@@ -1,0 +1,37 @@
+grammar org.xtext.mongobeans.MongoBeans with org.eclipse.xtext.xbase.Xbase
+
+generate mongoBeans "http://www.eclipse.org/xtext/mongobeans/MongoBeans"
+
+MongoFile:
+	elements+=AbstractElement*;
+
+Import:
+	'import' importedNamespace=QualifiedNameWithWildcard;
+
+AbstractElement:
+	Import | PackageDeclaration | MongoBean;
+
+PackageDeclaration:
+	'package' name=QualifiedName '{'
+		elements+=AbstractElement*
+	'}';
+
+MongoBean:
+	name=ValidID '{'
+		features+=AbstractFeature*
+	'}';
+
+AbstractFeature:
+	MongoOperation | MongoProperty;
+
+MongoProperty:
+	(type=JvmTypeReference | inlineType=MongoBean) (many?='*')? name=ValidID;
+
+MongoOperation:
+	=>(returnType=JvmTypeReference name=ValidID '(') 
+		(parameters+=FullJvmFormalParameter (',' parameters+=FullJvmFormalParameter)*)? 
+	')' 
+	body=XBlockExpression;
+
+QualifiedNameWithWildcard:
+	QualifiedName (".*")?;

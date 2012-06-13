@@ -1,0 +1,30 @@
+import java.util.*
+import org.xtext.mongobeans.example.Duration
+
+package org.musicdb { 
+	/**
+	 * A musical performer
+	 */
+	Artist {
+		String name
+		Album* albums
+		Iterable<Track> getOevre() {
+			albums.map[tracks].flatten
+		}
+	}
+	
+	Album {
+		String title
+		int year
+		Duration getDuration() {
+			tracks.map[duration].reduce[Duration a, Duration b| a + b]
+		} 
+		Track {
+			String title
+			int seconds
+			Duration getDuration() {
+				new Duration(seconds)
+			}
+		}* tracks
+	}
+}
