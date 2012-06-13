@@ -1,0 +1,5 @@
+setpref targetPlatformPath="${target.platform}"
+resolve "${projects.location}/org.xtext.mongobeans.buckminster/projects-platform.cquery"
+resolve "${projects.location}/org.xtext.mongobeans.buckminster/project.cquery"
+build
+perform "org.xtext.mongobeans.site#site.p2"
