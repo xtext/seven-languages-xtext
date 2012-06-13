@@ -20,7 +20,7 @@
 	<property name="commands.file" location="${projects.location}/org.xtext.mongobeans.buckminster/commands.txt" />
 	<property name="target.platform" value="target.platform" />
 	
-	<target name="buckminster" depends="cleanup" description="description">
+	<target name="buckminster" description="description">
 		<echo message="IMPORTANT: Populating an empty target platform may took over 10 minutes."/>
 		<condition property="executable.file" value="buckminster.bat" else="buckminster">
 			<os family="windows"/>
