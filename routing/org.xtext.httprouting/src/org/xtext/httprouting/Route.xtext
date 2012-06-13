@@ -1,0 +1,47 @@
+/*******************************************************************************
+ * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *******************************************************************************/
+grammar org.xtext.httprouting.Route with org.eclipse.xtext.xbase.annotations.XbaseWithAnnotations
+
+generate route "http://www.xtext.org/httprouting/Route"
+import "http://www.eclipse.org/xtext/common/JavaVMTypes" as types
+import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
+
+Model:
+	imports+=Import*
+	routes+=Route*;
+Import:
+	'import' importedType=[types::JvmType|QualifiedName];
+
+Route:
+	type=Type url=URL condition=Condition? (key=Key call=RouteFeatureCall | call=XFeatureCall);
+
+enum Type:
+	GET | POST | PUT | DELETE | HEAD;
+
+URL:
+	{URL} "/" (ID ("." ID)? | variables+=Variable) ("/" (ID ("." ID)? | variables+=Variable))*;
+
+Variable:
+	":" name=ID (wildcard?="*")?;
+
+Condition:
+	"when" expression=XExpression;
+
+Key:
+	annotations+=XAnnotation? type=JvmTypeReference;
+
+RouteFeatureCall returns xbase::XExpression:
+	{xbase::XFeatureCall} "->"
+	('<' typeArguments+=JvmArgumentTypeReference (',' typeArguments+=JvmArgumentTypeReference)* '>')?
+	feature=[types::JvmIdentifiableElement|IdOrSuper]
+	(=> explicitOperationCall?='('
+	(featureCallArguments+=XShortClosure
+	| featureCallArguments+=XExpression (',' featureCallArguments+=XExpression)*)?
+	')')?
+	featureCallArguments+=XClosure?;
+	

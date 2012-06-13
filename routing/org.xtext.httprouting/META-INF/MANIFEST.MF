@@ -1,0 +1,34 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.httprouting
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.httprouting; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext;visibility:=reexport,
+ org.eclipse.xtext.xbase;resolution:=optional;visibility:=reexport,
+ org.eclipse.xtext.generator;resolution:=optional,
+ org.apache.commons.logging;bundle-version="1.0.4";resolution:=optional,
+ org.eclipse.emf.codegen.ecore;resolution:=optional,
+ org.eclipse.emf.mwe.utils;resolution:=optional,
+ org.eclipse.emf.mwe2.launch;resolution:=optional,
+ org.eclipse.xtext.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types,
+ org.eclipse.xtext.xbase.lib
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: org.xtext.httprouting,
+ org.xtext.httprouting.services,
+ org.xtext.httprouting.route,
+ org.xtext.httprouting.route.impl,
+ org.xtext.httprouting.route.util,
+ org.xtext.httprouting.serializer,
+ org.xtext.httprouting.parser.antlr,
+ org.xtext.httprouting.parser.antlr.internal,
+ org.xtext.httprouting.validation,
+ org.xtext.httprouting.formatting,
+ org.xtext.httprouting.jvmmodel
+Bundle-ClassPath: .
