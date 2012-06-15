@@ -1,0 +1,30 @@
+// Das Haus vom Nikolaus
+begin
+  val length = 100
+  val diagonal = length * sqrt(2.0)
+  lineWidth = 2 
+  square(it)
+  turnRight(135)
+  lineColor = blue
+  forward(diagonal)
+  turnLeft(90)
+  lineColor = red
+  forward(diagonal / 2)
+  turnLeft(90)
+  forward(diagonal / 2)
+  turnLeft(90)
+  lineColor = blue
+  forward(diagonal) 
+end
+
+sub square
+begin
+  val length = 100
+  forward(length)
+  turnRight(90)
+  forward(length)
+  turnRight(90)
+  forward(length)
+  turnRight(90)
+  forward(length)
+end

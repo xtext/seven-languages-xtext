@@ -1,0 +1,19 @@
+grammar org.xtext.tortoiseshell.TortoiseShell with org.eclipse.xtext.xbase.Xbase
+
+import "http://www.eclipse.org/xtext/xbase/Xbase"
+generate tortoiseShell "http://www.xtext.org/tortoiseshell/TortoiseShell"
+
+Program :
+	body=Body
+	functions+=Function*;
+	
+Function:
+	'sub' name=ValidID
+	(parameters += FullJvmFormalParameter)*
+	body=Body;
+
+Body returns XBlockExpression:
+	{XBlockExpression}
+	'begin'
+	(expressions+=XExpressionInsideBlock ';'?)*
+	'end';

@@ -1,0 +1,23 @@
+SMAP
+MyTortoiseProgram.java
+TortoiseShell
+*S TortoiseShell
+*F
++ 0 Star.tortoiseshell
+src/org/xtext/tortoiseshell/example/Star.tortoiseshell
+*L
+3:6
+4:7
+5:8
+7:9
+8:10,5
+9:15,5
+10:20,4
+11:24,5
+12:29,3
+13:32
+14:33,2
+15:35
+16:36,3
+12:39,2
+*E

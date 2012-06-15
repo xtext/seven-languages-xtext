@@ -1,0 +1,18 @@
+// Star
+begin
+	val innerRadius = 100.0
+	val outerRadius = 140.0
+	val numPeaks = 50
+	
+	val alpha = 360.0 / numPeaks
+	val innerEdge = 2 * innerRadius * sin(toRadians(alpha/2))
+	val peakHeight = outerRadius - innerRadius * cos(toRadians(alpha/2))
+	val beta = toDegrees(atan(2*peakHeight/innerEdge))
+	val starEdge = sqrt(peakHeight*peakHeight + innerEdge * innerEdge / 4)
+	for(i: 1..numPeaks) {
+		forward(starEdge)
+		turnLeft(2*beta)
+		forward(starEdge)
+		turnRight(2 * beta + alpha)
+	}
+end
