@@ -1,0 +1,17 @@
+<% package org.xtext.template.tests.compiler
+	/* XPECT execute 'setParam1(true) setParam2(true)' ----
+		hello World!
+	--- */
+	
+	/* XPECT execute 'setParam1(false) setParam2(true)' ----
+		hello Germany!
+	--- */
+	
+	/* XPECT execute 'setParam1(false) setParam2(false)' ----
+		hello Europe!
+	--- */
+	
+	param boolean param1
+	param boolean param2
+%>
+hello <%if param1 %>World<%elseif param2%>Germany<%else%>Europe<%endif%>!

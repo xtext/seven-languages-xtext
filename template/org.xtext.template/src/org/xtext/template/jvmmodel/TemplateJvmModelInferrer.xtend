@@ -24,6 +24,7 @@ import org.xtext.template.template.TextStmt
 import static extension org.eclipse.emf.ecore.util.EcoreUtil.*
 import static extension org.eclipse.xtext.EcoreUtil2.*
 import org.eclipse.xtext.xbase.compiler.TypeReferenceSerializer
+import org.xtext.template.template.IfStmtBody
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -134,7 +135,7 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
    		for(es:file.eAllContentsAsList)
    			switch(es) {
    				ExpressionStmt: put(es.expresson, new ExpressionInfo(file.newTypeRef(typeof(Object)), "exp" + (i = i+1), es.expresson.allParameters.toList, es.expresson))
-   				IfStmt: put(es.^if, new ExpressionInfo(file.newTypeRef("boolean"), "cond" + (i = i+1), es.^if.allParameters.toList, es.^if))
+   				IfStmtBody: put(es.condition, new ExpressionInfo(file.newTypeRef("boolean"), "cond" + (i = i+1), es.condition.allParameters.toList, es.condition))
    				ForStmt: put(es.list, new ExpressionInfo(file.newTypeRef(typeof(Iterable), wildCardExtends(es.param.parameterType.copy)), "loop" + (i = i+1), es.list.allParameters.toList, es.list))
    			}
    		it
@@ -170,23 +171,24 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
    	}
    	
    	def dispatch void genStatement(IfStmt ifStmt, Context it) {
-   		out.append("if(")
-   		genExpressionCall(ifStmt.^if, it)
-   		out.append(") {")
-   		out.increaseIndentation
-   		out.newLine
-   		genStatement(ifStmt.then, it)
-   		if(ifStmt.^else != null) {
-   			out.decreaseIndentation
-   			out.newLine
-   			out.append("} else {")
-   			out.increaseIndentation
-   			out.newLine
-   			genStatement(ifStmt.^else, it)
+   		for(body:ifStmt.ifbodies) {
+   			if(body != ifStmt.ifbodies.head)
+   				out.append(" else ")
+	   		out.append("if(")
+	   		genExpressionCall(body.condition, it)
+	   		out.append(") {")
+	   		out.increaseIndentation.newLine
+	   		genStatement(body.body, it)
+	   		out.decreaseIndentation.newLine
+	   		out.append("}")
    		}
-   		out.decreaseIndentation
-   		out.newLine
-   		out.append("}")
+   		if(ifStmt.elsebody != null) {
+   			out.append(" else {")
+   			out.increaseIndentation.newLine
+   			genStatement(ifStmt.elsebody, it)
+	   		out.decreaseIndentation.newLine
+	   		out.append("}")
+   		}
    	}
    	
    	def dispatch void genStatement(ForStmt forStmt, Context it) {
