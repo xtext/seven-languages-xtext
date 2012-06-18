@@ -1,0 +1,36 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.guicecon.modules
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0
+Bundle-SymbolicName: org.guicecon.modules; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext;bundle-version="2.0.0";visibility:=reexport,
+ org.apache.log4j;bundle-version="1.2.15";visibility:=reexport,
+ org.apache.commons.logging;bundle-version="1.0.4";resolution:=optional;visibility:=reexport,
+ org.eclipse.xtext.generator;resolution:=optional,
+ org.eclipse.emf.codegen.ecore;resolution:=optional,
+ org.eclipse.emf.mwe.utils;resolution:=optional,
+ org.eclipse.emf.mwe2.launch;resolution:=optional,
+ org.eclipse.xtext.xbase;bundle-version="2.0.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types,
+ org.eclipse.xtext.xbase.lib
+Import-Package: org.apache.commons.logging,
+ org.apache.log4j,
+ org.eclipse.xtext.xbase.lib
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: org.guicecon.modules,
+ org.guicecon.modules.services,
+ org.guicecon.modules.guiceModules,
+ org.guicecon.modules.guiceModules.impl,
+ org.guicecon.modules.guiceModules.util,
+ org.guicecon.modules.parseTreeConstruction,
+ org.guicecon.modules.parser.antlr,
+ org.guicecon.modules.parser.antlr.internal,
+ org.guicecon.modules.validation,
+ org.guicecon.modules.formatting,
+ org.guicecon.modules.jvmmodel
