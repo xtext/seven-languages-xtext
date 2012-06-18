@@ -14,6 +14,8 @@ import org.xtext.template.template.TextStmt
 import static extension org.eclipse.xtext.EcoreUtil2.*
 import java.util.Map
 import org.eclipse.xtext.xbase.lib.util.ToStringHelper
+import org.xtext.template.template.IfStmt
+import org.eclipse.xtext.xbase.XExpression
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -80,6 +82,7 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
    						append("();");
    						newLine 
    						element.body.genStatement(new Context(expressionNames, it))
+   						newLine
    						append("return out.toString();");
    					]
    				]
@@ -96,8 +99,14 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
    				}
    				
    				for(es:element.getAllContentsOfType(typeof(ExpressionStmt))) {
-   					members += element.toMethod(expressionNames.get(es), element.newTypeRef(typeof(String))) [
+   					members += element.toMethod(expressionNames.get(es.expresson), element.newTypeRef(typeof(String))) [
    						body = 	es.expresson
+   					] 
+   				}
+   				
+   				for(es:element.getAllContentsOfType(typeof(IfStmt))) {
+   					members += element.toMethod(expressionNames.get(es.^if), element.newTypeRef("boolean")) [
+   						body = 	es.^if
    					] 
    				}
    				
@@ -113,35 +122,59 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
    	}
    	
    	def getExpressionNames(TemplateFile file) {
-   		val result = <ExpressionStmt, String>newHashMap()
+   		val result = <XExpression, String>newHashMap()
    		var i = -1
-   		for(es:file.getAllContentsOfType(typeof(ExpressionStmt)))
-   			result.put(es, "expression" + (i = i + 1))
+   		for(es:file.eAllContentsAsList)
+   			switch(es) {
+   				ExpressionStmt: result.put(es.expresson, "stmt" + (i = i + 1)) 
+   				IfStmt: result.put(es.^if, "ifcondition" + (i = i + 1)) 
+   			}
    		result
    	}
    	
    	def dispatch void genStatement(BlockStmt blockStmt, Context ctx) {
-   		for(s:blockStmt.statements) 
+   		for(s:blockStmt.statements) {
+   			if(s != blockStmt.statements.head)
+   				ctx.out.newLine 
    			genStatement(s, ctx)
+   		}
    	}
    	
-   	def dispatch void genStatement(TextStmt textStmt, Context ctx) {
-   		ctx.out.append("out.append(\"")
-   		ctx.out.append(textStmt.text.replace("\n", "\\n").replace("\r", "\\r"))
-   		ctx.out.append("\");")
-   		ctx.out.newLine
+   	def dispatch void genStatement(TextStmt textStmt, Context it) {
+   		out.append("out.append(\"")
+   		out.append(textStmt.text.replace("\n", "\\n").replace("\r", "\\r"))
+   		out.append("\");")
    	}
    	
-   	def dispatch void genStatement(ExpressionStmt exprStmt, Context ctx) {
-   		ctx.out.append("out.append(")
-   		ctx.out.append(ctx.expressionNames.get(exprStmt))
-   		ctx.out.append("());")
-   		ctx.out.newLine
+   	def dispatch void genStatement(ExpressionStmt exprStmt, Context it) {
+   		out.append("out.append(")
+   		out.append(expressionNames.get(exprStmt.expresson))
+   		out.append("());")
+   	}
+   	
+   	def dispatch void genStatement(IfStmt ifStmt, Context it) {
+   		out.append("if(")
+   		out.append(expressionNames.get(ifStmt.^if))
+   		out.append("()) {")
+   		out.increaseIndentation
+   		out.newLine
+   		genStatement(ifStmt.then, it)
+   		if(ifStmt.^else != null) {
+   			out.decreaseIndentation
+   			out.newLine
+   			out.append("} else {")
+   			out.increaseIndentation
+   			out.newLine
+   			genStatement(ifStmt.^else, it)
+   		}
+   		out.decreaseIndentation
+   		out.newLine
+   		out.append("}")
    	}
 }
 
 @Data class Context {
-	Map<ExpressionStmt, String> expressionNames
+	Map<XExpression, String> expressionNames
 	ITreeAppendable out
 }
 

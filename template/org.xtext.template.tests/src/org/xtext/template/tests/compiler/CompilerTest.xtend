@@ -47,7 +47,7 @@ class CompilerTest {
 		println(javaCode)
 		val clazz = javaCompiler.compileToClass(inferredType.qualifiedName, javaCode.toString)
 		val template = newInstance(clazz, inferredType, param)
-		println(template)
+//		println(template)
 		val generateMethod = clazz.getMethod("generate")
 		generateMethod.invoke(template).toString
 	}
@@ -57,10 +57,12 @@ class CompilerTest {
 		val resource = context.eResource.resourceSet.createResource(URI::createURI("param.___xbase"))
 		resource.load(new StringInputStream(document), null)
 		val expression =  resource.contents.head as XExpression
-		println(document)
+//		println(document)
 		assertNoErrors(expression)
 		val interpreter = (resource as XtextResource).resourceServiceProvider.get(typeof(XbaseInterpreter))
 		interpreter.setClassLoader(clazz.classLoader)
-		interpreter.evaluate(expression).result
+		val result = interpreter.evaluate(expression).result
+		context.eResource.resourceSet.resources.remove(resource)
+		result
 	}	
 }

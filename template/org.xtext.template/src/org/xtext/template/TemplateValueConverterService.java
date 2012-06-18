@@ -41,7 +41,7 @@ public class TemplateValueConverterService extends XbaseValueConverterService {
 	private TextValueConverter exp2exp = new TextValueConverter("?>", "<?");
 	private TextValueConverter exp2stm = new TextValueConverter("?>", "<%");
 	private TextValueConverter stm2exp = new TextValueConverter("%>", "<?");
-	private TextValueConverter stm2stm = new TextValueConverter("%>", "<?");
+	private TextValueConverter stm2stm = new TextValueConverter("%>", "<%");
 
 	@ValueConverter(rule = "TEXT_EXP2EXP")
 	public IValueConverter<String> getTEXT_EXP2EXPValueConverter() {
