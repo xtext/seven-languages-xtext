@@ -1,0 +1,14 @@
+<%
+	/* XPECT javaSignatures ----
+		public class Simple {
+		  private String param1;
+		  
+		  public String generate() {...}
+		  
+		  public void setParam1(final String param1) {...}
+		}
+	--- */
+	param String param1
+%>
+
+Hello World!

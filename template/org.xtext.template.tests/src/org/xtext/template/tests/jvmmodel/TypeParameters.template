@@ -1,0 +1,17 @@
+<%
+	/* XPECT javaSignatures ----
+	  import java.util.List;
+	
+	  public class TypeParameters {
+	    private List<String> param1;
+	  
+	    public String generate() {...}
+	  
+	    public void setParam1(final List<String> param1)  {...}
+	  }
+	--- */
+	import java.util.List
+	param List<String> param1
+%>
+
+Hello World!

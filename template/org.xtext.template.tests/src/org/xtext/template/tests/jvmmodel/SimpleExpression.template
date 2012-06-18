@@ -1,0 +1,16 @@
+<%
+	/* XPECT javaSignatures ----
+	public class SimpleExpression {
+	  private String param1;
+	  
+	  public String generate() {...}
+	  
+	  public void setParam1(final String param1) {...}
+	  
+	  public String expression0() {...}
+	}
+	--- */
+	param String param1
+%>
+
+Hello World! The param is "<? param1 ?>"

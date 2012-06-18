@@ -1,0 +1,9 @@
+<%
+	/* XPECT execute ----
+	
+		Hello World!
+	--- */
+	param String param1
+%>
+
+Hello World!

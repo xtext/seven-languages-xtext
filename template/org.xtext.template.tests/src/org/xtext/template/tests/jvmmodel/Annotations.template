@@ -1,0 +1,17 @@
+<%
+	/* XPECT javaSignatures ----
+	public class Annotations {
+	
+	  private String param1;
+	  
+	  public String generate() {...}
+
+	  @Deprecated	  
+	  public void setParam1(final String param1) {...}
+	}
+	--- */
+	@Deprecated
+	param String param1
+%>
+
+Hello World!
