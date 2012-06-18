@@ -22,12 +22,12 @@ Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.xtext.template,
  org.xtext.template.services,
- org.xtext.template.xtl,
- org.xtext.template.xtl.impl,
- org.xtext.template.xtl.util,
  org.xtext.template.serializer,
  org.xtext.template.parser.antlr,
  org.xtext.template.parser.antlr.internal,
  org.xtext.template.validation,
  org.xtext.template.formatting,
- org.xtext.template.jvmmodel
+ org.xtext.template.jvmmodel,
+ org.xtext.template.template,
+ org.xtext.template.template.impl,
+ org.xtext.template.template.util

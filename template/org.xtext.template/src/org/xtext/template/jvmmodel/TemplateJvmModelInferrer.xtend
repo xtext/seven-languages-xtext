@@ -1,16 +1,17 @@
 package org.xtext.template.jvmmodel
 
 import com.google.inject.Inject
+import org.eclipse.xtext.common.types.util.TypeReferences
+import org.eclipse.xtext.xbase.compiler.output.ITreeAppendable
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
-import org.xtext.template.xtl.XTLFile
-import org.eclipse.xtext.common.types.util.TypeReferences
+import org.xtext.template.template.BlockStmt
+import org.xtext.template.template.ExpressionStmt
+import org.xtext.template.template.TemplateFile
+import org.xtext.template.template.TextStmt
+
 import static extension org.eclipse.xtext.EcoreUtil2.*
-import org.xtext.template.xtl.ExpressionStmt
-import org.xtext.template.xtl.BlockStmt
-import org.eclipse.xtext.xbase.compiler.output.ITreeAppendable
-import org.xtext.template.xtl.TextStmt
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -52,7 +53,7 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
 	 *            rely on linking using the index if isPreIndexingPhase is
 	 *            <code>true</code>.
 	 */
-   	def dispatch void infer(XTLFile element, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+   	def dispatch void infer(TemplateFile element, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
    		val simpleName = element.eResource.URI.trimFileExtension.lastSegment
    		val qualifiedName = if(element.^package != null) 
    				element.^package + "." + simpleName
@@ -101,7 +102,7 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
    			])
    	}
    	
-   	def getExpressionNames(XTLFile file) {
+   	def getExpressionNames(TemplateFile file) {
    		val result = <ExpressionStmt, String>newHashMap()
    		var i = -1
    		for(es:file.getAllContentsOfType(typeof(ExpressionStmt)))
