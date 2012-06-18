@@ -1,25 +1,22 @@
 package org.xtext.tortoiseshell.runtime.view
 
+import com.google.inject.Inject
 import org.eclipse.draw2d.Graphics
 import org.eclipse.draw2d.ImageFigure
-import org.eclipse.jface.resource.ImageDescriptor
-import org.eclipse.swt.graphics.Image
-import org.eclipse.xtend.lib.Property
-
-import static org.xtext.tortoiseshell.runtime.view.TortoiseFigure.*
-import org.eclipse.draw2d.geometry.Dimension
 import org.eclipse.draw2d.PositionConstants
+import org.eclipse.draw2d.geometry.Dimension
 import org.eclipse.draw2d.geometry.Point
 import org.eclipse.draw2d.geometry.Rectangle
+import org.eclipse.xtend.lib.Property
+import org.eclipse.xtext.ui.PluginImageHelper
 
 class TortoiseFigure extends ImageFigure {
 
-	static Image icon = ImageDescriptor::createFromURL(typeof(TortoiseFigure).classLoader.getResource("icons/Turtle.png")).createImage
-
 	@Property double angle
 
-	new() {
-		super(icon, PositionConstants::NORTH_EAST)
+	@Inject 
+	new(PluginImageHelper imageHelper) {
+		super(imageHelper.getImage('Turtle.png'), PositionConstants::NORTH_EAST)
 	}
 	
 	override protected paintFigure(Graphics graphics) {
@@ -33,7 +30,7 @@ class TortoiseFigure extends ImageFigure {
 	}
   
 	override getMinimumSize(int wHint, int hHint) {
-		val bounds = icon.bounds
+		val bounds = image.bounds
 		new Dimension(bounds.width, bounds.height)
 	}
 	

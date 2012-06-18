@@ -1,37 +1,33 @@
 package org.xtext.tortoiseshell.runtime.view;
 
-import java.net.URL;
+import com.google.inject.Inject;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.ImageFigure;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
-import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Rectangle;
+import org.eclipse.xtext.ui.PluginImageHelper;
 import org.eclipse.xtext.xbase.lib.Functions.Function0;
 
 @SuppressWarnings("all")
 public class TortoiseFigure extends ImageFigure {
-  private static Image icon = new Function0<Image>() {
-    public Image apply() {
-      ClassLoader _classLoader = TortoiseFigure.class.getClassLoader();
-      URL _resource = _classLoader.getResource("icons/Turtle.png");
-      ImageDescriptor _createFromURL = ImageDescriptor.createFromURL(_resource);
-      Image _createImage = _createFromURL.createImage();
-      return _createImage;
-    }
-  }.apply();
-  
   private double _angle;
   
   public double getAngle() {
     return this._angle;
   }
   
-  public TortoiseFigure() {
-    super(TortoiseFigure.icon, PositionConstants.NORTH_EAST);
+  @Inject
+  public TortoiseFigure(final PluginImageHelper imageHelper) {
+    super(new Function0<Image>() {
+      public Image apply() {
+        Image _image = imageHelper.getImage("Turtle.png");
+        return _image;
+      }
+    }.apply(), PositionConstants.NORTH_EAST);
   }
   
   protected void paintFigure(final Graphics graphics) {
@@ -64,7 +60,8 @@ public class TortoiseFigure extends ImageFigure {
   public Dimension getMinimumSize(final int wHint, final int hHint) {
     Dimension _xblockexpression = null;
     {
-      final Rectangle bounds = TortoiseFigure.icon.getBounds();
+      Image _image = this.getImage();
+      final Rectangle bounds = _image.getBounds();
       Dimension _dimension = new Dimension(bounds.width, bounds.height);
       _xblockexpression = (_dimension);
     }

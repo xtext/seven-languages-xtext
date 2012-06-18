@@ -3,10 +3,12 @@
  */
 package org.xtext.tortoiseshell;
 
+import org.eclipse.xtext.xbase.featurecalls.IdentifiableSimpleNameProvider;
 import org.eclipse.xtext.xbase.scoping.featurecalls.StaticImplicitMethodsFeatureForTypeProvider;
 import org.xtext.tortoiseshell.interpreter.TortoiseShellInterpeter;
 import org.xtext.tortoiseshell.runtime.ITortoiseInterpreter;
 import org.xtext.tortoiseshell.scoping.TortoiseShellExtensionClassNameProvider;
+import org.xtext.tortoiseshell.scoping.TortoiseShellIdentifiableSimpleNameProvider;
 
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
@@ -22,5 +24,8 @@ public class TortoiseShellRuntimeModule extends org.xtext.tortoiseshell.Abstract
 	public Class<? extends ITortoiseInterpreter> bindITortoiseInterpreter() {
 		return TortoiseShellInterpeter.class;
 	}
-	
+
+	public Class<? extends IdentifiableSimpleNameProvider> bindIdentifiableSimpleNameProvider() {
+		return TortoiseShellIdentifiableSimpleNameProvider.class;
+	}
 }

@@ -1,31 +1,43 @@
 package org.xtext.tortoiseshell.runtime.view
 
+import com.google.inject.Inject
+import com.google.inject.Singleton
+import org.apache.log4j.Logger
 import org.eclipse.draw2d.ColorConstants
-import org.eclipse.draw2d.Figure
 import org.eclipse.draw2d.FigureCanvas
 import org.eclipse.draw2d.FreeformLayeredPane
 import org.eclipse.draw2d.FreeformViewport
 import org.eclipse.draw2d.Polyline
 import org.eclipse.draw2d.geometry.Point
+import org.eclipse.jface.dialogs.MessageDialog
+import org.eclipse.jface.text.source.Annotation
 import org.eclipse.swt.SWT
 import org.eclipse.swt.widgets.Composite
+import org.eclipse.ui.IViewSite
 import org.eclipse.ui.part.ViewPart
+import org.eclipse.xtext.ui.editor.XtextEditor
+import org.eclipse.xtext.ui.util.DisplayRunHelper
 import org.xtext.tortoiseshell.runtime.ITortoiseEvent
 import org.xtext.tortoiseshell.runtime.ITortoiseEvent$Listener
-import org.xtext.tortoiseshell.runtime.MoveEvent
-import org.xtext.tortoiseshell.runtime.TurnEvent
-import org.eclipse.xtext.ui.editor.XtextEditor
-import org.xtext.tortoiseshell.runtime.Tortoise
 import org.xtext.tortoiseshell.runtime.ITortoiseInterpreter
-import org.eclipse.jface.text.source.Annotation
+import org.xtext.tortoiseshell.runtime.MoveEvent
+import org.xtext.tortoiseshell.runtime.Tortoise
+import org.xtext.tortoiseshell.runtime.TurnEvent
 
+import static org.xtext.tortoiseshell.runtime.view.TortoiseView.*
+
+@Singleton
 class TortoiseView extends ViewPart implements ITortoiseEvent$Listener {
 	
+	static val LOGGER = Logger::getLogger(typeof(TortoiseView))
+	 
 	FigureCanvas canvas
-	Figure rootFigure
-	TortoiseFigure tortoiseFigure 
-	TortoisePartListener listener
-	Animator animator
+	
+	@Inject ToggleStopModeAction action
+	@Inject RootLayer rootFigure
+	@Inject TortoiseFigure tortoiseFigure 
+	@Inject TortoisePartListener listener
+	@Inject Animator animator
 	
 	override createPartControl(Composite parent) {
 		canvas = new FigureCanvas(parent, SWT::DOUBLE_BUFFERED)
@@ -34,18 +46,22 @@ class TortoiseView extends ViewPart implements ITortoiseEvent$Listener {
 		val pane = new FreeformLayeredPane
 		pane.font = parent.font
 		canvas.contents = pane
-		rootFigure = new RootLayer
 		pane.add(rootFigure, 'primary')
-		
-		tortoiseFigure = new TortoiseFigure
 		reset
-		listener = new TortoisePartListener(this)
 		site.page.addPartListener(listener) 
-		animator = new org.xtext.tortoiseshell.runtime.view.Animator(tortoiseFigure)
+		(site as IViewSite).actionBars.toolBarManager.add(action)
 	}
 
 	override setFocus() {
 		canvas.setFocus
+	}
+
+	def getTortoiseFigure() {
+		tortoiseFigure
+	}
+	
+	def getTortoisePartListener() {
+		listener
 	}
 
 	def reset() {
@@ -53,19 +69,28 @@ class TortoiseView extends ViewPart implements ITortoiseEvent$Listener {
 		rootFigure.add(tortoiseFigure)
 		tortoiseFigure.tortoiseLocation = new Point(0,0)
 		tortoiseFigure.angle = 0
-		canvas.scrollTo(-canvas.viewport.bounds.center.x, -canvas.viewport.bounds.center.y)
+		val viewportSize = canvas.size	
+		canvas.scrollTo(-viewportSize.x / 2, -viewportSize.y/ 2)
 	}
 	
-	def show(XtextEditor tortoiseEditor) {
-		animator.stop
-		reset
+	def show(XtextEditor tortoiseEditor, int stopAtLine) {
+		animator.setAnimated(stopAtLine < 0)
+		DisplayRunHelper::runSyncInDisplayThread[|reset]
 		tortoiseEditor.document.readOnly [
-			if(!tortoiseEditor.hasError) {
+			if(it != null && !tortoiseEditor.hasError) {
 				val tortoise = new Tortoise
 				tortoise.addListener(this)
 				val interpreter = resourceServiceProvider.get(typeof(ITortoiseInterpreter))
-				if(interpreter != null) {
-					interpreter.execute(tortoise, it)
+				if(interpreter != null && !contents.empty) {
+					try {		
+						interpreter.run(tortoise, contents.get(0), stopAtLine)
+					} catch (Exception e) {
+						MessageDialog::openError(site.shell, "Error during Execution", '''
+						Error during execution:
+						  «e.message»
+						See log for details''')
+						LOGGER.error("Error executing TortoiseScript", e)
+					}
 				}
 				tortoise.removeListener(this)
 			}

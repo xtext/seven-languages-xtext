@@ -13,6 +13,7 @@ import org.eclipse.xtext.common.types.TypesPackage;
 
 import org.eclipse.xtext.xbase.XbasePackage;
 
+import org.xtext.tortoiseshell.tortoiseShell.Executable;
 import org.xtext.tortoiseshell.tortoiseShell.Function;
 import org.xtext.tortoiseshell.tortoiseShell.Program;
 import org.xtext.tortoiseshell.tortoiseShell.TortoiseShellFactory;
@@ -39,6 +40,13 @@ public class TortoiseShellPackageImpl extends EPackageImpl implements TortoiseSh
    * @generated
    */
   private EClass functionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass executableEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -121,19 +129,9 @@ public class TortoiseShellPackageImpl extends EPackageImpl implements TortoiseSh
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getProgram_Body()
-  {
-    return (EReference)programEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getProgram_Functions()
   {
-    return (EReference)programEClass.getEStructuralFeatures().get(1);
+    return (EReference)programEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -171,9 +169,19 @@ public class TortoiseShellPackageImpl extends EPackageImpl implements TortoiseSh
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFunction_Body()
+  public EClass getExecutable()
   {
-    return (EReference)functionEClass.getEStructuralFeatures().get(2);
+    return executableEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getExecutable_Body()
+  {
+    return (EReference)executableEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -207,13 +215,14 @@ public class TortoiseShellPackageImpl extends EPackageImpl implements TortoiseSh
 
     // Create classes and their features
     programEClass = createEClass(PROGRAM);
-    createEReference(programEClass, PROGRAM__BODY);
     createEReference(programEClass, PROGRAM__FUNCTIONS);
 
     functionEClass = createEClass(FUNCTION);
     createEAttribute(functionEClass, FUNCTION__NAME);
     createEReference(functionEClass, FUNCTION__PARAMETERS);
-    createEReference(functionEClass, FUNCTION__BODY);
+
+    executableEClass = createEClass(EXECUTABLE);
+    createEReference(executableEClass, EXECUTABLE__BODY);
   }
 
   /**
@@ -241,24 +250,27 @@ public class TortoiseShellPackageImpl extends EPackageImpl implements TortoiseSh
     setNsURI(eNS_URI);
 
     // Obtain other dependent packages
-    XbasePackage theXbasePackage = (XbasePackage)EPackage.Registry.INSTANCE.getEPackage(XbasePackage.eNS_URI);
     TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
+    XbasePackage theXbasePackage = (XbasePackage)EPackage.Registry.INSTANCE.getEPackage(XbasePackage.eNS_URI);
 
     // Create type parameters
 
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    programEClass.getESuperTypes().add(this.getExecutable());
+    functionEClass.getESuperTypes().add(this.getExecutable());
 
     // Initialize classes and features; add operations and parameters
     initEClass(programEClass, Program.class, "Program", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getProgram_Body(), theXbasePackage.getXBlockExpression(), null, "body", null, 0, 1, Program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProgram_Functions(), this.getFunction(), null, "functions", null, 0, -1, Program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(functionEClass, Function.class, "Function", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFunction_Name(), ecorePackage.getEString(), "name", null, 0, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFunction_Parameters(), theTypesPackage.getJvmFormalParameter(), null, "parameters", null, 0, -1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFunction_Body(), theXbasePackage.getXBlockExpression(), null, "body", null, 0, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(executableEClass, Executable.class, "Executable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getExecutable_Body(), theXbasePackage.getXBlockExpression(), null, "body", null, 0, 1, Executable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

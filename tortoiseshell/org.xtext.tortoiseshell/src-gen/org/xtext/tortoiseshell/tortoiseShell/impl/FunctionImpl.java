@@ -13,14 +13,11 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.xtext.common.types.JvmFormalParameter;
-
-import org.eclipse.xtext.xbase.XBlockExpression;
 
 import org.xtext.tortoiseshell.tortoiseShell.Function;
 import org.xtext.tortoiseshell.tortoiseShell.TortoiseShellPackage;
@@ -34,13 +31,12 @@ import org.xtext.tortoiseshell.tortoiseShell.TortoiseShellPackage;
  * <ul>
  *   <li>{@link org.xtext.tortoiseshell.tortoiseShell.impl.FunctionImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.tortoiseshell.tortoiseShell.impl.FunctionImpl#getParameters <em>Parameters</em>}</li>
- *   <li>{@link org.xtext.tortoiseshell.tortoiseShell.impl.FunctionImpl#getBody <em>Body</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class FunctionImpl extends MinimalEObjectImpl.Container implements Function
+public class FunctionImpl extends ExecutableImpl implements Function
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -71,16 +67,6 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
    * @ordered
    */
   protected EList<JvmFormalParameter> parameters;
-
-  /**
-   * The cached value of the '{@link #getBody() <em>Body</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getBody()
-   * @generated
-   * @ordered
-   */
-  protected XBlockExpression body;
 
   /**
    * <!-- begin-user-doc -->
@@ -145,54 +131,6 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
    * <!-- end-user-doc -->
    * @generated
    */
-  public XBlockExpression getBody()
-  {
-    return body;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetBody(XBlockExpression newBody, NotificationChain msgs)
-  {
-    XBlockExpression oldBody = body;
-    body = newBody;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TortoiseShellPackage.FUNCTION__BODY, oldBody, newBody);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setBody(XBlockExpression newBody)
-  {
-    if (newBody != body)
-    {
-      NotificationChain msgs = null;
-      if (body != null)
-        msgs = ((InternalEObject)body).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TortoiseShellPackage.FUNCTION__BODY, null, msgs);
-      if (newBody != null)
-        msgs = ((InternalEObject)newBody).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TortoiseShellPackage.FUNCTION__BODY, null, msgs);
-      msgs = basicSetBody(newBody, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TortoiseShellPackage.FUNCTION__BODY, newBody, newBody));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -200,8 +138,6 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
     {
       case TortoiseShellPackage.FUNCTION__PARAMETERS:
         return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
-      case TortoiseShellPackage.FUNCTION__BODY:
-        return basicSetBody(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -220,8 +156,6 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
         return getName();
       case TortoiseShellPackage.FUNCTION__PARAMETERS:
         return getParameters();
-      case TortoiseShellPackage.FUNCTION__BODY:
-        return getBody();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -244,9 +178,6 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
         getParameters().clear();
         getParameters().addAll((Collection<? extends JvmFormalParameter>)newValue);
         return;
-      case TortoiseShellPackage.FUNCTION__BODY:
-        setBody((XBlockExpression)newValue);
-        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -267,9 +198,6 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
       case TortoiseShellPackage.FUNCTION__PARAMETERS:
         getParameters().clear();
         return;
-      case TortoiseShellPackage.FUNCTION__BODY:
-        setBody((XBlockExpression)null);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -288,8 +216,6 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case TortoiseShellPackage.FUNCTION__PARAMETERS:
         return parameters != null && !parameters.isEmpty();
-      case TortoiseShellPackage.FUNCTION__BODY:
-        return body != null;
     }
     return super.eIsSet(featureID);
   }

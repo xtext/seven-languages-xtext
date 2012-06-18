@@ -85,6 +85,11 @@ public class TortoiseShellAdapterFactory extends AdapterFactoryImpl
         return createFunctionAdapter();
       }
       @Override
+      public Adapter caseExecutable(Executable object)
+      {
+        return createExecutableAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -132,6 +137,21 @@ public class TortoiseShellAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createFunctionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.tortoiseshell.tortoiseShell.Executable <em>Executable</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.tortoiseshell.tortoiseShell.Executable
+   * @generated
+   */
+  public Adapter createExecutableAdapter()
   {
     return null;
   }

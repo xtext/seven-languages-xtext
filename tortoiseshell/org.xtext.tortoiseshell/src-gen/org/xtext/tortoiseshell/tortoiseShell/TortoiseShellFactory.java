@@ -41,6 +41,15 @@ public interface TortoiseShellFactory extends EFactory
   Function createFunction();
 
   /**
+   * Returns a new object of class '<em>Executable</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Executable</em>'.
+   * @generated
+   */
+  Executable createExecutable();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -3,21 +3,30 @@ MyTortoiseProgram.java
 TortoiseShell
 *S TortoiseShell
 *F
-+ 0 Star.tortoiseshell
-src/org/xtext/tortoiseshell/example/Star.tortoiseshell
++ 0 Nikolaus.tortoiseshell
+src/org/xtext/tortoiseshell/example/Nikolaus.tortoiseshell
 *L
 3:6
-4:7
-5:8
-7:9
-8:10,5
-9:15,5
-10:20,4
-11:24,5
-12:29,3
-13:32
-14:33,2
-15:35
-16:36,3
-12:39,2
+4:7,2
+5:9
+6:10
+7:11
+8:12
+9:13
+10:14
+11:15
+12:16,2
+13:18
+14:19,2
+15:21
+16:22
+17:23
+22:27
+23:28
+24:29
+25:30
+26:31
+27:32
+28:33
+29:34
 *E

@@ -26,7 +26,8 @@ public class RootLayer extends FreeformLayer {
       if (_notEquals) {
         Rectangle _xblockexpression_1 = null;
         {
-          Rectangle _bounds = parentViewport.getBounds();
+          IFigure _parent = parentViewport.getParent();
+          Rectangle _bounds = _parent.getBounds();
           final Dimension viewDimension = _bounds.getSize();
           parentViewport.translateToAbsolute(viewDimension);
           this.translateToRelative(viewDimension);

@@ -17,3 +17,6 @@ Body returns XBlockExpression:
 	'begin'
 	(expressions+=XExpressionInsideBlock ';'?)*
 	'end';
+	
+Executable:
+	Program | Function;

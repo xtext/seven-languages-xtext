@@ -66,6 +66,7 @@ public class TortoiseShellFactoryImpl extends EFactoryImpl implements TortoiseSh
     {
       case TortoiseShellPackage.PROGRAM: return createProgram();
       case TortoiseShellPackage.FUNCTION: return createFunction();
+      case TortoiseShellPackage.EXECUTABLE: return createExecutable();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -91,6 +92,17 @@ public class TortoiseShellFactoryImpl extends EFactoryImpl implements TortoiseSh
   {
     FunctionImpl function = new FunctionImpl();
     return function;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Executable createExecutable()
+  {
+    ExecutableImpl executable = new ExecutableImpl();
+    return executable;
   }
 
   /**

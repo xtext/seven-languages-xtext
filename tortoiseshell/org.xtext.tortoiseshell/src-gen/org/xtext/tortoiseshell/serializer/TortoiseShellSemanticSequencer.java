@@ -61,13 +61,15 @@ public class TortoiseShellSemanticSequencer extends XbaseSemanticSequencer {
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == TortoiseShellPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case TortoiseShellPackage.FUNCTION:
-				if(context == grammarAccess.getFunctionRule()) {
+				if(context == grammarAccess.getExecutableRule() ||
+				   context == grammarAccess.getFunctionRule()) {
 					sequence_Function(context, (Function) semanticObject); 
 					return; 
 				}
 				else break;
 			case TortoiseShellPackage.PROGRAM:
-				if(context == grammarAccess.getProgramRule()) {
+				if(context == grammarAccess.getExecutableRule() ||
+				   context == grammarAccess.getProgramRule()) {
 					sequence_Program(context, (Program) semanticObject); 
 					return; 
 				}

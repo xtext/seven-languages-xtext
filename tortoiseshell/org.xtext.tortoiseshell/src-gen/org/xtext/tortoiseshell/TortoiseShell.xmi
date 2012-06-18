@@ -57,6 +57,15 @@
         <elements xsi:type="xtext:Keyword" value="end"/>
       </alternatives>
     </rules>
+    <rules xsi:type="xtext:ParserRule" name="Executable">
+      <type metamodel="/0/@metamodelDeclarations.1">
+        <classifier xsi:type="ecore:EClass" href="http://www.xtext.org/tortoiseshell/TortoiseShell#//Executable"/>
+      </type>
+      <alternatives xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.0"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.1"/>
+      </alternatives>
+    </rules>
   </xtext:Grammar>
   <xtext:Grammar name="org.eclipse.xtext.xbase.Xbase" usedGrammars="/2">
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel">

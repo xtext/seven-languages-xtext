@@ -57,6 +57,34 @@ public interface TortoiseShellPackage extends EPackage
   TortoiseShellPackage eINSTANCE = org.xtext.tortoiseshell.tortoiseShell.impl.TortoiseShellPackageImpl.init();
 
   /**
+   * The meta object id for the '{@link org.xtext.tortoiseshell.tortoiseShell.impl.ExecutableImpl <em>Executable</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.tortoiseshell.tortoiseShell.impl.ExecutableImpl
+   * @see org.xtext.tortoiseshell.tortoiseShell.impl.TortoiseShellPackageImpl#getExecutable()
+   * @generated
+   */
+  int EXECUTABLE = 2;
+
+  /**
+   * The feature id for the '<em><b>Body</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXECUTABLE__BODY = 0;
+
+  /**
+   * The number of structural features of the '<em>Executable</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXECUTABLE_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link org.xtext.tortoiseshell.tortoiseShell.impl.ProgramImpl <em>Program</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -73,7 +101,7 @@ public interface TortoiseShellPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PROGRAM__BODY = 0;
+  int PROGRAM__BODY = EXECUTABLE__BODY;
 
   /**
    * The feature id for the '<em><b>Functions</b></em>' containment reference list.
@@ -82,7 +110,7 @@ public interface TortoiseShellPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PROGRAM__FUNCTIONS = 1;
+  int PROGRAM__FUNCTIONS = EXECUTABLE_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Program</em>' class.
@@ -91,7 +119,7 @@ public interface TortoiseShellPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PROGRAM_FEATURE_COUNT = 2;
+  int PROGRAM_FEATURE_COUNT = EXECUTABLE_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.xtext.tortoiseshell.tortoiseShell.impl.FunctionImpl <em>Function</em>}' class.
@@ -104,13 +132,22 @@ public interface TortoiseShellPackage extends EPackage
   int FUNCTION = 1;
 
   /**
+   * The feature id for the '<em><b>Body</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION__BODY = EXECUTABLE__BODY;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION__NAME = 0;
+  int FUNCTION__NAME = EXECUTABLE_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -119,16 +156,7 @@ public interface TortoiseShellPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION__PARAMETERS = 1;
-
-  /**
-   * The feature id for the '<em><b>Body</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION__BODY = 2;
+  int FUNCTION__PARAMETERS = EXECUTABLE_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Function</em>' class.
@@ -137,7 +165,7 @@ public interface TortoiseShellPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_FEATURE_COUNT = 3;
+  int FUNCTION_FEATURE_COUNT = EXECUTABLE_FEATURE_COUNT + 2;
 
 
   /**
@@ -149,17 +177,6 @@ public interface TortoiseShellPackage extends EPackage
    * @generated
    */
   EClass getProgram();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.tortoiseshell.tortoiseShell.Program#getBody <em>Body</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Body</em>'.
-   * @see org.xtext.tortoiseshell.tortoiseShell.Program#getBody()
-   * @see #getProgram()
-   * @generated
-   */
-  EReference getProgram_Body();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.xtext.tortoiseshell.tortoiseShell.Program#getFunctions <em>Functions</em>}'.
@@ -205,15 +222,25 @@ public interface TortoiseShellPackage extends EPackage
   EReference getFunction_Parameters();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.tortoiseshell.tortoiseShell.Function#getBody <em>Body</em>}'.
+   * Returns the meta object for class '{@link org.xtext.tortoiseshell.tortoiseShell.Executable <em>Executable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Executable</em>'.
+   * @see org.xtext.tortoiseshell.tortoiseShell.Executable
+   * @generated
+   */
+  EClass getExecutable();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.tortoiseshell.tortoiseShell.Executable#getBody <em>Body</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Body</em>'.
-   * @see org.xtext.tortoiseshell.tortoiseShell.Function#getBody()
-   * @see #getFunction()
+   * @see org.xtext.tortoiseshell.tortoiseShell.Executable#getBody()
+   * @see #getExecutable()
    * @generated
    */
-  EReference getFunction_Body();
+  EReference getExecutable_Body();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -247,14 +274,6 @@ public interface TortoiseShellPackage extends EPackage
      * @generated
      */
     EClass PROGRAM = eINSTANCE.getProgram();
-
-    /**
-     * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PROGRAM__BODY = eINSTANCE.getProgram_Body();
 
     /**
      * The meta object literal for the '<em><b>Functions</b></em>' containment reference list feature.
@@ -291,12 +310,22 @@ public interface TortoiseShellPackage extends EPackage
     EReference FUNCTION__PARAMETERS = eINSTANCE.getFunction_Parameters();
 
     /**
+     * The meta object literal for the '{@link org.xtext.tortoiseshell.tortoiseShell.impl.ExecutableImpl <em>Executable</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.tortoiseshell.tortoiseShell.impl.ExecutableImpl
+     * @see org.xtext.tortoiseshell.tortoiseShell.impl.TortoiseShellPackageImpl#getExecutable()
+     * @generated
+     */
+    EClass EXECUTABLE = eINSTANCE.getExecutable();
+
+    /**
      * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FUNCTION__BODY = eINSTANCE.getFunction_Body();
+    EReference EXECUTABLE__BODY = eINSTANCE.getExecutable_Body();
 
   }
 

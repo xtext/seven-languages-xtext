@@ -1,41 +1,56 @@
 package org.xtext.tortoiseshell.runtime.view
 
+import com.google.inject.Inject
 import java.util.Queue
 import java.util.concurrent.ConcurrentLinkedQueue
 import org.eclipse.core.runtime.IProgressMonitor
 import org.eclipse.core.runtime.Status
-import org.eclipse.ui.progress.UIJob
 import org.eclipse.swt.widgets.Display
+import org.eclipse.ui.progress.UIJob
 
 class Animator extends UIJob {
 	
 	val int UPDATE_INTERVAL = 20
 	
+	@Inject TortoiseView view
+	
 	long lastStart
 	boolean isScheduled
-	TortoiseFigure figure
 	Queue<Animation> animationQueue = new ConcurrentLinkedQueue
 	boolean isStop
+	boolean isAnimated = true
 	
-	new(TortoiseFigure figure) {
+	new() {
 		super("Tortoise Animator")
-		this.figure = figure
 		isScheduled = false
 	}
 	
 	def addAnimation(Animation animation) {
-		animationQueue.add(animation)
-		if(!isScheduled && !isStop) {
-			schedule(UPDATE_INTERVAL)
-			isScheduled = true
-			lastStart = System::currentTimeMillis
+		if(isAnimated) {
+			animationQueue.add(animation)
+			if(!isScheduled && !isStop) {
+				schedule(UPDATE_INTERVAL)
+				isScheduled = true
+				lastStart = System::currentTimeMillis
+			}
+		} else {
+			animation.set(view.tortoiseFigure, 1)
 		}
+	}
+	
+	def setAnimated(boolean isAnimated) {
+		stop
+		this.isAnimated = isAnimated
 	}
 	
 	def stop() {
 		isStop = true
-		while(isScheduled && isStop) 
-			Display::current.readAndDispatch
+		while(isScheduled && isStop) {
+			if(Display::current != null)
+				Display::current.readAndDispatch
+			else 
+				join
+		}
 		animationQueue.clear
 		isStop = false
 		isScheduled = false
@@ -49,13 +64,13 @@ class Animator extends UIJob {
 			val now = System::currentTimeMillis
 			var currentAnimation = animationQueue.peek()
 			while(currentAnimation != null && now >= lastStart + currentAnimation.delay) {
-				animationQueue.poll.set(figure, 1)
+				animationQueue.poll.set(view.tortoiseFigure, 1)
 				lastStart = lastStart + currentAnimation.delay
 				currentAnimation = animationQueue.peek
 			}
 			if(currentAnimation != null) {
 				val alpha = (now - lastStart) as double / currentAnimation.delay 
-				currentAnimation.set(figure, alpha)
+				currentAnimation.set(view.tortoiseFigure, alpha)
 				schedule(UPDATE_INTERVAL)
 			} else {
 				isScheduled = false

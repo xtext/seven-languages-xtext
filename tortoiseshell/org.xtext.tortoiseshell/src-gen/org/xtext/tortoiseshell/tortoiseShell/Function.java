@@ -4,11 +4,7 @@ package org.xtext.tortoiseshell.tortoiseShell;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.xtext.common.types.JvmFormalParameter;
-
-import org.eclipse.xtext.xbase.XBlockExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +16,6 @@ import org.eclipse.xtext.xbase.XBlockExpression;
  * <ul>
  *   <li>{@link org.xtext.tortoiseshell.tortoiseShell.Function#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.tortoiseshell.tortoiseShell.Function#getParameters <em>Parameters</em>}</li>
- *   <li>{@link org.xtext.tortoiseshell.tortoiseShell.Function#getBody <em>Body</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,7 +23,7 @@ import org.eclipse.xtext.xbase.XBlockExpression;
  * @model
  * @generated
  */
-public interface Function extends EObject
+public interface Function extends Executable
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -71,31 +66,5 @@ public interface Function extends EObject
    * @generated
    */
   EList<JvmFormalParameter> getParameters();
-
-  /**
-   * Returns the value of the '<em><b>Body</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Body</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Body</em>' containment reference.
-   * @see #setBody(XBlockExpression)
-   * @see org.xtext.tortoiseshell.tortoiseShell.TortoiseShellPackage#getFunction_Body()
-   * @model containment="true"
-   * @generated
-   */
-  XBlockExpression getBody();
-
-  /**
-   * Sets the value of the '{@link org.xtext.tortoiseshell.tortoiseShell.Function#getBody <em>Body</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Body</em>' containment reference.
-   * @see #getBody()
-   * @generated
-   */
-  void setBody(XBlockExpression value);
 
 } // Function

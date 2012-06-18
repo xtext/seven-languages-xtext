@@ -1,33 +1,45 @@
 package org.xtext.tortoiseshell.runtime.view;
 
 import com.google.common.base.Objects;
+import com.google.inject.Inject;
+import com.google.inject.Singleton;
 import java.util.Iterator;
+import org.apache.log4j.Logger;
 import org.eclipse.draw2d.ColorConstants;
-import org.eclipse.draw2d.Figure;
 import org.eclipse.draw2d.FigureCanvas;
 import org.eclipse.draw2d.FreeformLayeredPane;
 import org.eclipse.draw2d.FreeformViewport;
 import org.eclipse.draw2d.Polyline;
-import org.eclipse.draw2d.Viewport;
 import org.eclipse.draw2d.geometry.Point;
-import org.eclipse.draw2d.geometry.Rectangle;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.jface.action.IToolBarManager;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.text.source.Annotation;
 import org.eclipse.jface.text.source.IAnnotationModel;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.IEditorInput;
+import org.eclipse.ui.IViewSite;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPartSite;
 import org.eclipse.ui.part.ViewPart;
 import org.eclipse.ui.texteditor.IDocumentProvider;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.resource.IResourceServiceProvider;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.model.IXtextDocument;
+import org.eclipse.xtext.ui.util.DisplayRunHelper;
 import org.eclipse.xtext.util.concurrent.IUnitOfWork;
+import org.eclipse.xtext.xbase.lib.Exceptions;
+import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.Procedures.Procedure0;
 import org.xtext.tortoiseshell.runtime.ITortoiseEvent;
 import org.xtext.tortoiseshell.runtime.ITortoiseEvent.Listener;
 import org.xtext.tortoiseshell.runtime.ITortoiseInterpreter;
@@ -37,19 +49,35 @@ import org.xtext.tortoiseshell.runtime.TurnEvent;
 import org.xtext.tortoiseshell.runtime.view.Animation;
 import org.xtext.tortoiseshell.runtime.view.Animator;
 import org.xtext.tortoiseshell.runtime.view.RootLayer;
+import org.xtext.tortoiseshell.runtime.view.ToggleStopModeAction;
 import org.xtext.tortoiseshell.runtime.view.TortoiseFigure;
 import org.xtext.tortoiseshell.runtime.view.TortoisePartListener;
 
+@Singleton
 @SuppressWarnings("all")
 public class TortoiseView extends ViewPart implements Listener {
+  private final static Logger LOGGER = new Function0<Logger>() {
+    public Logger apply() {
+      Logger _logger = Logger.getLogger(TortoiseView.class);
+      return _logger;
+    }
+  }.apply();
+  
   private FigureCanvas canvas;
   
-  private Figure rootFigure;
+  @Inject
+  private ToggleStopModeAction action;
   
+  @Inject
+  private RootLayer rootFigure;
+  
+  @Inject
   private TortoiseFigure tortoiseFigure;
   
+  @Inject
   private TortoisePartListener listener;
   
+  @Inject
   private Animator animator;
   
   public void createPartControl(final Composite parent) {
@@ -63,23 +91,27 @@ public class TortoiseView extends ViewPart implements Listener {
     Font _font = parent.getFont();
     pane.setFont(_font);
     this.canvas.setContents(pane);
-    RootLayer _rootLayer = new RootLayer();
-    this.rootFigure = _rootLayer;
     pane.add(this.rootFigure, "primary");
-    TortoiseFigure _tortoiseFigure = new TortoiseFigure();
-    this.tortoiseFigure = _tortoiseFigure;
     this.reset();
-    TortoisePartListener _tortoisePartListener = new TortoisePartListener(this);
-    this.listener = _tortoisePartListener;
     IWorkbenchPartSite _site = this.getSite();
     IWorkbenchPage _page = _site.getPage();
     _page.addPartListener(this.listener);
-    Animator _animator = new Animator(this.tortoiseFigure);
-    this.animator = _animator;
+    IWorkbenchPartSite _site_1 = this.getSite();
+    IActionBars _actionBars = ((IViewSite) _site_1).getActionBars();
+    IToolBarManager _toolBarManager = _actionBars.getToolBarManager();
+    _toolBarManager.add(this.action);
   }
   
   public void setFocus() {
     this.canvas.setFocus();
+  }
+  
+  public TortoiseFigure getTortoiseFigure() {
+    return this.tortoiseFigure;
+  }
+  
+  public TortoisePartListener getTortoisePartListener() {
+    return this.listener;
   }
   
   public void reset() {
@@ -88,29 +120,43 @@ public class TortoiseView extends ViewPart implements Listener {
     Point _point = new Point(0, 0);
     this.tortoiseFigure.setTortoiseLocation(_point);
     this.tortoiseFigure.setAngle(0);
-    Viewport _viewport = this.canvas.getViewport();
-    Rectangle _bounds = _viewport.getBounds();
-    Point _center = _bounds.getCenter();
-    int _minus = (-_center.x);
-    Viewport _viewport_1 = this.canvas.getViewport();
-    Rectangle _bounds_1 = _viewport_1.getBounds();
-    Point _center_1 = _bounds_1.getCenter();
-    int _minus_1 = (-_center_1.y);
-    this.canvas.scrollTo(_minus, _minus_1);
+    final org.eclipse.swt.graphics.Point viewportSize = this.canvas.getSize();
+    int _minus = (-viewportSize.x);
+    int _divide = (_minus / 2);
+    int _minus_1 = (-viewportSize.y);
+    int _divide_1 = (_minus_1 / 2);
+    this.canvas.scrollTo(_divide, _divide_1);
   }
   
-  public Boolean show(final XtextEditor tortoiseEditor) {
+  public Boolean show(final XtextEditor tortoiseEditor, final int stopAtLine) {
     Boolean _xblockexpression = null;
     {
-      this.animator.stop();
-      this.reset();
+      boolean _lessThan = (stopAtLine < 0);
+      this.animator.setAnimated(_lessThan);
+      final Procedure0 _function = new Procedure0() {
+          public void apply() {
+            TortoiseView.this.reset();
+          }
+        };
+      DisplayRunHelper.runSyncInDisplayThread(new Runnable() {
+          public void run() {
+            _function.apply();
+          }
+      });
       IXtextDocument _document = tortoiseEditor.getDocument();
-      final Function1<XtextResource,Boolean> _function = new Function1<XtextResource,Boolean>() {
+      final Function1<XtextResource,Boolean> _function_1 = new Function1<XtextResource,Boolean>() {
           public Boolean apply(final XtextResource it) {
             boolean _xifexpression = false;
-            boolean _hasError = TortoiseView.this.hasError(tortoiseEditor);
-            boolean _not = (!_hasError);
-            if (_not) {
+            boolean _and = false;
+            boolean _notEquals = (!Objects.equal(it, null));
+            if (!_notEquals) {
+              _and = false;
+            } else {
+              boolean _hasError = TortoiseView.this.hasError(tortoiseEditor);
+              boolean _not = (!_hasError);
+              _and = (_notEquals && _not);
+            }
+            if (_and) {
               boolean _xblockexpression = false;
               {
                 Tortoise _tortoise = new Tortoise();
@@ -118,9 +164,40 @@ public class TortoiseView extends ViewPart implements Listener {
                 tortoise.addListener(TortoiseView.this);
                 IResourceServiceProvider _resourceServiceProvider = it.getResourceServiceProvider();
                 final ITortoiseInterpreter interpreter = _resourceServiceProvider.<ITortoiseInterpreter>get(ITortoiseInterpreter.class);
-                boolean _notEquals = (!Objects.equal(interpreter, null));
-                if (_notEquals) {
-                  interpreter.execute(tortoise, it);
+                boolean _and_1 = false;
+                boolean _notEquals_1 = (!Objects.equal(interpreter, null));
+                if (!_notEquals_1) {
+                  _and_1 = false;
+                } else {
+                  EList<EObject> _contents = it.getContents();
+                  boolean _isEmpty = _contents.isEmpty();
+                  boolean _not_1 = (!_isEmpty);
+                  _and_1 = (_notEquals_1 && _not_1);
+                }
+                if (_and_1) {
+                  try {
+                    EList<EObject> _contents_1 = it.getContents();
+                    EObject _get = _contents_1.get(0);
+                    interpreter.run(tortoise, _get, stopAtLine);
+                  } catch (final Throwable _t) {
+                    if (_t instanceof Exception) {
+                      final Exception e = (Exception)_t;
+                      IWorkbenchPartSite _site = TortoiseView.this.getSite();
+                      Shell _shell = _site.getShell();
+                      StringConcatenation _builder = new StringConcatenation();
+                      _builder.append("Error during execution:");
+                      _builder.newLine();
+                      _builder.append("  ");
+                      String _message = e.getMessage();
+                      _builder.append(_message, "  ");
+                      _builder.newLineIfNotEmpty();
+                      _builder.append("See log for details");
+                      MessageDialog.openError(_shell, "Error during Execution", _builder.toString());
+                      TortoiseView.LOGGER.error("Error executing TortoiseScript", e);
+                    } else {
+                      throw Exceptions.sneakyThrow(_t);
+                    }
+                  }
                 }
                 boolean _removeListener = tortoise.removeListener(TortoiseView.this);
                 _xblockexpression = (_removeListener);
@@ -132,7 +209,7 @@ public class TortoiseView extends ViewPart implements Listener {
         };
       Boolean _readOnly = _document.<Boolean>readOnly(new IUnitOfWork<Boolean,XtextResource>() {
           public Boolean exec(XtextResource state) {
-            return _function.apply(state);
+            return _function_1.apply(state);
           }
       });
       _xblockexpression = (_readOnly);

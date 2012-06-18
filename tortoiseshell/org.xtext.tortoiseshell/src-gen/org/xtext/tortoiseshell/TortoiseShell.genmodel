@@ -8,13 +8,14 @@
   <genPackages prefix="TortoiseShell" basePackage="org.xtext.tortoiseshell" disposableProviderFactory="true"
       ecorePackage="TortoiseShell.ecore#/">
     <genClasses ecoreClass="TortoiseShell.ecore#//Program">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TortoiseShell.ecore#//Program/body"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TortoiseShell.ecore#//Program/functions"/>
     </genClasses>
     <genClasses ecoreClass="TortoiseShell.ecore#//Function">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TortoiseShell.ecore#//Function/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TortoiseShell.ecore#//Function/parameters"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TortoiseShell.ecore#//Function/body"/>
+    </genClasses>
+    <genClasses ecoreClass="TortoiseShell.ecore#//Executable">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TortoiseShell.ecore#//Executable/body"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

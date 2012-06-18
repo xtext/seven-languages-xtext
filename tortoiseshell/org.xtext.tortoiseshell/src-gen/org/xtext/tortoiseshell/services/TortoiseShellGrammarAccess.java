@@ -127,11 +127,32 @@ public class TortoiseShellGrammarAccess extends AbstractGrammarElementFinder {
 		//"end"
 		public Keyword getEndKeyword_3() { return cEndKeyword_3; }
 	}
+
+	public class ExecutableElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Executable");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cProgramParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cFunctionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//Executable:
+		//	Program | Function;
+		public ParserRule getRule() { return rule; }
+
+		//Program | Function
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//Program
+		public RuleCall getProgramParserRuleCall_0() { return cProgramParserRuleCall_0; }
+
+		//Function
+		public RuleCall getFunctionParserRuleCall_1() { return cFunctionParserRuleCall_1; }
+	}
 	
 	
 	private ProgramElements pProgram;
 	private FunctionElements pFunction;
 	private BodyElements pBody;
+	private ExecutableElements pExecutable;
 	
 	private final Grammar grammar;
 
@@ -199,6 +220,16 @@ public class TortoiseShellGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getBodyRule() {
 		return getBodyAccess().getRule();
+	}
+
+	//Executable:
+	//	Program | Function;
+	public ExecutableElements getExecutableAccess() {
+		return (pExecutable != null) ? pExecutable : (pExecutable = new ExecutableElements());
+	}
+	
+	public ParserRule getExecutableRule() {
+		return getExecutableAccess().getRule();
 	}
 
 	//XExpression:

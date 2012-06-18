@@ -1,8 +1,9 @@
 package org.xtext.tortoiseshell.runtime;
 
-import org.eclipse.xtext.resource.XtextResource;
+import org.eclipse.emf.ecore.EObject;
+
 
 public interface ITortoiseInterpreter {
 
-	void execute(Tortoise tortoise, XtextResource resource);
+	void run(Tortoise tortoise, EObject program, int stopAtLine);
 }

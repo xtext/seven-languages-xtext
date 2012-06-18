@@ -1,7 +1,6 @@
 // Tree of Pythagoras - a fractal
 // (a,b,c) have to form a pythagorean triple, i.e. a^2 + b^2 = c^2
 begin
-	delay = 0
 	val a = 3.0
 	val b = 4.0
 	val c = 5.0
@@ -11,7 +10,8 @@ begin
 	val scaleA = a / c
 	val scaleB = b / c
 	
-	squares(it, length, alpha, scaleA, scaleB)
+	delay = 0
+	squares(length, alpha, scaleA, scaleB)
 end
 
 sub squares
@@ -19,15 +19,15 @@ sub squares
 	double alpha
 	double scaleA
 	double scaleB
-begin
-	if(length > 4) {
-		square(it, length)
+begin 
+	if(length > 6) {
+		square(length)
 		forward(length)
 		turnLeft(alpha)
-		squares(it, length * scaleB, alpha, scaleA, scaleB)
+		squares(length * scaleB, alpha, scaleA, scaleB)
 		turnRight(90)
 		forward(length * scaleB)
-		squares(it, length * scaleA, alpha, scaleA, scaleB)
+		squares(length * scaleA, alpha, scaleA, scaleB)
 		back(length * scaleB)
 		turnRight(alpha - 90)
 		back(length)
