@@ -1,4 +1,4 @@
-<%
+<% package org.xtext.template.tests.compiler
 	/* XPECT execute ----
 	   1-a
 	   1-b
@@ -11,8 +11,8 @@
 	   3-c
 	--- */
 %>
-<%for(Integer x:newArrayList(1, 2, 3))%>
-	<%for(String y:newArrayList("a", "b", "c"))%>
+<%for Integer x:newArrayList(1, 2, 3) %>
+	<%for String y:newArrayList("a", "b", "c") %>
 		<?x?>-<?y?>
 	<%endfor%>
 <%endfor%>

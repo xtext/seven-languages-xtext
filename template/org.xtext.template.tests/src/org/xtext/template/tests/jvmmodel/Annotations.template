@@ -1,5 +1,6 @@
-<%
+<% package org.xtext.template.tests.jvmmodel
 	/* XPECT javaSignatures ----
+	package org.xtext.template.tests.jvmmodel;
 	public class Annotations {
 	
 	  public String generate() {...}

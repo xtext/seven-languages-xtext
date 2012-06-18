@@ -1,4 +1,4 @@
-<%
+<% package org.xtext.template.tests.compiler
 	/* XPECT execute 'setParam1(true)' ----
 		hello World!
 	--- */
@@ -9,4 +9,4 @@
 	
 	param boolean param1
 %>
-hello <%if(param1)%>World<%else%>Germany<%endif%>!
+hello <%if param1 %>World<%else%>Germany<%endif%>!

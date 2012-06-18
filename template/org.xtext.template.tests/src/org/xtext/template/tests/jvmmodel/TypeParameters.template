@@ -1,14 +1,15 @@
-<%
+<% package org.xtext.template.tests.jvmmodel
 	/* XPECT javaSignatures ----
-	  import java.util.List;
+	package org.xtext.template.tests.jvmmodel;
+	import java.util.List;
 	
-	  public class TypeParameters {
-	    public String generate() {...}
+	public class TypeParameters {
+	  public String generate() {...}
+	
+	  public void setParam1(final List<String> param1)  {...}
 	  
-	    public void setParam1(final List<String> param1)  {...}
-	    
-	    public String toString() {...}
-	  }
+	  public String toString() {...}
+	}
 	--- */
 	import java.util.List
 	param List<String> param1

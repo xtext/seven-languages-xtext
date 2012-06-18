@@ -31,12 +31,12 @@ ExpressionStmt:
 	expresson=XExpression;
 
 ForStmt:
-	'for' '(' param=JvmFormalParameter ':' list=XExpression ')'
+	'for' param=JvmFormalParameter ':' list=XExpression
 		stmt=BlockStmt
 	'endfor';
 		
 IfStmt:
-	'if' '(' if=XExpression ')'
+	'if' if=XExpression
 	then=BlockStmt ('endif' | 'else' else=BlockStmt 'endif');
 	
 TextStmtStmt returns TextStmt:

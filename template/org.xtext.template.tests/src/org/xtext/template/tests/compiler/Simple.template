@@ -1,4 +1,4 @@
-<%
+<% package org.xtext.template.tests.compiler
 	/* XPECT execute ----
 	
 		Hello World!

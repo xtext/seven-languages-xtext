@@ -1,12 +1,13 @@
-<%
+<% package org.xtext.template.tests.jvmmodel
 	/* XPECT javaSignatures ----
-		public class Simple {
-		  public String generate() {...}
-		  
-		  public void setParam1(final String param1) {...}
-		  
-		  public String toString() {...}
-		}
+	package org.xtext.template.tests.jvmmodel;
+	public class Simple {
+	  public String generate() {...}
+	  
+	  public void setParam1(final String param1) {...}
+	  
+	  public String toString() {...}
+	}
 	--- */
 	param String param1
 %>
