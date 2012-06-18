@@ -1,0 +1,12 @@
+<%
+	/* XPECT execute 'setParam1(true)' ----
+		hello World!
+	--- */
+	
+	/* XPECT execute 'setParam1(false)' ----
+		hello Germany!
+	--- */
+	
+	param boolean param1
+%>
+hello <%if(param1)%>World<%else%>Germany<%endif%>!
