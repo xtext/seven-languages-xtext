@@ -2,6 +2,9 @@ package org.xtext.template.tests.jvmmodel
 
 import com.google.inject.Inject
 import org.eclipse.xtext.common.types.JvmExecutable
+import org.eclipse.xtext.common.types.JvmField
+import org.eclipse.xtext.common.types.JvmOperation
+import org.eclipse.xtext.common.types.JvmVisibility
 import org.eclipse.xtext.generator.InMemoryFileSystemAccess
 import org.eclipse.xtext.junit4.InjectWith
 import org.eclipse.xtext.junit4.parameterized.InjectParameter
@@ -48,4 +51,15 @@ class JvmModelSignatureGenerator extends JvmModelGenerator {
 	override generateExecutableBody(JvmExecutable op, ITreeAppendable appendable) {
 		appendable.append("{...}")
 	}
+	
+	override dispatch generateMember(JvmField it, ITreeAppendable appendable, boolean first) {
+		if(it.visibility != JvmVisibility::PRIVATE)
+			super._generateMember(it, appendable, first)
+	}
+	
+	override dispatch generateMember(JvmOperation it, ITreeAppendable appendable, boolean first) {
+		if(it.visibility != JvmVisibility::PRIVATE)
+			super._generateMember(it, appendable, first)
+	}
+	
 }

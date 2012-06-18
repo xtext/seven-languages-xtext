@@ -16,6 +16,7 @@ import java.util.Map
 import org.eclipse.xtext.xbase.lib.util.ToStringHelper
 import org.xtext.template.template.IfStmt
 import org.eclipse.xtext.xbase.XExpression
+import org.eclipse.xtext.common.types.JvmVisibility
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -100,12 +101,14 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
    				
    				for(es:element.getAllContentsOfType(typeof(ExpressionStmt))) {
    					members += element.toMethod(expressionNames.get(es.expresson), element.newTypeRef(typeof(String))) [
+   						visibility = JvmVisibility::PRIVATE
    						body = 	es.expresson
    					] 
    				}
    				
    				for(es:element.getAllContentsOfType(typeof(IfStmt))) {
    					members += element.toMethod(expressionNames.get(es.^if), element.newTypeRef("boolean")) [
+   						visibility = JvmVisibility::PRIVATE
    						body = 	es.^if
    					] 
    				}

@@ -2,8 +2,6 @@
 	/* XPECT javaSignatures ----
 	public class Annotations {
 	
-	  private String param1;
-	  
 	  public String generate() {...}
 
 	  @Deprecated	  
