@@ -9,22 +9,24 @@ import org.eclipse.xtext.common.types.JvmTypeReference
 import org.eclipse.xtext.common.types.JvmVisibility
 import org.eclipse.xtext.common.types.util.TypeReferences
 import org.eclipse.xtext.xbase.XExpression
+import org.eclipse.xtext.xbase.compiler.TypeReferenceSerializer
 import org.eclipse.xtext.xbase.compiler.output.ITreeAppendable
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
+import org.eclipse.xtext.xbase.lib.Exceptions
+import org.eclipse.xtext.xbase.lib.Procedures$Procedure1
 import org.eclipse.xtext.xbase.lib.util.ToStringHelper
 import org.xtext.template.template.BlockStmt
 import org.xtext.template.template.ExpressionStmt
 import org.xtext.template.template.ForStmt
 import org.xtext.template.template.IfStmt
+import org.xtext.template.template.IfStmtBody
 import org.xtext.template.template.TemplateFile
 import org.xtext.template.template.TextStmt
 
 import static extension org.eclipse.emf.ecore.util.EcoreUtil.*
 import static extension org.eclipse.xtext.EcoreUtil2.*
-import org.eclipse.xtext.xbase.compiler.TypeReferenceSerializer
-import org.xtext.template.template.IfStmtBody
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -74,8 +76,8 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
    				element.^package + "." + simpleName
    			else 
    				simpleName
-   		acceptor.accept(element.toClass(qualifiedName))
-   			.initializeLater([
+		val root = element.toClass(qualifiedName)
+   		acceptor.accept(root).initializeLater([
    				
    				val expressions  = element.allExpressions
    				
@@ -85,6 +87,16 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
    						field.initializer = p.defaultexp
    					members += field
    				}
+   				
+   				members += element.toConstructor()[]
+   				
+   				members += element.toConstructor()[
+   					parameters += element.toParameter("other", newTypeRef(root))
+   					body = [
+   						for(p:element.params) 
+   							append('''this.«p.name» = other.«p.name»;''')
+   					]
+   				]
    				
    				members += element.toMethod("generate", element.newTypeRef(typeof(String))) [
    					body = [
@@ -97,6 +109,22 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
    						element.body.genStatement(new Context(expressions, it))
    						newLine
    						append("return out.toString();");
+   					]
+   				]
+   				
+   				members += element.toMethod("generate", element.newTypeRef(typeof(String))) [
+   					parameters += element.toParameter("init", element.newTypeRef(typeof(Procedures$Procedure1), newTypeRef(root)))
+   					body = [
+   						append("try {").increaseIndentation.newLine
+   						append(root)
+   						append(" tpl = getClass().getConstructor(getClass()).newInstance(this);").newLine
+   						append("init.apply(tpl);").newLine
+   						append("return tpl.generate();")
+   						decreaseIndentation.newLine.append("} catch(Exception e) {").increaseIndentation.newLine
+   						append("throw ")
+   						append(findDeclaredType(typeof(Exceptions), element))
+   						append(".sneakyThrow(e);")
+   						decreaseIndentation.newLine.append("}")
    					]
    				]
    				
@@ -162,7 +190,7 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
    	
    	def dispatch void genStatement(TextStmt textStmt, Context it) {
    		out.append("out.append(\"")
-   		out.append(textStmt.text.replace("\n", "\\n").replace("\r", "\\r"))
+   		out.append(textStmt.text.replace("\n", "\\n").replace("\r", "\\r").replace("\"", "\\\""))
    		out.append("\");")
    	}
    	

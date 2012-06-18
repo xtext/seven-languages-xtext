@@ -1,8 +1,16 @@
 <% package org.xtext.template.tests.jvmmodel
 	/* XPECT javaSignatures ----
 	package org.xtext.template.tests.jvmmodel;
+	import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
+	
 	public class Simple {
+	  public Simple() {...}
+	  
+	  public Simple(final Simple other) {...}
+	  
 	  public String generate() {...}
+	  
+	  public String generate(final Procedure1<Simple> init) {...}
 	  
 	  public void setParam1(final String param1) {...}
 	  

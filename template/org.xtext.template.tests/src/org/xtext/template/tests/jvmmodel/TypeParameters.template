@@ -2,9 +2,17 @@
 	/* XPECT javaSignatures ----
 	package org.xtext.template.tests.jvmmodel;
 	import java.util.List;
+	import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 	
 	public class TypeParameters {
+	
+	  public TypeParameters() {...}
+	  
+	  public TypeParameters(final TypeParameters other) {...}
+	
 	  public String generate() {...}
+	  
+	  public String generate(final Procedure1<TypeParameters> init) {...}
 	
 	  public void setParam1(final List<String> param1)  {...}
 	  
