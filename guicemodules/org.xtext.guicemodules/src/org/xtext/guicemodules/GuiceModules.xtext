@@ -1,0 +1,40 @@
+grammar org.xtext.guicemodules.GuiceModules 
+	with org.eclipse.xtext.xbase.Xbase
+ 
+generate guiceModules "http://www.xtext.org/guicemodules/GuiceModules"
+import "http://www.eclipse.org/xtext/common/JavaVMTypes" as types
+  
+Module :
+	'package' packageName=QualifiedName
+	imports+=Import*
+	'module' name=ID ('mixin' mixins+=[Module|QualifiedName] (',' mixins+=[Module|QualifiedName])*)? '{'
+		bindings+=Binding*
+	'}'
+;
+
+Binding:
+	override?='override'? 'bind' from=Key 
+	('to' to=Key
+	 |'toInstance' toInstance=XExpression)?
+;
+
+Key:
+	annotation=AnnotationRef? type=JvmTypeReference
+;
+
+AnnotationRef:
+	'@' annotation=[types::JvmAnnotationType|QualifiedName]
+;
+
+Import:
+	'import' importedNamespace=QualifiedNameWithWildCard
+;
+
+QualifiedNameWithWildCard:
+	QualifiedName '.*'?
+;
+
+
+/* 
+ * key( @Named('foo') TypeProvider<String> )
+ */
