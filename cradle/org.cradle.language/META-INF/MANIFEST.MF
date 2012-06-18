@@ -1,0 +1,33 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.cradle.language
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.cradle.language; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext;bundle-version="2.1.0";visibility:=reexport,
+ org.eclipse.xtext.xbase;bundle-version="2.1.0";resolution:=optional;visibility:=reexport,
+ org.eclipse.xtext.generator;resolution:=optional,
+ org.eclipse.emf.codegen.ecore;resolution:=optional,
+ org.eclipse.emf.mwe.utils;resolution:=optional,
+ org.eclipse.emf.mwe2.launch;resolution:=optional,
+ org.eclipse.xtext.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types,
+ org.eclipse.xtext.xbase.lib
+Import-Package: org.apache.log4j,
+ org.apache.commons.logging
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: org.cradle.language,
+ org.cradle.language.cradle,
+ org.cradle.language.cradle.impl,
+ org.cradle.language.cradle.util,
+ org.cradle.language.formatting,
+ org.cradle.language.jvmmodel,
+ org.cradle.language.parser.antlr,
+ org.cradle.language.parser.antlr.internal,
+ org.cradle.language.serializer,
+ org.cradle.language.services,
+ org.cradle.language.validation

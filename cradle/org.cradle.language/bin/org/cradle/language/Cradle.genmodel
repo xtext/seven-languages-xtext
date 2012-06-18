@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.cradle.language/src-gen" editDirectory="/org.cradle.language.edit/src"
+    editorDirectory="/org.cradle.language.editor/src" modelPluginID="org.cradle.language"
+    forceOverwrite="true" modelName="Cradle" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="org.cradle.language.edit"
+    editorPluginID="org.cradle.language.editor" runtimeVersion="2.8" usedGenPackages="../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase">
+  <genPackages prefix="Cradle" basePackage="org.cradle.language" disposableProviderFactory="true"
+      ecorePackage="Cradle.ecore#/">
+    <genClasses ecoreClass="Cradle.ecore#//CradleFile">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cradle.ecore#//CradleFile/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cradle.ecore#//CradleFile/declarations"/>
+    </genClasses>
+    <genClasses ecoreClass="Cradle.ecore#//ImportDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cradle.ecore#//ImportDeclaration/importedNamespace"/>
+    </genClasses>
+    <genClasses ecoreClass="Cradle.ecore#//Declaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cradle.ecore#//Declaration/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Cradle.ecore#//Parameter">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cradle.ecore#//Parameter/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cradle.ecore#//Parameter/init"/>
+    </genClasses>
+    <genClasses ecoreClass="Cradle.ecore#//Task">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cradle.ecore#//Task/dependsOn"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cradle.ecore#//Task/action"/>
+    </genClasses>
+    <genClasses ecoreClass="Cradle.ecore#//TaskReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Cradle.ecore#//TaskReference/reference"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cradle.ecore#//TaskReference/softReference"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
