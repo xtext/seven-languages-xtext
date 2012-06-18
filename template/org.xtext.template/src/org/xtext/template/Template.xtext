@@ -25,14 +25,14 @@ BlockStmt:
 	)*;
 
 StructuralStmt:
-	ForLoopStmt | IfStmt;
+	ForStmt | IfStmt;
 
 ExpressionStmt:
 	expresson=XExpression;
 
-ForLoopStmt:
-	'for' '(' declaredParam=JvmFormalParameter ':' forExpression=XExpression ')'
-		eachStatement=BlockStmt
+ForStmt:
+	'for' '(' param=JvmFormalParameter ':' list=XExpression ')'
+		stmt=BlockStmt
 	'endfor';
 		
 IfStmt:

@@ -1,0 +1,10 @@
+<%
+	/* XPECT execute ----
+		No 1
+		No 2
+		No 3
+	--- */
+%>
+<%for(Integer x:newArrayList(1, 2, 3))%>
+	No <?x?>
+<%endfor%>
