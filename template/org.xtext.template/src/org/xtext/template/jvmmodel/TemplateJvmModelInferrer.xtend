@@ -12,6 +12,8 @@ import org.xtext.template.template.TemplateFile
 import org.xtext.template.template.TextStmt
 
 import static extension org.eclipse.xtext.EcoreUtil2.*
+import java.util.Map
+import org.eclipse.xtext.xbase.lib.util.ToStringHelper
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -77,12 +79,11 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
    						append(type)
    						append("();");
    						newLine 
-   						element.body.genStatement(it)
-   						newLine
+   						element.body.genStatement(new Context(expressionNames, it))
    						append("return out.toString();");
    					]
    				]
-
+   				
 				for(p:element.params) {
    				    val method = element.toMethod("set" +p.name.toFirstUpper, element.newTypeRef("void")) [
    				    	parameters += p.toParameter(p.name, p.type)
@@ -99,6 +100,15 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
    						body = 	es.expresson
    					] 
    				}
+   				
+   				members += element.toMethod("toString", element.newTypeRef(typeof(String))) [
+   					body = [
+   						val type = findDeclaredType(typeof(ToStringHelper), element)
+   						append("return new ")
+   						append(type)
+   						append("().toString(this);");
+   					]
+   				]
    			])
    	}
    	
@@ -110,16 +120,28 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
    		result
    	}
    	
-   	def dispatch void genStatement(BlockStmt blockStmt, ITreeAppendable out) {
+   	def dispatch void genStatement(BlockStmt blockStmt, Context ctx) {
    		for(s:blockStmt.statements) 
-   			genStatement(s, out)
+   			genStatement(s, ctx)
    	}
    	
-   	def dispatch void genStatement(TextStmt textStmt, ITreeAppendable out) {
-   		out.append("out.append(\"")
-   		out.append(textStmt.text.replace("\n", "\\n").replace("\r", "\\r"))
-   		out.append("\");")
-   		
+   	def dispatch void genStatement(TextStmt textStmt, Context ctx) {
+   		ctx.out.append("out.append(\"")
+   		ctx.out.append(textStmt.text.replace("\n", "\\n").replace("\r", "\\r"))
+   		ctx.out.append("\");")
+   		ctx.out.newLine
    	}
+   	
+   	def dispatch void genStatement(ExpressionStmt exprStmt, Context ctx) {
+   		ctx.out.append("out.append(")
+   		ctx.out.append(ctx.expressionNames.get(exprStmt))
+   		ctx.out.append("());")
+   		ctx.out.newLine
+   	}
+}
+
+@Data class Context {
+	Map<ExpressionStmt, String> expressionNames
+	ITreeAppendable out
 }
 

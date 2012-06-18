@@ -1,0 +1,7 @@
+<%
+	/* XPECT execute ----
+	
+	expression 'myexpression'
+	--- */
+%>
+expression '<? "myexpression" ?>'
