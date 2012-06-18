@@ -92,10 +92,14 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
    				
    				members += element.toConstructor()[
    					parameters += element.toParameter("other", newTypeRef(root))
-   					body = [
-   						for(p:element.params) 
-   							append('''this.«p.name» = other.«p.name»;''')
-   					]
+   					if(!element.params.empty)
+	   					body = [
+	   						for(p:element.params) {
+	   							if(p != element.params.head)
+	   								newLine
+	   							append('''this.«p.name» = other.«p.name»;''')
+	   						}
+	   					]
    				]
    				
    				members += element.toMethod("generate", element.newTypeRef(typeof(String))) [
