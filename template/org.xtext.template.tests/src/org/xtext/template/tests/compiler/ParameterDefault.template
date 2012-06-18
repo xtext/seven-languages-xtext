@@ -1,0 +1,13 @@
+<% package org.xtext.template.tests.compiler
+
+	/* XPECT execute ----
+		expression 'mydefault'
+	--- */
+	
+	/* XPECT execute 'setParam1("explicit")' ----
+		expression 'explicit'
+	--- */
+	
+	param String param1 = "mydefault"
+%>
+expression '<? param1 ?>'

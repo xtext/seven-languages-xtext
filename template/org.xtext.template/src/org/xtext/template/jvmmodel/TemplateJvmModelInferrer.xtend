@@ -81,6 +81,8 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
    				
    				for(p:element.params) {
    					val field = p.toField(p.name, p.type)
+   					if(p.defaultexp != null)
+   						field.initializer = p.defaultexp
    					members += field
    				}
    				

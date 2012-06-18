@@ -11,8 +11,7 @@ Import:
 	"import" importedNamespace=QualifiedName;
 
 Parameter:
-	annotations+=XAnnotation* 
-	"param" type=JvmTypeReference name=ID;
+	annotations+=XAnnotation* "param" type=JvmTypeReference name=ID ("=" defaultexp=XExpression)?;
 	
 Statement:
 	BlockStmt | StructuralStmt | ExpressionStmt;
