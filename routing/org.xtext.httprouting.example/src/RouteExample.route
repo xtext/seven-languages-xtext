@@ -7,5 +7,5 @@ GET /client/foo/:id  when id=="foo" @Named("ActionClassName") ActionClass->doSom
       
 GET /client/:bar/foo/:baz/:name* when bar == "Some" && (bar + baz) == "SomeString" ActionClass->doSomething(bar, name) 
 
-POST /client/:bar/file.gif/:rest* when rest.startsWith("/action?=delete")  ActionClass::doSomethingStatic(bar + rest)  
+POST /client/:bar/file.gif/:rest* when rest.startsWith("action?=delete")  ActionClass::doSomethingStatic(bar + rest)  
 POST /client/:bar/file.gif/:rest* ActionClass::doSomethingStatic(bar + rest)    

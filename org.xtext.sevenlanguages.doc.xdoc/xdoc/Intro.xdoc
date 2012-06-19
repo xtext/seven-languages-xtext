@@ -5,7 +5,7 @@ Why?
 The seven languages are
 ul[
 item[ref:mongo[mongoBeans]: JavaBeans-like statically typed access to mongoDB documents]
-item[ref:routing[HttpRouting]: ]
+item[ref:routing[HttpRouting]: HttpRoutes with full support of expressions]
 item[ref:templates[Templates]: ]
 item[ref:guice[GuiceModules]: ]
 item[ref:cradle[Cradle]: ]
