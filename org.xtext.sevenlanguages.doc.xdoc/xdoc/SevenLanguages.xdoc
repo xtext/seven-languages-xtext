@@ -26,7 +26,7 @@ codelanguage-def[Xbase][
 
 codelanguage-def[MWE2][module, var, auto-inject, auto, inject, import, true, false]
 
-codelanguage-def[Xtend2][
+codelanguage-def[Xtend][
 	abstract,continue,def,override,for,new,switch,assert,default,goto,package,synchronized,
 	boolean,do,if,private,this,it,break,double,implements,protected,throw,
 	byte,else,import,public,throws,
