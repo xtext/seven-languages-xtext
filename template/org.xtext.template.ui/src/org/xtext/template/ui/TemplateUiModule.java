@@ -4,6 +4,10 @@
 package org.xtext.template.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfiguration;
+import org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculator;
+import org.xtext.template.ui.highlighting.TemplateHighlightingCalculator;
+import org.xtext.template.ui.highlighting.TemplateHighlightingConfiguration;
 
 /**
  * Use this class to register components to be used within the IDE.
@@ -11,5 +15,15 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 public class TemplateUiModule extends org.xtext.template.ui.AbstractTemplateUiModule {
 	public TemplateUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
+	}
+
+	@Override
+	public Class<? extends ISemanticHighlightingCalculator> bindISemanticHighlightingCalculator() {
+		return TemplateHighlightingCalculator.class;
+	}
+
+	@Override
+	public Class<? extends IHighlightingConfiguration> bindIHighlightingConfiguration() {
+		return TemplateHighlightingConfiguration.class;
 	}
 }
