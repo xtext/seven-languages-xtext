@@ -100,6 +100,7 @@ section2:mongo_statistics[Some Stats]
 
 table[
 tr[td[Language name]td[mongoBeans]]
+tr[td[Author]td[Jan Koehnlein]]
 tr[td[Xtext Grammar]td[27 LOC, 9 rules]]
 tr[td[Xtext extensions]td[6 classes]]
 tr[td[Execution]td[Java code generator]]
