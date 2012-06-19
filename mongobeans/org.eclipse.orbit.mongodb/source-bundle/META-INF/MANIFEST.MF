@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-Name: %Bundle-Name
+Bundle-Vendor: %Bundle-Vendor
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.eclipse.orbit.mongodb.source
+Bundle-Version: 2.6.3.qualifier
+Eclipse-SourceBundle: org.eclipse.orbit.mongodb;version="2.6.3.qualifier"
+
