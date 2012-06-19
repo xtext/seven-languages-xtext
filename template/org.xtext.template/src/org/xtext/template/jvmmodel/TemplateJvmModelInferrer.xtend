@@ -53,7 +53,7 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
    		acceptor.accept(root).initializeLater([
    				
    				for(p:element.params) {
-   					val field = p.toField(p.name, p.type)
+   					val field = p.toField(p.name, p.type ?: p.defaultexp.type)
    					if(p.defaultexp != null)
    						field.initializer = p.defaultexp
    					members += field
@@ -108,8 +108,8 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
    				]
    				
 				for(p:element.params) {
-   				    val method = element.toMethod("set" +p.name.toFirstUpper, element.newTypeRef("void")) [
-   				    	parameters += p.toParameter(p.name, p.type)
+   				    val method = element.toMethod("set" +p.name.toFirstUpper, element.newTypeRef(Void::TYPE)) [
+   				    	parameters += p.toParameter(p.name, p.type ?: p.defaultexp.type)
    				    	body = [
    				    		append('''this.«p.name» = «p.name»;''')
    				    	]	
