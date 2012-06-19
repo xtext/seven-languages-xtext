@@ -1,10 +1,12 @@
 package org.xtext.template.jvmmodel
 
 import com.google.inject.Inject
+import java.util.List
 import java.util.Map
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.xtend.lib.Data
 import org.eclipse.xtext.common.types.JvmFormalParameter
+import org.eclipse.xtext.common.types.JvmMember
 import org.eclipse.xtext.common.types.JvmTypeReference
 import org.eclipse.xtext.common.types.JvmVisibility
 import org.eclipse.xtext.common.types.util.TypeReferences
@@ -26,7 +28,6 @@ import org.xtext.template.template.TemplateFile
 import org.xtext.template.template.TextStmt
 
 import static extension org.eclipse.emf.ecore.util.EcoreUtil.*
-import static extension org.eclipse.xtext.EcoreUtil2.*
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -47,8 +48,6 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
    				simpleName
 		val root = element.toClass(qualifiedName)
    		acceptor.accept(root).initializeLater([
-   				
-   				val expressions  = element.allExpressions
    				
    				for(p:element.params) {
    					val field = p.toField(p.name, p.type)
@@ -71,6 +70,10 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
 	   					]
    				]
    				
+   				val expr2call = <XExpression, String>newHashMap()
+   				for(expr : element.eAllContents.toIterable)
+   					genExpression(new ExpCtx(members, expr2call), expr)
+   				
    				members += element.toMethod("generate", element.newTypeRef(typeof(String))) [
    					body = [
    						val type = findDeclaredType(typeof(StringBuilder), element)
@@ -79,7 +82,7 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
    						append(type)
    						append("();");
    						newLine 
-   						element.body.genStatement(new Context(expressions, it))
+   						genStatement(new StmtCtx(it, expr2call), element.body)
    						newLine
    						append("return out.toString();");
    					]
@@ -112,15 +115,6 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
    					members += method
    				}
    				
-   				for(es:expressions.values) {
-   					members += element.toMethod(es.name, es.type) [
-   						visibility = JvmVisibility::PRIVATE
-   						for(p: es.params)
-   							parameters += element.toParameter(p.name, p.parameterType)
-   						body = es.expression
-   					] 
-   				}
-   				
    				members += element.toMethod("toString", element.newTypeRef(typeof(String))) [
    					body = [
    						val type = findDeclaredType(typeof(ToStringHelper), element)
@@ -132,18 +126,6 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
    			])
    	}
    	
-   	def getAllExpressions(TemplateFile file) {
-   		val it = <XExpression, ExpressionInfo>newLinkedHashMap()
-   		var i = -1
-   		for(es:file.eAllContentsAsList)
-   			switch(es) {
-   				ExpressionStmt: put(es.expresson, new ExpressionInfo(file.newTypeRef(typeof(Object)), "exp" + (i = i+1), es.expresson.allParameters.toList, es.expresson))
-   				IfStmtBody: put(es.condition, new ExpressionInfo(file.newTypeRef("boolean"), "cond" + (i = i+1), es.condition.allParameters.toList, es.condition))
-   				ForStmt: put(es.source, new ExpressionInfo(file.newTypeRef(typeof(Iterable), wildCardExtends(es.param.parameterType.copy)), "loop" + (i = i+1), es.source.allParameters.toList, es.source))
-   			}
-   		it
-   	}
-   	
    	def Iterable<JvmFormalParameter> getAllParameters(EObject exp){
    		val cnt = exp.eContainer
    		switch(cnt) {
@@ -153,80 +135,102 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
    		}
    	}
    	
-   	def dispatch void genStatement(BlockStmt blockStmt, Context ctx) {
+   	def dispatch void genStatement(StmtCtx it, BlockStmt blockStmt) {
    		for(s:blockStmt.statements) {
    			if(s != blockStmt.statements.head)
-   				ctx.out.newLine 
-   			genStatement(s, ctx)
+   				out.newLine 
+   			genStatement(s)
    		}
    	}
    	
-   	def dispatch void genStatement(TextStmt textStmt, Context it) {
+   	def dispatch void genStatement(StmtCtx it, TextStmt textStmt) {
    		out.append("out.append(\"")
    		out.append(textStmt.text.replace("\n", "\\n").replace("\r", "\\r").replace("\"", "\\\""))
    		out.append("\");")
    	}
    	
-   	def dispatch void genStatement(ExpressionStmt exprStmt, Context it) {
+   	def dispatch void genStatement(StmtCtx it, ExpressionStmt exprStmt) {
    		out.append("out.append(")
-   		genExpressionCall(exprStmt.expresson, it)
+   		out.append(expr2call.get(exprStmt.body))
    		out.append(");")
    	}
    	
-   	def dispatch void genStatement(IfStmt ifStmt, Context it) {
+   	def dispatch void genStatement(StmtCtx it, IfStmt ifStmt) {
    		for(body:ifStmt.ifbodies) {
    			if(body != ifStmt.ifbodies.head)
    				out.append(" else ")
 	   		out.append("if(")
-	   		genExpressionCall(body.condition, it)
+	   		out.append(expr2call.get(body.condition))
 	   		out.append(") {")
 	   		out.increaseIndentation.newLine
-	   		genStatement(body.body, it)
+	   		genStatement(body.body)
 	   		out.decreaseIndentation.newLine
 	   		out.append("}")
    		}
    		if(ifStmt.elsebody != null) {
    			out.append(" else {")
    			out.increaseIndentation.newLine
-   			genStatement(ifStmt.elsebody, it)
+   			genStatement(ifStmt.elsebody)
 	   		out.decreaseIndentation.newLine
 	   		out.append("}")
    		}
    	}
    	
-   	def dispatch void genStatement(ForStmt forStmt, Context it) {
+   	def dispatch void genStatement(StmtCtx it, ForStmt forStmt) {
    		out.append("for(")
    		forStmt.param.parameterType.serialize(forStmt, out)
    		out.append(" ")
    		out.append(forStmt.param.name)
    		out.append(" : ")
-   		genExpressionCall(forStmt.source, it)
+   		out.append(expr2call.get(forStmt.source))
    		out.append(") {")
    		out.increaseIndentation
    		out.newLine
-   		genStatement(forStmt.body, it)
+   		genStatement(forStmt.body)
    		out.decreaseIndentation
    		out.newLine
    		out.append("}")
    	}
    	
-   	def genExpressionCall(XExpression exp, Context it) {
-   		val info = expressions.get(exp)
-   		out.append(info.name)
-   		out.append("(")
-   		out.append(info.params.map[name].join(", "))
-   		out.append(")")
+   	def dispatch void genExpression(ExpCtx it, ForStmt forStmt) {
+   		genExpression("loop", forStmt.source, forStmt.newTypeRef(typeof(Iterable), wildCardExtends(forStmt.param.parameterType.copy)))
    	}
+   	
+   	def dispatch void genExpression(ExpCtx it, IfStmtBody ifStmt) {
+   		genExpression("cond", ifStmt.condition, ifStmt.newTypeRef(Boolean::TYPE))
+   	}
+   	
+   	def dispatch void genExpression(ExpCtx it, ExpressionStmt expStmt) {
+   		genExpression("exp", expStmt.body, expStmt.newTypeRef(typeof(Object)))
+   	}
+   	
+   	def dispatch void genExpression(ExpCtx it, EObject expStmt) {
+   	}
+   	
+   	def genExpression(ExpCtx it, String prefix, XExpression exp, JvmTypeReference type) {
+   		val name = newMemberName(members, prefix)
+   		val params = exp.allParameters
+   		members += exp.toMethod(name, type) [
+			visibility = JvmVisibility::PRIVATE
+			for(p: params)
+				parameters += exp.toParameter(p.name, p.parameterType)
+			body = exp
+		]
+		getExpr2call.put(exp, name + "(" + params.map[simpleName].join(", ") + ")") 
+   	}
+   	
+   	def newMemberName(List<JvmMember> members, String prefix) { 
+		val names = members.map[simpleName].toSet
+		prefix + (0..Integer::MAX_VALUE).findFirst[!names.contains(prefix + it)]
+	}
 }
 
-@Data class Context {
-	Map<XExpression, ExpressionInfo> expressions
+@Data class ExpCtx {
+	List<JvmMember> members
+	Map<XExpression, String> expr2call
+}
+
+@Data class StmtCtx {
 	ITreeAppendable out
-}
-
-@Data class ExpressionInfo {
-	JvmTypeReference type
-	String name
-	Iterable<JvmFormalParameter> params
-	XExpression expression
+	Map<XExpression, String> expr2call
 }

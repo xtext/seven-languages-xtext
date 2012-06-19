@@ -27,7 +27,7 @@ StructuralStmt:
 	ForStmt | IfStmt;
 
 ExpressionStmt:
-	expresson=XExpression;
+	body=XExpression;
 
 ForStmt:
 	'for' param=JvmFormalParameter ':' source=XExpression body=BlockStmt 'endfor';
