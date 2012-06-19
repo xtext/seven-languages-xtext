@@ -19,24 +19,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.xtext.common.types.JvmFormalParameter;
 
-import org.xtext.tortoiseshell.tortoiseShell.Function;
+import org.xtext.tortoiseshell.tortoiseShell.SubProgram;
 import org.xtext.tortoiseshell.tortoiseShell.TortoiseShellPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Function</b></em>'.
+ * An implementation of the model object '<em><b>Sub Program</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.tortoiseshell.tortoiseShell.impl.FunctionImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.tortoiseshell.tortoiseShell.impl.FunctionImpl#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link org.xtext.tortoiseshell.tortoiseShell.impl.SubProgramImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.tortoiseshell.tortoiseShell.impl.SubProgramImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class FunctionImpl extends ExecutableImpl implements Function
+public class SubProgramImpl extends ExecutableImpl implements SubProgram
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -73,7 +73,7 @@ public class FunctionImpl extends ExecutableImpl implements Function
    * <!-- end-user-doc -->
    * @generated
    */
-  protected FunctionImpl()
+  protected SubProgramImpl()
   {
     super();
   }
@@ -86,7 +86,7 @@ public class FunctionImpl extends ExecutableImpl implements Function
   @Override
   protected EClass eStaticClass()
   {
-    return TortoiseShellPackage.Literals.FUNCTION;
+    return TortoiseShellPackage.Literals.SUB_PROGRAM;
   }
 
   /**
@@ -109,7 +109,7 @@ public class FunctionImpl extends ExecutableImpl implements Function
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TortoiseShellPackage.FUNCTION__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, TortoiseShellPackage.SUB_PROGRAM__NAME, oldName, name));
   }
 
   /**
@@ -121,7 +121,7 @@ public class FunctionImpl extends ExecutableImpl implements Function
   {
     if (parameters == null)
     {
-      parameters = new EObjectContainmentEList<JvmFormalParameter>(JvmFormalParameter.class, this, TortoiseShellPackage.FUNCTION__PARAMETERS);
+      parameters = new EObjectContainmentEList<JvmFormalParameter>(JvmFormalParameter.class, this, TortoiseShellPackage.SUB_PROGRAM__PARAMETERS);
     }
     return parameters;
   }
@@ -136,7 +136,7 @@ public class FunctionImpl extends ExecutableImpl implements Function
   {
     switch (featureID)
     {
-      case TortoiseShellPackage.FUNCTION__PARAMETERS:
+      case TortoiseShellPackage.SUB_PROGRAM__PARAMETERS:
         return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -152,9 +152,9 @@ public class FunctionImpl extends ExecutableImpl implements Function
   {
     switch (featureID)
     {
-      case TortoiseShellPackage.FUNCTION__NAME:
+      case TortoiseShellPackage.SUB_PROGRAM__NAME:
         return getName();
-      case TortoiseShellPackage.FUNCTION__PARAMETERS:
+      case TortoiseShellPackage.SUB_PROGRAM__PARAMETERS:
         return getParameters();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -171,10 +171,10 @@ public class FunctionImpl extends ExecutableImpl implements Function
   {
     switch (featureID)
     {
-      case TortoiseShellPackage.FUNCTION__NAME:
+      case TortoiseShellPackage.SUB_PROGRAM__NAME:
         setName((String)newValue);
         return;
-      case TortoiseShellPackage.FUNCTION__PARAMETERS:
+      case TortoiseShellPackage.SUB_PROGRAM__PARAMETERS:
         getParameters().clear();
         getParameters().addAll((Collection<? extends JvmFormalParameter>)newValue);
         return;
@@ -192,10 +192,10 @@ public class FunctionImpl extends ExecutableImpl implements Function
   {
     switch (featureID)
     {
-      case TortoiseShellPackage.FUNCTION__NAME:
+      case TortoiseShellPackage.SUB_PROGRAM__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case TortoiseShellPackage.FUNCTION__PARAMETERS:
+      case TortoiseShellPackage.SUB_PROGRAM__PARAMETERS:
         getParameters().clear();
         return;
     }
@@ -212,9 +212,9 @@ public class FunctionImpl extends ExecutableImpl implements Function
   {
     switch (featureID)
     {
-      case TortoiseShellPackage.FUNCTION__NAME:
+      case TortoiseShellPackage.SUB_PROGRAM__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case TortoiseShellPackage.FUNCTION__PARAMETERS:
+      case TortoiseShellPackage.SUB_PROGRAM__PARAMETERS:
         return parameters != null && !parameters.isEmpty();
     }
     return super.eIsSet(featureID);
@@ -237,4 +237,4 @@ public class FunctionImpl extends ExecutableImpl implements Function
     return result.toString();
   }
 
-} //FunctionImpl
+} //SubProgramImpl

@@ -3,7 +3,7 @@ begin
   val length = 100
   val diagonal = length * sqrt(2)
   lineWidth = 2 
-  square 
+  square(length)
   turnRight(135)
   lineColor = blue 
   forward(diagonal)
@@ -18,8 +18,8 @@ begin
 end
 
 sub square
+  int length
 begin
-  val length = 100
   forward(length)
   turnRight(90) 
   forward(length)

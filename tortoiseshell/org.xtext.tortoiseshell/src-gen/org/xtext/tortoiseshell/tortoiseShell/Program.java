@@ -12,7 +12,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.tortoiseshell.tortoiseShell.Program#getFunctions <em>Functions</em>}</li>
+ *   <li>{@link org.xtext.tortoiseshell.tortoiseShell.Program#getSubPrograms <em>Sub Programs</em>}</li>
  * </ul>
  * </p>
  *
@@ -23,19 +23,19 @@ import org.eclipse.emf.common.util.EList;
 public interface Program extends Executable
 {
   /**
-   * Returns the value of the '<em><b>Functions</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.tortoiseshell.tortoiseShell.Function}.
+   * Returns the value of the '<em><b>Sub Programs</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.tortoiseshell.tortoiseShell.SubProgram}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Functions</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Sub Programs</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Functions</em>' containment reference list.
-   * @see org.xtext.tortoiseshell.tortoiseShell.TortoiseShellPackage#getProgram_Functions()
+   * @return the value of the '<em>Sub Programs</em>' containment reference list.
+   * @see org.xtext.tortoiseshell.tortoiseShell.TortoiseShellPackage#getProgram_SubPrograms()
    * @model containment="true"
    * @generated
    */
-  EList<Function> getFunctions();
+  EList<SubProgram> getSubPrograms();
 
 } // Program

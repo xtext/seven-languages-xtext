@@ -80,9 +80,9 @@ public class TortoiseShellAdapterFactory extends AdapterFactoryImpl
         return createProgramAdapter();
       }
       @Override
-      public Adapter caseFunction(Function object)
+      public Adapter caseSubProgram(SubProgram object)
       {
-        return createFunctionAdapter();
+        return createSubProgramAdapter();
       }
       @Override
       public Adapter caseExecutable(Executable object)
@@ -127,16 +127,16 @@ public class TortoiseShellAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.tortoiseshell.tortoiseShell.Function <em>Function</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.tortoiseshell.tortoiseShell.SubProgram <em>Sub Program</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.tortoiseshell.tortoiseShell.Function
+   * @see org.xtext.tortoiseshell.tortoiseShell.SubProgram
    * @generated
    */
-  public Adapter createFunctionAdapter()
+  public Adapter createSubProgramAdapter()
   {
     return null;
   }

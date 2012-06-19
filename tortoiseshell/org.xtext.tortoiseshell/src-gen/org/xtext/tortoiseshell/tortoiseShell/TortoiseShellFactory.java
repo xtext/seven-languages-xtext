@@ -32,13 +32,13 @@ public interface TortoiseShellFactory extends EFactory
   Program createProgram();
 
   /**
-   * Returns a new object of class '<em>Function</em>'.
+   * Returns a new object of class '<em>Sub Program</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Function</em>'.
+   * @return a new object of class '<em>Sub Program</em>'.
    * @generated
    */
-  Function createFunction();
+  SubProgram createSubProgram();
 
   /**
    * Returns a new object of class '<em>Executable</em>'.

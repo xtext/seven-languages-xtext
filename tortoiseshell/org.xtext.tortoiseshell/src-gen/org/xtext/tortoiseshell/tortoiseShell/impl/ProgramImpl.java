@@ -14,8 +14,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.xtext.tortoiseshell.tortoiseShell.Function;
 import org.xtext.tortoiseshell.tortoiseShell.Program;
+import org.xtext.tortoiseshell.tortoiseShell.SubProgram;
 import org.xtext.tortoiseshell.tortoiseShell.TortoiseShellPackage;
 
 /**
@@ -25,7 +25,7 @@ import org.xtext.tortoiseshell.tortoiseShell.TortoiseShellPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.tortoiseshell.tortoiseShell.impl.ProgramImpl#getFunctions <em>Functions</em>}</li>
+ *   <li>{@link org.xtext.tortoiseshell.tortoiseShell.impl.ProgramImpl#getSubPrograms <em>Sub Programs</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,14 +34,14 @@ import org.xtext.tortoiseshell.tortoiseShell.TortoiseShellPackage;
 public class ProgramImpl extends ExecutableImpl implements Program
 {
   /**
-   * The cached value of the '{@link #getFunctions() <em>Functions</em>}' containment reference list.
+   * The cached value of the '{@link #getSubPrograms() <em>Sub Programs</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFunctions()
+   * @see #getSubPrograms()
    * @generated
    * @ordered
    */
-  protected EList<Function> functions;
+  protected EList<SubProgram> subPrograms;
 
   /**
    * <!-- begin-user-doc -->
@@ -69,13 +69,13 @@ public class ProgramImpl extends ExecutableImpl implements Program
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Function> getFunctions()
+  public EList<SubProgram> getSubPrograms()
   {
-    if (functions == null)
+    if (subPrograms == null)
     {
-      functions = new EObjectContainmentEList<Function>(Function.class, this, TortoiseShellPackage.PROGRAM__FUNCTIONS);
+      subPrograms = new EObjectContainmentEList<SubProgram>(SubProgram.class, this, TortoiseShellPackage.PROGRAM__SUB_PROGRAMS);
     }
-    return functions;
+    return subPrograms;
   }
 
   /**
@@ -88,8 +88,8 @@ public class ProgramImpl extends ExecutableImpl implements Program
   {
     switch (featureID)
     {
-      case TortoiseShellPackage.PROGRAM__FUNCTIONS:
-        return ((InternalEList<?>)getFunctions()).basicRemove(otherEnd, msgs);
+      case TortoiseShellPackage.PROGRAM__SUB_PROGRAMS:
+        return ((InternalEList<?>)getSubPrograms()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -104,8 +104,8 @@ public class ProgramImpl extends ExecutableImpl implements Program
   {
     switch (featureID)
     {
-      case TortoiseShellPackage.PROGRAM__FUNCTIONS:
-        return getFunctions();
+      case TortoiseShellPackage.PROGRAM__SUB_PROGRAMS:
+        return getSubPrograms();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -121,9 +121,9 @@ public class ProgramImpl extends ExecutableImpl implements Program
   {
     switch (featureID)
     {
-      case TortoiseShellPackage.PROGRAM__FUNCTIONS:
-        getFunctions().clear();
-        getFunctions().addAll((Collection<? extends Function>)newValue);
+      case TortoiseShellPackage.PROGRAM__SUB_PROGRAMS:
+        getSubPrograms().clear();
+        getSubPrograms().addAll((Collection<? extends SubProgram>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -139,8 +139,8 @@ public class ProgramImpl extends ExecutableImpl implements Program
   {
     switch (featureID)
     {
-      case TortoiseShellPackage.PROGRAM__FUNCTIONS:
-        getFunctions().clear();
+      case TortoiseShellPackage.PROGRAM__SUB_PROGRAMS:
+        getSubPrograms().clear();
         return;
     }
     super.eUnset(featureID);
@@ -156,8 +156,8 @@ public class ProgramImpl extends ExecutableImpl implements Program
   {
     switch (featureID)
     {
-      case TortoiseShellPackage.PROGRAM__FUNCTIONS:
-        return functions != null && !functions.isEmpty();
+      case TortoiseShellPackage.PROGRAM__SUB_PROGRAMS:
+        return subPrograms != null && !subPrograms.isEmpty();
     }
     return super.eIsSet(featureID);
   }

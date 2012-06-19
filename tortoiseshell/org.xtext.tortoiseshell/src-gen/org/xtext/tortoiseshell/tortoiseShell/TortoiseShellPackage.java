@@ -104,13 +104,13 @@ public interface TortoiseShellPackage extends EPackage
   int PROGRAM__BODY = EXECUTABLE__BODY;
 
   /**
-   * The feature id for the '<em><b>Functions</b></em>' containment reference list.
+   * The feature id for the '<em><b>Sub Programs</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROGRAM__FUNCTIONS = EXECUTABLE_FEATURE_COUNT + 0;
+  int PROGRAM__SUB_PROGRAMS = EXECUTABLE_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Program</em>' class.
@@ -122,14 +122,14 @@ public interface TortoiseShellPackage extends EPackage
   int PROGRAM_FEATURE_COUNT = EXECUTABLE_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link org.xtext.tortoiseshell.tortoiseShell.impl.FunctionImpl <em>Function</em>}' class.
+   * The meta object id for the '{@link org.xtext.tortoiseshell.tortoiseShell.impl.SubProgramImpl <em>Sub Program</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.tortoiseshell.tortoiseShell.impl.FunctionImpl
-   * @see org.xtext.tortoiseshell.tortoiseShell.impl.TortoiseShellPackageImpl#getFunction()
+   * @see org.xtext.tortoiseshell.tortoiseShell.impl.SubProgramImpl
+   * @see org.xtext.tortoiseshell.tortoiseShell.impl.TortoiseShellPackageImpl#getSubProgram()
    * @generated
    */
-  int FUNCTION = 1;
+  int SUB_PROGRAM = 1;
 
   /**
    * The feature id for the '<em><b>Body</b></em>' containment reference.
@@ -138,7 +138,7 @@ public interface TortoiseShellPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION__BODY = EXECUTABLE__BODY;
+  int SUB_PROGRAM__BODY = EXECUTABLE__BODY;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -147,7 +147,7 @@ public interface TortoiseShellPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION__NAME = EXECUTABLE_FEATURE_COUNT + 0;
+  int SUB_PROGRAM__NAME = EXECUTABLE_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -156,16 +156,16 @@ public interface TortoiseShellPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION__PARAMETERS = EXECUTABLE_FEATURE_COUNT + 1;
+  int SUB_PROGRAM__PARAMETERS = EXECUTABLE_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Function</em>' class.
+   * The number of structural features of the '<em>Sub Program</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION_FEATURE_COUNT = EXECUTABLE_FEATURE_COUNT + 2;
+  int SUB_PROGRAM_FEATURE_COUNT = EXECUTABLE_FEATURE_COUNT + 2;
 
 
   /**
@@ -179,47 +179,47 @@ public interface TortoiseShellPackage extends EPackage
   EClass getProgram();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.tortoiseshell.tortoiseShell.Program#getFunctions <em>Functions</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.tortoiseshell.tortoiseShell.Program#getSubPrograms <em>Sub Programs</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Functions</em>'.
-   * @see org.xtext.tortoiseshell.tortoiseShell.Program#getFunctions()
+   * @return the meta object for the containment reference list '<em>Sub Programs</em>'.
+   * @see org.xtext.tortoiseshell.tortoiseShell.Program#getSubPrograms()
    * @see #getProgram()
    * @generated
    */
-  EReference getProgram_Functions();
+  EReference getProgram_SubPrograms();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.tortoiseshell.tortoiseShell.Function <em>Function</em>}'.
+   * Returns the meta object for class '{@link org.xtext.tortoiseshell.tortoiseShell.SubProgram <em>Sub Program</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Function</em>'.
-   * @see org.xtext.tortoiseshell.tortoiseShell.Function
+   * @return the meta object for class '<em>Sub Program</em>'.
+   * @see org.xtext.tortoiseshell.tortoiseShell.SubProgram
    * @generated
    */
-  EClass getFunction();
+  EClass getSubProgram();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.tortoiseshell.tortoiseShell.Function#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.tortoiseshell.tortoiseShell.SubProgram#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.tortoiseshell.tortoiseShell.Function#getName()
-   * @see #getFunction()
+   * @see org.xtext.tortoiseshell.tortoiseShell.SubProgram#getName()
+   * @see #getSubProgram()
    * @generated
    */
-  EAttribute getFunction_Name();
+  EAttribute getSubProgram_Name();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.tortoiseshell.tortoiseShell.Function#getParameters <em>Parameters</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.tortoiseshell.tortoiseShell.SubProgram#getParameters <em>Parameters</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Parameters</em>'.
-   * @see org.xtext.tortoiseshell.tortoiseShell.Function#getParameters()
-   * @see #getFunction()
+   * @see org.xtext.tortoiseshell.tortoiseShell.SubProgram#getParameters()
+   * @see #getSubProgram()
    * @generated
    */
-  EReference getFunction_Parameters();
+  EReference getSubProgram_Parameters();
 
   /**
    * Returns the meta object for class '{@link org.xtext.tortoiseshell.tortoiseShell.Executable <em>Executable</em>}'.
@@ -276,22 +276,22 @@ public interface TortoiseShellPackage extends EPackage
     EClass PROGRAM = eINSTANCE.getProgram();
 
     /**
-     * The meta object literal for the '<em><b>Functions</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Sub Programs</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PROGRAM__FUNCTIONS = eINSTANCE.getProgram_Functions();
+    EReference PROGRAM__SUB_PROGRAMS = eINSTANCE.getProgram_SubPrograms();
 
     /**
-     * The meta object literal for the '{@link org.xtext.tortoiseshell.tortoiseShell.impl.FunctionImpl <em>Function</em>}' class.
+     * The meta object literal for the '{@link org.xtext.tortoiseshell.tortoiseShell.impl.SubProgramImpl <em>Sub Program</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.tortoiseshell.tortoiseShell.impl.FunctionImpl
-     * @see org.xtext.tortoiseshell.tortoiseShell.impl.TortoiseShellPackageImpl#getFunction()
+     * @see org.xtext.tortoiseshell.tortoiseShell.impl.SubProgramImpl
+     * @see org.xtext.tortoiseshell.tortoiseShell.impl.TortoiseShellPackageImpl#getSubProgram()
      * @generated
      */
-    EClass FUNCTION = eINSTANCE.getFunction();
+    EClass SUB_PROGRAM = eINSTANCE.getSubProgram();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -299,7 +299,7 @@ public interface TortoiseShellPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute FUNCTION__NAME = eINSTANCE.getFunction_Name();
+    EAttribute SUB_PROGRAM__NAME = eINSTANCE.getSubProgram_Name();
 
     /**
      * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
@@ -307,7 +307,7 @@ public interface TortoiseShellPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FUNCTION__PARAMETERS = eINSTANCE.getFunction_Parameters();
+    EReference SUB_PROGRAM__PARAMETERS = eINSTANCE.getSubProgram_Parameters();
 
     /**
      * The meta object literal for the '{@link org.xtext.tortoiseshell.tortoiseShell.impl.ExecutableImpl <em>Executable</em>}' class.

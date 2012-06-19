@@ -5,9 +5,9 @@ generate tortoiseShell "http://www.xtext.org/tortoiseshell/TortoiseShell"
 
 Program :
 	body=Body
-	functions+=Function*;
+	subPrograms+=SubProgram*;
 	
-Function:
+SubProgram:
 	'sub' name=ValidID
 	(parameters += FullJvmFormalParameter)*
 	body=Body;
@@ -19,4 +19,4 @@ Body returns XBlockExpression:
 	'end';
 	
 Executable:
-	Program | Function;
+	Program | SubProgram;

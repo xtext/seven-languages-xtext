@@ -88,14 +88,14 @@ class Tortoise {
 		angle
 	}
 	
-	def fireMoveEvent(Point oldPosition) {
+	def protected fireMoveEvent(Point oldPosition) {
 		notifyListeners(new MoveEvent(
 			this,
 			oldPosition
 		))
 	}
 	
-	def fireTurnEvent(double oldAngle) {
+	def protected fireTurnEvent(double oldAngle) {
 		notifyListeners(new TurnEvent(this, oldAngle));
 	}
 	

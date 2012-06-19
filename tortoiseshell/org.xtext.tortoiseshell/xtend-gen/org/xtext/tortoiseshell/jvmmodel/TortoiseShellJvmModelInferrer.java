@@ -17,8 +17,8 @@ import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor.IPostIndexingIn
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.xtext.tortoiseshell.runtime.Tortoise;
-import org.xtext.tortoiseshell.tortoiseShell.Function;
 import org.xtext.tortoiseshell.tortoiseShell.Program;
+import org.xtext.tortoiseshell.tortoiseShell.SubProgram;
 
 @SuppressWarnings("all")
 public class TortoiseShellJvmModelInferrer extends AbstractModelInferrer {
@@ -49,14 +49,14 @@ public class TortoiseShellJvmModelInferrer extends AbstractModelInferrer {
             JvmOperation _method = TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.toMethod(program, "main", _newTypeRef_1, _function);
             TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members, _method);
           }
-          EList<Function> _functions = program.getFunctions();
-          for (final Function function : _functions) {
+          EList<SubProgram> _subPrograms = program.getSubPrograms();
+          for (final SubProgram subProgram : _subPrograms) {
             EList<JvmMember> _members_1 = it.getMembers();
-            String _name = function.getName();
+            String _name = subProgram.getName();
             JvmTypeReference _newTypeRef_2 = TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(program, Void.TYPE);
             final Procedure1<JvmOperation> _function_1 = new Procedure1<JvmOperation>() {
                 public void apply(final JvmOperation it) {
-                  EList<JvmFormalParameter> _parameters = function.getParameters();
+                  EList<JvmFormalParameter> _parameters = subProgram.getParameters();
                   for (final JvmFormalParameter functionParameter : _parameters) {
                     EList<JvmFormalParameter> _parameters_1 = it.getParameters();
                     String _name = functionParameter.getName();
@@ -64,11 +64,11 @@ public class TortoiseShellJvmModelInferrer extends AbstractModelInferrer {
                     JvmFormalParameter _parameter = TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.toParameter(functionParameter, _name, _parameterType);
                     TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters_1, _parameter);
                   }
-                  XBlockExpression _body = function.getBody();
+                  XBlockExpression _body = subProgram.getBody();
                   TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _body);
                 }
               };
-            JvmOperation _method_1 = TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.toMethod(function, _name, _newTypeRef_2, _function_1);
+            JvmOperation _method_1 = TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.toMethod(subProgram, _name, _newTypeRef_2, _function_1);
             TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_1, _method_1);
           }
         }

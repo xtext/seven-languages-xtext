@@ -180,23 +180,23 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProgram"
-    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:76:1: ruleProgram returns [EObject current=null] : ( ( (lv_body_0_0= ruleBody ) ) ( (lv_functions_1_0= ruleFunction ) )* ) ;
+    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:76:1: ruleProgram returns [EObject current=null] : ( ( (lv_body_0_0= ruleBody ) ) ( (lv_subPrograms_1_0= ruleSubProgram ) )* ) ;
     public final EObject ruleProgram() throws RecognitionException {
         EObject current = null;
 
         EObject lv_body_0_0 = null;
 
-        EObject lv_functions_1_0 = null;
+        EObject lv_subPrograms_1_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:79:28: ( ( ( (lv_body_0_0= ruleBody ) ) ( (lv_functions_1_0= ruleFunction ) )* ) )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:80:1: ( ( (lv_body_0_0= ruleBody ) ) ( (lv_functions_1_0= ruleFunction ) )* )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:79:28: ( ( ( (lv_body_0_0= ruleBody ) ) ( (lv_subPrograms_1_0= ruleSubProgram ) )* ) )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:80:1: ( ( (lv_body_0_0= ruleBody ) ) ( (lv_subPrograms_1_0= ruleSubProgram ) )* )
             {
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:80:1: ( ( (lv_body_0_0= ruleBody ) ) ( (lv_functions_1_0= ruleFunction ) )* )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:80:2: ( (lv_body_0_0= ruleBody ) ) ( (lv_functions_1_0= ruleFunction ) )*
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:80:1: ( ( (lv_body_0_0= ruleBody ) ) ( (lv_subPrograms_1_0= ruleSubProgram ) )* )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:80:2: ( (lv_body_0_0= ruleBody ) ) ( (lv_subPrograms_1_0= ruleSubProgram ) )*
             {
             // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:80:2: ( (lv_body_0_0= ruleBody ) )
             // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:81:1: (lv_body_0_0= ruleBody )
@@ -233,7 +233,7 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:98:2: ( (lv_functions_1_0= ruleFunction ) )*
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:98:2: ( (lv_subPrograms_1_0= ruleSubProgram ) )*
             loop1:
             do {
                 int alt1=2;
@@ -246,18 +246,18 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
 
                 switch (alt1) {
             	case 1 :
-            	    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:99:1: (lv_functions_1_0= ruleFunction )
+            	    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:99:1: (lv_subPrograms_1_0= ruleSubProgram )
             	    {
-            	    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:99:1: (lv_functions_1_0= ruleFunction )
-            	    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:100:3: lv_functions_1_0= ruleFunction
+            	    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:99:1: (lv_subPrograms_1_0= ruleSubProgram )
+            	    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:100:3: lv_subPrograms_1_0= ruleSubProgram
             	    {
             	    if ( state.backtracking==0 ) {
             	       
-            	      	        newCompositeNode(grammarAccess.getProgramAccess().getFunctionsFunctionParserRuleCall_1_0()); 
+            	      	        newCompositeNode(grammarAccess.getProgramAccess().getSubProgramsSubProgramParserRuleCall_1_0()); 
             	      	    
             	    }
-            	    pushFollow(FOLLOW_ruleFunction_in_ruleProgram152);
-            	    lv_functions_1_0=ruleFunction();
+            	    pushFollow(FOLLOW_ruleSubProgram_in_ruleProgram152);
+            	    lv_subPrograms_1_0=ruleSubProgram();
 
             	    state._fsp--;
             	    if (state.failed) return current;
@@ -268,9 +268,9 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
             	      	        }
             	             		add(
             	             			current, 
-            	             			"functions",
-            	              		lv_functions_1_0, 
-            	              		"Function");
+            	             			"subPrograms",
+            	              		lv_subPrograms_1_0, 
+            	              		"SubProgram");
             	      	        afterParserOrEnumRuleCall();
             	      	    
             	    }
@@ -308,30 +308,30 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleProgram"
 
 
-    // $ANTLR start "entryRuleFunction"
-    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:124:1: entryRuleFunction returns [EObject current=null] : iv_ruleFunction= ruleFunction EOF ;
-    public final EObject entryRuleFunction() throws RecognitionException {
+    // $ANTLR start "entryRuleSubProgram"
+    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:124:1: entryRuleSubProgram returns [EObject current=null] : iv_ruleSubProgram= ruleSubProgram EOF ;
+    public final EObject entryRuleSubProgram() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleFunction = null;
+        EObject iv_ruleSubProgram = null;
 
 
         try {
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:125:2: (iv_ruleFunction= ruleFunction EOF )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:126:2: iv_ruleFunction= ruleFunction EOF
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:125:2: (iv_ruleSubProgram= ruleSubProgram EOF )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:126:2: iv_ruleSubProgram= ruleSubProgram EOF
             {
             if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getFunctionRule()); 
+               newCompositeNode(grammarAccess.getSubProgramRule()); 
             }
-            pushFollow(FOLLOW_ruleFunction_in_entryRuleFunction189);
-            iv_ruleFunction=ruleFunction();
+            pushFollow(FOLLOW_ruleSubProgram_in_entryRuleSubProgram189);
+            iv_ruleSubProgram=ruleSubProgram();
 
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
-               current =iv_ruleFunction; 
+               current =iv_ruleSubProgram; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFunction199); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSubProgram199); if (state.failed) return current;
 
             }
 
@@ -345,12 +345,12 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleFunction"
+    // $ANTLR end "entryRuleSubProgram"
 
 
-    // $ANTLR start "ruleFunction"
-    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:133:1: ruleFunction returns [EObject current=null] : (otherlv_0= 'sub' ( (lv_name_1_0= ruleValidID ) ) ( (lv_parameters_2_0= ruleFullJvmFormalParameter ) )* ( (lv_body_3_0= ruleBody ) ) ) ;
-    public final EObject ruleFunction() throws RecognitionException {
+    // $ANTLR start "ruleSubProgram"
+    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:133:1: ruleSubProgram returns [EObject current=null] : (otherlv_0= 'sub' ( (lv_name_1_0= ruleValidID ) ) ( (lv_parameters_2_0= ruleFullJvmFormalParameter ) )* ( (lv_body_3_0= ruleBody ) ) ) ;
+    public final EObject ruleSubProgram() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
@@ -370,10 +370,10 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
             // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:137:1: (otherlv_0= 'sub' ( (lv_name_1_0= ruleValidID ) ) ( (lv_parameters_2_0= ruleFullJvmFormalParameter ) )* ( (lv_body_3_0= ruleBody ) ) )
             // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:137:3: otherlv_0= 'sub' ( (lv_name_1_0= ruleValidID ) ) ( (lv_parameters_2_0= ruleFullJvmFormalParameter ) )* ( (lv_body_3_0= ruleBody ) )
             {
-            otherlv_0=(Token)match(input,13,FOLLOW_13_in_ruleFunction236); if (state.failed) return current;
+            otherlv_0=(Token)match(input,13,FOLLOW_13_in_ruleSubProgram236); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_0, grammarAccess.getFunctionAccess().getSubKeyword_0());
+                  	newLeafNode(otherlv_0, grammarAccess.getSubProgramAccess().getSubKeyword_0());
                   
             }
             // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:141:1: ( (lv_name_1_0= ruleValidID ) )
@@ -384,10 +384,10 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
             {
             if ( state.backtracking==0 ) {
                
-              	        newCompositeNode(grammarAccess.getFunctionAccess().getNameValidIDParserRuleCall_1_0()); 
+              	        newCompositeNode(grammarAccess.getSubProgramAccess().getNameValidIDParserRuleCall_1_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleValidID_in_ruleFunction257);
+            pushFollow(FOLLOW_ruleValidID_in_ruleSubProgram257);
             lv_name_1_0=ruleValidID();
 
             state._fsp--;
@@ -395,7 +395,7 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
 
               	        if (current==null) {
-              	            current = createModelElementForParent(grammarAccess.getFunctionRule());
+              	            current = createModelElementForParent(grammarAccess.getSubProgramRule());
               	        }
                      		set(
                      			current, 
@@ -431,10 +431,10 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
             	    {
             	    if ( state.backtracking==0 ) {
             	       
-            	      	        newCompositeNode(grammarAccess.getFunctionAccess().getParametersFullJvmFormalParameterParserRuleCall_2_0()); 
+            	      	        newCompositeNode(grammarAccess.getSubProgramAccess().getParametersFullJvmFormalParameterParserRuleCall_2_0()); 
             	      	    
             	    }
-            	    pushFollow(FOLLOW_ruleFullJvmFormalParameter_in_ruleFunction278);
+            	    pushFollow(FOLLOW_ruleFullJvmFormalParameter_in_ruleSubProgram278);
             	    lv_parameters_2_0=ruleFullJvmFormalParameter();
 
             	    state._fsp--;
@@ -442,7 +442,7 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
             	    if ( state.backtracking==0 ) {
 
             	      	        if (current==null) {
-            	      	            current = createModelElementForParent(grammarAccess.getFunctionRule());
+            	      	            current = createModelElementForParent(grammarAccess.getSubProgramRule());
             	      	        }
             	             		add(
             	             			current, 
@@ -472,10 +472,10 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
             {
             if ( state.backtracking==0 ) {
                
-              	        newCompositeNode(grammarAccess.getFunctionAccess().getBodyBodyParserRuleCall_3_0()); 
+              	        newCompositeNode(grammarAccess.getSubProgramAccess().getBodyBodyParserRuleCall_3_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleBody_in_ruleFunction300);
+            pushFollow(FOLLOW_ruleBody_in_ruleSubProgram300);
             lv_body_3_0=ruleBody();
 
             state._fsp--;
@@ -483,7 +483,7 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
 
               	        if (current==null) {
-              	            current = createModelElementForParent(grammarAccess.getFunctionRule());
+              	            current = createModelElementForParent(grammarAccess.getSubProgramRule());
               	        }
                      		set(
                      			current, 
@@ -518,7 +518,7 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleFunction"
+    // $ANTLR end "ruleSubProgram"
 
 
     // $ANTLR start "entryRuleBody"
@@ -18851,13 +18851,13 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleProgram_in_entryRuleProgram75 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleProgram85 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBody_in_ruleProgram131 = new BitSet(new long[]{0x0000000000002002L});
-    public static final BitSet FOLLOW_ruleFunction_in_ruleProgram152 = new BitSet(new long[]{0x0000000000002002L});
-    public static final BitSet FOLLOW_ruleFunction_in_entryRuleFunction189 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFunction199 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_ruleFunction236 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_ruleValidID_in_ruleFunction257 = new BitSet(new long[]{0x0000400040004100L});
-    public static final BitSet FOLLOW_ruleFullJvmFormalParameter_in_ruleFunction278 = new BitSet(new long[]{0x0000400040004100L});
-    public static final BitSet FOLLOW_ruleBody_in_ruleFunction300 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSubProgram_in_ruleProgram152 = new BitSet(new long[]{0x0000000000002002L});
+    public static final BitSet FOLLOW_ruleSubProgram_in_entryRuleSubProgram189 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSubProgram199 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_ruleSubProgram236 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_ruleValidID_in_ruleSubProgram257 = new BitSet(new long[]{0x0000400040004100L});
+    public static final BitSet FOLLOW_ruleFullJvmFormalParameter_in_ruleSubProgram278 = new BitSet(new long[]{0x0000400040004100L});
+    public static final BitSet FOLLOW_ruleBody_in_ruleSubProgram300 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBody_in_entryRuleBody336 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleBody346 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_14_in_ruleBody392 = new BitSet(new long[]{0xF8A9410C080101F0L,0x00000000000003FDL});

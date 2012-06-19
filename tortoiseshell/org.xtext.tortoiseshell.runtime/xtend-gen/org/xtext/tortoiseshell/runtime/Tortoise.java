@@ -155,12 +155,12 @@ public class Tortoise {
     return this.angle;
   }
   
-  public void fireMoveEvent(final Point oldPosition) {
+  protected void fireMoveEvent(final Point oldPosition) {
     MoveEvent _moveEvent = new MoveEvent(this, oldPosition);
     this.notifyListeners(_moveEvent);
   }
   
-  public void fireTurnEvent(final double oldAngle) {
+  protected void fireTurnEvent(final double oldAngle) {
     TurnEvent _turnEvent = new TurnEvent(this, oldAngle);
     this.notifyListeners(_turnEvent);
   }

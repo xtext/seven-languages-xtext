@@ -14,8 +14,8 @@ import org.eclipse.xtext.common.types.TypesPackage;
 import org.eclipse.xtext.xbase.XbasePackage;
 
 import org.xtext.tortoiseshell.tortoiseShell.Executable;
-import org.xtext.tortoiseshell.tortoiseShell.Function;
 import org.xtext.tortoiseshell.tortoiseShell.Program;
+import org.xtext.tortoiseshell.tortoiseShell.SubProgram;
 import org.xtext.tortoiseshell.tortoiseShell.TortoiseShellFactory;
 import org.xtext.tortoiseshell.tortoiseShell.TortoiseShellPackage;
 
@@ -39,7 +39,7 @@ public class TortoiseShellPackageImpl extends EPackageImpl implements TortoiseSh
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass functionEClass = null;
+  private EClass subProgramEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -129,7 +129,7 @@ public class TortoiseShellPackageImpl extends EPackageImpl implements TortoiseSh
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getProgram_Functions()
+  public EReference getProgram_SubPrograms()
   {
     return (EReference)programEClass.getEStructuralFeatures().get(0);
   }
@@ -139,9 +139,9 @@ public class TortoiseShellPackageImpl extends EPackageImpl implements TortoiseSh
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getFunction()
+  public EClass getSubProgram()
   {
-    return functionEClass;
+    return subProgramEClass;
   }
 
   /**
@@ -149,9 +149,9 @@ public class TortoiseShellPackageImpl extends EPackageImpl implements TortoiseSh
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getFunction_Name()
+  public EAttribute getSubProgram_Name()
   {
-    return (EAttribute)functionEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)subProgramEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -159,9 +159,9 @@ public class TortoiseShellPackageImpl extends EPackageImpl implements TortoiseSh
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFunction_Parameters()
+  public EReference getSubProgram_Parameters()
   {
-    return (EReference)functionEClass.getEStructuralFeatures().get(1);
+    return (EReference)subProgramEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -215,11 +215,11 @@ public class TortoiseShellPackageImpl extends EPackageImpl implements TortoiseSh
 
     // Create classes and their features
     programEClass = createEClass(PROGRAM);
-    createEReference(programEClass, PROGRAM__FUNCTIONS);
+    createEReference(programEClass, PROGRAM__SUB_PROGRAMS);
 
-    functionEClass = createEClass(FUNCTION);
-    createEAttribute(functionEClass, FUNCTION__NAME);
-    createEReference(functionEClass, FUNCTION__PARAMETERS);
+    subProgramEClass = createEClass(SUB_PROGRAM);
+    createEAttribute(subProgramEClass, SUB_PROGRAM__NAME);
+    createEReference(subProgramEClass, SUB_PROGRAM__PARAMETERS);
 
     executableEClass = createEClass(EXECUTABLE);
     createEReference(executableEClass, EXECUTABLE__BODY);
@@ -259,15 +259,15 @@ public class TortoiseShellPackageImpl extends EPackageImpl implements TortoiseSh
 
     // Add supertypes to classes
     programEClass.getESuperTypes().add(this.getExecutable());
-    functionEClass.getESuperTypes().add(this.getExecutable());
+    subProgramEClass.getESuperTypes().add(this.getExecutable());
 
     // Initialize classes and features; add operations and parameters
     initEClass(programEClass, Program.class, "Program", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getProgram_Functions(), this.getFunction(), null, "functions", null, 0, -1, Program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProgram_SubPrograms(), this.getSubProgram(), null, "subPrograms", null, 0, -1, Program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(functionEClass, Function.class, "Function", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFunction_Name(), ecorePackage.getEString(), "name", null, 0, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFunction_Parameters(), theTypesPackage.getJvmFormalParameter(), null, "parameters", null, 0, -1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(subProgramEClass, SubProgram.class, "SubProgram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSubProgram_Name(), ecorePackage.getEString(), "name", null, 0, 1, SubProgram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSubProgram_Parameters(), theTypesPackage.getJvmFormalParameter(), null, "parameters", null, 0, -1, SubProgram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(executableEClass, Executable.class, "Executable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getExecutable_Body(), theXbasePackage.getXBlockExpression(), null, "body", null, 0, 1, Executable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

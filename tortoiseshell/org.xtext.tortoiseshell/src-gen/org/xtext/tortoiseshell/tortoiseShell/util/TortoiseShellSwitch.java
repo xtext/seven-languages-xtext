@@ -80,11 +80,11 @@ public class TortoiseShellSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TortoiseShellPackage.FUNCTION:
+      case TortoiseShellPackage.SUB_PROGRAM:
       {
-        Function function = (Function)theEObject;
-        T result = caseFunction(function);
-        if (result == null) result = caseExecutable(function);
+        SubProgram subProgram = (SubProgram)theEObject;
+        T result = caseSubProgram(subProgram);
+        if (result == null) result = caseExecutable(subProgram);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -116,17 +116,17 @@ public class TortoiseShellSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Function</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Sub Program</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Function</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Sub Program</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseFunction(Function object)
+  public T caseSubProgram(SubProgram object)
   {
     return null;
   }

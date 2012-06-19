@@ -25,14 +25,14 @@ public class TortoiseShellGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cBodyAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cBodyBodyParserRuleCall_0_0 = (RuleCall)cBodyAssignment_0.eContents().get(0);
-		private final Assignment cFunctionsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cFunctionsFunctionParserRuleCall_1_0 = (RuleCall)cFunctionsAssignment_1.eContents().get(0);
+		private final Assignment cSubProgramsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cSubProgramsSubProgramParserRuleCall_1_0 = (RuleCall)cSubProgramsAssignment_1.eContents().get(0);
 		
 		//Program:
-		//	body=Body functions+=Function*;
+		//	body=Body subPrograms+=SubProgram*;
 		public ParserRule getRule() { return rule; }
 
-		//body=Body functions+=Function*
+		//body=Body subPrograms+=SubProgram*
 		public Group getGroup() { return cGroup; }
 
 		//body=Body
@@ -41,15 +41,15 @@ public class TortoiseShellGrammarAccess extends AbstractGrammarElementFinder {
 		//Body
 		public RuleCall getBodyBodyParserRuleCall_0_0() { return cBodyBodyParserRuleCall_0_0; }
 
-		//functions+=Function*
-		public Assignment getFunctionsAssignment_1() { return cFunctionsAssignment_1; }
+		//subPrograms+=SubProgram*
+		public Assignment getSubProgramsAssignment_1() { return cSubProgramsAssignment_1; }
 
-		//Function
-		public RuleCall getFunctionsFunctionParserRuleCall_1_0() { return cFunctionsFunctionParserRuleCall_1_0; }
+		//SubProgram
+		public RuleCall getSubProgramsSubProgramParserRuleCall_1_0() { return cSubProgramsSubProgramParserRuleCall_1_0; }
 	}
 
-	public class FunctionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Function");
+	public class SubProgramElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SubProgram");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cSubKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -59,7 +59,7 @@ public class TortoiseShellGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cBodyAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cBodyBodyParserRuleCall_3_0 = (RuleCall)cBodyAssignment_3.eContents().get(0);
 		
-		//Function:
+		//SubProgram:
 		//	"sub" name=ValidID parameters+=FullJvmFormalParameter* body=Body;
 		public ParserRule getRule() { return rule; }
 
@@ -132,25 +132,25 @@ public class TortoiseShellGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Executable");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cProgramParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cFunctionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cSubProgramParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//Executable:
-		//	Program | Function;
+		//	Program | SubProgram;
 		public ParserRule getRule() { return rule; }
 
-		//Program | Function
+		//Program | SubProgram
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//Program
 		public RuleCall getProgramParserRuleCall_0() { return cProgramParserRuleCall_0; }
 
-		//Function
-		public RuleCall getFunctionParserRuleCall_1() { return cFunctionParserRuleCall_1; }
+		//SubProgram
+		public RuleCall getSubProgramParserRuleCall_1() { return cSubProgramParserRuleCall_1; }
 	}
 	
 	
 	private ProgramElements pProgram;
-	private FunctionElements pFunction;
+	private SubProgramElements pSubProgram;
 	private BodyElements pBody;
 	private ExecutableElements pExecutable;
 	
@@ -193,7 +193,7 @@ public class TortoiseShellGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Program:
-	//	body=Body functions+=Function*;
+	//	body=Body subPrograms+=SubProgram*;
 	public ProgramElements getProgramAccess() {
 		return (pProgram != null) ? pProgram : (pProgram = new ProgramElements());
 	}
@@ -202,14 +202,14 @@ public class TortoiseShellGrammarAccess extends AbstractGrammarElementFinder {
 		return getProgramAccess().getRule();
 	}
 
-	//Function:
+	//SubProgram:
 	//	"sub" name=ValidID parameters+=FullJvmFormalParameter* body=Body;
-	public FunctionElements getFunctionAccess() {
-		return (pFunction != null) ? pFunction : (pFunction = new FunctionElements());
+	public SubProgramElements getSubProgramAccess() {
+		return (pSubProgram != null) ? pSubProgram : (pSubProgram = new SubProgramElements());
 	}
 	
-	public ParserRule getFunctionRule() {
-		return getFunctionAccess().getRule();
+	public ParserRule getSubProgramRule() {
+		return getSubProgramAccess().getRule();
 	}
 
 	//Body returns XBlockExpression:
@@ -223,7 +223,7 @@ public class TortoiseShellGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Executable:
-	//	Program | Function;
+	//	Program | SubProgram;
 	public ExecutableElements getExecutableAccess() {
 		return (pExecutable != null) ? pExecutable : (pExecutable = new ExecutableElements());
 	}

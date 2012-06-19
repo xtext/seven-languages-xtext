@@ -71,7 +71,7 @@ public class TortoiseShellParser extends AbstractContentAssistParser {
 					put(grammarAccess.getJvmWildcardTypeReferenceAccess().getAlternatives_2(), "rule__JvmWildcardTypeReference__Alternatives_2");
 					put(grammarAccess.getJvmTypeParameterAccess().getAlternatives_1(), "rule__JvmTypeParameter__Alternatives_1");
 					put(grammarAccess.getProgramAccess().getGroup(), "rule__Program__Group__0");
-					put(grammarAccess.getFunctionAccess().getGroup(), "rule__Function__Group__0");
+					put(grammarAccess.getSubProgramAccess().getGroup(), "rule__SubProgram__Group__0");
 					put(grammarAccess.getBodyAccess().getGroup(), "rule__Body__Group__0");
 					put(grammarAccess.getBodyAccess().getGroup_2(), "rule__Body__Group_2__0");
 					put(grammarAccess.getXAssignmentAccess().getGroup_0(), "rule__XAssignment__Group_0__0");
@@ -217,10 +217,10 @@ public class TortoiseShellParser extends AbstractContentAssistParser {
 					put(grammarAccess.getJvmTypeParameterAccess().getGroup(), "rule__JvmTypeParameter__Group__0");
 					put(grammarAccess.getJvmTypeParameterAccess().getGroup_1_0(), "rule__JvmTypeParameter__Group_1_0__0");
 					put(grammarAccess.getProgramAccess().getBodyAssignment_0(), "rule__Program__BodyAssignment_0");
-					put(grammarAccess.getProgramAccess().getFunctionsAssignment_1(), "rule__Program__FunctionsAssignment_1");
-					put(grammarAccess.getFunctionAccess().getNameAssignment_1(), "rule__Function__NameAssignment_1");
-					put(grammarAccess.getFunctionAccess().getParametersAssignment_2(), "rule__Function__ParametersAssignment_2");
-					put(grammarAccess.getFunctionAccess().getBodyAssignment_3(), "rule__Function__BodyAssignment_3");
+					put(grammarAccess.getProgramAccess().getSubProgramsAssignment_1(), "rule__Program__SubProgramsAssignment_1");
+					put(grammarAccess.getSubProgramAccess().getNameAssignment_1(), "rule__SubProgram__NameAssignment_1");
+					put(grammarAccess.getSubProgramAccess().getParametersAssignment_2(), "rule__SubProgram__ParametersAssignment_2");
+					put(grammarAccess.getSubProgramAccess().getBodyAssignment_3(), "rule__SubProgram__BodyAssignment_3");
 					put(grammarAccess.getBodyAccess().getExpressionsAssignment_2_0(), "rule__Body__ExpressionsAssignment_2_0");
 					put(grammarAccess.getXAssignmentAccess().getFeatureAssignment_0_1(), "rule__XAssignment__FeatureAssignment_0_1");
 					put(grammarAccess.getXAssignmentAccess().getValueAssignment_0_3(), "rule__XAssignment__ValueAssignment_0_3");

@@ -224,25 +224,25 @@ public class InternalTortoiseShellParser extends AbstractInternalContentAssistPa
     // $ANTLR end "ruleProgram"
 
 
-    // $ANTLR start "entryRuleFunction"
-    // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:89:1: entryRuleFunction : ruleFunction EOF ;
-    public final void entryRuleFunction() throws RecognitionException {
+    // $ANTLR start "entryRuleSubProgram"
+    // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:89:1: entryRuleSubProgram : ruleSubProgram EOF ;
+    public final void entryRuleSubProgram() throws RecognitionException {
         try {
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:90:1: ( ruleFunction EOF )
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:91:1: ruleFunction EOF
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:90:1: ( ruleSubProgram EOF )
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:91:1: ruleSubProgram EOF
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFunctionRule()); 
+               before(grammarAccess.getSubProgramRule()); 
             }
-            pushFollow(FOLLOW_ruleFunction_in_entryRuleFunction127);
-            ruleFunction();
+            pushFollow(FOLLOW_ruleSubProgram_in_entryRuleSubProgram127);
+            ruleSubProgram();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFunctionRule()); 
+               after(grammarAccess.getSubProgramRule()); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFunction134); if (state.failed) return ;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSubProgram134); if (state.failed) return ;
 
             }
 
@@ -255,30 +255,30 @@ public class InternalTortoiseShellParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "entryRuleFunction"
+    // $ANTLR end "entryRuleSubProgram"
 
 
-    // $ANTLR start "ruleFunction"
-    // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:98:1: ruleFunction : ( ( rule__Function__Group__0 ) ) ;
-    public final void ruleFunction() throws RecognitionException {
+    // $ANTLR start "ruleSubProgram"
+    // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:98:1: ruleSubProgram : ( ( rule__SubProgram__Group__0 ) ) ;
+    public final void ruleSubProgram() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:102:2: ( ( ( rule__Function__Group__0 ) ) )
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:103:1: ( ( rule__Function__Group__0 ) )
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:102:2: ( ( ( rule__SubProgram__Group__0 ) ) )
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:103:1: ( ( rule__SubProgram__Group__0 ) )
             {
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:103:1: ( ( rule__Function__Group__0 ) )
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:104:1: ( rule__Function__Group__0 )
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:103:1: ( ( rule__SubProgram__Group__0 ) )
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:104:1: ( rule__SubProgram__Group__0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFunctionAccess().getGroup()); 
+               before(grammarAccess.getSubProgramAccess().getGroup()); 
             }
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:105:1: ( rule__Function__Group__0 )
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:105:2: rule__Function__Group__0
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:105:1: ( rule__SubProgram__Group__0 )
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:105:2: rule__SubProgram__Group__0
             {
-            pushFollow(FOLLOW_rule__Function__Group__0_in_ruleFunction160);
-            rule__Function__Group__0();
+            pushFollow(FOLLOW_rule__SubProgram__Group__0_in_ruleSubProgram160);
+            rule__SubProgram__Group__0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -286,7 +286,7 @@ public class InternalTortoiseShellParser extends AbstractInternalContentAssistPa
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFunctionAccess().getGroup()); 
+               after(grammarAccess.getSubProgramAccess().getGroup()); 
             }
 
             }
@@ -306,7 +306,7 @@ public class InternalTortoiseShellParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "ruleFunction"
+    // $ANTLR end "ruleSubProgram"
 
 
     // $ANTLR start "entryRuleBody"
@@ -9530,22 +9530,22 @@ public class InternalTortoiseShellParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Program__Group__1__Impl"
-    // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2878:1: rule__Program__Group__1__Impl : ( ( rule__Program__FunctionsAssignment_1 )* ) ;
+    // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2878:1: rule__Program__Group__1__Impl : ( ( rule__Program__SubProgramsAssignment_1 )* ) ;
     public final void rule__Program__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2882:1: ( ( ( rule__Program__FunctionsAssignment_1 )* ) )
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2883:1: ( ( rule__Program__FunctionsAssignment_1 )* )
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2882:1: ( ( ( rule__Program__SubProgramsAssignment_1 )* ) )
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2883:1: ( ( rule__Program__SubProgramsAssignment_1 )* )
             {
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2883:1: ( ( rule__Program__FunctionsAssignment_1 )* )
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2884:1: ( rule__Program__FunctionsAssignment_1 )*
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2883:1: ( ( rule__Program__SubProgramsAssignment_1 )* )
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2884:1: ( rule__Program__SubProgramsAssignment_1 )*
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getProgramAccess().getFunctionsAssignment_1()); 
+               before(grammarAccess.getProgramAccess().getSubProgramsAssignment_1()); 
             }
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2885:1: ( rule__Program__FunctionsAssignment_1 )*
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2885:1: ( rule__Program__SubProgramsAssignment_1 )*
             loop33:
             do {
                 int alt33=2;
@@ -9558,10 +9558,10 @@ public class InternalTortoiseShellParser extends AbstractInternalContentAssistPa
 
                 switch (alt33) {
             	case 1 :
-            	    // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2885:2: rule__Program__FunctionsAssignment_1
+            	    // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2885:2: rule__Program__SubProgramsAssignment_1
             	    {
-            	    pushFollow(FOLLOW_rule__Program__FunctionsAssignment_1_in_rule__Program__Group__1__Impl6251);
-            	    rule__Program__FunctionsAssignment_1();
+            	    pushFollow(FOLLOW_rule__Program__SubProgramsAssignment_1_in_rule__Program__Group__1__Impl6251);
+            	    rule__Program__SubProgramsAssignment_1();
 
             	    state._fsp--;
             	    if (state.failed) return ;
@@ -9575,7 +9575,7 @@ public class InternalTortoiseShellParser extends AbstractInternalContentAssistPa
             } while (true);
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getProgramAccess().getFunctionsAssignment_1()); 
+               after(grammarAccess.getProgramAccess().getSubProgramsAssignment_1()); 
             }
 
             }
@@ -9598,23 +9598,23 @@ public class InternalTortoiseShellParser extends AbstractInternalContentAssistPa
     // $ANTLR end "rule__Program__Group__1__Impl"
 
 
-    // $ANTLR start "rule__Function__Group__0"
-    // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2899:1: rule__Function__Group__0 : rule__Function__Group__0__Impl rule__Function__Group__1 ;
-    public final void rule__Function__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__SubProgram__Group__0"
+    // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2899:1: rule__SubProgram__Group__0 : rule__SubProgram__Group__0__Impl rule__SubProgram__Group__1 ;
+    public final void rule__SubProgram__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2903:1: ( rule__Function__Group__0__Impl rule__Function__Group__1 )
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2904:2: rule__Function__Group__0__Impl rule__Function__Group__1
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2903:1: ( rule__SubProgram__Group__0__Impl rule__SubProgram__Group__1 )
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2904:2: rule__SubProgram__Group__0__Impl rule__SubProgram__Group__1
             {
-            pushFollow(FOLLOW_rule__Function__Group__0__Impl_in_rule__Function__Group__06286);
-            rule__Function__Group__0__Impl();
+            pushFollow(FOLLOW_rule__SubProgram__Group__0__Impl_in_rule__SubProgram__Group__06286);
+            rule__SubProgram__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Function__Group__1_in_rule__Function__Group__06289);
-            rule__Function__Group__1();
+            pushFollow(FOLLOW_rule__SubProgram__Group__1_in_rule__SubProgram__Group__06289);
+            rule__SubProgram__Group__1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -9633,12 +9633,12 @@ public class InternalTortoiseShellParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__Function__Group__0"
+    // $ANTLR end "rule__SubProgram__Group__0"
 
 
-    // $ANTLR start "rule__Function__Group__0__Impl"
-    // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2911:1: rule__Function__Group__0__Impl : ( 'sub' ) ;
-    public final void rule__Function__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SubProgram__Group__0__Impl"
+    // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2911:1: rule__SubProgram__Group__0__Impl : ( 'sub' ) ;
+    public final void rule__SubProgram__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -9650,11 +9650,11 @@ public class InternalTortoiseShellParser extends AbstractInternalContentAssistPa
             // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2917:1: 'sub'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFunctionAccess().getSubKeyword_0()); 
+               before(grammarAccess.getSubProgramAccess().getSubKeyword_0()); 
             }
-            match(input,40,FOLLOW_40_in_rule__Function__Group__0__Impl6317); if (state.failed) return ;
+            match(input,40,FOLLOW_40_in_rule__SubProgram__Group__0__Impl6317); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFunctionAccess().getSubKeyword_0()); 
+               after(grammarAccess.getSubProgramAccess().getSubKeyword_0()); 
             }
 
             }
@@ -9674,26 +9674,26 @@ public class InternalTortoiseShellParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__Function__Group__0__Impl"
+    // $ANTLR end "rule__SubProgram__Group__0__Impl"
 
 
-    // $ANTLR start "rule__Function__Group__1"
-    // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2930:1: rule__Function__Group__1 : rule__Function__Group__1__Impl rule__Function__Group__2 ;
-    public final void rule__Function__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__SubProgram__Group__1"
+    // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2930:1: rule__SubProgram__Group__1 : rule__SubProgram__Group__1__Impl rule__SubProgram__Group__2 ;
+    public final void rule__SubProgram__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2934:1: ( rule__Function__Group__1__Impl rule__Function__Group__2 )
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2935:2: rule__Function__Group__1__Impl rule__Function__Group__2
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2934:1: ( rule__SubProgram__Group__1__Impl rule__SubProgram__Group__2 )
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2935:2: rule__SubProgram__Group__1__Impl rule__SubProgram__Group__2
             {
-            pushFollow(FOLLOW_rule__Function__Group__1__Impl_in_rule__Function__Group__16348);
-            rule__Function__Group__1__Impl();
+            pushFollow(FOLLOW_rule__SubProgram__Group__1__Impl_in_rule__SubProgram__Group__16348);
+            rule__SubProgram__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Function__Group__2_in_rule__Function__Group__16351);
-            rule__Function__Group__2();
+            pushFollow(FOLLOW_rule__SubProgram__Group__2_in_rule__SubProgram__Group__16351);
+            rule__SubProgram__Group__2();
 
             state._fsp--;
             if (state.failed) return ;
@@ -9712,30 +9712,30 @@ public class InternalTortoiseShellParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__Function__Group__1"
+    // $ANTLR end "rule__SubProgram__Group__1"
 
 
-    // $ANTLR start "rule__Function__Group__1__Impl"
-    // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2942:1: rule__Function__Group__1__Impl : ( ( rule__Function__NameAssignment_1 ) ) ;
-    public final void rule__Function__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SubProgram__Group__1__Impl"
+    // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2942:1: rule__SubProgram__Group__1__Impl : ( ( rule__SubProgram__NameAssignment_1 ) ) ;
+    public final void rule__SubProgram__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2946:1: ( ( ( rule__Function__NameAssignment_1 ) ) )
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2947:1: ( ( rule__Function__NameAssignment_1 ) )
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2946:1: ( ( ( rule__SubProgram__NameAssignment_1 ) ) )
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2947:1: ( ( rule__SubProgram__NameAssignment_1 ) )
             {
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2947:1: ( ( rule__Function__NameAssignment_1 ) )
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2948:1: ( rule__Function__NameAssignment_1 )
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2947:1: ( ( rule__SubProgram__NameAssignment_1 ) )
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2948:1: ( rule__SubProgram__NameAssignment_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFunctionAccess().getNameAssignment_1()); 
+               before(grammarAccess.getSubProgramAccess().getNameAssignment_1()); 
             }
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2949:1: ( rule__Function__NameAssignment_1 )
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2949:2: rule__Function__NameAssignment_1
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2949:1: ( rule__SubProgram__NameAssignment_1 )
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2949:2: rule__SubProgram__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__Function__NameAssignment_1_in_rule__Function__Group__1__Impl6378);
-            rule__Function__NameAssignment_1();
+            pushFollow(FOLLOW_rule__SubProgram__NameAssignment_1_in_rule__SubProgram__Group__1__Impl6378);
+            rule__SubProgram__NameAssignment_1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -9743,7 +9743,7 @@ public class InternalTortoiseShellParser extends AbstractInternalContentAssistPa
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFunctionAccess().getNameAssignment_1()); 
+               after(grammarAccess.getSubProgramAccess().getNameAssignment_1()); 
             }
 
             }
@@ -9763,26 +9763,26 @@ public class InternalTortoiseShellParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__Function__Group__1__Impl"
+    // $ANTLR end "rule__SubProgram__Group__1__Impl"
 
 
-    // $ANTLR start "rule__Function__Group__2"
-    // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2959:1: rule__Function__Group__2 : rule__Function__Group__2__Impl rule__Function__Group__3 ;
-    public final void rule__Function__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__SubProgram__Group__2"
+    // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2959:1: rule__SubProgram__Group__2 : rule__SubProgram__Group__2__Impl rule__SubProgram__Group__3 ;
+    public final void rule__SubProgram__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2963:1: ( rule__Function__Group__2__Impl rule__Function__Group__3 )
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2964:2: rule__Function__Group__2__Impl rule__Function__Group__3
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2963:1: ( rule__SubProgram__Group__2__Impl rule__SubProgram__Group__3 )
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2964:2: rule__SubProgram__Group__2__Impl rule__SubProgram__Group__3
             {
-            pushFollow(FOLLOW_rule__Function__Group__2__Impl_in_rule__Function__Group__26408);
-            rule__Function__Group__2__Impl();
+            pushFollow(FOLLOW_rule__SubProgram__Group__2__Impl_in_rule__SubProgram__Group__26408);
+            rule__SubProgram__Group__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Function__Group__3_in_rule__Function__Group__26411);
-            rule__Function__Group__3();
+            pushFollow(FOLLOW_rule__SubProgram__Group__3_in_rule__SubProgram__Group__26411);
+            rule__SubProgram__Group__3();
 
             state._fsp--;
             if (state.failed) return ;
@@ -9801,26 +9801,26 @@ public class InternalTortoiseShellParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__Function__Group__2"
+    // $ANTLR end "rule__SubProgram__Group__2"
 
 
-    // $ANTLR start "rule__Function__Group__2__Impl"
-    // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2971:1: rule__Function__Group__2__Impl : ( ( rule__Function__ParametersAssignment_2 )* ) ;
-    public final void rule__Function__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SubProgram__Group__2__Impl"
+    // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2971:1: rule__SubProgram__Group__2__Impl : ( ( rule__SubProgram__ParametersAssignment_2 )* ) ;
+    public final void rule__SubProgram__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2975:1: ( ( ( rule__Function__ParametersAssignment_2 )* ) )
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2976:1: ( ( rule__Function__ParametersAssignment_2 )* )
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2975:1: ( ( ( rule__SubProgram__ParametersAssignment_2 )* ) )
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2976:1: ( ( rule__SubProgram__ParametersAssignment_2 )* )
             {
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2976:1: ( ( rule__Function__ParametersAssignment_2 )* )
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2977:1: ( rule__Function__ParametersAssignment_2 )*
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2976:1: ( ( rule__SubProgram__ParametersAssignment_2 )* )
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2977:1: ( rule__SubProgram__ParametersAssignment_2 )*
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFunctionAccess().getParametersAssignment_2()); 
+               before(grammarAccess.getSubProgramAccess().getParametersAssignment_2()); 
             }
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2978:1: ( rule__Function__ParametersAssignment_2 )*
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2978:1: ( rule__SubProgram__ParametersAssignment_2 )*
             loop34:
             do {
                 int alt34=2;
@@ -9833,10 +9833,10 @@ public class InternalTortoiseShellParser extends AbstractInternalContentAssistPa
 
                 switch (alt34) {
             	case 1 :
-            	    // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2978:2: rule__Function__ParametersAssignment_2
+            	    // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2978:2: rule__SubProgram__ParametersAssignment_2
             	    {
-            	    pushFollow(FOLLOW_rule__Function__ParametersAssignment_2_in_rule__Function__Group__2__Impl6438);
-            	    rule__Function__ParametersAssignment_2();
+            	    pushFollow(FOLLOW_rule__SubProgram__ParametersAssignment_2_in_rule__SubProgram__Group__2__Impl6438);
+            	    rule__SubProgram__ParametersAssignment_2();
 
             	    state._fsp--;
             	    if (state.failed) return ;
@@ -9850,7 +9850,7 @@ public class InternalTortoiseShellParser extends AbstractInternalContentAssistPa
             } while (true);
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFunctionAccess().getParametersAssignment_2()); 
+               after(grammarAccess.getSubProgramAccess().getParametersAssignment_2()); 
             }
 
             }
@@ -9870,21 +9870,21 @@ public class InternalTortoiseShellParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__Function__Group__2__Impl"
+    // $ANTLR end "rule__SubProgram__Group__2__Impl"
 
 
-    // $ANTLR start "rule__Function__Group__3"
-    // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2988:1: rule__Function__Group__3 : rule__Function__Group__3__Impl ;
-    public final void rule__Function__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__SubProgram__Group__3"
+    // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2988:1: rule__SubProgram__Group__3 : rule__SubProgram__Group__3__Impl ;
+    public final void rule__SubProgram__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2992:1: ( rule__Function__Group__3__Impl )
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2993:2: rule__Function__Group__3__Impl
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2992:1: ( rule__SubProgram__Group__3__Impl )
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2993:2: rule__SubProgram__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__Function__Group__3__Impl_in_rule__Function__Group__36469);
-            rule__Function__Group__3__Impl();
+            pushFollow(FOLLOW_rule__SubProgram__Group__3__Impl_in_rule__SubProgram__Group__36469);
+            rule__SubProgram__Group__3__Impl();
 
             state._fsp--;
             if (state.failed) return ;
@@ -9903,30 +9903,30 @@ public class InternalTortoiseShellParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__Function__Group__3"
+    // $ANTLR end "rule__SubProgram__Group__3"
 
 
-    // $ANTLR start "rule__Function__Group__3__Impl"
-    // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2999:1: rule__Function__Group__3__Impl : ( ( rule__Function__BodyAssignment_3 ) ) ;
-    public final void rule__Function__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SubProgram__Group__3__Impl"
+    // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:2999:1: rule__SubProgram__Group__3__Impl : ( ( rule__SubProgram__BodyAssignment_3 ) ) ;
+    public final void rule__SubProgram__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:3003:1: ( ( ( rule__Function__BodyAssignment_3 ) ) )
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:3004:1: ( ( rule__Function__BodyAssignment_3 ) )
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:3003:1: ( ( ( rule__SubProgram__BodyAssignment_3 ) ) )
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:3004:1: ( ( rule__SubProgram__BodyAssignment_3 ) )
             {
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:3004:1: ( ( rule__Function__BodyAssignment_3 ) )
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:3005:1: ( rule__Function__BodyAssignment_3 )
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:3004:1: ( ( rule__SubProgram__BodyAssignment_3 ) )
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:3005:1: ( rule__SubProgram__BodyAssignment_3 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFunctionAccess().getBodyAssignment_3()); 
+               before(grammarAccess.getSubProgramAccess().getBodyAssignment_3()); 
             }
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:3006:1: ( rule__Function__BodyAssignment_3 )
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:3006:2: rule__Function__BodyAssignment_3
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:3006:1: ( rule__SubProgram__BodyAssignment_3 )
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:3006:2: rule__SubProgram__BodyAssignment_3
             {
-            pushFollow(FOLLOW_rule__Function__BodyAssignment_3_in_rule__Function__Group__3__Impl6496);
-            rule__Function__BodyAssignment_3();
+            pushFollow(FOLLOW_rule__SubProgram__BodyAssignment_3_in_rule__SubProgram__Group__3__Impl6496);
+            rule__SubProgram__BodyAssignment_3();
 
             state._fsp--;
             if (state.failed) return ;
@@ -9934,7 +9934,7 @@ public class InternalTortoiseShellParser extends AbstractInternalContentAssistPa
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFunctionAccess().getBodyAssignment_3()); 
+               after(grammarAccess.getSubProgramAccess().getBodyAssignment_3()); 
             }
 
             }
@@ -9954,7 +9954,7 @@ public class InternalTortoiseShellParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__Function__Group__3__Impl"
+    // $ANTLR end "rule__SubProgram__Group__3__Impl"
 
 
     // $ANTLR start "rule__Body__Group__0"
@@ -39642,29 +39642,29 @@ public class InternalTortoiseShellParser extends AbstractInternalContentAssistPa
     // $ANTLR end "rule__Program__BodyAssignment_0"
 
 
-    // $ANTLR start "rule__Program__FunctionsAssignment_1"
-    // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:13840:1: rule__Program__FunctionsAssignment_1 : ( ruleFunction ) ;
-    public final void rule__Program__FunctionsAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Program__SubProgramsAssignment_1"
+    // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:13840:1: rule__Program__SubProgramsAssignment_1 : ( ruleSubProgram ) ;
+    public final void rule__Program__SubProgramsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:13844:1: ( ( ruleFunction ) )
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:13845:1: ( ruleFunction )
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:13844:1: ( ( ruleSubProgram ) )
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:13845:1: ( ruleSubProgram )
             {
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:13845:1: ( ruleFunction )
-            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:13846:1: ruleFunction
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:13845:1: ( ruleSubProgram )
+            // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:13846:1: ruleSubProgram
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getProgramAccess().getFunctionsFunctionParserRuleCall_1_0()); 
+               before(grammarAccess.getProgramAccess().getSubProgramsSubProgramParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleFunction_in_rule__Program__FunctionsAssignment_127794);
-            ruleFunction();
+            pushFollow(FOLLOW_ruleSubProgram_in_rule__Program__SubProgramsAssignment_127794);
+            ruleSubProgram();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getProgramAccess().getFunctionsFunctionParserRuleCall_1_0()); 
+               after(grammarAccess.getProgramAccess().getSubProgramsSubProgramParserRuleCall_1_0()); 
             }
 
             }
@@ -39684,12 +39684,12 @@ public class InternalTortoiseShellParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__Program__FunctionsAssignment_1"
+    // $ANTLR end "rule__Program__SubProgramsAssignment_1"
 
 
-    // $ANTLR start "rule__Function__NameAssignment_1"
-    // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:13855:1: rule__Function__NameAssignment_1 : ( ruleValidID ) ;
-    public final void rule__Function__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__SubProgram__NameAssignment_1"
+    // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:13855:1: rule__SubProgram__NameAssignment_1 : ( ruleValidID ) ;
+    public final void rule__SubProgram__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -39701,15 +39701,15 @@ public class InternalTortoiseShellParser extends AbstractInternalContentAssistPa
             // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:13861:1: ruleValidID
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFunctionAccess().getNameValidIDParserRuleCall_1_0()); 
+               before(grammarAccess.getSubProgramAccess().getNameValidIDParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleValidID_in_rule__Function__NameAssignment_127825);
+            pushFollow(FOLLOW_ruleValidID_in_rule__SubProgram__NameAssignment_127825);
             ruleValidID();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFunctionAccess().getNameValidIDParserRuleCall_1_0()); 
+               after(grammarAccess.getSubProgramAccess().getNameValidIDParserRuleCall_1_0()); 
             }
 
             }
@@ -39729,12 +39729,12 @@ public class InternalTortoiseShellParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__Function__NameAssignment_1"
+    // $ANTLR end "rule__SubProgram__NameAssignment_1"
 
 
-    // $ANTLR start "rule__Function__ParametersAssignment_2"
-    // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:13870:1: rule__Function__ParametersAssignment_2 : ( ruleFullJvmFormalParameter ) ;
-    public final void rule__Function__ParametersAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__SubProgram__ParametersAssignment_2"
+    // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:13870:1: rule__SubProgram__ParametersAssignment_2 : ( ruleFullJvmFormalParameter ) ;
+    public final void rule__SubProgram__ParametersAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -39746,15 +39746,15 @@ public class InternalTortoiseShellParser extends AbstractInternalContentAssistPa
             // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:13876:1: ruleFullJvmFormalParameter
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFunctionAccess().getParametersFullJvmFormalParameterParserRuleCall_2_0()); 
+               before(grammarAccess.getSubProgramAccess().getParametersFullJvmFormalParameterParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleFullJvmFormalParameter_in_rule__Function__ParametersAssignment_227856);
+            pushFollow(FOLLOW_ruleFullJvmFormalParameter_in_rule__SubProgram__ParametersAssignment_227856);
             ruleFullJvmFormalParameter();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFunctionAccess().getParametersFullJvmFormalParameterParserRuleCall_2_0()); 
+               after(grammarAccess.getSubProgramAccess().getParametersFullJvmFormalParameterParserRuleCall_2_0()); 
             }
 
             }
@@ -39774,12 +39774,12 @@ public class InternalTortoiseShellParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__Function__ParametersAssignment_2"
+    // $ANTLR end "rule__SubProgram__ParametersAssignment_2"
 
 
-    // $ANTLR start "rule__Function__BodyAssignment_3"
-    // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:13885:1: rule__Function__BodyAssignment_3 : ( ruleBody ) ;
-    public final void rule__Function__BodyAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__SubProgram__BodyAssignment_3"
+    // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:13885:1: rule__SubProgram__BodyAssignment_3 : ( ruleBody ) ;
+    public final void rule__SubProgram__BodyAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -39791,15 +39791,15 @@ public class InternalTortoiseShellParser extends AbstractInternalContentAssistPa
             // ../org.xtext.tortoiseshell.ui/src-gen/org/xtext/tortoiseshell/ui/contentassist/antlr/internal/InternalTortoiseShell.g:13891:1: ruleBody
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFunctionAccess().getBodyBodyParserRuleCall_3_0()); 
+               before(grammarAccess.getSubProgramAccess().getBodyBodyParserRuleCall_3_0()); 
             }
-            pushFollow(FOLLOW_ruleBody_in_rule__Function__BodyAssignment_327887);
+            pushFollow(FOLLOW_ruleBody_in_rule__SubProgram__BodyAssignment_327887);
             ruleBody();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFunctionAccess().getBodyBodyParserRuleCall_3_0()); 
+               after(grammarAccess.getSubProgramAccess().getBodyBodyParserRuleCall_3_0()); 
             }
 
             }
@@ -39819,7 +39819,7 @@ public class InternalTortoiseShellParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__Function__BodyAssignment_3"
+    // $ANTLR end "rule__SubProgram__BodyAssignment_3"
 
 
     // $ANTLR start "rule__Body__ExpressionsAssignment_2_0"
@@ -48415,9 +48415,9 @@ public class InternalTortoiseShellParser extends AbstractInternalContentAssistPa
     public static final BitSet FOLLOW_ruleProgram_in_entryRuleProgram67 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleProgram74 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Program__Group__0_in_ruleProgram100 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFunction_in_entryRuleFunction127 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFunction134 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Function__Group__0_in_ruleFunction160 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSubProgram_in_entryRuleSubProgram127 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSubProgram134 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SubProgram__Group__0_in_ruleSubProgram160 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBody_in_entryRuleBody187 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleBody194 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Body__Group__0_in_ruleBody220 = new BitSet(new long[]{0x0000000000000002L});
@@ -48704,18 +48704,18 @@ public class InternalTortoiseShellParser extends AbstractInternalContentAssistPa
     public static final BitSet FOLLOW_rule__Program__Group__1_in_rule__Program__Group__06167 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Program__BodyAssignment_0_in_rule__Program__Group__0__Impl6194 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Program__Group__1__Impl_in_rule__Program__Group__16224 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Program__FunctionsAssignment_1_in_rule__Program__Group__1__Impl6251 = new BitSet(new long[]{0x0000010000000002L});
-    public static final BitSet FOLLOW_rule__Function__Group__0__Impl_in_rule__Function__Group__06286 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Function__Group__1_in_rule__Function__Group__06289 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_rule__Function__Group__0__Impl6317 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Function__Group__1__Impl_in_rule__Function__Group__16348 = new BitSet(new long[]{0x0004020002000010L});
-    public static final BitSet FOLLOW_rule__Function__Group__2_in_rule__Function__Group__16351 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Function__NameAssignment_1_in_rule__Function__Group__1__Impl6378 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Function__Group__2__Impl_in_rule__Function__Group__26408 = new BitSet(new long[]{0x0004020002000010L});
-    public static final BitSet FOLLOW_rule__Function__Group__3_in_rule__Function__Group__26411 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Function__ParametersAssignment_2_in_rule__Function__Group__2__Impl6438 = new BitSet(new long[]{0x0004000002000012L});
-    public static final BitSet FOLLOW_rule__Function__Group__3__Impl_in_rule__Function__Group__36469 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Function__BodyAssignment_3_in_rule__Function__Group__3__Impl6496 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Program__SubProgramsAssignment_1_in_rule__Program__Group__1__Impl6251 = new BitSet(new long[]{0x0000010000000002L});
+    public static final BitSet FOLLOW_rule__SubProgram__Group__0__Impl_in_rule__SubProgram__Group__06286 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__SubProgram__Group__1_in_rule__SubProgram__Group__06289 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_rule__SubProgram__Group__0__Impl6317 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SubProgram__Group__1__Impl_in_rule__SubProgram__Group__16348 = new BitSet(new long[]{0x0004020002000010L});
+    public static final BitSet FOLLOW_rule__SubProgram__Group__2_in_rule__SubProgram__Group__16351 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SubProgram__NameAssignment_1_in_rule__SubProgram__Group__1__Impl6378 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SubProgram__Group__2__Impl_in_rule__SubProgram__Group__26408 = new BitSet(new long[]{0x0004020002000010L});
+    public static final BitSet FOLLOW_rule__SubProgram__Group__3_in_rule__SubProgram__Group__26411 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SubProgram__ParametersAssignment_2_in_rule__SubProgram__Group__2__Impl6438 = new BitSet(new long[]{0x0004000002000012L});
+    public static final BitSet FOLLOW_rule__SubProgram__Group__3__Impl_in_rule__SubProgram__Group__36469 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SubProgram__BodyAssignment_3_in_rule__SubProgram__Group__3__Impl6496 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Body__Group__0__Impl_in_rule__Body__Group__06534 = new BitSet(new long[]{0x0004020002000010L});
     public static final BitSet FOLLOW_rule__Body__Group__1_in_rule__Body__Group__06537 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Body__Group__1__Impl_in_rule__Body__Group__16595 = new BitSet(new long[]{0xB86E04E8604001F0L,0x000000000000601FL});
@@ -49572,10 +49572,10 @@ public class InternalTortoiseShellParser extends AbstractInternalContentAssistPa
     public static final BitSet FOLLOW_rule__JvmLowerBound__Group__1__Impl_in_rule__JvmLowerBound__Group__127695 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__JvmLowerBound__TypeReferenceAssignment_1_in_rule__JvmLowerBound__Group__1__Impl27722 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBody_in_rule__Program__BodyAssignment_027763 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFunction_in_rule__Program__FunctionsAssignment_127794 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValidID_in_rule__Function__NameAssignment_127825 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFullJvmFormalParameter_in_rule__Function__ParametersAssignment_227856 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBody_in_rule__Function__BodyAssignment_327887 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSubProgram_in_rule__Program__SubProgramsAssignment_127794 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValidID_in_rule__SubProgram__NameAssignment_127825 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFullJvmFormalParameter_in_rule__SubProgram__ParametersAssignment_227856 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBody_in_rule__SubProgram__BodyAssignment_327887 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXExpressionInsideBlock_in_rule__Body__ExpressionsAssignment_2_027918 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleValidID_in_rule__XAssignment__FeatureAssignment_0_127953 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXAssignment_in_rule__XAssignment__ValueAssignment_0_327988 = new BitSet(new long[]{0x0000000000000002L});

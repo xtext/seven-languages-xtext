@@ -48,8 +48,8 @@ import org.eclipse.xtext.xbase.serializer.XbaseSemanticSequencer;
 import org.eclipse.xtext.xtype.XFunctionTypeRef;
 import org.eclipse.xtext.xtype.XtypePackage;
 import org.xtext.tortoiseshell.services.TortoiseShellGrammarAccess;
-import org.xtext.tortoiseshell.tortoiseShell.Function;
 import org.xtext.tortoiseshell.tortoiseShell.Program;
+import org.xtext.tortoiseshell.tortoiseShell.SubProgram;
 import org.xtext.tortoiseshell.tortoiseShell.TortoiseShellPackage;
 
 @SuppressWarnings("all")
@@ -60,17 +60,17 @@ public class TortoiseShellSemanticSequencer extends XbaseSemanticSequencer {
 	
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == TortoiseShellPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
-			case TortoiseShellPackage.FUNCTION:
-				if(context == grammarAccess.getExecutableRule() ||
-				   context == grammarAccess.getFunctionRule()) {
-					sequence_Function(context, (Function) semanticObject); 
-					return; 
-				}
-				else break;
 			case TortoiseShellPackage.PROGRAM:
 				if(context == grammarAccess.getExecutableRule() ||
 				   context == grammarAccess.getProgramRule()) {
 					sequence_Program(context, (Program) semanticObject); 
+					return; 
+				}
+				else break;
+			case TortoiseShellPackage.SUB_PROGRAM:
+				if(context == grammarAccess.getExecutableRule() ||
+				   context == grammarAccess.getSubProgramRule()) {
+					sequence_SubProgram(context, (SubProgram) semanticObject); 
 					return; 
 				}
 				else break;
@@ -949,18 +949,18 @@ public class TortoiseShellSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=ValidID parameters+=FullJvmFormalParameter* body=Body)
+	 *     (body=Body subPrograms+=SubProgram*)
 	 */
-	protected void sequence_Function(EObject context, Function semanticObject) {
+	protected void sequence_Program(EObject context, Program semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (body=Body functions+=Function*)
+	 *     (name=ValidID parameters+=FullJvmFormalParameter* body=Body)
 	 */
-	protected void sequence_Program(EObject context, Program semanticObject) {
+	protected void sequence_SubProgram(EObject context, SubProgram semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 }
