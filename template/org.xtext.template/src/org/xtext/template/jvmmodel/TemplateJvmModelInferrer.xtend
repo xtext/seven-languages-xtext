@@ -30,46 +30,15 @@ import static extension org.eclipse.xtext.EcoreUtil2.*
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
- *
- * <p>The JVM model should contain all elements that would appear in the Java code 
- * which is generated from the source model. Other models link against the JVM model rather than the source model.</p>     
  */
 class TemplateJvmModelInferrer extends AbstractModelInferrer {
 
-       /**
-     * convenience API to build and initialize JVM types and their members.
-     */
 	@Inject extension JvmTypesBuilder
 	
 	@Inject extension TypeReferences
 	
 	@Inject extension TypeReferenceSerializer
 
-	/**
-	 * The dispatch method {@code infer} is called for each instance of the
-	 * given element's type that is contained in a resource.
-	 * 
-	 * @param element
-	 *            the model to create one or more
-	 *            {@link org.eclipse.xtext.common.types.JvmDeclaredType declared
-	 *            types} from.
-	 * @param acceptor
-	 *            each created
-	 *            {@link org.eclipse.xtext.common.types.JvmDeclaredType type}
-	 *            without a container should be passed to the acceptor in order
-	 *            get attached to the current resource. The acceptor's
-	 *            {@link IJvmDeclaredTypeAcceptor#accept(org.eclipse.xtext.common.types.JvmDeclaredType)
-	 *            accept(..)} method takes the constructed empty type for the
-	 *            pre-indexing phase. This one is further initialized in the
-	 *            indexing phase using the closure you pass to the returned
-	 *            {@link org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor.IPostIndexingInitializing#initializeLater(org.eclipse.xtext.xbase.lib.Procedures.Procedure1)
-	 *            initializeLater(..)}.
-	 * @param isPreIndexingPhase
-	 *            whether the method is called in a pre-indexing phase, i.e.
-	 *            when the global index is not yet fully updated. You must not
-	 *            rely on linking using the index if isPreIndexingPhase is
-	 *            <code>true</code>.
-	 */
    	def dispatch void infer(TemplateFile element, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
    		val simpleName = element.eResource.URI.trimFileExtension.lastSegment
    		val qualifiedName = if(element.^package != null) 
@@ -170,7 +139,7 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
    			switch(es) {
    				ExpressionStmt: put(es.expresson, new ExpressionInfo(file.newTypeRef(typeof(Object)), "exp" + (i = i+1), es.expresson.allParameters.toList, es.expresson))
    				IfStmtBody: put(es.condition, new ExpressionInfo(file.newTypeRef("boolean"), "cond" + (i = i+1), es.condition.allParameters.toList, es.condition))
-   				ForStmt: put(es.list, new ExpressionInfo(file.newTypeRef(typeof(Iterable), wildCardExtends(es.param.parameterType.copy)), "loop" + (i = i+1), es.list.allParameters.toList, es.list))
+   				ForStmt: put(es.source, new ExpressionInfo(file.newTypeRef(typeof(Iterable), wildCardExtends(es.param.parameterType.copy)), "loop" + (i = i+1), es.source.allParameters.toList, es.source))
    			}
    		it
    	}
@@ -179,7 +148,7 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
    		val cnt = exp.eContainer
    		switch(cnt) {
    			TemplateFile: emptyList
-   			ForStmt case(cnt.list != exp): cnt.allParameters + newArrayList(cnt.param)
+   			ForStmt case(cnt.source != exp): cnt.allParameters + newArrayList(cnt.param)
    			default: cnt.allParameters
    		}
    	}
@@ -231,11 +200,11 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
    		out.append(" ")
    		out.append(forStmt.param.name)
    		out.append(" : ")
-   		genExpressionCall(forStmt.list, it)
+   		genExpressionCall(forStmt.source, it)
    		out.append(") {")
    		out.increaseIndentation
    		out.newLine
-   		genStatement(forStmt.stmt, it)
+   		genStatement(forStmt.body, it)
    		out.decreaseIndentation
    		out.newLine
    		out.append("}")
