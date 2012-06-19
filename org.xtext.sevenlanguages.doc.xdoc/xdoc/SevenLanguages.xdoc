@@ -43,6 +43,10 @@ codelanguage-def[mongoBeans][
 	package, import
 ]
 
+codelanguage-def[tortoise][
+	sub, begin, end
+]
+
 chapter-ref[intro]
 
 chapter-ref[mongo]

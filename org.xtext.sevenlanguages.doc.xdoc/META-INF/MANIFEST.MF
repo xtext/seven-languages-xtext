@@ -9,6 +9,8 @@ Require-Bundle: org.eclipse.orbit.mongodb;bundle-version="2.6.3",
  org.xtext.mongobeans;bundle-version="1.0.0",
  org.xtext.mongobeans.runtime;bundle-version="1.0.0",
  org.xtext.mongobeans.ui;bundle-version="1.0.0",
- org.xtext.mongobeans.example;bundle-version="1.0.0"
+ org.xtext.mongobeans.example;bundle-version="1.0.0",
+ org.xtext.tortoiseshell.runtime;bundle-version="1.0.0",
+ org.xtext.tortoiseshell;bundle-version="1.0.0"
 
 
