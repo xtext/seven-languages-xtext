@@ -45,6 +45,7 @@ class CompilerTest {
 	@XpectString @ParameterSyntax("param=STRING?") def execute() {
 		val inferredType = resource.contents.filter(typeof(JvmGenericType)).head
 		val javaCode = generator.generateType(inferredType);
+		println(javaCode)
 		val clazz = javaCompiler.compileToClass(inferredType.qualifiedName, javaCode.toString)
 		val document = '''{ val inst = new «inferredType.qualifiedName»() «IF !param.nullOrEmpty» => [ «param» ]«ENDIF»; inst }'''.toString
 		val template = newInstance(clazz, inferredType, document)

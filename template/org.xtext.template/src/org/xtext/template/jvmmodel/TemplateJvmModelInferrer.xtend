@@ -5,7 +5,6 @@ import java.util.List
 import java.util.Map
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.xtend.lib.Data
-import org.eclipse.xtext.common.types.JvmFormalParameter
 import org.eclipse.xtext.common.types.JvmMember
 import org.eclipse.xtext.common.types.JvmTypeReference
 import org.eclipse.xtext.common.types.JvmVisibility
@@ -19,6 +18,7 @@ import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
 import org.eclipse.xtext.xbase.lib.Exceptions
 import org.eclipse.xtext.xbase.lib.Procedures$Procedure1
 import org.eclipse.xtext.xbase.lib.util.ToStringHelper
+import org.eclipse.xtext.xbase.typing.ITypeProvider
 import org.xtext.template.template.BlockStmt
 import org.xtext.template.template.ExpressionStmt
 import org.xtext.template.template.ForStmt
@@ -28,6 +28,7 @@ import org.xtext.template.template.TemplateFile
 import org.xtext.template.template.TextStmt
 
 import static extension org.eclipse.emf.ecore.util.EcoreUtil.*
+import org.eclipse.xtext.common.types.JvmParameterizedTypeReference
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -39,6 +40,8 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
 	@Inject extension TypeReferences
 	
 	@Inject extension TypeReferenceSerializer
+	
+	@Inject extension ITypeProvider
 
    	def dispatch void infer(TemplateFile element, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
    		val simpleName = element.eResource.URI.trimFileExtension.lastSegment
@@ -126,11 +129,11 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
    			])
    	}
    	
-   	def Iterable<JvmFormalParameter> getAllParameters(EObject exp){
+   	def Iterable<ForStmt> getAllParameters(EObject exp){
    		val cnt = exp.eContainer
    		switch(cnt) {
    			TemplateFile: emptyList
-   			ForStmt case(cnt.source != exp): cnt.allParameters + newArrayList(cnt.param)
+   			ForStmt case(cnt.source != exp): cnt.allParameters + newArrayList(cnt)
    			default: cnt.allParameters
    		}
    	}
@@ -178,7 +181,7 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
    	
    	def dispatch void genStatement(StmtCtx it, ForStmt forStmt) {
    		out.append("for(")
-   		forStmt.param.parameterType.serialize(forStmt, out)
+   		forStmt.parameterType.serialize(forStmt, out)
    		out.append(" ")
    		out.append(forStmt.param.name)
    		out.append(" : ")
@@ -193,7 +196,7 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
    	}
    	
    	def dispatch void genExpression(ExpCtx it, ForStmt forStmt) {
-   		genExpression("loop", forStmt.source, forStmt.newTypeRef(typeof(Iterable), wildCardExtends(forStmt.param.parameterType.copy)))
+   		genExpression("loop", forStmt.source, forStmt.newTypeRef(typeof(Iterable), wildCardExtends(forStmt.parameterType)))
    	}
    	
    	def dispatch void genExpression(ExpCtx it, IfStmtBody ifStmt) {
@@ -213,15 +216,29 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
    		members += exp.toMethod(name, type) [
 			visibility = JvmVisibility::PRIVATE
 			for(p: params)
-				parameters += exp.toParameter(p.name, p.parameterType)
+				parameters += exp.toParameter(p.param.name, p.parameterType)
 			body = exp
 		]
-		getExpr2call.put(exp, name + "(" + params.map[simpleName].join(", ") + ")") 
+		getExpr2call.put(exp, name + "(" + params.map[param.name].join(", ") + ")") 
    	}
    	
    	def newMemberName(List<JvmMember> members, String prefix) { 
 		val names = members.map[simpleName].toSet
 		prefix + (0..Integer::MAX_VALUE).findFirst[!names.contains(prefix + it)]
+	}
+	
+	def getParameterType(ForStmt stmt) {
+		if(stmt.param.parameterType != null)
+			stmt.param.parameterType.copy
+		else {
+			val type = stmt.source.getType()
+			if(type instanceof JvmParameterizedTypeReference)
+				(type as JvmParameterizedTypeReference).arguments.get(0)
+			else {
+				println("invalid for-expression-type: " + type)
+				null as JvmTypeReference
+			}
+		}
 	}
 }
 
