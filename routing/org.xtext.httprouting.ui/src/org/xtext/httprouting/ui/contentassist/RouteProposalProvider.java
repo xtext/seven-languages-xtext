@@ -44,4 +44,18 @@ public class RouteProposalProvider extends AbstractRouteProposalProvider {
 		});
 		getCrossReferenceProposalCreator().lookupCrossReference(scope, model, XbasePackage.Literals.XABSTRACT_FEATURE_CALL__FEATURE, acceptor, getFeatureDescriptionPredicate(context), proposalFactory);
 	}
+
+	@Override
+	protected Predicate<IEObjectDescription> getFeatureDescriptionPredicate(ContentAssistContext contentAssistContext) {
+		if (contentAssistContext.getPrefix().startsWith("_"))
+			return super.getFeatureDescriptionPredicate(contentAssistContext);
+		final Predicate<IEObjectDescription> delegate = super.getFeatureDescriptionPredicate(contentAssistContext);
+		return new Predicate<IEObjectDescription>() {
+
+			public boolean apply(IEObjectDescription input) {
+				return !input.getName().getFirstSegment().startsWith("_") && delegate.apply(input);
+			}
+
+		};
+	}
 }

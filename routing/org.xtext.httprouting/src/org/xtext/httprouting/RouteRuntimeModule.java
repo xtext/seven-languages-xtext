@@ -6,7 +6,6 @@ package org.xtext.httprouting;
 import org.eclipse.xtext.scoping.IScopeProvider;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
 import org.xtext.httprouting.scoping.RouteImportedNamespaceScopeProvider;
-import org.xtext.httprouting.scoping.RouteScopeProvider;
 
 import com.google.inject.Binder;
 import com.google.inject.name.Names;
@@ -17,10 +16,6 @@ import com.google.inject.name.Names;
  */
 public class RouteRuntimeModule extends
 		org.xtext.httprouting.AbstractRouteRuntimeModule {
-	@Override
-	public Class<? extends IScopeProvider> bindIScopeProvider() {
-		return RouteScopeProvider.class;
-	}
 	
 	@Override
 	public void configureIScopeProviderDelegate(Binder binder) {

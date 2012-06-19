@@ -40,7 +40,7 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 	protected TypesFactory typesFactory;
 	
 	def nameOfRouteMethod(Route route, int i) {
-		"do" + route.type.literal.toLowerCase.toFirstUpper + i
+		"_do" + route.type.literal.toLowerCase.toFirstUpper + i
 	}
 	
    	def dispatch void infer(Model model, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
@@ -80,12 +80,12 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 	   						]
 	   					}
 	   					if(route.isValidKey){
-	   						val keyField = route.key.toField("key" + i, route.key.type)
+							val keyField = route.key.toField("_key" + i, route.key.type)
 			   				keyField.addInjectAnnotation(model)
 			   				route.key.annotations.translateAnnotationsTo(keyField)
 		   					members+= keyField
 	   					}
-   						val patternField = route.url.toField("pattern" + i , model.newTypeRef(typeof(Pattern)))[
+						val patternField = route.url.toField("_pattern" + i , model.newTypeRef(typeof(Pattern)))[
    							setStatic(true)
    							setInitializer([append('''Pattern.compile("«getRegExPattern(NodeModelUtils::getNode(route.url).text.trim,route.url.variables)»")''')])
    						]
@@ -126,13 +126,13 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 				for(route : routes){
 					if(route.type == filterType)
 						if(route.url != null){
-							append(element.newTypeRef(typeof(Matcher)).type).append(''' matcher«x» = pattern«x».matcher(url);
+							append(element.newTypeRef(typeof(Matcher)).type).append(''' _matcher«x» = _pattern«x».matcher(url);
 							''')
 							val variables = route.url.variables
-							    append('''if(matcher«x».find()){
+							    append('''if(_matcher«x».find()){
 							    	''')
 						    	for( variable : variables){
-									append('''		String «variable.name» =matcher«x».group(«variables.indexOf(variable) + 1»);
+									append('''		String «variable.name» = _matcher«x».group(«variables.indexOf(variable) + 1»);
 									''')
 								}
 								if(route.condition != null){
@@ -143,7 +143,7 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 					   			}
 								append('''			«route.nameOfRouteMethod(x)»(''')
 								if(route.validKey)
-									append('''key«x»,''') 
+									append('''_key«x»,''')
 								append('''request''')
 				   				append('''«FOR v : route.url.variables BEFORE ", " SEPARATOR ", " »«v.name»«ENDFOR»''')
 				   				append(''');

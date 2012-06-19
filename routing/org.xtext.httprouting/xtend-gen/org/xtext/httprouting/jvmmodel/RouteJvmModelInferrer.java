@@ -60,7 +60,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
     String _literal = _type.getLiteral();
     String _lowerCase = _literal.toLowerCase();
     String _firstUpper = StringExtensions.toFirstUpper(_lowerCase);
-    String _plus = ("do" + _firstUpper);
+    String _plus = ("_do" + _firstUpper);
     String _plus_1 = (_plus + Integer.valueOf(i));
     return _plus_1;
   }
@@ -174,7 +174,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
                 boolean _isValidKey = RouteJvmModelInferrer.this.isValidKey(route);
                 if (_isValidKey) {
                   Key _key = route.getKey();
-                  String _plus_1 = ("key" + Integer.valueOf(i));
+                  String _plus_1 = ("_key" + Integer.valueOf(i));
                   Key _key_1 = route.getKey();
                   JvmTypeReference _type = _key_1.getType();
                   final JvmField keyField = RouteJvmModelInferrer.this._jvmTypesBuilder.toField(_key, _plus_1, _type);
@@ -186,7 +186,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
                   RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmField>operator_add(_members_3, keyField);
                 }
                 URL _url_1 = route.getUrl();
-                String _plus_2 = ("pattern" + Integer.valueOf(i));
+                String _plus_2 = ("_pattern" + Integer.valueOf(i));
                 JvmTypeReference _newTypeRef_4 = RouteJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(model, Pattern.class);
                 final Procedure1<JvmField> _function_3 = new Procedure1<JvmField>() {
                     public void apply(final JvmField it) {
@@ -335,9 +335,9 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
                         ITreeAppendable _append = it.append(_type_1);
                         StringConcatenation _builder_1 = new StringConcatenation();
                         _builder_1.append(" ");
-                        _builder_1.append("matcher");
+                        _builder_1.append("_matcher");
                         _builder_1.append(x, " ");
-                        _builder_1.append(" = pattern");
+                        _builder_1.append(" = _pattern");
                         _builder_1.append(x, " ");
                         _builder_1.append(".matcher(url);");
                         _builder_1.newLineIfNotEmpty();
@@ -345,7 +345,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
                         URL _url_1 = route.getUrl();
                         final EList<Variable> variables = _url_1.getVariables();
                         StringConcatenation _builder_2 = new StringConcatenation();
-                        _builder_2.append("if(matcher");
+                        _builder_2.append("if(_matcher");
                         _builder_2.append(x, "");
                         _builder_2.append(".find()){");
                         _builder_2.newLineIfNotEmpty();
@@ -356,7 +356,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
                           _builder_3.append("String ");
                           String _name = variable.getName();
                           _builder_3.append(_name, "		");
-                          _builder_3.append(" =matcher");
+                          _builder_3.append(" = _matcher");
                           _builder_3.append(x, "		");
                           _builder_3.append(".group(");
                           int _indexOf = variables.indexOf(variable);
@@ -407,7 +407,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
                         boolean _isValidKey = RouteJvmModelInferrer.this.isValidKey(route);
                         if (_isValidKey) {
                           StringConcatenation _builder_8 = new StringConcatenation();
-                          _builder_8.append("key");
+                          _builder_8.append("_key");
                           _builder_8.append(x, "");
                           _builder_8.append(",");
                           it.append(_builder_8);
