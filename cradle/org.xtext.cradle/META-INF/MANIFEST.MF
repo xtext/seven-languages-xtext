@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: org.cradle.language
 Bundle-Vendor: My Company
 Bundle-Version: 1.0.0.qualifier
-Bundle-SymbolicName: org.cradle.language; singleton:=true
+Bundle-SymbolicName: org.xtext.cradle;singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext;bundle-version="2.1.0";visibility:=reexport,
  org.eclipse.xtext.xbase;bundle-version="2.1.0";resolution:=optional;visibility:=reexport,

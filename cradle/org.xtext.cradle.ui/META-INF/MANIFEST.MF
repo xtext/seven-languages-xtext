@@ -3,9 +3,9 @@ Bundle-ManifestVersion: 2
 Bundle-Name: org.cradle.language.ui
 Bundle-Vendor: My Company
 Bundle-Version: 1.0.0.qualifier
-Bundle-SymbolicName: org.cradle.language.ui; singleton:=true
+Bundle-SymbolicName: org.xtext.cradle.ui;singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: org.cradle.language;visibility:=reexport,
+Require-Bundle: org.xtext.cradle;visibility:=reexport,
  org.eclipse.xtext.ui,
  org.eclipse.ui.editors;bundle-version="3.5.0",
  org.eclipse.ui.ide;bundle-version="3.5.0",

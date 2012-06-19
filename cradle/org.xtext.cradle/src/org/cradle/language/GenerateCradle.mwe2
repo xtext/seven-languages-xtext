@@ -6,7 +6,7 @@ import org.eclipse.xtext.ui.generator.*
 
 var grammarURI = "classpath:/org/cradle/language/Cradle.xtext"
 var file.extensions = "cradle"
-var projectName = "org.cradle.language"
+var projectName = "org.xtext.cradle"
 var runtimeProject = "../${projectName}"
 
 Workflow {
@@ -41,10 +41,6 @@ Workflow {
 
             // generates Java API for the generated EPackages
             fragment = ecore.EcoreGeneratorFragment {
-            // referencedGenModels = "
-            //  platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel,
-            //  platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel
-            // "
             }
 
             // Serializer 2.0
@@ -52,9 +48,6 @@ Workflow {
             	generateStub = false
             }
             
-            // the serialization component (1.0)
-            // fragment = parseTreeConstructor.ParseTreeConstructorFragment {}
-
             // a custom ResourceFactory for use with EMF
             fragment = resourceFactory.ResourceFactoryFragment {
                 fileExtensions = file.extensions
@@ -62,9 +55,6 @@ Workflow {
 
             // The antlr parser generator fragment.
             fragment = parser.antlr.XtextAntlrGeneratorFragment {
-            //  options = {
-            //      backtrack = true
-            //  }
             }
 
             // java-based API for validation
@@ -72,10 +62,6 @@ Workflow {
             //    composedCheck = "org.eclipse.xtext.validation.ImportUriValidator"
             //    composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
             }
-
-            // scoping and exporting API
-            // fragment = scoping.ImportURIScopingFragment {}
-            // fragment = exporting.SimpleNamesFragment {}
 
             // scoping and exporting API
             fragment = scoping.ImportNamespacesScopingFragment {}

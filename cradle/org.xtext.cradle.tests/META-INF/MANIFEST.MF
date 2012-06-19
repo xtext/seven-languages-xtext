@@ -3,10 +3,10 @@ Bundle-ManifestVersion: 2
 Bundle-Name: org.cradle.language.tests
 Bundle-Vendor: My Company
 Bundle-Version: 1.0.0.qualifier
-Bundle-SymbolicName: org.cradle.language.tests
+Bundle-SymbolicName: org.xtext.cradle.tests
 Bundle-ActivationPolicy: lazy
-Require-Bundle: org.cradle.language,
- org.cradle.language.ui,
+Require-Bundle: org.xtext.cradle,
+ org.xtext.cradle.ui,
  org.eclipse.core.runtime,
  org.eclipse.xtext.junit4,
  org.eclipse.ui.workbench;resolution:=optional,
