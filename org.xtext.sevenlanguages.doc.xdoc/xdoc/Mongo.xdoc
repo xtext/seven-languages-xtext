@@ -1,0 +1,53 @@
+chapter:mongo[MongoBeans]
+
+link[http://www.mongodb.org][MongoDB] is a very popular document-based database management system. 
+
+section:mongo_motivation[The Problem]
+
+The standard mongoDB Java driver 
+allows to manipulate mongoDB entries as raw maps. This results in two major annoyances
+ul[
+item[you loose Java's static typing and]
+item[constructing a graph of nested maps is pretty inconvenient in Java.]
+]
+In this project, we have created a small DSL based on Xtext that allows to create basic entity classes
+that are backed by mongoDB objects but provide a statically typed JavaBeans API. 
+
+section:mongo_solution[A Solution With Xtext]
+
+Why a DSL
+How about expressions
+DSL example, Java example, Client code example (if appropriate)
+
+Approx 2 pages upto here
+
+section2:mongo_statistics[Some Stats]
+
+table[
+tr[td[LOC Grammar]td[many]]
+tr[td[# additional classes]td[6]]
+tr[td[Hardest part]td[Finding a project name w/o politically incorrect connotation]]
+]
+
+section:mongo_running[Running the Example]
+
+In addtion to the ref:common_requirements[common requirements], you need the 
+link[http://www.mongodb.org/downloads][mongoDB implementation] for your platform. We have included 
+the mongoDB Java driver from link[http://download.eclipse.org/tools/orbit/downloads/][Eclipse Orbit] 
+in the code base. 
+
+Import the projects into an Eclipse workspace and run the launch config 
+e[Run (org.eclipse.xtext.mongobeans)]. Import the example plug-in into the new workspace and run 
+code[MusicDBXtendTest] as a JUnit test.
+
+section:mongo_details[The Solution in Detail]
+
+section2:mongo_grammar[Grammar]
+
+section2:mongo_inferrer[Translation to Java]
+
+section2:mongo_additons[Additional Aspects]
+
+Addtionally customized things: validation, scoping, code completion ...
+
+section:mongo_beyond[Beyond This Example]

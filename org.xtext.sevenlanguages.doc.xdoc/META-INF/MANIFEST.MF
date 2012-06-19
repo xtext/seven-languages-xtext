@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Seven Languages Xdoc
+Bundle-SymbolicName: org.xtext.sevenlanguages.doc.xdoc
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Eclipse Modeing Project
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
