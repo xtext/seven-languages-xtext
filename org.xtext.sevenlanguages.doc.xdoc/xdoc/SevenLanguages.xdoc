@@ -39,6 +39,10 @@ codelanguage-def[Xtend2][
 	IF, ELSE, ELSEIF, ENDIF, FOR, ENDFOR, BEFORE, AFTER, SEPARATOR
 ]
 
+codelanguage-def[mongoBeans][
+	package, import
+]
+
 chapter-ref[intro]
 
 chapter-ref[mongo]
