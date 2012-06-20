@@ -6,3 +6,4 @@
 *.ear
 *buildroot
 *.DS_Store
+plugin.xml_gen

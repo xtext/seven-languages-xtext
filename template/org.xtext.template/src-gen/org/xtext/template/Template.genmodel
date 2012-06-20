@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.xtext.template/src-gen" editDirectory="/org.xtext.template.edit/src"
+    editorDirectory="/org.xtext.template.editor/src" modelPluginID="org.xtext.template"
+    forceOverwrite="true" modelName="Template" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="org.xtext.template.edit"
+    editorPluginID="org.xtext.template.editor" runtimeVersion="2.8" usedGenPackages="../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xAnnotations ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase">
+  <genPackages prefix="Template" basePackage="org.xtext.template" disposableProviderFactory="true"
+      ecorePackage="Template.ecore#/">
+    <genClasses ecoreClass="Template.ecore#//TemplateFile">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Template.ecore#//TemplateFile/package"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//TemplateFile/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//TemplateFile/params"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//TemplateFile/body"/>
+    </genClasses>
+    <genClasses ecoreClass="Template.ecore#//Import">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Template.ecore#//Import/importedNamespace"/>
+    </genClasses>
+    <genClasses ecoreClass="Template.ecore#//Parameter">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//Parameter/annotations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Template.ecore#//Parameter/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//Parameter/defaultexp"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//Parameter/type"/>
+    </genClasses>
+    <genClasses ecoreClass="Template.ecore#//Statement"/>
+    <genClasses ecoreClass="Template.ecore#//BlockStmt">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//BlockStmt/statements"/>
+    </genClasses>
+    <genClasses ecoreClass="Template.ecore#//StructuralStmt"/>
+    <genClasses ecoreClass="Template.ecore#//ExpressionStmt">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//ExpressionStmt/body"/>
+    </genClasses>
+    <genClasses ecoreClass="Template.ecore#//ForStmt">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//ForStmt/param"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//ForStmt/source"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//ForStmt/body"/>
+    </genClasses>
+    <genClasses ecoreClass="Template.ecore#//IfStmt">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//IfStmt/ifbodies"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//IfStmt/elsebody"/>
+    </genClasses>
+    <genClasses ecoreClass="Template.ecore#//IfStmtBody">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//IfStmtBody/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//IfStmtBody/body"/>
+    </genClasses>
+    <genClasses ecoreClass="Template.ecore#//TextStmt">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Template.ecore#//TextStmt/text"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
