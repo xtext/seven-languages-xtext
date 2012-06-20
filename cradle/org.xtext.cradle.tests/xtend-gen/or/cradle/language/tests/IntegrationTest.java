@@ -3,9 +3,6 @@ package or.cradle.language.tests;
 import com.google.common.base.Objects;
 import com.google.inject.Inject;
 import java.util.List;
-import org.cradle.language.CradleInjectorProvider;
-import org.cradle.language.cradle.CradleFile;
-import org.cradle.language.cradle.Declaration;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -21,6 +18,9 @@ import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.xtext.cradle.CradleInjectorProvider;
+import org.xtext.cradle.cradle.CradleFile;
+import org.xtext.cradle.cradle.Declaration;
 
 @RunWith(value = XtextRunner.class)
 @InjectWith(value = CradleInjectorProvider.class)
