@@ -5,30 +5,19 @@ generate cradle "http://www.cradle.org/language/Cradle"
 CradleFile:
 	imports+=ImportDeclaration*
 	declarations+=Declaration*;
-	
-ImportDeclaration :
-	'import' importedNamespace=QualifiedNameWithWildCard
-;
+
+ImportDeclaration:
+	'import' importedNamespace=QualifiedNameWithWildCard;
 
 QualifiedNameWithWildCard:
-	ID ('.' ID)* '.*'?
-;
+	ID ('.' ID)* '.*'?;
 
 Declaration:
-	Task | Parameter
-;
+	Task | Parameter;
 
 Parameter:
-	'param' (type=JvmTypeReference)? name=ValidID ('=' init=XExpression )?
-;
-	
+	'param' type=JvmTypeReference? name=ValidID ('=' init=XExpression)?;
+
 Task:
-	'task' name=ValidID ( ('depends' 'on' | ':') dependsOn+=TaskReference (',' dependsOn+=TaskReference)*)?
-		action=XBlockExpression
-;
-
-TaskReference:
-	reference=[Task]
-	| softReference=STRING
-;
-
+	'task' name=ValidID ('dependsOn' dependsOn+=[Task|ID] (',' dependsOn+=[Task|ID])*)?
+	action=XBlockExpression;

@@ -1,25 +1,44 @@
 package org.xtext.cradle
 
-import java.util.LinkedHashSet
-import java.util.List
+import java.util.Collection
+import java.util.Set
 import org.xtext.cradle.cradle.Task
 
 import static org.xtext.cradle.TaskExtensions.*
 
 class TaskExtensions {
 	
-	def static List<? extends Task> findDependentTasks(Task it) {
-		val set = <Task>newLinkedHashSet
-		internalFindDependenTasks(it, set)
-		return set.toList.reverseView
+	def static Collection<Task> findDependentTasks(Task it) {
+		findDependentTasks(it, null)
 	}
 	
-	def private static void internalFindDependenTasks(Task task, LinkedHashSet<Task> set) {
-		if (set.contains(task))
-			return;
-		for (t : task.dependsOn.map[reference]) {
-			set += t
-			internalFindDependenTasks(t, set)
+	def static Collection<Task> findDependentTasks(Task it, (Set<Task>) => void cycleHandler) {
+		
+		// 1. collect all tasks that we depend on
+		val tasks = <Task>newLinkedHashSet
+		internalFindDependenTasks(it, tasks)
+		
+		// 2. sort them so that dependents come after dependees  
+		val result = <Task>newLinkedHashSet
+		var changed = true
+		while(changed) {
+			changed = false
+			for(t:tasks.toList) 
+				if(result.containsAll(t.dependsOn)) {
+					changed = true
+					result.add(t)
+					tasks.remove(t)
+				}
 		}
+		if(!tasks.empty && cycleHandler != null)
+			cycleHandler.apply(tasks)
+		result
+	}
+	
+	def private static void internalFindDependenTasks(Task task, Set<Task> set) {
+		if (!set.add(task))
+			return;
+		for (t : task.dependsOn) 
+			internalFindDependenTasks(t, set)
 	}
 }
