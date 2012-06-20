@@ -107,8 +107,46 @@ section2:routing_additons[Additional Aspects]
 
 With the Grammar and the inferrer mentioned in the sections above the DSL is funtional and does excatly
 what we want but there are several things we should customize to have a nice tool-support.
-First of all there are several things we do not want to have in the contentassist. The outline is really
-ugly when the elements do not have a name and there is a need for validation in the URL-pattern defintion.
-So lets concentrate on the things in the contentassist.
+ul[
+	item[First of all there are several things we do not want to have in the contentassist] 
+	item[The outline is really ugly when the elements do not have a name]
+	item[There is a need for validation in the URL-pattern defintion]
+]
+So lets concentrate on the things in the contentassist. The inferred methods and fields have syntetic names
+and from the context of a condition or an action call we do not want to see the inferred things at all.
+The other thing is in case of a Guice-Key we introduce a parameter with the name 'it'. This means that
+all features of the type behind it are visible without writing it in front of the call. Good thing but
+we do not want it as itself in the contentassist.
+So for that reason we have to customize the code and tweak the inferrer. All inferred fields and methods
+are prefixed with an underscore so that we can filter out proposals with this prefix in org.xtext.httprouting.ui.contentassist.RouteProposalProvider.
+code[
+	@Override
+	protected Predicate<IEObjectDescription> getFeatureDescriptionPredicate(ContentAssistContext contentAssistContext) {
+		if (contentAssistContext.getPrefix().startsWith("_"))
+			return super.getFeatureDescriptionPredicate(contentAssistContext);
+		final Predicate<IEObjectDescription> delegate = super.getFeatureDescriptionPredicate(contentAssistContext);
+		return new Predicate<IEObjectDescription>() {
+			public boolean apply(IEObjectDescription input) {
+				return !input.getName().getFirstSegment().startsWith("_") && delegate.apply(input);
+			}
+		};
+	}]
+
+To filter out 'it':
+code[
+	public void completeRouteFeatureCall_Feature(EObject model,
+			Assignment assignment, ContentAssistContext context,
+			ICompletionProposalAcceptor acceptor) {
+		
+		Function<IEObjectDescription, ICompletionProposal> proposalFactory = getProposalFactory(getFeatureCallRuleName(), context);
+		IScope scope = new FilteringScope(getScopeProvider().createSimpleFeatureCallScope(model, XbasePackage.Literals.XABSTRACT_FEATURE_CALL__FEATURE, context.getResource(), false, -1), new Predicate<IEObjectDescription>() {
+			public boolean apply(IEObjectDescription input) {
+				return !input.getQualifiedName().equals(XbaseScopeProvider.IT);
+			}
+		});
+		getCrossReferenceProposalCreator().lookupCrossReference(scope, model, XbasePackage.Literals.XABSTRACT_FEATURE_CALL__FEATURE, acceptor, getFeatureDescriptionPredicate(context), proposalFactory);
+	}]
+	
+
 
 section:routing_beyond[Beyond This Example]
