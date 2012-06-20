@@ -185,7 +185,10 @@ also pass an execution context storing all temporary state such as local variabl
 
 The first thing we have to cope with is the strange mixture of existing Java methods (from the super class
 codeRef[org.xtext.tortoiseshell.runtime.Tortoise]) and inferred ones. While the former are evaluated
-via Java reflection, we need special treatment for the latter. This is accomplished by overriding the method 
+via Java reflection, we need special treatment for the latter. The idea is to bind an instance of 
+codeRef[org.xtext.tortoiseshell.runtime.Tortoise] to this and intercept calls to the inferred methods to 
+execute them directly. This is accomplished by overriding the method 
+
 code[invokeOperation]:
 
 code[Xtend][

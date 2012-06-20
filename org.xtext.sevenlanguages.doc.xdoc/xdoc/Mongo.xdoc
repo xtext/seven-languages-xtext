@@ -493,8 +493,8 @@ codeRef[org.xtext.mongobeans.ui.labeling.MongoBeansLabelProvider][label provider
 
 section:mongo_beyond[Beyond This Example]
 
-Of course there could be further concepts in the DSL, e.g. transient properties or indices. Furthermore,
-the codeRef[org.xtext.mongobeans.example.MusicDBXtendTest][example] shows how to use Xtend to build a very 
-compact API to create trees of e[MongoBean] instances. 
+Of course there could be further concepts in the DSL, e.g. transient properties, indices or refeerences. 
+Furthermore, the codeRef[org.xtext.mongobeans.example.MusicDBXtendTest][example] shows how to use Xtend to 
+build a very compact API to create trees of e[MongoBean] instances. 
 codeRef[org.xtext.mongobeans.MongoExtensions][Extension methods] can also be used to wrap other
 classes of the mongoDB driver.   
