@@ -99,6 +99,7 @@ tr[td[Xtext extensions]td[4 classes]]
 tr[td[Execution]td[interpreter]]
 tr[td[Runtime library]td[huge, a lot of fun!]]
 tr[td[Hardest part]td[Teaching GEF to center a figure]]
+tr[td[Animals harmed]td[0 (except virtual turtles)]]
 ]
 
 section:tortoise_running[Running the Example]
