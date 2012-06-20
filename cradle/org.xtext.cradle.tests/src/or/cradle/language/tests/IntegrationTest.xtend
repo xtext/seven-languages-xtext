@@ -1,18 +1,17 @@
 package or.cradle.language.tests
 
-import org.eclipse.xtext.junit4.InjectWith
-import org.cradle.language.CradleInjectorProvider
-import org.junit.runner.RunWith
-import org.eclipse.xtext.junit4.XtextRunner
-import org.junit.Test
 import com.google.inject.Inject
+import java.util.List
+import org.eclipse.xtext.junit4.InjectWith
+import org.eclipse.xtext.junit4.XtextRunner
 import org.eclipse.xtext.xbase.compiler.CompilationTestHelper
-import org.cradle.language.cradle.CradleFile
-import org.cradle.language.cradle.Task
+import org.junit.Test
+import org.junit.runner.RunWith
+import org.xtext.cradle.CradleInjectorProvider
+import org.xtext.cradle.cradle.CradleFile
+import org.xtext.cradle.cradle.Declaration
 
 import static org.junit.Assert.*
-import java.util.List
-import org.cradle.language.cradle.Declaration
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(CradleInjectorProvider))

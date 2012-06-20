@@ -1,10 +1,10 @@
-package org.cradle.language
+package org.xtext.cradle
 
 import java.util.LinkedHashSet
 import java.util.List
-import org.cradle.language.cradle.Task
+import org.xtext.cradle.cradle.Task
 
-import static org.cradle.language.TaskExtensions.*
+import static org.xtext.cradle.TaskExtensions.*
 
 class TaskExtensions {
 	

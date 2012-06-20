@@ -1,10 +1,11 @@
-package org.cradle.language.validation;
+package org.xtext.cradle.validation;
 
 import java.util.List;
 
-import org.cradle.language.TaskExtensions;
-import org.cradle.language.cradle.Task;
-import org.cradle.language.cradle.TaskReference;
+import org.xtext.cradle.TaskExtensions;
+import org.xtext.cradle.cradle.Task;
+import org.xtext.cradle.cradle.TaskReference;
+import org.xtext.cradle.validation.AbstractCradleJavaValidator;
 import org.eclipse.xtext.validation.Check;
  
 

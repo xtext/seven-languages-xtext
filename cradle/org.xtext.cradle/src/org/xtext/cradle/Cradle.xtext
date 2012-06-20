@@ -1,4 +1,4 @@
-grammar org.cradle.language.Cradle with org.eclipse.xtext.xbase.Xbase
+grammar org.xtext.cradle.Cradle with org.eclipse.xtext.xbase.Xbase
 
 generate cradle "http://www.cradle.org/language/Cradle"
 

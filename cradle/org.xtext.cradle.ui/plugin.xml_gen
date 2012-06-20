@@ -6,43 +6,43 @@
     <extension
             point="org.eclipse.ui.editors">
         <editor
-            class="org.cradle.language.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+            class="org.xtext.cradle.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
             contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
             default="true"
             extensions="cradle"
-            id="org.cradle.language.Cradle"
-            matchingStrategy="org.cradle.language.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.xbase.ui.editor.JavaEditorInputMatcher"
+            id="org.xtext.cradle.Cradle"
+            matchingStrategy="org.xtext.cradle.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.xbase.ui.editor.JavaEditorInputMatcher"
             name="Cradle Editor">
         </editor>
     </extension>
     <extension
         point="org.eclipse.ui.handlers">
         <handler
-            class="org.cradle.language.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
+            class="org.xtext.cradle.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
             commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
             <activeWhen>
                 <reference
-                    definitionId="org.cradle.language.Cradle.Editor.opened">
+                    definitionId="org.xtext.cradle.Cradle.Editor.opened">
                 </reference>
             </activeWhen>
         </handler>
         <handler
-            class="org.cradle.language.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
-            commandId="org.cradle.language.Cradle.validate">
+            class="org.xtext.cradle.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
+            commandId="org.xtext.cradle.Cradle.validate">
          <activeWhen>
             <reference
-                    definitionId="org.cradle.language.Cradle.Editor.opened">
+                    definitionId="org.xtext.cradle.Cradle.Editor.opened">
             </reference>
          </activeWhen>
       </handler>
     </extension>
     <extension point="org.eclipse.core.expressions.definitions">
-        <definition id="org.cradle.language.Cradle.Editor.opened">
+        <definition id="org.xtext.cradle.Cradle.Editor.opened">
             <and>
                 <reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
                 <with variable="activeEditor">
                     <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
-                        value="org.cradle.language.Cradle" 
+                        value="org.xtext.cradle.Cradle" 
                         forcePluginActivation="true"/>
                 </with>        
             </and>
@@ -51,33 +51,33 @@
     <extension
             point="org.eclipse.ui.preferencePages">
         <page
-            class="org.cradle.language.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-            id="org.cradle.language.Cradle"
+            class="org.xtext.cradle.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="org.xtext.cradle.Cradle"
             name="Cradle">
-            <keywordReference id="org.cradle.language.ui.keyword_Cradle"/>
+            <keywordReference id="org.xtext.cradle.ui.keyword_Cradle"/>
         </page>
         <page
-            category="org.cradle.language.Cradle"
-            class="org.cradle.language.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
-            id="org.cradle.language.Cradle.coloring"
+            category="org.xtext.cradle.Cradle"
+            class="org.xtext.cradle.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
+            id="org.xtext.cradle.Cradle.coloring"
             name="Syntax Coloring">
-            <keywordReference id="org.cradle.language.ui.keyword_Cradle"/>
+            <keywordReference id="org.xtext.cradle.ui.keyword_Cradle"/>
         </page>
         <page
-            category="org.cradle.language.Cradle"
-            class="org.cradle.language.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
-            id="org.cradle.language.Cradle.templates"
+            category="org.xtext.cradle.Cradle"
+            class="org.xtext.cradle.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
+            id="org.xtext.cradle.Cradle.templates"
             name="Templates">
-            <keywordReference id="org.cradle.language.ui.keyword_Cradle"/>
+            <keywordReference id="org.xtext.cradle.ui.keyword_Cradle"/>
         </page>
     </extension>
     <extension
             point="org.eclipse.ui.propertyPages">
         <page
-            class="org.cradle.language.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-            id="org.cradle.language.Cradle"
+            class="org.xtext.cradle.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="org.xtext.cradle.Cradle"
             name="Cradle">
-            <keywordReference id="org.cradle.language.ui.keyword_Cradle"/>
+            <keywordReference id="org.xtext.cradle.ui.keyword_Cradle"/>
             <enabledWhen>
 	            <adapt type="org.eclipse.core.resources.IProject"/>
 			</enabledWhen>
@@ -87,14 +87,14 @@
     <extension
         point="org.eclipse.ui.keywords">
         <keyword
-            id="org.cradle.language.ui.keyword_Cradle"
+            id="org.xtext.cradle.ui.keyword_Cradle"
             label="Cradle"/>
     </extension>
     <extension
          point="org.eclipse.ui.commands">
       <command
             description="Trigger expensive validation"
-            id="org.cradle.language.Cradle.validate"
+            id="org.xtext.cradle.Cradle.validate"
             name="Validate">
       </command>
     </extension>
@@ -102,12 +102,12 @@
         <menuContribution
             locationURI="popup:#TextEditorContext?after=group.edit">
              <command
-                 commandId="org.cradle.language.Cradle.validate"
+                 commandId="org.xtext.cradle.Cradle.validate"
                  style="push"
                  tooltip="Trigger expensive validation">
             <visibleWhen checkEnabled="false">
                 <reference
-                    definitionId="org.cradle.language.Cradle.Editor.opened">
+                    definitionId="org.xtext.cradle.Cradle.Editor.opened">
                 </reference>
             </visibleWhen>
          </command>  
@@ -117,7 +117,7 @@
 		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
 			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
 				<visibleWhen checkEnabled="false">
-                	<reference definitionId="org.cradle.language.Cradle.Editor.opened">
+                	<reference definitionId="org.xtext.cradle.Cradle.Editor.opened">
                 	</reference>
             	</visibleWhen>
 			</command>
@@ -125,11 +125,11 @@
 	</extension>
 	<extension point="org.eclipse.ui.handlers">
 	    <handler
-            class="org.cradle.language.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
+            class="org.xtext.cradle.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
             commandId="org.eclipse.xtext.ui.editor.FindReferences">
             <activeWhen>
                 <reference
-                    definitionId="org.cradle.language.Cradle.Editor.opened">
+                    definitionId="org.xtext.cradle.Cradle.Editor.opened">
                 </reference>
             </activeWhen>
         </handler>
@@ -140,19 +140,19 @@
 	<extension
 		point="org.eclipse.emf.ecore.extension_parser">
 		<parser
-			class="org.cradle.language.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			class="org.xtext.cradle.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
 			type="cradle">
 		</parser>
 	</extension>
 	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
         <resourceServiceProvider
-            class="org.cradle.language.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+            class="org.xtext.cradle.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
             uriExtension="cradle">
         </resourceServiceProvider>
     </extension>
 
 
-    <!-- marker definitions for org.cradle.language.Cradle -->
+    <!-- marker definitions for org.xtext.cradle.Cradle -->
     <extension
             id="cradle.check.fast"
             name="Cradle Problem"
@@ -178,27 +178,27 @@
    <extension
          point="org.eclipse.xtext.builder.participant">
       <participant
-            class="org.cradle.language.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant">
+            class="org.xtext.cradle.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant">
       </participant>
    </extension>
    <extension
             point="org.eclipse.ui.preferencePages">
         <page
-            category="org.cradle.language.Cradle"
-            class="org.cradle.language.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
-            id="org.cradle.language.Cradle.compiler.preferencePage"
+            category="org.xtext.cradle.Cradle"
+            class="org.xtext.cradle.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="org.xtext.cradle.Cradle.compiler.preferencePage"
             name="Compiler">
-            <keywordReference id="org.cradle.language.ui.keyword_Cradle"/>
+            <keywordReference id="org.xtext.cradle.ui.keyword_Cradle"/>
         </page>
     </extension>
     <extension
             point="org.eclipse.ui.propertyPages">
         <page
-            category="org.cradle.language.Cradle"
-            class="org.cradle.language.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
-            id="org.cradle.language.Cradle.compiler.propertyPage"
+            category="org.xtext.cradle.Cradle"
+            class="org.xtext.cradle.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="org.xtext.cradle.Cradle.compiler.propertyPage"
             name="Compiler">
-            <keywordReference id="org.cradle.language.ui.keyword_Cradle"/>
+            <keywordReference id="org.xtext.cradle.ui.keyword_Cradle"/>
             <enabledWhen>
 	            <adapt type="org.eclipse.core.resources.IProject"/>
 			</enabledWhen>
@@ -210,11 +210,11 @@
 	<extension
 		point="org.eclipse.ui.handlers">
 		<handler 
-			class="org.cradle.language.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
+			class="org.xtext.cradle.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
 			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
 			<activeWhen>
 				<reference
-					definitionId="org.cradle.language.Cradle.Editor.opened">
+					definitionId="org.xtext.cradle.Cradle.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -234,33 +234,33 @@
 				style="push"
 				tooltip="Open Quick Outline">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="org.cradle.language.Cradle.Editor.opened"/>
+					<reference definitionId="org.xtext.cradle.Cradle.Editor.opened"/>
 				</visibleWhen>
 			</command>
 		</menuContribution>
 	</extension>
-    <!-- quickfix marker resolution generator for org.cradle.language.Cradle -->
+    <!-- quickfix marker resolution generator for org.xtext.cradle.Cradle -->
     <extension
             point="org.eclipse.ui.ide.markerResolution">
         <markerResolutionGenerator
-            class="org.cradle.language.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="org.cradle.language.ui.cradle.check.fast">
+            class="org.xtext.cradle.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="org.xtext.cradle.ui.cradle.check.fast">
             <attribute
                 name="FIXABLE_KEY"
                 value="true">
             </attribute>
         </markerResolutionGenerator>
         <markerResolutionGenerator
-            class="org.cradle.language.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="org.cradle.language.ui.cradle.check.normal">
+            class="org.xtext.cradle.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="org.xtext.cradle.ui.cradle.check.normal">
             <attribute
                 name="FIXABLE_KEY"
                 value="true">
             </attribute>
         </markerResolutionGenerator>
         <markerResolutionGenerator
-            class="org.cradle.language.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="org.cradle.language.ui.cradle.check.expensive">
+            class="org.xtext.cradle.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="org.xtext.cradle.ui.cradle.check.expensive">
             <attribute
                 name="FIXABLE_KEY"
                 value="true">
@@ -270,11 +270,11 @@
    	<!-- Rename Refactoring -->
 	<extension point="org.eclipse.ui.handlers">
 		<handler 
-			class="org.cradle.language.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.IRenameElementHandler"
+			class="org.xtext.cradle.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.IRenameElementHandler"
 			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
 			<activeWhen>
 				<reference
-					definitionId="org.cradle.language.Cradle.Editor.opened">
+					definitionId="org.xtext.cradle.Cradle.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -286,7 +286,7 @@
                style="push">
             <visibleWhen checkEnabled="false">
                <reference
-                     definitionId="org.cradle.language.Cradle.Editor.opened">
+                     definitionId="org.xtext.cradle.Cradle.Editor.opened">
                </reference>
             </visibleWhen>
          </command>
@@ -294,11 +294,11 @@
    </extension>
    <extension point="org.eclipse.ui.preferencePages">
 	    <page
-	        category="org.cradle.language.Cradle"
-	        class="org.cradle.language.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
-	        id="org.cradle.language.Cradle.refactoring"
+	        category="org.xtext.cradle.Cradle"
+	        class="org.xtext.cradle.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
+	        id="org.xtext.cradle.Cradle.refactoring"
 	        name="Refactoring">
-	        <keywordReference id="org.cradle.language.ui.keyword_Cradle"/>
+	        <keywordReference id="org.xtext.cradle.ui.keyword_Cradle"/>
 	    </page>
 	</extension>
 
@@ -306,20 +306,20 @@
 	<extension
 		point="org.eclipse.ui.handlers">
 		<handler 
-			class="org.cradle.language.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.xbase.ui.hierarchy.OpenTypeHierarchyHandler"
+			class="org.xtext.cradle.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.xbase.ui.hierarchy.OpenTypeHierarchyHandler"
 			commandId="org.eclipse.xtext.xbase.ui.hierarchy.OpenTypeHierarchy">
 			<activeWhen>
 				<reference
-					definitionId="org.cradle.language.Cradle.Editor.opened">
+					definitionId="org.xtext.cradle.Cradle.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
 		<handler 
-			class="org.cradle.language.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.xbase.ui.hierarchy.QuickTypeHierarchyHandler"
+			class="org.xtext.cradle.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.xbase.ui.hierarchy.QuickTypeHierarchyHandler"
 			commandId="org.eclipse.xtext.xbase.ui.hierarchy.QuickTypeHierarchy">
 			<activeWhen>
 				<reference
-					definitionId="org.cradle.language.Cradle.Editor.opened">
+					definitionId="org.xtext.cradle.Cradle.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -331,7 +331,7 @@
 				style="push"
 				tooltip="Open Type Hierarchy">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="org.cradle.language.Cradle.Editor.opened"/>
+					<reference definitionId="org.xtext.cradle.Cradle.Editor.opened"/>
 				</visibleWhen>
 			</command>
 		</menuContribution>
@@ -341,7 +341,7 @@
 				style="push"
 				tooltip="Quick Type Hierarchy">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="org.cradle.language.Cradle.Editor.opened"/>
+					<reference definitionId="org.xtext.cradle.Cradle.Editor.opened"/>
 				</visibleWhen>
 			</command>
 		</menuContribution>
@@ -350,11 +350,11 @@
 	<extension
 		point="org.eclipse.ui.handlers">
 		<handler 
-			class="org.cradle.language.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.xbase.ui.hierarchy.OpenCallHierachyHandler"
+			class="org.xtext.cradle.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.xbase.ui.hierarchy.OpenCallHierachyHandler"
 			commandId="org.eclipse.xtext.xbase.ui.hierarchy.OpenCallHierarchy">
 			<activeWhen>
 				<reference
-					definitionId="org.cradle.language.Cradle.Editor.opened">
+					definitionId="org.xtext.cradle.Cradle.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -367,57 +367,57 @@
 				style="push"
 				tooltip="Open Call Hierarchy">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="org.cradle.language.Cradle.Editor.opened"/>
+					<reference definitionId="org.xtext.cradle.Cradle.Editor.opened"/>
 				</visibleWhen>
 			</command>
 		</menuContribution>
 	</extension>
 	<extension
          point="org.eclipse.core.runtime.adapters">
-      <factory class="org.cradle.language.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.builder.smap.StratumBreakpointAdapterFactory"
+      <factory class="org.xtext.cradle.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.builder.smap.StratumBreakpointAdapterFactory"
          adaptableType="org.eclipse.xtext.ui.editor.XtextEditor">
          <adapter type="org.eclipse.debug.ui.actions.IToggleBreakpointsTarget"/>
       </factory> 
    </extension>
    <extension point="org.eclipse.ui.editorActions">
-      <editorContribution targetID="org.cradle.language.Cradle" 
-                          id="org.cradle.language.Cradle.ide.rulerActions">
+      <editorContribution targetID="org.xtext.cradle.Cradle" 
+                          id="org.xtext.cradle.Cradle.ide.rulerActions">
 	     <action
 	             label="Not Used"
-	             class="org.cradle.language.ui.CradleExecutableExtensionFactory:org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate"
+	             class="org.xtext.cradle.ui.CradleExecutableExtensionFactory:org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate"
 	             style="push"
 	             actionID="RulerDoubleClick"
-	             id="org.cradle.language.Cradle.doubleClickBreakpointAction"/>
+	             id="org.xtext.cradle.Cradle.doubleClickBreakpointAction"/>
 	  </editorContribution>
    </extension>
    <extension point="org.eclipse.ui.popupMenus">
       <viewerContribution
          targetID="example.rulerContextMenuId"
-         id="org.cradle.language.Cradle.ide.RulerPopupActions">
+         id="org.xtext.cradle.Cradle.ide.RulerPopupActions">
          <action
             label="Toggle Breakpoint"
-            class="org.cradle.language.ui.CradleExecutableExtensionFactory:org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate"
+            class="org.xtext.cradle.ui.CradleExecutableExtensionFactory:org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate"
             menubarPath="additions"
-            id="org.cradle.language.Cradle.ide.rulerContextMenu.toggleBreakpointAction">
+            id="org.xtext.cradle.Cradle.ide.rulerContextMenu.toggleBreakpointAction">
          </action>
       </viewerContribution>
    </extension>
 
   <extension point="org.eclipse.compare.contentViewers">
-    <viewer id="org.cradle.language.Cradle.compare.contentViewers"
-            class="org.cradle.language.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+    <viewer id="org.xtext.cradle.Cradle.compare.contentViewers"
+            class="org.xtext.cradle.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
             extensions="cradle">
     </viewer>
   </extension>
   <extension point="org.eclipse.compare.contentMergeViewers">
-    <viewer id="org.cradle.language.Cradle.compare.contentMergeViewers"
-            class="org.cradle.language.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+    <viewer id="org.xtext.cradle.Cradle.compare.contentMergeViewers"
+            class="org.xtext.cradle.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
             extensions="cradle" label="Cradle Compare">
      </viewer>
   </extension>
   <extension point="org.eclipse.ui.editors.documentProviders">
-    <provider id="org.cradle.language.Cradle.editors.documentProviders"
-            class="org.cradle.language.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+    <provider id="org.xtext.cradle.Cradle.editors.documentProviders"
+            class="org.xtext.cradle.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
             extensions="cradle">
     </provider>
   </extension>

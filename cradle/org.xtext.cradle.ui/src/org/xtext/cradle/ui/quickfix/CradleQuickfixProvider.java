@@ -1,5 +1,5 @@
 
-package org.cradle.language.ui.quickfix;
+package org.xtext.cradle.ui.quickfix;
 
 import org.eclipse.xtext.ui.editor.quickfix.DefaultQuickfixProvider;
 

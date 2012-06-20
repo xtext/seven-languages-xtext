@@ -4,7 +4,7 @@ import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.generator.*
 import org.eclipse.xtext.ui.generator.*
 
-var grammarURI = "classpath:/org/cradle/language/Cradle.xtext"
+var grammarURI = "classpath:/org/xtext/cradle/Cradle.xtext"
 var file.extensions = "cradle"
 var projectName = "org.xtext.cradle"
 var runtimeProject = "../${projectName}"
@@ -24,6 +24,10 @@ Workflow {
 
     component = DirectoryCleaner {
         directory = "${runtimeProject}.ui/src-gen"
+    }
+    
+    component = DirectoryCleaner {
+        directory = "${runtimeProject}.tests/src-gen"
     }
 
     component = Generator {

@@ -20,14 +20,15 @@ Require-Bundle: org.eclipse.xtext;bundle-version="2.1.0";visibility:=reexport,
 Import-Package: org.apache.log4j,
  org.apache.commons.logging
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: org.cradle.language,
- org.cradle.language.cradle,
- org.cradle.language.cradle.impl,
- org.cradle.language.cradle.util,
- org.cradle.language.formatting,
- org.cradle.language.jvmmodel,
- org.cradle.language.parser.antlr,
- org.cradle.language.parser.antlr.internal,
- org.cradle.language.serializer,
- org.cradle.language.services,
- org.cradle.language.validation
+Export-Package: org.xtext.cradle,
+ org.xtext.cradle.formatting,
+ org.xtext.cradle.jvmmodel,
+ org.xtext.cradle.validation,
+ org.xtext.cradle.services,
+ org.xtext.cradle.cradle,
+ org.xtext.cradle.cradle.impl,
+ org.xtext.cradle.cradle.util,
+ org.xtext.cradle.serializer,
+ org.xtext.cradle.parser.antlr,
+ org.xtext.cradle.parser.antlr.internal
+

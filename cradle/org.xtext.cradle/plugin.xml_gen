@@ -6,8 +6,8 @@
   <extension point="org.eclipse.emf.ecore.generated_package">
     <package 
        uri = "http://www.cradle.org/language/Cradle" 
-       class = "org.cradle.language.cradle.CradlePackage"
-       genModel = "org/cradle/language/Cradle.genmodel" /> 
+       class = "org.xtext.cradle.cradle.CradlePackage"
+       genModel = "org/xtext/cradle/Cradle.genmodel" /> 
 	
   </extension>
 

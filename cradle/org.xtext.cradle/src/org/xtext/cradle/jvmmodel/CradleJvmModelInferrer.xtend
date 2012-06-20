@@ -1,9 +1,9 @@
-package org.cradle.language.jvmmodel
+package org.xtext.cradle.jvmmodel
 
 import com.google.inject.Inject
-import org.cradle.language.cradle.CradleFile
-import org.cradle.language.cradle.Parameter
-import org.cradle.language.cradle.Task
+import org.xtext.cradle.cradle.CradleFile
+import org.xtext.cradle.cradle.Parameter
+import org.xtext.cradle.cradle.Task
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.xtext.common.types.JvmVisibility
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
@@ -11,7 +11,7 @@ import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
 import org.eclipse.xtext.xbase.typing.ITypeProvider
 
-import static extension org.cradle.language.TaskExtensions.*
+import static extension org.xtext.cradle.TaskExtensions.*
 import org.eclipse.xtext.xbase.lib.Procedures
 
 class CradleJvmModelInferrer extends AbstractModelInferrer {
