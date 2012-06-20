@@ -75,7 +75,7 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
             String _documentation = MongoBeansJvmModelInferrer.this._jvmTypesBuilder.getDocumentation(bean);
             MongoBeansJvmModelInferrer.this._jvmTypesBuilder.setDocumentation(it, _documentation);
             EList<JvmTypeReference> _superTypes = it.getSuperTypes();
-            JvmTypeReference _newTypeRef = MongoBeansJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(bean, "org.xtext.mongobeans.IMongoBean");
+            JvmTypeReference _newTypeRef = MongoBeansJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(bean, "org.xtext.mongobeans.runtime.IMongoBean");
             MongoBeansJvmModelInferrer.this._jvmTypesBuilder.<JvmTypeReference>operator_add(_superTypes, _newTypeRef);
             MongoBeansJvmModelInferrer.this.addConstructors(it, bean);
             MongoBeansJvmModelInferrer.this.addDbObjectProperty(it, bean);
@@ -228,7 +228,7 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
         String _plus_1 = ("_" + _name_1);
         JvmTypeReference _jvmType_2 = this.getJvmType(property);
         JvmTypeReference _newTypeRef_1 = this._jvmTypesBuilder.newTypeRef(property, 
-          "org.xtext.mongobeans.MongoBeanList", _jvmType_2);
+          "org.xtext.mongobeans.runtime.MongoBeanList", _jvmType_2);
         JvmField _field = this._jvmTypesBuilder.toField(property, _plus_1, _newTypeRef_1);
         this._jvmTypesBuilder.<JvmField>operator_add(_members_1, _field);
         EList<JvmMember> _members_2 = inferredType.getMembers();
@@ -256,7 +256,7 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
                     _builder.append(" = new ");
                     it.append(_builder);
                     JvmTypeReference _jvmType = MongoBeansJvmModelInferrer.this.getJvmType(property);
-                    MongoBeansJvmModelInferrer.this.appendTypeRef(it, property, "org.xtext.mongobeans.MongoBeanList", _jvmType);
+                    MongoBeansJvmModelInferrer.this.appendTypeRef(it, property, "org.xtext.mongobeans.runtime.MongoBeanList", _jvmType);
                     String _name_2 = property.getName();
                     String _plus = ("(_dbObject, \"" + _name_2);
                     String _plus_1 = (_plus + "\");");
@@ -298,7 +298,7 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
                   JvmTypeReference _jvmType = MongoBeansJvmModelInferrer.this.getJvmType(property);
                   boolean _isMongoBean = MongoBeansJvmModelInferrer.this._mongoTypes.isMongoBean(_jvmType);
                   if (_isMongoBean) {
-                    MongoBeansJvmModelInferrer.this.appendTypeRef(it, property, "org.xtext.mongobeans.WrappingUtil");
+                    MongoBeansJvmModelInferrer.this.appendTypeRef(it, property, "org.xtext.mongobeans.runtime.WrappingUtil");
                     it.append(".wrapAndCast((");
                     MongoBeansJvmModelInferrer.this.appendTypeRef(it, property, "com.mongodb.DBObject");
                     StringConcatenation _builder = new StringConcatenation();
@@ -351,7 +351,7 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
                   JvmTypeReference _jvmType = MongoBeansJvmModelInferrer.this.getJvmType(property);
                   boolean _isMongoBean = MongoBeansJvmModelInferrer.this._mongoTypes.isMongoBean(_jvmType);
                   if (_isMongoBean) {
-                    MongoBeansJvmModelInferrer.this.appendTypeRef(it, property, "org.xtext.mongobeans.WrappingUtil");
+                    MongoBeansJvmModelInferrer.this.appendTypeRef(it, property, "org.xtext.mongobeans.runtime.WrappingUtil");
                     it.append(".unwrap(");
                     String _name_1 = property.getName();
                     it.append(_name_1);

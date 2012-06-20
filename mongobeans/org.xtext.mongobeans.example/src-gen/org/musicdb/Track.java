@@ -2,8 +2,8 @@ package org.musicdb;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
-import org.xtext.mongobeans.IMongoBean;
 import org.xtext.mongobeans.example.Duration;
+import org.xtext.mongobeans.runtime.IMongoBean;
 
 public class Track implements IMongoBean {
   /**

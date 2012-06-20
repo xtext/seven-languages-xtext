@@ -34,7 +34,7 @@ class MongoTypes {
 	}
 	
 	def isMongoBean(JvmTypeReference typeRef) {
-		typeRef.collectSuperTypeNames.contains('org.xtext.mongobeans.IMongoBean')
+		typeRef.collectSuperTypeNames.contains('org.xtext.mongobeans.runtime.IMongoBean')
 	}
 	
 }

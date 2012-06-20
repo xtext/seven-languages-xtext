@@ -14,8 +14,8 @@ import org.junit.Test;
 import org.musicdb.Album;
 import org.musicdb.Artist;
 import org.musicdb.Track;
-import org.xtext.mongobeans.MongoExtensions;
 import org.xtext.mongobeans.example.Duration;
+import org.xtext.mongobeans.runtime.MongoExtensions;
 
 @SuppressWarnings("all")
 public class MusicDBXtendTest {

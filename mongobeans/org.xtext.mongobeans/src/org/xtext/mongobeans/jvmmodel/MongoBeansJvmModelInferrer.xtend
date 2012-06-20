@@ -43,7 +43,7 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 	   		acceptor.accept(bean.toClass(bean.fullyQualifiedName))
 	   			.initializeLater([
 	   				documentation = bean.documentation
-	   				superTypes += newTypeRef(bean, 'org.xtext.mongobeans.IMongoBean')
+	   				superTypes += newTypeRef(bean, 'org.xtext.mongobeans.runtime.IMongoBean')
 	   				addConstructors(bean)
 	   				addDbObjectProperty(bean)
 	   				for(feature: bean.features) {
@@ -101,7 +101,7 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 			]		
 		} else {
 			inferredType.members += property.toField('_' + property.name, newTypeRef(property,
-				 'org.xtext.mongobeans.MongoBeanList', property.jvmType))
+				 'org.xtext.mongobeans.runtime.MongoBeanList', property.jvmType))
 			inferredType.members += property.toMethod('get' + property.name.toFirstUpper,
 				newTypeRef(property, 'java.util.List', property.jvmType)
 			) [
@@ -110,7 +110,7 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 					append('''
 						if(_«property.name»==null)
 							_«property.name» = new ''')
-					appendTypeRef(property, 'org.xtext.mongobeans.MongoBeanList', property.jvmType) 
+					appendTypeRef(property, 'org.xtext.mongobeans.runtime.MongoBeanList', property.jvmType) 
 					append('(_dbObject, "' + property.name + '");').newLine
 					append('return _' + property.name + ';')
 				]
@@ -124,7 +124,7 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 			body = [
 				append('return ')
 				if(property.jvmType.mongoBean) {
-					appendTypeRef(property, 'org.xtext.mongobeans.WrappingUtil')
+					appendTypeRef(property, 'org.xtext.mongobeans.runtime.WrappingUtil')
 					append('.wrapAndCast((')
 					appendTypeRef(property, 'com.mongodb.DBObject')
 					append(''') _dbObject.get("«property.name»"));''')
@@ -141,7 +141,7 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 			body = [
 				append(''' _dbObject.put("«property.name»", ''')
 				if(property.jvmType.mongoBean) {
-					appendTypeRef(property, 'org.xtext.mongobeans.WrappingUtil')
+					appendTypeRef(property, 'org.xtext.mongobeans.runtime.WrappingUtil')
 					append(".unwrap(")
 					append(property.name)
 					append(')')

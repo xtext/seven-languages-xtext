@@ -1,9 +1,9 @@
-package org.xtext.mongobeans
+package org.xtext.mongobeans.runtime
 
 import com.mongodb.DBCollection
-import org.xtext.mongobeans.IMongoBean
+import org.xtext.mongobeans.runtime.IMongoBean
 
-import static extension org.xtext.mongobeans.WrappingUtil.*
+import static extension org.xtext.mongobeans.runtime.WrappingUtil.*
 
 class MongoExtensions {
 	

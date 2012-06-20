@@ -57,7 +57,7 @@ public class MongoTypes {
   
   public boolean isMongoBean(final JvmTypeReference typeRef) {
     Set<String> _collectSuperTypeNames = this._superTypeCollector.collectSuperTypeNames(typeRef);
-    boolean _contains = _collectSuperTypeNames.contains("org.xtext.mongobeans.IMongoBean");
+    boolean _contains = _collectSuperTypeNames.contains("org.xtext.mongobeans.runtime.IMongoBean");
     return _contains;
   }
 }

@@ -1,10 +1,10 @@
-package org.xtext.mongobeans;
+package org.xtext.mongobeans.runtime;
 
 import com.mongodb.DBObject;
 import java.lang.reflect.Constructor;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.Exceptions;
-import org.xtext.mongobeans.IMongoBean;
+import org.xtext.mongobeans.runtime.IMongoBean;
 
 @SuppressWarnings("all")
 public class WrappingUtil {

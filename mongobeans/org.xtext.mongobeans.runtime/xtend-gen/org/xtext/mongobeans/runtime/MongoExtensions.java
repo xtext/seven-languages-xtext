@@ -1,10 +1,10 @@
-package org.xtext.mongobeans;
+package org.xtext.mongobeans.runtime;
 
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
 import com.mongodb.WriteResult;
-import org.xtext.mongobeans.IMongoBean;
-import org.xtext.mongobeans.WrappingUtil;
+import org.xtext.mongobeans.runtime.IMongoBean;
+import org.xtext.mongobeans.runtime.WrappingUtil;
 
 @SuppressWarnings("all")
 public class MongoExtensions {
