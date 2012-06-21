@@ -147,7 +147,13 @@ public class TemplateJvmModelInferrer extends AbstractModelInferrer {
                               it.newLine();
                             }
                             StringConcatenation _builder = new StringConcatenation();
-                            _builder.append("this.\u00C7p.name\u00C8 = other.\u00C7p.name\u00C8;");
+                            _builder.append("this.");
+                            String _name = p.getName();
+                            _builder.append(_name, "");
+                            _builder.append(" = other.");
+                            String _name_1 = p.getName();
+                            _builder.append(_name_1, "");
+                            _builder.append(";");
                             it.append(_builder);
                           }
                         }
@@ -250,7 +256,13 @@ public class TemplateJvmModelInferrer extends AbstractModelInferrer {
                     final Procedure1<ITreeAppendable> _function = new Procedure1<ITreeAppendable>() {
                         public void apply(final ITreeAppendable it) {
                           StringConcatenation _builder = new StringConcatenation();
-                          _builder.append("this.\u00C7p.name\u00C8 = \u00C7p.name\u00C8;");
+                          _builder.append("this.");
+                          String _name = p_1.getName();
+                          _builder.append(_name, "");
+                          _builder.append(" = ");
+                          String _name_1 = p_1.getName();
+                          _builder.append(_name_1, "");
+                          _builder.append(";");
                           it.append(_builder);
                         }
                       };

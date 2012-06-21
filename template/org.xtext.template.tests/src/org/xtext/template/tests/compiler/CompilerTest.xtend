@@ -47,7 +47,7 @@ class CompilerTest {
 		val javaCode = generator.generateType(inferredType);
 		println(javaCode)
 		val clazz = javaCompiler.compileToClass(inferredType.qualifiedName, javaCode.toString)
-		val document = '''{ val inst = new ÇinferredType.qualifiedNameÈ() ÇIF !param.nullOrEmptyÈ => [ ÇparamÈ ]ÇENDIFÈ; inst }'''.toString
+		val document = '''{ val inst = new Â«inferredType.qualifiedNameÂ»() Â«IF !param.nullOrEmptyÂ» => [ Â«paramÂ» ]Â«ENDIFÂ»; inst }'''.toString
 		val template = newInstance(clazz, inferredType, document)
 		val generateMethod = clazz.getMethod("generate")
 		generateMethod.invoke(template).toString
@@ -57,7 +57,7 @@ class CompilerTest {
 		val inferredType = resource.contents.filter(typeof(JvmGenericType)).head
 		val javaCode = generator.generateType(inferredType);
 		val clazz = javaCompiler.compileToClass(inferredType.qualifiedName, javaCode.toString)
-		val document = '''[ÇinferredType.qualifiedNameÈ it|ÇIF !param.nullOrEmptyÈÇparamÈÇENDIFÈ; null] as (ÇinferredType.qualifiedNameÈ) => void'''.toString
+		val document = '''[Â«inferredType.qualifiedNameÂ» it|Â«IF !param.nullOrEmptyÂ»Â«paramÂ»Â«ENDIFÂ»; null] as (Â«inferredType.qualifiedNameÂ») => void'''.toString
 		val closure = newInstance(clazz, inferredType, document)
 		val template = clazz.newInstance()
 		val generateMethod = clazz.getMethod("generate", typeof(Procedures$Procedure1))

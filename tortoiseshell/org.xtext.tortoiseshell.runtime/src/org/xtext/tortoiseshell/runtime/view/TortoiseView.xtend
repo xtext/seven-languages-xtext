@@ -87,7 +87,7 @@ class TortoiseView extends ViewPart implements ITortoiseEvent$Listener {
 					} catch (Exception e) {
 						MessageDialog::openError(site.shell, "Error during Execution", '''
 						Error during execution:
-						  «e.message»
+						  Â«e.messageÂ»
 						See log for details''')
 						LOGGER.error("Error executing TortoiseScript", e)
 					}

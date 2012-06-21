@@ -29,6 +29,7 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
+import org.eclipse.xtext.xbase.lib.StringExtensions;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.xtext.template.TemplateInjectorProvider;
@@ -75,7 +76,20 @@ public class CompilerTest {
         String _string = javaCode.toString();
         final Class<? extends Object> clazz = this.javaCompiler.compileToClass(_qualifiedName, _string);
         StringConcatenation _builder = new StringConcatenation();
-        _builder.append("{ val inst = new \u00C7inferredType.qualifiedName\u00C8() \u00C7IF !param.nullOrEmpty\u00C8 => [ \u00C7param\u00C8 ]\u00C7ENDIF\u00C8; inst }");
+        _builder.append("{ val inst = new ");
+        String _qualifiedName_1 = inferredType.getQualifiedName();
+        _builder.append(_qualifiedName_1, "");
+        _builder.append("() ");
+        {
+          boolean _isNullOrEmpty = StringExtensions.isNullOrEmpty(this.param);
+          boolean _not = (!_isNullOrEmpty);
+          if (_not) {
+            _builder.append(" => [ ");
+            _builder.append(this.param, "");
+            _builder.append(" ]");
+          }
+        }
+        _builder.append("; inst }");
         final String document = _builder.toString();
         final Object template = this.newInstance(clazz, inferredType, document);
         final Method generateMethod = clazz.getMethod("generate");
@@ -103,7 +117,21 @@ public class CompilerTest {
         String _string = javaCode.toString();
         final Class<? extends Object> clazz = this.javaCompiler.compileToClass(_qualifiedName, _string);
         StringConcatenation _builder = new StringConcatenation();
-        _builder.append("[\u00C7inferredType.qualifiedName\u00C8 it|\u00C7IF !param.nullOrEmpty\u00C8\u00C7param\u00C8\u00C7ENDIF\u00C8; null] as (\u00C7inferredType.qualifiedName\u00C8) => void");
+        _builder.append("[");
+        String _qualifiedName_1 = inferredType.getQualifiedName();
+        _builder.append(_qualifiedName_1, "");
+        _builder.append(" it|");
+        {
+          boolean _isNullOrEmpty = StringExtensions.isNullOrEmpty(this.param);
+          boolean _not = (!_isNullOrEmpty);
+          if (_not) {
+            _builder.append(this.param, "");
+          }
+        }
+        _builder.append("; null] as (");
+        String _qualifiedName_2 = inferredType.getQualifiedName();
+        _builder.append(_qualifiedName_2, "");
+        _builder.append(") => void");
         final String document = _builder.toString();
         final Object closure = this.newInstance(clazz, inferredType, document);
         final Object template = clazz.newInstance();

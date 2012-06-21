@@ -68,7 +68,7 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
 	   						for(p:element.params) {
 	   							if(p != element.params.head)
 	   								newLine
-	   							append('''this.Çp.nameÈ = other.Çp.nameÈ;''')
+								append('''this.Â«p.nameÂ» = other.Â«p.nameÂ»;''')
 	   						}
 	   					]
    				]
@@ -111,7 +111,7 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
    				    val method = element.toMethod("set" +p.name.toFirstUpper, element.newTypeRef(Void::TYPE)) [
    				    	parameters += p.toParameter(p.name, p.type ?: p.defaultexp.type)
    				    	body = [
-   				    		append('''this.Çp.nameÈ = Çp.nameÈ;''')
+						append('''this.Â«p.nameÂ» = Â«p.nameÂ»;''')
    				    	]	
    					]
    					translateAnnotationsTo(p.annotations, method)
