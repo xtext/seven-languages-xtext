@@ -89,13 +89,13 @@ Workflow {
                 }
     
                 // formatter API
-                //fragment = formatting.FormatterFragment {}
+                // fragment = formatting.FormatterFragment {}
     
                 // labeling API
-                //fragment = labeling.LabelProviderFragment {}
+                // fragment = labeling.LabelProviderFragment {}
     
                 // outline API
-                fragment = outline.OutlineTreeProviderFragment {}
+                // fragment = outline.OutlineTreeProviderFragment {}
                 fragment = outline.QuickOutlineFragment {}
     
                 // quickfix API
@@ -108,7 +108,7 @@ Workflow {
                 fragment = parser.antlr.XtextAntlrUiGeneratorFragment {}
     
                 // generates junit test support classes into Generator#pathTestProject
-                //fragment = junit.Junit4Fragment {}
+                // fragment = junit.Junit4Fragment {}
     
                 // project wizard (optional)
                 // fragment = projectWizard.SimpleProjectWizardFragment {
