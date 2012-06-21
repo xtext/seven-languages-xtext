@@ -11,11 +11,11 @@ class CradleXtendValidator extends AbstractCradleJavaValidator {
 	def void checkNoRecursiveDependencies(Task task) {
 		for (taskRef : task.getDependsOn())
 			if (taskRef == task) {
-				error('''The task 'Çtask.nameÈ' cannot depend on itself.''', taskRef, DECLARATION__NAME, -1)
+				error('''The task 'Â«task.nameÂ»' cannot depend on itself.''', taskRef, DECLARATION__NAME, -1)
 				return;
 			}
 		task.findDependentTasks [ cycle |
-			error('''There is a cyclic dependency that involves tasks Çcycle.map[name].join(", ")È''', task, DECLARATION__NAME, -1);
+			error('''There is a cyclic dependency that involves tasks Â«cycle.map[name].join(", ")Â»''', task, DECLARATION__NAME, -1);
 		]
 	}
 	

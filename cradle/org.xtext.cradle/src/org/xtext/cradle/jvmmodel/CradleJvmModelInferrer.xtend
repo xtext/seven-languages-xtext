@@ -52,16 +52,16 @@ class CradleJvmModelInferrer extends AbstractModelInferrer {
    						append("int index = 0;").newLine
    						append("while(args.length == 0 || index < args.length) {").increaseIndentation.newLine
    						append('''if(args.length == 0 || "--help".equals(args[index]) ||  "-h".equals(args[index])) {''').increaseIndentation.newLine
-   						append('''System.out.println("Cradle 'Çelement.eResource.URI.trimFileExtension.lastSegmentÈ'");''').newLine
+   						append('''System.out.println("Cradle 'Â«element.eResource.URI.trimFileExtension.lastSegmentÂ»'");''').newLine
    						append('''System.out.println();''').newLine
    						append('''System.out.println("Tasks:");''').newLine
    						for(dec : tasks)
-   							append('''System.out.println("  Çdec.nameÈ");''').newLine
+   							append('''System.out.println("  Â«dec.nameÂ»");''').newLine
    						if(!params.empty) {
 	   						append('''System.out.println();''').newLine
 	   						append('''System.out.println("Parameters:");''').newLine
 	   						for(dec : params) {
-	   							append('''System.out.println("  --Çdec.nameÈ <''')
+	   							append('''System.out.println("  --Â«dec.nameÂ» <''')
 	   							(dec.type ?: typeProvider.getType(dec.init)).serialize(element, it)
 	   							append('''>");''').newLine
 	   						}
@@ -85,14 +85,14 @@ class CradleJvmModelInferrer extends AbstractModelInferrer {
 	   							append(" else ")
    							switch(dec) {
    								Parameter: {
-			   						append('''if("--Çdec.nameÈ".equals(args[index])) {''').increaseIndentation.newLine
-			   						append('''parameter.Çdec.nameÈ = args[++index];''')
+			   						append('''if("--Â«dec.nameÂ»".equals(args[index])) {''').increaseIndentation.newLine
+			   						append('''parameter.Â«dec.nameÂ» = args[++index];''')
 			   						decreaseIndentation.newLine.append("}")	 
    								}
    								Task: {
-			   						append('''if("Çdec.nameÈ".equals(args[index])) {''').increaseIndentation
+			   						append('''if("Â«dec.nameÂ»".equals(args[index])) {''').increaseIndentation
 			   						for(t:dec.findDependentTasks)
-			   							newLine.append('''tasks.add("Çt.nameÈ");''')
+			   							newLine.append('''tasks.add("Â«t.nameÂ»");''')
 			   						decreaseIndentation.newLine.append("}") 
    								}
    							}
@@ -109,8 +109,8 @@ class CradleJvmModelInferrer extends AbstractModelInferrer {
 	   					for(dec : tasks) {
 	   						if(dec != tasks.head)
 	   							newLine.append("else ")
-	   						append('''if("Çdec.nameÈ".equals(task))''').increaseIndentation.newLine
-	   						append('''executeÇdec.name.toFirstUpperÈ(parameter);''') 
+	   						append('''if("Â«dec.nameÂ»".equals(task))''').increaseIndentation.newLine
+	   						append('''executeÂ«dec.name.toFirstUpperÂ»(parameter);''') 
 	   						decreaseIndentation	
 	   					}
 	   					newLine.append("index++;").newLine

@@ -131,7 +131,13 @@ public class CradleJvmModelInferrer extends AbstractModelInferrer {
                       ITreeAppendable _increaseIndentation_1 = _append_2.increaseIndentation();
                       _increaseIndentation_1.newLine();
                       StringConcatenation _builder_1 = new StringConcatenation();
-                      _builder_1.append("System.out.println(\"Cradle \'\u00C7element.eResource.URI.trimFileExtension.lastSegment\u00C8\'\");");
+                      _builder_1.append("System.out.println(\"Cradle \'");
+                      Resource _eResource = element.eResource();
+                      URI _uRI = _eResource.getURI();
+                      URI _trimFileExtension = _uRI.trimFileExtension();
+                      String _lastSegment = _trimFileExtension.lastSegment();
+                      _builder_1.append(_lastSegment, "");
+                      _builder_1.append("\'\");");
                       ITreeAppendable _append_3 = it.append(_builder_1);
                       _append_3.newLine();
                       StringConcatenation _builder_2 = new StringConcatenation();
@@ -144,7 +150,10 @@ public class CradleJvmModelInferrer extends AbstractModelInferrer {
                       _append_5.newLine();
                       for (final Task dec : tasks) {
                         StringConcatenation _builder_4 = new StringConcatenation();
-                        _builder_4.append("System.out.println(\"  \u00C7dec.name\u00C8\");");
+                        _builder_4.append("System.out.println(\"  ");
+                        String _name = dec.getName();
+                        _builder_4.append(_name, "");
+                        _builder_4.append("\");");
                         ITreeAppendable _append_6 = it.append(_builder_4);
                         _append_6.newLine();
                       }
@@ -162,7 +171,10 @@ public class CradleJvmModelInferrer extends AbstractModelInferrer {
                         for (final Parameter dec_1 : params) {
                           {
                             StringConcatenation _builder_7 = new StringConcatenation();
-                            _builder_7.append("System.out.println(\"  --\u00C7dec.name\u00C8 <");
+                            _builder_7.append("System.out.println(\"  --");
+                            String _name_1 = dec_1.getName();
+                            _builder_7.append(_name_1, "");
+                            _builder_7.append(" <");
                             it.append(_builder_7);
                             JvmTypeReference _type = dec_1.getType();
                             XExpression _init = dec_1.getInit();
@@ -222,12 +234,18 @@ public class CradleJvmModelInferrer extends AbstractModelInferrer {
                               final Parameter _parameter = (Parameter)dec_2;
                               _matched=true;
                               StringConcatenation _builder_8 = new StringConcatenation();
-                              _builder_8.append("if(\"--\u00C7dec.name\u00C8\".equals(args[index])) {");
+                              _builder_8.append("if(\"--");
+                              String _name_1 = _parameter.getName();
+                              _builder_8.append(_name_1, "");
+                              _builder_8.append("\".equals(args[index])) {");
                               ITreeAppendable _append_15 = it.append(_builder_8);
                               ITreeAppendable _increaseIndentation_4 = _append_15.increaseIndentation();
                               _increaseIndentation_4.newLine();
                               StringConcatenation _builder_9 = new StringConcatenation();
-                              _builder_9.append("parameter.\u00C7dec.name\u00C8 = args[++index];");
+                              _builder_9.append("parameter.");
+                              String _name_2 = _parameter.getName();
+                              _builder_9.append(_name_2, "");
+                              _builder_9.append(" = args[++index];");
                               it.append(_builder_9);
                               ITreeAppendable _decreaseIndentation_2 = it.decreaseIndentation();
                               ITreeAppendable _newLine_3 = _decreaseIndentation_2.newLine();
@@ -239,14 +257,20 @@ public class CradleJvmModelInferrer extends AbstractModelInferrer {
                               final Task _task = (Task)dec_2;
                               _matched=true;
                               StringConcatenation _builder_8 = new StringConcatenation();
-                              _builder_8.append("if(\"\u00C7dec.name\u00C8\".equals(args[index])) {");
+                              _builder_8.append("if(\"");
+                              String _name_1 = _task.getName();
+                              _builder_8.append(_name_1, "");
+                              _builder_8.append("\".equals(args[index])) {");
                               ITreeAppendable _append_15 = it.append(_builder_8);
                               _append_15.increaseIndentation();
                               Collection<Task> _findDependentTasks = TaskExtensions.findDependentTasks(_task);
                               for (final Task t : _findDependentTasks) {
                                 ITreeAppendable _newLine_3 = it.newLine();
                                 StringConcatenation _builder_9 = new StringConcatenation();
-                                _builder_9.append("tasks.add(\"\u00C7t.name\u00C8\");");
+                                _builder_9.append("tasks.add(\"");
+                                String _name_2 = t.getName();
+                                _builder_9.append(_name_2, "");
+                                _builder_9.append("\");");
                                 _newLine_3.append(_builder_9);
                               }
                               ITreeAppendable _decreaseIndentation_2 = it.decreaseIndentation();
@@ -296,12 +320,19 @@ public class CradleJvmModelInferrer extends AbstractModelInferrer {
                             _newLine_6.append("else ");
                           }
                           StringConcatenation _builder_12 = new StringConcatenation();
-                          _builder_12.append("if(\"\u00C7dec.name\u00C8\".equals(task))");
+                          _builder_12.append("if(\"");
+                          String _name_1 = dec_3.getName();
+                          _builder_12.append(_name_1, "");
+                          _builder_12.append("\".equals(task))");
                           ITreeAppendable _append_21 = it.append(_builder_12);
                           ITreeAppendable _increaseIndentation_7 = _append_21.increaseIndentation();
                           _increaseIndentation_7.newLine();
                           StringConcatenation _builder_13 = new StringConcatenation();
-                          _builder_13.append("execute\u00C7dec.name.toFirstUpper\u00C8(parameter);");
+                          _builder_13.append("execute");
+                          String _name_2 = dec_3.getName();
+                          String _firstUpper = StringExtensions.toFirstUpper(_name_2);
+                          _builder_13.append(_firstUpper, "");
+                          _builder_13.append("(parameter);");
                           it.append(_builder_13);
                           it.decreaseIndentation();
                         }

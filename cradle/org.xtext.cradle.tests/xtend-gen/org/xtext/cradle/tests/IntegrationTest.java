@@ -1,4 +1,4 @@
-package or.cradle.language.tests;
+package org.xtext.cradle.tests;
 
 import com.google.common.base.Objects;
 import com.google.inject.Inject;
@@ -49,11 +49,17 @@ public class IntegrationTest {
   @Test
   public void testExtensionMethod() {
     StringConcatenation _builder = new StringConcatenation();
+    _builder.append("\t\t\t");
     _builder.append("param String projectName = \'Hello\'");
     _builder.newLine();
+    _builder.append("\t\t\t");
     _builder.newLine();
+    _builder.append("\t\t\t");
     _builder.append("task Start {");
     _builder.newLine();
+    _builder.append("\uFFFD\uFFFD\uFFFD\t\t\t\tprintln(context.projectName)");
+    _builder.newLine();
+    _builder.append("\t\t\t");
     _builder.append("}");
     _builder.newLine();
     final Procedure1<Result> _function = new Procedure1<Result>() {

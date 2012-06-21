@@ -1,4 +1,4 @@
-package or.cradle.language.tests;
+package org.xtext.cradle.tests;
 
 import java.lang.reflect.Method;
 
