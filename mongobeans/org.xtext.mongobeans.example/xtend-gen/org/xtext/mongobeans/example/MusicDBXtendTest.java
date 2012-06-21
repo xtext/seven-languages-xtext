@@ -25,7 +25,7 @@ public class MusicDBXtendTest {
       return _mongoExtensions;
     }
   }.apply();
-
+  
   @Test
   public void testMongoFacade() {
     try {
@@ -91,7 +91,7 @@ public class MusicDBXtendTest {
       throw Exceptions.sneakyThrow(_e);
     }
   }
-
+  
   protected boolean addAlbum(final Artist it, final Procedure1<? super Album> initializer) {
     List<Album> _albums = it.getAlbums();
     Album _album = new Album();
@@ -99,7 +99,7 @@ public class MusicDBXtendTest {
     boolean _add = _albums.add(_doubleArrow);
     return _add;
   }
-
+  
   protected boolean addTrack(final Album it, final String trackTitle, final String trackDuration) {
     List<Track> _tracks = it.getTracks();
     Track _track = new Track();
