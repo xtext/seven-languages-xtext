@@ -33,7 +33,7 @@ public class WrappingUtil {
           _builder.append("\' does not extend \'");
           String _simpleName = IMongoBean.class.getSimpleName();
           _builder.append(_simpleName, "");
-          _builder.append("\'");
+          _builder.append("\'.");
           IllegalStateException _illegalStateException = new IllegalStateException(_builder.toString());
           throw _illegalStateException;
         }

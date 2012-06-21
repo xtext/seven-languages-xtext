@@ -13,7 +13,7 @@ class WrappingUtil {
 			val constructor = javaClass.getConstructor(typeof(DBObject))
 			constructor.newInstance(dbObject) as IMongoBean
 		} else {
-			throw new IllegalStateException('''Stored javaClass '«javaClassName»' does not extend '«typeof(IMongoBean).simpleName»'«»''')
+			throw new IllegalStateException('''Stored javaClass 'Â«javaClassNameÂ»' does not extend 'Â«typeof(IMongoBean).simpleNameÂ»'.''')
 		}
 	}
 	

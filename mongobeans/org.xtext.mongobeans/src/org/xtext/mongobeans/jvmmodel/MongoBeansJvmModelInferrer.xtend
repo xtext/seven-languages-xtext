@@ -63,20 +63,20 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
    	
    	def protected addConstructors(JvmDeclaredType inferredType, MongoBean bean) {
 		inferredType.members += bean.toConstructor [
-			documentation = '''Creates a new «bean.name» wrapping the given {@link DBObject}.'''
+			documentation = '''Creates a new Â«bean.nameÂ» wrapping the given {@link DBObject}.'''
 			parameters += toParameter("dbObject", newTypeRef(bean, 'com.mongodb.DBObject'))
 			body = [
 				append('this._dbObject = dbObject;')
 			]
 		]
 		inferredType.members += bean.toConstructor [
-			documentation = '''Creates a new «bean.name» wrapping a new {@link BasicDBObject}.'''
+			documentation = '''Creates a new Â«bean.nameÂ» wrapping a new {@link BasicDBObject}.'''
 			body = [
 				append('_dbObject = new ')
 				appendTypeRef(bean, 'com.mongodb.BasicDBObject')
 				append('();').newLine
 				append('''
-					_dbObject.put(JAVA_CLASS_KEY, "«inferredType.identifier»");
+					_dbObject.put(JAVA_CLASS_KEY, "Â«inferredType.identifierÂ»");
 				''')
 			]					
 		]   	
@@ -96,7 +96,7 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 				body = [
 					append('return (')
 					appendTypeRef(property, 'java.util.List', property.jvmType.asWrapperTypeIfPrimitive)
-					append(''') _dbObject.get("«property.name»");''')
+					append(''') _dbObject.get("Â«property.nameÂ»");''')
 				]
 			]		
 		} else {
@@ -108,8 +108,8 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 				documentation = property.documentation
 				body = [
 					append('''
-						if(_«property.name»==null)
-							_«property.name» = new ''')
+						if(_Â«property.nameÂ»==null)
+							_Â«property.nameÂ» = new ''')
 					appendTypeRef(property, 'org.xtext.mongobeans.runtime.MongoBeanList', property.jvmType) 
 					append('(_dbObject, "' + property.name + '");').newLine
 					append('return _' + property.name + ';')
@@ -127,11 +127,11 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 					appendTypeRef(property, 'org.xtext.mongobeans.runtime.WrappingUtil')
 					append('.wrapAndCast((')
 					appendTypeRef(property, 'com.mongodb.DBObject')
-					append(''') _dbObject.get("«property.name»"));''')
+					append(''') _dbObject.get("Â«property.nameÂ»"));''')
 				} else {
 					append('(')
 					appendTypeRef(property, property.jvmType.asWrapperTypeIfPrimitive)
-					append(''') _dbObject.get("«property.name»");''')
+					append(''') _dbObject.get("Â«property.nameÂ»");''')
 				} 
 			]
 		]
@@ -139,7 +139,7 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 			documentation = property.documentation
 			parameters += toParameter(property.name, property.jvmType)
 			body = [
-				append(''' _dbObject.put("«property.name»", ''')
+				append(''' _dbObject.put("Â«property.nameÂ»", ''')
 				if(property.jvmType.mongoBean) {
 					appendTypeRef(property, 'org.xtext.mongobeans.runtime.WrappingUtil')
 					append(".unwrap(")
