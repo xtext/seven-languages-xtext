@@ -39,9 +39,19 @@ public abstract class AbstractGuiceModulesRuntimeModule extends DefaultRuntimeMo
 		return org.xtext.guicemodules.services.GuiceModulesGrammarAccess.class;
 	}
 
-	// contributed by org.eclipse.xtext.generator.parseTreeConstructor.ParseTreeConstructorFragment
-	public Class<? extends org.eclipse.xtext.parsetree.reconstr.IParseTreeConstructor> bindIParseTreeConstructor() {
-		return org.xtext.guicemodules.parseTreeConstruction.GuiceModulesParsetreeConstructor.class;
+	// contributed by org.eclipse.xtext.generator.serializer.SerializerFragment
+	public Class<? extends org.eclipse.xtext.serializer.sequencer.ISemanticSequencer> bindISemanticSequencer() {
+		return org.xtext.guicemodules.serializer.GuiceModulesSemanticSequencer.class;
+	}
+
+	// contributed by org.eclipse.xtext.generator.serializer.SerializerFragment
+	public Class<? extends org.eclipse.xtext.serializer.sequencer.ISyntacticSequencer> bindISyntacticSequencer() {
+		return org.xtext.guicemodules.serializer.GuiceModulesSyntacticSequencer.class;
+	}
+
+	// contributed by org.eclipse.xtext.generator.serializer.SerializerFragment
+	public Class<? extends org.eclipse.xtext.serializer.ISerializer> bindISerializer() {
+		return org.eclipse.xtext.serializer.impl.Serializer.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
@@ -107,11 +117,6 @@ public abstract class AbstractGuiceModulesRuntimeModule extends DefaultRuntimeMo
 	// contributed by org.eclipse.xtext.generator.builder.BuilderIntegrationFragment
 	public void configureIResourceDescriptionsBuilderScope(com.google.inject.Binder binder) {
 		binder.bind(org.eclipse.xtext.resource.IResourceDescriptions.class).annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.resource.impl.ResourceDescriptionsProvider.NAMED_BUILDER_SCOPE)).to(org.eclipse.xtext.resource.impl.ResourceSetBasedResourceDescriptions.class);
-	}
-
-	// contributed by org.eclipse.xtext.generator.formatting.FormatterFragment
-	public Class<? extends org.eclipse.xtext.formatting.IFormatter> bindIFormatter() {
-		return org.xtext.guicemodules.formatting.GuiceModulesFormatter.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment

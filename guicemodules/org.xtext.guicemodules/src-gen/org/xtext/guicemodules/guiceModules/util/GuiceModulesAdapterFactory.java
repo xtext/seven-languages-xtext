@@ -90,11 +90,6 @@ public class GuiceModulesAdapterFactory extends AdapterFactoryImpl
         return createKeyAdapter();
       }
       @Override
-      public Adapter caseAnnotationRef(AnnotationRef object)
-      {
-        return createAnnotationRefAdapter();
-      }
-      @Override
       public Adapter caseImport(Import object)
       {
         return createImportAdapter();
@@ -162,21 +157,6 @@ public class GuiceModulesAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createKeyAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.guicemodules.guiceModules.AnnotationRef <em>Annotation Ref</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.guicemodules.guiceModules.AnnotationRef
-   * @generated
-   */
-  public Adapter createAnnotationRefAdapter()
   {
     return null;
   }

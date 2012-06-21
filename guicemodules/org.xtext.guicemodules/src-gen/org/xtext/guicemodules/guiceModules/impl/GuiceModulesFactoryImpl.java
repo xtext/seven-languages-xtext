@@ -67,7 +67,6 @@ public class GuiceModulesFactoryImpl extends EFactoryImpl implements GuiceModule
       case GuiceModulesPackage.MODULE: return createModule();
       case GuiceModulesPackage.BINDING: return createBinding();
       case GuiceModulesPackage.KEY: return createKey();
-      case GuiceModulesPackage.ANNOTATION_REF: return createAnnotationRef();
       case GuiceModulesPackage.IMPORT: return createImport();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -105,17 +104,6 @@ public class GuiceModulesFactoryImpl extends EFactoryImpl implements GuiceModule
   {
     KeyImpl key = new KeyImpl();
     return key;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public AnnotationRef createAnnotationRef()
-  {
-    AnnotationRefImpl annotationRef = new AnnotationRefImpl();
-    return annotationRef;
   }
 
   /**

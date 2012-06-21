@@ -3,10 +3,7 @@
 */
 package org.xtext.guicemodules.ui.outline;
 
-import org.eclipse.xtext.ui.editor.outline.IOutlineNode;
 import org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider;
-import org.xtext.guicemodules.guiceModules.Binding;
-import org.xtext.guicemodules.guiceModules.Import;
 
 /**
  * customization of the default outline structure
@@ -14,11 +11,4 @@ import org.xtext.guicemodules.guiceModules.Import;
  */
 public class GuiceModulesOutlineTreeProvider extends DefaultOutlineTreeProvider {
 	
-	protected void _createNode(IOutlineNode parentNode, Import imp) {
-		
-	}
-
-	protected boolean _isLeaf(Binding modelElement) {
-		return true;
-	}
 }

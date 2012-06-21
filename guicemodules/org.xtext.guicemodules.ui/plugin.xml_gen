@@ -175,6 +175,37 @@
         <persistent value="true"/>
     </extension>
 
+   <extension
+         point="org.eclipse.xtext.builder.participant">
+      <participant
+            class="org.xtext.guicemodules.ui.GuiceModulesExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant">
+      </participant>
+   </extension>
+   <extension
+            point="org.eclipse.ui.preferencePages">
+        <page
+            category="org.xtext.guicemodules.GuiceModules"
+            class="org.xtext.guicemodules.ui.GuiceModulesExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="org.xtext.guicemodules.GuiceModules.compiler.preferencePage"
+            name="Compiler">
+            <keywordReference id="org.xtext.guicemodules.ui.keyword_GuiceModules"/>
+        </page>
+    </extension>
+    <extension
+            point="org.eclipse.ui.propertyPages">
+        <page
+            category="org.xtext.guicemodules.GuiceModules"
+            class="org.xtext.guicemodules.ui.GuiceModulesExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="org.xtext.guicemodules.GuiceModules.compiler.propertyPage"
+            name="Compiler">
+            <keywordReference id="org.xtext.guicemodules.ui.keyword_GuiceModules"/>
+            <enabledWhen>
+	            <adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
+        </page>
+    </extension>
+
 	<!-- Quick Outline -->
 	<extension
 		point="org.eclipse.ui.handlers">
@@ -371,5 +402,24 @@
          </action>
       </viewerContribution>
    </extension>
+
+  <extension point="org.eclipse.compare.contentViewers">
+    <viewer id="org.xtext.guicemodules.GuiceModules.compare.contentViewers"
+            class="org.xtext.guicemodules.ui.GuiceModulesExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="guice">
+    </viewer>
+  </extension>
+  <extension point="org.eclipse.compare.contentMergeViewers">
+    <viewer id="org.xtext.guicemodules.GuiceModules.compare.contentMergeViewers"
+            class="org.xtext.guicemodules.ui.GuiceModulesExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="guice" label="GuiceModules Compare">
+     </viewer>
+  </extension>
+  <extension point="org.eclipse.ui.editors.documentProviders">
+    <provider id="org.xtext.guicemodules.GuiceModules.editors.documentProviders"
+            class="org.xtext.guicemodules.ui.GuiceModulesExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+            extensions="guice">
+    </provider>
+  </extension>
 
 </plugin>

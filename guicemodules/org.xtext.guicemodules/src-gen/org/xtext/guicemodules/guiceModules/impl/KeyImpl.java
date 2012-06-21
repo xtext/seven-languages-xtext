@@ -2,8 +2,12 @@
  */
 package org.xtext.guicemodules.guiceModules.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -11,9 +15,13 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.eclipse.xtext.common.types.JvmTypeReference;
 
-import org.xtext.guicemodules.guiceModules.AnnotationRef;
+import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotation;
+
 import org.xtext.guicemodules.guiceModules.GuiceModulesPackage;
 import org.xtext.guicemodules.guiceModules.Key;
 
@@ -24,7 +32,7 @@ import org.xtext.guicemodules.guiceModules.Key;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.guicemodules.guiceModules.impl.KeyImpl#getAnnotation <em>Annotation</em>}</li>
+ *   <li>{@link org.xtext.guicemodules.guiceModules.impl.KeyImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link org.xtext.guicemodules.guiceModules.impl.KeyImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
@@ -34,14 +42,14 @@ import org.xtext.guicemodules.guiceModules.Key;
 public class KeyImpl extends MinimalEObjectImpl.Container implements Key
 {
   /**
-   * The cached value of the '{@link #getAnnotation() <em>Annotation</em>}' containment reference.
+   * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAnnotation()
+   * @see #getAnnotations()
    * @generated
    * @ordered
    */
-  protected AnnotationRef annotation;
+  protected EList<XAnnotation> annotations;
 
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
@@ -79,47 +87,13 @@ public class KeyImpl extends MinimalEObjectImpl.Container implements Key
    * <!-- end-user-doc -->
    * @generated
    */
-  public AnnotationRef getAnnotation()
+  public EList<XAnnotation> getAnnotations()
   {
-    return annotation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetAnnotation(AnnotationRef newAnnotation, NotificationChain msgs)
-  {
-    AnnotationRef oldAnnotation = annotation;
-    annotation = newAnnotation;
-    if (eNotificationRequired())
+    if (annotations == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GuiceModulesPackage.KEY__ANNOTATION, oldAnnotation, newAnnotation);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      annotations = new EObjectContainmentEList<XAnnotation>(XAnnotation.class, this, GuiceModulesPackage.KEY__ANNOTATIONS);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setAnnotation(AnnotationRef newAnnotation)
-  {
-    if (newAnnotation != annotation)
-    {
-      NotificationChain msgs = null;
-      if (annotation != null)
-        msgs = ((InternalEObject)annotation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GuiceModulesPackage.KEY__ANNOTATION, null, msgs);
-      if (newAnnotation != null)
-        msgs = ((InternalEObject)newAnnotation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GuiceModulesPackage.KEY__ANNOTATION, null, msgs);
-      msgs = basicSetAnnotation(newAnnotation, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GuiceModulesPackage.KEY__ANNOTATION, newAnnotation, newAnnotation));
+    return annotations;
   }
 
   /**
@@ -180,8 +154,8 @@ public class KeyImpl extends MinimalEObjectImpl.Container implements Key
   {
     switch (featureID)
     {
-      case GuiceModulesPackage.KEY__ANNOTATION:
-        return basicSetAnnotation(null, msgs);
+      case GuiceModulesPackage.KEY__ANNOTATIONS:
+        return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
       case GuiceModulesPackage.KEY__TYPE:
         return basicSetType(null, msgs);
     }
@@ -198,8 +172,8 @@ public class KeyImpl extends MinimalEObjectImpl.Container implements Key
   {
     switch (featureID)
     {
-      case GuiceModulesPackage.KEY__ANNOTATION:
-        return getAnnotation();
+      case GuiceModulesPackage.KEY__ANNOTATIONS:
+        return getAnnotations();
       case GuiceModulesPackage.KEY__TYPE:
         return getType();
     }
@@ -211,13 +185,15 @@ public class KeyImpl extends MinimalEObjectImpl.Container implements Key
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case GuiceModulesPackage.KEY__ANNOTATION:
-        setAnnotation((AnnotationRef)newValue);
+      case GuiceModulesPackage.KEY__ANNOTATIONS:
+        getAnnotations().clear();
+        getAnnotations().addAll((Collection<? extends XAnnotation>)newValue);
         return;
       case GuiceModulesPackage.KEY__TYPE:
         setType((JvmTypeReference)newValue);
@@ -236,8 +212,8 @@ public class KeyImpl extends MinimalEObjectImpl.Container implements Key
   {
     switch (featureID)
     {
-      case GuiceModulesPackage.KEY__ANNOTATION:
-        setAnnotation((AnnotationRef)null);
+      case GuiceModulesPackage.KEY__ANNOTATIONS:
+        getAnnotations().clear();
         return;
       case GuiceModulesPackage.KEY__TYPE:
         setType((JvmTypeReference)null);
@@ -256,8 +232,8 @@ public class KeyImpl extends MinimalEObjectImpl.Container implements Key
   {
     switch (featureID)
     {
-      case GuiceModulesPackage.KEY__ANNOTATION:
-        return annotation != null;
+      case GuiceModulesPackage.KEY__ANNOTATIONS:
+        return annotations != null && !annotations.isEmpty();
       case GuiceModulesPackage.KEY__TYPE:
         return type != null;
     }

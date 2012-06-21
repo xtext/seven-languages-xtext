@@ -13,7 +13,8 @@ import org.eclipse.xtext.common.types.TypesPackage;
 
 import org.eclipse.xtext.xbase.XbasePackage;
 
-import org.xtext.guicemodules.guiceModules.AnnotationRef;
+import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationsPackage;
+
 import org.xtext.guicemodules.guiceModules.Binding;
 import org.xtext.guicemodules.guiceModules.GuiceModulesFactory;
 import org.xtext.guicemodules.guiceModules.GuiceModulesPackage;
@@ -49,13 +50,6 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
    * @generated
    */
   private EClass keyEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass annotationRefEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -113,6 +107,7 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
     isInited = true;
 
     // Initialize simple dependencies
+    XAnnotationsPackage.eINSTANCE.eClass();
     XbasePackage.eINSTANCE.eClass();
 
     // Create package meta-data objects
@@ -145,19 +140,9 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getModule_PackageName()
-  {
-    return (EAttribute)moduleEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getModule_Imports()
   {
-    return (EReference)moduleEClass.getEStructuralFeatures().get(1);
+    return (EReference)moduleEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -167,7 +152,7 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
    */
   public EAttribute getModule_Name()
   {
-    return (EAttribute)moduleEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)moduleEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -177,7 +162,7 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
    */
   public EReference getModule_Mixins()
   {
-    return (EReference)moduleEClass.getEStructuralFeatures().get(3);
+    return (EReference)moduleEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -187,7 +172,7 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
    */
   public EReference getModule_Bindings()
   {
-    return (EReference)moduleEClass.getEStructuralFeatures().get(4);
+    return (EReference)moduleEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -205,19 +190,9 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getBinding_Override()
-  {
-    return (EAttribute)bindingEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getBinding_From()
   {
-    return (EReference)bindingEClass.getEStructuralFeatures().get(1);
+    return (EReference)bindingEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -227,7 +202,7 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
    */
   public EReference getBinding_To()
   {
-    return (EReference)bindingEClass.getEStructuralFeatures().get(2);
+    return (EReference)bindingEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -237,7 +212,7 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
    */
   public EReference getBinding_ToInstance()
   {
-    return (EReference)bindingEClass.getEStructuralFeatures().get(3);
+    return (EReference)bindingEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -255,7 +230,7 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getKey_Annotation()
+  public EReference getKey_Annotations()
   {
     return (EReference)keyEClass.getEStructuralFeatures().get(0);
   }
@@ -268,26 +243,6 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
   public EReference getKey_Type()
   {
     return (EReference)keyEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getAnnotationRef()
-  {
-    return annotationRefEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getAnnotationRef_Annotation()
-  {
-    return (EReference)annotationRefEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -341,24 +296,19 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
 
     // Create classes and their features
     moduleEClass = createEClass(MODULE);
-    createEAttribute(moduleEClass, MODULE__PACKAGE_NAME);
     createEReference(moduleEClass, MODULE__IMPORTS);
     createEAttribute(moduleEClass, MODULE__NAME);
     createEReference(moduleEClass, MODULE__MIXINS);
     createEReference(moduleEClass, MODULE__BINDINGS);
 
     bindingEClass = createEClass(BINDING);
-    createEAttribute(bindingEClass, BINDING__OVERRIDE);
     createEReference(bindingEClass, BINDING__FROM);
     createEReference(bindingEClass, BINDING__TO);
     createEReference(bindingEClass, BINDING__TO_INSTANCE);
 
     keyEClass = createEClass(KEY);
-    createEReference(keyEClass, KEY__ANNOTATION);
+    createEReference(keyEClass, KEY__ANNOTATIONS);
     createEReference(keyEClass, KEY__TYPE);
-
-    annotationRefEClass = createEClass(ANNOTATION_REF);
-    createEReference(annotationRefEClass, ANNOTATION_REF__ANNOTATION);
 
     importEClass = createEClass(IMPORT);
     createEAttribute(importEClass, IMPORT__IMPORTED_NAMESPACE);
@@ -390,6 +340,7 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
 
     // Obtain other dependent packages
     XbasePackage theXbasePackage = (XbasePackage)EPackage.Registry.INSTANCE.getEPackage(XbasePackage.eNS_URI);
+    XAnnotationsPackage theXAnnotationsPackage = (XAnnotationsPackage)EPackage.Registry.INSTANCE.getEPackage(XAnnotationsPackage.eNS_URI);
     TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 
     // Create type parameters
@@ -400,24 +351,19 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
 
     // Initialize classes and features; add operations and parameters
     initEClass(moduleEClass, Module.class, "Module", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getModule_PackageName(), ecorePackage.getEString(), "packageName", null, 0, 1, Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModule_Imports(), this.getImport(), null, "imports", null, 0, -1, Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getModule_Name(), ecorePackage.getEString(), "name", null, 0, 1, Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModule_Mixins(), this.getModule(), null, "mixins", null, 0, -1, Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModule_Bindings(), this.getBinding(), null, "bindings", null, 0, -1, Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(bindingEClass, Binding.class, "Binding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBinding_Override(), ecorePackage.getEBoolean(), "override", null, 0, 1, Binding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getBinding_From(), this.getKey(), null, "from", null, 0, 1, Binding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getBinding_To(), this.getKey(), null, "to", null, 0, 1, Binding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getBinding_ToInstance(), theXbasePackage.getXExpression(), null, "toInstance", null, 0, 1, Binding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(keyEClass, Key.class, "Key", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getKey_Annotation(), this.getAnnotationRef(), null, "annotation", null, 0, 1, Key.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getKey_Annotations(), theXAnnotationsPackage.getXAnnotation(), null, "annotations", null, 0, -1, Key.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getKey_Type(), theTypesPackage.getJvmTypeReference(), null, "type", null, 0, 1, Key.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(annotationRefEClass, AnnotationRef.class, "AnnotationRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAnnotationRef_Annotation(), theTypesPackage.getJvmAnnotationType(), null, "annotation", null, 0, 1, AnnotationRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getImport_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

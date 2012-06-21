@@ -50,15 +50,6 @@ public interface GuiceModulesFactory extends EFactory
   Key createKey();
 
   /**
-   * Returns a new object of class '<em>Annotation Ref</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Annotation Ref</em>'.
-   * @generated
-   */
-  AnnotationRef createAnnotationRef();
-
-  /**
    * Returns a new object of class '<em>Import</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

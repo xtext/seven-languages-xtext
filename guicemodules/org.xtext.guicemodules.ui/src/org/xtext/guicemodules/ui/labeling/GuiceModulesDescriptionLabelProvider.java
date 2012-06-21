@@ -3,14 +3,14 @@
 */
 package org.xtext.guicemodules.ui.labeling;
 
-import org.eclipse.xtext.ui.label.DefaultDescriptionLabelProvider;
+import org.eclipse.xtext.xbase.ui.labeling.XbaseDescriptionLabelProvider;
 
 /**
  * Provides labels for a IEObjectDescriptions and IResourceDescriptions.
  * 
  * see http://www.eclipse.org/Xtext/documentation/latest/xtext.html#labelProvider
  */
-public class GuiceModulesDescriptionLabelProvider extends DefaultDescriptionLabelProvider {
+public class GuiceModulesDescriptionLabelProvider extends XbaseDescriptionLabelProvider {
 
 /*
 	//Labels and icons can be computed like this:

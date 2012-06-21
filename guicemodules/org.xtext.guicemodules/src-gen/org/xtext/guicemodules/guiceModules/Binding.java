@@ -14,7 +14,6 @@ import org.eclipse.xtext.xbase.XExpression;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.guicemodules.guiceModules.Binding#isOverride <em>Override</em>}</li>
  *   <li>{@link org.xtext.guicemodules.guiceModules.Binding#getFrom <em>From</em>}</li>
  *   <li>{@link org.xtext.guicemodules.guiceModules.Binding#getTo <em>To</em>}</li>
  *   <li>{@link org.xtext.guicemodules.guiceModules.Binding#getToInstance <em>To Instance</em>}</li>
@@ -27,32 +26,6 @@ import org.eclipse.xtext.xbase.XExpression;
  */
 public interface Binding extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Override</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Override</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Override</em>' attribute.
-   * @see #setOverride(boolean)
-   * @see org.xtext.guicemodules.guiceModules.GuiceModulesPackage#getBinding_Override()
-   * @model
-   * @generated
-   */
-  boolean isOverride();
-
-  /**
-   * Sets the value of the '{@link org.xtext.guicemodules.guiceModules.Binding#isOverride <em>Override</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Override</em>' attribute.
-   * @see #isOverride()
-   * @generated
-   */
-  void setOverride(boolean value);
-
   /**
    * Returns the value of the '<em><b>From</b></em>' containment reference.
    * <!-- begin-user-doc -->

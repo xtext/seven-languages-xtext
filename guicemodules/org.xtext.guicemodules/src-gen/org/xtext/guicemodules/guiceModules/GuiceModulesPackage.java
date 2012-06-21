@@ -67,22 +67,13 @@ public interface GuiceModulesPackage extends EPackage
   int MODULE = 0;
 
   /**
-   * The feature id for the '<em><b>Package Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODULE__PACKAGE_NAME = 0;
-
-  /**
    * The feature id for the '<em><b>Imports</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODULE__IMPORTS = 1;
+  int MODULE__IMPORTS = 0;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -91,7 +82,7 @@ public interface GuiceModulesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODULE__NAME = 2;
+  int MODULE__NAME = 1;
 
   /**
    * The feature id for the '<em><b>Mixins</b></em>' reference list.
@@ -100,7 +91,7 @@ public interface GuiceModulesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODULE__MIXINS = 3;
+  int MODULE__MIXINS = 2;
 
   /**
    * The feature id for the '<em><b>Bindings</b></em>' containment reference list.
@@ -109,7 +100,7 @@ public interface GuiceModulesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODULE__BINDINGS = 4;
+  int MODULE__BINDINGS = 3;
 
   /**
    * The number of structural features of the '<em>Module</em>' class.
@@ -118,7 +109,7 @@ public interface GuiceModulesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODULE_FEATURE_COUNT = 5;
+  int MODULE_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link org.xtext.guicemodules.guiceModules.impl.BindingImpl <em>Binding</em>}' class.
@@ -131,22 +122,13 @@ public interface GuiceModulesPackage extends EPackage
   int BINDING = 1;
 
   /**
-   * The feature id for the '<em><b>Override</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINDING__OVERRIDE = 0;
-
-  /**
    * The feature id for the '<em><b>From</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BINDING__FROM = 1;
+  int BINDING__FROM = 0;
 
   /**
    * The feature id for the '<em><b>To</b></em>' containment reference.
@@ -155,7 +137,7 @@ public interface GuiceModulesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BINDING__TO = 2;
+  int BINDING__TO = 1;
 
   /**
    * The feature id for the '<em><b>To Instance</b></em>' containment reference.
@@ -164,7 +146,7 @@ public interface GuiceModulesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BINDING__TO_INSTANCE = 3;
+  int BINDING__TO_INSTANCE = 2;
 
   /**
    * The number of structural features of the '<em>Binding</em>' class.
@@ -173,7 +155,7 @@ public interface GuiceModulesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BINDING_FEATURE_COUNT = 4;
+  int BINDING_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.xtext.guicemodules.guiceModules.impl.KeyImpl <em>Key</em>}' class.
@@ -186,13 +168,13 @@ public interface GuiceModulesPackage extends EPackage
   int KEY = 2;
 
   /**
-   * The feature id for the '<em><b>Annotation</b></em>' containment reference.
+   * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int KEY__ANNOTATION = 0;
+  int KEY__ANNOTATIONS = 0;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -213,34 +195,6 @@ public interface GuiceModulesPackage extends EPackage
   int KEY_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link org.xtext.guicemodules.guiceModules.impl.AnnotationRefImpl <em>Annotation Ref</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.guicemodules.guiceModules.impl.AnnotationRefImpl
-   * @see org.xtext.guicemodules.guiceModules.impl.GuiceModulesPackageImpl#getAnnotationRef()
-   * @generated
-   */
-  int ANNOTATION_REF = 3;
-
-  /**
-   * The feature id for the '<em><b>Annotation</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ANNOTATION_REF__ANNOTATION = 0;
-
-  /**
-   * The number of structural features of the '<em>Annotation Ref</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ANNOTATION_REF_FEATURE_COUNT = 1;
-
-  /**
    * The meta object id for the '{@link org.xtext.guicemodules.guiceModules.impl.ImportImpl <em>Import</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -248,7 +202,7 @@ public interface GuiceModulesPackage extends EPackage
    * @see org.xtext.guicemodules.guiceModules.impl.GuiceModulesPackageImpl#getImport()
    * @generated
    */
-  int IMPORT = 4;
+  int IMPORT = 3;
 
   /**
    * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
@@ -278,17 +232,6 @@ public interface GuiceModulesPackage extends EPackage
    * @generated
    */
   EClass getModule();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.guicemodules.guiceModules.Module#getPackageName <em>Package Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Package Name</em>'.
-   * @see org.xtext.guicemodules.guiceModules.Module#getPackageName()
-   * @see #getModule()
-   * @generated
-   */
-  EAttribute getModule_PackageName();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.xtext.guicemodules.guiceModules.Module#getImports <em>Imports</em>}'.
@@ -345,17 +288,6 @@ public interface GuiceModulesPackage extends EPackage
   EClass getBinding();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.guicemodules.guiceModules.Binding#isOverride <em>Override</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Override</em>'.
-   * @see org.xtext.guicemodules.guiceModules.Binding#isOverride()
-   * @see #getBinding()
-   * @generated
-   */
-  EAttribute getBinding_Override();
-
-  /**
    * Returns the meta object for the containment reference '{@link org.xtext.guicemodules.guiceModules.Binding#getFrom <em>From</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -399,15 +331,15 @@ public interface GuiceModulesPackage extends EPackage
   EClass getKey();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.guicemodules.guiceModules.Key#getAnnotation <em>Annotation</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.guicemodules.guiceModules.Key#getAnnotations <em>Annotations</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Annotation</em>'.
-   * @see org.xtext.guicemodules.guiceModules.Key#getAnnotation()
+   * @return the meta object for the containment reference list '<em>Annotations</em>'.
+   * @see org.xtext.guicemodules.guiceModules.Key#getAnnotations()
    * @see #getKey()
    * @generated
    */
-  EReference getKey_Annotation();
+  EReference getKey_Annotations();
 
   /**
    * Returns the meta object for the containment reference '{@link org.xtext.guicemodules.guiceModules.Key#getType <em>Type</em>}'.
@@ -419,27 +351,6 @@ public interface GuiceModulesPackage extends EPackage
    * @generated
    */
   EReference getKey_Type();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.guicemodules.guiceModules.AnnotationRef <em>Annotation Ref</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Annotation Ref</em>'.
-   * @see org.xtext.guicemodules.guiceModules.AnnotationRef
-   * @generated
-   */
-  EClass getAnnotationRef();
-
-  /**
-   * Returns the meta object for the reference '{@link org.xtext.guicemodules.guiceModules.AnnotationRef#getAnnotation <em>Annotation</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Annotation</em>'.
-   * @see org.xtext.guicemodules.guiceModules.AnnotationRef#getAnnotation()
-   * @see #getAnnotationRef()
-   * @generated
-   */
-  EReference getAnnotationRef_Annotation();
 
   /**
    * Returns the meta object for class '{@link org.xtext.guicemodules.guiceModules.Import <em>Import</em>}'.
@@ -496,14 +407,6 @@ public interface GuiceModulesPackage extends EPackage
     EClass MODULE = eINSTANCE.getModule();
 
     /**
-     * The meta object literal for the '<em><b>Package Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute MODULE__PACKAGE_NAME = eINSTANCE.getModule_PackageName();
-
-    /**
      * The meta object literal for the '<em><b>Imports</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -546,14 +449,6 @@ public interface GuiceModulesPackage extends EPackage
     EClass BINDING = eINSTANCE.getBinding();
 
     /**
-     * The meta object literal for the '<em><b>Override</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute BINDING__OVERRIDE = eINSTANCE.getBinding_Override();
-
-    /**
      * The meta object literal for the '<em><b>From</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -588,12 +483,12 @@ public interface GuiceModulesPackage extends EPackage
     EClass KEY = eINSTANCE.getKey();
 
     /**
-     * The meta object literal for the '<em><b>Annotation</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Annotations</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference KEY__ANNOTATION = eINSTANCE.getKey_Annotation();
+    EReference KEY__ANNOTATIONS = eINSTANCE.getKey_Annotations();
 
     /**
      * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
@@ -602,24 +497,6 @@ public interface GuiceModulesPackage extends EPackage
      * @generated
      */
     EReference KEY__TYPE = eINSTANCE.getKey_Type();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.guicemodules.guiceModules.impl.AnnotationRefImpl <em>Annotation Ref</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.guicemodules.guiceModules.impl.AnnotationRefImpl
-     * @see org.xtext.guicemodules.guiceModules.impl.GuiceModulesPackageImpl#getAnnotationRef()
-     * @generated
-     */
-    EClass ANNOTATION_REF = eINSTANCE.getAnnotationRef();
-
-    /**
-     * The meta object literal for the '<em><b>Annotation</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ANNOTATION_REF__ANNOTATION = eINSTANCE.getAnnotationRef_Annotation();
 
     /**
      * The meta object literal for the '{@link org.xtext.guicemodules.guiceModules.impl.ImportImpl <em>Import</em>}' class.

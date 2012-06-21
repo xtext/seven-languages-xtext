@@ -63,6 +63,21 @@ public abstract class AbstractGuiceModulesUiModule extends DefaultUiModule {
 		return org.eclipse.xtext.builder.impl.PersistentDataAwareDirtyResource.class;
 	}
 
+	// contributed by org.eclipse.xtext.generator.generator.GeneratorFragment
+	public Class<? extends org.eclipse.xtext.builder.IXtextBuilderParticipant> bindIXtextBuilderParticipant() {
+		return org.eclipse.xtext.builder.BuilderParticipant.class;
+	}
+
+	// contributed by org.eclipse.xtext.generator.generator.GeneratorFragment
+	public org.eclipse.core.resources.IWorkspaceRoot bindIWorkspaceRootToInstance() {
+		return org.eclipse.core.resources.ResourcesPlugin.getWorkspace().getRoot();
+	}
+
+	// contributed by org.eclipse.xtext.generator.generator.GeneratorFragment
+	public void configureBuilderPreferenceStoreInitializer(com.google.inject.Binder binder) {
+		binder.bind(org.eclipse.xtext.ui.editor.preferences.IPreferenceStoreInitializer.class).annotatedWith(com.google.inject.name.Names.named("builderPreferenceInitializer")).to(org.eclipse.xtext.builder.preferences.BuilderPreferenceAccess.Initializer.class);
+	}
+
 	// contributed by org.eclipse.xtext.ui.generator.labeling.LabelProviderFragment
 	public Class<? extends org.eclipse.jface.viewers.ILabelProvider> bindILabelProvider() {
 		return org.xtext.guicemodules.ui.labeling.GuiceModulesLabelProvider.class;
@@ -93,26 +108,6 @@ public abstract class AbstractGuiceModulesUiModule extends DefaultUiModule {
 		return org.xtext.guicemodules.ui.contentassist.GuiceModulesProposalProvider.class;
 	}
 
-	// contributed by org.eclipse.xtext.ui.generator.refactoring.RefactorElementNameFragment
-	public void configureIPreferenceStoreInitializer(com.google.inject.Binder binder) {
-		binder.bind(org.eclipse.xtext.ui.editor.preferences.IPreferenceStoreInitializer.class).annotatedWith(com.google.inject.name.Names.named("RefactoringPreferences")).to(org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferences.Initializer.class);
-	}
-
-	// contributed by org.eclipse.xtext.ui.generator.refactoring.RefactorElementNameFragment
-	public Class<? extends org.eclipse.xtext.ui.refactoring.ui.IRenameSupport.Factory> bindIRenameSupport$Factory() {
-		return org.eclipse.xtext.common.types.ui.refactoring.JdtRenameSupport.Factory.class;
-	}
-
-	// contributed by org.eclipse.xtext.ui.generator.refactoring.RefactorElementNameFragment
-	public Class<? extends org.eclipse.xtext.ui.refactoring.IRenameStrategy.Provider> bindIRenameStrategy$Provider() {
-		return org.eclipse.xtext.common.types.ui.refactoring.participant.JvmMemberRenameStrategy.Provider.class;
-	}
-
-	// contributed by org.eclipse.xtext.ui.generator.refactoring.RefactorElementNameFragment
-	public void configureJvmMemberRenameStrategy$Provider$Delegate(com.google.inject.Binder binder) {
-		binder.bind(org.eclipse.xtext.ui.refactoring.IRenameStrategy.Provider.class).annotatedWith(org.eclipse.xtext.common.types.ui.refactoring.participant.JvmMemberRenameStrategy.Provider.Delegate.class).to(org.eclipse.xtext.ui.refactoring.impl.DefaultRenameStrategyProvider.class);
-	}
-
 	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrUiGeneratorFragment
 	public Class<? extends org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext.Factory> bindContentAssistContext$Factory() {
 		return org.eclipse.xtext.ui.editor.contentassist.antlr.ParserBasedContentAssistContextFactory.class;
@@ -131,6 +126,26 @@ public abstract class AbstractGuiceModulesUiModule extends DefaultUiModule {
 	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrUiGeneratorFragment
 	public void configureContentAssistLexer(com.google.inject.Binder binder) {
 		binder.bind(org.eclipse.xtext.ui.editor.contentassist.antlr.internal.Lexer.class).annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.ui.LexerUIBindings.CONTENT_ASSIST)).to(org.xtext.guicemodules.ui.contentassist.antlr.internal.InternalGuiceModulesLexer.class);
+	}
+
+	// contributed by org.eclipse.xtext.ui.generator.refactoring.RefactorElementNameFragment
+	public void configureIPreferenceStoreInitializer(com.google.inject.Binder binder) {
+		binder.bind(org.eclipse.xtext.ui.editor.preferences.IPreferenceStoreInitializer.class).annotatedWith(com.google.inject.name.Names.named("RefactoringPreferences")).to(org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferences.Initializer.class);
+	}
+
+	// contributed by org.eclipse.xtext.ui.generator.refactoring.RefactorElementNameFragment
+	public Class<? extends org.eclipse.xtext.ui.refactoring.ui.IRenameSupport.Factory> bindIRenameSupport$Factory() {
+		return org.eclipse.xtext.common.types.ui.refactoring.JdtRenameSupport.Factory.class;
+	}
+
+	// contributed by org.eclipse.xtext.ui.generator.refactoring.RefactorElementNameFragment
+	public Class<? extends org.eclipse.xtext.ui.refactoring.IRenameStrategy.Provider> bindIRenameStrategy$Provider() {
+		return org.eclipse.xtext.common.types.ui.refactoring.participant.JvmMemberRenameStrategy.Provider.class;
+	}
+
+	// contributed by org.eclipse.xtext.ui.generator.refactoring.RefactorElementNameFragment
+	public void configureJvmMemberRenameStrategy$Provider$Delegate(com.google.inject.Binder binder) {
+		binder.bind(org.eclipse.xtext.ui.refactoring.IRenameStrategy.Provider.class).annotatedWith(org.eclipse.xtext.common.types.ui.refactoring.participant.JvmMemberRenameStrategy.Provider.Delegate.class).to(org.eclipse.xtext.ui.refactoring.impl.DefaultRenameStrategyProvider.class);
 	}
 
 	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
@@ -284,6 +299,36 @@ public abstract class AbstractGuiceModulesUiModule extends DefaultUiModule {
 			binder.bind(org.eclipse.xtext.ui.editor.IURIEditorOpener.class).annotatedWith(org.eclipse.xtext.ui.LanguageSpecific.class).to(org.eclipse.xtext.xbase.ui.jvmmodel.navigation.DerivedMemberAwareEditorOpener.class); 
 			binder.bind(org.eclipse.xtext.common.types.ui.navigation.IDerivedMemberAwareEditorOpener.class).to(org.eclipse.xtext.xbase.ui.jvmmodel.navigation.DerivedMemberAwareEditorOpener.class); 
 		};
+	}
+
+	// contributed by org.eclipse.xtext.ui.generator.templates.CodetemplatesGeneratorFragment
+	public com.google.inject.Provider<org.eclipse.xtext.ui.codetemplates.ui.preferences.TemplatesLanguageConfiguration> provideTemplatesLanguageConfiguration() {
+		return org.eclipse.xtext.ui.codetemplates.ui.AccessibleCodetemplatesActivator.getTemplatesLanguageConfigurationProvider();
+	}
+
+	// contributed by org.eclipse.xtext.ui.generator.templates.CodetemplatesGeneratorFragment
+	public com.google.inject.Provider<org.eclipse.xtext.ui.codetemplates.ui.registry.LanguageRegistry> provideLanguageRegistry() {
+		return org.eclipse.xtext.ui.codetemplates.ui.AccessibleCodetemplatesActivator.getLanguageRegistry();
+	}
+
+	// contributed by org.eclipse.xtext.ui.generator.templates.CodetemplatesGeneratorFragment
+	@org.eclipse.xtext.service.SingletonBinding(eager=true)	public Class<? extends org.eclipse.xtext.ui.codetemplates.ui.registry.LanguageRegistrar> bindLanguageRegistrar() {
+		return org.eclipse.xtext.ui.codetemplates.ui.registry.LanguageRegistrar.class;
+	}
+
+	// contributed by org.eclipse.xtext.ui.generator.templates.CodetemplatesGeneratorFragment
+	public Class<? extends org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage> bindXtextTemplatePreferencePage() {
+		return org.eclipse.xtext.ui.codetemplates.ui.preferences.AdvancedTemplatesPreferencePage.class;
+	}
+
+	// contributed by org.eclipse.xtext.ui.generator.templates.CodetemplatesGeneratorFragment
+	public Class<? extends org.eclipse.xtext.ui.codetemplates.ui.partialEditing.IPartialContentAssistParser> bindIPartialContentAssistParser() {
+		return org.xtext.guicemodules.ui.contentassist.antlr.PartialGuiceModulesContentAssistParser.class;
+	}
+
+	// contributed by org.eclipse.xtext.ui.generator.compare.CompareFragment
+	public Class<? extends org.eclipse.compare.IViewerCreator> bindIViewerCreator() {
+		return org.eclipse.xtext.ui.compare.DefaultViewerCreator.class;
 	}
 
 

@@ -31,7 +31,6 @@ import org.xtext.guicemodules.guiceModules.Module;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.guicemodules.guiceModules.impl.ModuleImpl#getPackageName <em>Package Name</em>}</li>
  *   <li>{@link org.xtext.guicemodules.guiceModules.impl.ModuleImpl#getImports <em>Imports</em>}</li>
  *   <li>{@link org.xtext.guicemodules.guiceModules.impl.ModuleImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.guicemodules.guiceModules.impl.ModuleImpl#getMixins <em>Mixins</em>}</li>
@@ -43,26 +42,6 @@ import org.xtext.guicemodules.guiceModules.Module;
  */
 public class ModuleImpl extends MinimalEObjectImpl.Container implements Module
 {
-  /**
-   * The default value of the '{@link #getPackageName() <em>Package Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPackageName()
-   * @generated
-   * @ordered
-   */
-  protected static final String PACKAGE_NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getPackageName() <em>Package Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPackageName()
-   * @generated
-   * @ordered
-   */
-  protected String packageName = PACKAGE_NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -132,29 +111,6 @@ public class ModuleImpl extends MinimalEObjectImpl.Container implements Module
   protected EClass eStaticClass()
   {
     return GuiceModulesPackage.Literals.MODULE;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getPackageName()
-  {
-    return packageName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setPackageName(String newPackageName)
-  {
-    String oldPackageName = packageName;
-    packageName = newPackageName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GuiceModulesPackage.MODULE__PACKAGE_NAME, oldPackageName, packageName));
   }
 
   /**
@@ -250,8 +206,6 @@ public class ModuleImpl extends MinimalEObjectImpl.Container implements Module
   {
     switch (featureID)
     {
-      case GuiceModulesPackage.MODULE__PACKAGE_NAME:
-        return getPackageName();
       case GuiceModulesPackage.MODULE__IMPORTS:
         return getImports();
       case GuiceModulesPackage.MODULE__NAME:
@@ -275,9 +229,6 @@ public class ModuleImpl extends MinimalEObjectImpl.Container implements Module
   {
     switch (featureID)
     {
-      case GuiceModulesPackage.MODULE__PACKAGE_NAME:
-        setPackageName((String)newValue);
-        return;
       case GuiceModulesPackage.MODULE__IMPORTS:
         getImports().clear();
         getImports().addAll((Collection<? extends Import>)newValue);
@@ -307,9 +258,6 @@ public class ModuleImpl extends MinimalEObjectImpl.Container implements Module
   {
     switch (featureID)
     {
-      case GuiceModulesPackage.MODULE__PACKAGE_NAME:
-        setPackageName(PACKAGE_NAME_EDEFAULT);
-        return;
       case GuiceModulesPackage.MODULE__IMPORTS:
         getImports().clear();
         return;
@@ -336,8 +284,6 @@ public class ModuleImpl extends MinimalEObjectImpl.Container implements Module
   {
     switch (featureID)
     {
-      case GuiceModulesPackage.MODULE__PACKAGE_NAME:
-        return PACKAGE_NAME_EDEFAULT == null ? packageName != null : !PACKAGE_NAME_EDEFAULT.equals(packageName);
       case GuiceModulesPackage.MODULE__IMPORTS:
         return imports != null && !imports.isEmpty();
       case GuiceModulesPackage.MODULE__NAME:
@@ -361,9 +307,7 @@ public class ModuleImpl extends MinimalEObjectImpl.Container implements Module
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (packageName: ");
-    result.append(packageName);
-    result.append(", name: ");
+    result.append(" (name: ");
     result.append(name);
     result.append(')');
     return result.toString();

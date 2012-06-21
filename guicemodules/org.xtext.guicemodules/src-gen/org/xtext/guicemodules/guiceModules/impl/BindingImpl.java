@@ -24,7 +24,6 @@ import org.xtext.guicemodules.guiceModules.Key;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.guicemodules.guiceModules.impl.BindingImpl#isOverride <em>Override</em>}</li>
  *   <li>{@link org.xtext.guicemodules.guiceModules.impl.BindingImpl#getFrom <em>From</em>}</li>
  *   <li>{@link org.xtext.guicemodules.guiceModules.impl.BindingImpl#getTo <em>To</em>}</li>
  *   <li>{@link org.xtext.guicemodules.guiceModules.impl.BindingImpl#getToInstance <em>To Instance</em>}</li>
@@ -35,26 +34,6 @@ import org.xtext.guicemodules.guiceModules.Key;
  */
 public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
 {
-  /**
-   * The default value of the '{@link #isOverride() <em>Override</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isOverride()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean OVERRIDE_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isOverride() <em>Override</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isOverride()
-   * @generated
-   * @ordered
-   */
-  protected boolean override = OVERRIDE_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getFrom() <em>From</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -104,29 +83,6 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
   protected EClass eStaticClass()
   {
     return GuiceModulesPackage.Literals.BINDING;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public boolean isOverride()
-  {
-    return override;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setOverride(boolean newOverride)
-  {
-    boolean oldOverride = override;
-    override = newOverride;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GuiceModulesPackage.BINDING__OVERRIDE, oldOverride, override));
   }
 
   /**
@@ -303,8 +259,6 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
   {
     switch (featureID)
     {
-      case GuiceModulesPackage.BINDING__OVERRIDE:
-        return isOverride();
       case GuiceModulesPackage.BINDING__FROM:
         return getFrom();
       case GuiceModulesPackage.BINDING__TO:
@@ -325,9 +279,6 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
   {
     switch (featureID)
     {
-      case GuiceModulesPackage.BINDING__OVERRIDE:
-        setOverride((Boolean)newValue);
-        return;
       case GuiceModulesPackage.BINDING__FROM:
         setFrom((Key)newValue);
         return;
@@ -351,9 +302,6 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
   {
     switch (featureID)
     {
-      case GuiceModulesPackage.BINDING__OVERRIDE:
-        setOverride(OVERRIDE_EDEFAULT);
-        return;
       case GuiceModulesPackage.BINDING__FROM:
         setFrom((Key)null);
         return;
@@ -377,8 +325,6 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
   {
     switch (featureID)
     {
-      case GuiceModulesPackage.BINDING__OVERRIDE:
-        return override != OVERRIDE_EDEFAULT;
       case GuiceModulesPackage.BINDING__FROM:
         return from != null;
       case GuiceModulesPackage.BINDING__TO:
@@ -387,23 +333,6 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
         return toInstance != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (override: ");
-    result.append(override);
-    result.append(')');
-    return result.toString();
   }
 
 } //BindingImpl

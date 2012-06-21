@@ -14,13 +14,13 @@ Require-Bundle: org.xtext.guicemodules;visibility:=reexport,
  org.eclipse.xtext.builder,
  org.antlr.runtime,
  org.eclipse.xtext.common.types.ui,
- org.eclipse.xtext.xbase.ui
+ org.eclipse.xtext.xbase.ui,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.compare
 Import-Package: org.apache.log4j,
  org.apache.commons.logging
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.xtext.guicemodules.ui.contentassist.antlr,
  org.xtext.guicemodules.ui.internal,
- org.xtext.guicemodules.ui.contentassist,
- org.xtext.guicemodules.ui.contentassist.antlr,
- org.xtext.guicemodules.ui.internal
+ org.xtext.guicemodules.ui.contentassist
 Bundle-Activator: org.xtext.guicemodules.ui.internal.GuiceModulesActivator

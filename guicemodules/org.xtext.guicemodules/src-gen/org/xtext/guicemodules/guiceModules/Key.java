@@ -2,9 +2,13 @@
  */
 package org.xtext.guicemodules.guiceModules;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.xtext.common.types.JvmTypeReference;
+
+import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotation;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,7 +18,7 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.guicemodules.guiceModules.Key#getAnnotation <em>Annotation</em>}</li>
+ *   <li>{@link org.xtext.guicemodules.guiceModules.Key#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link org.xtext.guicemodules.guiceModules.Key#getType <em>Type</em>}</li>
  * </ul>
  * </p>
@@ -26,30 +30,20 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
 public interface Key extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Annotation</b></em>' containment reference.
+   * Returns the value of the '<em><b>Annotations</b></em>' containment reference list.
+   * The list contents are of type {@link org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotation}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Annotation</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Annotations</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Annotation</em>' containment reference.
-   * @see #setAnnotation(AnnotationRef)
-   * @see org.xtext.guicemodules.guiceModules.GuiceModulesPackage#getKey_Annotation()
+   * @return the value of the '<em>Annotations</em>' containment reference list.
+   * @see org.xtext.guicemodules.guiceModules.GuiceModulesPackage#getKey_Annotations()
    * @model containment="true"
    * @generated
    */
-  AnnotationRef getAnnotation();
-
-  /**
-   * Sets the value of the '{@link org.xtext.guicemodules.guiceModules.Key#getAnnotation <em>Annotation</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Annotation</em>' containment reference.
-   * @see #getAnnotation()
-   * @generated
-   */
-  void setAnnotation(AnnotationRef value);
+  EList<XAnnotation> getAnnotations();
 
   /**
    * Returns the value of the '<em><b>Type</b></em>' containment reference.

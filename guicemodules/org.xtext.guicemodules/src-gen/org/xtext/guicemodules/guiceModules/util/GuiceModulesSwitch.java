@@ -93,13 +93,6 @@ public class GuiceModulesSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case GuiceModulesPackage.ANNOTATION_REF:
-      {
-        AnnotationRef annotationRef = (AnnotationRef)theEObject;
-        T result = caseAnnotationRef(annotationRef);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case GuiceModulesPackage.IMPORT:
       {
         Import import_ = (Import)theEObject;
@@ -155,22 +148,6 @@ public class GuiceModulesSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseKey(Key object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Annotation Ref</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Annotation Ref</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAnnotationRef(AnnotationRef object)
   {
     return null;
   }
