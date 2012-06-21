@@ -9,7 +9,7 @@ import org.xtext.httprouting.route.Variable;
 public class RouteJavaValidator extends AbstractRouteJavaValidator {
 
 	@Check
-	public void checkVaraibles(Route route) {
+	public void checkVariables(Route route) {
 		URL url = route.getUrl();
 		if (url != null) {
 			boolean wildCard = false;

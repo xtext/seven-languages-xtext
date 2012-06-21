@@ -10,60 +10,59 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.xtext.example.actionclasses.ActionClass;
 
+@SuppressWarnings("serial")
 public class HttpMapperServlet extends HttpServlet {
-  private final static long serialVersionUID = 1L;
-  
-  public void doGet0(final ActionClass it, final HttpServletRequest request, final String id) {
+  public void _doGet0(final ActionClass it, final HttpServletRequest request, final String id) {
     int _parseInt = Integer.parseInt(id);
     it.doSomething(Integer.valueOf(_parseInt));
   }
   
-  public boolean doGet0Condition(final HttpServletRequest request, final String id) {
+  public boolean _doGet0Condition(final HttpServletRequest request, final String id) {
     boolean _equals = Objects.equal(id, "42");
     return _equals;
   }
   
   @Inject
   @Named(value = "ActionClassName")
-  private ActionClass key0;
+  private ActionClass _key0;
   
-  private static Pattern pattern0 = Pattern.compile("/client/foo/(\\w+)");
+  private static Pattern _pattern0 = Pattern.compile("/client/foo/(\\w+)");
   
-  public void doGet1(final ActionClass it, final HttpServletRequest request, final String id) {
+  public void _doGet1(final ActionClass it, final HttpServletRequest request, final String id) {
     it.doSomething1(id);
   }
   
-  public boolean doGet1Condition(final HttpServletRequest request, final String id) {
+  public boolean _doGet1Condition(final HttpServletRequest request, final String id) {
     boolean _equals = Objects.equal(id, "bar");
     return _equals;
   }
   
   @Inject
   @Named(value = "ActionClassName")
-  private ActionClass key1;
+  private ActionClass _key1;
   
-  private static Pattern pattern1 = Pattern.compile("/client/foo/(\\w+)");
+  private static Pattern _pattern1 = Pattern.compile("/client/foo/(\\w+)");
   
-  public void doGet2(final ActionClass it, final HttpServletRequest request, final String id) {
+  public void _doGet2(final ActionClass it, final HttpServletRequest request, final String id) {
     it.doSomething2(id);
   }
   
-  public boolean doGet2Condition(final HttpServletRequest request, final String id) {
+  public boolean _doGet2Condition(final HttpServletRequest request, final String id) {
     boolean _equals = Objects.equal(id, "foo");
     return _equals;
   }
   
   @Inject
   @Named(value = "ActionClassName")
-  private ActionClass key2;
+  private ActionClass _key2;
   
-  private static Pattern pattern2 = Pattern.compile("/client/foo/(\\w+)");
+  private static Pattern _pattern2 = Pattern.compile("/client/foo/(\\w+)");
   
-  public void doGet3(final ActionClass it, final HttpServletRequest request, final String bar, final String baz, final String name) {
+  public void _doGet3(final ActionClass it, final HttpServletRequest request, final String bar, final String baz, final String name) {
     it.doSomething(bar, name);
   }
   
-  public boolean doGet3Condition(final HttpServletRequest request, final String bar, final String baz, final String name) {
+  public boolean _doGet3Condition(final HttpServletRequest request, final String bar, final String baz, final String name) {
     boolean _and = false;
     boolean _equals = Objects.equal(bar, "Some");
     if (!_equals) {
@@ -77,70 +76,76 @@ public class HttpMapperServlet extends HttpServlet {
   }
   
   @Inject
-  private ActionClass key3;
+  private ActionClass _key3;
   
-  private static Pattern pattern3 = Pattern.compile("/client/:bar/foo/(\\w+)/(.+)");
+  private static Pattern _pattern3 = Pattern.compile("/client/:bar/foo/(\\w+)/(.+)");
   
-  public void doPost4(final HttpServletRequest request, final String bar, final String rest) {
+  public void _doPost4(final HttpServletRequest request, final String bar, final String rest) {
     String _plus = (bar + rest);
     ActionClass.doSomethingStatic(_plus);
   }
   
-  public boolean doPost4Condition(final HttpServletRequest request, final String bar, final String rest) {
-    boolean _startsWith = rest.startsWith("/action?=delete");
+  public boolean _doPost4Condition(final HttpServletRequest request, final String bar, final String rest) {
+    boolean _startsWith = rest.startsWith("action?=delete");
     return _startsWith;
   }
   
-  private static Pattern pattern4 = Pattern.compile("/client/(\\w+)/file.gif/(.+)");
+  private static Pattern _pattern4 = Pattern.compile("/client/(\\w+)/file.gif/(.+)");
   
-  public void doPost5(final HttpServletRequest request, final String bar, final String rest) {
+  public void _doPost5(final HttpServletRequest request, final String bar, final String rest) {
     String _plus = (bar + rest);
     ActionClass.doSomethingStatic(_plus);
   }
   
-  private static Pattern pattern5 = Pattern.compile("/client/(\\w+)/file.gif/(.+)");
+  private static Pattern _pattern5 = Pattern.compile("/client/(\\w+)/file.gif/(.+)");
   
   public void doGet(final HttpServletRequest request, final HttpServletResponse response) {
     String url =  request.getRequestURI();
-    Matcher matcher0 = pattern0.matcher(url);
-    if(matcher0.find()){
-    		String id =matcher0.group(1);
-    		if(doGet0Condition(request, id))
-    			doGet0(key0,request, id);
-    }Matcher matcher1 = pattern1.matcher(url);
-    if(matcher1.find()){
-    		String id =matcher1.group(1);
-    		if(doGet1Condition(request, id))
-    			doGet1(key1,request, id);
-    }Matcher matcher2 = pattern2.matcher(url);
-    if(matcher2.find()){
-    		String id =matcher2.group(1);
-    		if(doGet2Condition(request, id))
-    			doGet2(key2,request, id);
-    }Matcher matcher3 = pattern3.matcher(url);
-    if(matcher3.find()){
-    		String bar =matcher3.group(1);
-    		String baz =matcher3.group(2);
-    		String name =matcher3.group(3);
-    		if(doGet3Condition(request, bar, baz, name))
-    			doGet3(key3,request, bar, baz, name);
+    Matcher _matcher0 = _pattern0.matcher(url);
+    if (_matcher0.find()) {
+    		String id = _matcher0.group(1);
+    		if (_doGet0Condition(request, id))
+    			_doGet0(_key0,request, id);
     }
+    Matcher _matcher1 = _pattern1.matcher(url);
+    if (_matcher1.find()) {
+    		String id = _matcher1.group(1);
+    		if (_doGet1Condition(request, id))
+    			_doGet1(_key1,request, id);
+    }
+    Matcher _matcher2 = _pattern2.matcher(url);
+    if (_matcher2.find()) {
+    		String id = _matcher2.group(1);
+    		if (_doGet2Condition(request, id))
+    			_doGet2(_key2,request, id);
+    }
+    Matcher _matcher3 = _pattern3.matcher(url);
+    if (_matcher3.find()) {
+    		String bar = _matcher3.group(1);
+    		String baz = _matcher3.group(2);
+    		String name = _matcher3.group(3);
+    		if (_doGet3Condition(request, bar, baz, name))
+    			_doGet3(_key3,request, bar, baz, name);
+    }
+    
   }
   
   public void doPost(final HttpServletRequest request, final HttpServletResponse response) {
     String url =  request.getRequestURI();
-    Matcher matcher4 = pattern4.matcher(url);
-    if(matcher4.find()){
-    		String bar =matcher4.group(1);
-    		String rest =matcher4.group(2);
-    		if(doPost4Condition(request, bar, rest))
-    			doPost4(request, bar, rest);
-    }Matcher matcher5 = pattern5.matcher(url);
-    if(matcher5.find()){
-    		String bar =matcher5.group(1);
-    		String rest =matcher5.group(2);
-    			doPost5(request, bar, rest);
+    Matcher _matcher4 = _pattern4.matcher(url);
+    if (_matcher4.find()) {
+    		String bar = _matcher4.group(1);
+    		String rest = _matcher4.group(2);
+    		if (_doPost4Condition(request, bar, rest))
+    			_doPost4(request, bar, rest);
     }
+    Matcher _matcher5 = _pattern5.matcher(url);
+    if (_matcher5.find()) {
+    		String bar = _matcher5.group(1);
+    		String rest = _matcher5.group(2);
+    			_doPost5(request, bar, rest);
+    }
+    
   }
   
   public void doPut(final HttpServletRequest request, final HttpServletResponse response) {

@@ -29,6 +29,5 @@ Export-Package: org.xtext.httprouting,
  org.xtext.httprouting.parser.antlr,
  org.xtext.httprouting.parser.antlr.internal,
  org.xtext.httprouting.validation,
- org.xtext.httprouting.formatting,
  org.xtext.httprouting.jvmmodel
 Bundle-ClassPath: .

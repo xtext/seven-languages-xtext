@@ -98,11 +98,6 @@ public abstract class AbstractRouteUiModule extends DefaultUiModule {
 		return org.xtext.httprouting.ui.outline.RouteOutlineTreeProvider.class;
 	}
 
-	// contributed by org.eclipse.xtext.ui.generator.quickfix.QuickfixProviderFragment
-	public Class<? extends org.eclipse.xtext.ui.editor.quickfix.IssueResolutionProvider> bindIssueResolutionProvider() {
-		return org.xtext.httprouting.ui.quickfix.RouteQuickfixProvider.class;
-	}
-
 	// contributed by org.eclipse.xtext.ui.generator.contentAssist.JavaBasedContentAssistFragment
 	public Class<? extends org.eclipse.xtext.ui.editor.contentassist.IContentProposalProvider> bindIContentProposalProvider() {
 		return org.xtext.httprouting.ui.contentassist.RouteProposalProvider.class;

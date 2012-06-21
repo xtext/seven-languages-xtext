@@ -22,12 +22,7 @@ import com.google.common.base.Function;
 import com.google.common.base.Predicate;
 
 /**
- * see
- * http://www.eclipse.org/Xtext/documentation/latest/xtext.html#contentAssist on
- * how to customize content assistant
- * 
  * @author Holger Schill - Initial contribution and API
- *
  */
 public class RouteProposalProvider extends AbstractRouteProposalProvider {
 
@@ -36,12 +31,17 @@ public class RouteProposalProvider extends AbstractRouteProposalProvider {
 			ICompletionProposalAcceptor acceptor) {
 		
 		Function<IEObjectDescription, ICompletionProposal> proposalFactory = getProposalFactory(getFeatureCallRuleName(), context);
-		IScope scope = new FilteringScope(getScopeProvider().createSimpleFeatureCallScope(model, XbasePackage.Literals.XABSTRACT_FEATURE_CALL__FEATURE, context.getResource(), false, -1), new Predicate<IEObjectDescription>() {
+		IScope scope = new FilteringScope(
+				getScopeProvider().createSimpleFeatureCallScope(
+						model, XbasePackage.Literals.XABSTRACT_FEATURE_CALL__FEATURE, context.getResource(), false, -1), 
+				new Predicate<IEObjectDescription>() {
 			public boolean apply(IEObjectDescription input) {
 				return !input.getQualifiedName().equals(XbaseScopeProvider.IT);
 			}
 		});
-		getCrossReferenceProposalCreator().lookupCrossReference(scope, model, XbasePackage.Literals.XABSTRACT_FEATURE_CALL__FEATURE, acceptor, getFeatureDescriptionPredicate(context), proposalFactory);
+		getCrossReferenceProposalCreator().lookupCrossReference(scope, model, 
+				XbasePackage.Literals.XABSTRACT_FEATURE_CALL__FEATURE, acceptor, 
+				getFeatureDescriptionPredicate(context), proposalFactory);
 	}
 
 	@Override
@@ -50,11 +50,9 @@ public class RouteProposalProvider extends AbstractRouteProposalProvider {
 			return super.getFeatureDescriptionPredicate(contentAssistContext);
 		final Predicate<IEObjectDescription> delegate = super.getFeatureDescriptionPredicate(contentAssistContext);
 		return new Predicate<IEObjectDescription>() {
-
 			public boolean apply(IEObjectDescription input) {
 				return !input.getName().getFirstSegment().startsWith("_") && delegate.apply(input);
 			}
-
 		};
 	}
 }
