@@ -1,0 +1,3 @@
+application sample.HelloWorld
+
+println('Hello world')
