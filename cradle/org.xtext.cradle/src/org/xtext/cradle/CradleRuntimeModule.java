@@ -3,10 +3,17 @@
  */
 package org.xtext.cradle;
 
+import org.xtext.cradle.validation.CradleValidator;
+
 /**
  * Use this class to register components to be used at runtime / without the
  * Equinox extension registry.
  */
 public class CradleRuntimeModule extends AbstractCradleRuntimeModule {
+
+	@org.eclipse.xtext.service.SingletonBinding(eager=true)	public Class<? extends CradleValidator> bindCradleXtendClass() {
+		return CradleValidator.class;
+	}
+
 
 }

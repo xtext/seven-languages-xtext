@@ -4,8 +4,14 @@ import org.eclipse.xtext.validation.Check
 import org.xtext.cradle.cradle.Task
 import static extension org.xtext.cradle.TaskExtensions.*
 import static org.xtext.cradle.cradle.CradlePackage$Literals.*
+import org.eclipse.xtext.xbase.validation.XbaseJavaValidator
+import org.eclipse.emf.ecore.EPackage
+import org.eclipse.xtext.xbase.XbasePackage
+import org.eclipse.xtext.common.types.TypesPackage
+import org.eclipse.xtext.xtype.XtypePackage
+import org.xtext.cradle.cradle.CradlePackage
 
-class CradleXtendValidator extends AbstractCradleJavaValidator {
+class CradleValidator extends XbaseJavaValidator {
 
 	@Check
 	def void checkNoRecursiveDependencies(Task task) {
@@ -19,4 +25,13 @@ class CradleXtendValidator extends AbstractCradleJavaValidator {
 		]
 	}
 	
+	override protected getEPackages() {
+	    val result = <EPackage>newArrayList
+	    result += CradlePackage::eINSTANCE
+	    result += XbasePackage::eINSTANCE
+	    result += TypesPackage::eINSTANCE
+	    result += XtypePackage::eINSTANCE
+		return result;
+	}
+
 }

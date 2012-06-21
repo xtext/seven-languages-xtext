@@ -39,6 +39,5 @@ public class CradleStandaloneSetupGenerated implements ISetup {
 
 
 
-
 	}
 }

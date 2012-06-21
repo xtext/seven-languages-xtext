@@ -78,36 +78,6 @@ public abstract class AbstractCradleUiModule extends DefaultUiModule {
 		binder.bind(org.eclipse.xtext.ui.editor.preferences.IPreferenceStoreInitializer.class).annotatedWith(com.google.inject.name.Names.named("builderPreferenceInitializer")).to(org.eclipse.xtext.builder.preferences.BuilderPreferenceAccess.Initializer.class);
 	}
 
-	// contributed by org.eclipse.xtext.ui.generator.labeling.LabelProviderFragment
-	public Class<? extends org.eclipse.jface.viewers.ILabelProvider> bindILabelProvider() {
-		return org.xtext.cradle.ui.labeling.CradleLabelProvider.class;
-	}
-
-	// contributed by org.eclipse.xtext.ui.generator.labeling.LabelProviderFragment
-	public void configureResourceUIServiceLabelProvider(com.google.inject.Binder binder) {
-		binder.bind(org.eclipse.jface.viewers.ILabelProvider.class).annotatedWith(org.eclipse.xtext.ui.resource.ResourceServiceDescriptionLabelProvider.class).to(org.xtext.cradle.ui.labeling.CradleDescriptionLabelProvider.class);
-	}
-
-	// contributed by org.eclipse.xtext.ui.generator.outline.OutlineTreeProviderFragment
-	public Class<? extends org.eclipse.xtext.ui.editor.outline.IOutlineTreeProvider> bindIOutlineTreeProvider() {
-		return org.xtext.cradle.ui.outline.CradleOutlineTreeProvider.class;
-	}
-
-	// contributed by org.eclipse.xtext.ui.generator.outline.OutlineTreeProviderFragment
-	public Class<? extends org.eclipse.xtext.ui.editor.outline.impl.IOutlineTreeStructureProvider> bindIOutlineTreeStructureProvider() {
-		return org.xtext.cradle.ui.outline.CradleOutlineTreeProvider.class;
-	}
-
-	// contributed by org.eclipse.xtext.ui.generator.quickfix.QuickfixProviderFragment
-	public Class<? extends org.eclipse.xtext.ui.editor.quickfix.IssueResolutionProvider> bindIssueResolutionProvider() {
-		return org.xtext.cradle.ui.quickfix.CradleQuickfixProvider.class;
-	}
-
-	// contributed by org.eclipse.xtext.ui.generator.contentAssist.JavaBasedContentAssistFragment
-	public Class<? extends org.eclipse.xtext.ui.editor.contentassist.IContentProposalProvider> bindIContentProposalProvider() {
-		return org.xtext.cradle.ui.contentassist.CradleProposalProvider.class;
-	}
-
 	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrUiGeneratorFragment
 	public Class<? extends org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext.Factory> bindContentAssistContext$Factory() {
 		return org.eclipse.xtext.ui.editor.contentassist.antlr.ParserBasedContentAssistContextFactory.class;

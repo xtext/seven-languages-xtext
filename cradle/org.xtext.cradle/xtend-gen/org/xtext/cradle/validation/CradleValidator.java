@@ -1,20 +1,28 @@
 package org.xtext.cradle.validation;
 
 import com.google.common.base.Objects;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.xtend2.lib.StringConcatenation;
+import org.eclipse.xtext.common.types.TypesPackage;
 import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.XbasePackage;
+import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
+import org.eclipse.xtext.xbase.validation.XbaseJavaValidator;
+import org.eclipse.xtext.xtype.XtypePackage;
 import org.xtext.cradle.TaskExtensions;
+import org.xtext.cradle.cradle.CradlePackage;
 import org.xtext.cradle.cradle.CradlePackage.Literals;
 import org.xtext.cradle.cradle.Task;
-import org.xtext.cradle.validation.AbstractCradleJavaValidator;
 
 @SuppressWarnings("all")
-public class CradleXtendValidator extends AbstractCradleJavaValidator {
+public class CradleValidator extends XbaseJavaValidator {
   @Check
   public void checkNoRecursiveDependencies(final Task task) {
     EList<Task> _dependsOn = task.getDependsOn();
@@ -45,9 +53,18 @@ public class CradleXtendValidator extends AbstractCradleJavaValidator {
           String _join = IterableExtensions.join(_map, ", ");
           _builder.append(_join, "");
           int _minus = (-1);
-          CradleXtendValidator.this.error(_builder.toString(), task, Literals.DECLARATION__NAME, _minus);
+          CradleValidator.this.error(_builder.toString(), task, Literals.DECLARATION__NAME, _minus);
         }
       };
     TaskExtensions.findDependentTasks(task, _function);
+  }
+  
+  protected List<EPackage> getEPackages() {
+    final ArrayList<EPackage> result = CollectionLiterals.<EPackage>newArrayList();
+    result.add(CradlePackage.eINSTANCE);
+    result.add(XbasePackage.eINSTANCE);
+    result.add(TypesPackage.eINSTANCE);
+    result.add(XtypePackage.eINSTANCE);
+    return result;
   }
 }

@@ -24,7 +24,7 @@ class IntegrationTest {
 			param String projectName = 'Hello'
 			
 			task Start {
-				println(context.projectName)
+				println(projectName)
 			}
 		'''.assertCompilesTo('''
 		''')
@@ -35,7 +35,7 @@ class IntegrationTest {
 			param String projectName = 'Hello'
 			
 			task Start {
-ллл				println(context.projectName)
+				println(projectName)
 			}
 		'''.compile [
 			val file = it.source.contents.head as CradleFile

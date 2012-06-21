@@ -38,7 +38,7 @@ public class IntegrationTest {
     _builder.append("task Start {");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("println(context.projectName)");
+    _builder.append("println(projectName)");
     _builder.newLine();
     _builder.append("}");
     _builder.newLine();
@@ -49,17 +49,14 @@ public class IntegrationTest {
   @Test
   public void testExtensionMethod() {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("\t\t\t");
     _builder.append("param String projectName = \'Hello\'");
     _builder.newLine();
-    _builder.append("\t\t\t");
     _builder.newLine();
-    _builder.append("\t\t\t");
     _builder.append("task Start {");
     _builder.newLine();
-    _builder.append("\uFFFD\uFFFD\uFFFD\t\t\t\tprintln(context.projectName)");
+    _builder.append("\t");
+    _builder.append("println(projectName)");
     _builder.newLine();
-    _builder.append("\t\t\t");
     _builder.append("}");
     _builder.newLine();
     final Procedure1<Result> _function = new Procedure1<Result>() {

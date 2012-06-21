@@ -22,10 +22,6 @@ Import-Package: org.apache.log4j,
  org.apache.commons.logging
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.xtext.cradle.ui,
- org.xtext.cradle.ui.contentassist,
  org.xtext.cradle.ui.contentassist.antlr,
- org.xtext.cradle.ui.internal,
- org.xtext.cradle.ui.labeling,
- org.xtext.cradle.ui.outline,
- org.xtext.cradle.ui.quickfix
+ org.xtext.cradle.ui.internal
 Bundle-Activator: org.xtext.cradle.ui.internal.CradleActivator

@@ -21,14 +21,13 @@ Import-Package: org.apache.log4j,
  org.apache.commons.logging
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.xtext.cradle,
- org.xtext.cradle.formatting,
- org.xtext.cradle.jvmmodel,
- org.xtext.cradle.validation,
- org.xtext.cradle.services,
  org.xtext.cradle.cradle,
  org.xtext.cradle.cradle.impl,
  org.xtext.cradle.cradle.util,
- org.xtext.cradle.serializer,
+ org.xtext.cradle.jvmmodel,
  org.xtext.cradle.parser.antlr,
- org.xtext.cradle.parser.antlr.internal
+ org.xtext.cradle.parser.antlr.internal,
+ org.xtext.cradle.serializer,
+ org.xtext.cradle.services,
+ org.xtext.cradle.validation
 
