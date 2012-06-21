@@ -19,7 +19,6 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.xtext.template.TemplateInjectorProvider
 
-@SuppressWarnings("restriction")
 @InjectWith(typeof(TemplateInjectorProvider))
 @RunWith(typeof(ParameterizedXtextRunner))
 @ResourceURIs(baseDir = "src/org/xtext/template/tests/jvmmodel", fileExtensions = "template")

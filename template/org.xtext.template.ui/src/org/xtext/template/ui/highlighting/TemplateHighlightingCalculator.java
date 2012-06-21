@@ -17,7 +17,6 @@ import org.xtext.template.services.TemplateGrammarAccess;
 
 import com.google.inject.Inject;
 
-@SuppressWarnings("restriction")
 public class TemplateHighlightingCalculator extends XbaseHighlightingCalculator {
 
 	@Inject

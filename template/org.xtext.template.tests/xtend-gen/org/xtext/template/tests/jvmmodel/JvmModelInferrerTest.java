@@ -19,10 +19,10 @@ import org.junit.runner.RunWith;
 import org.xtext.template.TemplateInjectorProvider;
 import org.xtext.template.tests.jvmmodel.JvmModelSignatureGenerator;
 
-@SuppressWarnings(value = "restriction")
 @InjectWith(value = TemplateInjectorProvider.class)
 @RunWith(value = ParameterizedXtextRunner.class)
 @ResourceURIs(baseDir = "src/org/xtext/template/tests/jvmmodel", fileExtensions = "template")
+@SuppressWarnings("all")
 public class JvmModelInferrerTest {
   @InjectParameter
   private XtextResource resource;

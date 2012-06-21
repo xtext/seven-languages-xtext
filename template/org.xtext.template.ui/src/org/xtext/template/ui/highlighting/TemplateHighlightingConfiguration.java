@@ -12,7 +12,6 @@ import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfigurationAcce
 import org.eclipse.xtext.ui.editor.utils.TextStyle;
 import org.eclipse.xtext.xbase.ui.highlighting.XbaseHighlightingConfiguration;
 
-@SuppressWarnings("restriction")
 public class TemplateHighlightingConfiguration extends XbaseHighlightingConfiguration {
 
 	public static final String TEXT = "template.text";

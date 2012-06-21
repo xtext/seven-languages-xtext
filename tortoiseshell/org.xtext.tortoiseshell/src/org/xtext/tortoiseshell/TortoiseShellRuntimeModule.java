@@ -13,7 +13,6 @@ import org.xtext.tortoiseshell.scoping.TortoiseShellIdentifiableSimpleNameProvid
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
-@SuppressWarnings("restriction")
 public class TortoiseShellRuntimeModule extends org.xtext.tortoiseshell.AbstractTortoiseShellRuntimeModule {
 
 	public Class<? extends StaticImplicitMethodsFeatureForTypeProvider.ExtensionClassNameProvider> 

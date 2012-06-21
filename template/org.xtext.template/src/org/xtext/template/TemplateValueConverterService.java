@@ -7,7 +7,6 @@ import org.eclipse.xtext.conversion.impl.AbstractValueConverter;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.xbase.conversion.XbaseValueConverterService;
 
-@SuppressWarnings("restriction")
 public class TemplateValueConverterService extends XbaseValueConverterService {
 
 	private static class TextValueConverter extends AbstractValueConverter<String> {

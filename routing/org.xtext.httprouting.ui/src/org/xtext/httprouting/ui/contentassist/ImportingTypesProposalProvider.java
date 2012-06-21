@@ -38,7 +38,6 @@ import com.google.inject.Inject;
 /**
  * @author Holger Schill - Initial contribution and API
  */
-@SuppressWarnings("restriction")
 public class ImportingTypesProposalProvider extends JdtTypesProposalProvider {
 	@Inject
 	private XbaseQualifiedNameValueConverter qualifiedNameValueConverter;

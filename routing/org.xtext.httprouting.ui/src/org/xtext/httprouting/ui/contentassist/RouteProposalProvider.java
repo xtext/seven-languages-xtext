@@ -29,7 +29,6 @@ import com.google.common.base.Predicate;
  * @author Holger Schill - Initial contribution and API
  *
  */
-@SuppressWarnings("restriction")
 public class RouteProposalProvider extends AbstractRouteProposalProvider {
 
 	public void completeRouteFeatureCall_Feature(EObject model,

@@ -2,7 +2,6 @@ package org.xtext.template.validation;
 
 import org.eclipse.xtext.xbase.XExpression;
 
-@SuppressWarnings("restriction")
 public class TemplateJavaValidator extends AbstractTemplateJavaValidator {
 
 	// @Check

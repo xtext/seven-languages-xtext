@@ -21,7 +21,6 @@ import com.google.inject.Inject;
  * see
  * http://www.eclipse.org/Xtext/documentation/latest/xtext.html#labelProvider
  */
-@SuppressWarnings("restriction")
 public class RouteLabelProvider extends XbaseLabelProvider {
 
 	@Inject

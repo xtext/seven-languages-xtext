@@ -10,7 +10,6 @@ import org.eclipse.xtext.xbase.ui.labeling.XbaseDescriptionLabelProvider;
  * 
  * see http://www.eclipse.org/Xtext/documentation/latest/xtext.html#labelProvider
  */
-@SuppressWarnings("restriction")
 public class RouteDescriptionLabelProvider extends XbaseDescriptionLabelProvider {
 
 /*

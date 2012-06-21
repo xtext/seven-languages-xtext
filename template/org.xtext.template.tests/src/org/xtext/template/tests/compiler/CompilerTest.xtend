@@ -22,7 +22,6 @@ import org.junit.runner.RunWith
 import org.xtext.template.TemplateInjectorProvider
 import org.eclipse.xtext.xbase.lib.Procedures$Procedure1
 
-@SuppressWarnings("restriction")
 @InjectWith(typeof(TemplateInjectorProvider))
 @RunWith(typeof(ParameterizedXtextRunner))
 @ResourceURIs(baseDir = "src/org/xtext/template/tests/compiler", fileExtensions = "template")

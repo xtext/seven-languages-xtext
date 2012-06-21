@@ -12,7 +12,6 @@ import org.xtext.httprouting.route.Key;
  * customization of the default outline structure
  * 
  */
-@SuppressWarnings("restriction")
 public class RouteOutlineTreeProvider extends DefaultOutlineTreeProvider {
 	protected boolean _isLeaf(XExpression expr) {
 		return true;

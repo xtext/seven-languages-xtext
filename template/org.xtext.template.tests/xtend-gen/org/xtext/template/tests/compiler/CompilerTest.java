@@ -34,10 +34,10 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.xtext.template.TemplateInjectorProvider;
 
-@SuppressWarnings(value = "restriction")
 @InjectWith(value = TemplateInjectorProvider.class)
 @RunWith(value = ParameterizedXtextRunner.class)
 @ResourceURIs(baseDir = "src/org/xtext/template/tests/compiler", fileExtensions = "template")
+@SuppressWarnings("all")
 public class CompilerTest {
   @Inject
   private ValidationTestHelper _validationTestHelper;
