@@ -87,7 +87,7 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 	   					}
 						val patternField = route.url.toField("_pattern" + i , model.newTypeRef(typeof(Pattern)))[
    							setStatic(true)
-   							setInitializer([append('''Pattern.compile("«getRegExPattern(NodeModelUtils::getNode(route.url).text.trim,route.url.variables)»")''')])
+   							setInitializer([append('''Pattern.compile("Â«getRegExPattern(NodeModelUtils::getNode(route.url).text.trim,route.url.variables)Â»")''')])
    						]
    						members+= patternField
    					}
@@ -126,26 +126,26 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 				for(route : routes){
 					if(route.type == filterType)
 						if(route.url != null){
-							append(element.newTypeRef(typeof(Matcher)).type).append(''' _matcher«x» = _pattern«x».matcher(url);
+							append(element.newTypeRef(typeof(Matcher)).type).append(''' _matcherÂ«xÂ» = _patternÂ«xÂ».matcher(url);
 							''')
 							val variables = route.url.variables
-							    append('''if(_matcher«x».find()){
+							    append('''if(_matcherÂ«xÂ».find()){
 							    	''')
 						    	for( variable : variables){
-									append('''		String «variable.name» = _matcher«x».group(«variables.indexOf(variable) + 1»);
+									append('''		String Â«variable.nameÂ» = _matcherÂ«xÂ».group(Â«variables.indexOf(variable) + 1Â»);
 									''')
 								}
 								if(route.condition != null){
-									append('''		if(«route.nameOfRouteMethod(x)»Condition(request''')
-					   				append('''«FOR v : route.url.variables BEFORE ", " SEPARATOR ", "»«v.name»«ENDFOR »''')
+									append('''		if(Â«route.nameOfRouteMethod(x)Â»Condition(request''')
+					   				append('''Â«FOR v : route.url.variables BEFORE ", " SEPARATOR ", "Â»Â«v.nameÂ»Â«ENDFORÂ»''')
 					   				append('''))
 					   				''');
 					   			}
-								append('''			«route.nameOfRouteMethod(x)»(''')
+								append('''			Â«route.nameOfRouteMethod(x)Â»(''')
 								if(route.validKey)
-									append('''_key«x»,''')
+									append('''_keyÂ«xÂ»,''')
 								append('''request''')
-				   				append('''«FOR v : route.url.variables BEFORE ", " SEPARATOR ", " »«v.name»«ENDFOR»''')
+				   				append('''Â«FOR v : route.url.variables BEFORE ", " SEPARATOR ", " Â»Â«v.nameÂ»Â«ENDFORÂ»''')
 				   				append(''');
 				   				''')	
    								append('''}''');
