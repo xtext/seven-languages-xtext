@@ -115,6 +115,7 @@ public class FileExtensions {
 	}
 
 	public static File containingFolderWithFile(File file, String string) {
+		file = file.getAbsoluteFile();
 		while (file != null) {
 			if (new File(file.getAbsolutePath() + "/" + string).exists())
 				return file;
