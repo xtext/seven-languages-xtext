@@ -4,8 +4,7 @@ import static cradle.MyTasks.*
 
 class MyClass {
 	def static void main(String[] args) {
-		
-		MyTask [
+		myTask [
 			name = 'Hello from Xtend!'
 		]
 	}

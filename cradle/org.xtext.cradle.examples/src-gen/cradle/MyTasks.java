@@ -1,13 +1,16 @@
 package cradle;
 
 import com.google.common.collect.Sets;
-import cradle.MyTasks.Params;
+import cradle.MyTasks.MyTasksParams;
 import java.util.Set;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
+import org.xtext.cradle.lib.impl.TaskSkippedException;
+import org.xtext.cradle.lib.impl.TaskState;
 
 public class MyTasks {
-  public static class Params {
+  public static class MyTasksParams {
     public String name = "Hello";
   }
   
@@ -29,7 +32,7 @@ public class MyTasks {
         index++;
     }
     Set<String> tasks = Sets.newLinkedHashSet();
-    Params parameter = new Params();
+    MyTasksParams parameter = new MyTasksParams();
     index = 0;
     while(index < args.length) {
       if("--name".equals(args[index])) {
@@ -47,38 +50,70 @@ public class MyTasks {
     }
     try {
       for(String task:tasks) {
-        System.out.print("running " + task + "...");
         if("Prerequisite".equals(task))
-          executePrerequisite(parameter);
+          executePrerequisite(parameter, true);
         else if("MyTask".equals(task))
-          executeMyTask(parameter);
+          executeMyTask(parameter, true);
         index++;
-        System.out.println("success");
       }
     } catch(Throwable e) {
-      System.out.println("failure: " + e.getMessage());System.out.println();e.printStackTrace();
+      System.out.println();
+      e.printStackTrace();
     }
-    
   }
   
-  public static void Prerequisite(final Procedure1<Params> paramInitializer) {
-    Params p = new Params();
-    paramInitializer.apply(p);
-    executePrerequisite(p);
+  public static void prerequisite(final Procedure1<MyTasksParams> init) {
+    MyTasksParams p = new MyTasksParams();
+    init.apply(p);
+    executePrerequisite(p, false);
   }
   
-  protected static void executePrerequisite(final Params it) {
+  protected static void executePrerequisite(final MyTasksParams it, final boolean log) {
+    try {
+      if(log) System.out.println("running Prerequisite...");
+      executePrerequisiteImpl(it);
+      TaskState.fireFinishTask("Prerequisite", null);
+      if(log) System.out.println("success");
+    } catch(TaskSkippedException e) {
+      TaskState.fireFinishTask("Prerequisite", e);
+      if(log) System.out.println("skipped: " + e.getMessage());
+    } catch(Throwable e) {
+      TaskState.setMaySkip(false);
+      TaskState.fireFinishTask("Prerequisite", e);
+      if(log) System.out.println("error: "+e.getMessage());
+      Exceptions.sneakyThrow(e);
+    }
+  }
+  
+  protected static void executePrerequisiteImpl(final MyTasksParams it) {
     InputOutput.<String>println("prerequisite");
   }
   
-  public static void MyTask(final Procedure1<Params> paramInitializer) {
-    Params p = new Params();
-    paramInitializer.apply(p);
-    executePrerequisite(p);
-    executeMyTask(p);
+  public static void myTask(final Procedure1<MyTasksParams> init) {
+    MyTasksParams p = new MyTasksParams();
+    init.apply(p);
+    executePrerequisite(p, false);
+    executeMyTask(p, false);
   }
   
-  protected static void executeMyTask(final Params it) {
+  protected static void executeMyTask(final MyTasksParams it, final boolean log) {
+    try {
+      if(log) System.out.println("running MyTask...");
+      executeMyTaskImpl(it);
+      TaskState.fireFinishTask("MyTask", null);
+      if(log) System.out.println("success");
+    } catch(TaskSkippedException e) {
+      TaskState.fireFinishTask("MyTask", e);
+      if(log) System.out.println("skipped: " + e.getMessage());
+    } catch(Throwable e) {
+      TaskState.setMaySkip(false);
+      TaskState.fireFinishTask("MyTask", e);
+      if(log) System.out.println("error: "+e.getMessage());
+      Exceptions.sneakyThrow(e);
+    }
+  }
+  
+  protected static void executeMyTaskImpl(final MyTasksParams it) {
     String _plus = ("Say: " + it.name);
     InputOutput.<String>println(_plus);
   }

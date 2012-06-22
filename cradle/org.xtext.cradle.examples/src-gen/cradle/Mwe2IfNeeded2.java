@@ -1,17 +1,21 @@
 package cradle;
 
 import com.google.common.collect.Sets;
-import cradle.Mwe2IfNeeded2.Params;
+import cradle.Mwe2IfNeeded2.Mwe2IfNeeded2Params;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Set;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Pair;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
+import org.xtext.cradle.lib.DigestInitFile;
 import org.xtext.cradle.lib.FileExtensions;
 import org.xtext.cradle.lib.Literals;
-import org.xtext.cradle.lib.Literals.DigestInitFile;
+import org.xtext.cradle.lib.impl.TaskSkippedException;
+import org.xtext.cradle.lib.impl.TaskState;
 
 public class Mwe2IfNeeded2 {
-  public static class Params {
+  public static class Mwe2IfNeeded2Params {
   }
   
   
@@ -28,7 +32,7 @@ public class Mwe2IfNeeded2 {
         index++;
     }
     Set<String> tasks = Sets.newLinkedHashSet();
-    Params parameter = new Params();
+    Mwe2IfNeeded2Params parameter = new Mwe2IfNeeded2Params();
     index = 0;
     while(index < args.length) {
       if("runMwe2IfNeeded2".equals(args[index])) {
@@ -41,35 +45,52 @@ public class Mwe2IfNeeded2 {
     }
     try {
       for(String task:tasks) {
-        System.out.print("running " + task + "...");
         if("runMwe2IfNeeded2".equals(task))
-          executeRunMwe2IfNeeded2(parameter);
+          executeRunMwe2IfNeeded2(parameter, true);
         index++;
-        System.out.println("success");
       }
     } catch(Throwable e) {
-      System.out.println("failure: " + e.getMessage());System.out.println();e.printStackTrace();
+      System.out.println();
+      e.printStackTrace();
     }
-    
   }
   
-  public static void runMwe2IfNeeded2(final Procedure1<Params> paramInitializer) {
-    Params p = new Params();
-    paramInitializer.apply(p);
-    executeRunMwe2IfNeeded2(p);
+  public static void runMwe2IfNeeded2(final Procedure1<Mwe2IfNeeded2Params> init) {
+    Mwe2IfNeeded2Params p = new Mwe2IfNeeded2Params();
+    init.apply(p);
+    executeRunMwe2IfNeeded2(p, false);
   }
   
-  protected static void executeRunMwe2IfNeeded2(final Params it) {
+  protected static void executeRunMwe2IfNeeded2(final Mwe2IfNeeded2Params it, final boolean log) {
+    try {
+      if(log) System.out.println("running runMwe2IfNeeded2...");
+      executeRunMwe2IfNeeded2Impl(it);
+      TaskState.fireFinishTask("runMwe2IfNeeded2", null);
+      if(log) System.out.println("success");
+    } catch(TaskSkippedException e) {
+      TaskState.fireFinishTask("runMwe2IfNeeded2", e);
+      if(log) System.out.println("skipped: " + e.getMessage());
+    } catch(Throwable e) {
+      TaskState.setMaySkip(false);
+      TaskState.fireFinishTask("runMwe2IfNeeded2", e);
+      if(log) System.out.println("error: "+e.getMessage());
+      Exceptions.sneakyThrow(e);
+    }
+  }
+  
+  protected static void executeRunMwe2IfNeeded2Impl(final Mwe2IfNeeded2Params it) {
     File _workspace = Literals.workspace();
     final File myDSL = FileExtensions.operator_divide(_workspace, "org.xtext.example.mydsl");
     final File workflowFile = FileExtensions.operator_divide(myDSL, "src/org/xtext/example/mydsl/GenerateMyDsl.mwe2");
     final Procedure1<DigestInitFile> _function = new Procedure1<DigestInitFile>() {
         public void apply(final DigestInitFile it) {
           File _divide = FileExtensions.operator_divide(myDSL, ".digest");
-          it.digest = _divide;
+          it.setDigest(_divide);
+          ArrayList<File> _files = it.getFiles();
           File _divide_1 = FileExtensions.operator_divide(myDSL, "src/org/xtext/example/mydsl/MyDsl.xtext");
-          it.files.add(_divide_1);
-          it.files.add(workflowFile);
+          _files.add(_divide_1);
+          ArrayList<File> _files_1 = it.getFiles();
+          _files_1.add(workflowFile);
         }
       };
     Literals.skipTaskIfDigestUnchanged(_function);

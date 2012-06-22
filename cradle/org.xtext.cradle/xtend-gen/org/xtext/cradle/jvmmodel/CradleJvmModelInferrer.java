@@ -30,6 +30,7 @@ import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor.IPostIndexingInitializing;
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
@@ -40,6 +41,8 @@ import org.xtext.cradle.cradle.CradleFile;
 import org.xtext.cradle.cradle.Declaration;
 import org.xtext.cradle.cradle.Parameter;
 import org.xtext.cradle.cradle.Task;
+import org.xtext.cradle.lib.impl.TaskSkippedException;
+import org.xtext.cradle.lib.impl.TaskState;
 
 @SuppressWarnings("all")
 public class CradleJvmModelInferrer extends AbstractModelInferrer {
@@ -62,6 +65,7 @@ public class CradleJvmModelInferrer extends AbstractModelInferrer {
     IPostIndexingInitializing<JvmGenericType> _accept = acceptor.<JvmGenericType>accept(_class);
     final Procedure1<JvmGenericType> _function = new Procedure1<JvmGenericType>() {
         public void apply(final JvmGenericType it) {
+          String _plus = (name + "Params");
           final Procedure1<JvmGenericType> _function = new Procedure1<JvmGenericType>() {
               public void apply(final JvmGenericType it) {
                 it.setStatic(true);
@@ -99,7 +103,7 @@ public class CradleJvmModelInferrer extends AbstractModelInferrer {
                 }
               }
             };
-          final JvmGenericType data = CradleJvmModelInferrer.this._jvmTypesBuilder.toClass(element, "Params", _function);
+          final JvmGenericType data = CradleJvmModelInferrer.this._jvmTypesBuilder.toClass(element, _plus, _function);
           EList<JvmMember> _members = it.getMembers();
           CradleJvmModelInferrer.this._jvmTypesBuilder.<JvmGenericType>operator_add(_members, data);
           EList<JvmMember> _members_1 = it.getMembers();
@@ -308,10 +312,6 @@ public class CradleJvmModelInferrer extends AbstractModelInferrer {
                       ITreeAppendable _append_19 = it.append("for(String task:tasks) {");
                       ITreeAppendable _increaseIndentation_6 = _append_19.increaseIndentation();
                       _increaseIndentation_6.newLine();
-                      StringConcatenation _builder_11 = new StringConcatenation();
-                      _builder_11.append("System.out.print(\"running \" + task + \"...\");");
-                      ITreeAppendable _append_20 = it.append(_builder_11);
-                      _append_20.newLine();
                       for (final Task dec_3 : tasks) {
                         {
                           Task _head = IterableExtensions.<Task>head(tasks);
@@ -320,30 +320,24 @@ public class CradleJvmModelInferrer extends AbstractModelInferrer {
                             ITreeAppendable _newLine_6 = it.newLine();
                             _newLine_6.append("else ");
                           }
-                          StringConcatenation _builder_12 = new StringConcatenation();
-                          _builder_12.append("if(\"");
+                          StringConcatenation _builder_11 = new StringConcatenation();
+                          _builder_11.append("if(\"");
                           String _name_1 = dec_3.getName();
-                          _builder_12.append(_name_1, "");
-                          _builder_12.append("\".equals(task))");
-                          ITreeAppendable _append_21 = it.append(_builder_12);
-                          ITreeAppendable _increaseIndentation_7 = _append_21.increaseIndentation();
+                          _builder_11.append(_name_1, "");
+                          _builder_11.append("\".equals(task))");
+                          ITreeAppendable _append_20 = it.append(_builder_11);
+                          ITreeAppendable _increaseIndentation_7 = _append_20.increaseIndentation();
                           _increaseIndentation_7.newLine();
-                          StringConcatenation _builder_13 = new StringConcatenation();
-                          _builder_13.append("execute");
-                          String _name_2 = dec_3.getName();
-                          String _firstUpper = StringExtensions.toFirstUpper(_name_2);
-                          _builder_13.append(_firstUpper, "");
-                          _builder_13.append("(parameter);");
-                          it.append(_builder_13);
+                          StringConcatenation _builder_12 = new StringConcatenation();
+                          String _methodNameExecute = CradleJvmModelInferrer.this.getMethodNameExecute(dec_3);
+                          _builder_12.append(_methodNameExecute, "");
+                          _builder_12.append("(parameter, true);");
+                          it.append(_builder_12);
                           it.decreaseIndentation();
                         }
                       }
                       ITreeAppendable _newLine_6 = it.newLine();
-                      ITreeAppendable _append_21 = _newLine_6.append("index++;");
-                      _append_21.newLine();
-                      StringConcatenation _builder_12 = new StringConcatenation();
-                      _builder_12.append("System.out.println(\"success\");");
-                      it.append(_builder_12);
+                      _newLine_6.append("index++;");
                       ITreeAppendable _decreaseIndentation_4 = it.decreaseIndentation();
                       ITreeAppendable _newLine_7 = _decreaseIndentation_4.newLine();
                       _newLine_7.append("}");
@@ -352,25 +346,22 @@ public class CradleJvmModelInferrer extends AbstractModelInferrer {
                       _newLine_8.append("} catch(");
                       JvmType _findDeclaredType_1 = CradleJvmModelInferrer.this._typeReferences.findDeclaredType(Throwable.class, element);
                       it.append(_findDeclaredType_1);
-                      StringConcatenation _builder_13 = new StringConcatenation();
-                      _builder_13.append(" ");
-                      _builder_13.append("e) {");
-                      ITreeAppendable _append_22 = it.append(_builder_13);
-                      ITreeAppendable _increaseIndentation_7 = _append_22.increaseIndentation();
+                      StringConcatenation _builder_11 = new StringConcatenation();
+                      _builder_11.append(" ");
+                      _builder_11.append("e) {");
+                      ITreeAppendable _append_20 = it.append(_builder_11);
+                      ITreeAppendable _increaseIndentation_7 = _append_20.increaseIndentation();
                       _increaseIndentation_7.newLine();
-                      StringConcatenation _builder_14 = new StringConcatenation();
-                      _builder_14.append("System.out.println(\"failure: \" + e.getMessage());");
-                      it.append(_builder_14);
-                      StringConcatenation _builder_15 = new StringConcatenation();
-                      _builder_15.append("System.out.println();");
-                      it.append(_builder_15);
-                      StringConcatenation _builder_16 = new StringConcatenation();
-                      _builder_16.append("e.printStackTrace();");
-                      it.append(_builder_16);
+                      StringConcatenation _builder_12 = new StringConcatenation();
+                      _builder_12.append("System.out.println();");
+                      ITreeAppendable _append_21 = it.append(_builder_12);
+                      _append_21.newLine();
+                      StringConcatenation _builder_13 = new StringConcatenation();
+                      _builder_13.append("e.printStackTrace();");
+                      it.append(_builder_13);
                       ITreeAppendable _decreaseIndentation_6 = it.decreaseIndentation();
                       ITreeAppendable _newLine_9 = _decreaseIndentation_6.newLine();
-                      ITreeAppendable _append_23 = _newLine_9.append("}");
-                      _append_23.newLine();
+                      _newLine_9.append("}");
                     }
                   };
                 CradleJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _function);
@@ -383,43 +374,157 @@ public class CradleJvmModelInferrer extends AbstractModelInferrer {
           for (final Task task : _filter) {
             {
               EList<JvmMember> _members_2 = it.getMembers();
-              String _name = task.getName();
+              String _methodName = CradleJvmModelInferrer.this.getMethodName(task);
               JvmTypeReference _newTypeRef_1 = CradleJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(task, Void.TYPE);
               final Procedure1<JvmOperation> _function_2 = new Procedure1<JvmOperation>() {
                   public void apply(final JvmOperation it) {
                     EList<JvmFormalParameter> _parameters = it.getParameters();
                     JvmTypeReference _newTypeRef = CradleJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(data);
                     JvmTypeReference _newTypeRef_1 = CradleJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(element, Procedure1.class, _newTypeRef);
-                    JvmFormalParameter _parameter = CradleJvmModelInferrer.this._jvmTypesBuilder.toParameter(task, "paramInitializer", _newTypeRef_1);
+                    JvmFormalParameter _parameter = CradleJvmModelInferrer.this._jvmTypesBuilder.toParameter(task, "init", _newTypeRef_1);
                     CradleJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters, _parameter);
                     it.setStatic(true);
                     final Procedure1<ITreeAppendable> _function = new Procedure1<ITreeAppendable>() {
                         public void apply(final ITreeAppendable it) {
-                          ITreeAppendable _append = it.append("Params p = new Params();");
+                          it.append(data);
+                          it.append(" p = new ");
+                          it.append(data);
+                          ITreeAppendable _append = it.append("();");
                           _append.newLine();
-                          it.append("paramInitializer.apply(p);");
+                          it.append("init.apply(p);");
                           Collection<Task> _findDependentTasks = TaskExtensions.findDependentTasks(task);
                           for (final Task dependency : _findDependentTasks) {
                             ITreeAppendable _newLine = it.newLine();
-                            String _name = dependency.getName();
-                            String _firstUpper = StringExtensions.toFirstUpper(_name);
-                            String _plus = ("execute" + _firstUpper);
-                            String _plus_1 = (_plus + "(p);");
-                            _newLine.append(_plus_1);
+                            String _methodNameExecute = CradleJvmModelInferrer.this.getMethodNameExecute(dependency);
+                            String _plus = (_methodNameExecute + "(p, false);");
+                            _newLine.append(_plus);
                           }
                         }
                       };
                     CradleJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _function);
                   }
                 };
-              JvmOperation _method_1 = CradleJvmModelInferrer.this._jvmTypesBuilder.toMethod(task, _name, _newTypeRef_1, _function_2);
+              JvmOperation _method_1 = CradleJvmModelInferrer.this._jvmTypesBuilder.toMethod(task, _methodName, _newTypeRef_1, _function_2);
               CradleJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_2, _method_1);
               EList<JvmMember> _members_3 = it.getMembers();
-              String _name_1 = task.getName();
-              String _firstUpper = StringExtensions.toFirstUpper(_name_1);
-              String _plus = ("execute" + _firstUpper);
+              String _methodNameExecute = CradleJvmModelInferrer.this.getMethodNameExecute(task);
               JvmTypeReference _newTypeRef_2 = CradleJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(task, Void.TYPE);
               final Procedure1<JvmOperation> _function_3 = new Procedure1<JvmOperation>() {
+                  public void apply(final JvmOperation it) {
+                    it.setStatic(true);
+                    it.setVisibility(JvmVisibility.PROTECTED);
+                    EList<JvmFormalParameter> _parameters = it.getParameters();
+                    JvmTypeReference _newTypeRef = CradleJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(data);
+                    JvmFormalParameter _parameter = CradleJvmModelInferrer.this._jvmTypesBuilder.toParameter(task, "it", _newTypeRef);
+                    CradleJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters, _parameter);
+                    EList<JvmFormalParameter> _parameters_1 = it.getParameters();
+                    JvmTypeReference _newTypeRef_1 = CradleJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(task, Boolean.TYPE);
+                    JvmFormalParameter _parameter_1 = CradleJvmModelInferrer.this._jvmTypesBuilder.toParameter(task, "log", _newTypeRef_1);
+                    CradleJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters_1, _parameter_1);
+                    final Procedure1<ITreeAppendable> _function = new Procedure1<ITreeAppendable>() {
+                        public void apply(final ITreeAppendable it) {
+                          StringConcatenation _builder = new StringConcatenation();
+                          _builder.append("try {");
+                          ITreeAppendable _append = it.append(_builder);
+                          ITreeAppendable _increaseIndentation = _append.increaseIndentation();
+                          _increaseIndentation.newLine();
+                          StringConcatenation _builder_1 = new StringConcatenation();
+                          _builder_1.append("if(log) System.out.println(\"running ");
+                          String _name = task.getName();
+                          _builder_1.append(_name, "");
+                          _builder_1.append("...\");");
+                          ITreeAppendable _append_1 = it.append(_builder_1);
+                          _append_1.newLine();
+                          String _methodNameExecuteImpl = CradleJvmModelInferrer.this.getMethodNameExecuteImpl(task);
+                          it.append(_methodNameExecuteImpl);
+                          StringConcatenation _builder_2 = new StringConcatenation();
+                          _builder_2.append("(it);");
+                          ITreeAppendable _append_2 = it.append(_builder_2);
+                          _append_2.newLine();
+                          JvmType _findDeclaredType = CradleJvmModelInferrer.this._typeReferences.findDeclaredType(TaskState.class, element);
+                          it.append(_findDeclaredType);
+                          StringConcatenation _builder_3 = new StringConcatenation();
+                          _builder_3.append(".fireFinishTask(\"");
+                          String _name_1 = task.getName();
+                          _builder_3.append(_name_1, "");
+                          _builder_3.append("\", null);");
+                          ITreeAppendable _append_3 = it.append(_builder_3);
+                          _append_3.newLine();
+                          StringConcatenation _builder_4 = new StringConcatenation();
+                          _builder_4.append("if(log) System.out.println(\"success\");");
+                          it.append(_builder_4);
+                          ITreeAppendable _decreaseIndentation = it.decreaseIndentation();
+                          ITreeAppendable _newLine = _decreaseIndentation.newLine();
+                          _newLine.append("} catch(");
+                          JvmType _findDeclaredType_1 = CradleJvmModelInferrer.this._typeReferences.findDeclaredType(TaskSkippedException.class, element);
+                          it.append(_findDeclaredType_1);
+                          StringConcatenation _builder_5 = new StringConcatenation();
+                          _builder_5.append(" ");
+                          _builder_5.append("e) {");
+                          ITreeAppendable _append_4 = it.append(_builder_5);
+                          ITreeAppendable _increaseIndentation_1 = _append_4.increaseIndentation();
+                          _increaseIndentation_1.newLine();
+                          JvmType _findDeclaredType_2 = CradleJvmModelInferrer.this._typeReferences.findDeclaredType(TaskState.class, element);
+                          it.append(_findDeclaredType_2);
+                          StringConcatenation _builder_6 = new StringConcatenation();
+                          _builder_6.append(".fireFinishTask(\"");
+                          String _name_2 = task.getName();
+                          _builder_6.append(_name_2, "");
+                          _builder_6.append("\", e);");
+                          ITreeAppendable _append_5 = it.append(_builder_6);
+                          _append_5.newLine();
+                          StringConcatenation _builder_7 = new StringConcatenation();
+                          _builder_7.append("if(log) System.out.println(\"skipped: \" + e.getMessage());");
+                          it.append(_builder_7);
+                          ITreeAppendable _decreaseIndentation_1 = it.decreaseIndentation();
+                          ITreeAppendable _newLine_1 = _decreaseIndentation_1.newLine();
+                          _newLine_1.append("} catch(");
+                          JvmType _findDeclaredType_3 = CradleJvmModelInferrer.this._typeReferences.findDeclaredType(Throwable.class, element);
+                          it.append(_findDeclaredType_3);
+                          StringConcatenation _builder_8 = new StringConcatenation();
+                          _builder_8.append(" ");
+                          _builder_8.append("e) {");
+                          ITreeAppendable _append_6 = it.append(_builder_8);
+                          ITreeAppendable _increaseIndentation_2 = _append_6.increaseIndentation();
+                          _increaseIndentation_2.newLine();
+                          JvmType _findDeclaredType_4 = CradleJvmModelInferrer.this._typeReferences.findDeclaredType(TaskState.class, element);
+                          it.append(_findDeclaredType_4);
+                          StringConcatenation _builder_9 = new StringConcatenation();
+                          _builder_9.append(".setMaySkip(false);");
+                          ITreeAppendable _append_7 = it.append(_builder_9);
+                          _append_7.newLine();
+                          JvmType _findDeclaredType_5 = CradleJvmModelInferrer.this._typeReferences.findDeclaredType(TaskState.class, element);
+                          it.append(_findDeclaredType_5);
+                          StringConcatenation _builder_10 = new StringConcatenation();
+                          _builder_10.append(".fireFinishTask(\"");
+                          String _name_3 = task.getName();
+                          _builder_10.append(_name_3, "");
+                          _builder_10.append("\", e);");
+                          ITreeAppendable _append_8 = it.append(_builder_10);
+                          _append_8.newLine();
+                          StringConcatenation _builder_11 = new StringConcatenation();
+                          _builder_11.append("if(log) System.out.println(\"error: \"+e.getMessage());");
+                          ITreeAppendable _append_9 = it.append(_builder_11);
+                          _append_9.newLine();
+                          JvmType _findDeclaredType_6 = CradleJvmModelInferrer.this._typeReferences.findDeclaredType(Exceptions.class, element);
+                          it.append(_findDeclaredType_6);
+                          StringConcatenation _builder_12 = new StringConcatenation();
+                          _builder_12.append(".sneakyThrow(e);");
+                          it.append(_builder_12);
+                          ITreeAppendable _decreaseIndentation_2 = it.decreaseIndentation();
+                          ITreeAppendable _newLine_2 = _decreaseIndentation_2.newLine();
+                          _newLine_2.append("}");
+                        }
+                      };
+                    CradleJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _function);
+                  }
+                };
+              JvmOperation _method_2 = CradleJvmModelInferrer.this._jvmTypesBuilder.toMethod(task, _methodNameExecute, _newTypeRef_2, _function_3);
+              CradleJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_3, _method_2);
+              EList<JvmMember> _members_4 = it.getMembers();
+              String _methodNameExecuteImpl = CradleJvmModelInferrer.this.getMethodNameExecuteImpl(task);
+              JvmTypeReference _newTypeRef_3 = CradleJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(task, Void.TYPE);
+              final Procedure1<JvmOperation> _function_4 = new Procedure1<JvmOperation>() {
                   public void apply(final JvmOperation it) {
                     it.setStatic(true);
                     it.setVisibility(JvmVisibility.PROTECTED);
@@ -431,8 +536,8 @@ public class CradleJvmModelInferrer extends AbstractModelInferrer {
                     CradleJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _action);
                   }
                 };
-              JvmOperation _method_2 = CradleJvmModelInferrer.this._jvmTypesBuilder.toMethod(task, _plus, _newTypeRef_2, _function_3);
-              CradleJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_3, _method_2);
+              JvmOperation _method_3 = CradleJvmModelInferrer.this._jvmTypesBuilder.toMethod(task, _methodNameExecuteImpl, _newTypeRef_3, _function_4);
+              CradleJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_4, _method_3);
             }
           }
         }
@@ -440,12 +545,33 @@ public class CradleJvmModelInferrer extends AbstractModelInferrer {
     _accept.initializeLater(_function);
   }
   
-  public String getJavaClassName(final EObject it) {
+  private String getMethodName(final Task task) {
+    String _name = task.getName();
+    String _firstLower = StringExtensions.toFirstLower(_name);
+    return _firstLower;
+  }
+  
+  private String getMethodNameExecuteImpl(final Task task) {
+    String _name = task.getName();
+    String _firstUpper = StringExtensions.toFirstUpper(_name);
+    String _plus = ("execute" + _firstUpper);
+    String _plus_1 = (_plus + "Impl");
+    return _plus_1;
+  }
+  
+  private String getMethodNameExecute(final Task task) {
+    String _name = task.getName();
+    String _firstUpper = StringExtensions.toFirstUpper(_name);
+    String _plus = ("execute" + _firstUpper);
+    return _plus;
+  }
+  
+  private String getJavaClassName(final EObject it) {
     Resource _eResource = it.eResource();
     URI _uRI = _eResource.getURI();
-    final String name = _uRI.lastSegment();
-    int _lastIndexOf = name.lastIndexOf(".");
-    return name.substring(0, _lastIndexOf);
+    URI _trimFileExtension = _uRI.trimFileExtension();
+    String _lastSegment = _trimFileExtension.lastSegment();
+    return _lastSegment;
   }
   
   public void infer(final EObject element, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {

@@ -17,6 +17,10 @@ import org.eclipse.xtext.xbase.compiler.TypeReferenceSerializer
 import org.eclipse.xtext.common.types.util.TypeReferences
 import com.google.common.collect.Sets
 import java.util.Set
+import org.xtext.cradle.lib.impl.TaskSkippedException
+import org.xtext.cradle.lib.impl.TaskState
+import java.io.PrintStream
+import org.eclipse.xtext.xbase.lib.Exceptions
 
 class CradleJvmModelInferrer extends AbstractModelInferrer {
 
@@ -29,7 +33,7 @@ class CradleJvmModelInferrer extends AbstractModelInferrer {
    		val name = element.javaClassName
    		acceptor.accept(element.toClass('cradle.'+name))
    			.initializeLater([
-   				val data = element.toClass("Params") [
+   				val data = element.toClass(name + "Params") [
    					^static = true
    					members += element.toConstructor[]
 	   				for (param : element.declarations.filter(typeof(Parameter))) {
@@ -105,40 +109,72 @@ class CradleJvmModelInferrer extends AbstractModelInferrer {
 	   					decreaseIndentation.newLine.append("}").newLine
    						append('''try {''').increaseIndentation.newLine
    						append("for(String task:tasks) {").increaseIndentation.newLine
-   						append('''System.out.print("running " + task + "...");''').newLine
 	   					for(dec : tasks) {
 	   						if(dec != tasks.head)
 	   							newLine.append("else ")
 	   						append('''if("«dec.name»".equals(task))''').increaseIndentation.newLine
-	   						append('''execute«dec.name.toFirstUpper»(parameter);''') 
+	   						append('''«dec.methodNameExecute»(parameter, true);''') 
 	   						decreaseIndentation	
 	   					}
-	   					newLine.append("index++;").newLine
-	   					append('''System.out.println("success");''')
+	   					newLine.append("index++;")
 	   					decreaseIndentation.newLine.append("}")
 	   					decreaseIndentation.newLine.append("} catch(")
 	   					append(findDeclaredType(typeof(Throwable), element))
 	   					append(''' e) {''').increaseIndentation.newLine
-	   					append('''System.out.println("failure: " + e.getMessage());''')
-	   					append('''System.out.println();''')
+	   					append('''System.out.println();''').newLine
 	   					append('''e.printStackTrace();''')
-	   					decreaseIndentation.newLine.append("}").newLine
+	   					decreaseIndentation.newLine.append("}")
    					]
    				]
    				
    				for (task : element.declarations.filter(typeof(Task))) {
-		   			members += task.toMethod(task.name, task.newTypeRef(Void::TYPE)) [
-		   				parameters += task.toParameter("paramInitializer", element.newTypeRef(typeof(Procedures$Procedure1),newTypeRef(data)))
+		   			members += task.toMethod(task.methodName, task.newTypeRef(Void::TYPE)) [
+		   				parameters += task.toParameter("init", element.newTypeRef(typeof(Procedures$Procedure1),newTypeRef(data)))
 		   				^static = true
 		   				body = [
-		   					append('Params p = new Params();').newLine
-		   					append('paramInitializer.apply(p);')
+		   					append(data)
+		   					append(' p = new ')
+		   					append(data)
+		   					append('();').newLine
+		   					append('init.apply(p);')
 		   					for (dependency : task.findDependentTasks) {
-			   					newLine.append('execute'+dependency.name.toFirstUpper+"(p);")
+			   					newLine.append(dependency.methodNameExecute+"(p, false);")
 		   					}
 		   				]
 		   			]
-		   			members += task.toMethod("execute"+task.name.toFirstUpper, task.newTypeRef(Void::TYPE)) [
+		   			members += task.toMethod(task.methodNameExecute, task.newTypeRef(Void::TYPE)) [
+		   				^static = true
+		   				visibility = JvmVisibility::PROTECTED
+		   				parameters += task.toParameter("it", newTypeRef(data))
+		   				parameters += task.toParameter("log", task.newTypeRef(Boolean::TYPE))
+		   				body = [
+		   					append('''try {''').increaseIndentation.newLine
+		   					append('''if(log) System.out.println("running «task.name»...");''').newLine
+	   						append(task.methodNameExecuteImpl)
+	   						append('''(it);''').newLine
+		   					append(findDeclaredType(typeof(TaskState), element))
+		   					append('''.fireFinishTask("«task.name»", null);''').newLine
+		   					append('''if(log) System.out.println("success");''')
+		   					decreaseIndentation.newLine.append("} catch(")
+		   					append(findDeclaredType(typeof(TaskSkippedException), element))
+		   					append(''' e) {''').increaseIndentation.newLine
+		   					append(findDeclaredType(typeof(TaskState), element))
+		   					append('''.fireFinishTask("«task.name»", e);''').newLine
+		   					append('''if(log) System.out.println("skipped: " + e.getMessage());''')
+		   					decreaseIndentation.newLine.append("} catch(")
+		   					append(findDeclaredType(typeof(Throwable), element))
+		   					append(''' e) {''').increaseIndentation.newLine
+		   					append(findDeclaredType(typeof(TaskState), element))
+		   					append('''.setMaySkip(false);''').newLine
+		   					append(findDeclaredType(typeof(TaskState), element))
+		   					append('''.fireFinishTask("«task.name»", e);''').newLine
+		   					append('''if(log) System.out.println("error: "+e.getMessage());''').newLine
+		   					append(findDeclaredType(typeof(Exceptions), element))
+	   						append('''.sneakyThrow(e);''')
+		   					decreaseIndentation.newLine.append("}")
+		   				]
+		   			]
+		   			members += task.toMethod(task.methodNameExecuteImpl, task.newTypeRef(Void::TYPE)) [
 		   				^static = true
 		   				visibility = JvmVisibility::PROTECTED
 		   				parameters += task.toParameter("it", newTypeRef(data))
@@ -148,9 +184,20 @@ class CradleJvmModelInferrer extends AbstractModelInferrer {
    			])
    	}
    	
-   	def getJavaClassName(EObject it) {
-   		val name = eResource.URI.lastSegment
-   		return name.substring(0, name.lastIndexOf('.'))
+   	def private getMethodName(Task task) {
+   		task.name.toFirstLower
+   	}
+   	
+   	def private getMethodNameExecuteImpl(Task task) {
+   		"execute" + task.name.toFirstUpper + "Impl"
+   	}
+   	
+   	def private getMethodNameExecute(Task task) {
+   		"execute" + task.name.toFirstUpper
+   	}
+   	
+   	def private getJavaClassName(EObject it) {
+   		eResource.URI.trimFileExtension.lastSegment
    	}
    	
 }

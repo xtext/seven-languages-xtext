@@ -1,5 +1,4 @@
 
-
 task runMwe2IfNeeded2 {
 	val myDSL = workspace:/org.xtext.example.mydsl
 	val workflowFile = myDSL:/src/org/xtext/example/mydsl/GenerateMyDsl.mwe2

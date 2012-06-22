@@ -1,10 +1,11 @@
 package cradle;
 
 import com.google.common.collect.Sets;
-import cradle.Properties.Params;
+import cradle.Properties.PropertiesParams;
 import java.io.File;
 import java.util.List;
 import java.util.Set;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
@@ -12,9 +13,11 @@ import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.xtext.cradle.lib.FileExtensions;
 import org.xtext.cradle.lib.Literals;
 import org.xtext.cradle.lib.impl.FileProperties;
+import org.xtext.cradle.lib.impl.TaskSkippedException;
+import org.xtext.cradle.lib.impl.TaskState;
 
 public class Properties {
-  public static class Params {
+  public static class PropertiesParams {
     public String name = "holla";
   }
   
@@ -39,7 +42,7 @@ public class Properties {
         index++;
     }
     Set<String> tasks = Sets.newLinkedHashSet();
-    Params parameter = new Params();
+    PropertiesParams parameter = new PropertiesParams();
     index = 0;
     while(index < args.length) {
       if("--name".equals(args[index])) {
@@ -62,33 +65,48 @@ public class Properties {
     }
     try {
       for(String task:tasks) {
-        System.out.print("running " + task + "...");
         if("SetJavaLineWrap".equals(task))
-          executeSetJavaLineWrap(parameter);
+          executeSetJavaLineWrap(parameter, true);
         else if("SetEncoding".equals(task))
-          executeSetEncoding(parameter);
+          executeSetEncoding(parameter, true);
         else if("SetEncoding2".equals(task))
-          executeSetEncoding2(parameter);
+          executeSetEncoding2(parameter, true);
         else if("SetAllEncoding1".equals(task))
-          executeSetAllEncoding1(parameter);
+          executeSetAllEncoding1(parameter, true);
         else if("SetAllEncoding2".equals(task))
-          executeSetAllEncoding2(parameter);
+          executeSetAllEncoding2(parameter, true);
         index++;
-        System.out.println("success");
       }
     } catch(Throwable e) {
-      System.out.println("failure: " + e.getMessage());System.out.println();e.printStackTrace();
+      System.out.println();
+      e.printStackTrace();
     }
-    
   }
   
-  public static void SetJavaLineWrap(final Procedure1<Params> paramInitializer) {
-    Params p = new Params();
-    paramInitializer.apply(p);
-    executeSetJavaLineWrap(p);
+  public static void setJavaLineWrap(final Procedure1<PropertiesParams> init) {
+    PropertiesParams p = new PropertiesParams();
+    init.apply(p);
+    executeSetJavaLineWrap(p, false);
   }
   
-  protected static void executeSetJavaLineWrap(final Params it) {
+  protected static void executeSetJavaLineWrap(final PropertiesParams it, final boolean log) {
+    try {
+      if(log) System.out.println("running SetJavaLineWrap...");
+      executeSetJavaLineWrapImpl(it);
+      TaskState.fireFinishTask("SetJavaLineWrap", null);
+      if(log) System.out.println("success");
+    } catch(TaskSkippedException e) {
+      TaskState.fireFinishTask("SetJavaLineWrap", e);
+      if(log) System.out.println("skipped: " + e.getMessage());
+    } catch(Throwable e) {
+      TaskState.setMaySkip(false);
+      TaskState.fireFinishTask("SetJavaLineWrap", e);
+      if(log) System.out.println("error: "+e.getMessage());
+      Exceptions.sneakyThrow(e);
+    }
+  }
+  
+  protected static void executeSetJavaLineWrapImpl(final PropertiesParams it) {
     File _project = Literals.project();
     File _divide = FileExtensions.operator_divide(_project, ".settings/org.eclipse.jdt.core.prefs");
     final FileProperties jdtprefs = FileExtensions.loadAsProperties(_divide);
@@ -96,13 +114,30 @@ public class Properties {
     jdtprefs.save();
   }
   
-  public static void SetEncoding(final Procedure1<Params> paramInitializer) {
-    Params p = new Params();
-    paramInitializer.apply(p);
-    executeSetEncoding(p);
+  public static void setEncoding(final Procedure1<PropertiesParams> init) {
+    PropertiesParams p = new PropertiesParams();
+    init.apply(p);
+    executeSetEncoding(p, false);
   }
   
-  protected static void executeSetEncoding(final Params it) {
+  protected static void executeSetEncoding(final PropertiesParams it, final boolean log) {
+    try {
+      if(log) System.out.println("running SetEncoding...");
+      executeSetEncodingImpl(it);
+      TaskState.fireFinishTask("SetEncoding", null);
+      if(log) System.out.println("success");
+    } catch(TaskSkippedException e) {
+      TaskState.fireFinishTask("SetEncoding", e);
+      if(log) System.out.println("skipped: " + e.getMessage());
+    } catch(Throwable e) {
+      TaskState.setMaySkip(false);
+      TaskState.fireFinishTask("SetEncoding", e);
+      if(log) System.out.println("error: "+e.getMessage());
+      Exceptions.sneakyThrow(e);
+    }
+  }
+  
+  protected static void executeSetEncodingImpl(final PropertiesParams it) {
     File _project = Literals.project();
     File _divide = FileExtensions.operator_divide(_project, ".settings/org.eclipse.core.resources.prefs");
     final FileProperties resprefs = FileExtensions.loadAsProperties(_divide);
@@ -110,13 +145,30 @@ public class Properties {
     resprefs.save();
   }
   
-  public static void SetEncoding2(final Procedure1<Params> paramInitializer) {
-    Params p = new Params();
-    paramInitializer.apply(p);
-    executeSetEncoding2(p);
+  public static void setEncoding2(final Procedure1<PropertiesParams> init) {
+    PropertiesParams p = new PropertiesParams();
+    init.apply(p);
+    executeSetEncoding2(p, false);
   }
   
-  protected static void executeSetEncoding2(final Params it) {
+  protected static void executeSetEncoding2(final PropertiesParams it, final boolean log) {
+    try {
+      if(log) System.out.println("running SetEncoding2...");
+      executeSetEncoding2Impl(it);
+      TaskState.fireFinishTask("SetEncoding2", null);
+      if(log) System.out.println("success");
+    } catch(TaskSkippedException e) {
+      TaskState.fireFinishTask("SetEncoding2", e);
+      if(log) System.out.println("skipped: " + e.getMessage());
+    } catch(Throwable e) {
+      TaskState.setMaySkip(false);
+      TaskState.fireFinishTask("SetEncoding2", e);
+      if(log) System.out.println("error: "+e.getMessage());
+      Exceptions.sneakyThrow(e);
+    }
+  }
+  
+  protected static void executeSetEncoding2Impl(final PropertiesParams it) {
     File _project = Literals.project();
     File _divide = FileExtensions.operator_divide(_project, ".settings/org.eclipse.core.resources.prefs");
     final FileProperties resprefs = FileExtensions.loadAsProperties(_divide);
@@ -124,13 +176,30 @@ public class Properties {
     resprefs.save();
   }
   
-  public static void SetAllEncoding1(final Procedure1<Params> paramInitializer) {
-    Params p = new Params();
-    paramInitializer.apply(p);
-    executeSetAllEncoding1(p);
+  public static void setAllEncoding1(final Procedure1<PropertiesParams> init) {
+    PropertiesParams p = new PropertiesParams();
+    init.apply(p);
+    executeSetAllEncoding1(p, false);
   }
   
-  protected static void executeSetAllEncoding1(final Params it) {
+  protected static void executeSetAllEncoding1(final PropertiesParams it, final boolean log) {
+    try {
+      if(log) System.out.println("running SetAllEncoding1...");
+      executeSetAllEncoding1Impl(it);
+      TaskState.fireFinishTask("SetAllEncoding1", null);
+      if(log) System.out.println("success");
+    } catch(TaskSkippedException e) {
+      TaskState.fireFinishTask("SetAllEncoding1", e);
+      if(log) System.out.println("skipped: " + e.getMessage());
+    } catch(Throwable e) {
+      TaskState.setMaySkip(false);
+      TaskState.fireFinishTask("SetAllEncoding1", e);
+      if(log) System.out.println("error: "+e.getMessage());
+      Exceptions.sneakyThrow(e);
+    }
+  }
+  
+  protected static void executeSetAllEncoding1Impl(final PropertiesParams it) {
     File _workspace = Literals.workspace();
     final List<File> projects = FileExtensions.containedJavaProjects(_workspace);
     final Function1<File,FileProperties> _function = new Function1<File,FileProperties>() {
@@ -155,13 +224,30 @@ public class Properties {
     IterableExtensions.<FileProperties>forEach(propertyFiles, _function_2);
   }
   
-  public static void SetAllEncoding2(final Procedure1<Params> paramInitializer) {
-    Params p = new Params();
-    paramInitializer.apply(p);
-    executeSetAllEncoding2(p);
+  public static void setAllEncoding2(final Procedure1<PropertiesParams> init) {
+    PropertiesParams p = new PropertiesParams();
+    init.apply(p);
+    executeSetAllEncoding2(p, false);
   }
   
-  protected static void executeSetAllEncoding2(final Params it) {
+  protected static void executeSetAllEncoding2(final PropertiesParams it, final boolean log) {
+    try {
+      if(log) System.out.println("running SetAllEncoding2...");
+      executeSetAllEncoding2Impl(it);
+      TaskState.fireFinishTask("SetAllEncoding2", null);
+      if(log) System.out.println("success");
+    } catch(TaskSkippedException e) {
+      TaskState.fireFinishTask("SetAllEncoding2", e);
+      if(log) System.out.println("skipped: " + e.getMessage());
+    } catch(Throwable e) {
+      TaskState.setMaySkip(false);
+      TaskState.fireFinishTask("SetAllEncoding2", e);
+      if(log) System.out.println("error: "+e.getMessage());
+      Exceptions.sneakyThrow(e);
+    }
+  }
+  
+  protected static void executeSetAllEncoding2Impl(final PropertiesParams it) {
     File _workspace = Literals.workspace();
     List<File> _containedJavaProjects = FileExtensions.containedJavaProjects(_workspace);
     for (final File proj : _containedJavaProjects) {

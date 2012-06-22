@@ -75,16 +75,71 @@ public class IntegrationTest {
     _builder.newLine();
     final CharSequence file = _builder;
     StringConcatenation _builder_1 = new StringConcatenation();
-    _builder_1.append("running Start...Hello");
+    _builder_1.append("running Start...");
+    _builder_1.newLine();
+    _builder_1.append("Hello");
     _builder_1.newLine();
     _builder_1.append("success");
     _builder_1.newLine();
     this.assertExecute(file, "Start", _builder_1.toString());
     StringConcatenation _builder_2 = new StringConcatenation();
-    _builder_2.append("running Start...MyProject");
+    _builder_2.append("running Start...");
+    _builder_2.newLine();
+    _builder_2.append("MyProject");
     _builder_2.newLine();
     _builder_2.append("success");
     _builder_2.newLine();
     this.assertExecute(file, "Start --projectName MyProject", _builder_2.toString());
+  }
+  
+  @Test
+  public void testSkipIfNeeded() {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("task Pre {");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("project:/digest.tmp:.delete");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("skipTaskIfDigestUnchanged [");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("digest = project:/digest.tmp");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("files += project:/build.properties");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("]\t");
+    _builder.newLine();
+    _builder.append("} ");
+    _builder.newLine();
+    _builder.append("task Main dependsOn Pre {");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("skipTaskIfDigestUnchanged [");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("digest = project:/digest.tmp");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("files += project:/build.properties");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("]\t");
+    _builder.newLine();
+    _builder.append("} ");
+    _builder.newLine();
+    final CharSequence file = _builder;
+    StringConcatenation _builder_1 = new StringConcatenation();
+    _builder_1.append("running Pre...");
+    _builder_1.newLine();
+    _builder_1.append("success");
+    _builder_1.newLine();
+    _builder_1.append("running Main...");
+    _builder_1.newLine();
+    _builder_1.append("skipped: Skipped because digest is unchanged");
+    _builder_1.newLine();
+    this.assertExecute(file, "Main", _builder_1.toString());
   }
 }

@@ -42,12 +42,38 @@ class IntegrationTest {
 			} 
 		'''
 		file.assertExecute("Start", '''
-			running Start...Hello
+			running Start...
+			Hello
 			success
 		''')
 		file.assertExecute("Start --projectName MyProject", '''
-			running Start...MyProject
+			running Start...
+			MyProject
 			success
+		''')
+	}
+	
+	@Test def testSkipIfNeeded() {
+		val file = '''
+			task Pre {
+				project:/digest.tmp:.delete
+				skipTaskIfDigestUnchanged [
+					digest = project:/digest.tmp
+					files += project:/build.properties
+				]	
+			} 
+			task Main dependsOn Pre {
+				skipTaskIfDigestUnchanged [
+					digest = project:/digest.tmp
+					files += project:/build.properties
+				]	
+			} 
+		'''
+		file.assertExecute("Main", '''
+			running Pre...
+			success
+			running Main...
+			skipped: Skipped because digest is unchanged
 		''')
 	}
 	

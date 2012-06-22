@@ -1,16 +1,19 @@
 package cradle;
 
 import com.google.common.collect.Sets;
-import cradle.Mwe2.Params;
+import cradle.Mwe2.Mwe2Params;
 import java.io.File;
 import java.util.Set;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Pair;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.xtext.cradle.lib.FileExtensions;
 import org.xtext.cradle.lib.Literals;
+import org.xtext.cradle.lib.impl.TaskSkippedException;
+import org.xtext.cradle.lib.impl.TaskState;
 
 public class Mwe2 {
-  public static class Params {
+  public static class Mwe2Params {
     public String name = "holla";
   }
   
@@ -31,7 +34,7 @@ public class Mwe2 {
         index++;
     }
     Set<String> tasks = Sets.newLinkedHashSet();
-    Params parameter = new Params();
+    Mwe2Params parameter = new Mwe2Params();
     index = 0;
     while(index < args.length) {
       if("--name".equals(args[index])) {
@@ -46,25 +49,40 @@ public class Mwe2 {
     }
     try {
       for(String task:tasks) {
-        System.out.print("running " + task + "...");
         if("runMwe2".equals(task))
-          executeRunMwe2(parameter);
+          executeRunMwe2(parameter, true);
         index++;
-        System.out.println("success");
       }
     } catch(Throwable e) {
-      System.out.println("failure: " + e.getMessage());System.out.println();e.printStackTrace();
+      System.out.println();
+      e.printStackTrace();
     }
-    
   }
   
-  public static void runMwe2(final Procedure1<Params> paramInitializer) {
-    Params p = new Params();
-    paramInitializer.apply(p);
-    executeRunMwe2(p);
+  public static void runMwe2(final Procedure1<Mwe2Params> init) {
+    Mwe2Params p = new Mwe2Params();
+    init.apply(p);
+    executeRunMwe2(p, false);
   }
   
-  protected static void executeRunMwe2(final Params it) {
+  protected static void executeRunMwe2(final Mwe2Params it, final boolean log) {
+    try {
+      if(log) System.out.println("running runMwe2...");
+      executeRunMwe2Impl(it);
+      TaskState.fireFinishTask("runMwe2", null);
+      if(log) System.out.println("success");
+    } catch(TaskSkippedException e) {
+      TaskState.fireFinishTask("runMwe2", e);
+      if(log) System.out.println("skipped: " + e.getMessage());
+    } catch(Throwable e) {
+      TaskState.setMaySkip(false);
+      TaskState.fireFinishTask("runMwe2", e);
+      if(log) System.out.println("error: "+e.getMessage());
+      Exceptions.sneakyThrow(e);
+    }
+  }
+  
+  protected static void executeRunMwe2Impl(final Mwe2Params it) {
     File _workspace = Literals.workspace();
     final File file = FileExtensions.operator_divide(_workspace, "org.xtext.example.mydsl/src/org/xtext/example/mydsl/GenerateMyDsl.mwe2");
     Pair<String,String> _mappedTo = Pair.<String, String>of("file.extensions", "myfoobarextension");
