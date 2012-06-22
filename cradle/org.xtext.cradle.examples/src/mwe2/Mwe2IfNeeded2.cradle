@@ -1,0 +1,17 @@
+
+
+task runMwe2IfNeeded2 {
+	val myDSL = workspace:/org.xtext.example.mydsl
+	val workflowFile = myDSL:/src/org/xtext/example/mydsl/GenerateMyDsl.mwe2
+
+	skipTaskIfDigestUnchanged [
+		digest = myDSL:/.digest
+		files += myDSL:/src/org/xtext/example/mydsl/MyDsl.xtext
+		files += workflowFile
+	]	
+	
+	workflowFile.runAsMwe2Workflow(
+		"file.extensions" -> "myfoobarextension"
+	)
+}
+

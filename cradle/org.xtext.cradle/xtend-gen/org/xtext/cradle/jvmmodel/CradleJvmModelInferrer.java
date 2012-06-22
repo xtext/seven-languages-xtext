@@ -361,6 +361,12 @@ public class CradleJvmModelInferrer extends AbstractModelInferrer {
                       StringConcatenation _builder_14 = new StringConcatenation();
                       _builder_14.append("System.out.println(\"failure: \" + e.getMessage());");
                       it.append(_builder_14);
+                      StringConcatenation _builder_15 = new StringConcatenation();
+                      _builder_15.append("System.out.println();");
+                      it.append(_builder_15);
+                      StringConcatenation _builder_16 = new StringConcatenation();
+                      _builder_16.append("e.printStackTrace();");
+                      it.append(_builder_16);
                       ITreeAppendable _decreaseIndentation_6 = it.decreaseIndentation();
                       ITreeAppendable _newLine_9 = _decreaseIndentation_6.newLine();
                       ITreeAppendable _append_23 = _newLine_9.append("}");

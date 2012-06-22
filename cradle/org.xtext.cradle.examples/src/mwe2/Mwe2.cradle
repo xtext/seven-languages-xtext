@@ -1,0 +1,11 @@
+param name = 'holla'
+
+
+task runMwe2 {
+	val file = workspace:/org.xtext.example.mydsl/src/org/xtext/example/mydsl/GenerateMyDsl.mwe2
+	file.runAsMwe2Workflow(
+		"file.extensions" -> "myfoobarextension"
+	)
+}
+
+

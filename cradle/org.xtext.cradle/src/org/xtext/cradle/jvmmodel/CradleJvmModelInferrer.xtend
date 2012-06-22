@@ -120,6 +120,8 @@ class CradleJvmModelInferrer extends AbstractModelInferrer {
 	   					append(findDeclaredType(typeof(Throwable), element))
 	   					append(''' e) {''').increaseIndentation.newLine
 	   					append('''System.out.println("failure: " + e.getMessage());''')
+	   					append('''System.out.println();''')
+	   					append('''e.printStackTrace();''')
 	   					decreaseIndentation.newLine.append("}").newLine
    					]
    				]

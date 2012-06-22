@@ -1,0 +1,37 @@
+
+
+param name = 'holla'
+
+task SetJavaLineWrap {
+	val jdtprefs = project:/.settings/org.eclipse.jdt.core.prefs:.loadAsProperties
+	jdtprefs.setProperty("org.eclipse.jdt.core.formatter.lineSplit", "140")
+	jdtprefs.save
+}
+
+task SetEncoding {
+	val resprefs = project:/.settings/org.eclipse.core.resources.prefs:.loadAsProperties
+	resprefs.setProperty("encoding/<project>", "UTF-8")
+	resprefs.save
+}
+
+task SetEncoding2 {
+	val resprefs = (project/".settings/org.eclipse.core.resources.prefs").loadAsProperties
+	resprefs.setProperty("encoding/<project>", "UTF-8")
+	resprefs.save
+}
+
+task SetAllEncoding1 {
+	val projects = workspace.containedJavaProjects
+	val propertyFiles = projects.map[ it:/.settings/org.eclipse.core.resources.prefs:.loadAsProperties ]
+	propertyFiles.forEach[setProperty("encoding/<project>", "UTF-8")]
+	propertyFiles.forEach[save]
+}
+
+task SetAllEncoding2 {
+	for(proj:workspace.containedJavaProjects) {
+		val properties = proj:/.settings/org.eclipse.core.resources.prefs:.loadAsProperties
+		properties.setProperty("encoding/<project>", "UTF-8")
+		properties.save
+	}
+}
+
