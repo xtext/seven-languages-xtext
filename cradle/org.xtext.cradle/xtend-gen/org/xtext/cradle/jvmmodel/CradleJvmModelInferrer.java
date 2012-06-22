@@ -223,7 +223,8 @@ public class CradleJvmModelInferrer extends AbstractModelInferrer {
                       EList<Declaration> _declarations_2 = element.getDeclarations();
                       for (final Declaration dec_2 : _declarations_2) {
                         {
-                          Parameter _head = IterableExtensions.<Parameter>head(params);
+                          EList<Declaration> _declarations_3 = element.getDeclarations();
+                          Declaration _head = IterableExtensions.<Declaration>head(_declarations_3);
                           boolean _notEquals = (!Objects.equal(dec_2, _head));
                           if (_notEquals) {
                             it.append(" else ");
@@ -389,24 +390,17 @@ public class CradleJvmModelInferrer extends AbstractModelInferrer {
                     final Procedure1<ITreeAppendable> _function = new Procedure1<ITreeAppendable>() {
                         public void apply(final ITreeAppendable it) {
                           ITreeAppendable _append = it.append("Params p = new Params();");
-                          _append.append("\n");
-                          ITreeAppendable _append_1 = it.append("paramInitializer.apply(p);");
-                          _append_1.append("\n");
+                          _append.newLine();
+                          it.append("paramInitializer.apply(p);");
                           Collection<Task> _findDependentTasks = TaskExtensions.findDependentTasks(task);
                           for (final Task dependency : _findDependentTasks) {
+                            ITreeAppendable _newLine = it.newLine();
                             String _name = dependency.getName();
                             String _firstUpper = StringExtensions.toFirstUpper(_name);
                             String _plus = ("execute" + _firstUpper);
                             String _plus_1 = (_plus + "(p);");
-                            ITreeAppendable _append_2 = it.append(_plus_1);
-                            _append_2.append("\n");
+                            _newLine.append(_plus_1);
                           }
-                          String _name_1 = task.getName();
-                          String _firstUpper_1 = StringExtensions.toFirstUpper(_name_1);
-                          String _plus_2 = ("execute" + _firstUpper_1);
-                          String _plus_3 = (_plus_2 + "(p);");
-                          ITreeAppendable _append_3 = it.append(_plus_3);
-                          _append_3.append("\n");
                         }
                       };
                     CradleJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _function);

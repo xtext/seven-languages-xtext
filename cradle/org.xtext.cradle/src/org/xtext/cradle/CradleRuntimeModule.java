@@ -3,17 +3,45 @@
  */
 package org.xtext.cradle;
 
+import org.eclipse.xtext.conversion.IValueConverterService;
+import org.eclipse.xtext.linking.ILinker;
+import org.eclipse.xtext.linking.ILinkingService;
+import org.eclipse.xtext.service.SingletonBinding;
+import org.eclipse.xtext.xbase.scoping.featurecalls.StaticImplicitMethodsFeatureForTypeProvider.ExtensionClassNameProvider;
+import org.xtext.cradle.scoping.CradleExtensionClassNameProvider;
 import org.xtext.cradle.validation.CradleValidator;
+import org.xtext.cradle.valueconversion.CradleValueConverter;
+import org.xtext.cradle.linking.CradleLazyLinker;
+import org.xtext.cradle.linking.CradleLinkingService;
 
 /**
  * Use this class to register components to be used at runtime / without the
  * Equinox extension registry.
  */
+@SuppressWarnings("restriction")
 public class CradleRuntimeModule extends AbstractCradleRuntimeModule {
 
-	@org.eclipse.xtext.service.SingletonBinding(eager=true)	public Class<? extends CradleValidator> bindCradleXtendClass() {
+	@SingletonBinding(eager = true)
+	public Class<? extends CradleValidator> bindCradleXtendClass() {
 		return CradleValidator.class;
 	}
 
+	public Class<? extends ExtensionClassNameProvider> bindExtensionClassNameProvider() {
+		return CradleExtensionClassNameProvider.class;
+	}
 
+	@Override
+	public Class<? extends IValueConverterService> bindIValueConverterService() {
+		return CradleValueConverter.class;
+	}
+
+	@Override
+	public Class<? extends ILinker> bindILinker() {
+		return CradleLazyLinker.class;
+	}
+
+	@Override
+	public Class<? extends ILinkingService> bindILinkingService() {
+		return CradleLinkingService.class;
+	}
 }

@@ -81,7 +81,7 @@ class CradleJvmModelInferrer extends AbstractModelInferrer {
 	   					append("index = 0;").newLine
    						append("while(index < args.length) {").increaseIndentation.newLine
 	   					for(dec : element.declarations) {
-	   						if(dec != params.head)
+	   						if(dec != element.declarations.head)
 	   							append(" else ")
    							switch(dec) {
    								Parameter: {
@@ -129,12 +129,11 @@ class CradleJvmModelInferrer extends AbstractModelInferrer {
 		   				parameters += task.toParameter("paramInitializer", element.newTypeRef(typeof(Procedures$Procedure1),newTypeRef(data)))
 		   				^static = true
 		   				body = [
-		   					append('Params p = new Params();').append('\n')
-		   					append('paramInitializer.apply(p);').append('\n')
+		   					append('Params p = new Params();').newLine
+		   					append('paramInitializer.apply(p);')
 		   					for (dependency : task.findDependentTasks) {
-			   					append('execute'+dependency.name.toFirstUpper+"(p);").append('\n')
+			   					newLine.append('execute'+dependency.name.toFirstUpper+"(p);")
 		   					}
-		   					append('execute'+task.name.toFirstUpper+"(p);").append('\n')
 		   				]
 		   			]
 		   			members += task.toMethod("execute"+task.name.toFirstUpper, task.newTypeRef(Void::TYPE)) [

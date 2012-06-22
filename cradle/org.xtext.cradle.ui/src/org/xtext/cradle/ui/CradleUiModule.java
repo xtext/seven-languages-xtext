@@ -4,12 +4,26 @@
 package org.xtext.cradle.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfiguration;
+import org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculator;
+import org.xtext.cradle.ui.highlighting.CradleHighlightingCalculator;
+import org.xtext.cradle.ui.highlighting.CradleHighlightingConfiguration;
 
 /**
  * Use this class to register components to be used within the IDE.
  */
-public class CradleUiModule extends org.xtext.cradle.ui.AbstractCradleUiModule {
+public class CradleUiModule extends AbstractCradleUiModule {
 	public CradleUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
+	}
+
+	@Override
+	public Class<? extends ISemanticHighlightingCalculator> bindISemanticHighlightingCalculator() {
+		return CradleHighlightingCalculator.class;
+	}
+
+	@Override
+	public Class<? extends IHighlightingConfiguration> bindIHighlightingConfiguration() {
+		return CradleHighlightingConfiguration.class;
 	}
 }
