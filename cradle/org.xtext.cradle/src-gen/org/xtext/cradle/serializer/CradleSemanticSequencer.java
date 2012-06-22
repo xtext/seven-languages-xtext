@@ -166,7 +166,8 @@ public class CradleSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getXExpressionInsideBlockRule() ||
 				   context == grammarAccess.getXMemberFeatureCallRule() ||
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXAssignmentAssignableAction_1_0_0_0_0() ||
-				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_1_0_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXBinaryOperationLeftOperandAction_1_1_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_2_0_0_0() ||
 				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXOrExpressionRule() ||
@@ -198,7 +199,8 @@ public class CradleSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getXExpressionInsideBlockRule() ||
 				   context == grammarAccess.getXMemberFeatureCallRule() ||
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXAssignmentAssignableAction_1_0_0_0_0() ||
-				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_1_0_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXBinaryOperationLeftOperandAction_1_1_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_2_0_0_0() ||
 				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXOrExpressionRule() ||
@@ -211,7 +213,7 @@ public class CradleSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getXRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_1_0_0_0() ||
 				   context == grammarAccess.getXRelationalExpressionAccess().getXInstanceOfExpressionExpressionAction_1_0_0_0_0() ||
 				   context == grammarAccess.getXUnaryOperationRule()) {
-					sequence_XAdditiveExpression_XAndExpression_XAssignment_XEqualityExpression_XMultiplicativeExpression_XOrExpression_XOtherOperatorExpression_XRelationalExpression(context, (XBinaryOperation) semanticObject); 
+					sequence_XAdditiveExpression_XAndExpression_XAssignment_XEqualityExpression_XMemberFeatureCall_XMultiplicativeExpression_XOrExpression_XOtherOperatorExpression_XRelationalExpression(context, (XBinaryOperation) semanticObject); 
 					return; 
 				}
 				else break;
@@ -231,7 +233,8 @@ public class CradleSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getXExpressionInsideBlockRule() ||
 				   context == grammarAccess.getXMemberFeatureCallRule() ||
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXAssignmentAssignableAction_1_0_0_0_0() ||
-				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_1_0_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXBinaryOperationLeftOperandAction_1_1_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_2_0_0_0() ||
 				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXOrExpressionRule() ||
@@ -269,7 +272,8 @@ public class CradleSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getXLiteralRule() ||
 				   context == grammarAccess.getXMemberFeatureCallRule() ||
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXAssignmentAssignableAction_1_0_0_0_0() ||
-				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_1_0_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXBinaryOperationLeftOperandAction_1_1_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_2_0_0_0() ||
 				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXOrExpressionRule() ||
@@ -307,7 +311,8 @@ public class CradleSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getXExpressionInsideBlockRule() ||
 				   context == grammarAccess.getXMemberFeatureCallRule() ||
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXAssignmentAssignableAction_1_0_0_0_0() ||
-				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_1_0_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXBinaryOperationLeftOperandAction_1_1_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_2_0_0_0() ||
 				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXOrExpressionRule() ||
@@ -347,7 +352,8 @@ public class CradleSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getXLiteralRule() ||
 				   context == grammarAccess.getXMemberFeatureCallRule() ||
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXAssignmentAssignableAction_1_0_0_0_0() ||
-				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_1_0_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXBinaryOperationLeftOperandAction_1_1_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_2_0_0_0() ||
 				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXOrExpressionRule() ||
@@ -384,7 +390,8 @@ public class CradleSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getXExpressionInsideBlockRule() ||
 				   context == grammarAccess.getXMemberFeatureCallRule() ||
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXAssignmentAssignableAction_1_0_0_0_0() ||
-				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_1_0_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXBinaryOperationLeftOperandAction_1_1_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_2_0_0_0() ||
 				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXOrExpressionRule() ||
@@ -417,7 +424,8 @@ public class CradleSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getXExpressionInsideBlockRule() ||
 				   context == grammarAccess.getXMemberFeatureCallRule() ||
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXAssignmentAssignableAction_1_0_0_0_0() ||
-				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_1_0_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXBinaryOperationLeftOperandAction_1_1_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_2_0_0_0() ||
 				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXOrExpressionRule() ||
@@ -450,7 +458,8 @@ public class CradleSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getXFeatureCallRule() ||
 				   context == grammarAccess.getXMemberFeatureCallRule() ||
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXAssignmentAssignableAction_1_0_0_0_0() ||
-				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_1_0_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXBinaryOperationLeftOperandAction_1_1_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_2_0_0_0() ||
 				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXOrExpressionRule() ||
@@ -483,7 +492,8 @@ public class CradleSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getXForLoopExpressionRule() ||
 				   context == grammarAccess.getXMemberFeatureCallRule() ||
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXAssignmentAssignableAction_1_0_0_0_0() ||
-				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_1_0_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXBinaryOperationLeftOperandAction_1_1_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_2_0_0_0() ||
 				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXOrExpressionRule() ||
@@ -516,7 +526,8 @@ public class CradleSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getXIfExpressionRule() ||
 				   context == grammarAccess.getXMemberFeatureCallRule() ||
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXAssignmentAssignableAction_1_0_0_0_0() ||
-				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_1_0_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXBinaryOperationLeftOperandAction_1_1_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_2_0_0_0() ||
 				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXOrExpressionRule() ||
@@ -548,7 +559,8 @@ public class CradleSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getXExpressionInsideBlockRule() ||
 				   context == grammarAccess.getXMemberFeatureCallRule() ||
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXAssignmentAssignableAction_1_0_0_0_0() ||
-				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_1_0_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXBinaryOperationLeftOperandAction_1_1_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_2_0_0_0() ||
 				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXOrExpressionRule() ||
@@ -580,7 +592,8 @@ public class CradleSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getXExpressionInsideBlockRule() ||
 				   context == grammarAccess.getXMemberFeatureCallRule() ||
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXAssignmentAssignableAction_1_0_0_0_0() ||
-				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_1_0_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXBinaryOperationLeftOperandAction_1_1_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_2_0_0_0() ||
 				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXOrExpressionRule() ||
@@ -613,7 +626,8 @@ public class CradleSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getXLiteralRule() ||
 				   context == grammarAccess.getXMemberFeatureCallRule() ||
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXAssignmentAssignableAction_1_0_0_0_0() ||
-				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_1_0_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXBinaryOperationLeftOperandAction_1_1_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_2_0_0_0() ||
 				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXNullLiteralRule() ||
@@ -647,7 +661,8 @@ public class CradleSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getXLiteralRule() ||
 				   context == grammarAccess.getXMemberFeatureCallRule() ||
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXAssignmentAssignableAction_1_0_0_0_0() ||
-				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_1_0_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXBinaryOperationLeftOperandAction_1_1_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_2_0_0_0() ||
 				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXNumberLiteralRule() ||
@@ -680,7 +695,8 @@ public class CradleSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getXExpressionInsideBlockRule() ||
 				   context == grammarAccess.getXMemberFeatureCallRule() ||
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXAssignmentAssignableAction_1_0_0_0_0() ||
-				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_1_0_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXBinaryOperationLeftOperandAction_1_1_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_2_0_0_0() ||
 				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXOrExpressionRule() ||
@@ -699,7 +715,11 @@ public class CradleSemanticSequencer extends XbaseSemanticSequencer {
 				}
 				else break;
 			case XbasePackage.XSTRING_LITERAL:
-				if(context == grammarAccess.getXAdditiveExpressionRule() ||
+				if(context == grammarAccess.getNavigationLiteralRule()) {
+					sequence_NavigationLiteral(context, (XStringLiteral) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getXAdditiveExpressionRule() ||
 				   context == grammarAccess.getXAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXAndExpressionRule() ||
 				   context == grammarAccess.getXAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
@@ -714,7 +734,8 @@ public class CradleSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getXLiteralRule() ||
 				   context == grammarAccess.getXMemberFeatureCallRule() ||
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXAssignmentAssignableAction_1_0_0_0_0() ||
-				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_1_0_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXBinaryOperationLeftOperandAction_1_1_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_2_0_0_0() ||
 				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXOrExpressionRule() ||
@@ -747,7 +768,8 @@ public class CradleSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getXExpressionInsideBlockRule() ||
 				   context == grammarAccess.getXMemberFeatureCallRule() ||
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXAssignmentAssignableAction_1_0_0_0_0() ||
-				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_1_0_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXBinaryOperationLeftOperandAction_1_1_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_2_0_0_0() ||
 				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXOrExpressionRule() ||
@@ -780,7 +802,8 @@ public class CradleSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getXExpressionInsideBlockRule() ||
 				   context == grammarAccess.getXMemberFeatureCallRule() ||
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXAssignmentAssignableAction_1_0_0_0_0() ||
-				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_1_0_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXBinaryOperationLeftOperandAction_1_1_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_2_0_0_0() ||
 				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXOrExpressionRule() ||
@@ -813,7 +836,8 @@ public class CradleSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getXExpressionInsideBlockRule() ||
 				   context == grammarAccess.getXMemberFeatureCallRule() ||
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXAssignmentAssignableAction_1_0_0_0_0() ||
-				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_1_0_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXBinaryOperationLeftOperandAction_1_1_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_2_0_0_0() ||
 				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXOrExpressionRule() ||
@@ -847,7 +871,8 @@ public class CradleSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getXLiteralRule() ||
 				   context == grammarAccess.getXMemberFeatureCallRule() ||
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXAssignmentAssignableAction_1_0_0_0_0() ||
-				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_1_0_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXBinaryOperationLeftOperandAction_1_1_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_2_0_0_0() ||
 				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXOrExpressionRule() ||
@@ -880,7 +905,8 @@ public class CradleSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getXExpressionInsideBlockRule() ||
 				   context == grammarAccess.getXMemberFeatureCallRule() ||
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXAssignmentAssignableAction_1_0_0_0_0() ||
-				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_1_0_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXBinaryOperationLeftOperandAction_1_1_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_2_0_0_0() ||
 				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXOrExpressionRule() ||
@@ -919,7 +945,8 @@ public class CradleSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getXExpressionInsideBlockRule() ||
 				   context == grammarAccess.getXMemberFeatureCallRule() ||
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXAssignmentAssignableAction_1_0_0_0_0() ||
-				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_1_0_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXBinaryOperationLeftOperandAction_1_1_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_2_0_0_0() ||
 				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXOrExpressionRule() ||
@@ -978,6 +1005,22 @@ public class CradleSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     value=FILE
+	 */
+	protected void sequence_NavigationLiteral(EObject context, XStringLiteral semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, XbasePackage.Literals.XSTRING_LITERAL__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XbasePackage.Literals.XSTRING_LITERAL__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getNavigationLiteralAccess().getValueFILETerminalRuleCall_1_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (type=JvmTypeReference? name=ValidID init=XExpression?)
 	 */
 	protected void sequence_Parameter(EObject context, Parameter semanticObject) {
@@ -990,6 +1033,53 @@ public class CradleSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (name=ValidID (dependsOn+=[Task|ID] dependsOn+=[Task|ID]*)? action=XBlockExpression)
 	 */
 	protected void sequence_Task(EObject context, Task semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         (leftOperand=XAdditiveExpression_XBinaryOperation_1_0_0_0 feature=[JvmIdentifiableElement|OpAdd] rightOperand=XMultiplicativeExpression) | 
+	 *         (leftOperand=XMultiplicativeExpression_XBinaryOperation_1_0_0_0 feature=[JvmIdentifiableElement|OpMulti] rightOperand=XUnaryOperation) | 
+	 *         (leftOperand=XOtherOperatorExpression_XBinaryOperation_1_0_0_0 feature=[JvmIdentifiableElement|OpOther] rightOperand=XAdditiveExpression) | 
+	 *         (leftOperand=XRelationalExpression_XBinaryOperation_1_1_0_0_0 feature=[JvmIdentifiableElement|OpCompare] rightOperand=XOtherOperatorExpression) | 
+	 *         (leftOperand=XEqualityExpression_XBinaryOperation_1_0_0_0 feature=[JvmIdentifiableElement|OpEquality] rightOperand=XRelationalExpression) | 
+	 *         (leftOperand=XAndExpression_XBinaryOperation_1_0_0_0 feature=[JvmIdentifiableElement|OpAnd] rightOperand=XEqualityExpression) | 
+	 *         (leftOperand=XOrExpression_XBinaryOperation_1_0_0_0 feature=[JvmIdentifiableElement|OpOr] rightOperand=XAndExpression) | 
+	 *         (leftOperand=XAssignment_XBinaryOperation_1_1_0_0_0 feature=[JvmIdentifiableElement|OpMultiAssign] rightOperand=XAssignment) | 
+	 *         (leftOperand=XMemberFeatureCall_XBinaryOperation_1_1_0_0 rightOperand=NavigationLiteral)
+	 *     )
+	 */
+	protected void sequence_XAdditiveExpression_XAndExpression_XAssignment_XEqualityExpression_XMemberFeatureCall_XMultiplicativeExpression_XOrExpression_XOtherOperatorExpression_XRelationalExpression(EObject context, XBinaryOperation semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         (assignable=XMemberFeatureCall_XAssignment_1_0_0_0_0 feature=[JvmIdentifiableElement|ValidID] value=XAssignment) | 
+	 *         (feature=[JvmIdentifiableElement|ValidID] value=XAssignment)
+	 *     )
+	 */
+	protected void sequence_XAssignment_XMemberFeatureCall(EObject context, XAssignment semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         memberCallTarget=XMemberFeatureCall_XMemberFeatureCall_1_2_0_0_0 
+	 *         (nullSafe?='?.' | spreading?='*.')? 
+	 *         (typeArguments+=JvmArgumentTypeReference typeArguments+=JvmArgumentTypeReference*)? 
+	 *         feature=[JvmIdentifiableElement|ValidID] 
+	 *         (explicitOperationCall?='(' (memberCallArguments+=XShortClosure | (memberCallArguments+=XExpression memberCallArguments+=XExpression*))?)? 
+	 *         memberCallArguments+=XClosure?
+	 *     )
+	 */
+	protected void sequence_XMemberFeatureCall(EObject context, XMemberFeatureCall semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 }

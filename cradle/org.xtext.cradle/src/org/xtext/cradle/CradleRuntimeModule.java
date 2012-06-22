@@ -8,17 +8,16 @@ import org.eclipse.xtext.linking.ILinker;
 import org.eclipse.xtext.linking.ILinkingService;
 import org.eclipse.xtext.service.SingletonBinding;
 import org.eclipse.xtext.xbase.scoping.featurecalls.StaticImplicitMethodsFeatureForTypeProvider.ExtensionClassNameProvider;
+import org.xtext.cradle.linking.CradleLazyLinker;
+import org.xtext.cradle.linking.CradleLinkingService;
 import org.xtext.cradle.scoping.CradleExtensionClassNameProvider;
 import org.xtext.cradle.validation.CradleValidator;
 import org.xtext.cradle.valueconversion.CradleValueConverter;
-import org.xtext.cradle.linking.CradleLazyLinker;
-import org.xtext.cradle.linking.CradleLinkingService;
 
 /**
  * Use this class to register components to be used at runtime / without the
  * Equinox extension registry.
  */
-@SuppressWarnings("restriction")
 public class CradleRuntimeModule extends AbstractCradleRuntimeModule {
 
 	@SingletonBinding(eager = true)

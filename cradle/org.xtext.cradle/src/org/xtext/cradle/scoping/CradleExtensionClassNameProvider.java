@@ -9,8 +9,8 @@ import org.xtext.cradle.lib.Literals;
 
 import com.google.common.collect.Multimap;
 
-@SuppressWarnings("restriction")
-public class CradleExtensionClassNameProvider extends ExtensionClassNameProvider {
+public class CradleExtensionClassNameProvider extends
+		ExtensionClassNameProvider {
 
 	@Override
 	protected Collection<String> computeLiteralClassNames() {
@@ -21,7 +21,8 @@ public class CradleExtensionClassNameProvider extends ExtensionClassNameProvider
 
 	@Override
 	protected Multimap<Class<?>, Class<?>> simpleComputeExtensionClasses() {
-		Multimap<Class<?>, Class<?>> classes = super.simpleComputeExtensionClasses();
+		Multimap<Class<?>, Class<?>> classes = super
+				.simpleComputeExtensionClasses();
 		classes.put(File.class, FileExtensions.class);
 		return classes;
 	}
