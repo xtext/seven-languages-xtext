@@ -6694,27 +6694,27 @@ public class InternalRouteParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleValidID"
 
 
-    // $ANTLR start "ruleType"
-    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:2243:1: ruleType : ( ( rule__Type__Alternatives ) ) ;
-    public final void ruleType() throws RecognitionException {
+    // $ANTLR start "ruleRequestType"
+    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:2243:1: ruleRequestType : ( ( rule__RequestType__Alternatives ) ) ;
+    public final void ruleRequestType() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:2247:1: ( ( ( rule__Type__Alternatives ) ) )
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:2248:1: ( ( rule__Type__Alternatives ) )
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:2247:1: ( ( ( rule__RequestType__Alternatives ) ) )
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:2248:1: ( ( rule__RequestType__Alternatives ) )
             {
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:2248:1: ( ( rule__Type__Alternatives ) )
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:2249:1: ( rule__Type__Alternatives )
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:2248:1: ( ( rule__RequestType__Alternatives ) )
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:2249:1: ( rule__RequestType__Alternatives )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTypeAccess().getAlternatives()); 
+               before(grammarAccess.getRequestTypeAccess().getAlternatives());
             }
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:2250:1: ( rule__Type__Alternatives )
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:2250:2: rule__Type__Alternatives
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:2250:1: ( rule__RequestType__Alternatives )
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:2250:2: rule__RequestType__Alternatives
             {
-            pushFollow(FOLLOW_rule__Type__Alternatives_in_ruleType4731);
-            rule__Type__Alternatives();
+            pushFollow(FOLLOW_rule__RequestType__Alternatives_in_ruleRequestType4731);
+            rule__RequestType__Alternatives();
 
             state._fsp--;
             if (state.failed) return ;
@@ -6722,7 +6722,7 @@ public class InternalRouteParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTypeAccess().getAlternatives()); 
+               after(grammarAccess.getRequestTypeAccess().getAlternatives());
             }
 
             }
@@ -6742,7 +6742,7 @@ public class InternalRouteParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleType"
+    // $ANTLR end "ruleRequestType"
 
 
     // $ANTLR start "rule__Route__Alternatives_3"
@@ -11240,9 +11240,9 @@ public class InternalRouteParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__JvmWildcardTypeReference__Alternatives_2"
 
 
-    // $ANTLR start "rule__Type__Alternatives"
-    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3328:1: rule__Type__Alternatives : ( ( ( 'GET' ) ) | ( ( 'POST' ) ) | ( ( 'PUT' ) ) | ( ( 'DELETE' ) ) | ( ( 'HEAD' ) ) );
-    public final void rule__Type__Alternatives() throws RecognitionException {
+    // $ANTLR start "rule__RequestType__Alternatives"
+    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3328:1: rule__RequestType__Alternatives : ( ( ( 'GET' ) ) | ( ( 'POST' ) ) | ( ( 'PUT' ) ) | ( ( 'DELETE' ) ) | ( ( 'HEAD' ) ) );
+    public final void rule__RequestType__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -11291,17 +11291,17 @@ public class InternalRouteParser extends AbstractInternalContentAssistParser {
                     // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3334:1: ( 'GET' )
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getTypeAccess().getGETEnumLiteralDeclaration_0()); 
+                       before(grammarAccess.getRequestTypeAccess().getGETEnumLiteralDeclaration_0());
                     }
                     // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3335:1: ( 'GET' )
                     // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3335:3: 'GET'
                     {
-                    match(input,40,FOLLOW_40_in_rule__Type__Alternatives7267); if (state.failed) return ;
+                    match(input,40,FOLLOW_40_in_rule__RequestType__Alternatives7267); if (state.failed) return ;
 
                     }
 
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getTypeAccess().getGETEnumLiteralDeclaration_0()); 
+                       after(grammarAccess.getRequestTypeAccess().getGETEnumLiteralDeclaration_0());
                     }
 
                     }
@@ -11316,17 +11316,17 @@ public class InternalRouteParser extends AbstractInternalContentAssistParser {
                     // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3341:1: ( 'POST' )
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getTypeAccess().getPOSTEnumLiteralDeclaration_1()); 
+                       before(grammarAccess.getRequestTypeAccess().getPOSTEnumLiteralDeclaration_1());
                     }
                     // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3342:1: ( 'POST' )
                     // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3342:3: 'POST'
                     {
-                    match(input,41,FOLLOW_41_in_rule__Type__Alternatives7288); if (state.failed) return ;
+                    match(input,41,FOLLOW_41_in_rule__RequestType__Alternatives7288); if (state.failed) return ;
 
                     }
 
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getTypeAccess().getPOSTEnumLiteralDeclaration_1()); 
+                       after(grammarAccess.getRequestTypeAccess().getPOSTEnumLiteralDeclaration_1());
                     }
 
                     }
@@ -11341,17 +11341,17 @@ public class InternalRouteParser extends AbstractInternalContentAssistParser {
                     // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3348:1: ( 'PUT' )
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getTypeAccess().getPUTEnumLiteralDeclaration_2()); 
+                       before(grammarAccess.getRequestTypeAccess().getPUTEnumLiteralDeclaration_2());
                     }
                     // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3349:1: ( 'PUT' )
                     // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3349:3: 'PUT'
                     {
-                    match(input,42,FOLLOW_42_in_rule__Type__Alternatives7309); if (state.failed) return ;
+                    match(input,42,FOLLOW_42_in_rule__RequestType__Alternatives7309); if (state.failed) return ;
 
                     }
 
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getTypeAccess().getPUTEnumLiteralDeclaration_2()); 
+                       after(grammarAccess.getRequestTypeAccess().getPUTEnumLiteralDeclaration_2());
                     }
 
                     }
@@ -11366,17 +11366,17 @@ public class InternalRouteParser extends AbstractInternalContentAssistParser {
                     // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3355:1: ( 'DELETE' )
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getTypeAccess().getDELETEEnumLiteralDeclaration_3()); 
+                       before(grammarAccess.getRequestTypeAccess().getDELETEEnumLiteralDeclaration_3());
                     }
                     // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3356:1: ( 'DELETE' )
                     // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3356:3: 'DELETE'
                     {
-                    match(input,43,FOLLOW_43_in_rule__Type__Alternatives7330); if (state.failed) return ;
+                    match(input,43,FOLLOW_43_in_rule__RequestType__Alternatives7330); if (state.failed) return ;
 
                     }
 
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getTypeAccess().getDELETEEnumLiteralDeclaration_3()); 
+                       after(grammarAccess.getRequestTypeAccess().getDELETEEnumLiteralDeclaration_3());
                     }
 
                     }
@@ -11391,17 +11391,17 @@ public class InternalRouteParser extends AbstractInternalContentAssistParser {
                     // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3362:1: ( 'HEAD' )
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getTypeAccess().getHEADEnumLiteralDeclaration_4()); 
+                       before(grammarAccess.getRequestTypeAccess().getHEADEnumLiteralDeclaration_4());
                     }
                     // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3363:1: ( 'HEAD' )
                     // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3363:3: 'HEAD'
                     {
-                    match(input,44,FOLLOW_44_in_rule__Type__Alternatives7351); if (state.failed) return ;
+                    match(input,44,FOLLOW_44_in_rule__RequestType__Alternatives7351); if (state.failed) return ;
 
                     }
 
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getTypeAccess().getHEADEnumLiteralDeclaration_4()); 
+                       after(grammarAccess.getRequestTypeAccess().getHEADEnumLiteralDeclaration_4());
                     }
 
                     }
@@ -11423,7 +11423,7 @@ public class InternalRouteParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Type__Alternatives"
+    // $ANTLR end "rule__RequestType__Alternatives"
 
 
     // $ANTLR start "rule__Model__Group__0"
@@ -11837,26 +11837,26 @@ public class InternalRouteParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Route__Group__0__Impl"
-    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3511:1: rule__Route__Group__0__Impl : ( ( rule__Route__TypeAssignment_0 ) ) ;
+    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3511:1: rule__Route__Group__0__Impl : ( ( rule__Route__RequestTypeAssignment_0 ) ) ;
     public final void rule__Route__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3515:1: ( ( ( rule__Route__TypeAssignment_0 ) ) )
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3516:1: ( ( rule__Route__TypeAssignment_0 ) )
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3515:1: ( ( ( rule__Route__RequestTypeAssignment_0 ) ) )
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3516:1: ( ( rule__Route__RequestTypeAssignment_0 ) )
             {
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3516:1: ( ( rule__Route__TypeAssignment_0 ) )
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3517:1: ( rule__Route__TypeAssignment_0 )
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3516:1: ( ( rule__Route__RequestTypeAssignment_0 ) )
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3517:1: ( rule__Route__RequestTypeAssignment_0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getRouteAccess().getTypeAssignment_0()); 
+               before(grammarAccess.getRouteAccess().getRequestTypeAssignment_0());
             }
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3518:1: ( rule__Route__TypeAssignment_0 )
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3518:2: rule__Route__TypeAssignment_0
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3518:1: ( rule__Route__RequestTypeAssignment_0 )
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3518:2: rule__Route__RequestTypeAssignment_0
             {
-            pushFollow(FOLLOW_rule__Route__TypeAssignment_0_in_rule__Route__Group__0__Impl7660);
-            rule__Route__TypeAssignment_0();
+            pushFollow(FOLLOW_rule__Route__RequestTypeAssignment_0_in_rule__Route__Group__0__Impl7660);
+            rule__Route__RequestTypeAssignment_0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -11864,7 +11864,7 @@ public class InternalRouteParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getRouteAccess().getTypeAssignment_0()); 
+               after(grammarAccess.getRouteAccess().getRequestTypeAssignment_0());
             }
 
             }
@@ -47782,29 +47782,29 @@ public class InternalRouteParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Import__ImportedTypeAssignment_1"
 
 
-    // $ANTLR start "rule__Route__TypeAssignment_0"
-    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:16603:1: rule__Route__TypeAssignment_0 : ( ruleType ) ;
-    public final void rule__Route__TypeAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__Route__RequestTypeAssignment_0"
+    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:16603:1: rule__Route__RequestTypeAssignment_0 : ( ruleRequestType ) ;
+    public final void rule__Route__RequestTypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:16607:1: ( ( ruleType ) )
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:16608:1: ( ruleType )
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:16607:1: ( ( ruleRequestType ) )
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:16608:1: ( ruleRequestType )
             {
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:16608:1: ( ruleType )
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:16609:1: ruleType
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:16608:1: ( ruleRequestType )
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:16609:1: ruleRequestType
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getRouteAccess().getTypeTypeEnumRuleCall_0_0()); 
+               before(grammarAccess.getRouteAccess().getRequestTypeRequestTypeEnumRuleCall_0_0());
             }
-            pushFollow(FOLLOW_ruleType_in_rule__Route__TypeAssignment_033399);
-            ruleType();
+            pushFollow(FOLLOW_ruleRequestType_in_rule__Route__RequestTypeAssignment_033399);
+            ruleRequestType();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getRouteAccess().getTypeTypeEnumRuleCall_0_0()); 
+               after(grammarAccess.getRouteAccess().getRequestTypeRequestTypeEnumRuleCall_0_0());
             }
 
             }
@@ -47824,7 +47824,7 @@ public class InternalRouteParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Route__TypeAssignment_0"
+    // $ANTLR end "rule__Route__RequestTypeAssignment_0"
 
 
     // $ANTLR start "rule__Route__UrlAssignment_1"
@@ -58414,7 +58414,7 @@ public class InternalRouteParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleValidID_in_entryRuleValidID4662 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleValidID4669 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleValidID4695 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Type__Alternatives_in_ruleType4731 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RequestType__Alternatives_in_ruleRequestType4731 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Route__Group_3_0__0_in_rule__Route__Alternatives_34766 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Route__CallAssignment_3_1_in_rule__Route__Alternatives_34784 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__URL__Group_2_0__0_in_rule__URL__Alternatives_24817 = new BitSet(new long[]{0x0000000000000002L});
@@ -58522,11 +58522,11 @@ public class InternalRouteParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleJvmWildcardTypeReference_in_rule__JvmArgumentTypeReference__Alternatives7182 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__JvmWildcardTypeReference__ConstraintsAssignment_2_0_in_rule__JvmWildcardTypeReference__Alternatives_27214 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__JvmWildcardTypeReference__ConstraintsAssignment_2_1_in_rule__JvmWildcardTypeReference__Alternatives_27232 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_rule__Type__Alternatives7267 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_41_in_rule__Type__Alternatives7288 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_42_in_rule__Type__Alternatives7309 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_43_in_rule__Type__Alternatives7330 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_44_in_rule__Type__Alternatives7351 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_rule__RequestType__Alternatives7267 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_41_in_rule__RequestType__Alternatives7288 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_42_in_rule__RequestType__Alternatives7309 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_43_in_rule__RequestType__Alternatives7330 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_44_in_rule__RequestType__Alternatives7351 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Model__Group__0__Impl_in_rule__Model__Group__07384 = new BitSet(new long[]{0x00001F0000000000L});
     public static final BitSet FOLLOW_rule__Model__Group__1_in_rule__Model__Group__07387 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Model__ImportsAssignment_0_in_rule__Model__Group__0__Impl7414 = new BitSet(new long[]{0x0000200000000002L});
@@ -58539,7 +58539,7 @@ public class InternalRouteParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__Import__ImportedTypeAssignment_1_in_rule__Import__Group__1__Impl7596 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Route__Group__0__Impl_in_rule__Route__Group__07630 = new BitSet(new long[]{0x0000000200000000L});
     public static final BitSet FOLLOW_rule__Route__Group__1_in_rule__Route__Group__07633 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Route__TypeAssignment_0_in_rule__Route__Group__0__Impl7660 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Route__RequestTypeAssignment_0_in_rule__Route__Group__0__Impl7660 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Route__Group__1__Impl_in_rule__Route__Group__17690 = new BitSet(new long[]{0x000C804002400010L});
     public static final BitSet FOLLOW_rule__Route__Group__2_in_rule__Route__Group__17693 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Route__UrlAssignment_1_in_rule__Route__Group__1__Impl7720 = new BitSet(new long[]{0x0000000000000002L});
@@ -59580,7 +59580,7 @@ public class InternalRouteParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleImport_in_rule__Model__ImportsAssignment_033298 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleRoute_in_rule__Model__RoutesAssignment_133329 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Import__ImportedTypeAssignment_133364 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleType_in_rule__Route__TypeAssignment_033399 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRequestType_in_rule__Route__RequestTypeAssignment_033399 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleURL_in_rule__Route__UrlAssignment_133430 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleCondition_in_rule__Route__ConditionAssignment_233461 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleKey_in_rule__Route__KeyAssignment_3_0_033492 = new BitSet(new long[]{0x0000000000000002L});

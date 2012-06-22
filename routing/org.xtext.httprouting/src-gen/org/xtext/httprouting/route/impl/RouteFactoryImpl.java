@@ -87,8 +87,8 @@ public class RouteFactoryImpl extends EFactoryImpl implements RouteFactory
   {
     switch (eDataType.getClassifierID())
     {
-      case RoutePackage.TYPE:
-        return createTypeFromString(eDataType, initialValue);
+      case RoutePackage.REQUEST_TYPE:
+        return createRequestTypeFromString(eDataType, initialValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -104,8 +104,8 @@ public class RouteFactoryImpl extends EFactoryImpl implements RouteFactory
   {
     switch (eDataType.getClassifierID())
     {
-      case RoutePackage.TYPE:
-        return convertTypeToString(eDataType, instanceValue);
+      case RoutePackage.REQUEST_TYPE:
+        return convertRequestTypeToString(eDataType, instanceValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -193,9 +193,9 @@ public class RouteFactoryImpl extends EFactoryImpl implements RouteFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Type createTypeFromString(EDataType eDataType, String initialValue)
+  public RequestType createRequestTypeFromString(EDataType eDataType, String initialValue)
   {
-    Type result = Type.get(initialValue);
+    RequestType result = RequestType.get(initialValue);
     if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
     return result;
   }
@@ -205,7 +205,7 @@ public class RouteFactoryImpl extends EFactoryImpl implements RouteFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertTypeToString(EDataType eDataType, Object instanceValue)
+  public String convertRequestTypeToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

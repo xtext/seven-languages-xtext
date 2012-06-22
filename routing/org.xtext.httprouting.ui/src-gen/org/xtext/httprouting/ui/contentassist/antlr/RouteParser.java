@@ -75,7 +75,7 @@ public class RouteParser extends AbstractContentAssistParser {
 					put(grammarAccess.getJvmArgumentTypeReferenceAccess().getAlternatives(), "rule__JvmArgumentTypeReference__Alternatives");
 					put(grammarAccess.getJvmWildcardTypeReferenceAccess().getAlternatives_2(), "rule__JvmWildcardTypeReference__Alternatives_2");
 					put(grammarAccess.getJvmTypeParameterAccess().getAlternatives_1(), "rule__JvmTypeParameter__Alternatives_1");
-					put(grammarAccess.getTypeAccess().getAlternatives(), "rule__Type__Alternatives");
+					put(grammarAccess.getRequestTypeAccess().getAlternatives(), "rule__RequestType__Alternatives");
 					put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 					put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
 					put(grammarAccess.getRouteAccess().getGroup(), "rule__Route__Group__0");
@@ -251,7 +251,7 @@ public class RouteParser extends AbstractContentAssistParser {
 					put(grammarAccess.getModelAccess().getImportsAssignment_0(), "rule__Model__ImportsAssignment_0");
 					put(grammarAccess.getModelAccess().getRoutesAssignment_1(), "rule__Model__RoutesAssignment_1");
 					put(grammarAccess.getImportAccess().getImportedTypeAssignment_1(), "rule__Import__ImportedTypeAssignment_1");
-					put(grammarAccess.getRouteAccess().getTypeAssignment_0(), "rule__Route__TypeAssignment_0");
+					put(grammarAccess.getRouteAccess().getRequestTypeAssignment_0(), "rule__Route__RequestTypeAssignment_0");
 					put(grammarAccess.getRouteAccess().getUrlAssignment_1(), "rule__Route__UrlAssignment_1");
 					put(grammarAccess.getRouteAccess().getConditionAssignment_2(), "rule__Route__ConditionAssignment_2");
 					put(grammarAccess.getRouteAccess().getKeyAssignment_3_0_0(), "rule__Route__KeyAssignment_3_0_0");

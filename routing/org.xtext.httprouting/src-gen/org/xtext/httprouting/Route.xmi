@@ -44,7 +44,7 @@
         <classifier xsi:type="ecore:EClass" href="http://www.xtext.org/httprouting/Route#//Route"/>
       </type>
       <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Assignment" feature="type" operator="=">
+        <elements xsi:type="xtext:Assignment" feature="requestType" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.3"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="url" operator="=">
@@ -68,29 +68,29 @@
         </elements>
       </alternatives>
     </rules>
-    <rules xsi:type="xtext:EnumRule" name="Type">
+    <rules xsi:type="xtext:EnumRule" name="RequestType">
       <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EEnum" href="http://www.xtext.org/httprouting/Route#//Type"/>
+        <classifier xsi:type="ecore:EEnum" href="http://www.xtext.org/httprouting/Route#//RequestType"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.xtext.org/httprouting/Route#//Type/GET"/>
+          <enumLiteral href="http://www.xtext.org/httprouting/Route#//RequestType/GET"/>
           <literal value="GET"/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.xtext.org/httprouting/Route#//Type/POST"/>
+          <enumLiteral href="http://www.xtext.org/httprouting/Route#//RequestType/POST"/>
           <literal value="POST"/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.xtext.org/httprouting/Route#//Type/PUT"/>
+          <enumLiteral href="http://www.xtext.org/httprouting/Route#//RequestType/PUT"/>
           <literal value="PUT"/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.xtext.org/httprouting/Route#//Type/DELETE"/>
+          <enumLiteral href="http://www.xtext.org/httprouting/Route#//RequestType/DELETE"/>
           <literal value="DELETE"/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.xtext.org/httprouting/Route#//Type/HEAD"/>
+          <enumLiteral href="http://www.xtext.org/httprouting/Route#//RequestType/HEAD"/>
           <literal value="HEAD"/>
         </elements>
       </alternatives>

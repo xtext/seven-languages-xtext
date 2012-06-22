@@ -20,7 +20,7 @@ import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
 import org.xtext.httprouting.route.Model
 import org.xtext.httprouting.route.Route
-import org.xtext.httprouting.route.Type
+import org.xtext.httprouting.route.RequestType
 import org.xtext.httprouting.route.Variable
 
 import static org.xtext.httprouting.jvmmodel.RouteJvmModelInferrer.*
@@ -50,11 +50,11 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 	   				}
 					routeCounter = routeCounter + 1
    				}
-   				addMethod("doGet", model, routes,Type::GET)
-   				addMethod("doPost", model, routes,Type::POST)
-   				addMethod("doPut", model, routes,Type::PUT)
-   				addMethod("doDelete", model, routes,Type::DELETE)
-   				addMethod("doHead", model, routes,Type::HEAD)
+				addMethod("doGet", model, routes,RequestType::GET)
+				addMethod("doPost", model, routes,RequestType::POST)
+				addMethod("doPut", model, routes,RequestType::PUT)
+				addMethod("doDelete", model, routes,RequestType::DELETE)
+				addMethod("doHead", model, routes,RequestType::HEAD)
    			]
    	}
    	
@@ -106,16 +106,16 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 		servlet.members += patternField
    	}
    	
-   	def protected addMethod(JvmDeclaredType servlet, String name, EObject element, Iterable<Route> routes, Type filterType) {
+	def protected addMethod(JvmDeclaredType servlet, String name, EObject element, Iterable<Route> routes, RequestType filterType) {
    		servlet.members += element.toMethod(name,element.newTypeRef(Void::TYPE)) [
 			parameters += element.toParameter("request", element.newTypeRef(HTTP_REQUEST))
 			parameters += element.toParameter("response", element.newTypeRef("javax.servlet.http.HttpServletResponse"))
 			body = [
 				var x = 0
-				if (routes.exists[e | e.type == filterType]) 
+				if (routes.exists[e | e.requestType == filterType])
 					append('String url =  request.getRequestURI();').newLine
 				for (route : routes) {
-					if (route.type == filterType) {
+					if (route.requestType == filterType) {
 						if (route.url != null) {
 							append(element.newTypeRef(typeof(Matcher)).type)
 							append(''' _matcher«x» = _pattern«x».matcher(url);''')
@@ -150,7 +150,7 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
    	}
    	
    	def protected nameOfRouteMethod(Route route, int routeCounter) {
-		"_do" + route.type.literal.toLowerCase.toFirstUpper + routeCounter
+		"_do" + route.requestType.literal.toLowerCase.toFirstUpper + routeCounter
 	}
 	
 	def protected hasValidKey(Route route){

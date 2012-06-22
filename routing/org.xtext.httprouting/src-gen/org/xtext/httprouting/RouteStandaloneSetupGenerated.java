@@ -39,6 +39,5 @@ public class RouteStandaloneSetupGenerated implements ISetup {
 
 
 
-
 	}
 }

@@ -20,10 +20,10 @@ import org.xtext.httprouting.route.Condition;
 import org.xtext.httprouting.route.Import;
 import org.xtext.httprouting.route.Key;
 import org.xtext.httprouting.route.Model;
+import org.xtext.httprouting.route.RequestType;
 import org.xtext.httprouting.route.Route;
 import org.xtext.httprouting.route.RouteFactory;
 import org.xtext.httprouting.route.RoutePackage;
-import org.xtext.httprouting.route.Type;
 import org.xtext.httprouting.route.Variable;
 
 /**
@@ -88,7 +88,7 @@ public class RoutePackageImpl extends EPackageImpl implements RoutePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EEnum typeEEnum = null;
+  private EEnum requestTypeEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -222,7 +222,7 @@ public class RoutePackageImpl extends EPackageImpl implements RoutePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRoute_Type()
+  public EAttribute getRoute_RequestType()
   {
     return (EAttribute)routeEClass.getEStructuralFeatures().get(0);
   }
@@ -372,9 +372,9 @@ public class RoutePackageImpl extends EPackageImpl implements RoutePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EEnum getType()
+  public EEnum getRequestType()
   {
-    return typeEEnum;
+    return requestTypeEEnum;
   }
 
   /**
@@ -415,7 +415,7 @@ public class RoutePackageImpl extends EPackageImpl implements RoutePackage
     createEReference(importEClass, IMPORT__IMPORTED_TYPE);
 
     routeEClass = createEClass(ROUTE);
-    createEAttribute(routeEClass, ROUTE__TYPE);
+    createEAttribute(routeEClass, ROUTE__REQUEST_TYPE);
     createEReference(routeEClass, ROUTE__URL);
     createEReference(routeEClass, ROUTE__CONDITION);
     createEReference(routeEClass, ROUTE__KEY);
@@ -436,7 +436,7 @@ public class RoutePackageImpl extends EPackageImpl implements RoutePackage
     createEReference(keyEClass, KEY__TYPE);
 
     // Create enums
-    typeEEnum = createEEnum(TYPE);
+    requestTypeEEnum = createEEnum(REQUEST_TYPE);
   }
 
   /**
@@ -483,7 +483,7 @@ public class RoutePackageImpl extends EPackageImpl implements RoutePackage
     initEReference(getImport_ImportedType(), theTypesPackage.getJvmType(), null, "importedType", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(routeEClass, Route.class, "Route", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRoute_Type(), this.getType(), "type", null, 0, 1, Route.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRoute_RequestType(), this.getRequestType(), "requestType", null, 0, 1, Route.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRoute_Url(), this.getURL(), null, "url", null, 0, 1, Route.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRoute_Condition(), this.getCondition(), null, "condition", null, 0, 1, Route.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRoute_Key(), this.getKey(), null, "key", null, 0, 1, Route.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -504,12 +504,12 @@ public class RoutePackageImpl extends EPackageImpl implements RoutePackage
     initEReference(getKey_Type(), theTypesPackage.getJvmTypeReference(), null, "type", null, 0, 1, Key.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
-    initEEnum(typeEEnum, Type.class, "Type");
-    addEEnumLiteral(typeEEnum, Type.GET);
-    addEEnumLiteral(typeEEnum, Type.POST);
-    addEEnumLiteral(typeEEnum, Type.PUT);
-    addEEnumLiteral(typeEEnum, Type.DELETE);
-    addEEnumLiteral(typeEEnum, Type.HEAD);
+    initEEnum(requestTypeEEnum, RequestType.class, "RequestType");
+    addEEnumLiteral(requestTypeEEnum, RequestType.GET);
+    addEEnumLiteral(requestTypeEEnum, RequestType.POST);
+    addEEnumLiteral(requestTypeEEnum, RequestType.PUT);
+    addEEnumLiteral(requestTypeEEnum, RequestType.DELETE);
+    addEEnumLiteral(requestTypeEEnum, RequestType.HEAD);
 
     // Create resource
     createResource(eNS_URI);

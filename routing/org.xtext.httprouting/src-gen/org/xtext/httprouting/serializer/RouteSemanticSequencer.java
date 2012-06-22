@@ -1098,7 +1098,7 @@ public class RouteSemanticSequencer extends XbaseWithAnnotationsSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (type=Type url=URL condition=Condition? ((key=Key call=RouteFeatureCall) | call=XFeatureCall))
+	 *     (requestType=RequestType url=URL condition=Condition? ((key=Key call=RouteFeatureCall) | call=XFeatureCall))
 	 */
 	protected void sequence_Route(EObject context, Route semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

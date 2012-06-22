@@ -14,7 +14,7 @@ import org.eclipse.xtext.xbase.XExpression;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.httprouting.route.Route#getType <em>Type</em>}</li>
+ *   <li>{@link org.xtext.httprouting.route.Route#getRequestType <em>Request Type</em>}</li>
  *   <li>{@link org.xtext.httprouting.route.Route#getUrl <em>Url</em>}</li>
  *   <li>{@link org.xtext.httprouting.route.Route#getCondition <em>Condition</em>}</li>
  *   <li>{@link org.xtext.httprouting.route.Route#getKey <em>Key</em>}</li>
@@ -29,33 +29,33 @@ import org.eclipse.xtext.xbase.XExpression;
 public interface Route extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Type</b></em>' attribute.
-   * The literals are from the enumeration {@link org.xtext.httprouting.route.Type}.
+   * Returns the value of the '<em><b>Request Type</b></em>' attribute.
+   * The literals are from the enumeration {@link org.xtext.httprouting.route.RequestType}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Type</em>' attribute isn't clear,
+   * If the meaning of the '<em>Request Type</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Type</em>' attribute.
-   * @see org.xtext.httprouting.route.Type
-   * @see #setType(Type)
-   * @see org.xtext.httprouting.route.RoutePackage#getRoute_Type()
+   * @return the value of the '<em>Request Type</em>' attribute.
+   * @see org.xtext.httprouting.route.RequestType
+   * @see #setRequestType(RequestType)
+   * @see org.xtext.httprouting.route.RoutePackage#getRoute_RequestType()
    * @model
    * @generated
    */
-  Type getType();
+  RequestType getRequestType();
 
   /**
-   * Sets the value of the '{@link org.xtext.httprouting.route.Route#getType <em>Type</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.httprouting.route.Route#getRequestType <em>Request Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type</em>' attribute.
-   * @see org.xtext.httprouting.route.Type
-   * @see #getType()
+   * @param value the new value of the '<em>Request Type</em>' attribute.
+   * @see org.xtext.httprouting.route.RequestType
+   * @see #getRequestType()
    * @generated
    */
-  void setType(Type value);
+  void setRequestType(RequestType value);
 
   /**
    * Returns the value of the '<em><b>Url</b></em>' containment reference.

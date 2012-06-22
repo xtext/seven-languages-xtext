@@ -19,9 +19,9 @@ Import:
 	'import' importedType=[types::JvmType|QualifiedName];
 
 Route:
-	type=Type url=URL condition=Condition? (key=Key call=RouteFeatureCall | call=XFeatureCall);
+	requestType=RequestType url=URL condition=Condition? (key=Key call=RouteFeatureCall | call=XFeatureCall);
 
-enum Type:
+enum RequestType:
 	GET | POST | PUT | DELETE | HEAD;
 
 URL:
@@ -41,9 +41,9 @@ RouteFeatureCall returns xbase::XExpression:
 	"->"
 	('<' typeArguments+=JvmArgumentTypeReference (',' typeArguments+=JvmArgumentTypeReference)* '>')?
 	feature=[types::JvmIdentifiableElement|IdOrSuper]
-	(=> explicitOperationCall?='('
-		(featureCallArguments+=XShortClosure 
-			| featureCallArguments+=XExpression (',' featureCallArguments+=XExpression)*
-		)? ')')?
+	(=>
+	explicitOperationCall?='('
+		(featureCallArguments+=XShortClosure | featureCallArguments+=XExpression (',' featureCallArguments+=XExpression)*)?
+	')')?
 	featureCallArguments+=XClosure?;
 	

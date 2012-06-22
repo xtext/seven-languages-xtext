@@ -36,8 +36,8 @@ import org.eclipse.xtext.xbase.lib.StringExtensions;
 import org.xtext.httprouting.route.Condition;
 import org.xtext.httprouting.route.Key;
 import org.xtext.httprouting.route.Model;
+import org.xtext.httprouting.route.RequestType;
 import org.xtext.httprouting.route.Route;
-import org.xtext.httprouting.route.Type;
 import org.xtext.httprouting.route.URL;
 import org.xtext.httprouting.route.Variable;
 
@@ -78,11 +78,11 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
               routeCounter = _plus;
             }
           }
-          RouteJvmModelInferrer.this.addMethod(it, "doGet", model, routes, Type.GET);
-          RouteJvmModelInferrer.this.addMethod(it, "doPost", model, routes, Type.POST);
-          RouteJvmModelInferrer.this.addMethod(it, "doPut", model, routes, Type.PUT);
-          RouteJvmModelInferrer.this.addMethod(it, "doDelete", model, routes, Type.DELETE);
-          RouteJvmModelInferrer.this.addMethod(it, "doHead", model, routes, Type.HEAD);
+          RouteJvmModelInferrer.this.addMethod(it, "doGet", model, routes, RequestType.GET);
+          RouteJvmModelInferrer.this.addMethod(it, "doPost", model, routes, RequestType.POST);
+          RouteJvmModelInferrer.this.addMethod(it, "doPut", model, routes, RequestType.PUT);
+          RouteJvmModelInferrer.this.addMethod(it, "doDelete", model, routes, RequestType.DELETE);
+          RouteJvmModelInferrer.this.addMethod(it, "doHead", model, routes, RequestType.HEAD);
         }
       };
     _accept.initializeLater(_function);
@@ -241,7 +241,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
     return _xblockexpression;
   }
   
-  protected boolean addMethod(final JvmDeclaredType servlet, final String name, final EObject element, final Iterable<Route> routes, final Type filterType) {
+  protected boolean addMethod(final JvmDeclaredType servlet, final String name, final EObject element, final Iterable<Route> routes, final RequestType filterType) {
     EList<JvmMember> _members = servlet.getMembers();
     JvmTypeReference _newTypeRef = this._jvmTypesBuilder.newTypeRef(element, Void.TYPE);
     final Procedure1<JvmOperation> _function = new Procedure1<JvmOperation>() {
@@ -259,8 +259,8 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
                 int x = 0;
                 final Function1<Route,Boolean> _function = new Function1<Route,Boolean>() {
                     public Boolean apply(final Route e) {
-                      Type _type = e.getType();
-                      boolean _equals = Objects.equal(_type, filterType);
+                      RequestType _requestType = e.getRequestType();
+                      boolean _equals = Objects.equal(_requestType, filterType);
                       return Boolean.valueOf(_equals);
                     }
                   };
@@ -271,15 +271,15 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
                 }
                 for (final Route route : routes) {
                   {
-                    Type _type = route.getType();
-                    boolean _equals = Objects.equal(_type, filterType);
+                    RequestType _requestType = route.getRequestType();
+                    boolean _equals = Objects.equal(_requestType, filterType);
                     if (_equals) {
                       URL _url = route.getUrl();
                       boolean _notEquals = (!Objects.equal(_url, null));
                       if (_notEquals) {
                         JvmTypeReference _newTypeRef = RouteJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(element, Matcher.class);
-                        JvmType _type_1 = _newTypeRef.getType();
-                        it.append(_type_1);
+                        JvmType _type = _newTypeRef.getType();
+                        it.append(_type);
                         StringConcatenation _builder = new StringConcatenation();
                         _builder.append(" ");
                         _builder.append("_matcher");
@@ -406,8 +406,8 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
   }
   
   protected String nameOfRouteMethod(final Route route, final int routeCounter) {
-    Type _type = route.getType();
-    String _literal = _type.getLiteral();
+    RequestType _requestType = route.getRequestType();
+    String _literal = _requestType.getLiteral();
     String _lowerCase = _literal.toLowerCase();
     String _firstUpper = StringExtensions.toFirstUpper(_lowerCase);
     String _plus = ("_do" + _firstUpper);

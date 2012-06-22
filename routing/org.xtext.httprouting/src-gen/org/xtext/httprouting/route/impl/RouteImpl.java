@@ -15,9 +15,9 @@ import org.eclipse.xtext.xbase.XExpression;
 
 import org.xtext.httprouting.route.Condition;
 import org.xtext.httprouting.route.Key;
+import org.xtext.httprouting.route.RequestType;
 import org.xtext.httprouting.route.Route;
 import org.xtext.httprouting.route.RoutePackage;
-import org.xtext.httprouting.route.Type;
 import org.xtext.httprouting.route.URL;
 
 /**
@@ -27,7 +27,7 @@ import org.xtext.httprouting.route.URL;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.httprouting.route.impl.RouteImpl#getType <em>Type</em>}</li>
+ *   <li>{@link org.xtext.httprouting.route.impl.RouteImpl#getRequestType <em>Request Type</em>}</li>
  *   <li>{@link org.xtext.httprouting.route.impl.RouteImpl#getUrl <em>Url</em>}</li>
  *   <li>{@link org.xtext.httprouting.route.impl.RouteImpl#getCondition <em>Condition</em>}</li>
  *   <li>{@link org.xtext.httprouting.route.impl.RouteImpl#getKey <em>Key</em>}</li>
@@ -40,24 +40,24 @@ import org.xtext.httprouting.route.URL;
 public class RouteImpl extends MinimalEObjectImpl.Container implements Route
 {
   /**
-   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+   * The default value of the '{@link #getRequestType() <em>Request Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getType()
+   * @see #getRequestType()
    * @generated
    * @ordered
    */
-  protected static final Type TYPE_EDEFAULT = Type.GET;
+  protected static final RequestType REQUEST_TYPE_EDEFAULT = RequestType.GET;
 
   /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+   * The cached value of the '{@link #getRequestType() <em>Request Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getType()
+   * @see #getRequestType()
    * @generated
    * @ordered
    */
-  protected Type type = TYPE_EDEFAULT;
+  protected RequestType requestType = REQUEST_TYPE_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getUrl() <em>Url</em>}' containment reference.
@@ -125,9 +125,9 @@ public class RouteImpl extends MinimalEObjectImpl.Container implements Route
    * <!-- end-user-doc -->
    * @generated
    */
-  public Type getType()
+  public RequestType getRequestType()
   {
-    return type;
+    return requestType;
   }
 
   /**
@@ -135,12 +135,12 @@ public class RouteImpl extends MinimalEObjectImpl.Container implements Route
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(Type newType)
+  public void setRequestType(RequestType newRequestType)
   {
-    Type oldType = type;
-    type = newType == null ? TYPE_EDEFAULT : newType;
+    RequestType oldRequestType = requestType;
+    requestType = newRequestType == null ? REQUEST_TYPE_EDEFAULT : newRequestType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RoutePackage.ROUTE__TYPE, oldType, type));
+      eNotify(new ENotificationImpl(this, Notification.SET, RoutePackage.ROUTE__REQUEST_TYPE, oldRequestType, requestType));
   }
 
   /**
@@ -367,8 +367,8 @@ public class RouteImpl extends MinimalEObjectImpl.Container implements Route
   {
     switch (featureID)
     {
-      case RoutePackage.ROUTE__TYPE:
-        return getType();
+      case RoutePackage.ROUTE__REQUEST_TYPE:
+        return getRequestType();
       case RoutePackage.ROUTE__URL:
         return getUrl();
       case RoutePackage.ROUTE__CONDITION:
@@ -391,8 +391,8 @@ public class RouteImpl extends MinimalEObjectImpl.Container implements Route
   {
     switch (featureID)
     {
-      case RoutePackage.ROUTE__TYPE:
-        setType((Type)newValue);
+      case RoutePackage.ROUTE__REQUEST_TYPE:
+        setRequestType((RequestType)newValue);
         return;
       case RoutePackage.ROUTE__URL:
         setUrl((URL)newValue);
@@ -420,8 +420,8 @@ public class RouteImpl extends MinimalEObjectImpl.Container implements Route
   {
     switch (featureID)
     {
-      case RoutePackage.ROUTE__TYPE:
-        setType(TYPE_EDEFAULT);
+      case RoutePackage.ROUTE__REQUEST_TYPE:
+        setRequestType(REQUEST_TYPE_EDEFAULT);
         return;
       case RoutePackage.ROUTE__URL:
         setUrl((URL)null);
@@ -449,8 +449,8 @@ public class RouteImpl extends MinimalEObjectImpl.Container implements Route
   {
     switch (featureID)
     {
-      case RoutePackage.ROUTE__TYPE:
-        return type != TYPE_EDEFAULT;
+      case RoutePackage.ROUTE__REQUEST_TYPE:
+        return requestType != REQUEST_TYPE_EDEFAULT;
       case RoutePackage.ROUTE__URL:
         return url != null;
       case RoutePackage.ROUTE__CONDITION:
@@ -474,8 +474,8 @@ public class RouteImpl extends MinimalEObjectImpl.Container implements Route
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (type: ");
-    result.append(type);
+    result.append(" (requestType: ");
+    result.append(requestType);
     result.append(')');
     return result.toString();
   }

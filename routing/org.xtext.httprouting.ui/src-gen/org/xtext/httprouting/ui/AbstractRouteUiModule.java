@@ -78,26 +78,6 @@ public abstract class AbstractRouteUiModule extends DefaultUiModule {
 		binder.bind(org.eclipse.xtext.ui.editor.preferences.IPreferenceStoreInitializer.class).annotatedWith(com.google.inject.name.Names.named("builderPreferenceInitializer")).to(org.eclipse.xtext.builder.preferences.BuilderPreferenceAccess.Initializer.class);
 	}
 
-	// contributed by org.eclipse.xtext.ui.generator.labeling.LabelProviderFragment
-	public Class<? extends org.eclipse.jface.viewers.ILabelProvider> bindILabelProvider() {
-		return org.xtext.httprouting.ui.labeling.RouteLabelProvider.class;
-	}
-
-	// contributed by org.eclipse.xtext.ui.generator.labeling.LabelProviderFragment
-	public void configureResourceUIServiceLabelProvider(com.google.inject.Binder binder) {
-		binder.bind(org.eclipse.jface.viewers.ILabelProvider.class).annotatedWith(org.eclipse.xtext.ui.resource.ResourceServiceDescriptionLabelProvider.class).to(org.xtext.httprouting.ui.labeling.RouteDescriptionLabelProvider.class);
-	}
-
-	// contributed by org.eclipse.xtext.ui.generator.outline.OutlineTreeProviderFragment
-	public Class<? extends org.eclipse.xtext.ui.editor.outline.IOutlineTreeProvider> bindIOutlineTreeProvider() {
-		return org.xtext.httprouting.ui.outline.RouteOutlineTreeProvider.class;
-	}
-
-	// contributed by org.eclipse.xtext.ui.generator.outline.OutlineTreeProviderFragment
-	public Class<? extends org.eclipse.xtext.ui.editor.outline.impl.IOutlineTreeStructureProvider> bindIOutlineTreeStructureProvider() {
-		return org.xtext.httprouting.ui.outline.RouteOutlineTreeProvider.class;
-	}
-
 	// contributed by org.eclipse.xtext.ui.generator.contentAssist.JavaBasedContentAssistFragment
 	public Class<? extends org.eclipse.xtext.ui.editor.contentassist.IContentProposalProvider> bindIContentProposalProvider() {
 		return org.xtext.httprouting.ui.contentassist.RouteProposalProvider.class;

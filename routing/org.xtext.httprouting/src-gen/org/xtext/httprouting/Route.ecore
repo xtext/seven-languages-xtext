@@ -11,7 +11,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="importedType" eType="ecore:EClass ../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.ecore#//JvmType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Route">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Type"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requestType" eType="#//RequestType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="url" eType="#//URL" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="#//Condition"
         containment="true"/>
@@ -19,7 +19,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="call" eType="ecore:EClass ../../../../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XExpression"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="Type">
+  <eClassifiers xsi:type="ecore:EEnum" name="RequestType">
     <eLiterals name="GET" literal="GET"/>
     <eLiterals name="POST" value="1" literal="POST"/>
     <eLiterals name="PUT" value="2" literal="PUT"/>

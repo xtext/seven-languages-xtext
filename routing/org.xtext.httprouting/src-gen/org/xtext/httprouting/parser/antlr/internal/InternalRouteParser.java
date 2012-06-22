@@ -491,11 +491,11 @@ public class InternalRouteParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRoute"
-    // ../org.xtext.httprouting/src-gen/org/xtext/httprouting/parser/antlr/internal/InternalRoute.g:174:1: ruleRoute returns [EObject current=null] : ( ( (lv_type_0_0= ruleType ) ) ( (lv_url_1_0= ruleURL ) ) ( (lv_condition_2_0= ruleCondition ) )? ( ( ( (lv_key_3_0= ruleKey ) ) ( (lv_call_4_0= ruleRouteFeatureCall ) ) ) | ( (lv_call_5_0= ruleXFeatureCall ) ) ) ) ;
+    // ../org.xtext.httprouting/src-gen/org/xtext/httprouting/parser/antlr/internal/InternalRoute.g:174:1: ruleRoute returns [EObject current=null] : ( ( (lv_requestType_0_0= ruleRequestType ) ) ( (lv_url_1_0= ruleURL ) ) ( (lv_condition_2_0= ruleCondition ) )? ( ( ( (lv_key_3_0= ruleKey ) ) ( (lv_call_4_0= ruleRouteFeatureCall ) ) ) | ( (lv_call_5_0= ruleXFeatureCall ) ) ) ) ;
     public final EObject ruleRoute() throws RecognitionException {
         EObject current = null;
 
-        Enumerator lv_type_0_0 = null;
+        Enumerator lv_requestType_0_0 = null;
 
         EObject lv_url_1_0 = null;
 
@@ -511,25 +511,25 @@ public class InternalRouteParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.httprouting/src-gen/org/xtext/httprouting/parser/antlr/internal/InternalRoute.g:177:28: ( ( ( (lv_type_0_0= ruleType ) ) ( (lv_url_1_0= ruleURL ) ) ( (lv_condition_2_0= ruleCondition ) )? ( ( ( (lv_key_3_0= ruleKey ) ) ( (lv_call_4_0= ruleRouteFeatureCall ) ) ) | ( (lv_call_5_0= ruleXFeatureCall ) ) ) ) )
-            // ../org.xtext.httprouting/src-gen/org/xtext/httprouting/parser/antlr/internal/InternalRoute.g:178:1: ( ( (lv_type_0_0= ruleType ) ) ( (lv_url_1_0= ruleURL ) ) ( (lv_condition_2_0= ruleCondition ) )? ( ( ( (lv_key_3_0= ruleKey ) ) ( (lv_call_4_0= ruleRouteFeatureCall ) ) ) | ( (lv_call_5_0= ruleXFeatureCall ) ) ) )
+            // ../org.xtext.httprouting/src-gen/org/xtext/httprouting/parser/antlr/internal/InternalRoute.g:177:28: ( ( ( (lv_requestType_0_0= ruleRequestType ) ) ( (lv_url_1_0= ruleURL ) ) ( (lv_condition_2_0= ruleCondition ) )? ( ( ( (lv_key_3_0= ruleKey ) ) ( (lv_call_4_0= ruleRouteFeatureCall ) ) ) | ( (lv_call_5_0= ruleXFeatureCall ) ) ) ) )
+            // ../org.xtext.httprouting/src-gen/org/xtext/httprouting/parser/antlr/internal/InternalRoute.g:178:1: ( ( (lv_requestType_0_0= ruleRequestType ) ) ( (lv_url_1_0= ruleURL ) ) ( (lv_condition_2_0= ruleCondition ) )? ( ( ( (lv_key_3_0= ruleKey ) ) ( (lv_call_4_0= ruleRouteFeatureCall ) ) ) | ( (lv_call_5_0= ruleXFeatureCall ) ) ) )
             {
-            // ../org.xtext.httprouting/src-gen/org/xtext/httprouting/parser/antlr/internal/InternalRoute.g:178:1: ( ( (lv_type_0_0= ruleType ) ) ( (lv_url_1_0= ruleURL ) ) ( (lv_condition_2_0= ruleCondition ) )? ( ( ( (lv_key_3_0= ruleKey ) ) ( (lv_call_4_0= ruleRouteFeatureCall ) ) ) | ( (lv_call_5_0= ruleXFeatureCall ) ) ) )
-            // ../org.xtext.httprouting/src-gen/org/xtext/httprouting/parser/antlr/internal/InternalRoute.g:178:2: ( (lv_type_0_0= ruleType ) ) ( (lv_url_1_0= ruleURL ) ) ( (lv_condition_2_0= ruleCondition ) )? ( ( ( (lv_key_3_0= ruleKey ) ) ( (lv_call_4_0= ruleRouteFeatureCall ) ) ) | ( (lv_call_5_0= ruleXFeatureCall ) ) )
+            // ../org.xtext.httprouting/src-gen/org/xtext/httprouting/parser/antlr/internal/InternalRoute.g:178:1: ( ( (lv_requestType_0_0= ruleRequestType ) ) ( (lv_url_1_0= ruleURL ) ) ( (lv_condition_2_0= ruleCondition ) )? ( ( ( (lv_key_3_0= ruleKey ) ) ( (lv_call_4_0= ruleRouteFeatureCall ) ) ) | ( (lv_call_5_0= ruleXFeatureCall ) ) ) )
+            // ../org.xtext.httprouting/src-gen/org/xtext/httprouting/parser/antlr/internal/InternalRoute.g:178:2: ( (lv_requestType_0_0= ruleRequestType ) ) ( (lv_url_1_0= ruleURL ) ) ( (lv_condition_2_0= ruleCondition ) )? ( ( ( (lv_key_3_0= ruleKey ) ) ( (lv_call_4_0= ruleRouteFeatureCall ) ) ) | ( (lv_call_5_0= ruleXFeatureCall ) ) )
             {
-            // ../org.xtext.httprouting/src-gen/org/xtext/httprouting/parser/antlr/internal/InternalRoute.g:178:2: ( (lv_type_0_0= ruleType ) )
-            // ../org.xtext.httprouting/src-gen/org/xtext/httprouting/parser/antlr/internal/InternalRoute.g:179:1: (lv_type_0_0= ruleType )
+            // ../org.xtext.httprouting/src-gen/org/xtext/httprouting/parser/antlr/internal/InternalRoute.g:178:2: ( (lv_requestType_0_0= ruleRequestType ) )
+            // ../org.xtext.httprouting/src-gen/org/xtext/httprouting/parser/antlr/internal/InternalRoute.g:179:1: (lv_requestType_0_0= ruleRequestType )
             {
-            // ../org.xtext.httprouting/src-gen/org/xtext/httprouting/parser/antlr/internal/InternalRoute.g:179:1: (lv_type_0_0= ruleType )
-            // ../org.xtext.httprouting/src-gen/org/xtext/httprouting/parser/antlr/internal/InternalRoute.g:180:3: lv_type_0_0= ruleType
+            // ../org.xtext.httprouting/src-gen/org/xtext/httprouting/parser/antlr/internal/InternalRoute.g:179:1: (lv_requestType_0_0= ruleRequestType )
+            // ../org.xtext.httprouting/src-gen/org/xtext/httprouting/parser/antlr/internal/InternalRoute.g:180:3: lv_requestType_0_0= ruleRequestType
             {
             if ( state.backtracking==0 ) {
                
-              	        newCompositeNode(grammarAccess.getRouteAccess().getTypeTypeEnumRuleCall_0_0()); 
+		        newCompositeNode(grammarAccess.getRouteAccess().getRequestTypeRequestTypeEnumRuleCall_0_0());
               	    
             }
-            pushFollow(FOLLOW_ruleType_in_ruleRoute352);
-            lv_type_0_0=ruleType();
+            pushFollow(FOLLOW_ruleRequestType_in_ruleRoute352);
+            lv_requestType_0_0=ruleRequestType();
 
             state._fsp--;
             if (state.failed) return current;
@@ -540,9 +540,9 @@ public class InternalRouteParser extends AbstractInternalAntlrParser {
               	        }
                      		set(
                      			current, 
-                     			"type",
-                      		lv_type_0_0, 
-                      		"Type");
+					"requestType",
+				lv_requestType_0_0,
+				"RequestType");
               	        afterParserOrEnumRuleCall();
               	    
             }
@@ -17431,9 +17431,9 @@ public class InternalRouteParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleValidID"
 
 
-    // $ANTLR start "ruleType"
-    // ../org.xtext.httprouting/src-gen/org/xtext/httprouting/parser/antlr/internal/InternalRoute.g:5993:1: ruleType returns [Enumerator current=null] : ( (enumLiteral_0= 'GET' ) | (enumLiteral_1= 'POST' ) | (enumLiteral_2= 'PUT' ) | (enumLiteral_3= 'DELETE' ) | (enumLiteral_4= 'HEAD' ) ) ;
-    public final Enumerator ruleType() throws RecognitionException {
+    // $ANTLR start "ruleRequestType"
+    // ../org.xtext.httprouting/src-gen/org/xtext/httprouting/parser/antlr/internal/InternalRoute.g:5993:1: ruleRequestType returns [Enumerator current=null] : ( (enumLiteral_0= 'GET' ) | (enumLiteral_1= 'POST' ) | (enumLiteral_2= 'PUT' ) | (enumLiteral_3= 'DELETE' ) | (enumLiteral_4= 'HEAD' ) ) ;
+    public final Enumerator ruleRequestType() throws RecognitionException {
         Enumerator current = null;
 
         Token enumLiteral_0=null;
@@ -17490,11 +17490,11 @@ public class InternalRouteParser extends AbstractInternalAntlrParser {
                     // ../org.xtext.httprouting/src-gen/org/xtext/httprouting/parser/antlr/internal/InternalRoute.g:5996:2: (enumLiteral_0= 'GET' )
                     // ../org.xtext.httprouting/src-gen/org/xtext/httprouting/parser/antlr/internal/InternalRoute.g:5996:4: enumLiteral_0= 'GET'
                     {
-                    enumLiteral_0=(Token)match(input,79,FOLLOW_79_in_ruleType13980); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,79,FOLLOW_79_in_ruleRequestType13980); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                              current = grammarAccess.getTypeAccess().getGETEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-                              newLeafNode(enumLiteral_0, grammarAccess.getTypeAccess().getGETEnumLiteralDeclaration_0()); 
+                              current = grammarAccess.getRequestTypeAccess().getGETEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                              newLeafNode(enumLiteral_0, grammarAccess.getRequestTypeAccess().getGETEnumLiteralDeclaration_0());
                           
                     }
 
@@ -17509,11 +17509,11 @@ public class InternalRouteParser extends AbstractInternalAntlrParser {
                     // ../org.xtext.httprouting/src-gen/org/xtext/httprouting/parser/antlr/internal/InternalRoute.g:6002:6: (enumLiteral_1= 'POST' )
                     // ../org.xtext.httprouting/src-gen/org/xtext/httprouting/parser/antlr/internal/InternalRoute.g:6002:8: enumLiteral_1= 'POST'
                     {
-                    enumLiteral_1=(Token)match(input,80,FOLLOW_80_in_ruleType13997); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,80,FOLLOW_80_in_ruleRequestType13997); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                              current = grammarAccess.getTypeAccess().getPOSTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-                              newLeafNode(enumLiteral_1, grammarAccess.getTypeAccess().getPOSTEnumLiteralDeclaration_1()); 
+                              current = grammarAccess.getRequestTypeAccess().getPOSTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                              newLeafNode(enumLiteral_1, grammarAccess.getRequestTypeAccess().getPOSTEnumLiteralDeclaration_1());
                           
                     }
 
@@ -17528,11 +17528,11 @@ public class InternalRouteParser extends AbstractInternalAntlrParser {
                     // ../org.xtext.httprouting/src-gen/org/xtext/httprouting/parser/antlr/internal/InternalRoute.g:6008:6: (enumLiteral_2= 'PUT' )
                     // ../org.xtext.httprouting/src-gen/org/xtext/httprouting/parser/antlr/internal/InternalRoute.g:6008:8: enumLiteral_2= 'PUT'
                     {
-                    enumLiteral_2=(Token)match(input,81,FOLLOW_81_in_ruleType14014); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,81,FOLLOW_81_in_ruleRequestType14014); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                              current = grammarAccess.getTypeAccess().getPUTEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-                              newLeafNode(enumLiteral_2, grammarAccess.getTypeAccess().getPUTEnumLiteralDeclaration_2()); 
+                              current = grammarAccess.getRequestTypeAccess().getPUTEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+                              newLeafNode(enumLiteral_2, grammarAccess.getRequestTypeAccess().getPUTEnumLiteralDeclaration_2());
                           
                     }
 
@@ -17547,11 +17547,11 @@ public class InternalRouteParser extends AbstractInternalAntlrParser {
                     // ../org.xtext.httprouting/src-gen/org/xtext/httprouting/parser/antlr/internal/InternalRoute.g:6014:6: (enumLiteral_3= 'DELETE' )
                     // ../org.xtext.httprouting/src-gen/org/xtext/httprouting/parser/antlr/internal/InternalRoute.g:6014:8: enumLiteral_3= 'DELETE'
                     {
-                    enumLiteral_3=(Token)match(input,82,FOLLOW_82_in_ruleType14031); if (state.failed) return current;
+                    enumLiteral_3=(Token)match(input,82,FOLLOW_82_in_ruleRequestType14031); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                              current = grammarAccess.getTypeAccess().getDELETEEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
-                              newLeafNode(enumLiteral_3, grammarAccess.getTypeAccess().getDELETEEnumLiteralDeclaration_3()); 
+                              current = grammarAccess.getRequestTypeAccess().getDELETEEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+                              newLeafNode(enumLiteral_3, grammarAccess.getRequestTypeAccess().getDELETEEnumLiteralDeclaration_3());
                           
                     }
 
@@ -17566,11 +17566,11 @@ public class InternalRouteParser extends AbstractInternalAntlrParser {
                     // ../org.xtext.httprouting/src-gen/org/xtext/httprouting/parser/antlr/internal/InternalRoute.g:6020:6: (enumLiteral_4= 'HEAD' )
                     // ../org.xtext.httprouting/src-gen/org/xtext/httprouting/parser/antlr/internal/InternalRoute.g:6020:8: enumLiteral_4= 'HEAD'
                     {
-                    enumLiteral_4=(Token)match(input,83,FOLLOW_83_in_ruleType14048); if (state.failed) return current;
+                    enumLiteral_4=(Token)match(input,83,FOLLOW_83_in_ruleRequestType14048); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                              current = grammarAccess.getTypeAccess().getHEADEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
-                              newLeafNode(enumLiteral_4, grammarAccess.getTypeAccess().getHEADEnumLiteralDeclaration_4()); 
+                              current = grammarAccess.getRequestTypeAccess().getHEADEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
+                              newLeafNode(enumLiteral_4, grammarAccess.getRequestTypeAccess().getHEADEnumLiteralDeclaration_4());
                           
                     }
 
@@ -17598,7 +17598,7 @@ public class InternalRouteParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleType"
+    // $ANTLR end "ruleRequestType"
 
     // $ANTLR start synpred1_InternalRoute
     public final void synpred1_InternalRoute_fragment() throws RecognitionException {   
@@ -22393,7 +22393,7 @@ public class InternalRouteParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleQualifiedName_in_ruleImport260 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleRoute_in_entryRuleRoute296 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleRoute306 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleType_in_ruleRoute352 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_ruleRequestType_in_ruleRoute352 = new BitSet(new long[]{0x0000000000004000L});
     public static final BitSet FOLLOW_ruleURL_in_ruleRoute373 = new BitSet(new long[]{0x0000008002940010L,0x0000000000000001L});
     public static final BitSet FOLLOW_ruleCondition_in_ruleRoute394 = new BitSet(new long[]{0x0000008002940010L,0x0000000000000001L});
     public static final BitSet FOLLOW_ruleKey_in_ruleRoute418 = new BitSet(new long[]{0x0000000000080000L});
@@ -22892,11 +22892,11 @@ public class InternalRouteParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleValidID_in_entryRuleValidID13872 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleValidID13883 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleValidID13922 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_79_in_ruleType13980 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_80_in_ruleType13997 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_81_in_ruleType14014 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_82_in_ruleType14031 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_83_in_ruleType14048 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_79_in_ruleRequestType13980 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_80_in_ruleRequestType13997 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_81_in_ruleRequestType14014 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_82_in_ruleRequestType14031 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_83_in_ruleRequestType14048 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_23_in_synpred1_InternalRoute1277 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred2_InternalRoute1329 = new BitSet(new long[]{0x0008000000200000L});
     public static final BitSet FOLLOW_21_in_synpred2_InternalRoute1336 = new BitSet(new long[]{0x0000008002800010L});

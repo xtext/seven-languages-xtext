@@ -10,14 +10,14 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Type</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Request Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see org.xtext.httprouting.route.RoutePackage#getType()
+ * @see org.xtext.httprouting.route.RoutePackage#getRequestType()
  * @model
  * @generated
  */
-public enum Type implements Enumerator
+public enum RequestType implements Enumerator
 {
   /**
    * The '<em><b>GET</b></em>' literal object.
@@ -145,13 +145,13 @@ public enum Type implements Enumerator
   public static final int HEAD_VALUE = 4;
 
   /**
-   * An array of all the '<em><b>Type</b></em>' enumerators.
+   * An array of all the '<em><b>Request Type</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private static final Type[] VALUES_ARRAY =
-    new Type[]
+  private static final RequestType[] VALUES_ARRAY =
+    new RequestType[]
     {
       GET,
       POST,
@@ -161,24 +161,24 @@ public enum Type implements Enumerator
     };
 
   /**
-   * A public read-only list of all the '<em><b>Type</b></em>' enumerators.
+   * A public read-only list of all the '<em><b>Request Type</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  public static final List<Type> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+  public static final List<RequestType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
   /**
-   * Returns the '<em><b>Type</b></em>' literal with the specified literal value.
+   * Returns the '<em><b>Request Type</b></em>' literal with the specified literal value.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  public static Type get(String literal)
+  public static RequestType get(String literal)
   {
     for (int i = 0; i < VALUES_ARRAY.length; ++i)
     {
-      Type result = VALUES_ARRAY[i];
+      RequestType result = VALUES_ARRAY[i];
       if (result.toString().equals(literal))
       {
         return result;
@@ -188,16 +188,16 @@ public enum Type implements Enumerator
   }
 
   /**
-   * Returns the '<em><b>Type</b></em>' literal with the specified name.
+   * Returns the '<em><b>Request Type</b></em>' literal with the specified name.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  public static Type getByName(String name)
+  public static RequestType getByName(String name)
   {
     for (int i = 0; i < VALUES_ARRAY.length; ++i)
     {
-      Type result = VALUES_ARRAY[i];
+      RequestType result = VALUES_ARRAY[i];
       if (result.getName().equals(name))
       {
         return result;
@@ -207,12 +207,12 @@ public enum Type implements Enumerator
   }
 
   /**
-   * Returns the '<em><b>Type</b></em>' literal with the specified integer value.
+   * Returns the '<em><b>Request Type</b></em>' literal with the specified integer value.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  public static Type get(int value)
+  public static RequestType get(int value)
   {
     switch (value)
     {
@@ -252,7 +252,7 @@ public enum Type implements Enumerator
    * <!-- end-user-doc -->
    * @generated
    */
-  private Type(int value, String name, String literal)
+  private RequestType(int value, String name, String literal)
   {
     this.value = value;
     this.name = name;
@@ -300,5 +300,5 @@ public enum Type implements Enumerator
   {
     return literal;
   }
-  
-} //Type
+
+} //RequestType

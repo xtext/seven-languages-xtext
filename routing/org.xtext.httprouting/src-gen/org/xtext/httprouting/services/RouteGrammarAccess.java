@@ -80,8 +80,8 @@ public class RouteGrammarAccess extends AbstractGrammarElementFinder {
 	public class RouteElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Route");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cTypeTypeEnumRuleCall_0_0 = (RuleCall)cTypeAssignment_0.eContents().get(0);
+		private final Assignment cRequestTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cRequestTypeRequestTypeEnumRuleCall_0_0 = (RuleCall)cRequestTypeAssignment_0.eContents().get(0);
 		private final Assignment cUrlAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cUrlURLParserRuleCall_1_0 = (RuleCall)cUrlAssignment_1.eContents().get(0);
 		private final Assignment cConditionAssignment_2 = (Assignment)cGroup.eContents().get(2);
@@ -96,17 +96,17 @@ public class RouteGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cCallXFeatureCallParserRuleCall_3_1_0 = (RuleCall)cCallAssignment_3_1.eContents().get(0);
 		
 		//Route:
-		//	type=Type url=URL condition=Condition? (key=Key call=RouteFeatureCall | call=XFeatureCall);
+		//	requestType=RequestType url=URL condition=Condition? (key=Key call=RouteFeatureCall | call=XFeatureCall);
 		public ParserRule getRule() { return rule; }
 
-		//type=Type url=URL condition=Condition? (key=Key call=RouteFeatureCall | call=XFeatureCall)
+		//requestType=RequestType url=URL condition=Condition? (key=Key call=RouteFeatureCall | call=XFeatureCall)
 		public Group getGroup() { return cGroup; }
 
-		//type=Type
-		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
+		//requestType=RequestType
+		public Assignment getRequestTypeAssignment_0() { return cRequestTypeAssignment_0; }
 
-		//Type
-		public RuleCall getTypeTypeEnumRuleCall_0_0() { return cTypeTypeEnumRuleCall_0_0; }
+		//RequestType
+		public RuleCall getRequestTypeRequestTypeEnumRuleCall_0_0() { return cRequestTypeRequestTypeEnumRuleCall_0_0; }
 
 		//url=URL
 		public Assignment getUrlAssignment_1() { return cUrlAssignment_1; }
@@ -461,8 +461,8 @@ public class RouteGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	
-	public class TypeElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "Type");
+	public class RequestTypeElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "RequestType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cGETEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cGETGETKeyword_0_0 = (Keyword)cGETEnumLiteralDeclaration_0.eContents().get(0);
@@ -475,7 +475,7 @@ public class RouteGrammarAccess extends AbstractGrammarElementFinder {
 		private final EnumLiteralDeclaration cHEADEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
 		private final Keyword cHEADHEADKeyword_4_0 = (Keyword)cHEADEnumLiteralDeclaration_4.eContents().get(0);
 		
-		//enum Type:
+		//enum RequestType:
 		//	GET | POST | PUT | DELETE | HEAD;
 		public EnumRule getRule() { return rule; }
 
@@ -516,7 +516,7 @@ public class RouteGrammarAccess extends AbstractGrammarElementFinder {
 	private ModelElements pModel;
 	private ImportElements pImport;
 	private RouteElements pRoute;
-	private TypeElements unknownRuleType;
+	private RequestTypeElements unknownRuleRequestType;
 	private URLElements pURL;
 	private VariableElements pVariable;
 	private ConditionElements pCondition;
@@ -582,7 +582,7 @@ public class RouteGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Route:
-	//	type=Type url=URL condition=Condition? (key=Key call=RouteFeatureCall | call=XFeatureCall);
+	//	requestType=RequestType url=URL condition=Condition? (key=Key call=RouteFeatureCall | call=XFeatureCall);
 	public RouteElements getRouteAccess() {
 		return (pRoute != null) ? pRoute : (pRoute = new RouteElements());
 	}
@@ -591,14 +591,14 @@ public class RouteGrammarAccess extends AbstractGrammarElementFinder {
 		return getRouteAccess().getRule();
 	}
 
-	//enum Type:
+	//enum RequestType:
 	//	GET | POST | PUT | DELETE | HEAD;
-	public TypeElements getTypeAccess() {
-		return (unknownRuleType != null) ? unknownRuleType : (unknownRuleType = new TypeElements());
+	public RequestTypeElements getRequestTypeAccess() {
+		return (unknownRuleRequestType != null) ? unknownRuleRequestType : (unknownRuleRequestType = new RequestTypeElements());
 	}
 	
-	public EnumRule getTypeRule() {
-		return getTypeAccess().getRule();
+	public EnumRule getRequestTypeRule() {
+		return getRequestTypeAccess().getRule();
 	}
 
 	//URL:

@@ -19,4 +19,25 @@ public class RouteUiModule extends org.xtext.httprouting.ui.AbstractRouteUiModul
 	public Class<? extends ITypesProposalProvider> bindITypesProposalProvider() {
 		return ImportingTypesProposalProvider.class;
 	}
+
+	public Class<? extends org.eclipse.xtext.ui.editor.contentassist.IContentProposalProvider> bindIContentProposalProvider() {
+		return org.xtext.httprouting.ui.contentassist.RouteProposalProviderXtend.class;
+	}
+
+	public Class<? extends org.eclipse.jface.viewers.ILabelProvider> bindILabelProvider() {
+		return org.xtext.httprouting.ui.labeling.RouteLabelProvider.class;
+	}
+
+	public void configureResourceUIServiceLabelProvider(com.google.inject.Binder binder) {
+		binder.bind(org.eclipse.jface.viewers.ILabelProvider.class).annotatedWith(org.eclipse.xtext.ui.resource.ResourceServiceDescriptionLabelProvider.class).to(org.xtext.httprouting.ui.labeling.RouteDescriptionLabelProvider.class);
+	}
+
+	public Class<? extends org.eclipse.xtext.ui.editor.outline.IOutlineTreeProvider> bindIOutlineTreeProvider() {
+		return org.xtext.httprouting.ui.outline.RouteOutlineTreeProvider.class;
+	}
+
+	public Class<? extends org.eclipse.xtext.ui.editor.outline.impl.IOutlineTreeStructureProvider> bindIOutlineTreeStructureProvider() {
+		return org.xtext.httprouting.ui.outline.RouteOutlineTreeProvider.class;
+	}
+
 }

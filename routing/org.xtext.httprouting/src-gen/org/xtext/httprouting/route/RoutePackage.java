@@ -133,13 +133,13 @@ public interface RoutePackage extends EPackage
   int ROUTE = 2;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * The feature id for the '<em><b>Request Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ROUTE__TYPE = 0;
+  int ROUTE__REQUEST_TYPE = 0;
 
   /**
    * The feature id for the '<em><b>Url</b></em>' containment reference.
@@ -317,14 +317,14 @@ public interface RoutePackage extends EPackage
   int KEY_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link org.xtext.httprouting.route.Type <em>Type</em>}' enum.
+   * The meta object id for the '{@link org.xtext.httprouting.route.RequestType <em>Request Type</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.httprouting.route.Type
-   * @see org.xtext.httprouting.route.impl.RoutePackageImpl#getType()
+   * @see org.xtext.httprouting.route.RequestType
+   * @see org.xtext.httprouting.route.impl.RoutePackageImpl#getRequestType()
    * @generated
    */
-  int TYPE = 7;
+  int REQUEST_TYPE = 7;
 
 
   /**
@@ -391,15 +391,15 @@ public interface RoutePackage extends EPackage
   EClass getRoute();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.httprouting.route.Route#getType <em>Type</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.httprouting.route.Route#getRequestType <em>Request Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
-   * @see org.xtext.httprouting.route.Route#getType()
+   * @return the meta object for the attribute '<em>Request Type</em>'.
+   * @see org.xtext.httprouting.route.Route#getRequestType()
    * @see #getRoute()
    * @generated
    */
-  EAttribute getRoute_Type();
+  EAttribute getRoute_RequestType();
 
   /**
    * Returns the meta object for the containment reference '{@link org.xtext.httprouting.route.Route#getUrl <em>Url</em>}'.
@@ -552,14 +552,14 @@ public interface RoutePackage extends EPackage
   EReference getKey_Type();
 
   /**
-   * Returns the meta object for enum '{@link org.xtext.httprouting.route.Type <em>Type</em>}'.
+   * Returns the meta object for enum '{@link org.xtext.httprouting.route.RequestType <em>Request Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>Type</em>'.
-   * @see org.xtext.httprouting.route.Type
+   * @return the meta object for enum '<em>Request Type</em>'.
+   * @see org.xtext.httprouting.route.RequestType
    * @generated
    */
-  EEnum getType();
+  EEnum getRequestType();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -639,12 +639,12 @@ public interface RoutePackage extends EPackage
     EClass ROUTE = eINSTANCE.getRoute();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Request Type</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ROUTE__TYPE = eINSTANCE.getRoute_Type();
+    EAttribute ROUTE__REQUEST_TYPE = eINSTANCE.getRoute_RequestType();
 
     /**
      * The meta object literal for the '<em><b>Url</b></em>' containment reference feature.
@@ -767,14 +767,14 @@ public interface RoutePackage extends EPackage
     EReference KEY__TYPE = eINSTANCE.getKey_Type();
 
     /**
-     * The meta object literal for the '{@link org.xtext.httprouting.route.Type <em>Type</em>}' enum.
+     * The meta object literal for the '{@link org.xtext.httprouting.route.RequestType <em>Request Type</em>}' enum.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.httprouting.route.Type
-     * @see org.xtext.httprouting.route.impl.RoutePackageImpl#getType()
+     * @see org.xtext.httprouting.route.RequestType
+     * @see org.xtext.httprouting.route.impl.RoutePackageImpl#getRequestType()
      * @generated
      */
-    EEnum TYPE = eINSTANCE.getType();
+    EEnum REQUEST_TYPE = eINSTANCE.getRequestType();
 
   }
 

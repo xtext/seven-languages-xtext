@@ -68,12 +68,6 @@ Workflow {
                 //  }
                 }
     
-                // java-based API for validation
-                fragment = validation.JavaValidatorFragment {
-                //    composedCheck = "org.eclipse.xtext.validation.ImportUriValidator"
-                //    composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
-                }
-    
                 // scoping and exporting API
                 // fragment = scoping.ImportURIScopingFragment {}
                 // fragment = exporting.SimpleNamesFragment {}
@@ -93,10 +87,10 @@ Workflow {
 				// fragment = formatting.FormatterFragment {}
     
                 // labeling API
-                fragment = labeling.LabelProviderFragment {}
+				// fragment = labeling.LabelProviderFragment {}
     
                 // outline API
-                fragment = outline.OutlineTreeProviderFragment {}
+                // fragment = outline.OutlineTreeProviderFragment {}
                 fragment = outline.QuickOutlineFragment {}
     
                 // quickfix API
