@@ -5,7 +5,8 @@ Bundle-SymbolicName: org.xtext.httprouting.example
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: Route.jar,
  lib/servlet-api.jar
-Export-Package: javax.servlet.http,
+Export-Package: javax.servlet,
+ javax.servlet.http,
  org.xtext.example.actionclasses
 Require-Bundle: com.google.inject;bundle-version="3.0.0",
  org.eclipse.xtext.xbase.lib;bundle-version="2.3.0"

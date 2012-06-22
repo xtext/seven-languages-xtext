@@ -266,7 +266,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
                   };
                 boolean _exists = IterableExtensions.<Route>exists(routes, _function);
                 if (_exists) {
-                  ITreeAppendable _append = it.append("String url =  request.getRequestURI();");
+                  ITreeAppendable _append = it.append("String url =  request.getRequestURL().toString();");
                   _append.newLine();
                 }
                 for (final Route route : routes) {

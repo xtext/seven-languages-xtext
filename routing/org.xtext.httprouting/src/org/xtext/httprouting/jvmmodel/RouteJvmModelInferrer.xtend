@@ -113,7 +113,7 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 			body = [
 				var x = 0
 				if (routes.exists[e | e.requestType == filterType])
-					append('String url =  request.getRequestURI();').newLine
+					append('String url =  request.getRequestURL().toString();').newLine
 				for (route : routes) {
 					if (route.requestType == filterType) {
 						if (route.url != null) {
