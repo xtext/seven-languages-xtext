@@ -9,8 +9,6 @@ import org.eclipse.xtext.common.types.JvmGenericType;
 import org.eclipse.xtext.common.types.JvmMember;
 import org.eclipse.xtext.common.types.JvmOperation;
 import org.eclipse.xtext.common.types.JvmTypeReference;
-import org.eclipse.xtext.naming.IQualifiedNameProvider;
-import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.xbase.XBlockExpression;
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor;
@@ -21,21 +19,15 @@ import org.xtext.simple.simpleExpressions.Application;
 
 /**
  * <p>Infers a JVM model from the source model.</p>
- * 
- * <p>The JVM model should contain all elements that would appear in the Java code
- * which is generated from the source model. Other models link against the JVM model rather than the source model.</p>
  */
 @SuppressWarnings("all")
 public class SimpleExpressionsJvmModelInferrer extends AbstractModelInferrer {
   @Inject
   private JvmTypesBuilder _jvmTypesBuilder;
   
-  @Inject
-  private IQualifiedNameProvider _iQualifiedNameProvider;
-  
   protected void _infer(final Application application, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {
-    QualifiedName _fullyQualifiedName = this._iQualifiedNameProvider.getFullyQualifiedName(application);
-    JvmGenericType _class = this._jvmTypesBuilder.toClass(application, _fullyQualifiedName);
+    String _name = application.getName();
+    JvmGenericType _class = this._jvmTypesBuilder.toClass(application, _name);
     IPostIndexingInitializing<JvmGenericType> _accept = acceptor.<JvmGenericType>accept(_class);
     final Procedure1<JvmGenericType> _function = new Procedure1<JvmGenericType>() {
         public void apply(final JvmGenericType it) {
