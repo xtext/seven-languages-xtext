@@ -100,7 +100,7 @@ public class HttpMapperServlet extends HttpServlet {
   private static Pattern _pattern5 = Pattern.compile("/client/(\\w+)/file.gif/(.+)");
   
   public void doGet(final HttpServletRequest request, final HttpServletResponse response) {
-    String url =  request.getRequestURI();
+    String url =  request.getRequestURL().toString();
     Matcher _matcher0 = _pattern0.matcher(url);
     if (_matcher0.find()) {
     		String id = _matcher0.group(1);
@@ -131,7 +131,7 @@ public class HttpMapperServlet extends HttpServlet {
   }
   
   public void doPost(final HttpServletRequest request, final HttpServletResponse response) {
-    String url =  request.getRequestURI();
+    String url =  request.getRequestURL().toString();
     Matcher _matcher4 = _pattern4.matcher(url);
     if (_matcher4.find()) {
     		String bar = _matcher4.group(1);
