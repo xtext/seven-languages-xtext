@@ -14,7 +14,7 @@ import static org.junit.Assert.*
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(CradleInjectorProvider))
-class IntegrationTest {
+class CommandLineTest {
 	
 	@Inject extension CompilationTestHelper
 	
@@ -35,6 +35,8 @@ class IntegrationTest {
 	
 	@Test def testSimple() {
 		val file = '''
+			package foo
+			
 			param String projectName = 'Hello'
 			
 			task Start {
@@ -55,6 +57,8 @@ class IntegrationTest {
 	
 	@Test def testSkipIfNeeded() {
 		val file = '''
+			package foo
+			
 			task Pre {
 				project:/digest.tmp:.delete
 				skipTaskIfDigestUnchanged [
