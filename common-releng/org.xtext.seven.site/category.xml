@@ -1,41 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-	<feature id="org.xtext.mongobeans.sdk" version="0.0.0">
-		<category name="main" />
-	</feature>
-	<feature id="org.xtext.cradle.sdk" version="1.0.0.qualifier">
-		<category name="main" />
-	</feature>
-	<feature id="org.xtext.httprouting.sdk" version="1.0.0.qualifier">
-		<category name="main" />
-	</feature>
-	<feature id="org.xtext.simple.sdk" version="1.0.0.qualifier">
-		<category name="main" />
-	</feature>
-	<feature id="org.xtext.template.sdk" version="1.0.0.qualifier">
-		<category name="main" />
-	</feature>
-	<feature id="org.xtext.tortoiseshell.sdk" version="1.0.0.qualifier">
-		<category name="main" />
-	</feature>
-	<feature id="org.xtext.mongobeans.sdk.source" version="0.0.0">
-		<category name="main.source" />
-	</feature>
-	<feature id="org.xtext.cradle.sdk.source" version="1.0.0.qualifier">
-		<category name="main.source" />
-	</feature>
-	<feature id="org.xtext.httprouting.sdk.source" version="1.0.0.qualifier">
-		<category name="main.source" />
-	</feature>
-	<feature id="org.xtext.simple.sdk.source" version="1.0.0.qualifier">
-		<category name="main.source" />
-	</feature>
-	<feature id="org.xtext.template.sdk.source" version="1.0.0.qualifier">
-		<category name="main.source" />
-	</feature>
-	<feature id="org.xtext.tortoiseshell.sdk.source" version="1.0.0.qualifier">
-		<category name="main.source" />
-	</feature>
-	<category-def name="main" label="Seven Languages" />
-	<category-def name="main.source" label="Sources for Seven Languages" />
+   <feature id="org.xtext.mongobeans.sdk" version="0.0.0">
+      <category name="main"/>
+   </feature>
+   <feature id="org.xtext.cradle.sdk" version="1.0.0.qualifier">
+      <category name="main"/>
+   </feature>
+   <feature id="org.xtext.httprouting.sdk" version="1.0.0.qualifier">
+      <category name="main"/>
+   </feature>
+   <feature id="org.xtext.simple.sdk" version="1.0.0.qualifier">
+      <category name="main"/>
+   </feature>
+   <feature id="org.xtext.template.sdk" version="1.0.0.qualifier">
+      <category name="main"/>
+   </feature>
+   <feature id="org.xtext.tortoiseshell.sdk" version="1.0.0.qualifier">
+      <category name="main"/>
+   </feature>
+   <feature id="org.xtext.guicemodules.sdk" version="1.0.0.qualifier">
+      <category name="main"/>
+   </feature>
+   <feature id="org.xtext.mongobeans.sdk.source" version="0.0.0">
+      <category name="main.source"/>
+   </feature>
+   <feature id="org.xtext.cradle.sdk.source" version="1.0.0.qualifier">
+      <category name="main.source"/>
+   </feature>
+   <feature id="org.xtext.guicemodules.sdk.source" version="1.0.0.qualifier">
+      <category name="main.source"/>
+   </feature>
+   <feature id="org.xtext.httprouting.sdk.source" version="1.0.0.qualifier">
+      <category name="main.source"/>
+   </feature>
+   <feature id="org.xtext.simple.sdk.source" version="1.0.0.qualifier">
+      <category name="main.source"/>
+   </feature>
+   <feature id="org.xtext.template.sdk.source" version="1.0.0.qualifier">
+      <category name="main.source"/>
+   </feature>
+   <feature id="org.xtext.tortoiseshell.sdk.source" version="1.0.0.qualifier">
+      <category name="main.source"/>
+   </feature>
+   <category-def name="main" label="Seven Languages">
+      <description>
+         7 Languages in 7 Days
+      </description>
+   </category-def>
+   <category-def name="main.source" label="Sources for Seven Languages">
+      <description>
+         7 Languages in 7 Days
+      </description>
+   </category-def>
 </site>

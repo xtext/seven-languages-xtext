@@ -4,6 +4,10 @@
       label="Seven Languages Site Feature"
       version="1.0.0.qualifier">
 
+   <description>
+      7 Languages in 7 Days
+   </description>
+
    <includes
          id="org.xtext.mongobeans.sdk"
          version="0.0.0"/>
@@ -26,6 +30,10 @@
 
    <includes
          id="org.xtext.tortoiseshell.sdk"
+         version="0.0.0"/>
+
+   <includes
+         id="org.xtext.guicemodules.sdk"
          version="0.0.0"/>
 
 </feature>
