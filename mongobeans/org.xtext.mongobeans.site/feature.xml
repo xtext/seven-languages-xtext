@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<feature id="org.xtext.mongobeans.site"
-	label="org.xtext.mongobeans.site Feature"
-	version="1.0.0.qualifier">
-	<includes
-		id="org.xtext.mongobeans.sdk"
-		version="0.0.0"/>
-</feature>

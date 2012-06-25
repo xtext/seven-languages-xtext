@@ -10,17 +10,17 @@
 		projects.location	Where to find projects to build?
 							Default: ${WORKSPACE}
 		commands.file		What to do?
-							Default: ${projects.location}/org.xtext.mongobeans.buckminster/commands.txt
+							Default: ${projects.location}/org.xtext.seven.buckminster/commands.txt
 -->
 <project name="Buckminster Headless" default="buckminster">
 	<property name="WORKSPACE" location="${ant.file}/../../" />
 	<property name="build.root" location="${user.home}/buildroot" />
 	<property name="buckminster.home" location="/Users/dhuebner/buckminster" />
-	<property name="projects.location" location="${WORKSPACE}" />
-	<property name="commands.file" location="${projects.location}/org.xtext.mongobeans.buckminster/commands.txt" />
+	<property name="projects.location" location="${WORKSPACE}/../" />
+	<property name="commands.file" location="${projects.location}/common-releng/org.xtext.seven.buckminster/commands.txt" />
 	<property name="target.platform" value="target.platform" />
 	
-	<target name="buckminster" description="description">
+	<target name="buckminster" depends="cleanup" description="description">
 		<echo message="IMPORTANT: Populating an empty target platform may took over 10 minutes."/>
 		<condition property="executable.file" value="buckminster.bat" else="buckminster">
 			<os family="windows"/>
@@ -35,7 +35,7 @@
 			<arg line="-S '${commands.file}'" />
 		</exec>
 		<echo message=" "/>
-		<echo message="Updatesite output in: ${build.root}/buckminster.output/org.xtext.mongobeans.site_*-eclipse.feature/site.p2/"/>
+		<echo message="Updatesite output in: ${build.root}/buckminster.output/org.xtext.seven.site_*-eclipse.feature/site.p2/"/>
 	</target>
 
 	<target name="cleanup">
