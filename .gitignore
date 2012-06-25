@@ -4,4 +4,6 @@ bin
 *.ear
 *buildroot
 *.DS_Store
+*.java._trace
+*.java_trace
 plugin.xml_gen
