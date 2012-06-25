@@ -13,6 +13,8 @@ import org.eclipse.emf.common.util.URI
 
 import static extension com.google.common.base.Predicates.*
 import static extension org.xtext.cradle.lib.FileExtensions.*
+import java.io.FileOutputStream
+import org.eclipse.xtext.util.Strings
 
 public class FileExtensions {
 	
@@ -55,6 +57,10 @@ public class FileExtensions {
 	def static List<File> containedDirectories(File container, String regex) {
 		return contained(container, matches(regex) && [directory]);
 	}
+	
+	def static List<File> containedDirectories(File container) {
+		return contained(container, [directory]);
+	}
 
 	def static List<File> containedFeatureProjects(File container) {
 		return contained(container, contains(".project") && contains("feature.xml"));
@@ -66,6 +72,10 @@ public class FileExtensions {
 
 	def static List<File> containedFiles(File container, String regex) {
 		return contained(container, matches(regex) && [file]);
+	}
+	
+	def static List<File> containedFiles(File container) {
+		return contained(container, [file]);
 	}
 
 	def static List<File> containedGitRepositories(File container) {
@@ -137,6 +147,25 @@ public class FileExtensions {
 		val injector = new Mwe2StandaloneSetup().createInjectorAndDoEMFRegistration();
 		val runner = injector.getInstance(typeof(Mwe2Runner));
 		runner.run(URI::createFileURI(file.getAbsolutePath()), newHashMap(args));
+	}
+	
+	def static setFileContents(File file, String contents) {
+		val out = new FileOutputStream(file)
+		try {
+			out.write(contents.bytes)
+			out.flush
+		} finally {
+			out.close
+		}
+	}
+	
+	def static deleteDirectoryContents(File file) {
+		if(file.directory)
+			file.listFiles.forEach[delete]
+	}
+	
+	def static fileExtension(File file) {
+		Strings::lastToken(file.name, ".")
 	}
 
 }

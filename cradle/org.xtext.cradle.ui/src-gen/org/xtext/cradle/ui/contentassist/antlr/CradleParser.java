@@ -71,6 +71,7 @@ public class CradleParser extends AbstractContentAssistParser {
 					put(grammarAccess.getJvmWildcardTypeReferenceAccess().getAlternatives_2(), "rule__JvmWildcardTypeReference__Alternatives_2");
 					put(grammarAccess.getJvmTypeParameterAccess().getAlternatives_1(), "rule__JvmTypeParameter__Alternatives_1");
 					put(grammarAccess.getCradleFileAccess().getGroup(), "rule__CradleFile__Group__0");
+					put(grammarAccess.getCradleFileAccess().getGroup_0(), "rule__CradleFile__Group_0__0");
 					put(grammarAccess.getImportDeclarationAccess().getGroup(), "rule__ImportDeclaration__Group__0");
 					put(grammarAccess.getQualifiedNameWithWildCardAccess().getGroup(), "rule__QualifiedNameWithWildCard__Group__0");
 					put(grammarAccess.getQualifiedNameWithWildCardAccess().getGroup_1(), "rule__QualifiedNameWithWildCard__Group_1__0");
@@ -224,8 +225,9 @@ public class CradleParser extends AbstractContentAssistParser {
 					put(grammarAccess.getJvmLowerBoundAccess().getGroup(), "rule__JvmLowerBound__Group__0");
 					put(grammarAccess.getJvmTypeParameterAccess().getGroup(), "rule__JvmTypeParameter__Group__0");
 					put(grammarAccess.getJvmTypeParameterAccess().getGroup_1_0(), "rule__JvmTypeParameter__Group_1_0__0");
-					put(grammarAccess.getCradleFileAccess().getImportsAssignment_0(), "rule__CradleFile__ImportsAssignment_0");
-					put(grammarAccess.getCradleFileAccess().getDeclarationsAssignment_1(), "rule__CradleFile__DeclarationsAssignment_1");
+					put(grammarAccess.getCradleFileAccess().getNameAssignment_0_1(), "rule__CradleFile__NameAssignment_0_1");
+					put(grammarAccess.getCradleFileAccess().getImportsAssignment_1(), "rule__CradleFile__ImportsAssignment_1");
+					put(grammarAccess.getCradleFileAccess().getDeclarationsAssignment_2(), "rule__CradleFile__DeclarationsAssignment_2");
 					put(grammarAccess.getImportDeclarationAccess().getImportedNamespaceAssignment_1(), "rule__ImportDeclaration__ImportedNamespaceAssignment_1");
 					put(grammarAccess.getParameterAccess().getTypeAssignment_1(), "rule__Parameter__TypeAssignment_1");
 					put(grammarAccess.getParameterAccess().getNameAssignment_2(), "rule__Parameter__NameAssignment_2");

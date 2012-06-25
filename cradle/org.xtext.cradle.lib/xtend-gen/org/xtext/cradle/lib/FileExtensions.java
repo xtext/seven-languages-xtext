@@ -5,6 +5,7 @@ import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
 import com.google.inject.Injector;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,9 +15,14 @@ import java.util.regex.Pattern;
 import org.eclipse.emf.mwe2.language.Mwe2StandaloneSetup;
 import org.eclipse.emf.mwe2.launch.runtime.Mwe2Runner;
 import org.eclipse.xtend2.lib.StringConcatenation;
+import org.eclipse.xtext.util.Strings;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
+import org.eclipse.xtext.xbase.lib.Conversions;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.Pair;
+import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.xtext.cradle.lib.impl.Digest;
 import org.xtext.cradle.lib.impl.FileProperties;
 
@@ -126,6 +132,20 @@ public class FileExtensions {
     return FileExtensions.contained(container, _and);
   }
   
+  public static List<File> containedDirectories(final File container) {
+    final Function1<File,Boolean> _function = new Function1<File,Boolean>() {
+        public Boolean apply(final File it) {
+          boolean _isDirectory = it.isDirectory();
+          return _isDirectory;
+        }
+      };
+    return FileExtensions.contained(container, new Predicate<File>() {
+        public boolean apply(File input) {
+          return _function.apply(input);
+        }
+    });
+  }
+  
   public static List<File> containedFeatureProjects(final File container) {
     Predicate<File> _contains = FileExtensions.contains(".project");
     Predicate<File> _contains_1 = FileExtensions.contains("feature.xml");
@@ -162,6 +182,20 @@ public class FileExtensions {
         }
     });
     return FileExtensions.contained(container, _and);
+  }
+  
+  public static List<File> containedFiles(final File container) {
+    final Function1<File,Boolean> _function = new Function1<File,Boolean>() {
+        public Boolean apply(final File it) {
+          boolean _isFile = it.isFile();
+          return _isFile;
+        }
+      };
+    return FileExtensions.contained(container, new Predicate<File>() {
+        public boolean apply(File input) {
+          return _function.apply(input);
+        }
+    });
   }
   
   public static List<File> containedGitRepositories(final File container) {
@@ -286,5 +320,40 @@ public class FileExtensions {
     org.eclipse.emf.common.util.URI _createFileURI = org.eclipse.emf.common.util.URI.createFileURI(_absolutePath);
     HashMap<String,String> _newHashMap = CollectionLiterals.<String, String>newHashMap(args);
     runner.run(_createFileURI, _newHashMap);
+  }
+  
+  public static void setFileContents(final File file, final String contents) {
+    try {
+      FileOutputStream _fileOutputStream = new FileOutputStream(file);
+      final FileOutputStream out = _fileOutputStream;
+      try {
+        byte[] _bytes = contents.getBytes();
+        out.write(_bytes);
+        out.flush();
+      } finally {
+        out.close();
+      }
+    } catch (Exception _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  public static void deleteDirectoryContents(final File file) {
+    boolean _isDirectory = file.isDirectory();
+    if (_isDirectory) {
+      File[] _listFiles = file.listFiles();
+      final Procedure1<File> _function = new Procedure1<File>() {
+          public void apply(final File it) {
+            it.delete();
+          }
+        };
+      IterableExtensions.<File>forEach(((Iterable<File>)Conversions.doWrapArray(_listFiles)), _function);
+    }
+  }
+  
+  public static String fileExtension(final File file) {
+    String _name = file.getName();
+    String _lastToken = Strings.lastToken(_name, ".");
+    return _lastToken;
   }
 }

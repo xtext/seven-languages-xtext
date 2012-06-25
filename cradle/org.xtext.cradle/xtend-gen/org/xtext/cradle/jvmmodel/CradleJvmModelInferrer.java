@@ -23,6 +23,7 @@ import org.eclipse.xtext.common.types.JvmType;
 import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.eclipse.xtext.common.types.JvmVisibility;
 import org.eclipse.xtext.common.types.util.TypeReferences;
+import org.eclipse.xtext.util.Strings;
 import org.eclipse.xtext.xbase.XExpression;
 import org.eclipse.xtext.xbase.compiler.TypeReferenceSerializer;
 import org.eclipse.xtext.xbase.compiler.output.ITreeAppendable;
@@ -59,9 +60,9 @@ public class CradleJvmModelInferrer extends AbstractModelInferrer {
   private TypeReferences _typeReferences;
   
   protected void _infer(final CradleFile element, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {
-    final String name = this.getJavaClassName(element);
-    String _plus = ("cradle." + name);
-    JvmGenericType _class = this._jvmTypesBuilder.toClass(element, _plus);
+    final String fqn = TaskExtensions.getJavaClassName(element);
+    final String name = Strings.lastToken(fqn, ".");
+    JvmGenericType _class = this._jvmTypesBuilder.toClass(element, fqn);
     IPostIndexingInitializing<JvmGenericType> _accept = acceptor.<JvmGenericType>accept(_class);
     final Procedure1<JvmGenericType> _function = new Procedure1<JvmGenericType>() {
         public void apply(final JvmGenericType it) {
@@ -564,14 +565,6 @@ public class CradleJvmModelInferrer extends AbstractModelInferrer {
     String _firstUpper = StringExtensions.toFirstUpper(_name);
     String _plus = ("execute" + _firstUpper);
     return _plus;
-  }
-  
-  private String getJavaClassName(final EObject it) {
-    Resource _eResource = it.eResource();
-    URI _uRI = _eResource.getURI();
-    URI _trimFileExtension = _uRI.trimFileExtension();
-    String _lastSegment = _trimFileExtension.lastSegment();
-    return _lastSegment;
   }
   
   public void infer(final EObject element, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {

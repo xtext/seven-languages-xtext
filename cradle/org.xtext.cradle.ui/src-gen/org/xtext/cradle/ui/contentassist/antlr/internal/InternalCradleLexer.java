@@ -63,6 +63,7 @@ public class InternalCradleLexer extends Lexer {
     public static final int T__47=47;
     public static final int T__81=81;
     public static final int T__44=44;
+    public static final int T__82=82;
     public static final int T__45=45;
     public static final int T__48=48;
     public static final int T__49=49;
@@ -667,10 +668,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:38:7: ( 'import' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:38:9: 'import'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:38:7: ( 'package' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:38:9: 'package'
             {
-            match("import"); 
+            match("package"); 
 
 
             }
@@ -688,10 +689,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:39:7: ( '.*' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:39:9: '.*'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:39:7: ( 'import' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:39:9: 'import'
             {
-            match(".*"); 
+            match("import"); 
 
 
             }
@@ -709,10 +710,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:40:7: ( 'param' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:40:9: 'param'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:40:7: ( '.*' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:40:9: '.*'
             {
-            match("param"); 
+            match(".*"); 
 
 
             }
@@ -730,10 +731,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__44;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:41:7: ( 'task' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:41:9: 'task'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:41:7: ( 'param' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:41:9: 'param'
             {
-            match("task"); 
+            match("param"); 
 
 
             }
@@ -751,10 +752,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:42:7: ( 'dependsOn' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:42:9: 'dependsOn'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:42:7: ( 'task' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:42:9: 'task'
             {
-            match("dependsOn"); 
+            match("task"); 
 
 
             }
@@ -772,10 +773,11 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__46;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:43:7: ( ',' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:43:9: ','
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:43:7: ( 'dependsOn' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:43:9: 'dependsOn'
             {
-            match(','); 
+            match("dependsOn"); 
+
 
             }
 
@@ -792,10 +794,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:44:7: ( ')' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:44:9: ')'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:44:7: ( ',' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:44:9: ','
             {
-            match(')'); 
+            match(','); 
 
             }
 
@@ -812,11 +814,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:45:7: ( 'instanceof' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:45:9: 'instanceof'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:45:7: ( ')' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:45:9: ')'
             {
-            match("instanceof"); 
-
+            match(')'); 
 
             }
 
@@ -833,10 +834,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:46:7: ( 'as' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:46:9: 'as'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:46:7: ( 'instanceof' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:46:9: 'instanceof'
             {
-            match("as"); 
+            match("instanceof"); 
 
 
             }
@@ -854,10 +855,11 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__50;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:47:7: ( ']' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:47:9: ']'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:47:7: ( 'as' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:47:9: 'as'
             {
-            match(']'); 
+            match("as"); 
+
 
             }
 
@@ -874,10 +876,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__51;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:48:7: ( '[' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:48:9: '['
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:48:7: ( ']' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:48:9: ']'
             {
-            match('['); 
+            match(']'); 
 
             }
 
@@ -894,10 +896,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__52;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:49:7: ( ';' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:49:9: ';'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:49:7: ( '[' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:49:9: '['
             {
-            match(';'); 
+            match('['); 
 
             }
 
@@ -914,10 +916,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:50:7: ( '(' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:50:9: '('
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:50:7: ( ';' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:50:9: ';'
             {
-            match('('); 
+            match(';'); 
 
             }
 
@@ -934,11 +936,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:51:7: ( 'if' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:51:9: 'if'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:51:7: ( '(' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:51:9: '('
             {
-            match("if"); 
-
+            match('('); 
 
             }
 
@@ -955,10 +956,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__55;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:52:7: ( 'else' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:52:9: 'else'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:52:7: ( 'if' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:52:9: 'if'
             {
-            match("else"); 
+            match("if"); 
 
 
             }
@@ -976,10 +977,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__56;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:53:7: ( 'switch' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:53:9: 'switch'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:53:7: ( 'else' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:53:9: 'else'
             {
-            match("switch"); 
+            match("else"); 
 
 
             }
@@ -997,10 +998,11 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__57;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:54:7: ( '{' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:54:9: '{'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:54:7: ( 'switch' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:54:9: 'switch'
             {
-            match('{'); 
+            match("switch"); 
+
 
             }
 
@@ -1017,10 +1019,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__58;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:55:7: ( '}' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:55:9: '}'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:55:7: ( '{' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:55:9: '{'
             {
-            match('}'); 
+            match('{'); 
 
             }
 
@@ -1037,10 +1039,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__59;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:56:7: ( ':' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:56:9: ':'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:56:7: ( '}' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:56:9: '}'
             {
-            match(':'); 
+            match('}'); 
 
             }
 
@@ -1057,11 +1059,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__60;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:57:7: ( 'default' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:57:9: 'default'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:57:7: ( ':' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:57:9: ':'
             {
-            match("default"); 
-
+            match(':'); 
 
             }
 
@@ -1078,10 +1079,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__61;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:58:7: ( 'case' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:58:9: 'case'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:58:7: ( 'default' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:58:9: 'default'
             {
-            match("case"); 
+            match("default"); 
 
 
             }
@@ -1099,10 +1100,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__62;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:59:7: ( 'for' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:59:9: 'for'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:59:7: ( 'case' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:59:9: 'case'
             {
-            match("for"); 
+            match("case"); 
 
 
             }
@@ -1120,10 +1121,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__63;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:60:7: ( 'while' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:60:9: 'while'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:60:7: ( 'for' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:60:9: 'for'
             {
-            match("while"); 
+            match("for"); 
 
 
             }
@@ -1141,10 +1142,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__64;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:61:7: ( 'do' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:61:9: 'do'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:61:7: ( 'while' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:61:9: 'while'
             {
-            match("do"); 
+            match("while"); 
 
 
             }
@@ -1162,10 +1163,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__65;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:62:7: ( '::' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:62:9: '::'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:62:7: ( 'do' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:62:9: 'do'
             {
-            match("::"); 
+            match("do"); 
 
 
             }
@@ -1183,10 +1184,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__66;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:63:7: ( 'new' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:63:9: 'new'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:63:7: ( '::' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:63:9: '::'
             {
-            match("new"); 
+            match("::"); 
 
 
             }
@@ -1204,10 +1205,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__67;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:64:7: ( 'null' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:64:9: 'null'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:64:7: ( 'new' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:64:9: 'new'
             {
-            match("null"); 
+            match("new"); 
 
 
             }
@@ -1225,10 +1226,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__68;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:65:7: ( 'typeof' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:65:9: 'typeof'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:65:7: ( 'null' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:65:9: 'null'
             {
-            match("typeof"); 
+            match("null"); 
 
 
             }
@@ -1246,10 +1247,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__69;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:66:7: ( 'throw' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:66:9: 'throw'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:66:7: ( 'typeof' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:66:9: 'typeof'
             {
-            match("throw"); 
+            match("typeof"); 
 
 
             }
@@ -1267,10 +1268,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__70;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:67:7: ( 'return' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:67:9: 'return'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:67:7: ( 'throw' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:67:9: 'throw'
             {
-            match("return"); 
+            match("throw"); 
 
 
             }
@@ -1288,10 +1289,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__71;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:68:7: ( 'try' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:68:9: 'try'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:68:7: ( 'return' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:68:9: 'return'
             {
-            match("try"); 
+            match("return"); 
 
 
             }
@@ -1309,10 +1310,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__72;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:69:7: ( 'finally' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:69:9: 'finally'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:69:7: ( 'try' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:69:9: 'try'
             {
-            match("finally"); 
+            match("try"); 
 
 
             }
@@ -1330,10 +1331,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__73;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:70:7: ( 'catch' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:70:9: 'catch'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:70:7: ( 'finally' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:70:9: 'finally'
             {
-            match("catch"); 
+            match("finally"); 
 
 
             }
@@ -1351,10 +1352,11 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__74;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:71:7: ( '?' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:71:9: '?'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:71:7: ( 'catch' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:71:9: 'catch'
             {
-            match('?'); 
+            match("catch"); 
+
 
             }
 
@@ -1371,11 +1373,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__75;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:72:7: ( 'extends' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:72:9: 'extends'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:72:7: ( '?' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:72:9: '?'
             {
-            match("extends"); 
-
+            match('?'); 
 
             }
 
@@ -1392,10 +1393,11 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__76;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:73:7: ( '&' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:73:9: '&'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:73:7: ( 'extends' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:73:9: 'extends'
             {
-            match('&'); 
+            match("extends"); 
+
 
             }
 
@@ -1412,11 +1414,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__77;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:74:7: ( '?.' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:74:9: '?.'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:74:7: ( '&' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:74:9: '&'
             {
-            match("?."); 
-
+            match('&'); 
 
             }
 
@@ -1433,10 +1434,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__78;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:75:7: ( '*.' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:75:9: '*.'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:75:7: ( '?.' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:75:9: '?.'
             {
-            match("*."); 
+            match("?."); 
 
 
             }
@@ -1454,10 +1455,11 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__79;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:76:7: ( '|' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:76:9: '|'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:76:7: ( '*.' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:76:9: '*.'
             {
-            match('|'); 
+            match("*."); 
+
 
             }
 
@@ -1474,11 +1476,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__80;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:77:7: ( 'var' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:77:9: 'var'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:77:7: ( '|' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:77:9: '|'
             {
-            match("var"); 
-
+            match('|'); 
 
             }
 
@@ -1495,10 +1496,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = T__81;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:78:7: ( 'true' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:78:9: 'true'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:78:7: ( 'var' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:78:9: 'var'
             {
-            match("true"); 
+            match("var"); 
 
 
             }
@@ -1511,17 +1512,38 @@ public class InternalCradleLexer extends Lexer {
     }
     // $ANTLR end "T__81"
 
+    // $ANTLR start "T__82"
+    public final void mT__82() throws RecognitionException {
+        try {
+            int _type = T__82;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:79:7: ( 'true' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:79:9: 'true'
+            {
+            match("true"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__82"
+
     // $ANTLR start "RULE_FILE"
     public final void mRULE_FILE() throws RecognitionException {
         try {
             int _type = RULE_FILE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16481:11: ( ':/' (~ ( ( ':' | '\\n' | '\\r' ) ) )* ( ':' | ( '\\r' )? '\\n' ) )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16481:13: ':/' (~ ( ( ':' | '\\n' | '\\r' ) ) )* ( ':' | ( '\\r' )? '\\n' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16590:11: ( ':/' (~ ( ( ':' | '\\n' | '\\r' ) ) )* ( ':' | ( '\\r' )? '\\n' ) )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16590:13: ':/' (~ ( ( ':' | '\\n' | '\\r' ) ) )* ( ':' | ( '\\r' )? '\\n' )
             {
             match(":/"); 
 
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16481:18: (~ ( ( ':' | '\\n' | '\\r' ) ) )*
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16590:18: (~ ( ( ':' | '\\n' | '\\r' ) ) )*
             loop1:
             do {
                 int alt1=2;
@@ -1534,7 +1556,7 @@ public class InternalCradleLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16481:18: ~ ( ( ':' | '\\n' | '\\r' ) )
+            	    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16590:18: ~ ( ( ':' | '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='9')||(input.LA(1)>=';' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1554,7 +1576,7 @@ public class InternalCradleLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16481:38: ( ':' | ( '\\r' )? '\\n' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16590:38: ( ':' | ( '\\r' )? '\\n' )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -1572,16 +1594,16 @@ public class InternalCradleLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16481:39: ':'
+                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16590:39: ':'
                     {
                     match(':'); 
 
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16481:43: ( '\\r' )? '\\n'
+                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16590:43: ( '\\r' )? '\\n'
                     {
-                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16481:43: ( '\\r' )?
+                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16590:43: ( '\\r' )?
                     int alt2=2;
                     int LA2_0 = input.LA(1);
 
@@ -1590,7 +1612,7 @@ public class InternalCradleLexer extends Lexer {
                     }
                     switch (alt2) {
                         case 1 :
-                            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16481:43: '\\r'
+                            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16590:43: '\\r'
                             {
                             match('\r'); 
 
@@ -1622,10 +1644,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = RULE_HEX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16483:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16483:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16592:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16592:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             {
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16483:12: ( '0x' | '0X' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16592:12: ( '0x' | '0X' )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1653,7 +1675,7 @@ public class InternalCradleLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16483:13: '0x'
+                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16592:13: '0x'
                     {
                     match("0x"); 
 
@@ -1661,7 +1683,7 @@ public class InternalCradleLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16483:18: '0X'
+                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16592:18: '0X'
                     {
                     match("0X"); 
 
@@ -1671,7 +1693,7 @@ public class InternalCradleLexer extends Lexer {
 
             }
 
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16483:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16592:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
             int cnt5=0;
             loop5:
             do {
@@ -1709,7 +1731,7 @@ public class InternalCradleLexer extends Lexer {
                 cnt5++;
             } while (true);
 
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16483:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16592:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -1718,10 +1740,10 @@ public class InternalCradleLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16483:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16592:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     {
                     match('#'); 
-                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16483:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16592:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -1739,7 +1761,7 @@ public class InternalCradleLexer extends Lexer {
                     }
                     switch (alt6) {
                         case 1 :
-                            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16483:64: ( 'b' | 'B' ) ( 'i' | 'I' )
+                            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16592:64: ( 'b' | 'B' ) ( 'i' | 'I' )
                             {
                             if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                                 input.consume();
@@ -1763,7 +1785,7 @@ public class InternalCradleLexer extends Lexer {
                             }
                             break;
                         case 2 :
-                            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16483:84: ( 'l' | 'L' )
+                            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16592:84: ( 'l' | 'L' )
                             {
                             if ( input.LA(1)=='L'||input.LA(1)=='l' ) {
                                 input.consume();
@@ -1802,11 +1824,11 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16485:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16485:12: '0' .. '9' ( '0' .. '9' | '_' )*
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16594:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16594:12: '0' .. '9' ( '0' .. '9' | '_' )*
             {
             matchRange('0','9'); 
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16485:21: ( '0' .. '9' | '_' )*
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16594:21: ( '0' .. '9' | '_' )*
             loop8:
             do {
                 int alt8=2;
@@ -1855,11 +1877,11 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = RULE_DECIMAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16487:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16487:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16596:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16596:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             {
             mRULE_INT(); 
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16487:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16596:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1868,7 +1890,7 @@ public class InternalCradleLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16487:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
+                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16596:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -1879,7 +1901,7 @@ public class InternalCradleLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16487:36: ( '+' | '-' )?
+                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16596:36: ( '+' | '-' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1912,7 +1934,7 @@ public class InternalCradleLexer extends Lexer {
 
             }
 
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16487:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16596:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             int alt11=3;
             int LA11_0 = input.LA(1);
 
@@ -1924,7 +1946,7 @@ public class InternalCradleLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16487:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
+                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16596:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
                     {
                     if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                         input.consume();
@@ -1948,7 +1970,7 @@ public class InternalCradleLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16487:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
+                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16596:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
                     {
                     if ( input.LA(1)=='D'||input.LA(1)=='F'||input.LA(1)=='L'||input.LA(1)=='d'||input.LA(1)=='f'||input.LA(1)=='l' ) {
                         input.consume();
@@ -1981,10 +2003,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16489:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16489:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16598:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16598:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             {
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16489:11: ( '^' )?
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16598:11: ( '^' )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -1993,7 +2015,7 @@ public class InternalCradleLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16489:11: '^'
+                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16598:11: '^'
                     {
                     match('^'); 
 
@@ -2011,7 +2033,7 @@ public class InternalCradleLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16489:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16598:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             loop13:
             do {
                 int alt13=2;
@@ -2060,10 +2082,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16491:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16491:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16600:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16600:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16491:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16600:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -2081,10 +2103,10 @@ public class InternalCradleLexer extends Lexer {
             }
             switch (alt16) {
                 case 1 :
-                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16491:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16600:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16491:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16600:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop14:
                     do {
                         int alt14=3;
@@ -2100,7 +2122,7 @@ public class InternalCradleLexer extends Lexer {
 
                         switch (alt14) {
                     	case 1 :
-                    	    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16491:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16600:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2116,7 +2138,7 @@ public class InternalCradleLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16491:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16600:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2141,10 +2163,10 @@ public class InternalCradleLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16491:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16600:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16491:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16600:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop15:
                     do {
                         int alt15=3;
@@ -2160,7 +2182,7 @@ public class InternalCradleLexer extends Lexer {
 
                         switch (alt15) {
                     	case 1 :
-                    	    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16491:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16600:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2176,7 +2198,7 @@ public class InternalCradleLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16491:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16600:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2219,12 +2241,12 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16493:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16493:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16602:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16602:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16493:24: ( options {greedy=false; } : . )*
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16602:24: ( options {greedy=false; } : . )*
             loop17:
             do {
                 int alt17=2;
@@ -2249,7 +2271,7 @@ public class InternalCradleLexer extends Lexer {
 
                 switch (alt17) {
             	case 1 :
-            	    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16493:52: .
+            	    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16602:52: .
             	    {
             	    matchAny(); 
 
@@ -2279,12 +2301,12 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16495:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16495:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16604:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16604:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16495:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16604:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop18:
             do {
                 int alt18=2;
@@ -2297,7 +2319,7 @@ public class InternalCradleLexer extends Lexer {
 
                 switch (alt18) {
             	case 1 :
-            	    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16495:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16604:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2317,7 +2339,7 @@ public class InternalCradleLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16495:40: ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16604:40: ( ( '\\r' )? '\\n' )?
             int alt20=2;
             int LA20_0 = input.LA(1);
 
@@ -2326,9 +2348,9 @@ public class InternalCradleLexer extends Lexer {
             }
             switch (alt20) {
                 case 1 :
-                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16495:41: ( '\\r' )? '\\n'
+                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16604:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16495:41: ( '\\r' )?
+                    // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16604:41: ( '\\r' )?
                     int alt19=2;
                     int LA19_0 = input.LA(1);
 
@@ -2337,7 +2359,7 @@ public class InternalCradleLexer extends Lexer {
                     }
                     switch (alt19) {
                         case 1 :
-                            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16495:41: '\\r'
+                            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16604:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2369,10 +2391,10 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16497:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16497:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16606:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16606:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16497:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16606:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt21=0;
             loop21:
             do {
@@ -2426,8 +2448,8 @@ public class InternalCradleLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16499:16: ( . )
-            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16499:18: .
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16608:16: ( . )
+            // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:16608:18: .
             {
             matchAny(); 
 
@@ -2442,8 +2464,8 @@ public class InternalCradleLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:1:8: ( T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | RULE_FILE | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt22=78;
+        // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:1:8: ( T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | RULE_FILE | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt22=79;
         alt22 = dfa22.predict(input);
         switch (alt22) {
             case 1 :
@@ -2923,70 +2945,77 @@ public class InternalCradleLexer extends Lexer {
                 }
                 break;
             case 69 :
-                // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:1:418: RULE_FILE
+                // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:1:418: T__82
+                {
+                mT__82(); 
+
+                }
+                break;
+            case 70 :
+                // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:1:424: RULE_FILE
                 {
                 mRULE_FILE(); 
 
                 }
                 break;
-            case 70 :
-                // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:1:428: RULE_HEX
+            case 71 :
+                // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:1:434: RULE_HEX
                 {
                 mRULE_HEX(); 
 
                 }
                 break;
-            case 71 :
-                // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:1:437: RULE_INT
+            case 72 :
+                // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:1:443: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 72 :
-                // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:1:446: RULE_DECIMAL
+            case 73 :
+                // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:1:452: RULE_DECIMAL
                 {
                 mRULE_DECIMAL(); 
 
                 }
                 break;
-            case 73 :
-                // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:1:459: RULE_ID
+            case 74 :
+                // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:1:465: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 74 :
-                // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:1:467: RULE_STRING
+            case 75 :
+                // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:1:473: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 75 :
-                // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:1:479: RULE_ML_COMMENT
+            case 76 :
+                // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:1:485: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 76 :
-                // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:1:495: RULE_SL_COMMENT
+            case 77 :
+                // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:1:501: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 77 :
-                // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:1:511: RULE_WS
+            case 78 :
+                // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:1:517: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 78 :
-                // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:1:519: RULE_ANY_OTHER
+            case 79 :
+                // ../org.xtext.cradle.ui/src-gen/org/xtext/cradle/ui/contentassist/antlr/internal/InternalCradle.g:1:525: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -3003,73 +3032,74 @@ public class InternalCradleLexer extends Lexer {
         "\1\uffff\1\56\1\60\1\62\1\64\1\67\1\71\1\73\1\76\1\100\1\103\1\106"+
         "\1\111\1\uffff\7\114\2\uffff\1\114\4\uffff\1\114\2\uffff\1\151\4"+
         "\114\2\161\1\53\1\uffff\2\53\22\uffff\1\166\16\uffff\1\114\1\uffff"+
-        "\7\114\1\u0080\6\114\1\u0089\2\uffff\1\u008a\4\uffff\2\114\5\uffff"+
-        "\5\114\1\uffff\1\161\6\uffff\1\u0093\1\u0094\3\114\1\u0098\3\114"+
-        "\1\uffff\4\114\1\u00a0\3\114\2\uffff\5\114\1\u00a9\2\114\2\uffff"+
-        "\3\114\1\uffff\4\114\1\u00b3\2\114\1\uffff\1\u00b6\2\114\1\u00b9"+
-        "\1\114\1\u00bb\2\114\1\uffff\1\u00be\1\114\1\u00c0\1\114\1\u00c2"+
-        "\3\114\1\u00c6\1\uffff\1\114\1\u00c8\1\uffff\2\114\1\uffff\1\114"+
-        "\1\uffff\1\u00cc\1\u00cd\1\uffff\1\114\1\uffff\1\u00cf\1\uffff\1"+
-        "\114\1\u00d1\1\114\1\uffff\1\u00d3\1\uffff\3\114\2\uffff\1\u00d7"+
-        "\1\uffff\1\u00d8\1\uffff\1\114\1\uffff\1\114\1\u00db\1\u00dc\2\uffff"+
-        "\2\114\2\uffff\1\114\1\u00e0\1\u00e1\2\uffff";
+        "\10\114\1\u0082\5\114\1\u008a\2\uffff\1\u008b\4\uffff\2\114\5\uffff"+
+        "\5\114\1\uffff\1\161\6\uffff\1\u0094\1\u0095\3\114\1\u0099\5\114"+
+        "\1\uffff\3\114\1\u00a2\3\114\2\uffff\5\114\1\u00ab\2\114\2\uffff"+
+        "\3\114\1\uffff\5\114\1\u00b6\2\114\1\uffff\1\u00b9\2\114\1\u00bc"+
+        "\1\114\1\u00be\2\114\1\uffff\1\u00c1\1\114\1\u00c3\1\114\1\u00c5"+
+        "\2\114\1\u00c8\2\114\1\uffff\1\114\1\u00cc\1\uffff\2\114\1\uffff"+
+        "\1\114\1\uffff\1\u00d0\1\u00d1\1\uffff\1\114\1\uffff\1\u00d3\1\uffff"+
+        "\2\114\1\uffff\1\u00d6\1\114\1\u00d8\1\uffff\3\114\2\uffff\1\u00dc"+
+        "\1\uffff\1\u00dd\1\u00de\1\uffff\1\114\1\uffff\1\114\1\u00e1\1\u00e2"+
+        "\3\uffff\2\114\2\uffff\1\114\1\u00e6\1\u00e7\2\uffff";
     static final String DFA22_eofS =
-        "\u00e2\uffff";
+        "\u00e8\uffff";
     static final String DFA22_minS =
         "\1\0\2\75\1\174\1\46\1\52\3\75\1\76\1\56\2\52\1\uffff\1\141\1\165"+
-        "\1\141\1\146\2\141\1\145\2\uffff\1\163\4\uffff\1\154\2\uffff\1\57"+
+        "\2\141\1\146\1\141\1\145\2\uffff\1\163\4\uffff\1\154\2\uffff\1\57"+
         "\1\141\1\150\2\145\2\60\1\44\1\uffff\2\0\22\uffff\1\76\16\uffff"+
-        "\1\154\1\uffff\1\160\1\151\1\154\1\162\1\156\1\160\1\163\1\44\1"+
-        "\162\1\163\1\160\1\162\1\165\1\146\1\44\2\uffff\1\44\4\uffff\1\163"+
+        "\1\154\1\uffff\1\160\1\151\1\154\1\162\1\156\1\143\1\160\1\163\1"+
+        "\44\1\163\1\160\1\162\1\165\1\146\1\44\2\uffff\1\44\4\uffff\1\163"+
         "\1\164\5\uffff\1\163\1\151\1\167\1\154\1\164\1\uffff\1\60\6\uffff"+
-        "\2\44\1\145\1\164\1\163\1\44\1\141\1\157\1\164\1\uffff\1\141\1\153"+
-        "\1\145\1\157\1\44\2\145\1\141\2\uffff\3\145\1\143\1\154\1\44\1\154"+
-        "\1\165\2\uffff\1\162\1\143\1\145\1\uffff\1\154\1\162\1\141\1\155"+
-        "\1\44\1\157\1\167\1\uffff\1\44\1\156\1\165\1\44\1\156\1\44\1\150"+
-        "\1\145\1\uffff\1\44\1\162\1\44\1\150\1\44\1\154\1\164\1\156\1\44"+
-        "\1\uffff\1\146\1\44\1\uffff\1\144\1\154\1\uffff\1\144\1\uffff\2"+
-        "\44\1\uffff\1\156\1\uffff\1\44\1\uffff\1\171\1\44\1\143\1\uffff"+
-        "\1\44\1\uffff\1\163\1\164\1\163\2\uffff\1\44\1\uffff\1\44\1\uffff"+
-        "\1\145\1\uffff\1\117\2\44\2\uffff\1\157\1\156\2\uffff\1\146\2\44"+
-        "\2\uffff";
+        "\2\44\1\145\1\164\1\163\1\44\1\141\1\153\1\141\1\157\1\164\1\uffff"+
+        "\1\153\1\145\1\157\1\44\2\145\1\141\2\uffff\3\145\1\143\1\154\1"+
+        "\44\1\154\1\165\2\uffff\1\162\1\143\1\145\1\uffff\1\154\1\141\1"+
+        "\155\1\162\1\141\1\44\1\157\1\167\1\uffff\1\44\1\156\1\165\1\44"+
+        "\1\156\1\44\1\150\1\145\1\uffff\1\44\1\162\1\44\1\150\1\44\1\154"+
+        "\1\147\1\44\1\164\1\156\1\uffff\1\146\1\44\1\uffff\1\144\1\154\1"+
+        "\uffff\1\144\1\uffff\2\44\1\uffff\1\156\1\uffff\1\44\1\uffff\1\171"+
+        "\1\145\1\uffff\1\44\1\143\1\44\1\uffff\1\163\1\164\1\163\2\uffff"+
+        "\1\44\1\uffff\2\44\1\uffff\1\145\1\uffff\1\117\2\44\3\uffff\1\157"+
+        "\1\156\2\uffff\1\146\2\44\2\uffff";
     static final String DFA22_maxS =
         "\1\uffff\1\76\1\75\1\174\1\46\1\56\2\75\2\76\1\72\1\56\1\57\1\uffff"+
-        "\1\141\1\167\1\157\1\156\1\141\1\171\1\157\2\uffff\1\163\4\uffff"+
+        "\1\141\1\167\1\157\1\141\1\156\1\171\1\157\2\uffff\1\163\4\uffff"+
         "\1\170\2\uffff\1\72\1\141\1\150\1\165\1\145\1\170\1\154\1\172\1"+
         "\uffff\2\uffff\22\uffff\1\76\16\uffff\1\162\1\uffff\1\160\1\151"+
-        "\1\154\1\162\1\156\1\160\1\163\1\172\1\162\1\163\1\160\1\162\1\171"+
+        "\1\154\1\162\1\156\1\162\1\160\1\163\1\172\1\163\1\160\1\162\1\171"+
         "\1\160\1\172\2\uffff\1\172\4\uffff\1\163\1\164\5\uffff\1\164\1\151"+
         "\1\167\1\154\1\164\1\uffff\1\154\6\uffff\2\172\1\145\1\164\1\163"+
-        "\1\172\1\141\1\157\1\164\1\uffff\1\141\1\153\1\145\1\157\1\172\2"+
-        "\145\1\141\2\uffff\3\145\1\143\1\154\1\172\1\154\1\165\2\uffff\1"+
-        "\162\1\143\1\145\1\uffff\1\154\1\162\1\141\1\155\1\172\1\157\1\167"+
-        "\1\uffff\1\172\1\156\1\165\1\172\1\156\1\172\1\150\1\145\1\uffff"+
-        "\1\172\1\162\1\172\1\150\1\172\1\154\1\164\1\156\1\172\1\uffff\1"+
-        "\146\1\172\1\uffff\1\144\1\154\1\uffff\1\144\1\uffff\2\172\1\uffff"+
-        "\1\156\1\uffff\1\172\1\uffff\1\171\1\172\1\143\1\uffff\1\172\1\uffff"+
-        "\1\163\1\164\1\163\2\uffff\1\172\1\uffff\1\172\1\uffff\1\145\1\uffff"+
-        "\1\117\2\172\2\uffff\1\157\1\156\2\uffff\1\146\2\172\2\uffff";
+        "\1\172\1\141\1\153\1\141\1\157\1\164\1\uffff\1\153\1\145\1\157\1"+
+        "\172\2\145\1\141\2\uffff\3\145\1\143\1\154\1\172\1\154\1\165\2\uffff"+
+        "\1\162\1\143\1\145\1\uffff\1\154\1\141\1\155\1\162\1\141\1\172\1"+
+        "\157\1\167\1\uffff\1\172\1\156\1\165\1\172\1\156\1\172\1\150\1\145"+
+        "\1\uffff\1\172\1\162\1\172\1\150\1\172\1\154\1\147\1\172\1\164\1"+
+        "\156\1\uffff\1\146\1\172\1\uffff\1\144\1\154\1\uffff\1\144\1\uffff"+
+        "\2\172\1\uffff\1\156\1\uffff\1\172\1\uffff\1\171\1\145\1\uffff\1"+
+        "\172\1\143\1\172\1\uffff\1\163\1\164\1\163\2\uffff\1\172\1\uffff"+
+        "\2\172\1\uffff\1\145\1\uffff\1\117\2\172\3\uffff\1\157\1\156\2\uffff"+
+        "\1\146\2\172\2\uffff";
     static final String DFA22_acceptS =
-        "\15\uffff\1\27\7\uffff\1\41\1\42\1\uffff\1\45\1\46\1\47\1\50\1\uffff"+
-        "\1\54\1\55\10\uffff\1\111\2\uffff\1\115\1\116\1\6\1\16\1\1\1\2\1"+
-        "\22\1\3\1\102\1\4\1\77\1\15\1\35\1\5\1\7\1\30\1\10\1\12\1\uffff"+
-        "\1\17\1\13\1\14\1\23\1\20\1\100\1\75\1\25\1\101\1\24\1\113\1\114"+
-        "\1\26\1\27\1\uffff\1\111\17\uffff\1\41\1\42\1\uffff\1\45\1\46\1"+
-        "\47\1\50\2\uffff\1\54\1\55\1\64\1\105\1\56\5\uffff\1\106\1\uffff"+
-        "\1\107\1\110\1\112\1\115\1\21\1\11\11\uffff\1\51\10\uffff\1\63\1"+
-        "\44\10\uffff\1\31\1\103\3\uffff\1\61\7\uffff\1\72\10\uffff\1\65"+
-        "\11\uffff\1\37\2\uffff\1\104\2\uffff\1\52\1\uffff\1\60\2\uffff\1"+
-        "\66\1\uffff\1\32\1\uffff\1\33\3\uffff\1\36\1\uffff\1\70\3\uffff"+
-        "\1\74\1\62\1\uffff\1\53\1\uffff\1\34\1\uffff\1\67\3\uffff\1\71\1"+
-        "\73\2\uffff\1\57\1\76\3\uffff\1\40\1\43";
+        "\15\uffff\1\27\7\uffff\1\42\1\43\1\uffff\1\46\1\47\1\50\1\51\1\uffff"+
+        "\1\55\1\56\10\uffff\1\112\2\uffff\1\116\1\117\1\6\1\16\1\1\1\2\1"+
+        "\22\1\3\1\103\1\4\1\100\1\15\1\36\1\5\1\7\1\30\1\10\1\12\1\uffff"+
+        "\1\17\1\13\1\14\1\23\1\20\1\101\1\76\1\25\1\102\1\24\1\114\1\115"+
+        "\1\26\1\27\1\uffff\1\112\17\uffff\1\42\1\43\1\uffff\1\46\1\47\1"+
+        "\50\1\51\2\uffff\1\55\1\56\1\65\1\106\1\57\5\uffff\1\107\1\uffff"+
+        "\1\110\1\111\1\113\1\116\1\21\1\11\13\uffff\1\52\7\uffff\1\64\1"+
+        "\45\10\uffff\1\31\1\104\3\uffff\1\62\10\uffff\1\73\10\uffff\1\66"+
+        "\12\uffff\1\40\2\uffff\1\105\2\uffff\1\53\1\uffff\1\61\2\uffff\1"+
+        "\67\1\uffff\1\32\1\uffff\1\33\2\uffff\1\37\3\uffff\1\71\3\uffff"+
+        "\1\75\1\63\1\uffff\1\54\2\uffff\1\35\1\uffff\1\70\3\uffff\1\72\1"+
+        "\74\1\34\2\uffff\1\60\1\77\3\uffff\1\41\1\44";
     static final String DFA22_specialS =
-        "\1\0\47\uffff\1\1\1\2\u00b8\uffff}>";
+        "\1\1\47\uffff\1\2\1\0\u00be\uffff}>";
     static final String[] DFA22_transitionS = {
             "\11\53\2\52\2\53\1\52\22\53\1\52\1\6\1\50\1\53\1\47\1\15\1\4"+
             "\1\51\1\33\1\26\1\13\1\2\1\25\1\11\1\5\1\14\1\44\11\45\1\37"+
             "\1\32\1\10\1\1\1\7\1\12\1\53\32\47\1\31\1\53\1\30\1\46\1\47"+
-            "\1\53\1\27\1\47\1\40\1\24\1\34\1\20\2\47\1\21\4\47\1\42\1\47"+
-            "\1\22\1\47\1\43\1\17\1\23\1\47\1\16\1\41\3\47\1\35\1\3\1\36"+
+            "\1\53\1\27\1\47\1\40\1\24\1\34\1\20\2\47\1\22\4\47\1\42\1\47"+
+            "\1\21\1\47\1\43\1\17\1\23\1\47\1\16\1\41\3\47\1\35\1\3\1\36"+
             "\uff82\53",
             "\1\54\1\55",
             "\1\57",
@@ -3087,8 +3117,8 @@ public class InternalCradleLexer extends Lexer {
             "\1\113",
             "\1\115\1\uffff\1\116",
             "\1\117\7\uffff\1\121\5\uffff\1\120",
-            "\1\124\6\uffff\1\122\1\123",
-            "\1\125",
+            "\1\122",
+            "\1\125\6\uffff\1\123\1\124",
             "\1\126\6\uffff\1\130\11\uffff\1\131\6\uffff\1\127",
             "\1\132\11\uffff\1\133",
             "",
@@ -3155,16 +3185,16 @@ public class InternalCradleLexer extends Lexer {
             "\1\173",
             "\1\174",
             "\1\175",
-            "\1\176",
-            "\1\177",
+            "\1\176\16\uffff\1\177",
+            "\1\u0080",
+            "\1\u0081",
             "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
             "\32\114",
-            "\1\u0081",
-            "\1\u0082",
             "\1\u0083",
             "\1\u0084",
-            "\1\u0086\3\uffff\1\u0085",
-            "\1\u0088\11\uffff\1\u0087",
+            "\1\u0085",
+            "\1\u0087\3\uffff\1\u0086",
+            "\1\u0089\11\uffff\1\u0088",
             "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
             "\32\114",
             "",
@@ -3175,18 +3205,18 @@ public class InternalCradleLexer extends Lexer {
             "",
             "",
             "",
-            "\1\u008b",
             "\1\u008c",
+            "\1\u008d",
             "",
             "",
             "",
             "",
             "",
-            "\1\u008d\1\u008e",
-            "\1\u008f",
+            "\1\u008e\1\u008f",
             "\1\u0090",
             "\1\u0091",
             "\1\u0092",
+            "\1\u0093",
             "",
             "\12\160\10\uffff\1\162\1\uffff\3\162\5\uffff\1\162\22\uffff"+
             "\1\160\2\uffff\1\162\1\uffff\3\162\5\uffff\1\162",
@@ -3200,98 +3230,93 @@ public class InternalCradleLexer extends Lexer {
             "\32\114",
             "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
             "\32\114",
-            "\1\u0095",
             "\1\u0096",
             "\1\u0097",
+            "\1\u0098",
             "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
             "\32\114",
-            "\1\u0099",
             "\1\u009a",
             "\1\u009b",
-            "",
             "\1\u009c",
             "\1\u009d",
             "\1\u009e",
+            "",
             "\1\u009f",
+            "\1\u00a0",
+            "\1\u00a1",
             "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
             "\32\114",
-            "\1\u00a1",
-            "\1\u00a2",
             "\1\u00a3",
-            "",
-            "",
             "\1\u00a4",
             "\1\u00a5",
+            "",
+            "",
             "\1\u00a6",
             "\1\u00a7",
             "\1\u00a8",
+            "\1\u00a9",
+            "\1\u00aa",
             "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
             "\32\114",
-            "\1\u00aa",
-            "\1\u00ab",
-            "",
-            "",
             "\1\u00ac",
             "\1\u00ad",
-            "\1\u00ae",
             "",
+            "",
+            "\1\u00ae",
             "\1\u00af",
             "\1\u00b0",
+            "",
             "\1\u00b1",
             "\1\u00b2",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "\1\u00b3",
             "\1\u00b4",
             "\1\u00b5",
-            "",
             "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
             "\32\114",
             "\1\u00b7",
             "\1\u00b8",
+            "",
             "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
             "\32\114",
             "\1\u00ba",
+            "\1\u00bb",
             "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
             "\32\114",
-            "\1\u00bc",
             "\1\u00bd",
-            "",
             "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
             "\32\114",
             "\1\u00bf",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
-            "\1\u00c1",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
-            "\1\u00c3",
-            "\1\u00c4",
-            "\1\u00c5",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "\1\u00c0",
             "",
+            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
+            "\32\114",
+            "\1\u00c2",
+            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
+            "\32\114",
+            "\1\u00c4",
+            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
+            "\32\114",
+            "\1\u00c6",
             "\1\u00c7",
             "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
             "\32\114",
-            "",
             "\1\u00c9",
             "\1\u00ca",
             "",
             "\1\u00cb",
-            "",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
             "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
             "\32\114",
             "",
+            "\1\u00cd",
             "\1\u00ce",
             "",
+            "\1\u00cf",
+            "",
+            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
+            "\32\114",
             "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
             "\32\114",
             "",
-            "\1\u00d0",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
             "\1\u00d2",
             "",
             "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
@@ -3299,29 +3324,41 @@ public class InternalCradleLexer extends Lexer {
             "",
             "\1\u00d4",
             "\1\u00d5",
-            "\1\u00d6",
-            "",
             "",
             "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
             "\32\114",
-            "",
+            "\1\u00d7",
             "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
             "\32\114",
             "",
             "\1\u00d9",
-            "",
             "\1\u00da",
+            "\1\u00db",
+            "",
+            "",
+            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
+            "\32\114",
+            "",
             "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
             "\32\114",
             "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
             "\32\114",
-            "",
-            "",
-            "\1\u00dd",
-            "\1\u00de",
-            "",
             "",
             "\1\u00df",
+            "",
+            "\1\u00e0",
+            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
+            "\32\114",
+            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
+            "\32\114",
+            "",
+            "",
+            "",
+            "\1\u00e3",
+            "\1\u00e4",
+            "",
+            "",
+            "\1\u00e5",
             "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
             "\32\114",
             "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
@@ -3360,13 +3397,23 @@ public class InternalCradleLexer extends Lexer {
             this.transition = DFA22_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | RULE_FILE | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | RULE_FILE | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
+                        int LA22_41 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA22_41>='\u0000' && LA22_41<='\uFFFF')) ) {s = 115;}
+
+                        else s = 43;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
                         int LA22_0 = input.LA(1);
 
                         s = -1;
@@ -3402,9 +3449,9 @@ public class InternalCradleLexer extends Lexer {
 
                         else if ( (LA22_0=='f') ) {s = 16;}
 
-                        else if ( (LA22_0=='i') ) {s = 17;}
+                        else if ( (LA22_0=='p') ) {s = 17;}
 
-                        else if ( (LA22_0=='p') ) {s = 18;}
+                        else if ( (LA22_0=='i') ) {s = 18;}
 
                         else if ( (LA22_0=='t') ) {s = 19;}
 
@@ -3458,21 +3505,11 @@ public class InternalCradleLexer extends Lexer {
 
                         if ( s>=0 ) return s;
                         break;
-                    case 1 : 
+                    case 2 : 
                         int LA22_40 = input.LA(1);
 
                         s = -1;
                         if ( ((LA22_40>='\u0000' && LA22_40<='\uFFFF')) ) {s = 115;}
-
-                        else s = 43;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA22_41 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA22_41>='\u0000' && LA22_41<='\uFFFF')) ) {s = 115;}
 
                         else s = 43;
 

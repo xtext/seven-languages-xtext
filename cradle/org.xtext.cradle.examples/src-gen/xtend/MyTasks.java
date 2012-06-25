@@ -1,13 +1,13 @@
-package cradle;
+package xtend;
 
 import com.google.common.collect.Sets;
-import cradle.MyTasks.MyTasksParams;
 import java.util.Set;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.xtext.cradle.lib.impl.TaskSkippedException;
 import org.xtext.cradle.lib.impl.TaskState;
+import xtend.MyTasks.MyTasksParams;
 
 public class MyTasks {
   public static class MyTasksParams {

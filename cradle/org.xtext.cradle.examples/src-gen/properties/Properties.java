@@ -1,7 +1,6 @@
-package cradle;
+package properties;
 
 import com.google.common.collect.Sets;
-import cradle.Properties.PropertiesParams;
 import java.io.File;
 import java.util.List;
 import java.util.Set;
@@ -15,10 +14,10 @@ import org.xtext.cradle.lib.Literals;
 import org.xtext.cradle.lib.impl.FileProperties;
 import org.xtext.cradle.lib.impl.TaskSkippedException;
 import org.xtext.cradle.lib.impl.TaskState;
+import properties.Properties.PropertiesParams;
 
 public class Properties {
   public static class PropertiesParams {
-    public String name = "holla";
   }
   
   
@@ -34,9 +33,6 @@ public class Properties {
         System.out.println("  SetEncoding2");
         System.out.println("  SetAllEncoding1");
         System.out.println("  SetAllEncoding2");
-        System.out.println();
-        System.out.println("Parameters:");
-        System.out.println("  --name <String>");
         return;
       } else
         index++;
@@ -45,9 +41,7 @@ public class Properties {
     PropertiesParams parameter = new PropertiesParams();
     index = 0;
     while(index < args.length) {
-      if("--name".equals(args[index])) {
-        parameter.name = args[++index];
-      } else if("SetJavaLineWrap".equals(args[index])) {
+      if("SetJavaLineWrap".equals(args[index])) {
         tasks.add("SetJavaLineWrap");
       } else if("SetEncoding".equals(args[index])) {
         tasks.add("SetEncoding");

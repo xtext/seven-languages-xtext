@@ -1,6 +1,6 @@
 package xtend
 
-import static cradle.MyTasks.*
+import static xtend.MyTasks.*
 
 class MyClass {
 	def static void main(String[] args) {

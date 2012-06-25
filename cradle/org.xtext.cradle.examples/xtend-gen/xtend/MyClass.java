@@ -1,8 +1,8 @@
 package xtend;
 
-import cradle.MyTasks;
-import cradle.MyTasks.MyTasksParams;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
+import xtend.MyTasks;
+import xtend.MyTasks.MyTasksParams;
 
 @SuppressWarnings("all")
 public class MyClass {

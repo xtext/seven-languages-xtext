@@ -8,6 +8,7 @@
   <genPackages prefix="Cradle" basePackage="org.xtext.cradle" disposableProviderFactory="true"
       ecorePackage="Cradle.ecore#/">
     <genClasses ecoreClass="Cradle.ecore#//CradleFile">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cradle.ecore#//CradleFile/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cradle.ecore#//CradleFile/imports"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cradle.ecore#//CradleFile/declarations"/>
     </genClasses>

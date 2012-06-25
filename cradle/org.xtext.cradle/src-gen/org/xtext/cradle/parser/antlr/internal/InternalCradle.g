@@ -77,19 +77,41 @@ ruleCradleFile returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
+((	otherlv_0='package' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getCradleFileAccess().getPackageKeyword_0_0());
+    }
+(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getCradleFileAccess().getImportsImportDeclarationParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getCradleFileAccess().getNameQualifiedNameParserRuleCall_0_1_0()); 
 	    }
-		lv_imports_0_0=ruleImportDeclaration		{
+		lv_name_1_0=ruleQualifiedName		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getCradleFileRule());
+	        }
+       		set(
+       			$current, 
+       			"name",
+        		lv_name_1_0, 
+        		"QualifiedName");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getCradleFileAccess().getImportsImportDeclarationParserRuleCall_1_0()); 
+	    }
+		lv_imports_2_0=ruleImportDeclaration		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getCradleFileRule());
 	        }
        		add(
        			$current, 
        			"imports",
-        		lv_imports_0_0, 
+        		lv_imports_2_0, 
         		"ImportDeclaration");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -98,16 +120,16 @@ ruleCradleFile returns [EObject current=null]
 )*(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getCradleFileAccess().getDeclarationsDeclarationParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getCradleFileAccess().getDeclarationsDeclarationParserRuleCall_2_0()); 
 	    }
-		lv_declarations_1_0=ruleDeclaration		{
+		lv_declarations_3_0=ruleDeclaration		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getCradleFileRule());
 	        }
        		add(
        			$current, 
        			"declarations",
-        		lv_declarations_1_0, 
+        		lv_declarations_3_0, 
         		"Declaration");
 	        afterParserOrEnumRuleCall();
 	    }

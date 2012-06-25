@@ -145,9 +145,19 @@ public class CradlePackageImpl extends EPackageImpl implements CradlePackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getCradleFile_Name()
+  {
+    return (EAttribute)cradleFileEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getCradleFile_Imports()
   {
-    return (EReference)cradleFileEClass.getEStructuralFeatures().get(0);
+    return (EReference)cradleFileEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -157,7 +167,7 @@ public class CradlePackageImpl extends EPackageImpl implements CradlePackage
    */
   public EReference getCradleFile_Declarations()
   {
-    return (EReference)cradleFileEClass.getEStructuralFeatures().get(1);
+    return (EReference)cradleFileEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -291,6 +301,7 @@ public class CradlePackageImpl extends EPackageImpl implements CradlePackage
 
     // Create classes and their features
     cradleFileEClass = createEClass(CRADLE_FILE);
+    createEAttribute(cradleFileEClass, CRADLE_FILE__NAME);
     createEReference(cradleFileEClass, CRADLE_FILE__IMPORTS);
     createEReference(cradleFileEClass, CRADLE_FILE__DECLARATIONS);
 
@@ -347,6 +358,7 @@ public class CradlePackageImpl extends EPackageImpl implements CradlePackage
 
     // Initialize classes and features; add operations and parameters
     initEClass(cradleFileEClass, CradleFile.class, "CradleFile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCradleFile_Name(), ecorePackage.getEString(), "name", null, 0, 1, CradleFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCradleFile_Imports(), this.getImportDeclaration(), null, "imports", null, 0, -1, CradleFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCradleFile_Declarations(), this.getDeclaration(), null, "declarations", null, 0, -1, CradleFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

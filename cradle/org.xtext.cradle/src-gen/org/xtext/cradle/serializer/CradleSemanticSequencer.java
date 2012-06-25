@@ -980,7 +980,7 @@ public class CradleSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (imports+=ImportDeclaration* declarations+=Declaration*)
+	 *     (name=QualifiedName? imports+=ImportDeclaration* declarations+=Declaration*)
 	 */
 	protected void sequence_CradleFile(EObject context, CradleFile semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

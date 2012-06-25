@@ -1,6 +1,4 @@
-
-
-param name = 'holla'
+package properties
 
 task SetJavaLineWrap {
 	val jdtprefs = project:/.settings/org.eclipse.jdt.core.prefs:.loadAsProperties

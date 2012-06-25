@@ -4,6 +4,7 @@ package org.xtext.cradle.cradle.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -11,6 +12,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -28,6 +30,7 @@ import org.xtext.cradle.cradle.ImportDeclaration;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link org.xtext.cradle.cradle.impl.CradleFileImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.cradle.cradle.impl.CradleFileImpl#getImports <em>Imports</em>}</li>
  *   <li>{@link org.xtext.cradle.cradle.impl.CradleFileImpl#getDeclarations <em>Declarations</em>}</li>
  * </ul>
@@ -37,6 +40,26 @@ import org.xtext.cradle.cradle.ImportDeclaration;
  */
 public class CradleFileImpl extends MinimalEObjectImpl.Container implements CradleFile
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -76,6 +99,29 @@ public class CradleFileImpl extends MinimalEObjectImpl.Container implements Crad
   protected EClass eStaticClass()
   {
     return CradlePackage.Literals.CRADLE_FILE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CradlePackage.CRADLE_FILE__NAME, oldName, name));
   }
 
   /**
@@ -134,6 +180,8 @@ public class CradleFileImpl extends MinimalEObjectImpl.Container implements Crad
   {
     switch (featureID)
     {
+      case CradlePackage.CRADLE_FILE__NAME:
+        return getName();
       case CradlePackage.CRADLE_FILE__IMPORTS:
         return getImports();
       case CradlePackage.CRADLE_FILE__DECLARATIONS:
@@ -153,6 +201,9 @@ public class CradleFileImpl extends MinimalEObjectImpl.Container implements Crad
   {
     switch (featureID)
     {
+      case CradlePackage.CRADLE_FILE__NAME:
+        setName((String)newValue);
+        return;
       case CradlePackage.CRADLE_FILE__IMPORTS:
         getImports().clear();
         getImports().addAll((Collection<? extends ImportDeclaration>)newValue);
@@ -175,6 +226,9 @@ public class CradleFileImpl extends MinimalEObjectImpl.Container implements Crad
   {
     switch (featureID)
     {
+      case CradlePackage.CRADLE_FILE__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case CradlePackage.CRADLE_FILE__IMPORTS:
         getImports().clear();
         return;
@@ -195,12 +249,31 @@ public class CradleFileImpl extends MinimalEObjectImpl.Container implements Crad
   {
     switch (featureID)
     {
+      case CradlePackage.CRADLE_FILE__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case CradlePackage.CRADLE_FILE__IMPORTS:
         return imports != null && !imports.isEmpty();
       case CradlePackage.CRADLE_FILE__DECLARATIONS:
         return declarations != null && !declarations.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //CradleFileImpl

@@ -23,29 +23,45 @@ public class CradleGrammarAccess extends AbstractGrammarElementFinder {
 	public class CradleFileElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CradleFile");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cImportsAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cImportsImportDeclarationParserRuleCall_0_0 = (RuleCall)cImportsAssignment_0.eContents().get(0);
-		private final Assignment cDeclarationsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cDeclarationsDeclarationParserRuleCall_1_0 = (RuleCall)cDeclarationsAssignment_1.eContents().get(0);
+		private final Group cGroup_0 = (Group)cGroup.eContents().get(0);
+		private final Keyword cPackageKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Assignment cNameAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cNameQualifiedNameParserRuleCall_0_1_0 = (RuleCall)cNameAssignment_0_1.eContents().get(0);
+		private final Assignment cImportsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cImportsImportDeclarationParserRuleCall_1_0 = (RuleCall)cImportsAssignment_1.eContents().get(0);
+		private final Assignment cDeclarationsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cDeclarationsDeclarationParserRuleCall_2_0 = (RuleCall)cDeclarationsAssignment_2.eContents().get(0);
 		
 		//CradleFile:
-		//	imports+=ImportDeclaration* declarations+=Declaration*;
+		//	("package" name=QualifiedName)? imports+=ImportDeclaration* declarations+=Declaration*;
 		public ParserRule getRule() { return rule; }
 
-		//imports+=ImportDeclaration* declarations+=Declaration*
+		//("package" name=QualifiedName)? imports+=ImportDeclaration* declarations+=Declaration*
 		public Group getGroup() { return cGroup; }
 
+		//("package" name=QualifiedName)?
+		public Group getGroup_0() { return cGroup_0; }
+
+		//"package"
+		public Keyword getPackageKeyword_0_0() { return cPackageKeyword_0_0; }
+
+		//name=QualifiedName
+		public Assignment getNameAssignment_0_1() { return cNameAssignment_0_1; }
+
+		//QualifiedName
+		public RuleCall getNameQualifiedNameParserRuleCall_0_1_0() { return cNameQualifiedNameParserRuleCall_0_1_0; }
+
 		//imports+=ImportDeclaration*
-		public Assignment getImportsAssignment_0() { return cImportsAssignment_0; }
+		public Assignment getImportsAssignment_1() { return cImportsAssignment_1; }
 
 		//ImportDeclaration
-		public RuleCall getImportsImportDeclarationParserRuleCall_0_0() { return cImportsImportDeclarationParserRuleCall_0_0; }
+		public RuleCall getImportsImportDeclarationParserRuleCall_1_0() { return cImportsImportDeclarationParserRuleCall_1_0; }
 
 		//declarations+=Declaration*
-		public Assignment getDeclarationsAssignment_1() { return cDeclarationsAssignment_1; }
+		public Assignment getDeclarationsAssignment_2() { return cDeclarationsAssignment_2; }
 
 		//Declaration
-		public RuleCall getDeclarationsDeclarationParserRuleCall_1_0() { return cDeclarationsDeclarationParserRuleCall_1_0; }
+		public RuleCall getDeclarationsDeclarationParserRuleCall_2_0() { return cDeclarationsDeclarationParserRuleCall_2_0; }
 	}
 
 	public class ImportDeclarationElements extends AbstractParserRuleElementFinder {
@@ -604,7 +620,7 @@ public class CradleGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//CradleFile:
-	//	imports+=ImportDeclaration* declarations+=Declaration*;
+	//	("package" name=QualifiedName)? imports+=ImportDeclaration* declarations+=Declaration*;
 	public CradleFileElements getCradleFileAccess() {
 		return (pCradleFile != null) ? pCradleFile : (pCradleFile = new CradleFileElements());
 	}

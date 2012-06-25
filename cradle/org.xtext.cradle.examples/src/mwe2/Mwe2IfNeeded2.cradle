@@ -1,3 +1,4 @@
+package mwe2
 
 task runMwe2IfNeeded2 {
 	val myDSL = workspace:/org.xtext.example.mydsl

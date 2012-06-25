@@ -25,18 +25,19 @@ public class FileProperties extends Properties {
 	public FileProperties(File file) {
 		super();
 		this.file = file;
-		try {
-			FileInputStream stream = new FileInputStream(file);
+		if (file.isFile())
 			try {
-				load(stream);
-			} finally {
-				stream.close();
+				FileInputStream stream = new FileInputStream(file);
+				try {
+					load(stream);
+				} finally {
+					stream.close();
+				}
+			} catch (FileNotFoundException e) {
+				Exceptions.sneakyThrow(e);
+			} catch (IOException e) {
+				Exceptions.sneakyThrow(e);
 			}
-		} catch (FileNotFoundException e) {
-			Exceptions.sneakyThrow(e);
-		} catch (IOException e) {
-			Exceptions.sneakyThrow(e);
-		}
 	}
 
 	public File getFile() {

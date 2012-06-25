@@ -1,5 +1,4 @@
-
-param name = 'holla'
+package mwe2
 
 task runMwe2IfNeeded {
 	val myDSL = workspace:/org.xtext.example.mydsl

@@ -5,6 +5,7 @@ import java.util.Set
 import org.xtext.cradle.cradle.Task
 
 import static org.xtext.cradle.TaskExtensions.*
+import org.xtext.cradle.cradle.CradleFile
 
 class TaskExtensions {
 	
@@ -40,5 +41,12 @@ class TaskExtensions {
 			return;
 		for (t : task.dependsOn) 
 			internalFindDependenTasks(t, set)
+	}
+	
+	def static getJavaClassName(CradleFile file) {
+		if(file.name == null)
+			file.eResource.URI.trimFileExtension.lastSegment
+		else
+			file.name + "." + file.eResource.URI.trimFileExtension.lastSegment
 	}
 }

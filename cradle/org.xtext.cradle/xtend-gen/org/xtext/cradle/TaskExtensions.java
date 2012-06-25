@@ -6,9 +6,12 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
+import org.xtext.cradle.cradle.CradleFile;
 import org.xtext.cradle.cradle.Task;
 
 @SuppressWarnings("all")
@@ -69,5 +72,28 @@ public class TaskExtensions {
     for (final Task t : _dependsOn) {
       TaskExtensions.internalFindDependenTasks(t, set);
     }
+  }
+  
+  public static String getJavaClassName(final CradleFile file) {
+    String _xifexpression = null;
+    String _name = file.getName();
+    boolean _equals = Objects.equal(_name, null);
+    if (_equals) {
+      Resource _eResource = file.eResource();
+      URI _uRI = _eResource.getURI();
+      URI _trimFileExtension = _uRI.trimFileExtension();
+      String _lastSegment = _trimFileExtension.lastSegment();
+      _xifexpression = _lastSegment;
+    } else {
+      String _name_1 = file.getName();
+      String _plus = (_name_1 + ".");
+      Resource _eResource_1 = file.eResource();
+      URI _uRI_1 = _eResource_1.getURI();
+      URI _trimFileExtension_1 = _uRI_1.trimFileExtension();
+      String _lastSegment_1 = _trimFileExtension_1.lastSegment();
+      String _plus_1 = (_plus + _lastSegment_1);
+      _xifexpression = _plus_1;
+    }
+    return _xifexpression;
   }
 }

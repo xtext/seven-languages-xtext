@@ -1,9 +1,9 @@
-package cradle;
+package mwe2;
 
 import com.google.common.collect.Sets;
-import cradle.Mwe2.Mwe2Params;
 import java.io.File;
 import java.util.Set;
+import mwe2.Mwe2.Mwe2Params;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Pair;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
@@ -14,7 +14,6 @@ import org.xtext.cradle.lib.impl.TaskState;
 
 public class Mwe2 {
   public static class Mwe2Params {
-    public String name = "holla";
   }
   
   
@@ -26,9 +25,6 @@ public class Mwe2 {
         System.out.println();
         System.out.println("Tasks:");
         System.out.println("  runMwe2");
-        System.out.println();
-        System.out.println("Parameters:");
-        System.out.println("  --name <String>");
         return;
       } else
         index++;
@@ -37,9 +33,7 @@ public class Mwe2 {
     Mwe2Params parameter = new Mwe2Params();
     index = 0;
     while(index < args.length) {
-      if("--name".equals(args[index])) {
-        parameter.name = args[++index];
-      } else if("runMwe2".equals(args[index])) {
+      if("runMwe2".equals(args[index])) {
         tasks.add("runMwe2");
       } else {
         System.out.println("Unknown task/parameter '" + args[index] + "'. Run program with --help to list available tasks/parameters");

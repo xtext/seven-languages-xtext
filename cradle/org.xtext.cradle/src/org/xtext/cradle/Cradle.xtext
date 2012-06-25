@@ -5,6 +5,7 @@ import "http://www.eclipse.org/xtext/common/JavaVMTypes" as types
 generate cradle "http://www.cradle.org/language/Cradle"
 
 CradleFile:
+	("package" name=QualifiedName)?
 	imports+=ImportDeclaration*
 	declarations+=Declaration*;
 

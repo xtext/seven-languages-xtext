@@ -46,7 +46,7 @@ class Literals {
 		val oldDigest = di.digest.loadAsDigest;
 		if (newDigest == oldDigest)
 			TaskState::skipTask("Skipped because digest is unchanged");
-		TaskState::addTaskFinishListener[ msg, t | newDigest.saveAs(di.digest) ]
+		TaskState::addTaskFinishListener[ msg, t | if(t==null) newDigest.saveAs(di.digest) ]
 	}
 }
 

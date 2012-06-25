@@ -78,8 +78,11 @@ public class Literals {
     }
     final Procedure2<String,Throwable> _function_1 = new Procedure2<String,Throwable>() {
         public void apply(final String msg, final Throwable t) {
-          File _digest = di.getDigest();
-          newDigest.saveAs(_digest);
+          boolean _equals = Objects.equal(t, null);
+          if (_equals) {
+            File _digest = di.getDigest();
+            newDigest.saveAs(_digest);
+          }
         }
       };
     TaskState.addTaskFinishListener(_function_1);

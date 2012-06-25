@@ -1,26 +1,25 @@
 package org.xtext.cradle.jvmmodel
 
+import com.google.common.collect.Sets
 import com.google.inject.Inject
-import org.xtext.cradle.cradle.CradleFile
-import org.xtext.cradle.cradle.Parameter
-import org.xtext.cradle.cradle.Task
-import org.eclipse.emf.ecore.EObject
+import java.util.Set
 import org.eclipse.xtext.common.types.JvmVisibility
+import org.eclipse.xtext.common.types.util.TypeReferences
+import org.eclipse.xtext.util.Strings
+import org.eclipse.xtext.xbase.compiler.TypeReferenceSerializer
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
+import org.eclipse.xtext.xbase.lib.Exceptions
+import org.eclipse.xtext.xbase.lib.Procedures$Procedure1
 import org.eclipse.xtext.xbase.typing.ITypeProvider
-
-import static extension org.xtext.cradle.TaskExtensions.*
-import org.eclipse.xtext.xbase.lib.Procedures
-import org.eclipse.xtext.xbase.compiler.TypeReferenceSerializer
-import org.eclipse.xtext.common.types.util.TypeReferences
-import com.google.common.collect.Sets
-import java.util.Set
+import org.xtext.cradle.cradle.CradleFile
+import org.xtext.cradle.cradle.Parameter
+import org.xtext.cradle.cradle.Task
 import org.xtext.cradle.lib.impl.TaskSkippedException
 import org.xtext.cradle.lib.impl.TaskState
-import java.io.PrintStream
-import org.eclipse.xtext.xbase.lib.Exceptions
+
+import static extension org.xtext.cradle.TaskExtensions.*
 
 class CradleJvmModelInferrer extends AbstractModelInferrer {
 
@@ -30,8 +29,9 @@ class CradleJvmModelInferrer extends AbstractModelInferrer {
 	@Inject extension TypeReferences
 
    	def dispatch void infer(CradleFile element, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
-   		val name = element.javaClassName
-   		acceptor.accept(element.toClass('cradle.'+name))
+   		val fqn = element.javaClassName
+   		val name = Strings::lastToken(fqn, ".")
+   		acceptor.accept(element.toClass(fqn))
    			.initializeLater([
    				val data = element.toClass(name + "Params") [
    					^static = true
@@ -195,9 +195,4 @@ class CradleJvmModelInferrer extends AbstractModelInferrer {
    	def private getMethodNameExecute(Task task) {
    		"execute" + task.name.toFirstUpper
    	}
-   	
-   	def private getJavaClassName(EObject it) {
-   		eResource.URI.trimFileExtension.lastSegment
-   	}
-   	
 }

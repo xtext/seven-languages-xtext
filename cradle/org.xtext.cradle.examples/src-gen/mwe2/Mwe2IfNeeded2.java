@@ -1,10 +1,10 @@
-package cradle;
+package mwe2;
 
 import com.google.common.collect.Sets;
-import cradle.Mwe2IfNeeded2.Mwe2IfNeeded2Params;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Set;
+import mwe2.Mwe2IfNeeded2.Mwe2IfNeeded2Params;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Pair;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;

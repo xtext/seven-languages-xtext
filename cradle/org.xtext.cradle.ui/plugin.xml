@@ -10,6 +10,7 @@
             contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
             default="true"
             extensions="cradle"
+            icon="icons/cradlefile16.gif"
             id="org.xtext.cradle.Cradle"
             matchingStrategy="org.xtext.cradle.ui.CradleExecutableExtensionFactory:org.eclipse.xtext.xbase.ui.editor.JavaEditorInputMatcher"
             name="Cradle Editor">
@@ -421,5 +422,76 @@
             extensions="cradle">
     </provider>
   </extension>
+  
+     <extension
+         point="org.eclipse.debug.core.launchConfigurationTypes">
+      <launchConfigurationType
+            id="org.xtext.cradle.ui.CradleLaunchConfigurationType"
+            modes="run, debug"
+            name="Cradle Launch"
+            delegate="org.xtext.cradle.ui.launch.CradleLaunchDelegate"
+            sourceLocatorId="org.eclipse.jdt.launching.sourceLocator.JavaSourceLookupDirector"
+            sourcePathComputerId="org.eclipse.jdt.launching.sourceLookup.javaSourcePathComputer"/>
+   </extension>
+   
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+      <launchConfigurationTabGroup
+            class="org.xtext.cradle.ui.launch.CradleLaunchTabGroup"
+            id="org.xtext.cradle.ui.CradleLaunchConfigurationTabGroup"
+            type="org.xtext.cradle.ui.CradleLaunchConfigurationType">
+            <launchMode 
+                  mode="debug"
+                  perspective="org.eclipse.debug.ui.DebugPerspective"
+                  description="Debug a Cradle File">
+            </launchMode>
+            <launchMode
+                  mode="run"
+                  description="Run a Cradle File">
+            </launchMode>
+      </launchConfigurationTabGroup>
+   </extension>
+
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+      <launchConfigurationTypeImage
+            configTypeID="org.xtext.cradle.ui.CradleLaunchConfigurationType"
+            icon="icons/cradlelaunch16.gif"
+            id="org.xtext.cradle.ui.CradleLaunchConfigurationTypeImage"/>
+   </extension>
+
+
+   <extension
+         point="org.eclipse.debug.ui.launchShortcuts">
+      <shortcut
+            class="org.xtext.cradle.ui.launch.CradleLaunchShortcut"
+            description="Launches a Cradle File"
+            icon="icons/cradlelaunch16.gif"
+            id="org.xtext.cradle.ui.launch.shortcut1"
+            label="Cradle Tasks"
+            modes="run, debug">
+          <contextualLaunch>
+           <enablement>
+             <with variable="selection">
+               <count value="1"/>
+               <iterate
+                     ifEmpty="false"
+                     operator="and">
+                  <adapt type="org.eclipse.core.resources.IFile"/>
+                    <test property="org.eclipse.debug.ui.matchesPattern"
+                          value="*.cradle"/>
+               </iterate>
+             </with>
+           </enablement>
+           <contextLabel
+              mode="run"
+              label="Cradle Task"/>
+          <contextLabel
+              mode="debug"
+              label="Cradle Task"/>
+         </contextualLaunch>
+      </shortcut>
+   </extension>
+  
 
 </plugin>
