@@ -20,6 +20,9 @@ import org.xtext.cradle.lib.impl.TaskSkippedException
 import org.xtext.cradle.lib.impl.TaskState
 
 import static extension org.xtext.cradle.TaskExtensions.*
+import org.eclipse.xtext.xbase.compiler.output.ITreeAppendable
+import org.eclipse.xtext.common.types.JvmTypeReference
+import java.io.File
 
 class CradleJvmModelInferrer extends AbstractModelInferrer {
 
@@ -90,7 +93,10 @@ class CradleJvmModelInferrer extends AbstractModelInferrer {
    							switch(dec) {
    								Parameter: {
 			   						append('''if("--«dec.name»".equals(args[index])) {''').increaseIndentation.newLine
-			   						append('''parameter.«dec.name» = args[++index];''')
+			   						append('''parameter.«dec.name» = ''')
+			   						val type = dec.type ?: typeProvider.getType(dec.init)
+			   						paramToStr(it, type, "args[++index]")
+			   						append(";")
 			   						decreaseIndentation.newLine.append("}")	 
    								}
    								Task: {
@@ -175,6 +181,7 @@ class CradleJvmModelInferrer extends AbstractModelInferrer {
 		   				]
 		   			]
 		   			members += task.toMethod(task.methodNameExecuteImpl, task.newTypeRef(Void::TYPE)) [
+		   				exceptions += task.newTypeRef(typeof(Throwable))
 		   				^static = true
 		   				visibility = JvmVisibility::PROTECTED
 		   				parameters += task.toParameter("it", newTypeRef(data))
@@ -194,5 +201,17 @@ class CradleJvmModelInferrer extends AbstractModelInferrer {
    	
    	def private getMethodNameExecute(Task task) {
    		"execute" + task.name.toFirstUpper
+   	}
+   	
+   	def private paramToStr(ITreeAppendable out, JvmTypeReference type, String name) {
+   		switch(type.qualifiedName) {
+   			case(typeof(String).name): 
+   				out.append(name)
+   			case(typeof(File).name): { 
+   				out.append("new ")
+   				serialize(type.newTypeRef(typeof(File)), type, out)
+   				out.append("(").append(name).append(")")
+   			}
+   		}
    	}
 }

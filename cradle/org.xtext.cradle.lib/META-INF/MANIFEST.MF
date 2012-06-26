@@ -8,4 +8,5 @@ Export-Package: org.xtext.cradle.lib,
  org.xtext.cradle.lib.impl
 Require-Bundle: org.eclipse.xtext.xbase.lib;bundle-version="2.3.0",
  org.eclipse.emf.mwe2.launch;bundle-version="2.3.0";resolution:=optional,
- org.eclipse.xtend.lib;bundle-version="2.3.0"
+ org.eclipse.xtend.lib;bundle-version="2.3.0",
+ org.eclipse.jdt.core;bundle-version="3.8.1"

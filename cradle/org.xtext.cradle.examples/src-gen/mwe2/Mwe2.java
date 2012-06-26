@@ -76,7 +76,7 @@ public class Mwe2 {
     }
   }
   
-  protected static void executeRunMwe2Impl(final Mwe2Params it) {
+  protected static void executeRunMwe2Impl(final Mwe2Params it) throws Throwable {
     File _workspace = Literals.workspace();
     final File file = FileExtensions.operator_divide(_workspace, "org.xtext.example.mydsl/src/org/xtext/example/mydsl/GenerateMyDsl.mwe2");
     Pair<String,String> _mappedTo = Pair.<String, String>of("file.extensions", "myfoobarextension");

@@ -87,7 +87,7 @@ public class files {
     }
   }
   
-  protected static void executeCountFileExtensionsImpl(final filesParams it) {
+  protected static void executeCountFileExtensionsImpl(final filesParams it) throws Throwable {
     final HashMap<String,Integer> counter = CollectionLiterals.<String, Integer>newHashMap();
     File _git = Literals.git();
     final Function1<File,Boolean> _function = new Function1<File,Boolean>() {

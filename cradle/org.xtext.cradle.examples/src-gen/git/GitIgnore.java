@@ -79,7 +79,7 @@ public class GitIgnore {
     }
   }
   
-  protected static void executeSetGitignoreImpl(final GitIgnoreParams it) {
+  protected static void executeSetGitignoreImpl(final GitIgnoreParams it) throws Throwable {
     File _git = Literals.git();
     List<File> _containedJavaProjects = FileExtensions.containedJavaProjects(_git);
     for (final File proj : _containedJavaProjects) {

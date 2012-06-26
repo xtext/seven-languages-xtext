@@ -80,7 +80,7 @@ public class Mwe2IfNeeded {
     }
   }
   
-  protected static void executeRunMwe2IfNeededImpl(final Mwe2IfNeededParams it) {
+  protected static void executeRunMwe2IfNeededImpl(final Mwe2IfNeededParams it) throws Throwable {
     File _workspace = Literals.workspace();
     final File myDSL = FileExtensions.operator_divide(_workspace, "org.xtext.example.mydsl");
     final File workflowFile = FileExtensions.operator_divide(myDSL, "src/org/xtext/example/mydsl/GenerateMyDsl.mwe2");

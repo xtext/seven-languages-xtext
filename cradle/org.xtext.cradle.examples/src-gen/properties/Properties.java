@@ -100,7 +100,7 @@ public class Properties {
     }
   }
   
-  protected static void executeSetJavaLineWrapImpl(final PropertiesParams it) {
+  protected static void executeSetJavaLineWrapImpl(final PropertiesParams it) throws Throwable {
     File _project = Literals.project();
     File _divide = FileExtensions.operator_divide(_project, ".settings/org.eclipse.jdt.core.prefs");
     final FileProperties jdtprefs = FileExtensions.loadAsProperties(_divide);
@@ -131,7 +131,7 @@ public class Properties {
     }
   }
   
-  protected static void executeSetEncodingImpl(final PropertiesParams it) {
+  protected static void executeSetEncodingImpl(final PropertiesParams it) throws Throwable {
     File _project = Literals.project();
     File _divide = FileExtensions.operator_divide(_project, ".settings/org.eclipse.core.resources.prefs");
     final FileProperties resprefs = FileExtensions.loadAsProperties(_divide);
@@ -162,7 +162,7 @@ public class Properties {
     }
   }
   
-  protected static void executeSetEncoding2Impl(final PropertiesParams it) {
+  protected static void executeSetEncoding2Impl(final PropertiesParams it) throws Throwable {
     File _project = Literals.project();
     File _divide = FileExtensions.operator_divide(_project, ".settings/org.eclipse.core.resources.prefs");
     final FileProperties resprefs = FileExtensions.loadAsProperties(_divide);
@@ -193,7 +193,7 @@ public class Properties {
     }
   }
   
-  protected static void executeSetAllEncoding1Impl(final PropertiesParams it) {
+  protected static void executeSetAllEncoding1Impl(final PropertiesParams it) throws Throwable {
     File _workspace = Literals.workspace();
     final List<File> projects = FileExtensions.containedJavaProjects(_workspace);
     final Function1<File,FileProperties> _function = new Function1<File,FileProperties>() {
@@ -241,7 +241,7 @@ public class Properties {
     }
   }
   
-  protected static void executeSetAllEncoding2Impl(final PropertiesParams it) {
+  protected static void executeSetAllEncoding2Impl(final PropertiesParams it) throws Throwable {
     File _workspace = Literals.workspace();
     List<File> _containedJavaProjects = FileExtensions.containedJavaProjects(_workspace);
     for (final File proj : _containedJavaProjects) {

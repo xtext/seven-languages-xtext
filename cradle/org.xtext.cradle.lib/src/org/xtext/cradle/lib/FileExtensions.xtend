@@ -167,5 +167,9 @@ public class FileExtensions {
 	def static fileExtension(File file) {
 		Strings::lastToken(file.name, ".")
 	}
+	
+	def static relativeTo(File target, File base) {
+		new File(base.absoluteFile.toURI.relativize(target.toURI).toString)
+	}
 
 }

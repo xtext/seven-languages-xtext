@@ -1,0 +1,31 @@
+package build
+
+param source =      project:/java-src
+param tmp =         project:/tmp
+param destination = project:/target/
+param jar =         "MyJarFile.jar"
+
+task Clean {
+	tmp.deleteDirectoryContents
+}
+
+task CompileAndZip dependsOn Clean {
+	val params = it
+	compileJava[
+		sources += params.source
+		destination = params.tmp
+	]
+	val files = tmp.containedFiles.toMap[relativeTo(params.tmp).path]
+	files.createJarFromFiles(destination/jar)
+}
+
+task Run dependsOn CompileAndZip {
+	val classpath = newClasspath(destination/jar)
+	val clazz = classpath.loadClass("org.eclipse.swt.snippets.Snippet50")
+	clazz.runMain()
+}
+
+
+
+
+

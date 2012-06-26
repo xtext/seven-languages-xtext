@@ -26,7 +26,7 @@ class CommandLineTest {
 		val backup = System::out
 		System::setOut(new PrintStream(out))
 		try {
-			TestUtil::runMain(clazz, cmdline.split(" "))
+			org::xtext::cradle::tests::RunUtil::runMain(clazz, cmdline.split(" "))
 		} finally {
 			System::setOut(backup)
 		}
@@ -74,6 +74,26 @@ class CommandLineTest {
 			} 
 		'''
 		file.assertExecute("Main", '''
+			running Pre...
+			success
+			running Main...
+			skipped: Skipped because digest is unchanged
+		''')
+	}
+	
+	@Test def testCompileJava() {
+		val file = '''
+			package foo
+			
+			task Compile {
+				val file = project:/src/org/xtext/cradle/tests/SimpleMain.java
+				compileJava [
+					sources += file
+					destination = project:/tmp/
+				]	
+			} 
+		'''
+		file.assertExecute("Compile", '''
 			running Pre...
 			success
 			running Main...

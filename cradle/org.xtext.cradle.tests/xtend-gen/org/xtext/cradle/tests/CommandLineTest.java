@@ -18,7 +18,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.xtext.cradle.CradleInjectorProvider;
-import org.xtext.cradle.tests.TestUtil;
+import org.xtext.cradle.tests.RunUtil;
 
 @RunWith(value = XtextRunner.class)
 @InjectWith(value = CradleInjectorProvider.class)
@@ -49,7 +49,7 @@ public class CommandLineTest {
       System.setOut(_printStream);
       try {
         String[] _split = cmdline.split(" ");
-        TestUtil.runMain(clazz, _split);
+        RunUtil.runMain(clazz, _split);
       } finally {
         System.setOut(backup);
       }
@@ -147,5 +147,43 @@ public class CommandLineTest {
     _builder_1.append("skipped: Skipped because digest is unchanged");
     _builder_1.newLine();
     this.assertExecute(file, "Main", _builder_1.toString());
+  }
+  
+  @Test
+  public void testCompileJava() {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("package foo");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("task Compile {");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("val file = project:/src/org/xtext/cradle/tests/SimpleMain.java");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("compileJava [");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("sources += file");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("destination = project:/tmp/");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("]\t");
+    _builder.newLine();
+    _builder.append("} ");
+    _builder.newLine();
+    final CharSequence file = _builder;
+    StringConcatenation _builder_1 = new StringConcatenation();
+    _builder_1.append("running Pre...");
+    _builder_1.newLine();
+    _builder_1.append("success");
+    _builder_1.newLine();
+    _builder_1.append("running Main...");
+    _builder_1.newLine();
+    _builder_1.append("skipped: Skipped because digest is unchanged");
+    _builder_1.newLine();
+    this.assertExecute(file, "Compile", _builder_1.toString());
   }
 }

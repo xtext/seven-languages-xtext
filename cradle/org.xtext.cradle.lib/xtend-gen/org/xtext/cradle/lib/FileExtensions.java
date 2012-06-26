@@ -356,4 +356,14 @@ public class FileExtensions {
     String _lastToken = Strings.lastToken(_name, ".");
     return _lastToken;
   }
+  
+  public static File relativeTo(final File target, final File base) {
+    File _absoluteFile = base.getAbsoluteFile();
+    URI _uRI = _absoluteFile.toURI();
+    URI _uRI_1 = target.toURI();
+    URI _relativize = _uRI.relativize(_uRI_1);
+    String _string = _relativize.toString();
+    File _file = new File(_string);
+    return _file;
+  }
 }

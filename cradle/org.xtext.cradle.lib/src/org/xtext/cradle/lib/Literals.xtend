@@ -7,6 +7,10 @@ import org.xtext.cradle.lib.impl.TaskState
 
 import static extension org.xtext.cradle.lib.FileExtensions.*
 import org.eclipse.xtext.xbase.lib.Procedures$Procedure1
+import java.util.Collection
+import org.eclipse.jdt.core.compiler.batch.BatchCompiler
+import java.io.PrintWriter
+import java.net.URLClassLoader
 
 class Literals {
 
@@ -48,6 +52,34 @@ class Literals {
 			TaskState::skipTask("Skipped because digest is unchanged");
 		TaskState::addTaskFinishListener[ msg, t | if(t==null) newDigest.saveAs(di.digest) ]
 	}
+	
+	def static void compileJava((JavaCompilerParams) => void init) {
+		val params = new JavaCompilerParams
+		init.apply(params)
+		val list = <String>newArrayList
+		if(params.destination == null) { 
+			list += "-d"
+			list += "none"
+		} else {
+			list += "-d"
+			list += params.destination.toString
+		}
+		if(!params.classpath.empty) {
+			list += "-classpath"
+			list += params.classpath.join(":")
+		}
+		list.addAll(params.sources.map[toString])
+		print("compiling Java files..."); // with options: "+list.join(" "))
+		val result = BatchCompiler::compile(list as String[], new PrintWriter(System::out), new PrintWriter(System::err), null)
+		if(result) 
+			println("success.")
+		else 
+			println("failed.")
+	}
+	
+	def static ClassLoader newClasspath(File ... entries) {
+		new URLClassLoader(entries.map[toURI.toURL])
+	}
 }
 
 class DigestInit {
@@ -58,3 +90,8 @@ class DigestInitFile extends DigestInit {
 	@Property File digest;
 }
 
+class JavaCompilerParams {
+	@Property Collection<File> sources = newArrayList()
+	@Property Collection<File> classpath = newArrayList()
+	@Property File destination; 
+}

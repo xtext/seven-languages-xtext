@@ -4,6 +4,7 @@ import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Sets;
 import com.google.inject.Inject;
+import java.io.File;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
@@ -251,8 +252,14 @@ public class CradleJvmModelInferrer extends AbstractModelInferrer {
                               _builder_9.append("parameter.");
                               String _name_2 = _parameter.getName();
                               _builder_9.append(_name_2, "");
-                              _builder_9.append(" = args[++index];");
+                              _builder_9.append(" = ");
                               it.append(_builder_9);
+                              JvmTypeReference _type = _parameter.getType();
+                              XExpression _init = _parameter.getInit();
+                              JvmTypeReference _type_1 = CradleJvmModelInferrer.this.typeProvider.getType(_init);
+                              final JvmTypeReference type = ObjectExtensions.<JvmTypeReference>operator_elvis(_type, _type_1);
+                              CradleJvmModelInferrer.this.paramToStr(it, type, "args[++index]");
+                              it.append(";");
                               ITreeAppendable _decreaseIndentation_2 = it.decreaseIndentation();
                               ITreeAppendable _newLine_3 = _decreaseIndentation_2.newLine();
                               _newLine_3.append("}");
@@ -527,11 +534,14 @@ public class CradleJvmModelInferrer extends AbstractModelInferrer {
               JvmTypeReference _newTypeRef_3 = CradleJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(task, Void.TYPE);
               final Procedure1<JvmOperation> _function_4 = new Procedure1<JvmOperation>() {
                   public void apply(final JvmOperation it) {
+                    EList<JvmTypeReference> _exceptions = it.getExceptions();
+                    JvmTypeReference _newTypeRef = CradleJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(task, Throwable.class);
+                    CradleJvmModelInferrer.this._jvmTypesBuilder.<JvmTypeReference>operator_add(_exceptions, _newTypeRef);
                     it.setStatic(true);
                     it.setVisibility(JvmVisibility.PROTECTED);
                     EList<JvmFormalParameter> _parameters = it.getParameters();
-                    JvmTypeReference _newTypeRef = CradleJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(data);
-                    JvmFormalParameter _parameter = CradleJvmModelInferrer.this._jvmTypesBuilder.toParameter(task, "it", _newTypeRef);
+                    JvmTypeReference _newTypeRef_1 = CradleJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(data);
+                    JvmFormalParameter _parameter = CradleJvmModelInferrer.this._jvmTypesBuilder.toParameter(task, "it", _newTypeRef_1);
                     CradleJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters, _parameter);
                     XExpression _action = task.getAction();
                     CradleJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _action);
@@ -565,6 +575,39 @@ public class CradleJvmModelInferrer extends AbstractModelInferrer {
     String _firstUpper = StringExtensions.toFirstUpper(_name);
     String _plus = ("execute" + _firstUpper);
     return _plus;
+  }
+  
+  private ITreeAppendable paramToStr(final ITreeAppendable out, final JvmTypeReference type, final String name) {
+    ITreeAppendable _switchResult = null;
+    String _qualifiedName = type.getQualifiedName();
+    final String _switchValue = _qualifiedName;
+    boolean _matched = false;
+    if (!_matched) {
+      String _name = String.class.getName();
+      if (Objects.equal(_switchValue,_name)) {
+        _matched=true;
+        ITreeAppendable _append = out.append(name);
+        _switchResult = _append;
+      }
+    }
+    if (!_matched) {
+      String _name_1 = File.class.getName();
+      if (Objects.equal(_switchValue,_name_1)) {
+        _matched=true;
+        ITreeAppendable _xblockexpression = null;
+        {
+          out.append("new ");
+          JvmTypeReference _newTypeRef = this._jvmTypesBuilder.newTypeRef(type, File.class);
+          this._typeReferenceSerializer.serialize(_newTypeRef, type, out);
+          ITreeAppendable _append_1 = out.append("(");
+          ITreeAppendable _append_2 = _append_1.append(name);
+          ITreeAppendable _append_3 = _append_2.append(")");
+          _xblockexpression = (_append_3);
+        }
+        _switchResult = _xblockexpression;
+      }
+    }
+    return _switchResult;
   }
   
   public void infer(final EObject element, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {

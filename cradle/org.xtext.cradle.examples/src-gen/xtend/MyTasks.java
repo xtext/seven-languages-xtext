@@ -85,7 +85,7 @@ public class MyTasks {
     }
   }
   
-  protected static void executePrerequisiteImpl(final MyTasksParams it) {
+  protected static void executePrerequisiteImpl(final MyTasksParams it) throws Throwable {
     InputOutput.<String>println("prerequisite");
   }
   
@@ -113,7 +113,7 @@ public class MyTasks {
     }
   }
   
-  protected static void executeMyTaskImpl(final MyTasksParams it) {
+  protected static void executeMyTaskImpl(final MyTasksParams it) throws Throwable {
     String _plus = ("Say: " + it.name);
     InputOutput.<String>println(_plus);
   }
