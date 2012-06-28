@@ -14,7 +14,6 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.common.types.JvmConstructor;
 import org.eclipse.xtext.common.types.JvmField;
@@ -561,8 +560,8 @@ public class TemplateJvmModelInferrer extends AbstractModelInferrer {
     if (_notEquals) {
       JvmFormalParameter _param_1 = stmt.getParam();
       JvmTypeReference _parameterType_1 = _param_1.getParameterType();
-      JvmTypeReference _copy = EcoreUtil.<JvmTypeReference>copy(_parameterType_1);
-      _xifexpression = _copy;
+      JvmTypeReference _cloneWithProxies = this._jvmTypesBuilder.cloneWithProxies(_parameterType_1);
+      _xifexpression = _cloneWithProxies;
     } else {
       JvmTypeReference _xblockexpression = null;
       {

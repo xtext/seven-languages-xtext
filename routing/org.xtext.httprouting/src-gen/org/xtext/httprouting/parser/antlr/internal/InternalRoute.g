@@ -178,7 +178,7 @@ ruleRoute returns [EObject current=null]
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getRouteAccess().getRequestTypeRequestTypeEnumRuleCall_0_0());
+	        newCompositeNode(grammarAccess.getRouteAccess().getRequestTypeRequestTypeEnumRuleCall_0_0()); 
 	    }
 		lv_requestType_0_0=ruleRequestType		{
 	        if ($current==null) {
@@ -186,9 +186,9 @@ ruleRoute returns [EObject current=null]
 	        }
        		set(
        			$current, 
-			"requestType",
-			lv_requestType_0_0,
-			"RequestType");
+       			"requestType",
+        		lv_requestType_0_0, 
+        		"RequestType");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5990,37 +5990,37 @@ ruleValidID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 
 
 // Rule RequestType
-ruleRequestType returns [Enumerator current=null]
+ruleRequestType returns [Enumerator current=null] 
     @init { enterRule(); }
     @after { leaveRule(); }:
 ((	enumLiteral_0='GET' 
 	{
         $current = grammarAccess.getRequestTypeAccess().getGETEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_0, grammarAccess.getRequestTypeAccess().getGETEnumLiteralDeclaration_0());
+        newLeafNode(enumLiteral_0, grammarAccess.getRequestTypeAccess().getGETEnumLiteralDeclaration_0()); 
     }
 )
     |(	enumLiteral_1='POST' 
 	{
         $current = grammarAccess.getRequestTypeAccess().getPOSTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_1, grammarAccess.getRequestTypeAccess().getPOSTEnumLiteralDeclaration_1());
+        newLeafNode(enumLiteral_1, grammarAccess.getRequestTypeAccess().getPOSTEnumLiteralDeclaration_1()); 
     }
 )
     |(	enumLiteral_2='PUT' 
 	{
         $current = grammarAccess.getRequestTypeAccess().getPUTEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_2, grammarAccess.getRequestTypeAccess().getPUTEnumLiteralDeclaration_2());
+        newLeafNode(enumLiteral_2, grammarAccess.getRequestTypeAccess().getPUTEnumLiteralDeclaration_2()); 
     }
 )
     |(	enumLiteral_3='DELETE' 
 	{
         $current = grammarAccess.getRequestTypeAccess().getDELETEEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_3, grammarAccess.getRequestTypeAccess().getDELETEEnumLiteralDeclaration_3());
+        newLeafNode(enumLiteral_3, grammarAccess.getRequestTypeAccess().getDELETEEnumLiteralDeclaration_3()); 
     }
 )
     |(	enumLiteral_4='HEAD' 
 	{
         $current = grammarAccess.getRequestTypeAccess().getHEADEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_4, grammarAccess.getRequestTypeAccess().getHEADEnumLiteralDeclaration_4());
+        newLeafNode(enumLiteral_4, grammarAccess.getRequestTypeAccess().getHEADEnumLiteralDeclaration_4()); 
     }
 ));
 

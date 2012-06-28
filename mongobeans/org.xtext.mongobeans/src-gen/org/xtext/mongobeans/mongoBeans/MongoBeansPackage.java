@@ -1,4 +1,7 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
  */
 package org.xtext.mongobeans.mongoBeans;
 

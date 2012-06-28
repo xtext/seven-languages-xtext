@@ -525,7 +525,7 @@ public class InternalRouteParser extends AbstractInternalAntlrParser {
             {
             if ( state.backtracking==0 ) {
                
-		        newCompositeNode(grammarAccess.getRouteAccess().getRequestTypeRequestTypeEnumRuleCall_0_0());
+              	        newCompositeNode(grammarAccess.getRouteAccess().getRequestTypeRequestTypeEnumRuleCall_0_0()); 
               	    
             }
             pushFollow(FOLLOW_ruleRequestType_in_ruleRoute352);
@@ -540,9 +540,9 @@ public class InternalRouteParser extends AbstractInternalAntlrParser {
               	        }
                      		set(
                      			current, 
-					"requestType",
-				lv_requestType_0_0,
-				"RequestType");
+                     			"requestType",
+                      		lv_requestType_0_0, 
+                      		"RequestType");
               	        afterParserOrEnumRuleCall();
               	    
             }
@@ -17494,7 +17494,7 @@ public class InternalRouteParser extends AbstractInternalAntlrParser {
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getRequestTypeAccess().getGETEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-                              newLeafNode(enumLiteral_0, grammarAccess.getRequestTypeAccess().getGETEnumLiteralDeclaration_0());
+                              newLeafNode(enumLiteral_0, grammarAccess.getRequestTypeAccess().getGETEnumLiteralDeclaration_0()); 
                           
                     }
 
@@ -17513,7 +17513,7 @@ public class InternalRouteParser extends AbstractInternalAntlrParser {
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getRequestTypeAccess().getPOSTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-                              newLeafNode(enumLiteral_1, grammarAccess.getRequestTypeAccess().getPOSTEnumLiteralDeclaration_1());
+                              newLeafNode(enumLiteral_1, grammarAccess.getRequestTypeAccess().getPOSTEnumLiteralDeclaration_1()); 
                           
                     }
 
@@ -17532,7 +17532,7 @@ public class InternalRouteParser extends AbstractInternalAntlrParser {
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getRequestTypeAccess().getPUTEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-                              newLeafNode(enumLiteral_2, grammarAccess.getRequestTypeAccess().getPUTEnumLiteralDeclaration_2());
+                              newLeafNode(enumLiteral_2, grammarAccess.getRequestTypeAccess().getPUTEnumLiteralDeclaration_2()); 
                           
                     }
 
@@ -17551,7 +17551,7 @@ public class InternalRouteParser extends AbstractInternalAntlrParser {
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getRequestTypeAccess().getDELETEEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
-                              newLeafNode(enumLiteral_3, grammarAccess.getRequestTypeAccess().getDELETEEnumLiteralDeclaration_3());
+                              newLeafNode(enumLiteral_3, grammarAccess.getRequestTypeAccess().getDELETEEnumLiteralDeclaration_3()); 
                           
                     }
 
@@ -17570,7 +17570,7 @@ public class InternalRouteParser extends AbstractInternalAntlrParser {
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getRequestTypeAccess().getHEADEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
-                              newLeafNode(enumLiteral_4, grammarAccess.getRequestTypeAccess().getHEADEnumLiteralDeclaration_4());
+                              newLeafNode(enumLiteral_4, grammarAccess.getRequestTypeAccess().getHEADEnumLiteralDeclaration_4()); 
                           
                     }
 

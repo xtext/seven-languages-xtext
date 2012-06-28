@@ -1,4 +1,7 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
  */
 package org.xtext.guicemodules.guiceModules.impl;
 

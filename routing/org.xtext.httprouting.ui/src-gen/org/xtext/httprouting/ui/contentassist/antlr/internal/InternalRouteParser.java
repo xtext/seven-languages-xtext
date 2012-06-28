@@ -6708,7 +6708,7 @@ public class InternalRouteParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:2249:1: ( rule__RequestType__Alternatives )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getRequestTypeAccess().getAlternatives());
+               before(grammarAccess.getRequestTypeAccess().getAlternatives()); 
             }
             // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:2250:1: ( rule__RequestType__Alternatives )
             // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:2250:2: rule__RequestType__Alternatives
@@ -6722,7 +6722,7 @@ public class InternalRouteParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getRequestTypeAccess().getAlternatives());
+               after(grammarAccess.getRequestTypeAccess().getAlternatives()); 
             }
 
             }
@@ -11291,7 +11291,7 @@ public class InternalRouteParser extends AbstractInternalContentAssistParser {
                     // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3334:1: ( 'GET' )
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getRequestTypeAccess().getGETEnumLiteralDeclaration_0());
+                       before(grammarAccess.getRequestTypeAccess().getGETEnumLiteralDeclaration_0()); 
                     }
                     // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3335:1: ( 'GET' )
                     // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3335:3: 'GET'
@@ -11301,7 +11301,7 @@ public class InternalRouteParser extends AbstractInternalContentAssistParser {
                     }
 
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getRequestTypeAccess().getGETEnumLiteralDeclaration_0());
+                       after(grammarAccess.getRequestTypeAccess().getGETEnumLiteralDeclaration_0()); 
                     }
 
                     }
@@ -11316,7 +11316,7 @@ public class InternalRouteParser extends AbstractInternalContentAssistParser {
                     // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3341:1: ( 'POST' )
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getRequestTypeAccess().getPOSTEnumLiteralDeclaration_1());
+                       before(grammarAccess.getRequestTypeAccess().getPOSTEnumLiteralDeclaration_1()); 
                     }
                     // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3342:1: ( 'POST' )
                     // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3342:3: 'POST'
@@ -11326,7 +11326,7 @@ public class InternalRouteParser extends AbstractInternalContentAssistParser {
                     }
 
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getRequestTypeAccess().getPOSTEnumLiteralDeclaration_1());
+                       after(grammarAccess.getRequestTypeAccess().getPOSTEnumLiteralDeclaration_1()); 
                     }
 
                     }
@@ -11341,7 +11341,7 @@ public class InternalRouteParser extends AbstractInternalContentAssistParser {
                     // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3348:1: ( 'PUT' )
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getRequestTypeAccess().getPUTEnumLiteralDeclaration_2());
+                       before(grammarAccess.getRequestTypeAccess().getPUTEnumLiteralDeclaration_2()); 
                     }
                     // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3349:1: ( 'PUT' )
                     // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3349:3: 'PUT'
@@ -11351,7 +11351,7 @@ public class InternalRouteParser extends AbstractInternalContentAssistParser {
                     }
 
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getRequestTypeAccess().getPUTEnumLiteralDeclaration_2());
+                       after(grammarAccess.getRequestTypeAccess().getPUTEnumLiteralDeclaration_2()); 
                     }
 
                     }
@@ -11366,7 +11366,7 @@ public class InternalRouteParser extends AbstractInternalContentAssistParser {
                     // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3355:1: ( 'DELETE' )
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getRequestTypeAccess().getDELETEEnumLiteralDeclaration_3());
+                       before(grammarAccess.getRequestTypeAccess().getDELETEEnumLiteralDeclaration_3()); 
                     }
                     // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3356:1: ( 'DELETE' )
                     // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3356:3: 'DELETE'
@@ -11376,7 +11376,7 @@ public class InternalRouteParser extends AbstractInternalContentAssistParser {
                     }
 
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getRequestTypeAccess().getDELETEEnumLiteralDeclaration_3());
+                       after(grammarAccess.getRequestTypeAccess().getDELETEEnumLiteralDeclaration_3()); 
                     }
 
                     }
@@ -11391,7 +11391,7 @@ public class InternalRouteParser extends AbstractInternalContentAssistParser {
                     // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3362:1: ( 'HEAD' )
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getRequestTypeAccess().getHEADEnumLiteralDeclaration_4());
+                       before(grammarAccess.getRequestTypeAccess().getHEADEnumLiteralDeclaration_4()); 
                     }
                     // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3363:1: ( 'HEAD' )
                     // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3363:3: 'HEAD'
@@ -11401,7 +11401,7 @@ public class InternalRouteParser extends AbstractInternalContentAssistParser {
                     }
 
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getRequestTypeAccess().getHEADEnumLiteralDeclaration_4());
+                       after(grammarAccess.getRequestTypeAccess().getHEADEnumLiteralDeclaration_4()); 
                     }
 
                     }
@@ -11850,7 +11850,7 @@ public class InternalRouteParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3517:1: ( rule__Route__RequestTypeAssignment_0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getRouteAccess().getRequestTypeAssignment_0());
+               before(grammarAccess.getRouteAccess().getRequestTypeAssignment_0()); 
             }
             // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3518:1: ( rule__Route__RequestTypeAssignment_0 )
             // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:3518:2: rule__Route__RequestTypeAssignment_0
@@ -11864,7 +11864,7 @@ public class InternalRouteParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getRouteAccess().getRequestTypeAssignment_0());
+               after(grammarAccess.getRouteAccess().getRequestTypeAssignment_0()); 
             }
 
             }
@@ -47796,7 +47796,7 @@ public class InternalRouteParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:16609:1: ruleRequestType
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getRouteAccess().getRequestTypeRequestTypeEnumRuleCall_0_0());
+               before(grammarAccess.getRouteAccess().getRequestTypeRequestTypeEnumRuleCall_0_0()); 
             }
             pushFollow(FOLLOW_ruleRequestType_in_rule__Route__RequestTypeAssignment_033399);
             ruleRequestType();
@@ -47804,7 +47804,7 @@ public class InternalRouteParser extends AbstractInternalContentAssistParser {
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getRouteAccess().getRequestTypeRequestTypeEnumRuleCall_0_0());
+               after(grammarAccess.getRouteAccess().getRequestTypeRequestTypeEnumRuleCall_0_0()); 
             }
 
             }

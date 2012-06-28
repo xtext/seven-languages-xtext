@@ -1,4 +1,7 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
  */
 package org.xtext.httprouting.route;
 
@@ -300,5 +303,5 @@ public enum RequestType implements Enumerator
   {
     return literal;
   }
-
+  
 } //RequestType

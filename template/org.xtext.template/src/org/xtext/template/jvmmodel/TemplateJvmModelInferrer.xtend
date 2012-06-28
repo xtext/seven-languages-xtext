@@ -27,7 +27,6 @@ import org.xtext.template.template.IfStmtBody
 import org.xtext.template.template.TemplateFile
 import org.xtext.template.template.TextStmt
 
-import static extension org.eclipse.emf.ecore.util.EcoreUtil.*
 import org.eclipse.xtext.common.types.JvmParameterizedTypeReference
 
 /**
@@ -229,7 +228,7 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
 	
 	def getParameterType(ForStmt stmt) {
 		if(stmt.param.parameterType != null)
-			stmt.param.parameterType.copy
+			stmt.param.parameterType.cloneWithProxies
 		else {
 			val type = stmt.source.getType()
 			if(type instanceof JvmParameterizedTypeReference)
