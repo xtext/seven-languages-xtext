@@ -2,7 +2,7 @@
 <rm:rmap xmlns:bc="http://www.eclipse.org/buckminster/Common-1.0" xmlns:rm="http://www.eclipse.org/buckminster/RMap-1.0">
   <rm:property key="projects.location" value="${workspace.root}"/>
   <rm:locator pattern="^org.xtext.seven(?:\..+)?$" searchPathRef="releng"/>
-  <rm:locator pattern="^org.xtext.cradle(?:\..+)?$" searchPathRef="cradle"/>
+  <rm:locator pattern="^org.xtext.builddsl(?:\..+)?$" searchPathRef="builddsl"/>
   <rm:locator pattern="^org.xtext.guicemodules(?:\..+)?$" searchPathRef="guicemodules"/>
   <rm:locator pattern="^org.xtext.httprouting(?:\..+)?$" searchPathRef="httprouting"/>
   <rm:locator pattern="^org.xtext.mongobeans(?:\..+)?$" searchPathRef="mongobeans"/>
@@ -19,10 +19,10 @@
       </rm:uri>
     </rm:provider>
   </rm:searchPath>
-  <rm:searchPath name="cradle">
+  <rm:searchPath name="builddsl">
     <rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="local" mutable="false">
       <rm:property key="buckminster.mutable" value="false"/>
-      <rm:uri format="{0}/cradle/{1}">
+      <rm:uri format="{0}/builddsl/{1}">
         <bc:propertyRef key="projects.location"/>
         <bc:propertyRef key="buckminster.component"/>
       </rm:uri>

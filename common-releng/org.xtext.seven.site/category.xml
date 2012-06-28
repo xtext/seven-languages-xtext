@@ -3,7 +3,7 @@
    <feature id="org.xtext.mongobeans.sdk" version="0.0.0">
       <category name="main"/>
    </feature>
-   <feature id="org.xtext.cradle.sdk" version="1.0.0.qualifier">
+   <feature id="org.xtext.builddsl.sdk" version="1.0.0.qualifier">
       <category name="main"/>
    </feature>
    <feature id="org.xtext.httprouting.sdk" version="1.0.0.qualifier">
@@ -24,7 +24,7 @@
    <feature id="org.xtext.mongobeans.sdk.source" version="0.0.0">
       <category name="main.source"/>
    </feature>
-   <feature id="org.xtext.cradle.sdk.source" version="1.0.0.qualifier">
+   <feature id="org.xtext.builddsl.sdk.source" version="1.0.0.qualifier">
       <category name="main.source"/>
    </feature>
    <feature id="org.xtext.guicemodules.sdk.source" version="1.0.0.qualifier">
