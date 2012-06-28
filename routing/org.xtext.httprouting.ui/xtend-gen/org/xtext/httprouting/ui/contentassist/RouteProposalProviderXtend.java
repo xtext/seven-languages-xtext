@@ -45,7 +45,7 @@ public class RouteProposalProviderXtend extends AbstractRouteProposalProvider {
     Predicate<IEObjectDescription> _featureDescriptionPredicate = this.getFeatureDescriptionPredicate(context);
     _crossReferenceProposalCreator.lookupCrossReference(scope, model, Literals.XABSTRACT_FEATURE_CALL__FEATURE, acceptor, _featureDescriptionPredicate, proposalFactory);
   }
-
+  
   public Predicate<IEObjectDescription> getFeatureDescriptionPredicate(final ContentAssistContext contentAssistContext) {
     String _prefix = contentAssistContext.getPrefix();
     boolean _startsWith = _prefix.startsWith("_");

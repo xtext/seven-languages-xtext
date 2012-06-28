@@ -10,11 +10,11 @@ public class RouteOutlineTreeProvider extends DefaultOutlineTreeProvider {
   public boolean _isLeaf(final XExpression expr) {
     return true;
   }
-
+  
   public boolean _isLeaf(final Key key) {
     return true;
   }
-
+  
   public boolean _isLeaf(final Condition condition) {
     return true;
   }

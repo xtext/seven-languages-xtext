@@ -19,7 +19,7 @@ public class RouteLabelProvider extends XbaseLabelProvider {
   public RouteLabelProvider(final AdapterFactoryLabelProvider delegate) {
     super(delegate);
   }
-
+  
   public String text(final Route route) {
     RequestType _requestType = route.getRequestType();
     String result = _requestType.getName();
@@ -34,38 +34,38 @@ public class RouteLabelProvider extends XbaseLabelProvider {
     }
     return result;
   }
-
+  
   public String text(final Variable v) {
     return v.getName();
   }
-
+  
   public Object image(final Variable v) {
     return null;
   }
-
+  
   public String text(final URL url) {
     final ICompositeNode node = NodeModelUtils.getNode(url);
     return node.getText();
   }
-
+  
   public Object image(final URL url) {
     return null;
   }
-
+  
   public String text(final Key key) {
     final ICompositeNode node = NodeModelUtils.getNode(key);
     return node.getText();
   }
-
+  
   public Object image(final Key key) {
     return null;
   }
-
+  
   public String text(final Condition condition) {
     final ICompositeNode node = NodeModelUtils.getNode(condition);
     return node.getText();
   }
-
+  
   public Object image(final Condition cond) {
     return null;
   }

@@ -32,7 +32,7 @@ public class RouteJavaValidator extends XbaseWithAnnotationsJavaValidator {
     result.add(XtypePackage.eINSTANCE);
     return result;
   }
-
+  
   @Check
   public void checkVariables(final Route route) {
     final URL url = route.getUrl();
@@ -44,7 +44,7 @@ public class RouteJavaValidator extends XbaseWithAnnotationsJavaValidator {
         {
           if (wildCard) {
             int _minus = (-1);
-            this.error("A placeholder should not be placed after a wildcard", variable,
+            this.error("A placeholder should not be placed after a wildcard", variable, 
               Literals.VARIABLE__NAME, _minus);
           }
           boolean _and = false;
