@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.xtext.template
-Bundle-Vendor: My Company
+Bundle-Vendor: Eclipse Modeling Project
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: org.xtext.template; singleton:=true
 Bundle-ActivationPolicy: lazy
@@ -19,7 +19,7 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.eclipse.xtext.common.types,
  org.eclipse.xtext.xbase.lib
 Import-Package: org.apache.log4j
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.xtext.template,
  org.xtext.template.services,
  org.xtext.template.serializer,

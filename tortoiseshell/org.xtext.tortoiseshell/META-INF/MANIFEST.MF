@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.xtext.tortoiseshell
-Bundle-Vendor: My Company
+Bundle-Vendor: Eclipse Modeling Project
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: org.xtext.tortoiseshell; singleton:=true
 Bundle-ActivationPolicy: lazy
@@ -20,7 +20,7 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.eclipse.xtext.xbase.lib,
  org.xtext.tortoiseshell.runtime;bundle-version="1.0.0";visibility:=reexport
 Import-Package: org.apache.log4j
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.xtext.tortoiseshell,
  org.xtext.tortoiseshell.services,
  org.xtext.tortoiseshell.tortoiseShell,

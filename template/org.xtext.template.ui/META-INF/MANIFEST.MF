@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.xtext.template.ui
-Bundle-Vendor: My Company
+Bundle-Vendor: Eclipse Modeling Project
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: org.xtext.template.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
@@ -18,7 +18,7 @@ Require-Bundle: org.xtext.template;visibility:=reexport,
  org.eclipse.xtext.ui.codetemplates.ui,
  org.eclipse.compare
 Import-Package: org.apache.log4j
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.xtext.template.ui.contentassist,
  org.xtext.template.ui.contentassist.antlr,
  org.xtext.template.ui.internal

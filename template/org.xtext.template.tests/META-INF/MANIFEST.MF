@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.xtext.template.tests
-Bundle-Vendor: My Company
+Bundle-Vendor: Eclipse Modeling Project
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: org.xtext.template.tests; singleton:=true
 Bundle-ActivationPolicy: lazy
@@ -23,5 +23,5 @@ Import-Package: org.apache.log4j,
  org.junit.runners;version="4.5.0",
  org.junit.runners.model;version="4.5.0",
  org.hamcrest.core
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.xtext.template
