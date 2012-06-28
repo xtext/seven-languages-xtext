@@ -106,7 +106,7 @@ public class FileExtensions {
 			f = f.getParentFile();
 		}
 		if(errorMessage != null)
-			throw new IllegalStateException('''ÇerrorMessageÈ No parent directory of "Çfile.absoluteFileÈ" contains 'ÇstringÈ'.''')
+			throw new IllegalStateException('''Â«errorMessageÂ» No parent directory of "Â«file.absoluteFileÂ»" contains 'Â«stringÂ»'.''')
 		return null;
 	}
 
