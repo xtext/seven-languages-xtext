@@ -1,0 +1,30 @@
+module CompileBuildExamples
+
+import org.eclipse.emf.mwe.utils.*
+import org.xtext.builddsl.BuildDSLStandaloneSetup
+
+Workflow {
+	
+	component = DirectoryCleaner {
+		directory = "src-gen"
+	}
+
+	component = org.eclipse.xtext.mwe.Reader {
+//		useJavaClassPath = true
+
+		path = "src"
+		register = BuildDSLStandaloneSetup {}
+		loadResource = {
+			slot = "model"
+			uri = ".*\\.build"
+		}
+	}
+
+	component = org.eclipse.xtext.generator.GeneratorComponent {
+		register = BuildDSLStandaloneSetup {}
+		slot = 'model'
+		outlet = {
+			path = "src-gen"
+		}
+	}
+}

@@ -1,0 +1,36 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.builddsl
+Bundle-Vendor: Eclipse Modeling Project
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.builddsl;singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext;bundle-version="2.3.0";visibility:=reexport,
+ org.eclipse.xtext.xbase;bundle-version="2.3.0";resolution:=optional;visibility:=reexport,
+ org.eclipse.xtext.generator;resolution:=optional,
+ org.eclipse.emf.codegen.ecore;resolution:=optional,
+ org.eclipse.emf.mwe.utils;resolution:=optional,
+ org.eclipse.emf.mwe2.launch;resolution:=optional,
+ org.eclipse.xtext.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types,
+ org.eclipse.xtext.xbase.lib,
+ org.xtext.builddsl.lib
+Import-Package: org.apache.log4j,
+ org.apache.commons.logging
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.xtext.builddsl,
+ org.xtext.builddsl.build,
+ org.xtext.builddsl.build.impl,
+ org.xtext.builddsl.build.util,
+ org.xtext.builddsl.jvmmodel,
+ org.xtext.builddsl.parser.antlr,
+ org.xtext.builddsl.parser.antlr.internal,
+ org.xtext.builddsl.scoping,
+ org.xtext.builddsl.serializer,
+ org.xtext.builddsl.services,
+ org.xtext.builddsl.validation,
+ org.xtext.builddsl.valueconversion
+
