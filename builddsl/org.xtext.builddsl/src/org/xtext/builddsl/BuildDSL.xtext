@@ -1,7 +1,5 @@
 grammar org.xtext.builddsl.BuildDSL with org.eclipse.xtext.xbase.Xbase
 
-import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
-import "http://www.eclipse.org/xtext/common/JavaVMTypes" as types
 generate build "http://www.xtext.org/builddsl"
 
 BuildFile:
@@ -13,7 +11,7 @@ ImportDeclaration:
 	'import' importedNamespace=QualifiedNameWithWildCard;
 
 QualifiedNameWithWildCard:
-	ID ('.' ID)* '.*'?;
+	QualifiedName '.*'?;
 
 Declaration:
 	Task | Parameter;
@@ -22,59 +20,5 @@ Parameter:
 	'param' type=JvmTypeReference? name=ValidID ('=' init=XExpression)?;
 
 Task:
-	'task' name=ValidID ('dependsOn' dependsOn+=[Task|ID] (',' dependsOn+=[Task|ID])*)?
+	'task' name=ValidID ('dependsOn' dependsOn+=[Task|QualifiedName] (',' dependsOn+=[Task|QualifiedName])*)?
 	action=XBlockExpression;
-	
-//
-//XMemberFeatureCall returns xbase::XExpression:
-//	XPrimaryExpression
-//	(=>({xbase::XAssignment.assignable=current} '.' feature=[types::JvmIdentifiableElement|ValidID] OpSingleAssign) value=XAssignment
-//	|=>(
-//		{xbase::XBinaryOperation.leftOperand=current} rightOperand=NavigationLiteral
-//		=>(
-//			{xbase::XMemberFeatureCall.memberCallTarget=current} 
-//			('<' typeArguments+=JvmArgumentTypeReference (',' typeArguments+=JvmArgumentTypeReference)* '>')?  
-//			feature=[types::JvmIdentifiableElement|ValidID] (
-//				=>explicitOperationCall?='(' 
-//					(
-//					    memberCallArguments+=XShortClosure
-//					  |	memberCallArguments+=XExpression (',' memberCallArguments+=XExpression)*
-//					)? 
-//				')')?
-//				memberCallArguments+=XClosure?
-//		)?
-//	)
-//	|=>({xbase::XMemberFeatureCall.memberCallTarget=current} ("."|nullSafe?="?."|spreading?="*.")) 
-//		('<' typeArguments+=JvmArgumentTypeReference (',' typeArguments+=JvmArgumentTypeReference)* '>')?  
-//		feature=[types::JvmIdentifiableElement|ValidID] (
-//			=>explicitOperationCall?='(' 
-//				(
-//				    memberCallArguments+=XShortClosure
-//				  |	memberCallArguments+=XExpression (',' memberCallArguments+=XExpression)*
-//				)? 
-//			')')?
-//			memberCallArguments+=XClosure?
-//		)*;
-		
-XMemberFeatureCall returns xbase::XExpression:
-	XPrimaryExpression
-	(=>({xbase::XAssignment.assignable=current} '.' feature=[types::JvmIdentifiableElement|ValidID] OpSingleAssign) value=XAssignment
-	|=>({xbase::XBinaryOperation.leftOperand=current} rightOperand=NavigationLiteral)
-	|=>({xbase::XMemberFeatureCall.memberCallTarget=current} ("."|nullSafe?="?."|spreading?="*.")) 
-		('<' typeArguments+=JvmArgumentTypeReference (',' typeArguments+=JvmArgumentTypeReference)* '>')?  
-		feature=[types::JvmIdentifiableElement|ValidID] (
-			=>explicitOperationCall?='(' 
-				(
-				    memberCallArguments+=XShortClosure
-				  |	memberCallArguments+=XExpression (',' memberCallArguments+=XExpression)*
-				)? 
-			')')?
-			memberCallArguments+=XClosure?
-		)*;
-		
-
-NavigationLiteral returns xbase::XExpression:
-	{xbase::XStringLiteral} value=FILE;
-
-terminal FILE:
-	':/' !(':' | '\n' | '\r')* (':' | '\r'? '\n');

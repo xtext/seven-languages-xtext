@@ -3,17 +3,13 @@ package org.xtext.builddsl.lib;
 import com.google.common.base.Objects;
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
-import com.google.inject.Injector;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.net.URI;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.eclipse.emf.mwe2.language.Mwe2StandaloneSetup;
-import org.eclipse.emf.mwe2.launch.runtime.Mwe2Runner;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.util.Strings;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
@@ -21,10 +17,7 @@ import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
-import org.eclipse.xtext.xbase.lib.Pair;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
-import org.xtext.builddsl.lib.impl.Digest;
-import org.xtext.builddsl.lib.impl.FileProperties;
 
 @SuppressWarnings("all")
 public class FileExtensions {
@@ -278,21 +271,6 @@ public class FileExtensions {
     return _containingFolderWithFile;
   }
   
-  public static Digest loadAsDigest(final File file) {
-    Digest _digest = new Digest();
-    final Digest result = _digest;
-    boolean _exists = file.exists();
-    if (_exists) {
-      result.load(file);
-    }
-    return result;
-  }
-  
-  public static FileProperties loadAsProperties(final File file) {
-    FileProperties _fileProperties = new FileProperties(file);
-    return _fileProperties;
-  }
-  
   public static Predicate<File> operator_and(final Predicate<File> left, final Predicate<File> right) {
     Predicate<File> _and = Predicates.<File>and(left, right);
     return _and;
@@ -310,16 +288,6 @@ public class FileExtensions {
     URI _resolve = _uRI.resolve(name);
     File _file = new File(_resolve);
     return _file;
-  }
-  
-  public static void runAsMwe2Workflow(final File file, final Pair<String,String>... args) {
-    Mwe2StandaloneSetup _mwe2StandaloneSetup = new Mwe2StandaloneSetup();
-    final Injector injector = _mwe2StandaloneSetup.createInjectorAndDoEMFRegistration();
-    final Mwe2Runner runner = injector.<Mwe2Runner>getInstance(Mwe2Runner.class);
-    String _absolutePath = file.getAbsolutePath();
-    org.eclipse.emf.common.util.URI _createFileURI = org.eclipse.emf.common.util.URI.createFileURI(_absolutePath);
-    HashMap<String,String> _newHashMap = CollectionLiterals.<String, String>newHashMap(args);
-    runner.run(_createFileURI, _newHashMap);
   }
   
   public static void setFileContents(final File file, final String contents) {

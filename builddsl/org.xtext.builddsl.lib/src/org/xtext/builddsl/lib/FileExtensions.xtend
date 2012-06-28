@@ -2,19 +2,13 @@ package org.xtext.builddsl.lib
 
 import com.google.common.base.Predicate
 import java.io.File
-import java.util.regex.Pattern
+import java.io.FileOutputStream
 import java.util.List
-import org.xtext.builddsl.lib.impl.Digest
-import org.xtext.builddsl.lib.impl.FileProperties
-import org.eclipse.emf.mwe2.language.Mwe2StandaloneSetup
-import org.eclipse.emf.mwe2.launch.runtime.Mwe2Runner
-import org.eclipse.xtext.xbase.lib.Pair
-import org.eclipse.emf.common.util.URI
+import java.util.regex.Pattern
+import org.eclipse.xtext.util.Strings
 
 import static extension com.google.common.base.Predicates.*
 import static extension org.xtext.builddsl.lib.FileExtensions.*
-import java.io.FileOutputStream
-import org.eclipse.xtext.util.Strings
 
 public class FileExtensions {
 	
@@ -122,17 +116,6 @@ public class FileExtensions {
 		containingFolderWithFile(file, ".metadata", "No Eclipse Workspace found.");
 	}
 
-	def static loadAsDigest(File file) {
-		val result = new Digest();
-		if (file.exists())
-			result.load(file);
-		return result;
-	}
-
-	def static loadAsProperties(File file) {
-		return new FileProperties(file);
-	}
-
 	def static Predicate<File> operator_and(Predicate<File> left, Predicate<File> right) {
 		left.and(right)	
 	}
@@ -143,12 +126,6 @@ public class FileExtensions {
 		return new File(file.toURI().resolve(name));
 	}
 
-	def static void runAsMwe2Workflow(File file, Pair<String, String>... args) {
-		val injector = new Mwe2StandaloneSetup().createInjectorAndDoEMFRegistration();
-		val runner = injector.getInstance(typeof(Mwe2Runner));
-		runner.run(URI::createFileURI(file.getAbsolutePath()), newHashMap(args));
-	}
-	
 	def static setFileContents(File file, String contents) {
 		val out = new FileOutputStream(file)
 		try {

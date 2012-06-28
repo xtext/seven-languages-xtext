@@ -1,25 +1,27 @@
 package build
 
-param source =      project:/java-src
-param tmp =         project:/tmp
-param destination = project:/target/
-param jar =         "MyJarFile.jar"
+param java.io.File source
+param java.io.File tmp
+param java.io.File destination
+param String jar
 
 task Clean {
 	tmp.deleteDirectoryContents
 }
 
-task CompileAndZip dependsOn Clean {
-	val params = it
-	compileJava[
-		sources += params.source
-		destination = params.tmp
-	]
-	val files = tmp.containedFiles.toMap[relativeTo(params.tmp).path]
+task Zip dependsOn Compile {
+	val files = tmp.containedFiles.toMap[relativeTo(tmp).path]
 	files.createJarFromFiles(destination/jar)
 }
 
-task Run dependsOn CompileAndZip {
+task Compile dependsOn Clean {
+	compileJava[
+		sources += source
+		destination = tmp
+	]
+}
+
+task Run dependsOn Zip {
 	val classpath = newClasspath(destination/jar)
 	val clazz = classpath.loadClass("org.eclipse.swt.snippets.Snippet50")
 	clazz.runMain()

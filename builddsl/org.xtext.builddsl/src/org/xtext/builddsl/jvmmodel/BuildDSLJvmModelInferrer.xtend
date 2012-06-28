@@ -1,26 +1,24 @@
 package org.xtext.builddsl.jvmmodel
 
+import com.google.common.collect.Sets
 import com.google.inject.Inject
+import java.io.File
+import java.util.Set
+import org.eclipse.xtext.common.types.JvmDeclaredType
+import org.eclipse.xtext.common.types.JvmOperation
+import org.eclipse.xtext.common.types.JvmTypeReference
+import org.eclipse.xtext.common.types.JvmVisibility
+import org.eclipse.xtext.util.Strings
+import org.eclipse.xtext.xbase.compiler.TypeReferenceSerializer
+import org.eclipse.xtext.xbase.compiler.output.ITreeAppendable
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
-import org.xtext.builddsl.build.BuildFile
 import org.eclipse.xtext.xbase.typing.ITypeProvider
-import org.eclipse.xtext.xbase.compiler.TypeReferenceSerializer
-import org.eclipse.xtext.common.types.util.TypeReferences
+import org.xtext.builddsl.build.BuildFile
 import org.xtext.builddsl.build.Parameter
-import org.eclipse.xtext.common.types.JvmVisibility
 import org.xtext.builddsl.build.Task
-import org.eclipse.xtext.util.Strings
-import java.util.Set
-import com.google.common.collect.Sets
-import org.eclipse.xtext.xbase.lib.Procedures
-import org.xtext.builddsl.lib.impl.TaskState
-import org.xtext.builddsl.lib.impl.TaskSkippedException
-import org.eclipse.xtext.xbase.lib.Exceptions
-import org.eclipse.xtext.xbase.compiler.output.ITreeAppendable
-import org.eclipse.xtext.common.types.JvmTypeReference
-import java.io.File
+import org.xtext.builddsl.lib.BuildScript
 
 import static extension org.xtext.builddsl.TaskExtensions.*
 
@@ -35,71 +33,83 @@ class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
 	@Inject extension JvmTypesBuilder
 	@Inject ITypeProvider typeProvider
 	@Inject extension TypeReferenceSerializer
-	@Inject extension TypeReferences
 
-   	def dispatch void infer(BuildFile element, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
-   		val fqn = element.javaClassName
-   		val name = Strings::lastToken(fqn, ".")
-   		acceptor.accept(element.toClass(fqn))
-   			.initializeLater([
-   				val data = element.toClass(name + "Params") [
-   					^static = true
-   					members += element.toConstructor[]
-	   				for (param : element.declarations.filter(typeof(Parameter))) {
-	   					val type = param.type ?: typeProvider.getType(param.init)
-	   					members += param.toField(param.name, type) [
-	   						visibility = JvmVisibility::PUBLIC
-	   						if (param.init != null)
-	   							initializer = param.init
-	   					]
-	   				}
-   				]
-   				members += data
-   				
-   				members += element.toMethod("main", element.newTypeRef(Void::TYPE)) [
-   					parameters += element.toParameter("args", element.newTypeRef(typeof(String)).addArrayTypeDimension)
-   					^static = true
+   	def dispatch void infer(BuildFile file, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+   		val fqn = file.javaClassName
+   		val scriptName = Strings::lastToken(fqn, ".")
+   		acceptor.accept(file.toClass(fqn)).initializeLater [
+   				superTypes += file.newTypeRef(typeof(BuildScript))
+   				val tasks = file.tasks.sortBy [ name ]
+				val declaredParameters = file.parameters.sortBy [ name ]
+				
+				for (declaredParameter : declaredParameters) {
+   					val type = declaredParameter.type ?: typeProvider.getType(declaredParameter.init)
+   					members += declaredParameter.toField(declaredParameter.name, type) [
+   						visibility = JvmVisibility::PUBLIC
+   						if (declaredParameter.init != null)
+   							initializer = declaredParameter.init
+   					]
+   				}
+				
+				val stringArray = file.newTypeRef(typeof(String)).addArrayTypeDimension
+   				overrideMethod("getScriptName", file.newTypeRef(typeof(String)), file) [
    					body = [
-   						val tasks = element.declarations.filter(typeof(Task)).toList
-   						val params = element.declarations.filter(typeof(Parameter)).toList
-   						append("int index = 0;").newLine
-   						append("while(args.length == 0 || index < args.length) {").increaseIndentation.newLine
-   						append('''if(args.length == 0 || "--help".equals(args[index]) ||  "-h".equals(args[index])) {''').increaseIndentation.newLine
-   						append('''System.out.println("Build '«element.eResource.URI.trimFileExtension.lastSegment»'");''').newLine
-   						append('''System.out.println();''').newLine
-   						append('''System.out.println("Tasks:");''').newLine
-   						for(dec : tasks)
-   							append('''System.out.println("  «dec.name»");''').newLine
-   						if(!params.empty) {
-	   						append('''System.out.println();''').newLine
-	   						append('''System.out.println("Parameters:");''').newLine
-	   						for(dec : params) {
-	   							append('''System.out.println("  --«dec.name» <''')
-	   							(dec.type ?: typeProvider.getType(dec.init)).serialize(element, it)
-	   							append('''>");''').newLine
-	   						}
-   						}
-   						append('''return;''')
-   						decreaseIndentation.newLine.append("} else")
-   						increaseIndentation.newLine.append("index++;").decreaseIndentation
-   						decreaseIndentation.newLine.append("}").newLine
-   						serialize(newTypeRef(element, typeof(Set), newTypeRef(element, typeof(String))), element, it)
+   						append('return "').append(scriptName).append('";')
+   					]
+   				]
+   				overrideMethod("getParameterNames", stringArray, file) [
+   					body = [
+   						append('return new String[] {')
+						if (!declaredParameters.empty) {
+							increaseIndentation.newLine
+							append(declaredParameters.map[ '"' + name + '"' ].join(', '))
+							decreaseIndentation.newLine
+						}
+						append("};")
+   					]
+   				]
+   				overrideMethod("getTaskNames", stringArray, file) [
+   					body = [
+   						append('return new String[] {')
+						if (!tasks.empty) {
+							increaseIndentation.newLine
+							append(tasks.map[ '"' + name + '"' ].join(', '))
+							decreaseIndentation.newLine
+						}
+						append("};")
+   					]
+   				]
+   				
+   				
+   				members += file.toMethod("main", file.newTypeRef(Void::TYPE)) [
+   					it.parameters += toParameter("args", stringArray)
+   					^static = true
+   					
+   					body = [
+   						append(scriptName).append(' script = new ').append(scriptName).append('();').newLine
+   						append('if (script.showHelp(args)) {').increaseIndentation.newLine
+   						append("System.exit(HELP);").decreaseIndentation.newLine
+   						append("}").newLine
+   						append("System.exit(script.build(args));")
+					]
+				]
+				overrideMethod("doBuild", file.newTypeRef(Integer::TYPE), file) [
+					parameters += toParameter("args", stringArray)
+					exceptions += file.newTypeRef(typeof(Throwable))
+					body = [
+						file.newTypeRef(typeof(Set), file.newTypeRef(typeof(String))).serialize(file, it)
    						append(" tasks = ")
-   						append(findDeclaredType(typeof(Sets), element))
+   						file.newTypeRef(typeof(Sets)).serialize(file, it)
    						append(".newLinkedHashSet();").newLine
-   						append(data)
-   						append(" parameter = new ")
-   						append(data)
-   						append("();").newLine
-	   					append("index = 0;").newLine
+						append("int index = 0;").newLine
    						append("while(index < args.length) {").increaseIndentation.newLine
-	   					for(dec : element.declarations) {
-	   						if(dec != element.declarations.head)
+	   					for(dec : file.declarations) {
+	   						if(dec != file.declarations.head)
 	   							append(" else ")
    							switch(dec) {
    								Parameter: {
 			   						append('''if("--«dec.name»".equals(args[index])) {''').increaseIndentation.newLine
-			   						append('''parameter.«dec.name» = ''')
+			   						append('''«dec.name» = ''')
 			   						val type = dec.type ?: typeProvider.getType(dec.init)
 			   						paramToStr(it, type, "args[++index]")
 			   						append(";")
@@ -115,98 +125,72 @@ class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
 	   					}
 	   					append(" else {").increaseIndentation.newLine
 	   					append('''System.out.println("Unknown task/parameter '" + args[index] + "'. Run program with --help to list available tasks/parameters");''').newLine
-	   					append('''return;''')
+	   					append('''return WRONG_PARAM;''')
 	   					decreaseIndentation.newLine.append("}")
 	   					newLine.append("index++;")
 	   					decreaseIndentation.newLine.append("}").newLine
-   						append('''try {''').increaseIndentation.newLine
    						append("for(String task:tasks) {").increaseIndentation.newLine
 	   					for(dec : tasks) {
 	   						if(dec != tasks.head)
 	   							newLine.append("else ")
 	   						append('''if("«dec.name»".equals(task))''').increaseIndentation.newLine
-	   						append('''«dec.methodNameExecute»(parameter, true);''') 
+	   						append('''«dec.methodName»();''') 
 	   						decreaseIndentation	
 	   					}
 	   					newLine.append("index++;")
 	   					decreaseIndentation.newLine.append("}")
-	   					decreaseIndentation.newLine.append("} catch(")
-	   					append(findDeclaredType(typeof(Throwable), element))
-	   					append(''' e) {''').increaseIndentation.newLine
-	   					append('''System.out.println();''').newLine
-	   					append('''e.printStackTrace();''')
-	   					decreaseIndentation.newLine.append("}")
+	   					append("return OK;")
    					]
    				]
-   				
-   				for (task : element.declarations.filter(typeof(Task))) {
-		   			members += task.toMethod(task.methodName, task.newTypeRef(Void::TYPE)) [
-		   				parameters += task.toParameter("init", element.newTypeRef(typeof(Procedures$Procedure1),newTypeRef(data)))
-		   				^static = true
-		   				body = [
-		   					append(data)
-		   					append(' p = new ')
-		   					append(data)
-		   					append('();').newLine
-		   					append('init.apply(p);')
-		   					for (dependency : task.findDependentTasks) {
-			   					newLine.append(dependency.methodNameExecute+"(p, false);")
-		   					}
-		   				]
-		   			]
-		   			members += task.toMethod(task.methodNameExecute, task.newTypeRef(Void::TYPE)) [
-		   				^static = true
-		   				visibility = JvmVisibility::PROTECTED
-		   				parameters += task.toParameter("it", newTypeRef(data))
-		   				parameters += task.toParameter("log", task.newTypeRef(Boolean::TYPE))
-		   				body = [
-		   					append('''try {''').increaseIndentation.newLine
-		   					append('''if(log) System.out.println("running «task.name»...");''').newLine
-	   						append(task.methodNameExecuteImpl)
-	   						append('''(it);''').newLine
-		   					append(findDeclaredType(typeof(TaskState), element))
-		   					append('''.fireFinishTask("«task.name»", null);''').newLine
-		   					append('''if(log) System.out.println("success");''')
-		   					decreaseIndentation.newLine.append("} catch(")
-		   					append(findDeclaredType(typeof(TaskSkippedException), element))
-		   					append(''' e) {''').increaseIndentation.newLine
-		   					append(findDeclaredType(typeof(TaskState), element))
-		   					append('''.fireFinishTask("«task.name»", e);''').newLine
-		   					append('''if(log) System.out.println("skipped: " + e.getMessage());''')
-		   					decreaseIndentation.newLine.append("} catch(")
-		   					append(findDeclaredType(typeof(Throwable), element))
-		   					append(''' e) {''').increaseIndentation.newLine
-		   					append(findDeclaredType(typeof(TaskState), element))
-		   					append('''.setMaySkip(false);''').newLine
-		   					append(findDeclaredType(typeof(TaskState), element))
-		   					append('''.fireFinishTask("«task.name»", e);''').newLine
-		   					append('''if(log) System.out.println("error: "+e.getMessage());''').newLine
-		   					append(findDeclaredType(typeof(Exceptions), element))
-	   						append('''.sneakyThrow(e);''')
-		   					decreaseIndentation.newLine.append("}")
-		   				]
-		   			]
-		   			members += task.toMethod(task.methodNameExecuteImpl, task.newTypeRef(Void::TYPE)) [
-		   				exceptions += task.newTypeRef(typeof(Throwable))
-		   				^static = true
-		   				visibility = JvmVisibility::PROTECTED
-		   				parameters += task.toParameter("it", newTypeRef(data))
-		   				body = task.action
-		   			]
-   				}
-   			])
+
+			for (task : tasks) {
+	   			members += task.toMethod(task.methodName, task.newTypeRef(Void::TYPE)) [
+	   				visibility = JvmVisibility::PROTECTED
+	   				exceptions += task.newTypeRef(typeof(Throwable))
+	   				body = [
+	   					append("try {").increaseIndentation.newLine
+	   					append('''System.out.println("running «task.name»...");''').newLine
+   						append(task.methodNameImpl).append("();").newLine
+	   					append('System.out.println("success");')
+	   					decreaseIndentation.newLine.append("} catch(")
+	   					file.newTypeRef(typeof(Throwable)).serialize(file, it)
+	   					append(' throwable) {').increaseIndentation.newLine
+	   					append('System.err.println(throwable.getMessage());').newLine
+	   					append("throw throwable;")
+	   					decreaseIndentation.newLine.append("}")
+	   				]
+	   			]
+	   			members += task.toMethod(task.methodNameImpl, task.newTypeRef(Void::TYPE)) [
+	   				exceptions += task.newTypeRef(typeof(Throwable))
+	   				visibility = JvmVisibility::PROTECTED
+	   				body = task.action
+	   			]
+   			}
+		]
    	}
    	
-   	def private getMethodName(Task task) {
-   		task.name.toFirstLower
+   	def private overrideMethod(JvmDeclaredType it, String name, JvmTypeReference returnType, BuildFile context, (JvmOperation)=>void init) {
+   		members += toMethod(name, returnType) [
+   			visibility = JvmVisibility::PROTECTED
+   			annotations += context.toAnnotation(typeof(Override))
+   			init.apply(it)
+   		]
+	}
+   	
+   	def private getTasks(BuildFile it) {
+   		declarations.filter(typeof(Task))
    	}
    	
-   	def private getMethodNameExecuteImpl(Task task) {
-   		"execute" + task.name.toFirstUpper + "Impl"
+   	def private getParameters(BuildFile it) {
+   		declarations.filter(typeof(Parameter))
    	}
    	
-   	def private getMethodNameExecute(Task task) {
-   		"execute" + task.name.toFirstUpper
+   	def private getMethodName(Task it) {
+   		name.toFirstLower
+   	}
+   	
+   	def private getMethodNameImpl(Task it) {
+   		"_" + methodName + "Impl"
    	}
    	
    	def private paramToStr(ITreeAppendable out, JvmTypeReference type, String name) {

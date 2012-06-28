@@ -4,10 +4,6 @@
 package org.xtext.builddsl.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
-import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfiguration;
-import org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculator;
-import org.xtext.builddsl.ui.highlighting.BuildHighlightingCalculator;
-import org.xtext.builddsl.ui.highlighting.BuildHighlightingConfiguration;
 
 /**
  * Use this class to register components to be used within the IDE.
@@ -15,15 +11,5 @@ import org.xtext.builddsl.ui.highlighting.BuildHighlightingConfiguration;
 public class BuildDSLUiModule extends org.xtext.builddsl.ui.AbstractBuildDSLUiModule {
 	public BuildDSLUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
-	}
-	
-	@Override
-	public Class<? extends ISemanticHighlightingCalculator> bindISemanticHighlightingCalculator() {
-		return BuildHighlightingCalculator.class;
-	}
-
-	@Override
-	public Class<? extends IHighlightingConfiguration> bindIHighlightingConfiguration() {
-		return BuildHighlightingConfiguration.class;
 	}
 }

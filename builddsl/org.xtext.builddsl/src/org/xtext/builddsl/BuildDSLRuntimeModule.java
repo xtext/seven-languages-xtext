@@ -3,16 +3,12 @@
  */
 package org.xtext.builddsl;
 
-import org.eclipse.xtext.conversion.IValueConverterService;
-import org.eclipse.xtext.linking.ILinker;
-import org.eclipse.xtext.linking.ILinkingService;
 import org.eclipse.xtext.service.SingletonBinding;
+import org.eclipse.xtext.xbase.scoping.featurecalls.StaticImplicitMethodsFeatureForTypeProvider;
 import org.eclipse.xtext.xbase.scoping.featurecalls.StaticImplicitMethodsFeatureForTypeProvider.ExtensionClassNameProvider;
-import org.xtext.builddsl.linking.BuildLazyLinker;
-import org.xtext.builddsl.linking.BuildLinkingService;
+import org.xtext.builddsl.scoping.AllImportsAreStaticFeatureProvider;
 import org.xtext.builddsl.scoping.BuildDSLExtensionClassNameProvider;
 import org.xtext.builddsl.validation.BuildDSLValidator;
-import org.xtext.builddsl.valueconversion.BuildDSLValueConverter;
 
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
@@ -27,20 +23,9 @@ public class BuildDSLRuntimeModule extends org.xtext.builddsl.AbstractBuildDSLRu
 	public Class<? extends ExtensionClassNameProvider> bindExtensionClassNameProvider() {
 		return BuildDSLExtensionClassNameProvider.class;
 	}
-
-	@Override
-	public Class<? extends IValueConverterService> bindIValueConverterService() {
-		return BuildDSLValueConverter.class;
+	
+	public Class<? extends StaticImplicitMethodsFeatureForTypeProvider> bindStaticImplicitMethodsFeatureForTypeProvider() {
+		return AllImportsAreStaticFeatureProvider.class;
 	}
 	
-	@Override
-	public Class<? extends ILinker> bindILinker() {
-		return BuildLazyLinker.class;
-	}
-
-	@Override
-	public Class<? extends ILinkingService> bindILinkingService() {
-		return BuildLinkingService.class;
-	}
-
 }
