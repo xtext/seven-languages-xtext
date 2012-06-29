@@ -183,25 +183,23 @@ public class BuildDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameValidIDParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cDependsOnKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cDependsOnAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final CrossReference cDependsOnTaskCrossReference_2_1_0 = (CrossReference)cDependsOnAssignment_2_1.eContents().get(0);
-		private final RuleCall cDependsOnTaskQualifiedNameParserRuleCall_2_1_0_1 = (RuleCall)cDependsOnTaskCrossReference_2_1_0.eContents().get(1);
+		private final Keyword cDependsKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cDependsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final CrossReference cDependsTaskCrossReference_2_1_0 = (CrossReference)cDependsAssignment_2_1.eContents().get(0);
+		private final RuleCall cDependsTaskValidIDParserRuleCall_2_1_0_1 = (RuleCall)cDependsTaskCrossReference_2_1_0.eContents().get(1);
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cCommaKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
-		private final Assignment cDependsOnAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final CrossReference cDependsOnTaskCrossReference_2_2_1_0 = (CrossReference)cDependsOnAssignment_2_2_1.eContents().get(0);
-		private final RuleCall cDependsOnTaskQualifiedNameParserRuleCall_2_2_1_0_1 = (RuleCall)cDependsOnTaskCrossReference_2_2_1_0.eContents().get(1);
+		private final Assignment cDependsAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
+		private final CrossReference cDependsTaskCrossReference_2_2_1_0 = (CrossReference)cDependsAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cDependsTaskValidIDParserRuleCall_2_2_1_0_1 = (RuleCall)cDependsTaskCrossReference_2_2_1_0.eContents().get(1);
 		private final Assignment cActionAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cActionXBlockExpressionParserRuleCall_3_0 = (RuleCall)cActionAssignment_3.eContents().get(0);
 		
 		//Task:
-		//	"task" name=ValidID ("dependsOn" dependsOn+=[Task|QualifiedName] ("," dependsOn+=[Task|QualifiedName])*)?
-		//	action=XBlockExpression;
+		//	"task" name=ValidID ("depends" depends+=[Task|ValidID] ("," depends+=[Task|ValidID])*)? action=XBlockExpression;
 		public ParserRule getRule() { return rule; }
 
-		//"task" name=ValidID ("dependsOn" dependsOn+=[Task|QualifiedName] ("," dependsOn+=[Task|QualifiedName])*)?
-		//action=XBlockExpression
+		//"task" name=ValidID ("depends" depends+=[Task|ValidID] ("," depends+=[Task|ValidID])*)? action=XBlockExpression
 		public Group getGroup() { return cGroup; }
 
 		//"task"
@@ -213,35 +211,35 @@ public class BuildDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//ValidID
 		public RuleCall getNameValidIDParserRuleCall_1_0() { return cNameValidIDParserRuleCall_1_0; }
 
-		//("dependsOn" dependsOn+=[Task|QualifiedName] ("," dependsOn+=[Task|QualifiedName])*)?
+		//("depends" depends+=[Task|ValidID] ("," depends+=[Task|ValidID])*)?
 		public Group getGroup_2() { return cGroup_2; }
 
-		//"dependsOn"
-		public Keyword getDependsOnKeyword_2_0() { return cDependsOnKeyword_2_0; }
+		//"depends"
+		public Keyword getDependsKeyword_2_0() { return cDependsKeyword_2_0; }
 
-		//dependsOn+=[Task|QualifiedName]
-		public Assignment getDependsOnAssignment_2_1() { return cDependsOnAssignment_2_1; }
+		//depends+=[Task|ValidID]
+		public Assignment getDependsAssignment_2_1() { return cDependsAssignment_2_1; }
 
-		//[Task|QualifiedName]
-		public CrossReference getDependsOnTaskCrossReference_2_1_0() { return cDependsOnTaskCrossReference_2_1_0; }
+		//[Task|ValidID]
+		public CrossReference getDependsTaskCrossReference_2_1_0() { return cDependsTaskCrossReference_2_1_0; }
 
-		//QualifiedName
-		public RuleCall getDependsOnTaskQualifiedNameParserRuleCall_2_1_0_1() { return cDependsOnTaskQualifiedNameParserRuleCall_2_1_0_1; }
+		//ValidID
+		public RuleCall getDependsTaskValidIDParserRuleCall_2_1_0_1() { return cDependsTaskValidIDParserRuleCall_2_1_0_1; }
 
-		//("," dependsOn+=[Task|QualifiedName])*
+		//("," depends+=[Task|ValidID])*
 		public Group getGroup_2_2() { return cGroup_2_2; }
 
 		//","
 		public Keyword getCommaKeyword_2_2_0() { return cCommaKeyword_2_2_0; }
 
-		//dependsOn+=[Task|QualifiedName]
-		public Assignment getDependsOnAssignment_2_2_1() { return cDependsOnAssignment_2_2_1; }
+		//depends+=[Task|ValidID]
+		public Assignment getDependsAssignment_2_2_1() { return cDependsAssignment_2_2_1; }
 
-		//[Task|QualifiedName]
-		public CrossReference getDependsOnTaskCrossReference_2_2_1_0() { return cDependsOnTaskCrossReference_2_2_1_0; }
+		//[Task|ValidID]
+		public CrossReference getDependsTaskCrossReference_2_2_1_0() { return cDependsTaskCrossReference_2_2_1_0; }
 
-		//QualifiedName
-		public RuleCall getDependsOnTaskQualifiedNameParserRuleCall_2_2_1_0_1() { return cDependsOnTaskQualifiedNameParserRuleCall_2_2_1_0_1; }
+		//ValidID
+		public RuleCall getDependsTaskValidIDParserRuleCall_2_2_1_0_1() { return cDependsTaskValidIDParserRuleCall_2_2_1_0_1; }
 
 		//action=XBlockExpression
 		public Assignment getActionAssignment_3() { return cActionAssignment_3; }
@@ -347,8 +345,7 @@ public class BuildDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Task:
-	//	"task" name=ValidID ("dependsOn" dependsOn+=[Task|QualifiedName] ("," dependsOn+=[Task|QualifiedName])*)?
-	//	action=XBlockExpression;
+	//	"task" name=ValidID ("depends" depends+=[Task|ValidID] ("," depends+=[Task|ValidID])*)? action=XBlockExpression;
 	public TaskElements getTaskAccess() {
 		return (pTask != null) ? pTask : (pTask = new TaskElements());
 	}

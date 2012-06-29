@@ -258,7 +258,7 @@ public class BuildPackageImpl extends EPackageImpl implements BuildPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTask_DependsOn()
+  public EReference getTask_Depends()
   {
     return (EReference)taskEClass.getEStructuralFeatures().get(0);
   }
@@ -319,7 +319,7 @@ public class BuildPackageImpl extends EPackageImpl implements BuildPackage
     createEReference(parameterEClass, PARAMETER__INIT);
 
     taskEClass = createEClass(TASK);
-    createEReference(taskEClass, TASK__DEPENDS_ON);
+    createEReference(taskEClass, TASK__DEPENDS);
     createEReference(taskEClass, TASK__ACTION);
   }
 
@@ -376,7 +376,7 @@ public class BuildPackageImpl extends EPackageImpl implements BuildPackage
     initEReference(getParameter_Init(), theXbasePackage.getXExpression(), null, "init", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(taskEClass, Task.class, "Task", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getTask_DependsOn(), this.getTask(), null, "dependsOn", null, 0, -1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTask_Depends(), this.getTask(), null, "depends", null, 0, -1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTask_Action(), theXbasePackage.getXExpression(), null, "action", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource

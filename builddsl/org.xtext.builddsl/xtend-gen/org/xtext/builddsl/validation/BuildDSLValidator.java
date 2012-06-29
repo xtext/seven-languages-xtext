@@ -25,8 +25,8 @@ import org.xtext.builddsl.build.Task;
 public class BuildDSLValidator extends XbaseJavaValidator {
   @Check
   public void checkNoRecursiveDependencies(final Task task) {
-    EList<Task> _dependsOn = task.getDependsOn();
-    for (final Task taskRef : _dependsOn) {
+    EList<Task> _depends = task.getDepends();
+    for (final Task taskRef : _depends) {
       boolean _equals = Objects.equal(taskRef, task);
       if (_equals) {
         StringConcatenation _builder = new StringConcatenation();
@@ -60,11 +60,11 @@ public class BuildDSLValidator extends XbaseJavaValidator {
   }
   
   protected List<EPackage> getEPackages() {
-    final ArrayList<EPackage> result = CollectionLiterals.<EPackage>newArrayList();
-    result.add(BuildPackage.eINSTANCE);
-    result.add(XbasePackage.eINSTANCE);
-    result.add(TypesPackage.eINSTANCE);
-    result.add(XtypePackage.eINSTANCE);
+    final ArrayList<EPackage> result = CollectionLiterals.<EPackage>newArrayList(
+      BuildPackage.eINSTANCE, 
+      XbasePackage.eINSTANCE, 
+      TypesPackage.eINSTANCE, 
+      XtypePackage.eINSTANCE);
     return result;
   }
 }

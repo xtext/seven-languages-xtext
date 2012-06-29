@@ -229,8 +229,8 @@ public class BuildDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getParameterAccess().getNameAssignment_2(), "rule__Parameter__NameAssignment_2");
 					put(grammarAccess.getParameterAccess().getInitAssignment_3_1(), "rule__Parameter__InitAssignment_3_1");
 					put(grammarAccess.getTaskAccess().getNameAssignment_1(), "rule__Task__NameAssignment_1");
-					put(grammarAccess.getTaskAccess().getDependsOnAssignment_2_1(), "rule__Task__DependsOnAssignment_2_1");
-					put(grammarAccess.getTaskAccess().getDependsOnAssignment_2_2_1(), "rule__Task__DependsOnAssignment_2_2_1");
+					put(grammarAccess.getTaskAccess().getDependsAssignment_2_1(), "rule__Task__DependsAssignment_2_1");
+					put(grammarAccess.getTaskAccess().getDependsAssignment_2_2_1(), "rule__Task__DependsAssignment_2_2_1");
 					put(grammarAccess.getTaskAccess().getActionAssignment_3(), "rule__Task__ActionAssignment_3");
 					put(grammarAccess.getXAssignmentAccess().getFeatureAssignment_0_1(), "rule__XAssignment__FeatureAssignment_0_1");
 					put(grammarAccess.getXAssignmentAccess().getValueAssignment_0_3(), "rule__XAssignment__ValueAssignment_0_3");

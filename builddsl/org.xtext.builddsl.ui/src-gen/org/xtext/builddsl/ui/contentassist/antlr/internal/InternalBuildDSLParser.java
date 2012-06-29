@@ -23,7 +23,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalBuildDSLParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_HEX", "RULE_INT", "RULE_DECIMAL", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'='", "'+='", "'||'", "'&&'", "'=='", "'!='", "'>='", "'<='", "'>'", "'<'", "'->'", "'..'", "'=>'", "'<>'", "'?:'", "'<=>'", "'+'", "'-'", "'*'", "'**'", "'/'", "'%'", "'!'", "'.'", "'val'", "'super'", "'false'", "'package'", "'import'", "'.*'", "'param'", "'task'", "'dependsOn'", "','", "'instanceof'", "'as'", "')'", "']'", "'['", "';'", "'('", "'if'", "'else'", "'switch'", "'{'", "'}'", "':'", "'default'", "'case'", "'for'", "'while'", "'do'", "'::'", "'new'", "'null'", "'typeof'", "'throw'", "'return'", "'try'", "'finally'", "'catch'", "'?'", "'extends'", "'&'", "'?.'", "'*.'", "'|'", "'var'", "'true'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_HEX", "RULE_INT", "RULE_DECIMAL", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'='", "'+='", "'||'", "'&&'", "'=='", "'!='", "'>='", "'<='", "'>'", "'<'", "'->'", "'..'", "'=>'", "'<>'", "'?:'", "'<=>'", "'+'", "'-'", "'*'", "'**'", "'/'", "'%'", "'!'", "'.'", "'val'", "'super'", "'false'", "'package'", "'import'", "'.*'", "'param'", "'task'", "'depends'", "','", "'instanceof'", "'as'", "')'", "']'", "'['", "';'", "'('", "'if'", "'else'", "'switch'", "'{'", "'}'", "':'", "'default'", "'case'", "'for'", "'while'", "'do'", "'::'", "'new'", "'null'", "'typeof'", "'throw'", "'return'", "'try'", "'finally'", "'catch'", "'?'", "'extends'", "'&'", "'?.'", "'*.'", "'|'", "'var'", "'true'"
     };
     public static final int T__68=68;
     public static final int T__69=69;
@@ -11486,24 +11486,24 @@ public class InternalBuildDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Task__Group_2__0__Impl"
-    // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3547:1: rule__Task__Group_2__0__Impl : ( 'dependsOn' ) ;
+    // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3547:1: rule__Task__Group_2__0__Impl : ( 'depends' ) ;
     public final void rule__Task__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3551:1: ( ( 'dependsOn' ) )
-            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3552:1: ( 'dependsOn' )
+            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3551:1: ( ( 'depends' ) )
+            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3552:1: ( 'depends' )
             {
-            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3552:1: ( 'dependsOn' )
-            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3553:1: 'dependsOn'
+            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3552:1: ( 'depends' )
+            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3553:1: 'depends'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTaskAccess().getDependsOnKeyword_2_0()); 
+               before(grammarAccess.getTaskAccess().getDependsKeyword_2_0()); 
             }
             match(input,45,FOLLOW_45_in_rule__Task__Group_2__0__Impl7598); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTaskAccess().getDependsOnKeyword_2_0()); 
+               after(grammarAccess.getTaskAccess().getDependsKeyword_2_0()); 
             }
 
             }
@@ -11565,26 +11565,26 @@ public class InternalBuildDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Task__Group_2__1__Impl"
-    // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3578:1: rule__Task__Group_2__1__Impl : ( ( rule__Task__DependsOnAssignment_2_1 ) ) ;
+    // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3578:1: rule__Task__Group_2__1__Impl : ( ( rule__Task__DependsAssignment_2_1 ) ) ;
     public final void rule__Task__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3582:1: ( ( ( rule__Task__DependsOnAssignment_2_1 ) ) )
-            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3583:1: ( ( rule__Task__DependsOnAssignment_2_1 ) )
+            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3582:1: ( ( ( rule__Task__DependsAssignment_2_1 ) ) )
+            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3583:1: ( ( rule__Task__DependsAssignment_2_1 ) )
             {
-            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3583:1: ( ( rule__Task__DependsOnAssignment_2_1 ) )
-            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3584:1: ( rule__Task__DependsOnAssignment_2_1 )
+            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3583:1: ( ( rule__Task__DependsAssignment_2_1 ) )
+            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3584:1: ( rule__Task__DependsAssignment_2_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTaskAccess().getDependsOnAssignment_2_1()); 
+               before(grammarAccess.getTaskAccess().getDependsAssignment_2_1()); 
             }
-            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3585:1: ( rule__Task__DependsOnAssignment_2_1 )
-            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3585:2: rule__Task__DependsOnAssignment_2_1
+            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3585:1: ( rule__Task__DependsAssignment_2_1 )
+            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3585:2: rule__Task__DependsAssignment_2_1
             {
-            pushFollow(FOLLOW_rule__Task__DependsOnAssignment_2_1_in_rule__Task__Group_2__1__Impl7659);
-            rule__Task__DependsOnAssignment_2_1();
+            pushFollow(FOLLOW_rule__Task__DependsAssignment_2_1_in_rule__Task__Group_2__1__Impl7659);
+            rule__Task__DependsAssignment_2_1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -11592,7 +11592,7 @@ public class InternalBuildDSLParser extends AbstractInternalContentAssistParser 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTaskAccess().getDependsOnAssignment_2_1()); 
+               after(grammarAccess.getTaskAccess().getDependsAssignment_2_1()); 
             }
 
             }
@@ -11830,26 +11830,26 @@ public class InternalBuildDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Task__Group_2_2__1__Impl"
-    // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3671:1: rule__Task__Group_2_2__1__Impl : ( ( rule__Task__DependsOnAssignment_2_2_1 ) ) ;
+    // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3671:1: rule__Task__Group_2_2__1__Impl : ( ( rule__Task__DependsAssignment_2_2_1 ) ) ;
     public final void rule__Task__Group_2_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3675:1: ( ( ( rule__Task__DependsOnAssignment_2_2_1 ) ) )
-            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3676:1: ( ( rule__Task__DependsOnAssignment_2_2_1 ) )
+            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3675:1: ( ( ( rule__Task__DependsAssignment_2_2_1 ) ) )
+            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3676:1: ( ( rule__Task__DependsAssignment_2_2_1 ) )
             {
-            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3676:1: ( ( rule__Task__DependsOnAssignment_2_2_1 ) )
-            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3677:1: ( rule__Task__DependsOnAssignment_2_2_1 )
+            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3676:1: ( ( rule__Task__DependsAssignment_2_2_1 ) )
+            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3677:1: ( rule__Task__DependsAssignment_2_2_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTaskAccess().getDependsOnAssignment_2_2_1()); 
+               before(grammarAccess.getTaskAccess().getDependsAssignment_2_2_1()); 
             }
-            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3678:1: ( rule__Task__DependsOnAssignment_2_2_1 )
-            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3678:2: rule__Task__DependsOnAssignment_2_2_1
+            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3678:1: ( rule__Task__DependsAssignment_2_2_1 )
+            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:3678:2: rule__Task__DependsAssignment_2_2_1
             {
-            pushFollow(FOLLOW_rule__Task__DependsOnAssignment_2_2_1_in_rule__Task__Group_2_2__1__Impl7842);
-            rule__Task__DependsOnAssignment_2_2_1();
+            pushFollow(FOLLOW_rule__Task__DependsAssignment_2_2_1_in_rule__Task__Group_2_2__1__Impl7842);
+            rule__Task__DependsAssignment_2_2_1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -11857,7 +11857,7 @@ public class InternalBuildDSLParser extends AbstractInternalContentAssistParser 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTaskAccess().getDependsOnAssignment_2_2_1()); 
+               after(grammarAccess.getTaskAccess().getDependsAssignment_2_2_1()); 
             }
 
             }
@@ -41361,41 +41361,41 @@ public class InternalBuildDSLParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__Task__NameAssignment_1"
 
 
-    // $ANTLR start "rule__Task__DependsOnAssignment_2_1"
-    // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:14421:1: rule__Task__DependsOnAssignment_2_1 : ( ( ruleQualifiedName ) ) ;
-    public final void rule__Task__DependsOnAssignment_2_1() throws RecognitionException {
+    // $ANTLR start "rule__Task__DependsAssignment_2_1"
+    // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:14421:1: rule__Task__DependsAssignment_2_1 : ( ( ruleValidID ) ) ;
+    public final void rule__Task__DependsAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:14425:1: ( ( ( ruleQualifiedName ) ) )
-            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:14426:1: ( ( ruleQualifiedName ) )
+            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:14425:1: ( ( ( ruleValidID ) ) )
+            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:14426:1: ( ( ruleValidID ) )
             {
-            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:14426:1: ( ( ruleQualifiedName ) )
-            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:14427:1: ( ruleQualifiedName )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getTaskAccess().getDependsOnTaskCrossReference_2_1_0()); 
-            }
-            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:14428:1: ( ruleQualifiedName )
-            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:14429:1: ruleQualifiedName
+            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:14426:1: ( ( ruleValidID ) )
+            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:14427:1: ( ruleValidID )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTaskAccess().getDependsOnTaskQualifiedNameParserRuleCall_2_1_0_1()); 
+               before(grammarAccess.getTaskAccess().getDependsTaskCrossReference_2_1_0()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Task__DependsOnAssignment_2_128980);
-            ruleQualifiedName();
+            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:14428:1: ( ruleValidID )
+            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:14429:1: ruleValidID
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getTaskAccess().getDependsTaskValidIDParserRuleCall_2_1_0_1()); 
+            }
+            pushFollow(FOLLOW_ruleValidID_in_rule__Task__DependsAssignment_2_128980);
+            ruleValidID();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTaskAccess().getDependsOnTaskQualifiedNameParserRuleCall_2_1_0_1()); 
+               after(grammarAccess.getTaskAccess().getDependsTaskValidIDParserRuleCall_2_1_0_1()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTaskAccess().getDependsOnTaskCrossReference_2_1_0()); 
+               after(grammarAccess.getTaskAccess().getDependsTaskCrossReference_2_1_0()); 
             }
 
             }
@@ -41415,44 +41415,44 @@ public class InternalBuildDSLParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__Task__DependsOnAssignment_2_1"
+    // $ANTLR end "rule__Task__DependsAssignment_2_1"
 
 
-    // $ANTLR start "rule__Task__DependsOnAssignment_2_2_1"
-    // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:14440:1: rule__Task__DependsOnAssignment_2_2_1 : ( ( ruleQualifiedName ) ) ;
-    public final void rule__Task__DependsOnAssignment_2_2_1() throws RecognitionException {
+    // $ANTLR start "rule__Task__DependsAssignment_2_2_1"
+    // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:14440:1: rule__Task__DependsAssignment_2_2_1 : ( ( ruleValidID ) ) ;
+    public final void rule__Task__DependsAssignment_2_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:14444:1: ( ( ( ruleQualifiedName ) ) )
-            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:14445:1: ( ( ruleQualifiedName ) )
+            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:14444:1: ( ( ( ruleValidID ) ) )
+            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:14445:1: ( ( ruleValidID ) )
             {
-            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:14445:1: ( ( ruleQualifiedName ) )
-            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:14446:1: ( ruleQualifiedName )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getTaskAccess().getDependsOnTaskCrossReference_2_2_1_0()); 
-            }
-            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:14447:1: ( ruleQualifiedName )
-            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:14448:1: ruleQualifiedName
+            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:14445:1: ( ( ruleValidID ) )
+            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:14446:1: ( ruleValidID )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTaskAccess().getDependsOnTaskQualifiedNameParserRuleCall_2_2_1_0_1()); 
+               before(grammarAccess.getTaskAccess().getDependsTaskCrossReference_2_2_1_0()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Task__DependsOnAssignment_2_2_129019);
-            ruleQualifiedName();
+            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:14447:1: ( ruleValidID )
+            // ../org.xtext.builddsl.ui/src-gen/org/xtext/builddsl/ui/contentassist/antlr/internal/InternalBuildDSL.g:14448:1: ruleValidID
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getTaskAccess().getDependsTaskValidIDParserRuleCall_2_2_1_0_1()); 
+            }
+            pushFollow(FOLLOW_ruleValidID_in_rule__Task__DependsAssignment_2_2_129019);
+            ruleValidID();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTaskAccess().getDependsOnTaskQualifiedNameParserRuleCall_2_2_1_0_1()); 
+               after(grammarAccess.getTaskAccess().getDependsTaskValidIDParserRuleCall_2_2_1_0_1()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTaskAccess().getDependsOnTaskCrossReference_2_2_1_0()); 
+               after(grammarAccess.getTaskAccess().getDependsTaskCrossReference_2_2_1_0()); 
             }
 
             }
@@ -41472,7 +41472,7 @@ public class InternalBuildDSLParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__Task__DependsOnAssignment_2_2_1"
+    // $ANTLR end "rule__Task__DependsAssignment_2_2_1"
 
 
     // $ANTLR start "rule__Task__ActionAssignment_3"
@@ -50428,14 +50428,14 @@ public class InternalBuildDSLParser extends AbstractInternalContentAssistParser 
     public static final BitSet FOLLOW_45_in_rule__Task__Group_2__0__Impl7598 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Task__Group_2__1__Impl_in_rule__Task__Group_2__17629 = new BitSet(new long[]{0x0000400000000000L});
     public static final BitSet FOLLOW_rule__Task__Group_2__2_in_rule__Task__Group_2__17632 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Task__DependsOnAssignment_2_1_in_rule__Task__Group_2__1__Impl7659 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Task__DependsAssignment_2_1_in_rule__Task__Group_2__1__Impl7659 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Task__Group_2__2__Impl_in_rule__Task__Group_2__27689 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Task__Group_2_2__0_in_rule__Task__Group_2__2__Impl7716 = new BitSet(new long[]{0x0000400000000002L});
     public static final BitSet FOLLOW_rule__Task__Group_2_2__0__Impl_in_rule__Task__Group_2_2__07753 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__Task__Group_2_2__1_in_rule__Task__Group_2_2__07756 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_46_in_rule__Task__Group_2_2__0__Impl7784 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Task__Group_2_2__1__Impl_in_rule__Task__Group_2_2__17815 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Task__DependsOnAssignment_2_2_1_in_rule__Task__Group_2_2__1__Impl7842 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Task__DependsAssignment_2_2_1_in_rule__Task__Group_2_2__1__Impl7842 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XAssignment__Group_0__0__Impl_in_rule__XAssignment__Group_0__07876 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__XAssignment__Group_0__1_in_rule__XAssignment__Group_0__07879 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XAssignment__Group_0__1__Impl_in_rule__XAssignment__Group_0__17937 = new BitSet(new long[]{0x0000000000002000L});
@@ -51284,8 +51284,8 @@ public class InternalBuildDSLParser extends AbstractInternalContentAssistParser 
     public static final BitSet FOLLOW_ruleValidID_in_rule__Parameter__NameAssignment_228883 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXExpression_in_rule__Parameter__InitAssignment_3_128914 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleValidID_in_rule__Task__NameAssignment_128945 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Task__DependsOnAssignment_2_128980 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Task__DependsOnAssignment_2_2_129019 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValidID_in_rule__Task__DependsAssignment_2_128980 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValidID_in_rule__Task__DependsAssignment_2_2_129019 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXBlockExpression_in_rule__Task__ActionAssignment_329054 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleValidID_in_rule__XAssignment__FeatureAssignment_0_129089 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXAssignment_in_rule__XAssignment__ValueAssignment_0_329124 = new BitSet(new long[]{0x0000000000000002L});

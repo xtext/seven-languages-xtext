@@ -1,29 +1,31 @@
 package build
 
+import com.google.common.io.Files
+import org.xtext.builddsl.lib.JavaCompiler
+
 param java.io.File source
-param java.io.File tmp
+param java.io.File target
 param java.io.File destination
 param String jar
 
 task Clean {
-	tmp.deleteDirectoryContents
+	target.deleteDirectoryContents
 }
 
-task Zip dependsOn Compile {
-	val files = tmp.containedFiles.toMap[relativeTo(tmp).path]
-	files.createJarFromFiles(destination/jar)
+task Zip depends Compile {
+	target.zip(destination/jar)
 }
 
-task Compile dependsOn Clean {
-	compileJava[
+task Compile depends Clean {
+	javac [
 		sources += source
-		destination = tmp
+		destination = target
 	]
 }
 
-task Run dependsOn Zip {
+task Run depends Zip {
 	val classpath = newClasspath(destination/jar)
-	val clazz = classpath.loadClass("org.eclipse.swt.snippets.Snippet50")
+	val clazz = classpath.loadClass("sample.Main")
 	clazz.runMain()
 }
 

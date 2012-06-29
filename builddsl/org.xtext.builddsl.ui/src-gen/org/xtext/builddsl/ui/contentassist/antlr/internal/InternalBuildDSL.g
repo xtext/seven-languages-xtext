@@ -3550,11 +3550,11 @@ rule__Task__Group_2__0__Impl
     }
 :
 (
-{ before(grammarAccess.getTaskAccess().getDependsOnKeyword_2_0()); }
+{ before(grammarAccess.getTaskAccess().getDependsKeyword_2_0()); }
 
-	'dependsOn' 
+	'depends' 
 
-{ after(grammarAccess.getTaskAccess().getDependsOnKeyword_2_0()); }
+{ after(grammarAccess.getTaskAccess().getDependsKeyword_2_0()); }
 )
 
 ;
@@ -3581,9 +3581,9 @@ rule__Task__Group_2__1__Impl
     }
 :
 (
-{ before(grammarAccess.getTaskAccess().getDependsOnAssignment_2_1()); }
-(rule__Task__DependsOnAssignment_2_1)
-{ after(grammarAccess.getTaskAccess().getDependsOnAssignment_2_1()); }
+{ before(grammarAccess.getTaskAccess().getDependsAssignment_2_1()); }
+(rule__Task__DependsAssignment_2_1)
+{ after(grammarAccess.getTaskAccess().getDependsAssignment_2_1()); }
 )
 
 ;
@@ -3674,9 +3674,9 @@ rule__Task__Group_2_2__1__Impl
     }
 :
 (
-{ before(grammarAccess.getTaskAccess().getDependsOnAssignment_2_2_1()); }
-(rule__Task__DependsOnAssignment_2_2_1)
-{ after(grammarAccess.getTaskAccess().getDependsOnAssignment_2_2_1()); }
+{ before(grammarAccess.getTaskAccess().getDependsAssignment_2_2_1()); }
+(rule__Task__DependsAssignment_2_2_1)
+{ after(grammarAccess.getTaskAccess().getDependsAssignment_2_2_1()); }
 )
 
 ;
@@ -14418,18 +14418,18 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Task__DependsOnAssignment_2_1
+rule__Task__DependsAssignment_2_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getTaskAccess().getDependsOnTaskCrossReference_2_1_0()); }
+{ before(grammarAccess.getTaskAccess().getDependsTaskCrossReference_2_1_0()); }
 (
-{ before(grammarAccess.getTaskAccess().getDependsOnTaskQualifiedNameParserRuleCall_2_1_0_1()); }
-	ruleQualifiedName{ after(grammarAccess.getTaskAccess().getDependsOnTaskQualifiedNameParserRuleCall_2_1_0_1()); }
+{ before(grammarAccess.getTaskAccess().getDependsTaskValidIDParserRuleCall_2_1_0_1()); }
+	ruleValidID{ after(grammarAccess.getTaskAccess().getDependsTaskValidIDParserRuleCall_2_1_0_1()); }
 )
-{ after(grammarAccess.getTaskAccess().getDependsOnTaskCrossReference_2_1_0()); }
+{ after(grammarAccess.getTaskAccess().getDependsTaskCrossReference_2_1_0()); }
 )
 
 ;
@@ -14437,18 +14437,18 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Task__DependsOnAssignment_2_2_1
+rule__Task__DependsAssignment_2_2_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getTaskAccess().getDependsOnTaskCrossReference_2_2_1_0()); }
+{ before(grammarAccess.getTaskAccess().getDependsTaskCrossReference_2_2_1_0()); }
 (
-{ before(grammarAccess.getTaskAccess().getDependsOnTaskQualifiedNameParserRuleCall_2_2_1_0_1()); }
-	ruleQualifiedName{ after(grammarAccess.getTaskAccess().getDependsOnTaskQualifiedNameParserRuleCall_2_2_1_0_1()); }
+{ before(grammarAccess.getTaskAccess().getDependsTaskValidIDParserRuleCall_2_2_1_0_1()); }
+	ruleValidID{ after(grammarAccess.getTaskAccess().getDependsTaskValidIDParserRuleCall_2_2_1_0_1()); }
 )
-{ after(grammarAccess.getTaskAccess().getDependsOnTaskCrossReference_2_2_1_0()); }
+{ after(grammarAccess.getTaskAccess().getDependsTaskCrossReference_2_2_1_0()); }
 )
 
 ;

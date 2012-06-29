@@ -32,4 +32,4 @@ Export-Package: org.xtext.builddsl.ui,
  org.xtext.builddsl.ui.contentassist.antlr,
  org.xtext.builddsl.ui.internal,
  org.xtext.builddsl.ui.contentassist
-Bundle-Activator: org.xtext.builddsl.ui.internal.BuildActivator
+Bundle-Activator: org.xtext.builddsl.ui.internal.BuildDSLActivator

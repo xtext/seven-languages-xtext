@@ -25,7 +25,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BuildDSL.ecore#//Parameter/init"/>
     </genClasses>
     <genClasses ecoreClass="BuildDSL.ecore#//Task">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference BuildDSL.ecore#//Task/dependsOn"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference BuildDSL.ecore#//Task/depends"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BuildDSL.ecore#//Task/action"/>
     </genClasses>
   </genPackages>

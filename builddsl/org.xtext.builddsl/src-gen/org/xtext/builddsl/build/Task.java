@@ -17,7 +17,7 @@ import org.eclipse.xtext.xbase.XExpression;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.builddsl.build.Task#getDependsOn <em>Depends On</em>}</li>
+ *   <li>{@link org.xtext.builddsl.build.Task#getDepends <em>Depends</em>}</li>
  *   <li>{@link org.xtext.builddsl.build.Task#getAction <em>Action</em>}</li>
  * </ul>
  * </p>
@@ -29,20 +29,20 @@ import org.eclipse.xtext.xbase.XExpression;
 public interface Task extends Declaration
 {
   /**
-   * Returns the value of the '<em><b>Depends On</b></em>' reference list.
+   * Returns the value of the '<em><b>Depends</b></em>' reference list.
    * The list contents are of type {@link org.xtext.builddsl.build.Task}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Depends On</em>' reference list isn't clear,
+   * If the meaning of the '<em>Depends</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Depends On</em>' reference list.
-   * @see org.xtext.builddsl.build.BuildPackage#getTask_DependsOn()
+   * @return the value of the '<em>Depends</em>' reference list.
+   * @see org.xtext.builddsl.build.BuildPackage#getTask_Depends()
    * @model
    * @generated
    */
-  EList<Task> getDependsOn();
+  EList<Task> getDepends();
 
   /**
    * Returns the value of the '<em><b>Action</b></em>' containment reference.

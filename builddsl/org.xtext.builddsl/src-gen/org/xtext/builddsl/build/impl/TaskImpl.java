@@ -31,7 +31,7 @@ import org.xtext.builddsl.build.Task;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.builddsl.build.impl.TaskImpl#getDependsOn <em>Depends On</em>}</li>
+ *   <li>{@link org.xtext.builddsl.build.impl.TaskImpl#getDepends <em>Depends</em>}</li>
  *   <li>{@link org.xtext.builddsl.build.impl.TaskImpl#getAction <em>Action</em>}</li>
  * </ul>
  * </p>
@@ -41,14 +41,14 @@ import org.xtext.builddsl.build.Task;
 public class TaskImpl extends DeclarationImpl implements Task
 {
   /**
-   * The cached value of the '{@link #getDependsOn() <em>Depends On</em>}' reference list.
+   * The cached value of the '{@link #getDepends() <em>Depends</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDependsOn()
+   * @see #getDepends()
    * @generated
    * @ordered
    */
-  protected EList<Task> dependsOn;
+  protected EList<Task> depends;
 
   /**
    * The cached value of the '{@link #getAction() <em>Action</em>}' containment reference.
@@ -86,13 +86,13 @@ public class TaskImpl extends DeclarationImpl implements Task
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Task> getDependsOn()
+  public EList<Task> getDepends()
   {
-    if (dependsOn == null)
+    if (depends == null)
     {
-      dependsOn = new EObjectResolvingEList<Task>(Task.class, this, BuildPackage.TASK__DEPENDS_ON);
+      depends = new EObjectResolvingEList<Task>(Task.class, this, BuildPackage.TASK__DEPENDS);
     }
-    return dependsOn;
+    return depends;
   }
 
   /**
@@ -169,8 +169,8 @@ public class TaskImpl extends DeclarationImpl implements Task
   {
     switch (featureID)
     {
-      case BuildPackage.TASK__DEPENDS_ON:
-        return getDependsOn();
+      case BuildPackage.TASK__DEPENDS:
+        return getDepends();
       case BuildPackage.TASK__ACTION:
         return getAction();
     }
@@ -188,9 +188,9 @@ public class TaskImpl extends DeclarationImpl implements Task
   {
     switch (featureID)
     {
-      case BuildPackage.TASK__DEPENDS_ON:
-        getDependsOn().clear();
-        getDependsOn().addAll((Collection<? extends Task>)newValue);
+      case BuildPackage.TASK__DEPENDS:
+        getDepends().clear();
+        getDepends().addAll((Collection<? extends Task>)newValue);
         return;
       case BuildPackage.TASK__ACTION:
         setAction((XExpression)newValue);
@@ -209,8 +209,8 @@ public class TaskImpl extends DeclarationImpl implements Task
   {
     switch (featureID)
     {
-      case BuildPackage.TASK__DEPENDS_ON:
-        getDependsOn().clear();
+      case BuildPackage.TASK__DEPENDS:
+        getDepends().clear();
         return;
       case BuildPackage.TASK__ACTION:
         setAction((XExpression)null);
@@ -229,8 +229,8 @@ public class TaskImpl extends DeclarationImpl implements Task
   {
     switch (featureID)
     {
-      case BuildPackage.TASK__DEPENDS_ON:
-        return dependsOn != null && !dependsOn.isEmpty();
+      case BuildPackage.TASK__DEPENDS:
+        return depends != null && !depends.isEmpty();
       case BuildPackage.TASK__ACTION:
         return action != null;
     }

@@ -987,7 +987,7 @@ public class BuildDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=ValidID (dependsOn+=[Task|QualifiedName] dependsOn+=[Task|QualifiedName]*)? action=XBlockExpression)
+	 *     (name=ValidID (depends+=[Task|ValidID] depends+=[Task|ValidID]*)? action=XBlockExpression)
 	 */
 	protected void sequence_Task(EObject context, Task semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

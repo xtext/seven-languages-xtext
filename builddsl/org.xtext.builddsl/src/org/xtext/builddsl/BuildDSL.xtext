@@ -20,5 +20,5 @@ Parameter:
 	'param' type=JvmTypeReference? name=ValidID ('=' init=XExpression)?;
 
 Task:
-	'task' name=ValidID ('dependsOn' dependsOn+=[Task|QualifiedName] (',' dependsOn+=[Task|QualifiedName])*)?
+	'task' name=ValidID ('depends' depends+=[Task|ValidID] (',' depends+=[Task|ValidID])*)?
 	action=XBlockExpression;

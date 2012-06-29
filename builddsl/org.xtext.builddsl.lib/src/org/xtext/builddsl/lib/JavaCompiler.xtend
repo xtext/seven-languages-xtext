@@ -7,13 +7,9 @@ import java.util.Collection
 import org.eclipse.jdt.core.compiler.batch.BatchCompiler
 import org.eclipse.xtend.lib.Property
 
-class Literals {
-
-	def static File file() {
-		new File("/");
-	}
-
-	def static void compileJava((JavaCompilerParams) => void init) {
+class JavaCompiler {
+	
+	def static void javac((JavaCompilerParams) => void init) {
 		val params = new JavaCompilerParams
 		init.apply(params)
 		val list = <String>newArrayList
@@ -28,8 +24,8 @@ class Literals {
 			list += "-classpath"
 			list += params.classpath.join(":")
 		}
-		list.addAll(params.sources.map[toString])
-		print("compiling Java files..."); // with options: "+list.join(" "))
+		list += params.sources.map [toString]
+		print("compiling Java files...")
 		val result = BatchCompiler::compile(list as String[], new PrintWriter(System::out), new PrintWriter(System::err), null)
 		if(result) 
 			println("success.")

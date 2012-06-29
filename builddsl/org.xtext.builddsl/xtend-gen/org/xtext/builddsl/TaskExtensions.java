@@ -25,7 +25,7 @@ public class TaskExtensions {
     LinkedHashSet<Task> _xblockexpression = null;
     {
       final LinkedHashSet<Task> tasks = CollectionLiterals.<Task>newLinkedHashSet();
-      TaskExtensions.internalFindDependenTasks(it, tasks);
+      TaskExtensions.internalFindDependentTasks(it, tasks);
       final LinkedHashSet<Task> result = CollectionLiterals.<Task>newLinkedHashSet();
       boolean changed = true;
       boolean _while = changed;
@@ -34,8 +34,8 @@ public class TaskExtensions {
           changed = false;
           List<Task> _list = IterableExtensions.<Task>toList(tasks);
           for (final Task t : _list) {
-            EList<Task> _dependsOn = t.getDependsOn();
-            boolean _containsAll = result.containsAll(_dependsOn);
+            EList<Task> _depends = t.getDepends();
+            boolean _containsAll = result.containsAll(_depends);
             if (_containsAll) {
               changed = true;
               result.add(t);
@@ -62,15 +62,15 @@ public class TaskExtensions {
     return _xblockexpression;
   }
   
-  private static void internalFindDependenTasks(final Task task, final Set<Task> set) {
+  private static void internalFindDependentTasks(final Task task, final Set<Task> set) {
     boolean _add = set.add(task);
     boolean _not = (!_add);
     if (_not) {
       return;
     }
-    EList<Task> _dependsOn = task.getDependsOn();
-    for (final Task t : _dependsOn) {
-      TaskExtensions.internalFindDependenTasks(t, set);
+    EList<Task> _depends = task.getDepends();
+    for (final Task t : _depends) {
+      TaskExtensions.internalFindDependentTasks(t, set);
     }
   }
   

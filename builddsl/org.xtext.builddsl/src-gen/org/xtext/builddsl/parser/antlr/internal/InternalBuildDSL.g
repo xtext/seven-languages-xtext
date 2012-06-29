@@ -382,9 +382,9 @@ ruleTask returns [EObject current=null]
 	    }
 
 )
-)(	otherlv_2='dependsOn' 
+)(	otherlv_2='depends' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getTaskAccess().getDependsOnKeyword_2_0());
+    	newLeafNode(otherlv_2, grammarAccess.getTaskAccess().getDependsKeyword_2_0());
     }
 (
 (
@@ -394,9 +394,9 @@ ruleTask returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getTaskAccess().getDependsOnTaskCrossReference_2_1_0()); 
+	        newCompositeNode(grammarAccess.getTaskAccess().getDependsTaskCrossReference_2_1_0()); 
 	    }
-		ruleQualifiedName		{ 
+		ruleValidID		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -413,9 +413,9 @@ ruleTask returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getTaskAccess().getDependsOnTaskCrossReference_2_2_1_0()); 
+	        newCompositeNode(grammarAccess.getTaskAccess().getDependsTaskCrossReference_2_2_1_0()); 
 	    }
-		ruleQualifiedName		{ 
+		ruleValidID		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 

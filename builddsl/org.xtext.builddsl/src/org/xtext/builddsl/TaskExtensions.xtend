@@ -17,7 +17,7 @@ class TaskExtensions {
 		
 		// 1. collect all tasks that we depend on
 		val tasks = <Task>newLinkedHashSet
-		internalFindDependenTasks(it, tasks)
+		internalFindDependentTasks(it, tasks)
 		
 		// 2. sort them so that dependents come after dependees  
 		val result = <Task>newLinkedHashSet
@@ -25,7 +25,7 @@ class TaskExtensions {
 		while(changed) {
 			changed = false
 			for(t:tasks.toList) 
-				if(result.containsAll(t.dependsOn)) {
+				if(result.containsAll(t.depends)) {
 					changed = true
 					result.add(t)
 					tasks.remove(t)
@@ -36,11 +36,11 @@ class TaskExtensions {
 		result
 	}
 	
-	def private static void internalFindDependenTasks(Task task, Set<Task> set) {
+	def private static void internalFindDependentTasks(Task task, Set<Task> set) {
 		if (!set.add(task))
 			return;
-		for (t : task.dependsOn) 
-			internalFindDependenTasks(t, set)
+		for (t : task.depends) 
+			internalFindDependentTasks(t, set)
 	}
 	
 	def static getJavaClassName(BuildFile file) {

@@ -1,20 +1,16 @@
 package build;
 
 import com.google.common.collect.Sets;
+import com.google.common.io.Files;
 import java.io.File;
 import java.util.Collection;
-import java.util.List;
-import java.util.Map;
 import java.util.Set;
-import org.eclipse.xtext.xbase.lib.Functions.Function1;
-import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.xtext.builddsl.lib.BuildScript;
 import org.xtext.builddsl.lib.ClassExtensions;
 import org.xtext.builddsl.lib.FileExtensions;
+import org.xtext.builddsl.lib.JavaCompiler;
 import org.xtext.builddsl.lib.JavaCompilerParams;
-import org.xtext.builddsl.lib.Literals;
-import org.xtext.builddsl.lib.MapExtensions;
 
 public class BuildExample extends BuildScript {
   public File destination;
@@ -23,7 +19,7 @@ public class BuildExample extends BuildScript {
   
   public File source;
   
-  public File tmp;
+  public File target;
   
   @Override
   protected String getScriptName() {
@@ -33,7 +29,7 @@ public class BuildExample extends BuildScript {
   @Override
   protected String[] getParameterNames() {
     return new String[] {
-      "destination", "jar", "source", "tmp"
+      "destination", "jar", "source", "target"
     };
   }
   
@@ -59,8 +55,8 @@ public class BuildExample extends BuildScript {
     while(index < args.length) {
       if("--source".equals(args[index])) {
         source = new File(args[++index]);
-      } else if("--tmp".equals(args[index])) {
-        tmp = new File(args[++index]);
+      } else if("--target".equals(args[index])) {
+        target = new File(args[++index]);
       } else if("--destination".equals(args[index])) {
         destination = new File(args[++index]);
       } else if("--jar".equals(args[index])) {
@@ -110,7 +106,7 @@ public class BuildExample extends BuildScript {
   }
   
   protected void _cleanImpl() throws Throwable {
-    FileExtensions.deleteDirectoryContents(this.tmp);
+    Files.deleteDirectoryContents(this.target);
   }
   
   protected void compile() throws Throwable {
@@ -129,10 +125,10 @@ public class BuildExample extends BuildScript {
         public void apply(final JavaCompilerParams it) {
           Collection<File> _sources = it.getSources();
           _sources.add(BuildExample.this.source);
-          BuildExample.this.destination = BuildExample.this.tmp;
+          BuildExample.this.destination = BuildExample.this.target;
         }
       };
-    Literals.compileJava(_function);
+    JavaCompiler.javac(_function);
   }
   
   protected void run() throws Throwable {
@@ -148,8 +144,8 @@ public class BuildExample extends BuildScript {
   
   protected void _runImpl() throws Throwable {
     File _divide = FileExtensions.operator_divide(this.destination, this.jar);
-    final ClassLoader classpath = Literals.newClasspath(_divide);
-    final Class<? extends Object> clazz = classpath.loadClass("org.eclipse.swt.snippets.Snippet50");
+    final ClassLoader classpath = JavaCompiler.newClasspath(_divide);
+    final Class<? extends Object> clazz = classpath.loadClass("sample.Main");
     ClassExtensions.runMain(clazz);
   }
   
@@ -165,16 +161,7 @@ public class BuildExample extends BuildScript {
   }
   
   protected void _zipImpl() throws Throwable {
-    List<File> _containedFiles = FileExtensions.containedFiles(this.tmp);
-    final Function1<File,String> _function = new Function1<File,String>() {
-        public String apply(final File it) {
-          File _relativeTo = FileExtensions.relativeTo(it, BuildExample.this.tmp);
-          String _path = _relativeTo.getPath();
-          return _path;
-        }
-      };
-    final Map<String,File> files = IterableExtensions.<String, File>toMap(_containedFiles, _function);
     File _divide = FileExtensions.operator_divide(this.destination, this.jar);
-    MapExtensions.createJarFromFiles(files, _divide);
+    FileExtensions.zip(this.target, _divide);
   }
 }

@@ -15,7 +15,7 @@ class BuildDSLValidator extends XbaseJavaValidator {
 
 	@Check
 	def void checkNoRecursiveDependencies(Task task) {
-		for (taskRef : task.getDependsOn())
+		for (taskRef : task.getDepends())
 			if (taskRef == task) {
 				error('''The task '«task.name»' cannot depend on itself.''', taskRef, DECLARATION__NAME, -1)
 				return;
@@ -26,11 +26,11 @@ class BuildDSLValidator extends XbaseJavaValidator {
 	}
 	
 	override protected getEPackages() {
-	    val result = <EPackage>newArrayList
-	    result += BuildPackage::eINSTANCE
-	    result += XbasePackage::eINSTANCE
-	    result += TypesPackage::eINSTANCE
-	    result += XtypePackage::eINSTANCE
+	    val result = <EPackage>newArrayList(
+		    BuildPackage::eINSTANCE,
+		    XbasePackage::eINSTANCE,
+		    TypesPackage::eINSTANCE,
+		    XtypePackage::eINSTANCE)
 		return result;
 	}
 

@@ -31,6 +31,5 @@ Export-Package: org.xtext.builddsl,
  org.xtext.builddsl.scoping,
  org.xtext.builddsl.serializer,
  org.xtext.builddsl.services,
- org.xtext.builddsl.validation,
- org.xtext.builddsl.valueconversion
+ org.xtext.builddsl.validation
 

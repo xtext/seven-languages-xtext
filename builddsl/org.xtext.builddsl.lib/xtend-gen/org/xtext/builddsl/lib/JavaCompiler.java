@@ -22,13 +22,8 @@ import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.xtext.builddsl.lib.JavaCompilerParams;
 
 @SuppressWarnings("all")
-public class Literals {
-  public static File file() {
-    File _file = new File("/");
-    return _file;
-  }
-  
-  public static void compileJava(final Procedure1<? super JavaCompilerParams> init) {
+public class JavaCompiler {
+  public static void javac(final Procedure1<? super JavaCompilerParams> init) {
     JavaCompilerParams _javaCompilerParams = new JavaCompilerParams();
     final JavaCompilerParams params = _javaCompilerParams;
     init.apply(params);

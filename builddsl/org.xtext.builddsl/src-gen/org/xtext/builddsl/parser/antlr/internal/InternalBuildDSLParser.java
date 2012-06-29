@@ -22,7 +22,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_HEX", "RULE_INT", "RULE_DECIMAL", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'package'", "'import'", "'.*'", "'param'", "'='", "'task'", "'dependsOn'", "','", "'+='", "'||'", "'&&'", "'=='", "'!='", "'instanceof'", "'>='", "'<='", "'>'", "'<'", "'->'", "'..'", "'=>'", "'<>'", "'?:'", "'<=>'", "'+'", "'-'", "'*'", "'**'", "'/'", "'%'", "'!'", "'as'", "'.'", "'?.'", "'*.'", "'('", "')'", "'['", "'|'", "']'", "';'", "'if'", "'else'", "'switch'", "':'", "'{'", "'default'", "'}'", "'case'", "'for'", "'while'", "'do'", "'var'", "'val'", "'super'", "'::'", "'new'", "'false'", "'true'", "'null'", "'typeof'", "'throw'", "'return'", "'try'", "'finally'", "'catch'", "'?'", "'extends'", "'&'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_HEX", "RULE_INT", "RULE_DECIMAL", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'package'", "'import'", "'.*'", "'param'", "'='", "'task'", "'depends'", "','", "'+='", "'||'", "'&&'", "'=='", "'!='", "'instanceof'", "'>='", "'<='", "'>'", "'<'", "'->'", "'..'", "'=>'", "'<>'", "'?:'", "'<=>'", "'+'", "'-'", "'*'", "'**'", "'/'", "'%'", "'!'", "'as'", "'.'", "'?.'", "'*.'", "'('", "')'", "'['", "'|'", "']'", "';'", "'if'", "'else'", "'switch'", "':'", "'{'", "'default'", "'}'", "'case'", "'for'", "'while'", "'do'", "'var'", "'val'", "'super'", "'::'", "'new'", "'false'", "'true'", "'null'", "'typeof'", "'throw'", "'return'", "'try'", "'finally'", "'catch'", "'?'", "'extends'", "'&'"
     };
     public static final int T__68=68;
     public static final int T__69=69;
@@ -1053,7 +1053,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTask"
-    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:359:1: ruleTask returns [EObject current=null] : (otherlv_0= 'task' ( (lv_name_1_0= ruleValidID ) ) (otherlv_2= 'dependsOn' ( ( ruleQualifiedName ) ) (otherlv_4= ',' ( ( ruleQualifiedName ) ) )* )? ( (lv_action_6_0= ruleXBlockExpression ) ) ) ;
+    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:359:1: ruleTask returns [EObject current=null] : (otherlv_0= 'task' ( (lv_name_1_0= ruleValidID ) ) (otherlv_2= 'depends' ( ( ruleValidID ) ) (otherlv_4= ',' ( ( ruleValidID ) ) )* )? ( (lv_action_6_0= ruleXBlockExpression ) ) ) ;
     public final EObject ruleTask() throws RecognitionException {
         EObject current = null;
 
@@ -1068,11 +1068,11 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:362:28: ( (otherlv_0= 'task' ( (lv_name_1_0= ruleValidID ) ) (otherlv_2= 'dependsOn' ( ( ruleQualifiedName ) ) (otherlv_4= ',' ( ( ruleQualifiedName ) ) )* )? ( (lv_action_6_0= ruleXBlockExpression ) ) ) )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:363:1: (otherlv_0= 'task' ( (lv_name_1_0= ruleValidID ) ) (otherlv_2= 'dependsOn' ( ( ruleQualifiedName ) ) (otherlv_4= ',' ( ( ruleQualifiedName ) ) )* )? ( (lv_action_6_0= ruleXBlockExpression ) ) )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:362:28: ( (otherlv_0= 'task' ( (lv_name_1_0= ruleValidID ) ) (otherlv_2= 'depends' ( ( ruleValidID ) ) (otherlv_4= ',' ( ( ruleValidID ) ) )* )? ( (lv_action_6_0= ruleXBlockExpression ) ) ) )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:363:1: (otherlv_0= 'task' ( (lv_name_1_0= ruleValidID ) ) (otherlv_2= 'depends' ( ( ruleValidID ) ) (otherlv_4= ',' ( ( ruleValidID ) ) )* )? ( (lv_action_6_0= ruleXBlockExpression ) ) )
             {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:363:1: (otherlv_0= 'task' ( (lv_name_1_0= ruleValidID ) ) (otherlv_2= 'dependsOn' ( ( ruleQualifiedName ) ) (otherlv_4= ',' ( ( ruleQualifiedName ) ) )* )? ( (lv_action_6_0= ruleXBlockExpression ) ) )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:363:3: otherlv_0= 'task' ( (lv_name_1_0= ruleValidID ) ) (otherlv_2= 'dependsOn' ( ( ruleQualifiedName ) ) (otherlv_4= ',' ( ( ruleQualifiedName ) ) )* )? ( (lv_action_6_0= ruleXBlockExpression ) )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:363:1: (otherlv_0= 'task' ( (lv_name_1_0= ruleValidID ) ) (otherlv_2= 'depends' ( ( ruleValidID ) ) (otherlv_4= ',' ( ( ruleValidID ) ) )* )? ( (lv_action_6_0= ruleXBlockExpression ) ) )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:363:3: otherlv_0= 'task' ( (lv_name_1_0= ruleValidID ) ) (otherlv_2= 'depends' ( ( ruleValidID ) ) (otherlv_4= ',' ( ( ruleValidID ) ) )* )? ( (lv_action_6_0= ruleXBlockExpression ) )
             {
             otherlv_0=(Token)match(input,18,FOLLOW_18_in_ruleTask778); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -1115,7 +1115,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:385:2: (otherlv_2= 'dependsOn' ( ( ruleQualifiedName ) ) (otherlv_4= ',' ( ( ruleQualifiedName ) ) )* )?
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:385:2: (otherlv_2= 'depends' ( ( ruleValidID ) ) (otherlv_4= ',' ( ( ruleValidID ) ) )* )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -1124,19 +1124,19 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
             }
             switch (alt9) {
                 case 1 :
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:385:4: otherlv_2= 'dependsOn' ( ( ruleQualifiedName ) ) (otherlv_4= ',' ( ( ruleQualifiedName ) ) )*
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:385:4: otherlv_2= 'depends' ( ( ruleValidID ) ) (otherlv_4= ',' ( ( ruleValidID ) ) )*
                     {
                     otherlv_2=(Token)match(input,19,FOLLOW_19_in_ruleTask812); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_2, grammarAccess.getTaskAccess().getDependsOnKeyword_2_0());
+                          	newLeafNode(otherlv_2, grammarAccess.getTaskAccess().getDependsKeyword_2_0());
                           
                     }
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:389:1: ( ( ruleQualifiedName ) )
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:390:1: ( ruleQualifiedName )
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:389:1: ( ( ruleValidID ) )
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:390:1: ( ruleValidID )
                     {
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:390:1: ( ruleQualifiedName )
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:391:3: ruleQualifiedName
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:390:1: ( ruleValidID )
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:391:3: ruleValidID
                     {
                     if ( state.backtracking==0 ) {
 
@@ -1147,11 +1147,11 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
                     }
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getTaskAccess().getDependsOnTaskCrossReference_2_1_0()); 
+                      	        newCompositeNode(grammarAccess.getTaskAccess().getDependsTaskCrossReference_2_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleQualifiedName_in_ruleTask835);
-                    ruleQualifiedName();
+                    pushFollow(FOLLOW_ruleValidID_in_ruleTask835);
+                    ruleValidID();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -1166,7 +1166,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:404:2: (otherlv_4= ',' ( ( ruleQualifiedName ) ) )*
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:404:2: (otherlv_4= ',' ( ( ruleValidID ) ) )*
                     loop8:
                     do {
                         int alt8=2;
@@ -1179,7 +1179,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
                         switch (alt8) {
                     	case 1 :
-                    	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:404:4: otherlv_4= ',' ( ( ruleQualifiedName ) )
+                    	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:404:4: otherlv_4= ',' ( ( ruleValidID ) )
                     	    {
                     	    otherlv_4=(Token)match(input,20,FOLLOW_20_in_ruleTask848); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
@@ -1187,11 +1187,11 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
                     	          	newLeafNode(otherlv_4, grammarAccess.getTaskAccess().getCommaKeyword_2_2_0());
                     	          
                     	    }
-                    	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:408:1: ( ( ruleQualifiedName ) )
-                    	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:409:1: ( ruleQualifiedName )
+                    	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:408:1: ( ( ruleValidID ) )
+                    	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:409:1: ( ruleValidID )
                     	    {
-                    	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:409:1: ( ruleQualifiedName )
-                    	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:410:3: ruleQualifiedName
+                    	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:409:1: ( ruleValidID )
+                    	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:410:3: ruleValidID
                     	    {
                     	    if ( state.backtracking==0 ) {
 
@@ -1202,11 +1202,11 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
                     	    }
                     	    if ( state.backtracking==0 ) {
                     	       
-                    	      	        newCompositeNode(grammarAccess.getTaskAccess().getDependsOnTaskCrossReference_2_2_1_0()); 
+                    	      	        newCompositeNode(grammarAccess.getTaskAccess().getDependsTaskCrossReference_2_2_1_0()); 
                     	      	    
                     	    }
-                    	    pushFollow(FOLLOW_ruleQualifiedName_in_ruleTask871);
-                    	    ruleQualifiedName();
+                    	    pushFollow(FOLLOW_ruleValidID_in_ruleTask871);
+                    	    ruleValidID();
 
                     	    state._fsp--;
                     	    if (state.failed) return current;
@@ -19473,9 +19473,9 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_18_in_ruleTask778 = new BitSet(new long[]{0x0000000000000100L});
     public static final BitSet FOLLOW_ruleValidID_in_ruleTask799 = new BitSet(new long[]{0x0400000000080000L});
     public static final BitSet FOLLOW_19_in_ruleTask812 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleTask835 = new BitSet(new long[]{0x0400000000100000L});
+    public static final BitSet FOLLOW_ruleValidID_in_ruleTask835 = new BitSet(new long[]{0x0400000000100000L});
     public static final BitSet FOLLOW_20_in_ruleTask848 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleTask871 = new BitSet(new long[]{0x0400000000100000L});
+    public static final BitSet FOLLOW_ruleValidID_in_ruleTask871 = new BitSet(new long[]{0x0400000000100000L});
     public static final BitSet FOLLOW_ruleXBlockExpression_in_ruleTask896 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXExpression_in_entryRuleXExpression932 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXExpression942 = new BitSet(new long[]{0x0000000000000002L});

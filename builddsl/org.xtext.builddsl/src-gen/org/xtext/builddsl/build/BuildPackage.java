@@ -227,13 +227,13 @@ public interface BuildPackage extends EPackage
   int TASK__NAME = DECLARATION__NAME;
 
   /**
-   * The feature id for the '<em><b>Depends On</b></em>' reference list.
+   * The feature id for the '<em><b>Depends</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TASK__DEPENDS_ON = DECLARATION_FEATURE_COUNT + 0;
+  int TASK__DEPENDS = DECLARATION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Action</b></em>' containment reference.
@@ -382,15 +382,15 @@ public interface BuildPackage extends EPackage
   EClass getTask();
 
   /**
-   * Returns the meta object for the reference list '{@link org.xtext.builddsl.build.Task#getDependsOn <em>Depends On</em>}'.
+   * Returns the meta object for the reference list '{@link org.xtext.builddsl.build.Task#getDepends <em>Depends</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Depends On</em>'.
-   * @see org.xtext.builddsl.build.Task#getDependsOn()
+   * @return the meta object for the reference list '<em>Depends</em>'.
+   * @see org.xtext.builddsl.build.Task#getDepends()
    * @see #getTask()
    * @generated
    */
-  EReference getTask_DependsOn();
+  EReference getTask_Depends();
 
   /**
    * Returns the meta object for the containment reference '{@link org.xtext.builddsl.build.Task#getAction <em>Action</em>}'.
@@ -533,12 +533,12 @@ public interface BuildPackage extends EPackage
     EClass TASK = eINSTANCE.getTask();
 
     /**
-     * The meta object literal for the '<em><b>Depends On</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Depends</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TASK__DEPENDS_ON = eINSTANCE.getTask_DependsOn();
+    EReference TASK__DEPENDS = eINSTANCE.getTask_Depends();
 
     /**
      * The meta object literal for the '<em><b>Action</b></em>' containment reference feature.

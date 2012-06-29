@@ -235,10 +235,10 @@ public class InternalBuildDSLLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:17:7: ( 'dependsOn' )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:17:9: 'dependsOn'
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:17:7: ( 'depends' )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:17:9: 'depends'
             {
-            match("dependsOn"); 
+            match("depends"); 
 
 
             }
@@ -2925,10 +2925,10 @@ public class InternalBuildDSLLexer extends Lexer {
         "\1\u00c0\2\55\1\u00c3\2\55\2\uffff\1\55\1\u00c7\2\55\1\uffff\2\55"+
         "\1\u00cc\1\uffff\1\u00cd\1\u00ce\1\55\1\u00d0\1\uffff\2\55\1\uffff"+
         "\1\u00d3\1\55\1\u00d5\1\uffff\3\55\1\u00d9\3\uffff\1\55\1\uffff"+
-        "\1\u00db\1\u00dc\1\uffff\1\55\1\uffff\1\55\1\u00df\1\u00e0\1\uffff"+
-        "\1\u00e1\2\uffff\2\55\3\uffff\1\55\1\u00e5\1\u00e6\2\uffff";
+        "\1\u00db\1\u00dc\1\uffff\1\55\1\uffff\1\u00de\1\u00df\1\u00e0\1"+
+        "\uffff\1\u00e1\2\uffff\1\55\4\uffff\1\55\1\u00e4\1\uffff";
     static final String DFA19_eofS =
-        "\u00e7\uffff";
+        "\u00e5\uffff";
     static final String DFA19_minS =
         "\1\0\1\141\1\146\1\52\1\75\1\141\1\145\1\uffff\1\75\1\174\1\46\3"+
         "\75\1\76\1\56\2\52\1\uffff\1\163\5\uffff\1\154\1\165\1\72\2\uffff"+
@@ -2944,8 +2944,7 @@ public class InternalBuildDSLLexer extends Lexer {
         "\1\146\1\44\1\144\1\154\1\uffff\1\144\1\150\1\44\1\uffff\2\44\1"+
         "\154\1\44\1\uffff\1\156\1\145\1\uffff\1\44\1\143\1\44\1\uffff\1"+
         "\163\1\164\1\163\1\44\3\uffff\1\171\1\uffff\2\44\1\uffff\1\145\1"+
-        "\uffff\1\117\2\44\1\uffff\1\44\2\uffff\1\157\1\156\3\uffff\1\146"+
-        "\2\44\2\uffff";
+        "\uffff\3\44\1\uffff\1\44\2\uffff\1\157\4\uffff\1\146\1\44\1\uffff";
     static final String DFA19_maxS =
         "\1\uffff\1\141\1\156\1\56\1\76\1\171\1\157\1\uffff\1\75\1\174\1"+
         "\46\2\75\2\76\1\72\1\56\1\57\1\uffff\1\163\5\uffff\1\170\1\167\1"+
@@ -2961,9 +2960,8 @@ public class InternalBuildDSLLexer extends Lexer {
         "\3\uffff\1\172\1\162\1\147\1\172\1\164\1\156\2\uffff\1\146\1\172"+
         "\1\144\1\154\1\uffff\1\144\1\150\1\172\1\uffff\2\172\1\154\1\172"+
         "\1\uffff\1\156\1\145\1\uffff\1\172\1\143\1\172\1\uffff\1\163\1\164"+
-        "\1\163\1\172\3\uffff\1\171\1\uffff\2\172\1\uffff\1\145\1\uffff\1"+
-        "\117\2\172\1\uffff\1\172\2\uffff\1\157\1\156\3\uffff\1\146\2\172"+
-        "\2\uffff";
+        "\1\163\1\172\3\uffff\1\171\1\uffff\2\172\1\uffff\1\145\1\uffff\3"+
+        "\172\1\uffff\1\172\2\uffff\1\157\4\uffff\1\146\1\172\1\uffff";
     static final String DFA19_acceptS =
         "\7\uffff\1\10\12\uffff\1\36\1\uffff\1\44\1\45\1\46\1\50\1\51\3\uffff"+
         "\1\56\1\60\11\uffff\1\111\2\uffff\1\115\1\116\1\uffff\1\111\3\uffff"+
@@ -2975,10 +2973,10 @@ public class InternalBuildDSLLexer extends Lexer {
         "\25\uffff\1\100\12\uffff\1\62\3\uffff\1\65\1\66\1\71\6\uffff\1\6"+
         "\1\73\4\uffff\1\53\3\uffff\1\61\4\uffff\1\74\2\uffff\1\4\3\uffff"+
         "\1\76\4\uffff\1\67\1\102\1\72\1\uffff\1\63\2\uffff\1\2\1\uffff\1"+
-        "\75\3\uffff\1\54\1\uffff\1\77\1\1\2\uffff\1\57\1\104\1\101\3\uffff"+
-        "\1\7\1\16";
+        "\75\3\uffff\1\54\1\uffff\1\77\1\1\1\uffff\1\7\1\57\1\104\1\101\2"+
+        "\uffff\1\16";
     static final String DFA19_specialS =
-        "\1\2\47\uffff\1\0\1\1\u00bd\uffff}>";
+        "\1\0\47\uffff\1\1\1\2\u00bb\uffff}>";
     static final String[] DFA19_transitionS = {
             "\11\53\2\52\2\53\1\52\22\53\1\52\1\13\1\50\1\53\1\47\1\22\1"+
             "\12\1\51\1\24\1\25\1\20\1\10\1\7\1\16\1\3\1\21\1\44\11\45\1"+
@@ -3227,7 +3225,8 @@ public class InternalBuildDSLLexer extends Lexer {
             "",
             "\1\u00dd",
             "",
-            "\1\u00de",
+            "\1\55\13\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32"+
+            "\55",
             "\1\55\13\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32"+
             "\55",
             "\1\55\13\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32"+
@@ -3238,16 +3237,13 @@ public class InternalBuildDSLLexer extends Lexer {
             "",
             "",
             "\1\u00e2",
+            "",
+            "",
+            "",
+            "",
             "\1\u00e3",
-            "",
-            "",
-            "",
-            "\1\u00e4",
             "\1\55\13\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32"+
             "\55",
-            "\1\55\13\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32"+
-            "\55",
-            "",
             ""
     };
 
@@ -3288,26 +3284,6 @@ public class InternalBuildDSLLexer extends Lexer {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA19_40 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA19_40>='\u0000' && LA19_40<='\uFFFF')) ) {s = 114;}
-
-                        else s = 43;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA19_41 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA19_41>='\u0000' && LA19_41<='\uFFFF')) ) {s = 114;}
-
-                        else s = 43;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
                         int LA19_0 = input.LA(1);
 
                         s = -1;
@@ -3396,6 +3372,26 @@ public class InternalBuildDSLLexer extends Lexer {
                         else if ( ((LA19_0>='\t' && LA19_0<='\n')||LA19_0=='\r'||LA19_0==' ') ) {s = 42;}
 
                         else if ( ((LA19_0>='\u0000' && LA19_0<='\b')||(LA19_0>='\u000B' && LA19_0<='\f')||(LA19_0>='\u000E' && LA19_0<='\u001F')||LA19_0=='#'||LA19_0=='@'||LA19_0=='\\'||LA19_0=='`'||(LA19_0>='~' && LA19_0<='\uFFFF')) ) {s = 43;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA19_40 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA19_40>='\u0000' && LA19_40<='\uFFFF')) ) {s = 114;}
+
+                        else s = 43;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA19_41 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA19_41>='\u0000' && LA19_41<='\uFFFF')) ) {s = 114;}
+
+                        else s = 43;
 
                         if ( s>=0 ) return s;
                         break;
