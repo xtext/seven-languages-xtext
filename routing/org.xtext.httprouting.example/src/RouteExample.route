@@ -1,11 +1,33 @@
-import com.google.inject.name.Named
-import org.xtext.example.actionclasses.ActionClass 
+import org.xtext.example.ActionClass
+import org.xtext.example.TimeSheetController
+import org.xtext.example.UserController
+import com.google.inject.name.Named 
         
-GET /client/foo/:id  when id=="42" @Named("ActionClassName") ActionClass->doSomething(Integer::parseInt(id))   
-GET /client/foo/:id  when id=="bar" @Named("ActionClassName") ActionClass->doSomething1(id) 
-GET /client/foo/:id  when id=="foo" @Named("ActionClassName") ActionClass->doSomething2(id)  
-      
-GET /client/:bar/foo/:baz/:name* when bar == "Some" && (bar + baz) == "SomeString" ActionClass->doSomething(bar, name) 
+GET /user/:id UserController->showUser(Integer::parseInt(id))   
+GET /timesheet/user/:id  when id=="admin" TimeSheetController->forUser(id) 
+GET /timesheet/month/:year/:month TimeSheetController->forMonth(Integer::parseInt(year), Integer::parseInt(month))  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GET /client/:bar/foo/:baz/:name* when bar == "Some" && (bar + baz) == "SomeString" @Named("Action") ActionClass->doSomething(bar, name) 
 
 POST /client/:bar/file.gif/:rest* when rest.startsWith("action?=delete")  ActionClass::doSomethingStatic(bar + rest)  
 POST /client/:bar/file.gif/:rest* ActionClass::doSomethingStatic(bar + rest)

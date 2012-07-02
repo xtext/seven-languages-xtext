@@ -412,7 +412,7 @@
    <extension
          point="org.eclipse.debug.ui.launchShortcuts">
       <shortcut
-            class="org.xtext.builddsl.ui.launch.BuildLaunchShortcut"
+            class="org.xtext.builddsl.ui.launch.BuildDSLLaunchShortcut"
             description="Launches a Build File"
             icon="icons/buildlaunch16.gif"
             id="org.xtext.builddsl.ui.launch.shortcut1"
