@@ -6,7 +6,7 @@
   <extension point="org.eclipse.emf.ecore.generated_package">
     <package 
        uri = "http://www.itemis.de/xtl/XTL" 
-       class = "org.xtext.template.xtl.XtlPackage"
+       class = "org.xtext.template.template.TemplatePackage"
        genModel = "org/xtext/template/Template.genmodel" /> 
 	
   </extension>

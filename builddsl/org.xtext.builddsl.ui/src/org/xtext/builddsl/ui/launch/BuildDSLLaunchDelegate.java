@@ -24,7 +24,6 @@ public class BuildDSLLaunchDelegate extends JavaLaunchDelegate {
 			ILaunch launch, IProgressMonitor monitor) throws CoreException {
 		if (RefreshTab.getRefreshScope(configuration) != null) {
 			DebugPlugin.getDefault().addDebugEventListener(new IDebugEventSetListener() {
-				@Override
 				public void handleDebugEvents(DebugEvent[] events) {
 					for (int i = 0; i < events.length; i++) {
 						DebugEvent event = events[i];

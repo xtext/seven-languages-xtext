@@ -25,6 +25,7 @@ public class MongoBeansUiModule extends org.xtext.mongobeans.ui.AbstractMongoBea
 		return MongoBeansOutlineTreeProvider.class;
 	}
 	
+	@Override
 	public Class<? extends org.eclipse.jface.viewers.ILabelProvider> bindILabelProvider() {
 		return MongoBeansLabelProvider.class;
 	}

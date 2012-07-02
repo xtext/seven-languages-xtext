@@ -19,13 +19,11 @@ public class TemplateValueConverterService extends XbaseValueConverterService {
 			this.postfix = postfix;
 		}
 
-		@Override
 		public String toString(String value) {
 			String infix = value == null ? "" : value;
 			return prefix + infix + postfix;
 		}
 
-		@Override
 		public String toValue(String string, INode node) throws ValueConverterException {
 			if (string == null)
 				return null;

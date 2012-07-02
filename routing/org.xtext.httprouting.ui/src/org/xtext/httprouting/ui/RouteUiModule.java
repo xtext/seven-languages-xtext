@@ -20,14 +20,17 @@ public class RouteUiModule extends org.xtext.httprouting.ui.AbstractRouteUiModul
 		return ImportingTypesProposalProvider.class;
 	}
 
+	@Override
 	public Class<? extends org.eclipse.xtext.ui.editor.contentassist.IContentProposalProvider> bindIContentProposalProvider() {
 		return org.xtext.httprouting.ui.contentassist.RouteProposalProviderXtend.class;
 	}
 
+	@Override
 	public Class<? extends org.eclipse.jface.viewers.ILabelProvider> bindILabelProvider() {
 		return org.xtext.httprouting.ui.labeling.RouteLabelProvider.class;
 	}
 
+	@Override
 	public void configureResourceUIServiceLabelProvider(com.google.inject.Binder binder) {
 		binder.bind(org.eclipse.jface.viewers.ILabelProvider.class).annotatedWith(org.eclipse.xtext.ui.resource.ResourceServiceDescriptionLabelProvider.class).to(org.xtext.httprouting.ui.labeling.RouteDescriptionLabelProvider.class);
 	}
