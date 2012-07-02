@@ -50,11 +50,11 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 	   				}
 					routeCounter = routeCounter + 1
    				}
-				addMethod("doGet", model, routes,RequestType::GET)
-				addMethod("doPost", model, routes,RequestType::POST)
-				addMethod("doPut", model, routes,RequestType::PUT)
-				addMethod("doDelete", model, routes,RequestType::DELETE)
-				addMethod("doHead", model, routes,RequestType::HEAD)
+				addOverriddenMethod("doGet", model, routes,RequestType::GET)
+				addOverriddenMethod("doPost", model, routes,RequestType::POST)
+				addOverriddenMethod("doPut", model, routes,RequestType::PUT)
+				addOverriddenMethod("doDelete", model, routes,RequestType::DELETE)
+				addOverriddenMethod("doHead", model, routes,RequestType::HEAD)
    			]
    	}
    	
@@ -106,8 +106,9 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 		servlet.members += patternField
    	}
    	
-	def protected addMethod(JvmDeclaredType servlet, String name, EObject element, Iterable<Route> routes, RequestType filterType) {
+	def protected addOverriddenMethod(JvmDeclaredType servlet, String name, EObject element, Iterable<Route> routes, RequestType filterType) {
    		servlet.members += element.toMethod(name,element.newTypeRef(Void::TYPE)) [
+   			annotations += element.toAnnotation(typeof(Override))
 			parameters += element.toParameter("request", element.newTypeRef(HTTP_REQUEST))
 			parameters += element.toParameter("response", element.newTypeRef("javax.servlet.http.HttpServletResponse"))
 			body = [

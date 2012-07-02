@@ -78,11 +78,11 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
               routeCounter = _plus;
             }
           }
-          RouteJvmModelInferrer.this.addMethod(it, "doGet", model, routes, RequestType.GET);
-          RouteJvmModelInferrer.this.addMethod(it, "doPost", model, routes, RequestType.POST);
-          RouteJvmModelInferrer.this.addMethod(it, "doPut", model, routes, RequestType.PUT);
-          RouteJvmModelInferrer.this.addMethod(it, "doDelete", model, routes, RequestType.DELETE);
-          RouteJvmModelInferrer.this.addMethod(it, "doHead", model, routes, RequestType.HEAD);
+          RouteJvmModelInferrer.this.addOverriddenMethod(it, "doGet", model, routes, RequestType.GET);
+          RouteJvmModelInferrer.this.addOverriddenMethod(it, "doPost", model, routes, RequestType.POST);
+          RouteJvmModelInferrer.this.addOverriddenMethod(it, "doPut", model, routes, RequestType.PUT);
+          RouteJvmModelInferrer.this.addOverriddenMethod(it, "doDelete", model, routes, RequestType.DELETE);
+          RouteJvmModelInferrer.this.addOverriddenMethod(it, "doHead", model, routes, RequestType.HEAD);
         }
       };
     _accept.initializeLater(_function);
@@ -241,11 +241,14 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
     return _xblockexpression;
   }
   
-  protected boolean addMethod(final JvmDeclaredType servlet, final String name, final EObject element, final Iterable<Route> routes, final RequestType filterType) {
+  protected boolean addOverriddenMethod(final JvmDeclaredType servlet, final String name, final EObject element, final Iterable<Route> routes, final RequestType filterType) {
     EList<JvmMember> _members = servlet.getMembers();
     JvmTypeReference _newTypeRef = this._jvmTypesBuilder.newTypeRef(element, Void.TYPE);
     final Procedure1<JvmOperation> _function = new Procedure1<JvmOperation>() {
         public void apply(final JvmOperation it) {
+          EList<JvmAnnotationReference> _annotations = it.getAnnotations();
+          JvmAnnotationReference _annotation = RouteJvmModelInferrer.this._jvmTypesBuilder.toAnnotation(element, Override.class);
+          RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmAnnotationReference>operator_add(_annotations, _annotation);
           EList<JvmFormalParameter> _parameters = it.getParameters();
           JvmTypeReference _newTypeRef = RouteJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(element, RouteJvmModelInferrer.HTTP_REQUEST);
           JvmFormalParameter _parameter = RouteJvmModelInferrer.this._jvmTypesBuilder.toParameter(element, "request", _newTypeRef);

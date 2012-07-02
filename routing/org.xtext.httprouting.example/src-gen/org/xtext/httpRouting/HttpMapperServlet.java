@@ -91,6 +91,7 @@ public class HttpMapperServlet extends HttpServlet {
   
   private static Pattern _pattern5 = Pattern.compile("/client/(\\w+)/file.gif/(.+)");
   
+  @Override
   public void doGet(final HttpServletRequest request, final HttpServletResponse response) {
     String url =  request.getRequestURL().toString();
     Matcher _matcher0 = _pattern0.matcher(url);
@@ -121,6 +122,7 @@ public class HttpMapperServlet extends HttpServlet {
     
   }
   
+  @Override
   public void doPost(final HttpServletRequest request, final HttpServletResponse response) {
     String url =  request.getRequestURL().toString();
     Matcher _matcher4 = _pattern4.matcher(url);
@@ -139,14 +141,17 @@ public class HttpMapperServlet extends HttpServlet {
     
   }
   
+  @Override
   public void doPut(final HttpServletRequest request, final HttpServletResponse response) {
     
   }
   
+  @Override
   public void doDelete(final HttpServletRequest request, final HttpServletResponse response) {
     
   }
   
+  @Override
   public void doHead(final HttpServletRequest request, final HttpServletResponse response) {
     
   }
