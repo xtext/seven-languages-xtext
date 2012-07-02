@@ -152,29 +152,6 @@
     </extension>
 
 
-    <!-- marker definitions for org.xtext.mongobeans.MongoBeans -->
-    <extension
-            id="mongobeans.check.fast"
-            name="MongoBeans Problem"
-            point="org.eclipse.core.resources.markers">
-        <super type="org.eclipse.xtext.ui.check.fast"/>
-        <persistent value="true"/>
-    </extension>
-    <extension
-            id="mongobeans.check.normal"
-            name="MongoBeans Problem"
-            point="org.eclipse.core.resources.markers">
-        <super type="org.eclipse.xtext.ui.check.normal"/>
-        <persistent value="true"/>
-    </extension>
-    <extension
-            id="mongobeans.check.expensive"
-            name="MongoBeans Problem"
-            point="org.eclipse.core.resources.markers">
-        <super type="org.eclipse.xtext.ui.check.expensive"/>
-        <persistent value="true"/>
-    </extension>
-
    <extension
          point="org.eclipse.xtext.builder.participant">
       <participant
