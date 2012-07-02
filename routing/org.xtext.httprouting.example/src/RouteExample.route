@@ -11,22 +11,6 @@ GET /timesheet/month/:year/:month TimeSheetController->forMonth(Integer::parseIn
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 GET /client/:bar/foo/:baz/:name* when bar == "Some" && (bar + baz) == "SomeString" @Named("Action") ActionClass->doSomething(bar, name) 
 
 POST /client/:bar/file.gif/:rest* when rest.startsWith("action?=delete")  ActionClass::doSomethingStatic(bar + rest)  

@@ -8,55 +8,46 @@ import java.util.regex.Pattern;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.xtext.example.actionclasses.ActionClass;
+import org.xtext.example.ActionClass;
+import org.xtext.example.TimeSheetController;
+import org.xtext.example.UserController;
 
 @SuppressWarnings("serial")
 public class HttpMapperServlet extends HttpServlet {
-  public void _doGet0(final ActionClass it, final HttpServletRequest request, final String id) {
+  public void _doGet0(final UserController it, final HttpServletRequest request, final String id) {
     int _parseInt = Integer.parseInt(id);
-    it.doSomething(Integer.valueOf(_parseInt));
-  }
-  
-  public boolean _doGet0Condition(final HttpServletRequest request, final String id) {
-    boolean _equals = Objects.equal(id, "42");
-    return _equals;
+    it.showUser(_parseInt);
   }
   
   @Inject
-  @Named(value = "ActionClassName")
-  private ActionClass _key0;
+  private UserController _key0;
   
-  private static Pattern _pattern0 = Pattern.compile("/client/foo/(\\w+)");
+  private static Pattern _pattern0 = Pattern.compile("/user/(\\w+)");
   
-  public void _doGet1(final ActionClass it, final HttpServletRequest request, final String id) {
-    it.doSomething1(id);
+  public void _doGet1(final TimeSheetController it, final HttpServletRequest request, final String id) {
+    it.forUser(id);
   }
   
   public boolean _doGet1Condition(final HttpServletRequest request, final String id) {
-    boolean _equals = Objects.equal(id, "bar");
+    boolean _equals = Objects.equal(id, "admin");
     return _equals;
   }
   
   @Inject
-  @Named(value = "ActionClassName")
-  private ActionClass _key1;
+  private TimeSheetController _key1;
   
-  private static Pattern _pattern1 = Pattern.compile("/client/foo/(\\w+)");
+  private static Pattern _pattern1 = Pattern.compile("/timesheet/user/(\\w+)");
   
-  public void _doGet2(final ActionClass it, final HttpServletRequest request, final String id) {
-    it.doSomething2(id);
-  }
-  
-  public boolean _doGet2Condition(final HttpServletRequest request, final String id) {
-    boolean _equals = Objects.equal(id, "foo");
-    return _equals;
+  public void _doGet2(final TimeSheetController it, final HttpServletRequest request, final String year, final String month) {
+    int _parseInt = Integer.parseInt(year);
+    int _parseInt_1 = Integer.parseInt(month);
+    it.forMonth(_parseInt, _parseInt_1);
   }
   
   @Inject
-  @Named(value = "ActionClassName")
-  private ActionClass _key2;
+  private TimeSheetController _key2;
   
-  private static Pattern _pattern2 = Pattern.compile("/client/foo/(\\w+)");
+  private static Pattern _pattern2 = Pattern.compile("/timesheet/month/:year/(\\w+)");
   
   public void _doGet3(final ActionClass it, final HttpServletRequest request, final String bar, final String baz, final String name) {
     it.doSomething(bar, name);
@@ -76,6 +67,7 @@ public class HttpMapperServlet extends HttpServlet {
   }
   
   @Inject
+  @Named(value = "Action")
   private ActionClass _key3;
   
   private static Pattern _pattern3 = Pattern.compile("/client/:bar/foo/(\\w+)/(.+)");
@@ -104,7 +96,6 @@ public class HttpMapperServlet extends HttpServlet {
     Matcher _matcher0 = _pattern0.matcher(url);
     if (_matcher0.find()) {
     		String id = _matcher0.group(1);
-    		if (_doGet0Condition(request, id))
     			_doGet0(_key0,request, id);
     }
     Matcher _matcher1 = _pattern1.matcher(url);
@@ -115,9 +106,9 @@ public class HttpMapperServlet extends HttpServlet {
     }
     Matcher _matcher2 = _pattern2.matcher(url);
     if (_matcher2.find()) {
-    		String id = _matcher2.group(1);
-    		if (_doGet2Condition(request, id))
-    			_doGet2(_key2,request, id);
+    		String year = _matcher2.group(1);
+    		String month = _matcher2.group(2);
+    			_doGet2(_key2,request, year, month);
     }
     Matcher _matcher3 = _pattern3.matcher(url);
     if (_matcher3.find()) {

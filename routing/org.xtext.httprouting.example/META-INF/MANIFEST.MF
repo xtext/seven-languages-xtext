@@ -6,8 +6,7 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: Route.jar,
  lib/servlet-api.jar
 Export-Package: javax.servlet,
- javax.servlet.http,
- org.xtext.example.actionclasses
+ javax.servlet.http
 Require-Bundle: com.google.inject;bundle-version="3.0.0",
  org.eclipse.xtext.xbase.lib;bundle-version="2.3.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
