@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.xtext.guicemodules.guiceModules;
 
@@ -60,14 +57,14 @@ public interface GuiceModulesPackage extends EPackage
   GuiceModulesPackage eINSTANCE = org.xtext.guicemodules.guiceModules.impl.GuiceModulesPackageImpl.init();
 
   /**
-   * The meta object id for the '{@link org.xtext.guicemodules.guiceModules.impl.ModuleImpl <em>Module</em>}' class.
+   * The meta object id for the '{@link org.xtext.guicemodules.guiceModules.impl.ModulesASTImpl <em>Modules AST</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.guicemodules.guiceModules.impl.ModuleImpl
-   * @see org.xtext.guicemodules.guiceModules.impl.GuiceModulesPackageImpl#getModule()
+   * @see org.xtext.guicemodules.guiceModules.impl.ModulesASTImpl
+   * @see org.xtext.guicemodules.guiceModules.impl.GuiceModulesPackageImpl#getModulesAST()
    * @generated
    */
-  int MODULE = 0;
+  int MODULES_AST = 0;
 
   /**
    * The feature id for the '<em><b>Imports</b></em>' containment reference list.
@@ -76,7 +73,35 @@ public interface GuiceModulesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODULE__IMPORTS = 0;
+  int MODULES_AST__IMPORTS = 0;
+
+  /**
+   * The feature id for the '<em><b>Modules</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODULES_AST__MODULES = 1;
+
+  /**
+   * The number of structural features of the '<em>Modules AST</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODULES_AST_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.guicemodules.guiceModules.impl.ModuleASTImpl <em>Module AST</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.guicemodules.guiceModules.impl.ModuleASTImpl
+   * @see org.xtext.guicemodules.guiceModules.impl.GuiceModulesPackageImpl#getModuleAST()
+   * @generated
+   */
+  int MODULE_AST = 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -85,7 +110,7 @@ public interface GuiceModulesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODULE__NAME = 1;
+  int MODULE_AST__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Mixins</b></em>' reference list.
@@ -94,7 +119,7 @@ public interface GuiceModulesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODULE__MIXINS = 2;
+  int MODULE_AST__MIXINS = 1;
 
   /**
    * The feature id for the '<em><b>Bindings</b></em>' containment reference list.
@@ -103,26 +128,26 @@ public interface GuiceModulesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODULE__BINDINGS = 3;
+  int MODULE_AST__BINDINGS = 2;
 
   /**
-   * The number of structural features of the '<em>Module</em>' class.
+   * The number of structural features of the '<em>Module AST</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODULE_FEATURE_COUNT = 4;
+  int MODULE_AST_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link org.xtext.guicemodules.guiceModules.impl.BindingImpl <em>Binding</em>}' class.
+   * The meta object id for the '{@link org.xtext.guicemodules.guiceModules.impl.BindingASTImpl <em>Binding AST</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.guicemodules.guiceModules.impl.BindingImpl
-   * @see org.xtext.guicemodules.guiceModules.impl.GuiceModulesPackageImpl#getBinding()
+   * @see org.xtext.guicemodules.guiceModules.impl.BindingASTImpl
+   * @see org.xtext.guicemodules.guiceModules.impl.GuiceModulesPackageImpl#getBindingAST()
    * @generated
    */
-  int BINDING = 1;
+  int BINDING_AST = 2;
 
   /**
    * The feature id for the '<em><b>From</b></em>' containment reference.
@@ -131,7 +156,7 @@ public interface GuiceModulesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BINDING__FROM = 0;
+  int BINDING_AST__FROM = 0;
 
   /**
    * The feature id for the '<em><b>To</b></em>' containment reference.
@@ -140,7 +165,7 @@ public interface GuiceModulesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BINDING__TO = 1;
+  int BINDING_AST__TO = 1;
 
   /**
    * The feature id for the '<em><b>To Instance</b></em>' containment reference.
@@ -149,35 +174,35 @@ public interface GuiceModulesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BINDING__TO_INSTANCE = 2;
+  int BINDING_AST__TO_INSTANCE = 2;
 
   /**
-   * The number of structural features of the '<em>Binding</em>' class.
+   * The number of structural features of the '<em>Binding AST</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BINDING_FEATURE_COUNT = 3;
+  int BINDING_AST_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link org.xtext.guicemodules.guiceModules.impl.KeyImpl <em>Key</em>}' class.
+   * The meta object id for the '{@link org.xtext.guicemodules.guiceModules.impl.KeyASTImpl <em>Key AST</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.guicemodules.guiceModules.impl.KeyImpl
-   * @see org.xtext.guicemodules.guiceModules.impl.GuiceModulesPackageImpl#getKey()
+   * @see org.xtext.guicemodules.guiceModules.impl.KeyASTImpl
+   * @see org.xtext.guicemodules.guiceModules.impl.GuiceModulesPackageImpl#getKeyAST()
    * @generated
    */
-  int KEY = 2;
+  int KEY_AST = 3;
 
   /**
-   * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+   * The feature id for the '<em><b>Annotation</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int KEY__ANNOTATIONS = 0;
+  int KEY_AST__ANNOTATION = 0;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -186,26 +211,26 @@ public interface GuiceModulesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int KEY__TYPE = 1;
+  int KEY_AST__TYPE = 1;
 
   /**
-   * The number of structural features of the '<em>Key</em>' class.
+   * The number of structural features of the '<em>Key AST</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int KEY_FEATURE_COUNT = 2;
+  int KEY_AST_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link org.xtext.guicemodules.guiceModules.impl.ImportImpl <em>Import</em>}' class.
+   * The meta object id for the '{@link org.xtext.guicemodules.guiceModules.impl.ImportASTImpl <em>Import AST</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.guicemodules.guiceModules.impl.ImportImpl
-   * @see org.xtext.guicemodules.guiceModules.impl.GuiceModulesPackageImpl#getImport()
+   * @see org.xtext.guicemodules.guiceModules.impl.ImportASTImpl
+   * @see org.xtext.guicemodules.guiceModules.impl.GuiceModulesPackageImpl#getImportAST()
    * @generated
    */
-  int IMPORT = 3;
+  int IMPORT_AST = 4;
 
   /**
    * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
@@ -214,167 +239,188 @@ public interface GuiceModulesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IMPORT__IMPORTED_NAMESPACE = 0;
+  int IMPORT_AST__IMPORTED_NAMESPACE = 0;
 
   /**
-   * The number of structural features of the '<em>Import</em>' class.
+   * The number of structural features of the '<em>Import AST</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IMPORT_FEATURE_COUNT = 1;
+  int IMPORT_AST_FEATURE_COUNT = 1;
 
 
   /**
-   * Returns the meta object for class '{@link org.xtext.guicemodules.guiceModules.Module <em>Module</em>}'.
+   * Returns the meta object for class '{@link org.xtext.guicemodules.guiceModules.ModulesAST <em>Modules AST</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Module</em>'.
-   * @see org.xtext.guicemodules.guiceModules.Module
+   * @return the meta object for class '<em>Modules AST</em>'.
+   * @see org.xtext.guicemodules.guiceModules.ModulesAST
    * @generated
    */
-  EClass getModule();
+  EClass getModulesAST();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.guicemodules.guiceModules.Module#getImports <em>Imports</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.guicemodules.guiceModules.ModulesAST#getImports <em>Imports</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Imports</em>'.
-   * @see org.xtext.guicemodules.guiceModules.Module#getImports()
-   * @see #getModule()
+   * @see org.xtext.guicemodules.guiceModules.ModulesAST#getImports()
+   * @see #getModulesAST()
    * @generated
    */
-  EReference getModule_Imports();
+  EReference getModulesAST_Imports();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.guicemodules.guiceModules.Module#getName <em>Name</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.guicemodules.guiceModules.ModulesAST#getModules <em>Modules</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Modules</em>'.
+   * @see org.xtext.guicemodules.guiceModules.ModulesAST#getModules()
+   * @see #getModulesAST()
+   * @generated
+   */
+  EReference getModulesAST_Modules();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.guicemodules.guiceModules.ModuleAST <em>Module AST</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Module AST</em>'.
+   * @see org.xtext.guicemodules.guiceModules.ModuleAST
+   * @generated
+   */
+  EClass getModuleAST();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.guicemodules.guiceModules.ModuleAST#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.guicemodules.guiceModules.Module#getName()
-   * @see #getModule()
+   * @see org.xtext.guicemodules.guiceModules.ModuleAST#getName()
+   * @see #getModuleAST()
    * @generated
    */
-  EAttribute getModule_Name();
+  EAttribute getModuleAST_Name();
 
   /**
-   * Returns the meta object for the reference list '{@link org.xtext.guicemodules.guiceModules.Module#getMixins <em>Mixins</em>}'.
+   * Returns the meta object for the reference list '{@link org.xtext.guicemodules.guiceModules.ModuleAST#getMixins <em>Mixins</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference list '<em>Mixins</em>'.
-   * @see org.xtext.guicemodules.guiceModules.Module#getMixins()
-   * @see #getModule()
+   * @see org.xtext.guicemodules.guiceModules.ModuleAST#getMixins()
+   * @see #getModuleAST()
    * @generated
    */
-  EReference getModule_Mixins();
+  EReference getModuleAST_Mixins();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.guicemodules.guiceModules.Module#getBindings <em>Bindings</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.guicemodules.guiceModules.ModuleAST#getBindings <em>Bindings</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Bindings</em>'.
-   * @see org.xtext.guicemodules.guiceModules.Module#getBindings()
-   * @see #getModule()
+   * @see org.xtext.guicemodules.guiceModules.ModuleAST#getBindings()
+   * @see #getModuleAST()
    * @generated
    */
-  EReference getModule_Bindings();
+  EReference getModuleAST_Bindings();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.guicemodules.guiceModules.Binding <em>Binding</em>}'.
+   * Returns the meta object for class '{@link org.xtext.guicemodules.guiceModules.BindingAST <em>Binding AST</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Binding</em>'.
-   * @see org.xtext.guicemodules.guiceModules.Binding
+   * @return the meta object for class '<em>Binding AST</em>'.
+   * @see org.xtext.guicemodules.guiceModules.BindingAST
    * @generated
    */
-  EClass getBinding();
+  EClass getBindingAST();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.guicemodules.guiceModules.Binding#getFrom <em>From</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.guicemodules.guiceModules.BindingAST#getFrom <em>From</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>From</em>'.
-   * @see org.xtext.guicemodules.guiceModules.Binding#getFrom()
-   * @see #getBinding()
+   * @see org.xtext.guicemodules.guiceModules.BindingAST#getFrom()
+   * @see #getBindingAST()
    * @generated
    */
-  EReference getBinding_From();
+  EReference getBindingAST_From();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.guicemodules.guiceModules.Binding#getTo <em>To</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.guicemodules.guiceModules.BindingAST#getTo <em>To</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>To</em>'.
-   * @see org.xtext.guicemodules.guiceModules.Binding#getTo()
-   * @see #getBinding()
+   * @see org.xtext.guicemodules.guiceModules.BindingAST#getTo()
+   * @see #getBindingAST()
    * @generated
    */
-  EReference getBinding_To();
+  EReference getBindingAST_To();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.guicemodules.guiceModules.Binding#getToInstance <em>To Instance</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.guicemodules.guiceModules.BindingAST#getToInstance <em>To Instance</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>To Instance</em>'.
-   * @see org.xtext.guicemodules.guiceModules.Binding#getToInstance()
-   * @see #getBinding()
+   * @see org.xtext.guicemodules.guiceModules.BindingAST#getToInstance()
+   * @see #getBindingAST()
    * @generated
    */
-  EReference getBinding_ToInstance();
+  EReference getBindingAST_ToInstance();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.guicemodules.guiceModules.Key <em>Key</em>}'.
+   * Returns the meta object for class '{@link org.xtext.guicemodules.guiceModules.KeyAST <em>Key AST</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Key</em>'.
-   * @see org.xtext.guicemodules.guiceModules.Key
+   * @return the meta object for class '<em>Key AST</em>'.
+   * @see org.xtext.guicemodules.guiceModules.KeyAST
    * @generated
    */
-  EClass getKey();
+  EClass getKeyAST();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.guicemodules.guiceModules.Key#getAnnotations <em>Annotations</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.guicemodules.guiceModules.KeyAST#getAnnotation <em>Annotation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Annotations</em>'.
-   * @see org.xtext.guicemodules.guiceModules.Key#getAnnotations()
-   * @see #getKey()
+   * @return the meta object for the containment reference '<em>Annotation</em>'.
+   * @see org.xtext.guicemodules.guiceModules.KeyAST#getAnnotation()
+   * @see #getKeyAST()
    * @generated
    */
-  EReference getKey_Annotations();
+  EReference getKeyAST_Annotation();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.guicemodules.guiceModules.Key#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.guicemodules.guiceModules.KeyAST#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Type</em>'.
-   * @see org.xtext.guicemodules.guiceModules.Key#getType()
-   * @see #getKey()
+   * @see org.xtext.guicemodules.guiceModules.KeyAST#getType()
+   * @see #getKeyAST()
    * @generated
    */
-  EReference getKey_Type();
+  EReference getKeyAST_Type();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.guicemodules.guiceModules.Import <em>Import</em>}'.
+   * Returns the meta object for class '{@link org.xtext.guicemodules.guiceModules.ImportAST <em>Import AST</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Import</em>'.
-   * @see org.xtext.guicemodules.guiceModules.Import
+   * @return the meta object for class '<em>Import AST</em>'.
+   * @see org.xtext.guicemodules.guiceModules.ImportAST
    * @generated
    */
-  EClass getImport();
+  EClass getImportAST();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.guicemodules.guiceModules.Import#getImportedNamespace <em>Imported Namespace</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.guicemodules.guiceModules.ImportAST#getImportedNamespace <em>Imported Namespace</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Imported Namespace</em>'.
-   * @see org.xtext.guicemodules.guiceModules.Import#getImportedNamespace()
-   * @see #getImport()
+   * @see org.xtext.guicemodules.guiceModules.ImportAST#getImportedNamespace()
+   * @see #getImportAST()
    * @generated
    */
-  EAttribute getImport_ImportedNamespace();
+  EAttribute getImportAST_ImportedNamespace();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -400,14 +446,14 @@ public interface GuiceModulesPackage extends EPackage
   interface Literals
   {
     /**
-     * The meta object literal for the '{@link org.xtext.guicemodules.guiceModules.impl.ModuleImpl <em>Module</em>}' class.
+     * The meta object literal for the '{@link org.xtext.guicemodules.guiceModules.impl.ModulesASTImpl <em>Modules AST</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.guicemodules.guiceModules.impl.ModuleImpl
-     * @see org.xtext.guicemodules.guiceModules.impl.GuiceModulesPackageImpl#getModule()
+     * @see org.xtext.guicemodules.guiceModules.impl.ModulesASTImpl
+     * @see org.xtext.guicemodules.guiceModules.impl.GuiceModulesPackageImpl#getModulesAST()
      * @generated
      */
-    EClass MODULE = eINSTANCE.getModule();
+    EClass MODULES_AST = eINSTANCE.getModulesAST();
 
     /**
      * The meta object literal for the '<em><b>Imports</b></em>' containment reference list feature.
@@ -415,7 +461,25 @@ public interface GuiceModulesPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODULE__IMPORTS = eINSTANCE.getModule_Imports();
+    EReference MODULES_AST__IMPORTS = eINSTANCE.getModulesAST_Imports();
+
+    /**
+     * The meta object literal for the '<em><b>Modules</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODULES_AST__MODULES = eINSTANCE.getModulesAST_Modules();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.guicemodules.guiceModules.impl.ModuleASTImpl <em>Module AST</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.guicemodules.guiceModules.impl.ModuleASTImpl
+     * @see org.xtext.guicemodules.guiceModules.impl.GuiceModulesPackageImpl#getModuleAST()
+     * @generated
+     */
+    EClass MODULE_AST = eINSTANCE.getModuleAST();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -423,7 +487,7 @@ public interface GuiceModulesPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute MODULE__NAME = eINSTANCE.getModule_Name();
+    EAttribute MODULE_AST__NAME = eINSTANCE.getModuleAST_Name();
 
     /**
      * The meta object literal for the '<em><b>Mixins</b></em>' reference list feature.
@@ -431,7 +495,7 @@ public interface GuiceModulesPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODULE__MIXINS = eINSTANCE.getModule_Mixins();
+    EReference MODULE_AST__MIXINS = eINSTANCE.getModuleAST_Mixins();
 
     /**
      * The meta object literal for the '<em><b>Bindings</b></em>' containment reference list feature.
@@ -439,17 +503,17 @@ public interface GuiceModulesPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODULE__BINDINGS = eINSTANCE.getModule_Bindings();
+    EReference MODULE_AST__BINDINGS = eINSTANCE.getModuleAST_Bindings();
 
     /**
-     * The meta object literal for the '{@link org.xtext.guicemodules.guiceModules.impl.BindingImpl <em>Binding</em>}' class.
+     * The meta object literal for the '{@link org.xtext.guicemodules.guiceModules.impl.BindingASTImpl <em>Binding AST</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.guicemodules.guiceModules.impl.BindingImpl
-     * @see org.xtext.guicemodules.guiceModules.impl.GuiceModulesPackageImpl#getBinding()
+     * @see org.xtext.guicemodules.guiceModules.impl.BindingASTImpl
+     * @see org.xtext.guicemodules.guiceModules.impl.GuiceModulesPackageImpl#getBindingAST()
      * @generated
      */
-    EClass BINDING = eINSTANCE.getBinding();
+    EClass BINDING_AST = eINSTANCE.getBindingAST();
 
     /**
      * The meta object literal for the '<em><b>From</b></em>' containment reference feature.
@@ -457,7 +521,7 @@ public interface GuiceModulesPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BINDING__FROM = eINSTANCE.getBinding_From();
+    EReference BINDING_AST__FROM = eINSTANCE.getBindingAST_From();
 
     /**
      * The meta object literal for the '<em><b>To</b></em>' containment reference feature.
@@ -465,7 +529,7 @@ public interface GuiceModulesPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BINDING__TO = eINSTANCE.getBinding_To();
+    EReference BINDING_AST__TO = eINSTANCE.getBindingAST_To();
 
     /**
      * The meta object literal for the '<em><b>To Instance</b></em>' containment reference feature.
@@ -473,25 +537,25 @@ public interface GuiceModulesPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BINDING__TO_INSTANCE = eINSTANCE.getBinding_ToInstance();
+    EReference BINDING_AST__TO_INSTANCE = eINSTANCE.getBindingAST_ToInstance();
 
     /**
-     * The meta object literal for the '{@link org.xtext.guicemodules.guiceModules.impl.KeyImpl <em>Key</em>}' class.
+     * The meta object literal for the '{@link org.xtext.guicemodules.guiceModules.impl.KeyASTImpl <em>Key AST</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.guicemodules.guiceModules.impl.KeyImpl
-     * @see org.xtext.guicemodules.guiceModules.impl.GuiceModulesPackageImpl#getKey()
+     * @see org.xtext.guicemodules.guiceModules.impl.KeyASTImpl
+     * @see org.xtext.guicemodules.guiceModules.impl.GuiceModulesPackageImpl#getKeyAST()
      * @generated
      */
-    EClass KEY = eINSTANCE.getKey();
+    EClass KEY_AST = eINSTANCE.getKeyAST();
 
     /**
-     * The meta object literal for the '<em><b>Annotations</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Annotation</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference KEY__ANNOTATIONS = eINSTANCE.getKey_Annotations();
+    EReference KEY_AST__ANNOTATION = eINSTANCE.getKeyAST_Annotation();
 
     /**
      * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
@@ -499,17 +563,17 @@ public interface GuiceModulesPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference KEY__TYPE = eINSTANCE.getKey_Type();
+    EReference KEY_AST__TYPE = eINSTANCE.getKeyAST_Type();
 
     /**
-     * The meta object literal for the '{@link org.xtext.guicemodules.guiceModules.impl.ImportImpl <em>Import</em>}' class.
+     * The meta object literal for the '{@link org.xtext.guicemodules.guiceModules.impl.ImportASTImpl <em>Import AST</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.guicemodules.guiceModules.impl.ImportImpl
-     * @see org.xtext.guicemodules.guiceModules.impl.GuiceModulesPackageImpl#getImport()
+     * @see org.xtext.guicemodules.guiceModules.impl.ImportASTImpl
+     * @see org.xtext.guicemodules.guiceModules.impl.GuiceModulesPackageImpl#getImportAST()
      * @generated
      */
-    EClass IMPORT = eINSTANCE.getImport();
+    EClass IMPORT_AST = eINSTANCE.getImportAST();
 
     /**
      * The meta object literal for the '<em><b>Imported Namespace</b></em>' attribute feature.
@@ -517,7 +581,7 @@ public interface GuiceModulesPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute IMPORT__IMPORTED_NAMESPACE = eINSTANCE.getImport_ImportedNamespace();
+    EAttribute IMPORT_AST__IMPORTED_NAMESPACE = eINSTANCE.getImportAST_ImportedNamespace();
 
   }
 

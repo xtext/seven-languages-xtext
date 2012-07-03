@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.xtext.guicemodules.guiceModules.impl;
 
@@ -22,39 +19,27 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.xtext.guicemodules.guiceModules.Binding;
+import org.xtext.guicemodules.guiceModules.BindingAST;
 import org.xtext.guicemodules.guiceModules.GuiceModulesPackage;
-import org.xtext.guicemodules.guiceModules.Import;
-import org.xtext.guicemodules.guiceModules.Module;
+import org.xtext.guicemodules.guiceModules.ModuleAST;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Module</b></em>'.
+ * An implementation of the model object '<em><b>Module AST</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.guicemodules.guiceModules.impl.ModuleImpl#getImports <em>Imports</em>}</li>
- *   <li>{@link org.xtext.guicemodules.guiceModules.impl.ModuleImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.guicemodules.guiceModules.impl.ModuleImpl#getMixins <em>Mixins</em>}</li>
- *   <li>{@link org.xtext.guicemodules.guiceModules.impl.ModuleImpl#getBindings <em>Bindings</em>}</li>
+ *   <li>{@link org.xtext.guicemodules.guiceModules.impl.ModuleASTImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.guicemodules.guiceModules.impl.ModuleASTImpl#getMixins <em>Mixins</em>}</li>
+ *   <li>{@link org.xtext.guicemodules.guiceModules.impl.ModuleASTImpl#getBindings <em>Bindings</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ModuleImpl extends MinimalEObjectImpl.Container implements Module
+public class ModuleASTImpl extends MinimalEObjectImpl.Container implements ModuleAST
 {
-  /**
-   * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getImports()
-   * @generated
-   * @ordered
-   */
-  protected EList<Import> imports;
-
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -83,7 +68,7 @@ public class ModuleImpl extends MinimalEObjectImpl.Container implements Module
    * @generated
    * @ordered
    */
-  protected EList<Module> mixins;
+  protected EList<ModuleAST> mixins;
 
   /**
    * The cached value of the '{@link #getBindings() <em>Bindings</em>}' containment reference list.
@@ -93,14 +78,14 @@ public class ModuleImpl extends MinimalEObjectImpl.Container implements Module
    * @generated
    * @ordered
    */
-  protected EList<Binding> bindings;
+  protected EList<BindingAST> bindings;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ModuleImpl()
+  protected ModuleASTImpl()
   {
     super();
   }
@@ -113,21 +98,7 @@ public class ModuleImpl extends MinimalEObjectImpl.Container implements Module
   @Override
   protected EClass eStaticClass()
   {
-    return GuiceModulesPackage.Literals.MODULE;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Import> getImports()
-  {
-    if (imports == null)
-    {
-      imports = new EObjectContainmentEList<Import>(Import.class, this, GuiceModulesPackage.MODULE__IMPORTS);
-    }
-    return imports;
+    return GuiceModulesPackage.Literals.MODULE_AST;
   }
 
   /**
@@ -150,7 +121,7 @@ public class ModuleImpl extends MinimalEObjectImpl.Container implements Module
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GuiceModulesPackage.MODULE__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, GuiceModulesPackage.MODULE_AST__NAME, oldName, name));
   }
 
   /**
@@ -158,11 +129,11 @@ public class ModuleImpl extends MinimalEObjectImpl.Container implements Module
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Module> getMixins()
+  public EList<ModuleAST> getMixins()
   {
     if (mixins == null)
     {
-      mixins = new EObjectResolvingEList<Module>(Module.class, this, GuiceModulesPackage.MODULE__MIXINS);
+      mixins = new EObjectResolvingEList<ModuleAST>(ModuleAST.class, this, GuiceModulesPackage.MODULE_AST__MIXINS);
     }
     return mixins;
   }
@@ -172,11 +143,11 @@ public class ModuleImpl extends MinimalEObjectImpl.Container implements Module
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Binding> getBindings()
+  public EList<BindingAST> getBindings()
   {
     if (bindings == null)
     {
-      bindings = new EObjectContainmentEList<Binding>(Binding.class, this, GuiceModulesPackage.MODULE__BINDINGS);
+      bindings = new EObjectContainmentEList<BindingAST>(BindingAST.class, this, GuiceModulesPackage.MODULE_AST__BINDINGS);
     }
     return bindings;
   }
@@ -191,9 +162,7 @@ public class ModuleImpl extends MinimalEObjectImpl.Container implements Module
   {
     switch (featureID)
     {
-      case GuiceModulesPackage.MODULE__IMPORTS:
-        return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
-      case GuiceModulesPackage.MODULE__BINDINGS:
+      case GuiceModulesPackage.MODULE_AST__BINDINGS:
         return ((InternalEList<?>)getBindings()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -209,13 +178,11 @@ public class ModuleImpl extends MinimalEObjectImpl.Container implements Module
   {
     switch (featureID)
     {
-      case GuiceModulesPackage.MODULE__IMPORTS:
-        return getImports();
-      case GuiceModulesPackage.MODULE__NAME:
+      case GuiceModulesPackage.MODULE_AST__NAME:
         return getName();
-      case GuiceModulesPackage.MODULE__MIXINS:
+      case GuiceModulesPackage.MODULE_AST__MIXINS:
         return getMixins();
-      case GuiceModulesPackage.MODULE__BINDINGS:
+      case GuiceModulesPackage.MODULE_AST__BINDINGS:
         return getBindings();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -232,20 +199,16 @@ public class ModuleImpl extends MinimalEObjectImpl.Container implements Module
   {
     switch (featureID)
     {
-      case GuiceModulesPackage.MODULE__IMPORTS:
-        getImports().clear();
-        getImports().addAll((Collection<? extends Import>)newValue);
-        return;
-      case GuiceModulesPackage.MODULE__NAME:
+      case GuiceModulesPackage.MODULE_AST__NAME:
         setName((String)newValue);
         return;
-      case GuiceModulesPackage.MODULE__MIXINS:
+      case GuiceModulesPackage.MODULE_AST__MIXINS:
         getMixins().clear();
-        getMixins().addAll((Collection<? extends Module>)newValue);
+        getMixins().addAll((Collection<? extends ModuleAST>)newValue);
         return;
-      case GuiceModulesPackage.MODULE__BINDINGS:
+      case GuiceModulesPackage.MODULE_AST__BINDINGS:
         getBindings().clear();
-        getBindings().addAll((Collection<? extends Binding>)newValue);
+        getBindings().addAll((Collection<? extends BindingAST>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -261,16 +224,13 @@ public class ModuleImpl extends MinimalEObjectImpl.Container implements Module
   {
     switch (featureID)
     {
-      case GuiceModulesPackage.MODULE__IMPORTS:
-        getImports().clear();
-        return;
-      case GuiceModulesPackage.MODULE__NAME:
+      case GuiceModulesPackage.MODULE_AST__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case GuiceModulesPackage.MODULE__MIXINS:
+      case GuiceModulesPackage.MODULE_AST__MIXINS:
         getMixins().clear();
         return;
-      case GuiceModulesPackage.MODULE__BINDINGS:
+      case GuiceModulesPackage.MODULE_AST__BINDINGS:
         getBindings().clear();
         return;
     }
@@ -287,13 +247,11 @@ public class ModuleImpl extends MinimalEObjectImpl.Container implements Module
   {
     switch (featureID)
     {
-      case GuiceModulesPackage.MODULE__IMPORTS:
-        return imports != null && !imports.isEmpty();
-      case GuiceModulesPackage.MODULE__NAME:
+      case GuiceModulesPackage.MODULE_AST__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case GuiceModulesPackage.MODULE__MIXINS:
+      case GuiceModulesPackage.MODULE_AST__MIXINS:
         return mixins != null && !mixins.isEmpty();
-      case GuiceModulesPackage.MODULE__BINDINGS:
+      case GuiceModulesPackage.MODULE_AST__BINDINGS:
         return bindings != null && !bindings.isEmpty();
     }
     return super.eIsSet(featureID);
@@ -316,4 +274,4 @@ public class ModuleImpl extends MinimalEObjectImpl.Container implements Module
     return result.toString();
   }
 
-} //ModuleImpl
+} //ModuleASTImpl

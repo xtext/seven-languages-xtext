@@ -44,7 +44,7 @@ import org.xtext.guicemodules.services.GuiceModulesGrammarAccess;
     
     @Override
     protected String getFirstRuleName() {
-    	return "Module";	
+    	return "ModulesAST";	
    	}
    	
    	@Override
@@ -63,34 +63,34 @@ import org.xtext.guicemodules.services.GuiceModulesGrammarAccess;
 
 
 
-// Entry rule entryRuleModule
-entryRuleModule returns [EObject current=null] 
+// Entry rule entryRuleModulesAST
+entryRuleModulesAST returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getModuleRule()); }
-	 iv_ruleModule=ruleModule 
-	 { $current=$iv_ruleModule.current; } 
+	{ newCompositeNode(grammarAccess.getModulesASTRule()); }
+	 iv_ruleModulesAST=ruleModulesAST 
+	 { $current=$iv_ruleModulesAST.current; } 
 	 EOF 
 ;
 
-// Rule Module
-ruleModule returns [EObject current=null] 
+// Rule ModulesAST
+ruleModulesAST returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getModuleAccess().getImportsImportParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getModulesASTAccess().getImportsImportASTParserRuleCall_0_0()); 
 	    }
-		lv_imports_0_0=ruleImport		{
+		lv_imports_0_0=ruleImportAST		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getModuleRule());
+	            $current = createModelElementForParent(grammarAccess.getModulesASTRule());
 	        }
        		add(
        			$current, 
        			"imports",
         		lv_imports_0_0, 
-        		"Import");
+        		"ImportAST");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -98,84 +98,123 @@ ruleModule returns [EObject current=null]
 )*(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getModuleAccess().getNameQualifiedNameParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getModulesASTAccess().getModulesModuleASTParserRuleCall_1_0()); 
 	    }
-		lv_name_1_0=ruleQualifiedName		{
+		lv_modules_1_0=ruleModuleAST		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getModuleRule());
+	            $current = createModelElementForParent(grammarAccess.getModulesASTRule());
+	        }
+       		add(
+       			$current, 
+       			"modules",
+        		lv_modules_1_0, 
+        		"ModuleAST");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*)
+;
+
+
+
+
+
+// Entry rule entryRuleModuleAST
+entryRuleModuleAST returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getModuleASTRule()); }
+	 iv_ruleModuleAST=ruleModuleAST 
+	 { $current=$iv_ruleModuleAST.current; } 
+	 EOF 
+;
+
+// Rule ModuleAST
+ruleModuleAST returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		{ 
+	        newCompositeNode(grammarAccess.getModuleASTAccess().getNameQualifiedNameParserRuleCall_0_0()); 
+	    }
+		lv_name_0_0=ruleQualifiedName		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getModuleASTRule());
 	        }
        		set(
        			$current, 
        			"name",
-        		lv_name_1_0, 
+        		lv_name_0_0, 
         		"QualifiedName");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)(	otherlv_2='mixin' 
+)(	otherlv_1='mixin' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getModuleAccess().getMixinKeyword_2_0());
+    	newLeafNode(otherlv_1, grammarAccess.getModuleASTAccess().getMixinKeyword_1_0());
     }
 (
 (
 		{
 			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getModuleRule());
+	            $current = createModelElement(grammarAccess.getModuleASTRule());
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getModuleAccess().getMixinsModuleCrossReference_2_1_0()); 
+	        newCompositeNode(grammarAccess.getModuleASTAccess().getMixinsModuleASTCrossReference_1_1_0()); 
 	    }
 		ruleQualifiedName		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)(	otherlv_4=',' 
+)(	otherlv_3=',' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getModuleAccess().getCommaKeyword_2_2_0());
+    	newLeafNode(otherlv_3, grammarAccess.getModuleASTAccess().getCommaKeyword_1_2_0());
     }
 (
 (
 		{
 			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getModuleRule());
+	            $current = createModelElement(grammarAccess.getModuleASTRule());
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getModuleAccess().getMixinsModuleCrossReference_2_2_1_0()); 
+	        newCompositeNode(grammarAccess.getModuleASTAccess().getMixinsModuleASTCrossReference_1_2_1_0()); 
 	    }
 		ruleQualifiedName		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))*)?	otherlv_6='{' 
+))*)?	otherlv_5='{' 
     {
-    	newLeafNode(otherlv_6, grammarAccess.getModuleAccess().getLeftCurlyBracketKeyword_3());
+    	newLeafNode(otherlv_5, grammarAccess.getModuleASTAccess().getLeftCurlyBracketKeyword_2());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getModuleAccess().getBindingsBindingParserRuleCall_4_0()); 
+	        newCompositeNode(grammarAccess.getModuleASTAccess().getBindingsBindingASTParserRuleCall_3_0()); 
 	    }
-		lv_bindings_7_0=ruleBinding		{
+		lv_bindings_6_0=ruleBindingAST		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getModuleRule());
+	            $current = createModelElementForParent(grammarAccess.getModuleASTRule());
 	        }
        		add(
        			$current, 
        			"bindings",
-        		lv_bindings_7_0, 
-        		"Binding");
+        		lv_bindings_6_0, 
+        		"BindingAST");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*	otherlv_8='}' 
+)*	otherlv_7='}' 
     {
-    	newLeafNode(otherlv_8, grammarAccess.getModuleAccess().getRightCurlyBracketKeyword_5());
+    	newLeafNode(otherlv_7, grammarAccess.getModuleASTAccess().getRightCurlyBracketKeyword_4());
     }
 )
 ;
@@ -184,60 +223,60 @@ ruleModule returns [EObject current=null]
 
 
 
-// Entry rule entryRuleBinding
-entryRuleBinding returns [EObject current=null] 
+// Entry rule entryRuleBindingAST
+entryRuleBindingAST returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getBindingRule()); }
-	 iv_ruleBinding=ruleBinding 
-	 { $current=$iv_ruleBinding.current; } 
+	{ newCompositeNode(grammarAccess.getBindingASTRule()); }
+	 iv_ruleBindingAST=ruleBindingAST 
+	 { $current=$iv_ruleBindingAST.current; } 
 	 EOF 
 ;
 
-// Rule Binding
-ruleBinding returns [EObject current=null] 
+// Rule BindingAST
+ruleBindingAST returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 (	otherlv_0='bind' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getBindingAccess().getBindKeyword_0());
+    	newLeafNode(otherlv_0, grammarAccess.getBindingASTAccess().getBindKeyword_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getBindingAccess().getFromKeyParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getBindingASTAccess().getFromKeyASTParserRuleCall_1_0()); 
 	    }
-		lv_from_1_0=ruleKey		{
+		lv_from_1_0=ruleKeyAST		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getBindingRule());
+	            $current = createModelElementForParent(grammarAccess.getBindingASTRule());
 	        }
        		set(
        			$current, 
        			"from",
         		lv_from_1_0, 
-        		"Key");
+        		"KeyAST");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
 )((	otherlv_2='to' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getBindingAccess().getToKeyword_2_0_0());
+    	newLeafNode(otherlv_2, grammarAccess.getBindingASTAccess().getToKeyword_2_0_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getBindingAccess().getToKeyParserRuleCall_2_0_1_0()); 
+	        newCompositeNode(grammarAccess.getBindingASTAccess().getToKeyASTParserRuleCall_2_0_1_0()); 
 	    }
-		lv_to_3_0=ruleKey		{
+		lv_to_3_0=ruleKeyAST		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getBindingRule());
+	            $current = createModelElementForParent(grammarAccess.getBindingASTRule());
 	        }
        		set(
        			$current, 
        			"to",
         		lv_to_3_0, 
-        		"Key");
+        		"KeyAST");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -245,16 +284,16 @@ ruleBinding returns [EObject current=null]
 ))
     |(	otherlv_4='to-instance' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getBindingAccess().getToInstanceKeyword_2_1_0());
+    	newLeafNode(otherlv_4, grammarAccess.getBindingASTAccess().getToInstanceKeyword_2_1_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getBindingAccess().getToInstanceXExpressionParserRuleCall_2_1_1_0()); 
+	        newCompositeNode(grammarAccess.getBindingASTAccess().getToInstanceXExpressionParserRuleCall_2_1_1_0()); 
 	    }
 		lv_toInstance_5_0=ruleXExpression		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getBindingRule());
+	            $current = createModelElementForParent(grammarAccess.getBindingASTRule());
 	        }
        		set(
        			$current, 
@@ -272,46 +311,46 @@ ruleBinding returns [EObject current=null]
 
 
 
-// Entry rule entryRuleKey
-entryRuleKey returns [EObject current=null] 
+// Entry rule entryRuleKeyAST
+entryRuleKeyAST returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getKeyRule()); }
-	 iv_ruleKey=ruleKey 
-	 { $current=$iv_ruleKey.current; } 
+	{ newCompositeNode(grammarAccess.getKeyASTRule()); }
+	 iv_ruleKeyAST=ruleKeyAST 
+	 { $current=$iv_ruleKeyAST.current; } 
 	 EOF 
 ;
 
-// Rule Key
-ruleKey returns [EObject current=null] 
+// Rule KeyAST
+ruleKeyAST returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getKeyAccess().getAnnotationsXAnnotationParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getKeyASTAccess().getAnnotationXAnnotationParserRuleCall_0_0()); 
 	    }
-		lv_annotations_0_0=ruleXAnnotation		{
+		lv_annotation_0_0=ruleXAnnotation		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getKeyRule());
+	            $current = createModelElementForParent(grammarAccess.getKeyASTRule());
 	        }
-       		add(
+       		set(
        			$current, 
-       			"annotations",
-        		lv_annotations_0_0, 
+       			"annotation",
+        		lv_annotation_0_0, 
         		"XAnnotation");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*(
+)?(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getKeyAccess().getTypeJvmTypeReferenceParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getKeyASTAccess().getTypeJvmTypeReferenceParserRuleCall_1_0()); 
 	    }
 		lv_type_1_0=ruleJvmTypeReference		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getKeyRule());
+	            $current = createModelElementForParent(grammarAccess.getKeyASTRule());
 	        }
        		set(
        			$current, 
@@ -329,32 +368,32 @@ ruleKey returns [EObject current=null]
 
 
 
-// Entry rule entryRuleImport
-entryRuleImport returns [EObject current=null] 
+// Entry rule entryRuleImportAST
+entryRuleImportAST returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getImportRule()); }
-	 iv_ruleImport=ruleImport 
-	 { $current=$iv_ruleImport.current; } 
+	{ newCompositeNode(grammarAccess.getImportASTRule()); }
+	 iv_ruleImportAST=ruleImportAST 
+	 { $current=$iv_ruleImportAST.current; } 
 	 EOF 
 ;
 
-// Rule Import
-ruleImport returns [EObject current=null] 
+// Rule ImportAST
+ruleImportAST returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 (	otherlv_0='import' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getImportAccess().getImportKeyword_0());
+    	newLeafNode(otherlv_0, grammarAccess.getImportASTAccess().getImportKeyword_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWithWildCardParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getImportASTAccess().getImportedNamespaceQualifiedNameWithWildCardParserRuleCall_1_0()); 
 	    }
 		lv_importedNamespace_1_0=ruleQualifiedNameWithWildCard		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getImportRule());
+	            $current = createModelElementForParent(grammarAccess.getImportASTRule());
 	        }
        		set(
        			$current, 

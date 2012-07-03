@@ -4,21 +4,24 @@ grammar org.xtext.guicemodules.GuiceModules
 import "http://www.eclipse.org/xtext/common/JavaVMTypes" as types
 generate guiceModules "http://www.xtext.org/guicemodules/GuiceModules"
   
-Module :
-imports+=Import*
-	name=QualifiedName 
-	('mixin' mixins+=[Module|QualifiedName] (',' mixins+=[Module|QualifiedName])*)? 
+ModulesAST :
+	imports+=ImportAST*
+	modules+=ModuleAST*;
+
+ModuleAST :
+	name=QualifiedName ('mixin' mixins+=[ModuleAST|QualifiedName] (',' mixins+=[ModuleAST|QualifiedName])*)? 
 	'{'
-		bindings+=Binding*
-	'}';
+		bindings+=BindingAST*
+	'}'
+;
 
-Binding:
-	'bind' from=Key ('to' to=Key | 'to-instance' toInstance=XExpression)?;
+BindingAST:
+	'bind' from=KeyAST ('to' to=KeyAST | 'to-instance' toInstance=XExpression)?;
 
-Key:
-	annotations+=XAnnotation* type=JvmTypeReference;
+KeyAST:
+	annotation=XAnnotation? type=JvmTypeReference;
 
-Import:
+ImportAST:
 	'import' importedNamespace=QualifiedNameWithWildCard;
 
 QualifiedNameWithWildCard:

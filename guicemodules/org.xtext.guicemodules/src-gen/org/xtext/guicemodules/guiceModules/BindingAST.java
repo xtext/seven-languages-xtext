@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.xtext.guicemodules.guiceModules;
 
@@ -11,23 +8,23 @@ import org.eclipse.xtext.xbase.XExpression;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Binding</b></em>'.
+ * A representation of the model object '<em><b>Binding AST</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.guicemodules.guiceModules.Binding#getFrom <em>From</em>}</li>
- *   <li>{@link org.xtext.guicemodules.guiceModules.Binding#getTo <em>To</em>}</li>
- *   <li>{@link org.xtext.guicemodules.guiceModules.Binding#getToInstance <em>To Instance</em>}</li>
+ *   <li>{@link org.xtext.guicemodules.guiceModules.BindingAST#getFrom <em>From</em>}</li>
+ *   <li>{@link org.xtext.guicemodules.guiceModules.BindingAST#getTo <em>To</em>}</li>
+ *   <li>{@link org.xtext.guicemodules.guiceModules.BindingAST#getToInstance <em>To Instance</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.xtext.guicemodules.guiceModules.GuiceModulesPackage#getBinding()
+ * @see org.xtext.guicemodules.guiceModules.GuiceModulesPackage#getBindingAST()
  * @model
  * @generated
  */
-public interface Binding extends EObject
+public interface BindingAST extends EObject
 {
   /**
    * Returns the value of the '<em><b>From</b></em>' containment reference.
@@ -38,22 +35,22 @@ public interface Binding extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>From</em>' containment reference.
-   * @see #setFrom(Key)
-   * @see org.xtext.guicemodules.guiceModules.GuiceModulesPackage#getBinding_From()
+   * @see #setFrom(KeyAST)
+   * @see org.xtext.guicemodules.guiceModules.GuiceModulesPackage#getBindingAST_From()
    * @model containment="true"
    * @generated
    */
-  Key getFrom();
+  KeyAST getFrom();
 
   /**
-   * Sets the value of the '{@link org.xtext.guicemodules.guiceModules.Binding#getFrom <em>From</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.guicemodules.guiceModules.BindingAST#getFrom <em>From</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>From</em>' containment reference.
    * @see #getFrom()
    * @generated
    */
-  void setFrom(Key value);
+  void setFrom(KeyAST value);
 
   /**
    * Returns the value of the '<em><b>To</b></em>' containment reference.
@@ -64,22 +61,22 @@ public interface Binding extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>To</em>' containment reference.
-   * @see #setTo(Key)
-   * @see org.xtext.guicemodules.guiceModules.GuiceModulesPackage#getBinding_To()
+   * @see #setTo(KeyAST)
+   * @see org.xtext.guicemodules.guiceModules.GuiceModulesPackage#getBindingAST_To()
    * @model containment="true"
    * @generated
    */
-  Key getTo();
+  KeyAST getTo();
 
   /**
-   * Sets the value of the '{@link org.xtext.guicemodules.guiceModules.Binding#getTo <em>To</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.guicemodules.guiceModules.BindingAST#getTo <em>To</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>To</em>' containment reference.
    * @see #getTo()
    * @generated
    */
-  void setTo(Key value);
+  void setTo(KeyAST value);
 
   /**
    * Returns the value of the '<em><b>To Instance</b></em>' containment reference.
@@ -91,14 +88,14 @@ public interface Binding extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>To Instance</em>' containment reference.
    * @see #setToInstance(XExpression)
-   * @see org.xtext.guicemodules.guiceModules.GuiceModulesPackage#getBinding_ToInstance()
+   * @see org.xtext.guicemodules.guiceModules.GuiceModulesPackage#getBindingAST_ToInstance()
    * @model containment="true"
    * @generated
    */
   XExpression getToInstance();
 
   /**
-   * Sets the value of the '{@link org.xtext.guicemodules.guiceModules.Binding#getToInstance <em>To Instance</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.guicemodules.guiceModules.BindingAST#getToInstance <em>To Instance</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>To Instance</em>' containment reference.
@@ -107,4 +104,4 @@ public interface Binding extends EObject
    */
   void setToInstance(XExpression value);
 
-} // Binding
+} // BindingAST

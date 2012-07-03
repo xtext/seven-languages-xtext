@@ -55,11 +55,12 @@ import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationValueArray;
 import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationsPackage;
 import org.eclipse.xtext.xtype.XFunctionTypeRef;
 import org.eclipse.xtext.xtype.XtypePackage;
-import org.xtext.guicemodules.guiceModules.Binding;
+import org.xtext.guicemodules.guiceModules.BindingAST;
 import org.xtext.guicemodules.guiceModules.GuiceModulesPackage;
-import org.xtext.guicemodules.guiceModules.Import;
-import org.xtext.guicemodules.guiceModules.Key;
-import org.xtext.guicemodules.guiceModules.Module;
+import org.xtext.guicemodules.guiceModules.ImportAST;
+import org.xtext.guicemodules.guiceModules.KeyAST;
+import org.xtext.guicemodules.guiceModules.ModuleAST;
+import org.xtext.guicemodules.guiceModules.ModulesAST;
 import org.xtext.guicemodules.services.GuiceModulesGrammarAccess;
 
 @SuppressWarnings("all")
@@ -70,27 +71,33 @@ public class GuiceModulesSemanticSequencer extends XbaseWithAnnotationsSemanticS
 	
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == GuiceModulesPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
-			case GuiceModulesPackage.BINDING:
-				if(context == grammarAccess.getBindingRule()) {
-					sequence_Binding(context, (Binding) semanticObject); 
+			case GuiceModulesPackage.BINDING_AST:
+				if(context == grammarAccess.getBindingASTRule()) {
+					sequence_BindingAST(context, (BindingAST) semanticObject); 
 					return; 
 				}
 				else break;
-			case GuiceModulesPackage.IMPORT:
-				if(context == grammarAccess.getImportRule()) {
-					sequence_Import(context, (Import) semanticObject); 
+			case GuiceModulesPackage.IMPORT_AST:
+				if(context == grammarAccess.getImportASTRule()) {
+					sequence_ImportAST(context, (ImportAST) semanticObject); 
 					return; 
 				}
 				else break;
-			case GuiceModulesPackage.KEY:
-				if(context == grammarAccess.getKeyRule()) {
-					sequence_Key(context, (Key) semanticObject); 
+			case GuiceModulesPackage.KEY_AST:
+				if(context == grammarAccess.getKeyASTRule()) {
+					sequence_KeyAST(context, (KeyAST) semanticObject); 
 					return; 
 				}
 				else break;
-			case GuiceModulesPackage.MODULE:
-				if(context == grammarAccess.getModuleRule()) {
-					sequence_Module(context, (Module) semanticObject); 
+			case GuiceModulesPackage.MODULE_AST:
+				if(context == grammarAccess.getModuleASTRule()) {
+					sequence_ModuleAST(context, (ModuleAST) semanticObject); 
+					return; 
+				}
+				else break;
+			case GuiceModulesPackage.MODULES_AST:
+				if(context == grammarAccess.getModulesASTRule()) {
+					sequence_ModulesAST(context, (ModulesAST) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1009,9 +1016,9 @@ public class GuiceModulesSemanticSequencer extends XbaseWithAnnotationsSemanticS
 	
 	/**
 	 * Constraint:
-	 *     (from=Key (to=Key | toInstance=XExpression)?)
+	 *     (from=KeyAST (to=KeyAST | toInstance=XExpression)?)
 	 */
-	protected void sequence_Binding(EObject context, Binding semanticObject) {
+	protected void sequence_BindingAST(EObject context, BindingAST semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1020,32 +1027,41 @@ public class GuiceModulesSemanticSequencer extends XbaseWithAnnotationsSemanticS
 	 * Constraint:
 	 *     importedNamespace=QualifiedNameWithWildCard
 	 */
-	protected void sequence_Import(EObject context, Import semanticObject) {
+	protected void sequence_ImportAST(EObject context, ImportAST semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, GuiceModulesPackage.Literals.IMPORT__IMPORTED_NAMESPACE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GuiceModulesPackage.Literals.IMPORT__IMPORTED_NAMESPACE));
+			if(transientValues.isValueTransient(semanticObject, GuiceModulesPackage.Literals.IMPORT_AST__IMPORTED_NAMESPACE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GuiceModulesPackage.Literals.IMPORT_AST__IMPORTED_NAMESPACE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWithWildCardParserRuleCall_1_0(), semanticObject.getImportedNamespace());
+		feeder.accept(grammarAccess.getImportASTAccess().getImportedNamespaceQualifiedNameWithWildCardParserRuleCall_1_0(), semanticObject.getImportedNamespace());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (annotations+=XAnnotation* type=JvmTypeReference)
+	 *     (annotation=XAnnotation? type=JvmTypeReference)
 	 */
-	protected void sequence_Key(EObject context, Key semanticObject) {
+	protected void sequence_KeyAST(EObject context, KeyAST semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (imports+=Import* name=QualifiedName (mixins+=[Module|QualifiedName] mixins+=[Module|QualifiedName]*)? bindings+=Binding*)
+	 *     (name=QualifiedName (mixins+=[ModuleAST|QualifiedName] mixins+=[ModuleAST|QualifiedName]*)? bindings+=BindingAST*)
 	 */
-	protected void sequence_Module(EObject context, Module semanticObject) {
+	protected void sequence_ModuleAST(EObject context, ModuleAST semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (imports+=ImportAST* modules+=ModuleAST*)
+	 */
+	protected void sequence_ModulesAST(EObject context, ModulesAST semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 }

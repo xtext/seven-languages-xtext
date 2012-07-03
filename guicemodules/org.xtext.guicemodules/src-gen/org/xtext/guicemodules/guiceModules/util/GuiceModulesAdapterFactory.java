@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.xtext.guicemodules.guiceModules.util;
 
@@ -78,24 +75,29 @@ public class GuiceModulesAdapterFactory extends AdapterFactoryImpl
     new GuiceModulesSwitch<Adapter>()
     {
       @Override
-      public Adapter caseModule(Module object)
+      public Adapter caseModulesAST(ModulesAST object)
       {
-        return createModuleAdapter();
+        return createModulesASTAdapter();
       }
       @Override
-      public Adapter caseBinding(Binding object)
+      public Adapter caseModuleAST(ModuleAST object)
       {
-        return createBindingAdapter();
+        return createModuleASTAdapter();
       }
       @Override
-      public Adapter caseKey(Key object)
+      public Adapter caseBindingAST(BindingAST object)
       {
-        return createKeyAdapter();
+        return createBindingASTAdapter();
       }
       @Override
-      public Adapter caseImport(Import object)
+      public Adapter caseKeyAST(KeyAST object)
       {
-        return createImportAdapter();
+        return createKeyASTAdapter();
+      }
+      @Override
+      public Adapter caseImportAST(ImportAST object)
+      {
+        return createImportASTAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -120,61 +122,76 @@ public class GuiceModulesAdapterFactory extends AdapterFactoryImpl
 
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.guicemodules.guiceModules.Module <em>Module</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.guicemodules.guiceModules.ModulesAST <em>Modules AST</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.guicemodules.guiceModules.Module
+   * @see org.xtext.guicemodules.guiceModules.ModulesAST
    * @generated
    */
-  public Adapter createModuleAdapter()
+  public Adapter createModulesASTAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.guicemodules.guiceModules.Binding <em>Binding</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.guicemodules.guiceModules.ModuleAST <em>Module AST</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.guicemodules.guiceModules.Binding
+   * @see org.xtext.guicemodules.guiceModules.ModuleAST
    * @generated
    */
-  public Adapter createBindingAdapter()
+  public Adapter createModuleASTAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.guicemodules.guiceModules.Key <em>Key</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.guicemodules.guiceModules.BindingAST <em>Binding AST</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.guicemodules.guiceModules.Key
+   * @see org.xtext.guicemodules.guiceModules.BindingAST
    * @generated
    */
-  public Adapter createKeyAdapter()
+  public Adapter createBindingASTAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.guicemodules.guiceModules.Import <em>Import</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.guicemodules.guiceModules.KeyAST <em>Key AST</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.guicemodules.guiceModules.Import
+   * @see org.xtext.guicemodules.guiceModules.KeyAST
    * @generated
    */
-  public Adapter createImportAdapter()
+  public Adapter createKeyASTAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.guicemodules.guiceModules.ImportAST <em>Import AST</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.guicemodules.guiceModules.ImportAST
+   * @generated
+   */
+  public Adapter createImportASTAdapter()
   {
     return null;
   }

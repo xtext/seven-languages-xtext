@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.xtext.guicemodules.guiceModules.util;
 
@@ -95,31 +92,38 @@ public class GuiceModulesSwitch<T>
   {
     switch (classifierID)
     {
-      case GuiceModulesPackage.MODULE:
+      case GuiceModulesPackage.MODULES_AST:
       {
-        Module module = (Module)theEObject;
-        T result = caseModule(module);
+        ModulesAST modulesAST = (ModulesAST)theEObject;
+        T result = caseModulesAST(modulesAST);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case GuiceModulesPackage.BINDING:
+      case GuiceModulesPackage.MODULE_AST:
       {
-        Binding binding = (Binding)theEObject;
-        T result = caseBinding(binding);
+        ModuleAST moduleAST = (ModuleAST)theEObject;
+        T result = caseModuleAST(moduleAST);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case GuiceModulesPackage.KEY:
+      case GuiceModulesPackage.BINDING_AST:
       {
-        Key key = (Key)theEObject;
-        T result = caseKey(key);
+        BindingAST bindingAST = (BindingAST)theEObject;
+        T result = caseBindingAST(bindingAST);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case GuiceModulesPackage.IMPORT:
+      case GuiceModulesPackage.KEY_AST:
       {
-        Import import_ = (Import)theEObject;
-        T result = caseImport(import_);
+        KeyAST keyAST = (KeyAST)theEObject;
+        T result = caseKeyAST(keyAST);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GuiceModulesPackage.IMPORT_AST:
+      {
+        ImportAST importAST = (ImportAST)theEObject;
+        T result = caseImportAST(importAST);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -128,65 +132,81 @@ public class GuiceModulesSwitch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Module</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Modules AST</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Module</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Modules AST</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseModule(Module object)
+  public T caseModulesAST(ModulesAST object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Binding</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Module AST</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Binding</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Module AST</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseBinding(Binding object)
+  public T caseModuleAST(ModuleAST object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Key</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Binding AST</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Key</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Binding AST</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseKey(Key object)
+  public T caseBindingAST(BindingAST object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Import</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Key AST</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Import</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Key AST</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseImport(Import object)
+  public T caseKeyAST(KeyAST object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Import AST</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Import AST</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseImportAST(ImportAST object)
   {
     return null;
   }

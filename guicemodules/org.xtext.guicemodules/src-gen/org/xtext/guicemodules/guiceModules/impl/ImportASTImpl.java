@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.xtext.guicemodules.guiceModules.impl;
 
@@ -13,22 +10,22 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.guicemodules.guiceModules.GuiceModulesPackage;
-import org.xtext.guicemodules.guiceModules.Import;
+import org.xtext.guicemodules.guiceModules.ImportAST;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Import</b></em>'.
+ * An implementation of the model object '<em><b>Import AST</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.guicemodules.guiceModules.impl.ImportImpl#getImportedNamespace <em>Imported Namespace</em>}</li>
+ *   <li>{@link org.xtext.guicemodules.guiceModules.impl.ImportASTImpl#getImportedNamespace <em>Imported Namespace</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ImportImpl extends MinimalEObjectImpl.Container implements Import
+public class ImportASTImpl extends MinimalEObjectImpl.Container implements ImportAST
 {
   /**
    * The default value of the '{@link #getImportedNamespace() <em>Imported Namespace</em>}' attribute.
@@ -55,7 +52,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ImportImpl()
+  protected ImportASTImpl()
   {
     super();
   }
@@ -68,7 +65,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
   @Override
   protected EClass eStaticClass()
   {
-    return GuiceModulesPackage.Literals.IMPORT;
+    return GuiceModulesPackage.Literals.IMPORT_AST;
   }
 
   /**
@@ -91,7 +88,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
     String oldImportedNamespace = importedNamespace;
     importedNamespace = newImportedNamespace;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GuiceModulesPackage.IMPORT__IMPORTED_NAMESPACE, oldImportedNamespace, importedNamespace));
+      eNotify(new ENotificationImpl(this, Notification.SET, GuiceModulesPackage.IMPORT_AST__IMPORTED_NAMESPACE, oldImportedNamespace, importedNamespace));
   }
 
   /**
@@ -104,7 +101,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
   {
     switch (featureID)
     {
-      case GuiceModulesPackage.IMPORT__IMPORTED_NAMESPACE:
+      case GuiceModulesPackage.IMPORT_AST__IMPORTED_NAMESPACE:
         return getImportedNamespace();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -120,7 +117,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
   {
     switch (featureID)
     {
-      case GuiceModulesPackage.IMPORT__IMPORTED_NAMESPACE:
+      case GuiceModulesPackage.IMPORT_AST__IMPORTED_NAMESPACE:
         setImportedNamespace((String)newValue);
         return;
     }
@@ -137,7 +134,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
   {
     switch (featureID)
     {
-      case GuiceModulesPackage.IMPORT__IMPORTED_NAMESPACE:
+      case GuiceModulesPackage.IMPORT_AST__IMPORTED_NAMESPACE:
         setImportedNamespace(IMPORTED_NAMESPACE_EDEFAULT);
         return;
     }
@@ -154,7 +151,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
   {
     switch (featureID)
     {
-      case GuiceModulesPackage.IMPORT__IMPORTED_NAMESPACE:
+      case GuiceModulesPackage.IMPORT_AST__IMPORTED_NAMESPACE:
         return IMPORTED_NAMESPACE_EDEFAULT == null ? importedNamespace != null : !IMPORTED_NAMESPACE_EDEFAULT.equals(importedNamespace);
     }
     return super.eIsSet(featureID);
@@ -177,4 +174,4 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
     return result.toString();
   }
 
-} //ImportImpl
+} //ImportASTImpl

@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.xtext.guicemodules.guiceModules;
 
@@ -9,21 +6,21 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Import</b></em>'.
+ * A representation of the model object '<em><b>Import AST</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.guicemodules.guiceModules.Import#getImportedNamespace <em>Imported Namespace</em>}</li>
+ *   <li>{@link org.xtext.guicemodules.guiceModules.ImportAST#getImportedNamespace <em>Imported Namespace</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.xtext.guicemodules.guiceModules.GuiceModulesPackage#getImport()
+ * @see org.xtext.guicemodules.guiceModules.GuiceModulesPackage#getImportAST()
  * @model
  * @generated
  */
-public interface Import extends EObject
+public interface ImportAST extends EObject
 {
   /**
    * Returns the value of the '<em><b>Imported Namespace</b></em>' attribute.
@@ -35,14 +32,14 @@ public interface Import extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Imported Namespace</em>' attribute.
    * @see #setImportedNamespace(String)
-   * @see org.xtext.guicemodules.guiceModules.GuiceModulesPackage#getImport_ImportedNamespace()
+   * @see org.xtext.guicemodules.guiceModules.GuiceModulesPackage#getImportAST_ImportedNamespace()
    * @model
    * @generated
    */
   String getImportedNamespace();
 
   /**
-   * Sets the value of the '{@link org.xtext.guicemodules.guiceModules.Import#getImportedNamespace <em>Imported Namespace</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.guicemodules.guiceModules.ImportAST#getImportedNamespace <em>Imported Namespace</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Imported Namespace</em>' attribute.
@@ -51,4 +48,4 @@ public interface Import extends EObject
    */
   void setImportedNamespace(String value);
 
-} // Import
+} // ImportAST

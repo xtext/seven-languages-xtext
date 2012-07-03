@@ -21,138 +21,158 @@ import org.eclipse.xtext.xbase.services.XtypeGrammarAccess;
 public class GuiceModulesGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
-	public class ModuleElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Module");
+	public class ModulesASTElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ModulesAST");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cImportsAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cImportsImportParserRuleCall_0_0 = (RuleCall)cImportsAssignment_0.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cMixinKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cMixinsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final CrossReference cMixinsModuleCrossReference_2_1_0 = (CrossReference)cMixinsAssignment_2_1.eContents().get(0);
-		private final RuleCall cMixinsModuleQualifiedNameParserRuleCall_2_1_0_1 = (RuleCall)cMixinsModuleCrossReference_2_1_0.eContents().get(1);
-		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
-		private final Keyword cCommaKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
-		private final Assignment cMixinsAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final CrossReference cMixinsModuleCrossReference_2_2_1_0 = (CrossReference)cMixinsAssignment_2_2_1.eContents().get(0);
-		private final RuleCall cMixinsModuleQualifiedNameParserRuleCall_2_2_1_0_1 = (RuleCall)cMixinsModuleCrossReference_2_2_1_0.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cBindingsAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cBindingsBindingParserRuleCall_4_0 = (RuleCall)cBindingsAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final RuleCall cImportsImportASTParserRuleCall_0_0 = (RuleCall)cImportsAssignment_0.eContents().get(0);
+		private final Assignment cModulesAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cModulesModuleASTParserRuleCall_1_0 = (RuleCall)cModulesAssignment_1.eContents().get(0);
 		
-		//Module:
-		//	imports+=Import* name=QualifiedName ("mixin" mixins+=[Module|QualifiedName] ("," mixins+=[Module|QualifiedName])*)?
-		//	"{" bindings+=Binding* "}";
+		//ModulesAST:
+		//	imports+=ImportAST* modules+=ModuleAST*;
 		public ParserRule getRule() { return rule; }
 
-		//imports+=Import* name=QualifiedName ("mixin" mixins+=[Module|QualifiedName] ("," mixins+=[Module|QualifiedName])*)? "{"
-		//bindings+=Binding* "}"
+		//imports+=ImportAST* modules+=ModuleAST*
 		public Group getGroup() { return cGroup; }
 
-		//imports+=Import*
+		//imports+=ImportAST*
 		public Assignment getImportsAssignment_0() { return cImportsAssignment_0; }
 
-		//Import
-		public RuleCall getImportsImportParserRuleCall_0_0() { return cImportsImportParserRuleCall_0_0; }
+		//ImportAST
+		public RuleCall getImportsImportASTParserRuleCall_0_0() { return cImportsImportASTParserRuleCall_0_0; }
 
-		//name=QualifiedName
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		//modules+=ModuleAST*
+		public Assignment getModulesAssignment_1() { return cModulesAssignment_1; }
 
-		//QualifiedName
-		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
-
-		//("mixin" mixins+=[Module|QualifiedName] ("," mixins+=[Module|QualifiedName])*)?
-		public Group getGroup_2() { return cGroup_2; }
-
-		//"mixin"
-		public Keyword getMixinKeyword_2_0() { return cMixinKeyword_2_0; }
-
-		//mixins+=[Module|QualifiedName]
-		public Assignment getMixinsAssignment_2_1() { return cMixinsAssignment_2_1; }
-
-		//[Module|QualifiedName]
-		public CrossReference getMixinsModuleCrossReference_2_1_0() { return cMixinsModuleCrossReference_2_1_0; }
-
-		//QualifiedName
-		public RuleCall getMixinsModuleQualifiedNameParserRuleCall_2_1_0_1() { return cMixinsModuleQualifiedNameParserRuleCall_2_1_0_1; }
-
-		//("," mixins+=[Module|QualifiedName])*
-		public Group getGroup_2_2() { return cGroup_2_2; }
-
-		//","
-		public Keyword getCommaKeyword_2_2_0() { return cCommaKeyword_2_2_0; }
-
-		//mixins+=[Module|QualifiedName]
-		public Assignment getMixinsAssignment_2_2_1() { return cMixinsAssignment_2_2_1; }
-
-		//[Module|QualifiedName]
-		public CrossReference getMixinsModuleCrossReference_2_2_1_0() { return cMixinsModuleCrossReference_2_2_1_0; }
-
-		//QualifiedName
-		public RuleCall getMixinsModuleQualifiedNameParserRuleCall_2_2_1_0_1() { return cMixinsModuleQualifiedNameParserRuleCall_2_2_1_0_1; }
-
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
-
-		//bindings+=Binding*
-		public Assignment getBindingsAssignment_4() { return cBindingsAssignment_4; }
-
-		//Binding
-		public RuleCall getBindingsBindingParserRuleCall_4_0() { return cBindingsBindingParserRuleCall_4_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		//ModuleAST
+		public RuleCall getModulesModuleASTParserRuleCall_1_0() { return cModulesModuleASTParserRuleCall_1_0; }
 	}
 
-	public class BindingElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Binding");
+	public class ModuleASTElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ModuleAST");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameQualifiedNameParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cMixinKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cMixinsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final CrossReference cMixinsModuleASTCrossReference_1_1_0 = (CrossReference)cMixinsAssignment_1_1.eContents().get(0);
+		private final RuleCall cMixinsModuleASTQualifiedNameParserRuleCall_1_1_0_1 = (RuleCall)cMixinsModuleASTCrossReference_1_1_0.eContents().get(1);
+		private final Group cGroup_1_2 = (Group)cGroup_1.eContents().get(2);
+		private final Keyword cCommaKeyword_1_2_0 = (Keyword)cGroup_1_2.eContents().get(0);
+		private final Assignment cMixinsAssignment_1_2_1 = (Assignment)cGroup_1_2.eContents().get(1);
+		private final CrossReference cMixinsModuleASTCrossReference_1_2_1_0 = (CrossReference)cMixinsAssignment_1_2_1.eContents().get(0);
+		private final RuleCall cMixinsModuleASTQualifiedNameParserRuleCall_1_2_1_0_1 = (RuleCall)cMixinsModuleASTCrossReference_1_2_1_0.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cBindingsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cBindingsBindingASTParserRuleCall_3_0 = (RuleCall)cBindingsAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//ModuleAST:
+		//	name=QualifiedName ("mixin" mixins+=[ModuleAST|QualifiedName] ("," mixins+=[ModuleAST|QualifiedName])*)? "{"
+		//	bindings+=BindingAST* "}";
+		public ParserRule getRule() { return rule; }
+
+		//name=QualifiedName ("mixin" mixins+=[ModuleAST|QualifiedName] ("," mixins+=[ModuleAST|QualifiedName])*)? "{"
+		//bindings+=BindingAST* "}"
+		public Group getGroup() { return cGroup; }
+
+		//name=QualifiedName
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+
+		//QualifiedName
+		public RuleCall getNameQualifiedNameParserRuleCall_0_0() { return cNameQualifiedNameParserRuleCall_0_0; }
+
+		//("mixin" mixins+=[ModuleAST|QualifiedName] ("," mixins+=[ModuleAST|QualifiedName])*)?
+		public Group getGroup_1() { return cGroup_1; }
+
+		//"mixin"
+		public Keyword getMixinKeyword_1_0() { return cMixinKeyword_1_0; }
+
+		//mixins+=[ModuleAST|QualifiedName]
+		public Assignment getMixinsAssignment_1_1() { return cMixinsAssignment_1_1; }
+
+		//[ModuleAST|QualifiedName]
+		public CrossReference getMixinsModuleASTCrossReference_1_1_0() { return cMixinsModuleASTCrossReference_1_1_0; }
+
+		//QualifiedName
+		public RuleCall getMixinsModuleASTQualifiedNameParserRuleCall_1_1_0_1() { return cMixinsModuleASTQualifiedNameParserRuleCall_1_1_0_1; }
+
+		//("," mixins+=[ModuleAST|QualifiedName])*
+		public Group getGroup_1_2() { return cGroup_1_2; }
+
+		//","
+		public Keyword getCommaKeyword_1_2_0() { return cCommaKeyword_1_2_0; }
+
+		//mixins+=[ModuleAST|QualifiedName]
+		public Assignment getMixinsAssignment_1_2_1() { return cMixinsAssignment_1_2_1; }
+
+		//[ModuleAST|QualifiedName]
+		public CrossReference getMixinsModuleASTCrossReference_1_2_1_0() { return cMixinsModuleASTCrossReference_1_2_1_0; }
+
+		//QualifiedName
+		public RuleCall getMixinsModuleASTQualifiedNameParserRuleCall_1_2_1_0_1() { return cMixinsModuleASTQualifiedNameParserRuleCall_1_2_1_0_1; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+
+		//bindings+=BindingAST*
+		public Assignment getBindingsAssignment_3() { return cBindingsAssignment_3; }
+
+		//BindingAST
+		public RuleCall getBindingsBindingASTParserRuleCall_3_0() { return cBindingsBindingASTParserRuleCall_3_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+	}
+
+	public class BindingASTElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BindingAST");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cBindKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cFromAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cFromKeyParserRuleCall_1_0 = (RuleCall)cFromAssignment_1.eContents().get(0);
+		private final RuleCall cFromKeyASTParserRuleCall_1_0 = (RuleCall)cFromAssignment_1.eContents().get(0);
 		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
 		private final Group cGroup_2_0 = (Group)cAlternatives_2.eContents().get(0);
 		private final Keyword cToKeyword_2_0_0 = (Keyword)cGroup_2_0.eContents().get(0);
 		private final Assignment cToAssignment_2_0_1 = (Assignment)cGroup_2_0.eContents().get(1);
-		private final RuleCall cToKeyParserRuleCall_2_0_1_0 = (RuleCall)cToAssignment_2_0_1.eContents().get(0);
+		private final RuleCall cToKeyASTParserRuleCall_2_0_1_0 = (RuleCall)cToAssignment_2_0_1.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cAlternatives_2.eContents().get(1);
 		private final Keyword cToInstanceKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cToInstanceAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
 		private final RuleCall cToInstanceXExpressionParserRuleCall_2_1_1_0 = (RuleCall)cToInstanceAssignment_2_1_1.eContents().get(0);
 		
-		//Binding:
-		//	"bind" from=Key ("to" to=Key | "to-instance" toInstance=XExpression)?;
+		//BindingAST:
+		//	"bind" from=KeyAST ("to" to=KeyAST | "to-instance" toInstance=XExpression)?;
 		public ParserRule getRule() { return rule; }
 
-		//"bind" from=Key ("to" to=Key | "to-instance" toInstance=XExpression)?
+		//"bind" from=KeyAST ("to" to=KeyAST | "to-instance" toInstance=XExpression)?
 		public Group getGroup() { return cGroup; }
 
 		//"bind"
 		public Keyword getBindKeyword_0() { return cBindKeyword_0; }
 
-		//from=Key
+		//from=KeyAST
 		public Assignment getFromAssignment_1() { return cFromAssignment_1; }
 
-		//Key
-		public RuleCall getFromKeyParserRuleCall_1_0() { return cFromKeyParserRuleCall_1_0; }
+		//KeyAST
+		public RuleCall getFromKeyASTParserRuleCall_1_0() { return cFromKeyASTParserRuleCall_1_0; }
 
-		//("to" to=Key | "to-instance" toInstance=XExpression)?
+		//("to" to=KeyAST | "to-instance" toInstance=XExpression)?
 		public Alternatives getAlternatives_2() { return cAlternatives_2; }
 
-		//"to" to=Key
+		//"to" to=KeyAST
 		public Group getGroup_2_0() { return cGroup_2_0; }
 
 		//"to"
 		public Keyword getToKeyword_2_0_0() { return cToKeyword_2_0_0; }
 
-		//to=Key
+		//to=KeyAST
 		public Assignment getToAssignment_2_0_1() { return cToAssignment_2_0_1; }
 
-		//Key
-		public RuleCall getToKeyParserRuleCall_2_0_1_0() { return cToKeyParserRuleCall_2_0_1_0; }
+		//KeyAST
+		public RuleCall getToKeyASTParserRuleCall_2_0_1_0() { return cToKeyASTParserRuleCall_2_0_1_0; }
 
 		//"to-instance" toInstance=XExpression
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -167,26 +187,26 @@ public class GuiceModulesGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getToInstanceXExpressionParserRuleCall_2_1_1_0() { return cToInstanceXExpressionParserRuleCall_2_1_1_0; }
 	}
 
-	public class KeyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Key");
+	public class KeyASTElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "KeyAST");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cAnnotationsAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cAnnotationsXAnnotationParserRuleCall_0_0 = (RuleCall)cAnnotationsAssignment_0.eContents().get(0);
+		private final Assignment cAnnotationAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cAnnotationXAnnotationParserRuleCall_0_0 = (RuleCall)cAnnotationAssignment_0.eContents().get(0);
 		private final Assignment cTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cTypeJvmTypeReferenceParserRuleCall_1_0 = (RuleCall)cTypeAssignment_1.eContents().get(0);
 		
-		//Key:
-		//	annotations+=XAnnotation* type=JvmTypeReference;
+		//KeyAST:
+		//	annotation=XAnnotation? type=JvmTypeReference;
 		public ParserRule getRule() { return rule; }
 
-		//annotations+=XAnnotation* type=JvmTypeReference
+		//annotation=XAnnotation? type=JvmTypeReference
 		public Group getGroup() { return cGroup; }
 
-		//annotations+=XAnnotation*
-		public Assignment getAnnotationsAssignment_0() { return cAnnotationsAssignment_0; }
+		//annotation=XAnnotation?
+		public Assignment getAnnotationAssignment_0() { return cAnnotationAssignment_0; }
 
 		//XAnnotation
-		public RuleCall getAnnotationsXAnnotationParserRuleCall_0_0() { return cAnnotationsXAnnotationParserRuleCall_0_0; }
+		public RuleCall getAnnotationXAnnotationParserRuleCall_0_0() { return cAnnotationXAnnotationParserRuleCall_0_0; }
 
 		//type=JvmTypeReference
 		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
@@ -195,14 +215,14 @@ public class GuiceModulesGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getTypeJvmTypeReferenceParserRuleCall_1_0() { return cTypeJvmTypeReferenceParserRuleCall_1_0; }
 	}
 
-	public class ImportElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Import");
+	public class ImportASTElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ImportAST");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cImportKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cImportedNamespaceAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cImportedNamespaceQualifiedNameWithWildCardParserRuleCall_1_0 = (RuleCall)cImportedNamespaceAssignment_1.eContents().get(0);
 		
-		//Import:
+		//ImportAST:
 		//	"import" importedNamespace=QualifiedNameWithWildCard;
 		public ParserRule getRule() { return rule; }
 
@@ -240,10 +260,11 @@ public class GuiceModulesGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	
-	private ModuleElements pModule;
-	private BindingElements pBinding;
-	private KeyElements pKey;
-	private ImportElements pImport;
+	private ModulesASTElements pModulesAST;
+	private ModuleASTElements pModuleAST;
+	private BindingASTElements pBindingAST;
+	private KeyASTElements pKeyAST;
+	private ImportASTElements pImportAST;
 	private QualifiedNameWithWildCardElements pQualifiedNameWithWildCard;
 	
 	private final Grammar grammar;
@@ -284,45 +305,55 @@ public class GuiceModulesGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	
-	//Module:
-	//	imports+=Import* name=QualifiedName ("mixin" mixins+=[Module|QualifiedName] ("," mixins+=[Module|QualifiedName])*)?
-	//	"{" bindings+=Binding* "}";
-	public ModuleElements getModuleAccess() {
-		return (pModule != null) ? pModule : (pModule = new ModuleElements());
+	//ModulesAST:
+	//	imports+=ImportAST* modules+=ModuleAST*;
+	public ModulesASTElements getModulesASTAccess() {
+		return (pModulesAST != null) ? pModulesAST : (pModulesAST = new ModulesASTElements());
 	}
 	
-	public ParserRule getModuleRule() {
-		return getModuleAccess().getRule();
+	public ParserRule getModulesASTRule() {
+		return getModulesASTAccess().getRule();
 	}
 
-	//Binding:
-	//	"bind" from=Key ("to" to=Key | "to-instance" toInstance=XExpression)?;
-	public BindingElements getBindingAccess() {
-		return (pBinding != null) ? pBinding : (pBinding = new BindingElements());
+	//ModuleAST:
+	//	name=QualifiedName ("mixin" mixins+=[ModuleAST|QualifiedName] ("," mixins+=[ModuleAST|QualifiedName])*)? "{"
+	//	bindings+=BindingAST* "}";
+	public ModuleASTElements getModuleASTAccess() {
+		return (pModuleAST != null) ? pModuleAST : (pModuleAST = new ModuleASTElements());
 	}
 	
-	public ParserRule getBindingRule() {
-		return getBindingAccess().getRule();
+	public ParserRule getModuleASTRule() {
+		return getModuleASTAccess().getRule();
 	}
 
-	//Key:
-	//	annotations+=XAnnotation* type=JvmTypeReference;
-	public KeyElements getKeyAccess() {
-		return (pKey != null) ? pKey : (pKey = new KeyElements());
+	//BindingAST:
+	//	"bind" from=KeyAST ("to" to=KeyAST | "to-instance" toInstance=XExpression)?;
+	public BindingASTElements getBindingASTAccess() {
+		return (pBindingAST != null) ? pBindingAST : (pBindingAST = new BindingASTElements());
 	}
 	
-	public ParserRule getKeyRule() {
-		return getKeyAccess().getRule();
+	public ParserRule getBindingASTRule() {
+		return getBindingASTAccess().getRule();
 	}
 
-	//Import:
+	//KeyAST:
+	//	annotation=XAnnotation? type=JvmTypeReference;
+	public KeyASTElements getKeyASTAccess() {
+		return (pKeyAST != null) ? pKeyAST : (pKeyAST = new KeyASTElements());
+	}
+	
+	public ParserRule getKeyASTRule() {
+		return getKeyASTAccess().getRule();
+	}
+
+	//ImportAST:
 	//	"import" importedNamespace=QualifiedNameWithWildCard;
-	public ImportElements getImportAccess() {
-		return (pImport != null) ? pImport : (pImport = new ImportElements());
+	public ImportASTElements getImportASTAccess() {
+		return (pImportAST != null) ? pImportAST : (pImportAST = new ImportASTElements());
 	}
 	
-	public ParserRule getImportRule() {
-		return getImportAccess().getRule();
+	public ParserRule getImportASTRule() {
+		return getImportASTAccess().getRule();
 	}
 
 	//QualifiedNameWithWildCard:

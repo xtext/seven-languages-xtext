@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.xtext.guicemodules.guiceModules.impl;
 
@@ -67,10 +64,11 @@ public class GuiceModulesFactoryImpl extends EFactoryImpl implements GuiceModule
   {
     switch (eClass.getClassifierID())
     {
-      case GuiceModulesPackage.MODULE: return createModule();
-      case GuiceModulesPackage.BINDING: return createBinding();
-      case GuiceModulesPackage.KEY: return createKey();
-      case GuiceModulesPackage.IMPORT: return createImport();
+      case GuiceModulesPackage.MODULES_AST: return createModulesAST();
+      case GuiceModulesPackage.MODULE_AST: return createModuleAST();
+      case GuiceModulesPackage.BINDING_AST: return createBindingAST();
+      case GuiceModulesPackage.KEY_AST: return createKeyAST();
+      case GuiceModulesPackage.IMPORT_AST: return createImportAST();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -81,10 +79,10 @@ public class GuiceModulesFactoryImpl extends EFactoryImpl implements GuiceModule
    * <!-- end-user-doc -->
    * @generated
    */
-  public Module createModule()
+  public ModulesAST createModulesAST()
   {
-    ModuleImpl module = new ModuleImpl();
-    return module;
+    ModulesASTImpl modulesAST = new ModulesASTImpl();
+    return modulesAST;
   }
 
   /**
@@ -92,10 +90,10 @@ public class GuiceModulesFactoryImpl extends EFactoryImpl implements GuiceModule
    * <!-- end-user-doc -->
    * @generated
    */
-  public Binding createBinding()
+  public ModuleAST createModuleAST()
   {
-    BindingImpl binding = new BindingImpl();
-    return binding;
+    ModuleASTImpl moduleAST = new ModuleASTImpl();
+    return moduleAST;
   }
 
   /**
@@ -103,10 +101,10 @@ public class GuiceModulesFactoryImpl extends EFactoryImpl implements GuiceModule
    * <!-- end-user-doc -->
    * @generated
    */
-  public Key createKey()
+  public BindingAST createBindingAST()
   {
-    KeyImpl key = new KeyImpl();
-    return key;
+    BindingASTImpl bindingAST = new BindingASTImpl();
+    return bindingAST;
   }
 
   /**
@@ -114,10 +112,21 @@ public class GuiceModulesFactoryImpl extends EFactoryImpl implements GuiceModule
    * <!-- end-user-doc -->
    * @generated
    */
-  public Import createImport()
+  public KeyAST createKeyAST()
   {
-    ImportImpl import_ = new ImportImpl();
-    return import_;
+    KeyASTImpl keyAST = new KeyASTImpl();
+    return keyAST;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ImportAST createImportAST()
+  {
+    ImportASTImpl importAST = new ImportASTImpl();
+    return importAST;
   }
 
   /**

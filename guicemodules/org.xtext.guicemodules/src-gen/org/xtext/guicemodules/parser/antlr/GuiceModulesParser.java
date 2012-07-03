@@ -25,7 +25,7 @@ public class GuiceModulesParser extends org.eclipse.xtext.parser.antlr.AbstractA
 	
 	@Override 
 	protected String getDefaultRuleName() {
-		return "Module";
+		return "ModulesAST";
 	}
 	
 	public GuiceModulesGrammarAccess getGrammarAccess() {

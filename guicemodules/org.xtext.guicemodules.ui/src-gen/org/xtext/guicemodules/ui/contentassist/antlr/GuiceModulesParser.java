@@ -37,7 +37,7 @@ public class GuiceModulesParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getBindingAccess().getAlternatives_2(), "rule__Binding__Alternatives_2");
+					put(grammarAccess.getBindingASTAccess().getAlternatives_2(), "rule__BindingAST__Alternatives_2");
 					put(grammarAccess.getXAnnotationAccess().getAlternatives_3_1(), "rule__XAnnotation__Alternatives_3_1");
 					put(grammarAccess.getXAnnotationElementValueAccess().getAlternatives(), "rule__XAnnotationElementValue__Alternatives");
 					put(grammarAccess.getXAssignmentAccess().getAlternatives(), "rule__XAssignment__Alternatives");
@@ -72,14 +72,15 @@ public class GuiceModulesParser extends AbstractContentAssistParser {
 					put(grammarAccess.getJvmArgumentTypeReferenceAccess().getAlternatives(), "rule__JvmArgumentTypeReference__Alternatives");
 					put(grammarAccess.getJvmWildcardTypeReferenceAccess().getAlternatives_2(), "rule__JvmWildcardTypeReference__Alternatives_2");
 					put(grammarAccess.getJvmTypeParameterAccess().getAlternatives_1(), "rule__JvmTypeParameter__Alternatives_1");
-					put(grammarAccess.getModuleAccess().getGroup(), "rule__Module__Group__0");
-					put(grammarAccess.getModuleAccess().getGroup_2(), "rule__Module__Group_2__0");
-					put(grammarAccess.getModuleAccess().getGroup_2_2(), "rule__Module__Group_2_2__0");
-					put(grammarAccess.getBindingAccess().getGroup(), "rule__Binding__Group__0");
-					put(grammarAccess.getBindingAccess().getGroup_2_0(), "rule__Binding__Group_2_0__0");
-					put(grammarAccess.getBindingAccess().getGroup_2_1(), "rule__Binding__Group_2_1__0");
-					put(grammarAccess.getKeyAccess().getGroup(), "rule__Key__Group__0");
-					put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
+					put(grammarAccess.getModulesASTAccess().getGroup(), "rule__ModulesAST__Group__0");
+					put(grammarAccess.getModuleASTAccess().getGroup(), "rule__ModuleAST__Group__0");
+					put(grammarAccess.getModuleASTAccess().getGroup_1(), "rule__ModuleAST__Group_1__0");
+					put(grammarAccess.getModuleASTAccess().getGroup_1_2(), "rule__ModuleAST__Group_1_2__0");
+					put(grammarAccess.getBindingASTAccess().getGroup(), "rule__BindingAST__Group__0");
+					put(grammarAccess.getBindingASTAccess().getGroup_2_0(), "rule__BindingAST__Group_2_0__0");
+					put(grammarAccess.getBindingASTAccess().getGroup_2_1(), "rule__BindingAST__Group_2_1__0");
+					put(grammarAccess.getKeyASTAccess().getGroup(), "rule__KeyAST__Group__0");
+					put(grammarAccess.getImportASTAccess().getGroup(), "rule__ImportAST__Group__0");
 					put(grammarAccess.getQualifiedNameWithWildCardAccess().getGroup(), "rule__QualifiedNameWithWildCard__Group__0");
 					put(grammarAccess.getXAnnotationAccess().getGroup(), "rule__XAnnotation__Group__0");
 					put(grammarAccess.getXAnnotationAccess().getGroup_3(), "rule__XAnnotation__Group_3__0");
@@ -234,17 +235,18 @@ public class GuiceModulesParser extends AbstractContentAssistParser {
 					put(grammarAccess.getJvmLowerBoundAccess().getGroup(), "rule__JvmLowerBound__Group__0");
 					put(grammarAccess.getJvmTypeParameterAccess().getGroup(), "rule__JvmTypeParameter__Group__0");
 					put(grammarAccess.getJvmTypeParameterAccess().getGroup_1_0(), "rule__JvmTypeParameter__Group_1_0__0");
-					put(grammarAccess.getModuleAccess().getImportsAssignment_0(), "rule__Module__ImportsAssignment_0");
-					put(grammarAccess.getModuleAccess().getNameAssignment_1(), "rule__Module__NameAssignment_1");
-					put(grammarAccess.getModuleAccess().getMixinsAssignment_2_1(), "rule__Module__MixinsAssignment_2_1");
-					put(grammarAccess.getModuleAccess().getMixinsAssignment_2_2_1(), "rule__Module__MixinsAssignment_2_2_1");
-					put(grammarAccess.getModuleAccess().getBindingsAssignment_4(), "rule__Module__BindingsAssignment_4");
-					put(grammarAccess.getBindingAccess().getFromAssignment_1(), "rule__Binding__FromAssignment_1");
-					put(grammarAccess.getBindingAccess().getToAssignment_2_0_1(), "rule__Binding__ToAssignment_2_0_1");
-					put(grammarAccess.getBindingAccess().getToInstanceAssignment_2_1_1(), "rule__Binding__ToInstanceAssignment_2_1_1");
-					put(grammarAccess.getKeyAccess().getAnnotationsAssignment_0(), "rule__Key__AnnotationsAssignment_0");
-					put(grammarAccess.getKeyAccess().getTypeAssignment_1(), "rule__Key__TypeAssignment_1");
-					put(grammarAccess.getImportAccess().getImportedNamespaceAssignment_1(), "rule__Import__ImportedNamespaceAssignment_1");
+					put(grammarAccess.getModulesASTAccess().getImportsAssignment_0(), "rule__ModulesAST__ImportsAssignment_0");
+					put(grammarAccess.getModulesASTAccess().getModulesAssignment_1(), "rule__ModulesAST__ModulesAssignment_1");
+					put(grammarAccess.getModuleASTAccess().getNameAssignment_0(), "rule__ModuleAST__NameAssignment_0");
+					put(grammarAccess.getModuleASTAccess().getMixinsAssignment_1_1(), "rule__ModuleAST__MixinsAssignment_1_1");
+					put(grammarAccess.getModuleASTAccess().getMixinsAssignment_1_2_1(), "rule__ModuleAST__MixinsAssignment_1_2_1");
+					put(grammarAccess.getModuleASTAccess().getBindingsAssignment_3(), "rule__ModuleAST__BindingsAssignment_3");
+					put(grammarAccess.getBindingASTAccess().getFromAssignment_1(), "rule__BindingAST__FromAssignment_1");
+					put(grammarAccess.getBindingASTAccess().getToAssignment_2_0_1(), "rule__BindingAST__ToAssignment_2_0_1");
+					put(grammarAccess.getBindingASTAccess().getToInstanceAssignment_2_1_1(), "rule__BindingAST__ToInstanceAssignment_2_1_1");
+					put(grammarAccess.getKeyASTAccess().getAnnotationAssignment_0(), "rule__KeyAST__AnnotationAssignment_0");
+					put(grammarAccess.getKeyASTAccess().getTypeAssignment_1(), "rule__KeyAST__TypeAssignment_1");
+					put(grammarAccess.getImportASTAccess().getImportedNamespaceAssignment_1(), "rule__ImportAST__ImportedNamespaceAssignment_1");
 					put(grammarAccess.getXAnnotationAccess().getAnnotationTypeAssignment_2(), "rule__XAnnotation__AnnotationTypeAssignment_2");
 					put(grammarAccess.getXAnnotationAccess().getElementValuePairsAssignment_3_1_0_0(), "rule__XAnnotation__ElementValuePairsAssignment_3_1_0_0");
 					put(grammarAccess.getXAnnotationAccess().getElementValuePairsAssignment_3_1_0_1_1(), "rule__XAnnotation__ElementValuePairsAssignment_3_1_0_1_1");
@@ -382,7 +384,7 @@ public class GuiceModulesParser extends AbstractContentAssistParser {
 	protected Collection<FollowElement> getFollowElements(AbstractInternalContentAssistParser parser) {
 		try {
 			org.xtext.guicemodules.ui.contentassist.antlr.internal.InternalGuiceModulesParser typedParser = (org.xtext.guicemodules.ui.contentassist.antlr.internal.InternalGuiceModulesParser) parser;
-			typedParser.entryRuleModule();
+			typedParser.entryRuleModulesAST();
 			return typedParser.getFollowElements();
 		} catch(RecognitionException ex) {
 			throw new RuntimeException(ex);

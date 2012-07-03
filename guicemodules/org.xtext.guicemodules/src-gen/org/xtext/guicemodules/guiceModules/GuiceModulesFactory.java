@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.xtext.guicemodules.guiceModules;
 
@@ -26,40 +23,49 @@ public interface GuiceModulesFactory extends EFactory
   GuiceModulesFactory eINSTANCE = org.xtext.guicemodules.guiceModules.impl.GuiceModulesFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Module</em>'.
+   * Returns a new object of class '<em>Modules AST</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Module</em>'.
+   * @return a new object of class '<em>Modules AST</em>'.
    * @generated
    */
-  Module createModule();
+  ModulesAST createModulesAST();
 
   /**
-   * Returns a new object of class '<em>Binding</em>'.
+   * Returns a new object of class '<em>Module AST</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Binding</em>'.
+   * @return a new object of class '<em>Module AST</em>'.
    * @generated
    */
-  Binding createBinding();
+  ModuleAST createModuleAST();
 
   /**
-   * Returns a new object of class '<em>Key</em>'.
+   * Returns a new object of class '<em>Binding AST</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Key</em>'.
+   * @return a new object of class '<em>Binding AST</em>'.
    * @generated
    */
-  Key createKey();
+  BindingAST createBindingAST();
 
   /**
-   * Returns a new object of class '<em>Import</em>'.
+   * Returns a new object of class '<em>Key AST</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Import</em>'.
+   * @return a new object of class '<em>Key AST</em>'.
    * @generated
    */
-  Import createImport();
+  KeyAST createKeyAST();
+
+  /**
+   * Returns a new object of class '<em>Import AST</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Import AST</em>'.
+   * @generated
+   */
+  ImportAST createImportAST();
 
   /**
    * Returns the package supported by this factory.

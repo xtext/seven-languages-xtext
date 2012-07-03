@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.xtext.guicemodules.guiceModules.impl;
 
@@ -16,26 +13,26 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.xtext.xbase.XExpression;
 
-import org.xtext.guicemodules.guiceModules.Binding;
+import org.xtext.guicemodules.guiceModules.BindingAST;
 import org.xtext.guicemodules.guiceModules.GuiceModulesPackage;
-import org.xtext.guicemodules.guiceModules.Key;
+import org.xtext.guicemodules.guiceModules.KeyAST;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Binding</b></em>'.
+ * An implementation of the model object '<em><b>Binding AST</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.guicemodules.guiceModules.impl.BindingImpl#getFrom <em>From</em>}</li>
- *   <li>{@link org.xtext.guicemodules.guiceModules.impl.BindingImpl#getTo <em>To</em>}</li>
- *   <li>{@link org.xtext.guicemodules.guiceModules.impl.BindingImpl#getToInstance <em>To Instance</em>}</li>
+ *   <li>{@link org.xtext.guicemodules.guiceModules.impl.BindingASTImpl#getFrom <em>From</em>}</li>
+ *   <li>{@link org.xtext.guicemodules.guiceModules.impl.BindingASTImpl#getTo <em>To</em>}</li>
+ *   <li>{@link org.xtext.guicemodules.guiceModules.impl.BindingASTImpl#getToInstance <em>To Instance</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
+public class BindingASTImpl extends MinimalEObjectImpl.Container implements BindingAST
 {
   /**
    * The cached value of the '{@link #getFrom() <em>From</em>}' containment reference.
@@ -45,7 +42,7 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
    * @generated
    * @ordered
    */
-  protected Key from;
+  protected KeyAST from;
 
   /**
    * The cached value of the '{@link #getTo() <em>To</em>}' containment reference.
@@ -55,7 +52,7 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
    * @generated
    * @ordered
    */
-  protected Key to;
+  protected KeyAST to;
 
   /**
    * The cached value of the '{@link #getToInstance() <em>To Instance</em>}' containment reference.
@@ -72,7 +69,7 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
    * <!-- end-user-doc -->
    * @generated
    */
-  protected BindingImpl()
+  protected BindingASTImpl()
   {
     super();
   }
@@ -85,7 +82,7 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
   @Override
   protected EClass eStaticClass()
   {
-    return GuiceModulesPackage.Literals.BINDING;
+    return GuiceModulesPackage.Literals.BINDING_AST;
   }
 
   /**
@@ -93,7 +90,7 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
    * <!-- end-user-doc -->
    * @generated
    */
-  public Key getFrom()
+  public KeyAST getFrom()
   {
     return from;
   }
@@ -103,13 +100,13 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetFrom(Key newFrom, NotificationChain msgs)
+  public NotificationChain basicSetFrom(KeyAST newFrom, NotificationChain msgs)
   {
-    Key oldFrom = from;
+    KeyAST oldFrom = from;
     from = newFrom;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GuiceModulesPackage.BINDING__FROM, oldFrom, newFrom);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GuiceModulesPackage.BINDING_AST__FROM, oldFrom, newFrom);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -120,20 +117,20 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setFrom(Key newFrom)
+  public void setFrom(KeyAST newFrom)
   {
     if (newFrom != from)
     {
       NotificationChain msgs = null;
       if (from != null)
-        msgs = ((InternalEObject)from).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GuiceModulesPackage.BINDING__FROM, null, msgs);
+        msgs = ((InternalEObject)from).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GuiceModulesPackage.BINDING_AST__FROM, null, msgs);
       if (newFrom != null)
-        msgs = ((InternalEObject)newFrom).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GuiceModulesPackage.BINDING__FROM, null, msgs);
+        msgs = ((InternalEObject)newFrom).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GuiceModulesPackage.BINDING_AST__FROM, null, msgs);
       msgs = basicSetFrom(newFrom, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GuiceModulesPackage.BINDING__FROM, newFrom, newFrom));
+      eNotify(new ENotificationImpl(this, Notification.SET, GuiceModulesPackage.BINDING_AST__FROM, newFrom, newFrom));
   }
 
   /**
@@ -141,7 +138,7 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
    * <!-- end-user-doc -->
    * @generated
    */
-  public Key getTo()
+  public KeyAST getTo()
   {
     return to;
   }
@@ -151,13 +148,13 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetTo(Key newTo, NotificationChain msgs)
+  public NotificationChain basicSetTo(KeyAST newTo, NotificationChain msgs)
   {
-    Key oldTo = to;
+    KeyAST oldTo = to;
     to = newTo;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GuiceModulesPackage.BINDING__TO, oldTo, newTo);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GuiceModulesPackage.BINDING_AST__TO, oldTo, newTo);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -168,20 +165,20 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTo(Key newTo)
+  public void setTo(KeyAST newTo)
   {
     if (newTo != to)
     {
       NotificationChain msgs = null;
       if (to != null)
-        msgs = ((InternalEObject)to).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GuiceModulesPackage.BINDING__TO, null, msgs);
+        msgs = ((InternalEObject)to).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GuiceModulesPackage.BINDING_AST__TO, null, msgs);
       if (newTo != null)
-        msgs = ((InternalEObject)newTo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GuiceModulesPackage.BINDING__TO, null, msgs);
+        msgs = ((InternalEObject)newTo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GuiceModulesPackage.BINDING_AST__TO, null, msgs);
       msgs = basicSetTo(newTo, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GuiceModulesPackage.BINDING__TO, newTo, newTo));
+      eNotify(new ENotificationImpl(this, Notification.SET, GuiceModulesPackage.BINDING_AST__TO, newTo, newTo));
   }
 
   /**
@@ -205,7 +202,7 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
     toInstance = newToInstance;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GuiceModulesPackage.BINDING__TO_INSTANCE, oldToInstance, newToInstance);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GuiceModulesPackage.BINDING_AST__TO_INSTANCE, oldToInstance, newToInstance);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -222,14 +219,14 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
     {
       NotificationChain msgs = null;
       if (toInstance != null)
-        msgs = ((InternalEObject)toInstance).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GuiceModulesPackage.BINDING__TO_INSTANCE, null, msgs);
+        msgs = ((InternalEObject)toInstance).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GuiceModulesPackage.BINDING_AST__TO_INSTANCE, null, msgs);
       if (newToInstance != null)
-        msgs = ((InternalEObject)newToInstance).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GuiceModulesPackage.BINDING__TO_INSTANCE, null, msgs);
+        msgs = ((InternalEObject)newToInstance).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GuiceModulesPackage.BINDING_AST__TO_INSTANCE, null, msgs);
       msgs = basicSetToInstance(newToInstance, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GuiceModulesPackage.BINDING__TO_INSTANCE, newToInstance, newToInstance));
+      eNotify(new ENotificationImpl(this, Notification.SET, GuiceModulesPackage.BINDING_AST__TO_INSTANCE, newToInstance, newToInstance));
   }
 
   /**
@@ -242,11 +239,11 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
   {
     switch (featureID)
     {
-      case GuiceModulesPackage.BINDING__FROM:
+      case GuiceModulesPackage.BINDING_AST__FROM:
         return basicSetFrom(null, msgs);
-      case GuiceModulesPackage.BINDING__TO:
+      case GuiceModulesPackage.BINDING_AST__TO:
         return basicSetTo(null, msgs);
-      case GuiceModulesPackage.BINDING__TO_INSTANCE:
+      case GuiceModulesPackage.BINDING_AST__TO_INSTANCE:
         return basicSetToInstance(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -262,11 +259,11 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
   {
     switch (featureID)
     {
-      case GuiceModulesPackage.BINDING__FROM:
+      case GuiceModulesPackage.BINDING_AST__FROM:
         return getFrom();
-      case GuiceModulesPackage.BINDING__TO:
+      case GuiceModulesPackage.BINDING_AST__TO:
         return getTo();
-      case GuiceModulesPackage.BINDING__TO_INSTANCE:
+      case GuiceModulesPackage.BINDING_AST__TO_INSTANCE:
         return getToInstance();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -282,13 +279,13 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
   {
     switch (featureID)
     {
-      case GuiceModulesPackage.BINDING__FROM:
-        setFrom((Key)newValue);
+      case GuiceModulesPackage.BINDING_AST__FROM:
+        setFrom((KeyAST)newValue);
         return;
-      case GuiceModulesPackage.BINDING__TO:
-        setTo((Key)newValue);
+      case GuiceModulesPackage.BINDING_AST__TO:
+        setTo((KeyAST)newValue);
         return;
-      case GuiceModulesPackage.BINDING__TO_INSTANCE:
+      case GuiceModulesPackage.BINDING_AST__TO_INSTANCE:
         setToInstance((XExpression)newValue);
         return;
     }
@@ -305,13 +302,13 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
   {
     switch (featureID)
     {
-      case GuiceModulesPackage.BINDING__FROM:
-        setFrom((Key)null);
+      case GuiceModulesPackage.BINDING_AST__FROM:
+        setFrom((KeyAST)null);
         return;
-      case GuiceModulesPackage.BINDING__TO:
-        setTo((Key)null);
+      case GuiceModulesPackage.BINDING_AST__TO:
+        setTo((KeyAST)null);
         return;
-      case GuiceModulesPackage.BINDING__TO_INSTANCE:
+      case GuiceModulesPackage.BINDING_AST__TO_INSTANCE:
         setToInstance((XExpression)null);
         return;
     }
@@ -328,14 +325,14 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
   {
     switch (featureID)
     {
-      case GuiceModulesPackage.BINDING__FROM:
+      case GuiceModulesPackage.BINDING_AST__FROM:
         return from != null;
-      case GuiceModulesPackage.BINDING__TO:
+      case GuiceModulesPackage.BINDING_AST__TO:
         return to != null;
-      case GuiceModulesPackage.BINDING__TO_INSTANCE:
+      case GuiceModulesPackage.BINDING_AST__TO_INSTANCE:
         return toInstance != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //BindingImpl
+} //BindingASTImpl
