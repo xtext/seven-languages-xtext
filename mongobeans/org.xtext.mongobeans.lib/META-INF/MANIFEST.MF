@@ -9,5 +9,5 @@ Require-Bundle: org.eclipse.xtend.lib,
  com.google.guava,
  org.eclipse.xtext.xbase.lib,
  org.eclipse.orbit.mongodb;bundle-version="2.6.3";visibility:=reexport
-Export-Package: org.xtext.mongobeans.runtime
+Export-Package: org.xtext.mongobeans.lib
 

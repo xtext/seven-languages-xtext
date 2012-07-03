@@ -1,4 +1,4 @@
-package org.xtext.mongobeans.runtime;
+package org.xtext.mongobeans.lib;
 
 import com.mongodb.DBObject;
 

@@ -1,11 +1,11 @@
-package org.xtext.mongobeans.runtime
+package org.xtext.mongobeans.lib
 
 import com.mongodb.DBObject
 import java.util.Collection
 import java.util.List
 import java.util.ListIterator
 
-import static extension org.xtext.mongobeans.runtime.WrappingUtil.*
+import static extension org.xtext.mongobeans.lib.WrappingUtil.*
 import java.lang.reflect.Array
 
 class MongoBeanList <T extends IMongoBean> implements List<T> {

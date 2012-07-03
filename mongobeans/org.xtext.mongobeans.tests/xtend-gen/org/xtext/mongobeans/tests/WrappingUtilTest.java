@@ -25,8 +25,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.xtext.mongobeans.MongoBeansInjectorProvider;
-import org.xtext.mongobeans.runtime.IMongoBean;
-import org.xtext.mongobeans.runtime.WrappingUtil;
+import org.xtext.mongobeans.lib.IMongoBean;
+import org.xtext.mongobeans.lib.WrappingUtil;
 
 @RunWith(value = XtextRunner.class)
 @InjectWith(value = MongoBeansInjectorProvider.class)

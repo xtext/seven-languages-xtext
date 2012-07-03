@@ -1,13 +1,13 @@
-package org.xtext.mongobeans.runtime
+package org.xtext.mongobeans.lib
 
 import com.mongodb.DBObject
 
-import static org.xtext.mongobeans.runtime.WrappingUtil.*
+import static org.xtext.mongobeans.lib.WrappingUtil.*
 
 class WrappingUtil {
 	
 	def static IMongoBean wrap(DBObject dbObject) {
-		val javaClassName = dbObject.get(org::xtext::mongobeans::runtime::IMongoBean::JAVA_CLASS_KEY)?.toString
+		val javaClassName = dbObject.get(IMongoBean::JAVA_CLASS_KEY)?.toString
 		val javaClass = classLoader.loadClass(javaClassName)
 		if(typeof(IMongoBean).isAssignableFrom(javaClass)) {
 			val constructor = javaClass.getConstructor(typeof(DBObject))

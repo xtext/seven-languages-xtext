@@ -1,4 +1,4 @@
-package org.xtext.mongobeans.runtime;
+package org.xtext.mongobeans.lib;
 
 import com.google.common.base.Objects;
 import com.mongodb.DBObject;
@@ -14,8 +14,8 @@ import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure2;
-import org.xtext.mongobeans.runtime.IMongoBean;
-import org.xtext.mongobeans.runtime.WrappingUtil;
+import org.xtext.mongobeans.lib.IMongoBean;
+import org.xtext.mongobeans.lib.WrappingUtil;
 
 @SuppressWarnings("all")
 public class MongoBeanList<T extends IMongoBean> implements List<T> {

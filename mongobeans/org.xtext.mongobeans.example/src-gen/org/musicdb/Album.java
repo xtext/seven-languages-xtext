@@ -9,8 +9,8 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
 import org.musicdb.Track;
 import org.xtext.mongobeans.example.Duration;
-import org.xtext.mongobeans.runtime.IMongoBean;
-import org.xtext.mongobeans.runtime.MongoBeanList;
+import org.xtext.mongobeans.lib.IMongoBean;
+import org.xtext.mongobeans.lib.MongoBeanList;
 
 public class Album implements IMongoBean {
   /**

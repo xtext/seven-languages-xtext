@@ -8,8 +8,8 @@ import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
 import org.musicdb.Album;
 import org.musicdb.Track;
-import org.xtext.mongobeans.runtime.IMongoBean;
-import org.xtext.mongobeans.runtime.MongoBeanList;
+import org.xtext.mongobeans.lib.IMongoBean;
+import org.xtext.mongobeans.lib.MongoBeanList;
 
 /**
  * A musical performer

@@ -9,8 +9,8 @@ import org.eclipse.xtext.xbase.compiler.CompilationTestHelper
 import org.eclipse.xtext.xbase.lib.util.ReflectExtensions
 import org.junit.Test
 import org.junit.Before
-import org.xtext.mongobeans.runtime.IMongoBean
-import org.xtext.mongobeans.runtime.WrappingUtil
+import org.xtext.mongobeans.lib.IMongoBean
+import org.xtext.mongobeans.lib.WrappingUtil
 import java.util.List
 import com.mongodb.BasicDBObject
 import com.mongodb.DBObject
