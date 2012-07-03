@@ -17,14 +17,14 @@ class TemplateHighlightingConfiguration extends XbaseHighlightingConfiguration {
 	}
 
 	def TextStyle staticText() {
-		defaultTextStyle().copy() => [
+		defaultTextStyle.copy => [
 			color= new RGB(0, 0, 0)
 			backgroundColor = new RGB(220, 220, 220)
 		]
 	}
 
 	def TextStyle staticEscape() {
-		defaultTextStyle().copy() => [
+		defaultTextStyle.copy => [
 			color = new RGB(180, 180, 180)
 		]
 	}

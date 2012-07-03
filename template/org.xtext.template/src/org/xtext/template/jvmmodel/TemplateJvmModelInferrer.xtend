@@ -44,89 +44,89 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
 
    	def dispatch void infer(TemplateFile element, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
    		val simpleName = element.eResource.URI.trimFileExtension.lastSegment
-   		val qualifiedName = if(element.^package != null) 
-   				element.^package + "." + simpleName
+   		val qualifiedName = if(element.getPackage != null) 
+   				element.getPackage + "." + simpleName
    			else 
    				simpleName
 		val root = element.toClass(qualifiedName)
    		acceptor.accept(root).initializeLater([
-   				
-   				for(p:element.params) {
-   					val field = p.toField(p.name, p.type ?: p.defaultexp.type)
-   					if(p.defaultexp != null)
-   						field.initializer = p.defaultexp
-   					members += field
-   				}
-   				
-   				members += element.toConstructor()[]
-   				
-   				members += element.toConstructor()[
-   					parameters += element.toParameter("other", newTypeRef(root))
-   					if(!element.params.empty)
-	   					body = [
-	   						for(p:element.params) {
-	   							if(p != element.params.head)
-	   								newLine
-								append('''this.«p.name» = other.«p.name»;''')
-	   						}
-	   					]
-   				]
-   				
-   				val expr2call = <XExpression, String>newHashMap()
-   				for(expr : element.eAllContents.toIterable)
-   					genExpression(new ExpCtx(members, expr2call), expr)
-   				
-   				members += element.toMethod("generate", element.newTypeRef(typeof(String))) [
+			
+			for(p:element.params) {
+				val field = p.toField(p.name, p.type ?: p.defaultexp.type)
+				if(p.defaultexp != null)
+					field.initializer = p.defaultexp
+				members += field
+			}
+			
+			members += element.toConstructor()[]
+			
+			members += element.toConstructor()[
+				parameters += element.toParameter("other", newTypeRef(root))
+				if(!element.params.empty)
    					body = [
-   						val type = findDeclaredType(typeof(StringBuilder), element)
-   						append(type)
-   						append(" out = new ")
-   						append(type)
-   						append("();");
-   						newLine 
-   						genStatement(new StmtCtx(it, expr2call), element.body)
-   						newLine
-   						append("return out.toString();");
+   						for(p:element.params) {
+   							if(p != element.params.head)
+   								newLine
+							append('''this.«p.name» = other.«p.name»;''')
+   						}
    					]
-   				]
-   				
-   				members += element.toMethod("generate", element.newTypeRef(typeof(String))) [
-   					parameters += element.toParameter("init", element.newTypeRef(typeof(Procedures$Procedure1), newTypeRef(root)))
-   					body = [
-   						append("try {").increaseIndentation.newLine
-   						append(root)
-   						append(" tpl = getClass().getConstructor(getClass()).newInstance(this);").newLine
-   						append("init.apply(tpl);").newLine
-   						append("return tpl.generate();")
-   						decreaseIndentation.newLine.append("} catch(Exception e) {").increaseIndentation.newLine
-   						append("throw ")
-   						append(findDeclaredType(typeof(Exceptions), element))
-   						append(".sneakyThrow(e);")
-   						decreaseIndentation.newLine.append("}")
-   					]
-   				]
-   				
-				for(p:element.params) {
-   				    val method = element.toMethod("set" +p.name.toFirstUpper, element.newTypeRef(Void::TYPE)) [
-   				    	parameters += p.toParameter(p.name, p.type ?: p.defaultexp.type)
-   				    	body = [
-						append('''this.«p.name» = «p.name»;''')
-   				    	]	
-   					]
-   					translateAnnotationsTo(p.annotations, method)
-   					members += method
-   				}
-   				
-   				members += element.toMethod("toString", element.newTypeRef(typeof(String))) [
-   					body = [
-   						val type = findDeclaredType(typeof(ToStringHelper), element)
-   						append("return new ")
-   						append(type)
-   						append("().toString(this);");
-   					]
-   				]
-   			])
-   	}
+			]
+			
+			val expr2call = <XExpression, String>newHashMap()
+			for(expr : element.eAllContents.toIterable)
+				genExpression(new ExpCtx(members, expr2call), expr)
+			
+			members += element.toMethod("generate", element.newTypeRef(typeof(String))) [
+				body = [
+					val type = findDeclaredType(typeof(StringBuilder), element)
+					append(type)
+					append(" out = new ")
+					append(type)
+					append("();");
+					newLine 
+					genStatement(new StmtCtx(it, expr2call), element.body)
+					newLine
+					append("return out.toString();");
+				]
+			]
+			
+			members += element.toMethod("generate", element.newTypeRef(typeof(String))) [
+				parameters += element.toParameter("init", element.newTypeRef(typeof(Procedures$Procedure1), newTypeRef(root)))
+				body = [
+					append("try {").increaseIndentation.newLine
+					append(root)
+					append(" tpl = getClass().getConstructor(getClass()).newInstance(this);").newLine
+					append("init.apply(tpl);").newLine
+					append("return tpl.generate();")
+					decreaseIndentation.newLine.append("} catch(Exception e) {").increaseIndentation.newLine
+					append("throw ")
+					append(findDeclaredType(typeof(Exceptions), element))
+					append(".sneakyThrow(e);")
+					decreaseIndentation.newLine.append("}")
+				]
+			]
+			
+			for(p:element.params) {
+			    val method = element.toMethod("set" +p.name.toFirstUpper, element.newTypeRef(Void::TYPE)) [
+			    	parameters += p.toParameter(p.name, p.type ?: p.defaultexp.type)
+			    	body = [
+					append('''this.«p.name» = «p.name»;''')
+			    	]	
+				]
+				translateAnnotationsTo(p.annotations, method)
+				members += method
+			}
+			
+			members += element.toMethod("toString", element.newTypeRef(typeof(String))) [
+				body = [
+					val type = findDeclaredType(typeof(ToStringHelper), element)
+					append("return new ")
+					append(type)
+					append("().toString(this);");
+				]
+			]
+		])
+	}
    	
    	def Iterable<ForStmt> getAllParameters(EObject exp){
    		val cnt = exp.eContainer
