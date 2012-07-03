@@ -19,7 +19,6 @@ Require-Bundle: org.xtext.tortoiseshell;visibility:=reexport,
  org.eclipse.compare
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: org.xtext.tortoiseshell.ui.contentassist,
- org.xtext.tortoiseshell.ui.contentassist.antlr,
+Export-Package: org.xtext.tortoiseshell.ui.contentassist.antlr,
  org.xtext.tortoiseshell.ui.internal
 Bundle-Activator: org.xtext.tortoiseshell.ui.internal.TortoiseShellActivator

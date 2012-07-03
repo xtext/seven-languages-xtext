@@ -22,13 +22,12 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.xtext.tortoiseshell,
+ org.xtext.tortoiseshell.interpreter,
+ org.xtext.tortoiseshell.jvmmodel,
+ org.xtext.tortoiseshell.parser.antlr,
+ org.xtext.tortoiseshell.parser.antlr.internal,
+ org.xtext.tortoiseshell.serializer,
  org.xtext.tortoiseshell.services,
  org.xtext.tortoiseshell.tortoiseShell,
  org.xtext.tortoiseshell.tortoiseShell.impl,
- org.xtext.tortoiseshell.tortoiseShell.util,
- org.xtext.tortoiseshell.serializer,
- org.xtext.tortoiseshell.parser.antlr,
- org.xtext.tortoiseshell.parser.antlr.internal,
- org.xtext.tortoiseshell.validation,
- org.xtext.tortoiseshell.formatting,
- org.xtext.tortoiseshell.jvmmodel
+ org.xtext.tortoiseshell.tortoiseShell.util

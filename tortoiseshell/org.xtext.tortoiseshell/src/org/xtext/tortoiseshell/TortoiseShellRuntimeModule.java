@@ -28,4 +28,5 @@ public class TortoiseShellRuntimeModule extends org.xtext.tortoiseshell.Abstract
 	public Class<? extends IdentifiableSimpleNameProvider> bindIdentifiableSimpleNameProvider() {
 		return TortoiseShellIdentifiableSimpleNameProvider.class;
 	}
+	
 }

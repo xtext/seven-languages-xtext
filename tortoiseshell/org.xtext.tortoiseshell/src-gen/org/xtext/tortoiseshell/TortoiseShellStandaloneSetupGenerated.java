@@ -39,6 +39,5 @@ public class TortoiseShellStandaloneSetupGenerated implements ISetup {
 
 
 
-
 	}
 }
