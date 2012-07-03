@@ -6,6 +6,7 @@ import org.eclipse.xtend.lib.Data
 import static java.lang.Math.*
 import org.eclipse.swt.graphics.Color
 import org.eclipse.draw2d.geometry.Point
+import org.eclipse.draw2d.ColorConstants
 
 class Tortoise {
 	double angle
@@ -14,8 +15,8 @@ class Tortoise {
 	@Property int delay = 200
 
 	boolean isPaint = true
-	@Property int lineWidth
-	@Property Color lineColor
+	@Property int lineWidth = 1
+	@Property Color lineColor = ColorConstants::black
 
 	List<ITortoiseEvent$Listener> listeners = newArrayList()
 	

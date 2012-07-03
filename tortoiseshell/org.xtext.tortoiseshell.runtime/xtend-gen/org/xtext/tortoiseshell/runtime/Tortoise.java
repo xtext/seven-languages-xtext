@@ -2,6 +2,7 @@ package org.xtext.tortoiseshell.runtime;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
@@ -31,7 +32,7 @@ public class Tortoise {
   
   private boolean isPaint = true;
   
-  private int _lineWidth;
+  private int _lineWidth = 1;
   
   public int getLineWidth() {
     return this._lineWidth;
@@ -41,7 +42,7 @@ public class Tortoise {
     this._lineWidth = lineWidth;
   }
   
-  private Color _lineColor;
+  private Color _lineColor = ColorConstants.black;
   
   public Color getLineColor() {
     return this._lineColor;
