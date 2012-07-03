@@ -28,8 +28,3 @@ task Run depends Zip {
 	val clazz = classpath.loadClass("sample.Main")
 	clazz.runMain()
 }
-
-
-
-
-
