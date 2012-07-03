@@ -4,6 +4,7 @@ import com.mongodb.DBObject;
 import java.lang.reflect.Constructor;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.Exceptions;
+import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.xtext.mongobeans.runtime.IMongoBean;
 
 @SuppressWarnings("all")
@@ -14,7 +15,7 @@ public class WrappingUtil {
       {
         Object _get = dbObject.get(IMongoBean.JAVA_CLASS_KEY);
         final String javaClassName = _get==null?(String)null:_get.toString();
-        ClassLoader _classLoader = WrappingUtil.class.getClassLoader();
+        ClassLoader _classLoader = WrappingUtil.getClassLoader();
         final Class<? extends Object> javaClass = _classLoader.loadClass(javaClassName);
         IMongoBean _xifexpression = null;
         boolean _isAssignableFrom = IMongoBean.class.isAssignableFrom(javaClass);
@@ -61,5 +62,21 @@ public class WrappingUtil {
       _xifexpression = _dbObject;
     }
     return _xifexpression;
+  }
+  
+  private static ClassLoader _classLoader = new Function0<ClassLoader>() {
+    public ClassLoader apply() {
+      ClassLoader _classLoader = WrappingUtil.class.getClassLoader();
+      return _classLoader;
+    }
+  }.apply();
+  
+  public static ClassLoader getClassLoader() {
+    return WrappingUtil._classLoader;
+  }
+  
+  public static ClassLoader setClassLoader(final ClassLoader classLoader) {
+    ClassLoader __classLoader = WrappingUtil._classLoader = classLoader;
+    return __classLoader;
   }
 }

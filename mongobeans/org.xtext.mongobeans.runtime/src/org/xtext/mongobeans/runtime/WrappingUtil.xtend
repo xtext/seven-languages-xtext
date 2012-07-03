@@ -8,7 +8,7 @@ class WrappingUtil {
 	
 	def static IMongoBean wrap(DBObject dbObject) {
 		val javaClassName = dbObject.get(org::xtext::mongobeans::runtime::IMongoBean::JAVA_CLASS_KEY)?.toString
-		val javaClass = typeof(WrappingUtil).classLoader.loadClass(javaClassName)
+		val javaClass = classLoader.loadClass(javaClassName)
 		if(typeof(IMongoBean).isAssignableFrom(javaClass)) {
 			val constructor = javaClass.getConstructor(typeof(DBObject))
 			constructor.newInstance(dbObject) as IMongoBean
@@ -27,5 +27,14 @@ class WrappingUtil {
 		else 
 			(wrapper as IMongoBean).getDbObject
 	}
-
+	
+	static ClassLoader _classLoader = typeof(WrappingUtil).classLoader
+	
+	def static getClassLoader() {
+		_classLoader
+	} 
+	
+	def static setClassLoader(ClassLoader classLoader) {
+		_classLoader = classLoader
+	}
 }
