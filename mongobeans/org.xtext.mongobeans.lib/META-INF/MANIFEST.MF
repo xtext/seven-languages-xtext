@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: MongoDSL Runtime Plug-in
-Bundle-SymbolicName: org.xtext.mongobeans.runtime
+Bundle-SymbolicName: org.xtext.mongobeans.lib
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
