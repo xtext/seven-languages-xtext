@@ -62,10 +62,10 @@ Workflow {
                 }
     
                 // java-based API for validation
-                fragment = validation.JavaValidatorFragment {
+                //fragment = validation.JavaValidatorFragment {
                 //    composedCheck = "org.eclipse.xtext.validation.ImportUriValidator"
                 //    composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
-                }
+                //}
     
                 // scoping and exporting API
                 fragment = scoping.ImportNamespacesScopingFragment {}
@@ -79,20 +79,20 @@ Workflow {
                 }
     
                 // formatter API
-                fragment = formatting.FormatterFragment {}
+                // fragment = formatting.FormatterFragment {}
     
                 // labeling API
-                fragment = labeling.LabelProviderFragment {}
+                //fragment = labeling.LabelProviderFragment {}
     
                 // outline API
-                fragment = outline.OutlineTreeProviderFragment {}
+                //fragment = outline.OutlineTreeProviderFragment {}
                 fragment = outline.QuickOutlineFragment {}
     
                 // quickfix API
-                fragment = quickfix.QuickfixProviderFragment {}
+                //fragment = quickfix.QuickfixProviderFragment {}
     
                 // content assist API
-                fragment = contentAssist.JavaBasedContentAssistFragment {}
+                //fragment = contentAssist.JavaBasedContentAssistFragment {}
     
                 // generates a more lightweight Antlr parser and lexer tailored for content assist
                 fragment = parser.antlr.XtextAntlrUiGeneratorFragment {}

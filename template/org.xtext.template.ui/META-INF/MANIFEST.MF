@@ -16,10 +16,12 @@ Require-Bundle: org.xtext.template;visibility:=reexport,
  org.antlr.runtime,
  org.eclipse.xtext.common.types.ui,
  org.eclipse.xtext.ui.codetemplates.ui,
- org.eclipse.compare
+ org.eclipse.compare,
+ org.eclipse.xtend.lib,
+ com.google.guava,
+ org.eclipse.xtext.xbase.lib
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: org.xtext.template.ui.contentassist,
- org.xtext.template.ui.contentassist.antlr,
+Export-Package: org.xtext.template.ui.contentassist.antlr,
  org.xtext.template.ui.internal
 Bundle-Activator: org.xtext.template.ui.internal.TemplateActivator

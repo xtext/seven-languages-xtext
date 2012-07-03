@@ -4,14 +4,23 @@
 package org.xtext.template;
 
 import org.eclipse.xtext.conversion.IValueConverterService;
+import org.eclipse.xtext.service.SingletonBinding;
+import org.xtext.template.validation.TemplateValidator;
 
 /**
  * Use this class to register components to be used at runtime / without the
  * Equinox extension registry.
  */
 public class TemplateRuntimeModule extends AbstractTemplateRuntimeModule {
+	
 	@Override
 	public Class<? extends IValueConverterService> bindIValueConverterService() {
 		return TemplateValueConverterService.class;
 	}
+	
+	@SingletonBinding(eager=true)	
+	public Class<? extends TemplateValidator> bindTemplateValidator() {
+		return TemplateValidator.class;
+	}
+
 }

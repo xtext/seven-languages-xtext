@@ -39,6 +39,5 @@ public class TemplateStandaloneSetupGenerated implements ISetup {
 
 
 
-
 	}
 }

@@ -13,6 +13,7 @@ import org.xtext.template.ui.highlighting.TemplateHighlightingConfiguration;
  * Use this class to register components to be used within the IDE.
  */
 public class TemplateUiModule extends org.xtext.template.ui.AbstractTemplateUiModule {
+	
 	public TemplateUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
 	}
