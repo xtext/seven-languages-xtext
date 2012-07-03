@@ -6,7 +6,7 @@ package org.xtext.tortoiseshell;
 import org.eclipse.xtext.xbase.featurecalls.IdentifiableSimpleNameProvider;
 import org.eclipse.xtext.xbase.scoping.featurecalls.StaticImplicitMethodsFeatureForTypeProvider;
 import org.xtext.tortoiseshell.interpreter.TortoiseShellInterpeter;
-import org.xtext.tortoiseshell.runtime.ITortoiseInterpreter;
+import org.xtext.tortoiseshell.lib.ITortoiseInterpreter;
 import org.xtext.tortoiseshell.scoping.TortoiseShellExtensionClassNameProvider;
 import org.xtext.tortoiseshell.scoping.TortoiseShellIdentifiableSimpleNameProvider;
 

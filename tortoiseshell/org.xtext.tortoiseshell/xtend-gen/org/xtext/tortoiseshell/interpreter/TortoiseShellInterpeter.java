@@ -24,8 +24,8 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.scoping.XbaseScopeProvider;
 import org.xtext.tortoiseshell.interpreter.StopLineReachedException;
-import org.xtext.tortoiseshell.runtime.ITortoiseInterpreter;
-import org.xtext.tortoiseshell.runtime.Tortoise;
+import org.xtext.tortoiseshell.lib.ITortoiseInterpreter;
+import org.xtext.tortoiseshell.lib.Tortoise;
 import org.xtext.tortoiseshell.tortoiseShell.Executable;
 
 @SuppressWarnings("all")

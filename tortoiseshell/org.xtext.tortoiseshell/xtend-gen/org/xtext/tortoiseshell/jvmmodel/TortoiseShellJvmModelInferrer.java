@@ -16,7 +16,7 @@ import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor.IPostIndexingInitializing;
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
-import org.xtext.tortoiseshell.runtime.Tortoise;
+import org.xtext.tortoiseshell.lib.Tortoise;
 import org.xtext.tortoiseshell.tortoiseShell.Program;
 import org.xtext.tortoiseshell.tortoiseShell.SubProgram;
 

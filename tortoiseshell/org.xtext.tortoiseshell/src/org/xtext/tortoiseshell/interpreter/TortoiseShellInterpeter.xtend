@@ -10,8 +10,8 @@ import org.eclipse.xtext.util.CancelIndicator
 import org.eclipse.xtext.xbase.interpreter.impl.XbaseInterpreter
 import org.eclipse.xtext.xbase.jvmmodel.IJvmModelAssociations
 import org.eclipse.xtext.xbase.scoping.XbaseScopeProvider
-import org.xtext.tortoiseshell.runtime.ITortoiseInterpreter
-import org.xtext.tortoiseshell.runtime.Tortoise
+import org.xtext.tortoiseshell.lib.ITortoiseInterpreter
+import org.xtext.tortoiseshell.lib.Tortoise
 import org.xtext.tortoiseshell.tortoiseShell.Executable
 import org.eclipse.xtext.xbase.XExpression
 import org.eclipse.xtext.xbase.interpreter.IEvaluationContext

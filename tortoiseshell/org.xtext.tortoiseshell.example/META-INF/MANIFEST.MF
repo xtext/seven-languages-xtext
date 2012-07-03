@@ -4,4 +4,4 @@ Bundle-Name: Example
 Bundle-SymbolicName: org.xtext.tortoiseshell.example
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Require-Bundle: org.xtext.tortoiseshell.runtime;bundle-version="1.0.0"
+Require-Bundle: org.xtext.tortoiseshell.lib;bundle-version="1.0.0"

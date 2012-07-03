@@ -18,11 +18,11 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.xtext.tortoiseshell.TortoiseShellInjectorProvider;
 import org.xtext.tortoiseshell.interpreter.TortoiseShellInterpeter;
-import org.xtext.tortoiseshell.runtime.ITortoiseEvent;
-import org.xtext.tortoiseshell.runtime.ITortoiseEvent.Listener;
-import org.xtext.tortoiseshell.runtime.MoveEvent;
-import org.xtext.tortoiseshell.runtime.Tortoise;
-import org.xtext.tortoiseshell.runtime.TurnEvent;
+import org.xtext.tortoiseshell.lib.ITortoiseEvent;
+import org.xtext.tortoiseshell.lib.ITortoiseEvent.Listener;
+import org.xtext.tortoiseshell.lib.MoveEvent;
+import org.xtext.tortoiseshell.lib.Tortoise;
+import org.xtext.tortoiseshell.lib.TurnEvent;
 import org.xtext.tortoiseshell.tortoiseShell.Program;
 
 @RunWith(value = XtextRunner.class)

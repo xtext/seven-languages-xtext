@@ -9,12 +9,12 @@ import org.xtext.tortoiseshell.interpreter.TortoiseShellInterpeter
 import org.eclipse.xtext.junit4.util.ParseHelper
 import org.xtext.tortoiseshell.tortoiseShell.Program
 import org.junit.Test
-import org.xtext.tortoiseshell.runtime.Tortoise
+import org.xtext.tortoiseshell.lib.Tortoise
 import static org.junit.Assert.*
 import org.eclipse.draw2d.geometry.Point
 import org.eclipse.draw2d.ColorConstants
-import org.xtext.tortoiseshell.runtime.MoveEvent
-import org.xtext.tortoiseshell.runtime.TurnEvent
+import org.xtext.tortoiseshell.lib.MoveEvent
+import org.xtext.tortoiseshell.lib.TurnEvent
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(TortoiseShellInjectorProvider))

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+  <extension
+        point="org.eclipse.ui.views">
+     <view
+           category="org.eclipse.xtext.viewCategory"
+           class="org.xtext.tortoiseshell.lib.ExecutableExtensionFactory:org.xtext.tortoiseshell.lib.view.TortoiseView"
+           icon="icons/Turtle_16.png"
+           id="org.xtext.tortoiseshell.lib.TortoiseView"
+           name="Tortoise View"
+           restorable="true">
+     </view>
+  </extension>
+
+</plugin>

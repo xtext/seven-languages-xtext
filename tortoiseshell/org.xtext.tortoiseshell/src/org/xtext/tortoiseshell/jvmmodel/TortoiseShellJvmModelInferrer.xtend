@@ -4,8 +4,10 @@ import com.google.inject.Inject
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
-import org.xtext.tortoiseshell.runtime.Tortoise
+import org.xtext.tortoiseshell.lib.Tortoise
 import org.xtext.tortoiseshell.tortoiseShell.Program
+
+import static org.xtext.tortoiseshell.jvmmodel.TortoiseShellJvmModelInferrer.*
 
 class TortoiseShellJvmModelInferrer extends AbstractModelInferrer {
 
