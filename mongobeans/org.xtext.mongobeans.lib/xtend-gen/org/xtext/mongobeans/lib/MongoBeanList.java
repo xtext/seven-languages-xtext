@@ -17,6 +17,9 @@ import org.eclipse.xtext.xbase.lib.Procedures.Procedure2;
 import org.xtext.mongobeans.lib.IMongoBean;
 import org.xtext.mongobeans.lib.WrappingUtil;
 
+/**
+ * Wraps a list of {@link DBObjects}.
+ */
 @SuppressWarnings("all")
 public class MongoBeanList<T extends IMongoBean> implements List<T> {
   private List<DBObject> delegate;

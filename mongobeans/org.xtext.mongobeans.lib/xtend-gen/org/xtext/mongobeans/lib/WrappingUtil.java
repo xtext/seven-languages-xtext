@@ -7,6 +7,9 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.xtext.mongobeans.lib.IMongoBean;
 
+/**
+ * Mongobeans <-> DBObject conversion methods.
+ */
 @SuppressWarnings("all")
 public class WrappingUtil {
   public static IMongoBean wrap(final DBObject dbObject) {

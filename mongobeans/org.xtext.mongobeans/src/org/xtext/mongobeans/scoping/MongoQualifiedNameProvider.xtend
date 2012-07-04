@@ -6,6 +6,9 @@ import org.xtext.mongobeans.mongoBeans.PackageDeclaration
 import static extension org.eclipse.xtext.EcoreUtil2.*
 import org.eclipse.xtext.naming.QualifiedName
 
+/**
+ * Customized to return correct names for inline declared {@link MongoBeans}.
+ */
 class MongoQualifiedNameProvider extends XbaseQualifiedNameProvider {
 	
 	def qualifiedName(MongoBean mongoBean) {

@@ -10,6 +10,9 @@ import org.eclipse.xtext.common.types.util.SuperTypeCollector;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Functions.Function0;
 
+/**
+ * Helper methods to decide if types are compatible with the mongoDB driver.
+ */
 @SuppressWarnings("all")
 public class MongoTypes {
   @Inject

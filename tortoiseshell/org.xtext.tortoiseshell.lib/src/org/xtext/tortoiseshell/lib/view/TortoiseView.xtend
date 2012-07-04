@@ -112,7 +112,7 @@ class TortoiseView extends ViewPart implements ITortoiseEvent$Listener {
 		switch event {
 			MoveEvent: { 
 				if(event.tortoise.paint) {
-					val line = new Polyline()
+					val line = new Polyline
 					line.foregroundColor = event.tortoise.lineColor
 					line.lineWidth = event.tortoise.lineWidth
 					line.setEndpoints(event.oldPosition, event.oldPosition)

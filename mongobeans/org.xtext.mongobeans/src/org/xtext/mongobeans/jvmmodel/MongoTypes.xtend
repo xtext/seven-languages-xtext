@@ -4,6 +4,9 @@ import com.google.inject.Inject
 import org.eclipse.xtext.common.types.JvmTypeReference
 import org.eclipse.xtext.common.types.util.SuperTypeCollector
 
+/** 
+ * Helper methods to decide if types are compatible with the mongoDB driver. 
+ */
 class MongoTypes {
 
 	@Inject extension SuperTypeCollector

@@ -17,7 +17,7 @@ package org.musicdb {
 		String title
 		int year
 		Duration getDuration() {
-			tracks.map[duration].reduce[Duration a, Duration b| a + b]
+			tracks.map[duration].reduce[ Duration a, Duration b | a + b ]
 		} 
 		Track {
 			String title

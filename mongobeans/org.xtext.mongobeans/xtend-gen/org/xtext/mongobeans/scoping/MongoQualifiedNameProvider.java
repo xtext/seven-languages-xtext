@@ -7,6 +7,9 @@ import org.eclipse.xtext.xbase.scoping.XbaseQualifiedNameProvider;
 import org.xtext.mongobeans.mongoBeans.MongoBean;
 import org.xtext.mongobeans.mongoBeans.PackageDeclaration;
 
+/**
+ * Customized to return correct names for inline declared {@link MongoBeans}.
+ */
 @SuppressWarnings("all")
 public class MongoQualifiedNameProvider extends XbaseQualifiedNameProvider {
   public QualifiedName qualifiedName(final MongoBean mongoBean) {

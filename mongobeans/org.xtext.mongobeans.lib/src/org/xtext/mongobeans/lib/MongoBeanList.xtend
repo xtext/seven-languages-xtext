@@ -8,6 +8,9 @@ import java.util.ListIterator
 import static extension org.xtext.mongobeans.lib.WrappingUtil.*
 import java.lang.reflect.Array
 
+/**
+ * Wraps a list of {@link DBObjects}.
+ */
 class MongoBeanList <T extends IMongoBean> implements List<T> {
 	
 	List<DBObject> delegate

@@ -18,7 +18,7 @@ import org.xtext.mongobeans.MongoBeansInjectorProvider;
 import org.xtext.mongobeans.mongoBeans.MongoBeansPackage.Literals;
 import org.xtext.mongobeans.mongoBeans.MongoFile;
 import org.xtext.mongobeans.mongoBeans.MongoProperty;
-import org.xtext.mongobeans.validation.IssueCodes;
+import org.xtext.mongobeans.validation.MongoBeansIssueCodes;
 
 @RunWith(value = XtextRunner.class)
 @InjectWith(value = MongoBeansInjectorProvider.class)
@@ -75,9 +75,9 @@ public class ValidationTest {
       TreeIterator<EObject> _eAllContents = _parse.eAllContents();
       final Iterator<MongoProperty> properties = Iterators.<MongoProperty>filter(_eAllContents, MongoProperty.class);
       MongoProperty _head = IteratorExtensions.<MongoProperty>head(properties);
-      this._validationTestHelper.assertError(_head, Literals.MONGO_PROPERTY, IssueCodes.ILLEGAL_TYPE);
+      this._validationTestHelper.assertError(_head, Literals.MONGO_PROPERTY, MongoBeansIssueCodes.ILLEGAL_TYPE);
       MongoProperty _last = IteratorExtensions.<MongoProperty>last(properties);
-      this._validationTestHelper.assertError(_last, Literals.MONGO_PROPERTY, IssueCodes.ILLEGAL_TYPE);
+      this._validationTestHelper.assertError(_last, Literals.MONGO_PROPERTY, MongoBeansIssueCodes.ILLEGAL_TYPE);
     } catch (Exception _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -98,7 +98,7 @@ public class ValidationTest {
       TreeIterator<EObject> _eAllContents = _parse.eAllContents();
       Iterator<MongoProperty> _filter = Iterators.<MongoProperty>filter(_eAllContents, MongoProperty.class);
       final MongoProperty property = IteratorExtensions.<MongoProperty>head(_filter);
-      this._validationTestHelper.assertError(property, Literals.MONGO_PROPERTY, IssueCodes.ILLEGAL_PROPERTY_NAME);
+      this._validationTestHelper.assertError(property, Literals.MONGO_PROPERTY, MongoBeansIssueCodes.ILLEGAL_PROPERTY_NAME);
     } catch (Exception _e) {
       throw Exceptions.sneakyThrow(_e);
     }

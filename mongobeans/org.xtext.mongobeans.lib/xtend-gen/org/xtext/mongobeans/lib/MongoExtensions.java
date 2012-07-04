@@ -6,6 +6,9 @@ import com.mongodb.WriteResult;
 import org.xtext.mongobeans.lib.IMongoBean;
 import org.xtext.mongobeans.lib.WrappingUtil;
 
+/**
+ * Example wrapper methods for DB interaction.
+ */
 @SuppressWarnings("all")
 public class MongoExtensions {
   public <T extends IMongoBean> T findOne(final DBCollection collection, final T wrapper) {

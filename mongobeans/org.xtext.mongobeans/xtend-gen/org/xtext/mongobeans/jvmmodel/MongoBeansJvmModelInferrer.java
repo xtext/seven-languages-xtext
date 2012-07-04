@@ -40,9 +40,8 @@ import org.xtext.mongobeans.mongoBeans.MongoOperation;
 import org.xtext.mongobeans.mongoBeans.MongoProperty;
 
 /**
- * <p>Infers a JVM model from the source model.</p>
- * 
- * @author Jan Koehnlein
+ * Infers a Java class for each {@link MongoBean} in the given {@link MongoFile}.
+ * The class wraps a {@link DBObject}.
  */
 @SuppressWarnings("all")
 public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {

@@ -5,6 +5,9 @@ import org.xtext.mongobeans.lib.IMongoBean
 
 import static extension org.xtext.mongobeans.lib.WrappingUtil.*
 
+/**
+ * Example wrapper methods for DB interaction.
+ */
 class MongoExtensions {
 	
 	def <T extends IMongoBean> findOne(DBCollection collection, T wrapper) {

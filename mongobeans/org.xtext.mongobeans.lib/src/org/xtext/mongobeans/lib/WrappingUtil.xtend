@@ -4,6 +4,9 @@ import com.mongodb.DBObject
 
 import static org.xtext.mongobeans.lib.WrappingUtil.*
 
+/**
+ * Mongobeans <-> DBObject conversion methods.
+ */
 class WrappingUtil {
 	
 	def static IMongoBean wrap(DBObject dbObject) {

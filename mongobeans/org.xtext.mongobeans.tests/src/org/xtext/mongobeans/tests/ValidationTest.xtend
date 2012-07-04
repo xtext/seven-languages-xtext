@@ -9,10 +9,11 @@ import com.google.inject.Inject
 import org.eclipse.xtext.junit4.validation.ValidationTestHelper
 import org.eclipse.xtext.junit4.util.ParseHelper
 import org.xtext.mongobeans.mongoBeans.MongoFile
+import org.xtext.mongobeans.mongoBeans.MongoProperty
+
 import static org.junit.Assert.*
 import static org.xtext.mongobeans.mongoBeans.MongoBeansPackage$Literals.*
-import static org.xtext.mongobeans.validation.IssueCodes.*
-import org.xtext.mongobeans.mongoBeans.MongoProperty
+import static org.xtext.mongobeans.validation.MongoBeansIssueCodes.*
 
 
 @RunWith(typeof(XtextRunner))

@@ -18,10 +18,7 @@ import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.xtext.scripting.scripting.Script;
 
 /**
- * <p>Infers a JVM model from the source model.</p>
- * 
- * <p>The JVM model should contain all elements that would appear in the Java code
- * which is generated from the source model. Other models link against the JVM model rather than the source model.</p>
+ * Infers a Java class with a main method from a {@link Script}.
  */
 @SuppressWarnings("all")
 public class ScriptingJvmModelInferrer extends AbstractModelInferrer {

@@ -20,9 +20,8 @@ import org.xtext.mongobeans.mongoBeans.MongoProperty
 import static extension org.eclipse.xtext.EcoreUtil2.*
 
 /**
- * <p>Infers a JVM model from the source model.</p>
- * 
- * @author Jan Koehnlein 
+ * Infers a Java class for each {@link MongoBean} in the given {@link MongoFile}.
+ * The class wraps a {@link DBObject}. 
  */
 class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 
