@@ -20,7 +20,7 @@ abstract class BuildScript {
 	
 	def protected int doBuild(String[] args) throws Throwable
 	
-	def protected int build(String[] args) {
+	def public int build(String[] args) {
 		try {
 			return doBuild(args)
 		} catch(Throwable throwable) {
@@ -31,7 +31,7 @@ abstract class BuildScript {
 	}
 	
 	def showHelp(String[] args) {
-		if (args.empty || args.exists [ arg | "--help" == arg || "-h" == arg]) {
+		if (args.nullOrEmpty || args.exists [ arg | "--help" == arg || "-h" == arg]) {
 			println('''
 				Build '«scriptName»'
 				
@@ -39,7 +39,7 @@ abstract class BuildScript {
 					«FOR task: taskNames»
 						«task»
 					«ENDFOR»
-					
+				
 				«IF !parameterNames.nullOrEmpty»
 					Parameters:
 						«FOR it: parameterNames»

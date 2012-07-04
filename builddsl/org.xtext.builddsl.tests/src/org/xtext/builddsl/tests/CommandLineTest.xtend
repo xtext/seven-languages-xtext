@@ -6,6 +6,7 @@ import java.io.PrintStream
 import org.eclipse.xtext.junit4.InjectWith
 import org.eclipse.xtext.junit4.XtextRunner
 import org.eclipse.xtext.xbase.compiler.CompilationTestHelper
+import org.eclipse.xtext.xbase.lib.util.ReflectExtensions
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.xtext.builddsl.BuildDSLInjectorProvider
@@ -18,22 +19,9 @@ class CommandLineTest {
 	
 	@Inject extension CompilationTestHelper
 	
-	def assertExecute(CharSequence file, String cmdline, String expectedOutput) {
-		val classes = <Class<?>>newArrayList()
-		file.compile[ classes += compiledClass ]
-		val clazz = classes.head
-		val out = new ByteArrayOutputStream()
-		val backup = System::out
-		System::setOut(new PrintStream(out))
-		try {
-			RunUtil::runMain(clazz, cmdline.split(" "))
-		} finally {
-			System::setOut(backup)
-		}
-		assertEquals(expectedOutput, out.toString)
-	} 
+	@Inject extension ReflectExtensions
 	
-	@Test def testSimple() {
+	@Test def testStringParameterWithDefault() {
 		val file = '''
 			package foo
 			
@@ -55,51 +43,122 @@ class CommandLineTest {
 		''')
 	}
 	
-	@Test def testSkipIfNeeded() {
+	@Test def testFileParameter() {
 		val file = '''
 			package foo
 			
-			task Pre {
-				project:/digest.tmp:.delete
-				skipTaskIfDigestUnchanged [
-					digest = project:/digest.tmp
-					files += project:/build.properties
-				]	
-			} 
-			task Main dependsOn Pre {
-				skipTaskIfDigestUnchanged [
-					digest = project:/digest.tmp
-					files += project:/build.properties
-				]	
+			import java.io.File
+			
+			param File file
+			
+			task Check {
+				if(file == null) 
+					showHelp(null)
+				else if(file.exists)
+					println('yes')
+				else 
+					println('no')
 			} 
 		'''
-		file.assertExecute("Main", '''
-			running Pre...
+		file.assertExecute("Check", '''
+			running Check...
+			Build '__synthetic0'
+
+			Tasks:
+				Check
+
+			Parameters:
+				--file <File>
+
 			success
-			running Main...
-			skipped: Skipped because digest is unchanged
+		''')
+		file.assertExecute("Check --file " + System::getProperty('user.dir'), '''
+			running Check...
+			yes
+			success
+		''')
+	}
+	
+	@Test def testDependencies() {
+		val file = '''
+			package foo
+			
+			task Bar depends Baz {
+			} 
+
+			task Foo depends Bar {
+			} 
+			
+			task Baz {
+			}
+			
+			task FooBar depends Bar {
+			} 
+		'''
+		file.assertExecute("Foo", '''
+			running Baz...
+			success
+			running Bar...
+			success
+			running Foo...
+			success
+		''')
+		file.assertExecute("FooBar", '''
+			running Baz...
+			success
+			running Bar...
+			success
+			running FooBar...
+			success
+		''')
+		file.assertExecute("Baz", '''
+			running Baz...
+			success
 		''')
 	}
 	
 	@Test def testCompileJava() {
+		val tmpDir = System::getProperty('java.io.tmpdir')
 		val file = '''
 			package foo
+			import java.io.File
+			import org.xtext.builddsl.lib.JavaCompiler
 			
-			task Compile {
-				val file = project:/src/org/xtext/builddsl/tests/SimpleMain.java
-				compileJava [
-					sources += file
-					destination = project:/tmp/
+			param File source
+			param File dest
+			
+			task Pre {
+			}
+			
+			task Compile depends Pre {
+				javac [
+					sources += source
+					destination = dest
 				]	
 			} 
 		'''
-		file.assertExecute("Compile", '''
+		file.assertExecute("Compile --source testdata/org/xtext/builddsl/tests/SimpleMain.java --dest " + tmpDir, '''
 			running Pre...
 			success
-			running Main...
-			skipped: Skipped because digest is unchanged
+			running Compile...
+			compiling Java files...success.
+			success
 		''')
 	}
 	
-	
+	def protected assertExecute(CharSequence file, String cmdline, String expectedOutput) {
+		val classes = <Class<?>>newArrayList()
+		file.compile[ classes += compiledClass ]
+		val clazz = classes.head
+		val out = new ByteArrayOutputStream()
+		val backup = System::out
+		System::setOut(new PrintStream(out))
+		try {
+			val instance = clazz.newInstance
+			instance.invoke('build', cmdline.split(' ') as Object) 
+		} finally {
+			System::setOut(backup)
+		}
+		assertEquals(expectedOutput, out.toString)
+	} 
 }

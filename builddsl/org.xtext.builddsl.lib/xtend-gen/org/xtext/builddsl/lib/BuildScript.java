@@ -2,7 +2,6 @@ package org.xtext.builddsl.lib;
 
 import com.google.common.base.Objects;
 import java.lang.reflect.Field;
-import java.util.List;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Exceptions;
@@ -43,7 +42,7 @@ public abstract class BuildScript {
   
   protected abstract int doBuild(final String[] args) throws Throwable;
   
-  protected int build(final String[] args) {
+  public int build(final String[] args) {
     try {
       try {
         return this.doBuild(args);
@@ -64,8 +63,8 @@ public abstract class BuildScript {
   
   public boolean showHelp(final String[] args) {
     boolean _or = false;
-    boolean _isEmpty = ((List<String>)Conversions.doWrapArray(args)).isEmpty();
-    if (_isEmpty) {
+    boolean _isNullOrEmpty = IterableExtensions.isNullOrEmpty(((Iterable<? extends Object>)Conversions.doWrapArray(args)));
+    if (_isNullOrEmpty) {
       _or = true;
     } else {
       final Function1<String,Boolean> _function = new Function1<String,Boolean>() {
@@ -82,7 +81,7 @@ public abstract class BuildScript {
           }
         };
       boolean _exists = IterableExtensions.<String>exists(((Iterable<String>)Conversions.doWrapArray(args)), _function);
-      _or = (_isEmpty || _exists);
+      _or = (_isNullOrEmpty || _exists);
     }
     if (_or) {
       StringConcatenation _builder = new StringConcatenation();
@@ -102,12 +101,11 @@ public abstract class BuildScript {
           _builder.newLineIfNotEmpty();
         }
       }
-      _builder.append("\t");
       _builder.newLine();
       {
         String[] _parameterNames = this.getParameterNames();
-        boolean _isNullOrEmpty = IterableExtensions.isNullOrEmpty(((Iterable<? extends Object>)Conversions.doWrapArray(_parameterNames)));
-        boolean _not = (!_isNullOrEmpty);
+        boolean _isNullOrEmpty_1 = IterableExtensions.isNullOrEmpty(((Iterable<? extends Object>)Conversions.doWrapArray(_parameterNames)));
+        boolean _not = (!_isNullOrEmpty_1);
         if (_not) {
           _builder.append("Parameters:");
           _builder.newLine();

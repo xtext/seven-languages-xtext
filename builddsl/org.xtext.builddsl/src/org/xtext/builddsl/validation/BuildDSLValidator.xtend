@@ -10,6 +10,7 @@ import org.eclipse.xtext.xbase.XbasePackage
 import org.eclipse.xtext.common.types.TypesPackage
 import org.eclipse.xtext.xtype.XtypePackage
 import org.xtext.builddsl.build.BuildPackage
+import static org.xtext.builddsl.validation.BuildDSLIssueCodes.*
 
 class BuildDSLValidator extends XbaseJavaValidator {
 
@@ -17,11 +18,15 @@ class BuildDSLValidator extends XbaseJavaValidator {
 	def void checkNoRecursiveDependencies(Task task) {
 		for (taskRef : task.getDepends())
 			if (taskRef == task) {
-				error('''The task '«task.name»' cannot depend on itself.''', taskRef, DECLARATION__NAME, -1)
+				error('''The task '«task.name»' cannot depend on itself.''', 
+					  taskRef, DECLARATION__NAME, SELF_DEPENDENCY
+				)
 				return;
 			}
 		task.findDependentTasks [ cycle |
-			error('''There is a cyclic dependency that involves tasks «cycle.map[name].join(", ")»''', task, DECLARATION__NAME, -1);
+			error('''There is a cyclic dependency that involves tasks «cycle.map[name].join(", ")»''', 
+				  task, DECLARATION__NAME, CYCLIC_DEPENDENCY
+			);
 		]
 	}
 	

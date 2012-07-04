@@ -14,11 +14,11 @@ import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
+import org.eclipse.xtext.xbase.lib.util.ReflectExtensions;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.xtext.builddsl.BuildDSLInjectorProvider;
-import org.xtext.builddsl.tests.RunUtil;
 
 @RunWith(value = XtextRunner.class)
 @InjectWith(value = BuildDSLInjectorProvider.class)
@@ -27,41 +27,11 @@ public class CommandLineTest {
   @Inject
   private CompilationTestHelper _compilationTestHelper;
   
-  public void assertExecute(final CharSequence file, final String cmdline, final String expectedOutput) {
-    try {
-      final ArrayList<Class<?>> classes = CollectionLiterals.<Class<?>>newArrayList();
-      final Procedure1<Result> _function = new Procedure1<Result>() {
-          public void apply(final Result it) {
-            Class<? extends Object> _compiledClass = it.getCompiledClass();
-            classes.add(_compiledClass);
-          }
-        };
-      this._compilationTestHelper.compile(file, new IAcceptor<Result>() {
-          public void accept(Result t) {
-            _function.apply(t);
-          }
-      });
-      final Class<?> clazz = IterableExtensions.<Class<?>>head(classes);
-      ByteArrayOutputStream _byteArrayOutputStream = new ByteArrayOutputStream();
-      final ByteArrayOutputStream out = _byteArrayOutputStream;
-      final PrintStream backup = System.out;
-      PrintStream _printStream = new PrintStream(out);
-      System.setOut(_printStream);
-      try {
-        String[] _split = cmdline.split(" ");
-        RunUtil.runMain(clazz, _split);
-      } finally {
-        System.setOut(backup);
-      }
-      String _string = out.toString();
-      Assert.assertEquals(expectedOutput, _string);
-    } catch (Exception _e) {
-      throw Exceptions.sneakyThrow(_e);
-    }
-  }
+  @Inject
+  private ReflectExtensions _reflectExtensions;
   
   @Test
-  public void testSimple() {
+  public void testStringParameterWithDefault() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("package foo");
     _builder.newLine();
@@ -96,78 +66,166 @@ public class CommandLineTest {
   }
   
   @Test
-  public void testSkipIfNeeded() {
+  public void testFileParameter() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("package foo");
     _builder.newLine();
     _builder.newLine();
-    _builder.append("task Pre {");
+    _builder.append("import java.io.File");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("param File file");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("task Check {");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("project:/digest.tmp:.delete");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("skipTaskIfDigestUnchanged [");
+    _builder.append("if(file == null) ");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("digest = project:/digest.tmp");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("files += project:/build.properties");
+    _builder.append("showHelp(null)");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("]\t");
-    _builder.newLine();
-    _builder.append("} ");
-    _builder.newLine();
-    _builder.append("task Main dependsOn Pre {");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("skipTaskIfDigestUnchanged [");
+    _builder.append("else if(file.exists)");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("digest = project:/digest.tmp");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("files += project:/build.properties");
+    _builder.append("println(\'yes\')");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("]\t");
+    _builder.append("else ");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("println(\'no\')");
     _builder.newLine();
     _builder.append("} ");
     _builder.newLine();
     final CharSequence file = _builder;
     StringConcatenation _builder_1 = new StringConcatenation();
-    _builder_1.append("running Pre...");
+    _builder_1.append("running Check...");
+    _builder_1.newLine();
+    _builder_1.append("Build \'__synthetic0\'");
+    _builder_1.newLine();
+    _builder_1.newLine();
+    _builder_1.append("Tasks:");
+    _builder_1.newLine();
+    _builder_1.append("\t");
+    _builder_1.append("Check");
+    _builder_1.newLine();
+    _builder_1.newLine();
+    _builder_1.append("Parameters:");
+    _builder_1.newLine();
+    _builder_1.append("\t");
+    _builder_1.append("--file <File>");
+    _builder_1.newLine();
     _builder_1.newLine();
     _builder_1.append("success");
     _builder_1.newLine();
-    _builder_1.append("running Main...");
+    this.assertExecute(file, "Check", _builder_1.toString());
+    String _property = System.getProperty("user.dir");
+    String _plus = ("Check --file " + _property);
+    StringConcatenation _builder_2 = new StringConcatenation();
+    _builder_2.append("running Check...");
+    _builder_2.newLine();
+    _builder_2.append("yes");
+    _builder_2.newLine();
+    _builder_2.append("success");
+    _builder_2.newLine();
+    this.assertExecute(file, _plus, _builder_2.toString());
+  }
+  
+  @Test
+  public void testDependencies() {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("package foo");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("task Bar depends Baz {");
+    _builder.newLine();
+    _builder.append("} ");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("task Foo depends Bar {");
+    _builder.newLine();
+    _builder.append("} ");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("task Baz {");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("task FooBar depends Bar {");
+    _builder.newLine();
+    _builder.append("} ");
+    _builder.newLine();
+    final CharSequence file = _builder;
+    StringConcatenation _builder_1 = new StringConcatenation();
+    _builder_1.append("running Baz...");
     _builder_1.newLine();
-    _builder_1.append("skipped: Skipped because digest is unchanged");
+    _builder_1.append("success");
     _builder_1.newLine();
-    this.assertExecute(file, "Main", _builder_1.toString());
+    _builder_1.append("running Bar...");
+    _builder_1.newLine();
+    _builder_1.append("success");
+    _builder_1.newLine();
+    _builder_1.append("running Foo...");
+    _builder_1.newLine();
+    _builder_1.append("success");
+    _builder_1.newLine();
+    this.assertExecute(file, "Foo", _builder_1.toString());
+    StringConcatenation _builder_2 = new StringConcatenation();
+    _builder_2.append("running Baz...");
+    _builder_2.newLine();
+    _builder_2.append("success");
+    _builder_2.newLine();
+    _builder_2.append("running Bar...");
+    _builder_2.newLine();
+    _builder_2.append("success");
+    _builder_2.newLine();
+    _builder_2.append("running FooBar...");
+    _builder_2.newLine();
+    _builder_2.append("success");
+    _builder_2.newLine();
+    this.assertExecute(file, "FooBar", _builder_2.toString());
+    StringConcatenation _builder_3 = new StringConcatenation();
+    _builder_3.append("running Baz...");
+    _builder_3.newLine();
+    _builder_3.append("success");
+    _builder_3.newLine();
+    this.assertExecute(file, "Baz", _builder_3.toString());
   }
   
   @Test
   public void testCompileJava() {
+    final String tmpDir = System.getProperty("java.io.tmpdir");
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("package foo");
     _builder.newLine();
+    _builder.append("import java.io.File");
     _builder.newLine();
-    _builder.append("task Compile {");
+    _builder.append("import org.xtext.builddsl.lib.JavaCompiler");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("param File source");
+    _builder.newLine();
+    _builder.append("param File dest");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("task Pre {");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("task Compile depends Pre {");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("val file = project:/src/org/xtext/builddsl/tests/SimpleMain.java");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("compileJava [");
+    _builder.append("javac [");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("sources += file");
+    _builder.append("sources += source");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("destination = project:/tmp/");
+    _builder.append("destination = dest");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("]\t");
@@ -175,15 +233,52 @@ public class CommandLineTest {
     _builder.append("} ");
     _builder.newLine();
     final CharSequence file = _builder;
+    String _plus = ("Compile --source testdata/org/xtext/builddsl/tests/SimpleMain.java --dest " + tmpDir);
     StringConcatenation _builder_1 = new StringConcatenation();
     _builder_1.append("running Pre...");
     _builder_1.newLine();
     _builder_1.append("success");
     _builder_1.newLine();
-    _builder_1.append("running Main...");
+    _builder_1.append("running Compile...");
     _builder_1.newLine();
-    _builder_1.append("skipped: Skipped because digest is unchanged");
+    _builder_1.append("compiling Java files...success.");
     _builder_1.newLine();
-    this.assertExecute(file, "Compile", _builder_1.toString());
+    _builder_1.append("success");
+    _builder_1.newLine();
+    this.assertExecute(file, _plus, _builder_1.toString());
+  }
+  
+  protected void assertExecute(final CharSequence file, final String cmdline, final String expectedOutput) {
+    try {
+      final ArrayList<Class<?>> classes = CollectionLiterals.<Class<?>>newArrayList();
+      final Procedure1<Result> _function = new Procedure1<Result>() {
+          public void apply(final Result it) {
+            Class<? extends Object> _compiledClass = it.getCompiledClass();
+            classes.add(_compiledClass);
+          }
+        };
+      this._compilationTestHelper.compile(file, new IAcceptor<Result>() {
+          public void accept(Result t) {
+            _function.apply(t);
+          }
+      });
+      final Class<?> clazz = IterableExtensions.<Class<?>>head(classes);
+      ByteArrayOutputStream _byteArrayOutputStream = new ByteArrayOutputStream();
+      final ByteArrayOutputStream out = _byteArrayOutputStream;
+      final PrintStream backup = System.out;
+      PrintStream _printStream = new PrintStream(out);
+      System.setOut(_printStream);
+      try {
+        final Object instance = clazz.newInstance();
+        String[] _split = cmdline.split(" ");
+        this._reflectExtensions.invoke(instance, "build", ((Object) _split));
+      } finally {
+        System.setOut(backup);
+      }
+      String _string = out.toString();
+      Assert.assertEquals(expectedOutput, _string);
+    } catch (Exception _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
   }
 }

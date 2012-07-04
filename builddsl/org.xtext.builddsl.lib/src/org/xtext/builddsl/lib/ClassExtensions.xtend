@@ -6,4 +6,4 @@ class ClassExtensions {
 	def static void runMain(Class<? extends Object> clazz) {
 		RunUtil::runMain(clazz, emptyList)
 	}
-}
+}	 
