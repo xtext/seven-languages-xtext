@@ -32,6 +32,7 @@ class IntegrationTest {
 		'''
 			<!--<<
 				param name = 'Foo'
+				param nullString
 				param list = newArrayList('one', 'two', 'three', 'four')
 			>>-->
 			<html>

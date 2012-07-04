@@ -63,12 +63,14 @@ public class TemplateJvmModelInferrer extends AbstractModelInferrer {
           EList<Parameter> _params = element.getParams();
           for (final Parameter p : _params) {
             {
-              EList<JvmMember> _members = it.getMembers();
-              String _name = p.getName();
               JvmTypeReference _type = p.getType();
               XExpression _defaultexp = p.getDefaultexp();
-              JvmTypeReference _type_1 = TemplateJvmModelInferrer.this._iTypeProvider.getType(_defaultexp);
+              JvmTypeReference _type_1 = _defaultexp==null?(JvmTypeReference)null:TemplateJvmModelInferrer.this._iTypeProvider.getType(_defaultexp);
               JvmTypeReference _elvis = ObjectExtensions.<JvmTypeReference>operator_elvis(_type, _type_1);
+              JvmTypeReference _newTypeRef = TemplateJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(element, String.class);
+              final JvmTypeReference type = ObjectExtensions.<JvmTypeReference>operator_elvis(_elvis, _newTypeRef);
+              EList<JvmMember> _members = it.getMembers();
+              String _name = p.getName();
               final Procedure1<JvmField> _function = new Procedure1<JvmField>() {
                   public void apply(final JvmField it) {
                     XExpression _defaultexp = p.getDefaultexp();
@@ -79,23 +81,15 @@ public class TemplateJvmModelInferrer extends AbstractModelInferrer {
                     }
                   }
                 };
-              JvmField _field = TemplateJvmModelInferrer.this._jvmTypesBuilder.toField(p, _name, _elvis, _function);
+              JvmField _field = TemplateJvmModelInferrer.this._jvmTypesBuilder.toField(p, _name, type, _function);
               TemplateJvmModelInferrer.this._jvmTypesBuilder.<JvmField>operator_add(_members, _field);
               EList<JvmMember> _members_1 = it.getMembers();
               String _name_1 = p.getName();
-              JvmTypeReference _type_2 = p.getType();
-              XExpression _defaultexp_1 = p.getDefaultexp();
-              JvmTypeReference _type_3 = TemplateJvmModelInferrer.this._iTypeProvider.getType(_defaultexp_1);
-              JvmTypeReference _elvis_1 = ObjectExtensions.<JvmTypeReference>operator_elvis(_type_2, _type_3);
-              JvmOperation _setter = TemplateJvmModelInferrer.this._jvmTypesBuilder.toSetter(p, _name_1, _elvis_1);
+              JvmOperation _setter = TemplateJvmModelInferrer.this._jvmTypesBuilder.toSetter(p, _name_1, type);
               TemplateJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_1, _setter);
               EList<JvmMember> _members_2 = it.getMembers();
               String _name_2 = p.getName();
-              JvmTypeReference _type_4 = p.getType();
-              XExpression _defaultexp_2 = p.getDefaultexp();
-              JvmTypeReference _type_5 = TemplateJvmModelInferrer.this._iTypeProvider.getType(_defaultexp_2);
-              JvmTypeReference _elvis_2 = ObjectExtensions.<JvmTypeReference>operator_elvis(_type_4, _type_5);
-              JvmOperation _getter = TemplateJvmModelInferrer.this._jvmTypesBuilder.toGetter(p, _name_2, _elvis_2);
+              JvmOperation _getter = TemplateJvmModelInferrer.this._jvmTypesBuilder.toGetter(p, _name_2, type);
               TemplateJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_2, _getter);
             }
           }

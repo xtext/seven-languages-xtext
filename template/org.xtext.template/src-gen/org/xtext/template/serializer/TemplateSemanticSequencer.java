@@ -1076,7 +1076,7 @@ public class TemplateSemanticSequencer extends XbaseWithAnnotationsSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (annotations+=XAnnotation* ((name=ID defaultexp=XExpression) | (type=JvmTypeReference name=ID defaultexp=XExpression?)))
+	 *     (annotations+=XAnnotation* type=JvmTypeReference? name=ID defaultexp=XExpression?)
 	 */
 	protected void sequence_Parameter(EObject context, Parameter semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

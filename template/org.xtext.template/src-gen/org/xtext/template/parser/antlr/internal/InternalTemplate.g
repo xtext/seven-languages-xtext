@@ -247,70 +247,29 @@ ruleParameter returns [EObject current=null]
     {
     	newLeafNode(otherlv_1, grammarAccess.getParameterAccess().getParamKeyword_1());
     }
-(((
-(
-		lv_name_2_0=RULE_ID
-		{
-			newLeafNode(lv_name_2_0, grammarAccess.getParameterAccess().getNameIDTerminalRuleCall_2_0_0_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getParameterRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"name",
-        		lv_name_2_0, 
-        		"ID");
-	    }
-
-)
-)	otherlv_3='=' 
-    {
-    	newLeafNode(otherlv_3, grammarAccess.getParameterAccess().getEqualsSignKeyword_2_0_1());
-    }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getParameterAccess().getDefaultexpXExpressionParserRuleCall_2_0_2_0()); 
+	        newCompositeNode(grammarAccess.getParameterAccess().getTypeJvmTypeReferenceParserRuleCall_2_0()); 
 	    }
-		lv_defaultexp_4_0=ruleXExpression		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getParameterRule());
-	        }
-       		set(
-       			$current, 
-       			"defaultexp",
-        		lv_defaultexp_4_0, 
-        		"XExpression");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))
-    |((
-(
-		{ 
-	        newCompositeNode(grammarAccess.getParameterAccess().getTypeJvmTypeReferenceParserRuleCall_2_1_0_0()); 
-	    }
-		lv_type_5_0=ruleJvmTypeReference		{
+		lv_type_2_0=ruleJvmTypeReference		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getParameterRule());
 	        }
        		set(
        			$current, 
        			"type",
-        		lv_type_5_0, 
+        		lv_type_2_0, 
         		"JvmTypeReference");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)(
+)?(
 (
-		lv_name_6_0=RULE_ID
+		lv_name_3_0=RULE_ID
 		{
-			newLeafNode(lv_name_6_0, grammarAccess.getParameterAccess().getNameIDTerminalRuleCall_2_1_1_0()); 
+			newLeafNode(lv_name_3_0, grammarAccess.getParameterAccess().getNameIDTerminalRuleCall_3_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -319,34 +278,34 @@ ruleParameter returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"name",
-        		lv_name_6_0, 
+        		lv_name_3_0, 
         		"ID");
 	    }
 
 )
-)(	otherlv_7='=' 
+)(	otherlv_4='=' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getParameterAccess().getEqualsSignKeyword_2_1_2_0());
+    	newLeafNode(otherlv_4, grammarAccess.getParameterAccess().getEqualsSignKeyword_4_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getParameterAccess().getDefaultexpXExpressionParserRuleCall_2_1_2_1_0()); 
+	        newCompositeNode(grammarAccess.getParameterAccess().getDefaultexpXExpressionParserRuleCall_4_1_0()); 
 	    }
-		lv_defaultexp_8_0=ruleXExpression		{
+		lv_defaultexp_5_0=ruleXExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getParameterRule());
 	        }
        		set(
        			$current, 
        			"defaultexp",
-        		lv_defaultexp_8_0, 
+        		lv_defaultexp_5_0, 
         		"XExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))?)))
+))?)
 ;
 
 

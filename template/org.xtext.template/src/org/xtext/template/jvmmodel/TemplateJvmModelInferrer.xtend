@@ -28,12 +28,16 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
    		acceptor.accept(root).initializeLater [
 			
 			for (p : element.params) {
-				members += p.toField(p.name, p.type ?: p.defaultexp.type) [
+				// try compute the type 1) explicitly declared, 2) inferred from the initializer catch-all) just String 
+				val type = p.type 
+					?: p.defaultexp?.type 
+					?: element.newTypeRef(typeof(String))
+				members += p.toField(p.name, type) [
 					if(p.defaultexp != null)
 						initializer = p.defaultexp
 				]
-				members += p.toSetter(p.name, p.type ?: p.defaultexp.type)
-				members += p.toGetter(p.name, p.type ?: p.defaultexp.type)
+				members += p.toSetter(p.name, type)
+				members += p.toGetter(p.name, type)
 			}
 			
 			members += element.toMethod("generate", element.newTypeRef(typeof(CharSequence))) [

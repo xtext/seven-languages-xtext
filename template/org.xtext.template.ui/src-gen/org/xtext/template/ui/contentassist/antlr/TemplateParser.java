@@ -37,7 +37,6 @@ public class TemplateParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getParameterAccess().getAlternatives_2(), "rule__Parameter__Alternatives_2");
 					put(grammarAccess.getRichStringPartAccess().getAlternatives(), "rule__RichStringPart__Alternatives");
 					put(grammarAccess.getRichStringIfAccess().getAlternatives_4(), "rule__RichStringIf__Alternatives_4");
 					put(grammarAccess.getRichStringElseIfAccess().getAlternatives_4(), "rule__RichStringElseIf__Alternatives_4");
@@ -79,9 +78,7 @@ public class TemplateParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTemplateFileAccess().getGroup_2(), "rule__TemplateFile__Group_2__0");
 					put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
 					put(grammarAccess.getParameterAccess().getGroup(), "rule__Parameter__Group__0");
-					put(grammarAccess.getParameterAccess().getGroup_2_0(), "rule__Parameter__Group_2_0__0");
-					put(grammarAccess.getParameterAccess().getGroup_2_1(), "rule__Parameter__Group_2_1__0");
-					put(grammarAccess.getParameterAccess().getGroup_2_1_2(), "rule__Parameter__Group_2_1_2__0");
+					put(grammarAccess.getParameterAccess().getGroup_4(), "rule__Parameter__Group_4__0");
 					put(grammarAccess.getRichStringAccess().getGroup(), "rule__RichString__Group__0");
 					put(grammarAccess.getRichStringAccess().getGroup_2(), "rule__RichString__Group_2__0");
 					put(grammarAccess.getRichStringLiteralAccess().getGroup(), "rule__RichStringLiteral__Group__0");
@@ -249,11 +246,9 @@ public class TemplateParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTemplateFileAccess().getBodyAssignment_5(), "rule__TemplateFile__BodyAssignment_5");
 					put(grammarAccess.getImportAccess().getImportedNamespaceAssignment_1(), "rule__Import__ImportedNamespaceAssignment_1");
 					put(grammarAccess.getParameterAccess().getAnnotationsAssignment_0(), "rule__Parameter__AnnotationsAssignment_0");
-					put(grammarAccess.getParameterAccess().getNameAssignment_2_0_0(), "rule__Parameter__NameAssignment_2_0_0");
-					put(grammarAccess.getParameterAccess().getDefaultexpAssignment_2_0_2(), "rule__Parameter__DefaultexpAssignment_2_0_2");
-					put(grammarAccess.getParameterAccess().getTypeAssignment_2_1_0(), "rule__Parameter__TypeAssignment_2_1_0");
-					put(grammarAccess.getParameterAccess().getNameAssignment_2_1_1(), "rule__Parameter__NameAssignment_2_1_1");
-					put(grammarAccess.getParameterAccess().getDefaultexpAssignment_2_1_2_1(), "rule__Parameter__DefaultexpAssignment_2_1_2_1");
+					put(grammarAccess.getParameterAccess().getTypeAssignment_2(), "rule__Parameter__TypeAssignment_2");
+					put(grammarAccess.getParameterAccess().getNameAssignment_3(), "rule__Parameter__NameAssignment_3");
+					put(grammarAccess.getParameterAccess().getDefaultexpAssignment_4_1(), "rule__Parameter__DefaultexpAssignment_4_1");
 					put(grammarAccess.getRichStringAccess().getExpressionsAssignment_1(), "rule__RichString__ExpressionsAssignment_1");
 					put(grammarAccess.getRichStringAccess().getExpressionsAssignment_2_0(), "rule__RichString__ExpressionsAssignment_2_0");
 					put(grammarAccess.getRichStringAccess().getExpressionsAssignment_2_1(), "rule__RichString__ExpressionsAssignment_2_1");

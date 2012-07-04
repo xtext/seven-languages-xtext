@@ -4,14 +4,12 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.common.types.JvmFormalParameter;
 import org.eclipse.xtext.common.types.JvmTypeReference;
-import org.eclipse.xtext.util.Strings;
 import org.eclipse.xtext.xbase.XExpression;
 import org.eclipse.xtext.xbase.compiler.XbaseCompiler;
 import org.eclipse.xtext.xbase.compiler.output.ITreeAppendable;
 import org.eclipse.xtext.xbase.typing.ITypeProvider;
 import org.xtext.template.template.RichString;
 import org.xtext.template.template.RichStringForLoop;
-import org.xtext.template.template.RichStringLiteral;
 
 @SuppressWarnings("all")
 public class TemplateCompiler extends XbaseCompiler {
@@ -103,27 +101,7 @@ public class TemplateCompiler extends XbaseCompiler {
       String _name = it.getName(obj);
       it.append(_name);
     } else {
-      boolean _matched = false;
-      if (!_matched) {
-        if (obj instanceof RichStringLiteral) {
-          final RichStringLiteral _richStringLiteral = (RichStringLiteral)obj;
-          _matched=true;
-          String _value = _richStringLiteral.getValue();
-          String _value_1 = _richStringLiteral.getValue();
-          int _length = _value_1.length();
-          int _minus = (_length - 1);
-          String string = _value.substring(1, _minus);
-          StringConcatenation _builder = new StringConcatenation();
-          _builder.append("\"");
-          String _convertToJavaString = Strings.convertToJavaString(string);
-          _builder.append(_convertToJavaString, "");
-          _builder.append("\"");
-          it.append(_builder);
-        }
-      }
-      if (!_matched) {
-        super.internalToConvertedExpression(obj, it);
-      }
+      super.internalToConvertedExpression(obj, it);
     }
   }
 }

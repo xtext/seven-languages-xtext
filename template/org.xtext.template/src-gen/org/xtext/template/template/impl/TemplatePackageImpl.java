@@ -244,9 +244,19 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getParameter_Type()
+  {
+    return (EReference)parameterEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EAttribute getParameter_Name()
   {
-    return (EAttribute)parameterEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)parameterEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -255,16 +265,6 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
    * @generated
    */
   public EReference getParameter_Defaultexp()
-  {
-    return (EReference)parameterEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getParameter_Type()
   {
     return (EReference)parameterEClass.getEStructuralFeatures().get(3);
   }
@@ -350,9 +350,9 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
 
     parameterEClass = createEClass(PARAMETER);
     createEReference(parameterEClass, PARAMETER__ANNOTATIONS);
+    createEReference(parameterEClass, PARAMETER__TYPE);
     createEAttribute(parameterEClass, PARAMETER__NAME);
     createEReference(parameterEClass, PARAMETER__DEFAULTEXP);
-    createEReference(parameterEClass, PARAMETER__TYPE);
 
     richStringEClass = createEClass(RICH_STRING);
 
@@ -414,9 +414,9 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
 
     initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getParameter_Annotations(), theXAnnotationsPackage.getXAnnotation(), null, "annotations", null, 0, -1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getParameter_Type(), theTypesPackage.getJvmTypeReference(), null, "type", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getParameter_Name(), ecorePackage.getEString(), "name", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getParameter_Defaultexp(), theXbasePackage.getXExpression(), null, "defaultexp", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getParameter_Type(), theTypesPackage.getJvmTypeReference(), null, "type", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(richStringEClass, RichString.class, "RichString", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

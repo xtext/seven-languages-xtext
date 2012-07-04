@@ -61,6 +61,9 @@ public class IntegrationTest {
     _builder.append("param name = \'Foo\'");
     _builder.newLine();
     _builder.append("\t");
+    _builder.append("param nullString");
+    _builder.newLine();
+    _builder.append("\t");
     _builder.append("param list = newArrayList(\'one\', \'two\', \'three\', \'four\')");
     _builder.newLine();
     _builder.append(">>-->");

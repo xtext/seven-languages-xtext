@@ -35,9 +35,9 @@ import org.xtext.template.template.TemplatePackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.xtext.template.template.impl.ParameterImpl#getAnnotations <em>Annotations</em>}</li>
+ *   <li>{@link org.xtext.template.template.impl.ParameterImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.xtext.template.template.impl.ParameterImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.template.template.impl.ParameterImpl#getDefaultexp <em>Defaultexp</em>}</li>
- *   <li>{@link org.xtext.template.template.impl.ParameterImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,6 +54,16 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
    * @ordered
    */
   protected EList<XAnnotation> annotations;
+
+  /**
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getType()
+   * @generated
+   * @ordered
+   */
+  protected JvmTypeReference type;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -84,16 +94,6 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
    * @ordered
    */
   protected XExpression defaultexp;
-
-  /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getType()
-   * @generated
-   * @ordered
-   */
-  protected JvmTypeReference type;
 
   /**
    * <!-- begin-user-doc -->
@@ -128,6 +128,54 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
       annotations = new EObjectContainmentEList<XAnnotation>(XAnnotation.class, this, TemplatePackage.PARAMETER__ANNOTATIONS);
     }
     return annotations;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public JvmTypeReference getType()
+  {
+    return type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetType(JvmTypeReference newType, NotificationChain msgs)
+  {
+    JvmTypeReference oldType = type;
+    type = newType;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TemplatePackage.PARAMETER__TYPE, oldType, newType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setType(JvmTypeReference newType)
+  {
+    if (newType != type)
+    {
+      NotificationChain msgs = null;
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TemplatePackage.PARAMETER__TYPE, null, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TemplatePackage.PARAMETER__TYPE, null, msgs);
+      msgs = basicSetType(newType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TemplatePackage.PARAMETER__TYPE, newType, newType));
   }
 
   /**
@@ -206,54 +254,6 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
    * <!-- end-user-doc -->
    * @generated
    */
-  public JvmTypeReference getType()
-  {
-    return type;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetType(JvmTypeReference newType, NotificationChain msgs)
-  {
-    JvmTypeReference oldType = type;
-    type = newType;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TemplatePackage.PARAMETER__TYPE, oldType, newType);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setType(JvmTypeReference newType)
-  {
-    if (newType != type)
-    {
-      NotificationChain msgs = null;
-      if (type != null)
-        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TemplatePackage.PARAMETER__TYPE, null, msgs);
-      if (newType != null)
-        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TemplatePackage.PARAMETER__TYPE, null, msgs);
-      msgs = basicSetType(newType, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TemplatePackage.PARAMETER__TYPE, newType, newType));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -261,10 +261,10 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
     {
       case TemplatePackage.PARAMETER__ANNOTATIONS:
         return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
-      case TemplatePackage.PARAMETER__DEFAULTEXP:
-        return basicSetDefaultexp(null, msgs);
       case TemplatePackage.PARAMETER__TYPE:
         return basicSetType(null, msgs);
+      case TemplatePackage.PARAMETER__DEFAULTEXP:
+        return basicSetDefaultexp(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -281,12 +281,12 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
     {
       case TemplatePackage.PARAMETER__ANNOTATIONS:
         return getAnnotations();
+      case TemplatePackage.PARAMETER__TYPE:
+        return getType();
       case TemplatePackage.PARAMETER__NAME:
         return getName();
       case TemplatePackage.PARAMETER__DEFAULTEXP:
         return getDefaultexp();
-      case TemplatePackage.PARAMETER__TYPE:
-        return getType();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -306,14 +306,14 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
         getAnnotations().clear();
         getAnnotations().addAll((Collection<? extends XAnnotation>)newValue);
         return;
+      case TemplatePackage.PARAMETER__TYPE:
+        setType((JvmTypeReference)newValue);
+        return;
       case TemplatePackage.PARAMETER__NAME:
         setName((String)newValue);
         return;
       case TemplatePackage.PARAMETER__DEFAULTEXP:
         setDefaultexp((XExpression)newValue);
-        return;
-      case TemplatePackage.PARAMETER__TYPE:
-        setType((JvmTypeReference)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -332,14 +332,14 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
       case TemplatePackage.PARAMETER__ANNOTATIONS:
         getAnnotations().clear();
         return;
+      case TemplatePackage.PARAMETER__TYPE:
+        setType((JvmTypeReference)null);
+        return;
       case TemplatePackage.PARAMETER__NAME:
         setName(NAME_EDEFAULT);
         return;
       case TemplatePackage.PARAMETER__DEFAULTEXP:
         setDefaultexp((XExpression)null);
-        return;
-      case TemplatePackage.PARAMETER__TYPE:
-        setType((JvmTypeReference)null);
         return;
     }
     super.eUnset(featureID);
@@ -357,12 +357,12 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
     {
       case TemplatePackage.PARAMETER__ANNOTATIONS:
         return annotations != null && !annotations.isEmpty();
+      case TemplatePackage.PARAMETER__TYPE:
+        return type != null;
       case TemplatePackage.PARAMETER__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case TemplatePackage.PARAMETER__DEFAULTEXP:
         return defaultexp != null;
-      case TemplatePackage.PARAMETER__TYPE:
-        return type != null;
     }
     return super.eIsSet(featureID);
   }

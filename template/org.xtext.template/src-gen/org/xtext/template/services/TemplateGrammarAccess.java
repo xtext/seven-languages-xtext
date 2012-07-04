@@ -111,30 +111,20 @@ public class TemplateGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cAnnotationsAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cAnnotationsXAnnotationParserRuleCall_0_0 = (RuleCall)cAnnotationsAssignment_0.eContents().get(0);
 		private final Keyword cParamKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
-		private final Group cGroup_2_0 = (Group)cAlternatives_2.eContents().get(0);
-		private final Assignment cNameAssignment_2_0_0 = (Assignment)cGroup_2_0.eContents().get(0);
-		private final RuleCall cNameIDTerminalRuleCall_2_0_0_0 = (RuleCall)cNameAssignment_2_0_0.eContents().get(0);
-		private final Keyword cEqualsSignKeyword_2_0_1 = (Keyword)cGroup_2_0.eContents().get(1);
-		private final Assignment cDefaultexpAssignment_2_0_2 = (Assignment)cGroup_2_0.eContents().get(2);
-		private final RuleCall cDefaultexpXExpressionParserRuleCall_2_0_2_0 = (RuleCall)cDefaultexpAssignment_2_0_2.eContents().get(0);
-		private final Group cGroup_2_1 = (Group)cAlternatives_2.eContents().get(1);
-		private final Assignment cTypeAssignment_2_1_0 = (Assignment)cGroup_2_1.eContents().get(0);
-		private final RuleCall cTypeJvmTypeReferenceParserRuleCall_2_1_0_0 = (RuleCall)cTypeAssignment_2_1_0.eContents().get(0);
-		private final Assignment cNameAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_2_1_1_0 = (RuleCall)cNameAssignment_2_1_1.eContents().get(0);
-		private final Group cGroup_2_1_2 = (Group)cGroup_2_1.eContents().get(2);
-		private final Keyword cEqualsSignKeyword_2_1_2_0 = (Keyword)cGroup_2_1_2.eContents().get(0);
-		private final Assignment cDefaultexpAssignment_2_1_2_1 = (Assignment)cGroup_2_1_2.eContents().get(1);
-		private final RuleCall cDefaultexpXExpressionParserRuleCall_2_1_2_1_0 = (RuleCall)cDefaultexpAssignment_2_1_2_1.eContents().get(0);
+		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTypeJvmTypeReferenceParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
+		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cNameIDTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cEqualsSignKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cDefaultexpAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cDefaultexpXExpressionParserRuleCall_4_1_0 = (RuleCall)cDefaultexpAssignment_4_1.eContents().get(0);
 		
 		//Parameter:
-		//	annotations+=XAnnotation* "param" (name=ID "=" defaultexp=XExpression | type=JvmTypeReference name=ID ("="
-		//	defaultexp=XExpression)?);
+		//	annotations+=XAnnotation* "param" type=JvmTypeReference? name=ID ("=" defaultexp=XExpression)?;
 		public ParserRule getRule() { return rule; }
 
-		//annotations+=XAnnotation* "param" (name=ID "=" defaultexp=XExpression | type=JvmTypeReference name=ID ("="
-		//defaultexp=XExpression)?)
+		//annotations+=XAnnotation* "param" type=JvmTypeReference? name=ID ("=" defaultexp=XExpression)?
 		public Group getGroup() { return cGroup; }
 
 		//annotations+=XAnnotation*
@@ -146,53 +136,29 @@ public class TemplateGrammarAccess extends AbstractGrammarElementFinder {
 		//"param"
 		public Keyword getParamKeyword_1() { return cParamKeyword_1; }
 
-		//name=ID "=" defaultexp=XExpression | type=JvmTypeReference name=ID ("=" defaultexp=XExpression)?
-		public Alternatives getAlternatives_2() { return cAlternatives_2; }
-
-		//name=ID "=" defaultexp=XExpression
-		public Group getGroup_2_0() { return cGroup_2_0; }
-
-		//name=ID
-		public Assignment getNameAssignment_2_0_0() { return cNameAssignment_2_0_0; }
-
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_2_0_0_0() { return cNameIDTerminalRuleCall_2_0_0_0; }
-
-		//"="
-		public Keyword getEqualsSignKeyword_2_0_1() { return cEqualsSignKeyword_2_0_1; }
-
-		//defaultexp=XExpression
-		public Assignment getDefaultexpAssignment_2_0_2() { return cDefaultexpAssignment_2_0_2; }
-
-		//XExpression
-		public RuleCall getDefaultexpXExpressionParserRuleCall_2_0_2_0() { return cDefaultexpXExpressionParserRuleCall_2_0_2_0; }
-
-		//type=JvmTypeReference name=ID ("=" defaultexp=XExpression)?
-		public Group getGroup_2_1() { return cGroup_2_1; }
-
-		//type=JvmTypeReference
-		public Assignment getTypeAssignment_2_1_0() { return cTypeAssignment_2_1_0; }
+		//type=JvmTypeReference?
+		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
 
 		//JvmTypeReference
-		public RuleCall getTypeJvmTypeReferenceParserRuleCall_2_1_0_0() { return cTypeJvmTypeReferenceParserRuleCall_2_1_0_0; }
+		public RuleCall getTypeJvmTypeReferenceParserRuleCall_2_0() { return cTypeJvmTypeReferenceParserRuleCall_2_0; }
 
 		//name=ID
-		public Assignment getNameAssignment_2_1_1() { return cNameAssignment_2_1_1; }
+		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_2_1_1_0() { return cNameIDTerminalRuleCall_2_1_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_3_0() { return cNameIDTerminalRuleCall_3_0; }
 
 		//("=" defaultexp=XExpression)?
-		public Group getGroup_2_1_2() { return cGroup_2_1_2; }
+		public Group getGroup_4() { return cGroup_4; }
 
 		//"="
-		public Keyword getEqualsSignKeyword_2_1_2_0() { return cEqualsSignKeyword_2_1_2_0; }
+		public Keyword getEqualsSignKeyword_4_0() { return cEqualsSignKeyword_4_0; }
 
 		//defaultexp=XExpression
-		public Assignment getDefaultexpAssignment_2_1_2_1() { return cDefaultexpAssignment_2_1_2_1; }
+		public Assignment getDefaultexpAssignment_4_1() { return cDefaultexpAssignment_4_1; }
 
 		//XExpression
-		public RuleCall getDefaultexpXExpressionParserRuleCall_2_1_2_1_0() { return cDefaultexpXExpressionParserRuleCall_2_1_2_1_0; }
+		public RuleCall getDefaultexpXExpressionParserRuleCall_4_1_0() { return cDefaultexpXExpressionParserRuleCall_4_1_0; }
 	}
 
 	public class RichStringElements extends AbstractParserRuleElementFinder {
@@ -544,8 +510,7 @@ public class TemplateGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Parameter:
-	//	annotations+=XAnnotation* "param" (name=ID "=" defaultexp=XExpression | type=JvmTypeReference name=ID ("="
-	//	defaultexp=XExpression)?);
+	//	annotations+=XAnnotation* "param" type=JvmTypeReference? name=ID ("=" defaultexp=XExpression)?;
 	public ParameterElements getParameterAccess() {
 		return (pParameter != null) ? pParameter : (pParameter = new ParameterElements());
 	}

@@ -5,8 +5,6 @@ import org.eclipse.xtext.xbase.compiler.XbaseCompiler
 import org.eclipse.xtext.xbase.compiler.output.ITreeAppendable
 import org.xtext.template.template.RichString
 import org.xtext.template.template.RichStringForLoop
-import org.xtext.template.template.RichStringLiteral
-import org.eclipse.xtext.util.Strings
 
 class TemplateCompiler extends XbaseCompiler {
 	
@@ -53,17 +51,10 @@ class TemplateCompiler extends XbaseCompiler {
 	}
 	
 	override protected internalToConvertedExpression(XExpression obj, ITreeAppendable it) {
-		if (hasName(obj)) {
+		if (hasName(obj))
 			append(getName(obj))
-		} else switch obj {
-			RichStringLiteral : {
-				// trim the guillemets
-				var string = obj.value.substring(1, obj.value.length-1)
-				append('''"«Strings::convertToJavaString(string)»"''')
-			}
-			default :
-				super.internalToConvertedExpression(obj, it) 
-		}
+		else 
+			super.internalToConvertedExpression(obj, it) 
 	}
 	
 }

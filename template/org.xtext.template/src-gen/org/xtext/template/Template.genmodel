@@ -18,9 +18,9 @@
     </genClasses>
     <genClasses ecoreClass="Template.ecore#//Parameter">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//Parameter/annotations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//Parameter/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Template.ecore#//Parameter/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//Parameter/defaultexp"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//Parameter/type"/>
     </genClasses>
     <genClasses ecoreClass="Template.ecore#//RichString"/>
     <genClasses ecoreClass="Template.ecore#//RichStringLiteral"/>

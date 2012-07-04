@@ -21,9 +21,9 @@ import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotation;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.xtext.template.template.Parameter#getAnnotations <em>Annotations</em>}</li>
+ *   <li>{@link org.xtext.template.template.Parameter#getType <em>Type</em>}</li>
  *   <li>{@link org.xtext.template.template.Parameter#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.template.template.Parameter#getDefaultexp <em>Defaultexp</em>}</li>
- *   <li>{@link org.xtext.template.template.Parameter#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,6 +48,32 @@ public interface Parameter extends EObject
    * @generated
    */
   EList<XAnnotation> getAnnotations();
+
+  /**
+   * Returns the value of the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Type</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Type</em>' containment reference.
+   * @see #setType(JvmTypeReference)
+   * @see org.xtext.template.template.TemplatePackage#getParameter_Type()
+   * @model containment="true"
+   * @generated
+   */
+  JvmTypeReference getType();
+
+  /**
+   * Sets the value of the '{@link org.xtext.template.template.Parameter#getType <em>Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Type</em>' containment reference.
+   * @see #getType()
+   * @generated
+   */
+  void setType(JvmTypeReference value);
 
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -100,31 +126,5 @@ public interface Parameter extends EObject
    * @generated
    */
   void setDefaultexp(XExpression value);
-
-  /**
-   * Returns the value of the '<em><b>Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Type</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Type</em>' containment reference.
-   * @see #setType(JvmTypeReference)
-   * @see org.xtext.template.template.TemplatePackage#getParameter_Type()
-   * @model containment="true"
-   * @generated
-   */
-  JvmTypeReference getType();
-
-  /**
-   * Sets the value of the '{@link org.xtext.template.template.Parameter#getType <em>Type</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type</em>' containment reference.
-   * @see #getType()
-   * @generated
-   */
-  void setType(JvmTypeReference value);
 
 } // Parameter
