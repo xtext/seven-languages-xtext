@@ -43,28 +43,29 @@ public class LaunchConfigurationInfo {
   
   public ILaunchConfiguration createConfiguration() {
     try {
-      DebugPlugin _default = DebugPlugin.getDefault();
-      final ILaunchManager launchManager = _default.getLaunchManager();
-      final ILaunchConfigurationType configType = launchManager.getLaunchConfigurationType("org.xtext.builddsl.ui.BuildLaunchConfigurationType");
-      String _name = this.getName();
-      String _generateUniqueLaunchConfigurationNameFrom = launchManager.generateUniqueLaunchConfigurationNameFrom(_name);
-      final ILaunchConfigurationWorkingCopy wc = configType.newInstance(null, _generateUniqueLaunchConfigurationNameFrom);
-      String _project = this.getProject();
-      wc.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROJECT_NAME, _project);
-      String _clazz = this.getClazz();
-      wc.setAttribute(IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME, _clazz);
-      wc.setAttribute(IJavaLaunchConfigurationConstants.ATTR_STOP_IN_MAIN, false);
-      String _task = this.getTask();
-      wc.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROGRAM_ARGUMENTS, _task);
-      wc.setAttribute(RefreshTab.ATTR_REFRESH_SCOPE, "${workspace}");
-      wc.setAttribute(RefreshTab.ATTR_REFRESH_RECURSIVE, true);
-      try {
-        return wc.doSave();
-      } catch (Exception _e) {
-        throw Exceptions.sneakyThrow(_e);
+      ILaunchConfiguration _xblockexpression = null;
+      {
+        DebugPlugin _default = DebugPlugin.getDefault();
+        final ILaunchManager launchManager = _default.getLaunchManager();
+        final ILaunchConfigurationType configType = launchManager.getLaunchConfigurationType("org.xtext.builddsl.ui.BuildLaunchConfigurationType");
+        String _name = this.getName();
+        String _generateUniqueLaunchConfigurationNameFrom = launchManager.generateUniqueLaunchConfigurationNameFrom(_name);
+        final ILaunchConfigurationWorkingCopy wc = configType.newInstance(null, _generateUniqueLaunchConfigurationNameFrom);
+        String _project = this.getProject();
+        wc.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROJECT_NAME, _project);
+        String _clazz = this.getClazz();
+        wc.setAttribute(IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME, _clazz);
+        wc.setAttribute(IJavaLaunchConfigurationConstants.ATTR_STOP_IN_MAIN, false);
+        String _task = this.getTask();
+        wc.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROGRAM_ARGUMENTS, _task);
+        wc.setAttribute(RefreshTab.ATTR_REFRESH_SCOPE, "${workspace}");
+        wc.setAttribute(RefreshTab.ATTR_REFRESH_RECURSIVE, true);
+        ILaunchConfiguration _doSave = wc.doSave();
+        _xblockexpression = (_doSave);
       }
-    } catch (Exception _e_1) {
-      throw Exceptions.sneakyThrow(_e_1);
+      return _xblockexpression;
+    } catch (Exception _e) {
+      throw Exceptions.sneakyThrow(_e);
     }
   }
   

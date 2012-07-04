@@ -12,7 +12,7 @@ import org.xtext.builddsl.build.BuildFile
 class AllImportsAreStaticFeatureProvider extends StaticImplicitMethodsFeatureForTypeProvider {
 
 	override getVisibleTypesContainingStaticMethods(Iterable<JvmTypeReference> hierarchy) {
-		val buildFile = getContext.getContents.get(0) as BuildFile
+		val buildFile = context.contents.get(0) as BuildFile
 		val importedTypes = <String>newArrayList
 		for (importDeclaration : buildFile.imports) {
 			val importedTypeOrPackage = importDeclaration.importedNamespace

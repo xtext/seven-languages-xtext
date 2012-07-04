@@ -24,6 +24,6 @@ class BuildDSLLaunchTabGroup extends AbstractLaunchConfigurationTabGroup {
 			new EnvironmentTab,
 			new CommonTab
 		)
-		setTabs(tabs);
+		setTabs(tabs)
 	}
 }

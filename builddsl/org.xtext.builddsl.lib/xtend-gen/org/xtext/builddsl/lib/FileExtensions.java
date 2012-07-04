@@ -32,9 +32,13 @@ public class FileExtensions {
   }
   
   public static ArrayList<File> listAllFiles(final File file) {
-    final ArrayList<File> files = CollectionLiterals.<File>newArrayList();
-    FileExtensions.collectFiles(file, files);
-    return files;
+    ArrayList<File> _xblockexpression = null;
+    {
+      final ArrayList<File> files = CollectionLiterals.<File>newArrayList();
+      FileExtensions.collectFiles(file, files);
+      _xblockexpression = (files);
+    }
+    return _xblockexpression;
   }
   
   public static void zip(final File directory, final File zipFile) {
@@ -72,17 +76,21 @@ public class FileExtensions {
   }
   
   public static File operator_divide(final File file, final String name) {
-    boolean _isDirectory = file.isDirectory();
-    boolean _not = (!_isDirectory);
-    if (_not) {
-      String _plus = ("This is not a directory: " + file);
-      IllegalStateException _illegalStateException = new IllegalStateException(_plus);
-      throw _illegalStateException;
+    File _xblockexpression = null;
+    {
+      boolean _isDirectory = file.isDirectory();
+      boolean _not = (!_isDirectory);
+      if (_not) {
+        String _plus = ("This is not a directory: " + file);
+        IllegalStateException _illegalStateException = new IllegalStateException(_plus);
+        throw _illegalStateException;
+      }
+      URI _uRI = file.toURI();
+      URI _resolve = _uRI.resolve(name);
+      File _file = new File(_resolve);
+      _xblockexpression = (_file);
     }
-    URI _uRI = file.toURI();
-    URI _resolve = _uRI.resolve(name);
-    File _file = new File(_resolve);
-    return _file;
+    return _xblockexpression;
   }
   
   public static File relativeTo(final File target, final File base) {

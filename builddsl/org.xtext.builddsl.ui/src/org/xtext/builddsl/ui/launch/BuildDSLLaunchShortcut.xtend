@@ -25,6 +25,7 @@ import org.eclipse.xtext.resource.XtextResource
 import org.eclipse.xtext.util.Strings
 import org.eclipse.xtext.xbase.ui.editor.XbaseEditor
 import org.xtext.builddsl.build.Task
+import org.xtext.builddsl.build.BuildFile
 
 import static org.eclipse.jdt.launching.IJavaLaunchConfigurationConstants.*
 import static org.eclipse.jface.dialogs.MessageDialog.*
@@ -32,34 +33,23 @@ import static org.eclipse.jface.dialogs.MessageDialog.*
 import static extension org.eclipse.xtext.EcoreUtil2.*
 import static extension org.eclipse.xtext.nodemodel.util.NodeModelUtils.*
 import static extension org.xtext.builddsl.TaskExtensions.*
-import org.xtext.builddsl.build.BuildFile
 
 
-public class BuildDSLLaunchShortcut implements ILaunchShortcut {
+class BuildDSLLaunchShortcut implements ILaunchShortcut {
 
-	public static val String BUNDLE_ID = "org.xtext.builddsl.ui";
-
+	public static val String BUNDLE_ID = "org.xtext.builddsl.ui"
 
 	override launch(ISelection selection, String mode) {
 		MessageDialog::openError(null, "Unsupported Launch Selection.", 
 			"Please open the file inside an editor to launch a task."
-		);
-//		if (selection instanceof IStructuredSelection) {
-//			val structuredSelection = selection as IStructuredSelection
-//			val object = structuredSelection.getFirstElement()
-//			if (object instanceof IAdaptable) {
-//				currFile = (IFile) ((IAdaptable) object)
-//						.getAdapter(IResource.class)
-//				// launch(mode);
-//			}
-//		}
+		)
 	}
 	
 	def findTask(XtextResource res, int offset) {
-		if(offset < 0)
+		if (offset < 0)
 			return null
 		val start = res.parseResult.rootNode.findLeafNodeAtOffset(offset)
-		if(start.hidden) {
+		if (start.hidden) {
 			val list = res.parseResult.rootNode.leafNodes.toList
 			val index = list.indexOf(start)
 			val first = (index..0).findFirst[!list.get(it).hidden]
@@ -75,48 +65,49 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
 
 	override launch(IEditorPart editor, String mode) {
 		if (editor instanceof XbaseEditor) {
-			val xbe =  editor as XbaseEditor;
-			val offset = switch it:xbe.selectionProvider.selection { ITextSelection: it.offset default: -1 }
-			if(xbe.editorInput instanceof IFileEditorInput) {
-				val project = (xbe.editorInput as IFileEditorInput).file.project.name
-				val info = xbe.document.readOnly[
+			val xbaseEditor = editor as XbaseEditor
+			val offset = switch it:xbaseEditor.selectionProvider.selection { ITextSelection: it.offset default: -1 }
+			if (xbaseEditor.editorInput instanceof IFileEditorInput) {
+				val project = (xbaseEditor.editorInput as IFileEditorInput).file.project.name
+				val info = xbaseEditor.document.readOnly[
 					val file = contents.filter(typeof(BuildFile)).head
 					new LaunchConfigurationInfo(project, file?.javaClassName, findTask(offset))
 				]
 				launch(mode, info)
-				return;
+				return
 			}
 		} 
-		openError(null, "Wrong editor kind.", "");
+		openError(null, "Wrong editor kind.", "")
 	}
 
 	def launch(String mode, LaunchConfigurationInfo info) {
-		if(info.task.nullOrEmpty)          openError(null, "Launch Error", "Could not determine the task that should be executed.")
-		else if(info.clazz.nullOrEmpty)    openError(null, "Launch Error", "Could not determine the class that should be executed.")
-		else if(info.project.nullOrEmpty)  openError(null, "Launch Error", "Could not determine the project that should be executed.")
+		if (info.task.nullOrEmpty)          
+			openError(null, "Launch Error", "Could not determine the task that should be executed.")
+		else if (info.clazz.nullOrEmpty)    
+			openError(null, "Launch Error", "Could not determine the class that should be executed.")
+		else if (info.project.nullOrEmpty)  
+			openError(null, "Launch Error", "Could not determine the project that should be executed.")
 		else try {
-			val configs = DebugPlugin::getDefault().getLaunchManager().getLaunchConfigurations();
+			val configs = DebugPlugin::getDefault.launchManager.launchConfigurations
 			val config = configs.findFirst[info.configEquals(it)] ?: info.createConfiguration 
-			DebugUITools::launch(config, mode);
-//			currFile.getProject().refreshLocal(IResource.DEPTH_INFINITE,
-//					new NullProgressMonitor());
+			DebugUITools::launch(config, mode)
 		} catch (CoreException e) {
-			openError(null, "Problem running workflow.", e.getMessage());
+			openError(null, "Problem running workflow.", e.message)
 		}
 	}
 }
 
 @Data class LaunchConfigurationInfo {
-	val String project;
-	val String clazz;
-	val String task;
+	val String project
+	val String clazz
+	val String task
 	
 	def getName() {
 		Strings::lastToken(clazz, ".")
 	}
 	
 	def createConfiguration()  {
-		val launchManager = DebugPlugin::getDefault().getLaunchManager()
+		val launchManager = DebugPlugin::getDefault.launchManager
 		val configType = launchManager.getLaunchConfigurationType("org.xtext.builddsl.ui.BuildLaunchConfigurationType")
 		val wc = configType.newInstance(null, launchManager.generateUniqueLaunchConfigurationNameFrom(name))
 		wc.setAttribute(ATTR_PROJECT_NAME, project)
@@ -125,7 +116,7 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
 		wc.setAttribute(ATTR_PROGRAM_ARGUMENTS, task)
 		wc.setAttribute(RefreshTab::ATTR_REFRESH_SCOPE, "${workspace}")
 		wc.setAttribute(RefreshTab::ATTR_REFRESH_RECURSIVE, true)
-		return wc.doSave()
+		wc.doSave
 	}
 
 	def configEquals(ILaunchConfiguration a) {

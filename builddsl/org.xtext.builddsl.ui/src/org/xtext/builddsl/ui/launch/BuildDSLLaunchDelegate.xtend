@@ -53,7 +53,7 @@ class RefreshJob extends Job {
 			RefreshTab::refreshResources(configuration, monitor)
 		} catch (CoreException e) {
 			logger.error(e.message, e)
-			return e.getStatus
+			return e.status
 		}
 		Status::OK_STATUS
 	}

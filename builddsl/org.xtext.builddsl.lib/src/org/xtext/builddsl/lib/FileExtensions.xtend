@@ -13,18 +13,18 @@ import static extension org.xtext.builddsl.lib.FileExtensions.*
 class FileExtensions {
 	
 	def private static void collectFiles(File root, List<File> result) {
-		for (it : root.listFiles()) {
+		for (it : root.listFiles) {
 			if (isFile)
 				result += it
-			else if (isDirectory())
+			else if (isDirectory)
 				collectFiles(it, result)
 		}
 	}
 
 	def static listAllFiles(File file) {
 		val files = <File>newArrayList
-		collectFiles(file, files);
-		return files;
+		collectFiles(file, files)
+		files
 	}
 	
 	def static void zip(File directory, File zipFile) {
@@ -46,9 +46,9 @@ class FileExtensions {
 	}
 	
 	def static File operator_divide(File file, String name) {
-		if (!file.isDirectory())
-			throw new IllegalStateException("This is not a directory: " + file);
-		return new File(file.toURI().resolve(name));
+		if (!file.isDirectory)
+			throw new IllegalStateException("This is not a directory: " + file)
+		new File(file.toURI.resolve(name))
 	}
 
 	def static relativeTo(File target, File base) {

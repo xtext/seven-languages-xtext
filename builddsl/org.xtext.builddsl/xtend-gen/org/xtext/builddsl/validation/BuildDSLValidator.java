@@ -59,11 +59,11 @@ public class BuildDSLValidator extends XbaseJavaValidator {
   }
   
   protected List<EPackage> getEPackages() {
-    final ArrayList<EPackage> result = CollectionLiterals.<EPackage>newArrayList(
+    ArrayList<EPackage> _newArrayList = CollectionLiterals.<EPackage>newArrayList(
       BuildPackage.eINSTANCE, 
       XbasePackage.eINSTANCE, 
       TypesPackage.eINSTANCE, 
       XtypePackage.eINSTANCE);
-    return result;
+    return _newArrayList;
   }
 }

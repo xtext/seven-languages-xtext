@@ -12,7 +12,6 @@ import java.util.Map.Entry;
 import java.util.Set;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.scoping.featurecalls.StaticImplicitMethodsFeatureForTypeProvider;
@@ -27,8 +26,7 @@ public class AllImportsAreStaticFeatureProvider extends StaticImplicitMethodsFea
   public Map<JvmTypeReference,Collection<String>> getVisibleTypesContainingStaticMethods(final Iterable<JvmTypeReference> hierarchy) {
     LinkedHashMap<JvmTypeReference,Collection<String>> _xblockexpression = null;
     {
-      Resource _context = this.getContext();
-      EList<EObject> _contents = _context.getContents();
+      EList<EObject> _contents = this.context.getContents();
       EObject _get = _contents.get(0);
       final BuildFile buildFile = ((BuildFile) _get);
       final ArrayList<String> importedTypes = CollectionLiterals.<String>newArrayList();

@@ -16,27 +16,26 @@ class BuildDSLValidator extends XbaseJavaValidator {
 
 	@Check
 	def void checkNoRecursiveDependencies(Task task) {
-		for (taskRef : task.getDepends())
+		for (taskRef : task.depends)
 			if (taskRef == task) {
 				error('''The task '«task.name»' cannot depend on itself.''', 
 					  taskRef, DECLARATION__NAME, SELF_DEPENDENCY
 				)
-				return;
+				return
 			}
 		task.findDependentTasks [ cycle |
 			error('''There is a cyclic dependency that involves tasks «cycle.map[name].join(", ")»''', 
 				  task, DECLARATION__NAME, CYCLIC_DEPENDENCY
-			);
+			)
 		]
 	}
 	
 	override protected getEPackages() {
-	    val result = <EPackage>newArrayList(
+	    <EPackage>newArrayList(
 		    BuildPackage::eINSTANCE,
 		    XbasePackage::eINSTANCE,
 		    TypesPackage::eINSTANCE,
 		    XtypePackage::eINSTANCE)
-		return result;
 	}
 
 }
