@@ -18,7 +18,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.xtext.template.template.BlockStmt;
+import org.eclipse.xtext.xbase.XBlockExpression;
+
 import org.xtext.template.template.Import;
 import org.xtext.template.template.Parameter;
 import org.xtext.template.template.TemplateFile;
@@ -90,7 +91,7 @@ public class TemplateFileImpl extends MinimalEObjectImpl.Container implements Te
    * @generated
    * @ordered
    */
-  protected BlockStmt body;
+  protected XBlockExpression body;
 
   /**
    * <!-- begin-user-doc -->
@@ -169,7 +170,7 @@ public class TemplateFileImpl extends MinimalEObjectImpl.Container implements Te
    * <!-- end-user-doc -->
    * @generated
    */
-  public BlockStmt getBody()
+  public XBlockExpression getBody()
   {
     return body;
   }
@@ -179,9 +180,9 @@ public class TemplateFileImpl extends MinimalEObjectImpl.Container implements Te
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetBody(BlockStmt newBody, NotificationChain msgs)
+  public NotificationChain basicSetBody(XBlockExpression newBody, NotificationChain msgs)
   {
-    BlockStmt oldBody = body;
+    XBlockExpression oldBody = body;
     body = newBody;
     if (eNotificationRequired())
     {
@@ -196,7 +197,7 @@ public class TemplateFileImpl extends MinimalEObjectImpl.Container implements Te
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setBody(BlockStmt newBody)
+  public void setBody(XBlockExpression newBody)
   {
     if (newBody != body)
     {
@@ -277,7 +278,7 @@ public class TemplateFileImpl extends MinimalEObjectImpl.Container implements Te
         getParams().addAll((Collection<? extends Parameter>)newValue);
         return;
       case TemplatePackage.TEMPLATE_FILE__BODY:
-        setBody((BlockStmt)newValue);
+        setBody((XBlockExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -303,7 +304,7 @@ public class TemplateFileImpl extends MinimalEObjectImpl.Container implements Te
         getParams().clear();
         return;
       case TemplatePackage.TEMPLATE_FILE__BODY:
-        setBody((BlockStmt)null);
+        setBody((XBlockExpression)null);
         return;
     }
     super.eUnset(featureID);

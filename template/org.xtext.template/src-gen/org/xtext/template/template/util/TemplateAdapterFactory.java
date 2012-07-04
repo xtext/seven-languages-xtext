@@ -9,6 +9,12 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.xtext.xbase.XBlockExpression;
+import org.eclipse.xtext.xbase.XExpression;
+import org.eclipse.xtext.xbase.XForLoopExpression;
+import org.eclipse.xtext.xbase.XIfExpression;
+import org.eclipse.xtext.xbase.XStringLiteral;
+
 import org.xtext.template.template.*;
 
 /**
@@ -90,44 +96,49 @@ public class TemplateAdapterFactory extends AdapterFactoryImpl
         return createParameterAdapter();
       }
       @Override
-      public Adapter caseStatement(Statement object)
+      public Adapter caseRichString(RichString object)
       {
-        return createStatementAdapter();
+        return createRichStringAdapter();
       }
       @Override
-      public Adapter caseBlockStmt(BlockStmt object)
+      public Adapter caseRichStringLiteral(RichStringLiteral object)
       {
-        return createBlockStmtAdapter();
+        return createRichStringLiteralAdapter();
       }
       @Override
-      public Adapter caseStructuralStmt(StructuralStmt object)
+      public Adapter caseRichStringForLoop(RichStringForLoop object)
       {
-        return createStructuralStmtAdapter();
+        return createRichStringForLoopAdapter();
       }
       @Override
-      public Adapter caseExpressionStmt(ExpressionStmt object)
+      public Adapter caseRichStringIf(RichStringIf object)
       {
-        return createExpressionStmtAdapter();
+        return createRichStringIfAdapter();
       }
       @Override
-      public Adapter caseForStmt(ForStmt object)
+      public Adapter caseXExpression(XExpression object)
       {
-        return createForStmtAdapter();
+        return createXExpressionAdapter();
       }
       @Override
-      public Adapter caseIfStmt(IfStmt object)
+      public Adapter caseXBlockExpression(XBlockExpression object)
       {
-        return createIfStmtAdapter();
+        return createXBlockExpressionAdapter();
       }
       @Override
-      public Adapter caseIfStmtBody(IfStmtBody object)
+      public Adapter caseXStringLiteral(XStringLiteral object)
       {
-        return createIfStmtBodyAdapter();
+        return createXStringLiteralAdapter();
       }
       @Override
-      public Adapter caseTextStmt(TextStmt object)
+      public Adapter caseXForLoopExpression(XForLoopExpression object)
       {
-        return createTextStmtAdapter();
+        return createXForLoopExpressionAdapter();
+      }
+      @Override
+      public Adapter caseXIfExpression(XIfExpression object)
+      {
+        return createXIfExpressionAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -197,121 +208,136 @@ public class TemplateAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.template.template.Statement <em>Statement</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.template.template.RichString <em>Rich String</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.template.template.Statement
+   * @see org.xtext.template.template.RichString
    * @generated
    */
-  public Adapter createStatementAdapter()
+  public Adapter createRichStringAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.template.template.BlockStmt <em>Block Stmt</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.template.template.RichStringLiteral <em>Rich String Literal</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.template.template.BlockStmt
+   * @see org.xtext.template.template.RichStringLiteral
    * @generated
    */
-  public Adapter createBlockStmtAdapter()
+  public Adapter createRichStringLiteralAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.template.template.StructuralStmt <em>Structural Stmt</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.template.template.RichStringForLoop <em>Rich String For Loop</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.template.template.StructuralStmt
+   * @see org.xtext.template.template.RichStringForLoop
    * @generated
    */
-  public Adapter createStructuralStmtAdapter()
+  public Adapter createRichStringForLoopAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.template.template.ExpressionStmt <em>Expression Stmt</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.template.template.RichStringIf <em>Rich String If</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.template.template.ExpressionStmt
+   * @see org.xtext.template.template.RichStringIf
    * @generated
    */
-  public Adapter createExpressionStmtAdapter()
+  public Adapter createRichStringIfAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.template.template.ForStmt <em>For Stmt</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.xtext.xbase.XExpression <em>XExpression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.template.template.ForStmt
+   * @see org.eclipse.xtext.xbase.XExpression
    * @generated
    */
-  public Adapter createForStmtAdapter()
+  public Adapter createXExpressionAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.template.template.IfStmt <em>If Stmt</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.xtext.xbase.XBlockExpression <em>XBlock Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.template.template.IfStmt
+   * @see org.eclipse.xtext.xbase.XBlockExpression
    * @generated
    */
-  public Adapter createIfStmtAdapter()
+  public Adapter createXBlockExpressionAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.template.template.IfStmtBody <em>If Stmt Body</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.xtext.xbase.XStringLiteral <em>XString Literal</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.template.template.IfStmtBody
+   * @see org.eclipse.xtext.xbase.XStringLiteral
    * @generated
    */
-  public Adapter createIfStmtBodyAdapter()
+  public Adapter createXStringLiteralAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.template.template.TextStmt <em>Text Stmt</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.xtext.xbase.XForLoopExpression <em>XFor Loop Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.template.template.TextStmt
+   * @see org.eclipse.xtext.xbase.XForLoopExpression
    * @generated
    */
-  public Adapter createTextStmtAdapter()
+  public Adapter createXForLoopExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.eclipse.xtext.xbase.XIfExpression <em>XIf Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.eclipse.xtext.xbase.XIfExpression
+   * @generated
+   */
+  public Adapter createXIfExpressionAdapter()
   {
     return null;
   }

@@ -29,44 +29,22 @@ public class TemplateHighlightingCalculator extends XbaseHighlightingCalculator 
       if (grammarElement instanceof RuleCall) {
         final RuleCall _ruleCall = (RuleCall)grammarElement;
         _matched=true;
-        final AbstractRule rule = _ruleCall.getRule();
-        boolean _or = false;
-        boolean _or_1 = false;
-        boolean _or_2 = false;
-        TerminalRule _tEXT_EXP2EXPRule = this.grammarAccess.getTEXT_EXP2EXPRule();
-        boolean _equals = Objects.equal(rule, _tEXT_EXP2EXPRule);
-        if (_equals) {
-          _or_2 = true;
-        } else {
-          TerminalRule _tEXT_EXP2STMRule = this.grammarAccess.getTEXT_EXP2STMRule();
-          boolean _equals_1 = Objects.equal(rule, _tEXT_EXP2STMRule);
-          _or_2 = (_equals || _equals_1);
-        }
-        if (_or_2) {
-          _or_1 = true;
-        } else {
-          TerminalRule _tEXT_STM2EXPRule = this.grammarAccess.getTEXT_STM2EXPRule();
-          boolean _equals_2 = Objects.equal(rule, _tEXT_STM2EXPRule);
-          _or_1 = (_or_2 || _equals_2);
-        }
-        if (_or_1) {
-          _or = true;
-        } else {
-          TerminalRule _tEXT_STM2STMRule = this.grammarAccess.getTEXT_STM2STMRule();
-          boolean _equals_3 = Objects.equal(rule, _tEXT_STM2STMRule);
-          _or = (_or_1 || _equals_3);
-        }
-        return _or;
+        AbstractRule _rule = _ruleCall.getRule();
+        TerminalRule _tEXTRule = this.grammarAccess.getTEXTRule();
+        boolean _equals = Objects.equal(_rule, _tEXTRule);
+        _switchResult = _equals;
       }
     }
     if (!_matched) {
       _switchResult = false;
     }
-    return Boolean.valueOf(_switchResult);
+    return _switchResult;
   }
   
   public void doProvideHighlightingFor(final XtextResource resource, final IHighlightedPositionAcceptor acceptor) {
     super.doProvideHighlightingFor(resource, acceptor);
+    acceptor.addPosition(0, 4, TemplateHighlightingConfiguration.TEXT);
+    acceptor.addPosition(4, 1, TemplateHighlightingConfiguration.ESCAPE);
     IParseResult _parseResult = resource.getParseResult();
     ICompositeNode _rootNode = _parseResult.getRootNode();
     Iterable<ILeafNode> _leafNodes = _rootNode.getLeafNodes();
@@ -74,17 +52,17 @@ public class TemplateHighlightingCalculator extends XbaseHighlightingCalculator 
       boolean _isText = this.isText(leafNode);
       if (_isText) {
         int _offset = leafNode.getOffset();
-        acceptor.addPosition(_offset, 2, TemplateHighlightingConfiguration.ESCAPE);
+        acceptor.addPosition(_offset, 1, TemplateHighlightingConfiguration.ESCAPE);
         int _offset_1 = leafNode.getOffset();
-        int _plus = (_offset_1 + 2);
+        int _plus = (_offset_1 + 1);
         int _length = leafNode.getLength();
-        int _minus = (_length - 4);
+        int _minus = (_length - 2);
         acceptor.addPosition(_plus, _minus, TemplateHighlightingConfiguration.TEXT);
         int _offset_2 = leafNode.getOffset();
         int _length_1 = leafNode.getLength();
         int _plus_1 = (_offset_2 + _length_1);
-        int _minus_1 = (_plus_1 - 2);
-        acceptor.addPosition(_minus_1, 2, TemplateHighlightingConfiguration.ESCAPE);
+        int _minus_1 = (_plus_1 - 1);
+        acceptor.addPosition(_minus_1, 1, TemplateHighlightingConfiguration.ESCAPE);
       }
     }
   }

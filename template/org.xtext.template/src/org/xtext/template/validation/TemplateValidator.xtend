@@ -15,6 +15,10 @@ class TemplateValidator extends XbaseWithAnnotationsJavaValidator {
 		// workaround for https://bugs.eclipse.org/bugs/show_bug.cgi?id=382879
 		false
 	}
+	
+	override checkInnerExpressions(XExpression expr) {
+		// disabled
+	}
 
 	override getEPackages() {
 	    val result = <EPackage>newArrayList

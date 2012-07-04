@@ -86,13 +86,13 @@ Workflow {
     
                 // outline API
                 //fragment = outline.OutlineTreeProviderFragment {}
-                fragment = outline.QuickOutlineFragment {}
+				//fragment = outline.QuickOutlineFragment {}
     
                 // quickfix API
                 //fragment = quickfix.QuickfixProviderFragment {}
     
                 // content assist API
-                //fragment = contentAssist.JavaBasedContentAssistFragment {}
+                fragment = contentAssist.JavaBasedContentAssistFragment {}
     
                 // generates a more lightweight Antlr parser and lexer tailored for content assist
                 fragment = parser.antlr.XtextAntlrUiGeneratorFragment {}

@@ -7,6 +7,12 @@ import java.util.List;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.xtext.xbase.XBlockExpression;
+import org.eclipse.xtext.xbase.XExpression;
+import org.eclipse.xtext.xbase.XForLoopExpression;
+import org.eclipse.xtext.xbase.XIfExpression;
+import org.eclipse.xtext.xbase.XStringLiteral;
+
 import org.xtext.template.template.*;
 
 /**
@@ -113,66 +119,39 @@ public class TemplateSwitch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TemplatePackage.STATEMENT:
+      case TemplatePackage.RICH_STRING:
       {
-        Statement statement = (Statement)theEObject;
-        T result = caseStatement(statement);
+        RichString richString = (RichString)theEObject;
+        T result = caseRichString(richString);
+        if (result == null) result = caseXBlockExpression(richString);
+        if (result == null) result = caseXExpression(richString);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TemplatePackage.BLOCK_STMT:
+      case TemplatePackage.RICH_STRING_LITERAL:
       {
-        BlockStmt blockStmt = (BlockStmt)theEObject;
-        T result = caseBlockStmt(blockStmt);
-        if (result == null) result = caseStatement(blockStmt);
+        RichStringLiteral richStringLiteral = (RichStringLiteral)theEObject;
+        T result = caseRichStringLiteral(richStringLiteral);
+        if (result == null) result = caseXStringLiteral(richStringLiteral);
+        if (result == null) result = caseXExpression(richStringLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TemplatePackage.STRUCTURAL_STMT:
+      case TemplatePackage.RICH_STRING_FOR_LOOP:
       {
-        StructuralStmt structuralStmt = (StructuralStmt)theEObject;
-        T result = caseStructuralStmt(structuralStmt);
-        if (result == null) result = caseStatement(structuralStmt);
+        RichStringForLoop richStringForLoop = (RichStringForLoop)theEObject;
+        T result = caseRichStringForLoop(richStringForLoop);
+        if (result == null) result = caseXForLoopExpression(richStringForLoop);
+        if (result == null) result = caseXExpression(richStringForLoop);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TemplatePackage.EXPRESSION_STMT:
+      case TemplatePackage.RICH_STRING_IF:
       {
-        ExpressionStmt expressionStmt = (ExpressionStmt)theEObject;
-        T result = caseExpressionStmt(expressionStmt);
-        if (result == null) result = caseStatement(expressionStmt);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case TemplatePackage.FOR_STMT:
-      {
-        ForStmt forStmt = (ForStmt)theEObject;
-        T result = caseForStmt(forStmt);
-        if (result == null) result = caseStructuralStmt(forStmt);
-        if (result == null) result = caseStatement(forStmt);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case TemplatePackage.IF_STMT:
-      {
-        IfStmt ifStmt = (IfStmt)theEObject;
-        T result = caseIfStmt(ifStmt);
-        if (result == null) result = caseStructuralStmt(ifStmt);
-        if (result == null) result = caseStatement(ifStmt);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case TemplatePackage.IF_STMT_BODY:
-      {
-        IfStmtBody ifStmtBody = (IfStmtBody)theEObject;
-        T result = caseIfStmtBody(ifStmtBody);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case TemplatePackage.TEXT_STMT:
-      {
-        TextStmt textStmt = (TextStmt)theEObject;
-        T result = caseTextStmt(textStmt);
+        RichStringIf richStringIf = (RichStringIf)theEObject;
+        T result = caseRichStringIf(richStringIf);
+        if (result == null) result = caseXIfExpression(richStringIf);
+        if (result == null) result = caseXExpression(richStringIf);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -229,129 +208,145 @@ public class TemplateSwitch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Statement</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Rich String</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Statement</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Rich String</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseStatement(Statement object)
+  public T caseRichString(RichString object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Block Stmt</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Rich String Literal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Block Stmt</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Rich String Literal</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseBlockStmt(BlockStmt object)
+  public T caseRichStringLiteral(RichStringLiteral object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Structural Stmt</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Rich String For Loop</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Structural Stmt</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Rich String For Loop</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseStructuralStmt(StructuralStmt object)
+  public T caseRichStringForLoop(RichStringForLoop object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Expression Stmt</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Rich String If</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Expression Stmt</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Rich String If</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseExpressionStmt(ExpressionStmt object)
+  public T caseRichStringIf(RichStringIf object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>For Stmt</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>XExpression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>For Stmt</em>'.
+   * @return the result of interpreting the object as an instance of '<em>XExpression</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseForStmt(ForStmt object)
+  public T caseXExpression(XExpression object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>If Stmt</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>XBlock Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>If Stmt</em>'.
+   * @return the result of interpreting the object as an instance of '<em>XBlock Expression</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseIfStmt(IfStmt object)
+  public T caseXBlockExpression(XBlockExpression object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>If Stmt Body</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>XString Literal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>If Stmt Body</em>'.
+   * @return the result of interpreting the object as an instance of '<em>XString Literal</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseIfStmtBody(IfStmtBody object)
+  public T caseXStringLiteral(XStringLiteral object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Text Stmt</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>XFor Loop Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Text Stmt</em>'.
+   * @return the result of interpreting the object as an instance of '<em>XFor Loop Expression</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTextStmt(TextStmt object)
+  public T caseXForLoopExpression(XForLoopExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>XIf Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>XIf Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseXIfExpression(XIfExpression object)
   {
     return null;
   }

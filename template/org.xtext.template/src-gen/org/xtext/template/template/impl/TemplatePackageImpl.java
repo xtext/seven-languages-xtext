@@ -15,19 +15,15 @@ import org.eclipse.xtext.xbase.XbasePackage;
 
 import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationsPackage;
 
-import org.xtext.template.template.BlockStmt;
-import org.xtext.template.template.ExpressionStmt;
-import org.xtext.template.template.ForStmt;
-import org.xtext.template.template.IfStmt;
-import org.xtext.template.template.IfStmtBody;
 import org.xtext.template.template.Import;
 import org.xtext.template.template.Parameter;
-import org.xtext.template.template.Statement;
-import org.xtext.template.template.StructuralStmt;
+import org.xtext.template.template.RichString;
+import org.xtext.template.template.RichStringForLoop;
+import org.xtext.template.template.RichStringIf;
+import org.xtext.template.template.RichStringLiteral;
 import org.xtext.template.template.TemplateFactory;
 import org.xtext.template.template.TemplateFile;
 import org.xtext.template.template.TemplatePackage;
-import org.xtext.template.template.TextStmt;
 
 /**
  * <!-- begin-user-doc -->
@@ -63,56 +59,28 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass statementEClass = null;
+  private EClass richStringEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass blockStmtEClass = null;
+  private EClass richStringLiteralEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass structuralStmtEClass = null;
+  private EClass richStringForLoopEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass expressionStmtEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass forStmtEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass ifStmtEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass ifStmtBodyEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass textStmtEClass = null;
+  private EClass richStringIfEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -306,9 +274,9 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getStatement()
+  public EClass getRichString()
   {
-    return statementEClass;
+    return richStringEClass;
   }
 
   /**
@@ -316,9 +284,9 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getBlockStmt()
+  public EClass getRichStringLiteral()
   {
-    return blockStmtEClass;
+    return richStringLiteralEClass;
   }
 
   /**
@@ -326,9 +294,9 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBlockStmt_Statements()
+  public EClass getRichStringForLoop()
   {
-    return (EReference)blockStmtEClass.getEStructuralFeatures().get(0);
+    return richStringForLoopEClass;
   }
 
   /**
@@ -336,149 +304,9 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getStructuralStmt()
+  public EClass getRichStringIf()
   {
-    return structuralStmtEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getExpressionStmt()
-  {
-    return expressionStmtEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getExpressionStmt_Body()
-  {
-    return (EReference)expressionStmtEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getForStmt()
-  {
-    return forStmtEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getForStmt_Param()
-  {
-    return (EReference)forStmtEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getForStmt_Source()
-  {
-    return (EReference)forStmtEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getForStmt_Body()
-  {
-    return (EReference)forStmtEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getIfStmt()
-  {
-    return ifStmtEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getIfStmt_Ifbodies()
-  {
-    return (EReference)ifStmtEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getIfStmt_Elsebody()
-  {
-    return (EReference)ifStmtEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getIfStmtBody()
-  {
-    return ifStmtBodyEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getIfStmtBody_Condition()
-  {
-    return (EReference)ifStmtBodyEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getIfStmtBody_Body()
-  {
-    return (EReference)ifStmtBodyEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getTextStmt()
-  {
-    return textStmtEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getTextStmt_Text()
-  {
-    return (EAttribute)textStmtEClass.getEStructuralFeatures().get(0);
+    return richStringIfEClass;
   }
 
   /**
@@ -526,31 +354,13 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
     createEReference(parameterEClass, PARAMETER__DEFAULTEXP);
     createEReference(parameterEClass, PARAMETER__TYPE);
 
-    statementEClass = createEClass(STATEMENT);
+    richStringEClass = createEClass(RICH_STRING);
 
-    blockStmtEClass = createEClass(BLOCK_STMT);
-    createEReference(blockStmtEClass, BLOCK_STMT__STATEMENTS);
+    richStringLiteralEClass = createEClass(RICH_STRING_LITERAL);
 
-    structuralStmtEClass = createEClass(STRUCTURAL_STMT);
+    richStringForLoopEClass = createEClass(RICH_STRING_FOR_LOOP);
 
-    expressionStmtEClass = createEClass(EXPRESSION_STMT);
-    createEReference(expressionStmtEClass, EXPRESSION_STMT__BODY);
-
-    forStmtEClass = createEClass(FOR_STMT);
-    createEReference(forStmtEClass, FOR_STMT__PARAM);
-    createEReference(forStmtEClass, FOR_STMT__SOURCE);
-    createEReference(forStmtEClass, FOR_STMT__BODY);
-
-    ifStmtEClass = createEClass(IF_STMT);
-    createEReference(ifStmtEClass, IF_STMT__IFBODIES);
-    createEReference(ifStmtEClass, IF_STMT__ELSEBODY);
-
-    ifStmtBodyEClass = createEClass(IF_STMT_BODY);
-    createEReference(ifStmtBodyEClass, IF_STMT_BODY__CONDITION);
-    createEReference(ifStmtBodyEClass, IF_STMT_BODY__BODY);
-
-    textStmtEClass = createEClass(TEXT_STMT);
-    createEAttribute(textStmtEClass, TEXT_STMT__TEXT);
+    richStringIfEClass = createEClass(RICH_STRING_IF);
   }
 
   /**
@@ -578,8 +388,8 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
     setNsURI(eNS_URI);
 
     // Obtain other dependent packages
-    XAnnotationsPackage theXAnnotationsPackage = (XAnnotationsPackage)EPackage.Registry.INSTANCE.getEPackage(XAnnotationsPackage.eNS_URI);
     XbasePackage theXbasePackage = (XbasePackage)EPackage.Registry.INSTANCE.getEPackage(XbasePackage.eNS_URI);
+    XAnnotationsPackage theXAnnotationsPackage = (XAnnotationsPackage)EPackage.Registry.INSTANCE.getEPackage(XAnnotationsPackage.eNS_URI);
     TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 
     // Create type parameters
@@ -587,18 +397,17 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    blockStmtEClass.getESuperTypes().add(this.getStatement());
-    structuralStmtEClass.getESuperTypes().add(this.getStatement());
-    expressionStmtEClass.getESuperTypes().add(this.getStatement());
-    forStmtEClass.getESuperTypes().add(this.getStructuralStmt());
-    ifStmtEClass.getESuperTypes().add(this.getStructuralStmt());
+    richStringEClass.getESuperTypes().add(theXbasePackage.getXBlockExpression());
+    richStringLiteralEClass.getESuperTypes().add(theXbasePackage.getXStringLiteral());
+    richStringForLoopEClass.getESuperTypes().add(theXbasePackage.getXForLoopExpression());
+    richStringIfEClass.getESuperTypes().add(theXbasePackage.getXIfExpression());
 
     // Initialize classes and features; add operations and parameters
     initEClass(templateFileEClass, TemplateFile.class, "TemplateFile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTemplateFile_Package(), ecorePackage.getEString(), "package", null, 0, 1, TemplateFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTemplateFile_Imports(), this.getImport(), null, "imports", null, 0, -1, TemplateFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTemplateFile_Params(), this.getParameter(), null, "params", null, 0, -1, TemplateFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTemplateFile_Body(), this.getBlockStmt(), null, "body", null, 0, 1, TemplateFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTemplateFile_Body(), theXbasePackage.getXBlockExpression(), null, "body", null, 0, 1, TemplateFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getImport_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -609,31 +418,13 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
     initEReference(getParameter_Defaultexp(), theXbasePackage.getXExpression(), null, "defaultexp", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getParameter_Type(), theTypesPackage.getJvmTypeReference(), null, "type", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(statementEClass, Statement.class, "Statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(richStringEClass, RichString.class, "RichString", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(blockStmtEClass, BlockStmt.class, "BlockStmt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBlockStmt_Statements(), ecorePackage.getEObject(), null, "statements", null, 0, -1, BlockStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(richStringLiteralEClass, RichStringLiteral.class, "RichStringLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(structuralStmtEClass, StructuralStmt.class, "StructuralStmt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(richStringForLoopEClass, RichStringForLoop.class, "RichStringForLoop", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(expressionStmtEClass, ExpressionStmt.class, "ExpressionStmt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getExpressionStmt_Body(), theXbasePackage.getXExpression(), null, "body", null, 0, 1, ExpressionStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(forStmtEClass, ForStmt.class, "ForStmt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getForStmt_Param(), theTypesPackage.getJvmFormalParameter(), null, "param", null, 0, 1, ForStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getForStmt_Source(), theXbasePackage.getXExpression(), null, "source", null, 0, 1, ForStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getForStmt_Body(), this.getBlockStmt(), null, "body", null, 0, 1, ForStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(ifStmtEClass, IfStmt.class, "IfStmt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getIfStmt_Ifbodies(), this.getIfStmtBody(), null, "ifbodies", null, 0, -1, IfStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getIfStmt_Elsebody(), this.getBlockStmt(), null, "elsebody", null, 0, 1, IfStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(ifStmtBodyEClass, IfStmtBody.class, "IfStmtBody", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getIfStmtBody_Condition(), theXbasePackage.getXExpression(), null, "condition", null, 0, 1, IfStmtBody.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getIfStmtBody_Body(), this.getBlockStmt(), null, "body", null, 0, 1, IfStmtBody.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(textStmtEClass, TextStmt.class, "TextStmt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTextStmt_Text(), ecorePackage.getEString(), "text", null, 0, 1, TextStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(richStringIfEClass, RichStringIf.class, "RichStringIf", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     // Create resource
     createResource(eNS_URI);

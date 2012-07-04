@@ -1,7 +1,0 @@
-<% package org.xtext.template.tests.compiler
-	/* XPECT execute ----
-	
-	expression 'myexpression'
-	--- */
-%>
-expression '<? "myexpression" ?>'

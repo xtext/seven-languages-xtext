@@ -77,27 +77,31 @@ ruleTemplateFile returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='<%' 
+(	otherlv_0='<!--' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getTemplateFileAccess().getLessThanSignPercentSignKeyword_0());
+    	newLeafNode(otherlv_0, grammarAccess.getTemplateFileAccess().getLessThanSignExclamationMarkHyphenMinusHyphenMinusKeyword_0());
     }
-(	otherlv_1='package' 
+	otherlv_1='\u00AB' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getTemplateFileAccess().getPackageKeyword_1_0());
+    	newLeafNode(otherlv_1, grammarAccess.getTemplateFileAccess().getLeftPointingDoubleAngleQuotationMarkKeyword_1());
+    }
+(	otherlv_2='package' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getTemplateFileAccess().getPackageKeyword_2_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getTemplateFileAccess().getPackageQualifiedNameParserRuleCall_1_1_0()); 
+	        newCompositeNode(grammarAccess.getTemplateFileAccess().getPackageQualifiedNameParserRuleCall_2_1_0()); 
 	    }
-		lv_package_2_0=ruleQualifiedName		{
+		lv_package_3_0=ruleQualifiedName		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getTemplateFileRule());
 	        }
        		set(
        			$current, 
        			"package",
-        		lv_package_2_0, 
+        		lv_package_3_0, 
         		"QualifiedName");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -106,16 +110,16 @@ ruleTemplateFile returns [EObject current=null]
 ))?(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getTemplateFileAccess().getImportsImportParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getTemplateFileAccess().getImportsImportParserRuleCall_3_0()); 
 	    }
-		lv_imports_3_0=ruleImport		{
+		lv_imports_4_0=ruleImport		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getTemplateFileRule());
 	        }
        		add(
        			$current, 
        			"imports",
-        		lv_imports_3_0, 
+        		lv_imports_4_0, 
         		"Import");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -124,16 +128,16 @@ ruleTemplateFile returns [EObject current=null]
 )*(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getTemplateFileAccess().getParamsParameterParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getTemplateFileAccess().getParamsParameterParserRuleCall_4_0()); 
 	    }
-		lv_params_4_0=ruleParameter		{
+		lv_params_5_0=ruleParameter		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getTemplateFileRule());
 	        }
        		add(
        			$current, 
        			"params",
-        		lv_params_4_0, 
+        		lv_params_5_0, 
         		"Parameter");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -142,17 +146,17 @@ ruleTemplateFile returns [EObject current=null]
 )*(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getTemplateFileAccess().getBodyBlockStmtParserRuleCall_4_0()); 
+	        newCompositeNode(grammarAccess.getTemplateFileAccess().getBodyRichStringParserRuleCall_5_0()); 
 	    }
-		lv_body_5_0=ruleBlockStmt		{
+		lv_body_6_0=ruleRichString		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getTemplateFileRule());
 	        }
        		set(
        			$current, 
        			"body",
-        		lv_body_5_0, 
-        		"BlockStmt");
+        		lv_body_6_0, 
+        		"RichString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -349,42 +353,58 @@ ruleParameter returns [EObject current=null]
 
 
 
-
-
-// Entry rule entryRuleBlockStmt
-entryRuleBlockStmt returns [EObject current=null] 
+// Entry rule entryRuleRichString
+entryRuleRichString returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getBlockStmtRule()); }
-	 iv_ruleBlockStmt=ruleBlockStmt 
-	 { $current=$iv_ruleBlockStmt.current; } 
+	{ newCompositeNode(grammarAccess.getRichStringRule()); }
+	 iv_ruleRichString=ruleRichString 
+	 { $current=$iv_ruleRichString.current; } 
 	 EOF 
 ;
 
-// Rule BlockStmt
-ruleBlockStmt returns [EObject current=null] 
+// Rule RichString
+ruleRichString returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 ((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getBlockStmtAccess().getBlockStmtAction_0(),
+            grammarAccess.getRichStringAccess().getRichStringAction_0(),
             $current);
     }
-)(((
+)(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getBlockStmtAccess().getStatementsTextStmtStmtParserRuleCall_1_0_0_0()); 
+	        newCompositeNode(grammarAccess.getRichStringAccess().getExpressionsRichStringLiteralParserRuleCall_1_0()); 
 	    }
-		lv_statements_1_0=ruleTextStmtStmt		{
+		lv_expressions_1_0=ruleRichStringLiteral		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getBlockStmtRule());
+	            $current = createModelElementForParent(grammarAccess.getRichStringRule());
 	        }
        		add(
        			$current, 
-       			"statements",
-        		lv_statements_1_0, 
-        		"TextStmtStmt");
+       			"expressions",
+        		lv_expressions_1_0, 
+        		"RichStringLiteral");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)((
+(
+		{ 
+	        newCompositeNode(grammarAccess.getRichStringAccess().getExpressionsRichStringPartParserRuleCall_2_0_0()); 
+	    }
+		lv_expressions_2_0=ruleRichStringPart		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getRichStringRule());
+	        }
+       		add(
+       			$current, 
+       			"expressions",
+        		lv_expressions_2_0, 
+        		"RichStringPart");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -392,374 +412,63 @@ ruleBlockStmt returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getBlockStmtAccess().getStatementsStructuralStmtParserRuleCall_1_0_1_0()); 
+	        newCompositeNode(grammarAccess.getRichStringAccess().getExpressionsRichStringLiteralParserRuleCall_2_1_0()); 
 	    }
-		lv_statements_2_0=ruleStructuralStmt		{
+		lv_expressions_3_0=ruleRichStringLiteral		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getBlockStmtRule());
+	            $current = createModelElementForParent(grammarAccess.getRichStringRule());
 	        }
        		add(
        			$current, 
-       			"statements",
-        		lv_statements_2_0, 
-        		"StructuralStmt");
+       			"expressions",
+        		lv_expressions_3_0, 
+        		"RichStringLiteral");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)?)
-    |((
-(
-		{ 
-	        newCompositeNode(grammarAccess.getBlockStmtAccess().getStatementsTextStmtExpParserRuleCall_1_1_0_0()); 
-	    }
-		lv_statements_3_0=ruleTextStmtExp		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getBlockStmtRule());
-	        }
-       		add(
-       			$current, 
-       			"statements",
-        		lv_statements_3_0, 
-        		"TextStmtExp");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getBlockStmtAccess().getStatementsExpressionStmtParserRuleCall_1_1_1_0()); 
-	    }
-		lv_statements_4_0=ruleExpressionStmt		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getBlockStmtRule());
-	        }
-       		add(
-       			$current, 
-       			"statements",
-        		lv_statements_4_0, 
-        		"ExpressionStmt");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)?))*)
+))*)
 ;
 
 
 
 
 
-// Entry rule entryRuleStructuralStmt
-entryRuleStructuralStmt returns [EObject current=null] 
+// Entry rule entryRuleRichStringLiteral
+entryRuleRichStringLiteral returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getStructuralStmtRule()); }
-	 iv_ruleStructuralStmt=ruleStructuralStmt 
-	 { $current=$iv_ruleStructuralStmt.current; } 
+	{ newCompositeNode(grammarAccess.getRichStringLiteralRule()); }
+	 iv_ruleRichStringLiteral=ruleRichStringLiteral 
+	 { $current=$iv_ruleRichStringLiteral.current; } 
 	 EOF 
 ;
 
-// Rule StructuralStmt
-ruleStructuralStmt returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(
-    { 
-        newCompositeNode(grammarAccess.getStructuralStmtAccess().getForStmtParserRuleCall_0()); 
-    }
-    this_ForStmt_0=ruleForStmt
-    { 
-        $current = $this_ForStmt_0.current; 
-        afterParserOrEnumRuleCall();
-    }
-
-    |
-    { 
-        newCompositeNode(grammarAccess.getStructuralStmtAccess().getIfStmtParserRuleCall_1()); 
-    }
-    this_IfStmt_1=ruleIfStmt
-    { 
-        $current = $this_IfStmt_1.current; 
-        afterParserOrEnumRuleCall();
-    }
-)
-;
-
-
-
-
-
-// Entry rule entryRuleExpressionStmt
-entryRuleExpressionStmt returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getExpressionStmtRule()); }
-	 iv_ruleExpressionStmt=ruleExpressionStmt 
-	 { $current=$iv_ruleExpressionStmt.current; } 
-	 EOF 
-;
-
-// Rule ExpressionStmt
-ruleExpressionStmt returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getExpressionStmtAccess().getBodyXExpressionParserRuleCall_0()); 
-	    }
-		lv_body_0_0=ruleXExpression		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getExpressionStmtRule());
-	        }
-       		set(
-       			$current, 
-       			"body",
-        		lv_body_0_0, 
-        		"XExpression");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)
-;
-
-
-
-
-
-// Entry rule entryRuleForStmt
-entryRuleForStmt returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getForStmtRule()); }
-	 iv_ruleForStmt=ruleForStmt 
-	 { $current=$iv_ruleForStmt.current; } 
-	 EOF 
-;
-
-// Rule ForStmt
-ruleForStmt returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(	otherlv_0='for' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getForStmtAccess().getForKeyword_0());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getForStmtAccess().getParamJvmFormalParameterParserRuleCall_1_0()); 
-	    }
-		lv_param_1_0=ruleJvmFormalParameter		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getForStmtRule());
-	        }
-       		set(
-       			$current, 
-       			"param",
-        		lv_param_1_0, 
-        		"JvmFormalParameter");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)	otherlv_2=':' 
-    {
-    	newLeafNode(otherlv_2, grammarAccess.getForStmtAccess().getColonKeyword_2());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getForStmtAccess().getSourceXExpressionParserRuleCall_3_0()); 
-	    }
-		lv_source_3_0=ruleXExpression		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getForStmtRule());
-	        }
-       		set(
-       			$current, 
-       			"source",
-        		lv_source_3_0, 
-        		"XExpression");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getForStmtAccess().getBodyBlockStmtParserRuleCall_4_0()); 
-	    }
-		lv_body_4_0=ruleBlockStmt		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getForStmtRule());
-	        }
-       		set(
-       			$current, 
-       			"body",
-        		lv_body_4_0, 
-        		"BlockStmt");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)	otherlv_5='endfor' 
-    {
-    	newLeafNode(otherlv_5, grammarAccess.getForStmtAccess().getEndforKeyword_5());
-    }
-)
-;
-
-
-
-
-
-// Entry rule entryRuleIfStmt
-entryRuleIfStmt returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getIfStmtRule()); }
-	 iv_ruleIfStmt=ruleIfStmt 
-	 { $current=$iv_ruleIfStmt.current; } 
-	 EOF 
-;
-
-// Rule IfStmt
-ruleIfStmt returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(	otherlv_0='if' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getIfStmtAccess().getIfKeyword_0());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getIfStmtAccess().getIfbodiesIfStmtBodyParserRuleCall_1_0()); 
-	    }
-		lv_ifbodies_1_0=ruleIfStmtBody		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getIfStmtRule());
-	        }
-       		add(
-       			$current, 
-       			"ifbodies",
-        		lv_ifbodies_1_0, 
-        		"IfStmtBody");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)(	otherlv_2='elseif' 
-    {
-    	newLeafNode(otherlv_2, grammarAccess.getIfStmtAccess().getElseifKeyword_2_0());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getIfStmtAccess().getIfbodiesIfStmtBodyParserRuleCall_2_1_0()); 
-	    }
-		lv_ifbodies_3_0=ruleIfStmtBody		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getIfStmtRule());
-	        }
-       		add(
-       			$current, 
-       			"ifbodies",
-        		lv_ifbodies_3_0, 
-        		"IfStmtBody");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))*(	otherlv_4='endif' 
-    {
-    	newLeafNode(otherlv_4, grammarAccess.getIfStmtAccess().getEndifKeyword_3_0());
-    }
-
-    |(	otherlv_5='else' 
-    {
-    	newLeafNode(otherlv_5, grammarAccess.getIfStmtAccess().getElseKeyword_3_1_0());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getIfStmtAccess().getElsebodyBlockStmtParserRuleCall_3_1_1_0()); 
-	    }
-		lv_elsebody_6_0=ruleBlockStmt		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getIfStmtRule());
-	        }
-       		set(
-       			$current, 
-       			"elsebody",
-        		lv_elsebody_6_0, 
-        		"BlockStmt");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)	otherlv_7='endif' 
-    {
-    	newLeafNode(otherlv_7, grammarAccess.getIfStmtAccess().getEndifKeyword_3_1_2());
-    }
-)))
-;
-
-
-
-
-
-// Entry rule entryRuleIfStmtBody
-entryRuleIfStmtBody returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getIfStmtBodyRule()); }
-	 iv_ruleIfStmtBody=ruleIfStmtBody 
-	 { $current=$iv_ruleIfStmtBody.current; } 
-	 EOF 
-;
-
-// Rule IfStmtBody
-ruleIfStmtBody returns [EObject current=null] 
+// Rule RichStringLiteral
+ruleRichStringLiteral returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 ((
-(
-		{ 
-	        newCompositeNode(grammarAccess.getIfStmtBodyAccess().getConditionXExpressionParserRuleCall_0_0()); 
-	    }
-		lv_condition_0_0=ruleXExpression		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getIfStmtBodyRule());
-	        }
-       		set(
-       			$current, 
-       			"condition",
-        		lv_condition_0_0, 
-        		"XExpression");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getRichStringLiteralAccess().getRichStringLiteralAction_0(),
+            $current);
+    }
 )(
 (
-		{ 
-	        newCompositeNode(grammarAccess.getIfStmtBodyAccess().getBodyBlockStmtParserRuleCall_1_0()); 
-	    }
-		lv_body_1_0=ruleBlockStmt		{
+		lv_value_1_0=RULE_TEXT
+		{
+			newLeafNode(lv_value_1_0, grammarAccess.getRichStringLiteralAccess().getValueTEXTTerminalRuleCall_1_0()); 
+		}
+		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getIfStmtBodyRule());
+	            $current = createModelElement(grammarAccess.getRichStringLiteralRule());
 	        }
-       		set(
+       		setWithLastConsumed(
        			$current, 
-       			"body",
-        		lv_body_1_0, 
-        		"BlockStmt");
-	        afterParserOrEnumRuleCall();
+       			"value",
+        		lv_value_1_0, 
+        		"TEXT");
 	    }
 
 )
@@ -770,56 +479,49 @@ ruleIfStmtBody returns [EObject current=null]
 
 
 
-// Entry rule entryRuleTextStmtStmt
-entryRuleTextStmtStmt returns [EObject current=null] 
+// Entry rule entryRuleRichStringPart
+entryRuleRichStringPart returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getTextStmtStmtRule()); }
-	 iv_ruleTextStmtStmt=ruleTextStmtStmt 
-	 { $current=$iv_ruleTextStmtStmt.current; } 
+	{ newCompositeNode(grammarAccess.getRichStringPartRule()); }
+	 iv_ruleRichStringPart=ruleRichStringPart 
+	 { $current=$iv_ruleRichStringPart.current; } 
 	 EOF 
 ;
 
-// Rule TextStmtStmt
-ruleTextStmtStmt returns [EObject current=null] 
+// Rule RichStringPart
+ruleRichStringPart returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 (
-(
-(
-		lv_text_0_1=RULE_TEXT_EXP2STM
-		{
-			newLeafNode(lv_text_0_1, grammarAccess.getTextStmtStmtAccess().getTextTEXT_EXP2STMTerminalRuleCall_0_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getTextStmtStmtRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"text",
-        		lv_text_0_1, 
-        		"TEXT_EXP2STM");
-	    }
+    { 
+        newCompositeNode(grammarAccess.getRichStringPartAccess().getXExpressionInsideBlockParserRuleCall_0()); 
+    }
+    this_XExpressionInsideBlock_0=ruleXExpressionInsideBlock
+    { 
+        $current = $this_XExpressionInsideBlock_0.current; 
+        afterParserOrEnumRuleCall();
+    }
 
-    |		lv_text_0_2=RULE_TEXT_STM2STM
-		{
-			newLeafNode(lv_text_0_2, grammarAccess.getTextStmtStmtAccess().getTextTEXT_STM2STMTerminalRuleCall_0_1()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getTextStmtStmtRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"text",
-        		lv_text_0_2, 
-        		"TEXT_STM2STM");
-	    }
+    |
+    { 
+        newCompositeNode(grammarAccess.getRichStringPartAccess().getRichStringForLoopParserRuleCall_1()); 
+    }
+    this_RichStringForLoop_1=ruleRichStringForLoop
+    { 
+        $current = $this_RichStringForLoop_1.current; 
+        afterParserOrEnumRuleCall();
+    }
 
-)
-
-)
+    |
+    { 
+        newCompositeNode(grammarAccess.getRichStringPartAccess().getRichStringIfParserRuleCall_2()); 
+    }
+    this_RichStringIf_2=ruleRichStringIf
+    { 
+        $current = $this_RichStringIf_2.current; 
+        afterParserOrEnumRuleCall();
+    }
 )
 ;
 
@@ -827,57 +529,313 @@ ruleTextStmtStmt returns [EObject current=null]
 
 
 
-// Entry rule entryRuleTextStmtExp
-entryRuleTextStmtExp returns [EObject current=null] 
+// Entry rule entryRuleRichStringForLoop
+entryRuleRichStringForLoop returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getTextStmtExpRule()); }
-	 iv_ruleTextStmtExp=ruleTextStmtExp 
-	 { $current=$iv_ruleTextStmtExp.current; } 
+	{ newCompositeNode(grammarAccess.getRichStringForLoopRule()); }
+	 iv_ruleRichStringForLoop=ruleRichStringForLoop 
+	 { $current=$iv_ruleRichStringForLoop.current; } 
 	 EOF 
 ;
 
-// Rule TextStmtExp
-ruleTextStmtExp returns [EObject current=null] 
+// Rule RichStringForLoop
+ruleRichStringForLoop returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getRichStringForLoopAccess().getRichStringForLoopAction_0(),
+            $current);
+    }
+)	otherlv_1='FOR' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getRichStringForLoopAccess().getFORKeyword_1());
+    }
 (
 (
-(
-		lv_text_0_1=RULE_TEXT_EXP2EXP
-		{
-			newLeafNode(lv_text_0_1, grammarAccess.getTextStmtExpAccess().getTextTEXT_EXP2EXPTerminalRuleCall_0_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getTextStmtExpRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"text",
-        		lv_text_0_1, 
-        		"TEXT_EXP2EXP");
+		{ 
+	        newCompositeNode(grammarAccess.getRichStringForLoopAccess().getDeclaredParamJvmFormalParameterParserRuleCall_2_0()); 
 	    }
-
-    |		lv_text_0_2=RULE_TEXT_STM2EXP
-		{
-			newLeafNode(lv_text_0_2, grammarAccess.getTextStmtExpAccess().getTextTEXT_STM2EXPTerminalRuleCall_0_1()); 
-		}
-		{
+		lv_declaredParam_2_0=ruleJvmFormalParameter		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getTextStmtExpRule());
+	            $current = createModelElementForParent(grammarAccess.getRichStringForLoopRule());
 	        }
-       		setWithLastConsumed(
+       		set(
        			$current, 
-       			"text",
-        		lv_text_0_2, 
-        		"TEXT_STM2EXP");
+       			"declaredParam",
+        		lv_declaredParam_2_0, 
+        		"JvmFormalParameter");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )
+)	otherlv_3=':' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getRichStringForLoopAccess().getColonKeyword_3());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getRichStringForLoopAccess().getForExpressionXExpressionParserRuleCall_4_0()); 
+	    }
+		lv_forExpression_4_0=ruleXExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getRichStringForLoopRule());
+	        }
+       		set(
+       			$current, 
+       			"forExpression",
+        		lv_forExpression_4_0, 
+        		"XExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getRichStringForLoopAccess().getEachExpressionRichStringParserRuleCall_5_0()); 
+	    }
+		lv_eachExpression_5_0=ruleRichString		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getRichStringForLoopRule());
+	        }
+       		set(
+       			$current, 
+       			"eachExpression",
+        		lv_eachExpression_5_0, 
+        		"RichString");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_6='ENDFOR' 
+    {
+    	newLeafNode(otherlv_6, grammarAccess.getRichStringForLoopAccess().getENDFORKeyword_6());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleRichStringIf
+entryRuleRichStringIf returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getRichStringIfRule()); }
+	 iv_ruleRichStringIf=ruleRichStringIf 
+	 { $current=$iv_ruleRichStringIf.current; } 
+	 EOF 
+;
+
+// Rule RichStringIf
+ruleRichStringIf returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getRichStringIfAccess().getRichStringIfAction_0(),
+            $current);
+    }
+)	otherlv_1='IF' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getRichStringIfAccess().getIFKeyword_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getRichStringIfAccess().getIfXExpressionParserRuleCall_2_0()); 
+	    }
+		lv_if_2_0=ruleXExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getRichStringIfRule());
+	        }
+       		set(
+       			$current, 
+       			"if",
+        		lv_if_2_0, 
+        		"XExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getRichStringIfAccess().getThenRichStringParserRuleCall_3_0()); 
+	    }
+		lv_then_3_0=ruleRichString		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getRichStringIfRule());
+	        }
+       		set(
+       			$current, 
+       			"then",
+        		lv_then_3_0, 
+        		"RichString");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)((
+(
+		{ 
+	        newCompositeNode(grammarAccess.getRichStringIfAccess().getElseRichStringElseIfParserRuleCall_4_0_0()); 
+	    }
+		lv_else_4_0=ruleRichStringElseIf		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getRichStringIfRule());
+	        }
+       		set(
+       			$current, 
+       			"else",
+        		lv_else_4_0, 
+        		"RichStringElseIf");
+	        afterParserOrEnumRuleCall();
+	    }
 
 )
 )
+    |(	otherlv_5='ELSE' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getRichStringIfAccess().getELSEKeyword_4_1_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getRichStringIfAccess().getElseRichStringParserRuleCall_4_1_1_0()); 
+	    }
+		lv_else_6_0=ruleRichString		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getRichStringIfRule());
+	        }
+       		set(
+       			$current, 
+       			"else",
+        		lv_else_6_0, 
+        		"RichString");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)))?	otherlv_7='ENDIF' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getRichStringIfAccess().getENDIFKeyword_5());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleRichStringElseIf
+entryRuleRichStringElseIf returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getRichStringElseIfRule()); }
+	 iv_ruleRichStringElseIf=ruleRichStringElseIf 
+	 { $current=$iv_ruleRichStringElseIf.current; } 
+	 EOF 
+;
+
+// Rule RichStringElseIf
+ruleRichStringElseIf returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getRichStringElseIfAccess().getRichStringIfAction_0(),
+            $current);
+    }
+)	otherlv_1='ELSEIF' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getRichStringElseIfAccess().getELSEIFKeyword_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getRichStringElseIfAccess().getIfXExpressionParserRuleCall_2_0()); 
+	    }
+		lv_if_2_0=ruleXExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getRichStringElseIfRule());
+	        }
+       		set(
+       			$current, 
+       			"if",
+        		lv_if_2_0, 
+        		"XExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getRichStringElseIfAccess().getThenRichStringParserRuleCall_3_0()); 
+	    }
+		lv_then_3_0=ruleRichString		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getRichStringElseIfRule());
+	        }
+       		set(
+       			$current, 
+       			"then",
+        		lv_then_3_0, 
+        		"RichString");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)((
+(
+		{ 
+	        newCompositeNode(grammarAccess.getRichStringElseIfAccess().getElseRichStringElseIfParserRuleCall_4_0_0()); 
+	    }
+		lv_else_4_0=ruleRichStringElseIf		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getRichStringElseIfRule());
+	        }
+       		set(
+       			$current, 
+       			"else",
+        		lv_else_4_0, 
+        		"RichStringElseIf");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)
+    |(	otherlv_5='ELSE' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getRichStringElseIfAccess().getELSEKeyword_4_1_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getRichStringElseIfAccess().getElseRichStringParserRuleCall_4_1_1_0()); 
+	    }
+		lv_else_6_0=ruleRichString		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getRichStringElseIfRule());
+	        }
+       		set(
+       			$current, 
+       			"else",
+        		lv_else_6_0, 
+        		"RichString");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)))?)
 ;
 
 
@@ -6113,15 +6071,7 @@ ruleValidID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 
 
 
-RULE_TEXT_EXP2EXP : '?>' RULE_IN_STRING* ('<?'|EOF);
-
-RULE_TEXT_EXP2STM : '?>' RULE_IN_STRING* ('<%'|EOF);
-
-RULE_TEXT_STM2STM : '%>' RULE_IN_STRING* ('<%'|EOF);
-
-RULE_TEXT_STM2EXP : '%>' RULE_IN_STRING* ('<?'|EOF);
-
-fragment RULE_IN_STRING : ('<' ~(('%'|'?'))|~('<'));
+RULE_TEXT : '\u00BB' ~('\u00AB')* (EOF|'\u00AB');
 
 RULE_HEX : ('0x'|'0X') ('0'..'9'|'a'..'f'|'A'..'F'|'_')+ ('#' (('b'|'B') ('i'|'I')|('l'|'L')))?;
 

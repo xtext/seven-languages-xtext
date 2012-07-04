@@ -22,29 +22,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//Parameter/defaultexp"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//Parameter/type"/>
     </genClasses>
-    <genClasses ecoreClass="Template.ecore#//Statement"/>
-    <genClasses ecoreClass="Template.ecore#//BlockStmt">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//BlockStmt/statements"/>
-    </genClasses>
-    <genClasses ecoreClass="Template.ecore#//StructuralStmt"/>
-    <genClasses ecoreClass="Template.ecore#//ExpressionStmt">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//ExpressionStmt/body"/>
-    </genClasses>
-    <genClasses ecoreClass="Template.ecore#//ForStmt">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//ForStmt/param"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//ForStmt/source"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//ForStmt/body"/>
-    </genClasses>
-    <genClasses ecoreClass="Template.ecore#//IfStmt">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//IfStmt/ifbodies"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//IfStmt/elsebody"/>
-    </genClasses>
-    <genClasses ecoreClass="Template.ecore#//IfStmtBody">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//IfStmtBody/condition"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//IfStmtBody/body"/>
-    </genClasses>
-    <genClasses ecoreClass="Template.ecore#//TextStmt">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Template.ecore#//TextStmt/text"/>
-    </genClasses>
+    <genClasses ecoreClass="Template.ecore#//RichString"/>
+    <genClasses ecoreClass="Template.ecore#//RichStringLiteral"/>
+    <genClasses ecoreClass="Template.ecore#//RichStringForLoop"/>
+    <genClasses ecoreClass="Template.ecore#//RichStringIf"/>
   </genPackages>
 </genmodel:GenModel>

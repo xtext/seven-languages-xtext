@@ -23,5 +23,6 @@ Require-Bundle: org.xtext.template;visibility:=reexport,
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.xtext.template.ui.contentassist.antlr,
- org.xtext.template.ui.internal
+ org.xtext.template.ui.internal,
+ org.xtext.template.ui.contentassist
 Bundle-Activator: org.xtext.template.ui.internal.TemplateActivator

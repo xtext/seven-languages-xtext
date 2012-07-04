@@ -50,76 +50,40 @@ public interface TemplateFactory extends EFactory
   Parameter createParameter();
 
   /**
-   * Returns a new object of class '<em>Statement</em>'.
+   * Returns a new object of class '<em>Rich String</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Statement</em>'.
+   * @return a new object of class '<em>Rich String</em>'.
    * @generated
    */
-  Statement createStatement();
+  RichString createRichString();
 
   /**
-   * Returns a new object of class '<em>Block Stmt</em>'.
+   * Returns a new object of class '<em>Rich String Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Block Stmt</em>'.
+   * @return a new object of class '<em>Rich String Literal</em>'.
    * @generated
    */
-  BlockStmt createBlockStmt();
+  RichStringLiteral createRichStringLiteral();
 
   /**
-   * Returns a new object of class '<em>Structural Stmt</em>'.
+   * Returns a new object of class '<em>Rich String For Loop</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Structural Stmt</em>'.
+   * @return a new object of class '<em>Rich String For Loop</em>'.
    * @generated
    */
-  StructuralStmt createStructuralStmt();
+  RichStringForLoop createRichStringForLoop();
 
   /**
-   * Returns a new object of class '<em>Expression Stmt</em>'.
+   * Returns a new object of class '<em>Rich String If</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Expression Stmt</em>'.
+   * @return a new object of class '<em>Rich String If</em>'.
    * @generated
    */
-  ExpressionStmt createExpressionStmt();
-
-  /**
-   * Returns a new object of class '<em>For Stmt</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>For Stmt</em>'.
-   * @generated
-   */
-  ForStmt createForStmt();
-
-  /**
-   * Returns a new object of class '<em>If Stmt</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>If Stmt</em>'.
-   * @generated
-   */
-  IfStmt createIfStmt();
-
-  /**
-   * Returns a new object of class '<em>If Stmt Body</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>If Stmt Body</em>'.
-   * @generated
-   */
-  IfStmtBody createIfStmtBody();
-
-  /**
-   * Returns a new object of class '<em>Text Stmt</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Text Stmt</em>'.
-   * @generated
-   */
-  TextStmt createTextStmt();
+  RichStringIf createRichStringIf();
 
   /**
    * Returns the package supported by this factory.

@@ -7,7 +7,7 @@
         eType="#//Import" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1"
         eType="#//Parameter" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="#//BlockStmt"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="ecore:EClass ../../../../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XBlockExpression"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Import">
@@ -23,37 +23,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass ../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.ecore#//JvmTypeReference"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Statement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="BlockStmt" eSuperTypes="#//Statement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
-        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="StructuralStmt" eSuperTypes="#//Statement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ExpressionStmt" eSuperTypes="#//Statement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="ecore:EClass ../../../../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XExpression"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ForStmt" eSuperTypes="#//StructuralStmt">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="param" eType="ecore:EClass ../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.ecore#//JvmFormalParameter"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="ecore:EClass ../../../../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XExpression"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="#//BlockStmt"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IfStmt" eSuperTypes="#//StructuralStmt">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ifbodies" upperBound="-1"
-        eType="#//IfStmtBody" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elsebody" eType="#//BlockStmt"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IfStmtBody">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="ecore:EClass ../../../../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XExpression"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="#//BlockStmt"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TextStmt">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RichString" eSuperTypes="../../../../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XBlockExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RichStringLiteral" eSuperTypes="../../../../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XStringLiteral"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RichStringForLoop" eSuperTypes="../../../../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XForLoopExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RichStringIf" eSuperTypes="../../../../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XIfExpression"/>
 </ecore:EPackage>

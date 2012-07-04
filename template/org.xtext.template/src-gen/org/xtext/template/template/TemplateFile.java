@@ -6,6 +6,8 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.xtext.xbase.XBlockExpression;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>File</b></em>'.
@@ -94,12 +96,12 @@ public interface TemplateFile extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Body</em>' containment reference.
-   * @see #setBody(BlockStmt)
+   * @see #setBody(XBlockExpression)
    * @see org.xtext.template.template.TemplatePackage#getTemplateFile_Body()
    * @model containment="true"
    * @generated
    */
-  BlockStmt getBody();
+  XBlockExpression getBody();
 
   /**
    * Sets the value of the '{@link org.xtext.template.template.TemplateFile#getBody <em>Body</em>}' containment reference.
@@ -109,6 +111,6 @@ public interface TemplateFile extends EObject
    * @see #getBody()
    * @generated
    */
-  void setBody(BlockStmt value);
+  void setBody(XBlockExpression value);
 
 } // TemplateFile

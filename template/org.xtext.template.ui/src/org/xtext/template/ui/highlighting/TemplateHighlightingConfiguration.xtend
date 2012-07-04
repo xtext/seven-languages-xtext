@@ -13,19 +13,22 @@ class TemplateHighlightingConfiguration extends XbaseHighlightingConfiguration {
 	override configure(IHighlightingConfigurationAcceptor acceptor) {
 		acceptor.acceptDefaultHighlighting(TEXT, 'Text', staticText)
 		acceptor.acceptDefaultHighlighting(ESCAPE, 'Statement/Expression Escape Symbols', staticEscape)
-		super.configure(acceptor)
+		super.configure([id, name, style| 
+			style.backgroundColor = new RGB(230, 230, 230)
+			acceptor.acceptDefaultHighlighting(id, name, style)
+		])
 	}
 
 	def TextStyle staticText() {
 		defaultTextStyle.copy => [
 			color= new RGB(0, 0, 0)
-			backgroundColor = new RGB(220, 220, 220)
 		]
 	}
 
 	def TextStyle staticEscape() {
 		defaultTextStyle.copy => [
 			color = new RGB(180, 180, 180)
+			backgroundColor = new RGB(230, 230, 230)
 		]
 	}
 }

@@ -18,6 +18,9 @@ public class TemplateValidator extends XbaseWithAnnotationsJavaValidator {
     return false;
   }
   
+  public void checkInnerExpressions(final XExpression expr) {
+  }
+  
   public List<EPackage> getEPackages() {
     ArrayList<EPackage> _xblockexpression = null;
     {

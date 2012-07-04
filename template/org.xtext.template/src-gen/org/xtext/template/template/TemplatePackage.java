@@ -7,6 +7,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import org.eclipse.xtext.xbase.XbasePackage;
+
 /**
  * <!-- begin-user-doc -->
  * The <b>Package</b> for the model.
@@ -195,246 +197,152 @@ public interface TemplatePackage extends EPackage
   int PARAMETER_FEATURE_COUNT = 4;
 
   /**
-   * The meta object id for the '{@link org.xtext.template.template.impl.StatementImpl <em>Statement</em>}' class.
+   * The meta object id for the '{@link org.xtext.template.template.impl.RichStringImpl <em>Rich String</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.template.template.impl.StatementImpl
-   * @see org.xtext.template.template.impl.TemplatePackageImpl#getStatement()
+   * @see org.xtext.template.template.impl.RichStringImpl
+   * @see org.xtext.template.template.impl.TemplatePackageImpl#getRichString()
    * @generated
    */
-  int STATEMENT = 3;
+  int RICH_STRING = 3;
 
   /**
-   * The number of structural features of the '<em>Statement</em>' class.
+   * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STATEMENT_FEATURE_COUNT = 0;
+  int RICH_STRING__EXPRESSIONS = XbasePackage.XBLOCK_EXPRESSION__EXPRESSIONS;
 
   /**
-   * The meta object id for the '{@link org.xtext.template.template.impl.BlockStmtImpl <em>Block Stmt</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.template.template.impl.BlockStmtImpl
-   * @see org.xtext.template.template.impl.TemplatePackageImpl#getBlockStmt()
-   * @generated
-   */
-  int BLOCK_STMT = 4;
-
-  /**
-   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+   * The number of structural features of the '<em>Rich String</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BLOCK_STMT__STATEMENTS = STATEMENT_FEATURE_COUNT + 0;
+  int RICH_STRING_FEATURE_COUNT = XbasePackage.XBLOCK_EXPRESSION_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Block Stmt</em>' class.
+   * The meta object id for the '{@link org.xtext.template.template.impl.RichStringLiteralImpl <em>Rich String Literal</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.template.template.impl.RichStringLiteralImpl
+   * @see org.xtext.template.template.impl.TemplatePackageImpl#getRichStringLiteral()
+   * @generated
+   */
+  int RICH_STRING_LITERAL = 4;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BLOCK_STMT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+  int RICH_STRING_LITERAL__VALUE = XbasePackage.XSTRING_LITERAL__VALUE;
 
   /**
-   * The meta object id for the '{@link org.xtext.template.template.impl.StructuralStmtImpl <em>Structural Stmt</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.template.template.impl.StructuralStmtImpl
-   * @see org.xtext.template.template.impl.TemplatePackageImpl#getStructuralStmt()
-   * @generated
-   */
-  int STRUCTURAL_STMT = 5;
-
-  /**
-   * The number of structural features of the '<em>Structural Stmt</em>' class.
+   * The number of structural features of the '<em>Rich String Literal</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STRUCTURAL_STMT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 0;
+  int RICH_STRING_LITERAL_FEATURE_COUNT = XbasePackage.XSTRING_LITERAL_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link org.xtext.template.template.impl.ExpressionStmtImpl <em>Expression Stmt</em>}' class.
+   * The meta object id for the '{@link org.xtext.template.template.impl.RichStringForLoopImpl <em>Rich String For Loop</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.template.template.impl.ExpressionStmtImpl
-   * @see org.xtext.template.template.impl.TemplatePackageImpl#getExpressionStmt()
+   * @see org.xtext.template.template.impl.RichStringForLoopImpl
+   * @see org.xtext.template.template.impl.TemplatePackageImpl#getRichStringForLoop()
    * @generated
    */
-  int EXPRESSION_STMT = 6;
+  int RICH_STRING_FOR_LOOP = 5;
 
   /**
-   * The feature id for the '<em><b>Body</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPRESSION_STMT__BODY = STATEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Expression Stmt</em>' class.
+   * The feature id for the '<em><b>For Expression</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRESSION_STMT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+  int RICH_STRING_FOR_LOOP__FOR_EXPRESSION = XbasePackage.XFOR_LOOP_EXPRESSION__FOR_EXPRESSION;
 
   /**
-   * The meta object id for the '{@link org.xtext.template.template.impl.ForStmtImpl <em>For Stmt</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.template.template.impl.ForStmtImpl
-   * @see org.xtext.template.template.impl.TemplatePackageImpl#getForStmt()
-   * @generated
-   */
-  int FOR_STMT = 7;
-
-  /**
-   * The feature id for the '<em><b>Param</b></em>' containment reference.
+   * The feature id for the '<em><b>Each Expression</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FOR_STMT__PARAM = STRUCTURAL_STMT_FEATURE_COUNT + 0;
+  int RICH_STRING_FOR_LOOP__EACH_EXPRESSION = XbasePackage.XFOR_LOOP_EXPRESSION__EACH_EXPRESSION;
 
   /**
-   * The feature id for the '<em><b>Source</b></em>' containment reference.
+   * The feature id for the '<em><b>Declared Param</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FOR_STMT__SOURCE = STRUCTURAL_STMT_FEATURE_COUNT + 1;
+  int RICH_STRING_FOR_LOOP__DECLARED_PARAM = XbasePackage.XFOR_LOOP_EXPRESSION__DECLARED_PARAM;
 
   /**
-   * The feature id for the '<em><b>Body</b></em>' containment reference.
+   * The number of structural features of the '<em>Rich String For Loop</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FOR_STMT__BODY = STRUCTURAL_STMT_FEATURE_COUNT + 2;
+  int RICH_STRING_FOR_LOOP_FEATURE_COUNT = XbasePackage.XFOR_LOOP_EXPRESSION_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>For Stmt</em>' class.
+   * The meta object id for the '{@link org.xtext.template.template.impl.RichStringIfImpl <em>Rich String If</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.template.template.impl.RichStringIfImpl
+   * @see org.xtext.template.template.impl.TemplatePackageImpl#getRichStringIf()
+   * @generated
+   */
+  int RICH_STRING_IF = 6;
+
+  /**
+   * The feature id for the '<em><b>If</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FOR_STMT_FEATURE_COUNT = STRUCTURAL_STMT_FEATURE_COUNT + 3;
+  int RICH_STRING_IF__IF = XbasePackage.XIF_EXPRESSION__IF;
 
   /**
-   * The meta object id for the '{@link org.xtext.template.template.impl.IfStmtImpl <em>If Stmt</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.template.template.impl.IfStmtImpl
-   * @see org.xtext.template.template.impl.TemplatePackageImpl#getIfStmt()
-   * @generated
-   */
-  int IF_STMT = 8;
-
-  /**
-   * The feature id for the '<em><b>Ifbodies</b></em>' containment reference list.
+   * The feature id for the '<em><b>Then</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IF_STMT__IFBODIES = STRUCTURAL_STMT_FEATURE_COUNT + 0;
+  int RICH_STRING_IF__THEN = XbasePackage.XIF_EXPRESSION__THEN;
 
   /**
-   * The feature id for the '<em><b>Elsebody</b></em>' containment reference.
+   * The feature id for the '<em><b>Else</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IF_STMT__ELSEBODY = STRUCTURAL_STMT_FEATURE_COUNT + 1;
+  int RICH_STRING_IF__ELSE = XbasePackage.XIF_EXPRESSION__ELSE;
 
   /**
-   * The number of structural features of the '<em>If Stmt</em>' class.
+   * The number of structural features of the '<em>Rich String If</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IF_STMT_FEATURE_COUNT = STRUCTURAL_STMT_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link org.xtext.template.template.impl.IfStmtBodyImpl <em>If Stmt Body</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.template.template.impl.IfStmtBodyImpl
-   * @see org.xtext.template.template.impl.TemplatePackageImpl#getIfStmtBody()
-   * @generated
-   */
-  int IF_STMT_BODY = 9;
-
-  /**
-   * The feature id for the '<em><b>Condition</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_STMT_BODY__CONDITION = 0;
-
-  /**
-   * The feature id for the '<em><b>Body</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_STMT_BODY__BODY = 1;
-
-  /**
-   * The number of structural features of the '<em>If Stmt Body</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_STMT_BODY_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link org.xtext.template.template.impl.TextStmtImpl <em>Text Stmt</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.template.template.impl.TextStmtImpl
-   * @see org.xtext.template.template.impl.TemplatePackageImpl#getTextStmt()
-   * @generated
-   */
-  int TEXT_STMT = 10;
-
-  /**
-   * The feature id for the '<em><b>Text</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEXT_STMT__TEXT = 0;
-
-  /**
-   * The number of structural features of the '<em>Text Stmt</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEXT_STMT_FEATURE_COUNT = 1;
+  int RICH_STRING_IF_FEATURE_COUNT = XbasePackage.XIF_EXPRESSION_FEATURE_COUNT + 0;
 
 
   /**
@@ -567,194 +475,44 @@ public interface TemplatePackage extends EPackage
   EReference getParameter_Type();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.template.template.Statement <em>Statement</em>}'.
+   * Returns the meta object for class '{@link org.xtext.template.template.RichString <em>Rich String</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Statement</em>'.
-   * @see org.xtext.template.template.Statement
+   * @return the meta object for class '<em>Rich String</em>'.
+   * @see org.xtext.template.template.RichString
    * @generated
    */
-  EClass getStatement();
+  EClass getRichString();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.template.template.BlockStmt <em>Block Stmt</em>}'.
+   * Returns the meta object for class '{@link org.xtext.template.template.RichStringLiteral <em>Rich String Literal</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Block Stmt</em>'.
-   * @see org.xtext.template.template.BlockStmt
+   * @return the meta object for class '<em>Rich String Literal</em>'.
+   * @see org.xtext.template.template.RichStringLiteral
    * @generated
    */
-  EClass getBlockStmt();
+  EClass getRichStringLiteral();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.template.template.BlockStmt#getStatements <em>Statements</em>}'.
+   * Returns the meta object for class '{@link org.xtext.template.template.RichStringForLoop <em>Rich String For Loop</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Statements</em>'.
-   * @see org.xtext.template.template.BlockStmt#getStatements()
-   * @see #getBlockStmt()
+   * @return the meta object for class '<em>Rich String For Loop</em>'.
+   * @see org.xtext.template.template.RichStringForLoop
    * @generated
    */
-  EReference getBlockStmt_Statements();
+  EClass getRichStringForLoop();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.template.template.StructuralStmt <em>Structural Stmt</em>}'.
+   * Returns the meta object for class '{@link org.xtext.template.template.RichStringIf <em>Rich String If</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Structural Stmt</em>'.
-   * @see org.xtext.template.template.StructuralStmt
+   * @return the meta object for class '<em>Rich String If</em>'.
+   * @see org.xtext.template.template.RichStringIf
    * @generated
    */
-  EClass getStructuralStmt();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.template.template.ExpressionStmt <em>Expression Stmt</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Expression Stmt</em>'.
-   * @see org.xtext.template.template.ExpressionStmt
-   * @generated
-   */
-  EClass getExpressionStmt();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.template.template.ExpressionStmt#getBody <em>Body</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Body</em>'.
-   * @see org.xtext.template.template.ExpressionStmt#getBody()
-   * @see #getExpressionStmt()
-   * @generated
-   */
-  EReference getExpressionStmt_Body();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.template.template.ForStmt <em>For Stmt</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>For Stmt</em>'.
-   * @see org.xtext.template.template.ForStmt
-   * @generated
-   */
-  EClass getForStmt();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.template.template.ForStmt#getParam <em>Param</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Param</em>'.
-   * @see org.xtext.template.template.ForStmt#getParam()
-   * @see #getForStmt()
-   * @generated
-   */
-  EReference getForStmt_Param();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.template.template.ForStmt#getSource <em>Source</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Source</em>'.
-   * @see org.xtext.template.template.ForStmt#getSource()
-   * @see #getForStmt()
-   * @generated
-   */
-  EReference getForStmt_Source();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.template.template.ForStmt#getBody <em>Body</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Body</em>'.
-   * @see org.xtext.template.template.ForStmt#getBody()
-   * @see #getForStmt()
-   * @generated
-   */
-  EReference getForStmt_Body();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.template.template.IfStmt <em>If Stmt</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>If Stmt</em>'.
-   * @see org.xtext.template.template.IfStmt
-   * @generated
-   */
-  EClass getIfStmt();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.template.template.IfStmt#getIfbodies <em>Ifbodies</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Ifbodies</em>'.
-   * @see org.xtext.template.template.IfStmt#getIfbodies()
-   * @see #getIfStmt()
-   * @generated
-   */
-  EReference getIfStmt_Ifbodies();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.template.template.IfStmt#getElsebody <em>Elsebody</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Elsebody</em>'.
-   * @see org.xtext.template.template.IfStmt#getElsebody()
-   * @see #getIfStmt()
-   * @generated
-   */
-  EReference getIfStmt_Elsebody();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.template.template.IfStmtBody <em>If Stmt Body</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>If Stmt Body</em>'.
-   * @see org.xtext.template.template.IfStmtBody
-   * @generated
-   */
-  EClass getIfStmtBody();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.template.template.IfStmtBody#getCondition <em>Condition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Condition</em>'.
-   * @see org.xtext.template.template.IfStmtBody#getCondition()
-   * @see #getIfStmtBody()
-   * @generated
-   */
-  EReference getIfStmtBody_Condition();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.template.template.IfStmtBody#getBody <em>Body</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Body</em>'.
-   * @see org.xtext.template.template.IfStmtBody#getBody()
-   * @see #getIfStmtBody()
-   * @generated
-   */
-  EReference getIfStmtBody_Body();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.template.template.TextStmt <em>Text Stmt</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Text Stmt</em>'.
-   * @see org.xtext.template.template.TextStmt
-   * @generated
-   */
-  EClass getTextStmt();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.template.template.TextStmt#getText <em>Text</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Text</em>'.
-   * @see org.xtext.template.template.TextStmt#getText()
-   * @see #getTextStmt()
-   * @generated
-   */
-  EAttribute getTextStmt_Text();
+  EClass getRichStringIf();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -882,164 +640,44 @@ public interface TemplatePackage extends EPackage
     EReference PARAMETER__TYPE = eINSTANCE.getParameter_Type();
 
     /**
-     * The meta object literal for the '{@link org.xtext.template.template.impl.StatementImpl <em>Statement</em>}' class.
+     * The meta object literal for the '{@link org.xtext.template.template.impl.RichStringImpl <em>Rich String</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.template.template.impl.StatementImpl
-     * @see org.xtext.template.template.impl.TemplatePackageImpl#getStatement()
+     * @see org.xtext.template.template.impl.RichStringImpl
+     * @see org.xtext.template.template.impl.TemplatePackageImpl#getRichString()
      * @generated
      */
-    EClass STATEMENT = eINSTANCE.getStatement();
+    EClass RICH_STRING = eINSTANCE.getRichString();
 
     /**
-     * The meta object literal for the '{@link org.xtext.template.template.impl.BlockStmtImpl <em>Block Stmt</em>}' class.
+     * The meta object literal for the '{@link org.xtext.template.template.impl.RichStringLiteralImpl <em>Rich String Literal</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.template.template.impl.BlockStmtImpl
-     * @see org.xtext.template.template.impl.TemplatePackageImpl#getBlockStmt()
+     * @see org.xtext.template.template.impl.RichStringLiteralImpl
+     * @see org.xtext.template.template.impl.TemplatePackageImpl#getRichStringLiteral()
      * @generated
      */
-    EClass BLOCK_STMT = eINSTANCE.getBlockStmt();
+    EClass RICH_STRING_LITERAL = eINSTANCE.getRichStringLiteral();
 
     /**
-     * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
+     * The meta object literal for the '{@link org.xtext.template.template.impl.RichStringForLoopImpl <em>Rich String For Loop</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see org.xtext.template.template.impl.RichStringForLoopImpl
+     * @see org.xtext.template.template.impl.TemplatePackageImpl#getRichStringForLoop()
      * @generated
      */
-    EReference BLOCK_STMT__STATEMENTS = eINSTANCE.getBlockStmt_Statements();
+    EClass RICH_STRING_FOR_LOOP = eINSTANCE.getRichStringForLoop();
 
     /**
-     * The meta object literal for the '{@link org.xtext.template.template.impl.StructuralStmtImpl <em>Structural Stmt</em>}' class.
+     * The meta object literal for the '{@link org.xtext.template.template.impl.RichStringIfImpl <em>Rich String If</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.template.template.impl.StructuralStmtImpl
-     * @see org.xtext.template.template.impl.TemplatePackageImpl#getStructuralStmt()
+     * @see org.xtext.template.template.impl.RichStringIfImpl
+     * @see org.xtext.template.template.impl.TemplatePackageImpl#getRichStringIf()
      * @generated
      */
-    EClass STRUCTURAL_STMT = eINSTANCE.getStructuralStmt();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.template.template.impl.ExpressionStmtImpl <em>Expression Stmt</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.template.template.impl.ExpressionStmtImpl
-     * @see org.xtext.template.template.impl.TemplatePackageImpl#getExpressionStmt()
-     * @generated
-     */
-    EClass EXPRESSION_STMT = eINSTANCE.getExpressionStmt();
-
-    /**
-     * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXPRESSION_STMT__BODY = eINSTANCE.getExpressionStmt_Body();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.template.template.impl.ForStmtImpl <em>For Stmt</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.template.template.impl.ForStmtImpl
-     * @see org.xtext.template.template.impl.TemplatePackageImpl#getForStmt()
-     * @generated
-     */
-    EClass FOR_STMT = eINSTANCE.getForStmt();
-
-    /**
-     * The meta object literal for the '<em><b>Param</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FOR_STMT__PARAM = eINSTANCE.getForStmt_Param();
-
-    /**
-     * The meta object literal for the '<em><b>Source</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FOR_STMT__SOURCE = eINSTANCE.getForStmt_Source();
-
-    /**
-     * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FOR_STMT__BODY = eINSTANCE.getForStmt_Body();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.template.template.impl.IfStmtImpl <em>If Stmt</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.template.template.impl.IfStmtImpl
-     * @see org.xtext.template.template.impl.TemplatePackageImpl#getIfStmt()
-     * @generated
-     */
-    EClass IF_STMT = eINSTANCE.getIfStmt();
-
-    /**
-     * The meta object literal for the '<em><b>Ifbodies</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference IF_STMT__IFBODIES = eINSTANCE.getIfStmt_Ifbodies();
-
-    /**
-     * The meta object literal for the '<em><b>Elsebody</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference IF_STMT__ELSEBODY = eINSTANCE.getIfStmt_Elsebody();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.template.template.impl.IfStmtBodyImpl <em>If Stmt Body</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.template.template.impl.IfStmtBodyImpl
-     * @see org.xtext.template.template.impl.TemplatePackageImpl#getIfStmtBody()
-     * @generated
-     */
-    EClass IF_STMT_BODY = eINSTANCE.getIfStmtBody();
-
-    /**
-     * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference IF_STMT_BODY__CONDITION = eINSTANCE.getIfStmtBody_Condition();
-
-    /**
-     * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference IF_STMT_BODY__BODY = eINSTANCE.getIfStmtBody_Body();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.template.template.impl.TextStmtImpl <em>Text Stmt</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.template.template.impl.TextStmtImpl
-     * @see org.xtext.template.template.impl.TemplatePackageImpl#getTextStmt()
-     * @generated
-     */
-    EClass TEXT_STMT = eINSTANCE.getTextStmt();
-
-    /**
-     * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TEXT_STMT__TEXT = eINSTANCE.getTextStmt_Text();
+    EClass RICH_STRING_IF = eINSTANCE.getRichStringIf();
 
   }
 

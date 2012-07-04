@@ -67,14 +67,10 @@ public class TemplateFactoryImpl extends EFactoryImpl implements TemplateFactory
       case TemplatePackage.TEMPLATE_FILE: return createTemplateFile();
       case TemplatePackage.IMPORT: return createImport();
       case TemplatePackage.PARAMETER: return createParameter();
-      case TemplatePackage.STATEMENT: return createStatement();
-      case TemplatePackage.BLOCK_STMT: return createBlockStmt();
-      case TemplatePackage.STRUCTURAL_STMT: return createStructuralStmt();
-      case TemplatePackage.EXPRESSION_STMT: return createExpressionStmt();
-      case TemplatePackage.FOR_STMT: return createForStmt();
-      case TemplatePackage.IF_STMT: return createIfStmt();
-      case TemplatePackage.IF_STMT_BODY: return createIfStmtBody();
-      case TemplatePackage.TEXT_STMT: return createTextStmt();
+      case TemplatePackage.RICH_STRING: return createRichString();
+      case TemplatePackage.RICH_STRING_LITERAL: return createRichStringLiteral();
+      case TemplatePackage.RICH_STRING_FOR_LOOP: return createRichStringForLoop();
+      case TemplatePackage.RICH_STRING_IF: return createRichStringIf();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -118,10 +114,10 @@ public class TemplateFactoryImpl extends EFactoryImpl implements TemplateFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Statement createStatement()
+  public RichString createRichString()
   {
-    StatementImpl statement = new StatementImpl();
-    return statement;
+    RichStringImpl richString = new RichStringImpl();
+    return richString;
   }
 
   /**
@@ -129,10 +125,10 @@ public class TemplateFactoryImpl extends EFactoryImpl implements TemplateFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public BlockStmt createBlockStmt()
+  public RichStringLiteral createRichStringLiteral()
   {
-    BlockStmtImpl blockStmt = new BlockStmtImpl();
-    return blockStmt;
+    RichStringLiteralImpl richStringLiteral = new RichStringLiteralImpl();
+    return richStringLiteral;
   }
 
   /**
@@ -140,10 +136,10 @@ public class TemplateFactoryImpl extends EFactoryImpl implements TemplateFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public StructuralStmt createStructuralStmt()
+  public RichStringForLoop createRichStringForLoop()
   {
-    StructuralStmtImpl structuralStmt = new StructuralStmtImpl();
-    return structuralStmt;
+    RichStringForLoopImpl richStringForLoop = new RichStringForLoopImpl();
+    return richStringForLoop;
   }
 
   /**
@@ -151,54 +147,10 @@ public class TemplateFactoryImpl extends EFactoryImpl implements TemplateFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ExpressionStmt createExpressionStmt()
+  public RichStringIf createRichStringIf()
   {
-    ExpressionStmtImpl expressionStmt = new ExpressionStmtImpl();
-    return expressionStmt;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ForStmt createForStmt()
-  {
-    ForStmtImpl forStmt = new ForStmtImpl();
-    return forStmt;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public IfStmt createIfStmt()
-  {
-    IfStmtImpl ifStmt = new IfStmtImpl();
-    return ifStmt;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public IfStmtBody createIfStmtBody()
-  {
-    IfStmtBodyImpl ifStmtBody = new IfStmtBodyImpl();
-    return ifStmtBody;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public TextStmt createTextStmt()
-  {
-    TextStmtImpl textStmt = new TextStmtImpl();
-    return textStmt;
+    RichStringIfImpl richStringIf = new RichStringIfImpl();
+    return richStringIf;
   }
 
   /**

@@ -1,9 +1,0 @@
-<% package org.xtext.template.tests.compiler
-	/* XPECT execute ----
-	
-		Hello World!
-	--- */
-	param String param1
-%>
-
-Hello World!

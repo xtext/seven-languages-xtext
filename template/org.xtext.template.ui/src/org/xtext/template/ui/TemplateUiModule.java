@@ -4,6 +4,7 @@
 package org.xtext.template.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.ui.views.contentoutline.IContentOutlinePage;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfiguration;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculator;
 import org.xtext.template.ui.highlighting.TemplateHighlightingCalculator;
@@ -27,4 +28,10 @@ public class TemplateUiModule extends org.xtext.template.ui.AbstractTemplateUiMo
 	public Class<? extends IHighlightingConfiguration> bindIHighlightingConfiguration() {
 		return TemplateHighlightingConfiguration.class;
 	}
+	
+	@Override
+	public Class<? extends IContentOutlinePage> bindIContentOutlinePage() {
+		return null;
+	}
+	
 }

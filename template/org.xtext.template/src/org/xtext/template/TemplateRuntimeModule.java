@@ -5,6 +5,10 @@ package org.xtext.template;
 
 import org.eclipse.xtext.conversion.IValueConverterService;
 import org.eclipse.xtext.service.SingletonBinding;
+import org.eclipse.xtext.xbase.compiler.XbaseCompiler;
+import org.eclipse.xtext.xbase.typing.ITypeProvider;
+import org.xtext.template.jvmmodel.TemplateCompiler;
+import org.xtext.template.jvmmodel.TemplateTypeProvider;
 import org.xtext.template.validation.TemplateValidator;
 
 /**
@@ -21,6 +25,15 @@ public class TemplateRuntimeModule extends AbstractTemplateRuntimeModule {
 	@SingletonBinding(eager=true)	
 	public Class<? extends TemplateValidator> bindTemplateValidator() {
 		return TemplateValidator.class;
+	}
+	
+	@Override
+	public Class<? extends ITypeProvider> bindITypeProvider() {
+		return TemplateTypeProvider.class;
+	}
+	
+	public Class<? extends XbaseCompiler> bindXbaseCompiler() {
+		return TemplateCompiler.class;
 	}
 
 }
