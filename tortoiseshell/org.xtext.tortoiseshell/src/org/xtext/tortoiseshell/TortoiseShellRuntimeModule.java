@@ -3,8 +3,10 @@
  */
 package org.xtext.tortoiseshell;
 
+import org.eclipse.xtext.generator.IGenerator;
 import org.eclipse.xtext.xbase.featurecalls.IdentifiableSimpleNameProvider;
 import org.eclipse.xtext.xbase.scoping.featurecalls.StaticImplicitMethodsFeatureForTypeProvider;
+import org.xtext.tortoiseshell.interpreter.NullGenerator;
 import org.xtext.tortoiseshell.interpreter.TortoiseShellInterpeter;
 import org.xtext.tortoiseshell.lib.ITortoiseInterpreter;
 import org.xtext.tortoiseshell.scoping.TortoiseShellExtensionClassNameProvider;
@@ -29,4 +31,8 @@ public class TortoiseShellRuntimeModule extends org.xtext.tortoiseshell.Abstract
 		return TortoiseShellIdentifiableSimpleNameProvider.class;
 	}
 	
+	@Override
+	public Class<? extends IGenerator> bindIGenerator() {
+		return NullGenerator.class;
+	}
 }
