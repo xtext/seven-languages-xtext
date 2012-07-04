@@ -18,7 +18,7 @@ class Tortoise {
 	@Property int lineWidth = 1
 	@Property Color lineColor = ColorConstants::black
 
-	List<ITortoiseEvent$Listener> listeners = newArrayList()
+	List<ITortoiseEvent$Listener> listeners = newArrayList
 	
 	def addListener(ITortoiseEvent$Listener listener) {
 		listeners += listener
@@ -97,7 +97,7 @@ class Tortoise {
 	}
 	
 	def protected fireTurnEvent(double oldAngle) {
-		notifyListeners(new TurnEvent(this, oldAngle));
+		notifyListeners(new TurnEvent(this, oldAngle))
 	}
 	
 	def protected notifyListeners(ITortoiseEvent event) {

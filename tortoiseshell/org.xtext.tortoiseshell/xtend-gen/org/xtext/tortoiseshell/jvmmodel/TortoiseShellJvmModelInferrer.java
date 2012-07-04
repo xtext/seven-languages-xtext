@@ -57,11 +57,11 @@ public class TortoiseShellJvmModelInferrer extends AbstractModelInferrer {
             final Procedure1<JvmOperation> _function_1 = new Procedure1<JvmOperation>() {
                 public void apply(final JvmOperation it) {
                   EList<JvmFormalParameter> _parameters = subProgram.getParameters();
-                  for (final JvmFormalParameter functionParameter : _parameters) {
+                  for (final JvmFormalParameter subParameter : _parameters) {
                     EList<JvmFormalParameter> _parameters_1 = it.getParameters();
-                    String _name = functionParameter.getName();
-                    JvmTypeReference _parameterType = functionParameter.getParameterType();
-                    JvmFormalParameter _parameter = TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.toParameter(functionParameter, _name, _parameterType);
+                    String _name = subParameter.getName();
+                    JvmTypeReference _parameterType = subParameter.getParameterType();
+                    JvmFormalParameter _parameter = TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.toParameter(subParameter, _name, _parameterType);
                     TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters_1, _parameter);
                   }
                   XBlockExpression _body = subProgram.getBody();

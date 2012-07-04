@@ -26,7 +26,7 @@ class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoiseInter
 	int stopAtLine
 	
 	override run(Tortoise tortoise, EObject program, int stopAtLine) {
-		if(tortoise != null && program != null) {
+		if (tortoise != null && program != null) {
 			this.tortoise = tortoise
 			this.stopAtLine = stopAtLine
 			try {
@@ -40,18 +40,18 @@ class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoiseInter
 	
 	override protected internalEvaluate(XExpression expression, IEvaluationContext context, CancelIndicator indicator) {
 		val line = NodeModelUtils::findActualNodeFor(expression)?.startLine
-		if(line-1 == stopAtLine)
+		if (line-1 == stopAtLine)
 			throw new StopLineReachedException
 		super.internalEvaluate(expression, context, indicator)
 	}
 	
 	override protected invokeOperation(JvmOperation operation, Object receiver, List<Object> argumentValues) {
 		val executable = operation.sourceElements.head
-		if(executable instanceof Executable) {
+		if (executable instanceof Executable) {
 			val context = createContext
 			context.newValue(XbaseScopeProvider::THIS, tortoise)
 			var index = 0
-			for(param: operation.parameters) {
+			for (param : operation.parameters) {
 				context.newValue(QualifiedName::create(param.name), argumentValues.get(index))
 				index = index + 1	
 			}

@@ -26,7 +26,7 @@ class Animation {
 
 	new(double startAngle, double endAngle, int delay) {
 		this.startAngle = startAngle
-		this.deltaAngle = endAngle - startAngle;
+		this.deltaAngle = endAngle - startAngle
 		this.delay = delay
 	}
 	
@@ -35,16 +35,16 @@ class Animation {
 	}
 	
 	def set(TortoiseFigure figure, double alpha) {
-		if(deltaAngle != 0.0) {
+		if (deltaAngle != 0.0) {
 			figure.angle = startAngle + alpha * deltaAngle
 		}
-		if(startPosition != null) {
+		if (startPosition != null) {
 			val currentLocation = new Point(delta).scale(alpha).translate(startPosition)
 			figure.tortoiseLocation = currentLocation
-			if(line != null) {
+			if (line != null) {
 				line.end = currentLocation
-				if(line.parent == null)
-					figure.parent.add(line, figure.parent.children.size() -2)
+				if (line.parent == null)
+					figure.parent.add(line, figure.parent.children.size -2)
 			}
 		}
 	}

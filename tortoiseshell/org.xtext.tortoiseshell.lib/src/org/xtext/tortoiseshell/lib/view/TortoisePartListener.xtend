@@ -25,11 +25,11 @@ class TortoisePartListener implements IPartListener, IResourceChangeListener, Ca
 	}
 
 	override partActivated(IWorkbenchPart part) {
-		if(part.tortoiseEditor) {
+		if (part.tortoiseEditor) {
 			currentTortoiseEditor?.editorFile?.workspace?.removeResourceChangeListener(this)
 			currentTortoiseEditor?.internalSourceViewer?.textWidget?.removeCaretListener(this)
 			currentTortoiseEditor = part as XtextEditor
-			if(isStopMode)
+			if (isStopMode)
 				currentTortoiseEditor?.internalSourceViewer?.textWidget?.addCaretListener(this)
 			currentTortoiseEditor?.editorFile?.workspace?.addResourceChangeListener(this)
 		}
@@ -42,7 +42,7 @@ class TortoisePartListener implements IPartListener, IResourceChangeListener, Ca
 	}
 	
 	override partDeactivated(IWorkbenchPart part) {
-		if(part == currentTortoiseEditor) {
+		if (part == currentTortoiseEditor) {
 			currentTortoiseEditor?.internalSourceViewer?.textWidget?.removeCaretListener(this)
 			currentTortoiseEditor?.editorFile?.workspace?.removeResourceChangeListener(this)
 			currentTortoiseEditor = null
@@ -54,10 +54,10 @@ class TortoisePartListener implements IPartListener, IResourceChangeListener, Ca
 
 	override resourceChanged(IResourceChangeEvent event) {
 		val editorFile = currentTortoiseEditor?.editorFile
-		if(editorFile != null) {
+		if (editorFile != null) {
 			val editorFilePath = editorFile.fullPath 
 			event.delta.accept [
-				if(resource == editorFile && kind==IResourceDelta::CHANGED && flags==IResourceDelta::CONTENT) {
+				if (resource == editorFile && kind==IResourceDelta::CHANGED && flags==IResourceDelta::CONTENT) {
 					view.show(currentTortoiseEditor, -10)
 					false			
 				} else {
@@ -68,7 +68,7 @@ class TortoisePartListener implements IPartListener, IResourceChangeListener, Ca
 	}	
 	
 	def protected getEditorFile(IEditorPart editor) {
-		if(editor?.editorInput instanceof IFileEditorInput)
+		if (editor?.editorInput instanceof IFileEditorInput)
 			((editor.editorInput) as IFileEditorInput).file
 		else 
 			null
@@ -78,7 +78,7 @@ class TortoisePartListener implements IPartListener, IResourceChangeListener, Ca
 	def boolean toggleStopMode() {
 		currentTortoiseEditor?.internalSourceViewer?.textWidget?.removeCaretListener(this)
 		isStopMode = !isStopMode 
-		if(isStopMode) 
+		if (isStopMode) 
 			currentTortoiseEditor?.internalSourceViewer?.textWidget?.addCaretListener(this)
 		isStopMode
 	}

@@ -35,7 +35,7 @@ class TortoiseFigure extends ImageFigure {
 	}
 	
 	def setTortoiseLocation(Point location) {
-		val minSize = getMinimumSize()
+		val minSize = minimumSize
 		parent.setConstraint(this, new Rectangle(
 			location.x - minSize.width / 2, 
 			location.y - minSize.height / 2,

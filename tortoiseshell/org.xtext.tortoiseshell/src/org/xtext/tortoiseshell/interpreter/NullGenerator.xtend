@@ -7,7 +7,7 @@ import org.eclipse.xtext.generator.IFileSystemAccess
 class NullGenerator implements IGenerator {
 
 	override doGenerate(Resource input, IFileSystemAccess fsa) {
-		// don't genrate anything
+		// don't generate anything
 	}
 	
 }

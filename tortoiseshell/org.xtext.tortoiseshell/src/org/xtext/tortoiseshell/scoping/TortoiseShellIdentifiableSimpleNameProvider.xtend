@@ -7,7 +7,7 @@ import org.xtext.tortoiseshell.jvmmodel.TortoiseShellJvmModelInferrer
 class TortoiseShellIdentifiableSimpleNameProvider extends IdentifiableSimpleNameProvider {
 	
 	override getSimpleName(JvmIdentifiableElement element) {
-		if(element.simpleName == TortoiseShellJvmModelInferrer::INFERRED_CLASS_NAME)
+		if (element.simpleName == TortoiseShellJvmModelInferrer::INFERRED_CLASS_NAME)
 			'this'
 		else
 			super.getSimpleName(element)

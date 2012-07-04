@@ -5,7 +5,7 @@ import org.eclipse.xtext.xbase.scoping.featurecalls.StaticImplicitMethodsFeature
 class TortoiseShellExtensionClassNameProvider extends StaticImplicitMethodsFeatureForTypeProvider$ExtensionClassNameProvider {
 
 	override protected computeLiteralClassNames() {
-		super.computeLiteralClassNames() => [
+		super.computeLiteralClassNames => [
 			it += "java.lang.Math"
 			it += "org.eclipse.draw2d.ColorConstants" 
 		]	
