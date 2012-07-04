@@ -83,6 +83,11 @@ public abstract class AbstractMongoBeansUiModule extends DefaultUiModule {
 		return org.xtext.mongobeans.ui.quickfix.MongoBeansQuickfixProvider.class;
 	}
 
+	// contributed by org.eclipse.xtext.ui.generator.contentAssist.JavaBasedContentAssistFragment
+	public Class<? extends org.eclipse.xtext.ui.editor.contentassist.IContentProposalProvider> bindIContentProposalProvider() {
+		return org.xtext.mongobeans.ui.contentassist.MongoBeansProposalProvider.class;
+	}
+
 	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrUiGeneratorFragment
 	public Class<? extends org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext.Factory> bindContentAssistContext$Factory() {
 		return org.eclipse.xtext.ui.editor.contentassist.antlr.ParserBasedContentAssistContextFactory.class;

@@ -23,5 +23,6 @@ Require-Bundle: org.xtext.mongobeans;visibility:=reexport,
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.xtext.mongobeans.ui.contentassist.antlr,
- org.xtext.mongobeans.ui.internal
+ org.xtext.mongobeans.ui.internal,
+ org.xtext.mongobeans.ui.contentassist
 Bundle-Activator: org.xtext.mongobeans.ui.internal.MongoBeansActivator
