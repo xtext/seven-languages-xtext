@@ -836,10 +836,10 @@ public class InternalRouteLexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:46:7: ( ',' )
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:46:9: ','
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:46:7: ( ')' )
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:46:9: ')'
             {
-            match(','); 
+            match(')'); 
 
             }
 
@@ -856,10 +856,10 @@ public class InternalRouteLexer extends Lexer {
         try {
             int _type = T__49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:47:7: ( ')' )
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:47:9: ')'
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:47:7: ( ',' )
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:47:9: ','
             {
-            match(')'); 
+            match(','); 
 
             }
 
@@ -1580,10 +1580,10 @@ public class InternalRouteLexer extends Lexer {
         try {
             int _type = RULE_HEX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18944:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18944:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18438:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18438:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             {
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18944:12: ( '0x' | '0X' )
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18438:12: ( '0x' | '0X' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1611,7 +1611,7 @@ public class InternalRouteLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18944:13: '0x'
+                    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18438:13: '0x'
                     {
                     match("0x"); 
 
@@ -1619,7 +1619,7 @@ public class InternalRouteLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18944:18: '0X'
+                    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18438:18: '0X'
                     {
                     match("0X"); 
 
@@ -1629,7 +1629,7 @@ public class InternalRouteLexer extends Lexer {
 
             }
 
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18944:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18438:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
             int cnt2=0;
             loop2:
             do {
@@ -1667,7 +1667,7 @@ public class InternalRouteLexer extends Lexer {
                 cnt2++;
             } while (true);
 
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18944:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18438:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1676,10 +1676,10 @@ public class InternalRouteLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18944:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18438:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     {
                     match('#'); 
-                    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18944:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18438:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     int alt3=2;
                     int LA3_0 = input.LA(1);
 
@@ -1697,7 +1697,7 @@ public class InternalRouteLexer extends Lexer {
                     }
                     switch (alt3) {
                         case 1 :
-                            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18944:64: ( 'b' | 'B' ) ( 'i' | 'I' )
+                            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18438:64: ( 'b' | 'B' ) ( 'i' | 'I' )
                             {
                             if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                                 input.consume();
@@ -1721,7 +1721,7 @@ public class InternalRouteLexer extends Lexer {
                             }
                             break;
                         case 2 :
-                            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18944:84: ( 'l' | 'L' )
+                            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18438:84: ( 'l' | 'L' )
                             {
                             if ( input.LA(1)=='L'||input.LA(1)=='l' ) {
                                 input.consume();
@@ -1760,11 +1760,11 @@ public class InternalRouteLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18946:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18946:12: '0' .. '9' ( '0' .. '9' | '_' )*
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18440:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18440:12: '0' .. '9' ( '0' .. '9' | '_' )*
             {
             matchRange('0','9'); 
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18946:21: ( '0' .. '9' | '_' )*
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18440:21: ( '0' .. '9' | '_' )*
             loop5:
             do {
                 int alt5=2;
@@ -1813,11 +1813,11 @@ public class InternalRouteLexer extends Lexer {
         try {
             int _type = RULE_DECIMAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18948:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18948:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18442:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18442:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             {
             mRULE_INT(); 
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18948:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18442:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -1826,7 +1826,7 @@ public class InternalRouteLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18948:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
+                    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18442:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -1837,7 +1837,7 @@ public class InternalRouteLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18948:36: ( '+' | '-' )?
+                    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18442:36: ( '+' | '-' )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -1870,7 +1870,7 @@ public class InternalRouteLexer extends Lexer {
 
             }
 
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18948:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18442:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             int alt8=3;
             int LA8_0 = input.LA(1);
 
@@ -1882,7 +1882,7 @@ public class InternalRouteLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18948:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
+                    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18442:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
                     {
                     if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                         input.consume();
@@ -1906,7 +1906,7 @@ public class InternalRouteLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18948:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
+                    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18442:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
                     {
                     if ( input.LA(1)=='D'||input.LA(1)=='F'||input.LA(1)=='L'||input.LA(1)=='d'||input.LA(1)=='f'||input.LA(1)=='l' ) {
                         input.consume();
@@ -1939,10 +1939,10 @@ public class InternalRouteLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18950:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18950:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18444:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18444:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             {
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18950:11: ( '^' )?
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18444:11: ( '^' )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -1951,7 +1951,7 @@ public class InternalRouteLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18950:11: '^'
+                    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18444:11: '^'
                     {
                     match('^'); 
 
@@ -1969,7 +1969,7 @@ public class InternalRouteLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18950:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18444:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             loop10:
             do {
                 int alt10=2;
@@ -2018,10 +2018,10 @@ public class InternalRouteLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18952:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18952:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18446:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18446:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18952:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18446:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -2039,10 +2039,10 @@ public class InternalRouteLexer extends Lexer {
             }
             switch (alt13) {
                 case 1 :
-                    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18952:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18446:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18952:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18446:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop11:
                     do {
                         int alt11=3;
@@ -2058,7 +2058,7 @@ public class InternalRouteLexer extends Lexer {
 
                         switch (alt11) {
                     	case 1 :
-                    	    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18952:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18446:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2074,7 +2074,7 @@ public class InternalRouteLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18952:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18446:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2099,10 +2099,10 @@ public class InternalRouteLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18952:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18446:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18952:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18446:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop12:
                     do {
                         int alt12=3;
@@ -2118,7 +2118,7 @@ public class InternalRouteLexer extends Lexer {
 
                         switch (alt12) {
                     	case 1 :
-                    	    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18952:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18446:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2134,7 +2134,7 @@ public class InternalRouteLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18952:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18446:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2177,12 +2177,12 @@ public class InternalRouteLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18954:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18954:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18448:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18448:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18954:24: ( options {greedy=false; } : . )*
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18448:24: ( options {greedy=false; } : . )*
             loop14:
             do {
                 int alt14=2;
@@ -2207,7 +2207,7 @@ public class InternalRouteLexer extends Lexer {
 
                 switch (alt14) {
             	case 1 :
-            	    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18954:52: .
+            	    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18448:52: .
             	    {
             	    matchAny(); 
 
@@ -2237,12 +2237,12 @@ public class InternalRouteLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18956:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18956:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18450:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18450:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18956:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18450:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop15:
             do {
                 int alt15=2;
@@ -2255,7 +2255,7 @@ public class InternalRouteLexer extends Lexer {
 
                 switch (alt15) {
             	case 1 :
-            	    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18956:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18450:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2275,7 +2275,7 @@ public class InternalRouteLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18956:40: ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18450:40: ( ( '\\r' )? '\\n' )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -2284,9 +2284,9 @@ public class InternalRouteLexer extends Lexer {
             }
             switch (alt17) {
                 case 1 :
-                    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18956:41: ( '\\r' )? '\\n'
+                    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18450:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18956:41: ( '\\r' )?
+                    // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18450:41: ( '\\r' )?
                     int alt16=2;
                     int LA16_0 = input.LA(1);
 
@@ -2295,7 +2295,7 @@ public class InternalRouteLexer extends Lexer {
                     }
                     switch (alt16) {
                         case 1 :
-                            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18956:41: '\\r'
+                            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18450:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2327,10 +2327,10 @@ public class InternalRouteLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18958:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18958:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18452:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18452:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18958:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18452:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt18=0;
             loop18:
             do {
@@ -2384,8 +2384,8 @@ public class InternalRouteLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18960:16: ( . )
-            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18960:18: .
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18454:16: ( . )
+            // ../org.xtext.httprouting.ui/src-gen/org/xtext/httprouting/ui/contentassist/antlr/internal/InternalRoute.g:18454:18: .
             {
             matchAny(); 
 
@@ -3042,7 +3042,7 @@ public class InternalRouteLexer extends Lexer {
         "\1\0\53\uffff\1\1\1\2\u00bd\uffff}>";
     static final String[] DFA19_transitionS = {
             "\11\57\2\56\2\57\1\56\22\57\1\56\1\5\1\54\1\57\1\53\1\15\1\4"+
-            "\1\55\1\33\1\31\1\13\1\2\1\30\1\10\1\11\1\14\1\50\11\51\1\26"+
+            "\1\55\1\33\1\30\1\13\1\2\1\31\1\10\1\11\1\14\1\50\11\51\1\26"+
             "\1\41\1\7\1\1\1\6\1\12\1\32\3\53\1\23\2\53\1\21\1\24\7\53\1"+
             "\22\12\53\1\40\1\57\1\37\1\52\1\53\1\57\1\36\1\53\1\44\1\43"+
             "\1\42\1\20\2\53\1\25\4\53\1\45\3\53\1\47\1\17\1\46\1\53\1\16"+
@@ -3404,9 +3404,9 @@ public class InternalRouteLexer extends Lexer {
 
                         else if ( (LA19_0=='w') ) {s = 23;}
 
-                        else if ( (LA19_0==',') ) {s = 24;}
+                        else if ( (LA19_0==')') ) {s = 24;}
 
-                        else if ( (LA19_0==')') ) {s = 25;}
+                        else if ( (LA19_0==',') ) {s = 25;}
 
                         else if ( (LA19_0=='@') ) {s = 26;}
 

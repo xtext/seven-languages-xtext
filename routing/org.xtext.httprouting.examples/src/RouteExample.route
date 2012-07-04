@@ -7,11 +7,9 @@ GET /user/:id UserController->showUser(Integer::parseInt(id))
 GET /timesheet/user/:id  when id=="admin" TimeSheetController->forUser(id) 
 GET /timesheet/month/:year/:month TimeSheetController->forMonth(Integer::parseInt(year), Integer::parseInt(month))  
 
-
-
-
-
-GET /client/:bar/foo/:baz/:name* when bar == "Some" && (bar + baz) == "SomeString" @Named("Action") ActionClass->doSomething(bar, name) 
+GET /client/:bar/foo/:baz/:name* 
+	when bar == "Some" && (bar + baz) == "SomeString" 
+	@Named("Action") ActionClass->doSomething(bar, name) 
 
 POST /client/:bar/file.gif/:rest* when rest.startsWith("action?=delete")  ActionClass::doSomethingStatic(bar + rest)  
 POST /client/:bar/file.gif/:rest* ActionClass::doSomethingStatic(bar + rest)

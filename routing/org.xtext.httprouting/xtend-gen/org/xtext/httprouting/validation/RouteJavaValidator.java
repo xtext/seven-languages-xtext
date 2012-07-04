@@ -7,6 +7,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.xtext.common.types.TypesPackage;
 import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.XExpression;
 import org.eclipse.xtext.xbase.XbasePackage;
 import org.eclipse.xtext.xbase.annotations.validation.XbaseWithAnnotationsJavaValidator;
 import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationsPackage;
@@ -61,5 +62,9 @@ public class RouteJavaValidator extends XbaseWithAnnotationsJavaValidator {
         }
       }
     }
+  }
+  
+  protected boolean isImplicitReturn(final XExpression expr) {
+    return false;
   }
 }

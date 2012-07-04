@@ -16,6 +16,8 @@ import org.eclipse.xtext.xbase.XbasePackage
 import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationsPackage
 import org.eclipse.xtext.common.types.TypesPackage
 import org.eclipse.xtext.xtype.XtypePackage
+import org.eclipse.xtext.xbase.XExpression
+
 /**
  * @author Holger Schill - Initial contribution and API
  */
@@ -45,4 +47,9 @@ class RouteJavaValidator extends XbaseWithAnnotationsJavaValidator{
 			}
 		}
 	}
+	
+	override protected isImplicitReturn(XExpression expr) {
+		false
+	}
+	
 }

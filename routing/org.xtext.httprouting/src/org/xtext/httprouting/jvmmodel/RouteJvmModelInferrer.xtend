@@ -9,21 +9,20 @@ package org.xtext.httprouting.jvmmodel
 
 import com.google.inject.Inject
 import java.util.List
-import java.util.regex.Matcher
 import java.util.regex.Pattern
 import org.eclipse.emf.ecore.EObject
-import org.eclipse.xtext.common.types.JvmDeclaredType
 import org.eclipse.xtext.common.types.JvmVoid
-import org.eclipse.xtext.nodemodel.util.NodeModelUtils
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
 import org.xtext.httprouting.route.Model
-import org.xtext.httprouting.route.Route
 import org.xtext.httprouting.route.RequestType
+import org.xtext.httprouting.route.Route
 import org.xtext.httprouting.route.Variable
 
 import static org.xtext.httprouting.jvmmodel.RouteJvmModelInferrer.*
+
+import static extension org.eclipse.xtext.nodemodel.util.NodeModelUtils.*
 
 /**
  * @author Holger Schill - Initial contribution and API
@@ -31,36 +30,51 @@ import static org.xtext.httprouting.jvmmodel.RouteJvmModelInferrer.*
 class RouteJvmModelInferrer extends AbstractModelInferrer {
 
 	static val String HTTP_REQUEST = "javax.servlet.http.HttpServletRequest"
+	static val String HTTP_SERVLET = "javax.servlet.http.HttpServlet"
 
 	@Inject extension JvmTypesBuilder
+
+	def dispatch void infer(Model model, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+		acceptor.accept(model.toClass("org.xtext.httpRouting.HttpMapperServlet"))
+			.initializeLater [
+				superTypes += model.newTypeRef(HTTP_SERVLET)
+				// get rid of the annoying serial warning
+				annotations += model.toAnnotation(typeof(SuppressWarnings), "serial")
+				for (route : model.routes.filter[ url != null ]) {
+					members += route.toRoutePatternField
+					if (route.hasValidKey)
+						members += route.toRouteKeyField
+					if (route.condition != null && route.condition.expression != null)
+						members += route.toRouteConditionMethod
+					members += route.toRouteCallMethod
+				}
+				val getRoutes = model.routes.filter[ requestType == RequestType::GET ]
+				if (!getRoutes.empty)
+					members += model.toRequestHandlerMethod("doGet",  getRoutes)
+					
+				val postRoutes = model.routes.filter[ requestType == RequestType::POST ]
+				if (!postRoutes.empty)
+					members += model.toRequestHandlerMethod("doPost", postRoutes)
+				
+				val putRoutes = model.routes.filter[ requestType == RequestType::PUT ]
+				if (!putRoutes.empty)
+					members += model.toRequestHandlerMethod("doPut",  putRoutes)
+				
+				val deleteRoutes = model.routes.filter[ requestType == RequestType::DELETE ]
+				if (!deleteRoutes.empty)
+					members += model.toRequestHandlerMethod("doDelete", deleteRoutes)
+				
+				val headRoutes = model.routes.filter[ requestType == RequestType::HEAD ]
+				if (!headRoutes.empty)
+					members += model.toRequestHandlerMethod("doHead", headRoutes)
+			]
+	}
 	
-   	def dispatch void infer(Model model, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
-   		acceptor.accept(model.toClass("org.xtext.httpRouting.HttpMapperServlet"))
-   			.initializeLater [
-   				superTypes += model.newTypeRef("javax.servlet.http.HttpServlet")
-   				annotations += model.toAnnotation(typeof(SuppressWarnings), "serial")
-   				val routes = model.routes
-   				var routeCounter = 0
-   				for (route : routes) {
-   					if (route.url != null) {
-	   					addRouteMethod(route, routeCounter)
-	   					addRouteConditionMethod(route, routeCounter)
-	   					addRouteKeyField(route, routeCounter)
-		   				addRoutePatternField(route, routeCounter)
-	   				}
-					routeCounter = routeCounter + 1
-   				}
-				addOverriddenMethod("doGet", model, routes,RequestType::GET)
-				addOverriddenMethod("doPost", model, routes,RequestType::POST)
-				addOverriddenMethod("doPut", model, routes,RequestType::PUT)
-				addOverriddenMethod("doDelete", model, routes,RequestType::DELETE)
-				addOverriddenMethod("doHead", model, routes,RequestType::HEAD)
-   			]
-   	}
-   	
-   	def protected addRouteMethod(JvmDeclaredType servlet, Route route, int routeCounter) {
-   		val name = route.nameOfRouteMethod(routeCounter)
-		servlet.members += route.toMethod(name, route.newTypeRef(Void::TYPE)) [
+	/**
+	 * Creates a method for the route's target call.
+	 */
+	def protected toRouteCallMethod(Route route) {
+		route.toMethod(route.nameOfRouteMethod, route.newTypeRef(Void::TYPE)) [
 			documentation = route.documentation
 			if (route.hasValidKey)
 				parameters += route.key.toParameter("it", route.key.type)
@@ -70,95 +84,74 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 			}
 			body = route.call
 		]
-   	}
-   	
-   	def protected addRouteConditionMethod(JvmDeclaredType servlet, Route route, int routeCounter) {
-		if (route.condition != null && route.condition.expression != null) {
-		   	val name = route.nameOfRouteMethod(routeCounter)
-			servlet.members += route.toMethod(name + "Condition", route.newTypeRef(Boolean::TYPE)) [
-				parameters += route.toParameter("request", route.newTypeRef(HTTP_REQUEST))
-				for (variable : route.url.variables){
-					parameters += variable.toParameter(variable.name, route.newTypeRef(typeof(String)))
-				}
-				body = route.condition.expression
-			]
-		}
-   	}
-   	
-   	def protected addRouteKeyField(JvmDeclaredType servlet, Route route, int routeCounter) {
-		if (route.hasValidKey){
-			servlet.members += route.key.toField("_key" + routeCounter, route.key.type) => [
-				annotations += route.toAnnotation(typeof(Inject))
-				route.key.annotations.translateAnnotationsTo(it)
-			]
-		}
-   	}
-   	
-   	def protected addRoutePatternField(JvmDeclaredType servlet, Route route, int routeCounter) {
-		val patternField = route.url.toField("_pattern" + routeCounter , route.newTypeRef(typeof(Pattern))) [
+	}
+
+	def protected toRoutePatternField(Route route) {
+		route.url.toField("_pattern" + route.index , route.newTypeRef(typeof(Pattern))) [
 			setStatic(true)
 			setInitializer [
-				append('Pattern.compile("')
-				append(getRegExPattern(NodeModelUtils::getNode(route.url).text.trim, route.url.variables))
-				append('")')
+				append('''Pattern.compile("«getRegExPattern(route.url.node.text.trim, route.url.variables)»")''')
 			]
 		]
-		servlet.members += patternField
-   	}
-   	
-	def protected addOverriddenMethod(JvmDeclaredType servlet, String name, EObject element, Iterable<Route> routes, RequestType filterType) {
-   		servlet.members += element.toMethod(name,element.newTypeRef(Void::TYPE)) [
-   			annotations += element.toAnnotation(typeof(Override))
-			parameters += element.toParameter("request", element.newTypeRef(HTTP_REQUEST))
-			parameters += element.toParameter("response", element.newTypeRef("javax.servlet.http.HttpServletResponse"))
-			body = [
-				var x = 0
-				if (routes.exists[e | e.requestType == filterType])
-					append('String url =  request.getRequestURL().toString();').newLine
-				for (route : routes) {
-					if (route.requestType == filterType) {
-						if (route.url != null) {
-							append(element.newTypeRef(typeof(Matcher)).type)
-							append(''' _matcher«x» = _pattern«x».matcher(url);''')
-							newLine
-							val variables = route.url.variables
-						    append('''if (_matcher«x».find()) {''').newLine
-					    	for (variable : variables) {
-								append('''		String «variable.name» = _matcher«x».group(«variables.indexOf(variable) + 1»);''')
-								newLine
-							}
-							if (route.condition != null) {
-								append('''		if («route.nameOfRouteMethod(x)»Condition(request''')
-				   				append('''«FOR v : route.url.variables BEFORE ", " SEPARATOR ", "»«v.name»«ENDFOR»''')
-				   				append('''))''')
-				   				newLine
-				   			}
-							append('''			«route.nameOfRouteMethod(x)»(''')
-							if(route.hasValidKey)
-								append('''_key«x»,''')
-							append('''request''')
-			   				append('''«FOR v : route.url.variables BEFORE ", " SEPARATOR ", " »«v.name»«ENDFOR»''')
-			   				append(''');''')
-			   				newLine
-							append('''}''')
-							newLine
+	}
+
+	def protected toRouteConditionMethod(Route route) {
+		route.toMethod(route.nameOfRouteMethod + "Condition", route.newTypeRef(Boolean::TYPE)) [
+			parameters += route.toParameter("request", route.newTypeRef(HTTP_REQUEST))
+			for (variable : route.url.variables){
+				parameters += variable.toParameter(variable.name, route.newTypeRef(typeof(String)))
+			}
+			body = route.condition.expression
+		]
+	}
+
+	def protected toRouteKeyField(Route route) {
+		route.key.toField("_key" + route.index, route.key.type) [
+			annotations += route.toAnnotation(typeof(Inject))
+			route.key.annotations.translateAnnotationsTo(it)
+		]
+	}
+
+	def protected toRequestHandlerMethod(Model model, String name, Iterable<Route> routes) {
+		model.toMethod(name,model.newTypeRef(Void::TYPE)) [
+			annotations += model.toAnnotation(typeof(Override))
+			parameters += model.toParameter("request", model.newTypeRef(HTTP_REQUEST))
+			parameters += model.toParameter("response", model.newTypeRef("javax.servlet.http.HttpServletResponse"))
+			body = [append('''
+				String url =  request.getRequestURL().toString();
+				«FOR route : routes»
+					{
+						java.util.regex.Matcher _matcher = _pattern«route.index».matcher(url);
+						if (_matcher.find()) {
+							«FOR variable : route.url.variables»
+									String «variable.name» = _matcher.group(«variable.index + 1»);
+							«ENDFOR»
+							«IF route.condition != null»
+								if («route.nameOfRouteMethod»Condition(request«FOR v : route.url.variables BEFORE ", " SEPARATOR ", "»«v.name»«ENDFOR»))
+							«ENDIF»
+							«route.nameOfRouteMethod»(«IF route.hasValidKey»_key«route.index»,
+									«ENDIF»request«FOR v : route.url.variables», 
+									«v.name»«ENDFOR»);
 						}
 					}
-					x = x + 1
-				}
-			]
+				«ENDFOR»
+			''')]
 		]
-   	}
-   	
-   	def protected nameOfRouteMethod(Route route, int routeCounter) {
-		"_do" + route.requestType.literal.toLowerCase.toFirstUpper + routeCounter
 	}
-	
+
+	def protected nameOfRouteMethod(Route route) {
+		"_do" + route.requestType.literal.toLowerCase.toFirstUpper + route.index
+	}
+
+	def protected index(EObject obj) {
+		obj.eContainer.eContents.indexOf(obj)
+	}
+
 	def protected hasValidKey(Route route){
-   		route.key != null && route.key.type != null && !(route.key.type instanceof JvmVoid)
-   	}
-	
-   	def protected getRegExPattern(String originalPattern, List<Variable> variables) {
+		route.key != null && route.key.type != null && !(route.key.type instanceof JvmVoid)
+	}
+
+	def protected getRegExPattern(String originalPattern, List<Variable> variables) {
 		var pattern = originalPattern
 		for (variable : variables) {
 			if (variable.wildcard)
@@ -166,7 +159,7 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 			else
 				pattern = originalPattern.replaceAll("(:" + variable.name + ")", "(\\\\\\\\w+)")
 		}
-		pattern
+		return pattern
 	}
 }
 

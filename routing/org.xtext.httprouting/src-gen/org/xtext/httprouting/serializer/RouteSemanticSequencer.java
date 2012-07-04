@@ -1085,9 +1085,8 @@ public class RouteSemanticSequencer extends XbaseWithAnnotationsSemanticSequence
 	/**
 	 * Constraint:
 	 *     (
-	 *         (typeArguments+=JvmArgumentTypeReference typeArguments+=JvmArgumentTypeReference*)? 
 	 *         feature=[JvmIdentifiableElement|IdOrSuper] 
-	 *         (explicitOperationCall?='(' (featureCallArguments+=XShortClosure | (featureCallArguments+=XExpression featureCallArguments+=XExpression*))?)? 
+	 *         (explicitOperationCall?='(' (featureCallArguments+=XExpression featureCallArguments+=XExpression*)?)? 
 	 *         featureCallArguments+=XClosure?
 	 *     )
 	 */
@@ -1107,7 +1106,7 @@ public class RouteSemanticSequencer extends XbaseWithAnnotationsSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (variables+=Variable? variables+=Variable*)
+	 *     (variables+=Variable*)
 	 */
 	protected void sequence_URL(EObject context, URL semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

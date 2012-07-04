@@ -19,13 +19,13 @@ Import:
 	'import' importedType=[types::JvmType|QualifiedName];
 
 Route:
-	requestType=RequestType url=URL condition=Condition? (key=Key call=RouteFeatureCall | call=XFeatureCall);
+	requestType=RequestType url=URL condition=Condition? (key=Key "->" call=RouteFeatureCall | call=XFeatureCall);
 
 enum RequestType:
 	GET | POST | PUT | DELETE | HEAD;
 
 URL:
-	{URL} "/" (ID ("." ID)? | variables+=Variable) ("/" (ID ("." ID)? | variables+=Variable))*;
+	{URL} ("/" (ID ("." ID)? | variables+=Variable))+;
 
 Variable:
 	":" name=ID (wildcard?="*")?;
@@ -38,12 +38,7 @@ Key:
 
 RouteFeatureCall returns xbase::XExpression:
 	{xbase::XFeatureCall} 
-	"->"
-	('<' typeArguments+=JvmArgumentTypeReference (',' typeArguments+=JvmArgumentTypeReference)* '>')?
 	feature=[types::JvmIdentifiableElement|IdOrSuper]
-	(=>
-	explicitOperationCall?='('
-		(featureCallArguments+=XShortClosure | featureCallArguments+=XExpression (',' featureCallArguments+=XExpression)*)?
-	')')?
+	(=> explicitOperationCall?='(' (featureCallArguments+=XExpression (',' featureCallArguments+=XExpression)*)? ')')?
 	featureCallArguments+=XClosure?;
 	
