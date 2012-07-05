@@ -7,7 +7,7 @@ import org.eclipse.xtext.xbase.scoping.featurecalls.StaticImplicitMethodsFeature
 import org.xtext.builddsl.build.BuildFile
 
 /**
- * @author Sebastian Zarnekow - Initial contribution and API
+ * Handle all imports as static imports.
  */
 class AllImportsAreStaticFeatureProvider extends StaticImplicitMethodsFeatureForTypeProvider {
 

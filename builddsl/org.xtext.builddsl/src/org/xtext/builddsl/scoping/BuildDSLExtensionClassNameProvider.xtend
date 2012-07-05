@@ -5,6 +5,9 @@ import java.io.File
 import org.xtext.builddsl.lib.FileExtensions
 import org.xtext.builddsl.lib.ClassExtensions
 
+/** 
+ * Add more static extension classes. 
+ */
 class BuildDSLExtensionClassNameProvider extends ExtensionClassNameProvider {
 
 	override simpleComputeExtensionClasses() {

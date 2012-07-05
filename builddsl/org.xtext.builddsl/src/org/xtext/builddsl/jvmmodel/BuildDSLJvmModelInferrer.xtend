@@ -23,10 +23,7 @@ import org.xtext.builddsl.lib.BuildScript
 import static extension org.xtext.builddsl.TaskExtensions.*
 
 /**
- * <p>Infers a JVM model from the source model.</p> 
- *
- * <p>The JVM model should contain all elements that would appear in the Java code 
- * which is generated from the source model. Other models link against the JVM model rather than the source model.</p>     
+ * Infers a Java class from a {@link BuildFile} allowing to execute it.
  */
 class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
 

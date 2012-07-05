@@ -14,6 +14,9 @@ import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.xtext.builddsl.build.BuildFile;
 import org.xtext.builddsl.build.Task;
 
+/**
+ * Convenience methods for dealing with {@link Task}s.
+ */
 @SuppressWarnings("all")
 public class TaskExtensions {
   public static Collection<Task> findDependentTasks(final Task it) {

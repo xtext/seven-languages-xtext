@@ -2,6 +2,9 @@ package org.xtext.builddsl.validation;
 
 import org.eclipse.xtext.xbase.lib.Functions.Function0;
 
+/**
+ * Issue codes for errors in build DSL files.
+ */
 @SuppressWarnings("all")
 public abstract class BuildDSLIssueCodes {
   public final static String SELF_DEPENDENCY = new Function0<String>() {

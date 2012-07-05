@@ -7,6 +7,9 @@ import org.xtext.builddsl.build.Task
 import static org.xtext.builddsl.TaskExtensions.*
 import org.xtext.builddsl.build.BuildFile
 
+/** 
+ * Convenience methods for dealing with {@link Task}s.
+ */
 class TaskExtensions {
 	
 	def static Collection<Task> findDependentTasks(Task it) {

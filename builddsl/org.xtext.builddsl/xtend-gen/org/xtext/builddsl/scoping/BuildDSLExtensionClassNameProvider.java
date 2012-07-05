@@ -8,6 +8,9 @@ import org.eclipse.xtext.xbase.scoping.featurecalls.StaticImplicitMethodsFeature
 import org.xtext.builddsl.lib.ClassExtensions;
 import org.xtext.builddsl.lib.FileExtensions;
 
+/**
+ * Add more static extension classes.
+ */
 @SuppressWarnings("all")
 public class BuildDSLExtensionClassNameProvider extends ExtensionClassNameProvider {
   public Multimap<Class<? extends Object>,Class<? extends Object>> simpleComputeExtensionClasses() {

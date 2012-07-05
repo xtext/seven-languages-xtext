@@ -19,7 +19,7 @@ import org.xtext.builddsl.build.BuildFile;
 import org.xtext.builddsl.build.ImportDeclaration;
 
 /**
- * @author Sebastian Zarnekow - Initial contribution and API
+ * Handle all imports as static imports.
  */
 @SuppressWarnings("all")
 public class AllImportsAreStaticFeatureProvider extends StaticImplicitMethodsFeatureForTypeProvider {
