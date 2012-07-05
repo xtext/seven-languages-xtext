@@ -7,3 +7,4 @@ bin
 *.java._trace
 *.java_trace
 plugin.xml_gen
+.metadata
