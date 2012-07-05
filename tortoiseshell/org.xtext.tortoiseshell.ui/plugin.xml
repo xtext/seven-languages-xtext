@@ -6,13 +6,14 @@
     <extension
             point="org.eclipse.ui.editors">
         <editor
-            class="org.xtext.tortoiseshell.ui.TortoiseShellExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
-            contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
-            default="true"
-            extensions="tortoiseshell"
-            id="org.xtext.tortoiseshell.TortoiseShell"
-            matchingStrategy="org.xtext.tortoiseshell.ui.TortoiseShellExecutableExtensionFactory:org.eclipse.xtext.xbase.ui.editor.JavaEditorInputMatcher"
-            name="TortoiseShell Editor">
+              class="org.xtext.tortoiseshell.ui.TortoiseShellExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+              contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
+              default="true"
+              extensions="tortoiseshell"
+              icon="icons/Turtle_16.png"
+              id="org.xtext.tortoiseshell.TortoiseShell"
+              matchingStrategy="org.xtext.tortoiseshell.ui.TortoiseShellExecutableExtensionFactory:org.eclipse.xtext.xbase.ui.editor.JavaEditorInputMatcher"
+              name="TortoiseShell Editor">
         </editor>
     </extension>
     <extension

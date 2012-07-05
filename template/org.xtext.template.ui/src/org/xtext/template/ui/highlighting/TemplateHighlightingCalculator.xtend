@@ -15,9 +15,8 @@ class TemplateHighlightingCalculator extends XbaseHighlightingCalculator {
 
 	def isText(ILeafNode node) {
 		switch grammarElement: node.getGrammarElement {
-			RuleCall: {
+			RuleCall: 
 				grammarElement.rule == grammarAccess.TEXTRule
-			}
 			default: 
 				false
 		}

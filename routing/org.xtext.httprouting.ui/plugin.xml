@@ -6,13 +6,14 @@
     <extension
             point="org.eclipse.ui.editors">
         <editor
-            class="org.xtext.httprouting.ui.RouteExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
-            contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
-            default="true"
-            extensions="route"
-            id="org.xtext.httprouting.Route"
-            matchingStrategy="org.xtext.httprouting.ui.RouteExecutableExtensionFactory:org.eclipse.xtext.xbase.ui.editor.JavaEditorInputMatcher"
-            name="Route Editor">
+              class="org.xtext.httprouting.ui.RouteExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+              contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
+              default="true"
+              extensions="route"
+              icon="icons/routing_16.png"
+              id="org.xtext.httprouting.Route"
+              matchingStrategy="org.xtext.httprouting.ui.RouteExecutableExtensionFactory:org.eclipse.xtext.xbase.ui.editor.JavaEditorInputMatcher"
+              name="Route Editor">
         </editor>
     </extension>
     <extension
