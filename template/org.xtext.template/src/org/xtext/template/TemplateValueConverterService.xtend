@@ -15,13 +15,13 @@ class TemplateValueConverterService extends XbaseValueConverterService {
 	def IValueConverter<String> TEXT() {
 		return textValueConverter;
 	}
-
 }
 
 /**
  * removes the surrounding terminals in template text
  */
 class TextValueConverter extends STRINGValueConverter {
+	
 	override protected toEscapedString(String value) {
 		'»' + Strings::convertToJavaString(value, false) + '«'
 	}		

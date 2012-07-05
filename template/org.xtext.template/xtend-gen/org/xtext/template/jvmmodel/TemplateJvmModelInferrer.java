@@ -56,40 +56,40 @@ public class TemplateJvmModelInferrer extends AbstractModelInferrer {
       _xifexpression = simpleName;
     }
     final String qualifiedName = _xifexpression;
-    final JvmGenericType root = this._jvmTypesBuilder.toClass(element, qualifiedName);
-    IPostIndexingInitializing<JvmGenericType> _accept = acceptor.<JvmGenericType>accept(root);
+    final JvmGenericType javaClass = this._jvmTypesBuilder.toClass(element, qualifiedName);
+    IPostIndexingInitializing<JvmGenericType> _accept = acceptor.<JvmGenericType>accept(javaClass);
     final Procedure1<JvmGenericType> _function = new Procedure1<JvmGenericType>() {
         public void apply(final JvmGenericType it) {
           EList<Parameter> _params = element.getParams();
-          for (final Parameter p : _params) {
+          for (final Parameter param : _params) {
             {
-              JvmTypeReference _type = p.getType();
-              XExpression _defaultexp = p.getDefaultexp();
+              JvmTypeReference _type = param.getType();
+              XExpression _defaultexp = param.getDefaultexp();
               JvmTypeReference _type_1 = _defaultexp==null?(JvmTypeReference)null:TemplateJvmModelInferrer.this._iTypeProvider.getType(_defaultexp);
               JvmTypeReference _elvis = ObjectExtensions.<JvmTypeReference>operator_elvis(_type, _type_1);
               JvmTypeReference _newTypeRef = TemplateJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(element, String.class);
               final JvmTypeReference type = ObjectExtensions.<JvmTypeReference>operator_elvis(_elvis, _newTypeRef);
               EList<JvmMember> _members = it.getMembers();
-              String _name = p.getName();
+              String _name = param.getName();
               final Procedure1<JvmField> _function = new Procedure1<JvmField>() {
                   public void apply(final JvmField it) {
-                    XExpression _defaultexp = p.getDefaultexp();
+                    XExpression _defaultexp = param.getDefaultexp();
                     boolean _notEquals = (!Objects.equal(_defaultexp, null));
                     if (_notEquals) {
-                      XExpression _defaultexp_1 = p.getDefaultexp();
+                      XExpression _defaultexp_1 = param.getDefaultexp();
                       TemplateJvmModelInferrer.this._jvmTypesBuilder.setInitializer(it, _defaultexp_1);
                     }
                   }
                 };
-              JvmField _field = TemplateJvmModelInferrer.this._jvmTypesBuilder.toField(p, _name, type, _function);
+              JvmField _field = TemplateJvmModelInferrer.this._jvmTypesBuilder.toField(param, _name, type, _function);
               TemplateJvmModelInferrer.this._jvmTypesBuilder.<JvmField>operator_add(_members, _field);
               EList<JvmMember> _members_1 = it.getMembers();
-              String _name_1 = p.getName();
-              JvmOperation _setter = TemplateJvmModelInferrer.this._jvmTypesBuilder.toSetter(p, _name_1, type);
+              String _name_1 = param.getName();
+              JvmOperation _setter = TemplateJvmModelInferrer.this._jvmTypesBuilder.toSetter(param, _name_1, type);
               TemplateJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_1, _setter);
               EList<JvmMember> _members_2 = it.getMembers();
-              String _name_2 = p.getName();
-              JvmOperation _getter = TemplateJvmModelInferrer.this._jvmTypesBuilder.toGetter(p, _name_2, type);
+              String _name_2 = param.getName();
+              JvmOperation _getter = TemplateJvmModelInferrer.this._jvmTypesBuilder.toGetter(param, _name_2, type);
               TemplateJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_2, _getter);
             }
           }
@@ -109,9 +109,10 @@ public class TemplateJvmModelInferrer extends AbstractModelInferrer {
           final Procedure1<JvmOperation> _function_1 = new Procedure1<JvmOperation>() {
               public void apply(final JvmOperation it) {
                 EList<JvmFormalParameter> _parameters = it.getParameters();
-                JvmTypeReference _newTypeRef = TemplateJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(root);
+                JvmTypeReference _newTypeRef = TemplateJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(javaClass);
                 JvmTypeReference _newTypeRef_1 = TemplateJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(element, Procedure1.class, _newTypeRef);
-                JvmFormalParameter _parameter = TemplateJvmModelInferrer.this._jvmTypesBuilder.toParameter(element, "init", _newTypeRef_1);
+                JvmFormalParameter _parameter = TemplateJvmModelInferrer.this._jvmTypesBuilder.toParameter(element, 
+                  "init", _newTypeRef_1);
                 TemplateJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters, _parameter);
                 final Procedure1<ITreeAppendable> _function = new Procedure1<ITreeAppendable>() {
                     public void apply(final ITreeAppendable it) {

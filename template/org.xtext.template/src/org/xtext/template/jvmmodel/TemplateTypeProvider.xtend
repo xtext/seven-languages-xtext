@@ -30,5 +30,4 @@ class TemplateTypeProvider extends XbaseTypeProvider {
 		else
 			super._expectedType(container,reference,index, rawType)
 	}
-	
 }

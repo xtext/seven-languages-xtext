@@ -21,38 +21,33 @@ Parameter:
 RichString returns xbase::XBlockExpression:
 	{RichString}  
 	expressions+=RichStringLiteral 
-	(expressions+=RichStringPart expressions+=RichStringLiteral)*
-;
+	(expressions+=RichStringPart expressions+=RichStringLiteral)*;
 
-RichStringLiteral returns xbase::XStringLiteral :
-	{RichStringLiteral} value=TEXT
-;
+RichStringLiteral returns xbase::XStringLiteral:
+	{RichStringLiteral} value=TEXT;
 
 RichStringPart returns xbase::XExpression:
 	XExpressionInsideBlock |
 	RichStringForLoop |
-	RichStringIf
-;
+	RichStringIf;
 
 RichStringForLoop returns xbase::XForLoopExpression:
 	{RichStringForLoop}
 	"FOR" declaredParam=JvmFormalParameter ':' forExpression=XExpression
 		eachExpression=RichString
-	"ENDFOR"
-;
+	"ENDFOR";
 
 RichStringIf returns xbase::XIfExpression:
 	{RichStringIf}
 	"IF" if=XExpression
 		then=RichString
 	(else=RichStringElseIf | "ELSE" else=RichString)?
-	"ENDIF"
-;
+	"ENDIF";
+	
 RichStringElseIf returns xbase::XIfExpression:
 	{RichStringIf}
 	"ELSEIF"if=XExpression
 		then=RichString
-	(else=RichStringElseIf | "ELSE" else=RichString)?
-;
+	(else=RichStringElseIf | "ELSE" else=RichString)?;
 
-terminal TEXT : '»' (!'«')* (EOF|'«') ;
+terminal TEXT : '»' (!'«')* (EOF|'«');

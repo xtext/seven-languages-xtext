@@ -24,20 +24,23 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
    				element.getPackage + "." + simpleName
    			else 
    				simpleName
-		val root = element.toClass(qualifiedName)
-   		acceptor.accept(root).initializeLater [
+		val javaClass = element.toClass(qualifiedName)
+   		acceptor.accept(javaClass).initializeLater [
 			
-			for (p : element.params) {
-				// try compute the type 1) explicitly declared, 2) inferred from the initializer catch-all) just String 
-				val type = p.type 
-					?: p.defaultexp?.type 
+			for (param : element.params) {
+				// try compute the type 
+				// 1) explicitly declared, 
+				// 2) inferred from the initializer 
+				// catch-all) just String 
+				val type = param.type 
+					?: param.defaultexp?.type 
 					?: element.newTypeRef(typeof(String))
-				members += p.toField(p.name, type) [
-					if(p.defaultexp != null)
-						initializer = p.defaultexp
+				members += param.toField(param.name, type) [
+					if (param.defaultexp != null)
+						initializer = param.defaultexp
 				]
-				members += p.toSetter(p.name, type)
-				members += p.toGetter(p.name, type)
+				members += param.toSetter(param.name, type)
+				members += param.toGetter(param.name, type)
 			}
 			
 			members += element.toMethod("generate", element.newTypeRef(typeof(CharSequence))) [
@@ -47,20 +50,23 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
 			
 			// generate a method accepting an initializer lambda expression
 			members += element.toMethod("generate", element.newTypeRef(typeof(String))) [
-				parameters += element.toParameter("init", element.newTypeRef(typeof(Procedures$Procedure1), newTypeRef(root)))
-				body = [append('''
-					if (init != null)
-						init.apply(this);
-					String result = generate().toString();
-					// remove leading -->
-					result = result.replaceAll("^-->\\n","");
-					// trim multi-newline to single newline
-					result = result.replaceAll("\\n\\s*\\n","\n");
-					return result;
-				''')]
+				parameters += element.toParameter(
+					"init", 
+					element.newTypeRef(typeof(Procedures$Procedure1), newTypeRef(javaClass))
+				)
+				body = [
+					append('''
+						if (init != null)
+							init.apply(this);
+						String result = generate().toString();
+						// remove leading -->
+						result = result.replaceAll("^-->\\n","");
+						// trim multi-newline to single newline
+						result = result.replaceAll("\\n\\s*\\n","\n");
+						return result;
+					''')
+				]
 			]
-			
 		]
 	}
-   	
 }
