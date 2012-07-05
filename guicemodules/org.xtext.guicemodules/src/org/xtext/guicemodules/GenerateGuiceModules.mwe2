@@ -79,17 +79,17 @@ Workflow {
             }
 
             // formatter API
-//            fragment = formatting.FormatterFragment {}
+			// fragment = formatting.FormatterFragment {}
 
             // labeling API
-            fragment = labeling.LabelProviderFragment {}
+            // fragment = labeling.LabelProviderFragment {}
 
             // outline API
-            fragment = outline.OutlineTreeProviderFragment {}
+            // fragment = outline.OutlineTreeProviderFragment {}
             fragment = outline.QuickOutlineFragment {}
 
             // quickfix API
-            fragment = quickfix.QuickfixProviderFragment {}
+            // fragment = quickfix.QuickfixProviderFragment {}
 
             // content assist API
             fragment = contentAssist.JavaBasedContentAssistFragment {}
