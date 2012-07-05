@@ -1,17 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<feature id="org.xtext.tortoiseshell.sdk"
-	label="TortoiseShell SDK Feature "
-	version="1.0.0.qualifier">
-	<plugin
-			id="org.xtext.tortoiseshell"
-			download-size="0"
-			install-size="0"
-			version="0.0.0"
-			unpack="false"/>
-	<plugin
-			id="org.xtext.tortoiseshell.ui"
-			download-size="0"
-			install-size="0"
-			version="0.0.0"
-			unpack="false"/>
+<feature
+      id="org.xtext.tortoiseshell.sdk"
+      label="TortoiseShell SDK Feature "
+      version="1.0.0.qualifier"
+      provider-name="Eclipse Modeling Project">
+
+   <plugin
+         id="org.xtext.tortoiseshell"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.xtext.tortoiseshell.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.xtext.tortoiseshell.examples"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.xtext.tortoiseshell.lib"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.xtext.tortoiseshell.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
 </feature>

@@ -2,7 +2,8 @@
 <feature
       id="org.xtext.builddsl.sdk"
       label="BuildDSL SDK Feature"
-      version="1.0.0.qualifier">
+      version="1.0.0.qualifier"
+      provider-name="Eclipse Modeling Project">
 
    <plugin
          id="org.xtext.builddsl"
@@ -13,6 +14,27 @@
 
    <plugin
          id="org.xtext.builddsl.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.xtext.builddsl.examples"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.xtext.builddsl.lib"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.xtext.builddsl.tests"
          download-size="0"
          install-size="0"
          version="0.0.0"
