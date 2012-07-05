@@ -21,7 +21,7 @@
          version="0.0.0"/>
 
    <includes
-         id="org.xtext.simple.sdk"
+         id="org.xtext.scripting.sdk"
          version="0.0.0"/>
 
    <includes

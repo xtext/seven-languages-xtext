@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.xtext.simple.sdk"
-      label="SimpleExpressions SDK Feature "
+      id="org.xtext.scripting.sdk"
+      label="Scripting SDK Feature"
       version="1.0.0.qualifier">
 
    <plugin

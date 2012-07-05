@@ -9,7 +9,7 @@
    <feature id="org.xtext.httprouting.sdk" version="1.0.0.qualifier">
       <category name="main"/>
    </feature>
-   <feature id="org.xtext.simple.sdk" version="1.0.0.qualifier">
+   <feature id="org.xtext.scripting.sdk" version="1.0.0.qualifier">
       <category name="main"/>
    </feature>
    <feature id="org.xtext.template.sdk" version="1.0.0.qualifier">
@@ -33,7 +33,7 @@
    <feature id="org.xtext.httprouting.sdk.source" version="1.0.0.qualifier">
       <category name="main.source"/>
    </feature>
-   <feature id="org.xtext.simple.sdk.source" version="1.0.0.qualifier">
+   <feature id="org.xtext.scripting.sdk.source" version="1.0.0.qualifier">
       <category name="main.source"/>
    </feature>
    <feature id="org.xtext.template.sdk.source" version="1.0.0.qualifier">

@@ -6,7 +6,7 @@
   <rm:locator pattern="^org.xtext.guicemodules(?:\..+)?$" searchPathRef="guicemodules"/>
   <rm:locator pattern="^org.xtext.httprouting(?:\..+)?$" searchPathRef="httprouting"/>
   <rm:locator pattern="^org.xtext.mongobeans(?:\..+)?$" searchPathRef="mongobeans"/>
-  <rm:locator pattern="^org.xtext.simple(?:\..+)?$" searchPathRef="simple"/>
+  <rm:locator pattern="^org.xtext.scripting(?:\..+)?$" searchPathRef="scripting"/>
   <rm:locator pattern="^org.xtext.template(?:\..+)?$" searchPathRef="template"/>
   <rm:locator pattern="^org.xtext.tortoiseshell(?:\..+)?$" searchPathRef="tortoiseshell"/>
   
@@ -55,10 +55,10 @@
       </rm:uri>
     </rm:provider>
   </rm:searchPath>
-  <rm:searchPath name="simple">
+  <rm:searchPath name="scripting">
     <rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="local" mutable="false">
       <rm:property key="buckminster.mutable" value="false"/>
-      <rm:uri format="{0}/simple/{1}">
+      <rm:uri format="{0}/scripting/{1}">
         <bc:propertyRef key="projects.location"/>
         <bc:propertyRef key="buckminster.component"/>
       </rm:uri>
