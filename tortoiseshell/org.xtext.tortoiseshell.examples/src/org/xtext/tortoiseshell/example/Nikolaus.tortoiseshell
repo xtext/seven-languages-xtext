@@ -1,10 +1,10 @@
-// Das Haus vom Nikolaus
+// 'Das Haus vom Nikolaus'
 begin
-  val length = 100
+  val length = 150
   val diagonal = length * sqrt(2)
   lineWidth = 2 
   square(length)
-  turnRight(135)
+  turnRight(45)
   lineColor = blue 
   forward(diagonal)
   turnLeft(90)
@@ -20,11 +20,8 @@ end
 sub square
   int length
 begin
-  forward(length)
-  turnRight(90) 
-  forward(length)
-  turnRight(90)
-  forward(length)
-  turnRight(90)
-  forward(length)
+  for (i : 1..4) {
+    forward(length)
+    turnRight(90) 
+  }
 end
