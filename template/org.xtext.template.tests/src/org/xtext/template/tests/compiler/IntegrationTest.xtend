@@ -35,7 +35,7 @@ class IntegrationTest {
 				param nullString
 				param list = newArrayList('one', 'two', 'three', 'four')
 			>>-->
-			<html>
+			<html><<nullString>>
 			  <title><<name>></title>
 			  <<FOR element : list>>
 			    <<IF element == 'one'>>

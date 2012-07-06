@@ -68,7 +68,7 @@ public class IntegrationTest {
     _builder.newLine();
     _builder.append(">>-->");
     _builder.newLine();
-    _builder.append("<html>");
+    _builder.append("<html><<nullString>>");
     _builder.newLine();
     _builder.append("  ");
     _builder.append("<title><<name>></title>");

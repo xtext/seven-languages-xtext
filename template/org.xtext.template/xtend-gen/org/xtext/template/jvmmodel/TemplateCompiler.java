@@ -34,10 +34,10 @@ public class TemplateCompiler extends XbaseCompiler {
             it.newLine();
             StringConcatenation _builder_1 = new StringConcatenation();
             _builder_1.append(name, "");
-            _builder_1.append(".append(");
+            _builder_1.append(".append(org.eclipse.xtext.xbase.lib.ObjectExtensions.operator_elvis(");
             it.append(_builder_1);
             this.internalToJavaExpression(nestedExpression, it);
-            it.append(");");
+            it.append(",\"\"));");
           }
         }
       }

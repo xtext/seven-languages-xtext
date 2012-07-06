@@ -19,9 +19,9 @@ class TemplateCompiler extends XbaseCompiler {
 				for (nestedExpression : expr.expressions) {
 					nestedExpression.internalToJavaStatement(it, true)
 					newLine
-					append('''«name».append(''')
+					append('''«name».append(org.eclipse.xtext.xbase.lib.ObjectExtensions.operator_elvis(''')
 					nestedExpression.internalToJavaExpression(it)
-					append(');')
+					append(',""));')
 				}
 			}
 			

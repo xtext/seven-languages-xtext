@@ -1,30 +1,30 @@
-<!--«
+<!--Â«
 	import java.util.ArrayList
 	
 	param title = "No Title"
 	param author = "No Author"
 	param description = "No Description"
 	param sections = new ArrayList<Section>
-»-->
+Â»-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>«title»</title>
+	<title>Â«titleÂ»</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description"
-		content="«description»">
-	<meta name="author" content="«author»">
+		content="Â«descriptionÂ»">
+	<meta name="author" content="Â«authorÂ»">
 </head>
 <body>
-«FOR element : sections»
+Â«FOR element : sectionsÂ»
 	<div class="section">
-		<h1>«element.title»</h1>
-		«IF element.description != null»
-			<p>«element.description»</p>
-		«ENDIF»
-		<p>«element.body»</p>
+		<h1>Â«element.titleÂ»</h1>
+		Â«IF element.description != nullÂ»
+			<p>Â«element.descriptionÂ»</p>
+		Â«ENDIFÂ»
+		<p>Â«element.bodyÂ»</p>
 	</div>
-«ENDFOR»
+Â«ENDFORÂ»
 </body>
 </html>
