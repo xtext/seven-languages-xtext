@@ -6,10 +6,10 @@
   <rm:locator pattern="^org.xtext.guicemodules(?:\..+)?$" searchPathRef="guicemodules"/>
   <rm:locator pattern="^org.xtext.httprouting(?:\..+)?$" searchPathRef="httprouting"/>
   <rm:locator pattern="^org.xtext.mongobeans(?:\..+)?$" searchPathRef="mongobeans"/>
+  <rm:locator pattern="^org.eclipse.orbit.mongodb$" searchPathRef="mongobeans"/>
   <rm:locator pattern="^org.xtext.scripting(?:\..+)?$" searchPathRef="scripting"/>
   <rm:locator pattern="^org.xtext.template(?:\..+)?$" searchPathRef="template"/>
   <rm:locator pattern="^org.xtext.tortoiseshell(?:\..+)?$" searchPathRef="tortoiseshell"/>
-  
   <rm:searchPath name="releng">
     <rm:provider componentTypes="eclipse.feature,buckminster" readerType="local" mutable="false">
       <rm:property key="buckminster.mutable" value="false"/>
@@ -64,7 +64,7 @@
       </rm:uri>
     </rm:provider>
   </rm:searchPath>
- <rm:searchPath name="template">
+  <rm:searchPath name="template">
     <rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="local" mutable="false">
       <rm:property key="buckminster.mutable" value="false"/>
       <rm:uri format="{0}/template/{1}">

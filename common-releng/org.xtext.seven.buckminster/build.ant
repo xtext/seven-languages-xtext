@@ -15,13 +15,13 @@
 <project name="Buckminster Headless" default="buckminster">
 	<property name="WORKSPACE" location="${ant.file}/../../" />
 	<property name="build.root" location="${user.home}/buildroot" />
-	<property name="buckminster.home" location="/Users/dhuebner/buckminster" />
+	<property name="buckminster.home" location="${user.home}/Programme/buckminster" />
 	<property name="projects.location" location="${WORKSPACE}/../" />
 	<property name="commands.file" location="${projects.location}/common-releng/org.xtext.seven.buckminster/commands.txt" />
 	<property name="target.platform" value="target.platform" />
 	
 	<target name="buckminster" depends="cleanup" description="description">
-		<echo message="IMPORTANT: Populating an empty target platform may took over 10 minutes."/>
+		<echo message="IMPORTANT: Populating an empty target platform may take over 10 minutes."/>
 		<condition property="executable.file" value="buckminster.bat" else="buckminster">
 			<os family="windows"/>
 		</condition>
