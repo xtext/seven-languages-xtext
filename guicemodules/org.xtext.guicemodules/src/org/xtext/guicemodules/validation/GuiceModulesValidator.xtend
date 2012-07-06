@@ -1,19 +1,20 @@
 package org.xtext.guicemodules.validation
 
-import org.eclipse.xtext.validation.Check
-import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotation
 import com.google.inject.BindingAnnotation
-import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationsPackage
+import com.google.inject.Inject
+import org.eclipse.xtext.common.types.util.TypeReferences
+import org.eclipse.xtext.validation.Check
 import org.eclipse.xtext.xbase.annotations.validation.XbaseWithAnnotationsJavaValidator
+import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotation
+
+import static org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationsPackage$Literals.*
 
 class GuiceModulesValidator extends XbaseWithAnnotationsJavaValidator {
 	
-	@Check def checkAnnotationIsBindingAnnotation(XAnnotation annotation) {
-		if (!annotation.annotationType.annotations.exists[
-			it.annotation.identifier.equals(typeof(BindingAnnotation).name)
-		]) {
-			error("The annotation is not annotated with @BindingAnnotation", 
-				XAnnotationsPackage$Literals::XANNOTATION__ANNOTATION_TYPE)
-		}
+	@Inject extension TypeReferences
+
+	@Check def checkAnnotationIsBindingAnnotation(XAnnotation it) {
+		if (!annotationType.annotations.exists[ annotation.is(typeof(BindingAnnotation)) ])
+			error("The annotation is not annotated with @BindingAnnotation", XANNOTATION__ANNOTATION_TYPE)
 	}
 }
