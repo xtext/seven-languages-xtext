@@ -152,29 +152,6 @@
     </extension>
 
 
-    <!-- marker definitions for org.xtext.guicemodules.GuiceModules -->
-    <extension
-            id="guicemodules.check.fast"
-            name="GuiceModules Problem"
-            point="org.eclipse.core.resources.markers">
-        <super type="org.eclipse.xtext.ui.check.fast"/>
-        <persistent value="true"/>
-    </extension>
-    <extension
-            id="guicemodules.check.normal"
-            name="GuiceModules Problem"
-            point="org.eclipse.core.resources.markers">
-        <super type="org.eclipse.xtext.ui.check.normal"/>
-        <persistent value="true"/>
-    </extension>
-    <extension
-            id="guicemodules.check.expensive"
-            name="GuiceModules Problem"
-            point="org.eclipse.core.resources.markers">
-        <super type="org.eclipse.xtext.ui.check.expensive"/>
-        <persistent value="true"/>
-    </extension>
-
    <extension
          point="org.eclipse.xtext.builder.participant">
       <participant
