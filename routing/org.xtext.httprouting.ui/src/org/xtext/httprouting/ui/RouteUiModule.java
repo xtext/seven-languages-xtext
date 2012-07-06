@@ -9,7 +9,10 @@ package org.xtext.httprouting.ui;
 
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.xtext.ui.editor.outline.IOutlineTreeProvider;
+import org.eclipse.xtext.ui.editor.outline.impl.IOutlineTreeStructureProvider;
 import org.xtext.httprouting.ui.labeling.RouteLabelProvider;
+import org.xtext.httprouting.ui.outline.RouteOutlineTreeProvider;
 
 /**
  * Use this class to register components to be used within the IDE.
@@ -24,4 +27,11 @@ public class RouteUiModule extends org.xtext.httprouting.ui.AbstractRouteUiModul
 		return RouteLabelProvider.class;
 	}
 
+	public Class<? extends IOutlineTreeProvider> bindIOutlineTreeProvider() {
+		return RouteOutlineTreeProvider.class;
+	}
+
+	public Class<? extends IOutlineTreeStructureProvider> bindIOutlineTreeStructureProvider() {
+		return RouteOutlineTreeProvider.class;
+	}
 }

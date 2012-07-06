@@ -12,6 +12,7 @@ import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider
 import org.eclipse.xtext.xbase.ui.labeling.XbaseLabelProvider
 import org.xtext.httprouting.route.Route
 import static extension org.eclipse.xtext.nodemodel.util.NodeModelUtils.*
+import org.xtext.httprouting.route.Dependency
 
 class RouteLabelProvider extends XbaseLabelProvider {
 
@@ -20,8 +21,12 @@ class RouteLabelProvider extends XbaseLabelProvider {
 		super(delegate)
 	}
 
-	def text(Route route) {
-		'''«route.requestType.name» «route.url.node.text»'''
+	def String text(Dependency dep) {
+		'''«dep.type.simpleName» «dep.name»'''
+	}
+	
+	def String text(Route route) {
+		'''«route.requestType.name»«route.url.node.text»'''
 	}
 
 }
