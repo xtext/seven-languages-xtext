@@ -6,8 +6,6 @@ import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.xtext.nodemodel.ICompositeNode;
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.eclipse.xtext.xbase.ui.labeling.XbaseLabelProvider;
-import org.xtext.httprouting.route.Condition;
-import org.xtext.httprouting.route.Key;
 import org.xtext.httprouting.route.RequestType;
 import org.xtext.httprouting.route.Route;
 import org.xtext.httprouting.route.URL;
@@ -49,24 +47,6 @@ public class RouteLabelProvider extends XbaseLabelProvider {
   }
   
   public Object image(final URL url) {
-    return null;
-  }
-  
-  public String text(final Key key) {
-    final ICompositeNode node = NodeModelUtils.getNode(key);
-    return node.getText();
-  }
-  
-  public Object image(final Key key) {
-    return null;
-  }
-  
-  public String text(final Condition condition) {
-    final ICompositeNode node = NodeModelUtils.getNode(condition);
-    return node.getText();
-  }
-  
-  public Object image(final Condition cond) {
     return null;
   }
 }

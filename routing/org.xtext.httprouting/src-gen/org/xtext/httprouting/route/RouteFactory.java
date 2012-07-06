@@ -41,6 +41,24 @@ public interface RouteFactory extends EFactory
   Import createImport();
 
   /**
+   * Returns a new object of class '<em>Abstract Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Abstract Declaration</em>'.
+   * @generated
+   */
+  AbstractDeclaration createAbstractDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Dependency</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Dependency</em>'.
+   * @generated
+   */
+  Dependency createDependency();
+
+  /**
    * Returns a new object of class '<em>Route</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -66,24 +84,6 @@ public interface RouteFactory extends EFactory
    * @generated
    */
   Variable createVariable();
-
-  /**
-   * Returns a new object of class '<em>Condition</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Condition</em>'.
-   * @generated
-   */
-  Condition createCondition();
-
-  /**
-   * Returns a new object of class '<em>Key</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Key</em>'.
-   * @generated
-   */
-  Key createKey();
 
   /**
    * Returns the package supported by this factory.

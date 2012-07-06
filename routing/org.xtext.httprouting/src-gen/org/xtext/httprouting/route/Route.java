@@ -2,8 +2,6 @@
  */
 package org.xtext.httprouting.route;
 
-import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.xtext.xbase.XExpression;
 
 /**
@@ -17,7 +15,6 @@ import org.eclipse.xtext.xbase.XExpression;
  *   <li>{@link org.xtext.httprouting.route.Route#getRequestType <em>Request Type</em>}</li>
  *   <li>{@link org.xtext.httprouting.route.Route#getUrl <em>Url</em>}</li>
  *   <li>{@link org.xtext.httprouting.route.Route#getCondition <em>Condition</em>}</li>
- *   <li>{@link org.xtext.httprouting.route.Route#getKey <em>Key</em>}</li>
  *   <li>{@link org.xtext.httprouting.route.Route#getCall <em>Call</em>}</li>
  * </ul>
  * </p>
@@ -26,7 +23,7 @@ import org.eclipse.xtext.xbase.XExpression;
  * @model
  * @generated
  */
-public interface Route extends EObject
+public interface Route extends AbstractDeclaration
 {
   /**
    * Returns the value of the '<em><b>Request Type</b></em>' attribute.
@@ -92,12 +89,12 @@ public interface Route extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Condition</em>' containment reference.
-   * @see #setCondition(Condition)
+   * @see #setCondition(XExpression)
    * @see org.xtext.httprouting.route.RoutePackage#getRoute_Condition()
    * @model containment="true"
    * @generated
    */
-  Condition getCondition();
+  XExpression getCondition();
 
   /**
    * Sets the value of the '{@link org.xtext.httprouting.route.Route#getCondition <em>Condition</em>}' containment reference.
@@ -107,33 +104,7 @@ public interface Route extends EObject
    * @see #getCondition()
    * @generated
    */
-  void setCondition(Condition value);
-
-  /**
-   * Returns the value of the '<em><b>Key</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Key</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Key</em>' containment reference.
-   * @see #setKey(Key)
-   * @see org.xtext.httprouting.route.RoutePackage#getRoute_Key()
-   * @model containment="true"
-   * @generated
-   */
-  Key getKey();
-
-  /**
-   * Sets the value of the '{@link org.xtext.httprouting.route.Route#getKey <em>Key</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Key</em>' containment reference.
-   * @see #getKey()
-   * @generated
-   */
-  void setKey(Key value);
+  void setCondition(XExpression value);
 
   /**
    * Returns the value of the '<em><b>Call</b></em>' containment reference.

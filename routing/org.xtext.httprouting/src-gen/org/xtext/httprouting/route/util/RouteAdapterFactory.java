@@ -85,6 +85,16 @@ public class RouteAdapterFactory extends AdapterFactoryImpl
         return createImportAdapter();
       }
       @Override
+      public Adapter caseAbstractDeclaration(AbstractDeclaration object)
+      {
+        return createAbstractDeclarationAdapter();
+      }
+      @Override
+      public Adapter caseDependency(Dependency object)
+      {
+        return createDependencyAdapter();
+      }
+      @Override
       public Adapter caseRoute(Route object)
       {
         return createRouteAdapter();
@@ -98,16 +108,6 @@ public class RouteAdapterFactory extends AdapterFactoryImpl
       public Adapter caseVariable(Variable object)
       {
         return createVariableAdapter();
-      }
-      @Override
-      public Adapter caseCondition(Condition object)
-      {
-        return createConditionAdapter();
-      }
-      @Override
-      public Adapter caseKey(Key object)
-      {
-        return createKeyAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -162,6 +162,36 @@ public class RouteAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.xtext.httprouting.route.AbstractDeclaration <em>Abstract Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.httprouting.route.AbstractDeclaration
+   * @generated
+   */
+  public Adapter createAbstractDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.httprouting.route.Dependency <em>Dependency</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.httprouting.route.Dependency
+   * @generated
+   */
+  public Adapter createDependencyAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.xtext.httprouting.route.Route <em>Route</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -202,36 +232,6 @@ public class RouteAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createVariableAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.httprouting.route.Condition <em>Condition</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.httprouting.route.Condition
-   * @generated
-   */
-  public Adapter createConditionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.httprouting.route.Key <em>Key</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.httprouting.route.Key
-   * @generated
-   */
-  public Adapter createKeyAdapter()
   {
     return null;
   }

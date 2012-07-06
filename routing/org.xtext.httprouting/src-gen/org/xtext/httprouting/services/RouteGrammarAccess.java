@@ -26,14 +26,14 @@ public class RouteGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cImportsAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cImportsImportParserRuleCall_0_0 = (RuleCall)cImportsAssignment_0.eContents().get(0);
-		private final Assignment cRoutesAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cRoutesRouteParserRuleCall_1_0 = (RuleCall)cRoutesAssignment_1.eContents().get(0);
+		private final Assignment cDeclarationsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cDeclarationsAbstractDeclarationParserRuleCall_1_0 = (RuleCall)cDeclarationsAssignment_1.eContents().get(0);
 		
 		//Model:
-		//	imports+=Import* routes+=Route*;
+		//	imports+=Import* declarations+=AbstractDeclaration*;
 		public ParserRule getRule() { return rule; }
 
-		//imports+=Import* routes+=Route*
+		//imports+=Import* declarations+=AbstractDeclaration*
 		public Group getGroup() { return cGroup; }
 
 		//imports+=Import*
@@ -42,11 +42,11 @@ public class RouteGrammarAccess extends AbstractGrammarElementFinder {
 		//Import
 		public RuleCall getImportsImportParserRuleCall_0_0() { return cImportsImportParserRuleCall_0_0; }
 
-		//routes+=Route*
-		public Assignment getRoutesAssignment_1() { return cRoutesAssignment_1; }
+		//declarations+=AbstractDeclaration*
+		public Assignment getDeclarationsAssignment_1() { return cDeclarationsAssignment_1; }
 
-		//Route
-		public RuleCall getRoutesRouteParserRuleCall_1_0() { return cRoutesRouteParserRuleCall_1_0; }
+		//AbstractDeclaration
+		public RuleCall getDeclarationsAbstractDeclarationParserRuleCall_1_0() { return cDeclarationsAbstractDeclarationParserRuleCall_1_0; }
 	}
 
 	public class ImportElements extends AbstractParserRuleElementFinder {
@@ -77,6 +77,66 @@ public class RouteGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getImportedTypeJvmTypeQualifiedNameParserRuleCall_1_0_1() { return cImportedTypeJvmTypeQualifiedNameParserRuleCall_1_0_1; }
 	}
 
+	public class AbstractDeclarationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AbstractDeclaration");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cDependencyParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cRouteParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//AbstractDeclaration:
+		//	Dependency | Route;
+		public ParserRule getRule() { return rule; }
+
+		//Dependency | Route
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//Dependency
+		public RuleCall getDependencyParserRuleCall_0() { return cDependencyParserRuleCall_0; }
+
+		//Route
+		public RuleCall getRouteParserRuleCall_1() { return cRouteParserRuleCall_1; }
+	}
+
+	public class DependencyElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Dependency");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cInjectKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cAnnotationsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cAnnotationsXAnnotationParserRuleCall_1_0 = (RuleCall)cAnnotationsAssignment_1.eContents().get(0);
+		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTypeJvmTypeReferenceParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
+		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cNameIDTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		
+		//Dependency:
+		//	"inject" annotations+=XAnnotation? type=JvmTypeReference name=ID;
+		public ParserRule getRule() { return rule; }
+
+		//"inject" annotations+=XAnnotation? type=JvmTypeReference name=ID
+		public Group getGroup() { return cGroup; }
+
+		//"inject"
+		public Keyword getInjectKeyword_0() { return cInjectKeyword_0; }
+
+		//annotations+=XAnnotation?
+		public Assignment getAnnotationsAssignment_1() { return cAnnotationsAssignment_1; }
+
+		//XAnnotation
+		public RuleCall getAnnotationsXAnnotationParserRuleCall_1_0() { return cAnnotationsXAnnotationParserRuleCall_1_0; }
+
+		//type=JvmTypeReference
+		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
+
+		//JvmTypeReference
+		public RuleCall getTypeJvmTypeReferenceParserRuleCall_2_0() { return cTypeJvmTypeReferenceParserRuleCall_2_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_3_0() { return cNameIDTerminalRuleCall_3_0; }
+	}
+
 	public class RouteElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Route");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -84,23 +144,19 @@ public class RouteGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRequestTypeRequestTypeEnumRuleCall_0_0 = (RuleCall)cRequestTypeAssignment_0.eContents().get(0);
 		private final Assignment cUrlAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cUrlURLParserRuleCall_1_0 = (RuleCall)cUrlAssignment_1.eContents().get(0);
-		private final Assignment cConditionAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cConditionConditionParserRuleCall_2_0 = (RuleCall)cConditionAssignment_2.eContents().get(0);
-		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
-		private final Group cGroup_3_0 = (Group)cAlternatives_3.eContents().get(0);
-		private final Assignment cKeyAssignment_3_0_0 = (Assignment)cGroup_3_0.eContents().get(0);
-		private final RuleCall cKeyKeyParserRuleCall_3_0_0_0 = (RuleCall)cKeyAssignment_3_0_0.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_3_0_1 = (Keyword)cGroup_3_0.eContents().get(1);
-		private final Assignment cCallAssignment_3_0_2 = (Assignment)cGroup_3_0.eContents().get(2);
-		private final RuleCall cCallRouteFeatureCallParserRuleCall_3_0_2_0 = (RuleCall)cCallAssignment_3_0_2.eContents().get(0);
-		private final Assignment cCallAssignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
-		private final RuleCall cCallXFeatureCallParserRuleCall_3_1_0 = (RuleCall)cCallAssignment_3_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cWhenKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cConditionAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cConditionXExpressionParserRuleCall_2_1_0 = (RuleCall)cConditionAssignment_2_1.eContents().get(0);
+		private final Keyword cDoKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cCallAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cCallXExpressionParserRuleCall_4_0 = (RuleCall)cCallAssignment_4.eContents().get(0);
 		
 		//Route:
-		//	requestType=RequestType url=URL condition=Condition? (key=Key "->" call=RouteFeatureCall | call=XFeatureCall);
+		//	requestType=RequestType url=URL ("when" condition=XExpression)? "do" call=XExpression;
 		public ParserRule getRule() { return rule; }
 
-		//requestType=RequestType url=URL condition=Condition? (key=Key "->" call=RouteFeatureCall | call=XFeatureCall)
+		//requestType=RequestType url=URL ("when" condition=XExpression)? "do" call=XExpression
 		public Group getGroup() { return cGroup; }
 
 		//requestType=RequestType
@@ -115,38 +171,26 @@ public class RouteGrammarAccess extends AbstractGrammarElementFinder {
 		//URL
 		public RuleCall getUrlURLParserRuleCall_1_0() { return cUrlURLParserRuleCall_1_0; }
 
-		//condition=Condition?
-		public Assignment getConditionAssignment_2() { return cConditionAssignment_2; }
+		//("when" condition=XExpression)?
+		public Group getGroup_2() { return cGroup_2; }
 
-		//Condition
-		public RuleCall getConditionConditionParserRuleCall_2_0() { return cConditionConditionParserRuleCall_2_0; }
+		//"when"
+		public Keyword getWhenKeyword_2_0() { return cWhenKeyword_2_0; }
 
-		//key=Key "->" call=RouteFeatureCall | call=XFeatureCall
-		public Alternatives getAlternatives_3() { return cAlternatives_3; }
+		//condition=XExpression
+		public Assignment getConditionAssignment_2_1() { return cConditionAssignment_2_1; }
 
-		//key=Key "->" call=RouteFeatureCall
-		public Group getGroup_3_0() { return cGroup_3_0; }
+		//XExpression
+		public RuleCall getConditionXExpressionParserRuleCall_2_1_0() { return cConditionXExpressionParserRuleCall_2_1_0; }
 
-		//key=Key
-		public Assignment getKeyAssignment_3_0_0() { return cKeyAssignment_3_0_0; }
+		//"do"
+		public Keyword getDoKeyword_3() { return cDoKeyword_3; }
 
-		//Key
-		public RuleCall getKeyKeyParserRuleCall_3_0_0_0() { return cKeyKeyParserRuleCall_3_0_0_0; }
+		//call=XExpression
+		public Assignment getCallAssignment_4() { return cCallAssignment_4; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_3_0_1() { return cHyphenMinusGreaterThanSignKeyword_3_0_1; }
-
-		//call=RouteFeatureCall
-		public Assignment getCallAssignment_3_0_2() { return cCallAssignment_3_0_2; }
-
-		//RouteFeatureCall
-		public RuleCall getCallRouteFeatureCallParserRuleCall_3_0_2_0() { return cCallRouteFeatureCallParserRuleCall_3_0_2_0; }
-
-		//call=XFeatureCall
-		public Assignment getCallAssignment_3_1() { return cCallAssignment_3_1; }
-
-		//XFeatureCall
-		public RuleCall getCallXFeatureCallParserRuleCall_3_1_0() { return cCallXFeatureCallParserRuleCall_3_1_0; }
+		//XExpression
+		public RuleCall getCallXExpressionParserRuleCall_4_0() { return cCallXExpressionParserRuleCall_4_0; }
 	}
 
 	public class URLElements extends AbstractParserRuleElementFinder {
@@ -156,53 +200,65 @@ public class RouteGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Keyword cSolidusKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Alternatives cAlternatives_1_1 = (Alternatives)cGroup_1.eContents().get(1);
-		private final Group cGroup_1_1_0 = (Group)cAlternatives_1_1.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_1_1_0_0 = (RuleCall)cGroup_1_1_0.eContents().get(0);
-		private final Group cGroup_1_1_0_1 = (Group)cGroup_1_1_0.eContents().get(1);
-		private final Keyword cFullStopKeyword_1_1_0_1_0 = (Keyword)cGroup_1_1_0_1.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_1_1_0_1_1 = (RuleCall)cGroup_1_1_0_1.eContents().get(1);
+		private final RuleCall cQualifiedNameParserRuleCall_1_1_0 = (RuleCall)cAlternatives_1_1.eContents().get(0);
 		private final Assignment cVariablesAssignment_1_1_1 = (Assignment)cAlternatives_1_1.eContents().get(1);
 		private final RuleCall cVariablesVariableParserRuleCall_1_1_1_0 = (RuleCall)cVariablesAssignment_1_1_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cSolidusKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cVariablesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cVariablesVariableParserRuleCall_2_1_0 = (RuleCall)cVariablesAssignment_2_1.eContents().get(0);
+		private final Assignment cWildcardAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
+		private final Keyword cWildcardAsteriskKeyword_2_2_0 = (Keyword)cWildcardAssignment_2_2.eContents().get(0);
 		
-		//URL:
-		//	{URL} ("/" (ID ("." ID)? | variables+=Variable))+;
+		/// **
+		// * matches URLs like 
+		// * 	'/foo/bar.html' or 
+		// * 	'/customer/:customerID/save'
+		// * / URL:
+		//	{URL} ("/" (QualifiedName | variables+=Variable))* ("/" variables+=Variable wildcard?="*")?;
 		public ParserRule getRule() { return rule; }
 
-		//{URL} ("/" (ID ("." ID)? | variables+=Variable))+
+		//{URL} ("/" (QualifiedName | variables+=Variable))* ("/" variables+=Variable wildcard?="*")?
 		public Group getGroup() { return cGroup; }
 
 		//{URL}
 		public Action getURLAction_0() { return cURLAction_0; }
 
-		//("/" (ID ("." ID)? | variables+=Variable))+
+		//("/" (QualifiedName | variables+=Variable))*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//"/"
 		public Keyword getSolidusKeyword_1_0() { return cSolidusKeyword_1_0; }
 
-		//ID ("." ID)? | variables+=Variable
+		//QualifiedName | variables+=Variable
 		public Alternatives getAlternatives_1_1() { return cAlternatives_1_1; }
 
-		//ID ("." ID)?
-		public Group getGroup_1_1_0() { return cGroup_1_1_0; }
-
-		//ID
-		public RuleCall getIDTerminalRuleCall_1_1_0_0() { return cIDTerminalRuleCall_1_1_0_0; }
-
-		//("." ID)?
-		public Group getGroup_1_1_0_1() { return cGroup_1_1_0_1; }
-
-		//"."
-		public Keyword getFullStopKeyword_1_1_0_1_0() { return cFullStopKeyword_1_1_0_1_0; }
-
-		//ID
-		public RuleCall getIDTerminalRuleCall_1_1_0_1_1() { return cIDTerminalRuleCall_1_1_0_1_1; }
+		//QualifiedName
+		public RuleCall getQualifiedNameParserRuleCall_1_1_0() { return cQualifiedNameParserRuleCall_1_1_0; }
 
 		//variables+=Variable
 		public Assignment getVariablesAssignment_1_1_1() { return cVariablesAssignment_1_1_1; }
 
 		//Variable
 		public RuleCall getVariablesVariableParserRuleCall_1_1_1_0() { return cVariablesVariableParserRuleCall_1_1_1_0; }
+
+		//("/" variables+=Variable wildcard?="*")?
+		public Group getGroup_2() { return cGroup_2; }
+
+		//"/"
+		public Keyword getSolidusKeyword_2_0() { return cSolidusKeyword_2_0; }
+
+		//variables+=Variable
+		public Assignment getVariablesAssignment_2_1() { return cVariablesAssignment_2_1; }
+
+		//Variable
+		public RuleCall getVariablesVariableParserRuleCall_2_1_0() { return cVariablesVariableParserRuleCall_2_1_0; }
+
+		//wildcard?="*"
+		public Assignment getWildcardAssignment_2_2() { return cWildcardAssignment_2_2; }
+
+		//"*"
+		public Keyword getWildcardAsteriskKeyword_2_2_0() { return cWildcardAsteriskKeyword_2_2_0; }
 	}
 
 	public class VariableElements extends AbstractParserRuleElementFinder {
@@ -211,14 +267,12 @@ public class RouteGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Assignment cWildcardAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final Keyword cWildcardAsteriskKeyword_2_0 = (Keyword)cWildcardAssignment_2.eContents().get(0);
 		
 		//Variable:
-		//	":" name=ID wildcard?="*"?;
+		//	":" name=ID;
 		public ParserRule getRule() { return rule; }
 
-		//":" name=ID wildcard?="*"?
+		//":" name=ID
 		public Group getGroup() { return cGroup; }
 
 		//":"
@@ -229,146 +283,6 @@ public class RouteGrammarAccess extends AbstractGrammarElementFinder {
 
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-
-		//wildcard?="*"?
-		public Assignment getWildcardAssignment_2() { return cWildcardAssignment_2; }
-
-		//"*"
-		public Keyword getWildcardAsteriskKeyword_2_0() { return cWildcardAsteriskKeyword_2_0; }
-	}
-
-	public class ConditionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Condition");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cWhenKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cExpressionAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cExpressionXExpressionParserRuleCall_1_0 = (RuleCall)cExpressionAssignment_1.eContents().get(0);
-		
-		//Condition:
-		//	"when" expression=XExpression;
-		public ParserRule getRule() { return rule; }
-
-		//"when" expression=XExpression
-		public Group getGroup() { return cGroup; }
-
-		//"when"
-		public Keyword getWhenKeyword_0() { return cWhenKeyword_0; }
-
-		//expression=XExpression
-		public Assignment getExpressionAssignment_1() { return cExpressionAssignment_1; }
-
-		//XExpression
-		public RuleCall getExpressionXExpressionParserRuleCall_1_0() { return cExpressionXExpressionParserRuleCall_1_0; }
-	}
-
-	public class KeyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Key");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cAnnotationsAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cAnnotationsXAnnotationParserRuleCall_0_0 = (RuleCall)cAnnotationsAssignment_0.eContents().get(0);
-		private final Assignment cTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cTypeJvmTypeReferenceParserRuleCall_1_0 = (RuleCall)cTypeAssignment_1.eContents().get(0);
-		
-		//Key:
-		//	annotations+=XAnnotation? type=JvmTypeReference;
-		public ParserRule getRule() { return rule; }
-
-		//annotations+=XAnnotation? type=JvmTypeReference
-		public Group getGroup() { return cGroup; }
-
-		//annotations+=XAnnotation?
-		public Assignment getAnnotationsAssignment_0() { return cAnnotationsAssignment_0; }
-
-		//XAnnotation
-		public RuleCall getAnnotationsXAnnotationParserRuleCall_0_0() { return cAnnotationsXAnnotationParserRuleCall_0_0; }
-
-		//type=JvmTypeReference
-		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
-
-		//JvmTypeReference
-		public RuleCall getTypeJvmTypeReferenceParserRuleCall_1_0() { return cTypeJvmTypeReferenceParserRuleCall_1_0; }
-	}
-
-	public class RouteFeatureCallElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "RouteFeatureCall");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cXFeatureCallAction_0 = (Action)cGroup.eContents().get(0);
-		private final Assignment cFeatureAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cFeatureJvmIdentifiableElementCrossReference_1_0 = (CrossReference)cFeatureAssignment_1.eContents().get(0);
-		private final RuleCall cFeatureJvmIdentifiableElementIdOrSuperParserRuleCall_1_0_1 = (RuleCall)cFeatureJvmIdentifiableElementCrossReference_1_0.eContents().get(1);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Assignment cExplicitOperationCallAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
-		private final Keyword cExplicitOperationCallLeftParenthesisKeyword_2_0_0 = (Keyword)cExplicitOperationCallAssignment_2_0.eContents().get(0);
-		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
-		private final Assignment cFeatureCallArgumentsAssignment_2_1_0 = (Assignment)cGroup_2_1.eContents().get(0);
-		private final RuleCall cFeatureCallArgumentsXExpressionParserRuleCall_2_1_0_0 = (RuleCall)cFeatureCallArgumentsAssignment_2_1_0.eContents().get(0);
-		private final Group cGroup_2_1_1 = (Group)cGroup_2_1.eContents().get(1);
-		private final Keyword cCommaKeyword_2_1_1_0 = (Keyword)cGroup_2_1_1.eContents().get(0);
-		private final Assignment cFeatureCallArgumentsAssignment_2_1_1_1 = (Assignment)cGroup_2_1_1.eContents().get(1);
-		private final RuleCall cFeatureCallArgumentsXExpressionParserRuleCall_2_1_1_1_0 = (RuleCall)cFeatureCallArgumentsAssignment_2_1_1_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
-		private final Assignment cFeatureCallArgumentsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cFeatureCallArgumentsXClosureParserRuleCall_3_0 = (RuleCall)cFeatureCallArgumentsAssignment_3.eContents().get(0);
-		
-		//RouteFeatureCall returns xbase::XExpression:
-		//	{xbase::XFeatureCall} feature=[types::JvmIdentifiableElement|IdOrSuper] (=> explicitOperationCall?="("
-		//	(featureCallArguments+=XExpression ("," featureCallArguments+=XExpression)*)? ")")? featureCallArguments+=XClosure?;
-		public ParserRule getRule() { return rule; }
-
-		//{xbase::XFeatureCall} feature=[types::JvmIdentifiableElement|IdOrSuper] (=> explicitOperationCall?="("
-		//(featureCallArguments+=XExpression ("," featureCallArguments+=XExpression)*)? ")")? featureCallArguments+=XClosure?
-		public Group getGroup() { return cGroup; }
-
-		//{xbase::XFeatureCall}
-		public Action getXFeatureCallAction_0() { return cXFeatureCallAction_0; }
-
-		//feature=[types::JvmIdentifiableElement|IdOrSuper]
-		public Assignment getFeatureAssignment_1() { return cFeatureAssignment_1; }
-
-		//[types::JvmIdentifiableElement|IdOrSuper]
-		public CrossReference getFeatureJvmIdentifiableElementCrossReference_1_0() { return cFeatureJvmIdentifiableElementCrossReference_1_0; }
-
-		//IdOrSuper
-		public RuleCall getFeatureJvmIdentifiableElementIdOrSuperParserRuleCall_1_0_1() { return cFeatureJvmIdentifiableElementIdOrSuperParserRuleCall_1_0_1; }
-
-		//(=> explicitOperationCall?="(" (featureCallArguments+=XExpression ("," featureCallArguments+=XExpression)*)? ")")?
-		public Group getGroup_2() { return cGroup_2; }
-
-		//=> explicitOperationCall?="("
-		public Assignment getExplicitOperationCallAssignment_2_0() { return cExplicitOperationCallAssignment_2_0; }
-
-		//"("
-		public Keyword getExplicitOperationCallLeftParenthesisKeyword_2_0_0() { return cExplicitOperationCallLeftParenthesisKeyword_2_0_0; }
-
-		//(featureCallArguments+=XExpression ("," featureCallArguments+=XExpression)*)?
-		public Group getGroup_2_1() { return cGroup_2_1; }
-
-		//featureCallArguments+=XExpression
-		public Assignment getFeatureCallArgumentsAssignment_2_1_0() { return cFeatureCallArgumentsAssignment_2_1_0; }
-
-		//XExpression
-		public RuleCall getFeatureCallArgumentsXExpressionParserRuleCall_2_1_0_0() { return cFeatureCallArgumentsXExpressionParserRuleCall_2_1_0_0; }
-
-		//("," featureCallArguments+=XExpression)*
-		public Group getGroup_2_1_1() { return cGroup_2_1_1; }
-
-		//","
-		public Keyword getCommaKeyword_2_1_1_0() { return cCommaKeyword_2_1_1_0; }
-
-		//featureCallArguments+=XExpression
-		public Assignment getFeatureCallArgumentsAssignment_2_1_1_1() { return cFeatureCallArgumentsAssignment_2_1_1_1; }
-
-		//XExpression
-		public RuleCall getFeatureCallArgumentsXExpressionParserRuleCall_2_1_1_1_0() { return cFeatureCallArgumentsXExpressionParserRuleCall_2_1_1_1_0; }
-
-		//")"
-		public Keyword getRightParenthesisKeyword_2_2() { return cRightParenthesisKeyword_2_2; }
-
-		//featureCallArguments+=XClosure?
-		public Assignment getFeatureCallArgumentsAssignment_3() { return cFeatureCallArgumentsAssignment_3; }
-
-		//XClosure
-		public RuleCall getFeatureCallArgumentsXClosureParserRuleCall_3_0() { return cFeatureCallArgumentsXClosureParserRuleCall_3_0; }
 	}
 	
 	
@@ -426,13 +340,12 @@ public class RouteGrammarAccess extends AbstractGrammarElementFinder {
 	
 	private ModelElements pModel;
 	private ImportElements pImport;
+	private AbstractDeclarationElements pAbstractDeclaration;
+	private DependencyElements pDependency;
 	private RouteElements pRoute;
 	private RequestTypeElements unknownRuleRequestType;
 	private URLElements pURL;
 	private VariableElements pVariable;
-	private ConditionElements pCondition;
-	private KeyElements pKey;
-	private RouteFeatureCallElements pRouteFeatureCall;
 	
 	private final Grammar grammar;
 
@@ -473,7 +386,7 @@ public class RouteGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Model:
-	//	imports+=Import* routes+=Route*;
+	//	imports+=Import* declarations+=AbstractDeclaration*;
 	public ModelElements getModelAccess() {
 		return (pModel != null) ? pModel : (pModel = new ModelElements());
 	}
@@ -492,8 +405,28 @@ public class RouteGrammarAccess extends AbstractGrammarElementFinder {
 		return getImportAccess().getRule();
 	}
 
+	//AbstractDeclaration:
+	//	Dependency | Route;
+	public AbstractDeclarationElements getAbstractDeclarationAccess() {
+		return (pAbstractDeclaration != null) ? pAbstractDeclaration : (pAbstractDeclaration = new AbstractDeclarationElements());
+	}
+	
+	public ParserRule getAbstractDeclarationRule() {
+		return getAbstractDeclarationAccess().getRule();
+	}
+
+	//Dependency:
+	//	"inject" annotations+=XAnnotation? type=JvmTypeReference name=ID;
+	public DependencyElements getDependencyAccess() {
+		return (pDependency != null) ? pDependency : (pDependency = new DependencyElements());
+	}
+	
+	public ParserRule getDependencyRule() {
+		return getDependencyAccess().getRule();
+	}
+
 	//Route:
-	//	requestType=RequestType url=URL condition=Condition? (key=Key "->" call=RouteFeatureCall | call=XFeatureCall);
+	//	requestType=RequestType url=URL ("when" condition=XExpression)? "do" call=XExpression;
 	public RouteElements getRouteAccess() {
 		return (pRoute != null) ? pRoute : (pRoute = new RouteElements());
 	}
@@ -512,8 +445,12 @@ public class RouteGrammarAccess extends AbstractGrammarElementFinder {
 		return getRequestTypeAccess().getRule();
 	}
 
-	//URL:
-	//	{URL} ("/" (ID ("." ID)? | variables+=Variable))+;
+	/// **
+	// * matches URLs like 
+	// * 	'/foo/bar.html' or 
+	// * 	'/customer/:customerID/save'
+	// * / URL:
+	//	{URL} ("/" (QualifiedName | variables+=Variable))* ("/" variables+=Variable wildcard?="*")?;
 	public URLElements getURLAccess() {
 		return (pURL != null) ? pURL : (pURL = new URLElements());
 	}
@@ -523,44 +460,13 @@ public class RouteGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Variable:
-	//	":" name=ID wildcard?="*"?;
+	//	":" name=ID;
 	public VariableElements getVariableAccess() {
 		return (pVariable != null) ? pVariable : (pVariable = new VariableElements());
 	}
 	
 	public ParserRule getVariableRule() {
 		return getVariableAccess().getRule();
-	}
-
-	//Condition:
-	//	"when" expression=XExpression;
-	public ConditionElements getConditionAccess() {
-		return (pCondition != null) ? pCondition : (pCondition = new ConditionElements());
-	}
-	
-	public ParserRule getConditionRule() {
-		return getConditionAccess().getRule();
-	}
-
-	//Key:
-	//	annotations+=XAnnotation? type=JvmTypeReference;
-	public KeyElements getKeyAccess() {
-		return (pKey != null) ? pKey : (pKey = new KeyElements());
-	}
-	
-	public ParserRule getKeyRule() {
-		return getKeyAccess().getRule();
-	}
-
-	//RouteFeatureCall returns xbase::XExpression:
-	//	{xbase::XFeatureCall} feature=[types::JvmIdentifiableElement|IdOrSuper] (=> explicitOperationCall?="("
-	//	(featureCallArguments+=XExpression ("," featureCallArguments+=XExpression)*)? ")")? featureCallArguments+=XClosure?;
-	public RouteFeatureCallElements getRouteFeatureCallAccess() {
-		return (pRouteFeatureCall != null) ? pRouteFeatureCall : (pRouteFeatureCall = new RouteFeatureCallElements());
-	}
-	
-	public ParserRule getRouteFeatureCallRule() {
-		return getRouteFeatureCallAccess().getRule();
 	}
 
 	//XAnnotation:

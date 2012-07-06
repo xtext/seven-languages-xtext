@@ -18,9 +18,8 @@ import org.xtext.httprouting.services.RouteGrammarAccess;
 public class RouteSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected RouteGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_URL___IDTerminalRuleCall_1_1_0_0___FullStopKeyword_1_1_0_1_0_IDTerminalRuleCall_1_1_0_1_1__q_SolidusKeyword_1_0__a;
-	protected AbstractElementAlias match_URL___SolidusKeyword_1_0_IDTerminalRuleCall_1_1_0_0___FullStopKeyword_1_1_0_1_0_IDTerminalRuleCall_1_1_0_1_1__q__a;
-	protected AbstractElementAlias match_URL___SolidusKeyword_1_0_IDTerminalRuleCall_1_1_0_0___FullStopKeyword_1_1_0_1_0_IDTerminalRuleCall_1_1_0_1_1__q__p;
+	protected AbstractElementAlias match_URL___QualifiedNameParserRuleCall_1_1_0_SolidusKeyword_1_0__a;
+	protected AbstractElementAlias match_URL___SolidusKeyword_1_0_QualifiedNameParserRuleCall_1_1_0__a;
 	protected AbstractElementAlias match_XAnnotationElementValue_LeftParenthesisKeyword_7_0_a;
 	protected AbstractElementAlias match_XAnnotationElementValue_LeftParenthesisKeyword_7_0_p;
 	protected AbstractElementAlias match_XAnnotation___LeftParenthesisKeyword_3_0_RightParenthesisKeyword_3_2__q;
@@ -34,9 +33,8 @@ public class RouteSyntacticSequencer extends AbstractSyntacticSequencer {
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (RouteGrammarAccess) access;
-		match_URL___IDTerminalRuleCall_1_1_0_0___FullStopKeyword_1_1_0_1_0_IDTerminalRuleCall_1_1_0_1_1__q_SolidusKeyword_1_0__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getURLAccess().getIDTerminalRuleCall_1_1_0_0()), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getURLAccess().getFullStopKeyword_1_1_0_1_0()), new TokenAlias(false, false, grammarAccess.getURLAccess().getIDTerminalRuleCall_1_1_0_1_1())), new TokenAlias(false, false, grammarAccess.getURLAccess().getSolidusKeyword_1_0()));
-		match_URL___SolidusKeyword_1_0_IDTerminalRuleCall_1_1_0_0___FullStopKeyword_1_1_0_1_0_IDTerminalRuleCall_1_1_0_1_1__q__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getURLAccess().getSolidusKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getURLAccess().getIDTerminalRuleCall_1_1_0_0()), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getURLAccess().getFullStopKeyword_1_1_0_1_0()), new TokenAlias(false, false, grammarAccess.getURLAccess().getIDTerminalRuleCall_1_1_0_1_1())));
-		match_URL___SolidusKeyword_1_0_IDTerminalRuleCall_1_1_0_0___FullStopKeyword_1_1_0_1_0_IDTerminalRuleCall_1_1_0_1_1__q__p = new GroupAlias(true, false, new TokenAlias(false, false, grammarAccess.getURLAccess().getSolidusKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getURLAccess().getIDTerminalRuleCall_1_1_0_0()), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getURLAccess().getFullStopKeyword_1_1_0_1_0()), new TokenAlias(false, false, grammarAccess.getURLAccess().getIDTerminalRuleCall_1_1_0_1_1())));
+		match_URL___QualifiedNameParserRuleCall_1_1_0_SolidusKeyword_1_0__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getURLAccess().getQualifiedNameParserRuleCall_1_1_0()), new TokenAlias(false, false, grammarAccess.getURLAccess().getSolidusKeyword_1_0()));
+		match_URL___SolidusKeyword_1_0_QualifiedNameParserRuleCall_1_1_0__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getURLAccess().getSolidusKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getURLAccess().getQualifiedNameParserRuleCall_1_1_0()));
 		match_XAnnotationElementValue_LeftParenthesisKeyword_7_0_a = new TokenAlias(true, true, grammarAccess.getXAnnotationElementValueAccess().getLeftParenthesisKeyword_7_0());
 		match_XAnnotationElementValue_LeftParenthesisKeyword_7_0_p = new TokenAlias(true, false, grammarAccess.getXAnnotationElementValueAccess().getLeftParenthesisKeyword_7_0());
 		match_XAnnotation___LeftParenthesisKeyword_3_0_RightParenthesisKeyword_3_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getXAnnotationAccess().getLeftParenthesisKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getXAnnotationAccess().getRightParenthesisKeyword_3_2()));
@@ -50,20 +48,10 @@ public class RouteSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if(ruleCall.getRule() == grammarAccess.getIDRule())
-			return getIDToken(semanticObject, ruleCall, node);
-		else if(ruleCall.getRule() == grammarAccess.getOpSingleAssignRule())
+		if(ruleCall.getRule() == grammarAccess.getOpSingleAssignRule())
 			return getOpSingleAssignToken(semanticObject, ruleCall, node);
-		return "";
-	}
-	
-	/**
-	 * terminal ID:
-	 * 	'^'? ('a'..'z'|'A'..'Z'|'$'|'_') ('a'..'z'|'A'..'Z'|'$'|'_'|'0'..'9')*;
-	 */
-	protected String getIDToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
+		else if(ruleCall.getRule() == grammarAccess.getQualifiedNameRule())
+			return getQualifiedNameToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
@@ -78,18 +66,26 @@ public class RouteSyntacticSequencer extends AbstractSyntacticSequencer {
 		return "=";
 	}
 	
+	/**
+	 * QualifiedName:
+	 *   ValidID (=>'.' ValidID)*;
+	 */
+	protected String getQualifiedNameToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "";
+	}
+	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
 		if (transition.getAmbiguousSyntaxes().isEmpty()) return;
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_URL___IDTerminalRuleCall_1_1_0_0___FullStopKeyword_1_1_0_1_0_IDTerminalRuleCall_1_1_0_1_1__q_SolidusKeyword_1_0__a.equals(syntax))
-				emit_URL___IDTerminalRuleCall_1_1_0_0___FullStopKeyword_1_1_0_1_0_IDTerminalRuleCall_1_1_0_1_1__q_SolidusKeyword_1_0__a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_URL___SolidusKeyword_1_0_IDTerminalRuleCall_1_1_0_0___FullStopKeyword_1_1_0_1_0_IDTerminalRuleCall_1_1_0_1_1__q__a.equals(syntax))
-				emit_URL___SolidusKeyword_1_0_IDTerminalRuleCall_1_1_0_0___FullStopKeyword_1_1_0_1_0_IDTerminalRuleCall_1_1_0_1_1__q__a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_URL___SolidusKeyword_1_0_IDTerminalRuleCall_1_1_0_0___FullStopKeyword_1_1_0_1_0_IDTerminalRuleCall_1_1_0_1_1__q__p.equals(syntax))
-				emit_URL___SolidusKeyword_1_0_IDTerminalRuleCall_1_1_0_0___FullStopKeyword_1_1_0_1_0_IDTerminalRuleCall_1_1_0_1_1__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
+			if(match_URL___QualifiedNameParserRuleCall_1_1_0_SolidusKeyword_1_0__a.equals(syntax))
+				emit_URL___QualifiedNameParserRuleCall_1_1_0_SolidusKeyword_1_0__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_URL___SolidusKeyword_1_0_QualifiedNameParserRuleCall_1_1_0__a.equals(syntax))
+				emit_URL___SolidusKeyword_1_0_QualifiedNameParserRuleCall_1_1_0__a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_XAnnotationElementValue_LeftParenthesisKeyword_7_0_a.equals(syntax))
 				emit_XAnnotationElementValue_LeftParenthesisKeyword_7_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_XAnnotationElementValue_LeftParenthesisKeyword_7_0_p.equals(syntax))
@@ -114,25 +110,17 @@ public class RouteSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	/**
 	 * Syntax:
-	 *     (ID ('.' ID)? '/')*
+	 *     (QualifiedName '/')*
 	 */
-	protected void emit_URL___IDTerminalRuleCall_1_1_0_0___FullStopKeyword_1_1_0_1_0_IDTerminalRuleCall_1_1_0_1_1__q_SolidusKeyword_1_0__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_URL___QualifiedNameParserRuleCall_1_1_0_SolidusKeyword_1_0__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Syntax:
-	 *     ('/' ID ('.' ID)?)*
+	 *     ('/' QualifiedName)*
 	 */
-	protected void emit_URL___SolidusKeyword_1_0_IDTerminalRuleCall_1_1_0_0___FullStopKeyword_1_1_0_1_0_IDTerminalRuleCall_1_1_0_1_1__q__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     ('/' ID ('.' ID)?)+
-	 */
-	protected void emit_URL___SolidusKeyword_1_0_IDTerminalRuleCall_1_1_0_0___FullStopKeyword_1_1_0_1_0_IDTerminalRuleCall_1_1_0_1_1__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_URL___SolidusKeyword_1_0_QualifiedNameParserRuleCall_1_1_0__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

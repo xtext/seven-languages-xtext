@@ -11,10 +11,10 @@ import com.google.inject.Inject
 import java.util.List
 import java.util.regex.Pattern
 import org.eclipse.emf.ecore.EObject
-import org.eclipse.xtext.common.types.JvmVoid
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
+import org.xtext.httprouting.route.Dependency
 import org.xtext.httprouting.route.Model
 import org.xtext.httprouting.route.RequestType
 import org.xtext.httprouting.route.Route
@@ -23,6 +23,7 @@ import org.xtext.httprouting.route.Variable
 import static org.xtext.httprouting.jvmmodel.RouteJvmModelInferrer.*
 
 import static extension org.eclipse.xtext.nodemodel.util.NodeModelUtils.*
+import org.xtext.httprouting.route.URL
 
 /**
  * @author Holger Schill - Initial contribution and API
@@ -30,24 +31,31 @@ import static extension org.eclipse.xtext.nodemodel.util.NodeModelUtils.*
 class RouteJvmModelInferrer extends AbstractModelInferrer {
 
 	static val String HTTP_REQUEST = "javax.servlet.http.HttpServletRequest"
+	static val String HTTP_RESPONSE = "javax.servlet.http.HttpServletResponse"
 	static val String HTTP_SERVLET = "javax.servlet.http.HttpServlet"
 
 	@Inject extension JvmTypesBuilder
 
 	def dispatch void infer(Model model, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
-		acceptor.accept(model.toClass("org.xtext.httpRouting.HttpMapperServlet"))
+		acceptor.accept(model.toClass(model.javaClassName))
 			.initializeLater [
 				superTypes += model.newTypeRef(HTTP_SERVLET)
 				// get rid of the annoying serial warning
 				annotations += model.toAnnotation(typeof(SuppressWarnings), "serial")
+				for (field : model.declarations.filter(typeof(Dependency))) {
+					members += field.toField(field.name, field.type) [
+						annotations += field.toAnnotation(typeof(Inject))
+						field.annotations.translateAnnotationsTo(it)
+					]
+				}
+				
 				for (route : model.routes.filter[ url != null ]) {
 					members += route.toRoutePatternField
-					if (route.hasValidKey)
-						members += route.toRouteKeyField
-					if (route.condition != null && route.condition.expression != null)
+					if (route.condition != null)
 						members += route.toRouteConditionMethod
 					members += route.toRouteCallMethod
 				}
+				
 				val getRoutes = model.routes.filter[ requestType == RequestType::GET ]
 				if (!getRoutes.empty)
 					members += model.toRequestHandlerMethod("doGet",  getRoutes)
@@ -70,15 +78,18 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 			]
 	}
 	
+	def javaClassName(Model it) {
+		'routes.'+eResource.URI.trimFileExtension.lastSegment
+	}
+	
 	/**
 	 * Creates a method for the route's target call.
 	 */
 	def protected toRouteCallMethod(Route route) {
 		route.toMethod(route.nameOfRouteMethod, route.newTypeRef(Void::TYPE)) [
 			documentation = route.documentation
-			if (route.hasValidKey)
-				parameters += route.key.toParameter("it", route.key.type)
 			parameters += route.toParameter("request", route.newTypeRef(HTTP_REQUEST))
+			parameters += route.toParameter("response", route.newTypeRef(HTTP_RESPONSE))
 			for (variable : route.url.variables) {
 				parameters += variable.toParameter(variable.name, route.newTypeRef(typeof(String)))
 			}
@@ -98,17 +109,11 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 	def protected toRouteConditionMethod(Route route) {
 		route.toMethod(route.nameOfRouteMethod + "Condition", route.newTypeRef(Boolean::TYPE)) [
 			parameters += route.toParameter("request", route.newTypeRef(HTTP_REQUEST))
+			parameters += route.toParameter("response", route.newTypeRef(HTTP_RESPONSE))
 			for (variable : route.url.variables){
 				parameters += variable.toParameter(variable.name, route.newTypeRef(typeof(String)))
 			}
-			body = route.condition.expression
-		]
-	}
-
-	def protected toRouteKeyField(Route route) {
-		route.key.toField("_key" + route.index, route.key.type) [
-			annotations += route.toAnnotation(typeof(Inject))
-			route.key.annotations.translateAnnotationsTo(it)
+			body = route.condition
 		]
 	}
 
@@ -116,7 +121,7 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 		model.toMethod(name,model.newTypeRef(Void::TYPE)) [
 			annotations += model.toAnnotation(typeof(Override))
 			parameters += model.toParameter("request", model.newTypeRef(HTTP_REQUEST))
-			parameters += model.toParameter("response", model.newTypeRef("javax.servlet.http.HttpServletResponse"))
+			parameters += model.toParameter("response", model.newTypeRef(HTTP_RESPONSE))
 			body = [append('''
 				String url =  request.getRequestURL().toString();
 				«FOR route : routes»
@@ -127,11 +132,9 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 									String «variable.name» = _matcher.group(«variable.index + 1»);
 							«ENDFOR»
 							«IF route.condition != null»
-								if («route.nameOfRouteMethod»Condition(request«FOR v : route.url.variables BEFORE ", " SEPARATOR ", "»«v.name»«ENDFOR»))
+								if («route.nameOfRouteMethod»Condition(request, response«FOR v : route.url.variables BEFORE ", " SEPARATOR ", "»«v.name»«ENDFOR»))
 							«ENDIF»
-							«route.nameOfRouteMethod»(«IF route.hasValidKey»_key«route.index»,
-									«ENDIF»request«FOR v : route.url.variables», 
-									«v.name»«ENDFOR»);
+							«route.nameOfRouteMethod»(request, response«FOR v : route.url.variables», «v.name»«ENDFOR»);
 						}
 					}
 				«ENDFOR»
@@ -147,19 +150,26 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 		obj.eContainer.eContents.indexOf(obj)
 	}
 
-	def protected hasValidKey(Route route){
-		route.key != null && route.key.type != null && !(route.key.type instanceof JvmVoid)
-	}
-
 	def protected getRegExPattern(String originalPattern, List<Variable> variables) {
 		var pattern = originalPattern
 		for (variable : variables) {
-			if (variable.wildcard)
+			if (variable.isWildcard)
 				pattern = pattern.replaceAll("(:" + variable.name + "\\*)", "(.+)")
 			else
 				pattern = originalPattern.replaceAll("(:" + variable.name + ")", "(\\\\\\\\w+)")
 		}
 		return pattern
+	}
+	
+	def routes(Model model) {
+		model.declarations.filter(typeof(Route))
+	}
+	
+	def isWildcard(Variable it) {
+		switch eContainer {
+			URL : eContainer.variables.last == it && eContainer.wildcard
+			default : false
+		}
 	}
 }
 

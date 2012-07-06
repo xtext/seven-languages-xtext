@@ -55,9 +55,8 @@ import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationValueArray;
 import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationsPackage;
 import org.eclipse.xtext.xtype.XFunctionTypeRef;
 import org.eclipse.xtext.xtype.XtypePackage;
-import org.xtext.httprouting.route.Condition;
+import org.xtext.httprouting.route.Dependency;
 import org.xtext.httprouting.route.Import;
-import org.xtext.httprouting.route.Key;
 import org.xtext.httprouting.route.Model;
 import org.xtext.httprouting.route.Route;
 import org.xtext.httprouting.route.RoutePackage;
@@ -73,21 +72,16 @@ public class RouteSemanticSequencer extends XbaseWithAnnotationsSemanticSequence
 	
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == RoutePackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
-			case RoutePackage.CONDITION:
-				if(context == grammarAccess.getConditionRule()) {
-					sequence_Condition(context, (Condition) semanticObject); 
+			case RoutePackage.DEPENDENCY:
+				if(context == grammarAccess.getAbstractDeclarationRule() ||
+				   context == grammarAccess.getDependencyRule()) {
+					sequence_Dependency(context, (Dependency) semanticObject); 
 					return; 
 				}
 				else break;
 			case RoutePackage.IMPORT:
 				if(context == grammarAccess.getImportRule()) {
 					sequence_Import(context, (Import) semanticObject); 
-					return; 
-				}
-				else break;
-			case RoutePackage.KEY:
-				if(context == grammarAccess.getKeyRule()) {
-					sequence_Key(context, (Key) semanticObject); 
 					return; 
 				}
 				else break;
@@ -98,7 +92,8 @@ public class RouteSemanticSequencer extends XbaseWithAnnotationsSemanticSequence
 				}
 				else break;
 			case RoutePackage.ROUTE:
-				if(context == grammarAccess.getRouteRule()) {
+				if(context == grammarAccess.getAbstractDeclarationRule() ||
+				   context == grammarAccess.getRouteRule()) {
 					sequence_Route(context, (Route) semanticObject); 
 					return; 
 				}
@@ -496,11 +491,7 @@ public class RouteSemanticSequencer extends XbaseWithAnnotationsSemanticSequence
 				}
 				else break;
 			case XbasePackage.XFEATURE_CALL:
-				if(context == grammarAccess.getRouteFeatureCallRule()) {
-					sequence_RouteFeatureCall(context, (XFeatureCall) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getXAnnotationElementValueRule() ||
+				if(context == grammarAccess.getXAnnotationElementValueRule() ||
 				   context == grammarAccess.getXAnnotationElementValueStringConcatenationRule() ||
 				   context == grammarAccess.getXAnnotationElementValueStringConcatenationAccess().getXAnnotationElementValueBinaryOperationLeftOperandAction_1_0() ||
 				   context == grammarAccess.getXAnnotationValueFieldReferenceRule()) {
@@ -1034,17 +1025,10 @@ public class RouteSemanticSequencer extends XbaseWithAnnotationsSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     expression=XExpression
+	 *     (annotations+=XAnnotation? type=JvmTypeReference name=ID)
 	 */
-	protected void sequence_Condition(EObject context, Condition semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, RoutePackage.Literals.CONDITION__EXPRESSION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RoutePackage.Literals.CONDITION__EXPRESSION));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getConditionAccess().getExpressionXExpressionParserRuleCall_1_0(), semanticObject.getExpression());
-		feeder.finish();
+	protected void sequence_Dependency(EObject context, Dependency semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -1066,16 +1050,7 @@ public class RouteSemanticSequencer extends XbaseWithAnnotationsSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (annotations+=XAnnotation? type=JvmTypeReference)
-	 */
-	protected void sequence_Key(EObject context, Key semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (imports+=Import* routes+=Route*)
+	 *     (imports+=Import* declarations+=AbstractDeclaration*)
 	 */
 	protected void sequence_Model(EObject context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1084,20 +1059,7 @@ public class RouteSemanticSequencer extends XbaseWithAnnotationsSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         feature=[JvmIdentifiableElement|IdOrSuper] 
-	 *         (explicitOperationCall?='(' (featureCallArguments+=XExpression featureCallArguments+=XExpression*)?)? 
-	 *         featureCallArguments+=XClosure?
-	 *     )
-	 */
-	protected void sequence_RouteFeatureCall(EObject context, XFeatureCall semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (requestType=RequestType url=URL condition=Condition? ((key=Key call=RouteFeatureCall) | call=XFeatureCall))
+	 *     (requestType=RequestType url=URL condition=XExpression? call=XExpression)
 	 */
 	protected void sequence_Route(EObject context, Route semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1106,7 +1068,7 @@ public class RouteSemanticSequencer extends XbaseWithAnnotationsSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (variables+=Variable*)
+	 *     (variables+=Variable* (variables+=Variable wildcard?='*')?)
 	 */
 	protected void sequence_URL(EObject context, URL semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1115,9 +1077,16 @@ public class RouteSemanticSequencer extends XbaseWithAnnotationsSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (name=ID wildcard?='*'?)
+	 *     name=ID
 	 */
 	protected void sequence_Variable(EObject context, Variable semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, RoutePackage.Literals.VARIABLE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RoutePackage.Literals.VARIABLE__NAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
 	}
 }

@@ -7,30 +7,21 @@
  *******************************************************************************/
 package org.xtext.httprouting.scoping
 
-import java.util.List
 import org.eclipse.emf.ecore.EObject
-import org.eclipse.xtext.EcoreUtil2
-import org.eclipse.xtext.scoping.impl.ImportNormalizer
 import org.eclipse.xtext.xbase.scoping.XbaseImportedNamespaceScopeProvider
 import org.xtext.httprouting.route.Model
-import org.xtext.httprouting.route.Route
+
+import static extension org.eclipse.xtext.EcoreUtil2.*
+
 /**
- * @author Holger Schill - Initial contribution and API
+ * Adds the imports
  */
 class RouteImportedNamespaceScopeProvider extends XbaseImportedNamespaceScopeProvider {
+	
 	override internalGetImportedNamespaceResolvers(EObject context, boolean ignoreCase) {
-		if (!(context instanceof Route))
-			return emptyList();
-		val model = EcoreUtil2::getContainerOfType(context, typeof(Model))
-		val List<ImportNormalizer> importedNamespaceResolvers = newArrayList();
-		for (imp :model.imports) {
-			if(imp.importedType != null){
-				val value = imp.importedType.qualifiedName
-				val resolver = createImportedNamespaceResolver(value, ignoreCase);
-				if (resolver != null)
-					importedNamespaceResolvers.add(resolver);
-			}
-		}
-		importedNamespaceResolvers;
+		val model = context.getContainerOfType(typeof(Model))
+		return model.imports.map [
+				createImportedNamespaceResolver(importedType.qualifiedName, ignoreCase)
+			].filterNull.toList
 	}
 }

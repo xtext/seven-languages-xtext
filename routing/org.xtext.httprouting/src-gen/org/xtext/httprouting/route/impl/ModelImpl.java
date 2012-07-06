@@ -16,9 +16,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.xtext.httprouting.route.AbstractDeclaration;
 import org.xtext.httprouting.route.Import;
 import org.xtext.httprouting.route.Model;
-import org.xtext.httprouting.route.Route;
 import org.xtext.httprouting.route.RoutePackage;
 
 /**
@@ -29,7 +29,7 @@ import org.xtext.httprouting.route.RoutePackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.xtext.httprouting.route.impl.ModelImpl#getImports <em>Imports</em>}</li>
- *   <li>{@link org.xtext.httprouting.route.impl.ModelImpl#getRoutes <em>Routes</em>}</li>
+ *   <li>{@link org.xtext.httprouting.route.impl.ModelImpl#getDeclarations <em>Declarations</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,14 +48,14 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   protected EList<Import> imports;
 
   /**
-   * The cached value of the '{@link #getRoutes() <em>Routes</em>}' containment reference list.
+   * The cached value of the '{@link #getDeclarations() <em>Declarations</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRoutes()
+   * @see #getDeclarations()
    * @generated
    * @ordered
    */
-  protected EList<Route> routes;
+  protected EList<AbstractDeclaration> declarations;
 
   /**
    * <!-- begin-user-doc -->
@@ -97,13 +97,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Route> getRoutes()
+  public EList<AbstractDeclaration> getDeclarations()
   {
-    if (routes == null)
+    if (declarations == null)
     {
-      routes = new EObjectContainmentEList<Route>(Route.class, this, RoutePackage.MODEL__ROUTES);
+      declarations = new EObjectContainmentEList<AbstractDeclaration>(AbstractDeclaration.class, this, RoutePackage.MODEL__DECLARATIONS);
     }
-    return routes;
+    return declarations;
   }
 
   /**
@@ -118,8 +118,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case RoutePackage.MODEL__IMPORTS:
         return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
-      case RoutePackage.MODEL__ROUTES:
-        return ((InternalEList<?>)getRoutes()).basicRemove(otherEnd, msgs);
+      case RoutePackage.MODEL__DECLARATIONS:
+        return ((InternalEList<?>)getDeclarations()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -136,8 +136,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case RoutePackage.MODEL__IMPORTS:
         return getImports();
-      case RoutePackage.MODEL__ROUTES:
-        return getRoutes();
+      case RoutePackage.MODEL__DECLARATIONS:
+        return getDeclarations();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -157,9 +157,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         getImports().clear();
         getImports().addAll((Collection<? extends Import>)newValue);
         return;
-      case RoutePackage.MODEL__ROUTES:
-        getRoutes().clear();
-        getRoutes().addAll((Collection<? extends Route>)newValue);
+      case RoutePackage.MODEL__DECLARATIONS:
+        getDeclarations().clear();
+        getDeclarations().addAll((Collection<? extends AbstractDeclaration>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -178,8 +178,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
       case RoutePackage.MODEL__IMPORTS:
         getImports().clear();
         return;
-      case RoutePackage.MODEL__ROUTES:
-        getRoutes().clear();
+      case RoutePackage.MODEL__DECLARATIONS:
+        getDeclarations().clear();
         return;
     }
     super.eUnset(featureID);
@@ -197,8 +197,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case RoutePackage.MODEL__IMPORTS:
         return imports != null && !imports.isEmpty();
-      case RoutePackage.MODEL__ROUTES:
-        return routes != null && !routes.isEmpty();
+      case RoutePackage.MODEL__DECLARATIONS:
+        return declarations != null && !declarations.isEmpty();
     }
     return super.eIsSet(featureID);
   }

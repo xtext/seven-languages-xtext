@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.xtext.httprouting.route.Model#getImports <em>Imports</em>}</li>
- *   <li>{@link org.xtext.httprouting.route.Model#getRoutes <em>Routes</em>}</li>
+ *   <li>{@link org.xtext.httprouting.route.Model#getDeclarations <em>Declarations</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,19 +42,19 @@ public interface Model extends EObject
   EList<Import> getImports();
 
   /**
-   * Returns the value of the '<em><b>Routes</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.httprouting.route.Route}.
+   * Returns the value of the '<em><b>Declarations</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.httprouting.route.AbstractDeclaration}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Routes</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Declarations</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Routes</em>' containment reference list.
-   * @see org.xtext.httprouting.route.RoutePackage#getModel_Routes()
+   * @return the value of the '<em>Declarations</em>' containment reference list.
+   * @see org.xtext.httprouting.route.RoutePackage#getModel_Declarations()
    * @model containment="true"
    * @generated
    */
-  EList<Route> getRoutes();
+  EList<AbstractDeclaration> getDeclarations();
 
 } // Model

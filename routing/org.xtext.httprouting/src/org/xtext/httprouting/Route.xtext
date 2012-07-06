@@ -11,34 +11,32 @@ generate route "http://www.xtext.org/httprouting/Route"
 import "http://www.eclipse.org/xtext/common/JavaVMTypes" as types
 import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
 
-Model:
+Model :
 	imports+=Import*
-	routes+=Route*;
-	
-Import:
-	'import' importedType=[types::JvmType|QualifiedName];
+	declarations+=AbstractDeclaration*;
 
-Route:
-	requestType=RequestType url=URL condition=Condition? (key=Key "->" call=RouteFeatureCall | call=XFeatureCall);
+Import :
+	'import' importedType=[ types::JvmType | QualifiedName];
 
-enum RequestType:
+AbstractDeclaration :
+	Dependency | Route;
+
+Dependency :
+	'inject' annotations+=XAnnotation? type=JvmTypeReference name=ID;
+
+Route :
+	requestType=RequestType url=URL ('when' condition=XExpression)? "do" call=XExpression;
+
+enum RequestType :
 	GET | POST | PUT | DELETE | HEAD;
 
-URL:
-	{URL} ("/" (ID ("." ID)? | variables+=Variable))+;
+/**
+ * matches URLs like 
+ * 	'/foo/bar.html' or 
+ * 	'/customer/:customerID/save'
+ */
+URL :
+	{URL} ("/" (QualifiedName | variables+=Variable))* ('/' variables+=Variable wildcard?="*")?;
 
-Variable:
-	":" name=ID (wildcard?="*")?;
-
-Condition:
-	"when" expression=XExpression;
-
-Key:
-	annotations+=XAnnotation? type=JvmTypeReference;
-
-RouteFeatureCall returns xbase::XExpression:
-	{xbase::XFeatureCall} 
-	feature=[types::JvmIdentifiableElement|IdOrSuper]
-	(=> explicitOperationCall?='(' (featureCallArguments+=XExpression (',' featureCallArguments+=XExpression)*)? ')')?
-	featureCallArguments+=XClosure?;
-	
+Variable :
+	":" name=ID;

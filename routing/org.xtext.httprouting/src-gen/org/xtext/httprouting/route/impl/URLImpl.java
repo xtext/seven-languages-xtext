@@ -4,6 +4,7 @@ package org.xtext.httprouting.route.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -11,6 +12,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -28,6 +30,7 @@ import org.xtext.httprouting.route.Variable;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.xtext.httprouting.route.impl.URLImpl#getVariables <em>Variables</em>}</li>
+ *   <li>{@link org.xtext.httprouting.route.impl.URLImpl#isWildcard <em>Wildcard</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,6 +47,26 @@ public class URLImpl extends MinimalEObjectImpl.Container implements URL
    * @ordered
    */
   protected EList<Variable> variables;
+
+  /**
+   * The default value of the '{@link #isWildcard() <em>Wildcard</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isWildcard()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean WILDCARD_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isWildcard() <em>Wildcard</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isWildcard()
+   * @generated
+   * @ordered
+   */
+  protected boolean wildcard = WILDCARD_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -85,6 +108,29 @@ public class URLImpl extends MinimalEObjectImpl.Container implements URL
    * <!-- end-user-doc -->
    * @generated
    */
+  public boolean isWildcard()
+  {
+    return wildcard;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setWildcard(boolean newWildcard)
+  {
+    boolean oldWildcard = wildcard;
+    wildcard = newWildcard;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, RoutePackage.URL__WILDCARD, oldWildcard, wildcard));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -108,6 +154,8 @@ public class URLImpl extends MinimalEObjectImpl.Container implements URL
     {
       case RoutePackage.URL__VARIABLES:
         return getVariables();
+      case RoutePackage.URL__WILDCARD:
+        return isWildcard();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -127,6 +175,9 @@ public class URLImpl extends MinimalEObjectImpl.Container implements URL
         getVariables().clear();
         getVariables().addAll((Collection<? extends Variable>)newValue);
         return;
+      case RoutePackage.URL__WILDCARD:
+        setWildcard((Boolean)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -144,6 +195,9 @@ public class URLImpl extends MinimalEObjectImpl.Container implements URL
       case RoutePackage.URL__VARIABLES:
         getVariables().clear();
         return;
+      case RoutePackage.URL__WILDCARD:
+        setWildcard(WILDCARD_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -160,8 +214,27 @@ public class URLImpl extends MinimalEObjectImpl.Container implements URL
     {
       case RoutePackage.URL__VARIABLES:
         return variables != null && !variables.isEmpty();
+      case RoutePackage.URL__WILDCARD:
+        return wildcard != WILDCARD_EDEFAULT;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (wildcard: ");
+    result.append(wildcard);
+    result.append(')');
+    return result.toString();
   }
 
 } //URLImpl

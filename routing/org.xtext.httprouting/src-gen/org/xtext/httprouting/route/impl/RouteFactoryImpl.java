@@ -67,11 +67,11 @@ public class RouteFactoryImpl extends EFactoryImpl implements RouteFactory
     {
       case RoutePackage.MODEL: return createModel();
       case RoutePackage.IMPORT: return createImport();
+      case RoutePackage.ABSTRACT_DECLARATION: return createAbstractDeclaration();
+      case RoutePackage.DEPENDENCY: return createDependency();
       case RoutePackage.ROUTE: return createRoute();
       case RoutePackage.URL: return createURL();
       case RoutePackage.VARIABLE: return createVariable();
-      case RoutePackage.CONDITION: return createCondition();
-      case RoutePackage.KEY: return createKey();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -138,6 +138,28 @@ public class RouteFactoryImpl extends EFactoryImpl implements RouteFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public AbstractDeclaration createAbstractDeclaration()
+  {
+    AbstractDeclarationImpl abstractDeclaration = new AbstractDeclarationImpl();
+    return abstractDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Dependency createDependency()
+  {
+    DependencyImpl dependency = new DependencyImpl();
+    return dependency;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Route createRoute()
   {
     RouteImpl route = new RouteImpl();
@@ -164,28 +186,6 @@ public class RouteFactoryImpl extends EFactoryImpl implements RouteFactory
   {
     VariableImpl variable = new VariableImpl();
     return variable;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Condition createCondition()
-  {
-    ConditionImpl condition = new ConditionImpl();
-    return condition;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Key createKey()
-  {
-    KeyImpl key = new KeyImpl();
-    return key;
   }
 
   /**

@@ -106,10 +106,26 @@ public class RouteSwitch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case RoutePackage.ABSTRACT_DECLARATION:
+      {
+        AbstractDeclaration abstractDeclaration = (AbstractDeclaration)theEObject;
+        T result = caseAbstractDeclaration(abstractDeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RoutePackage.DEPENDENCY:
+      {
+        Dependency dependency = (Dependency)theEObject;
+        T result = caseDependency(dependency);
+        if (result == null) result = caseAbstractDeclaration(dependency);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case RoutePackage.ROUTE:
       {
         Route route = (Route)theEObject;
         T result = caseRoute(route);
+        if (result == null) result = caseAbstractDeclaration(route);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -124,20 +140,6 @@ public class RouteSwitch<T>
       {
         Variable variable = (Variable)theEObject;
         T result = caseVariable(variable);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case RoutePackage.CONDITION:
-      {
-        Condition condition = (Condition)theEObject;
-        T result = caseCondition(condition);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case RoutePackage.KEY:
-      {
-        Key key = (Key)theEObject;
-        T result = caseKey(key);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -173,6 +175,38 @@ public class RouteSwitch<T>
    * @generated
    */
   public T caseImport(Import object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Abstract Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Abstract Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAbstractDeclaration(AbstractDeclaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Dependency</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Dependency</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDependency(Dependency object)
   {
     return null;
   }
@@ -221,38 +255,6 @@ public class RouteSwitch<T>
    * @generated
    */
   public T caseVariable(Variable object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Condition</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Condition</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseCondition(Condition object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Key</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Key</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseKey(Key object)
   {
     return null;
   }

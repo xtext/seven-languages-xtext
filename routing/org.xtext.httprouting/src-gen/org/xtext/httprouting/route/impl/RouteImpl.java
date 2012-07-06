@@ -9,12 +9,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.xtext.xbase.XExpression;
 
-import org.xtext.httprouting.route.Condition;
-import org.xtext.httprouting.route.Key;
 import org.xtext.httprouting.route.RequestType;
 import org.xtext.httprouting.route.Route;
 import org.xtext.httprouting.route.RoutePackage;
@@ -30,14 +27,13 @@ import org.xtext.httprouting.route.URL;
  *   <li>{@link org.xtext.httprouting.route.impl.RouteImpl#getRequestType <em>Request Type</em>}</li>
  *   <li>{@link org.xtext.httprouting.route.impl.RouteImpl#getUrl <em>Url</em>}</li>
  *   <li>{@link org.xtext.httprouting.route.impl.RouteImpl#getCondition <em>Condition</em>}</li>
- *   <li>{@link org.xtext.httprouting.route.impl.RouteImpl#getKey <em>Key</em>}</li>
  *   <li>{@link org.xtext.httprouting.route.impl.RouteImpl#getCall <em>Call</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class RouteImpl extends MinimalEObjectImpl.Container implements Route
+public class RouteImpl extends AbstractDeclarationImpl implements Route
 {
   /**
    * The default value of the '{@link #getRequestType() <em>Request Type</em>}' attribute.
@@ -77,17 +73,7 @@ public class RouteImpl extends MinimalEObjectImpl.Container implements Route
    * @generated
    * @ordered
    */
-  protected Condition condition;
-
-  /**
-   * The cached value of the '{@link #getKey() <em>Key</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getKey()
-   * @generated
-   * @ordered
-   */
-  protected Key key;
+  protected XExpression condition;
 
   /**
    * The cached value of the '{@link #getCall() <em>Call</em>}' containment reference.
@@ -196,7 +182,7 @@ public class RouteImpl extends MinimalEObjectImpl.Container implements Route
    * <!-- end-user-doc -->
    * @generated
    */
-  public Condition getCondition()
+  public XExpression getCondition()
   {
     return condition;
   }
@@ -206,9 +192,9 @@ public class RouteImpl extends MinimalEObjectImpl.Container implements Route
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetCondition(Condition newCondition, NotificationChain msgs)
+  public NotificationChain basicSetCondition(XExpression newCondition, NotificationChain msgs)
   {
-    Condition oldCondition = condition;
+    XExpression oldCondition = condition;
     condition = newCondition;
     if (eNotificationRequired())
     {
@@ -223,7 +209,7 @@ public class RouteImpl extends MinimalEObjectImpl.Container implements Route
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setCondition(Condition newCondition)
+  public void setCondition(XExpression newCondition)
   {
     if (newCondition != condition)
     {
@@ -237,54 +223,6 @@ public class RouteImpl extends MinimalEObjectImpl.Container implements Route
     }
     else if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, RoutePackage.ROUTE__CONDITION, newCondition, newCondition));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Key getKey()
-  {
-    return key;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetKey(Key newKey, NotificationChain msgs)
-  {
-    Key oldKey = key;
-    key = newKey;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RoutePackage.ROUTE__KEY, oldKey, newKey);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setKey(Key newKey)
-  {
-    if (newKey != key)
-    {
-      NotificationChain msgs = null;
-      if (key != null)
-        msgs = ((InternalEObject)key).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RoutePackage.ROUTE__KEY, null, msgs);
-      if (newKey != null)
-        msgs = ((InternalEObject)newKey).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RoutePackage.ROUTE__KEY, null, msgs);
-      msgs = basicSetKey(newKey, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RoutePackage.ROUTE__KEY, newKey, newKey));
   }
 
   /**
@@ -349,8 +287,6 @@ public class RouteImpl extends MinimalEObjectImpl.Container implements Route
         return basicSetUrl(null, msgs);
       case RoutePackage.ROUTE__CONDITION:
         return basicSetCondition(null, msgs);
-      case RoutePackage.ROUTE__KEY:
-        return basicSetKey(null, msgs);
       case RoutePackage.ROUTE__CALL:
         return basicSetCall(null, msgs);
     }
@@ -373,8 +309,6 @@ public class RouteImpl extends MinimalEObjectImpl.Container implements Route
         return getUrl();
       case RoutePackage.ROUTE__CONDITION:
         return getCondition();
-      case RoutePackage.ROUTE__KEY:
-        return getKey();
       case RoutePackage.ROUTE__CALL:
         return getCall();
     }
@@ -398,10 +332,7 @@ public class RouteImpl extends MinimalEObjectImpl.Container implements Route
         setUrl((URL)newValue);
         return;
       case RoutePackage.ROUTE__CONDITION:
-        setCondition((Condition)newValue);
-        return;
-      case RoutePackage.ROUTE__KEY:
-        setKey((Key)newValue);
+        setCondition((XExpression)newValue);
         return;
       case RoutePackage.ROUTE__CALL:
         setCall((XExpression)newValue);
@@ -427,10 +358,7 @@ public class RouteImpl extends MinimalEObjectImpl.Container implements Route
         setUrl((URL)null);
         return;
       case RoutePackage.ROUTE__CONDITION:
-        setCondition((Condition)null);
-        return;
-      case RoutePackage.ROUTE__KEY:
-        setKey((Key)null);
+        setCondition((XExpression)null);
         return;
       case RoutePackage.ROUTE__CALL:
         setCall((XExpression)null);
@@ -455,8 +383,6 @@ public class RouteImpl extends MinimalEObjectImpl.Container implements Route
         return url != null;
       case RoutePackage.ROUTE__CONDITION:
         return condition != null;
-      case RoutePackage.ROUTE__KEY:
-        return key != null;
       case RoutePackage.ROUTE__CALL:
         return call != null;
     }

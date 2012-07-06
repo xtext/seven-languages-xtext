@@ -16,31 +16,29 @@
     </genEnums>
     <genClasses ecoreClass="Route.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Route.ecore#//Model/imports"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Route.ecore#//Model/routes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Route.ecore#//Model/declarations"/>
     </genClasses>
     <genClasses ecoreClass="Route.ecore#//Import">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Route.ecore#//Import/importedType"/>
+    </genClasses>
+    <genClasses ecoreClass="Route.ecore#//AbstractDeclaration"/>
+    <genClasses ecoreClass="Route.ecore#//Dependency">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Route.ecore#//Dependency/annotations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Route.ecore#//Dependency/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Route.ecore#//Dependency/name"/>
     </genClasses>
     <genClasses ecoreClass="Route.ecore#//Route">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Route.ecore#//Route/requestType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Route.ecore#//Route/url"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Route.ecore#//Route/condition"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Route.ecore#//Route/key"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Route.ecore#//Route/call"/>
     </genClasses>
     <genClasses ecoreClass="Route.ecore#//URL">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Route.ecore#//URL/variables"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Route.ecore#//URL/wildcard"/>
     </genClasses>
     <genClasses ecoreClass="Route.ecore#//Variable">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Route.ecore#//Variable/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Route.ecore#//Variable/wildcard"/>
-    </genClasses>
-    <genClasses ecoreClass="Route.ecore#//Condition">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Route.ecore#//Condition/expression"/>
-    </genClasses>
-    <genClasses ecoreClass="Route.ecore#//Key">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Route.ecore#//Key/annotations"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Route.ecore#//Key/type"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -20,7 +20,6 @@ import org.xtext.httprouting.route.Variable;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.xtext.httprouting.route.impl.VariableImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.httprouting.route.impl.VariableImpl#isWildcard <em>Wildcard</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,26 +46,6 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #isWildcard() <em>Wildcard</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isWildcard()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean WILDCARD_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isWildcard() <em>Wildcard</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isWildcard()
-   * @generated
-   * @ordered
-   */
-  protected boolean wildcard = WILDCARD_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -117,29 +96,6 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
    * <!-- end-user-doc -->
    * @generated
    */
-  public boolean isWildcard()
-  {
-    return wildcard;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setWildcard(boolean newWildcard)
-  {
-    boolean oldWildcard = wildcard;
-    wildcard = newWildcard;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RoutePackage.VARIABLE__WILDCARD, oldWildcard, wildcard));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -147,8 +103,6 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
     {
       case RoutePackage.VARIABLE__NAME:
         return getName();
-      case RoutePackage.VARIABLE__WILDCARD:
-        return isWildcard();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -165,9 +119,6 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
     {
       case RoutePackage.VARIABLE__NAME:
         setName((String)newValue);
-        return;
-      case RoutePackage.VARIABLE__WILDCARD:
-        setWildcard((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -186,9 +137,6 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
       case RoutePackage.VARIABLE__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case RoutePackage.VARIABLE__WILDCARD:
-        setWildcard(WILDCARD_EDEFAULT);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -205,8 +153,6 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
     {
       case RoutePackage.VARIABLE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case RoutePackage.VARIABLE__WILDCARD:
-        return wildcard != WILDCARD_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -224,8 +170,6 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", wildcard: ");
-    result.append(wildcard);
     result.append(')');
     return result.toString();
   }
