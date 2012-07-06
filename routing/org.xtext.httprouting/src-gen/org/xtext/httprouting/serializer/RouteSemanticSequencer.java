@@ -1068,7 +1068,7 @@ public class RouteSemanticSequencer extends XbaseWithAnnotationsSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (variables+=Variable* (variables+=Variable wildcard?='*')?)
+	 *     ((variables+=Variable* (variables+=Variable wildcard?='*')?)?)
 	 */
 	protected void sequence_URL(EObject context, URL semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

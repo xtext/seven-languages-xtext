@@ -25,7 +25,7 @@ Dependency :
 	'inject' annotations+=XAnnotation? type=JvmTypeReference name=ID;
 
 Route :
-	requestType=RequestType url=URL ('when' condition=XExpression)? "do" call=XExpression;
+	requestType=RequestType url=URL ('when' condition=XExpression)? 'do' call=XExpression;
 
 enum RequestType :
 	GET | POST | PUT | DELETE | HEAD;
@@ -36,7 +36,8 @@ enum RequestType :
  * 	'/customer/:customerID/save'
  */
 URL :
-	{URL} ("/" (QualifiedName | variables+=Variable))* ('/' variables+=Variable wildcard?="*")?;
+	{URL} 
+	( '/' | ('/' (QualifiedName | variables+=Variable))* ('/' variables+=Variable wildcard?='*')?);
 
 Variable :
-	":" name=ID;
+	':' name=ID;

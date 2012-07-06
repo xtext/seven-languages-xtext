@@ -1,15 +1,14 @@
 package org.xtext.httprouting.ui.labeling;
 
-import com.google.common.base.Objects;
 import com.google.inject.Inject;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.nodemodel.ICompositeNode;
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.eclipse.xtext.xbase.ui.labeling.XbaseLabelProvider;
 import org.xtext.httprouting.route.RequestType;
 import org.xtext.httprouting.route.Route;
 import org.xtext.httprouting.route.URL;
-import org.xtext.httprouting.route.Variable;
 
 @SuppressWarnings("all")
 public class RouteLabelProvider extends XbaseLabelProvider {
@@ -18,35 +17,16 @@ public class RouteLabelProvider extends XbaseLabelProvider {
     super(delegate);
   }
   
-  public String text(final Route route) {
+  public CharSequence text(final Route route) {
+    StringConcatenation _builder = new StringConcatenation();
     RequestType _requestType = route.getRequestType();
-    String result = _requestType.getName();
+    String _name = _requestType.name();
+    _builder.append(_name, "");
+    _builder.append(" ");
     URL _url = route.getUrl();
-    boolean _notEquals = (!Objects.equal(_url, null));
-    if (_notEquals) {
-      String _plus = (result + " ");
-      URL _url_1 = route.getUrl();
-      String _text = this.getText(_url_1);
-      String _plus_1 = (_plus + _text);
-      result = _plus_1;
-    }
-    return result;
-  }
-  
-  public String text(final Variable v) {
-    return v.getName();
-  }
-  
-  public Object image(final Variable v) {
-    return null;
-  }
-  
-  public String text(final URL url) {
-    final ICompositeNode node = NodeModelUtils.getNode(url);
-    return node.getText();
-  }
-  
-  public Object image(final URL url) {
-    return null;
+    ICompositeNode _node = NodeModelUtils.getNode(_url);
+    String _text = _node.getText();
+    _builder.append(_text, "");
+    return _builder;
   }
 }

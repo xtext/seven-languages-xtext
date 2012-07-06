@@ -125,22 +125,27 @@
             <classifier xsi:type="ecore:EClass" href="http://www.xtext.org/httprouting/Route#//URL"/>
           </type>
         </elements>
-        <elements xsi:type="xtext:Group" cardinality="*">
+        <elements xsi:type="xtext:Alternatives">
           <elements xsi:type="xtext:Keyword" value="/"/>
-          <elements xsi:type="xtext:Alternatives">
-            <elements xsi:type="xtext:RuleCall" rule="/2/@rules.52"/>
-            <elements xsi:type="xtext:Assignment" feature="variables" operator="+=">
-              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.7"/>
+          <elements xsi:type="xtext:Group">
+            <elements xsi:type="xtext:Group" cardinality="*">
+              <elements xsi:type="xtext:Keyword" value="/"/>
+              <elements xsi:type="xtext:Alternatives">
+                <elements xsi:type="xtext:RuleCall" rule="/2/@rules.52"/>
+                <elements xsi:type="xtext:Assignment" feature="variables" operator="+=">
+                  <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.7"/>
+                </elements>
+              </elements>
             </elements>
-          </elements>
-        </elements>
-        <elements xsi:type="xtext:Group" cardinality="?">
-          <elements xsi:type="xtext:Keyword" value="/"/>
-          <elements xsi:type="xtext:Assignment" feature="variables" operator="+=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.7"/>
-          </elements>
-          <elements xsi:type="xtext:Assignment" feature="wildcard" operator="?=">
-            <terminal xsi:type="xtext:Keyword" value="*"/>
+            <elements xsi:type="xtext:Group" cardinality="?">
+              <elements xsi:type="xtext:Keyword" value="/"/>
+              <elements xsi:type="xtext:Assignment" feature="variables" operator="+=">
+                <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.7"/>
+              </elements>
+              <elements xsi:type="xtext:Assignment" feature="wildcard" operator="?=">
+                <terminal xsi:type="xtext:Keyword" value="*"/>
+              </elements>
+            </elements>
           </elements>
         </elements>
       </alternatives>

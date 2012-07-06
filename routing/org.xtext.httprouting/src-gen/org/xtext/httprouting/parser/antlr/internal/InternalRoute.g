@@ -405,9 +405,14 @@ ruleURL returns [EObject current=null]
     {
     	newLeafNode(otherlv_1, grammarAccess.getURLAccess().getSolidusKeyword_1_0());
     }
+
+    |((	otherlv_2='/' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getURLAccess().getSolidusKeyword_1_1_0_0());
+    }
 (
     { 
-        newCompositeNode(grammarAccess.getURLAccess().getQualifiedNameParserRuleCall_1_1_0()); 
+        newCompositeNode(grammarAccess.getURLAccess().getQualifiedNameParserRuleCall_1_1_0_1_0()); 
     }
 ruleQualifiedName
     { 
@@ -417,38 +422,38 @@ ruleQualifiedName
     |(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getURLAccess().getVariablesVariableParserRuleCall_1_1_1_0()); 
+	        newCompositeNode(grammarAccess.getURLAccess().getVariablesVariableParserRuleCall_1_1_0_1_1_0()); 
 	    }
-		lv_variables_3_0=ruleVariable		{
+		lv_variables_4_0=ruleVariable		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getURLRule());
 	        }
        		add(
        			$current, 
        			"variables",
-        		lv_variables_3_0, 
+        		lv_variables_4_0, 
         		"Variable");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)))*(	otherlv_4='/' 
+)))*(	otherlv_5='/' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getURLAccess().getSolidusKeyword_2_0());
+    	newLeafNode(otherlv_5, grammarAccess.getURLAccess().getSolidusKeyword_1_1_1_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getURLAccess().getVariablesVariableParserRuleCall_2_1_0()); 
+	        newCompositeNode(grammarAccess.getURLAccess().getVariablesVariableParserRuleCall_1_1_1_1_0()); 
 	    }
-		lv_variables_5_0=ruleVariable		{
+		lv_variables_6_0=ruleVariable		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getURLRule());
 	        }
        		add(
        			$current, 
        			"variables",
-        		lv_variables_5_0, 
+        		lv_variables_6_0, 
         		"Variable");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -456,9 +461,9 @@ ruleQualifiedName
 )
 )(
 (
-		lv_wildcard_6_0=	'*' 
+		lv_wildcard_7_0=	'*' 
     {
-        newLeafNode(lv_wildcard_6_0, grammarAccess.getURLAccess().getWildcardAsteriskKeyword_2_2_0());
+        newLeafNode(lv_wildcard_7_0, grammarAccess.getURLAccess().getWildcardAsteriskKeyword_1_1_1_2_0());
     }
  
 	    {
@@ -469,7 +474,7 @@ ruleQualifiedName
 	    }
 
 )
-))?)
+))?)))
 ;
 
 

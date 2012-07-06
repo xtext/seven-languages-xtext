@@ -40,7 +40,8 @@ import org.xtext.httprouting.route.URL;
 import org.xtext.httprouting.route.Variable;
 
 /**
- * @author Holger Schill - Initial contribution and API
+ * Translates a file of routes to a Java Servlet class with
+ * the desired dispatching logic.
  */
 @SuppressWarnings("all")
 public class RouteJvmModelInferrer extends AbstractModelInferrer {
@@ -53,6 +54,9 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
   @Inject
   private JvmTypesBuilder _jvmTypesBuilder;
   
+  /**
+   * The main entry point for this class.
+   */
   protected void _infer(final Model model, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {
     String _javaClassName = this.javaClassName(model);
     JvmGenericType _class = this._jvmTypesBuilder.toClass(model, _javaClassName);
@@ -194,6 +198,9 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
     _accept.initializeLater(_function);
   }
   
+  /**
+   * computes the Servlet name
+   */
   public String javaClassName(final Model it) {
     Resource _eResource = it.eResource();
     URI _uRI = _eResource.getURI();
@@ -205,6 +212,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
   
   /**
    * Creates a method for the route's target call.
+   * Gives scope and live to the expression.
    */
   protected JvmOperation toRouteCallMethod(final Route route) {
     String _nameOfRouteMethod = this.nameOfRouteMethod(route);
@@ -238,6 +246,9 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
     return _method;
   }
   
+  /**
+   * Creates a field for the URL pattern
+   */
   protected JvmField toRoutePatternField(final Route route) {
     URL _url = route.getUrl();
     int _index = this.index(route);
@@ -269,6 +280,10 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
     return _field;
   }
   
+  /**
+   * Creates a method for a route's when-part.
+   * Gives scope and live to the expression.
+   */
   protected JvmOperation toRouteConditionMethod(final Route route) {
     String _nameOfRouteMethod = this.nameOfRouteMethod(route);
     String _plus = (_nameOfRouteMethod + "Condition");
@@ -300,6 +315,9 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
     return _method;
   }
   
+  /**
+   * Creates a servlet request handling method for the given routes
+   */
   protected JvmOperation toRequestHandlerMethod(final Model model, final String name, final Iterable<Route> routes) {
     JvmTypeReference _newTypeRef = this._jvmTypesBuilder.newTypeRef(model, Void.TYPE);
     final Procedure1<JvmOperation> _function = new Procedure1<JvmOperation>() {
@@ -420,6 +438,9 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
     return _plus_1;
   }
   
+  /**
+   * a generic method computing the index of an AST object between its siblings
+   */
   protected int index(final EObject obj) {
     EObject _eContainer = obj.eContainer();
     EList<EObject> _eContents = _eContainer.eContents();

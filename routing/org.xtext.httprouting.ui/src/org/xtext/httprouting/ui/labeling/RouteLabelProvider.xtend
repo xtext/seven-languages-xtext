@@ -1,12 +1,17 @@
+/*******************************************************************************
+ * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *******************************************************************************/
 package org.xtext.httprouting.ui.labeling
 
 import com.google.inject.Inject
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider
-import org.eclipse.xtext.nodemodel.util.NodeModelUtils
 import org.eclipse.xtext.xbase.ui.labeling.XbaseLabelProvider
 import org.xtext.httprouting.route.Route
-import org.xtext.httprouting.route.URL
-import org.xtext.httprouting.route.Variable
+import static extension org.eclipse.xtext.nodemodel.util.NodeModelUtils.*
 
 class RouteLabelProvider extends XbaseLabelProvider {
 
@@ -16,26 +21,7 @@ class RouteLabelProvider extends XbaseLabelProvider {
 	}
 
 	def text(Route route) {
-		var result = route.getRequestType().getName();
-		if(route.getUrl() != null) {
-			result = result + " " + getText(route.getUrl())
-		}
-		return result;
-	}
-
-	def text(Variable v){
-		return v.getName();
-	}
-	def image(Variable v){
-
-	}
-
-	def text(URL url){
-		val node = NodeModelUtils::getNode(url);
-		return node.getText();
-	}
-	def image(URL url){
-
+		'''«route.requestType.name» «route.url.node.text»'''
 	}
 
 }

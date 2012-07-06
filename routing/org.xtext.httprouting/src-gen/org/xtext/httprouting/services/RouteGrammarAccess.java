@@ -197,68 +197,80 @@ public class RouteGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "URL");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cURLAction_0 = (Action)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Keyword cSolidusKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Alternatives cAlternatives_1_1 = (Alternatives)cGroup_1.eContents().get(1);
-		private final RuleCall cQualifiedNameParserRuleCall_1_1_0 = (RuleCall)cAlternatives_1_1.eContents().get(0);
-		private final Assignment cVariablesAssignment_1_1_1 = (Assignment)cAlternatives_1_1.eContents().get(1);
-		private final RuleCall cVariablesVariableParserRuleCall_1_1_1_0 = (RuleCall)cVariablesAssignment_1_1_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cSolidusKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cVariablesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cVariablesVariableParserRuleCall_2_1_0 = (RuleCall)cVariablesAssignment_2_1.eContents().get(0);
-		private final Assignment cWildcardAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
-		private final Keyword cWildcardAsteriskKeyword_2_2_0 = (Keyword)cWildcardAssignment_2_2.eContents().get(0);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Keyword cSolidusKeyword_1_0 = (Keyword)cAlternatives_1.eContents().get(0);
+		private final Group cGroup_1_1 = (Group)cAlternatives_1.eContents().get(1);
+		private final Group cGroup_1_1_0 = (Group)cGroup_1_1.eContents().get(0);
+		private final Keyword cSolidusKeyword_1_1_0_0 = (Keyword)cGroup_1_1_0.eContents().get(0);
+		private final Alternatives cAlternatives_1_1_0_1 = (Alternatives)cGroup_1_1_0.eContents().get(1);
+		private final RuleCall cQualifiedNameParserRuleCall_1_1_0_1_0 = (RuleCall)cAlternatives_1_1_0_1.eContents().get(0);
+		private final Assignment cVariablesAssignment_1_1_0_1_1 = (Assignment)cAlternatives_1_1_0_1.eContents().get(1);
+		private final RuleCall cVariablesVariableParserRuleCall_1_1_0_1_1_0 = (RuleCall)cVariablesAssignment_1_1_0_1_1.eContents().get(0);
+		private final Group cGroup_1_1_1 = (Group)cGroup_1_1.eContents().get(1);
+		private final Keyword cSolidusKeyword_1_1_1_0 = (Keyword)cGroup_1_1_1.eContents().get(0);
+		private final Assignment cVariablesAssignment_1_1_1_1 = (Assignment)cGroup_1_1_1.eContents().get(1);
+		private final RuleCall cVariablesVariableParserRuleCall_1_1_1_1_0 = (RuleCall)cVariablesAssignment_1_1_1_1.eContents().get(0);
+		private final Assignment cWildcardAssignment_1_1_1_2 = (Assignment)cGroup_1_1_1.eContents().get(2);
+		private final Keyword cWildcardAsteriskKeyword_1_1_1_2_0 = (Keyword)cWildcardAssignment_1_1_1_2.eContents().get(0);
 		
 		/// **
 		// * matches URLs like 
 		// * 	'/foo/bar.html' or 
 		// * 	'/customer/:customerID/save'
 		// * / URL:
-		//	{URL} ("/" (QualifiedName | variables+=Variable))* ("/" variables+=Variable wildcard?="*")?;
+		//	{URL} ("/" | ("/" (QualifiedName | variables+=Variable))* ("/" variables+=Variable wildcard?="*")?);
 		public ParserRule getRule() { return rule; }
 
-		//{URL} ("/" (QualifiedName | variables+=Variable))* ("/" variables+=Variable wildcard?="*")?
+		//{URL} ("/" | ("/" (QualifiedName | variables+=Variable))* ("/" variables+=Variable wildcard?="*")?)
 		public Group getGroup() { return cGroup; }
 
 		//{URL}
 		public Action getURLAction_0() { return cURLAction_0; }
 
-		//("/" (QualifiedName | variables+=Variable))*
-		public Group getGroup_1() { return cGroup_1; }
+		//"/" | ("/" (QualifiedName | variables+=Variable))* ("/" variables+=Variable wildcard?="*")?
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 
 		//"/"
 		public Keyword getSolidusKeyword_1_0() { return cSolidusKeyword_1_0; }
 
-		//QualifiedName | variables+=Variable
-		public Alternatives getAlternatives_1_1() { return cAlternatives_1_1; }
+		//("/" (QualifiedName | variables+=Variable))* ("/" variables+=Variable wildcard?="*")?
+		public Group getGroup_1_1() { return cGroup_1_1; }
 
-		//QualifiedName
-		public RuleCall getQualifiedNameParserRuleCall_1_1_0() { return cQualifiedNameParserRuleCall_1_1_0; }
-
-		//variables+=Variable
-		public Assignment getVariablesAssignment_1_1_1() { return cVariablesAssignment_1_1_1; }
-
-		//Variable
-		public RuleCall getVariablesVariableParserRuleCall_1_1_1_0() { return cVariablesVariableParserRuleCall_1_1_1_0; }
-
-		//("/" variables+=Variable wildcard?="*")?
-		public Group getGroup_2() { return cGroup_2; }
+		//("/" (QualifiedName | variables+=Variable))*
+		public Group getGroup_1_1_0() { return cGroup_1_1_0; }
 
 		//"/"
-		public Keyword getSolidusKeyword_2_0() { return cSolidusKeyword_2_0; }
+		public Keyword getSolidusKeyword_1_1_0_0() { return cSolidusKeyword_1_1_0_0; }
+
+		//QualifiedName | variables+=Variable
+		public Alternatives getAlternatives_1_1_0_1() { return cAlternatives_1_1_0_1; }
+
+		//QualifiedName
+		public RuleCall getQualifiedNameParserRuleCall_1_1_0_1_0() { return cQualifiedNameParserRuleCall_1_1_0_1_0; }
 
 		//variables+=Variable
-		public Assignment getVariablesAssignment_2_1() { return cVariablesAssignment_2_1; }
+		public Assignment getVariablesAssignment_1_1_0_1_1() { return cVariablesAssignment_1_1_0_1_1; }
 
 		//Variable
-		public RuleCall getVariablesVariableParserRuleCall_2_1_0() { return cVariablesVariableParserRuleCall_2_1_0; }
+		public RuleCall getVariablesVariableParserRuleCall_1_1_0_1_1_0() { return cVariablesVariableParserRuleCall_1_1_0_1_1_0; }
+
+		//("/" variables+=Variable wildcard?="*")?
+		public Group getGroup_1_1_1() { return cGroup_1_1_1; }
+
+		//"/"
+		public Keyword getSolidusKeyword_1_1_1_0() { return cSolidusKeyword_1_1_1_0; }
+
+		//variables+=Variable
+		public Assignment getVariablesAssignment_1_1_1_1() { return cVariablesAssignment_1_1_1_1; }
+
+		//Variable
+		public RuleCall getVariablesVariableParserRuleCall_1_1_1_1_0() { return cVariablesVariableParserRuleCall_1_1_1_1_0; }
 
 		//wildcard?="*"
-		public Assignment getWildcardAssignment_2_2() { return cWildcardAssignment_2_2; }
+		public Assignment getWildcardAssignment_1_1_1_2() { return cWildcardAssignment_1_1_1_2; }
 
 		//"*"
-		public Keyword getWildcardAsteriskKeyword_2_2_0() { return cWildcardAsteriskKeyword_2_2_0; }
+		public Keyword getWildcardAsteriskKeyword_1_1_1_2_0() { return cWildcardAsteriskKeyword_1_1_1_2_0; }
 	}
 
 	public class VariableElements extends AbstractParserRuleElementFinder {
@@ -450,7 +462,7 @@ public class RouteGrammarAccess extends AbstractGrammarElementFinder {
 	// * 	'/foo/bar.html' or 
 	// * 	'/customer/:customerID/save'
 	// * / URL:
-	//	{URL} ("/" (QualifiedName | variables+=Variable))* ("/" variables+=Variable wildcard?="*")?;
+	//	{URL} ("/" | ("/" (QualifiedName | variables+=Variable))* ("/" variables+=Variable wildcard?="*")?);
 	public URLElements getURLAccess() {
 		return (pURL != null) ? pURL : (pURL = new URLElements());
 	}

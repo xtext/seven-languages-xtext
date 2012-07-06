@@ -38,7 +38,8 @@ public class RouteParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getAbstractDeclarationAccess().getAlternatives(), "rule__AbstractDeclaration__Alternatives");
-					put(grammarAccess.getURLAccess().getAlternatives_1_1(), "rule__URL__Alternatives_1_1");
+					put(grammarAccess.getURLAccess().getAlternatives_1(), "rule__URL__Alternatives_1");
+					put(grammarAccess.getURLAccess().getAlternatives_1_1_0_1(), "rule__URL__Alternatives_1_1_0_1");
 					put(grammarAccess.getXAnnotationAccess().getAlternatives_3_1(), "rule__XAnnotation__Alternatives_3_1");
 					put(grammarAccess.getXAnnotationElementValueAccess().getAlternatives(), "rule__XAnnotationElementValue__Alternatives");
 					put(grammarAccess.getXAssignmentAccess().getAlternatives(), "rule__XAssignment__Alternatives");
@@ -80,8 +81,9 @@ public class RouteParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRouteAccess().getGroup(), "rule__Route__Group__0");
 					put(grammarAccess.getRouteAccess().getGroup_2(), "rule__Route__Group_2__0");
 					put(grammarAccess.getURLAccess().getGroup(), "rule__URL__Group__0");
-					put(grammarAccess.getURLAccess().getGroup_1(), "rule__URL__Group_1__0");
-					put(grammarAccess.getURLAccess().getGroup_2(), "rule__URL__Group_2__0");
+					put(grammarAccess.getURLAccess().getGroup_1_1(), "rule__URL__Group_1_1__0");
+					put(grammarAccess.getURLAccess().getGroup_1_1_0(), "rule__URL__Group_1_1_0__0");
+					put(grammarAccess.getURLAccess().getGroup_1_1_1(), "rule__URL__Group_1_1_1__0");
 					put(grammarAccess.getVariableAccess().getGroup(), "rule__Variable__Group__0");
 					put(grammarAccess.getXAnnotationAccess().getGroup(), "rule__XAnnotation__Group__0");
 					put(grammarAccess.getXAnnotationAccess().getGroup_3(), "rule__XAnnotation__Group_3__0");
@@ -246,9 +248,9 @@ public class RouteParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRouteAccess().getUrlAssignment_1(), "rule__Route__UrlAssignment_1");
 					put(grammarAccess.getRouteAccess().getConditionAssignment_2_1(), "rule__Route__ConditionAssignment_2_1");
 					put(grammarAccess.getRouteAccess().getCallAssignment_4(), "rule__Route__CallAssignment_4");
-					put(grammarAccess.getURLAccess().getVariablesAssignment_1_1_1(), "rule__URL__VariablesAssignment_1_1_1");
-					put(grammarAccess.getURLAccess().getVariablesAssignment_2_1(), "rule__URL__VariablesAssignment_2_1");
-					put(grammarAccess.getURLAccess().getWildcardAssignment_2_2(), "rule__URL__WildcardAssignment_2_2");
+					put(grammarAccess.getURLAccess().getVariablesAssignment_1_1_0_1_1(), "rule__URL__VariablesAssignment_1_1_0_1_1");
+					put(grammarAccess.getURLAccess().getVariablesAssignment_1_1_1_1(), "rule__URL__VariablesAssignment_1_1_1_1");
+					put(grammarAccess.getURLAccess().getWildcardAssignment_1_1_1_2(), "rule__URL__WildcardAssignment_1_1_1_2");
 					put(grammarAccess.getVariableAccess().getNameAssignment_1(), "rule__Variable__NameAssignment_1");
 					put(grammarAccess.getXAnnotationAccess().getAnnotationTypeAssignment_2(), "rule__XAnnotation__AnnotationTypeAssignment_2");
 					put(grammarAccess.getXAnnotationAccess().getElementValuePairsAssignment_3_1_0_0(), "rule__XAnnotation__ElementValuePairsAssignment_3_1_0_0");

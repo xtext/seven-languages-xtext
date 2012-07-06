@@ -26,7 +26,8 @@ import static extension org.eclipse.xtext.nodemodel.util.NodeModelUtils.*
 import org.xtext.httprouting.route.URL
 
 /**
- * @author Holger Schill - Initial contribution and API
+ * Translates a file of routes to a Java Servlet class with 
+ * the desired dispatching logic.
  */
 class RouteJvmModelInferrer extends AbstractModelInferrer {
 
@@ -36,19 +37,26 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 
 	@Inject extension JvmTypesBuilder
 
+	/**
+	 * The main entry point for this class.
+	 */
 	def dispatch void infer(Model model, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
 		acceptor.accept(model.toClass(model.javaClassName))
 			.initializeLater [
 				superTypes += model.newTypeRef(HTTP_SERVLET)
 				// get rid of the annoying serial warning
 				annotations += model.toAnnotation(typeof(SuppressWarnings), "serial")
+
+				// translate the dependencies to fields annotated with @Inejct
 				for (field : model.declarations.filter(typeof(Dependency))) {
 					members += field.toField(field.name, field.type) [
 						annotations += field.toAnnotation(typeof(Inject))
 						field.annotations.translateAnnotationsTo(it)
 					]
 				}
-				
+
+				// declare fields for the URL regexp, a method for each when-part 
+				// and of course the call part of a route
 				for (route : model.routes.filter[ url != null ]) {
 					members += route.toRoutePatternField
 					if (route.condition != null)
@@ -56,6 +64,7 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 					members += route.toRouteCallMethod
 				}
 				
+				// implement the servlet handler methods depending on the request type
 				val getRoutes = model.routes.filter[ requestType == RequestType::GET ]
 				if (!getRoutes.empty)
 					members += model.toRequestHandlerMethod("doGet",  getRoutes)
@@ -77,13 +86,17 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 					members += model.toRequestHandlerMethod("doHead", headRoutes)
 			]
 	}
-	
+
+	/**
+	 * computes the Servlet name
+	 */
 	def javaClassName(Model it) {
 		'routes.'+eResource.URI.trimFileExtension.lastSegment
 	}
 	
 	/**
 	 * Creates a method for the route's target call.
+	 * Gives scope and live to the expression.
 	 */
 	def protected toRouteCallMethod(Route route) {
 		route.toMethod(route.nameOfRouteMethod, route.newTypeRef(Void::TYPE)) [
@@ -97,6 +110,9 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 		]
 	}
 
+	/**
+	 * Creates a field for the URL pattern
+	 */
 	def protected toRoutePatternField(Route route) {
 		route.url.toField("_pattern" + route.index , route.newTypeRef(typeof(Pattern))) [
 			setStatic(true)
@@ -106,6 +122,10 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 		]
 	}
 
+	/**
+	 * Creates a method for a route's when-part.
+	 * Gives scope and live to the expression.
+	 */
 	def protected toRouteConditionMethod(Route route) {
 		route.toMethod(route.nameOfRouteMethod + "Condition", route.newTypeRef(Boolean::TYPE)) [
 			parameters += route.toParameter("request", route.newTypeRef(HTTP_REQUEST))
@@ -117,6 +137,9 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 		]
 	}
 
+	/**
+	 * Creates a servlet request handling method for the given routes
+	 */
 	def protected toRequestHandlerMethod(Model model, String name, Iterable<Route> routes) {
 		model.toMethod(name,model.newTypeRef(Void::TYPE)) [
 			annotations += model.toAnnotation(typeof(Override))
@@ -146,6 +169,9 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 		"_do" + route.requestType.literal.toLowerCase.toFirstUpper + route.index
 	}
 
+	/**
+	 * a generic method computing the index of an AST object between its siblings
+	 */
 	def protected index(EObject obj) {
 		obj.eContainer.eContents.indexOf(obj)
 	}
@@ -160,11 +186,11 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 		}
 		return pattern
 	}
-	
+
 	def routes(Model model) {
 		model.declarations.filter(typeof(Route))
 	}
-	
+
 	def isWildcard(Variable it) {
 		switch eContainer {
 			URL : eContainer.variables.last == it && eContainer.wildcard
