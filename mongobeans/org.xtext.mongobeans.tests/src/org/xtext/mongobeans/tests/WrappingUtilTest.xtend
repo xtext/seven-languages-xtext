@@ -1,3 +1,10 @@
+/*******************************************************************************
+ * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *******************************************************************************/
 package org.xtext.mongobeans.tests
 
 import org.junit.runner.RunWith
@@ -24,9 +31,9 @@ class WrappingUtilTest {
 
 	@Inject extension CompilationTestHelper
 	@Inject extension ReflectExtensions
-	
+
 	@Property Class<?> mongoBeanClass
-	
+
 	@Before def setUp() {
 		'''
 			Foo {
@@ -38,7 +45,7 @@ class WrappingUtilTest {
 			WrappingUtil::setClassLoader(compiledClass.classLoader) 
 		]
 	}
-	
+
 	@Test def testUnwrap() {
 		val one = mongoBeanClass.newInstance
 		val two = mongoBeanClass.newInstance
@@ -54,7 +61,7 @@ class WrappingUtilTest {
 		assertTrue(foos.contains(two.invoke('getDbObject')))
 		assertTrue(foos.contains(three.invoke('getDbObject')))
 	}
-	
+
 	@Test def testWrap() {
 		val oneDB = newFooDbObject('one')
 		val twoDB = newFooDbObject('two')
@@ -68,19 +75,19 @@ class WrappingUtilTest {
 		assertEquals(WrappingUtil::unwrap(foos.head), twoDB)
 		assertEquals(WrappingUtil::unwrap(foos.last), threeDB)
 	}
-	
-	
+
+
 	def protected newFooDbObject(String bar) {
 		new BasicDBObject => [
 			put(IMongoBean::JAVA_CLASS_KEY, 'Foo')
 			put('bar', bar)
 		]
 	}
-	
+
 	def protected newFooMongoBean(DBObject source) {
 		mongoBeanClass
 			.getConstructor(singletonList(typeof(DBObject)) as Class<?>[]) 
 			.newInstance(singletonList(source) as Object[])
 	}
-	
+
 }

@@ -226,8 +226,7 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
         String _name_1 = property.getName();
         String _plus_1 = ("_" + _name_1);
         JvmTypeReference _jvmType_2 = this.getJvmType(property);
-        JvmTypeReference _newTypeRef_1 = this._jvmTypesBuilder.newTypeRef(property, 
-          "org.xtext.mongobeans.lib.MongoBeanList", _jvmType_2);
+        JvmTypeReference _newTypeRef_1 = this._jvmTypesBuilder.newTypeRef(property, "org.xtext.mongobeans.lib.MongoBeanList", _jvmType_2);
         JvmField _field = this._jvmTypesBuilder.toField(property, _plus_1, _newTypeRef_1);
         this._jvmTypesBuilder.<JvmField>operator_add(_members_1, _field);
         EList<JvmMember> _members_2 = inferredType.getMembers();

@@ -1,3 +1,10 @@
+/*******************************************************************************
+ * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *******************************************************************************/
 package org.xtext.mongobeans.tests
 
 import org.eclipse.xtext.junit4.InjectWith
@@ -13,7 +20,7 @@ import org.xtext.mongobeans.mongoBeans.MongoProperty
 
 import static org.junit.Assert.*
 import static org.xtext.mongobeans.mongoBeans.MongoBeansPackage$Literals.*
-import static org.xtext.mongobeans.validation.MongoBeansIssueCodes.*
+import static org.xtext.mongobeans.validation.MongoBeansValidator.*
 
 
 @RunWith(typeof(XtextRunner))
@@ -32,7 +39,7 @@ class ValidationTest {
 				}
 			}
 		'''.parse.assertNoErrors
-	}	
+	}
 
 	@Test def testInvalidPropertyType() {
 		val properties = '''
@@ -43,8 +50,8 @@ class ValidationTest {
 		'''.parse.eAllContents.filter(typeof(MongoProperty))
 		assertError(properties.head, MONGO_PROPERTY, ILLEGAL_TYPE)
 		assertError(properties.last, MONGO_PROPERTY, ILLEGAL_TYPE)
-	}	
-	
+	}
+
 	@Test def testInvalidPropertyName() {
 		val property = '''
 			Foo {
@@ -52,5 +59,5 @@ class ValidationTest {
 			}
 		'''.parse.eAllContents.filter(typeof(MongoProperty)).head
 		assertError(property, MONGO_PROPERTY, ILLEGAL_PROPERTY_NAME)
-	}	
+	}
 }

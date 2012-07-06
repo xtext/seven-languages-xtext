@@ -12,7 +12,7 @@ package org.musicdb {
 			albums.map[tracks].flatten
 		}
 	}
-	
+
 	Album {
 		String title
 		int year

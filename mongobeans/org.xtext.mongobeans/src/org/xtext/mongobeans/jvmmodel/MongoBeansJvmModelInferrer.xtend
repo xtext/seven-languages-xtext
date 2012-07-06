@@ -1,3 +1,10 @@
+/*******************************************************************************
+ * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *******************************************************************************/
 package org.xtext.mongobeans.jvmmodel
 
 import com.google.inject.Inject
@@ -37,30 +44,29 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 	
 	@Inject extension IJvmModelAssociations associations
 
-   	def dispatch void infer(MongoFile file, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
-   		for(bean : file.eAllOfType(typeof(MongoBean))) {
-	   		acceptor.accept(bean.toClass(bean.fullyQualifiedName))
-	   			.initializeLater([
-	   				documentation = bean.documentation
-	   				superTypes += newTypeRef(bean, 'org.xtext.mongobeans.lib.IMongoBean')
-	   				addConstructors(bean)
-	   				addDbObjectProperty(bean)
-	   				for(feature: bean.features) {
-	   					switch feature {
-	   						MongoProperty:
-		   						if(feature.many)
-		   							addListAccessor(feature)
-		   						else
-		   							addDelegateAccessors(feature)
-	   						MongoOperation:
-	   							addMethod(feature)
-	   					}
-	   				}
-	   			])
-   		}
-   	}
-   	
-   	def protected addConstructors(JvmDeclaredType inferredType, MongoBean bean) {
+	def dispatch void infer(MongoFile file, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+		for(bean : file.eAllOfType(typeof(MongoBean))) {
+			acceptor.accept(bean.toClass(bean.fullyQualifiedName)).initializeLater [
+				documentation = bean.documentation
+				superTypes += bean.newTypeRef('org.xtext.mongobeans.lib.IMongoBean')
+				addConstructors(bean)
+				addDbObjectProperty(bean)
+				for(feature: bean.features) {
+					switch feature {
+						MongoProperty:
+							if (feature.many)
+								addListAccessor(feature)
+							else
+								addDelegateAccessors(feature)
+						MongoOperation:
+							addMethod(feature)
+					}
+				}
+			]
+		}
+	}
+	
+	def protected addConstructors(JvmDeclaredType inferredType, MongoBean bean) {
 		inferredType.members += bean.toConstructor [
 			documentation = '''Creates a new «bean.name» wrapping the given {@link DBObject}.'''
 			parameters += toParameter("dbObject", newTypeRef(bean, 'com.mongodb.DBObject'))
@@ -77,10 +83,10 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 				append('''
 					_dbObject.put(JAVA_CLASS_KEY, "«inferredType.identifier»");
 				''')
-			]					
-		]   	
+			]
+		]
 	}
-	
+
 	def protected addDbObjectProperty(JvmDeclaredType inferredType, MongoBean bean) {
 		inferredType.members += bean.toField('_dbObject', newTypeRef(bean, 'com.mongodb.DBObject'))
 		inferredType.members += bean.toGetter('dbObject', '_dbObject', newTypeRef(bean, 'com.mongodb.DBObject'))
@@ -99,8 +105,10 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 				]
 			]		
 		} else {
-			inferredType.members += property.toField('_' + property.name, newTypeRef(property,
-				 'org.xtext.mongobeans.lib.MongoBeanList', property.jvmType))
+			
+			inferredType.members += property.toField('_' + property.name, 
+				newTypeRef(property, 'org.xtext.mongobeans.lib.MongoBeanList', property.jvmType))
+				
 			inferredType.members += property.toMethod('get' + property.name.toFirstUpper,
 				newTypeRef(property, 'java.util.List', property.jvmType)
 			) [
@@ -151,7 +159,7 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 			]
 		]
 	}
-	
+
 	def protected addMethod(JvmDeclaredType inferredType, MongoOperation operation) {
 		inferredType.members += operation.toMethod(operation.name, operation.returnType) [
 			documentation = operation.documentation
@@ -160,14 +168,14 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 			body = operation.body
 		]
 	}
-	
+
 	def protected getJvmType(MongoProperty property) {
 		if(property.inlineType != null)
 			(property.inlineType.jvmElements.head as JvmDeclaredType).newTypeRef
 		else		
 			property.type
 	}
-	
+
 	def protected appendTypeRef(IAppendable appendable, EObject context, String name, JvmTypeReference... typeArguments) {
 		serialize(context.newTypeRef(name, typeArguments), context, appendable)
 	}
