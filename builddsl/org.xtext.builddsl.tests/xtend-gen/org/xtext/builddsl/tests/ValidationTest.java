@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
 import org.xtext.builddsl.BuildDSLInjectorProvider;
 import org.xtext.builddsl.build.BuildFile;
 import org.xtext.builddsl.build.BuildPackage.Literals;
-import org.xtext.builddsl.validation.BuildDSLIssueCodes;
+import org.xtext.builddsl.validation.BuildDSLValidator;
 
 @RunWith(value = XtextRunner.class)
 @InjectWith(value = BuildDSLInjectorProvider.class)
@@ -31,7 +31,7 @@ public class ValidationTest {
       _builder.append("task Foo depends Foo {}");
       _builder.newLine();
       BuildFile _parse = this._parseHelper.parse(_builder);
-      this._validationTestHelper.assertError(_parse, Literals.TASK, BuildDSLIssueCodes.SELF_DEPENDENCY);
+      this._validationTestHelper.assertError(_parse, Literals.TASK, BuildDSLValidator.SELF_DEPENDENCY);
     } catch (Exception _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -48,7 +48,7 @@ public class ValidationTest {
       _builder.append("task Baz depends Foo {}");
       _builder.newLine();
       BuildFile _parse = this._parseHelper.parse(_builder);
-      this._validationTestHelper.assertError(_parse, Literals.TASK, BuildDSLIssueCodes.CYCLIC_DEPENDENCY);
+      this._validationTestHelper.assertError(_parse, Literals.TASK, BuildDSLValidator.CYCLIC_DEPENDENCY);
     } catch (Exception _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -65,7 +65,7 @@ public class ValidationTest {
       _builder.append("task Baz {}");
       _builder.newLine();
       BuildFile _parse = this._parseHelper.parse(_builder);
-      this._validationTestHelper.assertNoError(_parse, BuildDSLIssueCodes.CYCLIC_DEPENDENCY);
+      this._validationTestHelper.assertNoError(_parse, BuildDSLValidator.CYCLIC_DEPENDENCY);
     } catch (Exception _e) {
       throw Exceptions.sneakyThrow(_e);
     }

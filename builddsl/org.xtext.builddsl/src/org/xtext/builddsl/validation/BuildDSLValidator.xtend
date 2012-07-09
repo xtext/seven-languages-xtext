@@ -1,18 +1,21 @@
 package org.xtext.builddsl.validation
 
-import org.eclipse.xtext.validation.Check
-import org.xtext.builddsl.build.Task
-import static extension org.xtext.builddsl.TaskExtensions.*
-import static org.xtext.builddsl.build.BuildPackage$Literals.*
-import org.eclipse.xtext.xbase.validation.XbaseJavaValidator
-import org.eclipse.emf.ecore.EPackage
-import org.eclipse.xtext.xbase.XbasePackage
 import org.eclipse.xtext.common.types.TypesPackage
+import org.eclipse.xtext.validation.Check
+import org.eclipse.xtext.xbase.XbasePackage
+import org.eclipse.xtext.xbase.validation.XbaseJavaValidator
 import org.eclipse.xtext.xtype.XtypePackage
 import org.xtext.builddsl.build.BuildPackage
-import static org.xtext.builddsl.validation.BuildDSLIssueCodes.*
+import org.xtext.builddsl.build.Task
+
+import static org.xtext.builddsl.build.BuildPackage$Literals.*
+
+import static extension org.xtext.builddsl.TaskExtensions.*
 
 class BuildDSLValidator extends XbaseJavaValidator {
+	
+	public static val SELF_DEPENDENCY = "build.issue.selfDependency"
+	public static val CYCLIC_DEPENDENCY = "build.issue.cyclicDependency"
 
 	@Check
 	def void checkNoRecursiveDependencies(Task task) {
@@ -31,7 +34,7 @@ class BuildDSLValidator extends XbaseJavaValidator {
 	}
 	
 	override protected getEPackages() {
-	    <EPackage>newArrayList(
+	    newArrayList(
 		    BuildPackage::eINSTANCE,
 		    XbasePackage::eINSTANCE,
 		    TypesPackage::eINSTANCE,

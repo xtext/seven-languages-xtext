@@ -35,110 +35,110 @@ class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
    		val fqn = file.javaClassName
    		val scriptName = Strings::lastToken(fqn, ".")
    		acceptor.accept(file.toClass(fqn)).initializeLater [
-   				superTypes += file.newTypeRef(typeof(BuildScript))
-   				val tasks = file.tasks.sortBy [ name ]
-				val declaredParameters = file.parameters.sortBy [ name ]
-				
-				for (declaredParameter : declaredParameters) {
-   					val type = declaredParameter.type ?: typeProvider.getType(declaredParameter.init)
-   					members += declaredParameter.toField(declaredParameter.name, type) [
-   						visibility = JvmVisibility::PUBLIC
-   						if (declaredParameter.init != null)
-   							initializer = declaredParameter.init
-   					]
-   				}
-				
-				val stringArray = file.newTypeRef(typeof(String)).addArrayTypeDimension
-   				overrideMethod("getScriptName", file.newTypeRef(typeof(String)), file) [
-   					body = [
-   						append('return "').append(scriptName).append('";')
-   					]
-   				]
-   				overrideMethod("getParameterNames", stringArray, file) [
-   					body = [
-   						append('return new String[] {')
-						if (!declaredParameters.empty) {
-							increaseIndentation.newLine
-							append(declaredParameters.map[ '"' + name + '"' ].join(', '))
-							decreaseIndentation.newLine
-						}
-						append("};")
-   					]
-   				]
-   				overrideMethod("getTaskNames", stringArray, file) [
-   					body = [
-   						append('return new String[] {')
-						if (!tasks.empty) {
-							increaseIndentation.newLine
-							append(tasks.map[ '"' + name + '"' ].join(', '))
-							decreaseIndentation.newLine
-						}
-						append("};")
-   					]
-   				]
-   				
-   				
-   				members += file.toMethod("main", file.newTypeRef(Void::TYPE)) [
-   					it.parameters += toParameter("args", stringArray)
-   					^static = true
-   					
-   					body = [
-   						append(scriptName).append(' script = new ').append(scriptName).append('();').newLine
-   						append('if (script.showHelp(args)) {').increaseIndentation.newLine
-   						append("System.exit(HELP);").decreaseIndentation.newLine
-   						append("}").newLine
-   						append("System.exit(script.build(args));")
-					]
+			superTypes += file.newTypeRef(typeof(BuildScript))
+			val tasks = file.tasks.sortBy [ name ]
+			val declaredParameters = file.parameters.sortBy [ name ]
+			
+			for (declaredParameter : declaredParameters) {
+				val type = declaredParameter.type ?: typeProvider.getType(declaredParameter.init)
+				members += declaredParameter.toField(declaredParameter.name, type) [
+					visibility = JvmVisibility::PUBLIC
+					if (declaredParameter.init != null)
+						initializer = declaredParameter.init
 				]
-				overrideMethod("doBuild", file.newTypeRef(Integer::TYPE), file) [
-					parameters += toParameter("args", stringArray)
-					exceptions += file.newTypeRef(typeof(Throwable))
-					body = [
-						file.newTypeRef(typeof(Set), file.newTypeRef(typeof(String))).serialize(file, it)
-   						append(" tasks = ")
-   						file.newTypeRef(typeof(Sets)).serialize(file, it)
-   						append(".newLinkedHashSet();").newLine
-						append("int index = 0;").newLine
-   						append("while(index < args.length) {").increaseIndentation.newLine
-	   					for(dec : file.declarations) {
-	   						if(dec != file.declarations.head)
-	   							append(" else ")
-   							switch(dec) {
-   								Parameter: {
-			   						append('''if("--«dec.name»".equals(args[index])) {''').increaseIndentation.newLine
-			   						append('''«dec.name» = ''')
-			   						val type = dec.type ?: typeProvider.getType(dec.init)
-			   						paramToStr(it, type, "args[++index]")
-			   						append(";")
-			   						decreaseIndentation.newLine.append("}")	 
-   								}
-   								Task: {
-			   						append('''if("«dec.name»".equals(args[index])) {''').increaseIndentation
-			   						for(t:dec.findDependentTasks)
-			   							newLine.append('''tasks.add("«t.name»");''')
-			   						decreaseIndentation.newLine.append("}") 
-   								}
-   							}
-	   					}
-	   					append(" else {").increaseIndentation.newLine
-	   					append('''System.out.println("Unknown task/parameter '" + args[index] + "'. Run program with --help to list available tasks/parameters");''').newLine
-	   					append('''return WRONG_PARAM;''')
-	   					decreaseIndentation.newLine.append("}")
-	   					newLine.append("index++;")
-	   					decreaseIndentation.newLine.append("}").newLine
-   						append("for(String task:tasks) {").increaseIndentation.newLine
-	   					for(dec : tasks) {
-	   						if(dec != tasks.head)
-	   							newLine.append("else ")
-	   						append('''if("«dec.name»".equals(task))''').increaseIndentation.newLine
-	   						append('''«dec.methodName»();''') 
-	   						decreaseIndentation	
-	   					}
-	   					newLine.append("index++;")
-	   					decreaseIndentation.newLine.append("}")
-	   					append("return OK;")
-   					]
-   				]
+			}
+			
+			val stringArray = file.newTypeRef(typeof(String)).addArrayTypeDimension
+			overrideMethod("getScriptName", file.newTypeRef(typeof(String)), file) [
+				body = [
+					append('return "').append(scriptName).append('";')
+				]
+			]
+			overrideMethod("getParameterNames", stringArray, file) [
+				body = [
+					append('return new String[] {')
+					if (!declaredParameters.empty) {
+						increaseIndentation.newLine
+						append(declaredParameters.map[ '"' + name + '"' ].join(', '))
+						decreaseIndentation.newLine
+					}
+					append("};")
+				]
+			]
+			overrideMethod("getTaskNames", stringArray, file) [
+				body = [
+					append('return new String[] {')
+					if (!tasks.empty) {
+						increaseIndentation.newLine
+						append(tasks.map[ '"' + name + '"' ].join(', '))
+						decreaseIndentation.newLine
+					}
+					append("};")
+				]
+			]
+			
+			
+			members += file.toMethod("main", file.newTypeRef(Void::TYPE)) [
+				it.parameters += toParameter("args", stringArray)
+				^static = true
+				
+				body = [
+					append(scriptName).append(' script = new ').append(scriptName).append('();').newLine
+					append('if (script.showHelp(args)) {').increaseIndentation.newLine
+					append("System.exit(HELP);").decreaseIndentation.newLine
+					append("}").newLine
+					append("System.exit(script.build(args));")
+				]
+			]
+			overrideMethod("doBuild", file.newTypeRef(Integer::TYPE), file) [
+				parameters += toParameter("args", stringArray)
+				exceptions += file.newTypeRef(typeof(Throwable))
+				body = [
+					file.newTypeRef(typeof(Set), file.newTypeRef(typeof(String))).serialize(file, it)
+					append(" tasks = ")
+					file.newTypeRef(typeof(Sets)).serialize(file, it)
+					append(".newLinkedHashSet();").newLine
+					append("int index = 0;").newLine
+					append("while(index < args.length) {").increaseIndentation.newLine
+   					for(dec : file.declarations) {
+   						if(dec != file.declarations.head)
+   							append(" else ")
+						switch(dec) {
+							Parameter: {
+		   						append('''if("--«dec.name»".equals(args[index])) {''').increaseIndentation.newLine
+		   						append('''«dec.name» = ''')
+		   						val type = dec.type ?: typeProvider.getType(dec.init)
+		   						paramToStr(it, type, "args[++index]")
+		   						append(";")
+		   						decreaseIndentation.newLine.append("}")	 
+							}
+							Task: {
+		   						append('''if("«dec.name»".equals(args[index])) {''').increaseIndentation
+		   						for(t:dec.findDependentTasks)
+		   							newLine.append('''tasks.add("«t.name»");''')
+		   						decreaseIndentation.newLine.append("}") 
+							}
+						}
+   					}
+   					append(" else {").increaseIndentation.newLine
+   					append('''System.out.println("Unknown task/parameter '" + args[index] + "'. Run program with --help to list available tasks/parameters");''').newLine
+   					append('''return WRONG_PARAM;''')
+   					decreaseIndentation.newLine.append("}")
+   					newLine.append("index++;")
+   					decreaseIndentation.newLine.append("}").newLine
+					append("for(String task:tasks) {").increaseIndentation.newLine
+   					for(dec : tasks) {
+   						if(dec != tasks.head)
+   							newLine.append("else ")
+   						append('''if("«dec.name»".equals(task))''').increaseIndentation.newLine
+   						append('''«dec.methodName»();''') 
+   						decreaseIndentation	
+   					}
+   					newLine.append("index++;")
+   					decreaseIndentation.newLine.append("}")
+   					append("return OK;")
+				]
+			]
 
 			for (task : tasks) {
 	   			members += task.toMethod(task.methodName, task.newTypeRef(Void::TYPE)) [

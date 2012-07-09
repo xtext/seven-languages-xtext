@@ -26,7 +26,7 @@ class AllImportsAreStaticFeatureProvider extends StaticImplicitMethodsFeatureFor
 			copy += importedTypes
 			entry.value = copy
 		}
-		result
+		return result
 	}
 	
 }

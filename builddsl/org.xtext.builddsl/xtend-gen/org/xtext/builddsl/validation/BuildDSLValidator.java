@@ -20,10 +20,13 @@ import org.xtext.builddsl.TaskExtensions;
 import org.xtext.builddsl.build.BuildPackage;
 import org.xtext.builddsl.build.BuildPackage.Literals;
 import org.xtext.builddsl.build.Task;
-import org.xtext.builddsl.validation.BuildDSLIssueCodes;
 
 @SuppressWarnings("all")
 public class BuildDSLValidator extends XbaseJavaValidator {
+  public final static String SELF_DEPENDENCY = "build.issue.selfDependency";
+  
+  public final static String CYCLIC_DEPENDENCY = "build.issue.cyclicDependency";
+  
   @Check
   public void checkNoRecursiveDependencies(final Task task) {
     EList<Task> _depends = task.getDepends();
@@ -35,7 +38,7 @@ public class BuildDSLValidator extends XbaseJavaValidator {
         String _name = task.getName();
         _builder.append(_name, "");
         _builder.append("\' cannot depend on itself.");
-        this.error(_builder.toString(), taskRef, Literals.DECLARATION__NAME, BuildDSLIssueCodes.SELF_DEPENDENCY);
+        this.error(_builder.toString(), taskRef, Literals.DECLARATION__NAME, BuildDSLValidator.SELF_DEPENDENCY);
         return;
       }
     }
@@ -52,7 +55,7 @@ public class BuildDSLValidator extends XbaseJavaValidator {
           Iterable<String> _map = IterableExtensions.<Task, String>map(cycle, _function);
           String _join = IterableExtensions.join(_map, ", ");
           _builder.append(_join, "");
-          BuildDSLValidator.this.error(_builder.toString(), task, Literals.DECLARATION__NAME, BuildDSLIssueCodes.CYCLIC_DEPENDENCY);
+          BuildDSLValidator.this.error(_builder.toString(), task, Literals.DECLARATION__NAME, BuildDSLValidator.CYCLIC_DEPENDENCY);
         }
       };
     TaskExtensions.findDependentTasks(task, _function);

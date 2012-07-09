@@ -24,36 +24,32 @@ import org.xtext.builddsl.build.ImportDeclaration;
 @SuppressWarnings("all")
 public class AllImportsAreStaticFeatureProvider extends StaticImplicitMethodsFeatureForTypeProvider {
   public Map<JvmTypeReference,Collection<String>> getVisibleTypesContainingStaticMethods(final Iterable<JvmTypeReference> hierarchy) {
-    LinkedHashMap<JvmTypeReference,Collection<String>> _xblockexpression = null;
-    {
-      EList<EObject> _contents = this.context.getContents();
-      EObject _get = _contents.get(0);
-      final BuildFile buildFile = ((BuildFile) _get);
-      final ArrayList<String> importedTypes = CollectionLiterals.<String>newArrayList();
-      EList<ImportDeclaration> _imports = buildFile.getImports();
-      for (final ImportDeclaration importDeclaration : _imports) {
-        {
-          final String importedTypeOrPackage = importDeclaration.getImportedNamespace();
-          boolean _endsWith = importedTypeOrPackage.endsWith(".*");
-          boolean _not = (!_endsWith);
-          if (_not) {
-            importedTypes.add(importedTypeOrPackage);
-          }
+    EList<EObject> _contents = this.context.getContents();
+    EObject _get = _contents.get(0);
+    final BuildFile buildFile = ((BuildFile) _get);
+    final ArrayList<String> importedTypes = CollectionLiterals.<String>newArrayList();
+    EList<ImportDeclaration> _imports = buildFile.getImports();
+    for (final ImportDeclaration importDeclaration : _imports) {
+      {
+        final String importedTypeOrPackage = importDeclaration.getImportedNamespace();
+        boolean _endsWith = importedTypeOrPackage.endsWith(".*");
+        boolean _not = (!_endsWith);
+        if (_not) {
+          importedTypes.add(importedTypeOrPackage);
         }
       }
-      Map<JvmTypeReference,Collection<String>> _visibleTypesContainingStaticMethods = super.getVisibleTypesContainingStaticMethods(hierarchy);
-      final LinkedHashMap<JvmTypeReference,Collection<String>> result = Maps.<JvmTypeReference, Collection<String>>newLinkedHashMap(_visibleTypesContainingStaticMethods);
-      Set<Entry<JvmTypeReference,Collection<String>>> _entrySet = result.entrySet();
-      for (final Entry<JvmTypeReference,Collection<String>> entry : _entrySet) {
-        {
-          Collection<String> _value = entry.getValue();
-          final LinkedHashSet<String> copy = Sets.<String>newLinkedHashSet(_value);
-          Iterables.<String>addAll(copy, importedTypes);
-          entry.setValue(copy);
-        }
-      }
-      _xblockexpression = (result);
     }
-    return _xblockexpression;
+    Map<JvmTypeReference,Collection<String>> _visibleTypesContainingStaticMethods = super.getVisibleTypesContainingStaticMethods(hierarchy);
+    final LinkedHashMap<JvmTypeReference,Collection<String>> result = Maps.<JvmTypeReference, Collection<String>>newLinkedHashMap(_visibleTypesContainingStaticMethods);
+    Set<Entry<JvmTypeReference,Collection<String>>> _entrySet = result.entrySet();
+    for (final Entry<JvmTypeReference,Collection<String>> entry : _entrySet) {
+      {
+        Collection<String> _value = entry.getValue();
+        final LinkedHashSet<String> copy = Sets.<String>newLinkedHashSet(_value);
+        Iterables.<String>addAll(copy, importedTypes);
+        entry.setValue(copy);
+      }
+    }
+    return result;
   }
 }
