@@ -18,8 +18,6 @@ public class WordCount {
       if (_equals) {
         InputOutput.<String>println("Missing args: Specify file names");
       }
-      int totalWords = 0;
-      int totalLines = 0;
       for (final String arg : args) {
         {
           File _file = new File(arg);
@@ -47,16 +45,8 @@ public class WordCount {
           String _plus_4 = (_plus_3 + Integer.valueOf(_size_1));
           String _plus_5 = (_plus_4 + " lines.");
           InputOutput.<String>println(_plus_5);
-          int _plus_6 = (totalWords + (wordsInFile).intValue());
-          totalWords = _plus_6;
-          int _size_2 = lines.size();
-          int _plus_7 = (totalLines + _size_2);
-          totalLines = _plus_7;
         }
       }
-      String _plus = ("Total: " + Integer.valueOf(totalWords));
-      String _plus_1 = (_plus + " words.");
-      InputOutput.<String>println(_plus_1);
     } catch (Exception _e) {
       throw Exceptions.sneakyThrow(_e);
     }

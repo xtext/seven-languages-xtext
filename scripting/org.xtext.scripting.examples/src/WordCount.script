@@ -5,13 +5,8 @@ import java.io.File
 import com.google.common.io.*
 import com.google.common.base.Charsets
 
-var totalWords = 0
-var totalLines = 0
 for (arg : args) {
 	val lines = Files::readLines(new File(arg), Charsets::UTF_8)
 	var wordsInFile = lines.map[ split('\\s*').size ].reduce[ a, b | a + b ]
-	println('File ' + arg + ': ' + wordsInFile + ' words, ' + lines.size + " lines.")
-	totalWords = totalWords + wordsInFile
-	totalLines = totalLines + lines.size
+	println('File ' + arg + ': ' + wordsInFile + ' words, ' + lines.size + ' lines.')
 }
-println("Total: " + totalWords + " words.")
