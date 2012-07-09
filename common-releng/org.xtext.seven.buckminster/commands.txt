@@ -1,5 +1,22 @@
 setpref targetPlatformPath="${target.platform}"
+
+# Resolve Target platform
 resolve "${projects.location}/common-releng/org.xtext.seven.buckminster/projects-platform.cquery"
+
+# Resolve Projects
 resolve "${projects.location}/common-releng/org.xtext.seven.buckminster/project.cquery"
+
+# Compile (eclipse clean build)
 build
+
+# Test
+junit --launch "org.xtext.tortoiseshell.tests/org.xtext.tortoiseshell.tests.launch" --flatXML --output "test.results/tortoiseshell.tests.xml"
+junit --launch "org.xtext.guicemodules.tests/org.xtext.guicemodules.tests.launch" --flatXML --output "test.results/guicemodules.tests.xml"
+junit --launch "org.xtext.httprouting.tests/org.xtext.httprouting.tests.launch" --flatXML --output "test.results/httprouting.tests.xml"
+junit --launch "org.xtext.mongobeans.tests/org.xtext.mongobeans.tests.launch" --flatXML --output "test.results/mongobeans.tests.xml"
+junit --launch "org.xtext.scripting.tests/org.xtext.scripting.tests.launch" --flatXML --output "test.results/scripting.tests.xml"
+junit --launch "org.xtext.builddsl.tests/org.xtext.builddsl.tests.launch" --flatXML --output "test.results/builddsl.tests.xml"
+junit --launch "org.xtext.template.tests/org.xtext.template.tests.launch" --flatXML --output "test.results/template.tests.xml"
+
+# Build p2 repo
 perform "org.xtext.seven.site#site.p2"
