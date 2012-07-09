@@ -50,6 +50,7 @@ import org.eclipse.xtext.xbase.XbasePackage;
 import org.eclipse.xtext.xbase.serializer.XbaseSemanticSequencer;
 import org.eclipse.xtext.xtype.XFunctionTypeRef;
 import org.eclipse.xtext.xtype.XtypePackage;
+import org.xtext.scripting.scripting.Import;
 import org.xtext.scripting.scripting.Script;
 import org.xtext.scripting.scripting.ScriptingPackage;
 import org.xtext.scripting.services.ScriptingGrammarAccess;
@@ -62,6 +63,12 @@ public class ScriptingSemanticSequencer extends XbaseSemanticSequencer {
 	
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == ScriptingPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+			case ScriptingPackage.IMPORT:
+				if(context == grammarAccess.getImportRule()) {
+					sequence_Import(context, (Import) semanticObject); 
+					return; 
+				}
+				else break;
 			case ScriptingPackage.SCRIPT:
 				if(context == grammarAccess.getScriptRule()) {
 					sequence_Script(context, (Script) semanticObject); 
@@ -193,11 +200,7 @@ public class ScriptingSemanticSequencer extends XbaseSemanticSequencer {
 				}
 				else break;
 			case XbasePackage.XBLOCK_EXPRESSION:
-				if(context == grammarAccess.getMainRule()) {
-					sequence_Main(context, (XBlockExpression) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getXAdditiveExpressionRule() ||
+				if(context == grammarAccess.getXAdditiveExpressionRule() ||
 				   context == grammarAccess.getXAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXAndExpressionRule() ||
 				   context == grammarAccess.getXAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
@@ -934,28 +937,25 @@ public class ScriptingSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (expressions+=XExpressionInsideBlock*)
+	 *     importedNamespace=QualifiedNameWithWildcard
 	 */
-	protected void sequence_Main(EObject context, XBlockExpression semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_Import(EObject context, Import semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ScriptingPackage.Literals.IMPORT__IMPORTED_NAMESPACE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScriptingPackage.Literals.IMPORT__IMPORTED_NAMESPACE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0(), semanticObject.getImportedNamespace());
+		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=QualifiedName main=Main)
+	 *     ((expressions+=XExpressionInsideBlock | imports+=Import)*)
 	 */
 	protected void sequence_Script(EObject context, Script semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ScriptingPackage.Literals.SCRIPT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScriptingPackage.Literals.SCRIPT__NAME));
-			if(transientValues.isValueTransient(semanticObject, ScriptingPackage.Literals.SCRIPT__MAIN) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScriptingPackage.Literals.SCRIPT__MAIN));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getScriptAccess().getNameQualifiedNameParserRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getScriptAccess().getMainMainParserRuleCall_2_0(), semanticObject.getMain());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 }

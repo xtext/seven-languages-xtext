@@ -64,10 +64,22 @@ public class ScriptingFactoryImpl extends EFactoryImpl implements ScriptingFacto
   {
     switch (eClass.getClassifierID())
     {
+      case ScriptingPackage.IMPORT: return createImport();
       case ScriptingPackage.SCRIPT: return createScript();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Import createImport()
+  {
+    ImportImpl import_ = new ImportImpl();
+    return import_;
   }
 
   /**

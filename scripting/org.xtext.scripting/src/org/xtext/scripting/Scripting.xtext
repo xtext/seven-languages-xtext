@@ -1,11 +1,15 @@
 grammar org.xtext.scripting.Scripting with org.eclipse.xtext.xbase.Xbase
 
-import "http://www.eclipse.org/xtext/xbase/Xbase"
 generate scripting "http://www.xtext.org/scripting/Scripting"
+import "http://www.eclipse.org/xtext/xbase/Xbase"
 
-Script:
-	'script' name=QualifiedName main=Main;
+Script returns XBlockExpression:
+	{Script}
+	((expressions+=XExpressionInsideBlock | imports+=Import) ';'?)*;
+
+Import:
+	'import' importedNamespace=QualifiedNameWithWildcard;
 	
-Main returns XBlockExpression:
-	{XBlockExpression}
-	(expressions+=XExpressionInsideBlock ';'?)*;
+QualifiedNameWithWildcard:
+	QualifiedName '.*'?;
+

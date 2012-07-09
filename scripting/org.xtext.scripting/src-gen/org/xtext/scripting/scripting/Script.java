@@ -2,7 +2,7 @@
  */
 package org.xtext.scripting.scripting;
 
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.xtext.xbase.XBlockExpression;
 
@@ -14,8 +14,7 @@ import org.eclipse.xtext.xbase.XBlockExpression;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.scripting.scripting.Script#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.scripting.scripting.Script#getMain <em>Main</em>}</li>
+ *   <li>{@link org.xtext.scripting.scripting.Script#getImports <em>Imports</em>}</li>
  * </ul>
  * </p>
  *
@@ -23,58 +22,22 @@ import org.eclipse.xtext.xbase.XBlockExpression;
  * @model
  * @generated
  */
-public interface Script extends EObject
+public interface Script extends XBlockExpression
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Imports</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.scripting.scripting.Import}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * If the meaning of the '<em>Imports</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see org.xtext.scripting.scripting.ScriptingPackage#getScript_Name()
-   * @model
-   * @generated
-   */
-  String getName();
-
-  /**
-   * Sets the value of the '{@link org.xtext.scripting.scripting.Script#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
-  void setName(String value);
-
-  /**
-   * Returns the value of the '<em><b>Main</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Main</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Main</em>' containment reference.
-   * @see #setMain(XBlockExpression)
-   * @see org.xtext.scripting.scripting.ScriptingPackage#getScript_Main()
+   * @return the value of the '<em>Imports</em>' containment reference list.
+   * @see org.xtext.scripting.scripting.ScriptingPackage#getScript_Imports()
    * @model containment="true"
    * @generated
    */
-  XBlockExpression getMain();
-
-  /**
-   * Sets the value of the '{@link org.xtext.scripting.scripting.Script#getMain <em>Main</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Main</em>' containment reference.
-   * @see #getMain()
-   * @generated
-   */
-  void setMain(XBlockExpression value);
+  EList<Import> getImports();
 
 } // Script

@@ -6,22 +6,27 @@ import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
 import org.xtext.scripting.scripting.Script
 
+import static org.xtext.scripting.jvmmodel.ScriptingJvmModelInferrer.*
+
 /**
  * Infers a Java class with a main method from a {@link Script}.
  */
 class ScriptingJvmModelInferrer extends AbstractModelInferrer {
+	
+   	@Inject extension JvmTypesBuilder
 
-   @Inject extension JvmTypesBuilder
-
-   	def dispatch void infer(Script application, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
-   		acceptor.accept(application.toClass(application.name)).initializeLater [
-   			members += application.toMethod('main', application.newTypeRef(Void::TYPE)) [
-   				varArgs = true
-   				parameters += application.toParameter("args", application.newTypeRef(typeof(String)).addArrayTypeDimension)
-   				setStatic(true)
-   				body = application.main
-   			]	
-   		]
+   	def dispatch void infer(Script script, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+   		val className = script?.eResource?.URI?.trimFileExtension?.lastSegment
+   		if(className != null) {
+	   		acceptor.accept(script.toClass(className)).initializeLater [
+	   			members += script.toMethod('main', script.newTypeRef(Void::TYPE)) [
+	   				varArgs = true
+	   				parameters += script.toParameter("args", script.newTypeRef(typeof(String)).addArrayTypeDimension)
+	   				setStatic(true)
+	   				body = script
+	   			]	
+	   		]
+   		}
   	}
 }
 

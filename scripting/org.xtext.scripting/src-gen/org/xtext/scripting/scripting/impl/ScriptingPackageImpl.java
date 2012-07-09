@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.eclipse.xtext.xbase.XbasePackage;
 
+import org.xtext.scripting.scripting.Import;
 import org.xtext.scripting.scripting.Script;
 import org.xtext.scripting.scripting.ScriptingFactory;
 import org.xtext.scripting.scripting.ScriptingPackage;
@@ -23,6 +24,13 @@ import org.xtext.scripting.scripting.ScriptingPackage;
  */
 public class ScriptingPackageImpl extends EPackageImpl implements ScriptingPackage
 {
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass importEClass = null;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -101,6 +109,26 @@ public class ScriptingPackageImpl extends EPackageImpl implements ScriptingPacka
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getImport()
+  {
+    return importEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getImport_ImportedNamespace()
+  {
+    return (EAttribute)importEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getScript()
   {
     return scriptEClass;
@@ -111,19 +139,9 @@ public class ScriptingPackageImpl extends EPackageImpl implements ScriptingPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getScript_Name()
+  public EReference getScript_Imports()
   {
-    return (EAttribute)scriptEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getScript_Main()
-  {
-    return (EReference)scriptEClass.getEStructuralFeatures().get(1);
+    return (EReference)scriptEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -156,9 +174,11 @@ public class ScriptingPackageImpl extends EPackageImpl implements ScriptingPacka
     isCreated = true;
 
     // Create classes and their features
+    importEClass = createEClass(IMPORT);
+    createEAttribute(importEClass, IMPORT__IMPORTED_NAMESPACE);
+
     scriptEClass = createEClass(SCRIPT);
-    createEAttribute(scriptEClass, SCRIPT__NAME);
-    createEReference(scriptEClass, SCRIPT__MAIN);
+    createEReference(scriptEClass, SCRIPT__IMPORTS);
   }
 
   /**
@@ -193,11 +213,14 @@ public class ScriptingPackageImpl extends EPackageImpl implements ScriptingPacka
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    scriptEClass.getESuperTypes().add(theXbasePackage.getXBlockExpression());
 
     // Initialize classes and features; add operations and parameters
+    initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getImport_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(scriptEClass, Script.class, "Script", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getScript_Name(), ecorePackage.getEString(), "name", null, 0, 1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getScript_Main(), theXbasePackage.getXBlockExpression(), null, "main", null, 0, 1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getScript_Imports(), this.getImport(), null, "imports", null, 0, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

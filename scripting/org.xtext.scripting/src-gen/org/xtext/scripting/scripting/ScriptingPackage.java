@@ -7,6 +7,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import org.eclipse.xtext.xbase.XbasePackage;
+
 /**
  * <!-- begin-user-doc -->
  * The <b>Package</b> for the model.
@@ -57,6 +59,34 @@ public interface ScriptingPackage extends EPackage
   ScriptingPackage eINSTANCE = org.xtext.scripting.scripting.impl.ScriptingPackageImpl.init();
 
   /**
+   * The meta object id for the '{@link org.xtext.scripting.scripting.impl.ImportImpl <em>Import</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.scripting.scripting.impl.ImportImpl
+   * @see org.xtext.scripting.scripting.impl.ScriptingPackageImpl#getImport()
+   * @generated
+   */
+  int IMPORT = 0;
+
+  /**
+   * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT__IMPORTED_NAMESPACE = 0;
+
+  /**
+   * The number of structural features of the '<em>Import</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link org.xtext.scripting.scripting.impl.ScriptImpl <em>Script</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -64,25 +94,25 @@ public interface ScriptingPackage extends EPackage
    * @see org.xtext.scripting.scripting.impl.ScriptingPackageImpl#getScript()
    * @generated
    */
-  int SCRIPT = 0;
+  int SCRIPT = 1;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SCRIPT__NAME = 0;
+  int SCRIPT__EXPRESSIONS = XbasePackage.XBLOCK_EXPRESSION__EXPRESSIONS;
 
   /**
-   * The feature id for the '<em><b>Main</b></em>' containment reference.
+   * The feature id for the '<em><b>Imports</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SCRIPT__MAIN = 1;
+  int SCRIPT__IMPORTS = XbasePackage.XBLOCK_EXPRESSION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Script</em>' class.
@@ -91,8 +121,29 @@ public interface ScriptingPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SCRIPT_FEATURE_COUNT = 2;
+  int SCRIPT_FEATURE_COUNT = XbasePackage.XBLOCK_EXPRESSION_FEATURE_COUNT + 1;
 
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.scripting.scripting.Import <em>Import</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Import</em>'.
+   * @see org.xtext.scripting.scripting.Import
+   * @generated
+   */
+  EClass getImport();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.scripting.scripting.Import#getImportedNamespace <em>Imported Namespace</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Imported Namespace</em>'.
+   * @see org.xtext.scripting.scripting.Import#getImportedNamespace()
+   * @see #getImport()
+   * @generated
+   */
+  EAttribute getImport_ImportedNamespace();
 
   /**
    * Returns the meta object for class '{@link org.xtext.scripting.scripting.Script <em>Script</em>}'.
@@ -105,26 +156,15 @@ public interface ScriptingPackage extends EPackage
   EClass getScript();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.scripting.scripting.Script#getName <em>Name</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.scripting.scripting.Script#getImports <em>Imports</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.scripting.scripting.Script#getName()
+   * @return the meta object for the containment reference list '<em>Imports</em>'.
+   * @see org.xtext.scripting.scripting.Script#getImports()
    * @see #getScript()
    * @generated
    */
-  EAttribute getScript_Name();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.scripting.scripting.Script#getMain <em>Main</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Main</em>'.
-   * @see org.xtext.scripting.scripting.Script#getMain()
-   * @see #getScript()
-   * @generated
-   */
-  EReference getScript_Main();
+  EReference getScript_Imports();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -150,6 +190,24 @@ public interface ScriptingPackage extends EPackage
   interface Literals
   {
     /**
+     * The meta object literal for the '{@link org.xtext.scripting.scripting.impl.ImportImpl <em>Import</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.scripting.scripting.impl.ImportImpl
+     * @see org.xtext.scripting.scripting.impl.ScriptingPackageImpl#getImport()
+     * @generated
+     */
+    EClass IMPORT = eINSTANCE.getImport();
+
+    /**
+     * The meta object literal for the '<em><b>Imported Namespace</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IMPORT__IMPORTED_NAMESPACE = eINSTANCE.getImport_ImportedNamespace();
+
+    /**
      * The meta object literal for the '{@link org.xtext.scripting.scripting.impl.ScriptImpl <em>Script</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -160,20 +218,12 @@ public interface ScriptingPackage extends EPackage
     EClass SCRIPT = eINSTANCE.getScript();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Imports</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SCRIPT__NAME = eINSTANCE.getScript_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Main</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SCRIPT__MAIN = eINSTANCE.getScript_Main();
+    EReference SCRIPT__IMPORTS = eINSTANCE.getScript_Imports();
 
   }
 

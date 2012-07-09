@@ -22,16 +22,12 @@ class ExecutionTest {
 	
 	@Test def void testHelloWorld() {
 		'''
-			script sample.HelloWorld
-			
 			throw new Exception('Hello World')
 		'''.compileAndExecuteMainAndExpect('Hello World')
 	}
 	
 	@Test def void testDeepThought() {
 		'''
-			script sample.DeepThought
-			
 			val answer = 2 * (17 + 4)
 			throw new Exception(answer.toString)
 		'''.compileAndExecuteMainAndExpect(42)

@@ -23,70 +23,95 @@ public class ScriptingGrammarAccess extends AbstractGrammarElementFinder {
 	public class ScriptElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Script");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cScriptKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Assignment cMainAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cMainMainParserRuleCall_2_0 = (RuleCall)cMainAssignment_2.eContents().get(0);
+		private final Action cScriptAction_0 = (Action)cGroup.eContents().get(0);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Group cGroup_1_0 = (Group)cAlternatives_1.eContents().get(0);
+		private final Assignment cExpressionsAssignment_1_0_0 = (Assignment)cGroup_1_0.eContents().get(0);
+		private final RuleCall cExpressionsXExpressionInsideBlockParserRuleCall_1_0_0_0 = (RuleCall)cExpressionsAssignment_1_0_0.eContents().get(0);
+		private final Keyword cSemicolonKeyword_1_0_1 = (Keyword)cGroup_1_0.eContents().get(1);
+		private final Assignment cImportsAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
+		private final RuleCall cImportsImportParserRuleCall_1_1_0 = (RuleCall)cImportsAssignment_1_1.eContents().get(0);
 		
-		//Script:
-		//	"script" name=QualifiedName main=Main;
+		//Script returns XBlockExpression:
+		//	{Script} (expressions+=XExpressionInsideBlock ";"? | imports+=Import)*;
 		public ParserRule getRule() { return rule; }
 
-		//"script" name=QualifiedName main=Main
+		//{Script} (expressions+=XExpressionInsideBlock ";"? | imports+=Import)*
 		public Group getGroup() { return cGroup; }
 
-		//"script"
-		public Keyword getScriptKeyword_0() { return cScriptKeyword_0; }
+		//{Script}
+		public Action getScriptAction_0() { return cScriptAction_0; }
 
-		//name=QualifiedName
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		//(expressions+=XExpressionInsideBlock ";"? | imports+=Import)*
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 
-		//QualifiedName
-		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
-
-		//main=Main
-		public Assignment getMainAssignment_2() { return cMainAssignment_2; }
-
-		//Main
-		public RuleCall getMainMainParserRuleCall_2_0() { return cMainMainParserRuleCall_2_0; }
-	}
-
-	public class MainElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Main");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cXBlockExpressionAction_0 = (Action)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Assignment cExpressionsAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
-		private final RuleCall cExpressionsXExpressionInsideBlockParserRuleCall_1_0_0 = (RuleCall)cExpressionsAssignment_1_0.eContents().get(0);
-		private final Keyword cSemicolonKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
-		
-		//Main returns XBlockExpression:
-		//	{XBlockExpression} (expressions+=XExpressionInsideBlock ";"?)*;
-		public ParserRule getRule() { return rule; }
-
-		//{XBlockExpression} (expressions+=XExpressionInsideBlock ";"?)*
-		public Group getGroup() { return cGroup; }
-
-		//{XBlockExpression}
-		public Action getXBlockExpressionAction_0() { return cXBlockExpressionAction_0; }
-
-		//(expressions+=XExpressionInsideBlock ";"?)*
-		public Group getGroup_1() { return cGroup_1; }
+		//expressions+=XExpressionInsideBlock ";"?
+		public Group getGroup_1_0() { return cGroup_1_0; }
 
 		//expressions+=XExpressionInsideBlock
-		public Assignment getExpressionsAssignment_1_0() { return cExpressionsAssignment_1_0; }
+		public Assignment getExpressionsAssignment_1_0_0() { return cExpressionsAssignment_1_0_0; }
 
 		//XExpressionInsideBlock
-		public RuleCall getExpressionsXExpressionInsideBlockParserRuleCall_1_0_0() { return cExpressionsXExpressionInsideBlockParserRuleCall_1_0_0; }
+		public RuleCall getExpressionsXExpressionInsideBlockParserRuleCall_1_0_0_0() { return cExpressionsXExpressionInsideBlockParserRuleCall_1_0_0_0; }
 
 		//";"?
-		public Keyword getSemicolonKeyword_1_1() { return cSemicolonKeyword_1_1; }
+		public Keyword getSemicolonKeyword_1_0_1() { return cSemicolonKeyword_1_0_1; }
+
+		//imports+=Import
+		public Assignment getImportsAssignment_1_1() { return cImportsAssignment_1_1; }
+
+		//Import
+		public RuleCall getImportsImportParserRuleCall_1_1_0() { return cImportsImportParserRuleCall_1_1_0; }
+	}
+
+	public class ImportElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Import");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cImportKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cImportedNamespaceAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0 = (RuleCall)cImportedNamespaceAssignment_1.eContents().get(0);
+		
+		//Import:
+		//	"import" importedNamespace=QualifiedNameWithWildcard;
+		public ParserRule getRule() { return rule; }
+
+		//"import" importedNamespace=QualifiedNameWithWildcard
+		public Group getGroup() { return cGroup; }
+
+		//"import"
+		public Keyword getImportKeyword_0() { return cImportKeyword_0; }
+
+		//importedNamespace=QualifiedNameWithWildcard
+		public Assignment getImportedNamespaceAssignment_1() { return cImportedNamespaceAssignment_1; }
+
+		//QualifiedNameWithWildcard
+		public RuleCall getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0() { return cImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0; }
+	}
+
+	public class QualifiedNameWithWildcardElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "QualifiedNameWithWildcard");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cQualifiedNameParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Keyword cFullStopAsteriskKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//QualifiedNameWithWildcard:
+		//	QualifiedName ".*"?;
+		public ParserRule getRule() { return rule; }
+
+		//QualifiedName ".*"?
+		public Group getGroup() { return cGroup; }
+
+		//QualifiedName
+		public RuleCall getQualifiedNameParserRuleCall_0() { return cQualifiedNameParserRuleCall_0; }
+
+		//".*"?
+		public Keyword getFullStopAsteriskKeyword_1() { return cFullStopAsteriskKeyword_1; }
 	}
 	
 	
 	private ScriptElements pScript;
-	private MainElements pMain;
+	private ImportElements pImport;
+	private QualifiedNameWithWildcardElements pQualifiedNameWithWildcard;
 	
 	private final Grammar grammar;
 
@@ -126,8 +151,8 @@ public class ScriptingGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	
-	//Script:
-	//	"script" name=QualifiedName main=Main;
+	//Script returns XBlockExpression:
+	//	{Script} (expressions+=XExpressionInsideBlock ";"? | imports+=Import)*;
 	public ScriptElements getScriptAccess() {
 		return (pScript != null) ? pScript : (pScript = new ScriptElements());
 	}
@@ -136,14 +161,24 @@ public class ScriptingGrammarAccess extends AbstractGrammarElementFinder {
 		return getScriptAccess().getRule();
 	}
 
-	//Main returns XBlockExpression:
-	//	{XBlockExpression} (expressions+=XExpressionInsideBlock ";"?)*;
-	public MainElements getMainAccess() {
-		return (pMain != null) ? pMain : (pMain = new MainElements());
+	//Import:
+	//	"import" importedNamespace=QualifiedNameWithWildcard;
+	public ImportElements getImportAccess() {
+		return (pImport != null) ? pImport : (pImport = new ImportElements());
 	}
 	
-	public ParserRule getMainRule() {
-		return getMainAccess().getRule();
+	public ParserRule getImportRule() {
+		return getImportAccess().getRule();
+	}
+
+	//QualifiedNameWithWildcard:
+	//	QualifiedName ".*"?;
+	public QualifiedNameWithWildcardElements getQualifiedNameWithWildcardAccess() {
+		return (pQualifiedNameWithWildcard != null) ? pQualifiedNameWithWildcard : (pQualifiedNameWithWildcard = new QualifiedNameWithWildcardElements());
+	}
+	
+	public ParserRule getQualifiedNameWithWildcardRule() {
+		return getQualifiedNameWithWildcardAccess().getRule();
 	}
 
 	//XExpression:

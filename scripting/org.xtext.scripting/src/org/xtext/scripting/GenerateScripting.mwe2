@@ -1,4 +1,4 @@
-module org.xtext.scripting.GenerateSimpleExpressions
+module org.xtext.scripting.GenerateScripting
 
 import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.generator.*

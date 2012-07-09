@@ -37,6 +37,7 @@ public class ScriptingParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getScriptAccess().getAlternatives_1(), "rule__Script__Alternatives_1");
 					put(grammarAccess.getXAssignmentAccess().getAlternatives(), "rule__XAssignment__Alternatives");
 					put(grammarAccess.getOpEqualityAccess().getAlternatives(), "rule__OpEquality__Alternatives");
 					put(grammarAccess.getXRelationalExpressionAccess().getAlternatives_1(), "rule__XRelationalExpression__Alternatives_1");
@@ -70,8 +71,9 @@ public class ScriptingParser extends AbstractContentAssistParser {
 					put(grammarAccess.getJvmWildcardTypeReferenceAccess().getAlternatives_2(), "rule__JvmWildcardTypeReference__Alternatives_2");
 					put(grammarAccess.getJvmTypeParameterAccess().getAlternatives_1(), "rule__JvmTypeParameter__Alternatives_1");
 					put(grammarAccess.getScriptAccess().getGroup(), "rule__Script__Group__0");
-					put(grammarAccess.getMainAccess().getGroup(), "rule__Main__Group__0");
-					put(grammarAccess.getMainAccess().getGroup_1(), "rule__Main__Group_1__0");
+					put(grammarAccess.getScriptAccess().getGroup_1_0(), "rule__Script__Group_1_0__0");
+					put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
+					put(grammarAccess.getQualifiedNameWithWildcardAccess().getGroup(), "rule__QualifiedNameWithWildcard__Group__0");
 					put(grammarAccess.getXAssignmentAccess().getGroup_0(), "rule__XAssignment__Group_0__0");
 					put(grammarAccess.getXAssignmentAccess().getGroup_1(), "rule__XAssignment__Group_1__0");
 					put(grammarAccess.getXAssignmentAccess().getGroup_1_1(), "rule__XAssignment__Group_1_1__0");
@@ -214,9 +216,9 @@ public class ScriptingParser extends AbstractContentAssistParser {
 					put(grammarAccess.getJvmLowerBoundAccess().getGroup(), "rule__JvmLowerBound__Group__0");
 					put(grammarAccess.getJvmTypeParameterAccess().getGroup(), "rule__JvmTypeParameter__Group__0");
 					put(grammarAccess.getJvmTypeParameterAccess().getGroup_1_0(), "rule__JvmTypeParameter__Group_1_0__0");
-					put(grammarAccess.getScriptAccess().getNameAssignment_1(), "rule__Script__NameAssignment_1");
-					put(grammarAccess.getScriptAccess().getMainAssignment_2(), "rule__Script__MainAssignment_2");
-					put(grammarAccess.getMainAccess().getExpressionsAssignment_1_0(), "rule__Main__ExpressionsAssignment_1_0");
+					put(grammarAccess.getScriptAccess().getExpressionsAssignment_1_0_0(), "rule__Script__ExpressionsAssignment_1_0_0");
+					put(grammarAccess.getScriptAccess().getImportsAssignment_1_1(), "rule__Script__ImportsAssignment_1_1");
+					put(grammarAccess.getImportAccess().getImportedNamespaceAssignment_1(), "rule__Import__ImportedNamespaceAssignment_1");
 					put(grammarAccess.getXAssignmentAccess().getFeatureAssignment_0_1(), "rule__XAssignment__FeatureAssignment_0_1");
 					put(grammarAccess.getXAssignmentAccess().getValueAssignment_0_3(), "rule__XAssignment__ValueAssignment_0_3");
 					put(grammarAccess.getXAssignmentAccess().getFeatureAssignment_1_1_0_0_1(), "rule__XAssignment__FeatureAssignment_1_1_0_0_1");

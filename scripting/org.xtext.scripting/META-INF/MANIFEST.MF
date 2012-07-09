@@ -24,9 +24,8 @@ Export-Package: org.xtext.scripting,
  org.xtext.scripting.jvmmodel,
  org.xtext.scripting.parser.antlr,
  org.xtext.scripting.parser.antlr.internal,
+ org.xtext.scripting.serializer,
+ org.xtext.scripting.services,
  org.xtext.scripting.scripting,
  org.xtext.scripting.scripting.impl,
- org.xtext.scripting.scripting.util,
- org.xtext.scripting.serializer,
- org.xtext.scripting.services
-
+ org.xtext.scripting.scripting.util

@@ -77,81 +77,20 @@ ruleScript returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='script' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getScriptAccess().getScriptKeyword_0());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getScriptAccess().getNameQualifiedNameParserRuleCall_1_0()); 
-	    }
-		lv_name_1_0=ruleQualifiedName		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getScriptRule());
-	        }
-       		set(
-       			$current, 
-       			"name",
-        		lv_name_1_0, 
-        		"QualifiedName");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getScriptAccess().getMainMainParserRuleCall_2_0()); 
-	    }
-		lv_main_2_0=ruleMain		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getScriptRule());
-	        }
-       		set(
-       			$current, 
-       			"main",
-        		lv_main_2_0, 
-        		"Main");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))
-;
-
-
-
-
-
-// Entry rule entryRuleMain
-entryRuleMain returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getMainRule()); }
-	 iv_ruleMain=ruleMain 
-	 { $current=$iv_ruleMain.current; } 
-	 EOF 
-;
-
-// Rule Main
-ruleMain returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
 ((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getMainAccess().getXBlockExpressionAction_0(),
+            grammarAccess.getScriptAccess().getScriptAction_0(),
             $current);
     }
-)((
+)(((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getMainAccess().getExpressionsXExpressionInsideBlockParserRuleCall_1_0_0()); 
+	        newCompositeNode(grammarAccess.getScriptAccess().getExpressionsXExpressionInsideBlockParserRuleCall_1_0_0_0()); 
 	    }
 		lv_expressions_1_0=ruleXExpressionInsideBlock		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getMainRule());
+	            $current = createModelElementForParent(grammarAccess.getScriptRule());
 	        }
        		add(
        			$current, 
@@ -164,10 +103,110 @@ ruleMain returns [EObject current=null]
 )
 )(	otherlv_2=';' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getMainAccess().getSemicolonKeyword_1_1());
+    	newLeafNode(otherlv_2, grammarAccess.getScriptAccess().getSemicolonKeyword_1_0_1());
     }
-)?)*)
+)?)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getScriptAccess().getImportsImportParserRuleCall_1_1_0()); 
+	    }
+		lv_imports_3_0=ruleImport		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getScriptRule());
+	        }
+       		add(
+       			$current, 
+       			"imports",
+        		lv_imports_3_0, 
+        		"Import");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*)
 ;
+
+
+
+
+
+// Entry rule entryRuleImport
+entryRuleImport returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getImportRule()); }
+	 iv_ruleImport=ruleImport 
+	 { $current=$iv_ruleImport.current; } 
+	 EOF 
+;
+
+// Rule Import
+ruleImport returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='import' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getImportAccess().getImportKeyword_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0()); 
+	    }
+		lv_importedNamespace_1_0=ruleQualifiedNameWithWildcard		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getImportRule());
+	        }
+       		set(
+       			$current, 
+       			"importedNamespace",
+        		lv_importedNamespace_1_0, 
+        		"QualifiedNameWithWildcard");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
+;
+
+
+
+
+
+// Entry rule entryRuleQualifiedNameWithWildcard
+entryRuleQualifiedNameWithWildcard returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getQualifiedNameWithWildcardRule()); } 
+	 iv_ruleQualifiedNameWithWildcard=ruleQualifiedNameWithWildcard 
+	 { $current=$iv_ruleQualifiedNameWithWildcard.current.getText(); }  
+	 EOF 
+;
+
+// Rule QualifiedNameWithWildcard
+ruleQualifiedNameWithWildcard returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+    { 
+        newCompositeNode(grammarAccess.getQualifiedNameWithWildcardAccess().getQualifiedNameParserRuleCall_0()); 
+    }
+    this_QualifiedName_0=ruleQualifiedName    {
+		$current.merge(this_QualifiedName_0);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+(
+	kw='.*' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getQualifiedNameWithWildcardAccess().getFullStopAsteriskKeyword_1()); 
+    }
+)?)
+    ;
 
 
 

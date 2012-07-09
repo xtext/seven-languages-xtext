@@ -7,9 +7,11 @@
     editorPluginID="org.xtext.scripting.editor" runtimeVersion="2.5" usedGenPackages="../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase">
   <genPackages prefix="Scripting" basePackage="org.xtext.scripting" disposableProviderFactory="true"
       ecorePackage="Scripting.ecore#/">
+    <genClasses ecoreClass="Scripting.ecore#//Import">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scripting.ecore#//Import/importedNamespace"/>
+    </genClasses>
     <genClasses ecoreClass="Scripting.ecore#//Script">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scripting.ecore#//Script/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scripting.ecore#//Script/main"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scripting.ecore#//Script/imports"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

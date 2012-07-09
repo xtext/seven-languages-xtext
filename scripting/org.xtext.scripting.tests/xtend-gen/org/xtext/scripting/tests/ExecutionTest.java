@@ -29,9 +29,6 @@ public class ExecutionTest {
   @Test
   public void testHelloWorld() {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("script sample.HelloWorld");
-    _builder.newLine();
-    _builder.newLine();
     _builder.append("throw new Exception(\'Hello World\')");
     _builder.newLine();
     this.compileAndExecuteMainAndExpect(_builder, "Hello World");
@@ -40,9 +37,6 @@ public class ExecutionTest {
   @Test
   public void testDeepThought() {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("script sample.DeepThought");
-    _builder.newLine();
-    _builder.newLine();
     _builder.append("val answer = 2 * (17 + 4)");
     _builder.newLine();
     _builder.append("throw new Exception(answer.toString)");

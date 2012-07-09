@@ -1,3 +1,0 @@
-script sample.HelloWorld
-
-println('Hello world')

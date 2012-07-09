@@ -14,38 +14,54 @@ class CompilationTest {
 
 	@Inject extension CompilationTestHelper
 	
-	@Test def testHelloWorld() {
+	@Test def testDeepThought() {
 		'''
-			script sample.HelloWorld
-
-			println('Hello World!')
+			val answer = 7 * 6;
+			println(answer)
 		'''.assertCompilesTo('''
-			package sample;
+			package org.xtext;
 			
 			import org.eclipse.xtext.xbase.lib.InputOutput;
 			
-			public class HelloWorld {
+			public class MyScript {
 			  public static void main(final String... args) {
-			    InputOutput.<String>println("Hello World!");
+			    final int answer = (7 * 6);
+			    InputOutput.<Integer>println(Integer.valueOf(answer));
 			  }
 			}
 		''')
 	}	
 	
-	@Test def testDeepThought() {
+	@Test def testMixedImports() {
 		'''
-			script sample.DeepThought
-			val answer = 7 * 6;
-			println(answer)
+			import java.io.File
+			val file = new File('test')
+			
+			import java.io.FileoutputStream
+			val stream = new FileOutputStream(file)
+			
+			import java.io.*
+			val buffered = new BufferedOutputStream(stream) 
 		'''.assertCompilesTo('''
-			package sample;
+			package org.xtext;
 			
-			import org.eclipse.xtext.xbase.lib.InputOutput;
+			import java.io.BufferedOutputStream;
+			import java.io.File;
+			import java.io.FileOutputStream;
+			import org.eclipse.xtext.xbase.lib.Exceptions;
 			
-			public class DeepThought {
+			public class MyScript {
 			  public static void main(final String... args) {
-			    final int answer = (7 * 6);
-			    InputOutput.<Integer>println(Integer.valueOf(answer));
+			    try {
+			      File _file = new File("test");
+			      final File file = _file;
+			      FileOutputStream _fileOutputStream = new FileOutputStream(file);
+			      final FileOutputStream stream = _fileOutputStream;
+			      BufferedOutputStream _bufferedOutputStream = new BufferedOutputStream(stream);
+			      final BufferedOutputStream buffered = _bufferedOutputStream;
+			    } catch (Exception _e) {
+			      throw Exceptions.sneakyThrow(_e);
+			    }
 			  }
 			}
 		''')
