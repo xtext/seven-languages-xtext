@@ -1,6 +1,5 @@
 package org.xtext.scripting.jvmmodel;
 
-import com.google.common.base.Objects;
 import com.google.inject.Inject;
 import java.util.Arrays;
 import org.eclipse.emf.common.util.EList;
@@ -16,6 +15,7 @@ import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor.IPostIndexingInitializing;
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder;
+import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.xtext.scripting.scripting.Script;
 
@@ -31,33 +31,31 @@ public class ScriptingJvmModelInferrer extends AbstractModelInferrer {
     Resource _eResource = script==null?(Resource)null:script.eResource();
     URI _uRI = _eResource==null?(URI)null:_eResource.getURI();
     URI _trimFileExtension = _uRI==null?(URI)null:_uRI.trimFileExtension();
-    final String className = _trimFileExtension==null?(String)null:_trimFileExtension.lastSegment();
-    boolean _notEquals = (!Objects.equal(className, null));
-    if (_notEquals) {
-      JvmGenericType _class = this._jvmTypesBuilder.toClass(script, className);
-      IPostIndexingInitializing<JvmGenericType> _accept = acceptor.<JvmGenericType>accept(_class);
-      final Procedure1<JvmGenericType> _function = new Procedure1<JvmGenericType>() {
-          public void apply(final JvmGenericType it) {
-            EList<JvmMember> _members = it.getMembers();
-            JvmTypeReference _newTypeRef = ScriptingJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(script, Void.TYPE);
-            final Procedure1<JvmOperation> _function = new Procedure1<JvmOperation>() {
-                public void apply(final JvmOperation it) {
-                  it.setVarArgs(true);
-                  EList<JvmFormalParameter> _parameters = it.getParameters();
-                  JvmTypeReference _newTypeRef = ScriptingJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(script, String.class);
-                  JvmTypeReference _addArrayTypeDimension = ScriptingJvmModelInferrer.this._jvmTypesBuilder.addArrayTypeDimension(_newTypeRef);
-                  JvmFormalParameter _parameter = ScriptingJvmModelInferrer.this._jvmTypesBuilder.toParameter(script, "args", _addArrayTypeDimension);
-                  ScriptingJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters, _parameter);
-                  it.setStatic(true);
-                  ScriptingJvmModelInferrer.this._jvmTypesBuilder.setBody(it, script);
-                }
-              };
-            JvmOperation _method = ScriptingJvmModelInferrer.this._jvmTypesBuilder.toMethod(script, "main", _newTypeRef, _function);
-            ScriptingJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members, _method);
-          }
-        };
-      _accept.initializeLater(_function);
-    }
+    String _lastSegment = _trimFileExtension==null?(String)null:_trimFileExtension.lastSegment();
+    final String className = ObjectExtensions.<String>operator_elvis(_lastSegment, "MyScript");
+    JvmGenericType _class = this._jvmTypesBuilder.toClass(script, className);
+    IPostIndexingInitializing<JvmGenericType> _accept = acceptor.<JvmGenericType>accept(_class);
+    final Procedure1<JvmGenericType> _function = new Procedure1<JvmGenericType>() {
+        public void apply(final JvmGenericType it) {
+          EList<JvmMember> _members = it.getMembers();
+          JvmTypeReference _newTypeRef = ScriptingJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(script, Void.TYPE);
+          final Procedure1<JvmOperation> _function = new Procedure1<JvmOperation>() {
+              public void apply(final JvmOperation it) {
+                it.setVarArgs(true);
+                EList<JvmFormalParameter> _parameters = it.getParameters();
+                JvmTypeReference _newTypeRef = ScriptingJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(script, String.class);
+                JvmTypeReference _addArrayTypeDimension = ScriptingJvmModelInferrer.this._jvmTypesBuilder.addArrayTypeDimension(_newTypeRef);
+                JvmFormalParameter _parameter = ScriptingJvmModelInferrer.this._jvmTypesBuilder.toParameter(script, "args", _addArrayTypeDimension);
+                ScriptingJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters, _parameter);
+                it.setStatic(true);
+                ScriptingJvmModelInferrer.this._jvmTypesBuilder.setBody(it, script);
+              }
+            };
+          JvmOperation _method = ScriptingJvmModelInferrer.this._jvmTypesBuilder.toMethod(script, "main", _newTypeRef, _function);
+          ScriptingJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members, _method);
+        }
+      };
+    _accept.initializeLater(_function);
   }
   
   public void infer(final EObject script, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {

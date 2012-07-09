@@ -19,11 +19,9 @@ class CompilationTest {
 			val answer = 7 * 6;
 			println(answer)
 		'''.assertCompilesTo('''
-			package org.xtext;
-			
 			import org.eclipse.xtext.xbase.lib.InputOutput;
 			
-			public class MyScript {
+			public class __synthetic0 {
 			  public static void main(final String... args) {
 			    final int answer = (7 * 6);
 			    InputOutput.<Integer>println(Integer.valueOf(answer));
@@ -43,14 +41,12 @@ class CompilationTest {
 			import java.io.*
 			val buffered = new BufferedOutputStream(stream) 
 		'''.assertCompilesTo('''
-			package org.xtext;
-			
 			import java.io.BufferedOutputStream;
 			import java.io.File;
 			import java.io.FileOutputStream;
 			import org.eclipse.xtext.xbase.lib.Exceptions;
 			
-			public class MyScript {
+			public class __synthetic0 {
 			  public static void main(final String... args) {
 			    try {
 			      File _file = new File("test");

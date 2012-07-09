@@ -24,13 +24,10 @@ public class CompilationTest {
     _builder.append("println(answer)");
     _builder.newLine();
     StringConcatenation _builder_1 = new StringConcatenation();
-    _builder_1.append("package org.xtext;");
-    _builder_1.newLine();
-    _builder_1.newLine();
     _builder_1.append("import org.eclipse.xtext.xbase.lib.InputOutput;");
     _builder_1.newLine();
     _builder_1.newLine();
-    _builder_1.append("public class MyScript {");
+    _builder_1.append("public class __synthetic0 {");
     _builder_1.newLine();
     _builder_1.append("  ");
     _builder_1.append("public static void main(final String... args) {");
@@ -67,9 +64,6 @@ public class CompilationTest {
     _builder.append("val buffered = new BufferedOutputStream(stream) ");
     _builder.newLine();
     StringConcatenation _builder_1 = new StringConcatenation();
-    _builder_1.append("package org.xtext;");
-    _builder_1.newLine();
-    _builder_1.newLine();
     _builder_1.append("import java.io.BufferedOutputStream;");
     _builder_1.newLine();
     _builder_1.append("import java.io.File;");
@@ -79,7 +73,7 @@ public class CompilationTest {
     _builder_1.append("import org.eclipse.xtext.xbase.lib.Exceptions;");
     _builder_1.newLine();
     _builder_1.newLine();
-    _builder_1.append("public class MyScript {");
+    _builder_1.append("public class __synthetic0 {");
     _builder_1.newLine();
     _builder_1.append("  ");
     _builder_1.append("public static void main(final String... args) {");
