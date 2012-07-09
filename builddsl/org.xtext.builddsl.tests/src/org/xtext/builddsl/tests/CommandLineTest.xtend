@@ -6,7 +6,6 @@ import java.io.PrintStream
 import org.eclipse.xtext.junit4.InjectWith
 import org.eclipse.xtext.junit4.XtextRunner
 import org.eclipse.xtext.xbase.compiler.CompilationTestHelper
-import org.eclipse.xtext.xbase.lib.util.ReflectExtensions
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.xtext.builddsl.BuildDSLInjectorProvider
@@ -19,8 +18,6 @@ class CommandLineTest {
 	
 	@Inject extension CompilationTestHelper
 	
-	@Inject extension ReflectExtensions
-	
 	@Test def testStringParameterWithDefault() {
 		val file = '''
 			package foo
@@ -32,14 +29,12 @@ class CommandLineTest {
 			} 
 		'''
 		file.assertExecute("Start", '''
-			running Start...
+			[Task 'Start']
 			Hello
-			success
 		''')
 		file.assertExecute("Start --projectName MyProject", '''
-			running Start...
+			[Task 'Start']
 			MyProject
-			success
 		''')
 	}
 	
@@ -58,10 +53,10 @@ class CommandLineTest {
 					println('yes')
 				else 
 					println('no')
-			} 
+			}
 		'''
 		file.assertExecute("Check", '''
-			running Check...
+			[Task 'Check']
 			Build '__synthetic0'
 
 			Tasks:
@@ -70,12 +65,10 @@ class CommandLineTest {
 			Parameters:
 				--file <File>
 
-			success
 		''')
 		file.assertExecute("Check --file " + System::getProperty('user.dir'), '''
-			running Check...
+			[Task 'Check']
 			yes
-			success
 		''')
 	}
 	
@@ -96,24 +89,17 @@ class CommandLineTest {
 			} 
 		'''
 		file.assertExecute("Foo", '''
-			running Baz...
-			success
-			running Bar...
-			success
-			running Foo...
-			success
+			[Task 'Baz']
+			[Task 'Bar']
+			[Task 'Foo']
 		''')
 		file.assertExecute("FooBar", '''
-			running Baz...
-			success
-			running Bar...
-			success
-			running FooBar...
-			success
+			[Task 'Baz']
+			[Task 'Bar']
+			[Task 'FooBar']
 		''')
 		file.assertExecute("Baz", '''
-			running Baz...
-			success
+			[Task 'Baz']
 		''')
 	}
 	
@@ -138,11 +124,9 @@ class CommandLineTest {
 			} 
 		'''
 		file.assertExecute("Compile --source testdata/org/xtext/builddsl/tests/SimpleMain.java --dest " + tmpDir, '''
-			running Pre...
-			success
-			running Compile...
+			[Task 'Pre']
+			[Task 'Compile']
 			compiling Java files...success.
-			success
 		''')
 	}
 	
@@ -155,7 +139,10 @@ class CommandLineTest {
 		System::setOut(new PrintStream(out))
 		try {
 			val instance = clazz.newInstance
-			instance.invoke('build', cmdline.split(' ') as Object) 
+			clazz.superclass.declaredMethods.findFirst[name == 'doBuild'] => [
+				accessible = true
+				invoke(instance, cmdline.split(' ') as Object)	
+			]
 		} finally {
 			System::setOut(backup)
 		}

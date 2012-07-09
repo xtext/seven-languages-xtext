@@ -21,18 +21,17 @@ import org.eclipse.jface.viewers.ISelection
 import org.eclipse.ui.IEditorPart
 import org.eclipse.ui.IFileEditorInput
 import org.eclipse.xtend.lib.Data
+import org.eclipse.xtext.common.types.JvmDeclaredType
 import org.eclipse.xtext.resource.XtextResource
 import org.eclipse.xtext.util.Strings
 import org.eclipse.xtext.xbase.ui.editor.XbaseEditor
 import org.xtext.builddsl.build.Task
-import org.xtext.builddsl.build.BuildFile
 
 import static org.eclipse.jdt.launching.IJavaLaunchConfigurationConstants.*
 import static org.eclipse.jface.dialogs.MessageDialog.*
 
 import static extension org.eclipse.xtext.EcoreUtil2.*
 import static extension org.eclipse.xtext.nodemodel.util.NodeModelUtils.*
-import static extension org.xtext.builddsl.TaskExtensions.*
 
 
 class BuildDSLLaunchShortcut implements ILaunchShortcut {
@@ -70,8 +69,8 @@ class BuildDSLLaunchShortcut implements ILaunchShortcut {
 			if (xbaseEditor.editorInput instanceof IFileEditorInput) {
 				val project = (xbaseEditor.editorInput as IFileEditorInput).file.project.name
 				val info = xbaseEditor.document.readOnly[
-					val file = contents.filter(typeof(BuildFile)).head
-					new LaunchConfigurationInfo(project, file?.javaClassName, findTask(offset))
+					val file = contents.filter(typeof(JvmDeclaredType)).head
+					new LaunchConfigurationInfo(project, file?.identifier, findTask(offset))
 				]
 				launch(mode, info)
 				return

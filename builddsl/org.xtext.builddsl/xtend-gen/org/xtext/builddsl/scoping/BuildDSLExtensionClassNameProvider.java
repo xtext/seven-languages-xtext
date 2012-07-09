@@ -18,6 +18,7 @@ public class BuildDSLExtensionClassNameProvider extends ExtensionClassNameProvid
     final Procedure1<Multimap<Class<? extends Object>,Class<? extends Object>>> _function = new Procedure1<Multimap<Class<? extends Object>,Class<? extends Object>>>() {
         public void apply(final Multimap<Class<? extends Object>,Class<? extends Object>> it) {
           it.put(File.class, FileExtensions.class);
+          it.put(String.class, FileExtensions.class);
           it.put(Class.class, ClassExtensions.class);
         }
       };

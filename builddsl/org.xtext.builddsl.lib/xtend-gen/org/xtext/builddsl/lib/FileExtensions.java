@@ -75,22 +75,45 @@ public class FileExtensions {
     }
   }
   
-  public static File operator_divide(final File file, final String name) {
+  public static File operator_divide(final File dir, final String name) {
     File _xblockexpression = null;
     {
-      boolean _isDirectory = file.isDirectory();
+      boolean _isDirectory = dir.isDirectory();
       boolean _not = (!_isDirectory);
       if (_not) {
-        String _plus = ("This is not a directory: " + file);
+        String _plus = ("This is not a directory: " + dir);
         IllegalStateException _illegalStateException = new IllegalStateException(_plus);
         throw _illegalStateException;
       }
-      URI _uRI = file.toURI();
+      URI _uRI = dir.toURI();
       URI _resolve = _uRI.resolve(name);
       File _file = new File(_resolve);
       _xblockexpression = (_file);
     }
     return _xblockexpression;
+  }
+  
+  public static File operator_divide(final String dir, final String post) {
+    File _xblockexpression = null;
+    {
+      File _file = FileExtensions.file(dir);
+      boolean _isDirectory = _file.isDirectory();
+      boolean _not = (!_isDirectory);
+      if (_not) {
+        String _plus = ("This is not a directory: " + dir);
+        IllegalStateException _illegalStateException = new IllegalStateException(_plus);
+        throw _illegalStateException;
+      }
+      File _file_1 = FileExtensions.file(dir);
+      File _file_2 = new File(_file_1, post);
+      _xblockexpression = (_file_2);
+    }
+    return _xblockexpression;
+  }
+  
+  public static File file(final String path) {
+    File _file = new File(path);
+    return _file;
   }
   
   public static File relativeTo(final File target, final File base) {

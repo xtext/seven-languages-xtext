@@ -31,7 +31,7 @@ public class ValidationTest {
       _builder.append("task Foo depends Foo {}");
       _builder.newLine();
       BuildFile _parse = this._parseHelper.parse(_builder);
-      this._validationTestHelper.assertError(_parse, Literals.TASK, BuildDSLValidator.SELF_DEPENDENCY);
+      this._validationTestHelper.assertError(_parse, Literals.TASK, BuildDSLValidator.CYCLIC_DEPENDENCY);
     } catch (Exception _e) {
       throw Exceptions.sneakyThrow(_e);
     }

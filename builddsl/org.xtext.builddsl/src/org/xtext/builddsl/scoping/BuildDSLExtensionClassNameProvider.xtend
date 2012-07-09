@@ -13,6 +13,7 @@ class BuildDSLExtensionClassNameProvider extends ExtensionClassNameProvider {
 	override simpleComputeExtensionClasses() {
 		super.simpleComputeExtensionClasses => [
 			put(typeof(File), typeof(FileExtensions))
+			put(typeof(String), typeof(FileExtensions))
 			put(typeof(Class), typeof(ClassExtensions))
 		]
 	}

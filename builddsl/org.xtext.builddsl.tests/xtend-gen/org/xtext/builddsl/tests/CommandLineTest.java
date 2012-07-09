@@ -1,8 +1,10 @@
 package org.xtext.builddsl.tests;
 
+import com.google.common.base.Objects;
 import com.google.inject.Inject;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.junit4.InjectWith;
@@ -11,10 +13,12 @@ import org.eclipse.xtext.util.IAcceptor;
 import org.eclipse.xtext.xbase.compiler.CompilationTestHelper;
 import org.eclipse.xtext.xbase.compiler.CompilationTestHelper.Result;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
+import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Exceptions;
+import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
-import org.eclipse.xtext.xbase.lib.util.ReflectExtensions;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -26,9 +30,6 @@ import org.xtext.builddsl.BuildDSLInjectorProvider;
 public class CommandLineTest {
   @Inject
   private CompilationTestHelper _compilationTestHelper;
-  
-  @Inject
-  private ReflectExtensions _reflectExtensions;
   
   @Test
   public void testStringParameterWithDefault() {
@@ -48,19 +49,15 @@ public class CommandLineTest {
     _builder.newLine();
     final CharSequence file = _builder;
     StringConcatenation _builder_1 = new StringConcatenation();
-    _builder_1.append("running Start...");
+    _builder_1.append("[Task \'Start\']");
     _builder_1.newLine();
     _builder_1.append("Hello");
     _builder_1.newLine();
-    _builder_1.append("success");
-    _builder_1.newLine();
     this.assertExecute(file, "Start", _builder_1.toString());
     StringConcatenation _builder_2 = new StringConcatenation();
-    _builder_2.append("running Start...");
+    _builder_2.append("[Task \'Start\']");
     _builder_2.newLine();
     _builder_2.append("MyProject");
-    _builder_2.newLine();
-    _builder_2.append("success");
     _builder_2.newLine();
     this.assertExecute(file, "Start --projectName MyProject", _builder_2.toString());
   }
@@ -97,11 +94,11 @@ public class CommandLineTest {
     _builder.append("\t\t");
     _builder.append("println(\'no\')");
     _builder.newLine();
-    _builder.append("} ");
+    _builder.append("}");
     _builder.newLine();
     final CharSequence file = _builder;
     StringConcatenation _builder_1 = new StringConcatenation();
-    _builder_1.append("running Check...");
+    _builder_1.append("[Task \'Check\']");
     _builder_1.newLine();
     _builder_1.append("Build \'__synthetic0\'");
     _builder_1.newLine();
@@ -118,17 +115,13 @@ public class CommandLineTest {
     _builder_1.append("--file <File>");
     _builder_1.newLine();
     _builder_1.newLine();
-    _builder_1.append("success");
-    _builder_1.newLine();
     this.assertExecute(file, "Check", _builder_1.toString());
     String _property = System.getProperty("user.dir");
     String _plus = ("Check --file " + _property);
     StringConcatenation _builder_2 = new StringConcatenation();
-    _builder_2.append("running Check...");
+    _builder_2.append("[Task \'Check\']");
     _builder_2.newLine();
     _builder_2.append("yes");
-    _builder_2.newLine();
-    _builder_2.append("success");
     _builder_2.newLine();
     this.assertExecute(file, _plus, _builder_2.toString());
   }
@@ -160,37 +153,23 @@ public class CommandLineTest {
     _builder.newLine();
     final CharSequence file = _builder;
     StringConcatenation _builder_1 = new StringConcatenation();
-    _builder_1.append("running Baz...");
+    _builder_1.append("[Task \'Baz\']");
     _builder_1.newLine();
-    _builder_1.append("success");
+    _builder_1.append("[Task \'Bar\']");
     _builder_1.newLine();
-    _builder_1.append("running Bar...");
-    _builder_1.newLine();
-    _builder_1.append("success");
-    _builder_1.newLine();
-    _builder_1.append("running Foo...");
-    _builder_1.newLine();
-    _builder_1.append("success");
+    _builder_1.append("[Task \'Foo\']");
     _builder_1.newLine();
     this.assertExecute(file, "Foo", _builder_1.toString());
     StringConcatenation _builder_2 = new StringConcatenation();
-    _builder_2.append("running Baz...");
+    _builder_2.append("[Task \'Baz\']");
     _builder_2.newLine();
-    _builder_2.append("success");
+    _builder_2.append("[Task \'Bar\']");
     _builder_2.newLine();
-    _builder_2.append("running Bar...");
-    _builder_2.newLine();
-    _builder_2.append("success");
-    _builder_2.newLine();
-    _builder_2.append("running FooBar...");
-    _builder_2.newLine();
-    _builder_2.append("success");
+    _builder_2.append("[Task \'FooBar\']");
     _builder_2.newLine();
     this.assertExecute(file, "FooBar", _builder_2.toString());
     StringConcatenation _builder_3 = new StringConcatenation();
-    _builder_3.append("running Baz...");
-    _builder_3.newLine();
-    _builder_3.append("success");
+    _builder_3.append("[Task \'Baz\']");
     _builder_3.newLine();
     this.assertExecute(file, "Baz", _builder_3.toString());
   }
@@ -235,15 +214,11 @@ public class CommandLineTest {
     final CharSequence file = _builder;
     String _plus = ("Compile --source testdata/org/xtext/builddsl/tests/SimpleMain.java --dest " + tmpDir);
     StringConcatenation _builder_1 = new StringConcatenation();
-    _builder_1.append("running Pre...");
+    _builder_1.append("[Task \'Pre\']");
     _builder_1.newLine();
-    _builder_1.append("success");
-    _builder_1.newLine();
-    _builder_1.append("running Compile...");
+    _builder_1.append("[Task \'Compile\']");
     _builder_1.newLine();
     _builder_1.append("compiling Java files...success.");
-    _builder_1.newLine();
-    _builder_1.append("success");
     _builder_1.newLine();
     this.assertExecute(file, _plus, _builder_1.toString());
   }
@@ -270,8 +245,28 @@ public class CommandLineTest {
       System.setOut(_printStream);
       try {
         final Object instance = clazz.newInstance();
-        String[] _split = cmdline.split(" ");
-        this._reflectExtensions.invoke(instance, "build", ((Object) _split));
+        Class<? extends Object> _superclass = clazz.getSuperclass();
+        Method[] _declaredMethods = _superclass.getDeclaredMethods();
+        final Function1<Method,Boolean> _function_1 = new Function1<Method,Boolean>() {
+            public Boolean apply(final Method it) {
+              String _name = it.getName();
+              boolean _equals = Objects.equal(_name, "doBuild");
+              return Boolean.valueOf(_equals);
+            }
+          };
+        Method _findFirst = IterableExtensions.<Method>findFirst(((Iterable<Method>)Conversions.doWrapArray(_declaredMethods)), _function_1);
+        final Procedure1<Method> _function_2 = new Procedure1<Method>() {
+            public void apply(final Method it) {
+              try {
+                it.setAccessible(true);
+                String[] _split = cmdline.split(" ");
+                it.invoke(instance, ((Object) _split));
+              } catch (Exception _e) {
+                throw Exceptions.sneakyThrow(_e);
+              }
+            }
+          };
+        ObjectExtensions.<Method>operator_doubleArrow(_findFirst, _function_2);
       } finally {
         System.setOut(backup);
       }

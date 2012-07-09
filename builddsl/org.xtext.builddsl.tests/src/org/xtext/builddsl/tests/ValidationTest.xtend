@@ -24,7 +24,7 @@ class ValidationTest {
 		'''
 			task Foo depends Foo {}
 		'''.parse
-		.assertError(TASK, SELF_DEPENDENCY)
+		.assertError(TASK, CYCLIC_DEPENDENCY)
 	}
 	
 	@Test def testSimpleCyclicDependency() {

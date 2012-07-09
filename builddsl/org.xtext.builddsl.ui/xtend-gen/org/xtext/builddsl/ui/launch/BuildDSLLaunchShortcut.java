@@ -21,6 +21,7 @@ import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.xtext.EcoreUtil2;
+import org.eclipse.xtext.common.types.JvmDeclaredType;
 import org.eclipse.xtext.nodemodel.ICompositeNode;
 import org.eclipse.xtext.nodemodel.ILeafNode;
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
@@ -36,8 +37,6 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 import org.eclipse.xtext.xbase.ui.editor.XbaseEditor;
-import org.xtext.builddsl.TaskExtensions;
-import org.xtext.builddsl.build.BuildFile;
 import org.xtext.builddsl.build.Task;
 import org.xtext.builddsl.ui.launch.LaunchConfigurationInfo;
 
@@ -138,11 +137,11 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
               LaunchConfigurationInfo _xblockexpression = null;
               {
                 EList<EObject> _contents = it.getContents();
-                Iterable<BuildFile> _filter = Iterables.<BuildFile>filter(_contents, BuildFile.class);
-                final BuildFile file = IterableExtensions.<BuildFile>head(_filter);
-                String _javaClassName = file==null?(String)null:TaskExtensions.getJavaClassName(file);
+                Iterable<JvmDeclaredType> _filter = Iterables.<JvmDeclaredType>filter(_contents, JvmDeclaredType.class);
+                final JvmDeclaredType file = IterableExtensions.<JvmDeclaredType>head(_filter);
+                String _identifier = file==null?(String)null:file.getIdentifier();
                 String _findTask = BuildDSLLaunchShortcut.this.findTask(it, offset);
-                LaunchConfigurationInfo _launchConfigurationInfo = new LaunchConfigurationInfo(project, _javaClassName, _findTask);
+                LaunchConfigurationInfo _launchConfigurationInfo = new LaunchConfigurationInfo(project, _identifier, _findTask);
                 _xblockexpression = (_launchConfigurationInfo);
               }
               return _xblockexpression;

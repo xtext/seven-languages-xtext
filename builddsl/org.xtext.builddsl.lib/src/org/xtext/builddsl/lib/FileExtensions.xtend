@@ -45,10 +45,20 @@ class FileExtensions {
 		
 	}
 	
-	def static File operator_divide(File file, String name) {
-		if (!file.isDirectory)
-			throw new IllegalStateException("This is not a directory: " + file)
-		new File(file.toURI.resolve(name))
+	def static File operator_divide(File dir, String name) {
+		if (!dir.isDirectory)
+			throw new IllegalStateException("This is not a directory: " + dir)
+		new File(dir.toURI.resolve(name))
+	}
+	
+	def static File operator_divide(String dir, String post) {
+		if (!dir.file.directory)
+			throw new IllegalStateException("This is not a directory: " + dir)
+		new File(dir.file, post)
+	}
+	
+	def static File file(String path) {
+		new File(path)
 	}
 
 	def static relativeTo(File target, File base) {
