@@ -7,6 +7,10 @@ import com.google.common.base.Charsets
 
 for (arg : args) {
 	val lines = Files::readLines(new File(arg), Charsets::UTF_8)
-	var wordsInFile = lines.map[ split('\\s*').size ].reduce[ a, b | a + b ]
-	println('File ' + arg + ': ' + wordsInFile + ' words, ' + lines.size + ' lines.')
+	var wordsInFile = lines
+		.map[ split('\\s*').size ]
+		.reduce[ a, b | a + b ]
+	println('File ' + arg + ': ' 
+		+ wordsInFile + ' words, ' + lines.size + ' lines.'
+	)
 }
