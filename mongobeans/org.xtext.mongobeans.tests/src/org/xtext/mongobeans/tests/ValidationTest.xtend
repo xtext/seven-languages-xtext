@@ -55,7 +55,7 @@ class ValidationTest {
 	@Test def testInvalidPropertyName() {
 		val property = '''
 			Foo {
-				String _dbObject
+				String dbObject
 			}
 		'''.parse.eAllContents.filter(typeof(MongoProperty)).head
 		assertError(property, MONGO_PROPERTY, ILLEGAL_PROPERTY_NAME)

@@ -90,7 +90,7 @@ public class ValidationTest {
       _builder.append("Foo {");
       _builder.newLine();
       _builder.append("\t");
-      _builder.append("String _dbObject");
+      _builder.append("String dbObject");
       _builder.newLine();
       _builder.append("}");
       _builder.newLine();
