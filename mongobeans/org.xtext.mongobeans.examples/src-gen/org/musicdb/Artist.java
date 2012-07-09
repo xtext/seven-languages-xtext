@@ -1,7 +1,6 @@
 package org.musicdb;
 
 import com.google.common.collect.Iterables;
-import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 import java.util.List;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
@@ -20,13 +19,14 @@ public class Artist implements IMongoBean {
    */
   public Artist(final DBObject dbObject) {
     this._dbObject = dbObject;
+    
   }
   
   /**
-   * Creates a new Artist wrapping a new {@link BasicDBObject}.
+   * Creates a new Artist wrapping a new {@link com.mongodb.BasicDBObject}.
    */
   public Artist() {
-    _dbObject = new BasicDBObject();
+    _dbObject = new com.mongodb.BasicDBObject();
     _dbObject.put(JAVA_CLASS_KEY, "org.musicdb.Artist");
     
   }
@@ -38,19 +38,22 @@ public class Artist implements IMongoBean {
   }
   
   public String getName() {
-    return (String) _dbObject.get("name");
+    return (java.lang.String) _dbObject.get("name");
+    
   }
   
   public void setName(final String name) {
-     _dbObject.put("name", name);
+    _dbObject.put("name", name);
+    
   }
   
   private MongoBeanList<Album> _albums;
   
   public List<Album> getAlbums() {
     if(_albums==null)
-    	_albums = new MongoBeanList<Album>(_dbObject, "albums");
+    	_albums = new org.xtext.mongobeans.lib.MongoBeanList<org.musicdb.Album>(_dbObject, "albums");
     return _albums;
+    
   }
   
   public Iterable<Track> getOevre() {

@@ -1,6 +1,5 @@
 package org.musicdb;
 
-import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 import java.util.List;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
@@ -18,13 +17,14 @@ public class Album implements IMongoBean {
    */
   public Album(final DBObject dbObject) {
     this._dbObject = dbObject;
+    
   }
   
   /**
-   * Creates a new Album wrapping a new {@link BasicDBObject}.
+   * Creates a new Album wrapping a new {@link com.mongodb.BasicDBObject}.
    */
   public Album() {
-    _dbObject = new BasicDBObject();
+    _dbObject = new com.mongodb.BasicDBObject();
     _dbObject.put(JAVA_CLASS_KEY, "org.musicdb.Album");
     
   }
@@ -36,19 +36,23 @@ public class Album implements IMongoBean {
   }
   
   public String getTitle() {
-    return (String) _dbObject.get("title");
+    return (java.lang.String) _dbObject.get("title");
+    
   }
   
   public void setTitle(final String title) {
-     _dbObject.put("title", title);
+    _dbObject.put("title", title);
+    
   }
   
   public int getYear() {
-    return (Integer) _dbObject.get("year");
+    return (java.lang.Integer) _dbObject.get("year");
+    
   }
   
   public void setYear(final int year) {
-     _dbObject.put("year", year);
+    _dbObject.put("year", year);
+    
   }
   
   public Duration getDuration() {
@@ -74,7 +78,8 @@ public class Album implements IMongoBean {
   
   public List<Track> getTracks() {
     if(_tracks==null)
-    	_tracks = new MongoBeanList<Track>(_dbObject, "tracks");
+    	_tracks = new org.xtext.mongobeans.lib.MongoBeanList<org.musicdb.Track>(_dbObject, "tracks");
     return _tracks;
+    
   }
 }

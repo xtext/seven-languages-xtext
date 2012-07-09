@@ -71,16 +71,16 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 			documentation = '''Creates a new «bean.name» wrapping the given {@link DBObject}.'''
 			parameters += toParameter("dbObject", newTypeRef(bean, 'com.mongodb.DBObject'))
 			body = [
-				append('this._dbObject = dbObject;')
+				append('''
+					this._dbObject = dbObject;
+				''')
 			]
 		]
 		inferredType.members += bean.toConstructor [
-			documentation = '''Creates a new «bean.name» wrapping a new {@link BasicDBObject}.'''
+			documentation = '''Creates a new «bean.name» wrapping a new {@link com.mongodb.BasicDBObject}.'''
 			body = [
-				append('_dbObject = new ')
-				appendTypeRef(bean, 'com.mongodb.BasicDBObject')
-				append('();').newLine
 				append('''
+					_dbObject = new com.mongodb.BasicDBObject();
 					_dbObject.put(JAVA_CLASS_KEY, "«inferredType.identifier»");
 				''')
 			]
@@ -93,33 +93,33 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 	}
 
 	def protected addListAccessor(JvmDeclaredType inferredType, MongoProperty property) {
-		if(isMongoPrimitiveType(property.jvmType)) {
+		val propertyType = property.jvmType.asWrapperTypeIfPrimitive
+		if(isMongoPrimitiveType(propertyType)) {
 			inferredType.members += property.toMethod('get' + property.name.toFirstUpper, 
-				newTypeRef(property, 'java.util.List', property.jvmType.asWrapperTypeIfPrimitive)
+				newTypeRef(property, 'java.util.List', propertyType)
 			) [
 				documentation = property.documentation
 				body = [
-					append('return (')
-					appendTypeRef(property, 'java.util.List', property.jvmType.asWrapperTypeIfPrimitive)
-					append(''') _dbObject.get("«property.name»");''')
+					append('''
+						return (java.util.List<«propertyType.identifier»>) _dbObject.get("«property.name»");
+					''')
 				]
 			]		
 		} else {
 			
 			inferredType.members += property.toField('_' + property.name, 
-				newTypeRef(property, 'org.xtext.mongobeans.lib.MongoBeanList', property.jvmType))
+				newTypeRef(property, 'org.xtext.mongobeans.lib.MongoBeanList', propertyType))
 				
 			inferredType.members += property.toMethod('get' + property.name.toFirstUpper,
-				newTypeRef(property, 'java.util.List', property.jvmType)
+				newTypeRef(property, 'java.util.List', propertyType)
 			) [
 				documentation = property.documentation
 				body = [
 					append('''
 						if(_«property.name»==null)
-							_«property.name» = new ''')
-					appendTypeRef(property, 'org.xtext.mongobeans.lib.MongoBeanList', property.jvmType) 
-					append('(_dbObject, "' + property.name + '");').newLine
-					append('return _' + property.name + ';')
+							_«property.name» = new org.xtext.mongobeans.lib.MongoBeanList<«propertyType.identifier»>(_dbObject, "«property.name»");
+						return _«property.name»;
+					''')
 				]
 			]
 		}
@@ -129,16 +129,14 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 		inferredType.members += property.toMethod('get' + property.name.toFirstUpper, property.jvmType) [
 			documentation = property.documentation
 			body = [
-				append('return ')
-				if(property.jvmType.mongoBean) {
-					appendTypeRef(property, 'org.xtext.mongobeans.lib.WrappingUtil')
-					append('.wrapAndCast((')
-					appendTypeRef(property, 'com.mongodb.DBObject')
-					append(''') _dbObject.get("«property.name»"));''')
+				if (property.jvmType.mongoBean) {
+				 	append('''
+						return org.xtext.mongobeans.lib.WrappingUtil.wrapAndCast((com.mongodb.DBObject) _dbObject.get("«property.name»"));
+					''')
 				} else {
-					append('(')
-					appendTypeRef(property, property.jvmType.asWrapperTypeIfPrimitive)
-					append(''') _dbObject.get("«property.name»");''')
+					append('''
+						return («property.jvmType.asWrapperTypeIfPrimitive.identifier») _dbObject.get("«property.name»");
+					''')
 				} 
 			]
 		]
@@ -146,16 +144,15 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 			documentation = property.documentation
 			parameters += toParameter(property.name, property.jvmType)
 			body = [
-				append(''' _dbObject.put("«property.name»", ''')
 				if(property.jvmType.mongoBean) {
-					appendTypeRef(property, 'org.xtext.mongobeans.lib.WrappingUtil')
-					append(".unwrap(")
-					append(property.name)
-					append(')')
+					append(''' 
+						_dbObject.put("«property.name»", org.xtext.mongobeans.lib.WrappingUtil.unwrap(«property.name»));
+					''')
 				} else {
-					append(property.name)
+					append(''' 
+						_dbObject.put("«property.name»", «property.name»);
+					''')
 				}
-				append(');')
 			]
 		]
 	}

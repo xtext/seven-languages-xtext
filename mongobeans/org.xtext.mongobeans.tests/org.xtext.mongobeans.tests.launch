@@ -8,6 +8,8 @@
 </listAttribute>
 <stringAttribute key="org.eclipse.jdt.junit.CONTAINER" value="=org.xtext.mongobeans.tests"/>
 <booleanAttribute key="org.eclipse.jdt.junit.KEEPRUNNING_ATTR" value="false"/>
+<stringAttribute key="org.eclipse.jdt.junit.TESTNAME" value=""/>
 <stringAttribute key="org.eclipse.jdt.junit.TEST_KIND" value="org.eclipse.jdt.junit.loader.junit4"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value=""/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="org.xtext.mongobeans.tests"/>
 </launchConfiguration>
