@@ -51,14 +51,11 @@ Workflow {
 	                emfRuntimeVersion = "2.5"
                 }
     
-                // Serializer 2.0
+                // Serializer
                 fragment = serializer.SerializerFragment {
                 	generateStub = false
                 }
                 
-                // the serialization component (1.0)
-                // fragment = parseTreeConstructor.ParseTreeConstructorFragment {}
-    
                 // a custom ResourceFactory for use with EMF
                 fragment = resourceFactory.ResourceFactoryFragment {
                     fileExtensions = file.extensions
@@ -70,17 +67,6 @@ Workflow {
                 //      backtrack = true
                 //  }
                 }
-    
-                // java-based API for validation
-                // ** manually implemented in Xtend **
-                // fragment = validation.JavaValidatorFragment {
-                //    composedCheck = "org.eclipse.xtext.validation.ImportUriValidator"
-                //    composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
-                //}
-    
-                // scoping and exporting API
-                // fragment = scoping.ImportURIScopingFragment {}
-                // fragment = exporting.SimpleNamesFragment {}
     
                 // scoping and exporting API
                 fragment = scoping.ImportNamespacesScopingFragment {}
@@ -97,19 +83,8 @@ Workflow {
                 // ** not implemented
                 //fragment = formatting.FormatterFragment {}
     
-                // labeling API
-                // ** manually implemented in Xtend **
-                // fragment = labeling.LabelProviderFragment {}
-    
                 // outline API
-                // ** manually implemented in Xtend **
-                // fragment = outline.OutlineTreeProviderFragment {}
                 fragment = outline.QuickOutlineFragment {}
-    
-                // quickfix API
-                fragment = quickfix.QuickfixProviderFragment {
-                	
-                }
     
                 // content assist API
                 fragment = contentAssist.JavaBasedContentAssistFragment {}
