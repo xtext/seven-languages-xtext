@@ -9,31 +9,6 @@
    </description>
 
    <includes
-         id="org.xtext.mongobeans.sdk"
+         id="org.xtext.seven.sdk"
          version="0.0.0"/>
-
-   <includes
-         id="org.xtext.builddsl.sdk"
-         version="0.0.0"/>
-
-   <includes
-         id="org.xtext.httprouting.sdk"
-         version="0.0.0"/>
-
-   <includes
-         id="org.xtext.scripting.sdk"
-         version="0.0.0"/>
-
-   <includes
-         id="org.xtext.template.sdk"
-         version="0.0.0"/>
-
-   <includes
-         id="org.xtext.tortoiseshell.sdk"
-         version="0.0.0"/>
-
-   <includes
-         id="org.xtext.guicemodules.sdk"
-         version="0.0.0"/>
-
 </feature>
