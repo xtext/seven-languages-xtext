@@ -13,10 +13,13 @@ import org.xtext.mongobeans.mongoBeans.MongoProperty
 import org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider
 
 class MongoBeansOutlineTreeProvider extends DefaultOutlineTreeProvider {
+	
+	// don't show children of operations
 	def _isLeaf(MongoOperation operation) {
 		true
 	}
 	
+	// show inline declared MongoBeans
 	def _createChildren(IOutlineNode parentNode, MongoProperty property) {
 		if(property.inlineType != null)
 			parentNode.createNode(property.inlineType)

@@ -23,6 +23,8 @@ class MongoBeansLabelProvider extends XbaseLabelProvider {
 	}
 	
 	override image(Object element) {
+		// icons are stored in the 'icons' folder of this project.
+		// when adding such a folder, don't forget to add it to the 'bin.includes' section in the build.properties
 		switch element {
 			MongoBean: 'Letter-B-blue-icon.png'
 			MongoProperty: 'Letter-P-orange-icon.png'

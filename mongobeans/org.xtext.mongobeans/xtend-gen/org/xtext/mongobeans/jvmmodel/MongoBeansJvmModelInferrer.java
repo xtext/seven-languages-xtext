@@ -143,7 +143,7 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
             _builder.append("Creates a new ");
             String _name = bean.getName();
             _builder.append(_name, "");
-            _builder.append(" wrapping a new {@link com.mongodb.BasicDBObject}.");
+            _builder.append(" wrapping a new {@link BasicDBObject}.");
             MongoBeansJvmModelInferrer.this._jvmTypesBuilder.setDocumentation(it, _builder.toString());
             final Procedure1<ITreeAppendable> _function = new Procedure1<ITreeAppendable>() {
                 public void apply(final ITreeAppendable it) {
