@@ -11,7 +11,7 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
 
 public class WordCount {
-  public static void main(final String... args) {
+  public static void main(final String[] args) {
     try {
       int _size = ((List<String>)Conversions.doWrapArray(args)).size();
       boolean _equals = (_size == 0);
