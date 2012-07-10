@@ -5,7 +5,7 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
-package org.xtext.mongobeans.example
+package org.xtext.mongobeans.examples
 
 import com.mongodb.Mongo
 import org.junit.Test

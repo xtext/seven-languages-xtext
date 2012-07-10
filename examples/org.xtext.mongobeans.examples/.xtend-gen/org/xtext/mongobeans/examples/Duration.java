@@ -1,4 +1,4 @@
-package org.xtext.mongobeans.example;
+package org.xtext.mongobeans.examples;
 
 import java.util.List;
 import org.eclipse.xtext.xbase.lib.Conversions;

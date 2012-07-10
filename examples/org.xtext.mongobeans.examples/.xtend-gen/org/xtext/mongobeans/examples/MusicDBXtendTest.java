@@ -1,4 +1,4 @@
-package org.xtext.mongobeans.example;
+package org.xtext.mongobeans.examples;
 
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
@@ -14,7 +14,7 @@ import org.junit.Test;
 import org.musicdb.Album;
 import org.musicdb.Artist;
 import org.musicdb.Track;
-import org.xtext.mongobeans.example.Duration;
+import org.xtext.mongobeans.examples.Duration;
 import org.xtext.mongobeans.lib.MongoExtensions;
 
 @SuppressWarnings("all")

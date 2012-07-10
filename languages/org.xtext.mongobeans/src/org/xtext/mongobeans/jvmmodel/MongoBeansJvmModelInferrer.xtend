@@ -77,7 +77,7 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 			]
 		]
 		inferredType.members += bean.toConstructor [
-			documentation = '''Creates a new «bean.name» wrapping a new {@link BasicDBObject}.'''
+			documentation = '''Creates a new «bean.name» wrapping a new {@link com.mongodb.BasicDBObject}.'''
 			body = [
 				append('''
 					_dbObject = new com.mongodb.BasicDBObject();
