@@ -62,6 +62,9 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
         ISourceViewer _internalSourceViewer_1 = this.currentTortoiseEditor==null?(ISourceViewer)null:this.currentTortoiseEditor.getInternalSourceViewer();
         StyledText _textWidget_1 = _internalSourceViewer_1==null?(StyledText)null:_internalSourceViewer_1.getTextWidget();
         if (_textWidget_1!=null) _textWidget_1.addCaretListener(this);
+      } else {
+        int _minus = (-10);
+        this.view.show(this.currentTortoiseEditor, _minus);
       }
       IFile _editorFile_1 = this.currentTortoiseEditor==null?(IFile)null:this.getEditorFile(this.currentTortoiseEditor);
       IWorkspace _workspace_1 = _editorFile_1==null?(IWorkspace)null:_editorFile_1.getWorkspace();

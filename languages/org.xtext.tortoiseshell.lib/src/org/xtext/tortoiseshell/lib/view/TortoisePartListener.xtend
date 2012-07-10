@@ -31,6 +31,8 @@ class TortoisePartListener implements IPartListener, IResourceChangeListener, Ca
 			currentTortoiseEditor = part as XtextEditor
 			if (isStopMode)
 				currentTortoiseEditor?.internalSourceViewer?.textWidget?.addCaretListener(this)
+			else
+				view.show(currentTortoiseEditor, -10)
 			currentTortoiseEditor?.editorFile?.workspace?.addResourceChangeListener(this)
 		}
 	}
