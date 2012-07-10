@@ -15,7 +15,6 @@ import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor.IPostIndexingInitializing;
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder;
-import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.xtext.scripting.scripting.Script;
 
@@ -28,11 +27,10 @@ public class ScriptingJvmModelInferrer extends AbstractModelInferrer {
   private JvmTypesBuilder _jvmTypesBuilder;
   
   protected void _infer(final Script script, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {
-    Resource _eResource = script==null?(Resource)null:script.eResource();
-    URI _uRI = _eResource==null?(URI)null:_eResource.getURI();
-    URI _trimFileExtension = _uRI==null?(URI)null:_uRI.trimFileExtension();
-    String _lastSegment = _trimFileExtension==null?(String)null:_trimFileExtension.lastSegment();
-    final String className = ObjectExtensions.<String>operator_elvis(_lastSegment, "MyScript");
+    Resource _eResource = script.eResource();
+    URI _uRI = _eResource.getURI();
+    URI _trimFileExtension = _uRI.trimFileExtension();
+    final String className = _trimFileExtension.lastSegment();
     JvmGenericType _class = this._jvmTypesBuilder.toClass(script, className);
     IPostIndexingInitializing<JvmGenericType> _accept = acceptor.<JvmGenericType>accept(_class);
     final Procedure1<JvmGenericType> _function = new Procedure1<JvmGenericType>() {
@@ -41,7 +39,6 @@ public class ScriptingJvmModelInferrer extends AbstractModelInferrer {
           JvmTypeReference _newTypeRef = ScriptingJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(script, Void.TYPE);
           final Procedure1<JvmOperation> _function = new Procedure1<JvmOperation>() {
               public void apply(final JvmOperation it) {
-                it.setVarArgs(true);
                 EList<JvmFormalParameter> _parameters = it.getParameters();
                 JvmTypeReference _newTypeRef = ScriptingJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(script, String.class);
                 JvmTypeReference _addArrayTypeDimension = ScriptingJvmModelInferrer.this._jvmTypesBuilder.addArrayTypeDimension(_newTypeRef);
