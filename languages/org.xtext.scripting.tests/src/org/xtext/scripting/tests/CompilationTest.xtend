@@ -29,7 +29,7 @@ class CompilationTest {
 			import org.eclipse.xtext.xbase.lib.InputOutput;
 			
 			public class __synthetic0 {
-			  public static void main(final String... args) {
+			  public static void main(final String[] args) {
 			    final int answer = (7 * 6);
 			    InputOutput.<Integer>println(Integer.valueOf(answer));
 			  }
@@ -54,7 +54,7 @@ class CompilationTest {
 			import org.eclipse.xtext.xbase.lib.Exceptions;
 			
 			public class __synthetic0 {
-			  public static void main(final String... args) {
+			  public static void main(final String[] args) {
 			    try {
 			      File _file = new File("test");
 			      final File file = _file;

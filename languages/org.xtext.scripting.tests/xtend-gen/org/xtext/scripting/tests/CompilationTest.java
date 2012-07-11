@@ -30,7 +30,7 @@ public class CompilationTest {
     _builder_1.append("public class __synthetic0 {");
     _builder_1.newLine();
     _builder_1.append("  ");
-    _builder_1.append("public static void main(final String... args) {");
+    _builder_1.append("public static void main(final String[] args) {");
     _builder_1.newLine();
     _builder_1.append("    ");
     _builder_1.append("final int answer = (7 * 6);");
@@ -76,7 +76,7 @@ public class CompilationTest {
     _builder_1.append("public class __synthetic0 {");
     _builder_1.newLine();
     _builder_1.append("  ");
-    _builder_1.append("public static void main(final String... args) {");
+    _builder_1.append("public static void main(final String[] args) {");
     _builder_1.newLine();
     _builder_1.append("    ");
     _builder_1.append("try {");
