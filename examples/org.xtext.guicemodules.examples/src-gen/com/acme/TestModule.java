@@ -1,10 +1,3 @@
-/*******************************************************************************
- * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- ******************************************************************************/
 package com.acme;
 
 import com.acme.DataProvider;
@@ -37,8 +30,7 @@ public class TestModule implements Module {
   }
   
   /**
-   * Only registers bindings for keys not present in the given set.
-   * 
+   * Registers bindings for keys not present in the given set.
    */
   public void configure(final Binder bind, final Set<Key<? extends Object>> usedKeys) {
     try {
