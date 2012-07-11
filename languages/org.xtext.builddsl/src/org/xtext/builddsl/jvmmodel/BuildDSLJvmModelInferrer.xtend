@@ -19,9 +19,9 @@ import org.xtext.builddsl.build.Parameter
 import org.xtext.builddsl.build.Task
 import org.xtext.builddsl.lib.BuildScript
 
-import static org.eclipse.xtext.common.types.TypesFactory.*
 import org.xtext.builddsl.lib.Param
 import org.xtext.builddsl.lib.DependsOn
+import org.eclipse.xtext.common.types.TypesFactory
 
 /**
  * Infers a Java class from a {@link BuildFile} allowing to execute it.
@@ -29,6 +29,7 @@ import org.xtext.builddsl.lib.DependsOn
 class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
 
 	@Inject extension JvmTypesBuilder
+	extension TypesFactory = TypesFactory::eINSTANCE
 	@Inject ITypeProvider typeProvider
 
    	def dispatch void infer(BuildFile file, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
@@ -69,7 +70,7 @@ class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
    			members += file.tasks.map[ task | toMethod(task.methodName, task.newTypeRef(Void::TYPE)) [
    				visibility = JvmVisibility::PROTECTED
    				annotations += task.toAnnotation(typeof(DependsOn)) => [
-   					values += eINSTANCE.createJvmStringAnnotationValue => [
+   					values += createJvmStringAnnotationValue => [
    						values += task.depends.map[name]
    					]
    				]

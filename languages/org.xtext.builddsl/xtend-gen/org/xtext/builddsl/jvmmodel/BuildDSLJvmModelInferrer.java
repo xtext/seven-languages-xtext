@@ -50,6 +50,8 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
   @Inject
   private JvmTypesBuilder _jvmTypesBuilder;
   
+  private TypesFactory _typesFactory = TypesFactory.eINSTANCE;
+  
   @Inject
   private ITypeProvider typeProvider;
   
@@ -141,7 +143,7 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
                       final Procedure1<JvmAnnotationReference> _function = new Procedure1<JvmAnnotationReference>() {
                           public void apply(final JvmAnnotationReference it) {
                             EList<JvmAnnotationValue> _values = it.getValues();
-                            JvmStringAnnotationValue _createJvmStringAnnotationValue = TypesFactory.eINSTANCE.createJvmStringAnnotationValue();
+                            JvmStringAnnotationValue _createJvmStringAnnotationValue = BuildDSLJvmModelInferrer.this._typesFactory.createJvmStringAnnotationValue();
                             final Procedure1<JvmStringAnnotationValue> _function = new Procedure1<JvmStringAnnotationValue>() {
                                 public void apply(final JvmStringAnnotationValue it) {
                                   EList<String> _values = it.getValues();
