@@ -219,8 +219,6 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
     JvmTypeReference _newTypeRef = this._jvmTypesBuilder.newTypeRef(route, Void.TYPE);
     final Procedure1<JvmOperation> _function = new Procedure1<JvmOperation>() {
         public void apply(final JvmOperation it) {
-          String _documentation = RouteJvmModelInferrer.this._jvmTypesBuilder.getDocumentation(route);
-          RouteJvmModelInferrer.this._jvmTypesBuilder.setDocumentation(it, _documentation);
           EList<JvmFormalParameter> _parameters = it.getParameters();
           JvmTypeReference _newTypeRef = RouteJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(route, RouteJvmModelInferrer.HTTP_REQUEST);
           JvmFormalParameter _parameter = RouteJvmModelInferrer.this._jvmTypesBuilder.toParameter(route, "request", _newTypeRef);

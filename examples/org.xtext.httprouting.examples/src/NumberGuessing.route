@@ -1,4 +1,3 @@
-import com.google.^inject.name.Named 
 import com.acme.GuessTheNumber
 
 inject GuessTheNumber controller
@@ -7,14 +6,13 @@ inject GuessTheNumber controller
  * the guess might be a parameter
  */
 GET /guess
-	do controller.handleGuess(controller.guess)
+	do controller.handleGuess(request.getParameter('theGuess'))
 
 /**
  * the same but having the guess as part of URL
  */
-GET /guess/:guess*
-	do try {
-		controller.handleGuess(Integer::parseInt(guess))
-	} catch (NumberFormatException e) {
-		controller.handleGuess(null)
-	}
+GET /guess/:theGuess
+	do controller.handleGuess(theGuess)
+
+GET /
+	do controller.handleGuess(null)

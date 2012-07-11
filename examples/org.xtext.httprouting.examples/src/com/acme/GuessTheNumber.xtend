@@ -1,37 +1,25 @@
 package com.acme
 
 import com.google.inject.Inject
-import javax.servlet.http.HttpServletRequest
-import javax.servlet.http.HttpServletResponse
 import java.io.OutputStreamWriter
-import java.util.Random
+import javax.servlet.http.HttpServletResponse
 
-import static extension java.lang.Integer.*
 import static extension com.google.common.io.CharStreams.*
+import static extension java.lang.Integer.*
 
 class GuessTheNumber {
 	
-	@Inject HttpServletRequest request 
+	@Inject extension MagicNumber 
 	@Inject HttpServletResponse response
 	
-	def getGuess() {
-		request.getParameter('guess')?.valueOf
-	}
-	
-	def getNumber() {
-		request.session.getAttribute('number') as Integer
-	}
-	
-	def seedNumber() {
-		val number = Math::abs(new Random().nextInt % 100)
-		request.session.setAttribute('number', number)
-	}
-	
-	def cleanNumber() {
-		request.session.removeAttribute('number')
-	}
-	
-	def handleGuess(Integer guess) {
+	def handleGuess(String theGuess) {
+		val guess= try { 
+				theGuess?.parseInt
+			} catch (NumberFormatException e) {
+				sendAnswer(theGuess + " is not a number.")
+				return
+			}
+
 		if (guess == null || number == null) {
 			seedNumber
 			sendAnswer(null)
@@ -42,8 +30,6 @@ class GuessTheNumber {
 			sendAnswer(guess + ' is too small.')
 		} else if (guess > number) {
 			sendAnswer(guess + ' is too high.')
-		} else {
-			'''OOOpps'''.send
 		}
 	}
 	
@@ -51,12 +37,12 @@ class GuessTheNumber {
 			<html>
 				<head>
 				</head>
-				<body>
+				<body onload="document.guessTheNumber.theGuess.focus();">
 					<h1>Guess a Number between 1 and 100</h1>
 					«IF message != null»
 						<p>«message»</p>
 					«ENDIF»
-					<form action="/guess"><input name="guess" type="text"></action>
+					<form name="guessTheNumber" action="/guess"><input name="theGuess" type="text" focus="true"></action>
 				</body>
 			</html>
 		'''.send

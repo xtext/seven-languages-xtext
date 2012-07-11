@@ -1,15 +1,13 @@
 package com.acme;
 
+import com.acme.MagicNumber;
 import com.google.common.base.Objects;
 import com.google.common.io.CharStreams;
 import com.google.common.io.OutputSupplier;
 import com.google.inject.Inject;
 import java.io.OutputStreamWriter;
-import java.util.Random;
 import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Functions.Function0;
@@ -17,73 +15,58 @@ import org.eclipse.xtext.xbase.lib.Functions.Function0;
 @SuppressWarnings("all")
 public class GuessTheNumber {
   @Inject
-  private HttpServletRequest request;
+  private MagicNumber _magicNumber;
   
   @Inject
   private HttpServletResponse response;
   
-  public Integer getGuess() {
-    String _parameter = this.request.getParameter("guess");
-    Integer _valueOf = _parameter==null?(Integer)null:Integer.valueOf(_parameter);
-    return _valueOf;
-  }
-  
-  public Integer getNumber() {
-    HttpSession _session = this.request.getSession();
-    Object _attribute = _session.getAttribute("number");
-    return ((Integer) _attribute);
-  }
-  
-  public void seedNumber() {
-    Random _random = new Random();
-    int _nextInt = _random.nextInt();
-    int _modulo = (_nextInt % 100);
-    final int number = Math.abs(_modulo);
-    HttpSession _session = this.request.getSession();
-    _session.setAttribute("number", Integer.valueOf(number));
-  }
-  
-  public void cleanNumber() {
-    HttpSession _session = this.request.getSession();
-    _session.removeAttribute("number");
-  }
-  
-  public void handleGuess(final Integer guess) {
+  public void handleGuess(final String theGuess) {
+    int _xtrycatchfinallyexpression = (int) 0;
+    try {
+      int _parseInt = theGuess==null?0:Integer.parseInt(theGuess);
+      _xtrycatchfinallyexpression = _parseInt;
+    } catch (final Throwable _t) {
+      if (_t instanceof NumberFormatException) {
+        final NumberFormatException e = (NumberFormatException)_t;
+        String _plus = (theGuess + " is not a number.");
+        this.sendAnswer(_plus);
+        return;
+      } else {
+        throw Exceptions.sneakyThrow(_t);
+      }
+    }
+    final int guess = _xtrycatchfinallyexpression;
     boolean _or = false;
-    boolean _equals = Objects.equal(guess, null);
+    boolean _equals = Objects.equal(Integer.valueOf(guess), null);
     if (_equals) {
       _or = true;
     } else {
-      Integer _number = this.getNumber();
+      Integer _number = this._magicNumber.getNumber();
       boolean _equals_1 = Objects.equal(_number, null);
       _or = (_equals || _equals_1);
     }
     if (_or) {
-      this.seedNumber();
+      this._magicNumber.seedNumber();
       this.sendAnswer(null);
     } else {
-      Integer _number_1 = this.getNumber();
-      boolean _equals_2 = Objects.equal(guess, _number_1);
+      Integer _number_1 = this._magicNumber.getNumber();
+      boolean _equals_2 = (guess == (_number_1).intValue());
       if (_equals_2) {
-        String _plus = ("You did it! The correct number is " + guess);
-        this.sendAnswer(_plus);
-        this.cleanNumber();
+        String _plus_1 = ("You did it! The correct number is " + Integer.valueOf(guess));
+        this.sendAnswer(_plus_1);
+        this._magicNumber.cleanNumber();
       } else {
-        Integer _number_2 = this.getNumber();
-        boolean _lessThan = (guess.compareTo(_number_2) < 0);
+        Integer _number_2 = this._magicNumber.getNumber();
+        boolean _lessThan = (guess < (_number_2).intValue());
         if (_lessThan) {
-          String _plus_1 = (guess + " is too small.");
-          this.sendAnswer(_plus_1);
+          String _plus_2 = (Integer.valueOf(guess) + " is too small.");
+          this.sendAnswer(_plus_2);
         } else {
-          Integer _number_3 = this.getNumber();
-          boolean _greaterThan = (guess.compareTo(_number_3) > 0);
+          Integer _number_3 = this._magicNumber.getNumber();
+          boolean _greaterThan = (guess > (_number_3).intValue());
           if (_greaterThan) {
-            String _plus_2 = (guess + " is too high.");
-            this.sendAnswer(_plus_2);
-          } else {
-            StringConcatenation _builder = new StringConcatenation();
-            _builder.append("OOOpps");
-            this.send(_builder);
+            String _plus_3 = (Integer.valueOf(guess) + " is too high.");
+            this.sendAnswer(_plus_3);
           }
         }
       }
@@ -101,7 +84,7 @@ public class GuessTheNumber {
     _builder.append("</head>");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("<body>");
+    _builder.append("<body onload=\"document.guessTheNumber.theGuess.focus();\">");
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("<h1>Guess a Number between 1 and 100</h1>");
@@ -117,7 +100,7 @@ public class GuessTheNumber {
       }
     }
     _builder.append("\t\t");
-    _builder.append("<form action=\"/guess\"><input name=\"guess\" type=\"text\"></action>");
+    _builder.append("<form name=\"guessTheNumber\" action=\"/guess\"><input name=\"theGuess\" type=\"text\" focus=\"true\"></action>");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("</body>");

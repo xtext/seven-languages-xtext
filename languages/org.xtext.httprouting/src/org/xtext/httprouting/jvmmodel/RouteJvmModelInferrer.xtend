@@ -100,7 +100,6 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 	 */
 	def protected toRouteCallMethod(Route route) {
 		route.toMethod(route.nameOfRouteMethod, route.newTypeRef(Void::TYPE)) [
-			documentation = route.documentation
 			parameters += route.toParameter("request", route.newTypeRef(HTTP_REQUEST))
 			parameters += route.toParameter("response", route.newTypeRef(HTTP_RESPONSE))
 			for (variable : route.url.variables) {
