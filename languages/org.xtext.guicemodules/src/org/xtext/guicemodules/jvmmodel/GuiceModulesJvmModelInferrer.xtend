@@ -40,6 +40,7 @@ class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
 			documentation = module.documentation
 			superTypes += moduleType.createTypeRef
 			
+			// declare a field for each mixed-in module
 			for (mixin : module.mixins) {
 				if (!mixin.eIsProxy)
 					members += mixin.toField( mixin.simpleName, newTypeRef(mixin.fullyQualifiedName.toString)) [
@@ -81,9 +82,7 @@ class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
 			]
 			
 			members+= module.toMethod("configure", voidType.createTypeRef) [
-				documentation = '''
-					Only registers bindings for keys not present in the given set.
-				'''
+				documentation = 'Registers bindings for keys not present in the given set.'
 				parameters += module.toParameter("bind", binderType.createTypeRef)
 				parameters += module.toParameter("usedKeys", setType.createTypeRef( keyType.createTypeRef(wildCard)))
 				body = [append('''

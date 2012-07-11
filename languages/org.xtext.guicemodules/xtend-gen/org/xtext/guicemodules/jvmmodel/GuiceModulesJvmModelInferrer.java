@@ -204,10 +204,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
           JvmParameterizedTypeReference _createTypeRef_2 = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(voidType);
           final Procedure1<JvmOperation> _function_2 = new Procedure1<JvmOperation>() {
               public void apply(final JvmOperation it) {
-                StringConcatenation _builder = new StringConcatenation();
-                _builder.append("Only registers bindings for keys not present in the given set.");
-                _builder.newLine();
-                GuiceModulesJvmModelInferrer.this.builder.setDocumentation(it, _builder.toString());
+                GuiceModulesJvmModelInferrer.this.builder.setDocumentation(it, "Registers bindings for keys not present in the given set.");
                 EList<JvmFormalParameter> _parameters = it.getParameters();
                 JvmParameterizedTypeReference _createTypeRef = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(binderType);
                 JvmFormalParameter _parameter = GuiceModulesJvmModelInferrer.this.builder.toParameter(module, "bind", _createTypeRef);
