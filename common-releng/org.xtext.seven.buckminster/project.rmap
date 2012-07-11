@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rm:rmap xmlns:bc="http://www.eclipse.org/buckminster/Common-1.0" xmlns:rm="http://www.eclipse.org/buckminster/RMap-1.0">
   <rm:property key="projects.location" value="${workspace.root}"/>
+  
   <rm:locator pattern="^org.xtext.seven(?:\..+)?$" searchPathRef="releng"/>
-  <rm:locator pattern="^org.xtext.builddsl(?:\..+)?$" searchPathRef="builddsl"/>
-  <rm:locator pattern="^org.xtext.guicemodules(?:\..+)?$" searchPathRef="guicemodules"/>
-  <rm:locator pattern="^org.xtext.httprouting(?:\..+)?$" searchPathRef="httprouting"/>
-  <rm:locator pattern="^org.xtext.mongobeans(?:\..+)?$" searchPathRef="mongobeans"/>
-  <rm:locator pattern="^org.eclipse.orbit.mongodb$" searchPathRef="mongobeans"/>
-  <rm:locator pattern="^org.xtext.scripting(?:\..+)?$" searchPathRef="scripting"/>
-  <rm:locator pattern="^org.xtext.template(?:\..+)?$" searchPathRef="template"/>
-  <rm:locator pattern="^org.xtext.tortoiseshell(?:\..+)?$" searchPathRef="tortoiseshell"/>
+  <rm:locator pattern="^org.eclipse.orbit.mongodb$" searchPathRef="languages"/>
+  <rm:locator pattern="^org.xtext(?:\..+).examples$" searchPathRef="examples"/>
+  <rm:locator pattern="^org.xtext(?:\..+)$" searchPathRef="languages"/>
+
   <rm:searchPath name="releng">
     <rm:provider componentTypes="eclipse.feature,buckminster" readerType="local" mutable="false">
       <rm:property key="buckminster.mutable" value="false"/>
@@ -19,64 +16,19 @@
       </rm:uri>
     </rm:provider>
   </rm:searchPath>
-  <rm:searchPath name="builddsl">
+  <rm:searchPath name="languages">
     <rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="local" mutable="false">
       <rm:property key="buckminster.mutable" value="false"/>
-      <rm:uri format="{0}/builddsl/{1}">
+      <rm:uri format="{0}/languages/{1}">
         <bc:propertyRef key="projects.location"/>
         <bc:propertyRef key="buckminster.component"/>
       </rm:uri>
     </rm:provider>
   </rm:searchPath>
-  <rm:searchPath name="guicemodules">
+  <rm:searchPath name="examples">
     <rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="local" mutable="false">
       <rm:property key="buckminster.mutable" value="false"/>
-      <rm:uri format="{0}/guicemodules/{1}">
-        <bc:propertyRef key="projects.location"/>
-        <bc:propertyRef key="buckminster.component"/>
-      </rm:uri>
-    </rm:provider>
-  </rm:searchPath>
-  <rm:searchPath name="httprouting">
-    <rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="local" mutable="false">
-      <rm:property key="buckminster.mutable" value="false"/>
-      <rm:uri format="{0}/routing/{1}">
-        <bc:propertyRef key="projects.location"/>
-        <bc:propertyRef key="buckminster.component"/>
-      </rm:uri>
-    </rm:provider>
-  </rm:searchPath>
-  <rm:searchPath name="mongobeans">
-    <rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="local" mutable="false">
-      <rm:property key="buckminster.mutable" value="false"/>
-      <rm:uri format="{0}/mongobeans/{1}">
-        <bc:propertyRef key="projects.location"/>
-        <bc:propertyRef key="buckminster.component"/>
-      </rm:uri>
-    </rm:provider>
-  </rm:searchPath>
-  <rm:searchPath name="scripting">
-    <rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="local" mutable="false">
-      <rm:property key="buckminster.mutable" value="false"/>
-      <rm:uri format="{0}/scripting/{1}">
-        <bc:propertyRef key="projects.location"/>
-        <bc:propertyRef key="buckminster.component"/>
-      </rm:uri>
-    </rm:provider>
-  </rm:searchPath>
-  <rm:searchPath name="template">
-    <rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="local" mutable="false">
-      <rm:property key="buckminster.mutable" value="false"/>
-      <rm:uri format="{0}/template/{1}">
-        <bc:propertyRef key="projects.location"/>
-        <bc:propertyRef key="buckminster.component"/>
-      </rm:uri>
-    </rm:provider>
-  </rm:searchPath>
-  <rm:searchPath name="tortoiseshell">
-    <rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="local" mutable="false">
-      <rm:property key="buckminster.mutable" value="false"/>
-      <rm:uri format="{0}/tortoiseshell/{1}">
+      <rm:uri format="{0}/examples/{1}">
         <bc:propertyRef key="projects.location"/>
         <bc:propertyRef key="buckminster.component"/>
       </rm:uri>

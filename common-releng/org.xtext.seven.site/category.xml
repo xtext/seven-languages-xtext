@@ -7,6 +7,12 @@
    <feature id="org.xtext.seven.sdk.source" version="0.0.0">
       <category name="main.source"/>
    </feature>
+   <feature id="org.xtext.seven.tests" version="0.0.0">
+      <category name="main.tests"/>
+   </feature>
+   <feature id="org.xtext.seven.tests.source" version="0.0.0">
+      <category name="main.tests"/>
+   </feature>
   
    <category-def name="main" label="Seven Languages">
       <description>
@@ -16,6 +22,11 @@
    <category-def name="main.source" label="Sources for Seven Languages">
       <description>
          7 Languages in 7 Days
+      </description>
+   </category-def>
+   <category-def name="main.tests" label="Tests for Seven Languages">
+      <description>
+         7 Tests for 7 Languages
       </description>
    </category-def>
 </site>

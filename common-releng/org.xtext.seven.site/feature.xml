@@ -11,4 +11,7 @@
    <includes
          id="org.xtext.seven.sdk"
          version="0.0.0"/>
+   <includes
+         id="org.xtext.seven.tests"
+         version="0.0.0"/>
 </feature>
