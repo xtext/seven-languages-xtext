@@ -33,8 +33,8 @@ public class TemplateStandaloneSetupGenerated implements ISetup {
 	}
 	
 	public void register(Injector injector) {
-	if (!EPackage.Registry.INSTANCE.containsKey("http://www.itemis.de/xtl/XTL")) {
-		EPackage.Registry.INSTANCE.put("http://www.itemis.de/xtl/XTL", org.xtext.template.template.TemplatePackage.eINSTANCE);
+	if (!EPackage.Registry.INSTANCE.containsKey("http://www.xtext.org/template/Template")) {
+		EPackage.Registry.INSTANCE.put("http://www.xtext.org/template/Template", org.xtext.template.template.TemplatePackage.eINSTANCE);
 	}
 
 		org.eclipse.xtext.resource.IResourceFactory resourceFactory = injector.getInstance(org.eclipse.xtext.resource.IResourceFactory.class);

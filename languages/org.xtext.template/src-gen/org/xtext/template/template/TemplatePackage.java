@@ -45,7 +45,7 @@ public interface TemplatePackage extends EPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  String eNS_URI = "http://www.itemis.de/xtl/XTL";
+  String eNS_URI = "http://www.xtext.org/template/Template";
 
   /**
    * The package namespace name.

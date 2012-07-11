@@ -35,7 +35,7 @@ public class TemplateFactoryImpl extends EFactoryImpl implements TemplateFactory
   {
     try
     {
-      TemplateFactory theTemplateFactory = (TemplateFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.itemis.de/xtl/XTL"); 
+      TemplateFactory theTemplateFactory = (TemplateFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.xtext.org/template/Template"); 
       if (theTemplateFactory != null)
       {
         return theTemplateFactory;
