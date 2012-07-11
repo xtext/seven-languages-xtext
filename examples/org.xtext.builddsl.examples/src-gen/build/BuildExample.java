@@ -57,16 +57,6 @@ public class BuildExample extends BuildScript {
     
   }
   
-  @DependsOn()
-  protected void Clean() {
-    try {
-      Files.deleteDirectoryContents(this.target);
-      this.jar.delete();
-    } catch (Exception _e) {
-      throw Exceptions.sneakyThrow(_e);
-    }
-  }
-  
   @DependsOn("Compile")
   protected void Zip() {
     FileExtensions.zip(this.target, this.jar);
@@ -90,6 +80,16 @@ public class BuildExample extends BuildScript {
       final ClassLoader classpath = JavaCompiler.newClasspath(this.jar);
       final Class<? extends Object> clazz = classpath.loadClass("helloworld.HelloWorld");
       ClassExtensions.runMain(clazz);
+    } catch (Exception _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @DependsOn()
+  protected void Clean() {
+    try {
+      Files.deleteDirectoryContents(this.target);
+      this.jar.delete();
     } catch (Exception _e) {
       throw Exceptions.sneakyThrow(_e);
     }

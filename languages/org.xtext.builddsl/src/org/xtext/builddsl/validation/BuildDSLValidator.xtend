@@ -11,6 +11,7 @@ import org.xtext.builddsl.build.BuildPackage
 import org.xtext.builddsl.build.Task
 
 import static org.xtext.builddsl.build.BuildPackage$Literals.*
+import static org.xtext.builddsl.validation.BuildDSLValidator.*
 
 class BuildDSLValidator extends XbaseJavaValidator {
 	
@@ -27,18 +28,16 @@ class BuildDSLValidator extends XbaseJavaValidator {
 		    TypesPackage::eINSTANCE,
 		    XtypePackage::eINSTANCE)
 	}
-
+	
 	@Check
 	def void checkNoRecursiveDependencies(Task task) {
 		task.findDependentTasks [ cycle |
 			if (cycle.size == 1) {
 				error('''The task '«task.name»' cannot depend on itself.''', 
-					  cycle.head, DECLARATION__NAME, CYCLIC_DEPENDENCY
-				)
+					  cycle.head, DECLARATION__NAME, CYCLIC_DEPENDENCY)
 			} else {
 				error('''There is a cyclic dependency that involves tasks «cycle.map[name].join(", ")»''', 
-					  cycle.head, DECLARATION__NAME, CYCLIC_DEPENDENCY
-				)
+					  cycle.head, DECLARATION__NAME, CYCLIC_DEPENDENCY)
 			}
 		]
 	}
@@ -52,16 +51,16 @@ class BuildDSLValidator extends XbaseJavaValidator {
 		// 2. sort them so that dependents come after dependees  
 		val result = <Task>newLinkedHashSet
 		var changed = true
-		while(changed) {
+		while (changed) {
 			changed = false
-			for(t:tasks.toList) 
-				if(result.containsAll(t.depends)) {
+			for (t : tasks.toList) 
+				if (result.containsAll(t.depends)) {
 					changed = true
 					result.add(t)
 					tasks.remove(t)
 				}
 		}
-		if(!tasks.empty && cycleHandler != null)
+		if (!tasks.empty && cycleHandler != null)
 			cycleHandler.apply(tasks)
 		result
 	}

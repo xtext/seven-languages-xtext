@@ -69,7 +69,9 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
               JvmTypeReference _type = declaredParameter.getType();
               XExpression _init = declaredParameter.getInit();
               JvmTypeReference _type_1 = BuildDSLJvmModelInferrer.this.typeProvider.getType(_init);
-              final JvmTypeReference type = ObjectExtensions.<JvmTypeReference>operator_elvis(_type, _type_1);
+              JvmTypeReference _elvis = ObjectExtensions.<JvmTypeReference>operator_elvis(_type, _type_1);
+              JvmTypeReference _newTypeRef_1 = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(file, String.class);
+              final JvmTypeReference type = ObjectExtensions.<JvmTypeReference>operator_elvis(_elvis, _newTypeRef_1);
               EList<JvmMember> _members = it.getMembers();
               String _name = declaredParameter.getName();
               final Procedure1<JvmField> _function = new Procedure1<JvmField>() {

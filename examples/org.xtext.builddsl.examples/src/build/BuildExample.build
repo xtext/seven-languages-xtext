@@ -3,17 +3,11 @@ package build
 import java.io.File
 import com.google.common.io.Files
 import org.xtext.builddsl.lib.JavaCompiler
-import org.xtext.builddsl.lib.FileExtensions
 
 param File project = 'example-project'.file
 param File source = project/'src'
 param File target = project/'target'
 param File jar = 	project/'result'/'foo.jar'
-
-task Clean {
-	target.deleteDirectoryContents
-	jar.delete
-}
 
 task Zip depends Compile {
 	target.zip(jar)
@@ -31,3 +25,9 @@ task Run depends Zip {
 	val clazz = classpath.loadClass("helloworld.HelloWorld")
 	clazz.runMain
 }
+
+task Clean {
+	target.deleteDirectoryContents
+	jar.delete
+}
+

@@ -32,7 +32,9 @@ class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
 			
 			// parameters become Java fields
 			for (declaredParameter : file.parameters) {
-				val type = declaredParameter.type ?: typeProvider.getType(declaredParameter.init)
+				val type = declaredParameter.type 
+					?: typeProvider.getType(declaredParameter.init)
+					?: file.newTypeRef(typeof(String))
 				members += declaredParameter.toField(declaredParameter.name, type) [
 					visibility = JvmVisibility::PUBLIC
 					annotations += declaredParameter.toAnnotation(typeof(Param))
@@ -44,8 +46,8 @@ class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
 			// the main method		
    			val stringArray = file.newTypeRef(typeof(String)).addArrayTypeDimension
 			members += file.toMethod("main", file.newTypeRef(Void::TYPE)) [
-				it.parameters += toParameter("args", stringArray)
-				^static = true
+				parameters += toParameter("args", stringArray)
+				setStatic(true)
 				body = [append('''
 					«scriptName» script = new «scriptName»();
 					if (script.showHelp(args)) {

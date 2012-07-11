@@ -1,0 +1,11 @@
+package sample
+
+param name
+
+task prepare {
+	print('Hello ')
+}
+
+task print depends prepare {
+	print(name)
+}
