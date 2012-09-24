@@ -8,7 +8,7 @@ package org.musicdb {
 	Artist {
 		String name
 		Album* albums
-		Iterable<Track> getOevre() {
+		Iterable<? extends Track> getOevre() {
 			albums.map[tracks].flatten
 		}
 	}
@@ -17,7 +17,7 @@ package org.musicdb {
 		String title
 		int year
 		Duration getDuration() {
-			tracks.map[duration].reduce[ Duration a, Duration b | a + b ]
+			tracks.map[duration].reduce[ a, b | a + b]
 		} 
 		Track {
 			String title

@@ -21,23 +21,8 @@ public class GuessTheNumber {
   private HttpServletResponse response;
   
   public void handleGuess(final String theGuess) {
-    int _xtrycatchfinallyexpression = (int) 0;
-    try {
-      int _parseInt = theGuess==null?0:Integer.parseInt(theGuess);
-      _xtrycatchfinallyexpression = _parseInt;
-    } catch (final Throwable _t) {
-      if (_t instanceof NumberFormatException) {
-        final NumberFormatException e = (NumberFormatException)_t;
-        String _plus = (theGuess + " is not a number.");
-        this.sendAnswer(_plus);
-        return;
-      } else {
-        throw Exceptions.sneakyThrow(_t);
-      }
-    }
-    final int guess = _xtrycatchfinallyexpression;
     boolean _or = false;
-    boolean _equals = Objects.equal(Integer.valueOf(guess), null);
+    boolean _equals = Objects.equal(theGuess, null);
     if (_equals) {
       _or = true;
     } else {
@@ -47,33 +32,60 @@ public class GuessTheNumber {
     }
     if (_or) {
       this._magicNumber.seedNumber();
+    }
+    boolean _equals_2 = Objects.equal(theGuess, null);
+    if (_equals_2) {
       this.sendAnswer(null);
-    } else {
-      Integer _number_1 = this._magicNumber.getNumber();
-      boolean _equals_2 = (guess == (_number_1).intValue());
-      if (_equals_2) {
-        String _plus_1 = ("You did it! The correct number is " + Integer.valueOf(guess));
-        this.sendAnswer(_plus_1);
-        this._magicNumber.cleanNumber();
+      return;
+    }
+    int _xtrycatchfinallyexpression = (int) 0;
+    try {
+      int _parseInt = theGuess==null?0:Integer.parseInt(theGuess);
+      _xtrycatchfinallyexpression = _parseInt;
+    } catch (final Throwable _t) {
+      if (_t instanceof NumberFormatException) {
+        final NumberFormatException e = (NumberFormatException)_t;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append(theGuess, "");
+        _builder.append(" is not a number.");
+        this.sendAnswer(_builder);
+        return;
       } else {
-        Integer _number_2 = this._magicNumber.getNumber();
-        boolean _lessThan = (guess < (_number_2).intValue());
-        if (_lessThan) {
-          String _plus_2 = (Integer.valueOf(guess) + " is too small.");
-          this.sendAnswer(_plus_2);
-        } else {
-          Integer _number_3 = this._magicNumber.getNumber();
-          boolean _greaterThan = (guess > (_number_3).intValue());
-          if (_greaterThan) {
-            String _plus_3 = (Integer.valueOf(guess) + " is too high.");
-            this.sendAnswer(_plus_3);
-          }
+        throw Exceptions.sneakyThrow(_t);
+      }
+    }
+    final int guess = _xtrycatchfinallyexpression;
+    Integer _number_1 = this._magicNumber.getNumber();
+    boolean _equals_3 = (guess == (_number_1).intValue());
+    if (_equals_3) {
+      StringConcatenation _builder_1 = new StringConcatenation();
+      _builder_1.append("You did it! The correct number is ");
+      _builder_1.append(guess, "");
+      _builder_1.append(".");
+      this.sendAnswer(_builder_1);
+      this._magicNumber.cleanNumber();
+    } else {
+      Integer _number_2 = this._magicNumber.getNumber();
+      boolean _lessThan = (guess < (_number_2).intValue());
+      if (_lessThan) {
+        StringConcatenation _builder_2 = new StringConcatenation();
+        _builder_2.append(guess, "");
+        _builder_2.append(" is too small.");
+        this.sendAnswer(_builder_2);
+      } else {
+        Integer _number_3 = this._magicNumber.getNumber();
+        boolean _greaterThan = (guess > (_number_3).intValue());
+        if (_greaterThan) {
+          StringConcatenation _builder_3 = new StringConcatenation();
+          _builder_3.append(guess, "");
+          _builder_3.append(" is too high.");
+          this.sendAnswer(_builder_3);
         }
       }
     }
   }
   
-  public void sendAnswer(final String message) {
+  public void sendAnswer(final CharSequence message) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<html>");
     _builder.newLine();

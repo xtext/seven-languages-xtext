@@ -56,7 +56,7 @@ public class Artist implements IMongoBean {
     
   }
   
-  public Iterable<Track> getOevre() {
+  public Iterable<? extends Track> getOevre() {
     List<Album> _albums = this.getAlbums();
     final Function1<Album,List<Track>> _function = new Function1<Album,List<Track>>() {
         public List<Track> apply(final Album it) {

@@ -19,6 +19,10 @@ import org.eclipse.jetty.servlet.ServletHolder
 import routes.NumberGuessing
 
 class StartServer {
+	/**
+	 * http://localhost:8080
+	 * http://localhost:8080/guess/50
+	 */
 	def static void main(String[] args) {
 		val server = new Server(8080)
  

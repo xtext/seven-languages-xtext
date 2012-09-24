@@ -67,7 +67,7 @@ class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
 			
 
 			// a method for the actual task body
-   			members += file.tasks.map[ task | toMethod(task.methodName, task.newTypeRef(Void::TYPE)) [
+   			members += file.tasks.map[ task | task.toMethod(task.methodName, task.newTypeRef(Void::TYPE)) [
    				visibility = JvmVisibility::PROTECTED
    				annotations += task.toAnnotation(typeof(DependsOn)) => [
    					values += createJvmStringAnnotationValue => [

@@ -49,8 +49,8 @@ class MusicDBXtendTest {
 			dbCollection.save(john)
 	
 			val johnFromDb = dbCollection.findOne(new Artist => [
-				name = 'John Coltrane'
-			])
+					name = 'John Coltrane'
+				])
 			assertNotNull(johnFromDb)
 			assertEquals(2, johnFromDb.albums.size)
 			val albumFromDb = johnFromDb.albums.get(1)

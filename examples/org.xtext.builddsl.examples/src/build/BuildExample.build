@@ -4,12 +4,12 @@ import java.io.File
 import com.google.common.io.Files
 import org.xtext.builddsl.lib.JavaCompiler
 
-param File project = 'example-project'.file
-param File source = project/'src'
-param File target = project/'target'
-param File jar = 	project/'result'/'foo.jar'
+param project 	= 'example-project'.file
+param source 	= project/ 'src'
+param target 	= project/'target'
+param jar 		= project/'result'/'foo.jar'
 
-task Zip depends Compile {
+task Jar depends Compile {
 	target.zip(jar)
 }
 
@@ -20,7 +20,7 @@ task Compile depends Clean {
 	]
 }
 
-task Run depends Zip {
+task Run depends Jar {
 	val classpath = newClasspath(jar)
 	val clazz = classpath.loadClass("helloworld.HelloWorld")
 	clazz.runMain

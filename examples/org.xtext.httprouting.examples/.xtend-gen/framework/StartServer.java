@@ -8,6 +8,10 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
 
 @SuppressWarnings("all")
 public class StartServer {
+  /**
+   * http://localhost:8080
+   * http://localhost:8080/guess/50
+   */
   public static void main(final String[] args) {
     try {
       Server _server = new Server(8080);

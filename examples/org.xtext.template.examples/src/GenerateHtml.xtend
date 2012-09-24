@@ -9,7 +9,7 @@ class GenerateHtml {
 	def static void main(String[] args) {
 		val template = new MyWebsite
 		println(template.generate [
-			author = 'Hans Harz'
+			author = 'Fred Flintstone'
 			title = 'My Website'
 			description = 'A simple Website'
 			sections += new Section(

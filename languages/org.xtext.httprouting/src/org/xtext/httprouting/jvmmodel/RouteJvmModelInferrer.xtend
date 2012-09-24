@@ -157,6 +157,7 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 								if («route.nameOfRouteMethod»Condition(request, response«FOR v : route.url.variables BEFORE ", " SEPARATOR ", "»«v.name»«ENDFOR»))
 							«ENDIF»
 							«route.nameOfRouteMethod»(request, response«FOR v : route.url.variables», «v.name»«ENDFOR»);
+							return;
 						}
 					}
 				«ENDFOR»

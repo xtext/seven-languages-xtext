@@ -168,7 +168,7 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
                       BuildDSLJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _action);
                     }
                   };
-                JvmOperation _method = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.toMethod(it, _methodName, _newTypeRef, _function);
+                JvmOperation _method = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.toMethod(task, _methodName, _newTypeRef, _function);
                 return _method;
               }
             };

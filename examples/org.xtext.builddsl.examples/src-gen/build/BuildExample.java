@@ -58,7 +58,7 @@ public class BuildExample extends BuildScript {
   }
   
   @DependsOn("Compile")
-  protected void Zip() {
+  protected void Jar() {
     FileExtensions.zip(this.target, this.jar);
   }
   
@@ -74,7 +74,7 @@ public class BuildExample extends BuildScript {
     JavaCompiler.javac(_function);
   }
   
-  @DependsOn("Zip")
+  @DependsOn("Jar")
   protected void Run() {
     try {
       final ClassLoader classpath = JavaCompiler.newClasspath(this.jar);

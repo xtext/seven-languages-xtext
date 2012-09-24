@@ -3,16 +3,22 @@ import com.acme.GuessTheNumber
 inject GuessTheNumber controller
 
 /**
+ * the same but having the guess as part of URL
+ */
+GET /guess/:myGuess
+	do controller.handleGuess(myGuess)
+
+/**
  * the guess might be a parameter
  */
 GET /guess
 	do controller.handleGuess(request.getParameter('theGuess'))
 
-/**
- * the same but having the guess as part of URL
- */
-GET /guess/:theGuess
-	do controller.handleGuess(theGuess)
-
+/* redirect root requests to guess the number */
 GET /
-	do controller.handleGuess(null)
+	do {
+		println('Redirecting!')
+		try {
+			response.sendRedirect('/guess')
+		} catch (java.io.IOException e) {}
+	}

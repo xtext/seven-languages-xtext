@@ -17,7 +17,7 @@ public class GenerateHtml {
     final MyWebsite template = _myWebsite;
     final Procedure1<MyWebsite> _function = new Procedure1<MyWebsite>() {
         public void apply(final MyWebsite it) {
-          it.setAuthor("Hans Harz");
+          it.setAuthor("Fred Flintstone");
           it.setTitle("My Website");
           it.setDescription("A simple Website");
           ArrayList<Section> _sections = it.getSections();
