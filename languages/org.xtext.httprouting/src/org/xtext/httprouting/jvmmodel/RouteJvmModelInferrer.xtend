@@ -161,6 +161,7 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 								}
 							«ELSE»
 								«routeMethodCall»
+								return;
 							«ENDIF»
 						}
 					}

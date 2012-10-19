@@ -423,6 +423,9 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
                         _builder.append("\t\t");
                         _builder.append(routeMethodCall, "		");
                         _builder.newLineIfNotEmpty();
+                        _builder.append("\t\t");
+                        _builder.append("return;");
+                        _builder.newLine();
                       }
                     }
                     _builder.append("\t");
