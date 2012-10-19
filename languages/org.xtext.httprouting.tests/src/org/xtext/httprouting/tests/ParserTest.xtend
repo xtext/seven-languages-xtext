@@ -37,12 +37,12 @@ class ParserTest {
 			
 			response => [
 				servlet.service(request("/client/foo/42/rest/of"), it)
-				assertTrue(containsHeader('rest/of/42'))
+				assertTrue("containsHeader('rest/of/42')",containsHeader('rest/of/42'))
 			]
 			
 			response => [
 				servlet.service(request("/client/foo/43/rest/of"), it)
-				assertTrue(containsHeader('43'))
+				assertTrue("containsHeader('43')", containsHeader('43'))
 			]
 		]
 	}

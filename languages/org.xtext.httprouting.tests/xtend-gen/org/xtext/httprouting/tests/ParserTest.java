@@ -56,7 +56,7 @@ public class ParserTest {
                     HttpServletRequest _request = ParserTest.this.request("/client/foo/42/rest/of");
                     servlet.service(_request, it);
                     boolean _containsHeader = it.containsHeader("rest/of/42");
-                    Assert.assertTrue(_containsHeader);
+                    Assert.assertTrue("containsHeader(\'rest/of/42\')", _containsHeader);
                   } catch (Exception _e) {
                     throw Exceptions.sneakyThrow(_e);
                   }
@@ -70,7 +70,7 @@ public class ParserTest {
                     HttpServletRequest _request = ParserTest.this.request("/client/foo/43/rest/of");
                     servlet.service(_request, it);
                     boolean _containsHeader = it.containsHeader("43");
-                    Assert.assertTrue(_containsHeader);
+                    Assert.assertTrue("containsHeader(\'43\')", _containsHeader);
                   } catch (Exception _e) {
                     throw Exceptions.sneakyThrow(_e);
                   }
@@ -116,8 +116,8 @@ public class ParserTest {
         }
       };
     HttpServletRequest _newProxy = this.<HttpServletRequest>newProxy(HttpServletRequest.class, new InvocationHandler() {
-        public Object invoke(Object proxy,Method method,Object[] args) {
-          return _function.apply(proxy,method,args);
+        public Object invoke(Object arg0,Method arg1,Object[] arg2) {
+          return _function.apply(arg0,arg1,arg2);
         }
     });
     return _newProxy;
@@ -156,8 +156,8 @@ public class ParserTest {
           }
         };
       HttpServletResponse _newProxy = this.<HttpServletResponse>newProxy(HttpServletResponse.class, new InvocationHandler() {
-          public Object invoke(Object proxy,Method method,Object[] args) {
-            return _function.apply(proxy,method,args);
+          public Object invoke(Object arg0,Method arg1,Object[] arg2) {
+            return _function.apply(arg0,arg1,arg2);
           }
       });
       _xblockexpression = (_newProxy);
