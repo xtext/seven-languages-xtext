@@ -45,13 +45,9 @@ sub square
 	double length
 begin
 	penDown
-	forward(length)
-	turnRight(90)
-	forward(length)
-	turnRight(90)
-	forward(length)
-	turnRight(90)
-	forward(length)
-	turnRight(90)
+	for(i: 1..4) {
+		forward(length)
+		turnRight(90)
+	}
 	penUp
 end
