@@ -1,8 +1,6 @@
 begin
   val length = 150
   val diagonal = length * sqrt(2)
-  lineWidth = 5 
-  lineColor = black
   forward(length)
   turnRight(90)
   forward(length)
@@ -18,10 +16,4 @@ begin
   forward(diagonal / 2)
   turnLeft(90)
   forward(diagonal)
-end
-
-sub diagonal
-	double length 
-begin
-	length * sqrt(2)
 end

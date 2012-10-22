@@ -365,49 +365,69 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
                         _builder.newLineIfNotEmpty();
                       }
                     }
+                    _builder.append("\t\t");
+                    StringConcatenation _builder_1 = new StringConcatenation();
+                    String _nameOfRouteMethod = RouteJvmModelInferrer.this.nameOfRouteMethod(route);
+                    _builder_1.append(_nameOfRouteMethod, "");
+                    _builder_1.append("(request, response");
+                    {
+                      URL _url_1 = route.getUrl();
+                      EList<Variable> _variables_1 = _url_1.getVariables();
+                      for(final Variable v : _variables_1) {
+                        _builder_1.append(", ");
+                        String _name_1 = v.getName();
+                        _builder_1.append(_name_1, "");
+                      }
+                    }
+                    _builder_1.append(");");
+                    final CharSequence routeMethodCall = _builder_1;
+                    _builder.newLineIfNotEmpty();
                     {
                       XExpression _condition = route.getCondition();
                       boolean _notEquals = (!Objects.equal(_condition, null));
                       if (_notEquals) {
                         _builder.append("\t\t");
                         _builder.append("if (");
-                        String _nameOfRouteMethod = RouteJvmModelInferrer.this.nameOfRouteMethod(route);
-                        _builder.append(_nameOfRouteMethod, "		");
+                        String _nameOfRouteMethod_1 = RouteJvmModelInferrer.this.nameOfRouteMethod(route);
+                        _builder.append(_nameOfRouteMethod_1, "		");
                         _builder.append("Condition(request, response");
                         {
-                          URL _url_1 = route.getUrl();
-                          EList<Variable> _variables_1 = _url_1.getVariables();
+                          URL _url_2 = route.getUrl();
+                          EList<Variable> _variables_2 = _url_2.getVariables();
                           boolean _hasElements = false;
-                          for(final Variable v : _variables_1) {
+                          for(final Variable v_1 : _variables_2) {
                             if (!_hasElements) {
                               _hasElements = true;
                               _builder.append(", ", "		");
                             } else {
                               _builder.appendImmediate(", ", "		");
                             }
-                            String _name_1 = v.getName();
-                            _builder.append(_name_1, "		");
+                            String _name_2 = v_1.getName();
+                            _builder.append(_name_2, "		");
                           }
                         }
-                        _builder.append("))");
+                        _builder.append(")) {");
                         _builder.newLineIfNotEmpty();
+                        _builder.append("\t\t");
+                        _builder.append("\t");
+                        _builder.append(routeMethodCall, "			");
+                        _builder.newLineIfNotEmpty();
+                        _builder.append("\t\t");
+                        _builder.append("\t");
+                        _builder.append("return;");
+                        _builder.newLine();
+                        _builder.append("\t\t");
+                        _builder.append("}");
+                        _builder.newLine();
+                      } else {
+                        _builder.append("\t\t");
+                        _builder.append(routeMethodCall, "		");
+                        _builder.newLineIfNotEmpty();
+                        _builder.append("\t\t");
+                        _builder.append("return;");
+                        _builder.newLine();
                       }
                     }
-                    _builder.append("\t\t");
-                    String _nameOfRouteMethod_1 = RouteJvmModelInferrer.this.nameOfRouteMethod(route);
-                    _builder.append(_nameOfRouteMethod_1, "		");
-                    _builder.append("(request, response");
-                    {
-                      URL _url_2 = route.getUrl();
-                      EList<Variable> _variables_2 = _url_2.getVariables();
-                      for(final Variable v_1 : _variables_2) {
-                        _builder.append(", ");
-                        String _name_2 = v_1.getName();
-                        _builder.append(_name_2, "		");
-                      }
-                    }
-                    _builder.append(");");
-                    _builder.newLineIfNotEmpty();
                     _builder.append("\t");
                     _builder.append("}");
                     _builder.newLine();

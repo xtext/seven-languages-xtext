@@ -1,0 +1,7 @@
+begin
+	val length = 300
+	for (i: 1..5) {
+		turnLeft(144)
+		forward(length)
+	}
+end
