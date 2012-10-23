@@ -44,7 +44,9 @@ class GuessTheNumber {
 		}
 	}
 	
-	
+	def handleAnswerToEverything(){
+		sendAnswer('''42 is normally the answer to everything ... «IF 42 == number»and the current number is 42, too!«ELSE» but not in this case! ;-) «ENDIF»''')
+	}
 	
 	def sendAnswer(CharSequence message) {'''
 		<html>

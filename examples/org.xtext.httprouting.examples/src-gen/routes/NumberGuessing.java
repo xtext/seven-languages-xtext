@@ -17,20 +17,43 @@ public class NumberGuessing extends HttpServlet {
   
   private static Pattern _pattern2 = Pattern.compile("/guess/(\\w+)");
   
+  public boolean _doGet2Condition(final HttpServletRequest request, final HttpServletResponse response, final String myGuess) {
+    boolean _equals = myGuess.equals("42");
+    return _equals;
+  }
+
   public void _doGet2(final HttpServletRequest request, final HttpServletResponse response, final String myGuess) {
-    this.controller.handleGuess(myGuess);
+    this.controller.handleAnswerToEverything();
   }
   
   private static Pattern _pattern3 = Pattern.compile("/guess");
   
+  public boolean _doGet3Condition(final HttpServletRequest request, final HttpServletResponse response) {
+    String _parameter = request.getParameter("theGuess");
+    boolean _equals = _parameter==null?false:_parameter.equals("42");
+    return _equals;
+  }
+
   public void _doGet3(final HttpServletRequest request, final HttpServletResponse response) {
+    this.controller.handleAnswerToEverything();
+  }
+
+  private static Pattern _pattern4 = Pattern.compile("/guess/(\\w+)");
+
+  public void _doGet4(final HttpServletRequest request, final HttpServletResponse response, final String myGuess) {
+    this.controller.handleGuess(myGuess);
+  }
+
+  private static Pattern _pattern5 = Pattern.compile("/guess");
+
+  public void _doGet5(final HttpServletRequest request, final HttpServletResponse response) {
     String _parameter = request.getParameter("theGuess");
     this.controller.handleGuess(_parameter);
   }
   
-  private static Pattern _pattern4 = Pattern.compile("/");
+  private static Pattern _pattern6 = Pattern.compile("/");
   
-  public void _doGet4(final HttpServletRequest request, final HttpServletResponse response) {
+  public void _doGet6(final HttpServletRequest request, final HttpServletResponse response) {
     InputOutput.<String>println("Redirecting!");
     try {
       response.sendRedirect("/guess");
@@ -50,21 +73,40 @@ public class NumberGuessing extends HttpServlet {
     	java.util.regex.Matcher _matcher = _pattern2.matcher(url);
     	if (_matcher.find()) {
     		String myGuess = _matcher.group(1);
-    		_doGet2(request, response, myGuess);
-    		return;
+		if (_doGet2Condition(request, response, myGuess)) {
+			_doGet2(request, response, myGuess);
+			return;
+		}
     	}
     }
     {
     	java.util.regex.Matcher _matcher = _pattern3.matcher(url);
     	if (_matcher.find()) {
-    		_doGet3(request, response);
-    		return;
+		if (_doGet3Condition(request, response)) {
+			_doGet3(request, response);
+			return;
+		}
     	}
     }
     {
     	java.util.regex.Matcher _matcher = _pattern4.matcher(url);
     	if (_matcher.find()) {
-    		_doGet4(request, response);
+		String myGuess = _matcher.group(1);
+		_doGet4(request, response, myGuess);
+		return;
+	}
+    }
+    {
+	java.util.regex.Matcher _matcher = _pattern5.matcher(url);
+	if (_matcher.find()) {
+		_doGet5(request, response);
+		return;
+	}
+    }
+    {
+	java.util.regex.Matcher _matcher = _pattern6.matcher(url);
+	if (_matcher.find()) {
+		_doGet6(request, response);
     		return;
     	}
     }
