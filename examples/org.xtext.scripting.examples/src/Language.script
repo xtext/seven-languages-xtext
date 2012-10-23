@@ -2,6 +2,8 @@ import java.math.BigInteger
 
 
 
+
+
 /******************** Literals ***********************/
 
 null					// Null Literal
@@ -15,9 +17,7 @@ newArrayList(3,5,7)
 newHashSet('foo','bar','baz')
 newHashMap( 1->'one', 2->'two', 3->'three' )
 
-// number literals for java.math.BigInteger and java.math.BigDecimal
-0xbeef_beef_beef_beef_beef#BI
-0.123_456_789_123_456_789_123_456_789_123_456_789e4242BD
+
 
 
 
@@ -29,18 +29,20 @@ val String s = "my String" // The type can be specified optionally
 
 
 
+
+
 /**************** operators *******************/
 
 1 + 2    1 - 2    1 / 2   1 * 2                   // arithmetic
-1 % 2    1 ** 2                                   // modulo, power
 true && false           true || false		      // boolean logic
 1 == 2   1 != 2   1 > 2   1 < 2   1 >= 2   1 <= 2 // comparison
-1 << 2            1 >> 2                          // bit shifting
 "first" -> "second"                               // tuples
 1..30                           // range
 null ?: "default"               // Elvis: if(first != null) first else second
 "foo" => [ println(charAt(0)) ] // with
 (null as String)?.length        // 0 (instead of NPE)					 
+
+
 
 
 
@@ -51,6 +53,7 @@ null ?: "default"               // Elvis: if(first != null) first else second
 // public static boolean isNullOrEmpty(String s) {
 //     return s == null || s.length() == 0;
 // }
+
 
 
 
@@ -69,31 +72,18 @@ list.map[ toUpperCase ]	// same behavior; uses implicit variable "it"
 
 
 
+
+
 /*************** Control Expressions ******************/
 
-if ('foo'.length > 3) {		    // if-expression
-	'never true!'
-} else {
-	'always true!'
-}
+val myString = 						// if-expression
+		if ('foo'.length > 3) {		    
+			'never true!'
+		} else {
+			'always true!'
+		}
 
-
-val list = newArrayList('foo','bar','baz')
-val result = new java.util.ArrayList<String>()
-
-for (x : list.reverse) {       // for-expression
-	result += x.toUpperCase
-}
-result                         // returns [BAZ, BAR, FOO]
-
-
-var i = 0
-while(i<list.size) {           // while-expression
-	result += 'whiled-'+list.get(i)
-	i = i+1
-}
-result	// returns [BAZ, BAR, FOO, whiled-baz, whiled-bar, whiled-foo]
-
+// for-each, while, do-while like in Java 
 
 val itemis = newArrayList('foo','bar', 123, 123456789BI)
 for(i:itemis) 
