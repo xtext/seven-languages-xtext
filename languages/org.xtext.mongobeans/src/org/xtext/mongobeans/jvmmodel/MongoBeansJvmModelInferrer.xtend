@@ -88,8 +88,8 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 	}
 
 	def protected addDbObjectProperty(JvmDeclaredType inferredType, MongoBean bean) {
-		inferredType.members += bean.toField('_dbObject', newTypeRef(bean, 'com.mongodb.DBObject'))
-		inferredType.members += bean.toGetter('dbObject', '_dbObject', newTypeRef(bean, 'com.mongodb.DBObject'))
+		inferredType.members += toField(null, '_dbObject', newTypeRef(bean, 'com.mongodb.DBObject'))
+		inferredType.members += toGetter(null, 'dbObject', '_dbObject', newTypeRef(bean, 'com.mongodb.DBObject'))
 	}
 
 	def protected addListAccessor(JvmDeclaredType inferredType, MongoProperty property) {
