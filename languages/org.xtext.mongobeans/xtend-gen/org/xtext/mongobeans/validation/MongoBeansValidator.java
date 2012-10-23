@@ -35,7 +35,7 @@ public class MongoBeansValidator extends XbaseJavaValidator {
     boolean _equals = Objects.equal(_name, "dbObject");
     if (_equals) {
       String _name_1 = it.getName();
-      String _plus = ("_" + _name_1);
+      String _plus = ("__" + _name_1);
       this.error("Illegal property name \'dbObject\'", Literals.ABSTRACT_FEATURE__NAME, MongoBeansValidator.ILLEGAL_PROPERTY_NAME, _plus);
     }
     JvmTypeReference _type = it.getType();

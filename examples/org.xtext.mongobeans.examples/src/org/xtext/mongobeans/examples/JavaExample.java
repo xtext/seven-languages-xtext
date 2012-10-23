@@ -8,7 +8,9 @@
 package org.xtext.mongobeans.examples;
 
 import java.net.UnknownHostException;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
@@ -21,14 +23,14 @@ public class JavaExample {
 
 	public void dealWithMongoEntities() throws UnknownHostException, MongoException {
 		DBObject artist = new BasicDBObject();
-		artist.put("name", "John coltrane");
+		artist.put("name", "John Coltrane");
+		
 		DBObject album = new BasicDBObject();
 		album.put("title", "A Love Supreme");
 		album.put("year", 1965);
-		DBObject track = new BasicDBObject();
-		track.put("title", "Part 1: Acknowledgement");
-		track.put("duration", "7:43");
-		
+		List<DBObject> albums = new ArrayList<DBObject>();
+		artist.put("albums", albums);
+
 		DB db = new Mongo().getDB("testdb");
 		DBCollection dbCollection = db.getCollection("testCollection");
 		dbCollection.save(artist);
@@ -36,6 +38,6 @@ public class JavaExample {
 		DBObject query = new BasicDBObject();
 		query.put("name", "John Coltrane");
 		DBObject artistFromDB = dbCollection.find(query).next();
-		System.out.println(((Collection)artistFromDB.get("album")).iterator().next());
+		System.out.println(((Collection<?>)artistFromDB.get("album")).iterator().next());
 	}
 }
