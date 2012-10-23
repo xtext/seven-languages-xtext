@@ -116,8 +116,8 @@ public class ParserTest {
         }
       };
     HttpServletRequest _newProxy = this.<HttpServletRequest>newProxy(HttpServletRequest.class, new InvocationHandler() {
-        public Object invoke(Object arg0,Method arg1,Object[] arg2) {
-          return _function.apply(arg0,arg1,arg2);
+        public Object invoke(Object proxy,Method method,Object[] args) {
+          return _function.apply(proxy,method,args);
         }
     });
     return _newProxy;
@@ -156,8 +156,8 @@ public class ParserTest {
           }
         };
       HttpServletResponse _newProxy = this.<HttpServletResponse>newProxy(HttpServletResponse.class, new InvocationHandler() {
-          public Object invoke(Object arg0,Method arg1,Object[] arg2) {
-            return _function.apply(arg0,arg1,arg2);
+          public Object invoke(Object proxy,Method method,Object[] args) {
+            return _function.apply(proxy,method,args);
           }
       });
       _xblockexpression = (_newProxy);

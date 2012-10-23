@@ -173,11 +173,11 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
     {
       EList<JvmMember> _members = inferredType.getMembers();
       JvmTypeReference _newTypeRef = this._jvmTypesBuilder.newTypeRef(bean, "com.mongodb.DBObject");
-      JvmField _field = this._jvmTypesBuilder.toField(bean, "_dbObject", _newTypeRef);
+      JvmField _field = this._jvmTypesBuilder.toField(null, "_dbObject", _newTypeRef);
       this._jvmTypesBuilder.<JvmField>operator_add(_members, _field);
       EList<JvmMember> _members_1 = inferredType.getMembers();
       JvmTypeReference _newTypeRef_1 = this._jvmTypesBuilder.newTypeRef(bean, "com.mongodb.DBObject");
-      JvmOperation _getter = this._jvmTypesBuilder.toGetter(bean, "dbObject", "_dbObject", _newTypeRef_1);
+      JvmOperation _getter = this._jvmTypesBuilder.toGetter(null, "dbObject", "_dbObject", _newTypeRef_1);
       boolean _add = this._jvmTypesBuilder.<JvmOperation>operator_add(_members_1, _getter);
       _xblockexpression = (_add);
     }
