@@ -3,7 +3,19 @@ import com.acme.GuessTheNumber
 inject GuessTheNumber controller
 
 /**
- * the same but having the guess as part of URL
+ * The guess is part of the URL and 42
+ */
+GET /guess/:myGuess
+	when myGuess.equals("42") do controller.handleAnswerToEverything
+
+/**
+ * The guess is 42 as parameter
+ */
+GET /guess
+	when request.getParameter('theGuess')?.equals("42") do controller.handleAnswerToEverything
+
+/**
+ * having the guess as part of URL
  */
 GET /guess/:myGuess
 	do controller.handleGuess(myGuess)

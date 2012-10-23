@@ -85,6 +85,21 @@ public class GuessTheNumber {
     }
   }
   
+  public void handleAnswerToEverything() {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("42 is normally the answer to everything ... ");
+    {
+      Integer _number = this._magicNumber.getNumber();
+      boolean _equals = (42 == (_number).intValue());
+      if (_equals) {
+        _builder.append("and the current number is 42, too!");
+      } else {
+        _builder.append(" but not in this case! ;-) ");
+      }
+    }
+    this.sendAnswer(_builder);
+  }
+
   public void sendAnswer(final CharSequence message) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<html>");
