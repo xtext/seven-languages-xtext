@@ -96,7 +96,7 @@ Workflow {
                 //fragment = formatting.FormatterFragment {}
     
                 // labeling API
-                //fragment = labeling.LabelProviderFragment {}
+                fragment = labeling.LabelProviderFragment {}
     
                 // outline API
                 //fragment = outline.OutlineTreeProviderFragment {}

@@ -1931,21 +1931,21 @@ finally {
 
 
 
-rule__Script__Alternatives_1
+rule__Script__Alternatives_1_0
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getScriptAccess().getGroup_1_0()); }
-(rule__Script__Group_1_0__0)
-{ after(grammarAccess.getScriptAccess().getGroup_1_0()); }
+{ before(grammarAccess.getScriptAccess().getExpressionsAssignment_1_0_0()); }
+(rule__Script__ExpressionsAssignment_1_0_0)
+{ after(grammarAccess.getScriptAccess().getExpressionsAssignment_1_0_0()); }
 )
 
     |(
-{ before(grammarAccess.getScriptAccess().getImportsAssignment_1_1()); }
-(rule__Script__ImportsAssignment_1_1)
-{ after(grammarAccess.getScriptAccess().getImportsAssignment_1_1()); }
+{ before(grammarAccess.getScriptAccess().getImportsAssignment_1_0_1()); }
+(rule__Script__ImportsAssignment_1_0_1)
+{ after(grammarAccess.getScriptAccess().getImportsAssignment_1_0_1()); }
 )
 
 ;
@@ -2902,9 +2902,9 @@ rule__Script__Group__1__Impl
     }
 :
 (
-{ before(grammarAccess.getScriptAccess().getAlternatives_1()); }
-(rule__Script__Alternatives_1)*
-{ after(grammarAccess.getScriptAccess().getAlternatives_1()); }
+{ before(grammarAccess.getScriptAccess().getGroup_1()); }
+(rule__Script__Group_1__0)*
+{ after(grammarAccess.getScriptAccess().getGroup_1()); }
 )
 
 ;
@@ -2917,27 +2917,27 @@ finally {
 
 
 
-rule__Script__Group_1_0__0
+rule__Script__Group_1__0
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__Script__Group_1_0__0__Impl
-	rule__Script__Group_1_0__1
+	rule__Script__Group_1__0__Impl
+	rule__Script__Group_1__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Script__Group_1_0__0__Impl
+rule__Script__Group_1__0__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getScriptAccess().getExpressionsAssignment_1_0_0()); }
-(rule__Script__ExpressionsAssignment_1_0_0)
-{ after(grammarAccess.getScriptAccess().getExpressionsAssignment_1_0_0()); }
+{ before(grammarAccess.getScriptAccess().getAlternatives_1_0()); }
+(rule__Script__Alternatives_1_0)
+{ after(grammarAccess.getScriptAccess().getAlternatives_1_0()); }
 )
 
 ;
@@ -2946,28 +2946,28 @@ finally {
 }
 
 
-rule__Script__Group_1_0__1
+rule__Script__Group_1__1
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__Script__Group_1_0__1__Impl
+	rule__Script__Group_1__1__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Script__Group_1_0__1__Impl
+rule__Script__Group_1__1__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getScriptAccess().getSemicolonKeyword_1_0_1()); }
+{ before(grammarAccess.getScriptAccess().getSemicolonKeyword_1_1()); }
 (
 	';' 
 )?
-{ after(grammarAccess.getScriptAccess().getSemicolonKeyword_1_0_1()); }
+{ after(grammarAccess.getScriptAccess().getSemicolonKeyword_1_1()); }
 )
 
 ;
@@ -13730,14 +13730,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Script__ImportsAssignment_1_1
+rule__Script__ImportsAssignment_1_0_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getScriptAccess().getImportsImportParserRuleCall_1_1_0()); }
-	ruleImport{ after(grammarAccess.getScriptAccess().getImportsImportParserRuleCall_1_1_0()); }
+{ before(grammarAccess.getScriptAccess().getImportsImportParserRuleCall_1_0_1_0()); }
+	ruleImport{ after(grammarAccess.getScriptAccess().getImportsImportParserRuleCall_1_0_1_0()); }
 )
 
 ;

@@ -1,10 +1,3 @@
-/*******************************************************************************
- * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- ******************************************************************************/
 package org.xtext.scripting.parser.antlr.internal; 
 
 import org.eclipse.xtext.*;
@@ -186,24 +179,24 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleScript"
-    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:76:1: ruleScript returns [EObject current=null] : ( () ( ( ( (lv_expressions_1_0= ruleXExpressionInsideBlock ) ) (otherlv_2= ';' )? ) | ( (lv_imports_3_0= ruleImport ) ) )* ) ;
+    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:76:1: ruleScript returns [EObject current=null] : ( () ( ( ( (lv_expressions_1_0= ruleXExpressionInsideBlock ) ) | ( (lv_imports_2_0= ruleImport ) ) ) (otherlv_3= ';' )? )* ) ;
     public final EObject ruleScript() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_2=null;
+        Token otherlv_3=null;
         EObject lv_expressions_1_0 = null;
 
-        EObject lv_imports_3_0 = null;
+        EObject lv_imports_2_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:79:28: ( ( () ( ( ( (lv_expressions_1_0= ruleXExpressionInsideBlock ) ) (otherlv_2= ';' )? ) | ( (lv_imports_3_0= ruleImport ) ) )* ) )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:80:1: ( () ( ( ( (lv_expressions_1_0= ruleXExpressionInsideBlock ) ) (otherlv_2= ';' )? ) | ( (lv_imports_3_0= ruleImport ) ) )* )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:79:28: ( ( () ( ( ( (lv_expressions_1_0= ruleXExpressionInsideBlock ) ) | ( (lv_imports_2_0= ruleImport ) ) ) (otherlv_3= ';' )? )* ) )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:80:1: ( () ( ( ( (lv_expressions_1_0= ruleXExpressionInsideBlock ) ) | ( (lv_imports_2_0= ruleImport ) ) ) (otherlv_3= ';' )? )* )
             {
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:80:1: ( () ( ( ( (lv_expressions_1_0= ruleXExpressionInsideBlock ) ) (otherlv_2= ';' )? ) | ( (lv_imports_3_0= ruleImport ) ) )* )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:80:2: () ( ( ( (lv_expressions_1_0= ruleXExpressionInsideBlock ) ) (otherlv_2= ';' )? ) | ( (lv_imports_3_0= ruleImport ) ) )*
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:80:1: ( () ( ( ( (lv_expressions_1_0= ruleXExpressionInsideBlock ) ) | ( (lv_imports_2_0= ruleImport ) ) ) (otherlv_3= ';' )? )* )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:80:2: () ( ( ( (lv_expressions_1_0= ruleXExpressionInsideBlock ) ) | ( (lv_imports_2_0= ruleImport ) ) ) (otherlv_3= ';' )? )*
             {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:80:2: ()
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:81:5: 
@@ -218,77 +211,139 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:86:2: ( ( ( (lv_expressions_1_0= ruleXExpressionInsideBlock ) ) (otherlv_2= ';' )? ) | ( (lv_imports_3_0= ruleImport ) ) )*
-            loop2:
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:86:2: ( ( ( (lv_expressions_1_0= ruleXExpressionInsideBlock ) ) | ( (lv_imports_2_0= ruleImport ) ) ) (otherlv_3= ';' )? )*
+            loop3:
             do {
-                int alt2=3;
-                int LA2_0 = input.LA(1);
+                int alt3=2;
+                int LA3_0 = input.LA(1);
 
-                if ( ((LA2_0>=RULE_STRING && LA2_0<=RULE_ID)||LA2_0==26||(LA2_0>=33 && LA2_0<=34)||LA2_0==39||LA2_0==45||LA2_0==47||LA2_0==50||LA2_0==52||LA2_0==54||(LA2_0>=58 && LA2_0<=63)||(LA2_0>=65 && LA2_0<=72)) ) {
-                    alt2=1;
-                }
-                else if ( (LA2_0==14) ) {
-                    alt2=2;
+                if ( ((LA3_0>=RULE_STRING && LA3_0<=RULE_ID)||LA3_0==14||LA3_0==26||(LA3_0>=33 && LA3_0<=34)||LA3_0==39||LA3_0==45||LA3_0==47||LA3_0==50||LA3_0==52||LA3_0==54||(LA3_0>=58 && LA3_0<=63)||(LA3_0>=65 && LA3_0<=72)) ) {
+                    alt3=1;
                 }
 
 
-                switch (alt2) {
+                switch (alt3) {
             	case 1 :
-            	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:86:3: ( ( (lv_expressions_1_0= ruleXExpressionInsideBlock ) ) (otherlv_2= ';' )? )
+            	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:86:3: ( ( (lv_expressions_1_0= ruleXExpressionInsideBlock ) ) | ( (lv_imports_2_0= ruleImport ) ) ) (otherlv_3= ';' )?
             	    {
-            	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:86:3: ( ( (lv_expressions_1_0= ruleXExpressionInsideBlock ) ) (otherlv_2= ';' )? )
-            	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:86:4: ( (lv_expressions_1_0= ruleXExpressionInsideBlock ) ) (otherlv_2= ';' )?
-            	    {
-            	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:86:4: ( (lv_expressions_1_0= ruleXExpressionInsideBlock ) )
-            	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:87:1: (lv_expressions_1_0= ruleXExpressionInsideBlock )
-            	    {
-            	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:87:1: (lv_expressions_1_0= ruleXExpressionInsideBlock )
-            	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:88:3: lv_expressions_1_0= ruleXExpressionInsideBlock
-            	    {
-            	    if ( state.backtracking==0 ) {
-            	       
-            	      	        newCompositeNode(grammarAccess.getScriptAccess().getExpressionsXExpressionInsideBlockParserRuleCall_1_0_0_0()); 
-            	      	    
-            	    }
-            	    pushFollow(FOLLOW_ruleXExpressionInsideBlock_in_ruleScript142);
-            	    lv_expressions_1_0=ruleXExpressionInsideBlock();
-
-            	    state._fsp--;
-            	    if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-
-            	      	        if (current==null) {
-            	      	            current = createModelElementForParent(grammarAccess.getScriptRule());
-            	      	        }
-            	             		add(
-            	             			current, 
-            	             			"expressions",
-            	              		lv_expressions_1_0, 
-            	              		"XExpressionInsideBlock");
-            	      	        afterParserOrEnumRuleCall();
-            	      	    
-            	    }
-
-            	    }
-
-
-            	    }
-
-            	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:104:2: (otherlv_2= ';' )?
+            	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:86:3: ( ( (lv_expressions_1_0= ruleXExpressionInsideBlock ) ) | ( (lv_imports_2_0= ruleImport ) ) )
             	    int alt1=2;
             	    int LA1_0 = input.LA(1);
 
-            	    if ( (LA1_0==13) ) {
+            	    if ( ((LA1_0>=RULE_STRING && LA1_0<=RULE_ID)||LA1_0==26||(LA1_0>=33 && LA1_0<=34)||LA1_0==39||LA1_0==45||LA1_0==47||LA1_0==50||LA1_0==52||LA1_0==54||(LA1_0>=58 && LA1_0<=63)||(LA1_0>=65 && LA1_0<=72)) ) {
             	        alt1=1;
+            	    }
+            	    else if ( (LA1_0==14) ) {
+            	        alt1=2;
+            	    }
+            	    else {
+            	        if (state.backtracking>0) {state.failed=true; return current;}
+            	        NoViableAltException nvae =
+            	            new NoViableAltException("", 1, 0, input);
+
+            	        throw nvae;
             	    }
             	    switch (alt1) {
             	        case 1 :
-            	            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:104:4: otherlv_2= ';'
+            	            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:86:4: ( (lv_expressions_1_0= ruleXExpressionInsideBlock ) )
             	            {
-            	            otherlv_2=(Token)match(input,13,FOLLOW_13_in_ruleScript155); if (state.failed) return current;
+            	            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:86:4: ( (lv_expressions_1_0= ruleXExpressionInsideBlock ) )
+            	            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:87:1: (lv_expressions_1_0= ruleXExpressionInsideBlock )
+            	            {
+            	            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:87:1: (lv_expressions_1_0= ruleXExpressionInsideBlock )
+            	            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:88:3: lv_expressions_1_0= ruleXExpressionInsideBlock
+            	            {
+            	            if ( state.backtracking==0 ) {
+            	               
+            	              	        newCompositeNode(grammarAccess.getScriptAccess().getExpressionsXExpressionInsideBlockParserRuleCall_1_0_0_0()); 
+            	              	    
+            	            }
+            	            pushFollow(FOLLOW_ruleXExpressionInsideBlock_in_ruleScript142);
+            	            lv_expressions_1_0=ruleXExpressionInsideBlock();
+
+            	            state._fsp--;
+            	            if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
 
-            	                  	newLeafNode(otherlv_2, grammarAccess.getScriptAccess().getSemicolonKeyword_1_0_1());
+            	              	        if (current==null) {
+            	              	            current = createModelElementForParent(grammarAccess.getScriptRule());
+            	              	        }
+            	                     		add(
+            	                     			current, 
+            	                     			"expressions",
+            	                      		lv_expressions_1_0, 
+            	                      		"XExpressionInsideBlock");
+            	              	        afterParserOrEnumRuleCall();
+            	              	    
+            	            }
+
+            	            }
+
+
+            	            }
+
+
+            	            }
+            	            break;
+            	        case 2 :
+            	            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:105:6: ( (lv_imports_2_0= ruleImport ) )
+            	            {
+            	            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:105:6: ( (lv_imports_2_0= ruleImport ) )
+            	            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:106:1: (lv_imports_2_0= ruleImport )
+            	            {
+            	            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:106:1: (lv_imports_2_0= ruleImport )
+            	            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:107:3: lv_imports_2_0= ruleImport
+            	            {
+            	            if ( state.backtracking==0 ) {
+            	               
+            	              	        newCompositeNode(grammarAccess.getScriptAccess().getImportsImportParserRuleCall_1_0_1_0()); 
+            	              	    
+            	            }
+            	            pushFollow(FOLLOW_ruleImport_in_ruleScript169);
+            	            lv_imports_2_0=ruleImport();
+
+            	            state._fsp--;
+            	            if (state.failed) return current;
+            	            if ( state.backtracking==0 ) {
+
+            	              	        if (current==null) {
+            	              	            current = createModelElementForParent(grammarAccess.getScriptRule());
+            	              	        }
+            	                     		add(
+            	                     			current, 
+            	                     			"imports",
+            	                      		lv_imports_2_0, 
+            	                      		"Import");
+            	              	        afterParserOrEnumRuleCall();
+            	              	    
+            	            }
+
+            	            }
+
+
+            	            }
+
+
+            	            }
+            	            break;
+
+            	    }
+
+            	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:123:3: (otherlv_3= ';' )?
+            	    int alt2=2;
+            	    int LA2_0 = input.LA(1);
+
+            	    if ( (LA2_0==13) ) {
+            	        alt2=1;
+            	    }
+            	    switch (alt2) {
+            	        case 1 :
+            	            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:123:5: otherlv_3= ';'
+            	            {
+            	            otherlv_3=(Token)match(input,13,FOLLOW_13_in_ruleScript183); if (state.failed) return current;
+            	            if ( state.backtracking==0 ) {
+
+            	                  	newLeafNode(otherlv_3, grammarAccess.getScriptAccess().getSemicolonKeyword_1_1());
             	                  
             	            }
 
@@ -299,54 +354,10 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
 
 
             	    }
-
-
-            	    }
-            	    break;
-            	case 2 :
-            	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:109:6: ( (lv_imports_3_0= ruleImport ) )
-            	    {
-            	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:109:6: ( (lv_imports_3_0= ruleImport ) )
-            	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:110:1: (lv_imports_3_0= ruleImport )
-            	    {
-            	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:110:1: (lv_imports_3_0= ruleImport )
-            	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:111:3: lv_imports_3_0= ruleImport
-            	    {
-            	    if ( state.backtracking==0 ) {
-            	       
-            	      	        newCompositeNode(grammarAccess.getScriptAccess().getImportsImportParserRuleCall_1_1_0()); 
-            	      	    
-            	    }
-            	    pushFollow(FOLLOW_ruleImport_in_ruleScript185);
-            	    lv_imports_3_0=ruleImport();
-
-            	    state._fsp--;
-            	    if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-
-            	      	        if (current==null) {
-            	      	            current = createModelElementForParent(grammarAccess.getScriptRule());
-            	      	        }
-            	             		add(
-            	             			current, 
-            	             			"imports",
-            	              		lv_imports_3_0, 
-            	              		"Import");
-            	      	        afterParserOrEnumRuleCall();
-            	      	    
-            	    }
-
-            	    }
-
-
-            	    }
-
-
-            	    }
             	    break;
 
             	default :
-            	    break loop2;
+            	    break loop3;
                 }
             } while (true);
 
@@ -572,13 +583,13 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                   
             }
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:202:1: (kw= '.*' )?
-            int alt3=2;
-            int LA3_0 = input.LA(1);
+            int alt4=2;
+            int LA4_0 = input.LA(1);
 
-            if ( (LA3_0==15) ) {
-                alt3=1;
+            if ( (LA4_0==15) ) {
+                alt4=1;
             }
-            switch (alt3) {
+            switch (alt4) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:203:2: kw= '.*'
                     {
@@ -765,37 +776,37 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:259:1: ( ( () ( ( ruleValidID ) ) ruleOpSingleAssign ( (lv_value_3_0= ruleXAssignment ) ) ) | (this_XOrExpression_4= ruleXOrExpression ( ( ( ( () ( ( ruleOpMultiAssign ) ) ) )=> ( () ( ( ruleOpMultiAssign ) ) ) ) ( (lv_rightOperand_7_0= ruleXAssignment ) ) )? ) )
             {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:259:1: ( ( () ( ( ruleValidID ) ) ruleOpSingleAssign ( (lv_value_3_0= ruleXAssignment ) ) ) | (this_XOrExpression_4= ruleXOrExpression ( ( ( ( () ( ( ruleOpMultiAssign ) ) ) )=> ( () ( ( ruleOpMultiAssign ) ) ) ) ( (lv_rightOperand_7_0= ruleXAssignment ) ) )? ) )
-            int alt5=2;
-            int LA5_0 = input.LA(1);
+            int alt6=2;
+            int LA6_0 = input.LA(1);
 
-            if ( (LA5_0==RULE_ID) ) {
-                int LA5_1 = input.LA(2);
+            if ( (LA6_0==RULE_ID) ) {
+                int LA6_1 = input.LA(2);
 
-                if ( (LA5_1==EOF||(LA5_1>=RULE_STRING && LA5_1<=RULE_ID)||(LA5_1>=13 && LA5_1<=14)||(LA5_1>=17 && LA5_1<=47)||(LA5_1>=49 && LA5_1<=74)) ) {
-                    alt5=2;
+                if ( (LA6_1==EOF||(LA6_1>=RULE_STRING && LA6_1<=RULE_ID)||(LA6_1>=13 && LA6_1<=14)||(LA6_1>=17 && LA6_1<=47)||(LA6_1>=49 && LA6_1<=74)) ) {
+                    alt6=2;
                 }
-                else if ( (LA5_1==16) ) {
-                    alt5=1;
+                else if ( (LA6_1==16) ) {
+                    alt6=1;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return current;}
                     NoViableAltException nvae =
-                        new NoViableAltException("", 5, 1, input);
+                        new NoViableAltException("", 6, 1, input);
 
                     throw nvae;
                 }
             }
-            else if ( ((LA5_0>=RULE_STRING && LA5_0<=RULE_DECIMAL)||LA5_0==26||(LA5_0>=33 && LA5_0<=34)||LA5_0==39||LA5_0==45||LA5_0==47||LA5_0==50||LA5_0==52||LA5_0==54||(LA5_0>=58 && LA5_0<=60)||LA5_0==63||(LA5_0>=65 && LA5_0<=72)) ) {
-                alt5=2;
+            else if ( ((LA6_0>=RULE_STRING && LA6_0<=RULE_DECIMAL)||LA6_0==26||(LA6_0>=33 && LA6_0<=34)||LA6_0==39||LA6_0==45||LA6_0==47||LA6_0==50||LA6_0==52||LA6_0==54||(LA6_0>=58 && LA6_0<=60)||LA6_0==63||(LA6_0>=65 && LA6_0<=72)) ) {
+                alt6=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 5, 0, input);
+                    new NoViableAltException("", 6, 0, input);
 
                 throw nvae;
             }
-            switch (alt5) {
+            switch (alt6) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:259:2: ( () ( ( ruleValidID ) ) ruleOpSingleAssign ( (lv_value_3_0= ruleXAssignment ) ) )
                     {
@@ -928,17 +939,17 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                           
                     }
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:316:1: ( ( ( ( () ( ( ruleOpMultiAssign ) ) ) )=> ( () ( ( ruleOpMultiAssign ) ) ) ) ( (lv_rightOperand_7_0= ruleXAssignment ) ) )?
-                    int alt4=2;
-                    int LA4_0 = input.LA(1);
+                    int alt5=2;
+                    int LA5_0 = input.LA(1);
 
-                    if ( (LA4_0==17) ) {
-                        int LA4_1 = input.LA(2);
+                    if ( (LA5_0==17) ) {
+                        int LA5_1 = input.LA(2);
 
                         if ( (synpred1_InternalScripting()) ) {
-                            alt4=1;
+                            alt5=1;
                         }
                     }
-                    switch (alt4) {
+                    switch (alt5) {
                         case 1 :
                             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:316:2: ( ( ( () ( ( ruleOpMultiAssign ) ) ) )=> ( () ( ( ruleOpMultiAssign ) ) ) ) ( (lv_rightOperand_7_0= ruleXAssignment ) )
                             {
@@ -1304,23 +1315,23 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                   
             }
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:444:1: ( ( ( ( () ( ( ruleOpOr ) ) ) )=> ( () ( ( ruleOpOr ) ) ) ) ( (lv_rightOperand_3_0= ruleXAndExpression ) ) )*
-            loop6:
+            loop7:
             do {
-                int alt6=2;
-                int LA6_0 = input.LA(1);
+                int alt7=2;
+                int LA7_0 = input.LA(1);
 
-                if ( (LA6_0==18) ) {
-                    int LA6_2 = input.LA(2);
+                if ( (LA7_0==18) ) {
+                    int LA7_2 = input.LA(2);
 
                     if ( (synpred2_InternalScripting()) ) {
-                        alt6=1;
+                        alt7=1;
                     }
 
 
                 }
 
 
-                switch (alt6) {
+                switch (alt7) {
             	case 1 :
             	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:444:2: ( ( ( () ( ( ruleOpOr ) ) ) )=> ( () ( ( ruleOpOr ) ) ) ) ( (lv_rightOperand_3_0= ruleXAndExpression ) )
             	    {
@@ -1423,7 +1434,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop6;
+            	    break loop7;
                 }
             } while (true);
 
@@ -1604,23 +1615,23 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                   
             }
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:545:1: ( ( ( ( () ( ( ruleOpAnd ) ) ) )=> ( () ( ( ruleOpAnd ) ) ) ) ( (lv_rightOperand_3_0= ruleXEqualityExpression ) ) )*
-            loop7:
+            loop8:
             do {
-                int alt7=2;
-                int LA7_0 = input.LA(1);
+                int alt8=2;
+                int LA8_0 = input.LA(1);
 
-                if ( (LA7_0==19) ) {
-                    int LA7_2 = input.LA(2);
+                if ( (LA8_0==19) ) {
+                    int LA8_2 = input.LA(2);
 
                     if ( (synpred3_InternalScripting()) ) {
-                        alt7=1;
+                        alt8=1;
                     }
 
 
                 }
 
 
-                switch (alt7) {
+                switch (alt8) {
             	case 1 :
             	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:545:2: ( ( ( () ( ( ruleOpAnd ) ) ) )=> ( () ( ( ruleOpAnd ) ) ) ) ( (lv_rightOperand_3_0= ruleXEqualityExpression ) )
             	    {
@@ -1723,7 +1734,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop7;
+            	    break loop8;
                 }
             } while (true);
 
@@ -1904,32 +1915,32 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                   
             }
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:646:1: ( ( ( ( () ( ( ruleOpEquality ) ) ) )=> ( () ( ( ruleOpEquality ) ) ) ) ( (lv_rightOperand_3_0= ruleXRelationalExpression ) ) )*
-            loop8:
+            loop9:
             do {
-                int alt8=2;
-                int LA8_0 = input.LA(1);
+                int alt9=2;
+                int LA9_0 = input.LA(1);
 
-                if ( (LA8_0==20) ) {
-                    int LA8_2 = input.LA(2);
+                if ( (LA9_0==20) ) {
+                    int LA9_2 = input.LA(2);
 
                     if ( (synpred4_InternalScripting()) ) {
-                        alt8=1;
+                        alt9=1;
                     }
 
 
                 }
-                else if ( (LA8_0==21) ) {
-                    int LA8_3 = input.LA(2);
+                else if ( (LA9_0==21) ) {
+                    int LA9_3 = input.LA(2);
 
                     if ( (synpred4_InternalScripting()) ) {
-                        alt8=1;
+                        alt9=1;
                     }
 
 
                 }
 
 
-                switch (alt8) {
+                switch (alt9) {
             	case 1 :
             	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:646:2: ( ( ( () ( ( ruleOpEquality ) ) ) )=> ( () ( ( ruleOpEquality ) ) ) ) ( (lv_rightOperand_3_0= ruleXRelationalExpression ) )
             	    {
@@ -2032,7 +2043,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop8;
+            	    break loop9;
                 }
             } while (true);
 
@@ -2112,23 +2123,23 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:711:1: (kw= '==' | kw= '!=' )
             {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:711:1: (kw= '==' | kw= '!=' )
-            int alt9=2;
-            int LA9_0 = input.LA(1);
+            int alt10=2;
+            int LA10_0 = input.LA(1);
 
-            if ( (LA9_0==20) ) {
-                alt9=1;
+            if ( (LA10_0==20) ) {
+                alt10=1;
             }
-            else if ( (LA9_0==21) ) {
-                alt9=2;
+            else if ( (LA10_0==21) ) {
+                alt10=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 9, 0, input);
+                    new NoViableAltException("", 10, 0, input);
 
                 throw nvae;
             }
-            switch (alt9) {
+            switch (alt10) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:712:2: kw= '=='
                     {
@@ -2256,16 +2267,16 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                   
             }
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:754:1: ( ( ( ( ( () 'instanceof' ) )=> ( () otherlv_2= 'instanceof' ) ) ( (lv_type_3_0= ruleJvmTypeReference ) ) ) | ( ( ( ( () ( ( ruleOpCompare ) ) ) )=> ( () ( ( ruleOpCompare ) ) ) ) ( (lv_rightOperand_6_0= ruleXOtherOperatorExpression ) ) ) )*
-            loop10:
+            loop11:
             do {
-                int alt10=3;
+                int alt11=3;
                 switch ( input.LA(1) ) {
                 case 25:
                     {
-                    int LA10_2 = input.LA(2);
+                    int LA11_2 = input.LA(2);
 
                     if ( (synpred6_InternalScripting()) ) {
-                        alt10=2;
+                        alt11=2;
                     }
 
 
@@ -2273,10 +2284,10 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                     break;
                 case 26:
                     {
-                    int LA10_3 = input.LA(2);
+                    int LA11_3 = input.LA(2);
 
                     if ( (synpred6_InternalScripting()) ) {
-                        alt10=2;
+                        alt11=2;
                     }
 
 
@@ -2284,10 +2295,10 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                     break;
                 case 22:
                     {
-                    int LA10_4 = input.LA(2);
+                    int LA11_4 = input.LA(2);
 
                     if ( (synpred5_InternalScripting()) ) {
-                        alt10=1;
+                        alt11=1;
                     }
 
 
@@ -2295,10 +2306,10 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                     break;
                 case 23:
                     {
-                    int LA10_5 = input.LA(2);
+                    int LA11_5 = input.LA(2);
 
                     if ( (synpred6_InternalScripting()) ) {
-                        alt10=2;
+                        alt11=2;
                     }
 
 
@@ -2306,10 +2317,10 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                     break;
                 case 24:
                     {
-                    int LA10_6 = input.LA(2);
+                    int LA11_6 = input.LA(2);
 
                     if ( (synpred6_InternalScripting()) ) {
-                        alt10=2;
+                        alt11=2;
                     }
 
 
@@ -2318,7 +2329,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
 
                 }
 
-                switch (alt10) {
+                switch (alt11) {
             	case 1 :
             	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:754:2: ( ( ( ( () 'instanceof' ) )=> ( () otherlv_2= 'instanceof' ) ) ( (lv_type_3_0= ruleJvmTypeReference ) ) )
             	    {
@@ -2505,7 +2516,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop10;
+            	    break loop11;
                 }
             } while (true);
 
@@ -2585,37 +2596,37 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:850:1: (kw= '>=' | kw= '<=' | kw= '>' | kw= '<' )
             {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:850:1: (kw= '>=' | kw= '<=' | kw= '>' | kw= '<' )
-            int alt11=4;
+            int alt12=4;
             switch ( input.LA(1) ) {
             case 23:
                 {
-                alt11=1;
+                alt12=1;
                 }
                 break;
             case 24:
                 {
-                alt11=2;
+                alt12=2;
                 }
                 break;
             case 25:
                 {
-                alt11=3;
+                alt12=3;
                 }
                 break;
             case 26:
                 {
-                alt11=4;
+                alt12=4;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 11, 0, input);
+                    new NoViableAltException("", 12, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt11) {
+            switch (alt12) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:851:2: kw= '>='
                     {
@@ -2766,11 +2777,11 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                   
             }
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:907:1: ( ( ( ( () ( ( ruleOpOther ) ) ) )=> ( () ( ( ruleOpOther ) ) ) ) ( (lv_rightOperand_3_0= ruleXAdditiveExpression ) ) )*
-            loop12:
+            loop13:
             do {
-                int alt12=2;
-                alt12 = dfa12.predict(input);
-                switch (alt12) {
+                int alt13=2;
+                alt13 = dfa13.predict(input);
+                switch (alt13) {
             	case 1 :
             	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:907:2: ( ( ( () ( ( ruleOpOther ) ) ) )=> ( () ( ( ruleOpOther ) ) ) ) ( (lv_rightOperand_3_0= ruleXAdditiveExpression ) )
             	    {
@@ -2873,7 +2884,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop12;
+            	    break loop13;
                 }
             } while (true);
 
@@ -2953,57 +2964,57 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:972:1: (kw= '->' | kw= '..' | kw= '=>' | (kw= '>' ( ( ( ( '>' '>' ) )=> (kw= '>' kw= '>' ) ) | kw= '>' ) ) | (kw= '<' ( ( ( ( '<' '<' ) )=> (kw= '<' kw= '<' ) ) | kw= '<' ) ) | kw= '<>' | kw= '?:' | kw= '<=>' )
             {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:972:1: (kw= '->' | kw= '..' | kw= '=>' | (kw= '>' ( ( ( ( '>' '>' ) )=> (kw= '>' kw= '>' ) ) | kw= '>' ) ) | (kw= '<' ( ( ( ( '<' '<' ) )=> (kw= '<' kw= '<' ) ) | kw= '<' ) ) | kw= '<>' | kw= '?:' | kw= '<=>' )
-            int alt15=8;
+            int alt16=8;
             switch ( input.LA(1) ) {
             case 27:
                 {
-                alt15=1;
+                alt16=1;
                 }
                 break;
             case 28:
                 {
-                alt15=2;
+                alt16=2;
                 }
                 break;
             case 29:
                 {
-                alt15=3;
+                alt16=3;
                 }
                 break;
             case 25:
                 {
-                alt15=4;
+                alt16=4;
                 }
                 break;
             case 26:
                 {
-                alt15=5;
+                alt16=5;
                 }
                 break;
             case 30:
                 {
-                alt15=6;
+                alt16=6;
                 }
                 break;
             case 31:
                 {
-                alt15=7;
+                alt16=7;
                 }
                 break;
             case 32:
                 {
-                alt15=8;
+                alt16=8;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 15, 0, input);
+                    new NoViableAltException("", 16, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt15) {
+            switch (alt16) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:973:2: kw= '->'
                     {
@@ -3057,22 +3068,22 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                           
                     }
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:999:1: ( ( ( ( '>' '>' ) )=> (kw= '>' kw= '>' ) ) | kw= '>' )
-                    int alt13=2;
-                    int LA13_0 = input.LA(1);
+                    int alt14=2;
+                    int LA14_0 = input.LA(1);
 
-                    if ( (LA13_0==25) ) {
-                        int LA13_1 = input.LA(2);
+                    if ( (LA14_0==25) ) {
+                        int LA14_1 = input.LA(2);
 
-                        if ( (LA13_1==25) && (synpred8_InternalScripting())) {
-                            alt13=1;
+                        if ( (LA14_1==25) && (synpred8_InternalScripting())) {
+                            alt14=1;
                         }
-                        else if ( (LA13_1==EOF||(LA13_1>=RULE_STRING && LA13_1<=RULE_ID)||LA13_1==26||(LA13_1>=33 && LA13_1<=34)||LA13_1==39||LA13_1==45||LA13_1==47||LA13_1==50||LA13_1==52||LA13_1==54||(LA13_1>=58 && LA13_1<=60)||LA13_1==63||(LA13_1>=65 && LA13_1<=72)) ) {
-                            alt13=2;
+                        else if ( (LA14_1==EOF||(LA14_1>=RULE_STRING && LA14_1<=RULE_ID)||LA14_1==26||(LA14_1>=33 && LA14_1<=34)||LA14_1==39||LA14_1==45||LA14_1==47||LA14_1==50||LA14_1==52||LA14_1==54||(LA14_1>=58 && LA14_1<=60)||LA14_1==63||(LA14_1>=65 && LA14_1<=72)) ) {
+                            alt14=2;
                         }
                         else {
                             if (state.backtracking>0) {state.failed=true; return current;}
                             NoViableAltException nvae =
-                                new NoViableAltException("", 13, 1, input);
+                                new NoViableAltException("", 14, 1, input);
 
                             throw nvae;
                         }
@@ -3080,11 +3091,11 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                     else {
                         if (state.backtracking>0) {state.failed=true; return current;}
                         NoViableAltException nvae =
-                            new NoViableAltException("", 13, 0, input);
+                            new NoViableAltException("", 14, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt13) {
+                    switch (alt14) {
                         case 1 :
                             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:999:2: ( ( ( '>' '>' ) )=> (kw= '>' kw= '>' ) )
                             {
@@ -3153,22 +3164,22 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                           
                     }
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1029:1: ( ( ( ( '<' '<' ) )=> (kw= '<' kw= '<' ) ) | kw= '<' )
-                    int alt14=2;
-                    int LA14_0 = input.LA(1);
+                    int alt15=2;
+                    int LA15_0 = input.LA(1);
 
-                    if ( (LA14_0==26) ) {
-                        int LA14_1 = input.LA(2);
+                    if ( (LA15_0==26) ) {
+                        int LA15_1 = input.LA(2);
 
                         if ( (synpred9_InternalScripting()) ) {
-                            alt14=1;
+                            alt15=1;
                         }
                         else if ( (true) ) {
-                            alt14=2;
+                            alt15=2;
                         }
                         else {
                             if (state.backtracking>0) {state.failed=true; return current;}
                             NoViableAltException nvae =
-                                new NoViableAltException("", 14, 1, input);
+                                new NoViableAltException("", 15, 1, input);
 
                             throw nvae;
                         }
@@ -3176,11 +3187,11 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                     else {
                         if (state.backtracking>0) {state.failed=true; return current;}
                         NoViableAltException nvae =
-                            new NoViableAltException("", 14, 0, input);
+                            new NoViableAltException("", 15, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt14) {
+                    switch (alt15) {
                         case 1 :
                             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1029:2: ( ( ( '<' '<' ) )=> (kw= '<' kw= '<' ) )
                             {
@@ -3372,32 +3383,32 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                   
             }
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1103:1: ( ( ( ( () ( ( ruleOpAdd ) ) ) )=> ( () ( ( ruleOpAdd ) ) ) ) ( (lv_rightOperand_3_0= ruleXMultiplicativeExpression ) ) )*
-            loop16:
+            loop17:
             do {
-                int alt16=2;
-                int LA16_0 = input.LA(1);
+                int alt17=2;
+                int LA17_0 = input.LA(1);
 
-                if ( (LA16_0==33) ) {
-                    int LA16_2 = input.LA(2);
+                if ( (LA17_0==33) ) {
+                    int LA17_2 = input.LA(2);
 
                     if ( (synpred10_InternalScripting()) ) {
-                        alt16=1;
+                        alt17=1;
                     }
 
 
                 }
-                else if ( (LA16_0==34) ) {
-                    int LA16_3 = input.LA(2);
+                else if ( (LA17_0==34) ) {
+                    int LA17_3 = input.LA(2);
 
                     if ( (synpred10_InternalScripting()) ) {
-                        alt16=1;
+                        alt17=1;
                     }
 
 
                 }
 
 
-                switch (alt16) {
+                switch (alt17) {
             	case 1 :
             	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1103:2: ( ( ( () ( ( ruleOpAdd ) ) ) )=> ( () ( ( ruleOpAdd ) ) ) ) ( (lv_rightOperand_3_0= ruleXMultiplicativeExpression ) )
             	    {
@@ -3500,7 +3511,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop16;
+            	    break loop17;
                 }
             } while (true);
 
@@ -3580,23 +3591,23 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1168:1: (kw= '+' | kw= '-' )
             {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1168:1: (kw= '+' | kw= '-' )
-            int alt17=2;
-            int LA17_0 = input.LA(1);
+            int alt18=2;
+            int LA18_0 = input.LA(1);
 
-            if ( (LA17_0==33) ) {
-                alt17=1;
+            if ( (LA18_0==33) ) {
+                alt18=1;
             }
-            else if ( (LA17_0==34) ) {
-                alt17=2;
+            else if ( (LA18_0==34) ) {
+                alt18=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 17, 0, input);
+                    new NoViableAltException("", 18, 0, input);
 
                 throw nvae;
             }
-            switch (alt17) {
+            switch (alt18) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1169:2: kw= '+'
                     {
@@ -3721,16 +3732,16 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                   
             }
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1211:1: ( ( ( ( () ( ( ruleOpMulti ) ) ) )=> ( () ( ( ruleOpMulti ) ) ) ) ( (lv_rightOperand_3_0= ruleXUnaryOperation ) ) )*
-            loop18:
+            loop19:
             do {
-                int alt18=2;
+                int alt19=2;
                 switch ( input.LA(1) ) {
                 case 35:
                     {
-                    int LA18_2 = input.LA(2);
+                    int LA19_2 = input.LA(2);
 
                     if ( (synpred11_InternalScripting()) ) {
-                        alt18=1;
+                        alt19=1;
                     }
 
 
@@ -3738,10 +3749,10 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                     break;
                 case 36:
                     {
-                    int LA18_3 = input.LA(2);
+                    int LA19_3 = input.LA(2);
 
                     if ( (synpred11_InternalScripting()) ) {
-                        alt18=1;
+                        alt19=1;
                     }
 
 
@@ -3749,10 +3760,10 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                     break;
                 case 37:
                     {
-                    int LA18_4 = input.LA(2);
+                    int LA19_4 = input.LA(2);
 
                     if ( (synpred11_InternalScripting()) ) {
-                        alt18=1;
+                        alt19=1;
                     }
 
 
@@ -3760,10 +3771,10 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                     break;
                 case 38:
                     {
-                    int LA18_5 = input.LA(2);
+                    int LA19_5 = input.LA(2);
 
                     if ( (synpred11_InternalScripting()) ) {
-                        alt18=1;
+                        alt19=1;
                     }
 
 
@@ -3772,7 +3783,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
 
                 }
 
-                switch (alt18) {
+                switch (alt19) {
             	case 1 :
             	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1211:2: ( ( ( () ( ( ruleOpMulti ) ) ) )=> ( () ( ( ruleOpMulti ) ) ) ) ( (lv_rightOperand_3_0= ruleXUnaryOperation ) )
             	    {
@@ -3875,7 +3886,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop18;
+            	    break loop19;
                 }
             } while (true);
 
@@ -3955,37 +3966,37 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1276:1: (kw= '*' | kw= '**' | kw= '/' | kw= '%' )
             {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1276:1: (kw= '*' | kw= '**' | kw= '/' | kw= '%' )
-            int alt19=4;
+            int alt20=4;
             switch ( input.LA(1) ) {
             case 35:
                 {
-                alt19=1;
+                alt20=1;
                 }
                 break;
             case 36:
                 {
-                alt19=2;
+                alt20=2;
                 }
                 break;
             case 37:
                 {
-                alt19=3;
+                alt20=3;
                 }
                 break;
             case 38:
                 {
-                alt19=4;
+                alt20=4;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 19, 0, input);
+                    new NoViableAltException("", 20, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt19) {
+            switch (alt20) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1277:2: kw= '*'
                     {
@@ -4117,23 +4128,23 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1324:1: ( ( () ( ( ruleOpUnary ) ) ( (lv_operand_2_0= ruleXCastedExpression ) ) ) | this_XCastedExpression_3= ruleXCastedExpression )
             {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1324:1: ( ( () ( ( ruleOpUnary ) ) ( (lv_operand_2_0= ruleXCastedExpression ) ) ) | this_XCastedExpression_3= ruleXCastedExpression )
-            int alt20=2;
-            int LA20_0 = input.LA(1);
+            int alt21=2;
+            int LA21_0 = input.LA(1);
 
-            if ( ((LA20_0>=33 && LA20_0<=34)||LA20_0==39) ) {
-                alt20=1;
+            if ( ((LA21_0>=33 && LA21_0<=34)||LA21_0==39) ) {
+                alt21=1;
             }
-            else if ( ((LA20_0>=RULE_STRING && LA20_0<=RULE_ID)||LA20_0==26||LA20_0==45||LA20_0==47||LA20_0==50||LA20_0==52||LA20_0==54||(LA20_0>=58 && LA20_0<=60)||LA20_0==63||(LA20_0>=65 && LA20_0<=72)) ) {
-                alt20=2;
+            else if ( ((LA21_0>=RULE_STRING && LA21_0<=RULE_ID)||LA21_0==26||LA21_0==45||LA21_0==47||LA21_0==50||LA21_0==52||LA21_0==54||(LA21_0>=58 && LA21_0<=60)||LA21_0==63||(LA21_0>=65 && LA21_0<=72)) ) {
+                alt21=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 20, 0, input);
+                    new NoViableAltException("", 21, 0, input);
 
                 throw nvae;
             }
-            switch (alt20) {
+            switch (alt21) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1324:2: ( () ( ( ruleOpUnary ) ) ( (lv_operand_2_0= ruleXCastedExpression ) ) )
                     {
@@ -4326,32 +4337,32 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1394:1: (kw= '!' | kw= '-' | kw= '+' )
             {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1394:1: (kw= '!' | kw= '-' | kw= '+' )
-            int alt21=3;
+            int alt22=3;
             switch ( input.LA(1) ) {
             case 39:
                 {
-                alt21=1;
+                alt22=1;
                 }
                 break;
             case 34:
                 {
-                alt21=2;
+                alt22=2;
                 }
                 break;
             case 33:
                 {
-                alt21=3;
+                alt22=3;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 21, 0, input);
+                    new NoViableAltException("", 22, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt21) {
+            switch (alt22) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1395:2: kw= '!'
                     {
@@ -4490,23 +4501,23 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                   
             }
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1444:1: ( ( ( ( () 'as' ) )=> ( () otherlv_2= 'as' ) ) ( (lv_type_3_0= ruleJvmTypeReference ) ) )*
-            loop22:
+            loop23:
             do {
-                int alt22=2;
-                int LA22_0 = input.LA(1);
+                int alt23=2;
+                int LA23_0 = input.LA(1);
 
-                if ( (LA22_0==40) ) {
-                    int LA22_2 = input.LA(2);
+                if ( (LA23_0==40) ) {
+                    int LA23_2 = input.LA(2);
 
                     if ( (synpred12_InternalScripting()) ) {
-                        alt22=1;
+                        alt23=1;
                     }
 
 
                 }
 
 
-                switch (alt22) {
+                switch (alt23) {
             	case 1 :
             	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1444:2: ( ( ( () 'as' ) )=> ( () otherlv_2= 'as' ) ) ( (lv_type_3_0= ruleJvmTypeReference ) )
             	    {
@@ -4581,7 +4592,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop22;
+            	    break loop23;
                 }
             } while (true);
 
@@ -4705,19 +4716,19 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                   
             }
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1504:1: ( ( ( ( ( () '.' ( ( ruleValidID ) ) ruleOpSingleAssign ) )=> ( () otherlv_2= '.' ( ( ruleValidID ) ) ruleOpSingleAssign ) ) ( (lv_value_5_0= ruleXAssignment ) ) ) | ( ( ( ( () ( '.' | ( ( '?.' ) ) | ( ( '*.' ) ) ) ) )=> ( () (otherlv_7= '.' | ( (lv_nullSafe_8_0= '?.' ) ) | ( (lv_spreading_9_0= '*.' ) ) ) ) ) (otherlv_10= '<' ( (lv_typeArguments_11_0= ruleJvmArgumentTypeReference ) ) (otherlv_12= ',' ( (lv_typeArguments_13_0= ruleJvmArgumentTypeReference ) ) )* otherlv_14= '>' )? ( ( ruleValidID ) ) ( ( ( ( '(' ) )=> (lv_explicitOperationCall_16_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_memberCallArguments_17_0= ruleXShortClosure ) ) | ( ( (lv_memberCallArguments_18_0= ruleXExpression ) ) (otherlv_19= ',' ( (lv_memberCallArguments_20_0= ruleXExpression ) ) )* ) )? otherlv_21= ')' )? ( ( ( () '[' ) )=> (lv_memberCallArguments_22_0= ruleXClosure ) )? ) )*
-            loop30:
+            loop31:
             do {
-                int alt30=3;
+                int alt31=3;
                 switch ( input.LA(1) ) {
                 case 41:
                     {
-                    int LA30_2 = input.LA(2);
+                    int LA31_2 = input.LA(2);
 
                     if ( (synpred13_InternalScripting()) ) {
-                        alt30=1;
+                        alt31=1;
                     }
                     else if ( (synpred14_InternalScripting()) ) {
-                        alt30=2;
+                        alt31=2;
                     }
 
 
@@ -4725,10 +4736,10 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                     break;
                 case 42:
                     {
-                    int LA30_3 = input.LA(2);
+                    int LA31_3 = input.LA(2);
 
                     if ( (synpred14_InternalScripting()) ) {
-                        alt30=2;
+                        alt31=2;
                     }
 
 
@@ -4736,10 +4747,10 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                     break;
                 case 43:
                     {
-                    int LA30_4 = input.LA(2);
+                    int LA31_4 = input.LA(2);
 
                     if ( (synpred14_InternalScripting()) ) {
-                        alt30=2;
+                        alt31=2;
                     }
 
 
@@ -4748,7 +4759,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
 
                 }
 
-                switch (alt30) {
+                switch (alt31) {
             	case 1 :
             	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1504:2: ( ( ( ( () '.' ( ( ruleValidID ) ) ruleOpSingleAssign ) )=> ( () otherlv_2= '.' ( ( ruleValidID ) ) ruleOpSingleAssign ) ) ( (lv_value_5_0= ruleXAssignment ) ) )
             	    {
@@ -4902,32 +4913,32 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             	    }
 
             	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1584:2: (otherlv_7= '.' | ( (lv_nullSafe_8_0= '?.' ) ) | ( (lv_spreading_9_0= '*.' ) ) )
-            	    int alt23=3;
+            	    int alt24=3;
             	    switch ( input.LA(1) ) {
             	    case 41:
             	        {
-            	        alt23=1;
+            	        alt24=1;
             	        }
             	        break;
             	    case 42:
             	        {
-            	        alt23=2;
+            	        alt24=2;
             	        }
             	        break;
             	    case 43:
             	        {
-            	        alt23=3;
+            	        alt24=3;
             	        }
             	        break;
             	    default:
             	        if (state.backtracking>0) {state.failed=true; return current;}
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 23, 0, input);
+            	            new NoViableAltException("", 24, 0, input);
 
             	        throw nvae;
             	    }
 
-            	    switch (alt23) {
+            	    switch (alt24) {
             	        case 1 :
             	            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1584:4: otherlv_7= '.'
             	            {
@@ -5014,13 +5025,13 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             	    }
 
             	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1620:5: (otherlv_10= '<' ( (lv_typeArguments_11_0= ruleJvmArgumentTypeReference ) ) (otherlv_12= ',' ( (lv_typeArguments_13_0= ruleJvmArgumentTypeReference ) ) )* otherlv_14= '>' )?
-            	    int alt25=2;
-            	    int LA25_0 = input.LA(1);
+            	    int alt26=2;
+            	    int LA26_0 = input.LA(1);
 
-            	    if ( (LA25_0==26) ) {
-            	        alt25=1;
+            	    if ( (LA26_0==26) ) {
+            	        alt26=1;
             	    }
-            	    switch (alt25) {
+            	    switch (alt26) {
             	        case 1 :
             	            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1620:7: otherlv_10= '<' ( (lv_typeArguments_11_0= ruleJvmArgumentTypeReference ) ) (otherlv_12= ',' ( (lv_typeArguments_13_0= ruleJvmArgumentTypeReference ) ) )* otherlv_14= '>'
             	            {
@@ -5066,17 +5077,17 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             	            }
 
             	            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1642:2: (otherlv_12= ',' ( (lv_typeArguments_13_0= ruleJvmArgumentTypeReference ) ) )*
-            	            loop24:
+            	            loop25:
             	            do {
-            	                int alt24=2;
-            	                int LA24_0 = input.LA(1);
+            	                int alt25=2;
+            	                int LA25_0 = input.LA(1);
 
-            	                if ( (LA24_0==44) ) {
-            	                    alt24=1;
+            	                if ( (LA25_0==44) ) {
+            	                    alt25=1;
             	                }
 
 
-            	                switch (alt24) {
+            	                switch (alt25) {
             	            	case 1 :
             	            	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1642:4: otherlv_12= ',' ( (lv_typeArguments_13_0= ruleJvmArgumentTypeReference ) )
             	            	    {
@@ -5126,7 +5137,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             	            	    break;
 
             	            	default :
-            	            	    break loop24;
+            	            	    break loop25;
             	                }
             	            } while (true);
 
@@ -5177,9 +5188,9 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             	    }
 
             	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1683:2: ( ( ( ( '(' ) )=> (lv_explicitOperationCall_16_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_memberCallArguments_17_0= ruleXShortClosure ) ) | ( ( (lv_memberCallArguments_18_0= ruleXExpression ) ) (otherlv_19= ',' ( (lv_memberCallArguments_20_0= ruleXExpression ) ) )* ) )? otherlv_21= ')' )?
-            	    int alt28=2;
-            	    alt28 = dfa28.predict(input);
-            	    switch (alt28) {
+            	    int alt29=2;
+            	    alt29 = dfa29.predict(input);
+            	    switch (alt29) {
             	        case 1 :
             	            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1683:3: ( ( ( '(' ) )=> (lv_explicitOperationCall_16_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_memberCallArguments_17_0= ruleXShortClosure ) ) | ( ( (lv_memberCallArguments_18_0= ruleXExpression ) ) (otherlv_19= ',' ( (lv_memberCallArguments_20_0= ruleXExpression ) ) )* ) )? otherlv_21= ')'
             	            {
@@ -5210,9 +5221,9 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             	            }
 
             	            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1704:2: ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_memberCallArguments_17_0= ruleXShortClosure ) ) | ( ( (lv_memberCallArguments_18_0= ruleXExpression ) ) (otherlv_19= ',' ( (lv_memberCallArguments_20_0= ruleXExpression ) ) )* ) )?
-            	            int alt27=3;
-            	            alt27 = dfa27.predict(input);
-            	            switch (alt27) {
+            	            int alt28=3;
+            	            alt28 = dfa28.predict(input);
+            	            switch (alt28) {
             	                case 1 :
             	                    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1704:3: ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_memberCallArguments_17_0= ruleXShortClosure ) )
             	                    {
@@ -5296,17 +5307,17 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             	                    }
 
             	                    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1757:2: (otherlv_19= ',' ( (lv_memberCallArguments_20_0= ruleXExpression ) ) )*
-            	                    loop26:
+            	                    loop27:
             	                    do {
-            	                        int alt26=2;
-            	                        int LA26_0 = input.LA(1);
+            	                        int alt27=2;
+            	                        int LA27_0 = input.LA(1);
 
-            	                        if ( (LA26_0==44) ) {
-            	                            alt26=1;
+            	                        if ( (LA27_0==44) ) {
+            	                            alt27=1;
             	                        }
 
 
-            	                        switch (alt26) {
+            	                        switch (alt27) {
             	                    	case 1 :
             	                    	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1757:4: otherlv_19= ',' ( (lv_memberCallArguments_20_0= ruleXExpression ) )
             	                    	    {
@@ -5356,7 +5367,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             	                    	    break;
 
             	                    	default :
-            	                    	    break loop26;
+            	                    	    break loop27;
             	                        }
             	                    } while (true);
 
@@ -5382,9 +5393,9 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             	    }
 
             	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1783:3: ( ( ( () '[' ) )=> (lv_memberCallArguments_22_0= ruleXClosure ) )?
-            	    int alt29=2;
-            	    alt29 = dfa29.predict(input);
-            	    switch (alt29) {
+            	    int alt30=2;
+            	    alt30 = dfa30.predict(input);
+            	    switch (alt30) {
             	        case 1 :
             	            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1783:4: ( ( () '[' ) )=> (lv_memberCallArguments_22_0= ruleXClosure )
             	            {
@@ -5431,7 +5442,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop30;
+            	    break loop31;
                 }
             } while (true);
 
@@ -5536,9 +5547,9 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1824:1: (this_XConstructorCall_0= ruleXConstructorCall | this_XBlockExpression_1= ruleXBlockExpression | this_XSwitchExpression_2= ruleXSwitchExpression | this_XFeatureCall_3= ruleXFeatureCall | this_XLiteral_4= ruleXLiteral | this_XIfExpression_5= ruleXIfExpression | this_XForLoopExpression_6= ruleXForLoopExpression | this_XWhileExpression_7= ruleXWhileExpression | this_XDoWhileExpression_8= ruleXDoWhileExpression | this_XThrowExpression_9= ruleXThrowExpression | this_XReturnExpression_10= ruleXReturnExpression | this_XTryCatchFinallyExpression_11= ruleXTryCatchFinallyExpression | this_XParenthesizedExpression_12= ruleXParenthesizedExpression )
             {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1824:1: (this_XConstructorCall_0= ruleXConstructorCall | this_XBlockExpression_1= ruleXBlockExpression | this_XSwitchExpression_2= ruleXSwitchExpression | this_XFeatureCall_3= ruleXFeatureCall | this_XLiteral_4= ruleXLiteral | this_XIfExpression_5= ruleXIfExpression | this_XForLoopExpression_6= ruleXForLoopExpression | this_XWhileExpression_7= ruleXWhileExpression | this_XDoWhileExpression_8= ruleXDoWhileExpression | this_XThrowExpression_9= ruleXThrowExpression | this_XReturnExpression_10= ruleXReturnExpression | this_XTryCatchFinallyExpression_11= ruleXTryCatchFinallyExpression | this_XParenthesizedExpression_12= ruleXParenthesizedExpression )
-            int alt31=13;
-            alt31 = dfa31.predict(input);
-            switch (alt31) {
+            int alt32=13;
+            alt32 = dfa32.predict(input);
+            switch (alt32) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1825:5: this_XConstructorCall_0= ruleXConstructorCall
                     {
@@ -5912,35 +5923,35 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1974:1: ( ( ( ( () '[' ) )=>this_XClosure_0= ruleXClosure ) | this_XBooleanLiteral_1= ruleXBooleanLiteral | this_XNumberLiteral_2= ruleXNumberLiteral | this_XNullLiteral_3= ruleXNullLiteral | this_XStringLiteral_4= ruleXStringLiteral | this_XTypeLiteral_5= ruleXTypeLiteral )
             {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1974:1: ( ( ( ( () '[' ) )=>this_XClosure_0= ruleXClosure ) | this_XBooleanLiteral_1= ruleXBooleanLiteral | this_XNumberLiteral_2= ruleXNumberLiteral | this_XNullLiteral_3= ruleXNullLiteral | this_XStringLiteral_4= ruleXStringLiteral | this_XTypeLiteral_5= ruleXTypeLiteral )
-            int alt32=6;
-            int LA32_0 = input.LA(1);
+            int alt33=6;
+            int LA33_0 = input.LA(1);
 
-            if ( (LA32_0==47) && (synpred18_InternalScripting())) {
-                alt32=1;
+            if ( (LA33_0==47) && (synpred18_InternalScripting())) {
+                alt33=1;
             }
-            else if ( ((LA32_0>=66 && LA32_0<=67)) ) {
-                alt32=2;
+            else if ( ((LA33_0>=66 && LA33_0<=67)) ) {
+                alt33=2;
             }
-            else if ( ((LA32_0>=RULE_HEX && LA32_0<=RULE_DECIMAL)) ) {
-                alt32=3;
+            else if ( ((LA33_0>=RULE_HEX && LA33_0<=RULE_DECIMAL)) ) {
+                alt33=3;
             }
-            else if ( (LA32_0==68) ) {
-                alt32=4;
+            else if ( (LA33_0==68) ) {
+                alt33=4;
             }
-            else if ( (LA32_0==RULE_STRING) ) {
-                alt32=5;
+            else if ( (LA33_0==RULE_STRING) ) {
+                alt33=5;
             }
-            else if ( (LA32_0==69) ) {
-                alt32=6;
+            else if ( (LA33_0==69) ) {
+                alt33=6;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 32, 0, input);
+                    new NoViableAltException("", 33, 0, input);
 
                 throw nvae;
             }
-            switch (alt32) {
+            switch (alt33) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1974:2: ( ( ( () '[' ) )=>this_XClosure_0= ruleXClosure )
                     {
@@ -6198,9 +6209,9 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2068:3: ( ( ( ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> ( ( ( (lv_declaredFormalParameters_2_0= ruleJvmFormalParameter ) ) (otherlv_3= ',' ( (lv_declaredFormalParameters_4_0= ruleJvmFormalParameter ) ) )* )? ( (lv_explicitSyntax_5_0= '|' ) ) ) )?
-            int alt35=2;
-            alt35 = dfa35.predict(input);
-            switch (alt35) {
+            int alt36=2;
+            alt36 = dfa36.predict(input);
+            switch (alt36) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2068:4: ( ( ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> ( ( ( (lv_declaredFormalParameters_2_0= ruleJvmFormalParameter ) ) (otherlv_3= ',' ( (lv_declaredFormalParameters_4_0= ruleJvmFormalParameter ) ) )* )? ( (lv_explicitSyntax_5_0= '|' ) ) )
                     {
@@ -6208,13 +6219,13 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2083:7: ( ( (lv_declaredFormalParameters_2_0= ruleJvmFormalParameter ) ) (otherlv_3= ',' ( (lv_declaredFormalParameters_4_0= ruleJvmFormalParameter ) ) )* )? ( (lv_explicitSyntax_5_0= '|' ) )
                     {
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2083:7: ( ( (lv_declaredFormalParameters_2_0= ruleJvmFormalParameter ) ) (otherlv_3= ',' ( (lv_declaredFormalParameters_4_0= ruleJvmFormalParameter ) ) )* )?
-                    int alt34=2;
-                    int LA34_0 = input.LA(1);
+                    int alt35=2;
+                    int LA35_0 = input.LA(1);
 
-                    if ( (LA34_0==RULE_ID||LA34_0==29||LA34_0==45) ) {
-                        alt34=1;
+                    if ( (LA35_0==RULE_ID||LA35_0==29||LA35_0==45) ) {
+                        alt35=1;
                     }
-                    switch (alt34) {
+                    switch (alt35) {
                         case 1 :
                             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2083:8: ( (lv_declaredFormalParameters_2_0= ruleJvmFormalParameter ) ) (otherlv_3= ',' ( (lv_declaredFormalParameters_4_0= ruleJvmFormalParameter ) ) )*
                             {
@@ -6254,17 +6265,17 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                             }
 
                             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2101:2: (otherlv_3= ',' ( (lv_declaredFormalParameters_4_0= ruleJvmFormalParameter ) ) )*
-                            loop33:
+                            loop34:
                             do {
-                                int alt33=2;
-                                int LA33_0 = input.LA(1);
+                                int alt34=2;
+                                int LA34_0 = input.LA(1);
 
-                                if ( (LA33_0==44) ) {
-                                    alt33=1;
+                                if ( (LA34_0==44) ) {
+                                    alt34=1;
                                 }
 
 
-                                switch (alt33) {
+                                switch (alt34) {
                             	case 1 :
                             	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2101:4: otherlv_3= ',' ( (lv_declaredFormalParameters_4_0= ruleJvmFormalParameter ) )
                             	    {
@@ -6314,7 +6325,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                             	    break;
 
                             	default :
-                            	    break loop33;
+                            	    break loop34;
                                 }
                             } while (true);
 
@@ -6494,17 +6505,17 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2187:2: ( ( (lv_expressions_1_0= ruleXExpressionInsideBlock ) ) (otherlv_2= ';' )? )*
-            loop37:
+            loop38:
             do {
-                int alt37=2;
-                int LA37_0 = input.LA(1);
+                int alt38=2;
+                int LA38_0 = input.LA(1);
 
-                if ( ((LA37_0>=RULE_STRING && LA37_0<=RULE_ID)||LA37_0==26||(LA37_0>=33 && LA37_0<=34)||LA37_0==39||LA37_0==45||LA37_0==47||LA37_0==50||LA37_0==52||LA37_0==54||(LA37_0>=58 && LA37_0<=63)||(LA37_0>=65 && LA37_0<=72)) ) {
-                    alt37=1;
+                if ( ((LA38_0>=RULE_STRING && LA38_0<=RULE_ID)||LA38_0==26||(LA38_0>=33 && LA38_0<=34)||LA38_0==39||LA38_0==45||LA38_0==47||LA38_0==50||LA38_0==52||LA38_0==54||(LA38_0>=58 && LA38_0<=63)||(LA38_0>=65 && LA38_0<=72)) ) {
+                    alt38=1;
                 }
 
 
-                switch (alt37) {
+                switch (alt38) {
             	case 1 :
             	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2187:3: ( (lv_expressions_1_0= ruleXExpressionInsideBlock ) ) (otherlv_2= ';' )?
             	    {
@@ -6544,13 +6555,13 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             	    }
 
             	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2205:2: (otherlv_2= ';' )?
-            	    int alt36=2;
-            	    int LA36_0 = input.LA(1);
+            	    int alt37=2;
+            	    int LA37_0 = input.LA(1);
 
-            	    if ( (LA36_0==13) ) {
-            	        alt36=1;
+            	    if ( (LA37_0==13) ) {
+            	        alt37=1;
             	    }
-            	    switch (alt36) {
+            	    switch (alt37) {
             	        case 1 :
             	            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2205:4: otherlv_2= ';'
             	            {
@@ -6571,7 +6582,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop37;
+            	    break loop38;
                 }
             } while (true);
 
@@ -6680,13 +6691,13 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2252:2: ( ( (lv_declaredFormalParameters_1_0= ruleJvmFormalParameter ) ) (otherlv_2= ',' ( (lv_declaredFormalParameters_3_0= ruleJvmFormalParameter ) ) )* )?
-            int alt39=2;
-            int LA39_0 = input.LA(1);
+            int alt40=2;
+            int LA40_0 = input.LA(1);
 
-            if ( (LA39_0==RULE_ID||LA39_0==29||LA39_0==45) ) {
-                alt39=1;
+            if ( (LA40_0==RULE_ID||LA40_0==29||LA40_0==45) ) {
+                alt40=1;
             }
-            switch (alt39) {
+            switch (alt40) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2252:3: ( (lv_declaredFormalParameters_1_0= ruleJvmFormalParameter ) ) (otherlv_2= ',' ( (lv_declaredFormalParameters_3_0= ruleJvmFormalParameter ) ) )*
                     {
@@ -6726,17 +6737,17 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                     }
 
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2270:2: (otherlv_2= ',' ( (lv_declaredFormalParameters_3_0= ruleJvmFormalParameter ) ) )*
-                    loop38:
+                    loop39:
                     do {
-                        int alt38=2;
-                        int LA38_0 = input.LA(1);
+                        int alt39=2;
+                        int LA39_0 = input.LA(1);
 
-                        if ( (LA38_0==44) ) {
-                            alt38=1;
+                        if ( (LA39_0==44) ) {
+                            alt39=1;
                         }
 
 
-                        switch (alt38) {
+                        switch (alt39) {
                     	case 1 :
                     	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2270:4: otherlv_2= ',' ( (lv_declaredFormalParameters_3_0= ruleJvmFormalParameter ) )
                     	    {
@@ -6786,7 +6797,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop38;
+                    	    break loop39;
                         }
                     } while (true);
 
@@ -7161,17 +7172,17 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2438:2: ( ( ( 'else' )=>otherlv_6= 'else' ) ( (lv_else_7_0= ruleXExpression ) ) )?
-            int alt40=2;
-            int LA40_0 = input.LA(1);
+            int alt41=2;
+            int LA41_0 = input.LA(1);
 
-            if ( (LA40_0==51) ) {
-                int LA40_1 = input.LA(2);
+            if ( (LA41_0==51) ) {
+                int LA41_1 = input.LA(2);
 
                 if ( (synpred22_InternalScripting()) ) {
-                    alt40=1;
+                    alt41=1;
                 }
             }
-            switch (alt40) {
+            switch (alt41) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2438:3: ( ( 'else' )=>otherlv_6= 'else' ) ( (lv_else_7_0= ruleXExpression ) )
                     {
@@ -7346,39 +7357,39 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                   
             }
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2492:1: ( ( ( ( ( ( ( ruleValidID ) ) ':' ) )=> ( ( (lv_localVarName_2_0= ruleValidID ) ) otherlv_3= ':' ) )? ( (lv_switch_4_0= ruleXExpression ) ) ) | ( ( ( ( '(' ( ( ruleValidID ) ) ':' ) )=> (otherlv_5= '(' ( (lv_localVarName_6_0= ruleValidID ) ) otherlv_7= ':' ) ) ( (lv_switch_8_0= ruleXExpression ) ) otherlv_9= ')' ) )
-            int alt42=2;
-            int LA42_0 = input.LA(1);
+            int alt43=2;
+            int LA43_0 = input.LA(1);
 
-            if ( ((LA42_0>=RULE_STRING && LA42_0<=RULE_ID)||LA42_0==26||(LA42_0>=33 && LA42_0<=34)||LA42_0==39||LA42_0==47||LA42_0==50||LA42_0==52||LA42_0==54||(LA42_0>=58 && LA42_0<=60)||LA42_0==63||(LA42_0>=65 && LA42_0<=72)) ) {
-                alt42=1;
+            if ( ((LA43_0>=RULE_STRING && LA43_0<=RULE_ID)||LA43_0==26||(LA43_0>=33 && LA43_0<=34)||LA43_0==39||LA43_0==47||LA43_0==50||LA43_0==52||LA43_0==54||(LA43_0>=58 && LA43_0<=60)||LA43_0==63||(LA43_0>=65 && LA43_0<=72)) ) {
+                alt43=1;
             }
-            else if ( (LA42_0==45) ) {
-                int LA42_2 = input.LA(2);
+            else if ( (LA43_0==45) ) {
+                int LA43_2 = input.LA(2);
 
-                if ( (LA42_2==RULE_ID) ) {
-                    int LA42_3 = input.LA(3);
+                if ( (LA43_2==RULE_ID) ) {
+                    int LA43_3 = input.LA(3);
 
-                    if ( ((LA42_3>=16 && LA42_3<=38)||(LA42_3>=40 && LA42_3<=43)||(LA42_3>=45 && LA42_3<=47)||LA42_3==64) ) {
-                        alt42=1;
+                    if ( ((LA43_3>=16 && LA43_3<=38)||(LA43_3>=40 && LA43_3<=43)||(LA43_3>=45 && LA43_3<=47)||LA43_3==64) ) {
+                        alt43=1;
                     }
-                    else if ( (LA42_3==53) && (synpred24_InternalScripting())) {
-                        alt42=2;
+                    else if ( (LA43_3==53) && (synpred24_InternalScripting())) {
+                        alt43=2;
                     }
                     else {
                         if (state.backtracking>0) {state.failed=true; return current;}
                         NoViableAltException nvae =
-                            new NoViableAltException("", 42, 3, input);
+                            new NoViableAltException("", 43, 3, input);
 
                         throw nvae;
                     }
                 }
-                else if ( ((LA42_2>=RULE_STRING && LA42_2<=RULE_DECIMAL)||LA42_2==26||(LA42_2>=33 && LA42_2<=34)||LA42_2==39||LA42_2==45||LA42_2==47||LA42_2==50||LA42_2==52||LA42_2==54||(LA42_2>=58 && LA42_2<=60)||LA42_2==63||(LA42_2>=65 && LA42_2<=72)) ) {
-                    alt42=1;
+                else if ( ((LA43_2>=RULE_STRING && LA43_2<=RULE_DECIMAL)||LA43_2==26||(LA43_2>=33 && LA43_2<=34)||LA43_2==39||LA43_2==45||LA43_2==47||LA43_2==50||LA43_2==52||LA43_2==54||(LA43_2>=58 && LA43_2<=60)||LA43_2==63||(LA43_2>=65 && LA43_2<=72)) ) {
+                    alt43=1;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return current;}
                     NoViableAltException nvae =
-                        new NoViableAltException("", 42, 2, input);
+                        new NoViableAltException("", 43, 2, input);
 
                     throw nvae;
                 }
@@ -7386,11 +7397,11 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 42, 0, input);
+                    new NoViableAltException("", 43, 0, input);
 
                 throw nvae;
             }
-            switch (alt42) {
+            switch (alt43) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2492:2: ( ( ( ( ( ( ruleValidID ) ) ':' ) )=> ( ( (lv_localVarName_2_0= ruleValidID ) ) otherlv_3= ':' ) )? ( (lv_switch_4_0= ruleXExpression ) ) )
                     {
@@ -7398,17 +7409,17 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2492:3: ( ( ( ( ( ruleValidID ) ) ':' ) )=> ( ( (lv_localVarName_2_0= ruleValidID ) ) otherlv_3= ':' ) )? ( (lv_switch_4_0= ruleXExpression ) )
                     {
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2492:3: ( ( ( ( ( ruleValidID ) ) ':' ) )=> ( ( (lv_localVarName_2_0= ruleValidID ) ) otherlv_3= ':' ) )?
-                    int alt41=2;
-                    int LA41_0 = input.LA(1);
+                    int alt42=2;
+                    int LA42_0 = input.LA(1);
 
-                    if ( (LA41_0==RULE_ID) ) {
-                        int LA41_1 = input.LA(2);
+                    if ( (LA42_0==RULE_ID) ) {
+                        int LA42_1 = input.LA(2);
 
-                        if ( (LA41_1==53) && (synpred23_InternalScripting())) {
-                            alt41=1;
+                        if ( (LA42_1==53) && (synpred23_InternalScripting())) {
+                            alt42=1;
                         }
                     }
-                    switch (alt41) {
+                    switch (alt42) {
                         case 1 :
                             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2492:4: ( ( ( ( ruleValidID ) ) ':' ) )=> ( ( (lv_localVarName_2_0= ruleValidID ) ) otherlv_3= ':' )
                             {
@@ -7628,18 +7639,18 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                   
             }
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2596:1: ( (lv_cases_11_0= ruleXCasePart ) )+
-            int cnt43=0;
-            loop43:
+            int cnt44=0;
+            loop44:
             do {
-                int alt43=2;
-                int LA43_0 = input.LA(1);
+                int alt44=2;
+                int LA44_0 = input.LA(1);
 
-                if ( (LA43_0==RULE_ID||LA43_0==29||LA43_0==45||LA43_0==53||LA43_0==57) ) {
-                    alt43=1;
+                if ( (LA44_0==RULE_ID||LA44_0==29||LA44_0==45||LA44_0==53||LA44_0==57) ) {
+                    alt44=1;
                 }
 
 
-                switch (alt43) {
+                switch (alt44) {
             	case 1 :
             	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2597:1: (lv_cases_11_0= ruleXCasePart )
             	    {
@@ -7677,23 +7688,23 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt43 >= 1 ) break loop43;
+            	    if ( cnt44 >= 1 ) break loop44;
             	    if (state.backtracking>0) {state.failed=true; return current;}
                         EarlyExitException eee =
-                            new EarlyExitException(43, input);
+                            new EarlyExitException(44, input);
                         throw eee;
                 }
-                cnt43++;
+                cnt44++;
             } while (true);
 
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2614:3: (otherlv_12= 'default' otherlv_13= ':' ( (lv_default_14_0= ruleXExpression ) ) )?
-            int alt44=2;
-            int LA44_0 = input.LA(1);
+            int alt45=2;
+            int LA45_0 = input.LA(1);
 
-            if ( (LA44_0==55) ) {
-                alt44=1;
+            if ( (LA45_0==55) ) {
+                alt45=1;
             }
-            switch (alt44) {
+            switch (alt45) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2614:5: otherlv_12= 'default' otherlv_13= ':' ( (lv_default_14_0= ruleXExpression ) )
                     {
@@ -7842,13 +7853,13 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2665:2: ( (lv_typeGuard_0_0= ruleJvmTypeReference ) )? (otherlv_1= 'case' ( (lv_case_2_0= ruleXExpression ) ) )? otherlv_3= ':' ( (lv_then_4_0= ruleXExpression ) )
             {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2665:2: ( (lv_typeGuard_0_0= ruleJvmTypeReference ) )?
-            int alt45=2;
-            int LA45_0 = input.LA(1);
+            int alt46=2;
+            int LA46_0 = input.LA(1);
 
-            if ( (LA45_0==RULE_ID||LA45_0==29||LA45_0==45) ) {
-                alt45=1;
+            if ( (LA46_0==RULE_ID||LA46_0==29||LA46_0==45) ) {
+                alt46=1;
             }
-            switch (alt45) {
+            switch (alt46) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2666:1: (lv_typeGuard_0_0= ruleJvmTypeReference )
                     {
@@ -7888,13 +7899,13 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2683:3: (otherlv_1= 'case' ( (lv_case_2_0= ruleXExpression ) ) )?
-            int alt46=2;
-            int LA46_0 = input.LA(1);
+            int alt47=2;
+            int LA47_0 = input.LA(1);
 
-            if ( (LA46_0==57) ) {
-                alt46=1;
+            if ( (LA47_0==57) ) {
+                alt47=1;
             }
-            switch (alt46) {
+            switch (alt47) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2683:5: otherlv_1= 'case' ( (lv_case_2_0= ruleXExpression ) )
                     {
@@ -8694,17 +8705,17 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                   
             }
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3009:1: ( ( (lv_expressions_2_0= ruleXExpressionInsideBlock ) ) (otherlv_3= ';' )? )*
-            loop48:
+            loop49:
             do {
-                int alt48=2;
-                int LA48_0 = input.LA(1);
+                int alt49=2;
+                int LA49_0 = input.LA(1);
 
-                if ( ((LA48_0>=RULE_STRING && LA48_0<=RULE_ID)||LA48_0==26||(LA48_0>=33 && LA48_0<=34)||LA48_0==39||LA48_0==45||LA48_0==47||LA48_0==50||LA48_0==52||LA48_0==54||(LA48_0>=58 && LA48_0<=63)||(LA48_0>=65 && LA48_0<=72)) ) {
-                    alt48=1;
+                if ( ((LA49_0>=RULE_STRING && LA49_0<=RULE_ID)||LA49_0==26||(LA49_0>=33 && LA49_0<=34)||LA49_0==39||LA49_0==45||LA49_0==47||LA49_0==50||LA49_0==52||LA49_0==54||(LA49_0>=58 && LA49_0<=63)||(LA49_0>=65 && LA49_0<=72)) ) {
+                    alt49=1;
                 }
 
 
-                switch (alt48) {
+                switch (alt49) {
             	case 1 :
             	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3009:2: ( (lv_expressions_2_0= ruleXExpressionInsideBlock ) ) (otherlv_3= ';' )?
             	    {
@@ -8744,13 +8755,13 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             	    }
 
             	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3027:2: (otherlv_3= ';' )?
-            	    int alt47=2;
-            	    int LA47_0 = input.LA(1);
+            	    int alt48=2;
+            	    int LA48_0 = input.LA(1);
 
-            	    if ( (LA47_0==13) ) {
-            	        alt47=1;
+            	    if ( (LA48_0==13) ) {
+            	        alt48=1;
             	    }
-            	    switch (alt47) {
+            	    switch (alt48) {
             	        case 1 :
             	            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3027:4: otherlv_3= ';'
             	            {
@@ -8771,7 +8782,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop48;
+            	    break loop49;
                 }
             } while (true);
 
@@ -8860,23 +8871,23 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3056:1: (this_XVariableDeclaration_0= ruleXVariableDeclaration | this_XExpression_1= ruleXExpression )
             {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3056:1: (this_XVariableDeclaration_0= ruleXVariableDeclaration | this_XExpression_1= ruleXExpression )
-            int alt49=2;
-            int LA49_0 = input.LA(1);
+            int alt50=2;
+            int LA50_0 = input.LA(1);
 
-            if ( ((LA49_0>=61 && LA49_0<=62)) ) {
-                alt49=1;
+            if ( ((LA50_0>=61 && LA50_0<=62)) ) {
+                alt50=1;
             }
-            else if ( ((LA49_0>=RULE_STRING && LA49_0<=RULE_ID)||LA49_0==26||(LA49_0>=33 && LA49_0<=34)||LA49_0==39||LA49_0==45||LA49_0==47||LA49_0==50||LA49_0==52||LA49_0==54||(LA49_0>=58 && LA49_0<=60)||LA49_0==63||(LA49_0>=65 && LA49_0<=72)) ) {
-                alt49=2;
+            else if ( ((LA50_0>=RULE_STRING && LA50_0<=RULE_ID)||LA50_0==26||(LA50_0>=33 && LA50_0<=34)||LA50_0==39||LA50_0==45||LA50_0==47||LA50_0==50||LA50_0==52||LA50_0==54||(LA50_0>=58 && LA50_0<=60)||LA50_0==63||(LA50_0>=65 && LA50_0<=72)) ) {
+                alt50=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 49, 0, input);
+                    new NoViableAltException("", 50, 0, input);
 
                 throw nvae;
             }
-            switch (alt49) {
+            switch (alt50) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3057:5: this_XVariableDeclaration_0= ruleXVariableDeclaration
                     {
@@ -9023,23 +9034,23 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3102:2: ( ( (lv_writeable_1_0= 'var' ) ) | otherlv_2= 'val' )
-            int alt50=2;
-            int LA50_0 = input.LA(1);
+            int alt51=2;
+            int LA51_0 = input.LA(1);
 
-            if ( (LA50_0==61) ) {
-                alt50=1;
+            if ( (LA51_0==61) ) {
+                alt51=1;
             }
-            else if ( (LA50_0==62) ) {
-                alt50=2;
+            else if ( (LA51_0==62) ) {
+                alt51=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 50, 0, input);
+                    new NoViableAltException("", 51, 0, input);
 
                 throw nvae;
             }
-            switch (alt50) {
+            switch (alt51) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3102:3: ( (lv_writeable_1_0= 'var' ) )
                     {
@@ -9088,40 +9099,40 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3122:2: ( ( ( ( ( ( ruleJvmTypeReference ) ) ( ( ruleValidID ) ) ) )=> ( ( (lv_type_3_0= ruleJvmTypeReference ) ) ( (lv_name_4_0= ruleValidID ) ) ) ) | ( (lv_name_5_0= ruleValidID ) ) )
-            int alt51=2;
-            int LA51_0 = input.LA(1);
+            int alt52=2;
+            int LA52_0 = input.LA(1);
 
-            if ( (LA51_0==RULE_ID) ) {
-                int LA51_1 = input.LA(2);
+            if ( (LA52_0==RULE_ID) ) {
+                int LA52_1 = input.LA(2);
 
                 if ( (synpred25_InternalScripting()) ) {
-                    alt51=1;
+                    alt52=1;
                 }
                 else if ( (true) ) {
-                    alt51=2;
+                    alt52=2;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return current;}
                     NoViableAltException nvae =
-                        new NoViableAltException("", 51, 1, input);
+                        new NoViableAltException("", 52, 1, input);
 
                     throw nvae;
                 }
             }
-            else if ( (LA51_0==45) && (synpred25_InternalScripting())) {
-                alt51=1;
+            else if ( (LA52_0==45) && (synpred25_InternalScripting())) {
+                alt52=1;
             }
-            else if ( (LA51_0==29) && (synpred25_InternalScripting())) {
-                alt51=1;
+            else if ( (LA52_0==29) && (synpred25_InternalScripting())) {
+                alt52=1;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 51, 0, input);
+                    new NoViableAltException("", 52, 0, input);
 
                 throw nvae;
             }
-            switch (alt51) {
+            switch (alt52) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3122:3: ( ( ( ( ( ruleJvmTypeReference ) ) ( ( ruleValidID ) ) ) )=> ( ( (lv_type_3_0= ruleJvmTypeReference ) ) ( (lv_name_4_0= ruleValidID ) ) ) )
                     {
@@ -9255,13 +9266,13 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3185:3: (otherlv_6= '=' ( (lv_right_7_0= ruleXExpression ) ) )?
-            int alt52=2;
-            int LA52_0 = input.LA(1);
+            int alt53=2;
+            int LA53_0 = input.LA(1);
 
-            if ( (LA52_0==16) ) {
-                alt52=1;
+            if ( (LA53_0==16) ) {
+                alt53=1;
             }
-            switch (alt52) {
+            switch (alt53) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3185:5: otherlv_6= '=' ( (lv_right_7_0= ruleXExpression ) )
                     {
@@ -9394,20 +9405,20 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3228:2: ( (lv_parameterType_0_0= ruleJvmTypeReference ) )? ( (lv_name_1_0= ruleValidID ) )
             {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3228:2: ( (lv_parameterType_0_0= ruleJvmTypeReference ) )?
-            int alt53=2;
-            int LA53_0 = input.LA(1);
+            int alt54=2;
+            int LA54_0 = input.LA(1);
 
-            if ( (LA53_0==RULE_ID) ) {
-                int LA53_1 = input.LA(2);
+            if ( (LA54_0==RULE_ID) ) {
+                int LA54_1 = input.LA(2);
 
-                if ( (LA53_1==RULE_ID||LA53_1==26||LA53_1==41||LA53_1==47) ) {
-                    alt53=1;
+                if ( (LA54_1==RULE_ID||LA54_1==26||LA54_1==41||LA54_1==47) ) {
+                    alt54=1;
                 }
             }
-            else if ( (LA53_0==29||LA53_0==45) ) {
-                alt53=1;
+            else if ( (LA54_0==29||LA54_0==45) ) {
+                alt54=1;
             }
-            switch (alt53) {
+            switch (alt54) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3229:1: (lv_parameterType_0_0= ruleJvmTypeReference )
                     {
@@ -9741,17 +9752,17 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3348:2: ( ( ruleStaticQualifier ) )?
-            int alt54=2;
-            int LA54_0 = input.LA(1);
+            int alt55=2;
+            int LA55_0 = input.LA(1);
 
-            if ( (LA54_0==RULE_ID) ) {
-                int LA54_1 = input.LA(2);
+            if ( (LA55_0==RULE_ID) ) {
+                int LA55_1 = input.LA(2);
 
-                if ( (LA54_1==64) ) {
-                    alt54=1;
+                if ( (LA55_1==64) ) {
+                    alt55=1;
                 }
             }
-            switch (alt54) {
+            switch (alt55) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3349:1: ( ruleStaticQualifier )
                     {
@@ -9790,13 +9801,13 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3363:3: (otherlv_2= '<' ( (lv_typeArguments_3_0= ruleJvmArgumentTypeReference ) ) (otherlv_4= ',' ( (lv_typeArguments_5_0= ruleJvmArgumentTypeReference ) ) )* otherlv_6= '>' )?
-            int alt56=2;
-            int LA56_0 = input.LA(1);
+            int alt57=2;
+            int LA57_0 = input.LA(1);
 
-            if ( (LA56_0==26) ) {
-                alt56=1;
+            if ( (LA57_0==26) ) {
+                alt57=1;
             }
-            switch (alt56) {
+            switch (alt57) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3363:5: otherlv_2= '<' ( (lv_typeArguments_3_0= ruleJvmArgumentTypeReference ) ) (otherlv_4= ',' ( (lv_typeArguments_5_0= ruleJvmArgumentTypeReference ) ) )* otherlv_6= '>'
                     {
@@ -9842,17 +9853,17 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                     }
 
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3385:2: (otherlv_4= ',' ( (lv_typeArguments_5_0= ruleJvmArgumentTypeReference ) ) )*
-                    loop55:
+                    loop56:
                     do {
-                        int alt55=2;
-                        int LA55_0 = input.LA(1);
+                        int alt56=2;
+                        int LA56_0 = input.LA(1);
 
-                        if ( (LA55_0==44) ) {
-                            alt55=1;
+                        if ( (LA56_0==44) ) {
+                            alt56=1;
                         }
 
 
-                        switch (alt55) {
+                        switch (alt56) {
                     	case 1 :
                     	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3385:4: otherlv_4= ',' ( (lv_typeArguments_5_0= ruleJvmArgumentTypeReference ) )
                     	    {
@@ -9902,7 +9913,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop55;
+                    	    break loop56;
                         }
                     } while (true);
 
@@ -9953,9 +9964,9 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3426:2: ( ( ( ( '(' ) )=> (lv_explicitOperationCall_8_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_featureCallArguments_9_0= ruleXShortClosure ) ) | ( ( (lv_featureCallArguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_featureCallArguments_12_0= ruleXExpression ) ) )* ) )? otherlv_13= ')' )?
-            int alt59=2;
-            alt59 = dfa59.predict(input);
-            switch (alt59) {
+            int alt60=2;
+            alt60 = dfa60.predict(input);
+            switch (alt60) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3426:3: ( ( ( '(' ) )=> (lv_explicitOperationCall_8_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_featureCallArguments_9_0= ruleXShortClosure ) ) | ( ( (lv_featureCallArguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_featureCallArguments_12_0= ruleXExpression ) ) )* ) )? otherlv_13= ')'
                     {
@@ -9986,9 +9997,9 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                     }
 
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3447:2: ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_featureCallArguments_9_0= ruleXShortClosure ) ) | ( ( (lv_featureCallArguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_featureCallArguments_12_0= ruleXExpression ) ) )* ) )?
-                    int alt58=3;
-                    alt58 = dfa58.predict(input);
-                    switch (alt58) {
+                    int alt59=3;
+                    alt59 = dfa59.predict(input);
+                    switch (alt59) {
                         case 1 :
                             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3447:3: ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_featureCallArguments_9_0= ruleXShortClosure ) )
                             {
@@ -10072,17 +10083,17 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                             }
 
                             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3500:2: (otherlv_11= ',' ( (lv_featureCallArguments_12_0= ruleXExpression ) ) )*
-                            loop57:
+                            loop58:
                             do {
-                                int alt57=2;
-                                int LA57_0 = input.LA(1);
+                                int alt58=2;
+                                int LA58_0 = input.LA(1);
 
-                                if ( (LA57_0==44) ) {
-                                    alt57=1;
+                                if ( (LA58_0==44) ) {
+                                    alt58=1;
                                 }
 
 
-                                switch (alt57) {
+                                switch (alt58) {
                             	case 1 :
                             	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3500:4: otherlv_11= ',' ( (lv_featureCallArguments_12_0= ruleXExpression ) )
                             	    {
@@ -10132,7 +10143,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                             	    break;
 
                             	default :
-                            	    break loop57;
+                            	    break loop58;
                                 }
                             } while (true);
 
@@ -10158,9 +10169,9 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3526:3: ( ( ( () '[' ) )=> (lv_featureCallArguments_14_0= ruleXClosure ) )?
-            int alt60=2;
-            alt60 = dfa60.predict(input);
-            switch (alt60) {
+            int alt61=2;
+            alt61 = dfa61.predict(input);
+            switch (alt61) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3526:4: ( ( () '[' ) )=> (lv_featureCallArguments_14_0= ruleXClosure )
                     {
@@ -10277,23 +10288,23 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3567:1: (this_ValidID_0= ruleValidID | kw= 'super' )
             {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3567:1: (this_ValidID_0= ruleValidID | kw= 'super' )
-            int alt61=2;
-            int LA61_0 = input.LA(1);
+            int alt62=2;
+            int LA62_0 = input.LA(1);
 
-            if ( (LA61_0==RULE_ID) ) {
-                alt61=1;
+            if ( (LA62_0==RULE_ID) ) {
+                alt62=1;
             }
-            else if ( (LA61_0==63) ) {
-                alt61=2;
+            else if ( (LA62_0==63) ) {
+                alt62=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 61, 0, input);
+                    new NoViableAltException("", 62, 0, input);
 
                 throw nvae;
             }
-            switch (alt61) {
+            switch (alt62) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3568:5: this_ValidID_0= ruleValidID
                     {
@@ -10411,24 +10422,24 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3606:1: (this_ValidID_0= ruleValidID kw= '::' )+
             {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3606:1: (this_ValidID_0= ruleValidID kw= '::' )+
-            int cnt62=0;
-            loop62:
+            int cnt63=0;
+            loop63:
             do {
-                int alt62=2;
-                int LA62_0 = input.LA(1);
+                int alt63=2;
+                int LA63_0 = input.LA(1);
 
-                if ( (LA62_0==RULE_ID) ) {
-                    int LA62_2 = input.LA(2);
+                if ( (LA63_0==RULE_ID) ) {
+                    int LA63_2 = input.LA(2);
 
-                    if ( (LA62_2==64) ) {
-                        alt62=1;
+                    if ( (LA63_2==64) ) {
+                        alt63=1;
                     }
 
 
                 }
 
 
-                switch (alt62) {
+                switch (alt63) {
             	case 1 :
             	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3607:5: this_ValidID_0= ruleValidID kw= '::'
             	    {
@@ -10464,13 +10475,13 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt62 >= 1 ) break loop62;
+            	    if ( cnt63 >= 1 ) break loop63;
             	    if (state.backtracking>0) {state.failed=true; return current;}
                         EarlyExitException eee =
-                            new EarlyExitException(62, input);
+                            new EarlyExitException(63, input);
                         throw eee;
                 }
-                cnt62++;
+                cnt63++;
             } while (true);
 
 
@@ -10620,9 +10631,9 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3669:2: ( ( ( '<' )=>otherlv_3= '<' ) ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) (otherlv_5= ',' ( (lv_typeArguments_6_0= ruleJvmArgumentTypeReference ) ) )* otherlv_7= '>' )?
-            int alt64=2;
-            alt64 = dfa64.predict(input);
-            switch (alt64) {
+            int alt65=2;
+            alt65 = dfa65.predict(input);
+            switch (alt65) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3669:3: ( ( '<' )=>otherlv_3= '<' ) ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) (otherlv_5= ',' ( (lv_typeArguments_6_0= ruleJvmArgumentTypeReference ) ) )* otherlv_7= '>'
                     {
@@ -10674,17 +10685,17 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                     }
 
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3692:2: (otherlv_5= ',' ( (lv_typeArguments_6_0= ruleJvmArgumentTypeReference ) ) )*
-                    loop63:
+                    loop64:
                     do {
-                        int alt63=2;
-                        int LA63_0 = input.LA(1);
+                        int alt64=2;
+                        int LA64_0 = input.LA(1);
 
-                        if ( (LA63_0==44) ) {
-                            alt63=1;
+                        if ( (LA64_0==44) ) {
+                            alt64=1;
                         }
 
 
-                        switch (alt63) {
+                        switch (alt64) {
                     	case 1 :
                     	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3692:4: otherlv_5= ',' ( (lv_typeArguments_6_0= ruleJvmArgumentTypeReference ) )
                     	    {
@@ -10734,7 +10745,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop63;
+                    	    break loop64;
                         }
                     } while (true);
 
@@ -10751,9 +10762,9 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3718:3: ( ( ( '(' )=>otherlv_8= '(' ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_arguments_9_0= ruleXShortClosure ) ) | ( ( (lv_arguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )* ) )? otherlv_13= ')' )?
-            int alt67=2;
-            alt67 = dfa67.predict(input);
-            switch (alt67) {
+            int alt68=2;
+            alt68 = dfa68.predict(input);
+            switch (alt68) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3718:4: ( ( '(' )=>otherlv_8= '(' ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_arguments_9_0= ruleXShortClosure ) ) | ( ( (lv_arguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )* ) )? otherlv_13= ')'
                     {
@@ -10770,9 +10781,9 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                     }
 
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3723:2: ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_arguments_9_0= ruleXShortClosure ) ) | ( ( (lv_arguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )* ) )?
-                    int alt66=3;
-                    alt66 = dfa66.predict(input);
-                    switch (alt66) {
+                    int alt67=3;
+                    alt67 = dfa67.predict(input);
+                    switch (alt67) {
                         case 1 :
                             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3723:3: ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_arguments_9_0= ruleXShortClosure ) )
                             {
@@ -10856,17 +10867,17 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                             }
 
                             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3776:2: (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )*
-                            loop65:
+                            loop66:
                             do {
-                                int alt65=2;
-                                int LA65_0 = input.LA(1);
+                                int alt66=2;
+                                int LA66_0 = input.LA(1);
 
-                                if ( (LA65_0==44) ) {
-                                    alt65=1;
+                                if ( (LA66_0==44) ) {
+                                    alt66=1;
                                 }
 
 
-                                switch (alt65) {
+                                switch (alt66) {
                             	case 1 :
                             	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3776:4: otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) )
                             	    {
@@ -10916,7 +10927,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                             	    break;
 
                             	default :
-                            	    break loop65;
+                            	    break loop66;
                                 }
                             } while (true);
 
@@ -10942,9 +10953,9 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3802:3: ( ( ( () '[' ) )=> (lv_arguments_14_0= ruleXClosure ) )?
-            int alt68=2;
-            alt68 = dfa68.predict(input);
-            switch (alt68) {
+            int alt69=2;
+            alt69 = dfa69.predict(input);
+            switch (alt69) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3802:4: ( ( () '[' ) )=> (lv_arguments_14_0= ruleXClosure )
                     {
@@ -11076,23 +11087,23 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3849:2: (otherlv_1= 'false' | ( (lv_isTrue_2_0= 'true' ) ) )
-            int alt69=2;
-            int LA69_0 = input.LA(1);
+            int alt70=2;
+            int LA70_0 = input.LA(1);
 
-            if ( (LA69_0==66) ) {
-                alt69=1;
+            if ( (LA70_0==66) ) {
+                alt70=1;
             }
-            else if ( (LA69_0==67) ) {
-                alt69=2;
+            else if ( (LA70_0==67) ) {
+                alt70=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 69, 0, input);
+                    new NoViableAltException("", 70, 0, input);
 
                 throw nvae;
             }
-            switch (alt69) {
+            switch (alt70) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3849:4: otherlv_1= 'false'
                     {
@@ -11864,9 +11875,9 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                   
             }
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4124:1: ( ( ( ruleXExpression ) )=> (lv_expression_2_0= ruleXExpression ) )?
-            int alt70=2;
-            alt70 = dfa70.predict(input);
-            switch (alt70) {
+            int alt71=2;
+            alt71 = dfa71.predict(input);
+            switch (alt71) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4124:2: ( ( ruleXExpression ) )=> (lv_expression_2_0= ruleXExpression )
                     {
@@ -12048,23 +12059,23 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4195:2: ( ( ( ( 'catch' )=> (lv_catchClauses_3_0= ruleXCatchClause ) )+ ( ( ( 'finally' )=>otherlv_4= 'finally' ) ( (lv_finallyExpression_5_0= ruleXExpression ) ) )? ) | (otherlv_6= 'finally' ( (lv_finallyExpression_7_0= ruleXExpression ) ) ) )
-            int alt73=2;
-            int LA73_0 = input.LA(1);
+            int alt74=2;
+            int LA74_0 = input.LA(1);
 
-            if ( (LA73_0==74) ) {
-                alt73=1;
+            if ( (LA74_0==74) ) {
+                alt74=1;
             }
-            else if ( (LA73_0==73) ) {
-                alt73=2;
+            else if ( (LA74_0==73) ) {
+                alt74=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 73, 0, input);
+                    new NoViableAltException("", 74, 0, input);
 
                 throw nvae;
             }
-            switch (alt73) {
+            switch (alt74) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4195:3: ( ( ( 'catch' )=> (lv_catchClauses_3_0= ruleXCatchClause ) )+ ( ( ( 'finally' )=>otherlv_4= 'finally' ) ( (lv_finallyExpression_5_0= ruleXExpression ) ) )? )
                     {
@@ -12072,24 +12083,24 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4195:4: ( ( 'catch' )=> (lv_catchClauses_3_0= ruleXCatchClause ) )+ ( ( ( 'finally' )=>otherlv_4= 'finally' ) ( (lv_finallyExpression_5_0= ruleXExpression ) ) )?
                     {
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4195:4: ( ( 'catch' )=> (lv_catchClauses_3_0= ruleXCatchClause ) )+
-                    int cnt71=0;
-                    loop71:
+                    int cnt72=0;
+                    loop72:
                     do {
-                        int alt71=2;
-                        int LA71_0 = input.LA(1);
+                        int alt72=2;
+                        int LA72_0 = input.LA(1);
 
-                        if ( (LA71_0==74) ) {
-                            int LA71_2 = input.LA(2);
+                        if ( (LA72_0==74) ) {
+                            int LA72_2 = input.LA(2);
 
                             if ( (synpred34_InternalScripting()) ) {
-                                alt71=1;
+                                alt72=1;
                             }
 
 
                         }
 
 
-                        switch (alt71) {
+                        switch (alt72) {
                     	case 1 :
                     	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4195:5: ( 'catch' )=> (lv_catchClauses_3_0= ruleXCatchClause )
                     	    {
@@ -12127,27 +12138,27 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    if ( cnt71 >= 1 ) break loop71;
+                    	    if ( cnt72 >= 1 ) break loop72;
                     	    if (state.backtracking>0) {state.failed=true; return current;}
                                 EarlyExitException eee =
-                                    new EarlyExitException(71, input);
+                                    new EarlyExitException(72, input);
                                 throw eee;
                         }
-                        cnt71++;
+                        cnt72++;
                     } while (true);
 
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4214:3: ( ( ( 'finally' )=>otherlv_4= 'finally' ) ( (lv_finallyExpression_5_0= ruleXExpression ) ) )?
-                    int alt72=2;
-                    int LA72_0 = input.LA(1);
+                    int alt73=2;
+                    int LA73_0 = input.LA(1);
 
-                    if ( (LA72_0==73) ) {
-                        int LA72_1 = input.LA(2);
+                    if ( (LA73_0==73) ) {
+                        int LA73_1 = input.LA(2);
 
                         if ( (synpred35_InternalScripting()) ) {
-                            alt72=1;
+                            alt73=1;
                         }
                     }
-                    switch (alt72) {
+                    switch (alt73) {
                         case 1 :
                             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4214:4: ( ( 'finally' )=>otherlv_4= 'finally' ) ( (lv_finallyExpression_5_0= ruleXExpression ) )
                             {
@@ -12547,19 +12558,19 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                   
             }
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4362:1: ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )*
-            loop74:
+            loop75:
             do {
-                int alt74=2;
-                int LA74_0 = input.LA(1);
+                int alt75=2;
+                int LA75_0 = input.LA(1);
 
-                if ( (LA74_0==41) ) {
-                    int LA74_2 = input.LA(2);
+                if ( (LA75_0==41) ) {
+                    int LA75_2 = input.LA(2);
 
-                    if ( (LA74_2==RULE_ID) ) {
-                        int LA74_3 = input.LA(3);
+                    if ( (LA75_2==RULE_ID) ) {
+                        int LA75_3 = input.LA(3);
 
                         if ( (synpred37_InternalScripting()) ) {
-                            alt74=1;
+                            alt75=1;
                         }
 
 
@@ -12569,7 +12580,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                 }
 
 
-                switch (alt74) {
+                switch (alt75) {
             	case 1 :
             	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4362:2: ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID
             	    {
@@ -12611,7 +12622,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop74;
+            	    break loop75;
                 }
             } while (true);
 
@@ -12703,23 +12714,23 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4409:1: (this_HEX_0= RULE_HEX | ( (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL ) (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )? ) )
             {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4409:1: (this_HEX_0= RULE_HEX | ( (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL ) (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )? ) )
-            int alt78=2;
-            int LA78_0 = input.LA(1);
+            int alt79=2;
+            int LA79_0 = input.LA(1);
 
-            if ( (LA78_0==RULE_HEX) ) {
-                alt78=1;
+            if ( (LA79_0==RULE_HEX) ) {
+                alt79=1;
             }
-            else if ( ((LA78_0>=RULE_INT && LA78_0<=RULE_DECIMAL)) ) {
-                alt78=2;
+            else if ( ((LA79_0>=RULE_INT && LA79_0<=RULE_DECIMAL)) ) {
+                alt79=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 78, 0, input);
+                    new NoViableAltException("", 79, 0, input);
 
                 throw nvae;
             }
-            switch (alt78) {
+            switch (alt79) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4409:6: this_HEX_0= RULE_HEX
                     {
@@ -12744,23 +12755,23 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4417:7: (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL ) (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )?
                     {
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4417:7: (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL )
-                    int alt75=2;
-                    int LA75_0 = input.LA(1);
+                    int alt76=2;
+                    int LA76_0 = input.LA(1);
 
-                    if ( (LA75_0==RULE_INT) ) {
-                        alt75=1;
+                    if ( (LA76_0==RULE_INT) ) {
+                        alt76=1;
                     }
-                    else if ( (LA75_0==RULE_DECIMAL) ) {
-                        alt75=2;
+                    else if ( (LA76_0==RULE_DECIMAL) ) {
+                        alt76=2;
                     }
                     else {
                         if (state.backtracking>0) {state.failed=true; return current;}
                         NoViableAltException nvae =
-                            new NoViableAltException("", 75, 0, input);
+                            new NoViableAltException("", 76, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt75) {
+                    switch (alt76) {
                         case 1 :
                             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4417:12: this_INT_1= RULE_INT
                             {
@@ -12799,17 +12810,17 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                     }
 
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4432:2: (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )?
-                    int alt77=2;
-                    int LA77_0 = input.LA(1);
+                    int alt78=2;
+                    int LA78_0 = input.LA(1);
 
-                    if ( (LA77_0==41) ) {
-                        int LA77_1 = input.LA(2);
+                    if ( (LA78_0==41) ) {
+                        int LA78_1 = input.LA(2);
 
-                        if ( ((LA77_1>=RULE_INT && LA77_1<=RULE_DECIMAL)) ) {
-                            alt77=1;
+                        if ( ((LA78_1>=RULE_INT && LA78_1<=RULE_DECIMAL)) ) {
+                            alt78=1;
                         }
                     }
-                    switch (alt77) {
+                    switch (alt78) {
                         case 1 :
                             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4433:2: kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL )
                             {
@@ -12821,23 +12832,23 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                                   
                             }
                             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4438:1: (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL )
-                            int alt76=2;
-                            int LA76_0 = input.LA(1);
+                            int alt77=2;
+                            int LA77_0 = input.LA(1);
 
-                            if ( (LA76_0==RULE_INT) ) {
-                                alt76=1;
+                            if ( (LA77_0==RULE_INT) ) {
+                                alt77=1;
                             }
-                            else if ( (LA76_0==RULE_DECIMAL) ) {
-                                alt76=2;
+                            else if ( (LA77_0==RULE_DECIMAL) ) {
+                                alt77=2;
                             }
                             else {
                                 if (state.backtracking>0) {state.failed=true; return current;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("", 76, 0, input);
+                                    new NoViableAltException("", 77, 0, input);
 
                                 throw nvae;
                             }
-                            switch (alt76) {
+                            switch (alt77) {
                                 case 1 :
                                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4438:6: this_INT_4= RULE_INT
                                     {
@@ -12971,23 +12982,23 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4477:1: ( (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () '[' ']' ) )=> ( () otherlv_2= '[' otherlv_3= ']' ) )* ) | this_XFunctionTypeRef_4= ruleXFunctionTypeRef )
             {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4477:1: ( (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () '[' ']' ) )=> ( () otherlv_2= '[' otherlv_3= ']' ) )* ) | this_XFunctionTypeRef_4= ruleXFunctionTypeRef )
-            int alt80=2;
-            int LA80_0 = input.LA(1);
+            int alt81=2;
+            int LA81_0 = input.LA(1);
 
-            if ( (LA80_0==RULE_ID) ) {
-                alt80=1;
+            if ( (LA81_0==RULE_ID) ) {
+                alt81=1;
             }
-            else if ( (LA80_0==29||LA80_0==45) ) {
-                alt80=2;
+            else if ( (LA81_0==29||LA81_0==45) ) {
+                alt81=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 80, 0, input);
+                    new NoViableAltException("", 81, 0, input);
 
                 throw nvae;
             }
-            switch (alt80) {
+            switch (alt81) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4477:2: (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () '[' ']' ) )=> ( () otherlv_2= '[' otherlv_3= ']' ) )* )
                     {
@@ -13011,19 +13022,19 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                           
                     }
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4486:1: ( ( ( () '[' ']' ) )=> ( () otherlv_2= '[' otherlv_3= ']' ) )*
-                    loop79:
+                    loop80:
                     do {
-                        int alt79=2;
-                        int LA79_0 = input.LA(1);
+                        int alt80=2;
+                        int LA80_0 = input.LA(1);
 
-                        if ( (LA79_0==47) ) {
-                            int LA79_2 = input.LA(2);
+                        if ( (LA80_0==47) ) {
+                            int LA80_2 = input.LA(2);
 
-                            if ( (LA79_2==49) ) {
-                                int LA79_3 = input.LA(3);
+                            if ( (LA80_2==49) ) {
+                                int LA80_3 = input.LA(3);
 
                                 if ( (synpred38_InternalScripting()) ) {
-                                    alt79=1;
+                                    alt80=1;
                                 }
 
 
@@ -13033,7 +13044,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         }
 
 
-                        switch (alt79) {
+                        switch (alt80) {
                     	case 1 :
                     	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4486:2: ( ( () '[' ']' ) )=> ( () otherlv_2= '[' otherlv_3= ']' )
                     	    {
@@ -13073,7 +13084,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop79;
+                    	    break loop80;
                         }
                     } while (true);
 
@@ -13193,13 +13204,13 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4534:2: (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )? otherlv_5= '=>' ( (lv_returnType_6_0= ruleJvmTypeReference ) )
             {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4534:2: (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )?
-            int alt83=2;
-            int LA83_0 = input.LA(1);
+            int alt84=2;
+            int LA84_0 = input.LA(1);
 
-            if ( (LA83_0==45) ) {
-                alt83=1;
+            if ( (LA84_0==45) ) {
+                alt84=1;
             }
-            switch (alt83) {
+            switch (alt84) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4534:4: otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')'
                     {
@@ -13210,13 +13221,13 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                           
                     }
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4538:1: ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )?
-                    int alt82=2;
-                    int LA82_0 = input.LA(1);
+                    int alt83=2;
+                    int LA83_0 = input.LA(1);
 
-                    if ( (LA82_0==RULE_ID||LA82_0==29||LA82_0==45) ) {
-                        alt82=1;
+                    if ( (LA83_0==RULE_ID||LA83_0==29||LA83_0==45) ) {
+                        alt83=1;
                     }
-                    switch (alt82) {
+                    switch (alt83) {
                         case 1 :
                             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4538:2: ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )*
                             {
@@ -13256,17 +13267,17 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                             }
 
                             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4556:2: (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )*
-                            loop81:
+                            loop82:
                             do {
-                                int alt81=2;
-                                int LA81_0 = input.LA(1);
+                                int alt82=2;
+                                int LA82_0 = input.LA(1);
 
-                                if ( (LA81_0==44) ) {
-                                    alt81=1;
+                                if ( (LA82_0==44) ) {
+                                    alt82=1;
                                 }
 
 
-                                switch (alt81) {
+                                switch (alt82) {
                             	case 1 :
                             	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4556:4: otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) )
                             	    {
@@ -13316,7 +13327,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                             	    break;
 
                             	default :
-                            	    break loop81;
+                            	    break loop82;
                                 }
                             } while (true);
 
@@ -13498,9 +13509,9 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4640:2: ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )?
-            int alt85=2;
-            alt85 = dfa85.predict(input);
-            switch (alt85) {
+            int alt86=2;
+            alt86 = dfa86.predict(input);
+            switch (alt86) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4640:3: ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>'
                     {
@@ -13552,17 +13563,17 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                     }
 
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4663:2: (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )*
-                    loop84:
+                    loop85:
                     do {
-                        int alt84=2;
-                        int LA84_0 = input.LA(1);
+                        int alt85=2;
+                        int LA85_0 = input.LA(1);
 
-                        if ( (LA84_0==44) ) {
-                            alt84=1;
+                        if ( (LA85_0==44) ) {
+                            alt85=1;
                         }
 
 
-                        switch (alt84) {
+                        switch (alt85) {
                     	case 1 :
                     	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4663:4: otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) )
                     	    {
@@ -13612,7 +13623,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop84;
+                    	    break loop85;
                         }
                     } while (true);
 
@@ -13707,23 +13718,23 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4710:1: (this_JvmTypeReference_0= ruleJvmTypeReference | this_JvmWildcardTypeReference_1= ruleJvmWildcardTypeReference )
             {
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4710:1: (this_JvmTypeReference_0= ruleJvmTypeReference | this_JvmWildcardTypeReference_1= ruleJvmWildcardTypeReference )
-            int alt86=2;
-            int LA86_0 = input.LA(1);
+            int alt87=2;
+            int LA87_0 = input.LA(1);
 
-            if ( (LA86_0==RULE_ID||LA86_0==29||LA86_0==45) ) {
-                alt86=1;
+            if ( (LA87_0==RULE_ID||LA87_0==29||LA87_0==45) ) {
+                alt87=1;
             }
-            else if ( (LA86_0==75) ) {
-                alt86=2;
+            else if ( (LA87_0==75) ) {
+                alt87=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 86, 0, input);
+                    new NoViableAltException("", 87, 0, input);
 
                 throw nvae;
             }
-            switch (alt86) {
+            switch (alt87) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4711:5: this_JvmTypeReference_0= ruleJvmTypeReference
                     {
@@ -13870,16 +13881,16 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                   
             }
             // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4760:1: ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) | ( (lv_constraints_3_0= ruleJvmLowerBound ) ) )?
-            int alt87=3;
-            int LA87_0 = input.LA(1);
+            int alt88=3;
+            int LA88_0 = input.LA(1);
 
-            if ( (LA87_0==76) ) {
-                alt87=1;
+            if ( (LA88_0==76) ) {
+                alt88=1;
             }
-            else if ( (LA87_0==63) ) {
-                alt87=2;
+            else if ( (LA88_0==63) ) {
+                alt88=2;
             }
-            switch (alt87) {
+            switch (alt88) {
                 case 1 :
                     // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:4760:2: ( (lv_constraints_2_0= ruleJvmUpperBound ) )
                     {
@@ -14874,32 +14885,32 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
         }
 
         // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1563:2: ( '.' | ( ( '?.' ) ) | ( ( '*.' ) ) )
-        int alt88=3;
+        int alt89=3;
         switch ( input.LA(1) ) {
         case 41:
             {
-            alt88=1;
+            alt89=1;
             }
             break;
         case 42:
             {
-            alt88=2;
+            alt89=2;
             }
             break;
         case 43:
             {
-            alt88=3;
+            alt89=3;
             }
             break;
         default:
             if (state.backtracking>0) {state.failed=true; return ;}
             NoViableAltException nvae =
-                new NoViableAltException("", 88, 0, input);
+                new NoViableAltException("", 89, 0, input);
 
             throw nvae;
         }
 
-        switch (alt88) {
+        switch (alt89) {
             case 1 :
                 // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1563:4: '.'
                 {
@@ -14987,13 +14998,13 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
         }
 
         // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1705:2: ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )?
-        int alt90=2;
-        int LA90_0 = input.LA(1);
+        int alt91=2;
+        int LA91_0 = input.LA(1);
 
-        if ( (LA90_0==RULE_ID||LA90_0==29||LA90_0==45) ) {
-            alt90=1;
+        if ( (LA91_0==RULE_ID||LA91_0==29||LA91_0==45) ) {
+            alt91=1;
         }
-        switch (alt90) {
+        switch (alt91) {
             case 1 :
                 // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1705:3: ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )*
                 {
@@ -15015,17 +15026,17 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                 }
 
                 // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1709:2: ( ',' ( ( ruleJvmFormalParameter ) ) )*
-                loop89:
+                loop90:
                 do {
-                    int alt89=2;
-                    int LA89_0 = input.LA(1);
+                    int alt90=2;
+                    int LA90_0 = input.LA(1);
 
-                    if ( (LA89_0==44) ) {
-                        alt89=1;
+                    if ( (LA90_0==44) ) {
+                        alt90=1;
                     }
 
 
-                    switch (alt89) {
+                    switch (alt90) {
                 	case 1 :
                 	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1709:4: ',' ( ( ruleJvmFormalParameter ) )
                 	    {
@@ -15052,7 +15063,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                 	    break;
 
                 	default :
-                	    break loop89;
+                	    break loop90;
                     }
                 } while (true);
 
@@ -15136,13 +15147,13 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
         // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2068:6: ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) )
         {
         // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2068:6: ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )?
-        int alt92=2;
-        int LA92_0 = input.LA(1);
+        int alt93=2;
+        int LA93_0 = input.LA(1);
 
-        if ( (LA92_0==RULE_ID||LA92_0==29||LA92_0==45) ) {
-            alt92=1;
+        if ( (LA93_0==RULE_ID||LA93_0==29||LA93_0==45) ) {
+            alt93=1;
         }
-        switch (alt92) {
+        switch (alt93) {
             case 1 :
                 // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2068:7: ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )*
                 {
@@ -15164,17 +15175,17 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                 }
 
                 // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2072:2: ( ',' ( ( ruleJvmFormalParameter ) ) )*
-                loop91:
+                loop92:
                 do {
-                    int alt91=2;
-                    int LA91_0 = input.LA(1);
+                    int alt92=2;
+                    int LA92_0 = input.LA(1);
 
-                    if ( (LA91_0==44) ) {
-                        alt91=1;
+                    if ( (LA92_0==44) ) {
+                        alt92=1;
                     }
 
 
-                    switch (alt91) {
+                    switch (alt92) {
                 	case 1 :
                 	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:2072:4: ',' ( ( ruleJvmFormalParameter ) )
                 	    {
@@ -15201,7 +15212,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                 	    break;
 
                 	default :
-                	    break loop91;
+                	    break loop92;
                     }
                 } while (true);
 
@@ -15393,13 +15404,13 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
         }
 
         // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3448:2: ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )?
-        int alt96=2;
-        int LA96_0 = input.LA(1);
+        int alt97=2;
+        int LA97_0 = input.LA(1);
 
-        if ( (LA96_0==RULE_ID||LA96_0==29||LA96_0==45) ) {
-            alt96=1;
+        if ( (LA97_0==RULE_ID||LA97_0==29||LA97_0==45) ) {
+            alt97=1;
         }
-        switch (alt96) {
+        switch (alt97) {
             case 1 :
                 // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3448:3: ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )*
                 {
@@ -15421,17 +15432,17 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                 }
 
                 // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3452:2: ( ',' ( ( ruleJvmFormalParameter ) ) )*
-                loop95:
+                loop96:
                 do {
-                    int alt95=2;
-                    int LA95_0 = input.LA(1);
+                    int alt96=2;
+                    int LA96_0 = input.LA(1);
 
-                    if ( (LA95_0==44) ) {
-                        alt95=1;
+                    if ( (LA96_0==44) ) {
+                        alt96=1;
                     }
 
 
-                    switch (alt95) {
+                    switch (alt96) {
                 	case 1 :
                 	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3452:4: ',' ( ( ruleJvmFormalParameter ) )
                 	    {
@@ -15458,7 +15469,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                 	    break;
 
                 	default :
-                	    break loop95;
+                	    break loop96;
                     }
                 } while (true);
 
@@ -15547,13 +15558,13 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
         }
 
         // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3724:2: ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )?
-        int alt98=2;
-        int LA98_0 = input.LA(1);
+        int alt99=2;
+        int LA99_0 = input.LA(1);
 
-        if ( (LA98_0==RULE_ID||LA98_0==29||LA98_0==45) ) {
-            alt98=1;
+        if ( (LA99_0==RULE_ID||LA99_0==29||LA99_0==45) ) {
+            alt99=1;
         }
-        switch (alt98) {
+        switch (alt99) {
             case 1 :
                 // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3724:3: ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )*
                 {
@@ -15575,17 +15586,17 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                 }
 
                 // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3728:2: ( ',' ( ( ruleJvmFormalParameter ) ) )*
-                loop97:
+                loop98:
                 do {
-                    int alt97=2;
-                    int LA97_0 = input.LA(1);
+                    int alt98=2;
+                    int LA98_0 = input.LA(1);
 
-                    if ( (LA97_0==44) ) {
-                        alt97=1;
+                    if ( (LA98_0==44) ) {
+                        alt98=1;
                     }
 
 
-                    switch (alt97) {
+                    switch (alt98) {
                 	case 1 :
                 	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:3728:4: ',' ( ( ruleJvmFormalParameter ) )
                 	    {
@@ -15612,7 +15623,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                 	    break;
 
                 	default :
-                	    break loop97;
+                	    break loop98;
                     }
                 } while (true);
 
@@ -16261,34 +16272,34 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
     }
 
 
-    protected DFA12 dfa12 = new DFA12(this);
-    protected DFA28 dfa28 = new DFA28(this);
-    protected DFA27 dfa27 = new DFA27(this);
+    protected DFA13 dfa13 = new DFA13(this);
     protected DFA29 dfa29 = new DFA29(this);
-    protected DFA31 dfa31 = new DFA31(this);
-    protected DFA35 dfa35 = new DFA35(this);
-    protected DFA59 dfa59 = new DFA59(this);
-    protected DFA58 dfa58 = new DFA58(this);
+    protected DFA28 dfa28 = new DFA28(this);
+    protected DFA30 dfa30 = new DFA30(this);
+    protected DFA32 dfa32 = new DFA32(this);
+    protected DFA36 dfa36 = new DFA36(this);
     protected DFA60 dfa60 = new DFA60(this);
-    protected DFA64 dfa64 = new DFA64(this);
-    protected DFA67 dfa67 = new DFA67(this);
-    protected DFA66 dfa66 = new DFA66(this);
+    protected DFA59 dfa59 = new DFA59(this);
+    protected DFA61 dfa61 = new DFA61(this);
+    protected DFA65 dfa65 = new DFA65(this);
     protected DFA68 dfa68 = new DFA68(this);
-    protected DFA70 dfa70 = new DFA70(this);
-    protected DFA85 dfa85 = new DFA85(this);
-    static final String DFA12_eotS =
+    protected DFA67 dfa67 = new DFA67(this);
+    protected DFA69 dfa69 = new DFA69(this);
+    protected DFA71 dfa71 = new DFA71(this);
+    protected DFA86 dfa86 = new DFA86(this);
+    static final String DFA13_eotS =
         "\13\uffff";
-    static final String DFA12_eofS =
+    static final String DFA13_eofS =
         "\1\1\12\uffff";
-    static final String DFA12_minS =
+    static final String DFA13_minS =
         "\1\4\1\uffff\10\0\1\uffff";
-    static final String DFA12_maxS =
+    static final String DFA13_maxS =
         "\1\112\1\uffff\10\0\1\uffff";
-    static final String DFA12_acceptS =
+    static final String DFA13_acceptS =
         "\1\uffff\1\2\10\uffff\1\1";
-    static final String DFA12_specialS =
-        "\2\uffff\1\0\1\7\1\5\1\3\1\4\1\2\1\1\1\6\1\uffff}>";
-    static final String[] DFA12_transitionS = {
+    static final String DFA13_specialS =
+        "\2\uffff\1\0\1\7\1\4\1\6\1\3\1\5\1\1\1\2\1\uffff}>";
+    static final String[] DFA13_transitionS = {
             "\5\1\4\uffff\2\1\2\uffff\10\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1"+
             "\11\17\1\1\uffff\17\1\1\uffff\12\1",
             "",
@@ -16303,34 +16314,34 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             ""
     };
 
-    static final short[] DFA12_eot = DFA.unpackEncodedString(DFA12_eotS);
-    static final short[] DFA12_eof = DFA.unpackEncodedString(DFA12_eofS);
-    static final char[] DFA12_min = DFA.unpackEncodedStringToUnsignedChars(DFA12_minS);
-    static final char[] DFA12_max = DFA.unpackEncodedStringToUnsignedChars(DFA12_maxS);
-    static final short[] DFA12_accept = DFA.unpackEncodedString(DFA12_acceptS);
-    static final short[] DFA12_special = DFA.unpackEncodedString(DFA12_specialS);
-    static final short[][] DFA12_transition;
+    static final short[] DFA13_eot = DFA.unpackEncodedString(DFA13_eotS);
+    static final short[] DFA13_eof = DFA.unpackEncodedString(DFA13_eofS);
+    static final char[] DFA13_min = DFA.unpackEncodedStringToUnsignedChars(DFA13_minS);
+    static final char[] DFA13_max = DFA.unpackEncodedStringToUnsignedChars(DFA13_maxS);
+    static final short[] DFA13_accept = DFA.unpackEncodedString(DFA13_acceptS);
+    static final short[] DFA13_special = DFA.unpackEncodedString(DFA13_specialS);
+    static final short[][] DFA13_transition;
 
     static {
-        int numStates = DFA12_transitionS.length;
-        DFA12_transition = new short[numStates][];
+        int numStates = DFA13_transitionS.length;
+        DFA13_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA12_transition[i] = DFA.unpackEncodedString(DFA12_transitionS[i]);
+            DFA13_transition[i] = DFA.unpackEncodedString(DFA13_transitionS[i]);
         }
     }
 
-    class DFA12 extends DFA {
+    class DFA13 extends DFA {
 
-        public DFA12(BaseRecognizer recognizer) {
+        public DFA13(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 12;
-            this.eot = DFA12_eot;
-            this.eof = DFA12_eof;
-            this.min = DFA12_min;
-            this.max = DFA12_max;
-            this.accept = DFA12_accept;
-            this.special = DFA12_special;
-            this.transition = DFA12_transition;
+            this.decisionNumber = 13;
+            this.eot = DFA13_eot;
+            this.eof = DFA13_eof;
+            this.min = DFA13_min;
+            this.max = DFA13_max;
+            this.accept = DFA13_accept;
+            this.special = DFA13_special;
+            this.transition = DFA13_transition;
         }
         public String getDescription() {
             return "()* loopback of 907:1: ( ( ( ( () ( ( ruleOpOther ) ) ) )=> ( () ( ( ruleOpOther ) ) ) ) ( (lv_rightOperand_3_0= ruleXAdditiveExpression ) ) )*";
@@ -16340,10 +16351,10 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA12_2 = input.LA(1);
+                        int LA13_2 = input.LA(1);
 
                          
-                        int index12_2 = input.index();
+                        int index13_2 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred7_InternalScripting()) ) {s = 10;}
@@ -16351,14 +16362,14 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 1;}
 
                          
-                        input.seek(index12_2);
+                        input.seek(index13_2);
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA12_8 = input.LA(1);
+                        int LA13_8 = input.LA(1);
 
                          
-                        int index12_8 = input.index();
+                        int index13_8 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred7_InternalScripting()) ) {s = 10;}
@@ -16366,14 +16377,14 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 1;}
 
                          
-                        input.seek(index12_8);
+                        input.seek(index13_8);
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA12_7 = input.LA(1);
+                        int LA13_9 = input.LA(1);
 
                          
-                        int index12_7 = input.index();
+                        int index13_9 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred7_InternalScripting()) ) {s = 10;}
@@ -16381,14 +16392,14 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 1;}
 
                          
-                        input.seek(index12_7);
+                        input.seek(index13_9);
                         if ( s>=0 ) return s;
                         break;
                     case 3 : 
-                        int LA12_5 = input.LA(1);
+                        int LA13_6 = input.LA(1);
 
                          
-                        int index12_5 = input.index();
+                        int index13_6 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred7_InternalScripting()) ) {s = 10;}
@@ -16396,14 +16407,14 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 1;}
 
                          
-                        input.seek(index12_5);
+                        input.seek(index13_6);
                         if ( s>=0 ) return s;
                         break;
                     case 4 : 
-                        int LA12_6 = input.LA(1);
+                        int LA13_4 = input.LA(1);
 
                          
-                        int index12_6 = input.index();
+                        int index13_4 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred7_InternalScripting()) ) {s = 10;}
@@ -16411,14 +16422,14 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 1;}
 
                          
-                        input.seek(index12_6);
+                        input.seek(index13_4);
                         if ( s>=0 ) return s;
                         break;
                     case 5 : 
-                        int LA12_4 = input.LA(1);
+                        int LA13_7 = input.LA(1);
 
                          
-                        int index12_4 = input.index();
+                        int index13_7 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred7_InternalScripting()) ) {s = 10;}
@@ -16426,14 +16437,14 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 1;}
 
                          
-                        input.seek(index12_4);
+                        input.seek(index13_7);
                         if ( s>=0 ) return s;
                         break;
                     case 6 : 
-                        int LA12_9 = input.LA(1);
+                        int LA13_5 = input.LA(1);
 
                          
-                        int index12_9 = input.index();
+                        int index13_5 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred7_InternalScripting()) ) {s = 10;}
@@ -16441,14 +16452,14 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 1;}
 
                          
-                        input.seek(index12_9);
+                        input.seek(index13_5);
                         if ( s>=0 ) return s;
                         break;
                     case 7 : 
-                        int LA12_3 = input.LA(1);
+                        int LA13_3 = input.LA(1);
 
                          
-                        int index12_3 = input.index();
+                        int index13_3 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred7_InternalScripting()) ) {s = 10;}
@@ -16456,298 +16467,13 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 1;}
 
                          
-                        input.seek(index12_3);
+                        input.seek(index13_3);
                         if ( s>=0 ) return s;
                         break;
             }
             if (state.backtracking>0) {state.failed=true; return -1;}
             NoViableAltException nvae =
-                new NoViableAltException(getDescription(), 12, _s, input);
-            error(nvae);
-            throw nvae;
-        }
-    }
-    static final String DFA28_eotS =
-        "\102\uffff";
-    static final String DFA28_eofS =
-        "\1\2\101\uffff";
-    static final String DFA28_minS =
-        "\1\4\1\0\100\uffff";
-    static final String DFA28_maxS =
-        "\1\112\1\0\100\uffff";
-    static final String DFA28_acceptS =
-        "\2\uffff\1\2\76\uffff\1\1";
-    static final String DFA28_specialS =
-        "\1\uffff\1\0\100\uffff}>";
-    static final String[] DFA28_transitionS = {
-            "\5\2\4\uffff\2\2\2\uffff\34\2\1\1\2\2\1\uffff\17\2\1\uffff\12"+
-            "\2",
-            "\1\uffff",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-    };
-
-    static final short[] DFA28_eot = DFA.unpackEncodedString(DFA28_eotS);
-    static final short[] DFA28_eof = DFA.unpackEncodedString(DFA28_eofS);
-    static final char[] DFA28_min = DFA.unpackEncodedStringToUnsignedChars(DFA28_minS);
-    static final char[] DFA28_max = DFA.unpackEncodedStringToUnsignedChars(DFA28_maxS);
-    static final short[] DFA28_accept = DFA.unpackEncodedString(DFA28_acceptS);
-    static final short[] DFA28_special = DFA.unpackEncodedString(DFA28_specialS);
-    static final short[][] DFA28_transition;
-
-    static {
-        int numStates = DFA28_transitionS.length;
-        DFA28_transition = new short[numStates][];
-        for (int i=0; i<numStates; i++) {
-            DFA28_transition[i] = DFA.unpackEncodedString(DFA28_transitionS[i]);
-        }
-    }
-
-    class DFA28 extends DFA {
-
-        public DFA28(BaseRecognizer recognizer) {
-            this.recognizer = recognizer;
-            this.decisionNumber = 28;
-            this.eot = DFA28_eot;
-            this.eof = DFA28_eof;
-            this.min = DFA28_min;
-            this.max = DFA28_max;
-            this.accept = DFA28_accept;
-            this.special = DFA28_special;
-            this.transition = DFA28_transition;
-        }
-        public String getDescription() {
-            return "1683:2: ( ( ( ( '(' ) )=> (lv_explicitOperationCall_16_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_memberCallArguments_17_0= ruleXShortClosure ) ) | ( ( (lv_memberCallArguments_18_0= ruleXExpression ) ) (otherlv_19= ',' ( (lv_memberCallArguments_20_0= ruleXExpression ) ) )* ) )? otherlv_21= ')' )?";
-        }
-        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
-            TokenStream input = (TokenStream)_input;
-        	int _s = s;
-            switch ( s ) {
-                    case 0 : 
-                        int LA28_1 = input.LA(1);
-
-                         
-                        int index28_1 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred15_InternalScripting()) ) {s = 65;}
-
-                        else if ( (true) ) {s = 2;}
-
-                         
-                        input.seek(index28_1);
-                        if ( s>=0 ) return s;
-                        break;
-            }
-            if (state.backtracking>0) {state.failed=true; return -1;}
-            NoViableAltException nvae =
-                new NoViableAltException(getDescription(), 28, _s, input);
-            error(nvae);
-            throw nvae;
-        }
-    }
-    static final String DFA27_eotS =
-        "\36\uffff";
-    static final String DFA27_eofS =
-        "\36\uffff";
-    static final String DFA27_minS =
-        "\1\4\2\0\33\uffff";
-    static final String DFA27_maxS =
-        "\1\110\2\0\33\uffff";
-    static final String DFA27_acceptS =
-        "\3\uffff\2\1\1\2\27\uffff\1\3";
-    static final String DFA27_specialS =
-        "\1\0\1\1\1\2\33\uffff}>";
-    static final String[] DFA27_transitionS = {
-            "\4\5\1\1\21\uffff\1\5\2\uffff\1\3\3\uffff\2\5\4\uffff\1\5\5"+
-            "\uffff\1\2\1\35\1\5\1\4\1\uffff\1\5\1\uffff\1\5\1\uffff\1\5"+
-            "\3\uffff\3\5\2\uffff\1\5\1\uffff\10\5",
-            "\1\uffff",
-            "\1\uffff",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-    };
-
-    static final short[] DFA27_eot = DFA.unpackEncodedString(DFA27_eotS);
-    static final short[] DFA27_eof = DFA.unpackEncodedString(DFA27_eofS);
-    static final char[] DFA27_min = DFA.unpackEncodedStringToUnsignedChars(DFA27_minS);
-    static final char[] DFA27_max = DFA.unpackEncodedStringToUnsignedChars(DFA27_maxS);
-    static final short[] DFA27_accept = DFA.unpackEncodedString(DFA27_acceptS);
-    static final short[] DFA27_special = DFA.unpackEncodedString(DFA27_specialS);
-    static final short[][] DFA27_transition;
-
-    static {
-        int numStates = DFA27_transitionS.length;
-        DFA27_transition = new short[numStates][];
-        for (int i=0; i<numStates; i++) {
-            DFA27_transition[i] = DFA.unpackEncodedString(DFA27_transitionS[i]);
-        }
-    }
-
-    class DFA27 extends DFA {
-
-        public DFA27(BaseRecognizer recognizer) {
-            this.recognizer = recognizer;
-            this.decisionNumber = 27;
-            this.eot = DFA27_eot;
-            this.eof = DFA27_eof;
-            this.min = DFA27_min;
-            this.max = DFA27_max;
-            this.accept = DFA27_accept;
-            this.special = DFA27_special;
-            this.transition = DFA27_transition;
-        }
-        public String getDescription() {
-            return "1704:2: ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_memberCallArguments_17_0= ruleXShortClosure ) ) | ( ( (lv_memberCallArguments_18_0= ruleXExpression ) ) (otherlv_19= ',' ( (lv_memberCallArguments_20_0= ruleXExpression ) ) )* ) )?";
-        }
-        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
-            TokenStream input = (TokenStream)_input;
-        	int _s = s;
-            switch ( s ) {
-                    case 0 : 
-                        int LA27_0 = input.LA(1);
-
-                         
-                        int index27_0 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA27_0==RULE_ID) ) {s = 1;}
-
-                        else if ( (LA27_0==45) ) {s = 2;}
-
-                        else if ( (LA27_0==29) && (synpred16_InternalScripting())) {s = 3;}
-
-                        else if ( (LA27_0==48) && (synpred16_InternalScripting())) {s = 4;}
-
-                        else if ( ((LA27_0>=RULE_STRING && LA27_0<=RULE_DECIMAL)||LA27_0==26||(LA27_0>=33 && LA27_0<=34)||LA27_0==39||LA27_0==47||LA27_0==50||LA27_0==52||LA27_0==54||(LA27_0>=58 && LA27_0<=60)||LA27_0==63||(LA27_0>=65 && LA27_0<=72)) ) {s = 5;}
-
-                        else if ( (LA27_0==46) ) {s = 29;}
-
-                         
-                        input.seek(index27_0);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA27_1 = input.LA(1);
-
-                         
-                        int index27_1 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred16_InternalScripting()) ) {s = 4;}
-
-                        else if ( (true) ) {s = 5;}
-
-                         
-                        input.seek(index27_1);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA27_2 = input.LA(1);
-
-                         
-                        int index27_2 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred16_InternalScripting()) ) {s = 4;}
-
-                        else if ( (true) ) {s = 5;}
-
-                         
-                        input.seek(index27_2);
-                        if ( s>=0 ) return s;
-                        break;
-            }
-            if (state.backtracking>0) {state.failed=true; return -1;}
-            NoViableAltException nvae =
-                new NoViableAltException(getDescription(), 27, _s, input);
+                new NoViableAltException(getDescription(), 13, _s, input);
             error(nvae);
             throw nvae;
         }
@@ -16765,7 +16491,8 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
     static final String DFA29_specialS =
         "\1\uffff\1\0\100\uffff}>";
     static final String[] DFA29_transitionS = {
-            "\5\2\4\uffff\2\2\2\uffff\36\2\1\1\1\uffff\17\2\1\uffff\12\2",
+            "\5\2\4\uffff\2\2\2\uffff\34\2\1\1\2\2\1\uffff\17\2\1\uffff\12"+
+            "\2",
             "\1\uffff",
             "",
             "",
@@ -16863,7 +16590,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             this.transition = DFA29_transition;
         }
         public String getDescription() {
-            return "1783:3: ( ( ( () '[' ) )=> (lv_memberCallArguments_22_0= ruleXClosure ) )?";
+            return "1683:2: ( ( ( ( '(' ) )=> (lv_explicitOperationCall_16_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_memberCallArguments_17_0= ruleXShortClosure ) ) | ( ( (lv_memberCallArguments_18_0= ruleXExpression ) ) (otherlv_19= ',' ( (lv_memberCallArguments_20_0= ruleXExpression ) ) )* ) )? otherlv_21= ')' )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -16876,7 +16603,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         int index29_1 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred17_InternalScripting()) ) {s = 65;}
+                        if ( (synpred15_InternalScripting()) ) {s = 65;}
 
                         else if ( (true) ) {s = 2;}
 
@@ -16892,20 +16619,304 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             throw nvae;
         }
     }
-    static final String DFA31_eotS =
+    static final String DFA28_eotS =
+        "\36\uffff";
+    static final String DFA28_eofS =
+        "\36\uffff";
+    static final String DFA28_minS =
+        "\1\4\2\0\33\uffff";
+    static final String DFA28_maxS =
+        "\1\110\2\0\33\uffff";
+    static final String DFA28_acceptS =
+        "\3\uffff\2\1\1\2\27\uffff\1\3";
+    static final String DFA28_specialS =
+        "\1\0\1\1\1\2\33\uffff}>";
+    static final String[] DFA28_transitionS = {
+            "\4\5\1\1\21\uffff\1\5\2\uffff\1\3\3\uffff\2\5\4\uffff\1\5\5"+
+            "\uffff\1\2\1\35\1\5\1\4\1\uffff\1\5\1\uffff\1\5\1\uffff\1\5"+
+            "\3\uffff\3\5\2\uffff\1\5\1\uffff\10\5",
+            "\1\uffff",
+            "\1\uffff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+    };
+
+    static final short[] DFA28_eot = DFA.unpackEncodedString(DFA28_eotS);
+    static final short[] DFA28_eof = DFA.unpackEncodedString(DFA28_eofS);
+    static final char[] DFA28_min = DFA.unpackEncodedStringToUnsignedChars(DFA28_minS);
+    static final char[] DFA28_max = DFA.unpackEncodedStringToUnsignedChars(DFA28_maxS);
+    static final short[] DFA28_accept = DFA.unpackEncodedString(DFA28_acceptS);
+    static final short[] DFA28_special = DFA.unpackEncodedString(DFA28_specialS);
+    static final short[][] DFA28_transition;
+
+    static {
+        int numStates = DFA28_transitionS.length;
+        DFA28_transition = new short[numStates][];
+        for (int i=0; i<numStates; i++) {
+            DFA28_transition[i] = DFA.unpackEncodedString(DFA28_transitionS[i]);
+        }
+    }
+
+    class DFA28 extends DFA {
+
+        public DFA28(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 28;
+            this.eot = DFA28_eot;
+            this.eof = DFA28_eof;
+            this.min = DFA28_min;
+            this.max = DFA28_max;
+            this.accept = DFA28_accept;
+            this.special = DFA28_special;
+            this.transition = DFA28_transition;
+        }
+        public String getDescription() {
+            return "1704:2: ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_memberCallArguments_17_0= ruleXShortClosure ) ) | ( ( (lv_memberCallArguments_18_0= ruleXExpression ) ) (otherlv_19= ',' ( (lv_memberCallArguments_20_0= ruleXExpression ) ) )* ) )?";
+        }
+        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
+            TokenStream input = (TokenStream)_input;
+        	int _s = s;
+            switch ( s ) {
+                    case 0 : 
+                        int LA28_0 = input.LA(1);
+
+                         
+                        int index28_0 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA28_0==RULE_ID) ) {s = 1;}
+
+                        else if ( (LA28_0==45) ) {s = 2;}
+
+                        else if ( (LA28_0==29) && (synpred16_InternalScripting())) {s = 3;}
+
+                        else if ( (LA28_0==48) && (synpred16_InternalScripting())) {s = 4;}
+
+                        else if ( ((LA28_0>=RULE_STRING && LA28_0<=RULE_DECIMAL)||LA28_0==26||(LA28_0>=33 && LA28_0<=34)||LA28_0==39||LA28_0==47||LA28_0==50||LA28_0==52||LA28_0==54||(LA28_0>=58 && LA28_0<=60)||LA28_0==63||(LA28_0>=65 && LA28_0<=72)) ) {s = 5;}
+
+                        else if ( (LA28_0==46) ) {s = 29;}
+
+                         
+                        input.seek(index28_0);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA28_1 = input.LA(1);
+
+                         
+                        int index28_1 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred16_InternalScripting()) ) {s = 4;}
+
+                        else if ( (true) ) {s = 5;}
+
+                         
+                        input.seek(index28_1);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA28_2 = input.LA(1);
+
+                         
+                        int index28_2 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred16_InternalScripting()) ) {s = 4;}
+
+                        else if ( (true) ) {s = 5;}
+
+                         
+                        input.seek(index28_2);
+                        if ( s>=0 ) return s;
+                        break;
+            }
+            if (state.backtracking>0) {state.failed=true; return -1;}
+            NoViableAltException nvae =
+                new NoViableAltException(getDescription(), 28, _s, input);
+            error(nvae);
+            throw nvae;
+        }
+    }
+    static final String DFA30_eotS =
+        "\102\uffff";
+    static final String DFA30_eofS =
+        "\1\2\101\uffff";
+    static final String DFA30_minS =
+        "\1\4\1\0\100\uffff";
+    static final String DFA30_maxS =
+        "\1\112\1\0\100\uffff";
+    static final String DFA30_acceptS =
+        "\2\uffff\1\2\76\uffff\1\1";
+    static final String DFA30_specialS =
+        "\1\uffff\1\0\100\uffff}>";
+    static final String[] DFA30_transitionS = {
+            "\5\2\4\uffff\2\2\2\uffff\36\2\1\1\1\uffff\17\2\1\uffff\12\2",
+            "\1\uffff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+    };
+
+    static final short[] DFA30_eot = DFA.unpackEncodedString(DFA30_eotS);
+    static final short[] DFA30_eof = DFA.unpackEncodedString(DFA30_eofS);
+    static final char[] DFA30_min = DFA.unpackEncodedStringToUnsignedChars(DFA30_minS);
+    static final char[] DFA30_max = DFA.unpackEncodedStringToUnsignedChars(DFA30_maxS);
+    static final short[] DFA30_accept = DFA.unpackEncodedString(DFA30_acceptS);
+    static final short[] DFA30_special = DFA.unpackEncodedString(DFA30_specialS);
+    static final short[][] DFA30_transition;
+
+    static {
+        int numStates = DFA30_transitionS.length;
+        DFA30_transition = new short[numStates][];
+        for (int i=0; i<numStates; i++) {
+            DFA30_transition[i] = DFA.unpackEncodedString(DFA30_transitionS[i]);
+        }
+    }
+
+    class DFA30 extends DFA {
+
+        public DFA30(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 30;
+            this.eot = DFA30_eot;
+            this.eof = DFA30_eof;
+            this.min = DFA30_min;
+            this.max = DFA30_max;
+            this.accept = DFA30_accept;
+            this.special = DFA30_special;
+            this.transition = DFA30_transition;
+        }
+        public String getDescription() {
+            return "1783:3: ( ( ( () '[' ) )=> (lv_memberCallArguments_22_0= ruleXClosure ) )?";
+        }
+        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
+            TokenStream input = (TokenStream)_input;
+        	int _s = s;
+            switch ( s ) {
+                    case 0 : 
+                        int LA30_1 = input.LA(1);
+
+                         
+                        int index30_1 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred17_InternalScripting()) ) {s = 65;}
+
+                        else if ( (true) ) {s = 2;}
+
+                         
+                        input.seek(index30_1);
+                        if ( s>=0 ) return s;
+                        break;
+            }
+            if (state.backtracking>0) {state.failed=true; return -1;}
+            NoViableAltException nvae =
+                new NoViableAltException(getDescription(), 30, _s, input);
+            error(nvae);
+            throw nvae;
+        }
+    }
+    static final String DFA32_eotS =
         "\16\uffff";
-    static final String DFA31_eofS =
+    static final String DFA32_eofS =
         "\16\uffff";
-    static final String DFA31_minS =
+    static final String DFA32_minS =
         "\1\4\15\uffff";
-    static final String DFA31_maxS =
+    static final String DFA32_maxS =
         "\1\110\15\uffff";
-    static final String DFA31_acceptS =
+    static final String DFA32_acceptS =
         "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1"+
         "\15";
-    static final String DFA31_specialS =
+    static final String DFA32_specialS =
         "\16\uffff}>";
-    static final String[] DFA31_transitionS = {
+    static final String[] DFA32_transitionS = {
             "\4\5\1\4\21\uffff\1\4\22\uffff\1\15\1\uffff\1\5\2\uffff\1\6"+
             "\1\uffff\1\3\1\uffff\1\2\3\uffff\1\7\1\10\1\11\2\uffff\1\4\1"+
             "\uffff\1\1\4\5\1\12\1\13\1\14",
@@ -16924,52 +16935,52 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             ""
     };
 
-    static final short[] DFA31_eot = DFA.unpackEncodedString(DFA31_eotS);
-    static final short[] DFA31_eof = DFA.unpackEncodedString(DFA31_eofS);
-    static final char[] DFA31_min = DFA.unpackEncodedStringToUnsignedChars(DFA31_minS);
-    static final char[] DFA31_max = DFA.unpackEncodedStringToUnsignedChars(DFA31_maxS);
-    static final short[] DFA31_accept = DFA.unpackEncodedString(DFA31_acceptS);
-    static final short[] DFA31_special = DFA.unpackEncodedString(DFA31_specialS);
-    static final short[][] DFA31_transition;
+    static final short[] DFA32_eot = DFA.unpackEncodedString(DFA32_eotS);
+    static final short[] DFA32_eof = DFA.unpackEncodedString(DFA32_eofS);
+    static final char[] DFA32_min = DFA.unpackEncodedStringToUnsignedChars(DFA32_minS);
+    static final char[] DFA32_max = DFA.unpackEncodedStringToUnsignedChars(DFA32_maxS);
+    static final short[] DFA32_accept = DFA.unpackEncodedString(DFA32_acceptS);
+    static final short[] DFA32_special = DFA.unpackEncodedString(DFA32_specialS);
+    static final short[][] DFA32_transition;
 
     static {
-        int numStates = DFA31_transitionS.length;
-        DFA31_transition = new short[numStates][];
+        int numStates = DFA32_transitionS.length;
+        DFA32_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA31_transition[i] = DFA.unpackEncodedString(DFA31_transitionS[i]);
+            DFA32_transition[i] = DFA.unpackEncodedString(DFA32_transitionS[i]);
         }
     }
 
-    class DFA31 extends DFA {
+    class DFA32 extends DFA {
 
-        public DFA31(BaseRecognizer recognizer) {
+        public DFA32(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 31;
-            this.eot = DFA31_eot;
-            this.eof = DFA31_eof;
-            this.min = DFA31_min;
-            this.max = DFA31_max;
-            this.accept = DFA31_accept;
-            this.special = DFA31_special;
-            this.transition = DFA31_transition;
+            this.decisionNumber = 32;
+            this.eot = DFA32_eot;
+            this.eof = DFA32_eof;
+            this.min = DFA32_min;
+            this.max = DFA32_max;
+            this.accept = DFA32_accept;
+            this.special = DFA32_special;
+            this.transition = DFA32_transition;
         }
         public String getDescription() {
             return "1824:1: (this_XConstructorCall_0= ruleXConstructorCall | this_XBlockExpression_1= ruleXBlockExpression | this_XSwitchExpression_2= ruleXSwitchExpression | this_XFeatureCall_3= ruleXFeatureCall | this_XLiteral_4= ruleXLiteral | this_XIfExpression_5= ruleXIfExpression | this_XForLoopExpression_6= ruleXForLoopExpression | this_XWhileExpression_7= ruleXWhileExpression | this_XDoWhileExpression_8= ruleXDoWhileExpression | this_XThrowExpression_9= ruleXThrowExpression | this_XReturnExpression_10= ruleXReturnExpression | this_XTryCatchFinallyExpression_11= ruleXTryCatchFinallyExpression | this_XParenthesizedExpression_12= ruleXParenthesizedExpression )";
         }
     }
-    static final String DFA35_eotS =
+    static final String DFA36_eotS =
         "\40\uffff";
-    static final String DFA35_eofS =
+    static final String DFA36_eofS =
         "\40\uffff";
-    static final String DFA35_minS =
+    static final String DFA36_minS =
         "\1\4\2\0\35\uffff";
-    static final String DFA35_maxS =
+    static final String DFA36_maxS =
         "\1\110\2\0\35\uffff";
-    static final String DFA35_acceptS =
+    static final String DFA36_acceptS =
         "\3\uffff\2\1\1\2\32\uffff";
-    static final String DFA35_specialS =
+    static final String DFA36_specialS =
         "\1\0\1\1\1\2\35\uffff}>";
-    static final String[] DFA35_transitionS = {
+    static final String[] DFA36_transitionS = {
             "\4\5\1\1\21\uffff\1\5\2\uffff\1\3\3\uffff\2\5\4\uffff\1\5\5"+
             "\uffff\1\2\1\uffff\1\5\1\4\2\5\1\uffff\1\5\1\uffff\1\5\3\uffff"+
             "\6\5\1\uffff\10\5",
@@ -17006,34 +17017,34 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             ""
     };
 
-    static final short[] DFA35_eot = DFA.unpackEncodedString(DFA35_eotS);
-    static final short[] DFA35_eof = DFA.unpackEncodedString(DFA35_eofS);
-    static final char[] DFA35_min = DFA.unpackEncodedStringToUnsignedChars(DFA35_minS);
-    static final char[] DFA35_max = DFA.unpackEncodedStringToUnsignedChars(DFA35_maxS);
-    static final short[] DFA35_accept = DFA.unpackEncodedString(DFA35_acceptS);
-    static final short[] DFA35_special = DFA.unpackEncodedString(DFA35_specialS);
-    static final short[][] DFA35_transition;
+    static final short[] DFA36_eot = DFA.unpackEncodedString(DFA36_eotS);
+    static final short[] DFA36_eof = DFA.unpackEncodedString(DFA36_eofS);
+    static final char[] DFA36_min = DFA.unpackEncodedStringToUnsignedChars(DFA36_minS);
+    static final char[] DFA36_max = DFA.unpackEncodedStringToUnsignedChars(DFA36_maxS);
+    static final short[] DFA36_accept = DFA.unpackEncodedString(DFA36_acceptS);
+    static final short[] DFA36_special = DFA.unpackEncodedString(DFA36_specialS);
+    static final short[][] DFA36_transition;
 
     static {
-        int numStates = DFA35_transitionS.length;
-        DFA35_transition = new short[numStates][];
+        int numStates = DFA36_transitionS.length;
+        DFA36_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA35_transition[i] = DFA.unpackEncodedString(DFA35_transitionS[i]);
+            DFA36_transition[i] = DFA.unpackEncodedString(DFA36_transitionS[i]);
         }
     }
 
-    class DFA35 extends DFA {
+    class DFA36 extends DFA {
 
-        public DFA35(BaseRecognizer recognizer) {
+        public DFA36(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 35;
-            this.eot = DFA35_eot;
-            this.eof = DFA35_eof;
-            this.min = DFA35_min;
-            this.max = DFA35_max;
-            this.accept = DFA35_accept;
-            this.special = DFA35_special;
-            this.transition = DFA35_transition;
+            this.decisionNumber = 36;
+            this.eot = DFA36_eot;
+            this.eof = DFA36_eof;
+            this.min = DFA36_min;
+            this.max = DFA36_max;
+            this.accept = DFA36_accept;
+            this.special = DFA36_special;
+            this.transition = DFA36_transition;
         }
         public String getDescription() {
             return "2068:3: ( ( ( ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> ( ( ( (lv_declaredFormalParameters_2_0= ruleJvmFormalParameter ) ) (otherlv_3= ',' ( (lv_declaredFormalParameters_4_0= ruleJvmFormalParameter ) ) )* )? ( (lv_explicitSyntax_5_0= '|' ) ) ) )?";
@@ -17043,31 +17054,31 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA35_0 = input.LA(1);
+                        int LA36_0 = input.LA(1);
 
                          
-                        int index35_0 = input.index();
+                        int index36_0 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (LA35_0==RULE_ID) ) {s = 1;}
+                        if ( (LA36_0==RULE_ID) ) {s = 1;}
 
-                        else if ( (LA35_0==45) ) {s = 2;}
+                        else if ( (LA36_0==45) ) {s = 2;}
 
-                        else if ( (LA35_0==29) && (synpred20_InternalScripting())) {s = 3;}
+                        else if ( (LA36_0==29) && (synpred20_InternalScripting())) {s = 3;}
 
-                        else if ( (LA35_0==48) && (synpred20_InternalScripting())) {s = 4;}
+                        else if ( (LA36_0==48) && (synpred20_InternalScripting())) {s = 4;}
 
-                        else if ( ((LA35_0>=RULE_STRING && LA35_0<=RULE_DECIMAL)||LA35_0==26||(LA35_0>=33 && LA35_0<=34)||LA35_0==39||LA35_0==47||(LA35_0>=49 && LA35_0<=50)||LA35_0==52||LA35_0==54||(LA35_0>=58 && LA35_0<=63)||(LA35_0>=65 && LA35_0<=72)) ) {s = 5;}
+                        else if ( ((LA36_0>=RULE_STRING && LA36_0<=RULE_DECIMAL)||LA36_0==26||(LA36_0>=33 && LA36_0<=34)||LA36_0==39||LA36_0==47||(LA36_0>=49 && LA36_0<=50)||LA36_0==52||LA36_0==54||(LA36_0>=58 && LA36_0<=63)||(LA36_0>=65 && LA36_0<=72)) ) {s = 5;}
 
                          
-                        input.seek(index35_0);
+                        input.seek(index36_0);
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA35_1 = input.LA(1);
+                        int LA36_1 = input.LA(1);
 
                          
-                        int index35_1 = input.index();
+                        int index36_1 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred20_InternalScripting()) ) {s = 4;}
@@ -17075,14 +17086,14 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 5;}
 
                          
-                        input.seek(index35_1);
+                        input.seek(index36_1);
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA35_2 = input.LA(1);
+                        int LA36_2 = input.LA(1);
 
                          
-                        int index35_2 = input.index();
+                        int index36_2 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred20_InternalScripting()) ) {s = 4;}
@@ -17090,298 +17101,13 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 5;}
 
                          
-                        input.seek(index35_2);
+                        input.seek(index36_2);
                         if ( s>=0 ) return s;
                         break;
             }
             if (state.backtracking>0) {state.failed=true; return -1;}
             NoViableAltException nvae =
-                new NoViableAltException(getDescription(), 35, _s, input);
-            error(nvae);
-            throw nvae;
-        }
-    }
-    static final String DFA59_eotS =
-        "\102\uffff";
-    static final String DFA59_eofS =
-        "\1\2\101\uffff";
-    static final String DFA59_minS =
-        "\1\4\1\0\100\uffff";
-    static final String DFA59_maxS =
-        "\1\112\1\0\100\uffff";
-    static final String DFA59_acceptS =
-        "\2\uffff\1\2\76\uffff\1\1";
-    static final String DFA59_specialS =
-        "\1\uffff\1\0\100\uffff}>";
-    static final String[] DFA59_transitionS = {
-            "\5\2\4\uffff\2\2\2\uffff\34\2\1\1\2\2\1\uffff\17\2\1\uffff\12"+
-            "\2",
-            "\1\uffff",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-    };
-
-    static final short[] DFA59_eot = DFA.unpackEncodedString(DFA59_eotS);
-    static final short[] DFA59_eof = DFA.unpackEncodedString(DFA59_eofS);
-    static final char[] DFA59_min = DFA.unpackEncodedStringToUnsignedChars(DFA59_minS);
-    static final char[] DFA59_max = DFA.unpackEncodedStringToUnsignedChars(DFA59_maxS);
-    static final short[] DFA59_accept = DFA.unpackEncodedString(DFA59_acceptS);
-    static final short[] DFA59_special = DFA.unpackEncodedString(DFA59_specialS);
-    static final short[][] DFA59_transition;
-
-    static {
-        int numStates = DFA59_transitionS.length;
-        DFA59_transition = new short[numStates][];
-        for (int i=0; i<numStates; i++) {
-            DFA59_transition[i] = DFA.unpackEncodedString(DFA59_transitionS[i]);
-        }
-    }
-
-    class DFA59 extends DFA {
-
-        public DFA59(BaseRecognizer recognizer) {
-            this.recognizer = recognizer;
-            this.decisionNumber = 59;
-            this.eot = DFA59_eot;
-            this.eof = DFA59_eof;
-            this.min = DFA59_min;
-            this.max = DFA59_max;
-            this.accept = DFA59_accept;
-            this.special = DFA59_special;
-            this.transition = DFA59_transition;
-        }
-        public String getDescription() {
-            return "3426:2: ( ( ( ( '(' ) )=> (lv_explicitOperationCall_8_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_featureCallArguments_9_0= ruleXShortClosure ) ) | ( ( (lv_featureCallArguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_featureCallArguments_12_0= ruleXExpression ) ) )* ) )? otherlv_13= ')' )?";
-        }
-        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
-            TokenStream input = (TokenStream)_input;
-        	int _s = s;
-            switch ( s ) {
-                    case 0 : 
-                        int LA59_1 = input.LA(1);
-
-                         
-                        int index59_1 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred26_InternalScripting()) ) {s = 65;}
-
-                        else if ( (true) ) {s = 2;}
-
-                         
-                        input.seek(index59_1);
-                        if ( s>=0 ) return s;
-                        break;
-            }
-            if (state.backtracking>0) {state.failed=true; return -1;}
-            NoViableAltException nvae =
-                new NoViableAltException(getDescription(), 59, _s, input);
-            error(nvae);
-            throw nvae;
-        }
-    }
-    static final String DFA58_eotS =
-        "\36\uffff";
-    static final String DFA58_eofS =
-        "\36\uffff";
-    static final String DFA58_minS =
-        "\1\4\2\0\33\uffff";
-    static final String DFA58_maxS =
-        "\1\110\2\0\33\uffff";
-    static final String DFA58_acceptS =
-        "\3\uffff\2\1\1\2\27\uffff\1\3";
-    static final String DFA58_specialS =
-        "\1\0\1\1\1\2\33\uffff}>";
-    static final String[] DFA58_transitionS = {
-            "\4\5\1\1\21\uffff\1\5\2\uffff\1\3\3\uffff\2\5\4\uffff\1\5\5"+
-            "\uffff\1\2\1\35\1\5\1\4\1\uffff\1\5\1\uffff\1\5\1\uffff\1\5"+
-            "\3\uffff\3\5\2\uffff\1\5\1\uffff\10\5",
-            "\1\uffff",
-            "\1\uffff",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-    };
-
-    static final short[] DFA58_eot = DFA.unpackEncodedString(DFA58_eotS);
-    static final short[] DFA58_eof = DFA.unpackEncodedString(DFA58_eofS);
-    static final char[] DFA58_min = DFA.unpackEncodedStringToUnsignedChars(DFA58_minS);
-    static final char[] DFA58_max = DFA.unpackEncodedStringToUnsignedChars(DFA58_maxS);
-    static final short[] DFA58_accept = DFA.unpackEncodedString(DFA58_acceptS);
-    static final short[] DFA58_special = DFA.unpackEncodedString(DFA58_specialS);
-    static final short[][] DFA58_transition;
-
-    static {
-        int numStates = DFA58_transitionS.length;
-        DFA58_transition = new short[numStates][];
-        for (int i=0; i<numStates; i++) {
-            DFA58_transition[i] = DFA.unpackEncodedString(DFA58_transitionS[i]);
-        }
-    }
-
-    class DFA58 extends DFA {
-
-        public DFA58(BaseRecognizer recognizer) {
-            this.recognizer = recognizer;
-            this.decisionNumber = 58;
-            this.eot = DFA58_eot;
-            this.eof = DFA58_eof;
-            this.min = DFA58_min;
-            this.max = DFA58_max;
-            this.accept = DFA58_accept;
-            this.special = DFA58_special;
-            this.transition = DFA58_transition;
-        }
-        public String getDescription() {
-            return "3447:2: ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_featureCallArguments_9_0= ruleXShortClosure ) ) | ( ( (lv_featureCallArguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_featureCallArguments_12_0= ruleXExpression ) ) )* ) )?";
-        }
-        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
-            TokenStream input = (TokenStream)_input;
-        	int _s = s;
-            switch ( s ) {
-                    case 0 : 
-                        int LA58_0 = input.LA(1);
-
-                         
-                        int index58_0 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA58_0==RULE_ID) ) {s = 1;}
-
-                        else if ( (LA58_0==45) ) {s = 2;}
-
-                        else if ( (LA58_0==29) && (synpred27_InternalScripting())) {s = 3;}
-
-                        else if ( (LA58_0==48) && (synpred27_InternalScripting())) {s = 4;}
-
-                        else if ( ((LA58_0>=RULE_STRING && LA58_0<=RULE_DECIMAL)||LA58_0==26||(LA58_0>=33 && LA58_0<=34)||LA58_0==39||LA58_0==47||LA58_0==50||LA58_0==52||LA58_0==54||(LA58_0>=58 && LA58_0<=60)||LA58_0==63||(LA58_0>=65 && LA58_0<=72)) ) {s = 5;}
-
-                        else if ( (LA58_0==46) ) {s = 29;}
-
-                         
-                        input.seek(index58_0);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA58_1 = input.LA(1);
-
-                         
-                        int index58_1 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred27_InternalScripting()) ) {s = 4;}
-
-                        else if ( (true) ) {s = 5;}
-
-                         
-                        input.seek(index58_1);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA58_2 = input.LA(1);
-
-                         
-                        int index58_2 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred27_InternalScripting()) ) {s = 4;}
-
-                        else if ( (true) ) {s = 5;}
-
-                         
-                        input.seek(index58_2);
-                        if ( s>=0 ) return s;
-                        break;
-            }
-            if (state.backtracking>0) {state.failed=true; return -1;}
-            NoViableAltException nvae =
-                new NoViableAltException(getDescription(), 58, _s, input);
+                new NoViableAltException(getDescription(), 36, _s, input);
             error(nvae);
             throw nvae;
         }
@@ -17399,7 +17125,8 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
     static final String DFA60_specialS =
         "\1\uffff\1\0\100\uffff}>";
     static final String[] DFA60_transitionS = {
-            "\5\2\4\uffff\2\2\2\uffff\36\2\1\1\1\uffff\17\2\1\uffff\12\2",
+            "\5\2\4\uffff\2\2\2\uffff\34\2\1\1\2\2\1\uffff\17\2\1\uffff\12"+
+            "\2",
             "\1\uffff",
             "",
             "",
@@ -17497,7 +17224,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             this.transition = DFA60_transition;
         }
         public String getDescription() {
-            return "3526:3: ( ( ( () '[' ) )=> (lv_featureCallArguments_14_0= ruleXClosure ) )?";
+            return "3426:2: ( ( ( ( '(' ) )=> (lv_explicitOperationCall_8_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_featureCallArguments_9_0= ruleXShortClosure ) ) | ( ( (lv_featureCallArguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_featureCallArguments_12_0= ruleXExpression ) ) )* ) )? otherlv_13= ')' )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -17510,7 +17237,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         int index60_1 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred28_InternalScripting()) ) {s = 65;}
+                        if ( (synpred26_InternalScripting()) ) {s = 65;}
 
                         else if ( (true) ) {s = 2;}
 
@@ -17526,19 +17253,303 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             throw nvae;
         }
     }
-    static final String DFA64_eotS =
+    static final String DFA59_eotS =
+        "\36\uffff";
+    static final String DFA59_eofS =
+        "\36\uffff";
+    static final String DFA59_minS =
+        "\1\4\2\0\33\uffff";
+    static final String DFA59_maxS =
+        "\1\110\2\0\33\uffff";
+    static final String DFA59_acceptS =
+        "\3\uffff\2\1\1\2\27\uffff\1\3";
+    static final String DFA59_specialS =
+        "\1\0\1\1\1\2\33\uffff}>";
+    static final String[] DFA59_transitionS = {
+            "\4\5\1\1\21\uffff\1\5\2\uffff\1\3\3\uffff\2\5\4\uffff\1\5\5"+
+            "\uffff\1\2\1\35\1\5\1\4\1\uffff\1\5\1\uffff\1\5\1\uffff\1\5"+
+            "\3\uffff\3\5\2\uffff\1\5\1\uffff\10\5",
+            "\1\uffff",
+            "\1\uffff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+    };
+
+    static final short[] DFA59_eot = DFA.unpackEncodedString(DFA59_eotS);
+    static final short[] DFA59_eof = DFA.unpackEncodedString(DFA59_eofS);
+    static final char[] DFA59_min = DFA.unpackEncodedStringToUnsignedChars(DFA59_minS);
+    static final char[] DFA59_max = DFA.unpackEncodedStringToUnsignedChars(DFA59_maxS);
+    static final short[] DFA59_accept = DFA.unpackEncodedString(DFA59_acceptS);
+    static final short[] DFA59_special = DFA.unpackEncodedString(DFA59_specialS);
+    static final short[][] DFA59_transition;
+
+    static {
+        int numStates = DFA59_transitionS.length;
+        DFA59_transition = new short[numStates][];
+        for (int i=0; i<numStates; i++) {
+            DFA59_transition[i] = DFA.unpackEncodedString(DFA59_transitionS[i]);
+        }
+    }
+
+    class DFA59 extends DFA {
+
+        public DFA59(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 59;
+            this.eot = DFA59_eot;
+            this.eof = DFA59_eof;
+            this.min = DFA59_min;
+            this.max = DFA59_max;
+            this.accept = DFA59_accept;
+            this.special = DFA59_special;
+            this.transition = DFA59_transition;
+        }
+        public String getDescription() {
+            return "3447:2: ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_featureCallArguments_9_0= ruleXShortClosure ) ) | ( ( (lv_featureCallArguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_featureCallArguments_12_0= ruleXExpression ) ) )* ) )?";
+        }
+        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
+            TokenStream input = (TokenStream)_input;
+        	int _s = s;
+            switch ( s ) {
+                    case 0 : 
+                        int LA59_0 = input.LA(1);
+
+                         
+                        int index59_0 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA59_0==RULE_ID) ) {s = 1;}
+
+                        else if ( (LA59_0==45) ) {s = 2;}
+
+                        else if ( (LA59_0==29) && (synpred27_InternalScripting())) {s = 3;}
+
+                        else if ( (LA59_0==48) && (synpred27_InternalScripting())) {s = 4;}
+
+                        else if ( ((LA59_0>=RULE_STRING && LA59_0<=RULE_DECIMAL)||LA59_0==26||(LA59_0>=33 && LA59_0<=34)||LA59_0==39||LA59_0==47||LA59_0==50||LA59_0==52||LA59_0==54||(LA59_0>=58 && LA59_0<=60)||LA59_0==63||(LA59_0>=65 && LA59_0<=72)) ) {s = 5;}
+
+                        else if ( (LA59_0==46) ) {s = 29;}
+
+                         
+                        input.seek(index59_0);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA59_1 = input.LA(1);
+
+                         
+                        int index59_1 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred27_InternalScripting()) ) {s = 4;}
+
+                        else if ( (true) ) {s = 5;}
+
+                         
+                        input.seek(index59_1);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA59_2 = input.LA(1);
+
+                         
+                        int index59_2 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred27_InternalScripting()) ) {s = 4;}
+
+                        else if ( (true) ) {s = 5;}
+
+                         
+                        input.seek(index59_2);
+                        if ( s>=0 ) return s;
+                        break;
+            }
+            if (state.backtracking>0) {state.failed=true; return -1;}
+            NoViableAltException nvae =
+                new NoViableAltException(getDescription(), 59, _s, input);
+            error(nvae);
+            throw nvae;
+        }
+    }
+    static final String DFA61_eotS =
         "\102\uffff";
-    static final String DFA64_eofS =
+    static final String DFA61_eofS =
         "\1\2\101\uffff";
-    static final String DFA64_minS =
+    static final String DFA61_minS =
         "\1\4\1\0\100\uffff";
-    static final String DFA64_maxS =
+    static final String DFA61_maxS =
         "\1\112\1\0\100\uffff";
-    static final String DFA64_acceptS =
+    static final String DFA61_acceptS =
         "\2\uffff\1\2\76\uffff\1\1";
-    static final String DFA64_specialS =
+    static final String DFA61_specialS =
         "\1\uffff\1\0\100\uffff}>";
-    static final String[] DFA64_transitionS = {
+    static final String[] DFA61_transitionS = {
+            "\5\2\4\uffff\2\2\2\uffff\36\2\1\1\1\uffff\17\2\1\uffff\12\2",
+            "\1\uffff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+    };
+
+    static final short[] DFA61_eot = DFA.unpackEncodedString(DFA61_eotS);
+    static final short[] DFA61_eof = DFA.unpackEncodedString(DFA61_eofS);
+    static final char[] DFA61_min = DFA.unpackEncodedStringToUnsignedChars(DFA61_minS);
+    static final char[] DFA61_max = DFA.unpackEncodedStringToUnsignedChars(DFA61_maxS);
+    static final short[] DFA61_accept = DFA.unpackEncodedString(DFA61_acceptS);
+    static final short[] DFA61_special = DFA.unpackEncodedString(DFA61_specialS);
+    static final short[][] DFA61_transition;
+
+    static {
+        int numStates = DFA61_transitionS.length;
+        DFA61_transition = new short[numStates][];
+        for (int i=0; i<numStates; i++) {
+            DFA61_transition[i] = DFA.unpackEncodedString(DFA61_transitionS[i]);
+        }
+    }
+
+    class DFA61 extends DFA {
+
+        public DFA61(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 61;
+            this.eot = DFA61_eot;
+            this.eof = DFA61_eof;
+            this.min = DFA61_min;
+            this.max = DFA61_max;
+            this.accept = DFA61_accept;
+            this.special = DFA61_special;
+            this.transition = DFA61_transition;
+        }
+        public String getDescription() {
+            return "3526:3: ( ( ( () '[' ) )=> (lv_featureCallArguments_14_0= ruleXClosure ) )?";
+        }
+        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
+            TokenStream input = (TokenStream)_input;
+        	int _s = s;
+            switch ( s ) {
+                    case 0 : 
+                        int LA61_1 = input.LA(1);
+
+                         
+                        int index61_1 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred28_InternalScripting()) ) {s = 65;}
+
+                        else if ( (true) ) {s = 2;}
+
+                         
+                        input.seek(index61_1);
+                        if ( s>=0 ) return s;
+                        break;
+            }
+            if (state.backtracking>0) {state.failed=true; return -1;}
+            NoViableAltException nvae =
+                new NoViableAltException(getDescription(), 61, _s, input);
+            error(nvae);
+            throw nvae;
+        }
+    }
+    static final String DFA65_eotS =
+        "\102\uffff";
+    static final String DFA65_eofS =
+        "\1\2\101\uffff";
+    static final String DFA65_minS =
+        "\1\4\1\0\100\uffff";
+    static final String DFA65_maxS =
+        "\1\112\1\0\100\uffff";
+    static final String DFA65_acceptS =
+        "\2\uffff\1\2\76\uffff\1\1";
+    static final String DFA65_specialS =
+        "\1\uffff\1\0\100\uffff}>";
+    static final String[] DFA65_transitionS = {
             "\5\2\4\uffff\2\2\2\uffff\11\2\1\1\25\2\1\uffff\17\2\1\uffff"+
             "\12\2",
             "\1\uffff",
@@ -17608,34 +17619,34 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             ""
     };
 
-    static final short[] DFA64_eot = DFA.unpackEncodedString(DFA64_eotS);
-    static final short[] DFA64_eof = DFA.unpackEncodedString(DFA64_eofS);
-    static final char[] DFA64_min = DFA.unpackEncodedStringToUnsignedChars(DFA64_minS);
-    static final char[] DFA64_max = DFA.unpackEncodedStringToUnsignedChars(DFA64_maxS);
-    static final short[] DFA64_accept = DFA.unpackEncodedString(DFA64_acceptS);
-    static final short[] DFA64_special = DFA.unpackEncodedString(DFA64_specialS);
-    static final short[][] DFA64_transition;
+    static final short[] DFA65_eot = DFA.unpackEncodedString(DFA65_eotS);
+    static final short[] DFA65_eof = DFA.unpackEncodedString(DFA65_eofS);
+    static final char[] DFA65_min = DFA.unpackEncodedStringToUnsignedChars(DFA65_minS);
+    static final char[] DFA65_max = DFA.unpackEncodedStringToUnsignedChars(DFA65_maxS);
+    static final short[] DFA65_accept = DFA.unpackEncodedString(DFA65_acceptS);
+    static final short[] DFA65_special = DFA.unpackEncodedString(DFA65_specialS);
+    static final short[][] DFA65_transition;
 
     static {
-        int numStates = DFA64_transitionS.length;
-        DFA64_transition = new short[numStates][];
+        int numStates = DFA65_transitionS.length;
+        DFA65_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA64_transition[i] = DFA.unpackEncodedString(DFA64_transitionS[i]);
+            DFA65_transition[i] = DFA.unpackEncodedString(DFA65_transitionS[i]);
         }
     }
 
-    class DFA64 extends DFA {
+    class DFA65 extends DFA {
 
-        public DFA64(BaseRecognizer recognizer) {
+        public DFA65(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 64;
-            this.eot = DFA64_eot;
-            this.eof = DFA64_eof;
-            this.min = DFA64_min;
-            this.max = DFA64_max;
-            this.accept = DFA64_accept;
-            this.special = DFA64_special;
-            this.transition = DFA64_transition;
+            this.decisionNumber = 65;
+            this.eot = DFA65_eot;
+            this.eof = DFA65_eof;
+            this.min = DFA65_min;
+            this.max = DFA65_max;
+            this.accept = DFA65_accept;
+            this.special = DFA65_special;
+            this.transition = DFA65_transition;
         }
         public String getDescription() {
             return "3669:2: ( ( ( '<' )=>otherlv_3= '<' ) ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) (otherlv_5= ',' ( (lv_typeArguments_6_0= ruleJvmArgumentTypeReference ) ) )* otherlv_7= '>' )?";
@@ -17645,10 +17656,10 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA64_1 = input.LA(1);
+                        int LA65_1 = input.LA(1);
 
                          
-                        int index64_1 = input.index();
+                        int index65_1 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred29_InternalScripting()) ) {s = 65;}
@@ -17656,298 +17667,13 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 2;}
 
                          
-                        input.seek(index64_1);
+                        input.seek(index65_1);
                         if ( s>=0 ) return s;
                         break;
             }
             if (state.backtracking>0) {state.failed=true; return -1;}
             NoViableAltException nvae =
-                new NoViableAltException(getDescription(), 64, _s, input);
-            error(nvae);
-            throw nvae;
-        }
-    }
-    static final String DFA67_eotS =
-        "\102\uffff";
-    static final String DFA67_eofS =
-        "\1\2\101\uffff";
-    static final String DFA67_minS =
-        "\1\4\1\0\100\uffff";
-    static final String DFA67_maxS =
-        "\1\112\1\0\100\uffff";
-    static final String DFA67_acceptS =
-        "\2\uffff\1\2\76\uffff\1\1";
-    static final String DFA67_specialS =
-        "\1\uffff\1\0\100\uffff}>";
-    static final String[] DFA67_transitionS = {
-            "\5\2\4\uffff\2\2\2\uffff\34\2\1\1\2\2\1\uffff\17\2\1\uffff\12"+
-            "\2",
-            "\1\uffff",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-    };
-
-    static final short[] DFA67_eot = DFA.unpackEncodedString(DFA67_eotS);
-    static final short[] DFA67_eof = DFA.unpackEncodedString(DFA67_eofS);
-    static final char[] DFA67_min = DFA.unpackEncodedStringToUnsignedChars(DFA67_minS);
-    static final char[] DFA67_max = DFA.unpackEncodedStringToUnsignedChars(DFA67_maxS);
-    static final short[] DFA67_accept = DFA.unpackEncodedString(DFA67_acceptS);
-    static final short[] DFA67_special = DFA.unpackEncodedString(DFA67_specialS);
-    static final short[][] DFA67_transition;
-
-    static {
-        int numStates = DFA67_transitionS.length;
-        DFA67_transition = new short[numStates][];
-        for (int i=0; i<numStates; i++) {
-            DFA67_transition[i] = DFA.unpackEncodedString(DFA67_transitionS[i]);
-        }
-    }
-
-    class DFA67 extends DFA {
-
-        public DFA67(BaseRecognizer recognizer) {
-            this.recognizer = recognizer;
-            this.decisionNumber = 67;
-            this.eot = DFA67_eot;
-            this.eof = DFA67_eof;
-            this.min = DFA67_min;
-            this.max = DFA67_max;
-            this.accept = DFA67_accept;
-            this.special = DFA67_special;
-            this.transition = DFA67_transition;
-        }
-        public String getDescription() {
-            return "3718:3: ( ( ( '(' )=>otherlv_8= '(' ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_arguments_9_0= ruleXShortClosure ) ) | ( ( (lv_arguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )* ) )? otherlv_13= ')' )?";
-        }
-        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
-            TokenStream input = (TokenStream)_input;
-        	int _s = s;
-            switch ( s ) {
-                    case 0 : 
-                        int LA67_1 = input.LA(1);
-
-                         
-                        int index67_1 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred30_InternalScripting()) ) {s = 65;}
-
-                        else if ( (true) ) {s = 2;}
-
-                         
-                        input.seek(index67_1);
-                        if ( s>=0 ) return s;
-                        break;
-            }
-            if (state.backtracking>0) {state.failed=true; return -1;}
-            NoViableAltException nvae =
-                new NoViableAltException(getDescription(), 67, _s, input);
-            error(nvae);
-            throw nvae;
-        }
-    }
-    static final String DFA66_eotS =
-        "\36\uffff";
-    static final String DFA66_eofS =
-        "\36\uffff";
-    static final String DFA66_minS =
-        "\1\4\2\0\33\uffff";
-    static final String DFA66_maxS =
-        "\1\110\2\0\33\uffff";
-    static final String DFA66_acceptS =
-        "\3\uffff\2\1\1\2\27\uffff\1\3";
-    static final String DFA66_specialS =
-        "\1\0\1\1\1\2\33\uffff}>";
-    static final String[] DFA66_transitionS = {
-            "\4\5\1\1\21\uffff\1\5\2\uffff\1\3\3\uffff\2\5\4\uffff\1\5\5"+
-            "\uffff\1\2\1\35\1\5\1\4\1\uffff\1\5\1\uffff\1\5\1\uffff\1\5"+
-            "\3\uffff\3\5\2\uffff\1\5\1\uffff\10\5",
-            "\1\uffff",
-            "\1\uffff",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-    };
-
-    static final short[] DFA66_eot = DFA.unpackEncodedString(DFA66_eotS);
-    static final short[] DFA66_eof = DFA.unpackEncodedString(DFA66_eofS);
-    static final char[] DFA66_min = DFA.unpackEncodedStringToUnsignedChars(DFA66_minS);
-    static final char[] DFA66_max = DFA.unpackEncodedStringToUnsignedChars(DFA66_maxS);
-    static final short[] DFA66_accept = DFA.unpackEncodedString(DFA66_acceptS);
-    static final short[] DFA66_special = DFA.unpackEncodedString(DFA66_specialS);
-    static final short[][] DFA66_transition;
-
-    static {
-        int numStates = DFA66_transitionS.length;
-        DFA66_transition = new short[numStates][];
-        for (int i=0; i<numStates; i++) {
-            DFA66_transition[i] = DFA.unpackEncodedString(DFA66_transitionS[i]);
-        }
-    }
-
-    class DFA66 extends DFA {
-
-        public DFA66(BaseRecognizer recognizer) {
-            this.recognizer = recognizer;
-            this.decisionNumber = 66;
-            this.eot = DFA66_eot;
-            this.eof = DFA66_eof;
-            this.min = DFA66_min;
-            this.max = DFA66_max;
-            this.accept = DFA66_accept;
-            this.special = DFA66_special;
-            this.transition = DFA66_transition;
-        }
-        public String getDescription() {
-            return "3723:2: ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_arguments_9_0= ruleXShortClosure ) ) | ( ( (lv_arguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )* ) )?";
-        }
-        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
-            TokenStream input = (TokenStream)_input;
-        	int _s = s;
-            switch ( s ) {
-                    case 0 : 
-                        int LA66_0 = input.LA(1);
-
-                         
-                        int index66_0 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA66_0==RULE_ID) ) {s = 1;}
-
-                        else if ( (LA66_0==45) ) {s = 2;}
-
-                        else if ( (LA66_0==29) && (synpred31_InternalScripting())) {s = 3;}
-
-                        else if ( (LA66_0==48) && (synpred31_InternalScripting())) {s = 4;}
-
-                        else if ( ((LA66_0>=RULE_STRING && LA66_0<=RULE_DECIMAL)||LA66_0==26||(LA66_0>=33 && LA66_0<=34)||LA66_0==39||LA66_0==47||LA66_0==50||LA66_0==52||LA66_0==54||(LA66_0>=58 && LA66_0<=60)||LA66_0==63||(LA66_0>=65 && LA66_0<=72)) ) {s = 5;}
-
-                        else if ( (LA66_0==46) ) {s = 29;}
-
-                         
-                        input.seek(index66_0);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA66_1 = input.LA(1);
-
-                         
-                        int index66_1 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred31_InternalScripting()) ) {s = 4;}
-
-                        else if ( (true) ) {s = 5;}
-
-                         
-                        input.seek(index66_1);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA66_2 = input.LA(1);
-
-                         
-                        int index66_2 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred31_InternalScripting()) ) {s = 4;}
-
-                        else if ( (true) ) {s = 5;}
-
-                         
-                        input.seek(index66_2);
-                        if ( s>=0 ) return s;
-                        break;
-            }
-            if (state.backtracking>0) {state.failed=true; return -1;}
-            NoViableAltException nvae =
-                new NoViableAltException(getDescription(), 66, _s, input);
+                new NoViableAltException(getDescription(), 65, _s, input);
             error(nvae);
             throw nvae;
         }
@@ -17965,7 +17691,8 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
     static final String DFA68_specialS =
         "\1\uffff\1\0\100\uffff}>";
     static final String[] DFA68_transitionS = {
-            "\5\2\4\uffff\2\2\2\uffff\36\2\1\1\1\uffff\17\2\1\uffff\12\2",
+            "\5\2\4\uffff\2\2\2\uffff\34\2\1\1\2\2\1\uffff\17\2\1\uffff\12"+
+            "\2",
             "\1\uffff",
             "",
             "",
@@ -18063,7 +17790,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             this.transition = DFA68_transition;
         }
         public String getDescription() {
-            return "3802:3: ( ( ( () '[' ) )=> (lv_arguments_14_0= ruleXClosure ) )?";
+            return "3718:3: ( ( ( '(' )=>otherlv_8= '(' ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_arguments_9_0= ruleXShortClosure ) ) | ( ( (lv_arguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )* ) )? otherlv_13= ')' )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -18076,7 +17803,7 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         int index68_1 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred32_InternalScripting()) ) {s = 65;}
+                        if ( (synpred30_InternalScripting()) ) {s = 65;}
 
                         else if ( (true) ) {s = 2;}
 
@@ -18092,21 +17819,305 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             throw nvae;
         }
     }
-    static final String DFA70_eotS =
+    static final String DFA67_eotS =
+        "\36\uffff";
+    static final String DFA67_eofS =
+        "\36\uffff";
+    static final String DFA67_minS =
+        "\1\4\2\0\33\uffff";
+    static final String DFA67_maxS =
+        "\1\110\2\0\33\uffff";
+    static final String DFA67_acceptS =
+        "\3\uffff\2\1\1\2\27\uffff\1\3";
+    static final String DFA67_specialS =
+        "\1\0\1\1\1\2\33\uffff}>";
+    static final String[] DFA67_transitionS = {
+            "\4\5\1\1\21\uffff\1\5\2\uffff\1\3\3\uffff\2\5\4\uffff\1\5\5"+
+            "\uffff\1\2\1\35\1\5\1\4\1\uffff\1\5\1\uffff\1\5\1\uffff\1\5"+
+            "\3\uffff\3\5\2\uffff\1\5\1\uffff\10\5",
+            "\1\uffff",
+            "\1\uffff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+    };
+
+    static final short[] DFA67_eot = DFA.unpackEncodedString(DFA67_eotS);
+    static final short[] DFA67_eof = DFA.unpackEncodedString(DFA67_eofS);
+    static final char[] DFA67_min = DFA.unpackEncodedStringToUnsignedChars(DFA67_minS);
+    static final char[] DFA67_max = DFA.unpackEncodedStringToUnsignedChars(DFA67_maxS);
+    static final short[] DFA67_accept = DFA.unpackEncodedString(DFA67_acceptS);
+    static final short[] DFA67_special = DFA.unpackEncodedString(DFA67_specialS);
+    static final short[][] DFA67_transition;
+
+    static {
+        int numStates = DFA67_transitionS.length;
+        DFA67_transition = new short[numStates][];
+        for (int i=0; i<numStates; i++) {
+            DFA67_transition[i] = DFA.unpackEncodedString(DFA67_transitionS[i]);
+        }
+    }
+
+    class DFA67 extends DFA {
+
+        public DFA67(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 67;
+            this.eot = DFA67_eot;
+            this.eof = DFA67_eof;
+            this.min = DFA67_min;
+            this.max = DFA67_max;
+            this.accept = DFA67_accept;
+            this.special = DFA67_special;
+            this.transition = DFA67_transition;
+        }
+        public String getDescription() {
+            return "3723:2: ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_arguments_9_0= ruleXShortClosure ) ) | ( ( (lv_arguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )* ) )?";
+        }
+        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
+            TokenStream input = (TokenStream)_input;
+        	int _s = s;
+            switch ( s ) {
+                    case 0 : 
+                        int LA67_0 = input.LA(1);
+
+                         
+                        int index67_0 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA67_0==RULE_ID) ) {s = 1;}
+
+                        else if ( (LA67_0==45) ) {s = 2;}
+
+                        else if ( (LA67_0==29) && (synpred31_InternalScripting())) {s = 3;}
+
+                        else if ( (LA67_0==48) && (synpred31_InternalScripting())) {s = 4;}
+
+                        else if ( ((LA67_0>=RULE_STRING && LA67_0<=RULE_DECIMAL)||LA67_0==26||(LA67_0>=33 && LA67_0<=34)||LA67_0==39||LA67_0==47||LA67_0==50||LA67_0==52||LA67_0==54||(LA67_0>=58 && LA67_0<=60)||LA67_0==63||(LA67_0>=65 && LA67_0<=72)) ) {s = 5;}
+
+                        else if ( (LA67_0==46) ) {s = 29;}
+
+                         
+                        input.seek(index67_0);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA67_1 = input.LA(1);
+
+                         
+                        int index67_1 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred31_InternalScripting()) ) {s = 4;}
+
+                        else if ( (true) ) {s = 5;}
+
+                         
+                        input.seek(index67_1);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA67_2 = input.LA(1);
+
+                         
+                        int index67_2 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred31_InternalScripting()) ) {s = 4;}
+
+                        else if ( (true) ) {s = 5;}
+
+                         
+                        input.seek(index67_2);
+                        if ( s>=0 ) return s;
+                        break;
+            }
+            if (state.backtracking>0) {state.failed=true; return -1;}
+            NoViableAltException nvae =
+                new NoViableAltException(getDescription(), 67, _s, input);
+            error(nvae);
+            throw nvae;
+        }
+    }
+    static final String DFA69_eotS =
         "\102\uffff";
-    static final String DFA70_eofS =
+    static final String DFA69_eofS =
+        "\1\2\101\uffff";
+    static final String DFA69_minS =
+        "\1\4\1\0\100\uffff";
+    static final String DFA69_maxS =
+        "\1\112\1\0\100\uffff";
+    static final String DFA69_acceptS =
+        "\2\uffff\1\2\76\uffff\1\1";
+    static final String DFA69_specialS =
+        "\1\uffff\1\0\100\uffff}>";
+    static final String[] DFA69_transitionS = {
+            "\5\2\4\uffff\2\2\2\uffff\36\2\1\1\1\uffff\17\2\1\uffff\12\2",
+            "\1\uffff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+    };
+
+    static final short[] DFA69_eot = DFA.unpackEncodedString(DFA69_eotS);
+    static final short[] DFA69_eof = DFA.unpackEncodedString(DFA69_eofS);
+    static final char[] DFA69_min = DFA.unpackEncodedStringToUnsignedChars(DFA69_minS);
+    static final char[] DFA69_max = DFA.unpackEncodedStringToUnsignedChars(DFA69_maxS);
+    static final short[] DFA69_accept = DFA.unpackEncodedString(DFA69_acceptS);
+    static final short[] DFA69_special = DFA.unpackEncodedString(DFA69_specialS);
+    static final short[][] DFA69_transition;
+
+    static {
+        int numStates = DFA69_transitionS.length;
+        DFA69_transition = new short[numStates][];
+        for (int i=0; i<numStates; i++) {
+            DFA69_transition[i] = DFA.unpackEncodedString(DFA69_transitionS[i]);
+        }
+    }
+
+    class DFA69 extends DFA {
+
+        public DFA69(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 69;
+            this.eot = DFA69_eot;
+            this.eof = DFA69_eof;
+            this.min = DFA69_min;
+            this.max = DFA69_max;
+            this.accept = DFA69_accept;
+            this.special = DFA69_special;
+            this.transition = DFA69_transition;
+        }
+        public String getDescription() {
+            return "3802:3: ( ( ( () '[' ) )=> (lv_arguments_14_0= ruleXClosure ) )?";
+        }
+        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
+            TokenStream input = (TokenStream)_input;
+        	int _s = s;
+            switch ( s ) {
+                    case 0 : 
+                        int LA69_1 = input.LA(1);
+
+                         
+                        int index69_1 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred32_InternalScripting()) ) {s = 65;}
+
+                        else if ( (true) ) {s = 2;}
+
+                         
+                        input.seek(index69_1);
+                        if ( s>=0 ) return s;
+                        break;
+            }
+            if (state.backtracking>0) {state.failed=true; return -1;}
+            NoViableAltException nvae =
+                new NoViableAltException(getDescription(), 69, _s, input);
+            error(nvae);
+            throw nvae;
+        }
+    }
+    static final String DFA71_eotS =
+        "\102\uffff";
+    static final String DFA71_eofS =
         "\1\33\101\uffff";
-    static final String DFA70_minS =
+    static final String DFA71_minS =
         "\1\4\32\0\47\uffff";
-    static final String DFA70_maxS =
+    static final String DFA71_maxS =
         "\1\112\32\0\47\uffff";
-    static final String DFA70_acceptS =
+    static final String DFA71_acceptS =
         "\33\uffff\1\2\45\uffff\1\1";
-    static final String DFA70_specialS =
+    static final String DFA71_specialS =
         "\1\uffff\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14"+
         "\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\30\1\31"+
         "\47\uffff}>";
-    static final String[] DFA70_transitionS = {
+    static final String[] DFA71_transitionS = {
             "\1\21\1\15\1\16\1\17\1\1\4\uffff\2\33\2\uffff\11\33\1\10\6\33"+
             "\1\4\1\3\4\33\1\2\5\33\1\32\1\33\1\12\1\uffff\1\33\1\23\1\33"+
             "\1\7\1\33\1\6\3\33\1\24\1\25\1\26\2\33\1\11\1\uffff\1\5\1\13"+
@@ -18178,34 +18189,34 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             ""
     };
 
-    static final short[] DFA70_eot = DFA.unpackEncodedString(DFA70_eotS);
-    static final short[] DFA70_eof = DFA.unpackEncodedString(DFA70_eofS);
-    static final char[] DFA70_min = DFA.unpackEncodedStringToUnsignedChars(DFA70_minS);
-    static final char[] DFA70_max = DFA.unpackEncodedStringToUnsignedChars(DFA70_maxS);
-    static final short[] DFA70_accept = DFA.unpackEncodedString(DFA70_acceptS);
-    static final short[] DFA70_special = DFA.unpackEncodedString(DFA70_specialS);
-    static final short[][] DFA70_transition;
+    static final short[] DFA71_eot = DFA.unpackEncodedString(DFA71_eotS);
+    static final short[] DFA71_eof = DFA.unpackEncodedString(DFA71_eofS);
+    static final char[] DFA71_min = DFA.unpackEncodedStringToUnsignedChars(DFA71_minS);
+    static final char[] DFA71_max = DFA.unpackEncodedStringToUnsignedChars(DFA71_maxS);
+    static final short[] DFA71_accept = DFA.unpackEncodedString(DFA71_acceptS);
+    static final short[] DFA71_special = DFA.unpackEncodedString(DFA71_specialS);
+    static final short[][] DFA71_transition;
 
     static {
-        int numStates = DFA70_transitionS.length;
-        DFA70_transition = new short[numStates][];
+        int numStates = DFA71_transitionS.length;
+        DFA71_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA70_transition[i] = DFA.unpackEncodedString(DFA70_transitionS[i]);
+            DFA71_transition[i] = DFA.unpackEncodedString(DFA71_transitionS[i]);
         }
     }
 
-    class DFA70 extends DFA {
+    class DFA71 extends DFA {
 
-        public DFA70(BaseRecognizer recognizer) {
+        public DFA71(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 70;
-            this.eot = DFA70_eot;
-            this.eof = DFA70_eof;
-            this.min = DFA70_min;
-            this.max = DFA70_max;
-            this.accept = DFA70_accept;
-            this.special = DFA70_special;
-            this.transition = DFA70_transition;
+            this.decisionNumber = 71;
+            this.eot = DFA71_eot;
+            this.eof = DFA71_eof;
+            this.min = DFA71_min;
+            this.max = DFA71_max;
+            this.accept = DFA71_accept;
+            this.special = DFA71_special;
+            this.transition = DFA71_transition;
         }
         public String getDescription() {
             return "4124:1: ( ( ( ruleXExpression ) )=> (lv_expression_2_0= ruleXExpression ) )?";
@@ -18215,10 +18226,10 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA70_1 = input.LA(1);
+                        int LA71_1 = input.LA(1);
 
                          
-                        int index70_1 = input.index();
+                        int index71_1 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred33_InternalScripting()) ) {s = 65;}
@@ -18226,14 +18237,14 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 27;}
 
                          
-                        input.seek(index70_1);
+                        input.seek(index71_1);
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA70_2 = input.LA(1);
+                        int LA71_2 = input.LA(1);
 
                          
-                        int index70_2 = input.index();
+                        int index71_2 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred33_InternalScripting()) ) {s = 65;}
@@ -18241,14 +18252,14 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 27;}
 
                          
-                        input.seek(index70_2);
+                        input.seek(index71_2);
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA70_3 = input.LA(1);
+                        int LA71_3 = input.LA(1);
 
                          
-                        int index70_3 = input.index();
+                        int index71_3 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred33_InternalScripting()) ) {s = 65;}
@@ -18256,14 +18267,14 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 27;}
 
                          
-                        input.seek(index70_3);
+                        input.seek(index71_3);
                         if ( s>=0 ) return s;
                         break;
                     case 3 : 
-                        int LA70_4 = input.LA(1);
+                        int LA71_4 = input.LA(1);
 
                          
-                        int index70_4 = input.index();
+                        int index71_4 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred33_InternalScripting()) ) {s = 65;}
@@ -18271,14 +18282,14 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 27;}
 
                          
-                        input.seek(index70_4);
+                        input.seek(index71_4);
                         if ( s>=0 ) return s;
                         break;
                     case 4 : 
-                        int LA70_5 = input.LA(1);
+                        int LA71_5 = input.LA(1);
 
                          
-                        int index70_5 = input.index();
+                        int index71_5 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred33_InternalScripting()) ) {s = 65;}
@@ -18286,14 +18297,14 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 27;}
 
                          
-                        input.seek(index70_5);
+                        input.seek(index71_5);
                         if ( s>=0 ) return s;
                         break;
                     case 5 : 
-                        int LA70_6 = input.LA(1);
+                        int LA71_6 = input.LA(1);
 
                          
-                        int index70_6 = input.index();
+                        int index71_6 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred33_InternalScripting()) ) {s = 65;}
@@ -18301,14 +18312,14 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 27;}
 
                          
-                        input.seek(index70_6);
+                        input.seek(index71_6);
                         if ( s>=0 ) return s;
                         break;
                     case 6 : 
-                        int LA70_7 = input.LA(1);
+                        int LA71_7 = input.LA(1);
 
                          
-                        int index70_7 = input.index();
+                        int index71_7 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred33_InternalScripting()) ) {s = 65;}
@@ -18316,14 +18327,14 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 27;}
 
                          
-                        input.seek(index70_7);
+                        input.seek(index71_7);
                         if ( s>=0 ) return s;
                         break;
                     case 7 : 
-                        int LA70_8 = input.LA(1);
+                        int LA71_8 = input.LA(1);
 
                          
-                        int index70_8 = input.index();
+                        int index71_8 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred33_InternalScripting()) ) {s = 65;}
@@ -18331,14 +18342,14 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 27;}
 
                          
-                        input.seek(index70_8);
+                        input.seek(index71_8);
                         if ( s>=0 ) return s;
                         break;
                     case 8 : 
-                        int LA70_9 = input.LA(1);
+                        int LA71_9 = input.LA(1);
 
                          
-                        int index70_9 = input.index();
+                        int index71_9 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred33_InternalScripting()) ) {s = 65;}
@@ -18346,14 +18357,14 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 27;}
 
                          
-                        input.seek(index70_9);
+                        input.seek(index71_9);
                         if ( s>=0 ) return s;
                         break;
                     case 9 : 
-                        int LA70_10 = input.LA(1);
+                        int LA71_10 = input.LA(1);
 
                          
-                        int index70_10 = input.index();
+                        int index71_10 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred33_InternalScripting()) ) {s = 65;}
@@ -18361,14 +18372,14 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 27;}
 
                          
-                        input.seek(index70_10);
+                        input.seek(index71_10);
                         if ( s>=0 ) return s;
                         break;
                     case 10 : 
-                        int LA70_11 = input.LA(1);
+                        int LA71_11 = input.LA(1);
 
                          
-                        int index70_11 = input.index();
+                        int index71_11 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred33_InternalScripting()) ) {s = 65;}
@@ -18376,14 +18387,14 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 27;}
 
                          
-                        input.seek(index70_11);
+                        input.seek(index71_11);
                         if ( s>=0 ) return s;
                         break;
                     case 11 : 
-                        int LA70_12 = input.LA(1);
+                        int LA71_12 = input.LA(1);
 
                          
-                        int index70_12 = input.index();
+                        int index71_12 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred33_InternalScripting()) ) {s = 65;}
@@ -18391,14 +18402,14 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 27;}
 
                          
-                        input.seek(index70_12);
+                        input.seek(index71_12);
                         if ( s>=0 ) return s;
                         break;
                     case 12 : 
-                        int LA70_13 = input.LA(1);
+                        int LA71_13 = input.LA(1);
 
                          
-                        int index70_13 = input.index();
+                        int index71_13 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred33_InternalScripting()) ) {s = 65;}
@@ -18406,14 +18417,14 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 27;}
 
                          
-                        input.seek(index70_13);
+                        input.seek(index71_13);
                         if ( s>=0 ) return s;
                         break;
                     case 13 : 
-                        int LA70_14 = input.LA(1);
+                        int LA71_14 = input.LA(1);
 
                          
-                        int index70_14 = input.index();
+                        int index71_14 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred33_InternalScripting()) ) {s = 65;}
@@ -18421,14 +18432,14 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 27;}
 
                          
-                        input.seek(index70_14);
+                        input.seek(index71_14);
                         if ( s>=0 ) return s;
                         break;
                     case 14 : 
-                        int LA70_15 = input.LA(1);
+                        int LA71_15 = input.LA(1);
 
                          
-                        int index70_15 = input.index();
+                        int index71_15 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred33_InternalScripting()) ) {s = 65;}
@@ -18436,14 +18447,14 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 27;}
 
                          
-                        input.seek(index70_15);
+                        input.seek(index71_15);
                         if ( s>=0 ) return s;
                         break;
                     case 15 : 
-                        int LA70_16 = input.LA(1);
+                        int LA71_16 = input.LA(1);
 
                          
-                        int index70_16 = input.index();
+                        int index71_16 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred33_InternalScripting()) ) {s = 65;}
@@ -18451,14 +18462,14 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 27;}
 
                          
-                        input.seek(index70_16);
+                        input.seek(index71_16);
                         if ( s>=0 ) return s;
                         break;
                     case 16 : 
-                        int LA70_17 = input.LA(1);
+                        int LA71_17 = input.LA(1);
 
                          
-                        int index70_17 = input.index();
+                        int index71_17 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred33_InternalScripting()) ) {s = 65;}
@@ -18466,14 +18477,14 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 27;}
 
                          
-                        input.seek(index70_17);
+                        input.seek(index71_17);
                         if ( s>=0 ) return s;
                         break;
                     case 17 : 
-                        int LA70_18 = input.LA(1);
+                        int LA71_18 = input.LA(1);
 
                          
-                        int index70_18 = input.index();
+                        int index71_18 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred33_InternalScripting()) ) {s = 65;}
@@ -18481,14 +18492,14 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 27;}
 
                          
-                        input.seek(index70_18);
+                        input.seek(index71_18);
                         if ( s>=0 ) return s;
                         break;
                     case 18 : 
-                        int LA70_19 = input.LA(1);
+                        int LA71_19 = input.LA(1);
 
                          
-                        int index70_19 = input.index();
+                        int index71_19 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred33_InternalScripting()) ) {s = 65;}
@@ -18496,14 +18507,14 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 27;}
 
                          
-                        input.seek(index70_19);
+                        input.seek(index71_19);
                         if ( s>=0 ) return s;
                         break;
                     case 19 : 
-                        int LA70_20 = input.LA(1);
+                        int LA71_20 = input.LA(1);
 
                          
-                        int index70_20 = input.index();
+                        int index71_20 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred33_InternalScripting()) ) {s = 65;}
@@ -18511,14 +18522,14 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 27;}
 
                          
-                        input.seek(index70_20);
+                        input.seek(index71_20);
                         if ( s>=0 ) return s;
                         break;
                     case 20 : 
-                        int LA70_21 = input.LA(1);
+                        int LA71_21 = input.LA(1);
 
                          
-                        int index70_21 = input.index();
+                        int index71_21 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred33_InternalScripting()) ) {s = 65;}
@@ -18526,14 +18537,14 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 27;}
 
                          
-                        input.seek(index70_21);
+                        input.seek(index71_21);
                         if ( s>=0 ) return s;
                         break;
                     case 21 : 
-                        int LA70_22 = input.LA(1);
+                        int LA71_22 = input.LA(1);
 
                          
-                        int index70_22 = input.index();
+                        int index71_22 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred33_InternalScripting()) ) {s = 65;}
@@ -18541,14 +18552,14 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 27;}
 
                          
-                        input.seek(index70_22);
+                        input.seek(index71_22);
                         if ( s>=0 ) return s;
                         break;
                     case 22 : 
-                        int LA70_23 = input.LA(1);
+                        int LA71_23 = input.LA(1);
 
                          
-                        int index70_23 = input.index();
+                        int index71_23 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred33_InternalScripting()) ) {s = 65;}
@@ -18556,14 +18567,14 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 27;}
 
                          
-                        input.seek(index70_23);
+                        input.seek(index71_23);
                         if ( s>=0 ) return s;
                         break;
                     case 23 : 
-                        int LA70_24 = input.LA(1);
+                        int LA71_24 = input.LA(1);
 
                          
-                        int index70_24 = input.index();
+                        int index71_24 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred33_InternalScripting()) ) {s = 65;}
@@ -18571,14 +18582,14 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 27;}
 
                          
-                        input.seek(index70_24);
+                        input.seek(index71_24);
                         if ( s>=0 ) return s;
                         break;
                     case 24 : 
-                        int LA70_25 = input.LA(1);
+                        int LA71_25 = input.LA(1);
 
                          
-                        int index70_25 = input.index();
+                        int index71_25 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred33_InternalScripting()) ) {s = 65;}
@@ -18586,14 +18597,14 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 27;}
 
                          
-                        input.seek(index70_25);
+                        input.seek(index71_25);
                         if ( s>=0 ) return s;
                         break;
                     case 25 : 
-                        int LA70_26 = input.LA(1);
+                        int LA71_26 = input.LA(1);
 
                          
-                        int index70_26 = input.index();
+                        int index71_26 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred33_InternalScripting()) ) {s = 65;}
@@ -18601,30 +18612,30 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 27;}
 
                          
-                        input.seek(index70_26);
+                        input.seek(index71_26);
                         if ( s>=0 ) return s;
                         break;
             }
             if (state.backtracking>0) {state.failed=true; return -1;}
             NoViableAltException nvae =
-                new NoViableAltException(getDescription(), 70, _s, input);
+                new NoViableAltException(getDescription(), 71, _s, input);
             error(nvae);
             throw nvae;
         }
     }
-    static final String DFA85_eotS =
+    static final String DFA86_eotS =
         "\102\uffff";
-    static final String DFA85_eofS =
+    static final String DFA86_eofS =
         "\1\2\101\uffff";
-    static final String DFA85_minS =
+    static final String DFA86_minS =
         "\1\4\1\0\100\uffff";
-    static final String DFA85_maxS =
+    static final String DFA86_maxS =
         "\1\112\1\0\100\uffff";
-    static final String DFA85_acceptS =
+    static final String DFA86_acceptS =
         "\2\uffff\1\2\76\uffff\1\1";
-    static final String DFA85_specialS =
+    static final String DFA86_specialS =
         "\1\uffff\1\0\100\uffff}>";
-    static final String[] DFA85_transitionS = {
+    static final String[] DFA86_transitionS = {
             "\5\2\4\uffff\2\2\2\uffff\11\2\1\1\25\2\1\uffff\17\2\1\uffff"+
             "\12\2",
             "\1\uffff",
@@ -18694,34 +18705,34 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
             ""
     };
 
-    static final short[] DFA85_eot = DFA.unpackEncodedString(DFA85_eotS);
-    static final short[] DFA85_eof = DFA.unpackEncodedString(DFA85_eofS);
-    static final char[] DFA85_min = DFA.unpackEncodedStringToUnsignedChars(DFA85_minS);
-    static final char[] DFA85_max = DFA.unpackEncodedStringToUnsignedChars(DFA85_maxS);
-    static final short[] DFA85_accept = DFA.unpackEncodedString(DFA85_acceptS);
-    static final short[] DFA85_special = DFA.unpackEncodedString(DFA85_specialS);
-    static final short[][] DFA85_transition;
+    static final short[] DFA86_eot = DFA.unpackEncodedString(DFA86_eotS);
+    static final short[] DFA86_eof = DFA.unpackEncodedString(DFA86_eofS);
+    static final char[] DFA86_min = DFA.unpackEncodedStringToUnsignedChars(DFA86_minS);
+    static final char[] DFA86_max = DFA.unpackEncodedStringToUnsignedChars(DFA86_maxS);
+    static final short[] DFA86_accept = DFA.unpackEncodedString(DFA86_acceptS);
+    static final short[] DFA86_special = DFA.unpackEncodedString(DFA86_specialS);
+    static final short[][] DFA86_transition;
 
     static {
-        int numStates = DFA85_transitionS.length;
-        DFA85_transition = new short[numStates][];
+        int numStates = DFA86_transitionS.length;
+        DFA86_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA85_transition[i] = DFA.unpackEncodedString(DFA85_transitionS[i]);
+            DFA86_transition[i] = DFA.unpackEncodedString(DFA86_transitionS[i]);
         }
     }
 
-    class DFA85 extends DFA {
+    class DFA86 extends DFA {
 
-        public DFA85(BaseRecognizer recognizer) {
+        public DFA86(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 85;
-            this.eot = DFA85_eot;
-            this.eof = DFA85_eof;
-            this.min = DFA85_min;
-            this.max = DFA85_max;
-            this.accept = DFA85_accept;
-            this.special = DFA85_special;
-            this.transition = DFA85_transition;
+            this.decisionNumber = 86;
+            this.eot = DFA86_eot;
+            this.eof = DFA86_eof;
+            this.min = DFA86_min;
+            this.max = DFA86_max;
+            this.accept = DFA86_accept;
+            this.special = DFA86_special;
+            this.transition = DFA86_transition;
         }
         public String getDescription() {
             return "4640:2: ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )?";
@@ -18731,10 +18742,10 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA85_1 = input.LA(1);
+                        int LA86_1 = input.LA(1);
 
                          
-                        int index85_1 = input.index();
+                        int index86_1 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred39_InternalScripting()) ) {s = 65;}
@@ -18742,13 +18753,13 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 2;}
 
                          
-                        input.seek(index85_1);
+                        input.seek(index86_1);
                         if ( s>=0 ) return s;
                         break;
             }
             if (state.backtracking>0) {state.failed=true; return -1;}
             NoViableAltException nvae =
-                new NoViableAltException(getDescription(), 85, _s, input);
+                new NoViableAltException(getDescription(), 86, _s, input);
             error(nvae);
             throw nvae;
         }
@@ -18758,8 +18769,8 @@ public class InternalScriptingParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleScript_in_entryRuleScript75 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleScript85 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXExpressionInsideBlock_in_ruleScript142 = new BitSet(new long[]{0xFC54A086040061F2L,0x00000000000001FEL});
-    public static final BitSet FOLLOW_13_in_ruleScript155 = new BitSet(new long[]{0xFC54A086040061F2L,0x00000000000001FEL});
-    public static final BitSet FOLLOW_ruleImport_in_ruleScript185 = new BitSet(new long[]{0xFC54A086040061F2L,0x00000000000001FEL});
+    public static final BitSet FOLLOW_ruleImport_in_ruleScript169 = new BitSet(new long[]{0xFC54A086040061F2L,0x00000000000001FEL});
+    public static final BitSet FOLLOW_13_in_ruleScript183 = new BitSet(new long[]{0xFC54A086040061F2L,0x00000000000001FEL});
     public static final BitSet FOLLOW_ruleImport_in_entryRuleImport223 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleImport233 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_14_in_ruleImport270 = new BitSet(new long[]{0x0000000000000100L});

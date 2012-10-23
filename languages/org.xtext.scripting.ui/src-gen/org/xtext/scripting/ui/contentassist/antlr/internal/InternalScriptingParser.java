@@ -1,10 +1,3 @@
-/*******************************************************************************
- * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- ******************************************************************************/
 package org.xtext.scripting.ui.contentassist.antlr.internal; 
 
 import java.io.InputStream;
@@ -5760,14 +5753,14 @@ public class InternalScriptingParser extends AbstractInternalContentAssistParser
     // $ANTLR end "ruleValidID"
 
 
-    // $ANTLR start "rule__Script__Alternatives_1"
-    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:1934:1: rule__Script__Alternatives_1 : ( ( ( rule__Script__Group_1_0__0 ) ) | ( ( rule__Script__ImportsAssignment_1_1 ) ) );
-    public final void rule__Script__Alternatives_1() throws RecognitionException {
+    // $ANTLR start "rule__Script__Alternatives_1_0"
+    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:1934:1: rule__Script__Alternatives_1_0 : ( ( ( rule__Script__ExpressionsAssignment_1_0_0 ) ) | ( ( rule__Script__ImportsAssignment_1_0_1 ) ) );
+    public final void rule__Script__Alternatives_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:1938:1: ( ( ( rule__Script__Group_1_0__0 ) ) | ( ( rule__Script__ImportsAssignment_1_1 ) ) )
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:1938:1: ( ( ( rule__Script__ExpressionsAssignment_1_0_0 ) ) | ( ( rule__Script__ImportsAssignment_1_0_1 ) ) )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -5786,19 +5779,19 @@ public class InternalScriptingParser extends AbstractInternalContentAssistParser
             }
             switch (alt2) {
                 case 1 :
-                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:1939:1: ( ( rule__Script__Group_1_0__0 ) )
+                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:1939:1: ( ( rule__Script__ExpressionsAssignment_1_0_0 ) )
                     {
-                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:1939:1: ( ( rule__Script__Group_1_0__0 ) )
-                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:1940:1: ( rule__Script__Group_1_0__0 )
+                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:1939:1: ( ( rule__Script__ExpressionsAssignment_1_0_0 ) )
+                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:1940:1: ( rule__Script__ExpressionsAssignment_1_0_0 )
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getScriptAccess().getGroup_1_0()); 
+                       before(grammarAccess.getScriptAccess().getExpressionsAssignment_1_0_0()); 
                     }
-                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:1941:1: ( rule__Script__Group_1_0__0 )
-                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:1941:2: rule__Script__Group_1_0__0
+                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:1941:1: ( rule__Script__ExpressionsAssignment_1_0_0 )
+                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:1941:2: rule__Script__ExpressionsAssignment_1_0_0
                     {
-                    pushFollow(FOLLOW_rule__Script__Group_1_0__0_in_rule__Script__Alternatives_14070);
-                    rule__Script__Group_1_0__0();
+                    pushFollow(FOLLOW_rule__Script__ExpressionsAssignment_1_0_0_in_rule__Script__Alternatives_1_04070);
+                    rule__Script__ExpressionsAssignment_1_0_0();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -5806,7 +5799,7 @@ public class InternalScriptingParser extends AbstractInternalContentAssistParser
                     }
 
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getScriptAccess().getGroup_1_0()); 
+                       after(grammarAccess.getScriptAccess().getExpressionsAssignment_1_0_0()); 
                     }
 
                     }
@@ -5815,19 +5808,19 @@ public class InternalScriptingParser extends AbstractInternalContentAssistParser
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:1945:6: ( ( rule__Script__ImportsAssignment_1_1 ) )
+                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:1945:6: ( ( rule__Script__ImportsAssignment_1_0_1 ) )
                     {
-                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:1945:6: ( ( rule__Script__ImportsAssignment_1_1 ) )
-                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:1946:1: ( rule__Script__ImportsAssignment_1_1 )
+                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:1945:6: ( ( rule__Script__ImportsAssignment_1_0_1 ) )
+                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:1946:1: ( rule__Script__ImportsAssignment_1_0_1 )
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getScriptAccess().getImportsAssignment_1_1()); 
+                       before(grammarAccess.getScriptAccess().getImportsAssignment_1_0_1()); 
                     }
-                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:1947:1: ( rule__Script__ImportsAssignment_1_1 )
-                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:1947:2: rule__Script__ImportsAssignment_1_1
+                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:1947:1: ( rule__Script__ImportsAssignment_1_0_1 )
+                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:1947:2: rule__Script__ImportsAssignment_1_0_1
                     {
-                    pushFollow(FOLLOW_rule__Script__ImportsAssignment_1_1_in_rule__Script__Alternatives_14088);
-                    rule__Script__ImportsAssignment_1_1();
+                    pushFollow(FOLLOW_rule__Script__ImportsAssignment_1_0_1_in_rule__Script__Alternatives_1_04088);
+                    rule__Script__ImportsAssignment_1_0_1();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -5835,7 +5828,7 @@ public class InternalScriptingParser extends AbstractInternalContentAssistParser
                     }
 
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getScriptAccess().getImportsAssignment_1_1()); 
+                       after(grammarAccess.getScriptAccess().getImportsAssignment_1_0_1()); 
                     }
 
                     }
@@ -5857,7 +5850,7 @@ public class InternalScriptingParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__Script__Alternatives_1"
+    // $ANTLR end "rule__Script__Alternatives_1_0"
 
 
     // $ANTLR start "rule__XAssignment__Alternatives"
@@ -9626,22 +9619,22 @@ public class InternalScriptingParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Script__Group__1__Impl"
-    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2899:1: rule__Script__Group__1__Impl : ( ( rule__Script__Alternatives_1 )* ) ;
+    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2899:1: rule__Script__Group__1__Impl : ( ( rule__Script__Group_1__0 )* ) ;
     public final void rule__Script__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2903:1: ( ( ( rule__Script__Alternatives_1 )* ) )
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2904:1: ( ( rule__Script__Alternatives_1 )* )
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2903:1: ( ( ( rule__Script__Group_1__0 )* ) )
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2904:1: ( ( rule__Script__Group_1__0 )* )
             {
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2904:1: ( ( rule__Script__Alternatives_1 )* )
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2905:1: ( rule__Script__Alternatives_1 )*
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2904:1: ( ( rule__Script__Group_1__0 )* )
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2905:1: ( rule__Script__Group_1__0 )*
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getScriptAccess().getAlternatives_1()); 
+               before(grammarAccess.getScriptAccess().getGroup_1()); 
             }
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2906:1: ( rule__Script__Alternatives_1 )*
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2906:1: ( rule__Script__Group_1__0 )*
             loop34:
             do {
                 int alt34=2;
@@ -9654,10 +9647,10 @@ public class InternalScriptingParser extends AbstractInternalContentAssistParser
 
                 switch (alt34) {
             	case 1 :
-            	    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2906:2: rule__Script__Alternatives_1
+            	    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2906:2: rule__Script__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__Script__Alternatives_1_in_rule__Script__Group__1__Impl6300);
-            	    rule__Script__Alternatives_1();
+            	    pushFollow(FOLLOW_rule__Script__Group_1__0_in_rule__Script__Group__1__Impl6300);
+            	    rule__Script__Group_1__0();
 
             	    state._fsp--;
             	    if (state.failed) return ;
@@ -9671,7 +9664,7 @@ public class InternalScriptingParser extends AbstractInternalContentAssistParser
             } while (true);
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getScriptAccess().getAlternatives_1()); 
+               after(grammarAccess.getScriptAccess().getGroup_1()); 
             }
 
             }
@@ -9694,23 +9687,23 @@ public class InternalScriptingParser extends AbstractInternalContentAssistParser
     // $ANTLR end "rule__Script__Group__1__Impl"
 
 
-    // $ANTLR start "rule__Script__Group_1_0__0"
-    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2920:1: rule__Script__Group_1_0__0 : rule__Script__Group_1_0__0__Impl rule__Script__Group_1_0__1 ;
-    public final void rule__Script__Group_1_0__0() throws RecognitionException {
+    // $ANTLR start "rule__Script__Group_1__0"
+    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2920:1: rule__Script__Group_1__0 : rule__Script__Group_1__0__Impl rule__Script__Group_1__1 ;
+    public final void rule__Script__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2924:1: ( rule__Script__Group_1_0__0__Impl rule__Script__Group_1_0__1 )
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2925:2: rule__Script__Group_1_0__0__Impl rule__Script__Group_1_0__1
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2924:1: ( rule__Script__Group_1__0__Impl rule__Script__Group_1__1 )
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2925:2: rule__Script__Group_1__0__Impl rule__Script__Group_1__1
             {
-            pushFollow(FOLLOW_rule__Script__Group_1_0__0__Impl_in_rule__Script__Group_1_0__06335);
-            rule__Script__Group_1_0__0__Impl();
+            pushFollow(FOLLOW_rule__Script__Group_1__0__Impl_in_rule__Script__Group_1__06335);
+            rule__Script__Group_1__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Script__Group_1_0__1_in_rule__Script__Group_1_0__06338);
-            rule__Script__Group_1_0__1();
+            pushFollow(FOLLOW_rule__Script__Group_1__1_in_rule__Script__Group_1__06338);
+            rule__Script__Group_1__1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -9729,30 +9722,30 @@ public class InternalScriptingParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__Script__Group_1_0__0"
+    // $ANTLR end "rule__Script__Group_1__0"
 
 
-    // $ANTLR start "rule__Script__Group_1_0__0__Impl"
-    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2932:1: rule__Script__Group_1_0__0__Impl : ( ( rule__Script__ExpressionsAssignment_1_0_0 ) ) ;
-    public final void rule__Script__Group_1_0__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Script__Group_1__0__Impl"
+    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2932:1: rule__Script__Group_1__0__Impl : ( ( rule__Script__Alternatives_1_0 ) ) ;
+    public final void rule__Script__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2936:1: ( ( ( rule__Script__ExpressionsAssignment_1_0_0 ) ) )
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2937:1: ( ( rule__Script__ExpressionsAssignment_1_0_0 ) )
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2936:1: ( ( ( rule__Script__Alternatives_1_0 ) ) )
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2937:1: ( ( rule__Script__Alternatives_1_0 ) )
             {
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2937:1: ( ( rule__Script__ExpressionsAssignment_1_0_0 ) )
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2938:1: ( rule__Script__ExpressionsAssignment_1_0_0 )
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2937:1: ( ( rule__Script__Alternatives_1_0 ) )
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2938:1: ( rule__Script__Alternatives_1_0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getScriptAccess().getExpressionsAssignment_1_0_0()); 
+               before(grammarAccess.getScriptAccess().getAlternatives_1_0()); 
             }
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2939:1: ( rule__Script__ExpressionsAssignment_1_0_0 )
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2939:2: rule__Script__ExpressionsAssignment_1_0_0
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2939:1: ( rule__Script__Alternatives_1_0 )
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2939:2: rule__Script__Alternatives_1_0
             {
-            pushFollow(FOLLOW_rule__Script__ExpressionsAssignment_1_0_0_in_rule__Script__Group_1_0__0__Impl6365);
-            rule__Script__ExpressionsAssignment_1_0_0();
+            pushFollow(FOLLOW_rule__Script__Alternatives_1_0_in_rule__Script__Group_1__0__Impl6365);
+            rule__Script__Alternatives_1_0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -9760,7 +9753,7 @@ public class InternalScriptingParser extends AbstractInternalContentAssistParser
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getScriptAccess().getExpressionsAssignment_1_0_0()); 
+               after(grammarAccess.getScriptAccess().getAlternatives_1_0()); 
             }
 
             }
@@ -9780,21 +9773,21 @@ public class InternalScriptingParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__Script__Group_1_0__0__Impl"
+    // $ANTLR end "rule__Script__Group_1__0__Impl"
 
 
-    // $ANTLR start "rule__Script__Group_1_0__1"
-    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2949:1: rule__Script__Group_1_0__1 : rule__Script__Group_1_0__1__Impl ;
-    public final void rule__Script__Group_1_0__1() throws RecognitionException {
+    // $ANTLR start "rule__Script__Group_1__1"
+    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2949:1: rule__Script__Group_1__1 : rule__Script__Group_1__1__Impl ;
+    public final void rule__Script__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2953:1: ( rule__Script__Group_1_0__1__Impl )
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2954:2: rule__Script__Group_1_0__1__Impl
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2953:1: ( rule__Script__Group_1__1__Impl )
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2954:2: rule__Script__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__Script__Group_1_0__1__Impl_in_rule__Script__Group_1_0__16395);
-            rule__Script__Group_1_0__1__Impl();
+            pushFollow(FOLLOW_rule__Script__Group_1__1__Impl_in_rule__Script__Group_1__16395);
+            rule__Script__Group_1__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
@@ -9813,12 +9806,12 @@ public class InternalScriptingParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__Script__Group_1_0__1"
+    // $ANTLR end "rule__Script__Group_1__1"
 
 
-    // $ANTLR start "rule__Script__Group_1_0__1__Impl"
-    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2960:1: rule__Script__Group_1_0__1__Impl : ( ( ';' )? ) ;
-    public final void rule__Script__Group_1_0__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Script__Group_1__1__Impl"
+    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2960:1: rule__Script__Group_1__1__Impl : ( ( ';' )? ) ;
+    public final void rule__Script__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -9830,7 +9823,7 @@ public class InternalScriptingParser extends AbstractInternalContentAssistParser
             // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2966:1: ( ';' )?
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getScriptAccess().getSemicolonKeyword_1_0_1()); 
+               before(grammarAccess.getScriptAccess().getSemicolonKeyword_1_1()); 
             }
             // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2967:1: ( ';' )?
             int alt35=2;
@@ -9843,7 +9836,7 @@ public class InternalScriptingParser extends AbstractInternalContentAssistParser
                 case 1 :
                     // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:2968:2: ';'
                     {
-                    match(input,40,FOLLOW_40_in_rule__Script__Group_1_0__1__Impl6424); if (state.failed) return ;
+                    match(input,40,FOLLOW_40_in_rule__Script__Group_1__1__Impl6424); if (state.failed) return ;
 
                     }
                     break;
@@ -9851,7 +9844,7 @@ public class InternalScriptingParser extends AbstractInternalContentAssistParser
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getScriptAccess().getSemicolonKeyword_1_0_1()); 
+               after(grammarAccess.getScriptAccess().getSemicolonKeyword_1_1()); 
             }
 
             }
@@ -9871,7 +9864,7 @@ public class InternalScriptingParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__Script__Group_1_0__1__Impl"
+    // $ANTLR end "rule__Script__Group_1__1__Impl"
 
 
     // $ANTLR start "rule__Import__Group__0"
@@ -39377,9 +39370,9 @@ public class InternalScriptingParser extends AbstractInternalContentAssistParser
     // $ANTLR end "rule__Script__ExpressionsAssignment_1_0_0"
 
 
-    // $ANTLR start "rule__Script__ImportsAssignment_1_1"
-    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:13733:1: rule__Script__ImportsAssignment_1_1 : ( ruleImport ) ;
-    public final void rule__Script__ImportsAssignment_1_1() throws RecognitionException {
+    // $ANTLR start "rule__Script__ImportsAssignment_1_0_1"
+    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:13733:1: rule__Script__ImportsAssignment_1_0_1 : ( ruleImport ) ;
+    public final void rule__Script__ImportsAssignment_1_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -39391,15 +39384,15 @@ public class InternalScriptingParser extends AbstractInternalContentAssistParser
             // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:13739:1: ruleImport
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getScriptAccess().getImportsImportParserRuleCall_1_1_0()); 
+               before(grammarAccess.getScriptAccess().getImportsImportParserRuleCall_1_0_1_0()); 
             }
-            pushFollow(FOLLOW_ruleImport_in_rule__Script__ImportsAssignment_1_127592);
+            pushFollow(FOLLOW_ruleImport_in_rule__Script__ImportsAssignment_1_0_127592);
             ruleImport();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getScriptAccess().getImportsImportParserRuleCall_1_1_0()); 
+               after(grammarAccess.getScriptAccess().getImportsImportParserRuleCall_1_0_1_0()); 
             }
 
             }
@@ -39419,7 +39412,7 @@ public class InternalScriptingParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__Script__ImportsAssignment_1_1"
+    // $ANTLR end "rule__Script__ImportsAssignment_1_0_1"
 
 
     // $ANTLR start "rule__Import__ImportedNamespaceAssignment_1"
@@ -48211,8 +48204,8 @@ public class InternalScriptingParser extends AbstractInternalContentAssistParser
     public static final BitSet FOLLOW_ruleValidID_in_entryRuleValidID4002 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleValidID4009 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleValidID4035 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Script__Group_1_0__0_in_rule__Script__Alternatives_14070 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Script__ImportsAssignment_1_1_in_rule__Script__Alternatives_14088 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Script__ExpressionsAssignment_1_0_0_in_rule__Script__Alternatives_1_04070 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Script__ImportsAssignment_1_0_1_in_rule__Script__Alternatives_1_04088 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XAssignment__Group_0__0_in_rule__XAssignment__Alternatives4121 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XAssignment__Group_1__0_in_rule__XAssignment__Alternatives4139 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_17_in_rule__OpEquality__Alternatives4173 = new BitSet(new long[]{0x0000000000000002L});
@@ -48305,12 +48298,12 @@ public class InternalScriptingParser extends AbstractInternalContentAssistParser
     public static final BitSet FOLLOW_rule__Script__Group__0__Impl_in_rule__Script__Group__06212 = new BitSet(new long[]{0xDC3702E8604001F0L,0x000000000000300FL});
     public static final BitSet FOLLOW_rule__Script__Group__1_in_rule__Script__Group__06215 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Script__Group__1__Impl_in_rule__Script__Group__16273 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Script__Alternatives_1_in_rule__Script__Group__1__Impl6300 = new BitSet(new long[]{0xDC3702E8604001F2L,0x000000000000300FL});
-    public static final BitSet FOLLOW_rule__Script__Group_1_0__0__Impl_in_rule__Script__Group_1_0__06335 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_rule__Script__Group_1_0__1_in_rule__Script__Group_1_0__06338 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Script__ExpressionsAssignment_1_0_0_in_rule__Script__Group_1_0__0__Impl6365 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Script__Group_1_0__1__Impl_in_rule__Script__Group_1_0__16395 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_rule__Script__Group_1_0__1__Impl6424 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Script__Group_1__0_in_rule__Script__Group__1__Impl6300 = new BitSet(new long[]{0xDC3702E8604001F2L,0x000000000000300FL});
+    public static final BitSet FOLLOW_rule__Script__Group_1__0__Impl_in_rule__Script__Group_1__06335 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_rule__Script__Group_1__1_in_rule__Script__Group_1__06338 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Script__Alternatives_1_0_in_rule__Script__Group_1__0__Impl6365 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Script__Group_1__1__Impl_in_rule__Script__Group_1__16395 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_rule__Script__Group_1__1__Impl6424 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Import__Group__0__Impl_in_rule__Import__Group__06461 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__Import__Group__1_in_rule__Import__Group__06464 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_41_in_rule__Import__Group__0__Impl6492 = new BitSet(new long[]{0x0000000000000002L});
@@ -49162,7 +49155,7 @@ public class InternalScriptingParser extends AbstractInternalContentAssistParser
     public static final BitSet FOLLOW_rule__JvmLowerBound__Group__1__Impl_in_rule__JvmLowerBound__Group__127493 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__JvmLowerBound__TypeReferenceAssignment_1_in_rule__JvmLowerBound__Group__1__Impl27520 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXExpressionInsideBlock_in_rule__Script__ExpressionsAssignment_1_0_027561 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleImport_in_rule__Script__ImportsAssignment_1_127592 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleImport_in_rule__Script__ImportsAssignment_1_0_127592 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleQualifiedNameWithWildcard_in_rule__Import__ImportedNamespaceAssignment_127623 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleValidID_in_rule__XAssignment__FeatureAssignment_0_127658 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXAssignment_in_rule__XAssignment__ValueAssignment_0_327693 = new BitSet(new long[]{0x0000000000000002L});

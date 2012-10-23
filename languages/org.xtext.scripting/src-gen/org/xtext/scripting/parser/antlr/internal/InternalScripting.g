@@ -101,30 +101,30 @@ ruleScript returns [EObject current=null]
 	    }
 
 )
-)(	otherlv_2=';' 
-    {
-    	newLeafNode(otherlv_2, grammarAccess.getScriptAccess().getSemicolonKeyword_1_0_1());
-    }
-)?)
+)
     |(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getScriptAccess().getImportsImportParserRuleCall_1_1_0()); 
+	        newCompositeNode(grammarAccess.getScriptAccess().getImportsImportParserRuleCall_1_0_1_0()); 
 	    }
-		lv_imports_3_0=ruleImport		{
+		lv_imports_2_0=ruleImport		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getScriptRule());
 	        }
        		add(
        			$current, 
        			"imports",
-        		lv_imports_3_0, 
+        		lv_imports_2_0, 
         		"Import");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))*)
+))(	otherlv_3=';' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getScriptAccess().getSemicolonKeyword_1_1());
+    }
+)?)*)
 ;
 
 
