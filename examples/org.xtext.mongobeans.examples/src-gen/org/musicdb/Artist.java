@@ -1,10 +1,8 @@
 package org.musicdb;
 
-import com.google.common.collect.Iterables;
 import com.mongodb.DBObject;
+import java.util.ArrayList;
 import java.util.List;
-import org.eclipse.xtext.xbase.lib.Functions.Function1;
-import org.eclipse.xtext.xbase.lib.ListExtensions;
 import org.musicdb.Album;
 import org.musicdb.Track;
 import org.xtext.mongobeans.lib.IMongoBean;
@@ -57,15 +55,15 @@ public class Artist implements IMongoBean {
   }
   
   public Iterable<? extends Track> getOevre() {
+    ArrayList<Track> _arrayList = new ArrayList<Track>();
+    final List<Track> result = _arrayList;
     List<Album> _albums = this.getAlbums();
-    final Function1<Album,List<Track>> _function = new Function1<Album,List<Track>>() {
-        public List<Track> apply(final Album it) {
-          List<Track> _tracks = it.getTracks();
-          return _tracks;
-        }
-      };
-    List<List<Track>> _map = ListExtensions.<Album, List<Track>>map(_albums, _function);
-    Iterable<Track> _flatten = Iterables.<Track>concat(_map);
-    return _flatten;
+    for (final Album album : _albums) {
+      List<Track> _tracks = album.getTracks();
+      for (final Track track : _tracks) {
+        result.add(track);
+      }
+    }
+    return result;
   }
 }

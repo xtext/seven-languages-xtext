@@ -24,7 +24,6 @@ public class JavaExample {
 	public void dealWithMongoEntities() throws UnknownHostException, MongoException {
 		DBObject artist = new BasicDBObject();
 		artist.put("name", "John Coltrane");
-		
 		DBObject album = new BasicDBObject();
 		album.put("title", "A Love Supreme");
 		album.put("year", 1965);
@@ -38,6 +37,13 @@ public class JavaExample {
 		DBObject query = new BasicDBObject();
 		query.put("name", "John Coltrane");
 		DBObject artistFromDB = dbCollection.find(query).next();
-		System.out.println(((Collection<?>)artistFromDB.get("album")).iterator().next());
+		Object albumFromDB = artistFromDB.get("album");
+		if(albumFromDB instanceof Collection) {
+			Object firstAlbumFromDB = ((Collection<?>) album).iterator().next();
+			if(firstAlbumFromDB instanceof DBObject) {
+				Object titleFromDB = album.get("title");
+				System.out.println(titleFromDB.toString());
+			}
+		}
 	}
 }
