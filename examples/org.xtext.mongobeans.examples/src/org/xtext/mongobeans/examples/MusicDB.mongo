@@ -9,7 +9,15 @@ package org.musicdb {
 		String name
 		Album* albums
 		Iterable<? extends Track> getOevre() {
-			albums.map[tracks].flatten
+			// Xbase can look like Java
+			val List<Track> result = new ArrayList<Track>();
+			for(Album album: getAlbums()) {
+				for(Track track: album.getTracks()) 
+					result.add(track);
+			}
+			return result;
+			// or a bit shorter ;-)
+			// albums.map[tracks].flatten
 		}
 	}
 
@@ -17,7 +25,7 @@ package org.musicdb {
 		String title
 		int year
 		Duration getDuration() {
-			tracks.map[duration].reduce[ a, b | a + b]
+			tracks.map[duration].reduce[a, b | a + b]
 		} 
 		Track {
 			String title

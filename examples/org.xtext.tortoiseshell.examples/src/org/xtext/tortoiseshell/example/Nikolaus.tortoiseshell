@@ -1,14 +1,8 @@
 begin
   val length = 150
   val diagonal = length * sqrt(2)
-  forward(length)
-  turnRight(90)
-  forward(length)
-  turnRight(90)
-  forward(length)
-  turnRight(90)
-  forward(length)
-  turnRight(135)
+  square(length)
+  turnRight(45)
   forward(diagonal)
   turnLeft(90)
   forward(diagonal / 2)
@@ -16,4 +10,13 @@ begin
   forward(diagonal / 2)
   turnLeft(90)
   forward(diagonal)
+end
+
+sub square
+  double length
+begin
+  for(i: 1..4) {
+    forward(length)
+    turnRight(90)
+  }
 end
