@@ -1,0 +1,8 @@
+import simple.SimpleClazz
+
+GET /:someValue do SimpleClazz::staticMethod(someValue)
+
+
+inject SimpleClazz simpleClazz
+
+GET /:someValue do simpleClazz.instanceMethod(someValue)
