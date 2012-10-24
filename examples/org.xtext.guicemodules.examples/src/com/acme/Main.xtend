@@ -15,6 +15,9 @@ import static org.junit.Assert.*
 
 class Main {
 	
+	@Inject DataProvider provider
+	@Inject LoggingService logger
+
 	def static void main(String[] args) {
 		val instance = new Main
 		Guice::createInjector(new RuntimeModule).injectMembers(instance)
@@ -26,9 +29,6 @@ class Main {
 		logTheData
 		assertEquals('dummy-data', logger.toString)
 	}
-	
-	@Inject DataProvider provider
-	@Inject LoggingService logger
 	
 	def logTheData() {
 		logger.logMessage(provider.data)

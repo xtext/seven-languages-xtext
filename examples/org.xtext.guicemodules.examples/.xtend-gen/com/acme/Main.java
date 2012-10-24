@@ -12,6 +12,12 @@ import org.junit.Test;
 
 @SuppressWarnings("all")
 public class Main {
+  @Inject
+  private DataProvider provider;
+
+  @Inject
+  private LoggingService logger;
+
   public static void main(final String[] args) {
     Main _main = new Main();
     final Main instance = _main;
@@ -30,12 +36,6 @@ public class Main {
     String _string = this.logger.toString();
     Assert.assertEquals("dummy-data", _string);
   }
-  
-  @Inject
-  private DataProvider provider;
-  
-  @Inject
-  private LoggingService logger;
   
   public void logTheData() {
     String _data = this.provider.getData();
