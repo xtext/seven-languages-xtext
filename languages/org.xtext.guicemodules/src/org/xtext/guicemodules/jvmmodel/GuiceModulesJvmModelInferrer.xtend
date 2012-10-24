@@ -81,14 +81,14 @@ class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
 			}
 			
 			// the main configure delegates to one accepting a set for the already bound keys.
-			members += toMethod(null, "configure", voidType.createTypeRef) [
+			members += module.toMethod("configure", voidType.createTypeRef) [
 				parameters += module.toParameter("binder", binderType.createTypeRef)
 				body = [append('''
 					configure(binder, new «hashSetType.createTypeRef(keyType.createTypeRef(wildCard)).identifier»());
 				''')]
 			]
 			
-			members+= toMethod(null, "configure", voidType.createTypeRef) [
+			members+= module.toMethod("configure", voidType.createTypeRef) [
 				documentation = 'Registers bindings for keys not present in the given set.'
 				parameters += module.toParameter("bind", binderType.createTypeRef)
 				parameters += module.toParameter("usedKeys", setType.createTypeRef( keyType.createTypeRef(wildCard)))
