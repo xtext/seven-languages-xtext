@@ -90,8 +90,8 @@ public abstract class AbstractMongoBeansRuntimeModule extends DefaultRuntimeModu
 	}
 
 	// contributed by org.eclipse.xtext.generator.validation.ValidatorFragment
-	@org.eclipse.xtext.service.SingletonBinding(eager=true)	public Class<? extends org.xtext.mongobeans.validation.MongoBeansValidator> bindMongoBeansValidator() {
-		return org.xtext.mongobeans.validation.MongoBeansValidator.class;
+	@org.eclipse.xtext.service.SingletonBinding(eager=true)	public Class<? extends org.xtext.mongobeans.validation.AbstractMongoBeansValidator> bindAbstractMongoBeansValidator() {
+		return org.xtext.mongobeans.validation.AbstractMongoBeansValidator.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.scoping.AbstractScopingFragment

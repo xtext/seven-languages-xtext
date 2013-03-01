@@ -15,8 +15,7 @@ var grammarURI = "classpath:/org/xtext/mongobeans/MongoBeans.xtext"
 var fileExtensions = "mongo"
 var projectName = "org.xtext.mongobeans"
 var runtimeProject = "../${projectName}"
-var generateStub = true
-var generateXtendStub = true
+var generateStub = false
 
 Workflow {
     bean = StandaloneSetup {
