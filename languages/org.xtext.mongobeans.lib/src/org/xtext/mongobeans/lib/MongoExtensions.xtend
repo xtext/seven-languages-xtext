@@ -8,7 +8,6 @@
 package org.xtext.mongobeans.lib
 
 import com.mongodb.DBCollection
-import org.xtext.mongobeans.lib.IMongoBean
 
 import static extension org.xtext.mongobeans.lib.WrappingUtil.*
 
@@ -17,7 +16,7 @@ import static extension org.xtext.mongobeans.lib.WrappingUtil.*
  */
 class MongoExtensions {
 	
-	def <T extends IMongoBean> findOne(DBCollection collection, T wrapper) {
+	def <T extends IMongoBean> findOneBean(DBCollection collection, T wrapper) {
 		collection.findOne(wrapper.getDbObject)?.wrap as T
 	}
 	

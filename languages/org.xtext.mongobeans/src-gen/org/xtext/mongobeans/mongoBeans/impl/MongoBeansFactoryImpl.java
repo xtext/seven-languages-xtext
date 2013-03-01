@@ -1,10 +1,5 @@
-/*******************************************************************************
- * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- ******************************************************************************/
+/**
+ */
 package org.xtext.mongobeans.mongoBeans.impl;
 
 import org.eclipse.emf.ecore.EClass;
@@ -35,7 +30,7 @@ public class MongoBeansFactoryImpl extends EFactoryImpl implements MongoBeansFac
   {
     try
     {
-      MongoBeansFactory theMongoBeansFactory = (MongoBeansFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/xtext/mongobeans/MongoBeans"); 
+      MongoBeansFactory theMongoBeansFactory = (MongoBeansFactory)EPackage.Registry.INSTANCE.getEFactory(MongoBeansPackage.eNS_URI);
       if (theMongoBeansFactory != null)
       {
         return theMongoBeansFactory;
@@ -70,7 +65,6 @@ public class MongoBeansFactoryImpl extends EFactoryImpl implements MongoBeansFac
     switch (eClass.getClassifierID())
     {
       case MongoBeansPackage.MONGO_FILE: return createMongoFile();
-      case MongoBeansPackage.IMPORT: return createImport();
       case MongoBeansPackage.ABSTRACT_ELEMENT: return createAbstractElement();
       case MongoBeansPackage.PACKAGE_DECLARATION: return createPackageDeclaration();
       case MongoBeansPackage.MONGO_BEAN: return createMongoBean();
@@ -91,17 +85,6 @@ public class MongoBeansFactoryImpl extends EFactoryImpl implements MongoBeansFac
   {
     MongoFileImpl mongoFile = new MongoFileImpl();
     return mongoFile;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Import createImport()
-  {
-    ImportImpl import_ = new ImportImpl();
-    return import_;
   }
 
   /**

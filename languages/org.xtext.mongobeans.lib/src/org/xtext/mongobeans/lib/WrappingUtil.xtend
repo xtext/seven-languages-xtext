@@ -9,8 +9,6 @@ package org.xtext.mongobeans.lib
 
 import com.mongodb.DBObject
 
-import static org.xtext.mongobeans.lib.WrappingUtil.*
-
 /**
  * Mongobeans <-> DBObject conversion methods.
  */

@@ -1,10 +1,5 @@
-/*******************************************************************************
- * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- ******************************************************************************/
+/**
+ */
 package org.xtext.mongobeans.mongoBeans.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -18,9 +13,10 @@ import org.eclipse.xtext.common.types.TypesPackage;
 
 import org.eclipse.xtext.xbase.XbasePackage;
 
+import org.eclipse.xtext.xtype.XtypePackage;
+
 import org.xtext.mongobeans.mongoBeans.AbstractElement;
 import org.xtext.mongobeans.mongoBeans.AbstractFeature;
-import org.xtext.mongobeans.mongoBeans.Import;
 import org.xtext.mongobeans.mongoBeans.MongoBean;
 import org.xtext.mongobeans.mongoBeans.MongoBeansFactory;
 import org.xtext.mongobeans.mongoBeans.MongoBeansPackage;
@@ -43,13 +39,6 @@ public class MongoBeansPackageImpl extends EPackageImpl implements MongoBeansPac
    * @generated
    */
   private EClass mongoFileEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass importEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -143,6 +132,7 @@ public class MongoBeansPackageImpl extends EPackageImpl implements MongoBeansPac
 
     // Initialize simple dependencies
     XbasePackage.eINSTANCE.eClass();
+    XtypePackage.eINSTANCE.eClass();
 
     // Create package meta-data objects
     theMongoBeansPackage.createPackageContents();
@@ -174,7 +164,7 @@ public class MongoBeansPackageImpl extends EPackageImpl implements MongoBeansPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getMongoFile_Elements()
+  public EReference getMongoFile_ImportSection()
   {
     return (EReference)mongoFileEClass.getEStructuralFeatures().get(0);
   }
@@ -184,19 +174,9 @@ public class MongoBeansPackageImpl extends EPackageImpl implements MongoBeansPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getImport()
+  public EReference getMongoFile_Elements()
   {
-    return importEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getImport_ImportedNamespace()
-  {
-    return (EAttribute)importEClass.getEStructuralFeatures().get(0);
+    return (EReference)mongoFileEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -214,6 +194,16 @@ public class MongoBeansPackageImpl extends EPackageImpl implements MongoBeansPac
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getAbstractElement_Name()
+  {
+    return (EAttribute)abstractElementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getPackageDeclaration()
   {
     return packageDeclarationEClass;
@@ -224,19 +214,9 @@ public class MongoBeansPackageImpl extends EPackageImpl implements MongoBeansPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getPackageDeclaration_Name()
-  {
-    return (EAttribute)packageDeclarationEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getPackageDeclaration_Elements()
   {
-    return (EReference)packageDeclarationEClass.getEStructuralFeatures().get(1);
+    return (EReference)packageDeclarationEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -254,19 +234,9 @@ public class MongoBeansPackageImpl extends EPackageImpl implements MongoBeansPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMongoBean_Name()
-  {
-    return (EAttribute)mongoBeanEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getMongoBean_Features()
   {
-    return (EReference)mongoBeanEClass.getEStructuralFeatures().get(1);
+    return (EReference)mongoBeanEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -400,19 +370,16 @@ public class MongoBeansPackageImpl extends EPackageImpl implements MongoBeansPac
 
     // Create classes and their features
     mongoFileEClass = createEClass(MONGO_FILE);
+    createEReference(mongoFileEClass, MONGO_FILE__IMPORT_SECTION);
     createEReference(mongoFileEClass, MONGO_FILE__ELEMENTS);
 
-    importEClass = createEClass(IMPORT);
-    createEAttribute(importEClass, IMPORT__IMPORTED_NAMESPACE);
-
     abstractElementEClass = createEClass(ABSTRACT_ELEMENT);
+    createEAttribute(abstractElementEClass, ABSTRACT_ELEMENT__NAME);
 
     packageDeclarationEClass = createEClass(PACKAGE_DECLARATION);
-    createEAttribute(packageDeclarationEClass, PACKAGE_DECLARATION__NAME);
     createEReference(packageDeclarationEClass, PACKAGE_DECLARATION__ELEMENTS);
 
     mongoBeanEClass = createEClass(MONGO_BEAN);
-    createEAttribute(mongoBeanEClass, MONGO_BEAN__NAME);
     createEReference(mongoBeanEClass, MONGO_BEAN__FEATURES);
 
     abstractFeatureEClass = createEClass(ABSTRACT_FEATURE);
@@ -454,6 +421,7 @@ public class MongoBeansPackageImpl extends EPackageImpl implements MongoBeansPac
     setNsURI(eNS_URI);
 
     // Obtain other dependent packages
+    XtypePackage theXtypePackage = (XtypePackage)EPackage.Registry.INSTANCE.getEPackage(XtypePackage.eNS_URI);
     TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
     XbasePackage theXbasePackage = (XbasePackage)EPackage.Registry.INSTANCE.getEPackage(XbasePackage.eNS_URI);
 
@@ -462,7 +430,6 @@ public class MongoBeansPackageImpl extends EPackageImpl implements MongoBeansPac
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    importEClass.getESuperTypes().add(this.getAbstractElement());
     packageDeclarationEClass.getESuperTypes().add(this.getAbstractElement());
     mongoBeanEClass.getESuperTypes().add(this.getAbstractElement());
     mongoPropertyEClass.getESuperTypes().add(this.getAbstractFeature());
@@ -470,19 +437,16 @@ public class MongoBeansPackageImpl extends EPackageImpl implements MongoBeansPac
 
     // Initialize classes and features; add operations and parameters
     initEClass(mongoFileEClass, MongoFile.class, "MongoFile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMongoFile_ImportSection(), theXtypePackage.getXImportSection(), null, "importSection", null, 0, 1, MongoFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMongoFile_Elements(), this.getAbstractElement(), null, "elements", null, 0, -1, MongoFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getImport_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(abstractElementEClass, AbstractElement.class, "AbstractElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAbstractElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, AbstractElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(packageDeclarationEClass, PackageDeclaration.class, "PackageDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPackageDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, PackageDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPackageDeclaration_Elements(), this.getAbstractElement(), null, "elements", null, 0, -1, PackageDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(mongoBeanEClass, MongoBean.class, "MongoBean", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getMongoBean_Name(), ecorePackage.getEString(), "name", null, 0, 1, MongoBean.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMongoBean_Features(), this.getAbstractFeature(), null, "features", null, 0, -1, MongoBean.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(abstractFeatureEClass, AbstractFeature.class, "AbstractFeature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

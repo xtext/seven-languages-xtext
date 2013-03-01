@@ -7,14 +7,15 @@
  ******************************************************************************/
 package org.xtext.mongobeans.scoping
 
+import org.eclipse.xtext.naming.QualifiedName
 import org.eclipse.xtext.xbase.scoping.XbaseQualifiedNameProvider
 import org.xtext.mongobeans.mongoBeans.MongoBean
 import org.xtext.mongobeans.mongoBeans.PackageDeclaration
+
 import static extension org.eclipse.xtext.EcoreUtil2.*
-import org.eclipse.xtext.naming.QualifiedName
 
 /**
- * Customized to return correct names for inline declared {@link MongoBeans}.
+ * Customized to return correct names for inline declared {@link MongoBean}s.
  */
 class MongoQualifiedNameProvider extends XbaseQualifiedNameProvider {
 	

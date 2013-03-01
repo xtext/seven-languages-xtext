@@ -11,6 +11,7 @@ import org.xtext.mongobeans.examples.Duration;
 import org.xtext.mongobeans.lib.IMongoBean;
 import org.xtext.mongobeans.lib.MongoBeanList;
 
+@SuppressWarnings("all")
 public class Album implements IMongoBean {
   /**
    * Creates a new Album wrapping the given {@link DBObject}.

@@ -5,16 +5,16 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  ******************************************************************************/
-package org.xtext.mongobeans.lib;
+package org.xtext.mongobeans.lib
 
-import com.mongodb.DBObject;
+import com.mongodb.DBObject
 
 /**
  * Base interface for all generated mongobeans.
  */
-public interface IMongoBean {
+interface IMongoBean {
 
-	public String JAVA_CLASS_KEY = "JavaClass";
+	val JAVA_CLASS_KEY = "JavaClass"
 
-	DBObject getDbObject();
+	def DBObject getDbObject()
 }

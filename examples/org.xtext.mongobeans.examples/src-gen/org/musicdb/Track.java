@@ -4,6 +4,7 @@ import com.mongodb.DBObject;
 import org.xtext.mongobeans.examples.Duration;
 import org.xtext.mongobeans.lib.IMongoBean;
 
+@SuppressWarnings("all")
 public class Track implements IMongoBean {
   /**
    * Creates a new Track wrapping the given {@link DBObject}.

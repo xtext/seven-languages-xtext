@@ -1,10 +1,5 @@
-/*******************************************************************************
- * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- ******************************************************************************/
+/**
+ */
 package org.xtext.mongobeans.mongoBeans.util;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -85,11 +80,6 @@ public class MongoBeansAdapterFactory extends AdapterFactoryImpl
         return createMongoFileAdapter();
       }
       @Override
-      public Adapter caseImport(Import object)
-      {
-        return createImportAdapter();
-      }
-      @Override
       public Adapter caseAbstractElement(AbstractElement object)
       {
         return createAbstractElementAdapter();
@@ -152,21 +142,6 @@ public class MongoBeansAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createMongoFileAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.mongobeans.mongoBeans.Import <em>Import</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.mongobeans.mongoBeans.Import
-   * @generated
-   */
-  public Adapter createImportAdapter()
   {
     return null;
   }

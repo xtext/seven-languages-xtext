@@ -1,3 +1,10 @@
+/**
+ * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
 package org.xtext.mongobeans.tests;
 
 import com.google.common.collect.Iterators;
@@ -20,8 +27,8 @@ import org.xtext.mongobeans.mongoBeans.MongoFile;
 import org.xtext.mongobeans.mongoBeans.MongoProperty;
 import org.xtext.mongobeans.validation.MongoBeansValidator;
 
-@RunWith(value = XtextRunner.class)
-@InjectWith(value = MongoBeansInjectorProvider.class)
+@RunWith(XtextRunner.class)
+@InjectWith(MongoBeansInjectorProvider.class)
 @SuppressWarnings("all")
 public class ValidationTest {
   @Inject
@@ -52,7 +59,7 @@ public class ValidationTest {
       _builder.newLine();
       MongoFile _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
-    } catch (Exception _e) {
+    } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
   }
@@ -78,7 +85,7 @@ public class ValidationTest {
       this._validationTestHelper.assertError(_head, Literals.MONGO_PROPERTY, MongoBeansValidator.ILLEGAL_TYPE);
       MongoProperty _last = IteratorExtensions.<MongoProperty>last(properties);
       this._validationTestHelper.assertError(_last, Literals.MONGO_PROPERTY, MongoBeansValidator.ILLEGAL_TYPE);
-    } catch (Exception _e) {
+    } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
   }
@@ -99,7 +106,7 @@ public class ValidationTest {
       Iterator<MongoProperty> _filter = Iterators.<MongoProperty>filter(_eAllContents, MongoProperty.class);
       final MongoProperty property = IteratorExtensions.<MongoProperty>head(_filter);
       this._validationTestHelper.assertError(property, Literals.MONGO_PROPERTY, MongoBeansValidator.ILLEGAL_PROPERTY_NAME);
-    } catch (Exception _e) {
+    } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
   }

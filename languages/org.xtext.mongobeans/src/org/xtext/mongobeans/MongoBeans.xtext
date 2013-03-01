@@ -10,13 +10,11 @@ grammar org.xtext.mongobeans.MongoBeans with org.eclipse.xtext.xbase.Xbase
 generate mongoBeans "http://www.eclipse.org/xtext/mongobeans/MongoBeans"
 
 MongoFile:
+	importSection=XImportSection?
 	elements+=AbstractElement*;
 
-Import:
-	'import' importedNamespace=QualifiedNameWithWildcard;
-
 AbstractElement:
-	Import | PackageDeclaration | MongoBean;
+	PackageDeclaration | MongoBean;
 
 PackageDeclaration:
 	'package' name=QualifiedName '{'
@@ -40,5 +38,3 @@ MongoOperation:
 	')' 
 	body=XBlockExpression;
 
-QualifiedNameWithWildcard:
-	QualifiedName (".*")?;

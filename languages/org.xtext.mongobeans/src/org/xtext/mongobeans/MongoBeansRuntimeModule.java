@@ -8,9 +8,7 @@
 package org.xtext.mongobeans;
 
 import org.eclipse.xtext.naming.IQualifiedNameProvider;
-import org.eclipse.xtext.service.SingletonBinding;
 import org.xtext.mongobeans.scoping.MongoQualifiedNameProvider;
-import org.xtext.mongobeans.validation.MongoBeansValidator;
 
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
@@ -22,9 +20,4 @@ public class MongoBeansRuntimeModule extends org.xtext.mongobeans.AbstractMongoB
 		return MongoQualifiedNameProvider.class;
 	}
 	
-	@SingletonBinding(eager=true)	
-	public Class<? extends MongoBeansValidator> bindMongoBeansValidator() {
-		return MongoBeansValidator.class;
-	}
-
 }

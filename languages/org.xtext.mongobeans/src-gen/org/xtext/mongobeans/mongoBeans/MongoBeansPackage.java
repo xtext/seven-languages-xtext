@@ -1,10 +1,5 @@
-/*******************************************************************************
- * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- ******************************************************************************/
+/**
+ */
 package org.xtext.mongobeans.mongoBeans;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -72,13 +67,22 @@ public interface MongoBeansPackage extends EPackage
   int MONGO_FILE = 0;
 
   /**
+   * The feature id for the '<em><b>Import Section</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MONGO_FILE__IMPORT_SECTION = 0;
+
+  /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MONGO_FILE__ELEMENTS = 0;
+  int MONGO_FILE__ELEMENTS = 1;
 
   /**
    * The number of structural features of the '<em>Mongo File</em>' class.
@@ -87,7 +91,7 @@ public interface MongoBeansPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONGO_FILE_FEATURE_COUNT = 1;
+  int MONGO_FILE_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.mongobeans.mongoBeans.impl.AbstractElementImpl <em>Abstract Element</em>}' class.
@@ -97,7 +101,16 @@ public interface MongoBeansPackage extends EPackage
    * @see org.xtext.mongobeans.mongoBeans.impl.MongoBeansPackageImpl#getAbstractElement()
    * @generated
    */
-  int ABSTRACT_ELEMENT = 2;
+  int ABSTRACT_ELEMENT = 1;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABSTRACT_ELEMENT__NAME = 0;
 
   /**
    * The number of structural features of the '<em>Abstract Element</em>' class.
@@ -106,35 +119,7 @@ public interface MongoBeansPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ABSTRACT_ELEMENT_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link org.xtext.mongobeans.mongoBeans.impl.ImportImpl <em>Import</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.mongobeans.mongoBeans.impl.ImportImpl
-   * @see org.xtext.mongobeans.mongoBeans.impl.MongoBeansPackageImpl#getImport()
-   * @generated
-   */
-  int IMPORT = 1;
-
-  /**
-   * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMPORT__IMPORTED_NAMESPACE = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Import</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMPORT_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+  int ABSTRACT_ELEMENT_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.mongobeans.mongoBeans.impl.PackageDeclarationImpl <em>Package Declaration</em>}' class.
@@ -144,7 +129,7 @@ public interface MongoBeansPackage extends EPackage
    * @see org.xtext.mongobeans.mongoBeans.impl.MongoBeansPackageImpl#getPackageDeclaration()
    * @generated
    */
-  int PACKAGE_DECLARATION = 3;
+  int PACKAGE_DECLARATION = 2;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -153,7 +138,7 @@ public interface MongoBeansPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PACKAGE_DECLARATION__NAME = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
+  int PACKAGE_DECLARATION__NAME = ABSTRACT_ELEMENT__NAME;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -162,7 +147,7 @@ public interface MongoBeansPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PACKAGE_DECLARATION__ELEMENTS = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+  int PACKAGE_DECLARATION__ELEMENTS = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Package Declaration</em>' class.
@@ -171,7 +156,7 @@ public interface MongoBeansPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PACKAGE_DECLARATION_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
+  int PACKAGE_DECLARATION_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.xtext.mongobeans.mongoBeans.impl.MongoBeanImpl <em>Mongo Bean</em>}' class.
@@ -181,7 +166,7 @@ public interface MongoBeansPackage extends EPackage
    * @see org.xtext.mongobeans.mongoBeans.impl.MongoBeansPackageImpl#getMongoBean()
    * @generated
    */
-  int MONGO_BEAN = 4;
+  int MONGO_BEAN = 3;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -190,7 +175,7 @@ public interface MongoBeansPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONGO_BEAN__NAME = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
+  int MONGO_BEAN__NAME = ABSTRACT_ELEMENT__NAME;
 
   /**
    * The feature id for the '<em><b>Features</b></em>' containment reference list.
@@ -199,7 +184,7 @@ public interface MongoBeansPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONGO_BEAN__FEATURES = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+  int MONGO_BEAN__FEATURES = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Mongo Bean</em>' class.
@@ -208,7 +193,7 @@ public interface MongoBeansPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MONGO_BEAN_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
+  int MONGO_BEAN_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.xtext.mongobeans.mongoBeans.impl.AbstractFeatureImpl <em>Abstract Feature</em>}' class.
@@ -218,7 +203,7 @@ public interface MongoBeansPackage extends EPackage
    * @see org.xtext.mongobeans.mongoBeans.impl.MongoBeansPackageImpl#getAbstractFeature()
    * @generated
    */
-  int ABSTRACT_FEATURE = 5;
+  int ABSTRACT_FEATURE = 4;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -246,7 +231,7 @@ public interface MongoBeansPackage extends EPackage
    * @see org.xtext.mongobeans.mongoBeans.impl.MongoBeansPackageImpl#getMongoProperty()
    * @generated
    */
-  int MONGO_PROPERTY = 6;
+  int MONGO_PROPERTY = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -301,7 +286,7 @@ public interface MongoBeansPackage extends EPackage
    * @see org.xtext.mongobeans.mongoBeans.impl.MongoBeansPackageImpl#getMongoOperation()
    * @generated
    */
-  int MONGO_OPERATION = 7;
+  int MONGO_OPERATION = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -360,6 +345,17 @@ public interface MongoBeansPackage extends EPackage
   EClass getMongoFile();
 
   /**
+   * Returns the meta object for the containment reference '{@link org.xtext.mongobeans.mongoBeans.MongoFile#getImportSection <em>Import Section</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Import Section</em>'.
+   * @see org.xtext.mongobeans.mongoBeans.MongoFile#getImportSection()
+   * @see #getMongoFile()
+   * @generated
+   */
+  EReference getMongoFile_ImportSection();
+
+  /**
    * Returns the meta object for the containment reference list '{@link org.xtext.mongobeans.mongoBeans.MongoFile#getElements <em>Elements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -369,27 +365,6 @@ public interface MongoBeansPackage extends EPackage
    * @generated
    */
   EReference getMongoFile_Elements();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.mongobeans.mongoBeans.Import <em>Import</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Import</em>'.
-   * @see org.xtext.mongobeans.mongoBeans.Import
-   * @generated
-   */
-  EClass getImport();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.mongobeans.mongoBeans.Import#getImportedNamespace <em>Imported Namespace</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Imported Namespace</em>'.
-   * @see org.xtext.mongobeans.mongoBeans.Import#getImportedNamespace()
-   * @see #getImport()
-   * @generated
-   */
-  EAttribute getImport_ImportedNamespace();
 
   /**
    * Returns the meta object for class '{@link org.xtext.mongobeans.mongoBeans.AbstractElement <em>Abstract Element</em>}'.
@@ -402,6 +377,17 @@ public interface MongoBeansPackage extends EPackage
   EClass getAbstractElement();
 
   /**
+   * Returns the meta object for the attribute '{@link org.xtext.mongobeans.mongoBeans.AbstractElement#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.mongobeans.mongoBeans.AbstractElement#getName()
+   * @see #getAbstractElement()
+   * @generated
+   */
+  EAttribute getAbstractElement_Name();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.mongobeans.mongoBeans.PackageDeclaration <em>Package Declaration</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -410,17 +396,6 @@ public interface MongoBeansPackage extends EPackage
    * @generated
    */
   EClass getPackageDeclaration();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.mongobeans.mongoBeans.PackageDeclaration#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.mongobeans.mongoBeans.PackageDeclaration#getName()
-   * @see #getPackageDeclaration()
-   * @generated
-   */
-  EAttribute getPackageDeclaration_Name();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.xtext.mongobeans.mongoBeans.PackageDeclaration#getElements <em>Elements</em>}'.
@@ -442,17 +417,6 @@ public interface MongoBeansPackage extends EPackage
    * @generated
    */
   EClass getMongoBean();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.mongobeans.mongoBeans.MongoBean#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.mongobeans.mongoBeans.MongoBean#getName()
-   * @see #getMongoBean()
-   * @generated
-   */
-  EAttribute getMongoBean_Name();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.xtext.mongobeans.mongoBeans.MongoBean#getFeatures <em>Features</em>}'.
@@ -606,30 +570,20 @@ public interface MongoBeansPackage extends EPackage
     EClass MONGO_FILE = eINSTANCE.getMongoFile();
 
     /**
+     * The meta object literal for the '<em><b>Import Section</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MONGO_FILE__IMPORT_SECTION = eINSTANCE.getMongoFile_ImportSection();
+
+    /**
      * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference MONGO_FILE__ELEMENTS = eINSTANCE.getMongoFile_Elements();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.mongobeans.mongoBeans.impl.ImportImpl <em>Import</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.mongobeans.mongoBeans.impl.ImportImpl
-     * @see org.xtext.mongobeans.mongoBeans.impl.MongoBeansPackageImpl#getImport()
-     * @generated
-     */
-    EClass IMPORT = eINSTANCE.getImport();
-
-    /**
-     * The meta object literal for the '<em><b>Imported Namespace</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute IMPORT__IMPORTED_NAMESPACE = eINSTANCE.getImport_ImportedNamespace();
 
     /**
      * The meta object literal for the '{@link org.xtext.mongobeans.mongoBeans.impl.AbstractElementImpl <em>Abstract Element</em>}' class.
@@ -642,6 +596,14 @@ public interface MongoBeansPackage extends EPackage
     EClass ABSTRACT_ELEMENT = eINSTANCE.getAbstractElement();
 
     /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ABSTRACT_ELEMENT__NAME = eINSTANCE.getAbstractElement_Name();
+
+    /**
      * The meta object literal for the '{@link org.xtext.mongobeans.mongoBeans.impl.PackageDeclarationImpl <em>Package Declaration</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -650,14 +612,6 @@ public interface MongoBeansPackage extends EPackage
      * @generated
      */
     EClass PACKAGE_DECLARATION = eINSTANCE.getPackageDeclaration();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute PACKAGE_DECLARATION__NAME = eINSTANCE.getPackageDeclaration_Name();
 
     /**
      * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
@@ -676,14 +630,6 @@ public interface MongoBeansPackage extends EPackage
      * @generated
      */
     EClass MONGO_BEAN = eINSTANCE.getMongoBean();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute MONGO_BEAN__NAME = eINSTANCE.getMongoBean_Name();
 
     /**
      * The meta object literal for the '<em><b>Features</b></em>' containment reference list feature.

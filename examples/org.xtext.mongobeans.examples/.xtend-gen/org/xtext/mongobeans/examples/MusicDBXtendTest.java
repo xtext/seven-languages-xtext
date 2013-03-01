@@ -1,3 +1,10 @@
+/**
+ * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
 package org.xtext.mongobeans.examples;
 
 import com.mongodb.DB;
@@ -74,7 +81,7 @@ public class MusicDBXtendTest {
             }
           };
         Artist _doubleArrow = ObjectExtensions.<Artist>operator_doubleArrow(_artist_1, _function_1);
-        final Artist johnFromDb = this._mongoExtensions.<Artist>findOne(dbCollection, _doubleArrow);
+        final Artist johnFromDb = this._mongoExtensions.<Artist>findOneBean(dbCollection, _doubleArrow);
         Assert.assertNotNull(johnFromDb);
         List<Album> _albums = johnFromDb.getAlbums();
         int _size_1 = _albums.size();
@@ -87,7 +94,7 @@ public class MusicDBXtendTest {
       } finally {
         mongo.close();
       }
-    } catch (Exception _e) {
+    } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
   }

@@ -1,23 +1,15 @@
-/*******************************************************************************
- * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- ******************************************************************************/
+/**
+ */
 package org.xtext.mongobeans.mongoBeans.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -33,7 +25,6 @@ import org.xtext.mongobeans.mongoBeans.PackageDeclaration;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.mongobeans.mongoBeans.impl.PackageDeclarationImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.mongobeans.mongoBeans.impl.PackageDeclarationImpl#getElements <em>Elements</em>}</li>
  * </ul>
  * </p>
@@ -42,26 +33,6 @@ import org.xtext.mongobeans.mongoBeans.PackageDeclaration;
  */
 public class PackageDeclarationImpl extends AbstractElementImpl implements PackageDeclaration
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -91,29 +62,6 @@ public class PackageDeclarationImpl extends AbstractElementImpl implements Packa
   protected EClass eStaticClass()
   {
     return MongoBeansPackage.Literals.PACKAGE_DECLARATION;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MongoBeansPackage.PACKAGE_DECLARATION__NAME, oldName, name));
   }
 
   /**
@@ -156,8 +104,6 @@ public class PackageDeclarationImpl extends AbstractElementImpl implements Packa
   {
     switch (featureID)
     {
-      case MongoBeansPackage.PACKAGE_DECLARATION__NAME:
-        return getName();
       case MongoBeansPackage.PACKAGE_DECLARATION__ELEMENTS:
         return getElements();
     }
@@ -175,9 +121,6 @@ public class PackageDeclarationImpl extends AbstractElementImpl implements Packa
   {
     switch (featureID)
     {
-      case MongoBeansPackage.PACKAGE_DECLARATION__NAME:
-        setName((String)newValue);
-        return;
       case MongoBeansPackage.PACKAGE_DECLARATION__ELEMENTS:
         getElements().clear();
         getElements().addAll((Collection<? extends AbstractElement>)newValue);
@@ -196,9 +139,6 @@ public class PackageDeclarationImpl extends AbstractElementImpl implements Packa
   {
     switch (featureID)
     {
-      case MongoBeansPackage.PACKAGE_DECLARATION__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case MongoBeansPackage.PACKAGE_DECLARATION__ELEMENTS:
         getElements().clear();
         return;
@@ -216,29 +156,10 @@ public class PackageDeclarationImpl extends AbstractElementImpl implements Packa
   {
     switch (featureID)
     {
-      case MongoBeansPackage.PACKAGE_DECLARATION__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case MongoBeansPackage.PACKAGE_DECLARATION__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //PackageDeclarationImpl

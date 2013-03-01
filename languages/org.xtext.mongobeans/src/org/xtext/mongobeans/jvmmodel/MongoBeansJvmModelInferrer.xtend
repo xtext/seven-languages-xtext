@@ -8,6 +8,7 @@
 package org.xtext.mongobeans.jvmmodel
 
 import com.google.inject.Inject
+import com.mongodb.DBObject
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.xtext.common.types.JvmDeclaredType
 import org.eclipse.xtext.common.types.JvmTypeReference
@@ -140,7 +141,7 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 				} 
 			]
 		]
-		inferredType.members += property.toMethod('set' + property.name.toFirstUpper, null) [
+		inferredType.members += property.toMethod('set' + property.name.toFirstUpper, property.newTypeRef(Void::TYPE)) [
 			documentation = property.documentation
 			parameters += toParameter(property.name, property.jvmType)
 			body = [

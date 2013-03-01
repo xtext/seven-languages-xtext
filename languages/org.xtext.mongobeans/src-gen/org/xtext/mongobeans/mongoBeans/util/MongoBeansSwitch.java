@@ -1,10 +1,5 @@
-/*******************************************************************************
- * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- ******************************************************************************/
+/**
+ */
 package org.xtext.mongobeans.mongoBeans.util;
 
 import java.util.List;
@@ -104,14 +99,6 @@ public class MongoBeansSwitch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MongoBeansPackage.IMPORT:
-      {
-        Import import_ = (Import)theEObject;
-        T result = caseImport(import_);
-        if (result == null) result = caseAbstractElement(import_);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case MongoBeansPackage.ABSTRACT_ELEMENT:
       {
         AbstractElement abstractElement = (AbstractElement)theEObject;
@@ -174,22 +161,6 @@ public class MongoBeansSwitch<T>
    * @generated
    */
   public T caseMongoFile(MongoFile object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Import</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Import</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseImport(Import object)
   {
     return null;
   }

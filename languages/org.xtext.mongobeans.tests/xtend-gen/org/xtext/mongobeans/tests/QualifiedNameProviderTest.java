@@ -1,3 +1,10 @@
+/**
+ * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
 package org.xtext.mongobeans.tests;
 
 import com.google.common.collect.Iterators;
@@ -20,8 +27,8 @@ import org.xtext.mongobeans.MongoBeansInjectorProvider;
 import org.xtext.mongobeans.mongoBeans.MongoBean;
 import org.xtext.mongobeans.mongoBeans.MongoFile;
 
-@RunWith(value = XtextRunner.class)
-@InjectWith(value = MongoBeansInjectorProvider.class)
+@RunWith(XtextRunner.class)
+@InjectWith(MongoBeansInjectorProvider.class)
 @SuppressWarnings("all")
 public class QualifiedNameProviderTest {
   @Inject
@@ -61,7 +68,7 @@ public class QualifiedNameProviderTest {
       MongoBean _last = IteratorExtensions.<MongoBean>last(beans);
       QualifiedName _fullyQualifiedName_1 = this._iQualifiedNameProvider.getFullyQualifiedName(_last);
       Assert.assertEquals(_create_1, _fullyQualifiedName_1);
-    } catch (Exception _e) {
+    } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
   }

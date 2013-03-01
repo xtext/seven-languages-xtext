@@ -7,23 +7,23 @@
  ******************************************************************************/
 package org.xtext.mongobeans.tests
 
-import org.junit.runner.RunWith
-import org.eclipse.xtext.junit4.XtextRunner
-import org.eclipse.xtext.junit4.InjectWith
-import org.xtext.mongobeans.MongoBeansInjectorProvider
 import com.google.inject.Inject
-import org.eclipse.xtext.xbase.compiler.CompilationTestHelper
-import org.eclipse.xtext.xbase.lib.util.ReflectExtensions
-import org.junit.Test
-import org.junit.Before
-import org.xtext.mongobeans.lib.IMongoBean
-import org.xtext.mongobeans.lib.WrappingUtil
-import java.util.List
 import com.mongodb.BasicDBObject
 import com.mongodb.DBObject
+import java.util.List
+import org.eclipse.xtext.junit4.InjectWith
+import org.eclipse.xtext.junit4.XtextRunner
+import org.eclipse.xtext.xbase.compiler.CompilationTestHelper
+import org.eclipse.xtext.xbase.lib.util.ReflectExtensions
+import org.junit.Before
+import org.junit.Test
+import org.junit.runner.RunWith
+import org.xtext.mongobeans.MongoBeansInjectorProvider
+import org.xtext.mongobeans.lib.IMongoBean
+import org.xtext.mongobeans.lib.WrappingUtil
 
-import static org.junit.Assert.*
 import static java.util.Collections.*
+import static org.junit.Assert.*
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(MongoBeansInjectorProvider))
@@ -57,7 +57,7 @@ class WrappingUtilTest {
 		val oneDB = WrappingUtil::unwrap(one)
 		assertEquals('Foo', oneDB.get(IMongoBean::JAVA_CLASS_KEY))
 		assertEquals('BAR', oneDB.get('bar'))
-		val foos = oneDB.get('foos') as List
+		val foos = oneDB.get('foos') as List<?>
 		assertTrue(foos.contains(two.invoke('getDbObject')))
 		assertTrue(foos.contains(three.invoke('getDbObject')))
 	}
@@ -71,7 +71,7 @@ class WrappingUtilTest {
 		val oneBean = newFooMongoBean(oneDB)
 		assertEquals('Foo', oneBean.getClass.name)
 		assertEquals('one', oneBean.invoke('getBar'))
-		val foos = oneBean.invoke('getFoos') as List
+		val foos = oneBean.invoke('getFoos') as List<?>
 		assertEquals(WrappingUtil::unwrap(foos.head), twoDB)
 		assertEquals(WrappingUtil::unwrap(foos.last), threeDB)
 	}

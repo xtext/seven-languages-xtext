@@ -7,10 +7,10 @@
  ******************************************************************************/
 package org.xtext.mongobeans.ui.outline
 
-import org.xtext.mongobeans.mongoBeans.MongoOperation
 import org.eclipse.xtext.ui.editor.outline.IOutlineNode
-import org.xtext.mongobeans.mongoBeans.MongoProperty
 import org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider
+import org.xtext.mongobeans.mongoBeans.MongoOperation
+import org.xtext.mongobeans.mongoBeans.MongoProperty
 
 class MongoBeansOutlineTreeProvider extends DefaultOutlineTreeProvider {
 	

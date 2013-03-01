@@ -48,7 +48,7 @@ class MusicDBXtendTest {
 			assertEquals(8, john.oevre.size)
 			dbCollection.save(john)
 	
-			val johnFromDb = dbCollection.findOne(new Artist => [
+			val johnFromDb = dbCollection.findOneBean(new Artist => [
 					name = 'John Coltrane'
 				])
 			assertNotNull(johnFromDb)

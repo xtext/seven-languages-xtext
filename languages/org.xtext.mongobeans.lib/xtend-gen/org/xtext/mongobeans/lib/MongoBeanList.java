@@ -1,6 +1,12 @@
+/**
+ * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
 package org.xtext.mongobeans.lib;
 
-import com.google.common.base.Objects;
 import com.mongodb.DBObject;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -13,12 +19,13 @@ import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
+import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure2;
 import org.xtext.mongobeans.lib.IMongoBean;
 import org.xtext.mongobeans.lib.WrappingUtil;
 
 /**
- * Wraps a list of {@link DBObjects}.
+ * Wraps a list of {@link DBObject}s.
  */
 @SuppressWarnings("all")
 public class MongoBeanList<T extends IMongoBean> implements List<T> {
@@ -26,7 +33,7 @@ public class MongoBeanList<T extends IMongoBean> implements List<T> {
   
   public MongoBeanList(final DBObject owner, final String key) {
     final Object value = owner.get(key);
-    boolean _equals = Objects.equal(value, null);
+    boolean _equals = ObjectExtensions.operator_equals(value, null);
     if (_equals) {
       ArrayList<DBObject> _newArrayList = CollectionLiterals.<DBObject>newArrayList();
       this.delegate = _newArrayList;
@@ -59,8 +66,8 @@ public class MongoBeanList<T extends IMongoBean> implements List<T> {
           return _wrapAndCast;
         }
       };
-    List _map = ListExtensions.<DBObject, T>map(this.delegate, _function);
-    Iterator _iterator = _map.iterator();
+    List<T> _map = ListExtensions.<DBObject, T>map(this.delegate, _function);
+    Iterator<T> _iterator = _map.iterator();
     return _iterator;
   }
   
@@ -71,7 +78,7 @@ public class MongoBeanList<T extends IMongoBean> implements List<T> {
           return _wrap;
         }
       };
-    List _map = ListExtensions.<DBObject, IMongoBean>map(this.delegate, _function);
+    List<IMongoBean> _map = ListExtensions.<DBObject, IMongoBean>map(this.delegate, _function);
     Object[] _array = _map.toArray();
     return ((T[]) _array);
   }
@@ -95,7 +102,7 @@ public class MongoBeanList<T extends IMongoBean> implements List<T> {
       final Object[] result = _xifexpression;
       final Procedure2<T,Integer> _function = new Procedure2<T,Integer>() {
           public void apply(final T elem, final Integer idx) {
-            ((List<Object>)Conversions.doWrapArray(result)).set((idx).intValue(), elem);
+            result[(idx).intValue()] = elem;
           }
         };
       IterableExtensions.<T>forEach(this, _function);
@@ -104,7 +111,7 @@ public class MongoBeanList<T extends IMongoBean> implements List<T> {
       boolean _greaterThan = (_size_3 > _size_4);
       if (_greaterThan) {
         int _size_5 = this.size();
-        ((List<Object>)Conversions.doWrapArray(result)).set(_size_5, null);
+        result[_size_5] = null;
       }
       _xblockexpression = (((R[]) result));
     }
@@ -153,7 +160,7 @@ public class MongoBeanList<T extends IMongoBean> implements List<T> {
   public boolean addAll(final int index, final Collection<? extends T> c) {
     boolean _xblockexpression = false;
     {
-      List<?> _list = IterableExtensions.toList(c);
+      List<? extends T> _list = IterableExtensions.toList(c);
       List<T> _reverse = ListExtensions.<T>reverse(((List<T>) _list));
       final Function1<T,DBObject> _function = new Function1<T,DBObject>() {
           public DBObject apply(final T it) {
@@ -161,8 +168,8 @@ public class MongoBeanList<T extends IMongoBean> implements List<T> {
             return _unwrap;
           }
         };
-      List _map = ListExtensions.<T, DBObject>map(_reverse, _function);
-      for (final DBObject element : ((List<DBObject>) _map)) {
+      List<DBObject> _map = ListExtensions.<T, DBObject>map(_reverse, _function);
+      for (final DBObject element : _map) {
         this.delegate.add(index, element);
       }
       boolean _isEmpty = c.isEmpty();
@@ -253,8 +260,8 @@ public class MongoBeanList<T extends IMongoBean> implements List<T> {
           return _wrapAndCast;
         }
       };
-    List _map = ListExtensions.<DBObject, T>map(this.delegate, _function);
-    ListIterator _listIterator = _map.listIterator();
+    List<T> _map = ListExtensions.<DBObject, T>map(this.delegate, _function);
+    ListIterator<T> _listIterator = _map.listIterator();
     return _listIterator;
   }
   
@@ -265,8 +272,8 @@ public class MongoBeanList<T extends IMongoBean> implements List<T> {
           return _wrapAndCast;
         }
       };
-    List _map = ListExtensions.<DBObject, T>map(this.delegate, _function);
-    ListIterator _listIterator = _map.listIterator(index);
+    List<T> _map = ListExtensions.<DBObject, T>map(this.delegate, _function);
+    ListIterator<T> _listIterator = _map.listIterator(index);
     return _listIterator;
   }
   
@@ -277,8 +284,8 @@ public class MongoBeanList<T extends IMongoBean> implements List<T> {
           return _wrapAndCast;
         }
       };
-    List _map = ListExtensions.<DBObject, T>map(this.delegate, _function);
-    List _subList = _map.subList(fromIndex, toIndex);
+    List<T> _map = ListExtensions.<DBObject, T>map(this.delegate, _function);
+    List<T> _subList = _map.subList(fromIndex, toIndex);
     return _subList;
   }
 }

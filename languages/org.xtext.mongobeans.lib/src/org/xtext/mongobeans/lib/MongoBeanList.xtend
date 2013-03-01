@@ -8,15 +8,15 @@
 package org.xtext.mongobeans.lib
 
 import com.mongodb.DBObject
+import java.lang.reflect.Array
 import java.util.Collection
 import java.util.List
 import java.util.ListIterator
 
 import static extension org.xtext.mongobeans.lib.WrappingUtil.*
-import java.lang.reflect.Array
 
 /**
- * Wraps a list of {@link DBObjects}.
+ * Wraps a list of {@link DBObject}s.
  */
 class MongoBeanList <T extends IMongoBean> implements List<T> {
 	
@@ -83,7 +83,7 @@ class MongoBeanList <T extends IMongoBean> implements List<T> {
 	}
 
 	override boolean addAll(int index, Collection<? extends T> c) {
-		for(element : ((c.toList as List<T>).reverse.map[unwrap] as List<DBObject>))
+		for(element : (c.toList as List<T>).reverse.map[unwrap])
 			delegate.add(index, element)
 		!c.empty
 	}

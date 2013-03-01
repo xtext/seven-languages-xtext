@@ -11,6 +11,7 @@ import org.xtext.mongobeans.lib.MongoBeanList;
 /**
  * A musical performer
  */
+@SuppressWarnings("all")
 public class Artist implements IMongoBean {
   /**
    * Creates a new Artist wrapping the given {@link DBObject}.

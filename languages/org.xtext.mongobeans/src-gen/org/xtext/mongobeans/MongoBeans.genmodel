@@ -4,22 +4,20 @@
     editorDirectory="/org.xtext.mongobeans.editor/src" modelPluginID="org.xtext.mongobeans"
     forceOverwrite="true" modelName="MongoBeans" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="org.xtext.mongobeans.edit"
-    editorPluginID="org.xtext.mongobeans.editor" runtimeVersion="2.5" usedGenPackages="../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase">
+    editorPluginID="org.xtext.mongobeans.editor" runtimeVersion="2.5" usedGenPackages="../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xtype">
   <genPackages prefix="MongoBeans" basePackage="org.xtext.mongobeans" disposableProviderFactory="true"
-      ecorePackage="MongoBeans.ecore#/">
+      fileExtensions="mongo" ecorePackage="MongoBeans.ecore#/">
     <genClasses ecoreClass="MongoBeans.ecore#//MongoFile">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MongoBeans.ecore#//MongoFile/importSection"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MongoBeans.ecore#//MongoFile/elements"/>
     </genClasses>
-    <genClasses ecoreClass="MongoBeans.ecore#//Import">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MongoBeans.ecore#//Import/importedNamespace"/>
+    <genClasses ecoreClass="MongoBeans.ecore#//AbstractElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MongoBeans.ecore#//AbstractElement/name"/>
     </genClasses>
-    <genClasses ecoreClass="MongoBeans.ecore#//AbstractElement"/>
     <genClasses ecoreClass="MongoBeans.ecore#//PackageDeclaration">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MongoBeans.ecore#//PackageDeclaration/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MongoBeans.ecore#//PackageDeclaration/elements"/>
     </genClasses>
     <genClasses ecoreClass="MongoBeans.ecore#//MongoBean">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MongoBeans.ecore#//MongoBean/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MongoBeans.ecore#//MongoBean/features"/>
     </genClasses>
     <genClasses ecoreClass="MongoBeans.ecore#//AbstractFeature">

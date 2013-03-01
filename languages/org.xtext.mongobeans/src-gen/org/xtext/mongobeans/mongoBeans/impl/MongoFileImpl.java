@@ -1,14 +1,10 @@
-/*******************************************************************************
- * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- ******************************************************************************/
+/**
+ */
 package org.xtext.mongobeans.mongoBeans.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -16,10 +12,13 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import org.eclipse.xtext.xtype.XImportSection;
 
 import org.xtext.mongobeans.mongoBeans.AbstractElement;
 import org.xtext.mongobeans.mongoBeans.MongoBeansPackage;
@@ -32,6 +31,7 @@ import org.xtext.mongobeans.mongoBeans.MongoFile;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link org.xtext.mongobeans.mongoBeans.impl.MongoFileImpl#getImportSection <em>Import Section</em>}</li>
  *   <li>{@link org.xtext.mongobeans.mongoBeans.impl.MongoFileImpl#getElements <em>Elements</em>}</li>
  * </ul>
  * </p>
@@ -40,6 +40,16 @@ import org.xtext.mongobeans.mongoBeans.MongoFile;
  */
 public class MongoFileImpl extends MinimalEObjectImpl.Container implements MongoFile
 {
+  /**
+   * The cached value of the '{@link #getImportSection() <em>Import Section</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getImportSection()
+   * @generated
+   * @ordered
+   */
+  protected XImportSection importSection;
+
   /**
    * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -76,6 +86,54 @@ public class MongoFileImpl extends MinimalEObjectImpl.Container implements Mongo
    * <!-- end-user-doc -->
    * @generated
    */
+  public XImportSection getImportSection()
+  {
+    return importSection;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetImportSection(XImportSection newImportSection, NotificationChain msgs)
+  {
+    XImportSection oldImportSection = importSection;
+    importSection = newImportSection;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MongoBeansPackage.MONGO_FILE__IMPORT_SECTION, oldImportSection, newImportSection);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setImportSection(XImportSection newImportSection)
+  {
+    if (newImportSection != importSection)
+    {
+      NotificationChain msgs = null;
+      if (importSection != null)
+        msgs = ((InternalEObject)importSection).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MongoBeansPackage.MONGO_FILE__IMPORT_SECTION, null, msgs);
+      if (newImportSection != null)
+        msgs = ((InternalEObject)newImportSection).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MongoBeansPackage.MONGO_FILE__IMPORT_SECTION, null, msgs);
+      msgs = basicSetImportSection(newImportSection, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MongoBeansPackage.MONGO_FILE__IMPORT_SECTION, newImportSection, newImportSection));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<AbstractElement> getElements()
   {
     if (elements == null)
@@ -95,6 +153,8 @@ public class MongoFileImpl extends MinimalEObjectImpl.Container implements Mongo
   {
     switch (featureID)
     {
+      case MongoBeansPackage.MONGO_FILE__IMPORT_SECTION:
+        return basicSetImportSection(null, msgs);
       case MongoBeansPackage.MONGO_FILE__ELEMENTS:
         return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
     }
@@ -111,6 +171,8 @@ public class MongoFileImpl extends MinimalEObjectImpl.Container implements Mongo
   {
     switch (featureID)
     {
+      case MongoBeansPackage.MONGO_FILE__IMPORT_SECTION:
+        return getImportSection();
       case MongoBeansPackage.MONGO_FILE__ELEMENTS:
         return getElements();
     }
@@ -128,6 +190,9 @@ public class MongoFileImpl extends MinimalEObjectImpl.Container implements Mongo
   {
     switch (featureID)
     {
+      case MongoBeansPackage.MONGO_FILE__IMPORT_SECTION:
+        setImportSection((XImportSection)newValue);
+        return;
       case MongoBeansPackage.MONGO_FILE__ELEMENTS:
         getElements().clear();
         getElements().addAll((Collection<? extends AbstractElement>)newValue);
@@ -146,6 +211,9 @@ public class MongoFileImpl extends MinimalEObjectImpl.Container implements Mongo
   {
     switch (featureID)
     {
+      case MongoBeansPackage.MONGO_FILE__IMPORT_SECTION:
+        setImportSection((XImportSection)null);
+        return;
       case MongoBeansPackage.MONGO_FILE__ELEMENTS:
         getElements().clear();
         return;
@@ -163,6 +231,8 @@ public class MongoFileImpl extends MinimalEObjectImpl.Container implements Mongo
   {
     switch (featureID)
     {
+      case MongoBeansPackage.MONGO_FILE__IMPORT_SECTION:
+        return importSection != null;
       case MongoBeansPackage.MONGO_FILE__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }
