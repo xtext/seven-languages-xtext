@@ -1,6 +1,12 @@
+/**
+ * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
 package org.xtext.builddsl.ui.launch;
 
-import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import java.util.List;
 import org.eclipse.core.resources.IFile;
@@ -92,7 +98,7 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
       ILeafNode _get_1 = list.get((last).intValue());
       EObject _semanticElement_1 = _get_1.getSemanticElement();
       final Task task2 = EcoreUtil2.<Task>getContainerOfType(_semanticElement_1, Task.class);
-      boolean _equals = Objects.equal(task1, task2);
+      boolean _equals = ObjectExtensions.operator_equals(task1, task2);
       if (_equals) {
         return task1.getName();
       }
@@ -132,8 +138,8 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
         IProject _project = _file.getProject();
         final String project = _project.getName();
         IXtextDocument _document = xbaseEditor.getDocument();
-        final Function1<XtextResource,LaunchConfigurationInfo> _function = new Function1<XtextResource,LaunchConfigurationInfo>() {
-            public LaunchConfigurationInfo apply(final XtextResource it) {
+        final IUnitOfWork<LaunchConfigurationInfo,XtextResource> _function = new IUnitOfWork<LaunchConfigurationInfo,XtextResource>() {
+            public LaunchConfigurationInfo exec(final XtextResource it) throws Exception {
               LaunchConfigurationInfo _xblockexpression = null;
               {
                 EList<EObject> _contents = it.getContents();
@@ -147,11 +153,7 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
               return _xblockexpression;
             }
           };
-        final LaunchConfigurationInfo info = _document.<LaunchConfigurationInfo>readOnly(new IUnitOfWork<LaunchConfigurationInfo,XtextResource>() {
-            public LaunchConfigurationInfo exec(XtextResource state) {
-              return _function.apply(state);
-            }
-        });
+        final LaunchConfigurationInfo info = _document.<LaunchConfigurationInfo>readOnly(_function);
         this.launch(mode, info);
         return;
       }
@@ -179,6 +181,7 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
             DebugPlugin _default = DebugPlugin.getDefault();
             ILaunchManager _launchManager = _default.getLaunchManager();
             final ILaunchConfiguration[] configs = _launchManager.getLaunchConfigurations();
+            ILaunchConfiguration _elvis = null;
             final Function1<ILaunchConfiguration,Boolean> _function = new Function1<ILaunchConfiguration,Boolean>() {
                 public Boolean apply(final ILaunchConfiguration it) {
                   boolean _configEquals = info.configEquals(it);
@@ -186,8 +189,13 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
                 }
               };
             ILaunchConfiguration _findFirst = IterableExtensions.<ILaunchConfiguration>findFirst(((Iterable<ILaunchConfiguration>)Conversions.doWrapArray(configs)), _function);
-            ILaunchConfiguration _createConfiguration = info.createConfiguration();
-            final ILaunchConfiguration config = ObjectExtensions.<ILaunchConfiguration>operator_elvis(_findFirst, _createConfiguration);
+            if (_findFirst != null) {
+              _elvis = _findFirst;
+            } else {
+              ILaunchConfiguration _createConfiguration = info.createConfiguration();
+              _elvis = ObjectExtensions.<ILaunchConfiguration>operator_elvis(_findFirst, _createConfiguration);
+            }
+            final ILaunchConfiguration config = _elvis;
             DebugUITools.launch(config, mode);
           } catch (final Throwable _t) {
             if (_t instanceof CoreException) {

@@ -18,11 +18,12 @@ import org.eclipse.xtext.common.types.TypesPackage;
 
 import org.eclipse.xtext.xbase.XbasePackage;
 
+import org.eclipse.xtext.xtype.XtypePackage;
+
 import org.xtext.builddsl.build.BuildFactory;
 import org.xtext.builddsl.build.BuildFile;
 import org.xtext.builddsl.build.BuildPackage;
 import org.xtext.builddsl.build.Declaration;
-import org.xtext.builddsl.build.ImportDeclaration;
 import org.xtext.builddsl.build.Parameter;
 import org.xtext.builddsl.build.Task;
 
@@ -40,13 +41,6 @@ public class BuildPackageImpl extends EPackageImpl implements BuildPackage
    * @generated
    */
   private EClass buildFileEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass importDeclarationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -119,6 +113,7 @@ public class BuildPackageImpl extends EPackageImpl implements BuildPackage
 
     // Initialize simple dependencies
     XbasePackage.eINSTANCE.eClass();
+    XtypePackage.eINSTANCE.eClass();
 
     // Create package meta-data objects
     theBuildPackage.createPackageContents();
@@ -160,7 +155,7 @@ public class BuildPackageImpl extends EPackageImpl implements BuildPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBuildFile_Imports()
+  public EReference getBuildFile_ImportSection()
   {
     return (EReference)buildFileEClass.getEStructuralFeatures().get(1);
   }
@@ -173,26 +168,6 @@ public class BuildPackageImpl extends EPackageImpl implements BuildPackage
   public EReference getBuildFile_Declarations()
   {
     return (EReference)buildFileEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getImportDeclaration()
-  {
-    return importDeclarationEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getImportDeclaration_ImportedNamespace()
-  {
-    return (EAttribute)importDeclarationEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -307,11 +282,8 @@ public class BuildPackageImpl extends EPackageImpl implements BuildPackage
     // Create classes and their features
     buildFileEClass = createEClass(BUILD_FILE);
     createEAttribute(buildFileEClass, BUILD_FILE__NAME);
-    createEReference(buildFileEClass, BUILD_FILE__IMPORTS);
+    createEReference(buildFileEClass, BUILD_FILE__IMPORT_SECTION);
     createEReference(buildFileEClass, BUILD_FILE__DECLARATIONS);
-
-    importDeclarationEClass = createEClass(IMPORT_DECLARATION);
-    createEAttribute(importDeclarationEClass, IMPORT_DECLARATION__IMPORTED_NAMESPACE);
 
     declarationEClass = createEClass(DECLARATION);
     createEAttribute(declarationEClass, DECLARATION__NAME);
@@ -350,6 +322,7 @@ public class BuildPackageImpl extends EPackageImpl implements BuildPackage
     setNsURI(eNS_URI);
 
     // Obtain other dependent packages
+    XtypePackage theXtypePackage = (XtypePackage)EPackage.Registry.INSTANCE.getEPackage(XtypePackage.eNS_URI);
     TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
     XbasePackage theXbasePackage = (XbasePackage)EPackage.Registry.INSTANCE.getEPackage(XbasePackage.eNS_URI);
 
@@ -364,11 +337,8 @@ public class BuildPackageImpl extends EPackageImpl implements BuildPackage
     // Initialize classes and features; add operations and parameters
     initEClass(buildFileEClass, BuildFile.class, "BuildFile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getBuildFile_Name(), ecorePackage.getEString(), "name", null, 0, 1, BuildFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getBuildFile_Imports(), this.getImportDeclaration(), null, "imports", null, 0, -1, BuildFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBuildFile_ImportSection(), theXtypePackage.getXImportSection(), null, "importSection", null, 0, 1, BuildFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getBuildFile_Declarations(), this.getDeclaration(), null, "declarations", null, 0, -1, BuildFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(importDeclarationEClass, ImportDeclaration.class, "ImportDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getImportDeclaration_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, ImportDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(declarationEClass, Declaration.class, "Declaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

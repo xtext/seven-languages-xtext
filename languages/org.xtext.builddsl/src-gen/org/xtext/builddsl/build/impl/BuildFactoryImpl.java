@@ -35,7 +35,7 @@ public class BuildFactoryImpl extends EFactoryImpl implements BuildFactory
   {
     try
     {
-      BuildFactory theBuildFactory = (BuildFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.xtext.org/builddsl"); 
+      BuildFactory theBuildFactory = (BuildFactory)EPackage.Registry.INSTANCE.getEFactory(BuildPackage.eNS_URI);
       if (theBuildFactory != null)
       {
         return theBuildFactory;
@@ -70,7 +70,6 @@ public class BuildFactoryImpl extends EFactoryImpl implements BuildFactory
     switch (eClass.getClassifierID())
     {
       case BuildPackage.BUILD_FILE: return createBuildFile();
-      case BuildPackage.IMPORT_DECLARATION: return createImportDeclaration();
       case BuildPackage.DECLARATION: return createDeclaration();
       case BuildPackage.PARAMETER: return createParameter();
       case BuildPackage.TASK: return createTask();
@@ -88,17 +87,6 @@ public class BuildFactoryImpl extends EFactoryImpl implements BuildFactory
   {
     BuildFileImpl buildFile = new BuildFileImpl();
     return buildFile;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ImportDeclaration createImportDeclaration()
-  {
-    ImportDeclarationImpl importDeclaration = new ImportDeclarationImpl();
-    return importDeclaration;
   }
 
   /**

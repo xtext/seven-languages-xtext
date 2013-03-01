@@ -7,18 +7,18 @@
  ******************************************************************************/
 package org.xtext.builddsl.ui.launch
 
-import org.eclipse.jdt.launching.JavaLaunchDelegate
 import org.apache.log4j.Logger
-import org.eclipse.debug.core.ILaunchConfiguration
-import org.eclipse.debug.core.ILaunch
-import org.eclipse.core.runtime.IProgressMonitor
-import org.eclipse.debug.ui.RefreshTab
-import org.eclipse.debug.core.DebugPlugin
-import org.eclipse.debug.core.model.IProcess
-import org.eclipse.debug.core.DebugEvent
-import org.eclipse.core.runtime.jobs.Job
 import org.eclipse.core.runtime.CoreException
+import org.eclipse.core.runtime.IProgressMonitor
 import org.eclipse.core.runtime.Status
+import org.eclipse.core.runtime.jobs.Job
+import org.eclipse.debug.core.DebugEvent
+import org.eclipse.debug.core.DebugPlugin
+import org.eclipse.debug.core.ILaunch
+import org.eclipse.debug.core.ILaunchConfiguration
+import org.eclipse.debug.core.model.IProcess
+import org.eclipse.debug.ui.RefreshTab
+import org.eclipse.jdt.launching.JavaLaunchDelegate
 
 class BuildDSLLaunchDelegate extends JavaLaunchDelegate {
 	

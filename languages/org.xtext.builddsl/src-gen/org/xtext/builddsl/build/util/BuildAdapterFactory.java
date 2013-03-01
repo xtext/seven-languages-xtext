@@ -85,11 +85,6 @@ public class BuildAdapterFactory extends AdapterFactoryImpl
         return createBuildFileAdapter();
       }
       @Override
-      public Adapter caseImportDeclaration(ImportDeclaration object)
-      {
-        return createImportDeclarationAdapter();
-      }
-      @Override
       public Adapter caseDeclaration(Declaration object)
       {
         return createDeclarationAdapter();
@@ -137,21 +132,6 @@ public class BuildAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createBuildFileAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.builddsl.build.ImportDeclaration <em>Import Declaration</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.builddsl.build.ImportDeclaration
-   * @generated
-   */
-  public Adapter createImportDeclarationAdapter()
   {
     return null;
   }

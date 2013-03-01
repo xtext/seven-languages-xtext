@@ -1,6 +1,12 @@
+/**
+ * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
 package org.xtext.builddsl.ui.launch;
 
-import com.google.common.base.Objects;
 import org.eclipse.debug.core.DebugPlugin;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.ILaunchConfigurationType;
@@ -11,6 +17,7 @@ import org.eclipse.jdt.launching.IJavaLaunchConfigurationConstants;
 import org.eclipse.xtend.lib.Data;
 import org.eclipse.xtext.util.Strings;
 import org.eclipse.xtext.xbase.lib.Exceptions;
+import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 import org.eclipse.xtext.xbase.lib.util.ToStringHelper;
 
@@ -64,7 +71,7 @@ public class LaunchConfigurationInfo {
         _xblockexpression = (_doSave);
       }
       return _xblockexpression;
-    } catch (Exception _e) {
+    } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
   }
@@ -76,13 +83,13 @@ public class LaunchConfigurationInfo {
       boolean _and_2 = false;
       String _attribute = a.getAttribute(IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME, "X");
       String _clazz = this.getClazz();
-      boolean _equals = Objects.equal(_attribute, _clazz);
+      boolean _equals = ObjectExtensions.operator_equals(_attribute, _clazz);
       if (!_equals) {
         _and_2 = false;
       } else {
         String _attribute_1 = a.getAttribute(IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME, "X");
         String _project = this.getProject();
-        boolean _equals_1 = Objects.equal(_attribute_1, _project);
+        boolean _equals_1 = ObjectExtensions.operator_equals(_attribute_1, _project);
         _and_2 = (_equals && _equals_1);
       }
       if (!_and_2) {
@@ -98,11 +105,11 @@ public class LaunchConfigurationInfo {
       } else {
         ILaunchConfigurationType _type = a.getType();
         String _identifier = _type.getIdentifier();
-        boolean _equals_2 = Objects.equal(_identifier, "org.xtext.builddsl.ui.BuildLaunchConfigurationType");
+        boolean _equals_2 = ObjectExtensions.operator_equals(_identifier, "org.xtext.builddsl.ui.BuildLaunchConfigurationType");
         _and = (_and_1 && _equals_2);
       }
       return _and;
-    } catch (Exception _e) {
+    } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
   }

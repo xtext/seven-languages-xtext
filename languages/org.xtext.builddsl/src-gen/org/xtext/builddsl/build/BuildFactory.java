@@ -37,15 +37,6 @@ public interface BuildFactory extends EFactory
   BuildFile createBuildFile();
 
   /**
-   * Returns a new object of class '<em>Import Declaration</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Import Declaration</em>'.
-   * @generated
-   */
-  ImportDeclaration createImportDeclaration();
-
-  /**
    * Returns a new object of class '<em>Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

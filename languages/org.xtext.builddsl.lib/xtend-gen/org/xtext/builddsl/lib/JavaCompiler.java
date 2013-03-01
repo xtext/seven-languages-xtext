@@ -1,6 +1,12 @@
+/**
+ * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
 package org.xtext.builddsl.lib;
 
-import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import java.io.File;
 import java.io.PrintWriter;
@@ -18,6 +24,7 @@ import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
+import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.xtext.builddsl.lib.JavaCompilerParams;
 
@@ -29,7 +36,7 @@ public class JavaCompiler {
     init.apply(params);
     final ArrayList<String> list = CollectionLiterals.<String>newArrayList();
     File _destination = params.getDestination();
-    boolean _equals = Objects.equal(_destination, null);
+    boolean _equals = ObjectExtensions.operator_equals(_destination, null);
     if (_equals) {
       list.add("-d");
       list.add("none");
@@ -75,7 +82,7 @@ public class JavaCompiler {
             URI _uRI = it.toURI();
             URL _uRL = _uRI.toURL();
             return _uRL;
-          } catch (Exception _e) {
+          } catch (Throwable _e) {
             throw Exceptions.sneakyThrow(_e);
           }
         }

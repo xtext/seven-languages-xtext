@@ -8,12 +8,9 @@
 package org.xtext.builddsl.lib
 
 import java.io.File
+import java.lang.reflect.Field
 import java.util.List
 import java.util.Map
-import org.eclipse.xtend.lib.Property
-
-import static org.xtext.builddsl.lib.BuildScript.*
-import java.lang.reflect.Field
 
 abstract class BuildScript {
 	

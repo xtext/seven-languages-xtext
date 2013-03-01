@@ -14,6 +14,7 @@ import java.lang.annotation.Target;
 
 /**
  * A task definition
+ * TODO: translate to Xtend as soon as https://bugs.eclipse.org/bugs/show_bug.cgi?id=402102 is fixed
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)

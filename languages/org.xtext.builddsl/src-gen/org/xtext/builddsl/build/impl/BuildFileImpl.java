@@ -23,10 +23,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.eclipse.xtext.xtype.XImportSection;
+
 import org.xtext.builddsl.build.BuildFile;
 import org.xtext.builddsl.build.BuildPackage;
 import org.xtext.builddsl.build.Declaration;
-import org.xtext.builddsl.build.ImportDeclaration;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,7 +37,7 @@ import org.xtext.builddsl.build.ImportDeclaration;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.xtext.builddsl.build.impl.BuildFileImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.builddsl.build.impl.BuildFileImpl#getImports <em>Imports</em>}</li>
+ *   <li>{@link org.xtext.builddsl.build.impl.BuildFileImpl#getImportSection <em>Import Section</em>}</li>
  *   <li>{@link org.xtext.builddsl.build.impl.BuildFileImpl#getDeclarations <em>Declarations</em>}</li>
  * </ul>
  * </p>
@@ -66,14 +67,14 @@ public class BuildFileImpl extends MinimalEObjectImpl.Container implements Build
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
+   * The cached value of the '{@link #getImportSection() <em>Import Section</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getImports()
+   * @see #getImportSection()
    * @generated
    * @ordered
    */
-  protected EList<ImportDeclaration> imports;
+  protected XImportSection importSection;
 
   /**
    * The cached value of the '{@link #getDeclarations() <em>Declarations</em>}' containment reference list.
@@ -134,13 +135,47 @@ public class BuildFileImpl extends MinimalEObjectImpl.Container implements Build
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ImportDeclaration> getImports()
+  public XImportSection getImportSection()
   {
-    if (imports == null)
+    return importSection;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetImportSection(XImportSection newImportSection, NotificationChain msgs)
+  {
+    XImportSection oldImportSection = importSection;
+    importSection = newImportSection;
+    if (eNotificationRequired())
     {
-      imports = new EObjectContainmentEList<ImportDeclaration>(ImportDeclaration.class, this, BuildPackage.BUILD_FILE__IMPORTS);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BuildPackage.BUILD_FILE__IMPORT_SECTION, oldImportSection, newImportSection);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return imports;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setImportSection(XImportSection newImportSection)
+  {
+    if (newImportSection != importSection)
+    {
+      NotificationChain msgs = null;
+      if (importSection != null)
+        msgs = ((InternalEObject)importSection).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BuildPackage.BUILD_FILE__IMPORT_SECTION, null, msgs);
+      if (newImportSection != null)
+        msgs = ((InternalEObject)newImportSection).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BuildPackage.BUILD_FILE__IMPORT_SECTION, null, msgs);
+      msgs = basicSetImportSection(newImportSection, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, BuildPackage.BUILD_FILE__IMPORT_SECTION, newImportSection, newImportSection));
   }
 
   /**
@@ -167,8 +202,8 @@ public class BuildFileImpl extends MinimalEObjectImpl.Container implements Build
   {
     switch (featureID)
     {
-      case BuildPackage.BUILD_FILE__IMPORTS:
-        return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
+      case BuildPackage.BUILD_FILE__IMPORT_SECTION:
+        return basicSetImportSection(null, msgs);
       case BuildPackage.BUILD_FILE__DECLARATIONS:
         return ((InternalEList<?>)getDeclarations()).basicRemove(otherEnd, msgs);
     }
@@ -187,8 +222,8 @@ public class BuildFileImpl extends MinimalEObjectImpl.Container implements Build
     {
       case BuildPackage.BUILD_FILE__NAME:
         return getName();
-      case BuildPackage.BUILD_FILE__IMPORTS:
-        return getImports();
+      case BuildPackage.BUILD_FILE__IMPORT_SECTION:
+        return getImportSection();
       case BuildPackage.BUILD_FILE__DECLARATIONS:
         return getDeclarations();
     }
@@ -209,9 +244,8 @@ public class BuildFileImpl extends MinimalEObjectImpl.Container implements Build
       case BuildPackage.BUILD_FILE__NAME:
         setName((String)newValue);
         return;
-      case BuildPackage.BUILD_FILE__IMPORTS:
-        getImports().clear();
-        getImports().addAll((Collection<? extends ImportDeclaration>)newValue);
+      case BuildPackage.BUILD_FILE__IMPORT_SECTION:
+        setImportSection((XImportSection)newValue);
         return;
       case BuildPackage.BUILD_FILE__DECLARATIONS:
         getDeclarations().clear();
@@ -234,8 +268,8 @@ public class BuildFileImpl extends MinimalEObjectImpl.Container implements Build
       case BuildPackage.BUILD_FILE__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case BuildPackage.BUILD_FILE__IMPORTS:
-        getImports().clear();
+      case BuildPackage.BUILD_FILE__IMPORT_SECTION:
+        setImportSection((XImportSection)null);
         return;
       case BuildPackage.BUILD_FILE__DECLARATIONS:
         getDeclarations().clear();
@@ -256,8 +290,8 @@ public class BuildFileImpl extends MinimalEObjectImpl.Container implements Build
     {
       case BuildPackage.BUILD_FILE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case BuildPackage.BUILD_FILE__IMPORTS:
-        return imports != null && !imports.isEmpty();
+      case BuildPackage.BUILD_FILE__IMPORT_SECTION:
+        return importSection != null;
       case BuildPackage.BUILD_FILE__DECLARATIONS:
         return declarations != null && !declarations.isEmpty();
     }

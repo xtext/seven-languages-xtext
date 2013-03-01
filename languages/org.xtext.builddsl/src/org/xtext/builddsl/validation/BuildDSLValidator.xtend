@@ -18,7 +18,6 @@ import org.xtext.builddsl.build.BuildPackage
 import org.xtext.builddsl.build.Task
 
 import static org.xtext.builddsl.build.BuildPackage$Literals.*
-import static org.xtext.builddsl.validation.BuildDSLValidator.*
 
 class BuildDSLValidator extends XbaseJavaValidator {
 	

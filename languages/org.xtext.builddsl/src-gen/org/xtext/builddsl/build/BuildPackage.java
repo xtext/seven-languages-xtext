@@ -81,13 +81,13 @@ public interface BuildPackage extends EPackage
   int BUILD_FILE__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Imports</b></em>' containment reference list.
+   * The feature id for the '<em><b>Import Section</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BUILD_FILE__IMPORTS = 1;
+  int BUILD_FILE__IMPORT_SECTION = 1;
 
   /**
    * The feature id for the '<em><b>Declarations</b></em>' containment reference list.
@@ -108,34 +108,6 @@ public interface BuildPackage extends EPackage
   int BUILD_FILE_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link org.xtext.builddsl.build.impl.ImportDeclarationImpl <em>Import Declaration</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.builddsl.build.impl.ImportDeclarationImpl
-   * @see org.xtext.builddsl.build.impl.BuildPackageImpl#getImportDeclaration()
-   * @generated
-   */
-  int IMPORT_DECLARATION = 1;
-
-  /**
-   * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMPORT_DECLARATION__IMPORTED_NAMESPACE = 0;
-
-  /**
-   * The number of structural features of the '<em>Import Declaration</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMPORT_DECLARATION_FEATURE_COUNT = 1;
-
-  /**
    * The meta object id for the '{@link org.xtext.builddsl.build.impl.DeclarationImpl <em>Declaration</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -143,7 +115,7 @@ public interface BuildPackage extends EPackage
    * @see org.xtext.builddsl.build.impl.BuildPackageImpl#getDeclaration()
    * @generated
    */
-  int DECLARATION = 2;
+  int DECLARATION = 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -171,7 +143,7 @@ public interface BuildPackage extends EPackage
    * @see org.xtext.builddsl.build.impl.BuildPackageImpl#getParameter()
    * @generated
    */
-  int PARAMETER = 3;
+  int PARAMETER = 2;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -217,7 +189,7 @@ public interface BuildPackage extends EPackage
    * @see org.xtext.builddsl.build.impl.BuildPackageImpl#getTask()
    * @generated
    */
-  int TASK = 4;
+  int TASK = 3;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -278,15 +250,15 @@ public interface BuildPackage extends EPackage
   EAttribute getBuildFile_Name();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.builddsl.build.BuildFile#getImports <em>Imports</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.builddsl.build.BuildFile#getImportSection <em>Import Section</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Imports</em>'.
-   * @see org.xtext.builddsl.build.BuildFile#getImports()
+   * @return the meta object for the containment reference '<em>Import Section</em>'.
+   * @see org.xtext.builddsl.build.BuildFile#getImportSection()
    * @see #getBuildFile()
    * @generated
    */
-  EReference getBuildFile_Imports();
+  EReference getBuildFile_ImportSection();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.xtext.builddsl.build.BuildFile#getDeclarations <em>Declarations</em>}'.
@@ -298,27 +270,6 @@ public interface BuildPackage extends EPackage
    * @generated
    */
   EReference getBuildFile_Declarations();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.builddsl.build.ImportDeclaration <em>Import Declaration</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Import Declaration</em>'.
-   * @see org.xtext.builddsl.build.ImportDeclaration
-   * @generated
-   */
-  EClass getImportDeclaration();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.builddsl.build.ImportDeclaration#getImportedNamespace <em>Imported Namespace</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Imported Namespace</em>'.
-   * @see org.xtext.builddsl.build.ImportDeclaration#getImportedNamespace()
-   * @see #getImportDeclaration()
-   * @generated
-   */
-  EAttribute getImportDeclaration_ImportedNamespace();
 
   /**
    * Returns the meta object for class '{@link org.xtext.builddsl.build.Declaration <em>Declaration</em>}'.
@@ -447,12 +398,12 @@ public interface BuildPackage extends EPackage
     EAttribute BUILD_FILE__NAME = eINSTANCE.getBuildFile_Name();
 
     /**
-     * The meta object literal for the '<em><b>Imports</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Import Section</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BUILD_FILE__IMPORTS = eINSTANCE.getBuildFile_Imports();
+    EReference BUILD_FILE__IMPORT_SECTION = eINSTANCE.getBuildFile_ImportSection();
 
     /**
      * The meta object literal for the '<em><b>Declarations</b></em>' containment reference list feature.
@@ -461,24 +412,6 @@ public interface BuildPackage extends EPackage
      * @generated
      */
     EReference BUILD_FILE__DECLARATIONS = eINSTANCE.getBuildFile_Declarations();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.builddsl.build.impl.ImportDeclarationImpl <em>Import Declaration</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.builddsl.build.impl.ImportDeclarationImpl
-     * @see org.xtext.builddsl.build.impl.BuildPackageImpl#getImportDeclaration()
-     * @generated
-     */
-    EClass IMPORT_DECLARATION = eINSTANCE.getImportDeclaration();
-
-    /**
-     * The meta object literal for the '<em><b>Imported Namespace</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute IMPORT_DECLARATION__IMPORTED_NAMESPACE = eINSTANCE.getImportDeclaration_ImportedNamespace();
 
     /**
      * The meta object literal for the '{@link org.xtext.builddsl.build.impl.DeclarationImpl <em>Declaration</em>}' class.

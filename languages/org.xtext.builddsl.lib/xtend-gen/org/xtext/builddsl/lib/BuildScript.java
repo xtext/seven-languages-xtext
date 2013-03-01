@@ -1,3 +1,10 @@
+/**
+ * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
 package org.xtext.builddsl.lib;
 
 import com.google.common.base.Objects;
@@ -20,6 +27,7 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure0;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.xtext.builddsl.lib.DependsOn;
@@ -41,11 +49,11 @@ public abstract class BuildScript {
   private Map<String,Field> _parameters;
   
   public Map<String,TaskDef> getTasks() {
-    boolean _equals = Objects.equal(this._tasks, null);
+    boolean _equals = ObjectExtensions.operator_equals(this._tasks, null);
     if (_equals) {
       HashMap<String,TaskDef> _newHashMap = CollectionLiterals.<String, TaskDef>newHashMap();
       this._tasks = _newHashMap;
-      Class<? extends Object> _class = this.getClass();
+      Class<? extends BuildScript> _class = this.getClass();
       Method[] _declaredMethods = _class.getDeclaredMethods();
       for (final Method method : _declaredMethods) {
         {
@@ -53,12 +61,12 @@ public abstract class BuildScript {
           final Function1<Annotation,Boolean> _function = new Function1<Annotation,Boolean>() {
               public Boolean apply(final Annotation it) {
                 Class<? extends Annotation> _annotationType = it.annotationType();
-                boolean _equals = Objects.equal(_annotationType, DependsOn.class);
+                boolean _equals = ObjectExtensions.operator_equals(_annotationType, DependsOn.class);
                 return Boolean.valueOf(_equals);
               }
             };
           final Annotation taskAnnotation = IterableExtensions.<Annotation>findFirst(((Iterable<Annotation>)Conversions.doWrapArray(_annotations)), _function);
-          boolean _notEquals = (!Objects.equal(taskAnnotation, null));
+          boolean _notEquals = ObjectExtensions.operator_notEquals(taskAnnotation, null);
           if (_notEquals) {
             String _name = method.getName();
             final Procedure1<TaskDef> _function_1 = new Procedure1<TaskDef>() {
@@ -70,7 +78,7 @@ public abstract class BuildScript {
                         try {
                           method.setAccessible(true);
                           method.invoke(BuildScript.this);
-                        } catch (Exception _e) {
+                        } catch (Throwable _e) {
                           throw Exceptions.sneakyThrow(_e);
                         }
                       }
@@ -87,11 +95,11 @@ public abstract class BuildScript {
   }
   
   public Map<String,Field> getParameters() {
-    boolean _equals = Objects.equal(this._parameters, null);
+    boolean _equals = ObjectExtensions.operator_equals(this._parameters, null);
     if (_equals) {
       HashMap<String,Field> _newHashMap = CollectionLiterals.<String, Field>newHashMap();
       this._parameters = _newHashMap;
-      Class<? extends Object> _class = this.getClass();
+      Class<? extends BuildScript> _class = this.getClass();
       Field[] _declaredFields = _class.getDeclaredFields();
       final Function1<Field,Boolean> _function = new Function1<Field,Boolean>() {
           public Boolean apply(final Field it) {
@@ -99,7 +107,7 @@ public abstract class BuildScript {
             final Function1<Annotation,Boolean> _function = new Function1<Annotation,Boolean>() {
                 public Boolean apply(final Annotation it) {
                   Class<? extends Annotation> _annotationType = it.annotationType();
-                  boolean _equals = Objects.equal(_annotationType, Param.class);
+                  boolean _equals = ObjectExtensions.operator_equals(_annotationType, Param.class);
                   return Boolean.valueOf(_equals);
                 }
               };
@@ -135,7 +143,7 @@ public abstract class BuildScript {
             StringConcatenation _builder = new StringConcatenation();
             _builder.append("Unknown parameter ");
             _builder.append(p, "");
-            InputOutput.<CharSequence>println(_builder);
+            InputOutput.<String>println(_builder.toString());
             return BuildScript.WRONG_PARAM;
           }
         } else {
@@ -146,7 +154,7 @@ public abstract class BuildScript {
             StringConcatenation _builder_1 = new StringConcatenation();
             _builder_1.append("Unknown task ");
             _builder_1.append(p, "");
-            InputOutput.<CharSequence>println(_builder_1);
+            InputOutput.<String>println(_builder_1.toString());
             return BuildScript.WRONG_PARAM;
           }
           tasksToExecute.add(p);
@@ -174,7 +182,7 @@ public abstract class BuildScript {
   public void _executeTask(final String name) {
     Map<String,TaskDef> _tasks = this.getTasks();
     final TaskDef task = _tasks.get(name);
-    boolean _equals = Objects.equal(task, null);
+    boolean _equals = ObjectExtensions.operator_equals(task, null);
     if (_equals) {
       String _plus = ("A task \'" + name);
       String _plus_1 = (_plus + "\' does not exist.");
@@ -202,7 +210,7 @@ public abstract class BuildScript {
       _builder.append("[Task \'");
       _builder.append(name, "");
       _builder.append("\']");
-      InputOutput.<CharSequence>println(_builder);
+      InputOutput.<String>println(_builder.toString());
       Procedure0 _runnable = task.getRunnable();
       if (_runnable!=null) _runnable.apply();
     } finally {
@@ -220,11 +228,11 @@ public abstract class BuildScript {
       final Function1<String,Boolean> _function = new Function1<String,Boolean>() {
           public Boolean apply(final String arg) {
             boolean _or = false;
-            boolean _equals = Objects.equal("--help", arg);
+            boolean _equals = ObjectExtensions.operator_equals("--help", arg);
             if (_equals) {
               _or = true;
             } else {
-              boolean _equals_1 = Objects.equal("-h", arg);
+              boolean _equals_1 = ObjectExtensions.operator_equals("-h", arg);
               _or = (_equals || _equals_1);
             }
             return Boolean.valueOf(_or);
@@ -236,7 +244,7 @@ public abstract class BuildScript {
     if (_or) {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("Build \'");
-      Class<? extends Object> _class = this.getClass();
+      Class<? extends BuildScript> _class = this.getClass();
       String _simpleName = _class.getSimpleName();
       _builder.append(_simpleName, "");
       _builder.append("\'");
@@ -280,7 +288,7 @@ public abstract class BuildScript {
           }
         }
       }
-      InputOutput.<CharSequence>println(_builder);
+      InputOutput.<String>println(_builder.toString());
       return true;
     }
     return false;
@@ -306,7 +314,7 @@ public abstract class BuildScript {
     try {
       Map<String,Field> _parameters = this.getParameters();
       final Field field = _parameters.get(name);
-      boolean _equals = Objects.equal(field, null);
+      boolean _equals = ObjectExtensions.operator_equals(field, null);
       if (_equals) {
         return false;
       }
@@ -315,7 +323,7 @@ public abstract class BuildScript {
       Object __convertTo = this._convertTo(value, _type);
       field.set(this, __convertTo);
       return true;
-    } catch (Exception _e) {
+    } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
   }

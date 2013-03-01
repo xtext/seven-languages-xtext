@@ -11,14 +11,8 @@ generate build "http://www.xtext.org/builddsl"
 
 BuildFile:
 	("package" name=QualifiedName)?
-	imports+=ImportDeclaration*
+	importSection=XImportSection?
 	declarations+=Declaration*;
-
-ImportDeclaration:
-	'import' importedNamespace=QualifiedNameWithWildCard;
-
-QualifiedNameWithWildCard:
-	QualifiedName '.*'?;
 
 Declaration:
 	Task | Parameter;

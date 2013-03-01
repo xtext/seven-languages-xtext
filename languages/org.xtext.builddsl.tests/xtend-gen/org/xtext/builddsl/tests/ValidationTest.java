@@ -1,3 +1,10 @@
+/**
+ * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
 package org.xtext.builddsl.tests;
 
 import com.google.inject.Inject;
@@ -14,8 +21,8 @@ import org.xtext.builddsl.build.BuildFile;
 import org.xtext.builddsl.build.BuildPackage.Literals;
 import org.xtext.builddsl.validation.BuildDSLValidator;
 
-@RunWith(value = XtextRunner.class)
-@InjectWith(value = BuildDSLInjectorProvider.class)
+@RunWith(XtextRunner.class)
+@InjectWith(BuildDSLInjectorProvider.class)
 @SuppressWarnings("all")
 public class ValidationTest {
   @Inject
@@ -32,7 +39,7 @@ public class ValidationTest {
       _builder.newLine();
       BuildFile _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertError(_parse, Literals.TASK, BuildDSLValidator.CYCLIC_DEPENDENCY);
-    } catch (Exception _e) {
+    } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
   }
@@ -49,7 +56,7 @@ public class ValidationTest {
       _builder.newLine();
       BuildFile _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertError(_parse, Literals.TASK, BuildDSLValidator.CYCLIC_DEPENDENCY);
-    } catch (Exception _e) {
+    } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
   }
@@ -66,7 +73,7 @@ public class ValidationTest {
       _builder.newLine();
       BuildFile _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoError(_parse, BuildDSLValidator.CYCLIC_DEPENDENCY);
-    } catch (Exception _e) {
+    } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
   }

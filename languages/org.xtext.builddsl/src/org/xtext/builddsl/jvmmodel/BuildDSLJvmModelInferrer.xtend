@@ -9,19 +9,17 @@ package org.xtext.builddsl.jvmmodel
 
 import com.google.inject.Inject
 import org.eclipse.xtext.common.types.JvmVisibility
+import org.eclipse.xtext.common.types.TypesFactory
 import org.eclipse.xtext.util.Strings
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
-import org.eclipse.xtext.xbase.typing.ITypeProvider
 import org.xtext.builddsl.build.BuildFile
 import org.xtext.builddsl.build.Parameter
 import org.xtext.builddsl.build.Task
 import org.xtext.builddsl.lib.BuildScript
-
-import org.xtext.builddsl.lib.Param
 import org.xtext.builddsl.lib.DependsOn
-import org.eclipse.xtext.common.types.TypesFactory
+import org.xtext.builddsl.lib.Param
 
 /**
  * Infers a Java class from a {@link BuildFile} allowing to execute it.
@@ -30,7 +28,6 @@ class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
 
 	@Inject extension JvmTypesBuilder
 	extension TypesFactory = TypesFactory::eINSTANCE
-	@Inject ITypeProvider typeProvider
 
    	def dispatch void infer(BuildFile file, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
    		val fqn = file.javaClassName
@@ -40,9 +37,7 @@ class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
 			
 			// parameters become Java fields
 			for (declaredParameter : file.parameters) {
-				val type = declaredParameter.type 
-					?: typeProvider.getType(declaredParameter.init)
-					?: file.newTypeRef(typeof(String))
+				val type = declaredParameter.type ?: inferredNonVoidType
 				members += declaredParameter.toField(declaredParameter.name, type) [
 					visibility = JvmVisibility::PUBLIC
 					annotations += declaredParameter.toAnnotation(typeof(Param))

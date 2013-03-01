@@ -5,12 +5,17 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  ******************************************************************************/
-package org.xtext.builddsl.ui.contentassist;
+package org.xtext.builddsl.lib;
 
-import org.xtext.builddsl.ui.contentassist.AbstractBuildDSLProposalProvider;
+import java.lang.annotation.ElementType
+import java.lang.annotation.Retention
+import java.lang.annotation.RetentionPolicy
+import java.lang.annotation.Target
+
 /**
- * see http://www.eclipse.org/Xtext/documentation/latest/xtext.html#contentAssist on how to customize content assistant
+ * a parameter
  */
-public class BuildDSLProposalProvider extends AbstractBuildDSLProposalProvider {
-
+@Retention(RetentionPolicy::RUNTIME)
+@Target(ElementType::FIELD)
+annotation Param {
 }

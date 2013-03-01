@@ -64,7 +64,7 @@ class CommandLineTest {
 		'''
 		file.assertExecute("Check", '''
 			[Task 'Check']
-			Build '__synthetic0'
+			Build 'MyFile'
 
 			Tasks:
 				Check

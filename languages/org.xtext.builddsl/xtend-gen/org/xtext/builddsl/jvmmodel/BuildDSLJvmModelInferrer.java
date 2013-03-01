@@ -1,6 +1,12 @@
+/**
+ * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
 package org.xtext.builddsl.jvmmodel;
 
-import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
 import java.util.Arrays;
@@ -33,7 +39,6 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
-import org.eclipse.xtext.xbase.typing.ITypeProvider;
 import org.xtext.builddsl.build.BuildFile;
 import org.xtext.builddsl.build.Declaration;
 import org.xtext.builddsl.build.Parameter;
@@ -52,9 +57,6 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
   
   private TypesFactory _typesFactory = TypesFactory.eINSTANCE;
   
-  @Inject
-  private ITypeProvider typeProvider;
-  
   protected void _infer(final BuildFile file, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {
     final String fqn = this.getJavaClassName(file);
     final String scriptName = Strings.lastToken(fqn, ".");
@@ -68,12 +70,15 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
           Iterable<Parameter> _parameters = BuildDSLJvmModelInferrer.this.getParameters(file);
           for (final Parameter declaredParameter : _parameters) {
             {
+              JvmTypeReference _elvis = null;
               JvmTypeReference _type = declaredParameter.getType();
-              XExpression _init = declaredParameter.getInit();
-              JvmTypeReference _type_1 = BuildDSLJvmModelInferrer.this.typeProvider.getType(_init);
-              JvmTypeReference _elvis = ObjectExtensions.<JvmTypeReference>operator_elvis(_type, _type_1);
-              JvmTypeReference _newTypeRef_1 = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(file, String.class);
-              final JvmTypeReference type = ObjectExtensions.<JvmTypeReference>operator_elvis(_elvis, _newTypeRef_1);
+              if (_type != null) {
+                _elvis = _type;
+              } else {
+                JvmTypeReference _inferredNonVoidType = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.inferredNonVoidType();
+                _elvis = ObjectExtensions.<JvmTypeReference>operator_elvis(_type, _inferredNonVoidType);
+              }
+              final JvmTypeReference type = _elvis;
               EList<JvmMember> _members = it.getMembers();
               String _name = declaredParameter.getName();
               final Procedure1<JvmField> _function = new Procedure1<JvmField>() {
@@ -83,7 +88,7 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
                     JvmAnnotationReference _annotation = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.toAnnotation(declaredParameter, Param.class);
                     BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmAnnotationReference>operator_add(_annotations, _annotation);
                     XExpression _init = declaredParameter.getInit();
-                    boolean _notEquals = (!Objects.equal(_init, null));
+                    boolean _notEquals = ObjectExtensions.operator_notEquals(_init, null);
                     if (_notEquals) {
                       XExpression _init_1 = declaredParameter.getInit();
                       BuildDSLJvmModelInferrer.this._jvmTypesBuilder.setInitializer(it, _init_1);
@@ -91,7 +96,7 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
                   }
                 };
               JvmField _field = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.toField(declaredParameter, _name, type, _function);
-              BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmField>operator_add(_members, _field);
+              BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members, _field);
             }
           }
           JvmTypeReference _newTypeRef_1 = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(file, String.class);
@@ -128,7 +133,7 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
               }
             };
           JvmOperation _method = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.toMethod(file, "main", _newTypeRef_2, _function);
-          BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members, _method);
+          BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members, _method);
           EList<JvmMember> _members_1 = it.getMembers();
           Iterable<Task> _tasks = BuildDSLJvmModelInferrer.this.getTasks(file);
           final Function1<Task,JvmOperation> _function_1 = new Function1<Task,JvmOperation>() {
@@ -172,8 +177,8 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
                 return _method;
               }
             };
-          Iterable<JvmOperation> _map = IterableExtensions.<Task, JvmOperation>map(_tasks, _function_1);
-          BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_1, _map);
+          Iterable<JvmMember> _map = IterableExtensions.<Task, JvmMember>map(_tasks, _function_1);
+          BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members_1, _map);
         }
       };
     _accept.initializeLater(_function);
@@ -199,7 +204,7 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
   public String getJavaClassName(final BuildFile it) {
     String _xifexpression = null;
     String _name = it.getName();
-    boolean _equals = Objects.equal(_name, null);
+    boolean _equals = ObjectExtensions.operator_equals(_name, null);
     if (_equals) {
       Resource _eResource = it.eResource();
       URI _uRI = _eResource.getURI();

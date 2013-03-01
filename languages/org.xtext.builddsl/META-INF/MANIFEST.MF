@@ -19,7 +19,8 @@ Require-Bundle: org.eclipse.xtext;bundle-version="2.3.0";visibility:=reexport,
  org.eclipse.xtext.xbase.lib,
  org.xtext.builddsl.lib
 Import-Package: org.apache.log4j,
- org.apache.commons.logging
+ org.apache.commons.logging,
+ org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.xtext.builddsl,
  org.xtext.builddsl.build,
@@ -32,4 +33,3 @@ Export-Package: org.xtext.builddsl,
  org.xtext.builddsl.serializer,
  org.xtext.builddsl.services,
  org.xtext.builddsl.validation
-

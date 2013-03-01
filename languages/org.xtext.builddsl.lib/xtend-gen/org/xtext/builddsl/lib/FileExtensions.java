@@ -1,3 +1,10 @@
+/**
+ * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
 package org.xtext.builddsl.lib;
 
 import com.google.common.io.Files;
@@ -60,7 +67,7 @@ public class FileExtensions {
                 out.putNextEntry(entry);
                 Files.copy(file, out);
                 out.closeEntry();
-              } catch (Exception _e) {
+              } catch (Throwable _e) {
                 throw Exceptions.sneakyThrow(_e);
               }
             }
@@ -70,7 +77,7 @@ public class FileExtensions {
       } finally {
         out.close();
       }
-    } catch (Exception _e) {
+    } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
   }

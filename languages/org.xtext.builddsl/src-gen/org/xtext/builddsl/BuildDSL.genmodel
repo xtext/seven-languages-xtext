@@ -4,16 +4,13 @@
     editorDirectory="/org.xtext.builddsl.editor/src" modelPluginID="org.xtext.builddsl"
     forceOverwrite="true" modelName="BuildDSL" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="org.xtext.builddsl.edit"
-    editorPluginID="org.xtext.builddsl.editor" runtimeVersion="2.5" usedGenPackages="../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase">
+    editorPluginID="org.xtext.builddsl.editor" runtimeVersion="2.5" usedGenPackages="../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xtype">
   <genPackages prefix="Build" basePackage="org.xtext.builddsl" disposableProviderFactory="true"
-      ecorePackage="BuildDSL.ecore#/">
+      fileExtensions="build" ecorePackage="BuildDSL.ecore#/">
     <genClasses ecoreClass="BuildDSL.ecore#//BuildFile">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BuildDSL.ecore#//BuildFile/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BuildDSL.ecore#//BuildFile/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BuildDSL.ecore#//BuildFile/importSection"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BuildDSL.ecore#//BuildFile/declarations"/>
-    </genClasses>
-    <genClasses ecoreClass="BuildDSL.ecore#//ImportDeclaration">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BuildDSL.ecore#//ImportDeclaration/importedNamespace"/>
     </genClasses>
     <genClasses ecoreClass="BuildDSL.ecore#//Declaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BuildDSL.ecore#//Declaration/name"/>

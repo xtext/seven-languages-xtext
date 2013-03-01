@@ -1,6 +1,12 @@
+/**
+ * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
 package org.xtext.builddsl.tests;
 
-import com.google.common.base.Objects;
 import com.google.inject.Inject;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -24,8 +30,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.xtext.builddsl.BuildDSLInjectorProvider;
 
-@RunWith(value = XtextRunner.class)
-@InjectWith(value = BuildDSLInjectorProvider.class)
+@RunWith(XtextRunner.class)
+@InjectWith(BuildDSLInjectorProvider.class)
 @SuppressWarnings("all")
 public class CommandLineTest {
   @Inject
@@ -47,7 +53,7 @@ public class CommandLineTest {
     _builder.newLine();
     _builder.append("} ");
     _builder.newLine();
-    final CharSequence file = _builder;
+    final String file = _builder.toString();
     StringConcatenation _builder_1 = new StringConcatenation();
     _builder_1.append("[Task \'Start\']");
     _builder_1.newLine();
@@ -96,11 +102,11 @@ public class CommandLineTest {
     _builder.newLine();
     _builder.append("}");
     _builder.newLine();
-    final CharSequence file = _builder;
+    final String file = _builder.toString();
     StringConcatenation _builder_1 = new StringConcatenation();
     _builder_1.append("[Task \'Check\']");
     _builder_1.newLine();
-    _builder_1.append("Build \'__synthetic0\'");
+    _builder_1.append("Build \'MyFile\'");
     _builder_1.newLine();
     _builder_1.newLine();
     _builder_1.append("Tasks:");
@@ -151,7 +157,7 @@ public class CommandLineTest {
     _builder.newLine();
     _builder.append("} ");
     _builder.newLine();
-    final CharSequence file = _builder;
+    final String file = _builder.toString();
     StringConcatenation _builder_1 = new StringConcatenation();
     _builder_1.append("[Task \'Baz\']");
     _builder_1.newLine();
@@ -211,7 +217,7 @@ public class CommandLineTest {
     _builder.newLine();
     _builder.append("} ");
     _builder.newLine();
-    final CharSequence file = _builder;
+    final String file = _builder.toString();
     String _plus = ("Compile --source testdata/org/xtext/builddsl/tests/SimpleMain.java --dest " + tmpDir);
     StringConcatenation _builder_1 = new StringConcatenation();
     _builder_1.append("[Task \'Pre\']");
@@ -225,19 +231,15 @@ public class CommandLineTest {
   
   protected void assertExecute(final CharSequence file, final String cmdline, final String expectedOutput) {
     try {
-      final ArrayList<Class<?>> classes = CollectionLiterals.<Class<?>>newArrayList();
-      final Procedure1<Result> _function = new Procedure1<Result>() {
-          public void apply(final Result it) {
+      final ArrayList<Class<? extends Object>> classes = CollectionLiterals.<Class<?>>newArrayList();
+      final IAcceptor<Result> _function = new IAcceptor<Result>() {
+          public void accept(final Result it) {
             Class<? extends Object> _compiledClass = it.getCompiledClass();
             classes.add(_compiledClass);
           }
         };
-      this._compilationTestHelper.compile(file, new IAcceptor<Result>() {
-          public void accept(Result t) {
-            _function.apply(t);
-          }
-      });
-      final Class<?> clazz = IterableExtensions.<Class<?>>head(classes);
+      this._compilationTestHelper.compile(file, _function);
+      final Class<? extends Object> clazz = IterableExtensions.<Class<? extends Object>>head(classes);
       ByteArrayOutputStream _byteArrayOutputStream = new ByteArrayOutputStream();
       final ByteArrayOutputStream out = _byteArrayOutputStream;
       final PrintStream backup = System.out;
@@ -250,7 +252,7 @@ public class CommandLineTest {
         final Function1<Method,Boolean> _function_1 = new Function1<Method,Boolean>() {
             public Boolean apply(final Method it) {
               String _name = it.getName();
-              boolean _equals = Objects.equal(_name, "doBuild");
+              boolean _equals = ObjectExtensions.operator_equals(_name, "doBuild");
               return Boolean.valueOf(_equals);
             }
           };
@@ -261,7 +263,7 @@ public class CommandLineTest {
                 it.setAccessible(true);
                 String[] _split = cmdline.split(" ");
                 it.invoke(instance, ((Object) _split));
-              } catch (Exception _e) {
+              } catch (Throwable _e) {
                 throw Exceptions.sneakyThrow(_e);
               }
             }
@@ -272,7 +274,7 @@ public class CommandLineTest {
       }
       String _string = out.toString();
       Assert.assertEquals(expectedOutput, _string);
-    } catch (Exception _e) {
+    } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
   }

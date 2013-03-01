@@ -15,7 +15,6 @@ import java.util.jar.JarOutputStream
 import java.util.zip.ZipEntry
 
 import static extension com.google.common.io.Files.*
-import static extension org.xtext.builddsl.lib.FileExtensions.*
 
 class FileExtensions {
 	

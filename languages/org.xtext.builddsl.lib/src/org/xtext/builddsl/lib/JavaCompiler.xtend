@@ -12,7 +12,6 @@ import java.io.PrintWriter
 import java.net.URLClassLoader
 import java.util.Collection
 import org.eclipse.jdt.core.compiler.batch.BatchCompiler
-import org.eclipse.xtend.lib.Property
 
 class JavaCompiler {
 	

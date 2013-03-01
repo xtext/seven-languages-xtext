@@ -3,13 +3,10 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="build" nsURI="http://www.xtext.org/builddsl" nsPrefix="build">
   <eClassifiers xsi:type="ecore:EClass" name="BuildFile">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
-        eType="#//ImportDeclaration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="importSection" eType="ecore:EClass ../../../../../org.eclipse.xtext.xbase/model/Xtype.ecore#//XImportSection"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="declarations" upperBound="-1"
         eType="#//Declaration" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ImportDeclaration">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="importedNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Declaration">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

@@ -14,6 +14,7 @@ import org.xtext.builddsl.lib.JavaCompiler;
 import org.xtext.builddsl.lib.JavaCompilerParams;
 import org.xtext.builddsl.lib.Param;
 
+@SuppressWarnings("all")
 public class BuildExample extends BuildScript {
   @Param
   public File project = new Function0<File>() {
@@ -80,7 +81,7 @@ public class BuildExample extends BuildScript {
       final ClassLoader classpath = JavaCompiler.newClasspath(this.jar);
       final Class<? extends Object> clazz = classpath.loadClass("helloworld.HelloWorld");
       ClassExtensions.runMain(clazz);
-    } catch (Exception _e) {
+    } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
   }
@@ -90,7 +91,7 @@ public class BuildExample extends BuildScript {
     try {
       Files.deleteDirectoryContents(this.target);
       this.jar.delete();
-    } catch (Exception _e) {
+    } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
   }

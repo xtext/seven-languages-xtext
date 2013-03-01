@@ -18,7 +18,6 @@ import org.eclipse.jface.text.ITextSelection
 import org.eclipse.jface.viewers.ISelection
 import org.eclipse.ui.IEditorPart
 import org.eclipse.ui.IFileEditorInput
-import org.eclipse.xtend.lib.Data
 import org.eclipse.xtext.common.types.JvmDeclaredType
 import org.eclipse.xtext.resource.XtextResource
 import org.eclipse.xtext.util.Strings
@@ -30,7 +29,6 @@ import static org.eclipse.jface.dialogs.MessageDialog.*
 
 import static extension org.eclipse.xtext.EcoreUtil2.*
 import static extension org.eclipse.xtext.nodemodel.util.NodeModelUtils.*
-
 
 class BuildDSLLaunchShortcut implements ILaunchShortcut {
 
