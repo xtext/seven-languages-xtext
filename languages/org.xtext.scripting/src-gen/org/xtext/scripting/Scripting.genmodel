@@ -4,12 +4,9 @@
     editorDirectory="/org.xtext.scripting.editor/src" modelPluginID="org.xtext.scripting"
     forceOverwrite="true" modelName="Scripting" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="org.xtext.scripting.edit"
-    editorPluginID="org.xtext.scripting.editor" runtimeVersion="2.5" usedGenPackages="../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase">
+    editorPluginID="org.xtext.scripting.editor" runtimeVersion="2.5" usedGenPackages="../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xtype">
   <genPackages prefix="Scripting" basePackage="org.xtext.scripting" disposableProviderFactory="true"
-      ecorePackage="Scripting.ecore#/">
-    <genClasses ecoreClass="Scripting.ecore#//Import">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scripting.ecore#//Import/importedNamespace"/>
-    </genClasses>
+      fileExtensions="script" ecorePackage="Scripting.ecore#/">
     <genClasses ecoreClass="Scripting.ecore#//Script">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scripting.ecore#//Script/imports"/>
     </genClasses>

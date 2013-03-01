@@ -1,13 +1,7 @@
-/*******************************************************************************
- * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- ******************************************************************************/
+/**
+ */
 package org.xtext.scripting.scripting.impl;
 
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -16,7 +10,8 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.eclipse.xtext.xbase.XbasePackage;
 
-import org.xtext.scripting.scripting.Import;
+import org.eclipse.xtext.xtype.XtypePackage;
+
 import org.xtext.scripting.scripting.Script;
 import org.xtext.scripting.scripting.ScriptingFactory;
 import org.xtext.scripting.scripting.ScriptingPackage;
@@ -29,13 +24,6 @@ import org.xtext.scripting.scripting.ScriptingPackage;
  */
 public class ScriptingPackageImpl extends EPackageImpl implements ScriptingPackage
 {
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass importEClass = null;
-
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -93,6 +81,7 @@ public class ScriptingPackageImpl extends EPackageImpl implements ScriptingPacka
 
     // Initialize simple dependencies
     XbasePackage.eINSTANCE.eClass();
+    XtypePackage.eINSTANCE.eClass();
 
     // Create package meta-data objects
     theScriptingPackage.createPackageContents();
@@ -107,26 +96,6 @@ public class ScriptingPackageImpl extends EPackageImpl implements ScriptingPacka
     // Update the registry and return the package
     EPackage.Registry.INSTANCE.put(ScriptingPackage.eNS_URI, theScriptingPackage);
     return theScriptingPackage;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getImport()
-  {
-    return importEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getImport_ImportedNamespace()
-  {
-    return (EAttribute)importEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -179,9 +148,6 @@ public class ScriptingPackageImpl extends EPackageImpl implements ScriptingPacka
     isCreated = true;
 
     // Create classes and their features
-    importEClass = createEClass(IMPORT);
-    createEAttribute(importEClass, IMPORT__IMPORTED_NAMESPACE);
-
     scriptEClass = createEClass(SCRIPT);
     createEReference(scriptEClass, SCRIPT__IMPORTS);
   }
@@ -212,6 +178,7 @@ public class ScriptingPackageImpl extends EPackageImpl implements ScriptingPacka
 
     // Obtain other dependent packages
     XbasePackage theXbasePackage = (XbasePackage)EPackage.Registry.INSTANCE.getEPackage(XbasePackage.eNS_URI);
+    XtypePackage theXtypePackage = (XtypePackage)EPackage.Registry.INSTANCE.getEPackage(XtypePackage.eNS_URI);
 
     // Create type parameters
 
@@ -221,11 +188,8 @@ public class ScriptingPackageImpl extends EPackageImpl implements ScriptingPacka
     scriptEClass.getESuperTypes().add(theXbasePackage.getXBlockExpression());
 
     // Initialize classes and features; add operations and parameters
-    initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getImport_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(scriptEClass, Script.class, "Script", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getScript_Imports(), this.getImport(), null, "imports", null, 0, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getScript_Imports(), theXtypePackage.getXImportDeclaration(), null, "imports", null, 0, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

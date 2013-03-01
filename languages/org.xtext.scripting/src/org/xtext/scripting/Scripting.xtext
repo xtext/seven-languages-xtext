@@ -12,11 +12,7 @@ import "http://www.eclipse.org/xtext/xbase/Xbase"
 
 Script returns XBlockExpression:
 	{Script}
-	((expressions+=XExpressionInsideBlock | imports+=Import) ';'?)*;
+	(expressions+=XExpressionInsideBlock ';'? | imports+=XImportDeclaration)*;
 
-Import:
-	'import' importedNamespace=QualifiedNameWithWildcard;
-	
-QualifiedNameWithWildcard:
-	QualifiedName '.*'?;
-
+FeatureCallID:
+	ValidID | 'extends' | 'static' | 'extension';

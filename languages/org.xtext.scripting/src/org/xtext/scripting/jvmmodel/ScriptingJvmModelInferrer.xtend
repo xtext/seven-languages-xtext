@@ -13,8 +13,6 @@ import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
 import org.xtext.scripting.scripting.Script
 
-import static org.xtext.scripting.jvmmodel.ScriptingJvmModelInferrer.*
-
 /**
  * Infers a Java class with a main method from a {@link Script}.
  */

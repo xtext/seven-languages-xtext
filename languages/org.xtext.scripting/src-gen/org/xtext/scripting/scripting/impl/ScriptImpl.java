@@ -1,10 +1,5 @@
-/*******************************************************************************
- * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- ******************************************************************************/
+/**
+ */
 package org.xtext.scripting.scripting.impl;
 
 import java.util.Collection;
@@ -21,7 +16,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.xtext.xbase.impl.XBlockExpressionImpl;
 
-import org.xtext.scripting.scripting.Import;
+import org.eclipse.xtext.xtype.XImportDeclaration;
+
 import org.xtext.scripting.scripting.Script;
 import org.xtext.scripting.scripting.ScriptingPackage;
 
@@ -48,7 +44,7 @@ public class ScriptImpl extends XBlockExpressionImpl implements Script
    * @generated
    * @ordered
    */
-  protected EList<Import> imports;
+  protected EList<XImportDeclaration> imports;
 
   /**
    * <!-- begin-user-doc -->
@@ -76,11 +72,11 @@ public class ScriptImpl extends XBlockExpressionImpl implements Script
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Import> getImports()
+  public EList<XImportDeclaration> getImports()
   {
     if (imports == null)
     {
-      imports = new EObjectContainmentEList<Import>(Import.class, this, ScriptingPackage.SCRIPT__IMPORTS);
+      imports = new EObjectContainmentEList<XImportDeclaration>(XImportDeclaration.class, this, ScriptingPackage.SCRIPT__IMPORTS);
     }
     return imports;
   }
@@ -130,7 +126,7 @@ public class ScriptImpl extends XBlockExpressionImpl implements Script
     {
       case ScriptingPackage.SCRIPT__IMPORTS:
         getImports().clear();
-        getImports().addAll((Collection<? extends Import>)newValue);
+        getImports().addAll((Collection<? extends XImportDeclaration>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

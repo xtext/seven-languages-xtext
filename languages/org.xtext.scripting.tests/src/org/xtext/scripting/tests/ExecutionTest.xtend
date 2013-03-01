@@ -8,17 +8,16 @@
 package org.xtext.scripting.tests
 
 import com.google.inject.Inject
+import java.lang.reflect.InvocationTargetException
 import org.eclipse.xtext.junit4.InjectWith
 import org.eclipse.xtext.junit4.XtextRunner
 import org.eclipse.xtext.xbase.compiler.CompilationTestHelper
+import org.eclipse.xtext.xbase.lib.util.ReflectExtensions
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.xtext.scripting.ScriptingInjectorProvider
-import org.eclipse.xtext.xbase.lib.util.ReflectExtensions
-import java.lang.reflect.InvocationTargetException
 
 import static org.junit.Assert.*
-import static java.util.Collections.*
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(ScriptingInjectorProvider))

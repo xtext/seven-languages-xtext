@@ -1,10 +1,5 @@
-/*******************************************************************************
- * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- ******************************************************************************/
+/**
+ */
 package org.xtext.scripting.scripting.impl;
 
 import org.eclipse.emf.ecore.EClass;
@@ -35,7 +30,7 @@ public class ScriptingFactoryImpl extends EFactoryImpl implements ScriptingFacto
   {
     try
     {
-      ScriptingFactory theScriptingFactory = (ScriptingFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.xtext.org/scripting/Scripting"); 
+      ScriptingFactory theScriptingFactory = (ScriptingFactory)EPackage.Registry.INSTANCE.getEFactory(ScriptingPackage.eNS_URI);
       if (theScriptingFactory != null)
       {
         return theScriptingFactory;
@@ -69,22 +64,10 @@ public class ScriptingFactoryImpl extends EFactoryImpl implements ScriptingFacto
   {
     switch (eClass.getClassifierID())
     {
-      case ScriptingPackage.IMPORT: return createImport();
       case ScriptingPackage.SCRIPT: return createScript();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Import createImport()
-  {
-    ImportImpl import_ = new ImportImpl();
-    return import_;
   }
 
   /**

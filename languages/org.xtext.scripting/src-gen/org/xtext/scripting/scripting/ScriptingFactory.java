@@ -1,10 +1,5 @@
-/*******************************************************************************
- * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- ******************************************************************************/
+/**
+ */
 package org.xtext.scripting.scripting;
 
 import org.eclipse.emf.ecore.EFactory;
@@ -26,15 +21,6 @@ public interface ScriptingFactory extends EFactory
    * @generated
    */
   ScriptingFactory eINSTANCE = org.xtext.scripting.scripting.impl.ScriptingFactoryImpl.init();
-
-  /**
-   * Returns a new object of class '<em>Import</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Import</em>'.
-   * @generated
-   */
-  Import createImport();
 
   /**
    * Returns a new object of class '<em>Script</em>'.
