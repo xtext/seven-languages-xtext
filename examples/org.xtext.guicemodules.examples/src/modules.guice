@@ -1,5 +1,6 @@
-import com.acme.*
-import com.acme.impl.*
+import com.acme.impl.BufferedLoggingService
+import com.acme.impl.DataFile
+import com.acme.impl.FileDataProvider
 
 com.acme.RuntimeModule {
 	bind DataProvider to FileDataProvider

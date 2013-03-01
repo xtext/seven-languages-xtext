@@ -20,10 +20,11 @@ import org.eclipse.xtext.xbase.XbasePackage;
 
 import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationsPackage;
 
+import org.eclipse.xtext.xtype.XtypePackage;
+
 import org.xtext.guicemodules.guiceModules.BindingAST;
 import org.xtext.guicemodules.guiceModules.GuiceModulesFactory;
 import org.xtext.guicemodules.guiceModules.GuiceModulesPackage;
-import org.xtext.guicemodules.guiceModules.ImportAST;
 import org.xtext.guicemodules.guiceModules.KeyAST;
 import org.xtext.guicemodules.guiceModules.ModuleAST;
 import org.xtext.guicemodules.guiceModules.ModulesAST;
@@ -63,13 +64,6 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
    * @generated
    */
   private EClass keyASTEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass importASTEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -122,6 +116,7 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
     // Initialize simple dependencies
     XAnnotationsPackage.eINSTANCE.eClass();
     XbasePackage.eINSTANCE.eClass();
+    XtypePackage.eINSTANCE.eClass();
 
     // Create package meta-data objects
     theGuiceModulesPackage.createPackageContents();
@@ -153,7 +148,7 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModulesAST_Imports()
+  public EReference getModulesAST_ImportSection()
   {
     return (EReference)modulesASTEClass.getEStructuralFeatures().get(0);
   }
@@ -283,26 +278,6 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getImportAST()
-  {
-    return importASTEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getImportAST_ImportedNamespace()
-  {
-    return (EAttribute)importASTEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public GuiceModulesFactory getGuiceModulesFactory()
   {
     return (GuiceModulesFactory)getEFactoryInstance();
@@ -329,7 +304,7 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
 
     // Create classes and their features
     modulesASTEClass = createEClass(MODULES_AST);
-    createEReference(modulesASTEClass, MODULES_AST__IMPORTS);
+    createEReference(modulesASTEClass, MODULES_AST__IMPORT_SECTION);
     createEReference(modulesASTEClass, MODULES_AST__MODULES);
 
     moduleASTEClass = createEClass(MODULE_AST);
@@ -345,9 +320,6 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
     keyASTEClass = createEClass(KEY_AST);
     createEReference(keyASTEClass, KEY_AST__ANNOTATION);
     createEReference(keyASTEClass, KEY_AST__TYPE);
-
-    importASTEClass = createEClass(IMPORT_AST);
-    createEAttribute(importASTEClass, IMPORT_AST__IMPORTED_NAMESPACE);
   }
 
   /**
@@ -375,6 +347,7 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
     setNsURI(eNS_URI);
 
     // Obtain other dependent packages
+    XtypePackage theXtypePackage = (XtypePackage)EPackage.Registry.INSTANCE.getEPackage(XtypePackage.eNS_URI);
     XbasePackage theXbasePackage = (XbasePackage)EPackage.Registry.INSTANCE.getEPackage(XbasePackage.eNS_URI);
     XAnnotationsPackage theXAnnotationsPackage = (XAnnotationsPackage)EPackage.Registry.INSTANCE.getEPackage(XAnnotationsPackage.eNS_URI);
     TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
@@ -387,7 +360,7 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
 
     // Initialize classes and features; add operations and parameters
     initEClass(modulesASTEClass, ModulesAST.class, "ModulesAST", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModulesAST_Imports(), this.getImportAST(), null, "imports", null, 0, -1, ModulesAST.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModulesAST_ImportSection(), theXtypePackage.getXImportSection(), null, "importSection", null, 0, 1, ModulesAST.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModulesAST_Modules(), this.getModuleAST(), null, "modules", null, 0, -1, ModulesAST.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(moduleASTEClass, ModuleAST.class, "ModuleAST", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -403,9 +376,6 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
     initEClass(keyASTEClass, KeyAST.class, "KeyAST", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getKeyAST_Annotation(), theXAnnotationsPackage.getXAnnotation(), null, "annotation", null, 0, 1, KeyAST.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getKeyAST_Type(), theTypesPackage.getJvmTypeReference(), null, "type", null, 0, 1, KeyAST.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(importASTEClass, ImportAST.class, "ImportAST", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getImportAST_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, ImportAST.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

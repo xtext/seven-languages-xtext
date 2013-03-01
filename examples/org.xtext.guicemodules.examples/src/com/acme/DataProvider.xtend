@@ -5,12 +5,8 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  ******************************************************************************/
-package com.acme;
+package com.acme
 
-import com.acme.impl.SystemOutLoggingService;
-import com.google.inject.ImplementedBy;
-
-@ImplementedBy(SystemOutLoggingService.class)
-public interface LoggingService {
-	void logMessage(String msg);
+interface DataProvider {
+	def String getData()
 }

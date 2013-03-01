@@ -19,9 +19,9 @@ import org.eclipse.xtext.naming.IQualifiedNameProvider
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
+import org.xtext.guicemodules.guiceModules.BindingAST
 import org.xtext.guicemodules.guiceModules.KeyAST
 import org.xtext.guicemodules.guiceModules.ModuleAST
-import org.xtext.guicemodules.guiceModules.BindingAST
 
 class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
 

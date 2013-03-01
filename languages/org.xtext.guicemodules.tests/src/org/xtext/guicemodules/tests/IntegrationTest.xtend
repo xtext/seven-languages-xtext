@@ -30,12 +30,13 @@ import static org.junit.Assert.*
 class IntegrationTest {
 	
 	@Inject extension CompilationTestHelper
-	@Inject extension ParseHelper
+	@Inject extension ParseHelper<ModulesAST>
 	@Inject extension ValidationTestHelper
 	
 	@Test def void testParsing() {
 		val it = '''
-			import java.util.*
+			import java.util.ArrayList
+			import java.util.Collection
 			ModuleA {
 				bind List<String> to-instance newArrayList('one','two')
 			}
@@ -44,7 +45,7 @@ class IntegrationTest {
 			}
 			ModuleC mixin ModuleA, ModuleB {
 			}
-		'''.parse as ModulesAST
+		'''.parse
 		
 		assertEquals(3, modules.size)
 		assertEquals(modules.get(0), modules.get(2).mixins.get(0))
@@ -69,7 +70,8 @@ class IntegrationTest {
 	
 	@Test def void testCompileAndExecute() {
 		'''
-			import java.util.*
+			import java.util.Collection
+			import java.util.List
 			import com.google.inject.name.Named
 			
 			foo.bar.MyModule {
@@ -89,5 +91,5 @@ class IntegrationTest {
 
 class InjectionTarget {
 	@Inject @Named('foo-bar') public String s
-	@Inject public Collection col
+	@Inject public Collection<?> col
 }

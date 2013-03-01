@@ -5,18 +5,9 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.xtext.guicemodules.tests;
-
-import com.google.inject.Inject;
-import com.google.inject.name.Named;
-import java.util.Collection;
+package com.acme;
 
 @SuppressWarnings("all")
-public class InjectionTarget {
-  @Inject
-  @Named("foo-bar")
-  public String s;
-  
-  @Inject
-  public Collection<? extends Object> col;
+public interface DataProvider {
+  public abstract String getData();
 }

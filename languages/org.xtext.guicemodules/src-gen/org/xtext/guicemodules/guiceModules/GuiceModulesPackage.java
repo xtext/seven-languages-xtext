@@ -72,13 +72,13 @@ public interface GuiceModulesPackage extends EPackage
   int MODULES_AST = 0;
 
   /**
-   * The feature id for the '<em><b>Imports</b></em>' containment reference list.
+   * The feature id for the '<em><b>Import Section</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODULES_AST__IMPORTS = 0;
+  int MODULES_AST__IMPORT_SECTION = 0;
 
   /**
    * The feature id for the '<em><b>Modules</b></em>' containment reference list.
@@ -227,34 +227,6 @@ public interface GuiceModulesPackage extends EPackage
    */
   int KEY_AST_FEATURE_COUNT = 2;
 
-  /**
-   * The meta object id for the '{@link org.xtext.guicemodules.guiceModules.impl.ImportASTImpl <em>Import AST</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.guicemodules.guiceModules.impl.ImportASTImpl
-   * @see org.xtext.guicemodules.guiceModules.impl.GuiceModulesPackageImpl#getImportAST()
-   * @generated
-   */
-  int IMPORT_AST = 4;
-
-  /**
-   * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMPORT_AST__IMPORTED_NAMESPACE = 0;
-
-  /**
-   * The number of structural features of the '<em>Import AST</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMPORT_AST_FEATURE_COUNT = 1;
-
 
   /**
    * Returns the meta object for class '{@link org.xtext.guicemodules.guiceModules.ModulesAST <em>Modules AST</em>}'.
@@ -267,15 +239,15 @@ public interface GuiceModulesPackage extends EPackage
   EClass getModulesAST();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.guicemodules.guiceModules.ModulesAST#getImports <em>Imports</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.guicemodules.guiceModules.ModulesAST#getImportSection <em>Import Section</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Imports</em>'.
-   * @see org.xtext.guicemodules.guiceModules.ModulesAST#getImports()
+   * @return the meta object for the containment reference '<em>Import Section</em>'.
+   * @see org.xtext.guicemodules.guiceModules.ModulesAST#getImportSection()
    * @see #getModulesAST()
    * @generated
    */
-  EReference getModulesAST_Imports();
+  EReference getModulesAST_ImportSection();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.xtext.guicemodules.guiceModules.ModulesAST#getModules <em>Modules</em>}'.
@@ -407,27 +379,6 @@ public interface GuiceModulesPackage extends EPackage
   EReference getKeyAST_Type();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.guicemodules.guiceModules.ImportAST <em>Import AST</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Import AST</em>'.
-   * @see org.xtext.guicemodules.guiceModules.ImportAST
-   * @generated
-   */
-  EClass getImportAST();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.guicemodules.guiceModules.ImportAST#getImportedNamespace <em>Imported Namespace</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Imported Namespace</em>'.
-   * @see org.xtext.guicemodules.guiceModules.ImportAST#getImportedNamespace()
-   * @see #getImportAST()
-   * @generated
-   */
-  EAttribute getImportAST_ImportedNamespace();
-
-  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -461,12 +412,12 @@ public interface GuiceModulesPackage extends EPackage
     EClass MODULES_AST = eINSTANCE.getModulesAST();
 
     /**
-     * The meta object literal for the '<em><b>Imports</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Import Section</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODULES_AST__IMPORTS = eINSTANCE.getModulesAST_Imports();
+    EReference MODULES_AST__IMPORT_SECTION = eINSTANCE.getModulesAST_ImportSection();
 
     /**
      * The meta object literal for the '<em><b>Modules</b></em>' containment reference list feature.
@@ -569,24 +520,6 @@ public interface GuiceModulesPackage extends EPackage
      * @generated
      */
     EReference KEY_AST__TYPE = eINSTANCE.getKeyAST_Type();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.guicemodules.guiceModules.impl.ImportASTImpl <em>Import AST</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.guicemodules.guiceModules.impl.ImportASTImpl
-     * @see org.xtext.guicemodules.guiceModules.impl.GuiceModulesPackageImpl#getImportAST()
-     * @generated
-     */
-    EClass IMPORT_AST = eINSTANCE.getImportAST();
-
-    /**
-     * The meta object literal for the '<em><b>Imported Namespace</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute IMPORT_AST__IMPORTED_NAMESPACE = eINSTANCE.getImportAST_ImportedNamespace();
 
   }
 

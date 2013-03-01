@@ -6,6 +6,7 @@ import com.google.inject.Key;
 import com.google.inject.Module;
 import java.util.Set;
 
+@SuppressWarnings("all")
 public class RuntimeModule implements Module {
   private String _toInstance1() {
     return "my-data.txt";

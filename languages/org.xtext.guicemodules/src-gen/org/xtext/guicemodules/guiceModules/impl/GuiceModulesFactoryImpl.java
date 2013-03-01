@@ -35,7 +35,7 @@ public class GuiceModulesFactoryImpl extends EFactoryImpl implements GuiceModule
   {
     try
     {
-      GuiceModulesFactory theGuiceModulesFactory = (GuiceModulesFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.xtext.org/guicemodules/GuiceModules"); 
+      GuiceModulesFactory theGuiceModulesFactory = (GuiceModulesFactory)EPackage.Registry.INSTANCE.getEFactory(GuiceModulesPackage.eNS_URI);
       if (theGuiceModulesFactory != null)
       {
         return theGuiceModulesFactory;
@@ -73,7 +73,6 @@ public class GuiceModulesFactoryImpl extends EFactoryImpl implements GuiceModule
       case GuiceModulesPackage.MODULE_AST: return createModuleAST();
       case GuiceModulesPackage.BINDING_AST: return createBindingAST();
       case GuiceModulesPackage.KEY_AST: return createKeyAST();
-      case GuiceModulesPackage.IMPORT_AST: return createImportAST();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -121,17 +120,6 @@ public class GuiceModulesFactoryImpl extends EFactoryImpl implements GuiceModule
   {
     KeyASTImpl keyAST = new KeyASTImpl();
     return keyAST;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ImportAST createImportAST()
-  {
-    ImportASTImpl importAST = new ImportASTImpl();
-    return importAST;
   }
 
   /**

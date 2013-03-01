@@ -6,13 +6,13 @@
  * http://www.eclipse.org/legal/epl-v10.html
  ******************************************************************************/
 grammar org.xtext.guicemodules.GuiceModules 
-	with org.eclipse.xtext.xbase.annotations.XbaseWithAnnotations
+   with org.eclipse.xtext.xbase.annotations.XbaseWithAnnotations
  
 import "http://www.eclipse.org/xtext/common/JavaVMTypes" as types
 generate guiceModules "http://www.xtext.org/guicemodules/GuiceModules"
   
 ModulesAST :
-	imports+=ImportAST*
+	importSection=XImportSection?
 	modules+=ModuleAST*;
 
 ModuleAST :
@@ -27,9 +27,3 @@ BindingAST:
 
 KeyAST:
 	annotation=XAnnotation? type=JvmTypeReference;
-
-ImportAST:
-	'import' importedNamespace=QualifiedNameWithWildCard;
-
-QualifiedNameWithWildCard:
-	QualifiedName '.*'?;

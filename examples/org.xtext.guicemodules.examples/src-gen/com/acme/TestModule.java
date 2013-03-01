@@ -6,22 +6,18 @@ import com.google.inject.Binder;
 import com.google.inject.Key;
 import com.google.inject.Module;
 import java.util.Set;
-import org.eclipse.xtext.xbase.lib.Functions.Function0;
 
+@SuppressWarnings("all")
 public class TestModule implements Module {
   private RuntimeModule runtimeModule = new com.acme.RuntimeModule();
   
   private DataProvider _toInstance0() {
-    final Function0<String> _function = new Function0<String>() {
-        public String apply() {
+    final DataProvider _function = new DataProvider() {
+        public String getData() {
           return "dummy-data";
         }
       };
-    return new DataProvider() {
-        public String getData() {
-          return _function.apply();
-        }
-    };
+    return _function;
   }
   
   public void configure(final Binder binder) {

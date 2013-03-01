@@ -1,3 +1,10 @@
+/**
+ * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
 package org.xtext.guicemodules.tests;
 
 import com.google.inject.Guice;
@@ -5,7 +12,6 @@ import com.google.inject.Inject;
 import com.google.inject.Injector;
 import com.google.inject.Module;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.junit4.InjectWith;
 import org.eclipse.xtext.junit4.XtextRunner;
@@ -17,7 +23,6 @@ import org.eclipse.xtext.xbase.compiler.CompilationTestHelper;
 import org.eclipse.xtext.xbase.compiler.CompilationTestHelper.Result;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
-import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -26,15 +31,15 @@ import org.xtext.guicemodules.guiceModules.ModuleAST;
 import org.xtext.guicemodules.guiceModules.ModulesAST;
 import org.xtext.guicemodules.tests.InjectionTarget;
 
-@RunWith(value = XtextRunner.class)
-@InjectWith(value = GuiceModulesInjectorProvider.class)
+@RunWith(XtextRunner.class)
+@InjectWith(GuiceModulesInjectorProvider.class)
 @SuppressWarnings("all")
 public class IntegrationTest {
   @Inject
   private CompilationTestHelper _compilationTestHelper;
   
   @Inject
-  private ParseHelper _parseHelper;
+  private ParseHelper<ModulesAST> _parseHelper;
   
   @Inject
   private ValidationTestHelper _validationTestHelper;
@@ -43,7 +48,9 @@ public class IntegrationTest {
   public void testParsing() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("import java.util.*");
+      _builder.append("import java.util.ArrayList");
+      _builder.newLine();
+      _builder.append("import java.util.Collection");
       _builder.newLine();
       _builder.append("ModuleA {");
       _builder.newLine();
@@ -63,8 +70,7 @@ public class IntegrationTest {
       _builder.newLine();
       _builder.append("}");
       _builder.newLine();
-      EObject _parse = this._parseHelper.parse(_builder);
-      final ModulesAST it = ((ModulesAST) _parse);
+      final ModulesAST it = this._parseHelper.parse(_builder);
       EList<ModuleAST> _modules = it.getModules();
       int _size = _modules.size();
       Assert.assertEquals(3, _size);
@@ -82,7 +88,7 @@ public class IntegrationTest {
       EList<ModuleAST> _mixins_1 = _get_4.getMixins();
       ModuleAST _get_5 = _mixins_1.get(1);
       Assert.assertEquals(_get_3, _get_5);
-    } catch (Exception _e) {
+    } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
   }
@@ -98,9 +104,9 @@ public class IntegrationTest {
       _builder.newLine();
       _builder.append("}");
       _builder.newLine();
-      EObject _parse = this._parseHelper.parse(_builder);
+      ModulesAST _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertError(_parse, Literals.XANNOTATION, null);
-    } catch (Exception _e) {
+    } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
   }
@@ -116,54 +122,56 @@ public class IntegrationTest {
       _builder.newLine();
       _builder.append("}");
       _builder.newLine();
-      EObject _parse = this._parseHelper.parse(_builder);
+      ModulesAST _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
-    } catch (Exception _e) {
+    } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
   }
   
   @Test
   public void testCompileAndExecute() {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("import java.util.*");
-    _builder.newLine();
-    _builder.append("import com.google.inject.name.Named");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("foo.bar.MyModule {");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("bind List<String> to-instance newArrayList(\'one\',\'two\')");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("bind Collection to List<String>");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("bind @Named(\'foo-bar\') String to-instance \'hello annotation\'");
-    _builder.newLine();
-    _builder.append("}");
-    _builder.newLine();
-    final Procedure1<Result> _function = new Procedure1<Result>() {
-        public void apply(final Result it) {
-          try {
-            Class<? extends Object> _compiledClass = it.getCompiledClass();
-            Object _newInstance = _compiledClass.newInstance();
-            final Module module = ((Module) _newInstance);
-            Injector _createInjector = Guice.createInjector(module);
-            final InjectionTarget obj = _createInjector.<InjectionTarget>getInstance(InjectionTarget.class);
-            Object _head = IterableExtensions.<Object>head(obj.col);
-            Assert.assertEquals("one", _head);
-            Assert.assertEquals("hello annotation", obj.s);
-          } catch (Exception _e) {
-            throw Exceptions.sneakyThrow(_e);
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("import java.util.Collection");
+      _builder.newLine();
+      _builder.append("import java.util.List");
+      _builder.newLine();
+      _builder.append("import com.google.inject.name.Named");
+      _builder.newLine();
+      _builder.newLine();
+      _builder.append("foo.bar.MyModule {");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("bind List<String> to-instance newArrayList(\'one\',\'two\')");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("bind Collection to List<String>");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("bind @Named(\'foo-bar\') String to-instance \'hello annotation\'");
+      _builder.newLine();
+      _builder.append("}");
+      _builder.newLine();
+      final IAcceptor<Result> _function = new IAcceptor<Result>() {
+          public void accept(final Result it) {
+            try {
+              Class<? extends Object> _compiledClass = it.getCompiledClass();
+              Object _newInstance = _compiledClass.newInstance();
+              final Module module = ((Module) _newInstance);
+              Injector _createInjector = Guice.createInjector(module);
+              final InjectionTarget obj = _createInjector.<InjectionTarget>getInstance(InjectionTarget.class);
+              Object _head = IterableExtensions.head(obj.col);
+              Assert.assertEquals("one", _head);
+              Assert.assertEquals("hello annotation", obj.s);
+            } catch (Throwable _e) {
+              throw Exceptions.sneakyThrow(_e);
+            }
           }
-        }
-      };
-    this._compilationTestHelper.compile(_builder, new IAcceptor<Result>() {
-        public void accept(Result t) {
-          _function.apply(t);
-        }
-    });
+        };
+      this._compilationTestHelper.compile(_builder, _function);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
   }
 }

@@ -5,12 +5,12 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  ******************************************************************************/
-package org.xtext.guicemodules.ui.contentassist;
+package com.acme
 
-import org.xtext.guicemodules.ui.contentassist.AbstractGuiceModulesProposalProvider;
-/**
- * see http://www.eclipse.org/Xtext/documentation/latest/xtext.html#contentAssist on how to customize content assistant
- */
-public class GuiceModulesProposalProvider extends AbstractGuiceModulesProposalProvider {
+import com.acme.impl.SystemOutLoggingService
+import com.google.inject.ImplementedBy
 
+@ImplementedBy(typeof(SystemOutLoggingService))
+interface LoggingService {
+	def void logMessage(String msg)
 }

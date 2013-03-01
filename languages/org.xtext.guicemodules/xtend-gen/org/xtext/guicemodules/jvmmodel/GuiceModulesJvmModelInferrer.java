@@ -1,6 +1,12 @@
+/**
+ * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
 package org.xtext.guicemodules.jvmmodel;
 
-import com.google.common.base.Objects;
 import com.google.inject.Binder;
 import com.google.inject.Inject;
 import com.google.inject.Key;
@@ -35,6 +41,7 @@ import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 import org.xtext.guicemodules.guiceModules.BindingAST;
@@ -54,7 +61,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
   
   protected void _infer(final ModuleAST module, final IJvmDeclaredTypeAcceptor acceptor, final boolean preIndexingPhase) {
     JvmTypeReference _newTypeRef = this.builder.newTypeRef(module, Key.class);
-    boolean _equals = Objects.equal(_newTypeRef, null);
+    boolean _equals = ObjectExtensions.operator_equals(_newTypeRef, null);
     if (_equals) {
       return;
     }
@@ -79,7 +86,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
           GuiceModulesJvmModelInferrer.this.builder.setDocumentation(it, _documentation);
           EList<JvmTypeReference> _superTypes = it.getSuperTypes();
           JvmParameterizedTypeReference _createTypeRef = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(moduleType);
-          GuiceModulesJvmModelInferrer.this.builder.<JvmParameterizedTypeReference>operator_add(_superTypes, _createTypeRef);
+          GuiceModulesJvmModelInferrer.this.builder.<JvmTypeReference>operator_add(_superTypes, _createTypeRef);
           EList<ModuleAST> _mixins = module.getMixins();
           for (final ModuleAST mixin : _mixins) {
             boolean _eIsProxy = mixin.eIsProxy();
@@ -106,14 +113,14 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
                   }
                 };
               JvmField _field = GuiceModulesJvmModelInferrer.this.builder.toField(mixin, _simpleName, _newTypeRef, _function);
-              GuiceModulesJvmModelInferrer.this.builder.<JvmField>operator_add(_members, _field);
+              GuiceModulesJvmModelInferrer.this.builder.<JvmMember>operator_add(_members, _field);
             }
           }
           EList<BindingAST> _bindings = module.getBindings();
           for (final BindingAST binding : _bindings) {
             {
               XExpression _toInstance = binding.getToInstance();
-              boolean _notEquals = (!Objects.equal(_toInstance, null));
+              boolean _notEquals = ObjectExtensions.operator_notEquals(_toInstance, null);
               if (_notEquals) {
                 EList<JvmMember> _members_1 = it.getMembers();
                 String _syntheticToInstanceName = GuiceModulesJvmModelInferrer.this.syntheticToInstanceName(binding);
@@ -127,11 +134,11 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
                     }
                   };
                 JvmOperation _method = GuiceModulesJvmModelInferrer.this.builder.toMethod(binding, _syntheticToInstanceName, _type, _function_1);
-                GuiceModulesJvmModelInferrer.this.builder.<JvmOperation>operator_add(_members_1, _method);
+                GuiceModulesJvmModelInferrer.this.builder.<JvmMember>operator_add(_members_1, _method);
               }
               KeyAST _to = binding.getTo();
               XAnnotation _annotation = _to==null?(XAnnotation)null:_to.getAnnotation();
-              boolean _notEquals_1 = (!Objects.equal(_annotation, null));
+              boolean _notEquals_1 = ObjectExtensions.operator_notEquals(_annotation, null);
               if (_notEquals_1) {
                 EList<JvmMember> _members_2 = it.getMembers();
                 KeyAST _to_1 = binding.getTo();
@@ -148,11 +155,11 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
                     }
                   };
                 JvmField _field_1 = GuiceModulesJvmModelInferrer.this.builder.toField(binding, _syntheticName, _type_1, _function_2);
-                GuiceModulesJvmModelInferrer.this.builder.<JvmField>operator_add(_members_2, _field_1);
+                GuiceModulesJvmModelInferrer.this.builder.<JvmMember>operator_add(_members_2, _field_1);
               }
               KeyAST _from_1 = binding.getFrom();
               XAnnotation _annotation_1 = _from_1.getAnnotation();
-              boolean _notEquals_2 = (!Objects.equal(_annotation_1, null));
+              boolean _notEquals_2 = ObjectExtensions.operator_notEquals(_annotation_1, null);
               if (_notEquals_2) {
                 EList<JvmMember> _members_3 = it.getMembers();
                 KeyAST _from_2 = binding.getFrom();
@@ -169,7 +176,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
                     }
                   };
                 JvmField _field_2 = GuiceModulesJvmModelInferrer.this.builder.toField(binding, _syntheticName_1, _type_2, _function_3);
-                GuiceModulesJvmModelInferrer.this.builder.<JvmField>operator_add(_members_3, _field_2);
+                GuiceModulesJvmModelInferrer.this.builder.<JvmMember>operator_add(_members_3, _field_2);
               }
             }
           }
@@ -199,7 +206,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
               }
             };
           JvmOperation _method = GuiceModulesJvmModelInferrer.this.builder.toMethod(module, "configure", _createTypeRef_1, _function_1);
-          GuiceModulesJvmModelInferrer.this.builder.<JvmOperation>operator_add(_members_1, _method);
+          GuiceModulesJvmModelInferrer.this.builder.<JvmMember>operator_add(_members_1, _method);
           EList<JvmMember> _members_2 = it.getMembers();
           JvmParameterizedTypeReference _createTypeRef_2 = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(voidType);
           final Procedure1<JvmOperation> _function_2 = new Procedure1<JvmOperation>() {
@@ -248,7 +255,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
                           _builder.newLine();
                           {
                             XExpression _toInstance = b.getToInstance();
-                            boolean _notEquals = (!Objects.equal(_toInstance, null));
+                            boolean _notEquals = ObjectExtensions.operator_notEquals(_toInstance, null);
                             if (_notEquals) {
                               _builder.append("\t");
                               _builder.append("\t\t");
@@ -301,7 +308,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
               }
             };
           JvmOperation _method_1 = GuiceModulesJvmModelInferrer.this.builder.toMethod(module, "configure", _createTypeRef_2, _function_2);
-          GuiceModulesJvmModelInferrer.this.builder.<JvmOperation>operator_add(_members_2, _method_1);
+          GuiceModulesJvmModelInferrer.this.builder.<JvmMember>operator_add(_members_2, _method_1);
         }
       };
     _accept.initializeLater(_function);
@@ -316,7 +323,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
     _builder.append(">(){}");
     {
       XAnnotation _annotation = it.getAnnotation();
-      boolean _notEquals = (!Objects.equal(_annotation, null));
+      boolean _notEquals = ObjectExtensions.operator_notEquals(_annotation, null);
       if (_notEquals) {
         _builder.append(", getClass().getDeclaredField(\"");
         String _syntheticName = this.syntheticName(it);

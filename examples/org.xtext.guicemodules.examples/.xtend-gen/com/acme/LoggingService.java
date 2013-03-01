@@ -5,18 +5,13 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.xtext.guicemodules.tests;
+package com.acme;
 
-import com.google.inject.Inject;
-import com.google.inject.name.Named;
-import java.util.Collection;
+import com.acme.impl.SystemOutLoggingService;
+import com.google.inject.ImplementedBy;
 
+@ImplementedBy(SystemOutLoggingService.class)
 @SuppressWarnings("all")
-public class InjectionTarget {
-  @Inject
-  @Named("foo-bar")
-  public String s;
-  
-  @Inject
-  public Collection<? extends Object> col;
+public interface LoggingService {
+  public abstract void logMessage(final String msg);
 }

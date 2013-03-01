@@ -4,11 +4,11 @@
     editorDirectory="/org.xtext.guicemodules.editor/src" modelPluginID="org.xtext.guicemodules"
     forceOverwrite="true" modelName="GuiceModules" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="org.xtext.guicemodules.edit"
-    editorPluginID="org.xtext.guicemodules.editor" runtimeVersion="2.5" usedGenPackages="../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xAnnotations ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase">
+    editorPluginID="org.xtext.guicemodules.editor" runtimeVersion="2.5" usedGenPackages="../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xAnnotations ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xtype">
   <genPackages prefix="GuiceModules" basePackage="org.xtext.guicemodules" disposableProviderFactory="true"
-      ecorePackage="GuiceModules.ecore#/">
+      fileExtensions="guice" ecorePackage="GuiceModules.ecore#/">
     <genClasses ecoreClass="GuiceModules.ecore#//ModulesAST">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GuiceModules.ecore#//ModulesAST/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GuiceModules.ecore#//ModulesAST/importSection"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GuiceModules.ecore#//ModulesAST/modules"/>
     </genClasses>
     <genClasses ecoreClass="GuiceModules.ecore#//ModuleAST">
@@ -24,9 +24,6 @@
     <genClasses ecoreClass="GuiceModules.ecore#//KeyAST">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GuiceModules.ecore#//KeyAST/annotation"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GuiceModules.ecore#//KeyAST/type"/>
-    </genClasses>
-    <genClasses ecoreClass="GuiceModules.ecore#//ImportAST">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GuiceModules.ecore#//ImportAST/importedNamespace"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -9,6 +9,7 @@ package org.xtext.guicemodules.guiceModules.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -16,13 +17,15 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.eclipse.xtext.xtype.XImportSection;
+
 import org.xtext.guicemodules.guiceModules.GuiceModulesPackage;
-import org.xtext.guicemodules.guiceModules.ImportAST;
 import org.xtext.guicemodules.guiceModules.ModuleAST;
 import org.xtext.guicemodules.guiceModules.ModulesAST;
 
@@ -33,7 +36,7 @@ import org.xtext.guicemodules.guiceModules.ModulesAST;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.guicemodules.guiceModules.impl.ModulesASTImpl#getImports <em>Imports</em>}</li>
+ *   <li>{@link org.xtext.guicemodules.guiceModules.impl.ModulesASTImpl#getImportSection <em>Import Section</em>}</li>
  *   <li>{@link org.xtext.guicemodules.guiceModules.impl.ModulesASTImpl#getModules <em>Modules</em>}</li>
  * </ul>
  * </p>
@@ -43,14 +46,14 @@ import org.xtext.guicemodules.guiceModules.ModulesAST;
 public class ModulesASTImpl extends MinimalEObjectImpl.Container implements ModulesAST
 {
   /**
-   * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
+   * The cached value of the '{@link #getImportSection() <em>Import Section</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getImports()
+   * @see #getImportSection()
    * @generated
    * @ordered
    */
-  protected EList<ImportAST> imports;
+  protected XImportSection importSection;
 
   /**
    * The cached value of the '{@link #getModules() <em>Modules</em>}' containment reference list.
@@ -88,13 +91,47 @@ public class ModulesASTImpl extends MinimalEObjectImpl.Container implements Modu
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ImportAST> getImports()
+  public XImportSection getImportSection()
   {
-    if (imports == null)
+    return importSection;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetImportSection(XImportSection newImportSection, NotificationChain msgs)
+  {
+    XImportSection oldImportSection = importSection;
+    importSection = newImportSection;
+    if (eNotificationRequired())
     {
-      imports = new EObjectContainmentEList<ImportAST>(ImportAST.class, this, GuiceModulesPackage.MODULES_AST__IMPORTS);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GuiceModulesPackage.MODULES_AST__IMPORT_SECTION, oldImportSection, newImportSection);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return imports;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setImportSection(XImportSection newImportSection)
+  {
+    if (newImportSection != importSection)
+    {
+      NotificationChain msgs = null;
+      if (importSection != null)
+        msgs = ((InternalEObject)importSection).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GuiceModulesPackage.MODULES_AST__IMPORT_SECTION, null, msgs);
+      if (newImportSection != null)
+        msgs = ((InternalEObject)newImportSection).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GuiceModulesPackage.MODULES_AST__IMPORT_SECTION, null, msgs);
+      msgs = basicSetImportSection(newImportSection, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GuiceModulesPackage.MODULES_AST__IMPORT_SECTION, newImportSection, newImportSection));
   }
 
   /**
@@ -121,8 +158,8 @@ public class ModulesASTImpl extends MinimalEObjectImpl.Container implements Modu
   {
     switch (featureID)
     {
-      case GuiceModulesPackage.MODULES_AST__IMPORTS:
-        return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
+      case GuiceModulesPackage.MODULES_AST__IMPORT_SECTION:
+        return basicSetImportSection(null, msgs);
       case GuiceModulesPackage.MODULES_AST__MODULES:
         return ((InternalEList<?>)getModules()).basicRemove(otherEnd, msgs);
     }
@@ -139,8 +176,8 @@ public class ModulesASTImpl extends MinimalEObjectImpl.Container implements Modu
   {
     switch (featureID)
     {
-      case GuiceModulesPackage.MODULES_AST__IMPORTS:
-        return getImports();
+      case GuiceModulesPackage.MODULES_AST__IMPORT_SECTION:
+        return getImportSection();
       case GuiceModulesPackage.MODULES_AST__MODULES:
         return getModules();
     }
@@ -158,9 +195,8 @@ public class ModulesASTImpl extends MinimalEObjectImpl.Container implements Modu
   {
     switch (featureID)
     {
-      case GuiceModulesPackage.MODULES_AST__IMPORTS:
-        getImports().clear();
-        getImports().addAll((Collection<? extends ImportAST>)newValue);
+      case GuiceModulesPackage.MODULES_AST__IMPORT_SECTION:
+        setImportSection((XImportSection)newValue);
         return;
       case GuiceModulesPackage.MODULES_AST__MODULES:
         getModules().clear();
@@ -180,8 +216,8 @@ public class ModulesASTImpl extends MinimalEObjectImpl.Container implements Modu
   {
     switch (featureID)
     {
-      case GuiceModulesPackage.MODULES_AST__IMPORTS:
-        getImports().clear();
+      case GuiceModulesPackage.MODULES_AST__IMPORT_SECTION:
+        setImportSection((XImportSection)null);
         return;
       case GuiceModulesPackage.MODULES_AST__MODULES:
         getModules().clear();
@@ -200,8 +236,8 @@ public class ModulesASTImpl extends MinimalEObjectImpl.Container implements Modu
   {
     switch (featureID)
     {
-      case GuiceModulesPackage.MODULES_AST__IMPORTS:
-        return imports != null && !imports.isEmpty();
+      case GuiceModulesPackage.MODULES_AST__IMPORT_SECTION:
+        return importSection != null;
       case GuiceModulesPackage.MODULES_AST__MODULES:
         return modules != null && !modules.isEmpty();
     }

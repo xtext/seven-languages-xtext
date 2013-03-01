@@ -100,11 +100,6 @@ public class GuiceModulesAdapterFactory extends AdapterFactoryImpl
         return createKeyASTAdapter();
       }
       @Override
-      public Adapter caseImportAST(ImportAST object)
-      {
-        return createImportASTAdapter();
-      }
-      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -182,21 +177,6 @@ public class GuiceModulesAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createKeyASTAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.guicemodules.guiceModules.ImportAST <em>Import AST</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.guicemodules.guiceModules.ImportAST
-   * @generated
-   */
-  public Adapter createImportASTAdapter()
   {
     return null;
   }
