@@ -21,7 +21,7 @@ import org.junit.runner.RunWith
 import org.xtext.httprouting.RouteInjectorProvider
 
 import static org.junit.Assert.*
- 
+
 @InjectWith(typeof(RouteInjectorProvider))
 @RunWith(typeof(XtextRunner))
 class ParserTest {

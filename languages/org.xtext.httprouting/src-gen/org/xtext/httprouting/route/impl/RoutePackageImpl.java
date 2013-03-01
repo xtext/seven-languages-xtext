@@ -1,10 +1,5 @@
-/*******************************************************************************
- * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- ******************************************************************************/
+/**
+ */
 package org.xtext.httprouting.route.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -21,9 +16,10 @@ import org.eclipse.xtext.xbase.XbasePackage;
 
 import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationsPackage;
 
+import org.eclipse.xtext.xtype.XtypePackage;
+
 import org.xtext.httprouting.route.AbstractDeclaration;
 import org.xtext.httprouting.route.Dependency;
-import org.xtext.httprouting.route.Import;
 import org.xtext.httprouting.route.Model;
 import org.xtext.httprouting.route.RequestType;
 import org.xtext.httprouting.route.Route;
@@ -45,13 +41,6 @@ public class RoutePackageImpl extends EPackageImpl implements RoutePackage
    * @generated
    */
   private EClass modelEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass importEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -146,6 +135,7 @@ public class RoutePackageImpl extends EPackageImpl implements RoutePackage
     // Initialize simple dependencies
     XAnnotationsPackage.eINSTANCE.eClass();
     XbasePackage.eINSTANCE.eClass();
+    XtypePackage.eINSTANCE.eClass();
 
     // Create package meta-data objects
     theRoutePackage.createPackageContents();
@@ -177,7 +167,7 @@ public class RoutePackageImpl extends EPackageImpl implements RoutePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Imports()
+  public EReference getModel_ImportSection()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(0);
   }
@@ -190,26 +180,6 @@ public class RoutePackageImpl extends EPackageImpl implements RoutePackage
   public EReference getModel_Declarations()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getImport()
-  {
-    return importEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getImport_ImportedType()
-  {
-    return (EReference)importEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -403,11 +373,8 @@ public class RoutePackageImpl extends EPackageImpl implements RoutePackage
 
     // Create classes and their features
     modelEClass = createEClass(MODEL);
-    createEReference(modelEClass, MODEL__IMPORTS);
+    createEReference(modelEClass, MODEL__IMPORT_SECTION);
     createEReference(modelEClass, MODEL__DECLARATIONS);
-
-    importEClass = createEClass(IMPORT);
-    createEReference(importEClass, IMPORT__IMPORTED_TYPE);
 
     abstractDeclarationEClass = createEClass(ABSTRACT_DECLARATION);
 
@@ -458,8 +425,9 @@ public class RoutePackageImpl extends EPackageImpl implements RoutePackage
     setNsURI(eNS_URI);
 
     // Obtain other dependent packages
-    TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
+    XtypePackage theXtypePackage = (XtypePackage)EPackage.Registry.INSTANCE.getEPackage(XtypePackage.eNS_URI);
     XAnnotationsPackage theXAnnotationsPackage = (XAnnotationsPackage)EPackage.Registry.INSTANCE.getEPackage(XAnnotationsPackage.eNS_URI);
+    TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
     XbasePackage theXbasePackage = (XbasePackage)EPackage.Registry.INSTANCE.getEPackage(XbasePackage.eNS_URI);
 
     // Create type parameters
@@ -472,11 +440,8 @@ public class RoutePackageImpl extends EPackageImpl implements RoutePackage
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_Imports(), this.getImport(), null, "imports", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_ImportSection(), theXtypePackage.getXImportSection(), null, "importSection", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_Declarations(), this.getAbstractDeclaration(), null, "declarations", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getImport_ImportedType(), theTypesPackage.getJvmType(), null, "importedType", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(abstractDeclarationEClass, AbstractDeclaration.class, "AbstractDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

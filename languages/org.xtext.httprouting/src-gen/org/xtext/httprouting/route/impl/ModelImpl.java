@@ -1,14 +1,10 @@
-/*******************************************************************************
- * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- ******************************************************************************/
+/**
+ */
 package org.xtext.httprouting.route.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -16,13 +12,15 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.eclipse.xtext.xtype.XImportSection;
+
 import org.xtext.httprouting.route.AbstractDeclaration;
-import org.xtext.httprouting.route.Import;
 import org.xtext.httprouting.route.Model;
 import org.xtext.httprouting.route.RoutePackage;
 
@@ -33,7 +31,7 @@ import org.xtext.httprouting.route.RoutePackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.httprouting.route.impl.ModelImpl#getImports <em>Imports</em>}</li>
+ *   <li>{@link org.xtext.httprouting.route.impl.ModelImpl#getImportSection <em>Import Section</em>}</li>
  *   <li>{@link org.xtext.httprouting.route.impl.ModelImpl#getDeclarations <em>Declarations</em>}</li>
  * </ul>
  * </p>
@@ -43,14 +41,14 @@ import org.xtext.httprouting.route.RoutePackage;
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
   /**
-   * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
+   * The cached value of the '{@link #getImportSection() <em>Import Section</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getImports()
+   * @see #getImportSection()
    * @generated
    * @ordered
    */
-  protected EList<Import> imports;
+  protected XImportSection importSection;
 
   /**
    * The cached value of the '{@link #getDeclarations() <em>Declarations</em>}' containment reference list.
@@ -88,13 +86,47 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Import> getImports()
+  public XImportSection getImportSection()
   {
-    if (imports == null)
+    return importSection;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetImportSection(XImportSection newImportSection, NotificationChain msgs)
+  {
+    XImportSection oldImportSection = importSection;
+    importSection = newImportSection;
+    if (eNotificationRequired())
     {
-      imports = new EObjectContainmentEList<Import>(Import.class, this, RoutePackage.MODEL__IMPORTS);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RoutePackage.MODEL__IMPORT_SECTION, oldImportSection, newImportSection);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return imports;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setImportSection(XImportSection newImportSection)
+  {
+    if (newImportSection != importSection)
+    {
+      NotificationChain msgs = null;
+      if (importSection != null)
+        msgs = ((InternalEObject)importSection).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RoutePackage.MODEL__IMPORT_SECTION, null, msgs);
+      if (newImportSection != null)
+        msgs = ((InternalEObject)newImportSection).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RoutePackage.MODEL__IMPORT_SECTION, null, msgs);
+      msgs = basicSetImportSection(newImportSection, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, RoutePackage.MODEL__IMPORT_SECTION, newImportSection, newImportSection));
   }
 
   /**
@@ -121,8 +153,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case RoutePackage.MODEL__IMPORTS:
-        return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
+      case RoutePackage.MODEL__IMPORT_SECTION:
+        return basicSetImportSection(null, msgs);
       case RoutePackage.MODEL__DECLARATIONS:
         return ((InternalEList<?>)getDeclarations()).basicRemove(otherEnd, msgs);
     }
@@ -139,8 +171,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case RoutePackage.MODEL__IMPORTS:
-        return getImports();
+      case RoutePackage.MODEL__IMPORT_SECTION:
+        return getImportSection();
       case RoutePackage.MODEL__DECLARATIONS:
         return getDeclarations();
     }
@@ -158,9 +190,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case RoutePackage.MODEL__IMPORTS:
-        getImports().clear();
-        getImports().addAll((Collection<? extends Import>)newValue);
+      case RoutePackage.MODEL__IMPORT_SECTION:
+        setImportSection((XImportSection)newValue);
         return;
       case RoutePackage.MODEL__DECLARATIONS:
         getDeclarations().clear();
@@ -180,8 +211,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case RoutePackage.MODEL__IMPORTS:
-        getImports().clear();
+      case RoutePackage.MODEL__IMPORT_SECTION:
+        setImportSection((XImportSection)null);
         return;
       case RoutePackage.MODEL__DECLARATIONS:
         getDeclarations().clear();
@@ -200,8 +231,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case RoutePackage.MODEL__IMPORTS:
-        return imports != null && !imports.isEmpty();
+      case RoutePackage.MODEL__IMPORT_SECTION:
+        return importSection != null;
       case RoutePackage.MODEL__DECLARATIONS:
         return declarations != null && !declarations.isEmpty();
     }

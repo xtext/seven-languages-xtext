@@ -18,12 +18,10 @@ import org.xtext.httprouting.route.Dependency
 import org.xtext.httprouting.route.Model
 import org.xtext.httprouting.route.RequestType
 import org.xtext.httprouting.route.Route
+import org.xtext.httprouting.route.URL
 import org.xtext.httprouting.route.Variable
 
-import static org.xtext.httprouting.jvmmodel.RouteJvmModelInferrer.*
-
 import static extension org.eclipse.xtext.nodemodel.util.NodeModelUtils.*
-import org.xtext.httprouting.route.URL
 
 /**
  * Translates a file of routes to a Java Servlet class with 
@@ -197,8 +195,8 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 	}
 
 	def isWildcard(Variable it) {
-		switch eContainer {
-			URL : eContainer.variables.last == it && eContainer.wildcard
+		switch parent: eContainer {
+			URL : parent.variables.last == it && parent.wildcard
 			default : false
 		}
 	}

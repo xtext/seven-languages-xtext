@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 
-@SuppressWarnings("serial")
+@SuppressWarnings("all")
 public class NumberGuessing extends HttpServlet {
   @Inject
   private GuessTheNumber controller;
@@ -21,7 +21,7 @@ public class NumberGuessing extends HttpServlet {
     boolean _equals = myGuess.equals("42");
     return _equals;
   }
-
+  
   public void _doGet2(final HttpServletRequest request, final HttpServletResponse response, final String myGuess) {
     this.controller.handleAnswerToEverything();
   }
@@ -33,19 +33,19 @@ public class NumberGuessing extends HttpServlet {
     boolean _equals = _parameter==null?false:_parameter.equals("42");
     return _equals;
   }
-
+  
   public void _doGet3(final HttpServletRequest request, final HttpServletResponse response) {
     this.controller.handleAnswerToEverything();
   }
-
+  
   private static Pattern _pattern4 = Pattern.compile("/guess/(\\w+)");
-
+  
   public void _doGet4(final HttpServletRequest request, final HttpServletResponse response, final String myGuess) {
     this.controller.handleGuess(myGuess);
   }
-
+  
   private static Pattern _pattern5 = Pattern.compile("/guess");
-
+  
   public void _doGet5(final HttpServletRequest request, final HttpServletResponse response) {
     String _parameter = request.getParameter("theGuess");
     this.controller.handleGuess(_parameter);
@@ -73,40 +73,40 @@ public class NumberGuessing extends HttpServlet {
     	java.util.regex.Matcher _matcher = _pattern2.matcher(url);
     	if (_matcher.find()) {
     		String myGuess = _matcher.group(1);
-		if (_doGet2Condition(request, response, myGuess)) {
-			_doGet2(request, response, myGuess);
-			return;
-		}
+    		if (_doGet2Condition(request, response, myGuess)) {
+    			_doGet2(request, response, myGuess);
+    			return;
+    		}
     	}
     }
     {
     	java.util.regex.Matcher _matcher = _pattern3.matcher(url);
     	if (_matcher.find()) {
-		if (_doGet3Condition(request, response)) {
-			_doGet3(request, response);
-			return;
-		}
+    		if (_doGet3Condition(request, response)) {
+    			_doGet3(request, response);
+    			return;
+    		}
     	}
     }
     {
     	java.util.regex.Matcher _matcher = _pattern4.matcher(url);
     	if (_matcher.find()) {
-		String myGuess = _matcher.group(1);
-		_doGet4(request, response, myGuess);
-		return;
-	}
+    		String myGuess = _matcher.group(1);
+    		_doGet4(request, response, myGuess);
+    		return;
+    	}
     }
     {
-	java.util.regex.Matcher _matcher = _pattern5.matcher(url);
-	if (_matcher.find()) {
-		_doGet5(request, response);
-		return;
-	}
+    	java.util.regex.Matcher _matcher = _pattern5.matcher(url);
+    	if (_matcher.find()) {
+    		_doGet5(request, response);
+    		return;
+    	}
     }
     {
-	java.util.regex.Matcher _matcher = _pattern6.matcher(url);
-	if (_matcher.find()) {
-		_doGet6(request, response);
+    	java.util.regex.Matcher _matcher = _pattern6.matcher(url);
+    	if (_matcher.find()) {
+    		_doGet6(request, response);
     		return;
     	}
     }

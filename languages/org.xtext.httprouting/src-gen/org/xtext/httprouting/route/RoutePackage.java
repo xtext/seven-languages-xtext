@@ -1,10 +1,5 @@
-/*******************************************************************************
- * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- ******************************************************************************/
+/**
+ */
 package org.xtext.httprouting.route;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -73,13 +68,13 @@ public interface RoutePackage extends EPackage
   int MODEL = 0;
 
   /**
-   * The feature id for the '<em><b>Imports</b></em>' containment reference list.
+   * The feature id for the '<em><b>Import Section</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__IMPORTS = 0;
+  int MODEL__IMPORT_SECTION = 0;
 
   /**
    * The feature id for the '<em><b>Declarations</b></em>' containment reference list.
@@ -100,34 +95,6 @@ public interface RoutePackage extends EPackage
   int MODEL_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link org.xtext.httprouting.route.impl.ImportImpl <em>Import</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.httprouting.route.impl.ImportImpl
-   * @see org.xtext.httprouting.route.impl.RoutePackageImpl#getImport()
-   * @generated
-   */
-  int IMPORT = 1;
-
-  /**
-   * The feature id for the '<em><b>Imported Type</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMPORT__IMPORTED_TYPE = 0;
-
-  /**
-   * The number of structural features of the '<em>Import</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMPORT_FEATURE_COUNT = 1;
-
-  /**
    * The meta object id for the '{@link org.xtext.httprouting.route.impl.AbstractDeclarationImpl <em>Abstract Declaration</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -135,7 +102,7 @@ public interface RoutePackage extends EPackage
    * @see org.xtext.httprouting.route.impl.RoutePackageImpl#getAbstractDeclaration()
    * @generated
    */
-  int ABSTRACT_DECLARATION = 2;
+  int ABSTRACT_DECLARATION = 1;
 
   /**
    * The number of structural features of the '<em>Abstract Declaration</em>' class.
@@ -154,7 +121,7 @@ public interface RoutePackage extends EPackage
    * @see org.xtext.httprouting.route.impl.RoutePackageImpl#getDependency()
    * @generated
    */
-  int DEPENDENCY = 3;
+  int DEPENDENCY = 2;
 
   /**
    * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -200,7 +167,7 @@ public interface RoutePackage extends EPackage
    * @see org.xtext.httprouting.route.impl.RoutePackageImpl#getRoute()
    * @generated
    */
-  int ROUTE = 4;
+  int ROUTE = 3;
 
   /**
    * The feature id for the '<em><b>Request Type</b></em>' attribute.
@@ -255,7 +222,7 @@ public interface RoutePackage extends EPackage
    * @see org.xtext.httprouting.route.impl.RoutePackageImpl#getURL()
    * @generated
    */
-  int URL = 5;
+  int URL = 4;
 
   /**
    * The feature id for the '<em><b>Variables</b></em>' containment reference list.
@@ -292,7 +259,7 @@ public interface RoutePackage extends EPackage
    * @see org.xtext.httprouting.route.impl.RoutePackageImpl#getVariable()
    * @generated
    */
-  int VARIABLE = 6;
+  int VARIABLE = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -320,7 +287,7 @@ public interface RoutePackage extends EPackage
    * @see org.xtext.httprouting.route.impl.RoutePackageImpl#getRequestType()
    * @generated
    */
-  int REQUEST_TYPE = 7;
+  int REQUEST_TYPE = 6;
 
 
   /**
@@ -334,15 +301,15 @@ public interface RoutePackage extends EPackage
   EClass getModel();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.httprouting.route.Model#getImports <em>Imports</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.httprouting.route.Model#getImportSection <em>Import Section</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Imports</em>'.
-   * @see org.xtext.httprouting.route.Model#getImports()
+   * @return the meta object for the containment reference '<em>Import Section</em>'.
+   * @see org.xtext.httprouting.route.Model#getImportSection()
    * @see #getModel()
    * @generated
    */
-  EReference getModel_Imports();
+  EReference getModel_ImportSection();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.xtext.httprouting.route.Model#getDeclarations <em>Declarations</em>}'.
@@ -354,27 +321,6 @@ public interface RoutePackage extends EPackage
    * @generated
    */
   EReference getModel_Declarations();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.httprouting.route.Import <em>Import</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Import</em>'.
-   * @see org.xtext.httprouting.route.Import
-   * @generated
-   */
-  EClass getImport();
-
-  /**
-   * Returns the meta object for the reference '{@link org.xtext.httprouting.route.Import#getImportedType <em>Imported Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Imported Type</em>'.
-   * @see org.xtext.httprouting.route.Import#getImportedType()
-   * @see #getImport()
-   * @generated
-   */
-  EReference getImport_ImportedType();
 
   /**
    * Returns the meta object for class '{@link org.xtext.httprouting.route.AbstractDeclaration <em>Abstract Declaration</em>}'.
@@ -580,12 +526,12 @@ public interface RoutePackage extends EPackage
     EClass MODEL = eINSTANCE.getModel();
 
     /**
-     * The meta object literal for the '<em><b>Imports</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Import Section</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__IMPORTS = eINSTANCE.getModel_Imports();
+    EReference MODEL__IMPORT_SECTION = eINSTANCE.getModel_ImportSection();
 
     /**
      * The meta object literal for the '<em><b>Declarations</b></em>' containment reference list feature.
@@ -594,24 +540,6 @@ public interface RoutePackage extends EPackage
      * @generated
      */
     EReference MODEL__DECLARATIONS = eINSTANCE.getModel_Declarations();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.httprouting.route.impl.ImportImpl <em>Import</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.httprouting.route.impl.ImportImpl
-     * @see org.xtext.httprouting.route.impl.RoutePackageImpl#getImport()
-     * @generated
-     */
-    EClass IMPORT = eINSTANCE.getImport();
-
-    /**
-     * The meta object literal for the '<em><b>Imported Type</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference IMPORT__IMPORTED_TYPE = eINSTANCE.getImport_ImportedType();
 
     /**
      * The meta object literal for the '{@link org.xtext.httprouting.route.impl.AbstractDeclarationImpl <em>Abstract Declaration</em>}' class.

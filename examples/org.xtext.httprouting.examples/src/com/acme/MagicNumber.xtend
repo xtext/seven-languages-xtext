@@ -8,8 +8,8 @@
 package com.acme
 
 import com.google.inject.Inject
-import javax.servlet.http.HttpServletRequest
 import java.util.Random
+import javax.servlet.http.HttpServletRequest
 
 class MagicNumber {
 	@Inject HttpServletRequest request

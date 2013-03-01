@@ -12,11 +12,8 @@ import "http://www.eclipse.org/xtext/common/JavaVMTypes" as types
 import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
 
 Model :
-	imports+=Import*
+	importSection=XImportSection?
 	declarations+=AbstractDeclaration*;
-
-Import :
-	'import' importedType=[ types::JvmType | QualifiedName];
 
 AbstractDeclaration :
 	Dependency | Route;

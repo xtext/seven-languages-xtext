@@ -1,16 +1,23 @@
+/**
+ * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
 package com.acme;
 
 import com.acme.MagicNumber;
-import com.google.common.base.Objects;
 import com.google.common.io.CharStreams;
 import com.google.common.io.OutputSupplier;
 import com.google.inject.Inject;
+import java.io.IOException;
 import java.io.OutputStreamWriter;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.Exceptions;
-import org.eclipse.xtext.xbase.lib.Functions.Function0;
+import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 
 @SuppressWarnings("all")
 public class GuessTheNumber {
@@ -22,18 +29,18 @@ public class GuessTheNumber {
   
   public void handleGuess(final String theGuess) {
     boolean _or = false;
-    boolean _equals = Objects.equal(theGuess, null);
+    boolean _equals = ObjectExtensions.operator_equals(theGuess, null);
     if (_equals) {
       _or = true;
     } else {
       Integer _number = this._magicNumber.getNumber();
-      boolean _equals_1 = Objects.equal(_number, null);
+      boolean _equals_1 = ObjectExtensions.operator_equals(_number, null);
       _or = (_equals || _equals_1);
     }
     if (_or) {
       this._magicNumber.seedNumber();
     }
-    boolean _equals_2 = Objects.equal(theGuess, null);
+    boolean _equals_2 = ObjectExtensions.operator_equals(theGuess, null);
     if (_equals_2) {
       this.sendAnswer(null);
       return;
@@ -99,7 +106,7 @@ public class GuessTheNumber {
     }
     this.sendAnswer(_builder);
   }
-
+  
   public void sendAnswer(final CharSequence message) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<html>");
@@ -117,7 +124,7 @@ public class GuessTheNumber {
     _builder.append("<h1>Guess a Number between 1 and 100</h1>");
     _builder.newLine();
     {
-      boolean _notEquals = (!Objects.equal(message, null));
+      boolean _notEquals = ObjectExtensions.operator_notEquals(message, null);
       if (_notEquals) {
         _builder.append("\t\t");
         _builder.append("<p>");
@@ -139,23 +146,15 @@ public class GuessTheNumber {
   
   private void send(final CharSequence answer) {
     try {
-      final Function0<OutputStreamWriter> _function = new Function0<OutputStreamWriter>() {
-          public OutputStreamWriter apply() {
-            try {
-              ServletOutputStream _outputStream = GuessTheNumber.this.response.getOutputStream();
-              OutputStreamWriter _outputStreamWriter = new OutputStreamWriter(_outputStream);
-              return _outputStreamWriter;
-            } catch (Exception _e) {
-              throw Exceptions.sneakyThrow(_e);
-            }
+      final OutputSupplier<OutputStreamWriter> _function = new OutputSupplier<OutputStreamWriter>() {
+          public OutputStreamWriter getOutput() throws IOException {
+            ServletOutputStream _outputStream = GuessTheNumber.this.response.getOutputStream();
+            OutputStreamWriter _outputStreamWriter = new OutputStreamWriter(_outputStream);
+            return _outputStreamWriter;
           }
         };
-      CharStreams.<OutputStreamWriter>write(answer, new OutputSupplier<OutputStreamWriter>() {
-          public OutputStreamWriter getOutput() {
-            return _function.apply();
-          }
-      });
-    } catch (Exception _e) {
+      CharStreams.<OutputStreamWriter>write(answer, _function);
+    } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
   }

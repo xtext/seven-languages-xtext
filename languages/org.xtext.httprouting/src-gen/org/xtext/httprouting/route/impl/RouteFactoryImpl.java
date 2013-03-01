@@ -1,10 +1,5 @@
-/*******************************************************************************
- * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- ******************************************************************************/
+/**
+ */
 package org.xtext.httprouting.route.impl;
 
 import org.eclipse.emf.ecore.EClass;
@@ -36,7 +31,7 @@ public class RouteFactoryImpl extends EFactoryImpl implements RouteFactory
   {
     try
     {
-      RouteFactory theRouteFactory = (RouteFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.xtext.org/httprouting/Route"); 
+      RouteFactory theRouteFactory = (RouteFactory)EPackage.Registry.INSTANCE.getEFactory(RoutePackage.eNS_URI);
       if (theRouteFactory != null)
       {
         return theRouteFactory;
@@ -71,7 +66,6 @@ public class RouteFactoryImpl extends EFactoryImpl implements RouteFactory
     switch (eClass.getClassifierID())
     {
       case RoutePackage.MODEL: return createModel();
-      case RoutePackage.IMPORT: return createImport();
       case RoutePackage.ABSTRACT_DECLARATION: return createAbstractDeclaration();
       case RoutePackage.DEPENDENCY: return createDependency();
       case RoutePackage.ROUTE: return createRoute();
@@ -125,17 +119,6 @@ public class RouteFactoryImpl extends EFactoryImpl implements RouteFactory
   {
     ModelImpl model = new ModelImpl();
     return model;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Import createImport()
-  {
-    ImportImpl import_ = new ImportImpl();
-    return import_;
   }
 
   /**

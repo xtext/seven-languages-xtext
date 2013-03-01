@@ -1,6 +1,12 @@
+/**
+ * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
 package org.xtext.httprouting.jvmmodel;
 
-import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
 import java.util.Arrays;
@@ -29,6 +35,7 @@ import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor.IPostIndexingIn
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 import org.xtext.httprouting.route.AbstractDeclaration;
@@ -85,13 +92,13 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
                 }
               };
             JvmField _field = RouteJvmModelInferrer.this._jvmTypesBuilder.toField(field, _name, _type, _function);
-            RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmField>operator_add(_members, _field);
+            RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members, _field);
           }
           Iterable<Route> _routes = RouteJvmModelInferrer.this.routes(model);
           final Function1<Route,Boolean> _function_1 = new Function1<Route,Boolean>() {
               public Boolean apply(final Route it) {
                 URL _url = it.getUrl();
-                boolean _notEquals = (!Objects.equal(_url, null));
+                boolean _notEquals = ObjectExtensions.operator_notEquals(_url, null);
                 return Boolean.valueOf(_notEquals);
               }
             };
@@ -100,24 +107,24 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
             {
               EList<JvmMember> _members_1 = it.getMembers();
               JvmField _routePatternField = RouteJvmModelInferrer.this.toRoutePatternField(route);
-              RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmField>operator_add(_members_1, _routePatternField);
+              RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members_1, _routePatternField);
               XExpression _condition = route.getCondition();
-              boolean _notEquals = (!Objects.equal(_condition, null));
+              boolean _notEquals = ObjectExtensions.operator_notEquals(_condition, null);
               if (_notEquals) {
                 EList<JvmMember> _members_2 = it.getMembers();
                 JvmOperation _routeConditionMethod = RouteJvmModelInferrer.this.toRouteConditionMethod(route);
-                RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_2, _routeConditionMethod);
+                RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members_2, _routeConditionMethod);
               }
               EList<JvmMember> _members_3 = it.getMembers();
               JvmOperation _routeCallMethod = RouteJvmModelInferrer.this.toRouteCallMethod(route);
-              RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_3, _routeCallMethod);
+              RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members_3, _routeCallMethod);
             }
           }
           Iterable<Route> _routes_1 = RouteJvmModelInferrer.this.routes(model);
           final Function1<Route,Boolean> _function_2 = new Function1<Route,Boolean>() {
               public Boolean apply(final Route it) {
                 RequestType _requestType = it.getRequestType();
-                boolean _equals = Objects.equal(_requestType, RequestType.GET);
+                boolean _equals = ObjectExtensions.operator_equals(_requestType, RequestType.GET);
                 return Boolean.valueOf(_equals);
               }
             };
@@ -127,13 +134,13 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
           if (_not) {
             EList<JvmMember> _members_1 = it.getMembers();
             JvmOperation _requestHandlerMethod = RouteJvmModelInferrer.this.toRequestHandlerMethod(model, "doGet", getRoutes);
-            RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_1, _requestHandlerMethod);
+            RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members_1, _requestHandlerMethod);
           }
           Iterable<Route> _routes_2 = RouteJvmModelInferrer.this.routes(model);
           final Function1<Route,Boolean> _function_3 = new Function1<Route,Boolean>() {
               public Boolean apply(final Route it) {
                 RequestType _requestType = it.getRequestType();
-                boolean _equals = Objects.equal(_requestType, RequestType.POST);
+                boolean _equals = ObjectExtensions.operator_equals(_requestType, RequestType.POST);
                 return Boolean.valueOf(_equals);
               }
             };
@@ -143,13 +150,13 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
           if (_not_1) {
             EList<JvmMember> _members_2 = it.getMembers();
             JvmOperation _requestHandlerMethod_1 = RouteJvmModelInferrer.this.toRequestHandlerMethod(model, "doPost", postRoutes);
-            RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_2, _requestHandlerMethod_1);
+            RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members_2, _requestHandlerMethod_1);
           }
           Iterable<Route> _routes_3 = RouteJvmModelInferrer.this.routes(model);
           final Function1<Route,Boolean> _function_4 = new Function1<Route,Boolean>() {
               public Boolean apply(final Route it) {
                 RequestType _requestType = it.getRequestType();
-                boolean _equals = Objects.equal(_requestType, RequestType.PUT);
+                boolean _equals = ObjectExtensions.operator_equals(_requestType, RequestType.PUT);
                 return Boolean.valueOf(_equals);
               }
             };
@@ -159,13 +166,13 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
           if (_not_2) {
             EList<JvmMember> _members_3 = it.getMembers();
             JvmOperation _requestHandlerMethod_2 = RouteJvmModelInferrer.this.toRequestHandlerMethod(model, "doPut", putRoutes);
-            RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_3, _requestHandlerMethod_2);
+            RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members_3, _requestHandlerMethod_2);
           }
           Iterable<Route> _routes_4 = RouteJvmModelInferrer.this.routes(model);
           final Function1<Route,Boolean> _function_5 = new Function1<Route,Boolean>() {
               public Boolean apply(final Route it) {
                 RequestType _requestType = it.getRequestType();
-                boolean _equals = Objects.equal(_requestType, RequestType.DELETE);
+                boolean _equals = ObjectExtensions.operator_equals(_requestType, RequestType.DELETE);
                 return Boolean.valueOf(_equals);
               }
             };
@@ -175,13 +182,13 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
           if (_not_3) {
             EList<JvmMember> _members_4 = it.getMembers();
             JvmOperation _requestHandlerMethod_3 = RouteJvmModelInferrer.this.toRequestHandlerMethod(model, "doDelete", deleteRoutes);
-            RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_4, _requestHandlerMethod_3);
+            RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members_4, _requestHandlerMethod_3);
           }
           Iterable<Route> _routes_5 = RouteJvmModelInferrer.this.routes(model);
           final Function1<Route,Boolean> _function_6 = new Function1<Route,Boolean>() {
               public Boolean apply(final Route it) {
                 RequestType _requestType = it.getRequestType();
-                boolean _equals = Objects.equal(_requestType, RequestType.HEAD);
+                boolean _equals = ObjectExtensions.operator_equals(_requestType, RequestType.HEAD);
                 return Boolean.valueOf(_equals);
               }
             };
@@ -191,7 +198,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
           if (_not_4) {
             EList<JvmMember> _members_5 = it.getMembers();
             JvmOperation _requestHandlerMethod_4 = RouteJvmModelInferrer.this.toRequestHandlerMethod(model, "doHead", headRoutes);
-            RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_5, _requestHandlerMethod_4);
+            RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members_5, _requestHandlerMethod_4);
           }
         }
       };
@@ -380,11 +387,11 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
                       }
                     }
                     _builder_1.append(");");
-                    final CharSequence routeMethodCall = _builder_1;
+                    final String routeMethodCall = _builder_1.toString();
                     _builder.newLineIfNotEmpty();
                     {
                       XExpression _condition = route.getCondition();
-                      boolean _notEquals = (!Objects.equal(_condition, null));
+                      boolean _notEquals = ObjectExtensions.operator_notEquals(_condition, null);
                       if (_notEquals) {
                         _builder.append("\t\t");
                         _builder.append("if (");
@@ -496,16 +503,16 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
   public boolean isWildcard(final Variable it) {
     boolean _switchResult = false;
     EObject _eContainer = it.eContainer();
-    final EObject eContainer = _eContainer;
+    final EObject parent = _eContainer;
     boolean _matched = false;
     if (!_matched) {
-      if (eContainer instanceof URL) {
-        final URL _uRL = (URL)eContainer;
+      if (parent instanceof URL) {
+        final URL _uRL = (URL)parent;
         _matched=true;
         boolean _and = false;
         EList<Variable> _variables = _uRL.getVariables();
         Variable _last = IterableExtensions.<Variable>last(_variables);
-        boolean _equals = Objects.equal(_last, it);
+        boolean _equals = ObjectExtensions.operator_equals(_last, it);
         if (!_equals) {
           _and = false;
         } else {

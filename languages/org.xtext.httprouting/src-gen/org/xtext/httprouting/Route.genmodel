@@ -4,9 +4,9 @@
     editorDirectory="/org.xtext.httprouting.editor/src" modelPluginID="org.xtext.httprouting"
     forceOverwrite="true" modelName="Route" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="org.xtext.httprouting.edit"
-    editorPluginID="org.xtext.httprouting.editor" runtimeVersion="2.5" usedGenPackages="../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xAnnotations ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase">
+    editorPluginID="org.xtext.httprouting.editor" runtimeVersion="2.5" usedGenPackages="../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xAnnotations ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xtype">
   <genPackages prefix="Route" basePackage="org.xtext.httprouting" disposableProviderFactory="true"
-      ecorePackage="Route.ecore#/">
+      fileExtensions="route" ecorePackage="Route.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="Route.ecore#//RequestType">
       <genEnumLiterals ecoreEnumLiteral="Route.ecore#//RequestType/GET"/>
       <genEnumLiterals ecoreEnumLiteral="Route.ecore#//RequestType/POST"/>
@@ -15,11 +15,8 @@
       <genEnumLiterals ecoreEnumLiteral="Route.ecore#//RequestType/HEAD"/>
     </genEnums>
     <genClasses ecoreClass="Route.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Route.ecore#//Model/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Route.ecore#//Model/importSection"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Route.ecore#//Model/declarations"/>
-    </genClasses>
-    <genClasses ecoreClass="Route.ecore#//Import">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Route.ecore#//Import/importedType"/>
     </genClasses>
     <genClasses ecoreClass="Route.ecore#//AbstractDeclaration"/>
     <genClasses ecoreClass="Route.ecore#//Dependency">
