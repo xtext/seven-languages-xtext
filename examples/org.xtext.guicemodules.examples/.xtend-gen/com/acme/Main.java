@@ -21,10 +21,10 @@ import org.junit.Test;
 public class Main {
   @Inject
   private DataProvider provider;
-
+  
   @Inject
   private LoggingService logger;
-
+  
   public static void main(final String[] args) {
     Main _main = new Main();
     final Main instance = _main;

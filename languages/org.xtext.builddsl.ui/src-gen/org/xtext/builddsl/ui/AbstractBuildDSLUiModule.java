@@ -81,16 +81,6 @@ public abstract class AbstractBuildDSLUiModule extends DefaultUiModule {
 		binder.bind(org.eclipse.xtext.ui.editor.preferences.IPreferenceStoreInitializer.class).annotatedWith(com.google.inject.name.Names.named("builderPreferenceInitializer")).to(org.eclipse.xtext.builder.preferences.BuilderPreferenceAccess.Initializer.class);
 	}
 
-	// contributed by org.eclipse.xtext.ui.generator.labeling.LabelProviderFragment
-	public Class<? extends org.eclipse.jface.viewers.ILabelProvider> bindILabelProvider() {
-		return org.xtext.builddsl.ui.labeling.BuildDSLLabelProvider.class;
-	}
-
-	// contributed by org.eclipse.xtext.ui.generator.labeling.LabelProviderFragment
-	public void configureResourceUIServiceLabelProvider(com.google.inject.Binder binder) {
-		binder.bind(org.eclipse.jface.viewers.ILabelProvider.class).annotatedWith(org.eclipse.xtext.ui.resource.ResourceServiceDescriptionLabelProvider.class).to(org.xtext.builddsl.ui.labeling.BuildDSLDescriptionLabelProvider.class);
-	}
-
 	// contributed by org.eclipse.xtext.ui.generator.contentAssist.ContentAssistFragment
 	public Class<? extends org.eclipse.xtext.ui.editor.contentassist.IContentProposalProvider> bindIContentProposalProvider() {
 		return org.xtext.builddsl.ui.contentassist.AbstractBuildDSLProposalProvider.class;
