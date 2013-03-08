@@ -18,6 +18,7 @@ import org.eclipse.xtext.junit4.XtextRunner;
 import org.eclipse.xtext.junit4.util.ParseHelper;
 import org.eclipse.xtext.junit4.validation.ValidationTestHelper;
 import org.eclipse.xtext.xbase.lib.Exceptions;
+import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -32,9 +33,11 @@ import org.xtext.mongobeans.validation.MongoBeansValidator;
 @SuppressWarnings("all")
 public class ValidationTest {
   @Inject
+  @Extension
   private ValidationTestHelper _validationTestHelper;
   
   @Inject
+  @Extension
   private ParseHelper<MongoFile> _parseHelper;
   
   @Test

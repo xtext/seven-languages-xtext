@@ -15,13 +15,17 @@ import org.eclipse.xtext.xbase.annotations.validation.XbaseWithAnnotationsJavaVa
 import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotation
 
 import static org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationsPackage$Literals.*
+import org.eclipse.xtext.common.types.JvmAnnotationType
 
 class GuiceModulesValidator extends XbaseWithAnnotationsJavaValidator {
 	
 	@Inject extension TypeReferences
 
 	@Check def checkAnnotationIsBindingAnnotation(XAnnotation it) {
-		if (!annotationType.annotations.exists[ annotation.is(typeof(BindingAnnotation)) ])
-			error("The annotation is not annotated with @BindingAnnotation", XANNOTATION__ANNOTATION_TYPE)
+		switch type : annotationType {
+			JvmAnnotationType: 
+				if(!type.annotations.exists[ annotation.is(typeof(BindingAnnotation)) ])
+					error("The annotation is not annotated with @BindingAnnotation", XANNOTATION__ANNOTATION_TYPE)
+		}
 	}
 }

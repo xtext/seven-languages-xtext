@@ -16,6 +16,7 @@ import org.eclipse.xtext.common.types.TypesPackage;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.xbase.XbasePackage;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
+import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.validation.XbaseJavaValidator;
 import org.eclipse.xtext.xtype.XtypePackage;
@@ -34,6 +35,7 @@ public class MongoBeansValidator extends XbaseJavaValidator {
   public final static String ILLEGAL_PROPERTY_NAME = "issue.illegalPropertyName";
   
   @Inject
+  @Extension
   private MongoTypes mongoTypes;
   
   @Check

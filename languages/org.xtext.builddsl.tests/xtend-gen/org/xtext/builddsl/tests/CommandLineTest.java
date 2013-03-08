@@ -21,6 +21,7 @@ import org.eclipse.xtext.xbase.compiler.CompilationTestHelper.Result;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Exceptions;
+import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
@@ -35,6 +36,7 @@ import org.xtext.builddsl.BuildDSLInjectorProvider;
 @SuppressWarnings("all")
 public class CommandLineTest {
   @Inject
+  @Extension
   private CompilationTestHelper _compilationTestHelper;
   
   @Test

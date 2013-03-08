@@ -33,6 +33,7 @@ import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor.IPostIndexingInitializing;
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder;
+import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
@@ -59,6 +60,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
   private final static String HTTP_SERVLET = "javax.servlet.http.HttpServlet";
   
   @Inject
+  @Extension
   private JvmTypesBuilder _jvmTypesBuilder;
   
   /**

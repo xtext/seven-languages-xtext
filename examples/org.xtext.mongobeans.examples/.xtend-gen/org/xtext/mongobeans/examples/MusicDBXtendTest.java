@@ -12,6 +12,7 @@ import com.mongodb.DBCollection;
 import com.mongodb.Mongo;
 import java.util.List;
 import org.eclipse.xtext.xbase.lib.Exceptions;
+import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
@@ -26,6 +27,7 @@ import org.xtext.mongobeans.lib.MongoExtensions;
 
 @SuppressWarnings("all")
 public class MusicDBXtendTest {
+  @Extension
   private MongoExtensions _mongoExtensions = new Function0<MongoExtensions>() {
     public MongoExtensions apply() {
       MongoExtensions _mongoExtensions = new MongoExtensions();

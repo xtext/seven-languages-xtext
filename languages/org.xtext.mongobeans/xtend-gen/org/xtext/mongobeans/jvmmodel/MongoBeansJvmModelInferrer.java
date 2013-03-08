@@ -36,6 +36,7 @@ import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor.IPostIndexingInitializing;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmModelAssociations;
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder;
+import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
@@ -54,21 +55,27 @@ import org.xtext.mongobeans.mongoBeans.MongoProperty;
 @SuppressWarnings("all")
 public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
   @Inject
+  @Extension
   private JvmTypesBuilder _jvmTypesBuilder;
   
   @Inject
+  @Extension
   private IQualifiedNameProvider _iQualifiedNameProvider;
   
   @Inject
+  @Extension
   private TypeReferenceSerializer _typeReferenceSerializer;
   
   @Inject
+  @Extension
   private MongoTypes _mongoTypes;
   
   @Inject
+  @Extension
   private Primitives _primitives;
   
   @Inject
+  @Extension
   private IJvmModelAssociations associations;
   
   protected void _infer(final MongoFile file, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {

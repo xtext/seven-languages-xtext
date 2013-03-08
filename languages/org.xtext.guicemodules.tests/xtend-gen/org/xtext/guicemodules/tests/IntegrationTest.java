@@ -22,6 +22,7 @@ import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationsPackage.Lite
 import org.eclipse.xtext.xbase.compiler.CompilationTestHelper;
 import org.eclipse.xtext.xbase.compiler.CompilationTestHelper.Result;
 import org.eclipse.xtext.xbase.lib.Exceptions;
+import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.junit.Assert;
 import org.junit.Test;
@@ -36,12 +37,15 @@ import org.xtext.guicemodules.tests.InjectionTarget;
 @SuppressWarnings("all")
 public class IntegrationTest {
   @Inject
+  @Extension
   private CompilationTestHelper _compilationTestHelper;
   
   @Inject
+  @Extension
   private ParseHelper<ModulesAST> _parseHelper;
   
   @Inject
+  @Extension
   private ValidationTestHelper _validationTestHelper;
   
   @Test

@@ -23,10 +23,6 @@ class BuildDSLValidator extends XbaseJavaValidator {
 	
 	public static val CYCLIC_DEPENDENCY = "build.issue.cyclicDependency"
 	
-	override protected supportsCheckedExceptions() {
-		false
-	}
-	
 	override protected getEPackages() {
 	    newArrayList(
 		    BuildPackage::eINSTANCE,

@@ -33,10 +33,6 @@ import org.xtext.builddsl.build.Task;
 public class BuildDSLValidator extends XbaseJavaValidator {
   public final static String CYCLIC_DEPENDENCY = "build.issue.cyclicDependency";
   
-  protected boolean supportsCheckedExceptions() {
-    return false;
-  }
-  
   protected List<EPackage> getEPackages() {
     ArrayList<EPackage> _newArrayList = CollectionLiterals.<EPackage>newArrayList(
       BuildPackage.eINSTANCE, 

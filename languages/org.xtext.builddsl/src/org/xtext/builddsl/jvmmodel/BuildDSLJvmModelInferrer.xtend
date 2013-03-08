@@ -37,7 +37,11 @@ class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
 			
 			// parameters become Java fields
 			for (declaredParameter : file.parameters) {
-				val type = declaredParameter.type ?: inferredNonVoidType
+				val type = declaredParameter.type ?: 
+					if(declaredParameter.init != null)
+					   declaredParameter.init.inferredType
+					else
+						file.newTypeRef(typeof(String))
 				members += declaredParameter.toField(declaredParameter.name, type) [
 					visibility = JvmVisibility::PUBLIC
 					annotations += declaredParameter.toAnnotation(typeof(Param))

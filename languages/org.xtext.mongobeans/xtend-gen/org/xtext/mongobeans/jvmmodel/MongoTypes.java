@@ -15,6 +15,7 @@ import java.util.Set;
 import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.eclipse.xtext.common.types.util.SuperTypeCollector;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
+import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.Functions.Function0;
 
 /**
@@ -23,6 +24,7 @@ import org.eclipse.xtext.xbase.lib.Functions.Function0;
 @SuppressWarnings("all")
 public class MongoTypes {
   @Inject
+  @Extension
   private SuperTypeCollector _superTypeCollector;
   
   public final List<String> mongoPrimitiveTypes = new Function0<List<String>>() {

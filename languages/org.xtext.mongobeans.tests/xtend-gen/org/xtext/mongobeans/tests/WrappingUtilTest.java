@@ -23,6 +23,7 @@ import org.eclipse.xtext.xbase.compiler.CompilationTestHelper.Result;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Exceptions;
+import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
@@ -40,9 +41,11 @@ import org.xtext.mongobeans.lib.WrappingUtil;
 @SuppressWarnings("all")
 public class WrappingUtilTest {
   @Inject
+  @Extension
   private CompilationTestHelper _compilationTestHelper;
   
   @Inject
+  @Extension
   private ReflectExtensions _reflectExtensions;
   
   private Class<? extends Object> _mongoBeanClass;

@@ -27,6 +27,7 @@ import org.eclipse.xtext.xbase.compiler.CompilationTestHelper.Result;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Exceptions;
+import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.junit.Assert;
@@ -39,6 +40,7 @@ import org.xtext.httprouting.RouteInjectorProvider;
 @SuppressWarnings("all")
 public class ParserTest {
   @Inject
+  @Extension
   private CompilationTestHelper _compilationTestHelper;
   
   @Test

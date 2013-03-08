@@ -19,6 +19,7 @@ import org.eclipse.xtext.junit4.util.ParseHelper;
 import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.xbase.lib.Exceptions;
+import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.junit.Assert;
 import org.junit.Test;
@@ -32,9 +33,11 @@ import org.xtext.mongobeans.mongoBeans.MongoFile;
 @SuppressWarnings("all")
 public class QualifiedNameProviderTest {
   @Inject
+  @Extension
   private IQualifiedNameProvider _iQualifiedNameProvider;
   
   @Inject
+  @Extension
   private ParseHelper<MongoFile> _parseHelper;
   
   @Test

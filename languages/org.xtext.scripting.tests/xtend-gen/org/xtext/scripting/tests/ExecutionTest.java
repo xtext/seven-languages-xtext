@@ -16,6 +16,7 @@ import org.eclipse.xtext.util.IAcceptor;
 import org.eclipse.xtext.xbase.compiler.CompilationTestHelper;
 import org.eclipse.xtext.xbase.compiler.CompilationTestHelper.Result;
 import org.eclipse.xtext.xbase.lib.Exceptions;
+import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.util.ReflectExtensions;
 import org.junit.Assert;
 import org.junit.Test;
@@ -27,9 +28,11 @@ import org.xtext.scripting.ScriptingInjectorProvider;
 @SuppressWarnings("all")
 public class ExecutionTest {
   @Inject
+  @Extension
   private CompilationTestHelper _compilationTestHelper;
   
   @Inject
+  @Extension
   private ReflectExtensions _reflectExtensions;
   
   @Test

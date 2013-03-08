@@ -34,6 +34,7 @@ import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor.IPostIndexingInitializing;
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder;
+import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
@@ -53,8 +54,10 @@ import org.xtext.builddsl.lib.Param;
 @SuppressWarnings("all")
 public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
   @Inject
+  @Extension
   private JvmTypesBuilder _jvmTypesBuilder;
   
+  @Extension
   private TypesFactory _typesFactory = TypesFactory.eINSTANCE;
   
   protected void _infer(final BuildFile file, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {
@@ -75,8 +78,18 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
               if (_type != null) {
                 _elvis = _type;
               } else {
-                JvmTypeReference _inferredNonVoidType = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.inferredNonVoidType();
-                _elvis = ObjectExtensions.<JvmTypeReference>operator_elvis(_type, _inferredNonVoidType);
+                JvmTypeReference _xifexpression = null;
+                XExpression _init = declaredParameter.getInit();
+                boolean _notEquals = ObjectExtensions.operator_notEquals(_init, null);
+                if (_notEquals) {
+                  XExpression _init_1 = declaredParameter.getInit();
+                  JvmTypeReference _inferredType = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.inferredType(_init_1);
+                  _xifexpression = _inferredType;
+                } else {
+                  JvmTypeReference _newTypeRef_1 = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(file, String.class);
+                  _xifexpression = _newTypeRef_1;
+                }
+                _elvis = ObjectExtensions.<JvmTypeReference>operator_elvis(_type, _xifexpression);
               }
               final JvmTypeReference type = _elvis;
               EList<JvmMember> _members = it.getMembers();
