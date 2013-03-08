@@ -1,3 +1,10 @@
+/**
+ * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
 package org.xtext.tortoiseshell.tests;
 
 import com.google.inject.Inject;
@@ -11,6 +18,7 @@ import org.eclipse.xtext.junit4.XtextRunner;
 import org.eclipse.xtext.junit4.util.ParseHelper;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Exceptions;
+import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.junit.Assert;
@@ -25,14 +33,16 @@ import org.xtext.tortoiseshell.lib.Tortoise;
 import org.xtext.tortoiseshell.lib.TurnEvent;
 import org.xtext.tortoiseshell.tortoiseShell.Program;
 
-@RunWith(value = XtextRunner.class)
-@InjectWith(value = TortoiseShellInjectorProvider.class)
+@RunWith(XtextRunner.class)
+@InjectWith(TortoiseShellInjectorProvider.class)
 @SuppressWarnings("all")
 public class InterpreterTest {
   @Inject
+  @Extension
   private TortoiseShellInterpeter _tortoiseShellInterpeter;
   
   @Inject
+  @Extension
   private ParseHelper<Program> _parseHelper;
   
   @Test
@@ -125,7 +135,7 @@ public class InterpreterTest {
           }
         };
       ObjectExtensions.<Tortoise>operator_doubleArrow(tortoise, _function_1);
-    } catch (Exception _e) {
+    } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
   }
@@ -177,8 +187,8 @@ public class InterpreterTest {
       final Program program = this._parseHelper.parse(_builder);
       final ArrayList<MoveEvent> moveEvents = CollectionLiterals.<MoveEvent>newArrayList();
       final ArrayList<TurnEvent> turnEvents = CollectionLiterals.<TurnEvent>newArrayList();
-      final Procedure1<ITortoiseEvent> _function = new Procedure1<ITortoiseEvent>() {
-          public void apply(final ITortoiseEvent it) {
+      final Listener _function = new Listener() {
+          public void handleTortoiseEvent(final ITortoiseEvent it) {
             boolean _matched = false;
             if (!_matched) {
               if (it instanceof MoveEvent) {
@@ -196,18 +206,14 @@ public class InterpreterTest {
             }
           }
         };
-      tortoise.addListener(new Listener() {
-          public void handleTortoiseEvent(ITortoiseEvent event) {
-            _function.apply(event);
-          }
-      });
+      tortoise.addListener(_function);
       int _minus = (-10);
       this._tortoiseShellInterpeter.run(tortoise, program, _minus);
       int _size = moveEvents.size();
       Assert.assertEquals(19, _size);
       int _size_1 = turnEvents.size();
       Assert.assertEquals(19, _size_1);
-    } catch (Exception _e) {
+    } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
   }

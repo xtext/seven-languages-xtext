@@ -25,13 +25,10 @@ import org.eclipse.ui.part.ViewPart
 import org.eclipse.xtext.ui.editor.XtextEditor
 import org.eclipse.xtext.ui.util.DisplayRunHelper
 import org.xtext.tortoiseshell.lib.ITortoiseEvent
-import org.xtext.tortoiseshell.lib.ITortoiseEvent$Listener
 import org.xtext.tortoiseshell.lib.ITortoiseInterpreter
 import org.xtext.tortoiseshell.lib.MoveEvent
 import org.xtext.tortoiseshell.lib.Tortoise
 import org.xtext.tortoiseshell.lib.TurnEvent
-
-import static org.xtext.tortoiseshell.lib.view.TortoiseView.*
 
 @Singleton
 class TortoiseView extends ViewPart implements ITortoiseEvent$Listener {
@@ -123,7 +120,7 @@ class TortoiseView extends ViewPart implements ITortoiseEvent$Listener {
 					line.foregroundColor = event.tortoise.lineColor
 					line.lineWidth = event.tortoise.lineWidth
 					line.setEndpoints(event.oldPosition, event.oldPosition)
-					animator.addAnimation(new org.xtext.tortoiseshell.lib.view.Animation(event.oldPosition, event.tortoise.position, line, event.tortoise.delay)) 					
+					animator.addAnimation(new Animation(event.oldPosition, event.tortoise.position, line, event.tortoise.delay)) 					
 				} else {
 					animator.addAnimation(new Animation(event.oldPosition, event.tortoise.position, event.tortoise.delay))
 				}

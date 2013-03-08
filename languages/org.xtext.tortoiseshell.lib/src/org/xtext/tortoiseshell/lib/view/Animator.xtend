@@ -32,7 +32,7 @@ class Animator extends UIJob {
 		isScheduled = false
 	}
 	
-	def addAnimation(Animation animation) {
+	def void addAnimation(Animation animation) {
 		if (isAnimated) {
 			animationQueue.add(animation)
 			if (!isScheduled && !isStop) {
@@ -46,7 +46,7 @@ class Animator extends UIJob {
 	}
 	
 	def setAnimated(boolean isAnimated) {
-		stop
+		stop()
 		this.isAnimated = isAnimated
 	}
 	

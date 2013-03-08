@@ -1,10 +1,17 @@
+/**
+ * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
 package org.xtext.tortoiseshell.lib.view;
 
-import com.google.common.base.Objects;
 import java.util.List;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Polyline;
 import org.eclipse.draw2d.geometry.Point;
+import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.xtext.tortoiseshell.lib.view.TortoiseFigure;
 
 @SuppressWarnings("all")
@@ -55,17 +62,17 @@ public class Animation {
       double _plus = (this.startAngle + _multiply);
       figure.setAngle(_plus);
     }
-    boolean _notEquals_1 = (!Objects.equal(this.startPosition, null));
+    boolean _notEquals_1 = ObjectExtensions.operator_notEquals(this.startPosition, null);
     if (_notEquals_1) {
       Point _point = new Point(this.delta);
       Point _scale = _point.scale(alpha);
       final Point currentLocation = _scale.translate(this.startPosition);
       figure.setTortoiseLocation(currentLocation);
-      boolean _notEquals_2 = (!Objects.equal(this.line, null));
+      boolean _notEquals_2 = ObjectExtensions.operator_notEquals(this.line, null);
       if (_notEquals_2) {
         this.line.setEnd(currentLocation);
         IFigure _parent = this.line.getParent();
-        boolean _equals = Objects.equal(_parent, null);
+        boolean _equals = ObjectExtensions.operator_equals(_parent, null);
         if (_equals) {
           IFigure _parent_1 = figure.getParent();
           IFigure _parent_2 = figure.getParent();

@@ -1,6 +1,12 @@
+/**
+ * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
 package org.xtext.tortoiseshell.jvmmodel;
 
-import com.google.common.base.Objects;
 import com.google.inject.Inject;
 import java.util.Arrays;
 import org.eclipse.emf.common.util.EList;
@@ -15,6 +21,8 @@ import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor.IPostIndexingInitializing;
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder;
+import org.eclipse.xtext.xbase.lib.Extension;
+import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.xtext.tortoiseshell.lib.Tortoise;
 import org.xtext.tortoiseshell.tortoiseShell.Program;
@@ -25,6 +33,7 @@ public class TortoiseShellJvmModelInferrer extends AbstractModelInferrer {
   public final static String INFERRED_CLASS_NAME = "MyTortoiseProgram";
   
   @Inject
+  @Extension
   private JvmTypesBuilder _jvmTypesBuilder;
   
   protected void _infer(final Program program, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {
@@ -36,7 +45,7 @@ public class TortoiseShellJvmModelInferrer extends AbstractModelInferrer {
           JvmTypeReference _newTypeRef = TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(program, Tortoise.class);
           TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.<JvmTypeReference>operator_add(_superTypes, _newTypeRef);
           XBlockExpression _body = program.getBody();
-          boolean _notEquals = (!Objects.equal(_body, null));
+          boolean _notEquals = ObjectExtensions.operator_notEquals(_body, null);
           if (_notEquals) {
             EList<JvmMember> _members = it.getMembers();
             JvmTypeReference _newTypeRef_1 = TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(program, Void.TYPE);
@@ -47,7 +56,7 @@ public class TortoiseShellJvmModelInferrer extends AbstractModelInferrer {
                 }
               };
             JvmOperation _method = TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.toMethod(program, "main", _newTypeRef_1, _function);
-            TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members, _method);
+            TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members, _method);
           }
           EList<SubProgram> _subPrograms = program.getSubPrograms();
           for (final SubProgram subProgram : _subPrograms) {
@@ -69,7 +78,7 @@ public class TortoiseShellJvmModelInferrer extends AbstractModelInferrer {
                 }
               };
             JvmOperation _method_1 = TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.toMethod(subProgram, _name, _newTypeRef_2, _function_1);
-            TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_1, _method_1);
+            TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members_1, _method_1);
           }
         }
       };

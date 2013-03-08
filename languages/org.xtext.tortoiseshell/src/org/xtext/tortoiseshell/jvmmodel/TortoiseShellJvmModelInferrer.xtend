@@ -14,8 +14,6 @@ import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
 import org.xtext.tortoiseshell.lib.Tortoise
 import org.xtext.tortoiseshell.tortoiseShell.Program
 
-import static org.xtext.tortoiseshell.jvmmodel.TortoiseShellJvmModelInferrer.*
-
 class TortoiseShellJvmModelInferrer extends AbstractModelInferrer {
 
 	public static val INFERRED_CLASS_NAME = 'MyTortoiseProgram'

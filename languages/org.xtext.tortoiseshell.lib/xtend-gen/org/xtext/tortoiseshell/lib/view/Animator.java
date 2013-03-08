@@ -1,6 +1,12 @@
+/**
+ * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
 package org.xtext.tortoiseshell.lib.view;
 
-import com.google.common.base.Objects;
 import com.google.inject.Inject;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -11,6 +17,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.progress.UIJob;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Functions.Function0;
+import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.xtext.tortoiseshell.lib.view.Animation;
 import org.xtext.tortoiseshell.lib.view.TortoiseFigure;
 import org.xtext.tortoiseshell.lib.view.TortoiseView;
@@ -42,40 +49,27 @@ public class Animator extends UIJob {
     this.isScheduled = false;
   }
   
-  public long addAnimation(final Animation animation) {
-    long _xifexpression = (long) 0;
+  public void addAnimation(final Animation animation) {
     if (this.isAnimated) {
-      long _xblockexpression = (long) 0;
-      {
-        this.animationQueue.add(animation);
-        long _xifexpression_1 = (long) 0;
-        boolean _and = false;
-        boolean _not = (!this.isScheduled);
-        if (!_not) {
-          _and = false;
-        } else {
-          boolean _not_1 = (!this.isStop);
-          _and = (_not && _not_1);
-        }
-        if (_and) {
-          long _xblockexpression_1 = (long) 0;
-          {
-            this.schedule(this.UPDATE_INTERVAL);
-            this.isScheduled = true;
-            long _currentTimeMillis = System.currentTimeMillis();
-            long _lastStart = this.lastStart = _currentTimeMillis;
-            _xblockexpression_1 = (_lastStart);
-          }
-          _xifexpression_1 = _xblockexpression_1;
-        }
-        _xblockexpression = (_xifexpression_1);
+      this.animationQueue.add(animation);
+      boolean _and = false;
+      boolean _not = (!this.isScheduled);
+      if (!_not) {
+        _and = false;
+      } else {
+        boolean _not_1 = (!this.isStop);
+        _and = (_not && _not_1);
       }
-      _xifexpression = _xblockexpression;
+      if (_and) {
+        this.schedule(this.UPDATE_INTERVAL);
+        this.isScheduled = true;
+        long _currentTimeMillis = System.currentTimeMillis();
+        this.lastStart = _currentTimeMillis;
+      }
     } else {
       TortoiseFigure _tortoiseFigure = this.view.getTortoiseFigure();
       animation.set(_tortoiseFigure, 1);
     }
-    return _xifexpression;
   }
   
   public boolean setAnimated(final boolean isAnimated) {
@@ -102,7 +96,7 @@ public class Animator extends UIJob {
         boolean _while = _and;
         while (_while) {
           Display _current = Display.getCurrent();
-          boolean _notEquals = (!Objects.equal(_current, null));
+          boolean _notEquals = ObjectExtensions.operator_notEquals(_current, null);
           if (_notEquals) {
             Display _current_1 = Display.getCurrent();
             _current_1.readAndDispatch();
@@ -123,7 +117,7 @@ public class Animator extends UIJob {
         _xblockexpression = (_isScheduled);
       }
       return _xblockexpression;
-    } catch (Exception _e) {
+    } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
   }
@@ -138,7 +132,7 @@ public class Animator extends UIJob {
         final long now = System.currentTimeMillis();
         Animation currentAnimation = this.animationQueue.peek();
         boolean _and = false;
-        boolean _notEquals = (!Objects.equal(currentAnimation, null));
+        boolean _notEquals = ObjectExtensions.operator_notEquals(currentAnimation, null);
         if (!_notEquals) {
           _and = false;
         } else {
@@ -160,7 +154,7 @@ public class Animator extends UIJob {
             currentAnimation = _peek;
           }
           boolean _and_1 = false;
-          boolean _notEquals_1 = (!Objects.equal(currentAnimation, null));
+          boolean _notEquals_1 = ObjectExtensions.operator_notEquals(currentAnimation, null);
           if (!_notEquals_1) {
             _and_1 = false;
           } else {
@@ -171,7 +165,7 @@ public class Animator extends UIJob {
           }
           _while = _and_1;
         }
-        boolean _notEquals_1 = (!Objects.equal(currentAnimation, null));
+        boolean _notEquals_1 = ObjectExtensions.operator_notEquals(currentAnimation, null);
         if (_notEquals_1) {
           long _minus = (now - this.lastStart);
           int _delay_1 = currentAnimation.getDelay();

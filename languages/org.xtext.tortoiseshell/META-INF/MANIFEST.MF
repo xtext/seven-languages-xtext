@@ -30,4 +30,5 @@ Export-Package: org.xtext.tortoiseshell,
  org.xtext.tortoiseshell.services,
  org.xtext.tortoiseshell.tortoiseShell,
  org.xtext.tortoiseshell.tortoiseShell.impl,
- org.xtext.tortoiseshell.tortoiseShell.util
+ org.xtext.tortoiseshell.tortoiseShell.util,
+ org.xtext.tortoiseshell.validation

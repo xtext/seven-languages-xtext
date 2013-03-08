@@ -6,7 +6,7 @@
     complianceLevel="5.0" copyrightFields="false" editPluginID="org.xtext.tortoiseshell.edit"
     editorPluginID="org.xtext.tortoiseshell.editor" runtimeVersion="2.5" usedGenPackages="../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase">
   <genPackages prefix="TortoiseShell" basePackage="org.xtext.tortoiseshell" disposableProviderFactory="true"
-      ecorePackage="TortoiseShell.ecore#/">
+      fileExtensions="tortoiseshell" ecorePackage="TortoiseShell.ecore#/">
     <genClasses ecoreClass="TortoiseShell.ecore#//Program">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TortoiseShell.ecore#//Program/subPrograms"/>
     </genClasses>

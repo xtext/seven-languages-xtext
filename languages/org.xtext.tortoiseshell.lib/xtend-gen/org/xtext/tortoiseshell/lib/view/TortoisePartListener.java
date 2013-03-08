@@ -1,6 +1,12 @@
+/**
+ * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
 package org.xtext.tortoiseshell.lib.view;
 
-import com.google.common.base.Objects;
 import com.google.inject.Inject;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
@@ -9,6 +15,7 @@ import org.eclipse.core.resources.IResourceChangeListener;
 import org.eclipse.core.resources.IResourceDelta;
 import org.eclipse.core.resources.IResourceDeltaVisitor;
 import org.eclipse.core.resources.IWorkspace;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.jface.text.source.ISourceViewer;
 import org.eclipse.swt.custom.CaretEvent;
@@ -23,7 +30,7 @@ import org.eclipse.ui.IWorkbenchPartSite;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.model.IXtextDocument;
 import org.eclipse.xtext.xbase.lib.Exceptions;
-import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.xtext.tortoiseshell.lib.view.TortoiseView;
 
 @SuppressWarnings("all")
@@ -42,7 +49,7 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
     } else {
       IWorkbenchPartSite _site = part.getSite();
       String _id = _site.getId();
-      boolean _equals = Objects.equal(_id, "org.xtext.tortoiseshell.TortoiseShell");
+      boolean _equals = ObjectExtensions.operator_equals(_id, "org.xtext.tortoiseshell.TortoiseShell");
       _and = ((part instanceof XtextEditor) && _equals);
     }
     return _and;
@@ -79,7 +86,7 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
   }
   
   public void partDeactivated(final IWorkbenchPart part) {
-    boolean _equals = Objects.equal(part, this.currentTortoiseEditor);
+    boolean _equals = ObjectExtensions.operator_equals(part, this.currentTortoiseEditor);
     if (_equals) {
       ISourceViewer _internalSourceViewer = this.currentTortoiseEditor==null?(ISourceViewer)null:this.currentTortoiseEditor.getInternalSourceViewer();
       StyledText _textWidget = _internalSourceViewer==null?(StyledText)null:_internalSourceViewer.getTextWidget();
@@ -97,17 +104,17 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
   public void resourceChanged(final IResourceChangeEvent event) {
     try {
       final IFile editorFile = this.currentTortoiseEditor==null?(IFile)null:this.getEditorFile(this.currentTortoiseEditor);
-      boolean _notEquals = (!Objects.equal(editorFile, null));
+      boolean _notEquals = ObjectExtensions.operator_notEquals(editorFile, null);
       if (_notEquals) {
         final IPath editorFilePath = editorFile.getFullPath();
         IResourceDelta _delta = event.getDelta();
-        final Function1<IResourceDelta,Boolean> _function = new Function1<IResourceDelta,Boolean>() {
-            public Boolean apply(final IResourceDelta it) {
+        final IResourceDeltaVisitor _function = new IResourceDeltaVisitor() {
+            public boolean visit(final IResourceDelta it) throws CoreException {
               boolean _xifexpression = false;
               boolean _and = false;
               boolean _and_1 = false;
               IResource _resource = it.getResource();
-              boolean _equals = Objects.equal(_resource, editorFile);
+              boolean _equals = ObjectExtensions.operator_equals(_resource, editorFile);
               if (!_equals) {
                 _and_1 = false;
               } else {
@@ -139,13 +146,9 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
               return _xifexpression;
             }
           };
-        _delta.accept(new IResourceDeltaVisitor() {
-            public boolean visit(IResourceDelta delta) {
-              return _function.apply(delta);
-            }
-        });
+        _delta.accept(_function);
       }
-    } catch (Exception _e) {
+    } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
   }
@@ -186,7 +189,7 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
       IXtextDocument _document = this.currentTortoiseEditor.getDocument();
       final int stopAtLine = _document.getLineOfOffset(event.caretOffset);
       this.view.show(this.currentTortoiseEditor, stopAtLine);
-    } catch (Exception _e) {
+    } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
   }

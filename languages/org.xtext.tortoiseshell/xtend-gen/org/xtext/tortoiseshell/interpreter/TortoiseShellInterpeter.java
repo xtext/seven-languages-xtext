@@ -1,6 +1,12 @@
+/**
+ * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
 package org.xtext.tortoiseshell.interpreter;
 
-import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
 import java.util.Collections;
@@ -21,7 +27,9 @@ import org.eclipse.xtext.xbase.interpreter.IEvaluationResult;
 import org.eclipse.xtext.xbase.interpreter.impl.XbaseInterpreter;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmModelAssociations;
 import org.eclipse.xtext.xbase.lib.Exceptions;
+import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.scoping.XbaseScopeProvider;
 import org.xtext.tortoiseshell.interpreter.StopLineReachedException;
 import org.xtext.tortoiseshell.lib.ITortoiseInterpreter;
@@ -31,6 +39,7 @@ import org.xtext.tortoiseshell.tortoiseShell.Executable;
 @SuppressWarnings("all")
 public class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoiseInterpreter {
   @Inject
+  @Extension
   private IJvmModelAssociations _iJvmModelAssociations;
   
   private Tortoise tortoise;
@@ -39,11 +48,11 @@ public class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoi
   
   public void run(final Tortoise tortoise, final EObject program, final int stopAtLine) {
     boolean _and = false;
-    boolean _notEquals = (!Objects.equal(tortoise, null));
+    boolean _notEquals = ObjectExtensions.operator_notEquals(tortoise, null);
     if (!_notEquals) {
       _and = false;
     } else {
-      boolean _notEquals_1 = (!Objects.equal(program, null));
+      boolean _notEquals_1 = ObjectExtensions.operator_notEquals(program, null);
       _and = (_notEquals && _notEquals_1);
     }
     if (_and) {
