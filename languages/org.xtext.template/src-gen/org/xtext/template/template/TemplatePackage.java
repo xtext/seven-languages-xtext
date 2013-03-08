@@ -1,10 +1,5 @@
-/*******************************************************************************
- * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- ******************************************************************************/
+/**
+ */
 package org.xtext.template.template;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -83,13 +78,13 @@ public interface TemplatePackage extends EPackage
   int TEMPLATE_FILE__PACKAGE = 0;
 
   /**
-   * The feature id for the '<em><b>Imports</b></em>' containment reference list.
+   * The feature id for the '<em><b>Import Section</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEMPLATE_FILE__IMPORTS = 1;
+  int TEMPLATE_FILE__IMPORT_SECTION = 1;
 
   /**
    * The feature id for the '<em><b>Params</b></em>' containment reference list.
@@ -119,34 +114,6 @@ public interface TemplatePackage extends EPackage
   int TEMPLATE_FILE_FEATURE_COUNT = 4;
 
   /**
-   * The meta object id for the '{@link org.xtext.template.template.impl.ImportImpl <em>Import</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.template.template.impl.ImportImpl
-   * @see org.xtext.template.template.impl.TemplatePackageImpl#getImport()
-   * @generated
-   */
-  int IMPORT = 1;
-
-  /**
-   * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMPORT__IMPORTED_NAMESPACE = 0;
-
-  /**
-   * The number of structural features of the '<em>Import</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMPORT_FEATURE_COUNT = 1;
-
-  /**
    * The meta object id for the '{@link org.xtext.template.template.impl.ParameterImpl <em>Parameter</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -154,7 +121,7 @@ public interface TemplatePackage extends EPackage
    * @see org.xtext.template.template.impl.TemplatePackageImpl#getParameter()
    * @generated
    */
-  int PARAMETER = 2;
+  int PARAMETER = 1;
 
   /**
    * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -209,7 +176,7 @@ public interface TemplatePackage extends EPackage
    * @see org.xtext.template.template.impl.TemplatePackageImpl#getRichString()
    * @generated
    */
-  int RICH_STRING = 3;
+  int RICH_STRING = 2;
 
   /**
    * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
@@ -237,7 +204,7 @@ public interface TemplatePackage extends EPackage
    * @see org.xtext.template.template.impl.TemplatePackageImpl#getRichStringLiteral()
    * @generated
    */
-  int RICH_STRING_LITERAL = 4;
+  int RICH_STRING_LITERAL = 3;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -265,7 +232,7 @@ public interface TemplatePackage extends EPackage
    * @see org.xtext.template.template.impl.TemplatePackageImpl#getRichStringForLoop()
    * @generated
    */
-  int RICH_STRING_FOR_LOOP = 5;
+  int RICH_STRING_FOR_LOOP = 4;
 
   /**
    * The feature id for the '<em><b>For Expression</b></em>' containment reference.
@@ -311,7 +278,7 @@ public interface TemplatePackage extends EPackage
    * @see org.xtext.template.template.impl.TemplatePackageImpl#getRichStringIf()
    * @generated
    */
-  int RICH_STRING_IF = 6;
+  int RICH_STRING_IF = 5;
 
   /**
    * The feature id for the '<em><b>If</b></em>' containment reference.
@@ -372,15 +339,15 @@ public interface TemplatePackage extends EPackage
   EAttribute getTemplateFile_Package();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.template.template.TemplateFile#getImports <em>Imports</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.template.template.TemplateFile#getImportSection <em>Import Section</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Imports</em>'.
-   * @see org.xtext.template.template.TemplateFile#getImports()
+   * @return the meta object for the containment reference '<em>Import Section</em>'.
+   * @see org.xtext.template.template.TemplateFile#getImportSection()
    * @see #getTemplateFile()
    * @generated
    */
-  EReference getTemplateFile_Imports();
+  EReference getTemplateFile_ImportSection();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.xtext.template.template.TemplateFile#getParams <em>Params</em>}'.
@@ -403,27 +370,6 @@ public interface TemplatePackage extends EPackage
    * @generated
    */
   EReference getTemplateFile_Body();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.template.template.Import <em>Import</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Import</em>'.
-   * @see org.xtext.template.template.Import
-   * @generated
-   */
-  EClass getImport();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.template.template.Import#getImportedNamespace <em>Imported Namespace</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Imported Namespace</em>'.
-   * @see org.xtext.template.template.Import#getImportedNamespace()
-   * @see #getImport()
-   * @generated
-   */
-  EAttribute getImport_ImportedNamespace();
 
   /**
    * Returns the meta object for class '{@link org.xtext.template.template.Parameter <em>Parameter</em>}'.
@@ -561,12 +507,12 @@ public interface TemplatePackage extends EPackage
     EAttribute TEMPLATE_FILE__PACKAGE = eINSTANCE.getTemplateFile_Package();
 
     /**
-     * The meta object literal for the '<em><b>Imports</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Import Section</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TEMPLATE_FILE__IMPORTS = eINSTANCE.getTemplateFile_Imports();
+    EReference TEMPLATE_FILE__IMPORT_SECTION = eINSTANCE.getTemplateFile_ImportSection();
 
     /**
      * The meta object literal for the '<em><b>Params</b></em>' containment reference list feature.
@@ -583,24 +529,6 @@ public interface TemplatePackage extends EPackage
      * @generated
      */
     EReference TEMPLATE_FILE__BODY = eINSTANCE.getTemplateFile_Body();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.template.template.impl.ImportImpl <em>Import</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.template.template.impl.ImportImpl
-     * @see org.xtext.template.template.impl.TemplatePackageImpl#getImport()
-     * @generated
-     */
-    EClass IMPORT = eINSTANCE.getImport();
-
-    /**
-     * The meta object literal for the '<em><b>Imported Namespace</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute IMPORT__IMPORTED_NAMESPACE = eINSTANCE.getImport_ImportedNamespace();
 
     /**
      * The meta object literal for the '{@link org.xtext.template.template.impl.ParameterImpl <em>Parameter</em>}' class.

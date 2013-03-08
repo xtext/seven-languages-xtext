@@ -1,10 +1,5 @@
-/*******************************************************************************
- * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- ******************************************************************************/
+/**
+ */
 package org.xtext.template.template;
 
 import org.eclipse.emf.common.util.EList;
@@ -12,6 +7,8 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.xtext.xbase.XBlockExpression;
+
+import org.eclipse.xtext.xtype.XImportSection;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +19,7 @@ import org.eclipse.xtext.xbase.XBlockExpression;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.xtext.template.template.TemplateFile#getPackage <em>Package</em>}</li>
- *   <li>{@link org.xtext.template.template.TemplateFile#getImports <em>Imports</em>}</li>
+ *   <li>{@link org.xtext.template.template.TemplateFile#getImportSection <em>Import Section</em>}</li>
  *   <li>{@link org.xtext.template.template.TemplateFile#getParams <em>Params</em>}</li>
  *   <li>{@link org.xtext.template.template.TemplateFile#getBody <em>Body</em>}</li>
  * </ul>
@@ -61,20 +58,30 @@ public interface TemplateFile extends EObject
   void setPackage(String value);
 
   /**
-   * Returns the value of the '<em><b>Imports</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.template.template.Import}.
+   * Returns the value of the '<em><b>Import Section</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Imports</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Import Section</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Imports</em>' containment reference list.
-   * @see org.xtext.template.template.TemplatePackage#getTemplateFile_Imports()
+   * @return the value of the '<em>Import Section</em>' containment reference.
+   * @see #setImportSection(XImportSection)
+   * @see org.xtext.template.template.TemplatePackage#getTemplateFile_ImportSection()
    * @model containment="true"
    * @generated
    */
-  EList<Import> getImports();
+  XImportSection getImportSection();
+
+  /**
+   * Sets the value of the '{@link org.xtext.template.template.TemplateFile#getImportSection <em>Import Section</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Import Section</em>' containment reference.
+   * @see #getImportSection()
+   * @generated
+   */
+  void setImportSection(XImportSection value);
 
   /**
    * Returns the value of the '<em><b>Params</b></em>' containment reference list.

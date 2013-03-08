@@ -1,3 +1,10 @@
+/**
+ * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
 package org.xtext.template.ui.highlighting;
 
 import org.eclipse.swt.graphics.RGB;
@@ -5,7 +12,6 @@ import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfigurationAcce
 import org.eclipse.xtext.ui.editor.utils.TextStyle;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
-import org.eclipse.xtext.xbase.lib.Procedures.Procedure3;
 import org.eclipse.xtext.xbase.ui.highlighting.XbaseHighlightingConfiguration;
 
 @SuppressWarnings("all")
@@ -19,18 +25,14 @@ public class TemplateHighlightingConfiguration extends XbaseHighlightingConfigur
     acceptor.acceptDefaultHighlighting(TemplateHighlightingConfiguration.TEXT, "Text", _staticText);
     TextStyle _staticEscape = this.staticEscape();
     acceptor.acceptDefaultHighlighting(TemplateHighlightingConfiguration.ESCAPE, "Statement/Expression Escape Symbols", _staticEscape);
-    final Procedure3<String,String,TextStyle> _function = new Procedure3<String,String,TextStyle>() {
-        public void apply(final String id, final String name, final TextStyle style) {
+    final IHighlightingConfigurationAcceptor _function = new IHighlightingConfigurationAcceptor() {
+        public void acceptDefaultHighlighting(final String id, final String name, final TextStyle style) {
           RGB _rGB = new RGB(230, 230, 230);
           style.setBackgroundColor(_rGB);
           acceptor.acceptDefaultHighlighting(id, name, style);
         }
       };
-    super.configure(new IHighlightingConfigurationAcceptor() {
-        public void acceptDefaultHighlighting(String id,String name,TextStyle style) {
-          _function.apply(id,name,style);
-        }
-    });
+    super.configure(_function);
   }
   
   public TextStyle staticText() {

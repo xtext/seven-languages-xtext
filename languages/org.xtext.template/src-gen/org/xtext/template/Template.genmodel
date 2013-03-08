@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.xtext.template/src-gen"
-    editDirectory="/org.xtext.template.edit/src" editorDirectory="/org.xtext.template.editor/src"
-    modelPluginID="org.xtext.template" forceOverwrite="true" modelName="Template"
-    updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.xtext.template/src-gen" editDirectory="/org.xtext.template.edit/src"
+    editorDirectory="/org.xtext.template.editor/src" modelPluginID="org.xtext.template"
+    forceOverwrite="true" modelName="Template" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="org.xtext.template.edit"
-    editorPluginID="org.xtext.template.editor" runtimeVersion="2.5" usedGenPackages="../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xAnnotations ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase">
+    editorPluginID="org.xtext.template.editor" runtimeVersion="2.5" usedGenPackages="../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xAnnotations ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xtype">
   <genPackages prefix="Template" basePackage="org.xtext.template" disposableProviderFactory="true"
-      ecorePackage="Template.ecore#/">
+      fileExtensions="template" ecorePackage="Template.ecore#/">
     <genClasses ecoreClass="Template.ecore#//TemplateFile">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Template.ecore#//TemplateFile/package"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//TemplateFile/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//TemplateFile/importSection"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//TemplateFile/params"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//TemplateFile/body"/>
-    </genClasses>
-    <genClasses ecoreClass="Template.ecore#//Import">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Template.ecore#//Import/importedNamespace"/>
     </genClasses>
     <genClasses ecoreClass="Template.ecore#//Parameter">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Template.ecore#//Parameter/annotations"/>

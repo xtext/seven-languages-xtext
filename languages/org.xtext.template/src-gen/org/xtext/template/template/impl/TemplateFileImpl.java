@@ -1,10 +1,5 @@
-/*******************************************************************************
- * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- ******************************************************************************/
+/**
+ */
 package org.xtext.template.template.impl;
 
 import java.util.Collection;
@@ -25,7 +20,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.xtext.xbase.XBlockExpression;
 
-import org.xtext.template.template.Import;
+import org.eclipse.xtext.xtype.XImportSection;
+
 import org.xtext.template.template.Parameter;
 import org.xtext.template.template.TemplateFile;
 import org.xtext.template.template.TemplatePackage;
@@ -38,7 +34,7 @@ import org.xtext.template.template.TemplatePackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.xtext.template.template.impl.TemplateFileImpl#getPackage <em>Package</em>}</li>
- *   <li>{@link org.xtext.template.template.impl.TemplateFileImpl#getImports <em>Imports</em>}</li>
+ *   <li>{@link org.xtext.template.template.impl.TemplateFileImpl#getImportSection <em>Import Section</em>}</li>
  *   <li>{@link org.xtext.template.template.impl.TemplateFileImpl#getParams <em>Params</em>}</li>
  *   <li>{@link org.xtext.template.template.impl.TemplateFileImpl#getBody <em>Body</em>}</li>
  * </ul>
@@ -69,14 +65,14 @@ public class TemplateFileImpl extends MinimalEObjectImpl.Container implements Te
   protected String package_ = PACKAGE_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
+   * The cached value of the '{@link #getImportSection() <em>Import Section</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getImports()
+   * @see #getImportSection()
    * @generated
    * @ordered
    */
-  protected EList<Import> imports;
+  protected XImportSection importSection;
 
   /**
    * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference list.
@@ -147,13 +143,47 @@ public class TemplateFileImpl extends MinimalEObjectImpl.Container implements Te
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Import> getImports()
+  public XImportSection getImportSection()
   {
-    if (imports == null)
+    return importSection;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetImportSection(XImportSection newImportSection, NotificationChain msgs)
+  {
+    XImportSection oldImportSection = importSection;
+    importSection = newImportSection;
+    if (eNotificationRequired())
     {
-      imports = new EObjectContainmentEList<Import>(Import.class, this, TemplatePackage.TEMPLATE_FILE__IMPORTS);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TemplatePackage.TEMPLATE_FILE__IMPORT_SECTION, oldImportSection, newImportSection);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return imports;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setImportSection(XImportSection newImportSection)
+  {
+    if (newImportSection != importSection)
+    {
+      NotificationChain msgs = null;
+      if (importSection != null)
+        msgs = ((InternalEObject)importSection).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TemplatePackage.TEMPLATE_FILE__IMPORT_SECTION, null, msgs);
+      if (newImportSection != null)
+        msgs = ((InternalEObject)newImportSection).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TemplatePackage.TEMPLATE_FILE__IMPORT_SECTION, null, msgs);
+      msgs = basicSetImportSection(newImportSection, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TemplatePackage.TEMPLATE_FILE__IMPORT_SECTION, newImportSection, newImportSection));
   }
 
   /**
@@ -228,8 +258,8 @@ public class TemplateFileImpl extends MinimalEObjectImpl.Container implements Te
   {
     switch (featureID)
     {
-      case TemplatePackage.TEMPLATE_FILE__IMPORTS:
-        return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
+      case TemplatePackage.TEMPLATE_FILE__IMPORT_SECTION:
+        return basicSetImportSection(null, msgs);
       case TemplatePackage.TEMPLATE_FILE__PARAMS:
         return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
       case TemplatePackage.TEMPLATE_FILE__BODY:
@@ -250,8 +280,8 @@ public class TemplateFileImpl extends MinimalEObjectImpl.Container implements Te
     {
       case TemplatePackage.TEMPLATE_FILE__PACKAGE:
         return getPackage();
-      case TemplatePackage.TEMPLATE_FILE__IMPORTS:
-        return getImports();
+      case TemplatePackage.TEMPLATE_FILE__IMPORT_SECTION:
+        return getImportSection();
       case TemplatePackage.TEMPLATE_FILE__PARAMS:
         return getParams();
       case TemplatePackage.TEMPLATE_FILE__BODY:
@@ -274,9 +304,8 @@ public class TemplateFileImpl extends MinimalEObjectImpl.Container implements Te
       case TemplatePackage.TEMPLATE_FILE__PACKAGE:
         setPackage((String)newValue);
         return;
-      case TemplatePackage.TEMPLATE_FILE__IMPORTS:
-        getImports().clear();
-        getImports().addAll((Collection<? extends Import>)newValue);
+      case TemplatePackage.TEMPLATE_FILE__IMPORT_SECTION:
+        setImportSection((XImportSection)newValue);
         return;
       case TemplatePackage.TEMPLATE_FILE__PARAMS:
         getParams().clear();
@@ -302,8 +331,8 @@ public class TemplateFileImpl extends MinimalEObjectImpl.Container implements Te
       case TemplatePackage.TEMPLATE_FILE__PACKAGE:
         setPackage(PACKAGE_EDEFAULT);
         return;
-      case TemplatePackage.TEMPLATE_FILE__IMPORTS:
-        getImports().clear();
+      case TemplatePackage.TEMPLATE_FILE__IMPORT_SECTION:
+        setImportSection((XImportSection)null);
         return;
       case TemplatePackage.TEMPLATE_FILE__PARAMS:
         getParams().clear();
@@ -327,8 +356,8 @@ public class TemplateFileImpl extends MinimalEObjectImpl.Container implements Te
     {
       case TemplatePackage.TEMPLATE_FILE__PACKAGE:
         return PACKAGE_EDEFAULT == null ? package_ != null : !PACKAGE_EDEFAULT.equals(package_);
-      case TemplatePackage.TEMPLATE_FILE__IMPORTS:
-        return imports != null && !imports.isEmpty();
+      case TemplatePackage.TEMPLATE_FILE__IMPORT_SECTION:
+        return importSection != null;
       case TemplatePackage.TEMPLATE_FILE__PARAMS:
         return params != null && !params.isEmpty();
       case TemplatePackage.TEMPLATE_FILE__BODY:

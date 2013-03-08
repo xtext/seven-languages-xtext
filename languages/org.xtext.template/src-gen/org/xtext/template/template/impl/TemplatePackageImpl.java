@@ -1,10 +1,5 @@
-/*******************************************************************************
- * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- ******************************************************************************/
+/**
+ */
 package org.xtext.template.template.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -20,7 +15,8 @@ import org.eclipse.xtext.xbase.XbasePackage;
 
 import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationsPackage;
 
-import org.xtext.template.template.Import;
+import org.eclipse.xtext.xtype.XtypePackage;
+
 import org.xtext.template.template.Parameter;
 import org.xtext.template.template.RichString;
 import org.xtext.template.template.RichStringForLoop;
@@ -44,13 +40,6 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
    * @generated
    */
   private EClass templateFileEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass importEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -138,6 +127,7 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
     // Initialize simple dependencies
     XAnnotationsPackage.eINSTANCE.eClass();
     XbasePackage.eINSTANCE.eClass();
+    XtypePackage.eINSTANCE.eClass();
 
     // Create package meta-data objects
     theTemplatePackage.createPackageContents();
@@ -179,7 +169,7 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTemplateFile_Imports()
+  public EReference getTemplateFile_ImportSection()
   {
     return (EReference)templateFileEClass.getEStructuralFeatures().get(1);
   }
@@ -202,26 +192,6 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
   public EReference getTemplateFile_Body()
   {
     return (EReference)templateFileEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getImport()
-  {
-    return importEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getImport_ImportedNamespace()
-  {
-    return (EAttribute)importEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -346,12 +316,9 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
     // Create classes and their features
     templateFileEClass = createEClass(TEMPLATE_FILE);
     createEAttribute(templateFileEClass, TEMPLATE_FILE__PACKAGE);
-    createEReference(templateFileEClass, TEMPLATE_FILE__IMPORTS);
+    createEReference(templateFileEClass, TEMPLATE_FILE__IMPORT_SECTION);
     createEReference(templateFileEClass, TEMPLATE_FILE__PARAMS);
     createEReference(templateFileEClass, TEMPLATE_FILE__BODY);
-
-    importEClass = createEClass(IMPORT);
-    createEAttribute(importEClass, IMPORT__IMPORTED_NAMESPACE);
 
     parameterEClass = createEClass(PARAMETER);
     createEReference(parameterEClass, PARAMETER__ANNOTATIONS);
@@ -393,6 +360,7 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
     setNsURI(eNS_URI);
 
     // Obtain other dependent packages
+    XtypePackage theXtypePackage = (XtypePackage)EPackage.Registry.INSTANCE.getEPackage(XtypePackage.eNS_URI);
     XbasePackage theXbasePackage = (XbasePackage)EPackage.Registry.INSTANCE.getEPackage(XbasePackage.eNS_URI);
     XAnnotationsPackage theXAnnotationsPackage = (XAnnotationsPackage)EPackage.Registry.INSTANCE.getEPackage(XAnnotationsPackage.eNS_URI);
     TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
@@ -410,12 +378,9 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
     // Initialize classes and features; add operations and parameters
     initEClass(templateFileEClass, TemplateFile.class, "TemplateFile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTemplateFile_Package(), ecorePackage.getEString(), "package", null, 0, 1, TemplateFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTemplateFile_Imports(), this.getImport(), null, "imports", null, 0, -1, TemplateFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTemplateFile_ImportSection(), theXtypePackage.getXImportSection(), null, "importSection", null, 0, 1, TemplateFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTemplateFile_Params(), this.getParameter(), null, "params", null, 0, -1, TemplateFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTemplateFile_Body(), theXbasePackage.getXBlockExpression(), null, "body", null, 0, 1, TemplateFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getImport_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getParameter_Annotations(), theXAnnotationsPackage.getXAnnotation(), null, "annotations", null, 0, -1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

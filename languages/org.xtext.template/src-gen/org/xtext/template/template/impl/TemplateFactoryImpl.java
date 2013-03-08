@@ -1,10 +1,5 @@
-/*******************************************************************************
- * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- ******************************************************************************/
+/**
+ */
 package org.xtext.template.template.impl;
 
 import org.eclipse.emf.ecore.EClass;
@@ -35,7 +30,7 @@ public class TemplateFactoryImpl extends EFactoryImpl implements TemplateFactory
   {
     try
     {
-      TemplateFactory theTemplateFactory = (TemplateFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.xtext.org/template/Template"); 
+      TemplateFactory theTemplateFactory = (TemplateFactory)EPackage.Registry.INSTANCE.getEFactory(TemplatePackage.eNS_URI);
       if (theTemplateFactory != null)
       {
         return theTemplateFactory;
@@ -70,7 +65,6 @@ public class TemplateFactoryImpl extends EFactoryImpl implements TemplateFactory
     switch (eClass.getClassifierID())
     {
       case TemplatePackage.TEMPLATE_FILE: return createTemplateFile();
-      case TemplatePackage.IMPORT: return createImport();
       case TemplatePackage.PARAMETER: return createParameter();
       case TemplatePackage.RICH_STRING: return createRichString();
       case TemplatePackage.RICH_STRING_LITERAL: return createRichStringLiteral();
@@ -90,17 +84,6 @@ public class TemplateFactoryImpl extends EFactoryImpl implements TemplateFactory
   {
     TemplateFileImpl templateFile = new TemplateFileImpl();
     return templateFile;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Import createImport()
-  {
-    ImportImpl import_ = new ImportImpl();
-    return import_;
   }
 
   /**

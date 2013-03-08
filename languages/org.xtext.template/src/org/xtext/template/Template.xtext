@@ -13,12 +13,9 @@ import 'http://www.eclipse.org/xtext/xbase/Xbase' as xbase
 TemplateFile:
 	'<!--''«' 
 		('package' package=QualifiedName)? 
-		imports+=Import* 
+		importSection=XImportSection? 
 		params+=Parameter* 
 		body=RichString;
-
-Import:
-	'import' importedNamespace=QualifiedName;
 
 Parameter:
 	annotations+=XAnnotation* 

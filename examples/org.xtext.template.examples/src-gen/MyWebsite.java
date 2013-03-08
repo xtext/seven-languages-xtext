@@ -1,8 +1,9 @@
-import com.google.common.base.Objects;
 import java.util.ArrayList;
 import org.eclipse.xtext.xbase.lib.Functions.Function0;
+import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 
+@SuppressWarnings("all")
 public class MyWebsite {
   private String title = "No Title";
   
@@ -67,9 +68,9 @@ public class MyWebsite {
       String _title = element.getTitle();
       _appendable_1.append(org.eclipse.xtext.xbase.lib.ObjectExtensions.operator_elvis(_title,""));
       _appendable_1.append(org.eclipse.xtext.xbase.lib.ObjectExtensions.operator_elvis("</h1>\n\t\t",""));
-      StringBuilder _richstringif = null;
+      Object _richstringif = null;
       String _description = element.getDescription();
-      boolean _notEquals = (!Objects.equal(_description, null));
+      boolean _notEquals = ObjectExtensions.operator_notEquals(_description, null);
       if (_notEquals) {
         StringBuilder _appendable_2 = new StringBuilder();
         
@@ -88,7 +89,7 @@ public class MyWebsite {
     }
     _appendable.append(org.eclipse.xtext.xbase.lib.ObjectExtensions.operator_elvis(_forLoopResult,""));
     _appendable.append(org.eclipse.xtext.xbase.lib.ObjectExtensions.operator_elvis("\n</body>\n</html>",""));
-    return _appendable;
+    return ((CharSequence)_appendable);
   }
   
   public String generate(final Procedure1<MyWebsite> init) {

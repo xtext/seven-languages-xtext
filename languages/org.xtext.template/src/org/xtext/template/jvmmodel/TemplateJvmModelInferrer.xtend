@@ -8,13 +8,12 @@
 package org.xtext.template.jvmmodel
 
 import com.google.inject.Inject
+import org.eclipse.xtext.common.types.JvmVisibility
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
-import org.eclipse.xtext.xbase.lib.Procedures$Procedure1
-import org.eclipse.xtext.xbase.typing.ITypeProvider
+import org.eclipse.xtext.xbase.lib.Procedures
 import org.xtext.template.template.TemplateFile
-import org.eclipse.xtext.common.types.JvmVisibility
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -23,8 +22,6 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
 
 	@Inject extension JvmTypesBuilder
 	
-	@Inject extension ITypeProvider
-
    	def dispatch void infer(TemplateFile element, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
    		val simpleName = element.eResource.URI.trimFileExtension.lastSegment
    		val qualifiedName = if(element.getPackage != null) 
@@ -40,7 +37,7 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
 				// 2) inferred from the initializer 
 				// catch-all) just String 
 				val type = param.type 
-					?: param.defaultexp?.type 
+					?: param.defaultexp?.inferredType 
 					?: element.newTypeRef(typeof(String))
 				members += param.toField(param.name, type) [
 					if (param.defaultexp != null)

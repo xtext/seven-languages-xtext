@@ -40,10 +40,11 @@ class IntegrationTest {
 			<!--<<
 				param name = 'Foo'
 				param nullString
-				param list = newArrayList('one', 'two', 'three', 'four')
+				param String string
+				param list = #['one', 'two', 'three', 'four']
 			>>-->
 			<html><<nullString>>
-			  <title><<name>></title>
+			  <title><<name>>/<<nullString>>/<<string>></title>
 			  <<FOR element : list>>
 			    <<IF element == 'one'>>
 			      <h1><<element>></h1>
@@ -58,7 +59,7 @@ class IntegrationTest {
 			val result = compiledClass.newInstance.invoke('generate', null)
 			assertEquals('''
 				<html>
-				  <title>Foo</title>
+				  <title>Foo//</title>
 				      <h1>one</h1>
 				      <h2>two</h2>
 				      <p>three</p>
