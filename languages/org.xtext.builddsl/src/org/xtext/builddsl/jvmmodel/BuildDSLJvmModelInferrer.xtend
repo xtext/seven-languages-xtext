@@ -27,6 +27,7 @@ import org.xtext.builddsl.lib.Param
 class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
 
 	@Inject extension JvmTypesBuilder
+	
 	extension TypesFactory = TypesFactory::eINSTANCE
 
    	def dispatch void infer(BuildFile file, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
@@ -37,16 +38,13 @@ class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
 			
 			// parameters become Java fields
 			for (declaredParameter : file.parameters) {
-				val type = declaredParameter.type ?: 
-					if(declaredParameter.init != null)
-					   declaredParameter.init.inferredType
-					else
-						file.newTypeRef(typeof(String))
+				val type = declaredParameter.type 
+					?: declaredParameter?.init?.inferredType
+					?: file.newTypeRef(typeof(String))
 				members += declaredParameter.toField(declaredParameter.name, type) [
 					visibility = JvmVisibility::PUBLIC
 					annotations += declaredParameter.toAnnotation(typeof(Param))
-					if (declaredParameter.init != null)
-						initializer = declaredParameter.init
+					initializer = declaredParameter.init
 				]
 			}
 			
@@ -54,7 +52,8 @@ class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
    			val stringArray = file.newTypeRef(typeof(String)).addArrayTypeDimension
 			members += file.toMethod("main", file.newTypeRef(Void::TYPE)) [
 				parameters += toParameter("args", stringArray)
-				setStatic(true)
+				varArgs = true
+				static = true
 				body = [append('''
 					«scriptName» script = new «scriptName»();
 					if (script.showHelp(args)) {
@@ -64,7 +63,6 @@ class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
 				''')]
 			]
 			
-
 			// a method for the actual task body
    			members += file.tasks.map[ task | task.toMethod(task.methodName, task.newTypeRef(Void::TYPE)) [
    				visibility = JvmVisibility::PROTECTED

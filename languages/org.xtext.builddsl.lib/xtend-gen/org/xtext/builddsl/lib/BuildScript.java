@@ -203,9 +203,12 @@ public abstract class BuildScript {
     try {
       task.setIsExecuting(true);
       List<String> _prerequisitedTasks = task.getPrerequisitedTasks();
-      for (final String dependency : _prerequisitedTasks) {
-        this._executeTask(dependency);
-      }
+      final Procedure1<String> _function = new Procedure1<String>() {
+          public void apply(final String it) {
+            BuildScript.this._executeTask(it);
+          }
+        };
+      IterableExtensions.<String>forEach(_prerequisitedTasks, _function);
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("[Task \'");
       _builder.append(name, "");

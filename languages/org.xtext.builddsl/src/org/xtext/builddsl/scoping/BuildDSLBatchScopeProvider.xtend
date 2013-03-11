@@ -17,6 +17,9 @@ class BuildDSLBatchScopeProvider extends XbaseWithAnnotationsBatchScopeProvider 
 	
 	@Inject IImportsConfiguration importsConfig
 	
+	/**
+	 * Make all imports automatically static.  
+	 */
 	override newSession(Resource context) {
 		var result = super.newSession(context)
 		val importSection = importsConfig.getImportSection(context as XtextResource)

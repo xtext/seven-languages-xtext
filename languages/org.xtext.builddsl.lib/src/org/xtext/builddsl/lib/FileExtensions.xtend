@@ -37,7 +37,7 @@ class FileExtensions {
 		val files = directory.listAllFiles
 		val out =  new JarOutputStream(new BufferedOutputStream(new FileOutputStream(zipFile)))
 		try {
-			out.setMethod(JarOutputStream::DEFLATED)
+			out.method = JarOutputStream::DEFLATED
 			files.forEach [ file |
 				val entry = new ZipEntry(file.relativeTo(directory).path)
 				out.putNextEntry(entry)

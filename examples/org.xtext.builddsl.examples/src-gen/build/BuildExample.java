@@ -49,7 +49,7 @@ public class BuildExample extends BuildScript {
     }
   }.apply();
   
-  public static void main(final String[] args) {
+  public static void main(final String... args) {
     BuildExample script = new BuildExample();
     if (script.showHelp(args)) {
     	System.exit(HELP);

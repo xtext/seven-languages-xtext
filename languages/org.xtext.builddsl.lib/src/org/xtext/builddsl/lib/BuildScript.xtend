@@ -25,7 +25,7 @@ abstract class BuildScript {
 	def getTasks() {
 		if (_tasks == null) {
 			_tasks = newHashMap
-			for (method : getClass().declaredMethods) {
+			for (method : class.declaredMethods) {
 				val taskAnnotation = method.annotations.findFirst[annotationType == typeof(DependsOn)]
 				if (taskAnnotation != null) {
 					taskDef(method.name) [
@@ -44,7 +44,7 @@ abstract class BuildScript {
 	def getParameters() {
 		if (_parameters == null) {
 			_parameters = newHashMap
-			for (field : getClass().declaredFields.filter[ annotations.exists[annotationType == typeof(Param)] ]) {
+			for (field : class.declaredFields.filter[ annotations.exists[annotationType == typeof(Param)] ]) {
 				_parameters.put(field.name, field)
 			}
 		}
@@ -84,16 +84,13 @@ abstract class BuildScript {
 		val task = tasks.get(name)
 		if (task == null)
 			throw new UnsupportedOperationException("A task '"+name+"' does not exist.")
-		if (task.executed) {
+		if (task.executed) 
 			return;
-		}
 		if (task.isExecuting)
 			throw new IllegalStateException("Recursion detected : The task '"+name+"' already running.")
 		try {
 			task.isExecuting = true
-			for (String dependency : task.prerequisitedTasks) {
-				dependency._executeTask
-			}
+			task.prerequisitedTasks.forEach[_executeTask]
 			println('''[Task '«name»']''')
 			task.runnable?.apply
 		} finally {
@@ -143,9 +140,7 @@ abstract class BuildScript {
 	
 	def Object _convertTo(String string, Class<? extends Object> type) {
 		switch type {
-			case typeof(File) : {
-				new File(string)
-			}
+			case typeof(File) : new File(string)
 			default : string
 		}
 	}

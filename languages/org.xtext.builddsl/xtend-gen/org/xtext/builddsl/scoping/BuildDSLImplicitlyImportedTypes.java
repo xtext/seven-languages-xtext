@@ -18,6 +18,9 @@ import org.xtext.builddsl.lib.FileExtensions;
 
 @SuppressWarnings("all")
 public class BuildDSLImplicitlyImportedTypes extends ImplicitlyImportedTypes {
+  /**
+   * Add methods from {@link FileExtensions} and {@link ClassExtensions} to the extension scope.
+   */
   protected List<Class<? extends Object>> getExtensionClasses() {
     List<Class<? extends Object>> _extensionClasses = super.getExtensionClasses();
     List<? extends Class<? extends Object>> _xlistliteral = null;

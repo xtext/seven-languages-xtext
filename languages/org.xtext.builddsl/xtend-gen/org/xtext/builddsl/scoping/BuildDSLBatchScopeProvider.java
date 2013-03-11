@@ -27,6 +27,9 @@ public class BuildDSLBatchScopeProvider extends XbaseWithAnnotationsBatchScopePr
   @Inject
   private IImportsConfiguration importsConfig;
   
+  /**
+   * Make all imports automatically static.
+   */
   public IFeatureScopeSession newSession(final Resource context) {
     IFeatureScopeSession _xblockexpression = null;
     {

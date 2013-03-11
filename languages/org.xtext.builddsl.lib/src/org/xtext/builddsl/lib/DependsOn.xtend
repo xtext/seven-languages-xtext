@@ -5,13 +5,18 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  ******************************************************************************/
-package org.xtext.builddsl.lib.impl
+package org.xtext.builddsl.lib;
 
-class RunUtil {
-	
-	def static void runMain(Class<?> clazz, String[] argument) {
-		val mainMethod = clazz.getDeclaredMethod("main", Class::forName('[Ljava.lang.String;'))
-		mainMethod.invoke(null, #[argument])
-	}
+import java.lang.annotation.ElementType
+import java.lang.annotation.Retention
+import java.lang.annotation.RetentionPolicy
+import java.lang.annotation.Target
 
+/**
+ * A task definition
+ */
+@Retention(RetentionPolicy::RUNTIME)
+@Target(ElementType::METHOD)
+annotation DependsOn {
+	String[] value = #[]
 }
