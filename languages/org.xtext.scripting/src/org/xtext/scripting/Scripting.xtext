@@ -12,7 +12,5 @@ import "http://www.eclipse.org/xtext/xbase/Xbase"
 
 Script returns XBlockExpression:
 	{Script}
-	(expressions+=XExpressionInsideBlock ';'? | imports+=XImportDeclaration)*;
+	(expressions+=XExpressionInsideBlock ';'?)*;
 
-FeatureCallID:
-	ValidID | 'extends' | 'static' | 'extension';

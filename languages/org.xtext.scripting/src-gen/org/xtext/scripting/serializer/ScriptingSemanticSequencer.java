@@ -1013,7 +1013,7 @@ public class ScriptingSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     ((expressions+=XExpressionInsideBlock | imports+=XImportDeclaration)*)
+	 *     (expressions+=XExpressionInsideBlock*)
 	 */
 	protected void sequence_Script(EObject context, Script semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

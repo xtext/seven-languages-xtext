@@ -66,19 +66,11 @@ public class CompilationTest {
   public void testMixedImports() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("import java.io.File");
+      _builder.append("val file = new java.io.File(\'test\')\t\t\t");
       _builder.newLine();
-      _builder.append("val file = new File(\'test\')");
+      _builder.append("val stream = new java.io.FileOutputStream(file)");
       _builder.newLine();
-      _builder.newLine();
-      _builder.append("import java.io.FileOutputStream");
-      _builder.newLine();
-      _builder.append("val stream = new FileOutputStream(file)");
-      _builder.newLine();
-      _builder.newLine();
-      _builder.append("import java.io.*");
-      _builder.newLine();
-      _builder.append("val buffered = new BufferedOutputStream(stream)");
+      _builder.append("val buffered = new java.io.BufferedOutputStream(stream)");
       _builder.newLine();
       StringConcatenation _builder_1 = new StringConcatenation();
       _builder_1.append("import java.io.BufferedOutputStream;");

@@ -83,10 +83,10 @@ ruleScript returns [EObject current=null]
             grammarAccess.getScriptAccess().getScriptAction_0(),
             $current);
     }
-)(((
+)((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getScriptAccess().getExpressionsXExpressionInsideBlockParserRuleCall_1_0_0_0()); 
+	        newCompositeNode(grammarAccess.getScriptAccess().getExpressionsXExpressionInsideBlockParserRuleCall_1_0_0()); 
 	    }
 		lv_expressions_1_0=ruleXExpressionInsideBlock		{
 	        if ($current==null) {
@@ -103,82 +103,10 @@ ruleScript returns [EObject current=null]
 )
 )(	otherlv_2=';' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getScriptAccess().getSemicolonKeyword_1_0_1());
+    	newLeafNode(otherlv_2, grammarAccess.getScriptAccess().getSemicolonKeyword_1_1());
     }
-)?)
-    |(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getScriptAccess().getImportsXImportDeclarationParserRuleCall_1_1_0()); 
-	    }
-		lv_imports_3_0=ruleXImportDeclaration		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getScriptRule());
-	        }
-       		add(
-       			$current, 
-       			"imports",
-        		lv_imports_3_0, 
-        		"XImportDeclaration");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))*)
+)?)*)
 ;
-
-
-
-
-
-// Entry rule entryRuleFeatureCallID
-entryRuleFeatureCallID returns [String current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getFeatureCallIDRule()); } 
-	 iv_ruleFeatureCallID=ruleFeatureCallID 
-	 { $current=$iv_ruleFeatureCallID.current.getText(); }  
-	 EOF 
-;
-
-// Rule FeatureCallID
-ruleFeatureCallID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(
-    { 
-        newCompositeNode(grammarAccess.getFeatureCallIDAccess().getValidIDParserRuleCall_0()); 
-    }
-    this_ValidID_0=ruleValidID    {
-		$current.merge(this_ValidID_0);
-    }
-
-    { 
-        afterParserOrEnumRuleCall();
-    }
-
-    |
-	kw='extends' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getFeatureCallIDAccess().getExtendsKeyword_1()); 
-    }
-
-    |
-	kw='static' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getFeatureCallIDAccess().getStaticKeyword_2()); 
-    }
-
-    |
-	kw='extension' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getFeatureCallIDAccess().getExtensionKeyword_3()); 
-    }
-)
-    ;
 
 
 
@@ -3759,6 +3687,66 @@ ruleJvmFormalParameter
 )
 )?)
 ;
+
+
+
+
+
+// Entry rule entryRuleFeatureCallID
+entryRuleFeatureCallID returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getFeatureCallIDRule()); } 
+	 iv_ruleFeatureCallID=ruleFeatureCallID 
+	 { $current=$iv_ruleFeatureCallID.current.getText(); }  
+	 EOF 
+;
+
+// Rule FeatureCallID
+ruleFeatureCallID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+    { 
+        newCompositeNode(grammarAccess.getFeatureCallIDAccess().getValidIDParserRuleCall_0()); 
+    }
+    this_ValidID_0=ruleValidID    {
+		$current.merge(this_ValidID_0);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+	kw='extends' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getFeatureCallIDAccess().getExtendsKeyword_1()); 
+    }
+
+    |
+	kw='static' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getFeatureCallIDAccess().getStaticKeyword_2()); 
+    }
+
+    |
+	kw='import' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getFeatureCallIDAccess().getImportKeyword_3()); 
+    }
+
+    |
+	kw='extension' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getFeatureCallIDAccess().getExtensionKeyword_4()); 
+    }
+)
+    ;
 
 
 

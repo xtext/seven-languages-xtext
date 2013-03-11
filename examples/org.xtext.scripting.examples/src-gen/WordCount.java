@@ -10,6 +10,7 @@ import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
 
+@SuppressWarnings("all")
 public class WordCount {
   public static void main(final String[] args) {
     try {
@@ -47,7 +48,7 @@ public class WordCount {
           InputOutput.<String>println(_plus_5);
         }
       }
-    } catch (Exception _e) {
+    } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
   }

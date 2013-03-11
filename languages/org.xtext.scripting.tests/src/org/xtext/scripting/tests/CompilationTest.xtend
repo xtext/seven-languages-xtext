@@ -40,14 +40,9 @@ class CompilationTest {
 	
 	@Test def testMixedImports() {
 		'''
-			import java.io.File
-			val file = new File('test')
-			
-			import java.io.FileOutputStream
-			val stream = new FileOutputStream(file)
-			
-			import java.io.*
-			val buffered = new BufferedOutputStream(stream)
+			val file = new java.io.File('test')			
+			val stream = new java.io.FileOutputStream(file)
+			val buffered = new java.io.BufferedOutputStream(stream)
 		'''.assertCompilesTo('''
 			import java.io.BufferedOutputStream;
 			import java.io.File;

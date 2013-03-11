@@ -7,9 +7,17 @@
  ******************************************************************************/
 package org.xtext.scripting;
 
+import org.xtext.scripting.validation.AbstractScriptingValidator;
+import org.xtext.scripting.validation.ScriptingValidator;
+
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
 public class ScriptingRuntimeModule extends org.xtext.scripting.AbstractScriptingRuntimeModule {
 
+	@Override
+	@org.eclipse.xtext.service.SingletonBinding(eager=true)	
+	public Class<? extends AbstractScriptingValidator> bindAbstractScriptingValidator() {
+		return ScriptingValidator.class;
+	}
 }

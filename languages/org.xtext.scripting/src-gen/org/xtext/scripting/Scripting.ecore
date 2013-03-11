@@ -2,9 +2,5 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="scripting" nsURI="http://www.xtext.org/scripting/Scripting"
     nsPrefix="scripting">
-  <eClassifiers xsi:type="ecore:EClass" name="Script" eSuperTypes="../../../../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XBlockExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
-        eType="ecore:EClass ../../../../../org.eclipse.xtext.xbase/model/Xtype.ecore#//XImportDeclaration"
-        containment="true"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Script" eSuperTypes="../../../../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XBlockExpression"/>
 </ecore:EPackage>

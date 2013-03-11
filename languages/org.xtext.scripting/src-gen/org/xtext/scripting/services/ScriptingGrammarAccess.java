@@ -23,77 +23,36 @@ public class ScriptingGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Script");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cScriptAction_0 = (Action)cGroup.eContents().get(0);
-		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
-		private final Group cGroup_1_0 = (Group)cAlternatives_1.eContents().get(0);
-		private final Assignment cExpressionsAssignment_1_0_0 = (Assignment)cGroup_1_0.eContents().get(0);
-		private final RuleCall cExpressionsXExpressionInsideBlockParserRuleCall_1_0_0_0 = (RuleCall)cExpressionsAssignment_1_0_0.eContents().get(0);
-		private final Keyword cSemicolonKeyword_1_0_1 = (Keyword)cGroup_1_0.eContents().get(1);
-		private final Assignment cImportsAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
-		private final RuleCall cImportsXImportDeclarationParserRuleCall_1_1_0 = (RuleCall)cImportsAssignment_1_1.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Assignment cExpressionsAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final RuleCall cExpressionsXExpressionInsideBlockParserRuleCall_1_0_0 = (RuleCall)cExpressionsAssignment_1_0.eContents().get(0);
+		private final Keyword cSemicolonKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		
 		//Script returns XBlockExpression:
-		//	{Script} (expressions+=XExpressionInsideBlock ";"? | imports+=XImportDeclaration)*;
+		//	{Script} (expressions+=XExpressionInsideBlock ";"?)*;
 		public ParserRule getRule() { return rule; }
 
-		//{Script} (expressions+=XExpressionInsideBlock ";"? | imports+=XImportDeclaration)*
+		//{Script} (expressions+=XExpressionInsideBlock ";"?)*
 		public Group getGroup() { return cGroup; }
 
 		//{Script}
 		public Action getScriptAction_0() { return cScriptAction_0; }
 
-		//(expressions+=XExpressionInsideBlock ";"? | imports+=XImportDeclaration)*
-		public Alternatives getAlternatives_1() { return cAlternatives_1; }
-
-		//expressions+=XExpressionInsideBlock ";"?
-		public Group getGroup_1_0() { return cGroup_1_0; }
+		//(expressions+=XExpressionInsideBlock ";"?)*
+		public Group getGroup_1() { return cGroup_1; }
 
 		//expressions+=XExpressionInsideBlock
-		public Assignment getExpressionsAssignment_1_0_0() { return cExpressionsAssignment_1_0_0; }
+		public Assignment getExpressionsAssignment_1_0() { return cExpressionsAssignment_1_0; }
 
 		//XExpressionInsideBlock
-		public RuleCall getExpressionsXExpressionInsideBlockParserRuleCall_1_0_0_0() { return cExpressionsXExpressionInsideBlockParserRuleCall_1_0_0_0; }
+		public RuleCall getExpressionsXExpressionInsideBlockParserRuleCall_1_0_0() { return cExpressionsXExpressionInsideBlockParserRuleCall_1_0_0; }
 
 		//";"?
-		public Keyword getSemicolonKeyword_1_0_1() { return cSemicolonKeyword_1_0_1; }
-
-		//imports+=XImportDeclaration
-		public Assignment getImportsAssignment_1_1() { return cImportsAssignment_1_1; }
-
-		//XImportDeclaration
-		public RuleCall getImportsXImportDeclarationParserRuleCall_1_1_0() { return cImportsXImportDeclarationParserRuleCall_1_1_0; }
-	}
-
-	public class FeatureCallIDElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FeatureCallID");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cValidIDParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final Keyword cExtendsKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		private final Keyword cStaticKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
-		private final Keyword cExtensionKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
-		
-		//FeatureCallID:
-		//	ValidID | "extends" | "static" | "extension";
-		public ParserRule getRule() { return rule; }
-
-		//ValidID | "extends" | "static" | "extension"
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//ValidID
-		public RuleCall getValidIDParserRuleCall_0() { return cValidIDParserRuleCall_0; }
-
-		//"extends"
-		public Keyword getExtendsKeyword_1() { return cExtendsKeyword_1; }
-
-		//"static"
-		public Keyword getStaticKeyword_2() { return cStaticKeyword_2; }
-
-		//"extension"
-		public Keyword getExtensionKeyword_3() { return cExtensionKeyword_3; }
+		public Keyword getSemicolonKeyword_1_1() { return cSemicolonKeyword_1_1; }
 	}
 	
 	
 	private ScriptElements pScript;
-	private FeatureCallIDElements pFeatureCallID;
 	
 	private final Grammar grammar;
 
@@ -134,23 +93,13 @@ public class ScriptingGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Script returns XBlockExpression:
-	//	{Script} (expressions+=XExpressionInsideBlock ";"? | imports+=XImportDeclaration)*;
+	//	{Script} (expressions+=XExpressionInsideBlock ";"?)*;
 	public ScriptElements getScriptAccess() {
 		return (pScript != null) ? pScript : (pScript = new ScriptElements());
 	}
 	
 	public ParserRule getScriptRule() {
 		return getScriptAccess().getRule();
-	}
-
-	//FeatureCallID:
-	//	ValidID | "extends" | "static" | "extension";
-	public FeatureCallIDElements getFeatureCallIDAccess() {
-		return (pFeatureCallID != null) ? pFeatureCallID : (pFeatureCallID = new FeatureCallIDElements());
-	}
-	
-	public ParserRule getFeatureCallIDRule() {
-		return getFeatureCallIDAccess().getRule();
 	}
 
 	//XExpression:
@@ -607,6 +556,16 @@ public class ScriptingGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getXFeatureCallRule() {
 		return getXFeatureCallAccess().getRule();
+	}
+
+	//FeatureCallID:
+	//	ValidID | "extends" | "static" | "import" | "extension";
+	public XbaseGrammarAccess.FeatureCallIDElements getFeatureCallIDAccess() {
+		return gaXbase.getFeatureCallIDAccess();
+	}
+	
+	public ParserRule getFeatureCallIDRule() {
+		return getFeatureCallIDAccess().getRule();
 	}
 
 	//IdOrSuper:

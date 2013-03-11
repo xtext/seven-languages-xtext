@@ -4,7 +4,6 @@ package org.xtext.scripting.scripting;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.xtext.xbase.XbasePackage;
 
@@ -77,22 +76,13 @@ public interface ScriptingPackage extends EPackage
   int SCRIPT__EXPRESSIONS = XbasePackage.XBLOCK_EXPRESSION__EXPRESSIONS;
 
   /**
-   * The feature id for the '<em><b>Imports</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SCRIPT__IMPORTS = XbasePackage.XBLOCK_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
    * The number of structural features of the '<em>Script</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SCRIPT_FEATURE_COUNT = XbasePackage.XBLOCK_EXPRESSION_FEATURE_COUNT + 1;
+  int SCRIPT_FEATURE_COUNT = XbasePackage.XBLOCK_EXPRESSION_FEATURE_COUNT + 0;
 
 
   /**
@@ -104,17 +94,6 @@ public interface ScriptingPackage extends EPackage
    * @generated
    */
   EClass getScript();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.scripting.scripting.Script#getImports <em>Imports</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Imports</em>'.
-   * @see org.xtext.scripting.scripting.Script#getImports()
-   * @see #getScript()
-   * @generated
-   */
-  EReference getScript_Imports();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -148,14 +127,6 @@ public interface ScriptingPackage extends EPackage
      * @generated
      */
     EClass SCRIPT = eINSTANCE.getScript();
-
-    /**
-     * The meta object literal for the '<em><b>Imports</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SCRIPT__IMPORTS = eINSTANCE.getScript_Imports();
 
   }
 

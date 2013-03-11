@@ -1,12 +1,8 @@
 if(args.size == 0)
 	println('Missing args: Specify file names')
 
-import java.io.File
-import com.google.common.io.*
-import com.google.common.base.Charsets
-
 for (arg : args) {
-	val lines = Files::readLines(new File(arg), Charsets::UTF_8)
+	val lines = com::google::common::io::Files::readLines(new java.io.File(arg), com::google::common::base::Charsets::UTF_8)
 	var wordsInFile = lines
 		.map[ split('\\s*').size ]
 		.reduce[ a, b | a + b ]
@@ -14,3 +10,4 @@ for (arg : args) {
 		+ wordsInFile + ' words, ' + lines.size + ' lines.'
 	)
 }
+ 
