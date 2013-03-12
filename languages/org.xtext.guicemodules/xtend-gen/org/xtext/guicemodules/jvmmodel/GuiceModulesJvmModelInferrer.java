@@ -198,7 +198,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
                 GuiceModulesJvmModelInferrer.this.builder.setBody(it, _function);
               }
             };
-          JvmOperation _method = GuiceModulesJvmModelInferrer.this.builder.toMethod(null, "configure", _createTypeRef_1, _function_1);
+          JvmOperation _method = GuiceModulesJvmModelInferrer.this.builder.toMethod(module, "configure", _createTypeRef_1, _function_1);
           GuiceModulesJvmModelInferrer.this.builder.<JvmOperation>operator_add(_members_1, _method);
           EList<JvmMember> _members_2 = it.getMembers();
           JvmParameterizedTypeReference _createTypeRef_2 = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(voidType);
@@ -300,7 +300,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
                 GuiceModulesJvmModelInferrer.this.builder.setBody(it, _function);
               }
             };
-          JvmOperation _method_1 = GuiceModulesJvmModelInferrer.this.builder.toMethod(null, "configure", _createTypeRef_2, _function_2);
+          JvmOperation _method_1 = GuiceModulesJvmModelInferrer.this.builder.toMethod(module, "configure", _createTypeRef_2, _function_2);
           GuiceModulesJvmModelInferrer.this.builder.<JvmOperation>operator_add(_members_2, _method_1);
         }
       };
