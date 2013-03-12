@@ -37,7 +37,9 @@ import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor.IPostIndexingIn
 import org.eclipse.xtext.xbase.jvmmodel.IJvmModelAssociations;
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder;
 import org.eclipse.xtext.xbase.lib.Extension;
+import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.ListExtensions;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
@@ -402,14 +404,18 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
         public void apply(final JvmOperation it) {
           String _documentation = MongoBeansJvmModelInferrer.this._jvmTypesBuilder.getDocumentation(operation);
           MongoBeansJvmModelInferrer.this._jvmTypesBuilder.setDocumentation(it, _documentation);
-          EList<JvmFormalParameter> _parameters = operation.getParameters();
-          for (final JvmFormalParameter parameter : _parameters) {
-            EList<JvmFormalParameter> _parameters_1 = it.getParameters();
-            String _name = parameter.getName();
-            JvmTypeReference _parameterType = parameter.getParameterType();
-            JvmFormalParameter _parameter = MongoBeansJvmModelInferrer.this._jvmTypesBuilder.toParameter(parameter, _name, _parameterType);
-            MongoBeansJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters_1, _parameter);
-          }
+          EList<JvmFormalParameter> _parameters = it.getParameters();
+          EList<JvmFormalParameter> _parameters_1 = operation.getParameters();
+          final Function1<JvmFormalParameter,JvmFormalParameter> _function = new Function1<JvmFormalParameter,JvmFormalParameter>() {
+              public JvmFormalParameter apply(final JvmFormalParameter it) {
+                String _name = it.getName();
+                JvmTypeReference _parameterType = it.getParameterType();
+                JvmFormalParameter _parameter = MongoBeansJvmModelInferrer.this._jvmTypesBuilder.toParameter(it, _name, _parameterType);
+                return _parameter;
+              }
+            };
+          List<JvmFormalParameter> _map = ListExtensions.<JvmFormalParameter, JvmFormalParameter>map(_parameters_1, _function);
+          MongoBeansJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters, _map);
           XExpression _body = operation.getBody();
           MongoBeansJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _body);
         }

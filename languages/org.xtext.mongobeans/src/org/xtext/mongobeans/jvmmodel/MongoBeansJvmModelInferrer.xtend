@@ -95,7 +95,7 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 
 	def protected addListAccessor(JvmDeclaredType inferredType, MongoProperty property) {
 		val propertyType = property.jvmType.asWrapperTypeIfPrimitive
-		if(isMongoPrimitiveType(propertyType)) {
+		if(propertyType.isMongoPrimitiveType) {
 			inferredType.members += property.toMethod('get' + property.name.toFirstUpper, 
 				newTypeRef(property, 'java.util.List', propertyType)
 			) [
@@ -161,8 +161,7 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 	def protected addMethod(JvmDeclaredType inferredType, MongoOperation operation) {
 		inferredType.members += operation.toMethod(operation.name, operation.returnType) [
 			documentation = operation.documentation
-			for(parameter: operation.parameters)
-				parameters += parameter.toParameter(parameter.name, parameter.parameterType)
+			parameters += operation.parameters.map[toParameter(name, parameterType)]
 			body = operation.body
 		]
 	}

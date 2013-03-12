@@ -42,7 +42,7 @@ public class IntegrationTest {
       _builder.newLine();
       _builder.append("Hello World");
       _builder.newLine();
-      String _repl = this.repl(_builder);
+      String _replace = this.replace(_builder);
       final IAcceptor<Result> _function = new IAcceptor<Result>() {
           public void accept(final Result it) {
             try {
@@ -55,7 +55,7 @@ public class IntegrationTest {
             }
           }
         };
-      this._compilationTestHelper.compile(_repl, _function);
+      this._compilationTestHelper.compile(_replace, _function);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -115,7 +115,7 @@ public class IntegrationTest {
       _builder.newLine();
       _builder.append("</html>");
       _builder.newLine();
-      String _repl = this.repl(_builder);
+      String _replace = this.replace(_builder);
       final IAcceptor<Result> _function = new IAcceptor<Result>() {
           public void accept(final Result it) {
             try {
@@ -149,13 +149,13 @@ public class IntegrationTest {
             }
           }
         };
-      this._compilationTestHelper.compile(_repl, _function);
+      this._compilationTestHelper.compile(_replace, _function);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
   }
   
-  public String repl(final CharSequence s) {
+  public String replace(final CharSequence s) {
     String _string = s.toString();
     String _replace = _string.replace("<<", "\u00AB");
     String _replace_1 = _replace.replace(">>", "\u00BB");

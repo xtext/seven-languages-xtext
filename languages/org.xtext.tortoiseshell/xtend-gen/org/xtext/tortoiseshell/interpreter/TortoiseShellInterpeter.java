@@ -9,7 +9,6 @@ package org.xtext.tortoiseshell.interpreter;
 
 import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
-import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 import org.eclipse.emf.common.util.EList;
@@ -26,6 +25,7 @@ import org.eclipse.xtext.xbase.interpreter.IEvaluationContext;
 import org.eclipse.xtext.xbase.interpreter.IEvaluationResult;
 import org.eclipse.xtext.xbase.interpreter.impl.XbaseInterpreter;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmModelAssociations;
+import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
@@ -62,7 +62,7 @@ public class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoi
         Set<EObject> _jvmElements = this._iJvmModelAssociations.getJvmElements(program);
         Iterable<JvmOperation> _filter = Iterables.<JvmOperation>filter(_jvmElements, JvmOperation.class);
         JvmOperation _head = IterableExtensions.<JvmOperation>head(_filter);
-        List<Object> _emptyList = Collections.<Object>emptyList();
+        List<Object> _emptyList = CollectionLiterals.<Object>emptyList();
         if (_head!=null) this.invokeOperation(_head, null, _emptyList);
       } catch (final Throwable _t) {
         if (_t instanceof StopLineReachedException) {

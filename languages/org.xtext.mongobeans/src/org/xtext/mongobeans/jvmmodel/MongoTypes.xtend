@@ -16,9 +16,10 @@ import org.eclipse.xtext.common.types.util.SuperTypeCollector
  */
 class MongoTypes {
 
+	// TODO: replace with non-deprecated solution
 	@Inject extension SuperTypeCollector
 	
-	public val mongoPrimitiveTypes = newArrayList(
+	public static val mongoPrimitiveTypes = #{
 		'double',
 		'java.lang.Double',
 		'java.lang.String',
@@ -33,14 +34,14 @@ class MongoTypes {
 		'java.lang.Integer',
 		'long',
 		'java.lang.Long'
-	).unmodifiableView
+	}
 	
 	def isMongoPrimitiveType(JvmTypeReference typeRef) {
 		mongoPrimitiveTypes.contains(typeRef.qualifiedName)
 	}
 	
 	def isMongoType(JvmTypeReference typeRef) {
-		isMongoPrimitiveType(typeRef) || isMongoBean(typeRef)
+		typeRef.isMongoPrimitiveType || typeRef.isMongoBean
 	}
 	
 	def isMongoBean(JvmTypeReference typeRef) {

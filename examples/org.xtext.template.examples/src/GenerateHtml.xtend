@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  ******************************************************************************/
 class GenerateHtml {
-	def static void main(String[] args) {
+	def static void main(String... args) {
 		val template = new MyWebsite
 		println(template.generate [
 			author = 'Fred Flintstone'

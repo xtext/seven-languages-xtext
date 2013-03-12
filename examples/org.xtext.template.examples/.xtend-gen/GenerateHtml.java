@@ -19,7 +19,7 @@ import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
  */
 @SuppressWarnings("all")
 public class GenerateHtml {
-  public static void main(final String[] args) {
+  public static void main(final String... args) {
     MyWebsite _myWebsite = new MyWebsite();
     final MyWebsite template = _myWebsite;
     final Procedure1<MyWebsite> _function = new Procedure1<MyWebsite>() {

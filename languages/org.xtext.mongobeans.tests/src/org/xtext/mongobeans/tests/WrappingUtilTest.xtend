@@ -22,7 +22,6 @@ import org.xtext.mongobeans.MongoBeansInjectorProvider
 import org.xtext.mongobeans.lib.IMongoBean
 import org.xtext.mongobeans.lib.WrappingUtil
 
-import static java.util.Collections.*
 import static org.junit.Assert.*
 
 @RunWith(typeof(XtextRunner))
@@ -66,10 +65,10 @@ class WrappingUtilTest {
 		val oneDB = newFooDbObject('one')
 		val twoDB = newFooDbObject('two')
 		val threeDB = newFooDbObject('three')
-		oneDB.put('foos', newArrayList(twoDB, threeDB))		
+		oneDB.put('foos', #[twoDB, threeDB])		
 		
 		val oneBean = newFooMongoBean(oneDB)
-		assertEquals('Foo', oneBean.getClass.name)
+		assertEquals('Foo', oneBean.class.name)
 		assertEquals('one', oneBean.invoke('getBar'))
 		val foos = oneBean.invoke('getFoos') as List<?>
 		assertEquals(WrappingUtil::unwrap(foos.head), twoDB)
@@ -86,8 +85,8 @@ class WrappingUtilTest {
 
 	def protected newFooMongoBean(DBObject source) {
 		mongoBeanClass
-			.getConstructor(singletonList(typeof(DBObject)) as Class<?>[]) 
-			.newInstance(singletonList(source) as Object[])
+			.getConstructor(#[typeof(DBObject)] as Class<?>[]) 
+			.newInstance(#[source] as Object[])
 	}
 
 }

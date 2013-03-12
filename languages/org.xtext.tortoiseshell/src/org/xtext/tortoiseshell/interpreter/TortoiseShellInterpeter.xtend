@@ -8,21 +8,20 @@
 package org.xtext.tortoiseshell.interpreter
 
 import com.google.inject.Inject
-import java.util.Collections
 import java.util.List
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.xtext.common.types.JvmOperation
 import org.eclipse.xtext.naming.QualifiedName
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils
 import org.eclipse.xtext.util.CancelIndicator
+import org.eclipse.xtext.xbase.XExpression
+import org.eclipse.xtext.xbase.interpreter.IEvaluationContext
 import org.eclipse.xtext.xbase.interpreter.impl.XbaseInterpreter
 import org.eclipse.xtext.xbase.jvmmodel.IJvmModelAssociations
 import org.eclipse.xtext.xbase.scoping.XbaseScopeProvider
 import org.xtext.tortoiseshell.lib.ITortoiseInterpreter
 import org.xtext.tortoiseshell.lib.Tortoise
 import org.xtext.tortoiseshell.tortoiseShell.Executable
-import org.eclipse.xtext.xbase.XExpression
-import org.eclipse.xtext.xbase.interpreter.IEvaluationContext
-import org.eclipse.xtext.nodemodel.util.NodeModelUtils
 
 class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoiseInterpreter {
 	
@@ -38,7 +37,7 @@ class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoiseInter
 			this.stopAtLine = stopAtLine
 			try {
 				program.jvmElements.filter(typeof(JvmOperation)).head
-					?.invokeOperation(null, Collections::emptyList)
+					?.invokeOperation(null, emptyList)
 			} catch (StopLineReachedException exc) {
 				// ignore
 			}

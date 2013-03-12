@@ -150,7 +150,7 @@ public class IntegrationTest {
       _builder.append("bind List<String> to-instance newArrayList(\'one\',\'two\')");
       _builder.newLine();
       _builder.append("\t");
-      _builder.append("bind Collection to List<String>");
+      _builder.append("bind Collection<?> to List<String>");
       _builder.newLine();
       _builder.append("\t");
       _builder.append("bind @Named(\'foo-bar\') String to-instance \'hello annotation\'");

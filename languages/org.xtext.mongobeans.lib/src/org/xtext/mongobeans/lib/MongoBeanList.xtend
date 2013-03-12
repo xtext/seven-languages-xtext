@@ -83,7 +83,7 @@ class MongoBeanList <T extends IMongoBean> implements List<T> {
 	}
 
 	override boolean addAll(int index, Collection<? extends T> c) {
-		for(element : (c.toList as List<T>).reverse.map[unwrap])
+		for(element : c.toList.reverse.map[unwrap])
 			delegate.add(index, element)
 		!c.empty
 	}

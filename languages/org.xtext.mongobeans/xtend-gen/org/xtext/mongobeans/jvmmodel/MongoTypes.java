@@ -7,14 +7,12 @@
  */
 package org.xtext.mongobeans.jvmmodel;
 
+import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.ImmutableSet.Builder;
 import com.google.inject.Inject;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import java.util.Set;
 import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.eclipse.xtext.common.types.util.SuperTypeCollector;
-import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.Functions.Function0;
 
@@ -27,31 +25,32 @@ public class MongoTypes {
   @Extension
   private SuperTypeCollector _superTypeCollector;
   
-  public final List<String> mongoPrimitiveTypes = new Function0<List<String>>() {
-    public List<String> apply() {
-      ArrayList<String> _newArrayList = CollectionLiterals.<String>newArrayList(
-        "double", 
-        "java.lang.Double", 
-        "java.lang.String", 
-        "byte[]", 
-        "boolean", 
-        "java.lang.Boolean", 
-        "java.util.Date", 
-        "void", 
-        "java.lang.Void", 
-        "java.util.regex.Pattern", 
-        "int", 
-        "java.lang.Integer", 
-        "long", 
-        "java.lang.Long");
-      List<String> _unmodifiableView = Collections.<String>unmodifiableList(_newArrayList);
-      return _unmodifiableView;
+  public final static Set<String> mongoPrimitiveTypes = new Function0<Set<String>>() {
+    public Set<String> apply() {
+      Set<String> _xsetliteral = null;
+      Builder<String> _builder = ImmutableSet.builder();
+      _builder.add("double");
+      _builder.add("java.lang.Double");
+      _builder.add("java.lang.String");
+      _builder.add("byte[]");
+      _builder.add("boolean");
+      _builder.add("java.lang.Boolean");
+      _builder.add("java.util.Date");
+      _builder.add("void");
+      _builder.add("java.lang.Void");
+      _builder.add("java.util.regex.Pattern");
+      _builder.add("int");
+      _builder.add("java.lang.Integer");
+      _builder.add("long");
+      _builder.add("java.lang.Long");
+      _xsetliteral = _builder.build();
+      return _xsetliteral;
     }
   }.apply();
   
   public boolean isMongoPrimitiveType(final JvmTypeReference typeRef) {
     String _qualifiedName = typeRef.getQualifiedName();
-    boolean _contains = this.mongoPrimitiveTypes.contains(_qualifiedName);
+    boolean _contains = MongoTypes.mongoPrimitiveTypes.contains(_qualifiedName);
     return _contains;
   }
   

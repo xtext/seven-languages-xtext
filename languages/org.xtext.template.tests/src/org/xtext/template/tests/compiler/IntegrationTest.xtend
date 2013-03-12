@@ -29,7 +29,7 @@ class IntegrationTest {
 		'''
 			<!--<< >>-->
 			Hello World
-		'''.repl.compile [
+		'''.replace.compile [
 			val result = compiledClass.newInstance.invoke('generate', null)
 			assertEquals('Hello World',result)
 		]
@@ -55,7 +55,7 @@ class IntegrationTest {
 			    <<ENDIF>>
 			  <<ENDFOR>>
 			</html>
-		'''.repl.compile [
+		'''.replace.compile [
 			val result = compiledClass.newInstance.invoke('generate', null)
 			assertEquals('''
 				<html>
@@ -68,7 +68,7 @@ class IntegrationTest {
 		]
 	}
 	
-	def repl(CharSequence s) {
+	def replace(CharSequence s) {
 		s.toString.replace('<<','«').replace('>>','»')
 	}
 }

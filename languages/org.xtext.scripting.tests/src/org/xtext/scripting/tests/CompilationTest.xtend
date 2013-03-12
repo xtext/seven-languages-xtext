@@ -30,7 +30,7 @@ class CompilationTest {
 
 			@SuppressWarnings("all")
 			public class MyFile {
-			  public static void main(final String[] args) {
+			  public static void main(final String... args) {
 			    final int answer = (7 * 6);
 			    InputOutput.<Integer>println(Integer.valueOf(answer));
 			  }
@@ -38,7 +38,7 @@ class CompilationTest {
 		''')
 	}	
 	
-	@Test def testMixedImports() {
+	@Test def testConstrutorChaining() {
 		'''
 			val file = new java.io.File('test')			
 			val stream = new java.io.FileOutputStream(file)
@@ -51,7 +51,7 @@ class CompilationTest {
 			
 			@SuppressWarnings("all")
 			public class MyFile {
-			  public static void main(final String[] args) {
+			  public static void main(final String... args) {
 			    try {
 			      File _file = new File("test");
 			      final File file = _file;

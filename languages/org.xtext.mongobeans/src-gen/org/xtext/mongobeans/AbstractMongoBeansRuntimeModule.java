@@ -90,8 +90,8 @@ public abstract class AbstractMongoBeansRuntimeModule extends DefaultRuntimeModu
 	}
 
 	// contributed by org.eclipse.xtext.generator.validation.ValidatorFragment
-	@org.eclipse.xtext.service.SingletonBinding(eager=true)	public Class<? extends org.xtext.mongobeans.validation.AbstractMongoBeansValidator> bindAbstractMongoBeansValidator() {
-		return org.xtext.mongobeans.validation.AbstractMongoBeansValidator.class;
+	@org.eclipse.xtext.service.SingletonBinding(eager=true)	public Class<? extends org.xtext.mongobeans.validation.MongoBeansValidator> bindMongoBeansValidator() {
+		return org.xtext.mongobeans.validation.MongoBeansValidator.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.scoping.AbstractScopingFragment
@@ -292,6 +292,11 @@ public abstract class AbstractMongoBeansRuntimeModule extends DefaultRuntimeModu
 	// contributed by org.eclipse.xtext.generator.xbase.XbaseGeneratorFragment
 	public Class<? extends org.eclipse.xtext.xbase.scoping.batch.XbaseBatchScopeProvider> bindXbaseBatchScopeProvider() {
 		return org.eclipse.xtext.xbase.annotations.typesystem.XbaseWithAnnotationsBatchScopeProvider.class;
+	}
+
+	// contributed by org.eclipse.xtext.generator.xbase.XbaseGeneratorFragment
+	public Class<? extends org.eclipse.xtext.linking.ILinkingDiagnosticMessageProvider> bindILinkingDiagnosticMessageProvider() {
+		return org.eclipse.xtext.xbase.annotations.validation.UnresolvedAnnotationTypeAwareMessageProducer.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.xbase.XbaseGeneratorFragment

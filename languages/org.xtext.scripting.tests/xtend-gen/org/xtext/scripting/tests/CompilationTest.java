@@ -43,7 +43,7 @@ public class CompilationTest {
       _builder_1.append("public class MyFile {");
       _builder_1.newLine();
       _builder_1.append("  ");
-      _builder_1.append("public static void main(final String[] args) {");
+      _builder_1.append("public static void main(final String... args) {");
       _builder_1.newLine();
       _builder_1.append("    ");
       _builder_1.append("final int answer = (7 * 6);");
@@ -63,7 +63,7 @@ public class CompilationTest {
   }
   
   @Test
-  public void testMixedImports() {
+  public void testConstrutorChaining() {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("val file = new java.io.File(\'test\')\t\t\t");
@@ -87,7 +87,7 @@ public class CompilationTest {
       _builder_1.append("public class MyFile {");
       _builder_1.newLine();
       _builder_1.append("  ");
-      _builder_1.append("public static void main(final String[] args) {");
+      _builder_1.append("public static void main(final String... args) {");
       _builder_1.newLine();
       _builder_1.append("    ");
       _builder_1.append("try {");

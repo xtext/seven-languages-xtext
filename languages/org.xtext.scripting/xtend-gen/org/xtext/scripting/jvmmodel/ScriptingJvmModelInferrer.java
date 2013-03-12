@@ -54,6 +54,7 @@ public class ScriptingJvmModelInferrer extends AbstractModelInferrer {
                 JvmFormalParameter _parameter = ScriptingJvmModelInferrer.this._jvmTypesBuilder.toParameter(script, "args", _addArrayTypeDimension);
                 ScriptingJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters, _parameter);
                 it.setStatic(true);
+                it.setVarArgs(true);
                 ScriptingJvmModelInferrer.this._jvmTypesBuilder.setBody(it, script);
               }
             };

@@ -30,7 +30,7 @@ class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
 	@Inject extension TypeReferences
 
 	def dispatch void infer(ModuleAST module, IJvmDeclaredTypeAcceptor acceptor, boolean preIndexingPhase) {
-		// leave if Guice in not on the classpath
+		// leave if Guice is not on the classpath
 		if(module.newTypeRef(typeof(Key)) == null) return;
 		
 		// declare the needed types :

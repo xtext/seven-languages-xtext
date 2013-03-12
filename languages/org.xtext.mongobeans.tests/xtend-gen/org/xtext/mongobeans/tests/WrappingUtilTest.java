@@ -7,12 +7,12 @@
  */
 package org.xtext.mongobeans.tests;
 
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableList.Builder;
 import com.google.inject.Inject;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 import java.lang.reflect.Constructor;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.junit4.InjectWith;
@@ -20,7 +20,6 @@ import org.eclipse.xtext.junit4.XtextRunner;
 import org.eclipse.xtext.util.IAcceptor;
 import org.eclipse.xtext.xbase.compiler.CompilationTestHelper;
 import org.eclipse.xtext.xbase.compiler.CompilationTestHelper.Result;
-import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Extension;
@@ -125,8 +124,12 @@ public class WrappingUtilTest {
       final BasicDBObject oneDB = this.newFooDbObject("one");
       final BasicDBObject twoDB = this.newFooDbObject("two");
       final BasicDBObject threeDB = this.newFooDbObject("three");
-      ArrayList<BasicDBObject> _newArrayList = CollectionLiterals.<BasicDBObject>newArrayList(twoDB, threeDB);
-      oneDB.put("foos", _newArrayList);
+      List<BasicDBObject> _xlistliteral = null;
+      Builder<BasicDBObject> _builder = ImmutableList.builder();
+      _builder.add(twoDB);
+      _builder.add(threeDB);
+      _xlistliteral = _builder.build();
+      oneDB.put("foos", _xlistliteral);
       final Object oneBean = this.newFooMongoBean(oneDB);
       Class<? extends Object> _class = oneBean.getClass();
       String _name = _class.getName();
@@ -161,10 +164,16 @@ public class WrappingUtilTest {
   protected Object newFooMongoBean(final DBObject source) {
     try {
       Class<? extends Object> _mongoBeanClass = this.getMongoBeanClass();
-      List<Class<DBObject>> _singletonList = Collections.<Class<DBObject>>singletonList(DBObject.class);
-      Constructor<? extends Object> _constructor = _mongoBeanClass.getConstructor(((Class<?>[]) ((Class<?>[])Conversions.unwrapArray(_singletonList, Class.class))));
-      List<DBObject> _singletonList_1 = Collections.<DBObject>singletonList(source);
-      Object _newInstance = _constructor.newInstance(((Object[]) ((Object[])Conversions.unwrapArray(_singletonList_1, Object.class))));
+      List<Class<DBObject>> _xlistliteral = null;
+      Builder<Class<DBObject>> _builder = ImmutableList.builder();
+      _builder.add(DBObject.class);
+      _xlistliteral = _builder.build();
+      Constructor<? extends Object> _constructor = _mongoBeanClass.getConstructor(((Class<?>[]) ((Class<?>[])Conversions.unwrapArray(_xlistliteral, Class.class))));
+      List<DBObject> _xlistliteral_1 = null;
+      Builder<DBObject> _builder_1 = ImmutableList.builder();
+      _builder_1.add(source);
+      _xlistliteral_1 = _builder_1.build();
+      Object _newInstance = _constructor.newInstance(((Object[]) ((Object[])Conversions.unwrapArray(_xlistliteral_1, Object.class))));
       return _newInstance;
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);

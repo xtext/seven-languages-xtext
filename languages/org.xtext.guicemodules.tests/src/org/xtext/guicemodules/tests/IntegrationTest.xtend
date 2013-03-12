@@ -76,7 +76,7 @@ class IntegrationTest {
 			
 			foo.bar.MyModule {
 				bind List<String> to-instance newArrayList('one','two')
-				bind Collection to List<String>
+				bind Collection<?> to List<String>
 				bind @Named('foo-bar') String to-instance 'hello annotation'
 			}
 		'''

@@ -161,14 +161,14 @@ public class MongoBeanList<T extends IMongoBean> implements List<T> {
     boolean _xblockexpression = false;
     {
       List<? extends T> _list = IterableExtensions.toList(c);
-      List<T> _reverse = ListExtensions.<T>reverse(((List<T>) _list));
+      List<? extends T> _reverse = ListExtensions.reverse(_list);
       final Function1<T,DBObject> _function = new Function1<T,DBObject>() {
           public DBObject apply(final T it) {
             DBObject _unwrap = WrappingUtil.unwrap(it);
             return _unwrap;
           }
         };
-      List<DBObject> _map = ListExtensions.<T, DBObject>map(_reverse, _function);
+      List<DBObject> _map = ListExtensions.map(_reverse, _function);
       for (final DBObject element : _map) {
         this.delegate.add(index, element);
       }

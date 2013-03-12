@@ -40,8 +40,8 @@ class StartServer {
 class SuperServlet extends NumberGuessing {
 	
 	Injector injector
-	var ThreadLocal<HttpServletRequest> request = new ThreadLocal<HttpServletRequest>
-	var ThreadLocal<HttpServletResponse> response = new ThreadLocal<HttpServletResponse>
+	var request = new ThreadLocal<HttpServletRequest>
+	var response = new ThreadLocal<HttpServletResponse>
 	
 	override init() throws ServletException {
 		super.init()
