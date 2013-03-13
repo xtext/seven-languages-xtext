@@ -69,7 +69,7 @@ public class Language {
       };
     ObjectExtensions.<String>operator_doubleArrow(
       "foo", _function);
-    if (((String) null)!=null) ((String) null).length();
+    if (((String) null)!=null) ((String) null).toLowerCase();
     /* StringExtensions.isNullOrEmpty("foo bar"); */
     final String z = "Hello ";
     final Function1<String,String> _function_1 = new Function1<String,String>() {
@@ -140,5 +140,9 @@ public class Language {
         /* "don\'t know" */
       }
     }
+    InputOutput.<String>println(x);
+    InputOutput.<String>println(y);
+    InputOutput.<String>println(myString);
+    InputOutput.<String>println(s);
   }
 }

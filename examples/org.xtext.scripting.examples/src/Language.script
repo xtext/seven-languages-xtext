@@ -34,7 +34,7 @@ true && false           true || false		      // boolean logic
 1..30                           // range
 null ?: "default"               // Elvis: if(first != null) first else second
 "foo" => [ println(charAt(0)) ] // with
-(null as String)?.length        // 0 (instead of NPE)					 
+(null as String)?.toLowerCase   // null (instead of NPE)					 
 
 
 
@@ -88,3 +88,15 @@ for(i:itemis)
 		java.math.BigInteger:	"it's huge, soo long:" + i.bitLength
 		default : 				"don't know"
 	}
+
+
+
+
+
+/*************** Use unused vars ******************/
+println(x)
+println(y)
+println(myString)
+println(s)
+	
+	
