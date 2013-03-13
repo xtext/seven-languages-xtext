@@ -135,11 +135,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:12:7: ( 'begin' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:12:9: 'begin'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:12:7: ( ':' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:12:9: ':'
             {
-            match("begin"); 
-
+            match(':'); 
 
             }
 
@@ -156,10 +155,11 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:13:7: ( ';' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:13:9: ';'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:13:7: ( 'begin' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:13:9: 'begin'
             {
-            match(';'); 
+            match("begin"); 
+
 
             }
 
@@ -176,11 +176,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:14:7: ( 'end' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:14:9: 'end'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:14:7: ( ';' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:14:9: ';'
             {
-            match("end"); 
-
+            match(';'); 
 
             }
 
@@ -197,10 +196,11 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:15:7: ( '=' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:15:9: '='
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:15:7: ( 'end' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:15:9: 'end'
             {
-            match('='); 
+            match("end"); 
+
 
             }
 
@@ -217,11 +217,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:16:7: ( '+=' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:16:9: '+='
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:16:7: ( '=' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:16:9: '='
             {
-            match("+="); 
-
+            match('='); 
 
             }
 
@@ -238,10 +237,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:17:7: ( '-=' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:17:9: '-='
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:17:7: ( '+=' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:17:9: '+='
             {
-            match("-="); 
+            match("+="); 
 
 
             }
@@ -259,10 +258,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:18:7: ( '||' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:18:9: '||'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:18:7: ( '-=' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:18:9: '-='
             {
-            match("||"); 
+            match("-="); 
 
 
             }
@@ -280,10 +279,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:19:7: ( '&&' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:19:9: '&&'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:19:7: ( '||' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:19:9: '||'
             {
-            match("&&"); 
+            match("||"); 
 
 
             }
@@ -301,10 +300,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:20:7: ( '==' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:20:9: '=='
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:20:7: ( '&&' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:20:9: '&&'
             {
-            match("=="); 
+            match("&&"); 
 
 
             }
@@ -322,10 +321,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:21:7: ( '!=' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:21:9: '!='
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:21:7: ( '==' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:21:9: '=='
             {
-            match("!="); 
+            match("=="); 
 
 
             }
@@ -343,10 +342,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:22:7: ( '===' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:22:9: '==='
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:22:7: ( '!=' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:22:9: '!='
             {
-            match("==="); 
+            match("!="); 
 
 
             }
@@ -364,10 +363,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:23:7: ( 'instanceof' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:23:9: 'instanceof'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:23:7: ( '===' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:23:9: '==='
             {
-            match("instanceof"); 
+            match("==="); 
 
 
             }
@@ -385,10 +384,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:24:7: ( '>=' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:24:9: '>='
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:24:7: ( 'instanceof' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:24:9: 'instanceof'
             {
-            match(">="); 
+            match("instanceof"); 
 
 
             }
@@ -406,10 +405,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:25:7: ( '<=' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:25:9: '<='
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:25:7: ( '>=' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:25:9: '>='
             {
-            match("<="); 
+            match(">="); 
 
 
             }
@@ -427,10 +426,11 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:26:7: ( '>' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:26:9: '>'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:26:7: ( '<=' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:26:9: '<='
             {
-            match('>'); 
+            match("<="); 
+
 
             }
 
@@ -447,10 +447,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:27:7: ( '<' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:27:9: '<'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:27:7: ( '>' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:27:9: '>'
             {
-            match('<'); 
+            match('>'); 
 
             }
 
@@ -467,11 +467,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:28:7: ( '->' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:28:9: '->'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:28:7: ( '<' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:28:9: '<'
             {
-            match("->"); 
-
+            match('<'); 
 
             }
 
@@ -488,10 +487,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:29:7: ( '..<' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:29:9: '..<'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:29:7: ( '->' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:29:9: '->'
             {
-            match("..<"); 
+            match("->"); 
 
 
             }
@@ -509,10 +508,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:30:7: ( '..' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:30:9: '..'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:30:7: ( '..<' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:30:9: '..<'
             {
-            match(".."); 
+            match("..<"); 
 
 
             }
@@ -530,10 +529,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:31:7: ( '=>' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:31:9: '=>'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:31:7: ( '..' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:31:9: '..'
             {
-            match("=>"); 
+            match(".."); 
 
 
             }
@@ -551,10 +550,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:32:7: ( '<>' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:32:9: '<>'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:32:7: ( '=>' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:32:9: '=>'
             {
-            match("<>"); 
+            match("=>"); 
 
 
             }
@@ -572,10 +571,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:33:7: ( '?:' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:33:9: '?:'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:33:7: ( '<>' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:33:9: '<>'
             {
-            match("?:"); 
+            match("<>"); 
 
 
             }
@@ -593,10 +592,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:34:7: ( '<=>' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:34:9: '<=>'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:34:7: ( '?:' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:34:9: '?:'
             {
-            match("<=>"); 
+            match("?:"); 
 
 
             }
@@ -614,10 +613,11 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:35:7: ( '+' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:35:9: '+'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:35:7: ( '<=>' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:35:9: '<=>'
             {
-            match('+'); 
+            match("<=>"); 
+
 
             }
 
@@ -634,10 +634,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:36:7: ( '-' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:36:9: '-'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:36:7: ( '+' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:36:9: '+'
             {
-            match('-'); 
+            match('+'); 
 
             }
 
@@ -654,10 +654,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:37:7: ( '*' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:37:9: '*'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:37:7: ( '-' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:37:9: '-'
             {
-            match('*'); 
+            match('-'); 
 
             }
 
@@ -674,11 +674,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:38:7: ( '**' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:38:9: '**'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:38:7: ( '*' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:38:9: '*'
             {
-            match("**"); 
-
+            match('*'); 
 
             }
 
@@ -695,10 +694,11 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:39:7: ( '/' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:39:9: '/'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:39:7: ( '**' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:39:9: '**'
             {
-            match('/'); 
+            match("**"); 
+
 
             }
 
@@ -715,10 +715,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:40:7: ( '%' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:40:9: '%'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:40:7: ( '/' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:40:9: '/'
             {
-            match('%'); 
+            match('/'); 
 
             }
 
@@ -735,10 +735,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:41:7: ( '!' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:41:9: '!'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:41:7: ( '%' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:41:9: '%'
             {
-            match('!'); 
+            match('%'); 
 
             }
 
@@ -755,11 +755,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__44;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:42:7: ( 'as' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:42:9: 'as'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:42:7: ( '!' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:42:9: '!'
             {
-            match("as"); 
-
+            match('!'); 
 
             }
 
@@ -776,10 +775,11 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:43:7: ( '.' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:43:9: '.'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:43:7: ( 'as' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:43:9: 'as'
             {
-            match('.'); 
+            match("as"); 
+
 
             }
 
@@ -796,11 +796,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__46;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:44:7: ( '?.' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:44:9: '?.'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:44:7: ( '.' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:44:9: '.'
             {
-            match("?."); 
-
+            match('.'); 
 
             }
 
@@ -817,10 +816,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:45:7: ( '*.' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:45:9: '*.'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:45:7: ( '?.' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:45:9: '?.'
             {
-            match("*."); 
+            match("?."); 
 
 
             }
@@ -838,10 +837,11 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:46:7: ( ',' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:46:9: ','
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:46:7: ( '*.' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:46:9: '*.'
             {
-            match(','); 
+            match("*."); 
+
 
             }
 
@@ -858,10 +858,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:47:7: ( '(' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:47:9: '('
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:47:7: ( ',' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:47:9: ','
             {
-            match('('); 
+            match(','); 
 
             }
 
@@ -878,10 +878,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__50;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:48:7: ( ')' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:48:9: ')'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:48:7: ( '(' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:48:9: '('
             {
-            match(')'); 
+            match('('); 
 
             }
 
@@ -898,10 +898,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__51;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:49:7: ( '#' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:49:9: '#'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:49:7: ( ')' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:49:9: ')'
             {
-            match('#'); 
+            match(')'); 
 
             }
 
@@ -918,10 +918,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__52;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:50:7: ( '{' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:50:9: '{'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:50:7: ( '#' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:50:9: '#'
             {
-            match('{'); 
+            match('#'); 
 
             }
 
@@ -938,10 +938,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:51:7: ( '}' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:51:9: '}'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:51:7: ( '{' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:51:9: '{'
             {
-            match('}'); 
+            match('{'); 
 
             }
 
@@ -958,10 +958,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:52:7: ( '[' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:52:9: '['
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:52:7: ( '}' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:52:9: '}'
             {
-            match('['); 
+            match('}'); 
 
             }
 
@@ -978,10 +978,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__55;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:53:7: ( ']' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:53:9: ']'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:53:7: ( '[' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:53:9: '['
             {
-            match(']'); 
+            match('['); 
 
             }
 
@@ -998,10 +998,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__56;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:54:7: ( '|' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:54:9: '|'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:54:7: ( ']' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:54:9: ']'
             {
-            match('|'); 
+            match(']'); 
 
             }
 
@@ -1018,11 +1018,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__57;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:55:7: ( 'if' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:55:9: 'if'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:55:7: ( '|' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:55:9: '|'
             {
-            match("if"); 
-
+            match('|'); 
 
             }
 
@@ -1039,10 +1038,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__58;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:56:7: ( 'else' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:56:9: 'else'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:56:7: ( 'if' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:56:9: 'if'
             {
-            match("else"); 
+            match("if"); 
 
 
             }
@@ -1060,10 +1059,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__59;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:57:7: ( 'switch' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:57:9: 'switch'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:57:7: ( 'else' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:57:9: 'else'
             {
-            match("switch"); 
+            match("else"); 
 
 
             }
@@ -1081,10 +1080,11 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = T__60;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:58:7: ( ':' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:58:9: ':'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:58:7: ( 'switch' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:58:9: 'switch'
             {
-            match(':'); 
+            match("switch"); 
+
 
             }
 
@@ -1624,10 +1624,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = RULE_HEX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5523:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5523:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5545:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5545:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             {
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5523:12: ( '0x' | '0X' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5545:12: ( '0x' | '0X' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1655,7 +1655,7 @@ public class InternalTortoiseShellLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5523:13: '0x'
+                    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5545:13: '0x'
                     {
                     match("0x"); 
 
@@ -1663,7 +1663,7 @@ public class InternalTortoiseShellLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5523:18: '0X'
+                    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5545:18: '0X'
                     {
                     match("0X"); 
 
@@ -1673,7 +1673,7 @@ public class InternalTortoiseShellLexer extends Lexer {
 
             }
 
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5523:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5545:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
             int cnt2=0;
             loop2:
             do {
@@ -1711,7 +1711,7 @@ public class InternalTortoiseShellLexer extends Lexer {
                 cnt2++;
             } while (true);
 
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5523:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5545:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1720,10 +1720,10 @@ public class InternalTortoiseShellLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5523:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5545:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     {
                     match('#'); 
-                    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5523:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5545:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     int alt3=2;
                     int LA3_0 = input.LA(1);
 
@@ -1741,7 +1741,7 @@ public class InternalTortoiseShellLexer extends Lexer {
                     }
                     switch (alt3) {
                         case 1 :
-                            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5523:64: ( 'b' | 'B' ) ( 'i' | 'I' )
+                            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5545:64: ( 'b' | 'B' ) ( 'i' | 'I' )
                             {
                             if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                                 input.consume();
@@ -1765,7 +1765,7 @@ public class InternalTortoiseShellLexer extends Lexer {
                             }
                             break;
                         case 2 :
-                            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5523:84: ( 'l' | 'L' )
+                            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5545:84: ( 'l' | 'L' )
                             {
                             if ( input.LA(1)=='L'||input.LA(1)=='l' ) {
                                 input.consume();
@@ -1804,11 +1804,11 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5525:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5525:12: '0' .. '9' ( '0' .. '9' | '_' )*
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5547:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5547:12: '0' .. '9' ( '0' .. '9' | '_' )*
             {
             matchRange('0','9'); 
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5525:21: ( '0' .. '9' | '_' )*
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5547:21: ( '0' .. '9' | '_' )*
             loop5:
             do {
                 int alt5=2;
@@ -1857,11 +1857,11 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = RULE_DECIMAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5527:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5527:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5549:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5549:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             {
             mRULE_INT(); 
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5527:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5549:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -1870,7 +1870,7 @@ public class InternalTortoiseShellLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5527:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
+                    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5549:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -1881,7 +1881,7 @@ public class InternalTortoiseShellLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5527:36: ( '+' | '-' )?
+                    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5549:36: ( '+' | '-' )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -1914,7 +1914,7 @@ public class InternalTortoiseShellLexer extends Lexer {
 
             }
 
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5527:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5549:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             int alt8=3;
             int LA8_0 = input.LA(1);
 
@@ -1926,7 +1926,7 @@ public class InternalTortoiseShellLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5527:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
+                    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5549:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
                     {
                     if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                         input.consume();
@@ -1950,7 +1950,7 @@ public class InternalTortoiseShellLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5527:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
+                    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5549:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
                     {
                     if ( input.LA(1)=='D'||input.LA(1)=='F'||input.LA(1)=='L'||input.LA(1)=='d'||input.LA(1)=='f'||input.LA(1)=='l' ) {
                         input.consume();
@@ -1983,10 +1983,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5529:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5529:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5551:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5551:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             {
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5529:11: ( '^' )?
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5551:11: ( '^' )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -1995,7 +1995,7 @@ public class InternalTortoiseShellLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5529:11: '^'
+                    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5551:11: '^'
                     {
                     match('^'); 
 
@@ -2013,7 +2013,7 @@ public class InternalTortoiseShellLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5529:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5551:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             loop10:
             do {
                 int alt10=2;
@@ -2062,10 +2062,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5531:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5531:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5553:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5553:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5531:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5553:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -2083,10 +2083,10 @@ public class InternalTortoiseShellLexer extends Lexer {
             }
             switch (alt13) {
                 case 1 :
-                    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5531:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5553:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5531:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5553:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop11:
                     do {
                         int alt11=3;
@@ -2102,7 +2102,7 @@ public class InternalTortoiseShellLexer extends Lexer {
 
                         switch (alt11) {
                     	case 1 :
-                    	    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5531:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5553:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2118,7 +2118,7 @@ public class InternalTortoiseShellLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5531:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5553:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2143,10 +2143,10 @@ public class InternalTortoiseShellLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5531:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5553:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5531:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5553:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop12:
                     do {
                         int alt12=3;
@@ -2162,7 +2162,7 @@ public class InternalTortoiseShellLexer extends Lexer {
 
                         switch (alt12) {
                     	case 1 :
-                    	    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5531:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5553:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2178,7 +2178,7 @@ public class InternalTortoiseShellLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5531:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5553:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2221,12 +2221,12 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5533:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5533:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5555:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5555:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5533:24: ( options {greedy=false; } : . )*
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5555:24: ( options {greedy=false; } : . )*
             loop14:
             do {
                 int alt14=2;
@@ -2251,7 +2251,7 @@ public class InternalTortoiseShellLexer extends Lexer {
 
                 switch (alt14) {
             	case 1 :
-            	    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5533:52: .
+            	    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5555:52: .
             	    {
             	    matchAny(); 
 
@@ -2281,12 +2281,12 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5535:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5535:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5557:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5557:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5535:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5557:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop15:
             do {
                 int alt15=2;
@@ -2299,7 +2299,7 @@ public class InternalTortoiseShellLexer extends Lexer {
 
                 switch (alt15) {
             	case 1 :
-            	    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5535:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5557:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2319,7 +2319,7 @@ public class InternalTortoiseShellLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5535:40: ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5557:40: ( ( '\\r' )? '\\n' )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -2328,9 +2328,9 @@ public class InternalTortoiseShellLexer extends Lexer {
             }
             switch (alt17) {
                 case 1 :
-                    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5535:41: ( '\\r' )? '\\n'
+                    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5557:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5535:41: ( '\\r' )?
+                    // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5557:41: ( '\\r' )?
                     int alt16=2;
                     int LA16_0 = input.LA(1);
 
@@ -2339,7 +2339,7 @@ public class InternalTortoiseShellLexer extends Lexer {
                     }
                     switch (alt16) {
                         case 1 :
-                            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5535:41: '\\r'
+                            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5557:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2371,10 +2371,10 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5537:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5537:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5559:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5559:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5537:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5559:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt18=0;
             loop18:
             do {
@@ -2428,8 +2428,8 @@ public class InternalTortoiseShellLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5539:16: ( . )
-            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5539:18: .
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5561:16: ( . )
+            // ../org.xtext.tortoiseshell/src-gen/org/xtext/tortoiseshell/parser/antlr/internal/InternalTortoiseShell.g:5561:18: .
             {
             matchAny(); 
 
@@ -3030,13 +3030,13 @@ public class InternalTortoiseShellLexer extends Lexer {
 
     protected DFA19 dfa19 = new DFA19(this);
     static final String DFA19_eotS =
-        "\1\uffff\2\60\1\uffff\1\60\1\70\1\72\1\75\1\77\1\101\1\103\1\60"+
-        "\1\110\1\113\1\115\1\120\1\123\1\126\1\uffff\1\60\10\uffff\1\142"+
-        "\10\60\2\163\1\54\1\uffff\2\54\2\uffff\3\60\1\uffff\1\60\1\uffff"+
-        "\3\60\1\u0080\15\uffff\1\60\1\u0082\1\60\2\uffff\1\u0085\2\uffff"+
-        "\1\u0087\13\uffff\1\u0088\12\uffff\1\60\1\u008a\14\60\1\uffff\1"+
-        "\163\4\uffff\1\u009a\4\60\1\u009f\2\60\2\uffff\1\60\1\uffff\1\60"+
-        "\5\uffff\1\60\1\uffff\2\60\1\u00a7\3\60\1\u00ab\1\u00ac\1\u00ad"+
+        "\1\uffff\1\60\1\62\1\60\1\uffff\1\60\1\72\1\74\1\77\1\101\1\103"+
+        "\1\105\1\60\1\112\1\115\1\117\1\122\1\125\1\130\1\uffff\1\60\10"+
+        "\uffff\10\60\2\163\1\54\1\uffff\2\54\2\uffff\3\60\3\uffff\1\60\1"+
+        "\uffff\3\60\1\u0080\15\uffff\1\60\1\u0082\1\60\2\uffff\1\u0085\2"+
+        "\uffff\1\u0087\13\uffff\1\u0088\10\uffff\1\60\1\u008a\14\60\1\uffff"+
+        "\1\163\4\uffff\1\u009a\4\60\1\u009f\2\60\2\uffff\1\60\1\uffff\1"+
+        "\60\5\uffff\1\60\1\uffff\2\60\1\u00a7\3\60\1\u00ab\1\u00ac\1\u00ad"+
         "\2\60\1\u00b0\3\60\1\uffff\4\60\1\uffff\1\u00b8\4\60\1\u00bd\1\60"+
         "\1\uffff\3\60\3\uffff\1\u00c2\1\u00c3\1\uffff\3\60\1\u00c7\2\60"+
         "\1\u00ca\1\uffff\4\60\1\uffff\1\u00d0\1\u00d1\1\60\1\u00d3\2\uffff"+
@@ -3047,11 +3047,11 @@ public class InternalTortoiseShellLexer extends Lexer {
     static final String DFA19_eofS =
         "\u00eb\uffff";
     static final String DFA19_minS =
-        "\1\0\1\164\1\145\1\uffff\1\154\3\75\1\174\1\46\1\75\1\146\2\75\2"+
-        "\56\2\52\1\uffff\1\163\10\uffff\1\72\1\145\2\141\1\150\1\141\1\145"+
-        "\1\150\1\145\2\60\1\44\1\uffff\2\0\2\uffff\1\142\1\151\1\141\1\uffff"+
+        "\1\0\1\164\1\72\1\145\1\uffff\1\154\3\75\1\174\1\46\1\75\1\146\2"+
+        "\75\2\56\2\52\1\uffff\1\163\10\uffff\1\145\2\141\1\150\1\141\1\145"+
+        "\1\150\1\145\2\60\1\44\1\uffff\2\0\2\uffff\1\142\1\151\1\141\3\uffff"+
         "\1\147\1\uffff\1\144\1\163\1\164\1\75\15\uffff\1\163\1\44\1\160"+
-        "\2\uffff\1\76\2\uffff\1\74\13\uffff\1\44\12\uffff\1\146\1\44\1\163"+
+        "\2\uffff\1\76\2\uffff\1\74\13\uffff\1\44\10\uffff\1\146\1\44\1\163"+
         "\1\162\1\154\1\156\1\151\1\154\1\167\1\154\1\165\1\160\1\162\1\164"+
         "\1\uffff\1\60\4\uffff\1\44\1\145\2\164\1\151\1\44\2\145\2\uffff"+
         "\1\164\1\uffff\1\157\5\uffff\1\141\1\uffff\1\145\1\143\1\44\1\163"+
@@ -3064,12 +3064,12 @@ public class InternalTortoiseShellLexer extends Lexer {
         "\2\uffff\1\44\1\157\1\145\1\uffff\2\44\3\uffff\1\156\1\157\2\uffff"+
         "\1\44\1\146\1\uffff\1\44\1\uffff";
     static final String DFA19_maxS =
-        "\1\uffff\1\167\1\145\1\uffff\1\170\1\76\1\75\1\76\1\174\1\46\1\75"+
-        "\1\156\1\75\1\76\1\56\1\72\1\56\1\57\1\uffff\1\163\10\uffff\1\72"+
+        "\1\uffff\1\167\1\72\1\145\1\uffff\1\170\1\76\1\75\1\76\1\174\1\46"+
+        "\1\75\1\156\1\75\1\76\1\56\1\72\1\56\1\57\1\uffff\1\163\10\uffff"+
         "\1\157\1\141\1\157\1\150\1\141\1\165\1\171\1\145\1\170\1\154\1\172"+
-        "\1\uffff\2\uffff\2\uffff\1\160\1\151\1\141\1\uffff\1\147\1\uffff"+
+        "\1\uffff\2\uffff\2\uffff\1\160\1\151\1\141\3\uffff\1\147\1\uffff"+
         "\1\144\1\163\1\164\1\75\15\uffff\1\163\1\172\1\160\2\uffff\1\76"+
-        "\2\uffff\1\74\13\uffff\1\172\12\uffff\1\146\1\172\1\164\1\162\1"+
+        "\2\uffff\1\74\13\uffff\1\172\10\uffff\1\146\1\172\1\164\1\162\1"+
         "\154\1\156\1\151\1\162\1\167\1\154\1\171\1\160\1\162\1\164\1\uffff"+
         "\1\154\4\uffff\1\172\1\145\2\164\1\151\1\172\2\145\2\uffff\1\164"+
         "\1\uffff\1\157\5\uffff\1\141\1\uffff\1\145\1\143\1\172\1\163\1\141"+
@@ -3082,55 +3082,55 @@ public class InternalTortoiseShellLexer extends Lexer {
         "\1\172\2\uffff\1\172\1\157\1\145\1\uffff\2\172\3\uffff\1\156\1\157"+
         "\2\uffff\1\172\1\146\1\uffff\1\172\1\uffff";
     static final String DFA19_acceptS =
-        "\3\uffff\1\3\16\uffff\1\36\1\uffff\1\44\1\45\1\46\1\47\1\50\1\51"+
-        "\1\52\1\53\14\uffff\1\115\2\uffff\1\121\1\122\3\uffff\1\115\1\uffff"+
-        "\1\3\4\uffff\1\25\1\5\1\6\1\31\1\7\1\22\1\32\1\10\1\54\1\11\1\111"+
-        "\1\13\1\37\3\uffff\1\16\1\20\1\uffff\1\26\1\21\1\uffff\1\41\1\27"+
-        "\1\42\1\110\1\34\1\43\1\33\1\117\1\120\1\35\1\36\1\uffff\1\44\1"+
-        "\45\1\46\1\47\1\50\1\51\1\52\1\53\1\75\1\60\16\uffff\1\112\1\uffff"+
-        "\1\113\1\114\1\116\1\121\10\uffff\1\14\1\12\1\uffff\1\55\1\uffff"+
-        "\1\30\1\17\1\23\1\24\1\40\1\uffff\1\65\17\uffff\1\1\4\uffff\1\4"+
-        "\7\uffff\1\63\3\uffff\1\66\1\67\1\76\2\uffff\1\105\7\uffff\1\56"+
-        "\4\uffff\1\62\4\uffff\1\101\1\100\3\uffff\1\74\2\uffff\1\2\5\uffff"+
-        "\1\107\1\77\1\uffff\1\64\1\uffff\1\103\1\uffff\1\57\1\71\3\uffff"+
+        "\4\uffff\1\4\16\uffff\1\37\1\uffff\1\45\1\46\1\47\1\50\1\51\1\52"+
+        "\1\53\1\54\13\uffff\1\115\2\uffff\1\121\1\122\3\uffff\1\115\1\75"+
+        "\1\2\1\uffff\1\4\4\uffff\1\26\1\6\1\7\1\32\1\10\1\23\1\33\1\11\1"+
+        "\55\1\12\1\111\1\14\1\40\3\uffff\1\17\1\21\1\uffff\1\27\1\22\1\uffff"+
+        "\1\42\1\30\1\43\1\110\1\35\1\44\1\34\1\117\1\120\1\36\1\37\1\uffff"+
+        "\1\45\1\46\1\47\1\50\1\51\1\52\1\53\1\54\16\uffff\1\112\1\uffff"+
+        "\1\113\1\114\1\116\1\121\10\uffff\1\15\1\13\1\uffff\1\56\1\uffff"+
+        "\1\31\1\20\1\24\1\25\1\41\1\uffff\1\65\17\uffff\1\1\4\uffff\1\5"+
+        "\7\uffff\1\63\3\uffff\1\66\1\67\1\76\2\uffff\1\105\7\uffff\1\57"+
+        "\4\uffff\1\62\4\uffff\1\101\1\100\3\uffff\1\74\2\uffff\1\3\5\uffff"+
+        "\1\107\1\77\1\uffff\1\64\1\uffff\1\103\1\uffff\1\60\1\71\3\uffff"+
         "\1\72\2\uffff\1\102\1\104\1\70\2\uffff\1\61\1\106\2\uffff\1\73\1"+
-        "\uffff\1\15";
+        "\uffff\1\16";
     static final String DFA19_specialS =
-        "\1\1\50\uffff\1\2\1\0\u00c0\uffff}>";
+        "\1\2\50\uffff\1\1\1\0\u00c0\uffff}>";
     static final String[] DFA19_transitionS = {
-            "\11\54\2\53\2\54\1\53\22\54\1\53\1\12\1\51\1\27\1\50\1\22\1"+
-            "\11\1\52\1\25\1\26\1\20\1\6\1\24\1\7\1\16\1\21\1\45\11\46\1"+
-            "\34\1\3\1\15\1\5\1\14\1\17\1\54\32\50\1\32\1\54\1\33\1\47\1"+
-            "\50\1\54\1\23\1\2\1\36\1\35\1\4\1\37\2\50\1\13\4\50\1\42\3\50"+
-            "\1\44\1\1\1\43\1\50\1\41\1\40\3\50\1\30\1\10\1\31\uff82\54",
+            "\11\54\2\53\2\54\1\53\22\54\1\53\1\13\1\51\1\30\1\50\1\23\1"+
+            "\12\1\52\1\26\1\27\1\21\1\7\1\25\1\10\1\17\1\22\1\45\11\46\1"+
+            "\2\1\4\1\16\1\6\1\15\1\20\1\54\32\50\1\33\1\54\1\34\1\47\1\50"+
+            "\1\54\1\24\1\3\1\36\1\35\1\5\1\37\2\50\1\14\4\50\1\42\3\50\1"+
+            "\44\1\1\1\43\1\50\1\41\1\40\3\50\1\31\1\11\1\32\uff82\54",
             "\1\57\1\55\1\uffff\1\56",
             "\1\61",
+            "\1\63",
             "",
-            "\1\64\1\uffff\1\63\11\uffff\1\65",
-            "\1\66\1\67",
-            "\1\71",
-            "\1\73\1\74",
-            "\1\76",
+            "\1\66\1\uffff\1\65\11\uffff\1\67",
+            "\1\70\1\71",
+            "\1\73",
+            "\1\75\1\76",
             "\1\100",
             "\1\102",
-            "\1\105\6\uffff\1\106\1\104",
-            "\1\107",
-            "\1\111\1\112",
-            "\1\114",
-            "\1\117\13\uffff\1\116",
-            "\1\121\3\uffff\1\122",
-            "\1\124\4\uffff\1\125",
+            "\1\104",
+            "\1\107\6\uffff\1\110\1\106",
+            "\1\111",
+            "\1\113\1\114",
+            "\1\116",
+            "\1\121\13\uffff\1\120",
+            "\1\123\3\uffff\1\124",
+            "\1\126\4\uffff\1\127",
             "",
-            "\1\130",
-            "",
-            "",
-            "",
+            "\1\132",
             "",
             "",
             "",
             "",
             "",
-            "\1\141",
+            "",
+            "",
+            "",
             "\1\143\11\uffff\1\144",
             "\1\145",
             "\1\147\7\uffff\1\150\5\uffff\1\146",
@@ -3153,6 +3153,8 @@ public class InternalTortoiseShellLexer extends Lexer {
             "\1\167\15\uffff\1\170",
             "\1\171",
             "\1\172",
+            "",
+            "",
             "",
             "\1\173",
             "",
@@ -3196,8 +3198,6 @@ public class InternalTortoiseShellLexer extends Lexer {
             "",
             "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
             "\60",
-            "",
-            "",
             "",
             "",
             "",
@@ -3420,64 +3420,74 @@ public class InternalTortoiseShellLexer extends Lexer {
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
+                        int LA19_41 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA19_41>='\u0000' && LA19_41<='\uFFFF')) ) {s = 117;}
+
+                        else s = 44;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
                         int LA19_0 = input.LA(1);
 
                         s = -1;
                         if ( (LA19_0=='s') ) {s = 1;}
 
-                        else if ( (LA19_0=='b') ) {s = 2;}
+                        else if ( (LA19_0==':') ) {s = 2;}
 
-                        else if ( (LA19_0==';') ) {s = 3;}
+                        else if ( (LA19_0=='b') ) {s = 3;}
 
-                        else if ( (LA19_0=='e') ) {s = 4;}
+                        else if ( (LA19_0==';') ) {s = 4;}
 
-                        else if ( (LA19_0=='=') ) {s = 5;}
+                        else if ( (LA19_0=='e') ) {s = 5;}
 
-                        else if ( (LA19_0=='+') ) {s = 6;}
+                        else if ( (LA19_0=='=') ) {s = 6;}
 
-                        else if ( (LA19_0=='-') ) {s = 7;}
+                        else if ( (LA19_0=='+') ) {s = 7;}
 
-                        else if ( (LA19_0=='|') ) {s = 8;}
+                        else if ( (LA19_0=='-') ) {s = 8;}
 
-                        else if ( (LA19_0=='&') ) {s = 9;}
+                        else if ( (LA19_0=='|') ) {s = 9;}
 
-                        else if ( (LA19_0=='!') ) {s = 10;}
+                        else if ( (LA19_0=='&') ) {s = 10;}
 
-                        else if ( (LA19_0=='i') ) {s = 11;}
+                        else if ( (LA19_0=='!') ) {s = 11;}
 
-                        else if ( (LA19_0=='>') ) {s = 12;}
+                        else if ( (LA19_0=='i') ) {s = 12;}
 
-                        else if ( (LA19_0=='<') ) {s = 13;}
+                        else if ( (LA19_0=='>') ) {s = 13;}
 
-                        else if ( (LA19_0=='.') ) {s = 14;}
+                        else if ( (LA19_0=='<') ) {s = 14;}
 
-                        else if ( (LA19_0=='?') ) {s = 15;}
+                        else if ( (LA19_0=='.') ) {s = 15;}
 
-                        else if ( (LA19_0=='*') ) {s = 16;}
+                        else if ( (LA19_0=='?') ) {s = 16;}
 
-                        else if ( (LA19_0=='/') ) {s = 17;}
+                        else if ( (LA19_0=='*') ) {s = 17;}
 
-                        else if ( (LA19_0=='%') ) {s = 18;}
+                        else if ( (LA19_0=='/') ) {s = 18;}
 
-                        else if ( (LA19_0=='a') ) {s = 19;}
+                        else if ( (LA19_0=='%') ) {s = 19;}
 
-                        else if ( (LA19_0==',') ) {s = 20;}
+                        else if ( (LA19_0=='a') ) {s = 20;}
 
-                        else if ( (LA19_0=='(') ) {s = 21;}
+                        else if ( (LA19_0==',') ) {s = 21;}
 
-                        else if ( (LA19_0==')') ) {s = 22;}
+                        else if ( (LA19_0=='(') ) {s = 22;}
 
-                        else if ( (LA19_0=='#') ) {s = 23;}
+                        else if ( (LA19_0==')') ) {s = 23;}
 
-                        else if ( (LA19_0=='{') ) {s = 24;}
+                        else if ( (LA19_0=='#') ) {s = 24;}
 
-                        else if ( (LA19_0=='}') ) {s = 25;}
+                        else if ( (LA19_0=='{') ) {s = 25;}
 
-                        else if ( (LA19_0=='[') ) {s = 26;}
+                        else if ( (LA19_0=='}') ) {s = 26;}
 
-                        else if ( (LA19_0==']') ) {s = 27;}
+                        else if ( (LA19_0=='[') ) {s = 27;}
 
-                        else if ( (LA19_0==':') ) {s = 28;}
+                        else if ( (LA19_0==']') ) {s = 28;}
 
                         else if ( (LA19_0=='d') ) {s = 29;}
 
@@ -3510,16 +3520,6 @@ public class InternalTortoiseShellLexer extends Lexer {
                         else if ( ((LA19_0>='\t' && LA19_0<='\n')||LA19_0=='\r'||LA19_0==' ') ) {s = 43;}
 
                         else if ( ((LA19_0>='\u0000' && LA19_0<='\b')||(LA19_0>='\u000B' && LA19_0<='\f')||(LA19_0>='\u000E' && LA19_0<='\u001F')||LA19_0=='@'||LA19_0=='\\'||LA19_0=='`'||(LA19_0>='~' && LA19_0<='\uFFFF')) ) {s = 44;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA19_41 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA19_41>='\u0000' && LA19_41<='\uFFFF')) ) {s = 117;}
-
-                        else s = 44;
 
                         if ( s>=0 ) return s;
                         break;

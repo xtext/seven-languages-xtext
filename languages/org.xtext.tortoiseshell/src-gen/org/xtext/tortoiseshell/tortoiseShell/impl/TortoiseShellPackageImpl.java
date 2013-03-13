@@ -159,9 +159,19 @@ public class TortoiseShellPackageImpl extends EPackageImpl implements TortoiseSh
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSubProgram_Parameters()
+  public EReference getSubProgram_ReturnType()
   {
     return (EReference)subProgramEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSubProgram_Parameters()
+  {
+    return (EReference)subProgramEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -219,6 +229,7 @@ public class TortoiseShellPackageImpl extends EPackageImpl implements TortoiseSh
 
     subProgramEClass = createEClass(SUB_PROGRAM);
     createEAttribute(subProgramEClass, SUB_PROGRAM__NAME);
+    createEReference(subProgramEClass, SUB_PROGRAM__RETURN_TYPE);
     createEReference(subProgramEClass, SUB_PROGRAM__PARAMETERS);
 
     executableEClass = createEClass(EXECUTABLE);
@@ -267,6 +278,7 @@ public class TortoiseShellPackageImpl extends EPackageImpl implements TortoiseSh
 
     initEClass(subProgramEClass, SubProgram.class, "SubProgram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSubProgram_Name(), ecorePackage.getEString(), "name", null, 0, 1, SubProgram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSubProgram_ReturnType(), theTypesPackage.getJvmTypeReference(), null, "returnType", null, 0, 1, SubProgram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSubProgram_Parameters(), theTypesPackage.getJvmFormalParameter(), null, "parameters", null, 0, -1, SubProgram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(executableEClass, Executable.class, "Executable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

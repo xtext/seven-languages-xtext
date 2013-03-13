@@ -156,19 +156,41 @@ ruleSubProgram returns [EObject current=null]
 	    }
 
 )
-)(
+)(	otherlv_2=':' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getSubProgramAccess().getColonKeyword_2_0());
+    }
+(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getSubProgramAccess().getParametersFullJvmFormalParameterParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getSubProgramAccess().getReturnTypeJvmTypeReferenceParserRuleCall_2_1_0()); 
 	    }
-		lv_parameters_2_0=ruleFullJvmFormalParameter		{
+		lv_returnType_3_0=ruleJvmTypeReference		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getSubProgramRule());
+	        }
+       		set(
+       			$current, 
+       			"returnType",
+        		lv_returnType_3_0, 
+        		"JvmTypeReference");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getSubProgramAccess().getParametersFullJvmFormalParameterParserRuleCall_3_0()); 
+	    }
+		lv_parameters_4_0=ruleFullJvmFormalParameter		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getSubProgramRule());
 	        }
        		add(
        			$current, 
        			"parameters",
-        		lv_parameters_2_0, 
+        		lv_parameters_4_0, 
         		"FullJvmFormalParameter");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -177,16 +199,16 @@ ruleSubProgram returns [EObject current=null]
 )*(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getSubProgramAccess().getBodyBodyParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getSubProgramAccess().getBodyBodyParserRuleCall_4_0()); 
 	    }
-		lv_body_3_0=ruleBody		{
+		lv_body_5_0=ruleBody		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getSubProgramRule());
 	        }
        		set(
        			$current, 
        			"body",
-        		lv_body_3_0, 
+        		lv_body_5_0, 
         		"Body");
 	        afterParserOrEnumRuleCall();
 	    }

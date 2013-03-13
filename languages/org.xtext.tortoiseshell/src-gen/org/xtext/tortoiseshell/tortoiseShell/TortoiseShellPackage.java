@@ -150,13 +150,22 @@ public interface TortoiseShellPackage extends EPackage
   int SUB_PROGRAM__NAME = EXECUTABLE_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Return Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUB_PROGRAM__RETURN_TYPE = EXECUTABLE_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SUB_PROGRAM__PARAMETERS = EXECUTABLE_FEATURE_COUNT + 1;
+  int SUB_PROGRAM__PARAMETERS = EXECUTABLE_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Sub Program</em>' class.
@@ -165,7 +174,7 @@ public interface TortoiseShellPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUB_PROGRAM_FEATURE_COUNT = EXECUTABLE_FEATURE_COUNT + 2;
+  int SUB_PROGRAM_FEATURE_COUNT = EXECUTABLE_FEATURE_COUNT + 3;
 
 
   /**
@@ -209,6 +218,17 @@ public interface TortoiseShellPackage extends EPackage
    * @generated
    */
   EAttribute getSubProgram_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.tortoiseshell.tortoiseShell.SubProgram#getReturnType <em>Return Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Return Type</em>'.
+   * @see org.xtext.tortoiseshell.tortoiseShell.SubProgram#getReturnType()
+   * @see #getSubProgram()
+   * @generated
+   */
+  EReference getSubProgram_ReturnType();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.xtext.tortoiseshell.tortoiseShell.SubProgram#getParameters <em>Parameters</em>}'.
@@ -300,6 +320,14 @@ public interface TortoiseShellPackage extends EPackage
      * @generated
      */
     EAttribute SUB_PROGRAM__NAME = eINSTANCE.getSubProgram_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Return Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SUB_PROGRAM__RETURN_TYPE = eINSTANCE.getSubProgram_ReturnType();
 
     /**
      * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.

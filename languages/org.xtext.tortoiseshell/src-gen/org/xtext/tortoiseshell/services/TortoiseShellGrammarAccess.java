@@ -53,16 +53,20 @@ public class TortoiseShellGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSubKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameValidIDParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Assignment cParametersAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cParametersFullJvmFormalParameterParserRuleCall_2_0 = (RuleCall)cParametersAssignment_2.eContents().get(0);
-		private final Assignment cBodyAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cBodyBodyParserRuleCall_3_0 = (RuleCall)cBodyAssignment_3.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cReturnTypeAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cReturnTypeJvmTypeReferenceParserRuleCall_2_1_0 = (RuleCall)cReturnTypeAssignment_2_1.eContents().get(0);
+		private final Assignment cParametersAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cParametersFullJvmFormalParameterParserRuleCall_3_0 = (RuleCall)cParametersAssignment_3.eContents().get(0);
+		private final Assignment cBodyAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cBodyBodyParserRuleCall_4_0 = (RuleCall)cBodyAssignment_4.eContents().get(0);
 		
 		//SubProgram:
-		//	"sub" name=ValidID parameters+=FullJvmFormalParameter* body=Body;
+		//	"sub" name=ValidID (":" returnType=JvmTypeReference)? parameters+=FullJvmFormalParameter* body=Body;
 		public ParserRule getRule() { return rule; }
 
-		//"sub" name=ValidID parameters+=FullJvmFormalParameter* body=Body
+		//"sub" name=ValidID (":" returnType=JvmTypeReference)? parameters+=FullJvmFormalParameter* body=Body
 		public Group getGroup() { return cGroup; }
 
 		//"sub"
@@ -74,17 +78,29 @@ public class TortoiseShellGrammarAccess extends AbstractGrammarElementFinder {
 		//ValidID
 		public RuleCall getNameValidIDParserRuleCall_1_0() { return cNameValidIDParserRuleCall_1_0; }
 
+		//(":" returnType=JvmTypeReference)?
+		public Group getGroup_2() { return cGroup_2; }
+
+		//":"
+		public Keyword getColonKeyword_2_0() { return cColonKeyword_2_0; }
+
+		//returnType=JvmTypeReference
+		public Assignment getReturnTypeAssignment_2_1() { return cReturnTypeAssignment_2_1; }
+
+		//JvmTypeReference
+		public RuleCall getReturnTypeJvmTypeReferenceParserRuleCall_2_1_0() { return cReturnTypeJvmTypeReferenceParserRuleCall_2_1_0; }
+
 		//parameters+=FullJvmFormalParameter*
-		public Assignment getParametersAssignment_2() { return cParametersAssignment_2; }
+		public Assignment getParametersAssignment_3() { return cParametersAssignment_3; }
 
 		//FullJvmFormalParameter
-		public RuleCall getParametersFullJvmFormalParameterParserRuleCall_2_0() { return cParametersFullJvmFormalParameterParserRuleCall_2_0; }
+		public RuleCall getParametersFullJvmFormalParameterParserRuleCall_3_0() { return cParametersFullJvmFormalParameterParserRuleCall_3_0; }
 
 		//body=Body
-		public Assignment getBodyAssignment_3() { return cBodyAssignment_3; }
+		public Assignment getBodyAssignment_4() { return cBodyAssignment_4; }
 
 		//Body
-		public RuleCall getBodyBodyParserRuleCall_3_0() { return cBodyBodyParserRuleCall_3_0; }
+		public RuleCall getBodyBodyParserRuleCall_4_0() { return cBodyBodyParserRuleCall_4_0; }
 	}
 
 	public class BodyElements extends AbstractParserRuleElementFinder {
@@ -202,7 +218,7 @@ public class TortoiseShellGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SubProgram:
-	//	"sub" name=ValidID parameters+=FullJvmFormalParameter* body=Body;
+	//	"sub" name=ValidID (":" returnType=JvmTypeReference)? parameters+=FullJvmFormalParameter* body=Body;
 	public SubProgramElements getSubProgramAccess() {
 		return (pSubProgram != null) ? pSubProgram : (pSubProgram = new SubProgramElements());
 	}

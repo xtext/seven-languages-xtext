@@ -15,7 +15,7 @@ Program :
 	subPrograms+=SubProgram*;
 	
 SubProgram:
-	'sub' name=ValidID
+	'sub' name=ValidID (':' returnType=JvmTypeReference)?
 	(parameters += FullJvmFormalParameter)*
 	body=Body;
 

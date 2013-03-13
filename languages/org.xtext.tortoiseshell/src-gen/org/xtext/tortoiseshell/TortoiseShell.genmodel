@@ -12,6 +12,7 @@
     </genClasses>
     <genClasses ecoreClass="TortoiseShell.ecore#//SubProgram">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TortoiseShell.ecore#//SubProgram/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TortoiseShell.ecore#//SubProgram/returnType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TortoiseShell.ecore#//SubProgram/parameters"/>
     </genClasses>
     <genClasses ecoreClass="TortoiseShell.ecore#//Executable">

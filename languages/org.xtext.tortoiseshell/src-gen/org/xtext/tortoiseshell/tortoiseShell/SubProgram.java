@@ -5,6 +5,7 @@ package org.xtext.tortoiseshell.tortoiseShell;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.xtext.common.types.JvmFormalParameter;
+import org.eclipse.xtext.common.types.JvmTypeReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,6 +16,7 @@ import org.eclipse.xtext.common.types.JvmFormalParameter;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.xtext.tortoiseshell.tortoiseShell.SubProgram#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.tortoiseshell.tortoiseShell.SubProgram#getReturnType <em>Return Type</em>}</li>
  *   <li>{@link org.xtext.tortoiseshell.tortoiseShell.SubProgram#getParameters <em>Parameters</em>}</li>
  * </ul>
  * </p>
@@ -50,6 +52,32 @@ public interface SubProgram extends Executable
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Return Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Return Type</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Return Type</em>' containment reference.
+   * @see #setReturnType(JvmTypeReference)
+   * @see org.xtext.tortoiseshell.tortoiseShell.TortoiseShellPackage#getSubProgram_ReturnType()
+   * @model containment="true"
+   * @generated
+   */
+  JvmTypeReference getReturnType();
+
+  /**
+   * Sets the value of the '{@link org.xtext.tortoiseshell.tortoiseShell.SubProgram#getReturnType <em>Return Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Return Type</em>' containment reference.
+   * @see #getReturnType()
+   * @generated
+   */
+  void setReturnType(JvmTypeReference value);
 
   /**
    * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.

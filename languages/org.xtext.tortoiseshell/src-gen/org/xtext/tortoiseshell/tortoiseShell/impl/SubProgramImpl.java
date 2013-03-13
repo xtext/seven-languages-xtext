@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.xtext.common.types.JvmFormalParameter;
+import org.eclipse.xtext.common.types.JvmTypeReference;
 
 import org.xtext.tortoiseshell.tortoiseShell.SubProgram;
 import org.xtext.tortoiseshell.tortoiseShell.TortoiseShellPackage;
@@ -30,6 +31,7 @@ import org.xtext.tortoiseshell.tortoiseShell.TortoiseShellPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.xtext.tortoiseshell.tortoiseShell.impl.SubProgramImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.tortoiseshell.tortoiseShell.impl.SubProgramImpl#getReturnType <em>Return Type</em>}</li>
  *   <li>{@link org.xtext.tortoiseshell.tortoiseShell.impl.SubProgramImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
  * </p>
@@ -57,6 +59,16 @@ public class SubProgramImpl extends ExecutableImpl implements SubProgram
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getReturnType() <em>Return Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getReturnType()
+   * @generated
+   * @ordered
+   */
+  protected JvmTypeReference returnType;
 
   /**
    * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
@@ -117,6 +129,54 @@ public class SubProgramImpl extends ExecutableImpl implements SubProgram
    * <!-- end-user-doc -->
    * @generated
    */
+  public JvmTypeReference getReturnType()
+  {
+    return returnType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetReturnType(JvmTypeReference newReturnType, NotificationChain msgs)
+  {
+    JvmTypeReference oldReturnType = returnType;
+    returnType = newReturnType;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TortoiseShellPackage.SUB_PROGRAM__RETURN_TYPE, oldReturnType, newReturnType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setReturnType(JvmTypeReference newReturnType)
+  {
+    if (newReturnType != returnType)
+    {
+      NotificationChain msgs = null;
+      if (returnType != null)
+        msgs = ((InternalEObject)returnType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TortoiseShellPackage.SUB_PROGRAM__RETURN_TYPE, null, msgs);
+      if (newReturnType != null)
+        msgs = ((InternalEObject)newReturnType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TortoiseShellPackage.SUB_PROGRAM__RETURN_TYPE, null, msgs);
+      msgs = basicSetReturnType(newReturnType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TortoiseShellPackage.SUB_PROGRAM__RETURN_TYPE, newReturnType, newReturnType));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<JvmFormalParameter> getParameters()
   {
     if (parameters == null)
@@ -136,6 +196,8 @@ public class SubProgramImpl extends ExecutableImpl implements SubProgram
   {
     switch (featureID)
     {
+      case TortoiseShellPackage.SUB_PROGRAM__RETURN_TYPE:
+        return basicSetReturnType(null, msgs);
       case TortoiseShellPackage.SUB_PROGRAM__PARAMETERS:
         return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
     }
@@ -154,6 +216,8 @@ public class SubProgramImpl extends ExecutableImpl implements SubProgram
     {
       case TortoiseShellPackage.SUB_PROGRAM__NAME:
         return getName();
+      case TortoiseShellPackage.SUB_PROGRAM__RETURN_TYPE:
+        return getReturnType();
       case TortoiseShellPackage.SUB_PROGRAM__PARAMETERS:
         return getParameters();
     }
@@ -173,6 +237,9 @@ public class SubProgramImpl extends ExecutableImpl implements SubProgram
     {
       case TortoiseShellPackage.SUB_PROGRAM__NAME:
         setName((String)newValue);
+        return;
+      case TortoiseShellPackage.SUB_PROGRAM__RETURN_TYPE:
+        setReturnType((JvmTypeReference)newValue);
         return;
       case TortoiseShellPackage.SUB_PROGRAM__PARAMETERS:
         getParameters().clear();
@@ -195,6 +262,9 @@ public class SubProgramImpl extends ExecutableImpl implements SubProgram
       case TortoiseShellPackage.SUB_PROGRAM__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case TortoiseShellPackage.SUB_PROGRAM__RETURN_TYPE:
+        setReturnType((JvmTypeReference)null);
+        return;
       case TortoiseShellPackage.SUB_PROGRAM__PARAMETERS:
         getParameters().clear();
         return;
@@ -214,6 +284,8 @@ public class SubProgramImpl extends ExecutableImpl implements SubProgram
     {
       case TortoiseShellPackage.SUB_PROGRAM__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case TortoiseShellPackage.SUB_PROGRAM__RETURN_TYPE:
+        return returnType != null;
       case TortoiseShellPackage.SUB_PROGRAM__PARAMETERS:
         return parameters != null && !parameters.isEmpty();
     }

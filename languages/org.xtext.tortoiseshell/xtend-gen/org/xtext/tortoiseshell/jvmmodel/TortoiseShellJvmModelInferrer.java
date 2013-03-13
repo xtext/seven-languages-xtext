@@ -62,8 +62,15 @@ public class TortoiseShellJvmModelInferrer extends AbstractModelInferrer {
           for (final SubProgram subProgram : _subPrograms) {
             EList<JvmMember> _members_1 = it.getMembers();
             String _name = subProgram.getName();
-            XBlockExpression _body_1 = subProgram.getBody();
-            JvmTypeReference _inferredType = TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.inferredType(_body_1);
+            JvmTypeReference _elvis = null;
+            JvmTypeReference _returnType = subProgram.getReturnType();
+            if (_returnType != null) {
+              _elvis = _returnType;
+            } else {
+              XBlockExpression _body_1 = subProgram.getBody();
+              JvmTypeReference _inferredType = TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.inferredType(_body_1);
+              _elvis = ObjectExtensions.<JvmTypeReference>operator_elvis(_returnType, _inferredType);
+            }
             final Procedure1<JvmOperation> _function_1 = new Procedure1<JvmOperation>() {
                 public void apply(final JvmOperation it) {
                   EList<JvmFormalParameter> _parameters = subProgram.getParameters();
@@ -78,7 +85,7 @@ public class TortoiseShellJvmModelInferrer extends AbstractModelInferrer {
                   TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _body);
                 }
               };
-            JvmOperation _method_1 = TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.toMethod(subProgram, _name, _inferredType, _function_1);
+            JvmOperation _method_1 = TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.toMethod(subProgram, _name, _elvis, _function_1);
             TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members_1, _method_1);
           }
         }

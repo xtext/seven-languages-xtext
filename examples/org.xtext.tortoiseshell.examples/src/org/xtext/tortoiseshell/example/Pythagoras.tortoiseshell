@@ -14,7 +14,7 @@ begin
 	squares(length, alpha, scaleA, scaleB)
 end
 
-sub squares
+sub squares : void
 	double length
 	double alpha
 	double scaleA

@@ -1044,7 +1044,7 @@ public class TortoiseShellSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=ValidID parameters+=FullJvmFormalParameter* body=Body)
+	 *     (name=ValidID returnType=JvmTypeReference? parameters+=FullJvmFormalParameter* body=Body)
 	 */
 	protected void sequence_SubProgram(EObject context, SubProgram semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
