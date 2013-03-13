@@ -61,7 +61,10 @@ class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoiseInter
 				context.newValue(QualifiedName::create(param.name), argumentValues.get(index))
 				index = index + 1	
 			}
-			evaluate((executable as Executable).body, context, CancelIndicator::NullImpl)
+			val result = evaluate((executable as Executable).body, context, CancelIndicator::NullImpl)
+			if(result.exception != null)
+				throw result.exception
+			result.result
 		} else {
 			super.invokeOperation(operation, receiver, argumentValues)
 		}

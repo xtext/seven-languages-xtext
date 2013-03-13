@@ -92,39 +92,49 @@ public class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoi
   }
   
   protected Object invokeOperation(final JvmOperation operation, final Object receiver, final List<Object> argumentValues) {
-    Object _xblockexpression = null;
-    {
-      Set<EObject> _sourceElements = this._iJvmModelAssociations.getSourceElements(operation);
-      final EObject executable = IterableExtensions.<EObject>head(_sourceElements);
-      Object _xifexpression = null;
-      if ((executable instanceof Executable)) {
-        IEvaluationResult _xblockexpression_1 = null;
-        {
-          final IEvaluationContext context = this.createContext();
-          context.newValue(XbaseScopeProvider.THIS, this.tortoise);
-          int index = 0;
-          EList<JvmFormalParameter> _parameters = operation.getParameters();
-          for (final JvmFormalParameter param : _parameters) {
-            {
-              String _name = param.getName();
-              QualifiedName _create = QualifiedName.create(_name);
-              Object _get = argumentValues.get(index);
-              context.newValue(_create, _get);
-              int _plus = (index + 1);
-              index = _plus;
+    try {
+      Object _xblockexpression = null;
+      {
+        Set<EObject> _sourceElements = this._iJvmModelAssociations.getSourceElements(operation);
+        final EObject executable = IterableExtensions.<EObject>head(_sourceElements);
+        Object _xifexpression = null;
+        if ((executable instanceof Executable)) {
+          Object _xblockexpression_1 = null;
+          {
+            final IEvaluationContext context = this.createContext();
+            context.newValue(XbaseScopeProvider.THIS, this.tortoise);
+            int index = 0;
+            EList<JvmFormalParameter> _parameters = operation.getParameters();
+            for (final JvmFormalParameter param : _parameters) {
+              {
+                String _name = param.getName();
+                QualifiedName _create = QualifiedName.create(_name);
+                Object _get = argumentValues.get(index);
+                context.newValue(_create, _get);
+                int _plus = (index + 1);
+                index = _plus;
+              }
             }
+            XBlockExpression _body = ((Executable) executable).getBody();
+            final IEvaluationResult result = this.evaluate(_body, context, CancelIndicator.NullImpl);
+            Throwable _exception = result.getException();
+            boolean _notEquals = ObjectExtensions.operator_notEquals(_exception, null);
+            if (_notEquals) {
+              throw result.getException();
+            }
+            Object _result = result.getResult();
+            _xblockexpression_1 = (_result);
           }
-          XBlockExpression _body = ((Executable) executable).getBody();
-          IEvaluationResult _evaluate = this.evaluate(_body, context, CancelIndicator.NullImpl);
-          _xblockexpression_1 = (_evaluate);
+          _xifexpression = _xblockexpression_1;
+        } else {
+          Object _invokeOperation = super.invokeOperation(operation, receiver, argumentValues);
+          _xifexpression = _invokeOperation;
         }
-        _xifexpression = _xblockexpression_1;
-      } else {
-        Object _invokeOperation = super.invokeOperation(operation, receiver, argumentValues);
-        _xifexpression = _invokeOperation;
+        _xblockexpression = (_xifexpression);
       }
-      _xblockexpression = (_xifexpression);
+      return _xblockexpression;
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
     }
-    return _xblockexpression;
   }
 }

@@ -28,7 +28,7 @@ class TortoiseShellJvmModelInferrer extends AbstractModelInferrer {
    					body = program.body
    				]
    			for (subProgram : program.subPrograms)
-   				members += subProgram.toMethod(subProgram.name, program.newTypeRef(Void::TYPE)) [
+   				members += subProgram.toMethod(subProgram.name, inferredType(subProgram.body)) [
 		   			for(subParameter: subProgram.parameters)
 		   				parameters += subParameter.toParameter(subParameter.name, subParameter.parameterType)
    					body = subProgram.body
