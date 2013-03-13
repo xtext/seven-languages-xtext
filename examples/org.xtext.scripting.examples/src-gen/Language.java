@@ -13,7 +13,7 @@ import org.eclipse.xtext.xbase.lib.StringExtensions;
 
 @SuppressWarnings("all")
 public class Language {
-  public static void main(final String[] args) {
+  public static void main(final String... args) {
     /* null */
     /* "Hello World" */
     /* 42 */

@@ -1,9 +1,3 @@
-import java.math.BigInteger
-
-
-
-
-
 /******************** Literals ***********************/
 
 null					// Null Literal
@@ -88,9 +82,9 @@ val myString = 						// if-expression
 val itemis = newArrayList('foo','bar', 123, 123456789BI)
 for(i:itemis) 
 	switch i {                 // switch-expression
-		case 'foo' : 		"it's foo"
-		case 'bar' : 		'a bar'
-		Integer case 123: 	'found integer'
-		BigInteger: 			"it's huge, soo long:" + i.bitLength
-		default : 			"don't know"
+		case 'foo' : 			"it's foo"
+		case 'bar' : 			'a bar'
+		Integer case 123: 		'found integer'
+		java.math.BigInteger:	"it's huge, soo long:" + i.bitLength
+		default : 				"don't know"
 	}
