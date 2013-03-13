@@ -114,6 +114,16 @@
 			</enabledWhen>
 	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
         </page>
+        <page
+              category="org.xtext.httprouting.Route"
+              class="org.xtext.httprouting.ui.RouteExecutableExtensionFactory:org.eclipse.xtext.ui.validation.ValidatorPreferencePage"
+              id="org.xtext.httprouting.Route.validator.preferencePage"
+              name="Errors/Warnings">
+           <keywordReference id="org.xtext.httprouting.ui.keyword_Route"/>
+           <keywordReference
+                 id="org.eclipse.jdt.ui.severities">
+           </keywordReference>
+        </page>
     </extension>
     <extension
         point="org.eclipse.ui.keywords">

@@ -11,6 +11,8 @@ import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.xtext.ui.editor.outline.IOutlineTreeProvider;
 import org.eclipse.xtext.ui.editor.outline.impl.IOutlineTreeStructureProvider;
+import org.eclipse.xtext.ui.validation.AbstractValidatorConfigurationBlock;
+import org.eclipse.xtext.xbase.ui.validation.XbaseValidationConfigurationBlock;
 import org.xtext.httprouting.ui.labeling.RouteLabelProvider;
 import org.xtext.httprouting.ui.outline.RouteOutlineTreeProvider;
 
@@ -33,5 +35,9 @@ public class RouteUiModule extends org.xtext.httprouting.ui.AbstractRouteUiModul
 
 	public Class<? extends IOutlineTreeStructureProvider> bindIOutlineTreeStructureProvider() {
 		return RouteOutlineTreeProvider.class;
+	}
+	
+	public Class<? extends AbstractValidatorConfigurationBlock> bindAbstractValidatorConfigurationBlock() {
+		return XbaseValidationConfigurationBlock.class;
 	}
 }

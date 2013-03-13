@@ -12,7 +12,7 @@ GET /guess/:myGuess
  * The guess is 42 as parameter
  */
 GET /guess
-	when request.getParameter('theGuess')?.equals("42") do controller.handleAnswerToEverything
+	when request.getParameter('theGuess')?.equals("42") do controller.handleAnswerToEverything 
 
 /**
  * having the guess as part of URL

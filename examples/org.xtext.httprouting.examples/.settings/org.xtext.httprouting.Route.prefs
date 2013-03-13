@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+is_project_specific=true
+org.eclipse.xtext.xbase.validation.IssueCodes.discouraged_reference=
+org.eclipse.xtext.xbase.validation.IssueCodes.forbidden_reference=
+org.eclipse.xtext.xbase.validation.IssueCodes.import_unsued=
+org.eclipse.xtext.xbase.validation.IssueCodes.import_wildcard_deprecated=
+org.eclipse.xtext.xbase.validation.IssueCodes.null_safe_feature_call_on_primitive_valued_feature=ignore
+org.eclipse.xtext.xbase.validation.IssueCodes.obsolete_cast=
+org.eclipse.xtext.xbase.validation.IssueCodes.obsolete_instanceof=
+org.eclipse.xtext.xbase.validation.IssueCodes.unhandled_exception=
+org.eclipse.xtext.xbase.validation.IssueCodes.unused_local_variable=
