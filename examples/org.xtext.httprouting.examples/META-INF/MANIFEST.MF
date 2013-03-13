@@ -4,7 +4,7 @@ Bundle-Name: Route
 Bundle-SymbolicName: org.xtext.httprouting.examples
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: com.google.inject;bundle-version="3.0.0",
- org.eclipse.xtext.xbase.lib;bundle-version="2.3.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.4.0",
  org.eclipse.jetty.http,
  javax.servlet;bundle-version="2.5.0",
  org.eclipse.jetty.io,
