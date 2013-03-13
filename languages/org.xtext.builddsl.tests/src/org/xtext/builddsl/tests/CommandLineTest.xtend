@@ -115,7 +115,7 @@ class CommandLineTest {
 		val file = '''
 			package foo
 			import java.io.File
-			import org.xtext.builddsl.lib.JavaCompiler
+			import static org.xtext.builddsl.lib.JavaCompiler.*
 			
 			param File source
 			param File dest

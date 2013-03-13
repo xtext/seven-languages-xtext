@@ -190,7 +190,7 @@ public class CommandLineTest {
     _builder.newLine();
     _builder.append("import java.io.File");
     _builder.newLine();
-    _builder.append("import org.xtext.builddsl.lib.JavaCompiler");
+    _builder.append("import static org.xtext.builddsl.lib.JavaCompiler.*");
     _builder.newLine();
     _builder.newLine();
     _builder.append("param File source");

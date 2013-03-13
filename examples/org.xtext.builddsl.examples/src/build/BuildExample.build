@@ -1,8 +1,8 @@
 package build
 
-import java.io.File
-import com.google.common.io.Files
-import org.xtext.builddsl.lib.JavaCompiler
+import static org.xtext.builddsl.lib.JavaCompiler.*
+
+import static extension com.google.common.io.Files.*
 
 param project 	= 'example-project'.file
 param source 	= project/ 'src'

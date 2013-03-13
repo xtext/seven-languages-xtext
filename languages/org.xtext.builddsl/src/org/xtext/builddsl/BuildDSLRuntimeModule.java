@@ -8,9 +8,7 @@
 package org.xtext.builddsl;
 
 import org.eclipse.xtext.service.SingletonBinding;
-import org.eclipse.xtext.xbase.annotations.typesystem.XbaseWithAnnotationsBatchScopeProvider;
 import org.eclipse.xtext.xbase.scoping.batch.ImplicitlyImportedTypes;
-import org.xtext.builddsl.scoping.BuildDSLBatchScopeProvider;
 import org.xtext.builddsl.scoping.BuildDSLImplicitlyImportedTypes;
 import org.xtext.builddsl.validation.BuildDSLValidator;
 
@@ -24,10 +22,6 @@ public class BuildDSLRuntimeModule extends org.xtext.builddsl.AbstractBuildDSLRu
 		return BuildDSLValidator.class;
 	}
 
-	public Class<? extends XbaseWithAnnotationsBatchScopeProvider> bindXbaseWithAnnotationsBatchScopeProvider() {
-		return BuildDSLBatchScopeProvider.class;
-	}
-	
 	public Class<? extends ImplicitlyImportedTypes> bindImplicitlyImportedTypes() {
 		return BuildDSLImplicitlyImportedTypes.class;
 	}
