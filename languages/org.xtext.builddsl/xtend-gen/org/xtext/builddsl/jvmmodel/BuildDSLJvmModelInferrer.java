@@ -7,6 +7,7 @@
  */
 package org.xtext.builddsl.jvmmodel;
 
+import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
 import java.util.Arrays;
@@ -212,7 +213,7 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
   public String getJavaClassName(final BuildFile it) {
     String _xifexpression = null;
     String _name = it.getName();
-    boolean _equals = ObjectExtensions.operator_equals(_name, null);
+    boolean _equals = Objects.equal(_name, null);
     if (_equals) {
       Resource _eResource = it.eResource();
       URI _uRI = _eResource.getURI();

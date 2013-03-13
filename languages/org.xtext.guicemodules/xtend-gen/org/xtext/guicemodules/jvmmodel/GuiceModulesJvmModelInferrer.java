@@ -7,6 +7,7 @@
  */
 package org.xtext.guicemodules.jvmmodel;
 
+import com.google.common.base.Objects;
 import com.google.inject.Binder;
 import com.google.inject.Inject;
 import com.google.inject.Key;
@@ -42,7 +43,6 @@ import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
-import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 import org.xtext.guicemodules.guiceModules.BindingAST;
@@ -65,7 +65,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
   
   protected void _infer(final ModuleAST module, final IJvmDeclaredTypeAcceptor acceptor, final boolean preIndexingPhase) {
     JvmTypeReference _newTypeRef = this.builder.newTypeRef(module, Key.class);
-    boolean _equals = ObjectExtensions.operator_equals(_newTypeRef, null);
+    boolean _equals = Objects.equal(_newTypeRef, null);
     if (_equals) {
       return;
     }
@@ -124,7 +124,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
           for (final BindingAST binding : _bindings) {
             {
               XExpression _toInstance = binding.getToInstance();
-              boolean _notEquals = ObjectExtensions.operator_notEquals(_toInstance, null);
+              boolean _notEquals = (!Objects.equal(_toInstance, null));
               if (_notEquals) {
                 EList<JvmMember> _members_1 = it.getMembers();
                 String _syntheticToInstanceName = GuiceModulesJvmModelInferrer.this.syntheticToInstanceName(binding);
@@ -142,7 +142,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
               }
               KeyAST _to = binding.getTo();
               XAnnotation _annotation = _to==null?(XAnnotation)null:_to.getAnnotation();
-              boolean _notEquals_1 = ObjectExtensions.operator_notEquals(_annotation, null);
+              boolean _notEquals_1 = (!Objects.equal(_annotation, null));
               if (_notEquals_1) {
                 EList<JvmMember> _members_2 = it.getMembers();
                 KeyAST _to_1 = binding.getTo();
@@ -163,7 +163,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
               }
               KeyAST _from_1 = binding.getFrom();
               XAnnotation _annotation_1 = _from_1.getAnnotation();
-              boolean _notEquals_2 = ObjectExtensions.operator_notEquals(_annotation_1, null);
+              boolean _notEquals_2 = (!Objects.equal(_annotation_1, null));
               if (_notEquals_2) {
                 EList<JvmMember> _members_3 = it.getMembers();
                 KeyAST _from_2 = binding.getFrom();
@@ -259,7 +259,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
                           _builder.newLine();
                           {
                             XExpression _toInstance = b.getToInstance();
-                            boolean _notEquals = ObjectExtensions.operator_notEquals(_toInstance, null);
+                            boolean _notEquals = (!Objects.equal(_toInstance, null));
                             if (_notEquals) {
                               _builder.append("\t");
                               _builder.append("\t\t");
@@ -327,7 +327,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
     _builder.append(">(){}");
     {
       XAnnotation _annotation = it.getAnnotation();
-      boolean _notEquals = ObjectExtensions.operator_notEquals(_annotation, null);
+      boolean _notEquals = (!Objects.equal(_annotation, null));
       if (_notEquals) {
         _builder.append(", getClass().getDeclaredField(\"");
         String _syntheticName = this.syntheticName(it);

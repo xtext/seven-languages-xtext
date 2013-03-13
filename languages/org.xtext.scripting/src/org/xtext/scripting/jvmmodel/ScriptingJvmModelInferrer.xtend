@@ -23,10 +23,12 @@ class ScriptingJvmModelInferrer extends AbstractModelInferrer {
    	def dispatch void infer(Script script, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
    		val className = script.eResource.URI.trimFileExtension.lastSegment
    		acceptor.accept(script.toClass(className)).initializeLater [
+   			// the class gets one main method
    			members += script.toMethod('main', script.newTypeRef(Void::TYPE)) [
    				parameters += script.toParameter("args", script.newTypeRef(typeof(String)).addArrayTypeDimension)
    				static = true
    				varArgs = true
+   				// Associate the script as the body of the main method
    				body = script
    			]	
    		]

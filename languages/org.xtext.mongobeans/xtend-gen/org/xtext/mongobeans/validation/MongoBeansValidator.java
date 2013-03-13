@@ -7,6 +7,7 @@
  */
 package org.xtext.mongobeans.validation;
 
+import com.google.common.base.Objects;
 import com.google.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +18,6 @@ import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.xbase.XbasePackage;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Extension;
-import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.validation.XbaseJavaValidator;
 import org.eclipse.xtext.xtype.XtypePackage;
 import org.xtext.mongobeans.jvmmodel.MongoTypes;
@@ -41,14 +41,14 @@ public class MongoBeansValidator extends XbaseJavaValidator {
   @Check
   public void checkMongoProperty(final MongoProperty it) {
     String _name = it.getName();
-    boolean _equals = ObjectExtensions.operator_equals(_name, "dbObject");
+    boolean _equals = Objects.equal(_name, "dbObject");
     if (_equals) {
       String _name_1 = it.getName();
       String _plus = ("__" + _name_1);
       this.error("Illegal property name \'dbObject\'", Literals.ABSTRACT_FEATURE__NAME, MongoBeansValidator.ILLEGAL_PROPERTY_NAME, _plus);
     }
     JvmTypeReference _type = it.getType();
-    boolean _notEquals = ObjectExtensions.operator_notEquals(_type, null);
+    boolean _notEquals = (!Objects.equal(_type, null));
     if (_notEquals) {
       JvmTypeReference _type_1 = it.getType();
       boolean _isMongoType = this.mongoTypes.isMongoType(_type_1);
@@ -58,7 +58,7 @@ public class MongoBeansValidator extends XbaseJavaValidator {
       }
     } else {
       MongoBean _inlineType = it.getInlineType();
-      boolean _equals_1 = ObjectExtensions.operator_equals(_inlineType, null);
+      boolean _equals_1 = Objects.equal(_inlineType, null);
       if (_equals_1) {
         this.error("Type must be set", Literals.ABSTRACT_FEATURE__NAME, MongoBeansValidator.MISSING_TYPE);
       }

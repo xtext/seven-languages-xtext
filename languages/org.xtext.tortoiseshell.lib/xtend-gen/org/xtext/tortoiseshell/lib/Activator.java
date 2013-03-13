@@ -7,10 +7,10 @@
  */
 package org.xtext.tortoiseshell.lib;
 
+import com.google.common.base.Objects;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
-import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.osgi.framework.BundleContext;
 import org.xtext.tortoiseshell.lib.Module;
 
@@ -38,7 +38,7 @@ public class Activator extends AbstractUIPlugin {
   public Injector getInjector() {
     Injector _xblockexpression = null;
     {
-      boolean _equals = ObjectExtensions.operator_equals(this.injector, null);
+      boolean _equals = Objects.equal(this.injector, null);
       if (_equals) {
         Injector _createInjector = this.createInjector();
         this.injector = _createInjector;

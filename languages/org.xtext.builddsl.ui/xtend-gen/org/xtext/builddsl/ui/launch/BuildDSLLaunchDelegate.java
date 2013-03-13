@@ -7,6 +7,7 @@
  */
 package org.xtext.builddsl.ui.launch;
 
+import com.google.common.base.Objects;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.debug.core.DebugEvent;
 import org.eclipse.debug.core.DebugPlugin;
@@ -17,7 +18,6 @@ import org.eclipse.debug.core.model.IProcess;
 import org.eclipse.debug.ui.RefreshTab;
 import org.eclipse.jdt.launching.JavaLaunchDelegate;
 import org.eclipse.xtext.xbase.lib.Exceptions;
-import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.xtext.builddsl.ui.launch.RefreshJob;
 
 @SuppressWarnings("all")
@@ -25,7 +25,7 @@ public class BuildDSLLaunchDelegate extends JavaLaunchDelegate {
   public void launch(final ILaunchConfiguration configuration, final String mode, final ILaunch launch, final IProgressMonitor monitor) {
     try {
       String _refreshScope = RefreshTab.getRefreshScope(configuration);
-      boolean _notEquals = ObjectExtensions.operator_notEquals(_refreshScope, null);
+      boolean _notEquals = (!Objects.equal(_refreshScope, null));
       if (_notEquals) {
         DebugPlugin _default = DebugPlugin.getDefault();
         final IDebugEventSetListener _function = new IDebugEventSetListener() {
@@ -45,7 +45,7 @@ public class BuildDSLLaunchDelegate extends JavaLaunchDelegate {
                   final IProcess process = ((IProcess) _source_1);
                   ILaunch _launch = process.getLaunch();
                   ILaunchConfiguration _launchConfiguration = _launch.getLaunchConfiguration();
-                  boolean _equals_1 = ObjectExtensions.operator_equals(configuration, _launchConfiguration);
+                  boolean _equals_1 = Objects.equal(configuration, _launchConfiguration);
                   if (_equals_1) {
                     DebugPlugin _default = DebugPlugin.getDefault();
                     _default.removeDebugEventListener(BuildDSLLaunchDelegate.this);

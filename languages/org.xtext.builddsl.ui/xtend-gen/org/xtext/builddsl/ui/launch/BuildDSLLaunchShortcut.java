@@ -7,6 +7,7 @@
  */
 package org.xtext.builddsl.ui.launch;
 
+import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import java.util.List;
 import org.eclipse.core.resources.IFile;
@@ -98,7 +99,7 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
       ILeafNode _get_1 = list.get((last).intValue());
       EObject _semanticElement_1 = _get_1.getSemanticElement();
       final Task task2 = EcoreUtil2.<Task>getContainerOfType(_semanticElement_1, Task.class);
-      boolean _equals = ObjectExtensions.operator_equals(task1, task2);
+      boolean _equals = Objects.equal(task1, task2);
       if (_equals) {
         return task1.getName();
       }

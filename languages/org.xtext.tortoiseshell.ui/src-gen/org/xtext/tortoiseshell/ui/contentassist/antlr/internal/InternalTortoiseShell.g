@@ -2207,6 +2207,14 @@ rule__OpEquality__Alternatives
 { after(grammarAccess.getOpEqualityAccess().getEqualsSignEqualsSignEqualsSignKeyword_2()); }
 )
 
+    |(
+{ before(grammarAccess.getOpEqualityAccess().getExclamationMarkEqualsSignEqualsSignKeyword_3()); }
+
+	'!==' 
+
+{ after(grammarAccess.getOpEqualityAccess().getExclamationMarkEqualsSignEqualsSignKeyword_3()); }
+)
+
 ;
 finally {
 	restoreStackSize(stackSize);

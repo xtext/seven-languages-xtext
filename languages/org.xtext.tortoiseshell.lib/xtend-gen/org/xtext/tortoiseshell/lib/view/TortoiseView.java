@@ -7,6 +7,7 @@
  */
 package org.xtext.tortoiseshell.lib.view;
 
+import com.google.common.base.Objects;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import java.util.Iterator;
@@ -44,7 +45,6 @@ import org.eclipse.xtext.ui.util.DisplayRunHelper;
 import org.eclipse.xtext.util.concurrent.IUnitOfWork;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Functions.Function0;
-import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.xtext.tortoiseshell.lib.ITortoiseEvent;
 import org.xtext.tortoiseshell.lib.ITortoiseEvent.Listener;
 import org.xtext.tortoiseshell.lib.ITortoiseInterpreter;
@@ -149,7 +149,7 @@ public class TortoiseView extends ViewPart implements Listener {
           public Boolean exec(final XtextResource it) throws Exception {
             Boolean _xifexpression = null;
             boolean _and = false;
-            boolean _notEquals = ObjectExtensions.operator_notEquals(it, null);
+            boolean _notEquals = (!Objects.equal(it, null));
             if (!_notEquals) {
               _and = false;
             } else {
@@ -166,7 +166,7 @@ public class TortoiseView extends ViewPart implements Listener {
                 IResourceServiceProvider _resourceServiceProvider = it.getResourceServiceProvider();
                 final ITortoiseInterpreter interpreter = _resourceServiceProvider.<ITortoiseInterpreter>get(ITortoiseInterpreter.class);
                 boolean _and_1 = false;
-                boolean _notEquals_1 = ObjectExtensions.operator_notEquals(interpreter, null);
+                boolean _notEquals_1 = (!Objects.equal(interpreter, null));
                 if (!_notEquals_1) {
                   _and_1 = false;
                 } else {
@@ -222,7 +222,7 @@ public class TortoiseView extends ViewPart implements Listener {
       IAnnotationModel _annotationModel = _documentProvider==null?(IAnnotationModel)null:_documentProvider.getAnnotationModel(_editorInput);
       final Iterator annotations = _annotationModel==null?(Iterator)null:_annotationModel.getAnnotationIterator();
       boolean _and = false;
-      boolean _notEquals = ObjectExtensions.operator_notEquals(annotations, null);
+      boolean _notEquals = (!Objects.equal(annotations, null));
       if (!_notEquals) {
         _and = false;
       } else {
@@ -238,7 +238,7 @@ public class TortoiseView extends ViewPart implements Listener {
             _and_1 = false;
           } else {
             String _type = ((Annotation) annotation).getType();
-            boolean _equals = ObjectExtensions.operator_equals(_type, XtextEditor.ERROR_ANNOTATION_TYPE);
+            boolean _equals = Objects.equal(_type, XtextEditor.ERROR_ANNOTATION_TYPE);
             _and_1 = ((annotation instanceof Annotation) && _equals);
           }
           if (_and_1) {
@@ -246,7 +246,7 @@ public class TortoiseView extends ViewPart implements Listener {
           }
         }
         boolean _and_1 = false;
-        boolean _notEquals_1 = ObjectExtensions.operator_notEquals(annotations, null);
+        boolean _notEquals_1 = (!Objects.equal(annotations, null));
         if (!_notEquals_1) {
           _and_1 = false;
         } else {

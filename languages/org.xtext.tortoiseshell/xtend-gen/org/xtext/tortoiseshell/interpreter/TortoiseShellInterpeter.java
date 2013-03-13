@@ -7,6 +7,7 @@
  */
 package org.xtext.tortoiseshell.interpreter;
 
+import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
 import java.util.List;
@@ -29,7 +30,6 @@ import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
-import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.scoping.XbaseScopeProvider;
 import org.xtext.tortoiseshell.interpreter.StopLineReachedException;
 import org.xtext.tortoiseshell.lib.ITortoiseInterpreter;
@@ -48,11 +48,11 @@ public class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoi
   
   public void run(final Tortoise tortoise, final EObject program, final int stopAtLine) {
     boolean _and = false;
-    boolean _notEquals = ObjectExtensions.operator_notEquals(tortoise, null);
+    boolean _notEquals = (!Objects.equal(tortoise, null));
     if (!_notEquals) {
       _and = false;
     } else {
-      boolean _notEquals_1 = ObjectExtensions.operator_notEquals(program, null);
+      boolean _notEquals_1 = (!Objects.equal(program, null));
       _and = (_notEquals && _notEquals_1);
     }
     if (_and) {
@@ -118,7 +118,7 @@ public class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoi
             XBlockExpression _body = ((Executable) executable).getBody();
             final IEvaluationResult result = this.evaluate(_body, context, CancelIndicator.NullImpl);
             Throwable _exception = result.getException();
-            boolean _notEquals = ObjectExtensions.operator_notEquals(_exception, null);
+            boolean _notEquals = (!Objects.equal(_exception, null));
             if (_notEquals) {
               throw result.getException();
             }

@@ -27,7 +27,6 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
-import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure0;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.xtext.builddsl.lib.DependsOn;
@@ -49,7 +48,7 @@ public abstract class BuildScript {
   private Map<String,Field> _parameters;
   
   public Map<String,TaskDef> getTasks() {
-    boolean _equals = ObjectExtensions.operator_equals(this._tasks, null);
+    boolean _equals = Objects.equal(this._tasks, null);
     if (_equals) {
       HashMap<String,TaskDef> _newHashMap = CollectionLiterals.<String, TaskDef>newHashMap();
       this._tasks = _newHashMap;
@@ -61,12 +60,12 @@ public abstract class BuildScript {
           final Function1<Annotation,Boolean> _function = new Function1<Annotation,Boolean>() {
               public Boolean apply(final Annotation it) {
                 Class<? extends Annotation> _annotationType = it.annotationType();
-                boolean _equals = ObjectExtensions.operator_equals(_annotationType, DependsOn.class);
+                boolean _equals = Objects.equal(_annotationType, DependsOn.class);
                 return Boolean.valueOf(_equals);
               }
             };
           final Annotation taskAnnotation = IterableExtensions.<Annotation>findFirst(((Iterable<Annotation>)Conversions.doWrapArray(_annotations)), _function);
-          boolean _notEquals = ObjectExtensions.operator_notEquals(taskAnnotation, null);
+          boolean _notEquals = (!Objects.equal(taskAnnotation, null));
           if (_notEquals) {
             String _name = method.getName();
             final Procedure1<TaskDef> _function_1 = new Procedure1<TaskDef>() {
@@ -95,7 +94,7 @@ public abstract class BuildScript {
   }
   
   public Map<String,Field> getParameters() {
-    boolean _equals = ObjectExtensions.operator_equals(this._parameters, null);
+    boolean _equals = Objects.equal(this._parameters, null);
     if (_equals) {
       HashMap<String,Field> _newHashMap = CollectionLiterals.<String, Field>newHashMap();
       this._parameters = _newHashMap;
@@ -107,7 +106,7 @@ public abstract class BuildScript {
             final Function1<Annotation,Boolean> _function = new Function1<Annotation,Boolean>() {
                 public Boolean apply(final Annotation it) {
                   Class<? extends Annotation> _annotationType = it.annotationType();
-                  boolean _equals = ObjectExtensions.operator_equals(_annotationType, Param.class);
+                  boolean _equals = Objects.equal(_annotationType, Param.class);
                   return Boolean.valueOf(_equals);
                 }
               };
@@ -182,7 +181,7 @@ public abstract class BuildScript {
   public void _executeTask(final String name) {
     Map<String,TaskDef> _tasks = this.getTasks();
     final TaskDef task = _tasks.get(name);
-    boolean _equals = ObjectExtensions.operator_equals(task, null);
+    boolean _equals = Objects.equal(task, null);
     if (_equals) {
       String _plus = ("A task \'" + name);
       String _plus_1 = (_plus + "\' does not exist.");
@@ -231,11 +230,11 @@ public abstract class BuildScript {
       final Function1<String,Boolean> _function = new Function1<String,Boolean>() {
           public Boolean apply(final String arg) {
             boolean _or = false;
-            boolean _equals = ObjectExtensions.operator_equals("--help", arg);
+            boolean _equals = Objects.equal("--help", arg);
             if (_equals) {
               _or = true;
             } else {
-              boolean _equals_1 = ObjectExtensions.operator_equals("-h", arg);
+              boolean _equals_1 = Objects.equal("-h", arg);
               _or = (_equals || _equals_1);
             }
             return Boolean.valueOf(_or);
@@ -317,7 +316,7 @@ public abstract class BuildScript {
     try {
       Map<String,Field> _parameters = this.getParameters();
       final Field field = _parameters.get(name);
-      boolean _equals = ObjectExtensions.operator_equals(field, null);
+      boolean _equals = Objects.equal(field, null);
       if (_equals) {
         return false;
       }

@@ -8,6 +8,7 @@
 package com.acme;
 
 import com.acme.MagicNumber;
+import com.google.common.base.Objects;
 import com.google.common.io.CharStreams;
 import com.google.common.io.OutputSupplier;
 import com.google.inject.Inject;
@@ -18,7 +19,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Extension;
-import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 
 @SuppressWarnings("all")
 public class GuessTheNumber {
@@ -31,18 +31,18 @@ public class GuessTheNumber {
   
   public void handleGuess(final String theGuess) {
     boolean _or = false;
-    boolean _equals = ObjectExtensions.operator_equals(theGuess, null);
+    boolean _equals = Objects.equal(theGuess, null);
     if (_equals) {
       _or = true;
     } else {
       Integer _number = this._magicNumber.getNumber();
-      boolean _equals_1 = ObjectExtensions.operator_equals(_number, null);
+      boolean _equals_1 = Objects.equal(_number, null);
       _or = (_equals || _equals_1);
     }
     if (_or) {
       this._magicNumber.seedNumber();
     }
-    boolean _equals_2 = ObjectExtensions.operator_equals(theGuess, null);
+    boolean _equals_2 = Objects.equal(theGuess, null);
     if (_equals_2) {
       this.sendAnswer(null);
       return;
@@ -126,7 +126,7 @@ public class GuessTheNumber {
     _builder.append("<h1>Guess a Number between 1 and 100</h1>");
     _builder.newLine();
     {
-      boolean _notEquals = ObjectExtensions.operator_notEquals(message, null);
+      boolean _notEquals = (!Objects.equal(message, null));
       if (_notEquals) {
         _builder.append("\t\t");
         _builder.append("<p>");

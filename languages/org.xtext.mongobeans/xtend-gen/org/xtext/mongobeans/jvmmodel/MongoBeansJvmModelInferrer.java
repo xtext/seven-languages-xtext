@@ -7,6 +7,7 @@
  */
 package org.xtext.mongobeans.jvmmodel;
 
+import com.google.common.base.Objects;
 import com.google.inject.Inject;
 import com.mongodb.DBObject;
 import java.util.Arrays;
@@ -40,7 +41,6 @@ import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
-import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 import org.xtext.mongobeans.jvmmodel.MongoTypes;
@@ -428,7 +428,7 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
   protected JvmTypeReference getJvmType(final MongoProperty property) {
     JvmTypeReference _xifexpression = null;
     MongoBean _inlineType = property.getInlineType();
-    boolean _notEquals = ObjectExtensions.operator_notEquals(_inlineType, null);
+    boolean _notEquals = (!Objects.equal(_inlineType, null));
     if (_notEquals) {
       MongoBean _inlineType_1 = property.getInlineType();
       Set<EObject> _jvmElements = this.associations.getJvmElements(_inlineType_1);

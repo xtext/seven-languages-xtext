@@ -15,7 +15,6 @@ import org.eclipse.draw2d.Viewport;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Insets;
 import org.eclipse.draw2d.geometry.Rectangle;
-import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 
 @SuppressWarnings("all")
 public class RootLayer extends FreeformLayer {
@@ -30,7 +29,7 @@ public class RootLayer extends FreeformLayer {
       final Rectangle freeformExtent = super.getFreeformExtent();
       final Viewport parentViewport = this.findViewport(this);
       Rectangle _xifexpression = null;
-      boolean _notEquals = ObjectExtensions.operator_notEquals(parentViewport, null);
+      boolean _notEquals = (!Objects.equal(parentViewport, null));
       if (_notEquals) {
         Rectangle _xblockexpression_1 = null;
         {

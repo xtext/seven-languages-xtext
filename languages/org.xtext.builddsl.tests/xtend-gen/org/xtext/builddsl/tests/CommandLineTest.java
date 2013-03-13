@@ -7,6 +7,7 @@
  */
 package org.xtext.builddsl.tests;
 
+import com.google.common.base.Objects;
 import com.google.inject.Inject;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -254,7 +255,7 @@ public class CommandLineTest {
         final Function1<Method,Boolean> _function_1 = new Function1<Method,Boolean>() {
             public Boolean apply(final Method it) {
               String _name = it.getName();
-              boolean _equals = ObjectExtensions.operator_equals(_name, "doBuild");
+              boolean _equals = Objects.equal(_name, "doBuild");
               return Boolean.valueOf(_equals);
             }
           };

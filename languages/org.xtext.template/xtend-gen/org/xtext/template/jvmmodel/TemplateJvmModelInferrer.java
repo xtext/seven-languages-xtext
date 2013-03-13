@@ -7,6 +7,7 @@
  */
 package org.xtext.template.jvmmodel;
 
+import com.google.common.base.Objects;
 import com.google.inject.Inject;
 import java.util.Arrays;
 import org.eclipse.emf.common.util.EList;
@@ -50,7 +51,7 @@ public class TemplateJvmModelInferrer extends AbstractModelInferrer {
     final String simpleName = _trimFileExtension.lastSegment();
     String _xifexpression = null;
     String _package = element.getPackage();
-    boolean _notEquals = ObjectExtensions.operator_notEquals(_package, null);
+    boolean _notEquals = (!Objects.equal(_package, null));
     if (_notEquals) {
       String _package_1 = element.getPackage();
       String _plus = (_package_1 + ".");
@@ -89,7 +90,7 @@ public class TemplateJvmModelInferrer extends AbstractModelInferrer {
               final Procedure1<JvmField> _function = new Procedure1<JvmField>() {
                   public void apply(final JvmField it) {
                     XExpression _defaultexp = param.getDefaultexp();
-                    boolean _notEquals = ObjectExtensions.operator_notEquals(_defaultexp, null);
+                    boolean _notEquals = (!Objects.equal(_defaultexp, null));
                     if (_notEquals) {
                       XExpression _defaultexp_1 = param.getDefaultexp();
                       TemplateJvmModelInferrer.this._jvmTypesBuilder.setInitializer(it, _defaultexp_1);

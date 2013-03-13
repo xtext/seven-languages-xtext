@@ -66,6 +66,7 @@ public class InternalScriptingLexer extends Lexer {
     public static final int T__44=44;
     public static final int T__82=82;
     public static final int T__45=45;
+    public static final int T__83=83;
     public static final int T__48=48;
     public static final int T__49=49;
     public static final int RULE_SL_COMMENT=10;
@@ -298,10 +299,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:20:7: ( 'instanceof' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:20:9: 'instanceof'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:20:7: ( '!==' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:20:9: '!=='
             {
-            match("instanceof"); 
+            match("!=="); 
 
 
             }
@@ -319,10 +320,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:21:7: ( '>=' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:21:9: '>='
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:21:7: ( 'instanceof' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:21:9: 'instanceof'
             {
-            match(">="); 
+            match("instanceof"); 
 
 
             }
@@ -340,10 +341,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:22:7: ( '<=' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:22:9: '<='
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:22:7: ( '>=' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:22:9: '>='
             {
-            match("<="); 
+            match(">="); 
 
 
             }
@@ -361,10 +362,11 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:23:7: ( '>' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:23:9: '>'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:23:7: ( '<=' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:23:9: '<='
             {
-            match('>'); 
+            match("<="); 
+
 
             }
 
@@ -381,10 +383,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:24:7: ( '<' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:24:9: '<'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:24:7: ( '>' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:24:9: '>'
             {
-            match('<'); 
+            match('>'); 
 
             }
 
@@ -401,11 +403,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:25:7: ( '->' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:25:9: '->'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:25:7: ( '<' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:25:9: '<'
             {
-            match("->"); 
-
+            match('<'); 
 
             }
 
@@ -422,10 +423,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:26:7: ( '..<' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:26:9: '..<'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:26:7: ( '->' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:26:9: '->'
             {
-            match("..<"); 
+            match("->"); 
 
 
             }
@@ -443,10 +444,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:27:7: ( '..' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:27:9: '..'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:27:7: ( '..<' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:27:9: '..<'
             {
-            match(".."); 
+            match("..<"); 
 
 
             }
@@ -464,10 +465,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:28:7: ( '=>' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:28:9: '=>'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:28:7: ( '..' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:28:9: '..'
             {
-            match("=>"); 
+            match(".."); 
 
 
             }
@@ -485,10 +486,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:29:7: ( '<>' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:29:9: '<>'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:29:7: ( '=>' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:29:9: '=>'
             {
-            match("<>"); 
+            match("=>"); 
 
 
             }
@@ -506,10 +507,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:30:7: ( '?:' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:30:9: '?:'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:30:7: ( '<>' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:30:9: '<>'
             {
-            match("?:"); 
+            match("<>"); 
 
 
             }
@@ -527,10 +528,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:31:7: ( '<=>' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:31:9: '<=>'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:31:7: ( '?:' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:31:9: '?:'
             {
-            match("<=>"); 
+            match("?:"); 
 
 
             }
@@ -548,10 +549,11 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:32:7: ( '+' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:32:9: '+'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:32:7: ( '<=>' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:32:9: '<=>'
             {
-            match('+'); 
+            match("<=>"); 
+
 
             }
 
@@ -568,10 +570,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:33:7: ( '-' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:33:9: '-'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:33:7: ( '+' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:33:9: '+'
             {
-            match('-'); 
+            match('+'); 
 
             }
 
@@ -588,10 +590,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:34:7: ( '*' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:34:9: '*'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:34:7: ( '-' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:34:9: '-'
             {
-            match('*'); 
+            match('-'); 
 
             }
 
@@ -608,11 +610,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:35:7: ( '**' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:35:9: '**'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:35:7: ( '*' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:35:9: '*'
             {
-            match("**"); 
-
+            match('*'); 
 
             }
 
@@ -629,10 +630,11 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:36:7: ( '/' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:36:9: '/'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:36:7: ( '**' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:36:9: '**'
             {
-            match('/'); 
+            match("**"); 
+
 
             }
 
@@ -649,10 +651,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:37:7: ( '%' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:37:9: '%'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:37:7: ( '/' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:37:9: '/'
             {
-            match('%'); 
+            match('/'); 
 
             }
 
@@ -669,10 +671,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:38:7: ( '!' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:38:9: '!'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:38:7: ( '%' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:38:9: '%'
             {
-            match('!'); 
+            match('%'); 
 
             }
 
@@ -689,11 +691,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:39:7: ( 'as' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:39:9: 'as'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:39:7: ( '!' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:39:9: '!'
             {
-            match("as"); 
-
+            match('!'); 
 
             }
 
@@ -710,10 +711,11 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:40:7: ( '.' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:40:9: '.'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:40:7: ( 'as' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:40:9: 'as'
             {
-            match('.'); 
+            match("as"); 
+
 
             }
 
@@ -730,11 +732,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:41:7: ( '?.' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:41:9: '?.'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:41:7: ( '.' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:41:9: '.'
             {
-            match("?."); 
-
+            match('.'); 
 
             }
 
@@ -751,10 +752,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__44;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:42:7: ( '*.' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:42:9: '*.'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:42:7: ( '?.' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:42:9: '?.'
             {
-            match("*."); 
+            match("?."); 
 
 
             }
@@ -772,10 +773,11 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:43:7: ( ',' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:43:9: ','
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:43:7: ( '*.' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:43:9: '*.'
             {
-            match(','); 
+            match("*."); 
+
 
             }
 
@@ -792,10 +794,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__46;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:44:7: ( '(' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:44:9: '('
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:44:7: ( ',' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:44:9: ','
             {
-            match('('); 
+            match(','); 
 
             }
 
@@ -812,10 +814,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:45:7: ( ')' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:45:9: ')'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:45:7: ( '(' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:45:9: '('
             {
-            match(')'); 
+            match('('); 
 
             }
 
@@ -832,10 +834,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:46:7: ( '#' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:46:9: '#'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:46:7: ( ')' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:46:9: ')'
             {
-            match('#'); 
+            match(')'); 
 
             }
 
@@ -852,10 +854,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:47:7: ( '{' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:47:9: '{'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:47:7: ( '#' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:47:9: '#'
             {
-            match('{'); 
+            match('#'); 
 
             }
 
@@ -872,10 +874,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__50;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:48:7: ( '}' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:48:9: '}'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:48:7: ( '{' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:48:9: '{'
             {
-            match('}'); 
+            match('{'); 
 
             }
 
@@ -892,10 +894,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__51;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:49:7: ( '[' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:49:9: '['
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:49:7: ( '}' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:49:9: '}'
             {
-            match('['); 
+            match('}'); 
 
             }
 
@@ -912,10 +914,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__52;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:50:7: ( ']' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:50:9: ']'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:50:7: ( '[' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:50:9: '['
             {
-            match(']'); 
+            match('['); 
 
             }
 
@@ -932,10 +934,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:51:7: ( '|' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:51:9: '|'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:51:7: ( ']' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:51:9: ']'
             {
-            match('|'); 
+            match(']'); 
 
             }
 
@@ -952,11 +954,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:52:7: ( 'if' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:52:9: 'if'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:52:7: ( '|' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:52:9: '|'
             {
-            match("if"); 
-
+            match('|'); 
 
             }
 
@@ -973,10 +974,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__55;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:53:7: ( 'else' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:53:9: 'else'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:53:7: ( 'if' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:53:9: 'if'
             {
-            match("else"); 
+            match("if"); 
 
 
             }
@@ -994,10 +995,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__56;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:54:7: ( 'switch' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:54:9: 'switch'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:54:7: ( 'else' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:54:9: 'else'
             {
-            match("switch"); 
+            match("else"); 
 
 
             }
@@ -1015,10 +1016,11 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__57;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:55:7: ( ':' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:55:9: ':'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:55:7: ( 'switch' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:55:9: 'switch'
             {
-            match(':'); 
+            match("switch"); 
+
 
             }
 
@@ -1035,11 +1037,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__58;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:56:7: ( 'default' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:56:9: 'default'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:56:7: ( ':' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:56:9: ':'
             {
-            match("default"); 
-
+            match(':'); 
 
             }
 
@@ -1056,10 +1057,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__59;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:57:7: ( 'case' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:57:9: 'case'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:57:7: ( 'default' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:57:9: 'default'
             {
-            match("case"); 
+            match("default"); 
 
 
             }
@@ -1077,10 +1078,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__60;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:58:7: ( 'for' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:58:9: 'for'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:58:7: ( 'case' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:58:9: 'case'
             {
-            match("for"); 
+            match("case"); 
 
 
             }
@@ -1098,10 +1099,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__61;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:59:7: ( 'while' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:59:9: 'while'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:59:7: ( 'for' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:59:9: 'for'
             {
-            match("while"); 
+            match("for"); 
 
 
             }
@@ -1119,10 +1120,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__62;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:60:7: ( 'do' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:60:9: 'do'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:60:7: ( 'while' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:60:9: 'while'
             {
-            match("do"); 
+            match("while"); 
 
 
             }
@@ -1140,10 +1141,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__63;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:61:7: ( 'var' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:61:9: 'var'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:61:7: ( 'do' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:61:9: 'do'
             {
-            match("var"); 
+            match("do"); 
 
 
             }
@@ -1161,10 +1162,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__64;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:62:7: ( 'val' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:62:9: 'val'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:62:7: ( 'var' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:62:9: 'var'
             {
-            match("val"); 
+            match("var"); 
 
 
             }
@@ -1182,10 +1183,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__65;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:63:7: ( 'extends' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:63:9: 'extends'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:63:7: ( 'val' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:63:9: 'val'
             {
-            match("extends"); 
+            match("val"); 
 
 
             }
@@ -1203,10 +1204,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__66;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:64:7: ( 'static' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:64:9: 'static'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:64:7: ( 'extends' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:64:9: 'extends'
             {
-            match("static"); 
+            match("extends"); 
 
 
             }
@@ -1224,10 +1225,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__67;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:65:7: ( 'import' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:65:9: 'import'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:65:7: ( 'static' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:65:9: 'static'
             {
-            match("import"); 
+            match("static"); 
 
 
             }
@@ -1245,10 +1246,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__68;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:66:7: ( 'extension' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:66:9: 'extension'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:66:7: ( 'import' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:66:9: 'import'
             {
-            match("extension"); 
+            match("import"); 
 
 
             }
@@ -1266,10 +1267,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__69;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:67:7: ( 'super' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:67:9: 'super'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:67:7: ( 'extension' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:67:9: 'extension'
             {
-            match("super"); 
+            match("extension"); 
 
 
             }
@@ -1287,10 +1288,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__70;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:68:7: ( '::' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:68:9: '::'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:68:7: ( 'super' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:68:9: 'super'
             {
-            match("::"); 
+            match("super"); 
 
 
             }
@@ -1308,10 +1309,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__71;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:69:7: ( 'new' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:69:9: 'new'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:69:7: ( '::' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:69:9: '::'
             {
-            match("new"); 
+            match("::"); 
 
 
             }
@@ -1329,10 +1330,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__72;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:70:7: ( 'false' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:70:9: 'false'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:70:7: ( 'new' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:70:9: 'new'
             {
-            match("false"); 
+            match("new"); 
 
 
             }
@@ -1350,10 +1351,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__73;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:71:7: ( 'true' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:71:9: 'true'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:71:7: ( 'false' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:71:9: 'false'
             {
-            match("true"); 
+            match("false"); 
 
 
             }
@@ -1371,10 +1372,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__74;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:72:7: ( 'null' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:72:9: 'null'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:72:7: ( 'true' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:72:9: 'true'
             {
-            match("null"); 
+            match("true"); 
 
 
             }
@@ -1392,10 +1393,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__75;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:73:7: ( 'typeof' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:73:9: 'typeof'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:73:7: ( 'null' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:73:9: 'null'
             {
-            match("typeof"); 
+            match("null"); 
 
 
             }
@@ -1413,10 +1414,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__76;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:74:7: ( 'throw' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:74:9: 'throw'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:74:7: ( 'typeof' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:74:9: 'typeof'
             {
-            match("throw"); 
+            match("typeof"); 
 
 
             }
@@ -1434,10 +1435,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__77;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:75:7: ( 'return' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:75:9: 'return'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:75:7: ( 'throw' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:75:9: 'throw'
             {
-            match("return"); 
+            match("throw"); 
 
 
             }
@@ -1455,10 +1456,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__78;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:76:7: ( 'try' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:76:9: 'try'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:76:7: ( 'return' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:76:9: 'return'
             {
-            match("try"); 
+            match("return"); 
 
 
             }
@@ -1476,10 +1477,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__79;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:77:7: ( 'finally' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:77:9: 'finally'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:77:7: ( 'try' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:77:9: 'try'
             {
-            match("finally"); 
+            match("try"); 
 
 
             }
@@ -1497,10 +1498,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__80;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:78:7: ( 'catch' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:78:9: 'catch'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:78:7: ( 'finally' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:78:9: 'finally'
             {
-            match("catch"); 
+            match("finally"); 
 
 
             }
@@ -1518,10 +1519,11 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__81;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:79:7: ( '?' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:79:9: '?'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:79:7: ( 'catch' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:79:9: 'catch'
             {
-            match('?'); 
+            match("catch"); 
+
 
             }
 
@@ -1538,10 +1540,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = T__82;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:80:7: ( '&' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:80:9: '&'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:80:7: ( '?' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:80:9: '?'
             {
-            match('&'); 
+            match('?'); 
 
             }
 
@@ -1553,15 +1555,35 @@ public class InternalScriptingLexer extends Lexer {
     }
     // $ANTLR end "T__82"
 
+    // $ANTLR start "T__83"
+    public final void mT__83() throws RecognitionException {
+        try {
+            int _type = T__83;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:81:7: ( '&' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:81:9: '&'
+            {
+            match('&'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__83"
+
     // $ANTLR start "RULE_HEX"
     public final void mRULE_HEX() throws RecognitionException {
         try {
             int _type = RULE_HEX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5377:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5377:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5384:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5384:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             {
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5377:12: ( '0x' | '0X' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5384:12: ( '0x' | '0X' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1589,7 +1611,7 @@ public class InternalScriptingLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5377:13: '0x'
+                    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5384:13: '0x'
                     {
                     match("0x"); 
 
@@ -1597,7 +1619,7 @@ public class InternalScriptingLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5377:18: '0X'
+                    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5384:18: '0X'
                     {
                     match("0X"); 
 
@@ -1607,7 +1629,7 @@ public class InternalScriptingLexer extends Lexer {
 
             }
 
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5377:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5384:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
             int cnt2=0;
             loop2:
             do {
@@ -1645,7 +1667,7 @@ public class InternalScriptingLexer extends Lexer {
                 cnt2++;
             } while (true);
 
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5377:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5384:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1654,10 +1676,10 @@ public class InternalScriptingLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5377:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5384:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     {
                     match('#'); 
-                    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5377:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5384:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     int alt3=2;
                     int LA3_0 = input.LA(1);
 
@@ -1675,7 +1697,7 @@ public class InternalScriptingLexer extends Lexer {
                     }
                     switch (alt3) {
                         case 1 :
-                            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5377:64: ( 'b' | 'B' ) ( 'i' | 'I' )
+                            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5384:64: ( 'b' | 'B' ) ( 'i' | 'I' )
                             {
                             if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                                 input.consume();
@@ -1699,7 +1721,7 @@ public class InternalScriptingLexer extends Lexer {
                             }
                             break;
                         case 2 :
-                            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5377:84: ( 'l' | 'L' )
+                            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5384:84: ( 'l' | 'L' )
                             {
                             if ( input.LA(1)=='L'||input.LA(1)=='l' ) {
                                 input.consume();
@@ -1738,11 +1760,11 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5379:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5379:12: '0' .. '9' ( '0' .. '9' | '_' )*
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5386:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5386:12: '0' .. '9' ( '0' .. '9' | '_' )*
             {
             matchRange('0','9'); 
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5379:21: ( '0' .. '9' | '_' )*
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5386:21: ( '0' .. '9' | '_' )*
             loop5:
             do {
                 int alt5=2;
@@ -1791,11 +1813,11 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = RULE_DECIMAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5381:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5381:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5388:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5388:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             {
             mRULE_INT(); 
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5381:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5388:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -1804,7 +1826,7 @@ public class InternalScriptingLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5381:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
+                    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5388:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -1815,7 +1837,7 @@ public class InternalScriptingLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5381:36: ( '+' | '-' )?
+                    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5388:36: ( '+' | '-' )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -1848,7 +1870,7 @@ public class InternalScriptingLexer extends Lexer {
 
             }
 
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5381:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5388:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             int alt8=3;
             int LA8_0 = input.LA(1);
 
@@ -1860,7 +1882,7 @@ public class InternalScriptingLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5381:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
+                    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5388:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
                     {
                     if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                         input.consume();
@@ -1884,7 +1906,7 @@ public class InternalScriptingLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5381:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
+                    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5388:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
                     {
                     if ( input.LA(1)=='D'||input.LA(1)=='F'||input.LA(1)=='L'||input.LA(1)=='d'||input.LA(1)=='f'||input.LA(1)=='l' ) {
                         input.consume();
@@ -1917,10 +1939,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5383:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5383:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5390:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5390:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             {
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5383:11: ( '^' )?
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5390:11: ( '^' )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -1929,7 +1951,7 @@ public class InternalScriptingLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5383:11: '^'
+                    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5390:11: '^'
                     {
                     match('^'); 
 
@@ -1947,7 +1969,7 @@ public class InternalScriptingLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5383:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5390:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             loop10:
             do {
                 int alt10=2;
@@ -1996,10 +2018,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5385:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5385:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5392:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5392:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5385:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5392:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -2017,10 +2039,10 @@ public class InternalScriptingLexer extends Lexer {
             }
             switch (alt13) {
                 case 1 :
-                    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5385:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5392:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5385:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5392:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop11:
                     do {
                         int alt11=3;
@@ -2036,7 +2058,7 @@ public class InternalScriptingLexer extends Lexer {
 
                         switch (alt11) {
                     	case 1 :
-                    	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5385:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5392:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2052,7 +2074,7 @@ public class InternalScriptingLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5385:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5392:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2077,10 +2099,10 @@ public class InternalScriptingLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5385:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5392:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5385:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5392:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop12:
                     do {
                         int alt12=3;
@@ -2096,7 +2118,7 @@ public class InternalScriptingLexer extends Lexer {
 
                         switch (alt12) {
                     	case 1 :
-                    	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5385:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5392:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2112,7 +2134,7 @@ public class InternalScriptingLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5385:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5392:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2155,12 +2177,12 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5387:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5387:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5394:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5394:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5387:24: ( options {greedy=false; } : . )*
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5394:24: ( options {greedy=false; } : . )*
             loop14:
             do {
                 int alt14=2;
@@ -2185,7 +2207,7 @@ public class InternalScriptingLexer extends Lexer {
 
                 switch (alt14) {
             	case 1 :
-            	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5387:52: .
+            	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5394:52: .
             	    {
             	    matchAny(); 
 
@@ -2215,12 +2237,12 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5389:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5389:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5396:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5396:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5389:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5396:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop15:
             do {
                 int alt15=2;
@@ -2233,7 +2255,7 @@ public class InternalScriptingLexer extends Lexer {
 
                 switch (alt15) {
             	case 1 :
-            	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5389:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5396:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2253,7 +2275,7 @@ public class InternalScriptingLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5389:40: ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5396:40: ( ( '\\r' )? '\\n' )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -2262,9 +2284,9 @@ public class InternalScriptingLexer extends Lexer {
             }
             switch (alt17) {
                 case 1 :
-                    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5389:41: ( '\\r' )? '\\n'
+                    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5396:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5389:41: ( '\\r' )?
+                    // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5396:41: ( '\\r' )?
                     int alt16=2;
                     int LA16_0 = input.LA(1);
 
@@ -2273,7 +2295,7 @@ public class InternalScriptingLexer extends Lexer {
                     }
                     switch (alt16) {
                         case 1 :
-                            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5389:41: '\\r'
+                            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5396:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2305,10 +2327,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5391:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5391:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5398:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5398:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5391:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5398:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt18=0;
             loop18:
             do {
@@ -2362,8 +2384,8 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5393:16: ( . )
-            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5393:18: .
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5400:16: ( . )
+            // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:5400:18: .
             {
             matchAny(); 
 
@@ -2378,8 +2400,8 @@ public class InternalScriptingLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1:8: ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt19=79;
+        // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1:8: ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt19=80;
         alt19 = dfa19.predict(input);
         switch (alt19) {
             case 1 :
@@ -2873,63 +2895,70 @@ public class InternalScriptingLexer extends Lexer {
                 }
                 break;
             case 71 :
-                // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1:430: RULE_HEX
+                // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1:430: T__83
+                {
+                mT__83(); 
+
+                }
+                break;
+            case 72 :
+                // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1:436: RULE_HEX
                 {
                 mRULE_HEX(); 
 
                 }
                 break;
-            case 72 :
-                // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1:439: RULE_INT
+            case 73 :
+                // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1:445: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 73 :
-                // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1:448: RULE_DECIMAL
+            case 74 :
+                // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1:454: RULE_DECIMAL
                 {
                 mRULE_DECIMAL(); 
 
                 }
                 break;
-            case 74 :
-                // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1:461: RULE_ID
+            case 75 :
+                // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1:467: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 75 :
-                // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1:469: RULE_STRING
+            case 76 :
+                // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1:475: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 76 :
-                // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1:481: RULE_ML_COMMENT
+            case 77 :
+                // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1:487: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 77 :
-                // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1:497: RULE_SL_COMMENT
+            case 78 :
+                // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1:503: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 78 :
-                // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1:513: RULE_WS
+            case 79 :
+                // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1:519: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 79 :
-                // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1:521: RULE_ANY_OTHER
+            case 80 :
+                // ../org.xtext.scripting/src-gen/org/xtext/scripting/parser/antlr/internal/InternalScripting.g:1:527: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -2944,67 +2973,67 @@ public class InternalScriptingLexer extends Lexer {
     protected DFA19 dfa19 = new DFA19(this);
     static final String DFA19_eotS =
         "\2\uffff\1\57\1\61\1\64\1\66\1\70\1\72\1\76\1\100\1\103\1\105\1"+
-        "\110\1\113\1\116\1\uffff\1\76\10\uffff\2\76\1\137\10\76\2\160\1"+
-        "\53\1\uffff\2\53\3\uffff\1\165\15\uffff\1\76\1\167\1\76\3\uffff"+
-        "\1\172\2\uffff\1\174\13\uffff\1\175\10\uffff\5\76\2\uffff\1\76\1"+
-        "\u0084\14\76\1\uffff\1\160\6\uffff\1\76\1\uffff\1\76\5\uffff\6\76"+
-        "\1\uffff\2\76\1\u009e\3\76\1\u00a2\1\u00a3\1\u00a4\2\76\1\u00a7"+
-        "\5\76\1\u00ad\5\76\1\u00b3\1\76\1\uffff\3\76\3\uffff\1\u00b8\1\u00b9"+
-        "\1\uffff\5\76\1\uffff\3\76\1\u00c3\1\76\1\uffff\1\u00c5\1\u00c6"+
-        "\1\76\1\u00c8\2\uffff\1\76\1\u00ca\2\76\1\u00cd\2\76\1\u00d0\1\u00d1"+
-        "\1\uffff\1\76\2\uffff\1\76\1\uffff\1\u00d4\1\uffff\1\u00d5\1\76"+
-        "\1\uffff\1\u00d7\1\76\2\uffff\1\u00d9\1\u00da\2\uffff\1\76\1\uffff"+
-        "\1\76\2\uffff\1\76\1\u00de\1\u00df\2\uffff";
+        "\110\1\113\1\116\1\uffff\1\76\10\uffff\2\76\1\137\10\76\2\157\1"+
+        "\53\1\uffff\2\53\3\uffff\1\165\13\uffff\1\167\1\uffff\1\76\1\171"+
+        "\1\76\3\uffff\1\174\2\uffff\1\176\13\uffff\1\177\10\uffff\5\76\2"+
+        "\uffff\1\76\1\u0086\14\76\2\uffff\1\157\7\uffff\1\76\1\uffff\1\76"+
+        "\5\uffff\6\76\1\uffff\2\76\1\u00a0\3\76\1\u00a4\1\u00a5\1\u00a6"+
+        "\2\76\1\u00a9\5\76\1\u00af\5\76\1\u00b5\1\76\1\uffff\3\76\3\uffff"+
+        "\1\u00ba\1\u00bb\1\uffff\5\76\1\uffff\3\76\1\u00c5\1\76\1\uffff"+
+        "\1\u00c7\1\u00c8\1\76\1\u00ca\2\uffff\1\76\1\u00cc\2\76\1\u00cf"+
+        "\2\76\1\u00d2\1\u00d3\1\uffff\1\76\2\uffff\1\76\1\uffff\1\u00d6"+
+        "\1\uffff\1\u00d7\1\76\1\uffff\1\u00d9\1\76\2\uffff\1\u00db\1\u00dc"+
+        "\2\uffff\1\76\1\uffff\1\76\2\uffff\1\76\1\u00e0\1\u00e1\2\uffff";
     static final String DFA19_eofS =
-        "\u00e0\uffff";
+        "\u00e2\uffff";
     static final String DFA19_minS =
         "\1\0\1\uffff\3\75\1\174\1\46\1\75\1\146\2\75\2\56\2\52\1\uffff\1"+
         "\163\10\uffff\1\154\1\164\1\72\1\145\2\141\1\150\1\141\1\145\1\150"+
-        "\1\145\2\60\1\44\1\uffff\2\0\3\uffff\1\75\15\uffff\1\163\1\44\1"+
-        "\160\3\uffff\1\76\2\uffff\1\74\13\uffff\1\44\10\uffff\1\163\1\164"+
-        "\1\151\1\141\1\160\2\uffff\1\146\1\44\1\163\1\162\1\154\1\156\1"+
-        "\151\1\154\1\167\1\154\1\165\1\160\1\162\1\164\1\uffff\1\60\6\uffff"+
-        "\1\164\1\uffff\1\157\5\uffff\2\145\2\164\1\145\1\141\1\uffff\1\145"+
-        "\1\143\1\44\1\163\1\141\1\154\3\44\1\154\1\145\1\44\1\145\1\157"+
-        "\1\165\1\141\1\162\1\44\1\156\1\143\1\151\1\162\1\165\1\44\1\150"+
-        "\1\uffff\1\145\1\154\1\145\3\uffff\2\44\1\uffff\1\157\1\167\1\162"+
-        "\1\156\1\164\1\uffff\1\144\1\150\1\143\1\44\1\154\1\uffff\2\44\1"+
-        "\154\1\44\2\uffff\1\146\1\44\1\156\1\143\1\44\1\163\1\151\2\44\1"+
-        "\uffff\1\164\2\uffff\1\171\1\uffff\1\44\1\uffff\1\44\1\145\1\uffff"+
-        "\1\44\1\157\2\uffff\2\44\2\uffff\1\157\1\uffff\1\156\2\uffff\1\146"+
-        "\2\44\2\uffff";
+        "\1\145\2\60\1\44\1\uffff\2\0\3\uffff\1\75\13\uffff\1\75\1\uffff"+
+        "\1\163\1\44\1\160\3\uffff\1\76\2\uffff\1\74\13\uffff\1\44\10\uffff"+
+        "\1\163\1\164\1\151\1\141\1\160\2\uffff\1\146\1\44\1\163\1\162\1"+
+        "\154\1\156\1\151\1\154\1\167\1\154\1\165\1\160\1\162\1\164\2\uffff"+
+        "\1\60\7\uffff\1\164\1\uffff\1\157\5\uffff\2\145\2\164\1\145\1\141"+
+        "\1\uffff\1\145\1\143\1\44\1\163\1\141\1\154\3\44\1\154\1\145\1\44"+
+        "\1\145\1\157\1\165\1\141\1\162\1\44\1\156\1\143\1\151\1\162\1\165"+
+        "\1\44\1\150\1\uffff\1\145\1\154\1\145\3\uffff\2\44\1\uffff\1\157"+
+        "\1\167\1\162\1\156\1\164\1\uffff\1\144\1\150\1\143\1\44\1\154\1"+
+        "\uffff\2\44\1\154\1\44\2\uffff\1\146\1\44\1\156\1\143\1\44\1\163"+
+        "\1\151\2\44\1\uffff\1\164\2\uffff\1\171\1\uffff\1\44\1\uffff\1\44"+
+        "\1\145\1\uffff\1\44\1\157\2\uffff\2\44\2\uffff\1\157\1\uffff\1\156"+
+        "\2\uffff\1\146\2\44\2\uffff";
     static final String DFA19_maxS =
         "\1\uffff\1\uffff\1\76\1\75\1\76\1\174\1\46\1\75\1\156\1\75\1\76"+
         "\1\56\1\72\1\56\1\57\1\uffff\1\163\10\uffff\1\170\1\167\1\72\1\157"+
         "\1\141\1\157\1\150\1\141\1\165\1\171\1\145\1\170\1\154\1\172\1\uffff"+
-        "\2\uffff\3\uffff\1\75\15\uffff\1\163\1\172\1\160\3\uffff\1\76\2"+
-        "\uffff\1\74\13\uffff\1\172\10\uffff\1\163\1\164\1\151\1\141\1\160"+
-        "\2\uffff\1\146\1\172\1\164\1\162\1\154\1\156\1\151\1\162\1\167\1"+
-        "\154\1\171\1\160\1\162\1\164\1\uffff\1\154\6\uffff\1\164\1\uffff"+
-        "\1\157\5\uffff\2\145\2\164\1\145\1\141\1\uffff\1\145\1\143\1\172"+
-        "\1\163\1\141\1\154\3\172\1\154\1\145\1\172\1\145\1\157\1\165\1\141"+
-        "\1\162\1\172\1\156\1\143\1\151\1\162\1\165\1\172\1\150\1\uffff\1"+
-        "\145\1\154\1\145\3\uffff\2\172\1\uffff\1\157\1\167\1\162\1\156\1"+
-        "\164\1\uffff\1\163\1\150\1\143\1\172\1\154\1\uffff\2\172\1\154\1"+
-        "\172\2\uffff\1\146\1\172\1\156\1\143\1\172\1\163\1\151\2\172\1\uffff"+
-        "\1\164\2\uffff\1\171\1\uffff\1\172\1\uffff\1\172\1\145\1\uffff\1"+
-        "\172\1\157\2\uffff\2\172\2\uffff\1\157\1\uffff\1\156\2\uffff\1\146"+
-        "\2\172\2\uffff";
+        "\2\uffff\3\uffff\1\75\13\uffff\1\75\1\uffff\1\163\1\172\1\160\3"+
+        "\uffff\1\76\2\uffff\1\74\13\uffff\1\172\10\uffff\1\163\1\164\1\151"+
+        "\1\141\1\160\2\uffff\1\146\1\172\1\164\1\162\1\154\1\156\1\151\1"+
+        "\162\1\167\1\154\1\171\1\160\1\162\1\164\2\uffff\1\154\7\uffff\1"+
+        "\164\1\uffff\1\157\5\uffff\2\145\2\164\1\145\1\141\1\uffff\1\145"+
+        "\1\143\1\172\1\163\1\141\1\154\3\172\1\154\1\145\1\172\1\145\1\157"+
+        "\1\165\1\141\1\162\1\172\1\156\1\143\1\151\1\162\1\165\1\172\1\150"+
+        "\1\uffff\1\145\1\154\1\145\3\uffff\2\172\1\uffff\1\157\1\167\1\162"+
+        "\1\156\1\164\1\uffff\1\163\1\150\1\143\1\172\1\154\1\uffff\2\172"+
+        "\1\154\1\172\2\uffff\1\146\1\172\1\156\1\143\1\172\1\163\1\151\2"+
+        "\172\1\uffff\1\164\2\uffff\1\171\1\uffff\1\172\1\uffff\1\172\1\145"+
+        "\1\uffff\1\172\1\157\2\uffff\2\172\2\uffff\1\157\1\uffff\1\156\2"+
+        "\uffff\1\146\2\172\2\uffff";
     static final String DFA19_acceptS =
-        "\1\uffff\1\1\15\uffff\1\33\1\uffff\1\41\1\42\1\43\1\44\1\45\1\46"+
-        "\1\47\1\50\16\uffff\1\112\2\uffff\1\116\1\117\1\1\1\uffff\1\22\1"+
-        "\2\1\3\1\26\1\4\1\17\1\27\1\5\1\51\1\6\1\106\1\10\1\34\3\uffff\1"+
-        "\112\1\13\1\15\1\uffff\1\23\1\16\1\uffff\1\36\1\24\1\37\1\105\1"+
-        "\31\1\40\1\30\1\114\1\115\1\32\1\33\1\uffff\1\41\1\42\1\43\1\44"+
-        "\1\45\1\46\1\47\1\50\5\uffff\1\72\1\55\16\uffff\1\107\1\uffff\1"+
-        "\110\1\111\1\113\1\116\1\11\1\7\1\uffff\1\52\1\uffff\1\25\1\14\1"+
-        "\20\1\21\1\35\6\uffff\1\62\31\uffff\1\60\3\uffff\1\63\1\64\1\73"+
-        "\2\uffff\1\102\5\uffff\1\53\5\uffff\1\57\4\uffff\1\76\1\75\11\uffff"+
-        "\1\71\1\uffff\1\104\1\74\1\uffff\1\61\1\uffff\1\100\2\uffff\1\67"+
-        "\2\uffff\1\54\1\66\2\uffff\1\77\1\101\1\uffff\1\65\1\uffff\1\56"+
-        "\1\103\3\uffff\1\70\1\12";
+        "\1\uffff\1\1\15\uffff\1\34\1\uffff\1\42\1\43\1\44\1\45\1\46\1\47"+
+        "\1\50\1\51\16\uffff\1\113\2\uffff\1\117\1\120\1\1\1\uffff\1\23\1"+
+        "\2\1\3\1\27\1\4\1\20\1\30\1\5\1\52\1\6\1\107\1\uffff\1\35\3\uffff"+
+        "\1\113\1\14\1\16\1\uffff\1\24\1\17\1\uffff\1\37\1\25\1\40\1\106"+
+        "\1\32\1\41\1\31\1\115\1\116\1\33\1\34\1\uffff\1\42\1\43\1\44\1\45"+
+        "\1\46\1\47\1\50\1\51\5\uffff\1\73\1\56\16\uffff\1\110\1\111\1\uffff"+
+        "\1\112\1\114\1\117\1\11\1\7\1\12\1\10\1\uffff\1\53\1\uffff\1\26"+
+        "\1\15\1\21\1\22\1\36\6\uffff\1\63\31\uffff\1\61\3\uffff\1\64\1\65"+
+        "\1\74\2\uffff\1\103\5\uffff\1\54\5\uffff\1\60\4\uffff\1\77\1\76"+
+        "\11\uffff\1\72\1\uffff\1\105\1\75\1\uffff\1\62\1\uffff\1\101\2\uffff"+
+        "\1\70\2\uffff\1\55\1\67\2\uffff\1\100\1\102\1\uffff\1\66\1\uffff"+
+        "\1\57\1\104\3\uffff\1\71\1\13";
     static final String DFA19_specialS =
-        "\1\2\47\uffff\1\0\1\1\u00b6\uffff}>";
+        "\1\2\47\uffff\1\0\1\1\u00b8\uffff}>";
     static final String[] DFA19_transitionS = {
             "\11\53\2\52\2\53\1\52\22\53\1\52\1\7\1\50\1\24\1\47\1\17\1\6"+
             "\1\51\1\22\1\23\1\15\1\3\1\21\1\4\1\13\1\16\1\44\11\45\1\33"+
@@ -3046,11 +3075,11 @@ public class InternalScriptingLexer extends Lexer {
             "\1\150\17\uffff\1\151",
             "\1\154\11\uffff\1\152\6\uffff\1\153",
             "\1\155",
-            "\12\157\10\uffff\1\161\1\uffff\3\161\5\uffff\1\161\13\uffff"+
-            "\1\156\6\uffff\1\157\2\uffff\1\161\1\uffff\3\161\5\uffff\1\161"+
+            "\12\160\10\uffff\1\161\1\uffff\3\161\5\uffff\1\161\13\uffff"+
+            "\1\156\6\uffff\1\160\2\uffff\1\161\1\uffff\3\161\5\uffff\1\161"+
             "\13\uffff\1\156",
-            "\12\157\10\uffff\1\161\1\uffff\3\161\5\uffff\1\161\22\uffff"+
-            "\1\157\2\uffff\1\161\1\uffff\3\161\5\uffff\1\161",
+            "\12\160\10\uffff\1\161\1\uffff\3\161\5\uffff\1\161\22\uffff"+
+            "\1\160\2\uffff\1\161\1\uffff\3\161\5\uffff\1\161",
             "\1\76\34\uffff\32\76\4\uffff\1\76\1\uffff\32\76",
             "",
             "\0\162",
@@ -3070,21 +3099,21 @@ public class InternalScriptingLexer extends Lexer {
             "",
             "",
             "",
-            "",
-            "",
             "\1\166",
+            "",
+            "\1\170",
             "\1\76\13\uffff\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\32"+
             "\76",
-            "\1\170",
+            "\1\172",
             "",
-            "",
-            "",
-            "\1\171",
             "",
             "",
             "\1\173",
             "",
             "",
+            "\1\175",
+            "",
+            "",
             "",
             "",
             "",
@@ -3104,88 +3133,90 @@ public class InternalScriptingLexer extends Lexer {
             "",
             "",
             "",
-            "\1\176",
-            "\1\177",
             "\1\u0080",
             "\1\u0081",
             "\1\u0082",
-            "",
-            "",
             "\1\u0083",
+            "\1\u0084",
+            "",
+            "",
+            "\1\u0085",
             "\1\76\13\uffff\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\32"+
             "\76",
-            "\1\u0085\1\u0086",
-            "\1\u0087",
-            "\1\u0088",
+            "\1\u0087\1\u0088",
             "\1\u0089",
             "\1\u008a",
-            "\1\u008c\5\uffff\1\u008b",
-            "\1\u008d",
-            "\1\u008e",
-            "\1\u008f\3\uffff\1\u0090",
-            "\1\u0091",
-            "\1\u0092",
+            "\1\u008b",
+            "\1\u008c",
+            "\1\u008e\5\uffff\1\u008d",
+            "\1\u008f",
+            "\1\u0090",
+            "\1\u0091\3\uffff\1\u0092",
             "\1\u0093",
-            "",
-            "\12\157\10\uffff\1\161\1\uffff\3\161\5\uffff\1\161\22\uffff"+
-            "\1\157\2\uffff\1\161\1\uffff\3\161\5\uffff\1\161",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\u0094",
-            "",
             "\1\u0095",
+            "",
+            "",
+            "\12\160\10\uffff\1\161\1\uffff\3\161\5\uffff\1\161\22\uffff"+
+            "\1\160\2\uffff\1\161\1\uffff\3\161\5\uffff\1\161",
+            "",
+            "",
             "",
             "",
             "",
             "",
             "",
             "\1\u0096",
+            "",
             "\1\u0097",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\u0098",
             "\1\u0099",
             "\1\u009a",
             "\1\u009b",
-            "",
             "\1\u009c",
             "\1\u009d",
-            "\1\76\13\uffff\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\32"+
-            "\76",
+            "",
+            "\1\u009e",
             "\1\u009f",
-            "\1\u00a0",
+            "\1\76\13\uffff\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\32"+
+            "\76",
             "\1\u00a1",
+            "\1\u00a2",
+            "\1\u00a3",
             "\1\76\13\uffff\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\32"+
             "\76",
             "\1\76\13\uffff\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\32"+
             "\76",
             "\1\76\13\uffff\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\32"+
             "\76",
-            "\1\u00a5",
-            "\1\u00a6",
-            "\1\76\13\uffff\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\32"+
-            "\76",
+            "\1\u00a7",
             "\1\u00a8",
-            "\1\u00a9",
+            "\1\76\13\uffff\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\32"+
+            "\76",
             "\1\u00aa",
             "\1\u00ab",
             "\1\u00ac",
+            "\1\u00ad",
+            "\1\u00ae",
             "\1\76\13\uffff\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\32"+
             "\76",
-            "\1\u00ae",
-            "\1\u00af",
             "\1\u00b0",
             "\1\u00b1",
             "\1\u00b2",
-            "\1\76\13\uffff\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\32"+
-            "\76",
+            "\1\u00b3",
             "\1\u00b4",
-            "",
-            "\1\u00b5",
+            "\1\76\13\uffff\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\32"+
+            "\76",
             "\1\u00b6",
+            "",
             "\1\u00b7",
+            "\1\u00b8",
+            "\1\u00b9",
             "",
             "",
             "",
@@ -3194,71 +3225,71 @@ public class InternalScriptingLexer extends Lexer {
             "\1\76\13\uffff\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\32"+
             "\76",
             "",
-            "\1\u00ba",
-            "\1\u00bb",
             "\1\u00bc",
             "\1\u00bd",
             "\1\u00be",
+            "\1\u00bf",
+            "\1\u00c0",
             "",
-            "\1\u00bf\16\uffff\1\u00c0",
-            "\1\u00c1",
-            "\1\u00c2",
-            "\1\76\13\uffff\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\32"+
-            "\76",
+            "\1\u00c1\16\uffff\1\u00c2",
+            "\1\u00c3",
             "\1\u00c4",
+            "\1\76\13\uffff\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\32"+
+            "\76",
+            "\1\u00c6",
             "",
             "\1\76\13\uffff\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\32"+
             "\76",
             "\1\76\13\uffff\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\32"+
             "\76",
-            "\1\u00c7",
-            "\1\76\13\uffff\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\32"+
-            "\76",
-            "",
-            "",
             "\1\u00c9",
             "\1\76\13\uffff\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\32"+
             "\76",
+            "",
+            "",
             "\1\u00cb",
-            "\1\u00cc",
             "\1\76\13\uffff\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\32"+
             "\76",
+            "\1\u00cd",
             "\1\u00ce",
-            "\1\u00cf",
+            "\1\76\13\uffff\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\32"+
+            "\76",
+            "\1\u00d0",
+            "\1\u00d1",
             "\1\76\13\uffff\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\32"+
             "\76",
             "\1\76\13\uffff\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\32"+
             "\76",
             "",
-            "\1\u00d2",
+            "\1\u00d4",
             "",
             "",
-            "\1\u00d3",
-            "",
-            "\1\76\13\uffff\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\32"+
-            "\76",
+            "\1\u00d5",
             "",
             "\1\76\13\uffff\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\32"+
             "\76",
-            "\1\u00d6",
             "",
             "\1\76\13\uffff\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\32"+
             "\76",
             "\1\u00d8",
             "",
+            "\1\76\13\uffff\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\32"+
+            "\76",
+            "\1\u00da",
+            "",
             "",
             "\1\76\13\uffff\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\32"+
             "\76",
             "\1\76\13\uffff\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\32"+
             "\76",
-            "",
-            "",
-            "\1\u00db",
-            "",
-            "\1\u00dc",
             "",
             "",
             "\1\u00dd",
+            "",
+            "\1\u00de",
+            "",
+            "",
+            "\1\u00df",
             "\1\76\13\uffff\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\32"+
             "\76",
             "\1\76\13\uffff\12\76\7\uffff\32\76\4\uffff\1\76\1\uffff\32"+
@@ -3297,7 +3328,7 @@ public class InternalScriptingLexer extends Lexer {
             this.transition = DFA19_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;

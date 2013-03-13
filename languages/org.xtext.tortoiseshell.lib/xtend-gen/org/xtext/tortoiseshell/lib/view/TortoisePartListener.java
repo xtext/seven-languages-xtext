@@ -7,6 +7,7 @@
  */
 package org.xtext.tortoiseshell.lib.view;
 
+import com.google.common.base.Objects;
 import com.google.inject.Inject;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
@@ -30,7 +31,6 @@ import org.eclipse.ui.IWorkbenchPartSite;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.model.IXtextDocument;
 import org.eclipse.xtext.xbase.lib.Exceptions;
-import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.xtext.tortoiseshell.lib.view.TortoiseView;
 
 @SuppressWarnings("all")
@@ -49,7 +49,7 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
     } else {
       IWorkbenchPartSite _site = part.getSite();
       String _id = _site.getId();
-      boolean _equals = ObjectExtensions.operator_equals(_id, "org.xtext.tortoiseshell.TortoiseShell");
+      boolean _equals = Objects.equal(_id, "org.xtext.tortoiseshell.TortoiseShell");
       _and = ((part instanceof XtextEditor) && _equals);
     }
     return _and;
@@ -86,7 +86,7 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
   }
   
   public void partDeactivated(final IWorkbenchPart part) {
-    boolean _equals = ObjectExtensions.operator_equals(part, this.currentTortoiseEditor);
+    boolean _equals = Objects.equal(part, this.currentTortoiseEditor);
     if (_equals) {
       ISourceViewer _internalSourceViewer = this.currentTortoiseEditor==null?(ISourceViewer)null:this.currentTortoiseEditor.getInternalSourceViewer();
       StyledText _textWidget = _internalSourceViewer==null?(StyledText)null:_internalSourceViewer.getTextWidget();
@@ -104,7 +104,7 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
   public void resourceChanged(final IResourceChangeEvent event) {
     try {
       final IFile editorFile = this.currentTortoiseEditor==null?(IFile)null:this.getEditorFile(this.currentTortoiseEditor);
-      boolean _notEquals = ObjectExtensions.operator_notEquals(editorFile, null);
+      boolean _notEquals = (!Objects.equal(editorFile, null));
       if (_notEquals) {
         final IPath editorFilePath = editorFile.getFullPath();
         IResourceDelta _delta = event.getDelta();
@@ -114,7 +114,7 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
               boolean _and = false;
               boolean _and_1 = false;
               IResource _resource = it.getResource();
-              boolean _equals = ObjectExtensions.operator_equals(_resource, editorFile);
+              boolean _equals = Objects.equal(_resource, editorFile);
               if (!_equals) {
                 _and_1 = false;
               } else {

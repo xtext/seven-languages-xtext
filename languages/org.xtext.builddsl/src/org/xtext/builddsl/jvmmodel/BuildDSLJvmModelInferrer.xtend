@@ -54,7 +54,7 @@ class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
 				parameters += toParameter("args", stringArray)
 				varArgs = true
 				static = true
-				body = [append('''
+				body = [ append('''
 					«scriptName» script = new «scriptName»();
 					if (script.showHelp(args)) {
 						System.exit(HELP);

@@ -7,6 +7,7 @@
  */
 package org.xtext.builddsl.validation;
 
+import com.google.common.base.Objects;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashSet;
@@ -21,7 +22,6 @@ import org.eclipse.xtext.xbase.XbasePackage;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
-import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.eclipse.xtext.xbase.validation.XbaseJavaValidator;
 import org.eclipse.xtext.xtype.XtypePackage;
@@ -106,7 +106,7 @@ public class BuildDSLValidator extends XbaseJavaValidator {
       if (!_not) {
         _and = false;
       } else {
-        boolean _notEquals = ObjectExtensions.operator_notEquals(cycleHandler, null);
+        boolean _notEquals = (!Objects.equal(cycleHandler, null));
         _and = (_not && _notEquals);
       }
       if (_and) {

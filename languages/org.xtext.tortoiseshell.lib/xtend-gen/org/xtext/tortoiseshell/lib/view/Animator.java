@@ -7,6 +7,7 @@
  */
 package org.xtext.tortoiseshell.lib.view;
 
+import com.google.common.base.Objects;
 import com.google.inject.Inject;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -17,7 +18,6 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.progress.UIJob;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Functions.Function0;
-import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.xtext.tortoiseshell.lib.view.Animation;
 import org.xtext.tortoiseshell.lib.view.TortoiseFigure;
 import org.xtext.tortoiseshell.lib.view.TortoiseView;
@@ -96,7 +96,7 @@ public class Animator extends UIJob {
         boolean _while = _and;
         while (_while) {
           Display _current = Display.getCurrent();
-          boolean _notEquals = ObjectExtensions.operator_notEquals(_current, null);
+          boolean _notEquals = (!Objects.equal(_current, null));
           if (_notEquals) {
             Display _current_1 = Display.getCurrent();
             _current_1.readAndDispatch();
@@ -132,7 +132,7 @@ public class Animator extends UIJob {
         final long now = System.currentTimeMillis();
         Animation currentAnimation = this.animationQueue.peek();
         boolean _and = false;
-        boolean _notEquals = ObjectExtensions.operator_notEquals(currentAnimation, null);
+        boolean _notEquals = (!Objects.equal(currentAnimation, null));
         if (!_notEquals) {
           _and = false;
         } else {
@@ -154,7 +154,7 @@ public class Animator extends UIJob {
             currentAnimation = _peek;
           }
           boolean _and_1 = false;
-          boolean _notEquals_1 = ObjectExtensions.operator_notEquals(currentAnimation, null);
+          boolean _notEquals_1 = (!Objects.equal(currentAnimation, null));
           if (!_notEquals_1) {
             _and_1 = false;
           } else {
@@ -165,7 +165,7 @@ public class Animator extends UIJob {
           }
           _while = _and_1;
         }
-        boolean _notEquals_1 = ObjectExtensions.operator_notEquals(currentAnimation, null);
+        boolean _notEquals_1 = (!Objects.equal(currentAnimation, null));
         if (_notEquals_1) {
           long _minus = (now - this.lastStart);
           int _delay_1 = currentAnimation.getDelay();

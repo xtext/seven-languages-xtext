@@ -7,6 +7,7 @@
  */
 package org.xtext.tortoiseshell.jvmmodel;
 
+import com.google.common.base.Objects;
 import com.google.inject.Inject;
 import java.util.Arrays;
 import org.eclipse.emf.common.util.EList;
@@ -45,7 +46,7 @@ public class TortoiseShellJvmModelInferrer extends AbstractModelInferrer {
           JvmTypeReference _newTypeRef = TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(program, Tortoise.class);
           TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.<JvmTypeReference>operator_add(_superTypes, _newTypeRef);
           XBlockExpression _body = program.getBody();
-          boolean _notEquals = ObjectExtensions.operator_notEquals(_body, null);
+          boolean _notEquals = (!Objects.equal(_body, null));
           if (_notEquals) {
             EList<JvmMember> _members = it.getMembers();
             JvmTypeReference _newTypeRef_1 = TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(program, Void.TYPE);

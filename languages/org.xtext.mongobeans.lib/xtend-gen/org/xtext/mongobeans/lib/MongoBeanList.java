@@ -7,6 +7,7 @@
  */
 package org.xtext.mongobeans.lib;
 
+import com.google.common.base.Objects;
 import com.mongodb.DBObject;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -19,7 +20,6 @@ import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
-import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure2;
 import org.xtext.mongobeans.lib.IMongoBean;
 import org.xtext.mongobeans.lib.WrappingUtil;
@@ -33,7 +33,7 @@ public class MongoBeanList<T extends IMongoBean> implements List<T> {
   
   public MongoBeanList(final DBObject owner, final String key) {
     final Object value = owner.get(key);
-    boolean _equals = ObjectExtensions.operator_equals(value, null);
+    boolean _equals = Objects.equal(value, null);
     if (_equals) {
       ArrayList<DBObject> _newArrayList = CollectionLiterals.<DBObject>newArrayList();
       this.delegate = _newArrayList;
