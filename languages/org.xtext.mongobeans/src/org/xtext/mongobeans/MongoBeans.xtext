@@ -34,7 +34,9 @@ MongoProperty:
 
 MongoOperation:
 	=>(returnType=JvmTypeReference name=ValidID '(') 
-		(parameters+=FullJvmFormalParameter (',' parameters+=FullJvmFormalParameter)*)? 
+		(parameters+=FullJvmFormalParameter 
+			(',' parameters+=FullJvmFormalParameter)*
+		)? 
 	')' 
 	body=XBlockExpression;
 

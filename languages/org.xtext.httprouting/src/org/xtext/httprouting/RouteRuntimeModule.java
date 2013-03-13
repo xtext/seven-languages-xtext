@@ -8,7 +8,7 @@
 package org.xtext.httprouting;
 
 import org.eclipse.xtext.service.SingletonBinding;
-import org.xtext.httprouting.validation.RouteJavaValidator;
+import org.xtext.httprouting.validation.RouteValidator;
 
 /**
  * Use this class to register components to be used at runtime.
@@ -17,7 +17,7 @@ public class RouteRuntimeModule extends
 		org.xtext.httprouting.AbstractRouteRuntimeModule {
 	
 	@SingletonBinding(eager = true)
-	public Class<? extends RouteJavaValidator> bindRouteJavaValidator() {
-		return RouteJavaValidator.class;
+	public Class<? extends RouteValidator> bindRouteJavaValidator() {
+		return RouteValidator.class;
 	}
 }

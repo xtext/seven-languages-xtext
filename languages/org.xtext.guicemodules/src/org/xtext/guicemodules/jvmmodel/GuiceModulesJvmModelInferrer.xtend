@@ -88,7 +88,7 @@ class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
 				''')]
 			]
 			
-			members+= module.toMethod("configure", voidType.createTypeRef) [
+			members += module.toMethod("configure", voidType.createTypeRef) [
 				documentation = 'Registers bindings for keys not present in the given set.'
 				parameters += module.toParameter("bind", binderType.createTypeRef)
 				parameters += module.toParameter("usedKeys", setType.createTypeRef( keyType.createTypeRef(wildCard)))

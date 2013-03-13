@@ -45,7 +45,7 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 				// get rid of the annoying serial warning
 				annotations += model.toAnnotation(typeof(SuppressWarnings), "serial")
 
-				// translate the dependencies to fields annotated with @Inejct
+				// translate the dependencies to fields annotated with @Inject
 				for (field : model.declarations.filter(typeof(Dependency))) {
 					members += field.toField(field.name, field.type) [
 						annotations += field.toAnnotation(typeof(Inject))

@@ -11,7 +11,7 @@ import org.eclipse.xtext.xbase.XExpression;
 import org.eclipse.xtext.xbase.annotations.validation.XbaseWithAnnotationsJavaValidator;
 
 @SuppressWarnings("all")
-public class RouteJavaValidator extends XbaseWithAnnotationsJavaValidator {
+public class RouteValidator extends XbaseWithAnnotationsJavaValidator {
   /**
    * disable this check
    */

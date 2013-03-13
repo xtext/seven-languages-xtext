@@ -10,7 +10,7 @@ package org.xtext.httprouting.validation
 import org.eclipse.xtext.xbase.XExpression
 import org.eclipse.xtext.xbase.annotations.validation.XbaseWithAnnotationsJavaValidator
 
-class RouteJavaValidator extends XbaseWithAnnotationsJavaValidator{
+class RouteValidator extends XbaseWithAnnotationsJavaValidator{
 
 	/**
 	 * disable this check
