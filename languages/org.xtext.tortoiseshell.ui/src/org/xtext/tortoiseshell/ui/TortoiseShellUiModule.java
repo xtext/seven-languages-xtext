@@ -7,7 +7,9 @@
  ******************************************************************************/
 package org.xtext.tortoiseshell.ui;
 
+import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.xtext.xbase.ui.labeling.XbaseLabelProvider;
 
 /**
  * Use this class to register components to be used within the IDE.
@@ -15,5 +17,10 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 public class TortoiseShellUiModule extends org.xtext.tortoiseshell.ui.AbstractTortoiseShellUiModule {
 	public TortoiseShellUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
+	}
+	
+	@Override
+	public Class<? extends ILabelProvider> bindILabelProvider() {
+		return XbaseLabelProvider.class;
 	}
 }

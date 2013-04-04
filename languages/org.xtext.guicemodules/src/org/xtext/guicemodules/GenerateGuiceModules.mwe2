@@ -91,14 +91,14 @@ Workflow {
     		// fragment = formatting.FormatterFragment auto-inject {}
     
     		// labeling API
-    		// fragment = labeling.LabelProviderFragment auto-inject {}
+    		fragment = labeling.LabelProviderFragment auto-inject {}
     
     		// outline API
     		fragment = outline.OutlineTreeProviderFragment auto-inject {}
     		fragment = outline.QuickOutlineFragment auto-inject {}
     
     		// quickfix API
-    		// fragment = quickfix.QuickfixProviderFragment auto-inject {}
+    		fragment = quickfix.QuickfixProviderFragment auto-inject {}
     
     		// content assist API
     		fragment = contentAssist.ContentAssistFragment auto-inject {}

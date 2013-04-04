@@ -7,10 +7,12 @@
  ******************************************************************************/
 package org.xtext.template.ui;
 
+import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.ui.views.contentoutline.IContentOutlinePage;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfiguration;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculator;
+import org.eclipse.xtext.xbase.ui.labeling.XbaseLabelProvider;
 import org.xtext.template.ui.highlighting.TemplateHighlightingCalculator;
 import org.xtext.template.ui.highlighting.TemplateHighlightingConfiguration;
 
@@ -37,5 +39,10 @@ public class TemplateUiModule extends org.xtext.template.ui.AbstractTemplateUiMo
 	public Class<? extends IContentOutlinePage> bindIContentOutlinePage() {
 		return null;
 	}
-	
+
+	@Override
+	public Class<? extends ILabelProvider> bindILabelProvider() {
+		return XbaseLabelProvider.class;
+	}
+
 }
