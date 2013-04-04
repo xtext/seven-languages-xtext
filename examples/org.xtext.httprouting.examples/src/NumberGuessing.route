@@ -30,7 +30,22 @@ GET /guess
 GET /
 	do {
 		println('Redirecting!')
-		try {
-			response.sendRedirect('/guess')
-		} catch (java.io.IOException e) {}
+		response.sendRedirect('/guess')
 	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

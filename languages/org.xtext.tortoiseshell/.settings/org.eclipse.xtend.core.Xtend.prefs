@@ -1,6 +1,7 @@
 autobuilding=true
 eclipse.preferences.version=1
 is_project_specific=true
+org.eclipse.xtext.xbase.validation.IssueCodes.null_safe_feature_call_on_primitive_valued_feature=ignore
 outlet.DEFAULT_OUTPUT.cleanDirectory=false
 outlet.DEFAULT_OUTPUT.cleanupDerived=true
 outlet.DEFAULT_OUTPUT.createDirectory=true

@@ -2,7 +2,6 @@ package routes;
 
 import com.acme.GuessTheNumber;
 import com.google.inject.Inject;
-import java.io.IOException;
 import java.util.regex.Pattern;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -54,15 +53,11 @@ public class NumberGuessing extends HttpServlet {
   private static Pattern _pattern6 = Pattern.compile("/");
   
   public void _doGet6(final HttpServletRequest request, final HttpServletResponse response) {
-    InputOutput.<String>println("Redirecting!");
     try {
+      InputOutput.<String>println("Redirecting!");
       response.sendRedirect("/guess");
-    } catch (final Throwable _t) {
-      if (_t instanceof IOException) {
-        final IOException e = (IOException)_t;
-      } else {
-        throw Exceptions.sneakyThrow(_t);
-      }
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
     }
   }
   

@@ -22,7 +22,8 @@ public class WordCount {
       for (final String arg : args) {
         {
           File _file = new File(arg);
-          final List<String> lines = Files.readLines(_file, Charsets.UTF_8);
+          final List<String> lines = Files.readLines(_file, 
+            Charsets.UTF_8);
           final Function1<String,Integer> _function = new Function1<String,Integer>() {
               public Integer apply(final String it) {
                 String[] _split = it.split("\\s*");

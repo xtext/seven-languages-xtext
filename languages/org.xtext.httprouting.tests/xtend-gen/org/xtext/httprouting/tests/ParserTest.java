@@ -144,7 +144,7 @@ public class ParserTest {
                 _matched=true;
                 Object _get = args[0];
                 boolean _add = header.add(((String) _get));
-                _switchResult = _add;
+                _switchResult = Boolean.valueOf(_add);
               }
             }
             if (!_matched) {
@@ -152,7 +152,7 @@ public class ParserTest {
                 _matched=true;
                 Object _get_1 = args[0];
                 boolean _contains = header.contains(_get_1);
-                _switchResult = _contains;
+                _switchResult = Boolean.valueOf(_contains);
               }
             }
             return _switchResult;

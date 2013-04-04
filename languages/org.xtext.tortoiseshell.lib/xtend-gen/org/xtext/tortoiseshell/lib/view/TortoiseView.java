@@ -203,7 +203,7 @@ public class TortoiseView extends ViewPart implements Listener {
                 boolean _removeListener = tortoise.removeListener(TortoiseView.this);
                 _xblockexpression = (_removeListener);
               }
-              _xifexpression = _xblockexpression;
+              _xifexpression = Boolean.valueOf(_xblockexpression);
             }
             return _xifexpression;
           }
