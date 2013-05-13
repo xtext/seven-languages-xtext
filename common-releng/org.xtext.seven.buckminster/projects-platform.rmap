@@ -4,11 +4,14 @@
   <rm:property key="xtext.p2.repository" value="${eclipse.download}/modeling/tmf/xtext/updates/composite/nightly/"/>
   <rm:property key="eclipse.target.platform" value="${eclipse.download}/releases/juno"/>
   <rm:redirect pattern="org.xtext.seven.buckminster" href="project.rmap"/>
+ 
   <rm:locator pattern="^org\.eclipse\.(?:xtext|xpand|xtend|xtend2|emf\.mwe|emf\.mwe2)(?:\..+)?$" searchPathRef="xtext"/>
   <rm:locator pattern="^com\.google.*" searchPathRef="xtext"/>
   <rm:locator pattern="^org\.antlr.*" searchPathRef="xtext"/>
   <rm:locator pattern="javax.inject" searchPathRef="xtext"/>
+  <rm:locator pattern="^org\.eclipse\.emf.*" searchPathRef="xtext"/>
   <rm:locator searchPathRef="eclipse"/>
+  
   <rm:searchPath name="xtext">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" source="false">
       <rm:uri format="{0}">
