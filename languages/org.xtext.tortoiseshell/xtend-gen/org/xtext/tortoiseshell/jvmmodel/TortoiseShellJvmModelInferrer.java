@@ -57,7 +57,7 @@ public class TortoiseShellJvmModelInferrer extends AbstractModelInferrer {
                 }
               };
             JvmOperation _method = TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.toMethod(program, "main", _newTypeRef_1, _function);
-            TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members, _method);
+            TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members, _method);
           }
           EList<SubProgram> _subPrograms = program.getSubPrograms();
           for (final SubProgram subProgram : _subPrograms) {
@@ -87,7 +87,7 @@ public class TortoiseShellJvmModelInferrer extends AbstractModelInferrer {
                 }
               };
             JvmOperation _method_1 = TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.toMethod(subProgram, _name, _elvis, _function_1);
-            TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members_1, _method_1);
+            TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_1, _method_1);
           }
         }
       };

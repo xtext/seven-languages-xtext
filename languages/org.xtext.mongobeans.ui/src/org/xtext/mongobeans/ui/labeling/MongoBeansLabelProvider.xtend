@@ -21,7 +21,7 @@ class MongoBeansLabelProvider extends XbaseLabelProvider {
 		super(delegate)
 	}
 	
-	override image(Object element) {
+	override protected doGetImage(Object element) {
 		// icons are stored in the 'icons' folder of this project.
 		// when adding such a folder, don't forget to add it to the 'bin.includes' section in the build.properties
 		switch element {
@@ -30,7 +30,7 @@ class MongoBeansLabelProvider extends XbaseLabelProvider {
 			MongoOperation: 'Letter-O-red-icon.png'
 			PackageDeclaration: 'package_obj.gif'
 			default:
-				super.image(element)
+				super.doGetImage(element)
 		}
 	}
 	

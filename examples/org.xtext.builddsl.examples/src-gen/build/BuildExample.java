@@ -1,6 +1,5 @@
 package build;
 
-import com.google.common.io.Files;
 import java.io.File;
 import java.util.Collection;
 import org.eclipse.xtext.xbase.lib.Exceptions;
@@ -9,6 +8,7 @@ import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.xtext.builddsl.lib.BuildScript;
 import org.xtext.builddsl.lib.ClassExtensions;
 import org.xtext.builddsl.lib.DependsOn;
+import org.xtext.builddsl.lib.DirectoryCleaner;
 import org.xtext.builddsl.lib.FileExtensions;
 import org.xtext.builddsl.lib.JavaCompiler;
 import org.xtext.builddsl.lib.JavaCompilerParams;
@@ -88,11 +88,7 @@ public class BuildExample extends BuildScript {
   
   @DependsOn()
   protected void Clean() {
-    try {
-      Files.deleteDirectoryContents(this.target);
-      this.jar.delete();
-    } catch (Throwable _e) {
-      throw Exceptions.sneakyThrow(_e);
-    }
+    DirectoryCleaner.deleteDirectoryContents(this.target);
+    this.jar.delete();
   }
 }

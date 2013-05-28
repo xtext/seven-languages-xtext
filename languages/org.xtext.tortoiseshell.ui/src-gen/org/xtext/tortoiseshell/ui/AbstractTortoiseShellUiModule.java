@@ -83,6 +83,16 @@ public abstract class AbstractTortoiseShellUiModule extends DefaultUiModule {
 		binder.bind(org.eclipse.xtext.ui.editor.preferences.IPreferenceStoreInitializer.class).annotatedWith(com.google.inject.name.Names.named("builderPreferenceInitializer")).to(org.eclipse.xtext.builder.preferences.BuilderPreferenceAccess.Initializer.class);
 	}
 
+	// contributed by org.eclipse.xtext.ui.generator.labeling.LabelProviderFragment
+	public Class<? extends org.eclipse.jface.viewers.ILabelProvider> bindILabelProvider() {
+		return org.eclipse.xtext.xbase.ui.labeling.XbaseLabelProvider.class;
+	}
+
+	// contributed by org.eclipse.xtext.ui.generator.labeling.LabelProviderFragment
+	public void configureResourceUIServiceLabelProvider(com.google.inject.Binder binder) {
+		binder.bind(org.eclipse.jface.viewers.ILabelProvider.class).annotatedWith(org.eclipse.xtext.ui.resource.ResourceServiceDescriptionLabelProvider.class).to(org.eclipse.xtext.xbase.ui.labeling.XbaseDescriptionLabelProvider.class);
+	}
+
 	// contributed by org.eclipse.xtext.ui.generator.quickfix.QuickfixProviderFragment
 	public Class<? extends org.eclipse.xtext.ui.editor.quickfix.IssueResolutionProvider> bindIssueResolutionProvider() {
 		return org.eclipse.xtext.xbase.ui.quickfix.XbaseQuickfixProvider.class;
@@ -294,11 +304,6 @@ public abstract class AbstractTortoiseShellUiModule extends DefaultUiModule {
 			binder.bind(org.eclipse.xtext.ui.editor.IURIEditorOpener.class).annotatedWith(org.eclipse.xtext.ui.LanguageSpecific.class).to(org.eclipse.xtext.xbase.ui.jvmmodel.navigation.DerivedMemberAwareEditorOpener.class); 
 			binder.bind(org.eclipse.xtext.common.types.ui.navigation.IDerivedMemberAwareEditorOpener.class).to(org.eclipse.xtext.xbase.ui.jvmmodel.navigation.DerivedMemberAwareEditorOpener.class); 
 		};
-	}
-
-	// contributed by org.eclipse.xtext.generator.xbase.XbaseGeneratorFragment
-	public Class<? extends org.eclipse.jface.viewers.ILabelProvider> bindILabelProvider() {
-		return org.eclipse.xtext.xbase.ui.labeling.XbaseLabelProvider.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.xbase.XbaseGeneratorFragment

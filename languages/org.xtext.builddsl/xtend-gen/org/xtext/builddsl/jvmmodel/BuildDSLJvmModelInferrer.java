@@ -104,7 +104,7 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
                   }
                 };
               JvmField _field = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.toField(declaredParameter, _name, type, _function);
-              BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members, _field);
+              BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmField>operator_add(_members, _field);
             }
           }
           JvmTypeReference _newTypeRef_1 = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(file, String.class);
@@ -142,7 +142,7 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
               }
             };
           JvmOperation _method = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.toMethod(file, "main", _newTypeRef_2, _function);
-          BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members, _method);
+          BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members, _method);
           EList<JvmMember> _members_1 = it.getMembers();
           Iterable<Task> _tasks = BuildDSLJvmModelInferrer.this.getTasks(file);
           final Function1<Task,JvmOperation> _function_1 = new Function1<Task,JvmOperation>() {

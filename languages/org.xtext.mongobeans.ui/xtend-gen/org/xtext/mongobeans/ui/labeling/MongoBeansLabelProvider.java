@@ -22,7 +22,7 @@ public class MongoBeansLabelProvider extends XbaseLabelProvider {
     super(delegate);
   }
   
-  public Object image(final Object element) {
+  protected Object doGetImage(final Object element) {
     Object _switchResult = null;
     boolean _matched = false;
     if (!_matched) {
@@ -54,8 +54,8 @@ public class MongoBeansLabelProvider extends XbaseLabelProvider {
       }
     }
     if (!_matched) {
-      Object _image = super.image(element);
-      _switchResult = _image;
+      Object _doGetImage = super.doGetImage(element);
+      _switchResult = _doGetImage;
     }
     return _switchResult;
   }

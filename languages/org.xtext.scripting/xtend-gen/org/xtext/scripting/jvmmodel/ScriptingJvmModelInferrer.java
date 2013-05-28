@@ -59,7 +59,7 @@ public class ScriptingJvmModelInferrer extends AbstractModelInferrer {
               }
             };
           JvmOperation _method = ScriptingJvmModelInferrer.this._jvmTypesBuilder.toMethod(script, "main", _newTypeRef, _function);
-          ScriptingJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members, _method);
+          ScriptingJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members, _method);
         }
       };
     _accept.initializeLater(_function);

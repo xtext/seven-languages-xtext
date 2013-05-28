@@ -1,8 +1,7 @@
 package build
 
 import static org.xtext.builddsl.lib.JavaCompiler.*
-
-import static extension com.google.common.io.Files.*
+import static extension org.xtext.builddsl.lib.DirectoryCleaner.*
 
 param project 	= 'example-project'.file
 param source 	= project/ 'src'

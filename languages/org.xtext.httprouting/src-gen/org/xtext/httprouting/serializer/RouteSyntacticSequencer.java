@@ -132,7 +132,7 @@ public class RouteSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	/**
 	 * Syntax:
-	 *     '/'? | ('/' QualifiedName)+
+	 *     ('/' QualifiedName)+ | '/'?
 	 */
 	protected void emit_URL_SolidusKeyword_1_0_q_or___SolidusKeyword_1_1_0_0_QualifiedNameParserRuleCall_1_1_0_1_0__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

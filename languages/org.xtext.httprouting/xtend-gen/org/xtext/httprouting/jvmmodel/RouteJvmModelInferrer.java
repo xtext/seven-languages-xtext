@@ -94,7 +94,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
                 }
               };
             JvmField _field = RouteJvmModelInferrer.this._jvmTypesBuilder.toField(field, _name, _type, _function);
-            RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members, _field);
+            RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmField>operator_add(_members, _field);
           }
           Iterable<Route> _routes = RouteJvmModelInferrer.this.routes(model);
           final Function1<Route,Boolean> _function_1 = new Function1<Route,Boolean>() {
@@ -109,17 +109,17 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
             {
               EList<JvmMember> _members_1 = it.getMembers();
               JvmField _routePatternField = RouteJvmModelInferrer.this.toRoutePatternField(route);
-              RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members_1, _routePatternField);
+              RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmField>operator_add(_members_1, _routePatternField);
               XExpression _condition = route.getCondition();
               boolean _notEquals = (!Objects.equal(_condition, null));
               if (_notEquals) {
                 EList<JvmMember> _members_2 = it.getMembers();
                 JvmOperation _routeConditionMethod = RouteJvmModelInferrer.this.toRouteConditionMethod(route);
-                RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members_2, _routeConditionMethod);
+                RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_2, _routeConditionMethod);
               }
               EList<JvmMember> _members_3 = it.getMembers();
               JvmOperation _routeCallMethod = RouteJvmModelInferrer.this.toRouteCallMethod(route);
-              RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members_3, _routeCallMethod);
+              RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_3, _routeCallMethod);
             }
           }
           Iterable<Route> _routes_1 = RouteJvmModelInferrer.this.routes(model);
@@ -136,7 +136,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
           if (_not) {
             EList<JvmMember> _members_1 = it.getMembers();
             JvmOperation _requestHandlerMethod = RouteJvmModelInferrer.this.toRequestHandlerMethod(model, "doGet", getRoutes);
-            RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members_1, _requestHandlerMethod);
+            RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_1, _requestHandlerMethod);
           }
           Iterable<Route> _routes_2 = RouteJvmModelInferrer.this.routes(model);
           final Function1<Route,Boolean> _function_3 = new Function1<Route,Boolean>() {
@@ -152,7 +152,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
           if (_not_1) {
             EList<JvmMember> _members_2 = it.getMembers();
             JvmOperation _requestHandlerMethod_1 = RouteJvmModelInferrer.this.toRequestHandlerMethod(model, "doPost", postRoutes);
-            RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members_2, _requestHandlerMethod_1);
+            RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_2, _requestHandlerMethod_1);
           }
           Iterable<Route> _routes_3 = RouteJvmModelInferrer.this.routes(model);
           final Function1<Route,Boolean> _function_4 = new Function1<Route,Boolean>() {
@@ -168,7 +168,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
           if (_not_2) {
             EList<JvmMember> _members_3 = it.getMembers();
             JvmOperation _requestHandlerMethod_2 = RouteJvmModelInferrer.this.toRequestHandlerMethod(model, "doPut", putRoutes);
-            RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members_3, _requestHandlerMethod_2);
+            RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_3, _requestHandlerMethod_2);
           }
           Iterable<Route> _routes_4 = RouteJvmModelInferrer.this.routes(model);
           final Function1<Route,Boolean> _function_5 = new Function1<Route,Boolean>() {
@@ -184,7 +184,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
           if (_not_3) {
             EList<JvmMember> _members_4 = it.getMembers();
             JvmOperation _requestHandlerMethod_3 = RouteJvmModelInferrer.this.toRequestHandlerMethod(model, "doDelete", deleteRoutes);
-            RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members_4, _requestHandlerMethod_3);
+            RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_4, _requestHandlerMethod_3);
           }
           Iterable<Route> _routes_5 = RouteJvmModelInferrer.this.routes(model);
           final Function1<Route,Boolean> _function_6 = new Function1<Route,Boolean>() {
@@ -200,7 +200,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
           if (_not_4) {
             EList<JvmMember> _members_5 = it.getMembers();
             JvmOperation _requestHandlerMethod_4 = RouteJvmModelInferrer.this.toRequestHandlerMethod(model, "doHead", headRoutes);
-            RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members_5, _requestHandlerMethod_4);
+            RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_5, _requestHandlerMethod_4);
           }
         }
       };
