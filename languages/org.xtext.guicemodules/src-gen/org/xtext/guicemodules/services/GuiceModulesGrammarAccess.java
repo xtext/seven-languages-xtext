@@ -334,7 +334,7 @@ public class GuiceModulesGrammarAccess extends AbstractGrammarElementFinder {
 
 	//XAnnotationElementValue returns xbase::XExpression:
 	//	XAnnotation | XListLiteral | XStringLiteral | XBooleanLiteral | XNumberLiteral | XTypeLiteral |
-	//	XAnnotationValueFieldReference | "(" XAnnotationElementValueStringConcatenation ")";
+	//	XAnnotationValueMemberFieldReference | "(" XAnnotationElementValueStringConcatenation ")";
 	public XbaseWithAnnotationsGrammarAccess.XAnnotationElementValueElements getXAnnotationElementValueAccess() {
 		return gaXbaseWithAnnotations.getXAnnotationElementValueAccess();
 	}
@@ -343,9 +343,19 @@ public class GuiceModulesGrammarAccess extends AbstractGrammarElementFinder {
 		return getXAnnotationElementValueAccess().getRule();
 	}
 
+	//XAnnotationValueMemberFieldReference returns xbase::XExpression:
+	//	XAnnotationValueFieldReference ({xbase::XMemberFeatureCall.memberCallTarget=current} ("." | explicitStatic?="::")
+	//	feature=[types::JvmIdentifiableElement|IdOrSuper])*;
+	public XbaseWithAnnotationsGrammarAccess.XAnnotationValueMemberFieldReferenceElements getXAnnotationValueMemberFieldReferenceAccess() {
+		return gaXbaseWithAnnotations.getXAnnotationValueMemberFieldReferenceAccess();
+	}
+	
+	public ParserRule getXAnnotationValueMemberFieldReferenceRule() {
+		return getXAnnotationValueMemberFieldReferenceAccess().getRule();
+	}
+
 	//XAnnotationValueFieldReference returns xbase::XExpression:
-	//	{xbase::XFeatureCall} declaringType=[types::JvmDeclaredType|StaticQualifier]?
-	//	feature=[types::JvmIdentifiableElement|IdOrSuper];
+	//	{xbase::XFeatureCall} feature=[types::JvmIdentifiableElement|IdOrSuper];
 	public XbaseWithAnnotationsGrammarAccess.XAnnotationValueFieldReferenceElements getXAnnotationValueFieldReferenceAccess() {
 		return gaXbaseWithAnnotations.getXAnnotationValueFieldReferenceAccess();
 	}
@@ -365,9 +375,8 @@ public class GuiceModulesGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XAssignment returns XExpression:
-	//	{XAssignment} / * (declaringType=[types::JvmDeclaredType] '::')? * /
-	//	feature=[types::JvmIdentifiableElement|FeatureCallID] OpSingleAssign value=XAssignment | XOrExpression (=>
-	//	({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpMultiAssign])
+	//	{XAssignment} feature=[types::JvmIdentifiableElement|FeatureCallID] OpSingleAssign value=XAssignment | XOrExpression
+	//	(=> ({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpMultiAssign])
 	//	rightOperand=XAssignment)?;
 	public XbaseGrammarAccess.XAssignmentElements getXAssignmentAccess() {
 		return gaXbaseWithAnnotations.getXAssignmentAccess();
@@ -576,9 +585,10 @@ public class GuiceModulesGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XMemberFeatureCall returns XExpression:
-	//	XPrimaryExpression (=> ({XAssignment.assignable=current} "." feature=[types::JvmIdentifiableElement|FeatureCallID]
-	//	OpSingleAssign) value=XAssignment | => ({XMemberFeatureCall.memberCallTarget=current} ("." | nullSafe?="?." |
-	//	spreading?="*.")) ("<" typeArguments+=JvmArgumentTypeReference ("," typeArguments+=JvmArgumentTypeReference)* ">")?
+	//	XPrimaryExpression (=> ({XAssignment.assignable=current} ("." | explicitStatic?="::")
+	//	feature=[types::JvmIdentifiableElement|FeatureCallID] OpSingleAssign) value=XAssignment | =>
+	//	({XMemberFeatureCall.memberCallTarget=current} ("." | nullSafe?="?." | explicitStatic?="::")) ("<"
+	//	typeArguments+=JvmArgumentTypeReference ("," typeArguments+=JvmArgumentTypeReference)* ">")?
 	//	feature=[types::JvmIdentifiableElement|FeatureCallID] (=> explicitOperationCall?="("
 	//	(memberCallArguments+=XShortClosure | memberCallArguments+=XExpression ("," memberCallArguments+=XExpression)*)? ")")?
 	//	memberCallArguments+=XClosure?)*;
@@ -798,10 +808,9 @@ public class GuiceModulesGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XFeatureCall returns XExpression:
-	//	{XFeatureCall} declaringType=[types::JvmDeclaredType|StaticQualifier]? ("<" typeArguments+=JvmArgumentTypeReference
-	//	("," typeArguments+=JvmArgumentTypeReference)* ">")? feature=[types::JvmIdentifiableElement|IdOrSuper] (=>
-	//	explicitOperationCall?="(" (featureCallArguments+=XShortClosure | featureCallArguments+=XExpression (","
-	//	featureCallArguments+=XExpression)*)? ")")? featureCallArguments+=XClosure?;
+	//	{XFeatureCall} ("<" typeArguments+=JvmArgumentTypeReference ("," typeArguments+=JvmArgumentTypeReference)* ">")?
+	//	feature=[types::JvmIdentifiableElement|IdOrSuper] (=> explicitOperationCall?="(" (featureCallArguments+=XShortClosure
+	//	| featureCallArguments+=XExpression ("," featureCallArguments+=XExpression)*)? ")")? featureCallArguments+=XClosure?;
 	public XbaseGrammarAccess.XFeatureCallElements getXFeatureCallAccess() {
 		return gaXbaseWithAnnotations.getXFeatureCallAccess();
 	}
@@ -828,19 +837,6 @@ public class GuiceModulesGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getIdOrSuperRule() {
 		return getIdOrSuperAccess().getRule();
-	}
-
-	//// This is a workaround since ANTLR will not be able to resolve
-	//// StaticQualifier: ValidID ('::' ValidID)*; and XFeatureCall: (StaticQualifier '::')? ValidID
-	//// Make sure to change the value converter if you change the syntax of the StaticQualifier
-	//StaticQualifier:
-	//	(ValidID "::")+;
-	public XbaseGrammarAccess.StaticQualifierElements getStaticQualifierAccess() {
-		return gaXbaseWithAnnotations.getStaticQualifierAccess();
-	}
-	
-	public ParserRule getStaticQualifierRule() {
-		return getStaticQualifierAccess().getRule();
 	}
 
 	//XConstructorCall returns XExpression:

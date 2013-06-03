@@ -146,7 +146,10 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
                 EList<EObject> _contents = it.getContents();
                 Iterable<JvmDeclaredType> _filter = Iterables.<JvmDeclaredType>filter(_contents, JvmDeclaredType.class);
                 final JvmDeclaredType file = IterableExtensions.<JvmDeclaredType>head(_filter);
-                String _identifier = file==null?(String)null:file.getIdentifier();
+                String _identifier = null;
+                if (file!=null) {
+                  _identifier=file.getIdentifier();
+                }
                 String _findTask = BuildDSLLaunchShortcut.this.findTask(it, offset);
                 LaunchConfigurationInfo _launchConfigurationInfo = new LaunchConfigurationInfo(project, _identifier, _findTask);
                 _xblockexpression = (_launchConfigurationInfo);

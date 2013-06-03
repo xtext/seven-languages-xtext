@@ -141,7 +141,10 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
                 GuiceModulesJvmModelInferrer.this.builder.<JvmOperation>operator_add(_members_1, _method);
               }
               KeyAST _to = binding.getTo();
-              XAnnotation _annotation = _to==null?(XAnnotation)null:_to.getAnnotation();
+              XAnnotation _annotation = null;
+              if (_to!=null) {
+                _annotation=_to.getAnnotation();
+              }
               boolean _notEquals_1 = (!Objects.equal(_annotation, null));
               if (_notEquals_1) {
                 EList<JvmMember> _members_2 = it.getMembers();

@@ -80,8 +80,14 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
               if (_type != null) {
                 _elvis_1 = _type;
               } else {
-                XExpression _init = declaredParameter==null?(XExpression)null:declaredParameter.getInit();
-                JvmTypeReference _inferredType = _init==null?(JvmTypeReference)null:BuildDSLJvmModelInferrer.this._jvmTypesBuilder.inferredType(_init);
+                JvmTypeReference _inferredType = null;
+                XExpression _init = null;
+                if (declaredParameter!=null) {
+                  _init=declaredParameter.getInit();
+                }
+                if (_init!=null) {
+                  _inferredType=BuildDSLJvmModelInferrer.this._jvmTypesBuilder.inferredType(_init);
+                }
                 _elvis_1 = ObjectExtensions.<JvmTypeReference>operator_elvis(_type, _inferredType);
               }
               if (_elvis_1 != null) {

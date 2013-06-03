@@ -218,9 +218,16 @@ public class TortoiseView extends ViewPart implements Listener {
     boolean _xblockexpression = false;
     {
       IDocumentProvider _documentProvider = tortoiseEditor.getDocumentProvider();
-      IEditorInput _editorInput = tortoiseEditor.getEditorInput();
-      IAnnotationModel _annotationModel = _documentProvider==null?(IAnnotationModel)null:_documentProvider.getAnnotationModel(_editorInput);
-      final Iterator annotations = _annotationModel==null?(Iterator)null:_annotationModel.getAnnotationIterator();
+      IAnnotationModel _annotationModel = null;
+      if (_documentProvider!=null) {
+        IEditorInput _editorInput = tortoiseEditor.getEditorInput();
+        _annotationModel=_documentProvider.getAnnotationModel(_editorInput);
+      }
+      Iterator _annotationIterator = null;
+      if (_annotationModel!=null) {
+        _annotationIterator=_annotationModel.getAnnotationIterator();
+      }
+      final Iterator annotations = _annotationIterator;
       boolean _and = false;
       boolean _notEquals = (!Objects.equal(annotations, null));
       if (!_notEquals) {

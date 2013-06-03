@@ -74,8 +74,11 @@ public class TemplateJvmModelInferrer extends AbstractModelInferrer {
               if (_type != null) {
                 _elvis_1 = _type;
               } else {
+                JvmTypeReference _inferredType = null;
                 XExpression _defaultexp = param.getDefaultexp();
-                JvmTypeReference _inferredType = _defaultexp==null?(JvmTypeReference)null:TemplateJvmModelInferrer.this._jvmTypesBuilder.inferredType(_defaultexp);
+                if (_defaultexp!=null) {
+                  _inferredType=TemplateJvmModelInferrer.this._jvmTypesBuilder.inferredType(_defaultexp);
+                }
                 _elvis_1 = ObjectExtensions.<JvmTypeReference>operator_elvis(_type, _inferredType);
               }
               if (_elvis_1 != null) {

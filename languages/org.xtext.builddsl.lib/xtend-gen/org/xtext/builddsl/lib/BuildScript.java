@@ -214,7 +214,9 @@ public abstract class BuildScript {
       _builder.append("\']");
       InputOutput.<String>println(_builder.toString());
       Procedure0 _runnable = task.getRunnable();
-      if (_runnable!=null) _runnable.apply();
+      if (_runnable!=null) {
+        _runnable.apply();
+      }
     } finally {
       task.setExecuted(true);
       task.setIsExecuting(false);

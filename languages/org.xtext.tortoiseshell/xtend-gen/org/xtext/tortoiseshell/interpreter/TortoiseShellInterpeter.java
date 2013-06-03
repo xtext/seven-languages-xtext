@@ -62,8 +62,10 @@ public class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoi
         Set<EObject> _jvmElements = this._iJvmModelAssociations.getJvmElements(program);
         Iterable<JvmOperation> _filter = Iterables.<JvmOperation>filter(_jvmElements, JvmOperation.class);
         JvmOperation _head = IterableExtensions.<JvmOperation>head(_filter);
-        List<Object> _emptyList = CollectionLiterals.<Object>emptyList();
-        if (_head!=null) this.invokeOperation(_head, null, _emptyList);
+        if (_head!=null) {
+          List<Object> _emptyList = CollectionLiterals.<Object>emptyList();
+          this.invokeOperation(_head, null, _emptyList);
+        }
       } catch (final Throwable _t) {
         if (_t instanceof StopLineReachedException) {
           final StopLineReachedException exc = (StopLineReachedException)_t;
@@ -78,7 +80,11 @@ public class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoi
     Object _xblockexpression = null;
     {
       ICompositeNode _findActualNodeFor = NodeModelUtils.findActualNodeFor(expression);
-      final int line = _findActualNodeFor==null?0:_findActualNodeFor.getStartLine();
+      int _startLine = 0;
+      if (_findActualNodeFor!=null) {
+        _startLine=_findActualNodeFor.getStartLine();
+      }
+      final int line = _startLine;
       int _minus = (line - 1);
       boolean _equals = (_minus == this.stopAtLine);
       if (_equals) {
