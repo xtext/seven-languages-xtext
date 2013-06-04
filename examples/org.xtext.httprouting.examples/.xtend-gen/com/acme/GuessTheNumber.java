@@ -49,7 +49,10 @@ public class GuessTheNumber {
     }
     int _xtrycatchfinallyexpression = (int) 0;
     try {
-      int _parseInt = theGuess==null?0:Integer.parseInt(theGuess);
+      int _parseInt = 0;
+      if (theGuess!=null) {
+        _parseInt=Integer.parseInt(theGuess);
+      }
       _xtrycatchfinallyexpression = _parseInt;
     } catch (final Throwable _t) {
       if (_t instanceof NumberFormatException) {

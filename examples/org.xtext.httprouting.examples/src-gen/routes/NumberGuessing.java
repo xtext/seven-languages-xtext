@@ -29,7 +29,10 @@ public class NumberGuessing extends HttpServlet {
   
   public boolean _doGet3Condition(final HttpServletRequest request, final HttpServletResponse response) {
     String _parameter = request.getParameter("theGuess");
-    boolean _equals = _parameter==null?false:_parameter.equals("42");
+    boolean _equals = false;
+    if (_parameter!=null) {
+      _equals=_parameter.equals("42");
+    }
     return _equals;
   }
   
