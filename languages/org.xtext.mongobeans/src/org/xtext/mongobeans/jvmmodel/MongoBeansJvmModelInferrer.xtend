@@ -46,7 +46,7 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 	@Inject extension IJvmModelAssociations associations
 
 	def dispatch void infer(MongoFile file, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
-		for(bean : file.eAllOfType(typeof(MongoBean))) {
+		for(bean : file.eAllOfType(MongoBean)) {
 			acceptor.accept(bean.toClass(bean.fullyQualifiedName)).initializeLater [
 				documentation = bean.documentation
 				superTypes += bean.newTypeRef('org.xtext.mongobeans.lib.IMongoBean')

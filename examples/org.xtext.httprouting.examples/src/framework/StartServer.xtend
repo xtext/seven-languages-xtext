@@ -46,8 +46,8 @@ class SuperServlet extends NumberGuessing {
 	override init() throws ServletException {
 		super.init()
 		injector = Guice::createInjector [
-			bind(typeof(HttpServletRequest)).toProvider [|request.get]
-			bind(typeof(HttpServletResponse)).toProvider[|response.get]
+			bind(HttpServletRequest).toProvider [|request.get]
+			bind(HttpServletResponse).toProvider [|response.get]
 		]
 	}
 	

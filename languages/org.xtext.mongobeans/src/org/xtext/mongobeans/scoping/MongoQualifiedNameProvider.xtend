@@ -20,7 +20,7 @@ import static extension org.eclipse.xtext.EcoreUtil2.*
 class MongoQualifiedNameProvider extends XbaseQualifiedNameProvider {
 	
 	def qualifiedName(MongoBean mongoBean) {
-		val packageDeclaration = mongoBean.getContainerOfType(typeof(PackageDeclaration))
+		val packageDeclaration = mongoBean.getContainerOfType(PackageDeclaration)
 		if(packageDeclaration != null) 
 			packageDeclaration.fullyQualifiedName.append(mongoBean.name)
 		else

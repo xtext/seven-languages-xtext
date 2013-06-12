@@ -56,7 +56,7 @@ class MusicDBXtendTest {
 			val albumFromDb = johnFromDb.albums.get(1)
 			assertEquals("35:51", albumFromDb.duration.toString)
 		} finally {
-			mongo.close 
+			mongo.close
 		}
 	}
 	

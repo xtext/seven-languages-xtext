@@ -15,8 +15,8 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.xtext.scripting.ScriptingInjectorProvider
 
-@RunWith(typeof(XtextRunner))
-@InjectWith(typeof(ScriptingInjectorProvider))
+@RunWith(XtextRunner)
+@InjectWith(ScriptingInjectorProvider)
 class CompilationTest {
 
 	@Inject extension CompilationTestHelper

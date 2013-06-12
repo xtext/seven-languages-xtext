@@ -24,7 +24,11 @@ public class WrappingUtil {
       IMongoBean _xblockexpression = null;
       {
         Object _get = dbObject.get(IMongoBean.JAVA_CLASS_KEY);
-        final String javaClassName = _get==null?(String)null:_get.toString();
+        String _string = null;
+        if (_get!=null) {
+          _string=_get.toString();
+        }
+        final String javaClassName = _string;
         ClassLoader _classLoader = WrappingUtil.getClassLoader();
         final Class<? extends Object> javaClass = _classLoader.loadClass(javaClassName);
         IMongoBean _xifexpression = null;

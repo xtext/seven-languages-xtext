@@ -18,8 +18,8 @@ import org.eclipse.xtext.xbase.lib.util.ReflectExtensions
 
 import static org.junit.Assert.*
 
-@RunWith(typeof(XtextRunner))
-@InjectWith(typeof(TemplateInjectorProvider))
+@RunWith(XtextRunner)
+@InjectWith(TemplateInjectorProvider)
 class IntegrationTest {
 	
 	@Inject extension CompilationTestHelper

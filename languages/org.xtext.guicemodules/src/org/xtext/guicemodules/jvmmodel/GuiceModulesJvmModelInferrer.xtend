@@ -31,14 +31,14 @@ class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
 
 	def dispatch void infer(ModuleAST module, IJvmDeclaredTypeAcceptor acceptor, boolean preIndexingPhase) {
 		// leave if Guice is not on the classpath
-		if(module.newTypeRef(typeof(Key)) == null) return;
+		if(module.newTypeRef(Key) == null) return;
 		
 		// declare the needed types :
-		val keyType = module.newTypeRef(typeof(Key)).type
-		val moduleType = module.newTypeRef(typeof(Module)).type
-		val binderType = module.newTypeRef(typeof(Binder)).type
-		val hashSetType = module.newTypeRef(typeof(HashSet)).type
-		val setType = module.newTypeRef(typeof(Set)).type
+		val keyType = module.newTypeRef(Key).type
+		val moduleType = module.newTypeRef(Module).type
+		val binderType = module.newTypeRef(Binder).type
+		val hashSetType = module.newTypeRef(HashSet).type
+		val setType = module.newTypeRef(Set).type
 		val voidType = module.newTypeRef('void').type
 
 		

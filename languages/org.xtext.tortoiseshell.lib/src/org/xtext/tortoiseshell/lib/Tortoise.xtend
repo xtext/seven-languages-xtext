@@ -25,13 +25,13 @@ class Tortoise {
 	@Property int lineWidth = 1
 	@Property Color lineColor = ColorConstants::black
 
-	List<ITortoiseEvent$Listener> listeners = newArrayList
+	List<ITortoiseEvent.Listener> listeners = newArrayList
 	
-	def addListener(ITortoiseEvent$Listener listener) {
+	def addListener(ITortoiseEvent.Listener listener) {
 		listeners += listener
 	}
 	
-	def removeListener(ITortoiseEvent$Listener listener) {
+	def removeListener(ITortoiseEvent.Listener listener) {
 		listeners.remove(listener)
 	}
 	

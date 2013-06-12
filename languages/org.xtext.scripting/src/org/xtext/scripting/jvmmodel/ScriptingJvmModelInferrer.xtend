@@ -25,7 +25,7 @@ class ScriptingJvmModelInferrer extends AbstractModelInferrer {
    		acceptor.accept(script.toClass(className)).initializeLater [
    			// the class gets one main method
    			members += script.toMethod('main', script.newTypeRef(Void::TYPE)) [
-   				parameters += script.toParameter("args", script.newTypeRef(typeof(String)).addArrayTypeDimension)
+   				parameters += script.toParameter("args", script.newTypeRef(String).addArrayTypeDimension)
    				static = true
    				varArgs = true
    				// Associate the script as the body of the main method

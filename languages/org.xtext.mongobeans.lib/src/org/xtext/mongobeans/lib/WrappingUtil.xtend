@@ -17,11 +17,11 @@ class WrappingUtil {
 	def static IMongoBean wrap(DBObject dbObject) {
 		val javaClassName = dbObject.get(IMongoBean::JAVA_CLASS_KEY)?.toString
 		val javaClass = classLoader.loadClass(javaClassName)
-		if(typeof(IMongoBean).isAssignableFrom(javaClass)) {
-			val constructor = javaClass.getConstructor(typeof(DBObject))
+		if(IMongoBean.isAssignableFrom(javaClass)) {
+			val constructor = javaClass.getConstructor(DBObject)
 			constructor.newInstance(dbObject) as IMongoBean
 		} else {
-			throw new IllegalStateException('''Stored javaClass '«javaClassName»' does not extend '«typeof(IMongoBean).simpleName»'.''')
+			throw new IllegalStateException('''Stored javaClass '«javaClassName»' does not extend '«IMongoBean.simpleName»'.''')
 		}
 	}
 	
@@ -36,7 +36,7 @@ class WrappingUtil {
 			(wrapper as IMongoBean).getDbObject
 	}
 	
-	static ClassLoader _classLoader = typeof(WrappingUtil).classLoader
+	static ClassLoader _classLoader = WrappingUtil.classLoader
 	
 	def static getClassLoader() {
 		_classLoader

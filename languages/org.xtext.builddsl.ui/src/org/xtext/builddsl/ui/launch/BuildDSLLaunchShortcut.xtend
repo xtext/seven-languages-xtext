@@ -49,12 +49,12 @@ class BuildDSLLaunchShortcut implements ILaunchShortcut {
 			val index = list.indexOf(start)
 			val first = (index..0).findFirst[!list.get(it).hidden]
 			val last = (index..(list.size-1)).findFirst[!list.get(it).hidden]
-			val task1 = list.get(first).semanticElement.getContainerOfType(typeof(Task))
-			val task2 = list.get(last).semanticElement.getContainerOfType(typeof(Task))
+			val task1 = list.get(first).semanticElement.getContainerOfType(Task)
+			val task2 = list.get(last).semanticElement.getContainerOfType(Task)
 			if(task1 == task2) 
 				return task1.name
 		} else 
-			return start.semanticElement.getContainerOfType(typeof(Task)).name
+			return start.semanticElement.getContainerOfType(Task).name
 		return null
 	}
 
@@ -68,7 +68,7 @@ class BuildDSLLaunchShortcut implements ILaunchShortcut {
 			if (xbaseEditor.editorInput instanceof IFileEditorInput) {
 				val project = (xbaseEditor.editorInput as IFileEditorInput).file.project.name
 				val info = xbaseEditor.document.readOnly [
-					val file = contents.filter(typeof(JvmDeclaredType)).head
+					val file = contents.filter(JvmDeclaredType).head
 					new LaunchConfigurationInfo(project, file?.identifier, findTask(offset))
 				]
 				launch(mode, info)

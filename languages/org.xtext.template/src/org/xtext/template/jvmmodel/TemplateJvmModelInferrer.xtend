@@ -38,7 +38,7 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
 				// catch-all) just String 
 				val type = param.type 
 					?: param.defaultexp?.inferredType 
-					?: element.newTypeRef(typeof(String))
+					?: element.newTypeRef(String)
 				members += param.toField(param.name, type) [
 					if (param.defaultexp != null)
 						initializer = param.defaultexp
@@ -47,16 +47,16 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
 				members += param.toGetter(param.name, type)
 			}
 			
-			members += element.toMethod("generate", element.newTypeRef(typeof(CharSequence))) [
+			members += element.toMethod("generate", element.newTypeRef(CharSequence)) [
 				visibility = JvmVisibility::PRIVATE
 				body = element.body
 			]
 			
 			// generate a method accepting an initializer lambda expression
-			members += element.toMethod("generate", element.newTypeRef(typeof(String))) [
+			members += element.toMethod("generate", element.newTypeRef(String)) [
 				parameters += element.toParameter(
 					"init", 
-					element.newTypeRef(typeof(Procedures$Procedure1), newTypeRef(javaClass))
+					element.newTypeRef(Procedures.Procedure1, newTypeRef(javaClass))
 				)
 				body = [
 					append('''

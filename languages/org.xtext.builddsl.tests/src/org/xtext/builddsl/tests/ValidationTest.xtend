@@ -17,11 +17,11 @@ import org.junit.runner.RunWith
 import org.xtext.builddsl.BuildDSLInjectorProvider
 import org.xtext.builddsl.build.BuildFile
 
-import static org.xtext.builddsl.build.BuildPackage$Literals.*
+import static org.xtext.builddsl.build.BuildPackage.Literals.*
 import static org.xtext.builddsl.validation.BuildDSLValidator.*
 
-@RunWith(typeof(XtextRunner))
-@InjectWith(typeof(BuildDSLInjectorProvider))
+@RunWith(XtextRunner)
+@InjectWith(BuildDSLInjectorProvider)
 class ValidationTest {
 	
 	@Inject extension ParseHelper<BuildFile> 

@@ -17,7 +17,7 @@ import org.xtext.mongobeans.jvmmodel.MongoTypes
 import org.xtext.mongobeans.mongoBeans.MongoBeansPackage
 import org.xtext.mongobeans.mongoBeans.MongoProperty
 
-import static org.xtext.mongobeans.mongoBeans.MongoBeansPackage$Literals.*
+import static org.xtext.mongobeans.mongoBeans.MongoBeansPackage.Literals.*
 
 class MongoBeansValidator extends XbaseJavaValidator {
 	

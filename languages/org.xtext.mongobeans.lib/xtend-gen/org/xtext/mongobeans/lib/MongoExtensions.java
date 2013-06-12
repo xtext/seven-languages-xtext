@@ -19,9 +19,12 @@ import org.xtext.mongobeans.lib.WrappingUtil;
 @SuppressWarnings("all")
 public class MongoExtensions {
   public <T extends IMongoBean> T findOneBean(final DBCollection collection, final T wrapper) {
+    IMongoBean _wrap = null;
     DBObject _dbObject = wrapper.getDbObject();
     DBObject _findOne = collection.findOne(_dbObject);
-    IMongoBean _wrap = _findOne==null?(IMongoBean)null:WrappingUtil.wrap(_findOne);
+    if (_findOne!=null) {
+      _wrap=WrappingUtil.wrap(_findOne);
+    }
     return ((T) _wrap);
   }
   

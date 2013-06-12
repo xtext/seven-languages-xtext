@@ -24,8 +24,8 @@ import org.xtext.mongobeans.lib.WrappingUtil
 
 import static org.junit.Assert.*
 
-@RunWith(typeof(XtextRunner))
-@InjectWith(typeof(MongoBeansInjectorProvider))
+@RunWith(XtextRunner)
+@InjectWith(MongoBeansInjectorProvider)
 class WrappingUtilTest {
 
 	@Inject extension CompilationTestHelper
@@ -85,8 +85,8 @@ class WrappingUtilTest {
 
 	def protected newFooMongoBean(DBObject source) {
 		mongoBeanClass
-			.getConstructor(#[typeof(DBObject)] as Class<?>[]) 
-			.newInstance(#[source] as Object[])
+			.getConstructor(DBObject) 
+			.newInstance(source)
 	}
 
 }

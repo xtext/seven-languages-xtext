@@ -6,7 +6,6 @@ import org.eclipse.draw2d.ColorConstants
 class TortoiseShellImplicitlyImportedTypes extends ImplicitlyImportedTypes {
 	
 	override protected getStaticImportClasses() {
-		(super.getStaticImportClasses() + #[typeof(Math), typeof(ColorConstants)])
-			.toList
+		(super.getStaticImportClasses() + #[Math, ColorConstants]).toList
 	}
 }

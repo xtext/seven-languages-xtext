@@ -31,9 +31,9 @@ import org.xtext.tortoiseshell.lib.Tortoise
 import org.xtext.tortoiseshell.lib.TurnEvent
 
 @Singleton
-class TortoiseView extends ViewPart implements ITortoiseEvent$Listener {
+class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
 	
-	static val LOGGER = Logger::getLogger(typeof(TortoiseView))
+	static val LOGGER = Logger::getLogger(TortoiseView)
 	 
 	FigureCanvas canvas
 	
@@ -84,9 +84,9 @@ class TortoiseView extends ViewPart implements ITortoiseEvent$Listener {
 			if(it != null && !tortoiseEditor.hasError) {
 				val tortoise = new Tortoise
 				tortoise.addListener(this)
-				val interpreter = resourceServiceProvider.get(typeof(ITortoiseInterpreter))
+				val interpreter = resourceServiceProvider.get(ITortoiseInterpreter)
 				if(interpreter != null && !contents.empty) {
-					try {		
+					try {
 						interpreter.run(tortoise, contents.get(0), stopAtLine)
 					} catch (Exception e) {
 						MessageDialog::openError(site.shell, "Error during Execution", '''

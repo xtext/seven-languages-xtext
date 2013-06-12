@@ -22,8 +22,8 @@ import org.xtext.httprouting.RouteInjectorProvider
 
 import static org.junit.Assert.*
 
-@InjectWith(typeof(RouteInjectorProvider))
-@RunWith(typeof(XtextRunner))
+@InjectWith(RouteInjectorProvider)
+@RunWith(XtextRunner)
 class ParserTest {
 	
 	@Inject extension CompilationTestHelper
@@ -51,7 +51,7 @@ class ParserTest {
 	 * creates a HttpServletRequest proxy
 	 */
 	def request(String url) {
-		typeof(HttpServletRequest).newProxy [ proxy, method, args |
+		HttpServletRequest.newProxy [ proxy, method, args |
 			switch method.name {
 				case 'getRequestURL' : 
 					new StringBuffer(url)
@@ -66,7 +66,7 @@ class ParserTest {
 	 */
 	def response() {
 		val header = <String>newHashSet
-		typeof(HttpServletResponse).newProxy [ proxy, method, args |
+		HttpServletResponse.newProxy [ proxy, method, args |
 			switch method.name {
 				case 'addHeader' : 
 					header.add(args.get(0) as String)
@@ -80,9 +80,7 @@ class ParserTest {
 	 * utility to create a proxy for a class and an invocation handler
 	 */
 	def private <T> T newProxy(Class<T> clazz, InvocationHandler handler) {
-		Proxy::newProxyInstance(getClass().classLoader, 
-			newArrayList(clazz), 
-			handler) as T
+		Proxy::newProxyInstance(getClass().classLoader,	newArrayList(clazz), handler) as T
 	}
 }
 

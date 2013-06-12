@@ -10,7 +10,7 @@ package com.acme
 import com.acme.impl.SystemOutLoggingService
 import com.google.inject.ImplementedBy
 
-@ImplementedBy(typeof(SystemOutLoggingService))
+@ImplementedBy(SystemOutLoggingService)
 interface LoggingService {
 	def void logMessage(String msg)
 }

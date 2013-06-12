@@ -58,24 +58,56 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
   public void partActivated(final IWorkbenchPart part) {
     boolean _isTortoiseEditor = this.isTortoiseEditor(part);
     if (_isTortoiseEditor) {
-      IFile _editorFile = this.currentTortoiseEditor==null?(IFile)null:this.getEditorFile(this.currentTortoiseEditor);
-      IWorkspace _workspace = _editorFile==null?(IWorkspace)null:_editorFile.getWorkspace();
-      if (_workspace!=null) _workspace.removeResourceChangeListener(this);
-      ISourceViewer _internalSourceViewer = this.currentTortoiseEditor==null?(ISourceViewer)null:this.currentTortoiseEditor.getInternalSourceViewer();
-      StyledText _textWidget = _internalSourceViewer==null?(StyledText)null:_internalSourceViewer.getTextWidget();
-      if (_textWidget!=null) _textWidget.removeCaretListener(this);
+      IFile _editorFile = null;
+      if (this.currentTortoiseEditor!=null) {
+        _editorFile=this.getEditorFile(this.currentTortoiseEditor);
+      }
+      IWorkspace _workspace = null;
+      if (_editorFile!=null) {
+        _workspace=_editorFile.getWorkspace();
+      }
+      if (_workspace!=null) {
+        _workspace.removeResourceChangeListener(this);
+      }
+      ISourceViewer _internalSourceViewer = null;
+      if (this.currentTortoiseEditor!=null) {
+        _internalSourceViewer=this.currentTortoiseEditor.getInternalSourceViewer();
+      }
+      StyledText _textWidget = null;
+      if (_internalSourceViewer!=null) {
+        _textWidget=_internalSourceViewer.getTextWidget();
+      }
+      if (_textWidget!=null) {
+        _textWidget.removeCaretListener(this);
+      }
       this.currentTortoiseEditor = ((XtextEditor) part);
       if (this.isStopMode) {
-        ISourceViewer _internalSourceViewer_1 = this.currentTortoiseEditor==null?(ISourceViewer)null:this.currentTortoiseEditor.getInternalSourceViewer();
-        StyledText _textWidget_1 = _internalSourceViewer_1==null?(StyledText)null:_internalSourceViewer_1.getTextWidget();
-        if (_textWidget_1!=null) _textWidget_1.addCaretListener(this);
+        ISourceViewer _internalSourceViewer_1 = null;
+        if (this.currentTortoiseEditor!=null) {
+          _internalSourceViewer_1=this.currentTortoiseEditor.getInternalSourceViewer();
+        }
+        StyledText _textWidget_1 = null;
+        if (_internalSourceViewer_1!=null) {
+          _textWidget_1=_internalSourceViewer_1.getTextWidget();
+        }
+        if (_textWidget_1!=null) {
+          _textWidget_1.addCaretListener(this);
+        }
       } else {
         int _minus = (-10);
         this.view.show(this.currentTortoiseEditor, _minus);
       }
-      IFile _editorFile_1 = this.currentTortoiseEditor==null?(IFile)null:this.getEditorFile(this.currentTortoiseEditor);
-      IWorkspace _workspace_1 = _editorFile_1==null?(IWorkspace)null:_editorFile_1.getWorkspace();
-      if (_workspace_1!=null) _workspace_1.addResourceChangeListener(this);
+      IFile _editorFile_1 = null;
+      if (this.currentTortoiseEditor!=null) {
+        _editorFile_1=this.getEditorFile(this.currentTortoiseEditor);
+      }
+      IWorkspace _workspace_1 = null;
+      if (_editorFile_1!=null) {
+        _workspace_1=_editorFile_1.getWorkspace();
+      }
+      if (_workspace_1!=null) {
+        _workspace_1.addResourceChangeListener(this);
+      }
     }
   }
   
@@ -88,12 +120,28 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
   public void partDeactivated(final IWorkbenchPart part) {
     boolean _equals = Objects.equal(part, this.currentTortoiseEditor);
     if (_equals) {
-      ISourceViewer _internalSourceViewer = this.currentTortoiseEditor==null?(ISourceViewer)null:this.currentTortoiseEditor.getInternalSourceViewer();
-      StyledText _textWidget = _internalSourceViewer==null?(StyledText)null:_internalSourceViewer.getTextWidget();
-      if (_textWidget!=null) _textWidget.removeCaretListener(this);
-      IFile _editorFile = this.currentTortoiseEditor==null?(IFile)null:this.getEditorFile(this.currentTortoiseEditor);
-      IWorkspace _workspace = _editorFile==null?(IWorkspace)null:_editorFile.getWorkspace();
-      if (_workspace!=null) _workspace.removeResourceChangeListener(this);
+      ISourceViewer _internalSourceViewer = null;
+      if (this.currentTortoiseEditor!=null) {
+        _internalSourceViewer=this.currentTortoiseEditor.getInternalSourceViewer();
+      }
+      StyledText _textWidget = null;
+      if (_internalSourceViewer!=null) {
+        _textWidget=_internalSourceViewer.getTextWidget();
+      }
+      if (_textWidget!=null) {
+        _textWidget.removeCaretListener(this);
+      }
+      IFile _editorFile = null;
+      if (this.currentTortoiseEditor!=null) {
+        _editorFile=this.getEditorFile(this.currentTortoiseEditor);
+      }
+      IWorkspace _workspace = null;
+      if (_editorFile!=null) {
+        _workspace=_editorFile.getWorkspace();
+      }
+      if (_workspace!=null) {
+        _workspace.removeResourceChangeListener(this);
+      }
       this.currentTortoiseEditor = null;
     }
   }
@@ -103,7 +151,11 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
   
   public void resourceChanged(final IResourceChangeEvent event) {
     try {
-      final IFile editorFile = this.currentTortoiseEditor==null?(IFile)null:this.getEditorFile(this.currentTortoiseEditor);
+      IFile _editorFile = null;
+      if (this.currentTortoiseEditor!=null) {
+        _editorFile=this.getEditorFile(this.currentTortoiseEditor);
+      }
+      final IFile editorFile = _editorFile;
       boolean _notEquals = (!Objects.equal(editorFile, null));
       if (_notEquals) {
         final IPath editorFilePath = editorFile.getFullPath();
@@ -155,7 +207,10 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
   
   protected IFile getEditorFile(final IEditorPart editor) {
     IFile _xifexpression = null;
-    IEditorInput _editorInput = editor==null?(IEditorInput)null:editor.getEditorInput();
+    IEditorInput _editorInput = null;
+    if (editor!=null) {
+      _editorInput=editor.getEditorInput();
+    }
     if ((_editorInput instanceof IFileEditorInput)) {
       IEditorInput _editorInput_1 = editor.getEditorInput();
       IFile _file = ((IFileEditorInput) _editorInput_1).getFile();
@@ -169,15 +224,31 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
   public boolean toggleStopMode() {
     boolean _xblockexpression = false;
     {
-      ISourceViewer _internalSourceViewer = this.currentTortoiseEditor==null?(ISourceViewer)null:this.currentTortoiseEditor.getInternalSourceViewer();
-      StyledText _textWidget = _internalSourceViewer==null?(StyledText)null:_internalSourceViewer.getTextWidget();
-      if (_textWidget!=null) _textWidget.removeCaretListener(this);
+      ISourceViewer _internalSourceViewer = null;
+      if (this.currentTortoiseEditor!=null) {
+        _internalSourceViewer=this.currentTortoiseEditor.getInternalSourceViewer();
+      }
+      StyledText _textWidget = null;
+      if (_internalSourceViewer!=null) {
+        _textWidget=_internalSourceViewer.getTextWidget();
+      }
+      if (_textWidget!=null) {
+        _textWidget.removeCaretListener(this);
+      }
       boolean _not = (!this.isStopMode);
       this.isStopMode = _not;
       if (this.isStopMode) {
-        ISourceViewer _internalSourceViewer_1 = this.currentTortoiseEditor==null?(ISourceViewer)null:this.currentTortoiseEditor.getInternalSourceViewer();
-        StyledText _textWidget_1 = _internalSourceViewer_1==null?(StyledText)null:_internalSourceViewer_1.getTextWidget();
-        if (_textWidget_1!=null) _textWidget_1.addCaretListener(this);
+        ISourceViewer _internalSourceViewer_1 = null;
+        if (this.currentTortoiseEditor!=null) {
+          _internalSourceViewer_1=this.currentTortoiseEditor.getInternalSourceViewer();
+        }
+        StyledText _textWidget_1 = null;
+        if (_internalSourceViewer_1!=null) {
+          _textWidget_1=_internalSourceViewer_1.getTextWidget();
+        }
+        if (_textWidget_1!=null) {
+          _textWidget_1.addCaretListener(this);
+        }
       }
       _xblockexpression = (this.isStopMode);
     }

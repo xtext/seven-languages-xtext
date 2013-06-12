@@ -18,11 +18,11 @@ import org.xtext.mongobeans.MongoBeansInjectorProvider
 import org.xtext.mongobeans.mongoBeans.MongoFile
 import org.xtext.mongobeans.mongoBeans.MongoProperty
 
-import static org.xtext.mongobeans.mongoBeans.MongoBeansPackage$Literals.*
+import static org.xtext.mongobeans.mongoBeans.MongoBeansPackage.Literals.*
 import static org.xtext.mongobeans.validation.MongoBeansValidator.*
 
-@RunWith(typeof(XtextRunner))
-@InjectWith(typeof(MongoBeansInjectorProvider))
+@RunWith(XtextRunner)
+@InjectWith(MongoBeansInjectorProvider)
 class ValidationTest {
 
 	@Inject extension ValidationTestHelper
@@ -45,7 +45,7 @@ class ValidationTest {
 				java.io.File file
 				char character
 			}
-		'''.parse.eAllContents.filter(typeof(MongoProperty))
+		'''.parse.eAllContents.filter(MongoProperty)
 		assertError(properties.head, MONGO_PROPERTY, ILLEGAL_TYPE)
 		assertError(properties.last, MONGO_PROPERTY, ILLEGAL_TYPE)
 	}
@@ -55,7 +55,7 @@ class ValidationTest {
 			Foo {
 				String dbObject
 			}
-		'''.parse.eAllContents.filter(typeof(MongoProperty)).head
+		'''.parse.eAllContents.filter(MongoProperty).head
 		assertError(property, MONGO_PROPERTY, ILLEGAL_PROPERTY_NAME)
 	}
 }

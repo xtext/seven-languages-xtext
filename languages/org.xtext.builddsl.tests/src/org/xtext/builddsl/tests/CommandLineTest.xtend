@@ -19,8 +19,8 @@ import org.xtext.builddsl.BuildDSLInjectorProvider
 
 import static org.junit.Assert.*
 
-@RunWith(typeof(XtextRunner))
-@InjectWith(typeof(BuildDSLInjectorProvider))
+@RunWith(XtextRunner)
+@InjectWith(BuildDSLInjectorProvider)
 class CommandLineTest {
 	
 	@Inject extension CompilationTestHelper

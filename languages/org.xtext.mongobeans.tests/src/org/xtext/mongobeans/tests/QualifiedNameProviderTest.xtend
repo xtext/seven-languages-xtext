@@ -21,8 +21,8 @@ import org.xtext.mongobeans.mongoBeans.MongoFile
 
 import static org.junit.Assert.*
 
-@RunWith(typeof(XtextRunner))
-@InjectWith(typeof(MongoBeansInjectorProvider))
+@RunWith(XtextRunner)
+@InjectWith(MongoBeansInjectorProvider)
 class QualifiedNameProviderTest {
 	
 	@Inject extension IQualifiedNameProvider
@@ -37,7 +37,7 @@ class QualifiedNameProviderTest {
 					} bar
 				}
 			}
-		'''.parse.eAllContents.filter(typeof(MongoBean))
+		'''.parse.eAllContents.filter(MongoBean)
 		assertEquals(QualifiedName::create('pkg', 'Foo'), beans.head.fullyQualifiedName)
 		assertEquals(QualifiedName::create('pkg', 'Bar'), beans.last.fullyQualifiedName)
 	}

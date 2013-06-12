@@ -46,7 +46,7 @@ class BuildDSLLaunchDelegate extends JavaLaunchDelegate {
 
 class RefreshJob extends Job {
 
-	static val Logger logger = Logger::getLogger(typeof(BuildDSLLaunchDelegate))
+	static val Logger logger = Logger::getLogger(BuildDSLLaunchDelegate)
 	
 	ILaunchConfiguration configuration
 	

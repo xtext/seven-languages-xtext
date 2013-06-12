@@ -36,7 +36,7 @@ class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoiseInter
 			this.tortoise = tortoise
 			this.stopAtLine = stopAtLine
 			try {
-				program.jvmElements.filter(typeof(JvmOperation)).head
+				program.jvmElements.filter(JvmOperation).head
 					?.invokeOperation(null, emptyList)
 			} catch (StopLineReachedException exc) {
 				// ignore

@@ -22,11 +22,11 @@ import org.junit.runner.RunWith
 import org.xtext.guicemodules.GuiceModulesInjectorProvider
 import org.xtext.guicemodules.guiceModules.ModulesAST
 
-import static org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationsPackage$Literals.*
+import static org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationsPackage.Literals.*
 import static org.junit.Assert.*
 
-@RunWith(typeof(XtextRunner))
-@InjectWith(typeof(GuiceModulesInjectorProvider))
+@RunWith(XtextRunner)
+@InjectWith(GuiceModulesInjectorProvider)
 class IntegrationTest {
 	
 	@Inject extension CompilationTestHelper
@@ -82,7 +82,7 @@ class IntegrationTest {
 		'''
 		.compile[
 			val module = compiledClass.newInstance as Module
-			val obj = Guice::createInjector(module).getInstance(typeof(InjectionTarget))
+			val obj = Guice::createInjector(module).getInstance(InjectionTarget)
 			assertEquals('one', obj.col.head)
 			assertEquals('hello annotation', obj.s)
 		]

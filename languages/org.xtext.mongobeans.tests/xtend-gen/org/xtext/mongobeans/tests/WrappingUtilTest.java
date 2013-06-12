@@ -20,7 +20,6 @@ import org.eclipse.xtext.junit4.XtextRunner;
 import org.eclipse.xtext.util.IAcceptor;
 import org.eclipse.xtext.xbase.compiler.CompilationTestHelper;
 import org.eclipse.xtext.xbase.compiler.CompilationTestHelper.Result;
-import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
@@ -159,8 +158,8 @@ public class WrappingUtilTest {
   protected Object newFooMongoBean(final DBObject source) {
     try {
       Class<? extends Object> _mongoBeanClass = this.getMongoBeanClass();
-      Constructor<? extends Object> _constructor = _mongoBeanClass.getConstructor(((Class<?>[]) ((Class<?>[])Conversions.unwrapArray(Collections.<Class<DBObject>>unmodifiableList(Lists.<Class<DBObject>>newArrayList(DBObject.class)), Class.class))));
-      Object _newInstance = _constructor.newInstance(((Object[]) ((Object[])Conversions.unwrapArray(Collections.<DBObject>unmodifiableList(Lists.<DBObject>newArrayList(source)), Object.class))));
+      Constructor<? extends Object> _constructor = _mongoBeanClass.getConstructor(DBObject.class);
+      Object _newInstance = _constructor.newInstance(source);
       return _newInstance;
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);

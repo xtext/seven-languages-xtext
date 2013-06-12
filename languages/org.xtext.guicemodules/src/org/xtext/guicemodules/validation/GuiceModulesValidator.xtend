@@ -14,7 +14,7 @@ import org.eclipse.xtext.validation.Check
 import org.eclipse.xtext.xbase.annotations.validation.XbaseWithAnnotationsJavaValidator
 import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotation
 
-import static org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationsPackage$Literals.*
+import static org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationsPackage.Literals.*
 import org.eclipse.xtext.common.types.JvmAnnotationType
 
 class GuiceModulesValidator extends XbaseWithAnnotationsJavaValidator {
@@ -24,7 +24,7 @@ class GuiceModulesValidator extends XbaseWithAnnotationsJavaValidator {
 	@Check def checkAnnotationIsBindingAnnotation(XAnnotation it) {
 		switch type : annotationType {
 			JvmAnnotationType: 
-				if(!type.annotations.exists[ annotation.is(typeof(BindingAnnotation)) ])
+				if(!type.annotations.exists[ annotation.is(BindingAnnotation) ])
 					error("The annotation is not annotated with @BindingAnnotation", XANNOTATION__ANNOTATION_TYPE)
 		}
 	}

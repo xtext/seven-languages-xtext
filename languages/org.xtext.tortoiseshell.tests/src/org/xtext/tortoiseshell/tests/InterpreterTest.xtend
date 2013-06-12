@@ -23,8 +23,8 @@ import org.eclipse.draw2d.ColorConstants
 import org.xtext.tortoiseshell.lib.MoveEvent
 import org.xtext.tortoiseshell.lib.TurnEvent
 
-@RunWith(typeof(XtextRunner))
-@InjectWith(typeof(TortoiseShellInjectorProvider))
+@RunWith(XtextRunner)
+@InjectWith(TortoiseShellInjectorProvider)
 class InterpreterTest {
 	
 	@Inject extension TortoiseShellInterpeter

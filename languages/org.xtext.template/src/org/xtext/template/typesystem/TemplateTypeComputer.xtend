@@ -22,11 +22,11 @@ class TemplateTypeComputer extends XbaseWithAnnotationsTypeComputer {
 	
 	protected def _computeTypes(RichString expression, ITypeComputationState state) {
 		super._computeTypes(expression as XBlockExpression, state)
-		state.acceptActualType(getTypeForName(typeof(StringBuilder), state))
+		state.acceptActualType(getTypeForName(StringBuilder, state))
 	}
 	 
 	protected def _computeTypes(RichStringForLoop expression, ITypeComputationState state) {
 		super._computeTypes(expression as XForLoopExpression, state)
-		state.acceptActualType(getTypeForName(typeof(StringBuilder), state))
+		state.acceptActualType(getTypeForName(StringBuilder, state))
 	}
 }
