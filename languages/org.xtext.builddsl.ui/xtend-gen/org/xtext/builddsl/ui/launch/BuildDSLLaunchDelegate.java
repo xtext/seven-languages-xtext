@@ -48,7 +48,7 @@ public class BuildDSLLaunchDelegate extends JavaLaunchDelegate {
                 boolean _equals_1 = Objects.equal(configuration, _launchConfiguration);
                 if (_equals_1) {
                   DebugPlugin _default = DebugPlugin.getDefault();
-                  _default.removeDebugEventListener(BuildDSLLaunchDelegate.this);
+                  _default.removeDebugEventListener(this);
                   RefreshJob _refreshJob = new RefreshJob(configuration);
                   _refreshJob.schedule();
                   return;

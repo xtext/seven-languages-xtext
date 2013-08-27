@@ -26,13 +26,13 @@ class BuildDSLLaunchDelegate extends JavaLaunchDelegate {
 		            String mode,
 		            ILaunch launch, 
 		            IProgressMonitor monitor) {
-		if (RefreshTab::getRefreshScope(configuration) != null) {
-			DebugPlugin::getDefault.addDebugEventListener [
+		if (RefreshTab.getRefreshScope(configuration) != null) {
+			DebugPlugin.getDefault.addDebugEventListener [
 				for (event : it) {
-					if (event.source instanceof IProcess && event.kind == DebugEvent::TERMINATE) {
+					if (event.source instanceof IProcess && event.kind == DebugEvent.TERMINATE) {
 						val process = event.source as IProcess
 						if (configuration == process.launch.launchConfiguration) {
-							DebugPlugin::getDefault.removeDebugEventListener(this)
+							DebugPlugin.getDefault.removeDebugEventListener(self)
 							new RefreshJob(configuration).schedule
 							return 
 						}
@@ -46,7 +46,7 @@ class BuildDSLLaunchDelegate extends JavaLaunchDelegate {
 
 class RefreshJob extends Job {
 
-	static val Logger logger = Logger::getLogger(BuildDSLLaunchDelegate)
+	static val Logger logger = Logger.getLogger(BuildDSLLaunchDelegate)
 	
 	ILaunchConfiguration configuration
 	
@@ -57,12 +57,12 @@ class RefreshJob extends Job {
 	
 	override run(IProgressMonitor monitor) {
 		try {
-			RefreshTab::refreshResources(configuration, monitor)
+			RefreshTab.refreshResources(configuration, monitor)
 		} catch (CoreException e) {
 			logger.error(e.message, e)
 			return e.status
 		}
-		Status::OK_STATUS
+		Status.OK_STATUS
 	}
 	
 }
