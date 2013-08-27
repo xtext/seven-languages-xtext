@@ -85,239 +85,239 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
     JvmGenericType _class = this.builder.toClass(module, _fullyQualifiedName);
     IPostIndexingInitializing<JvmGenericType> _accept = acceptor.<JvmGenericType>accept(_class);
     final Procedure1<JvmGenericType> _function = new Procedure1<JvmGenericType>() {
-        public void apply(final JvmGenericType it) {
-          String _documentation = GuiceModulesJvmModelInferrer.this.builder.getDocumentation(module);
-          GuiceModulesJvmModelInferrer.this.builder.setDocumentation(it, _documentation);
-          EList<JvmTypeReference> _superTypes = it.getSuperTypes();
-          JvmParameterizedTypeReference _createTypeRef = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(moduleType);
-          GuiceModulesJvmModelInferrer.this.builder.<JvmParameterizedTypeReference>operator_add(_superTypes, _createTypeRef);
-          EList<ModuleAST> _mixins = module.getMixins();
-          for (final ModuleAST mixin : _mixins) {
-            boolean _eIsProxy = mixin.eIsProxy();
-            boolean _not = (!_eIsProxy);
-            if (_not) {
-              EList<JvmMember> _members = it.getMembers();
-              String _simpleName = GuiceModulesJvmModelInferrer.this.simpleName(mixin);
-              QualifiedName _fullyQualifiedName = GuiceModulesJvmModelInferrer.this._iQualifiedNameProvider.getFullyQualifiedName(mixin);
-              String _string = _fullyQualifiedName.toString();
-              JvmTypeReference _newTypeRef = GuiceModulesJvmModelInferrer.this.builder.newTypeRef(it, _string);
-              final Procedure1<JvmField> _function = new Procedure1<JvmField>() {
-                  public void apply(final JvmField it) {
-                    final Procedure1<ITreeAppendable> _function = new Procedure1<ITreeAppendable>() {
-                        public void apply(final ITreeAppendable it) {
-                          StringConcatenation _builder = new StringConcatenation();
-                          _builder.append("new ");
-                          String _name = mixin.getName();
-                          _builder.append(_name, "");
-                          _builder.append("()");
-                          it.append(_builder);
-                        }
-                      };
-                    GuiceModulesJvmModelInferrer.this.builder.setInitializer(it, _function);
+      public void apply(final JvmGenericType it) {
+        String _documentation = GuiceModulesJvmModelInferrer.this.builder.getDocumentation(module);
+        GuiceModulesJvmModelInferrer.this.builder.setDocumentation(it, _documentation);
+        EList<JvmTypeReference> _superTypes = it.getSuperTypes();
+        JvmParameterizedTypeReference _createTypeRef = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(moduleType);
+        GuiceModulesJvmModelInferrer.this.builder.<JvmParameterizedTypeReference>operator_add(_superTypes, _createTypeRef);
+        EList<ModuleAST> _mixins = module.getMixins();
+        for (final ModuleAST mixin : _mixins) {
+          boolean _eIsProxy = mixin.eIsProxy();
+          boolean _not = (!_eIsProxy);
+          if (_not) {
+            EList<JvmMember> _members = it.getMembers();
+            String _simpleName = GuiceModulesJvmModelInferrer.this.simpleName(mixin);
+            QualifiedName _fullyQualifiedName = GuiceModulesJvmModelInferrer.this._iQualifiedNameProvider.getFullyQualifiedName(mixin);
+            String _string = _fullyQualifiedName.toString();
+            JvmTypeReference _newTypeRef = GuiceModulesJvmModelInferrer.this.builder.newTypeRef(it, _string);
+            final Procedure1<JvmField> _function = new Procedure1<JvmField>() {
+              public void apply(final JvmField it) {
+                final Procedure1<ITreeAppendable> _function = new Procedure1<ITreeAppendable>() {
+                  public void apply(final ITreeAppendable it) {
+                    StringConcatenation _builder = new StringConcatenation();
+                    _builder.append("new ");
+                    String _name = mixin.getName();
+                    _builder.append(_name, "");
+                    _builder.append("()");
+                    it.append(_builder);
                   }
                 };
-              JvmField _field = GuiceModulesJvmModelInferrer.this.builder.toField(mixin, _simpleName, _newTypeRef, _function);
-              GuiceModulesJvmModelInferrer.this.builder.<JvmField>operator_add(_members, _field);
-            }
-          }
-          EList<BindingAST> _bindings = module.getBindings();
-          for (final BindingAST binding : _bindings) {
-            {
-              XExpression _toInstance = binding.getToInstance();
-              boolean _notEquals = (!Objects.equal(_toInstance, null));
-              if (_notEquals) {
-                EList<JvmMember> _members_1 = it.getMembers();
-                String _syntheticToInstanceName = GuiceModulesJvmModelInferrer.this.syntheticToInstanceName(binding);
-                KeyAST _from = binding.getFrom();
-                JvmTypeReference _type = _from.getType();
-                final Procedure1<JvmOperation> _function_1 = new Procedure1<JvmOperation>() {
-                    public void apply(final JvmOperation it) {
-                      it.setVisibility(JvmVisibility.PRIVATE);
-                      XExpression _toInstance = binding.getToInstance();
-                      GuiceModulesJvmModelInferrer.this.builder.setBody(it, _toInstance);
-                    }
-                  };
-                JvmOperation _method = GuiceModulesJvmModelInferrer.this.builder.toMethod(binding, _syntheticToInstanceName, _type, _function_1);
-                GuiceModulesJvmModelInferrer.this.builder.<JvmOperation>operator_add(_members_1, _method);
-              }
-              KeyAST _to = binding.getTo();
-              XAnnotation _annotation = null;
-              if (_to!=null) {
-                _annotation=_to.getAnnotation();
-              }
-              boolean _notEquals_1 = (!Objects.equal(_annotation, null));
-              if (_notEquals_1) {
-                EList<JvmMember> _members_2 = it.getMembers();
-                KeyAST _to_1 = binding.getTo();
-                String _syntheticName = GuiceModulesJvmModelInferrer.this.syntheticName(_to_1);
-                KeyAST _to_2 = binding.getTo();
-                JvmTypeReference _type_1 = _to_2.getType();
-                final Procedure1<JvmField> _function_2 = new Procedure1<JvmField>() {
-                    public void apply(final JvmField it) {
-                      KeyAST _to = binding.getTo();
-                      XAnnotation _annotation = _to.getAnnotation();
-                      HashSet<XAnnotation> _newHashSet = CollectionLiterals.<XAnnotation>newHashSet(_annotation);
-                      GuiceModulesJvmModelInferrer.this.builder.translateAnnotationsTo(_newHashSet, it);
-                      it.setVisibility(JvmVisibility.PRIVATE);
-                    }
-                  };
-                JvmField _field_1 = GuiceModulesJvmModelInferrer.this.builder.toField(binding, _syntheticName, _type_1, _function_2);
-                GuiceModulesJvmModelInferrer.this.builder.<JvmField>operator_add(_members_2, _field_1);
-              }
-              KeyAST _from_1 = binding.getFrom();
-              XAnnotation _annotation_1 = _from_1.getAnnotation();
-              boolean _notEquals_2 = (!Objects.equal(_annotation_1, null));
-              if (_notEquals_2) {
-                EList<JvmMember> _members_3 = it.getMembers();
-                KeyAST _from_2 = binding.getFrom();
-                String _syntheticName_1 = GuiceModulesJvmModelInferrer.this.syntheticName(_from_2);
-                KeyAST _from_3 = binding.getFrom();
-                JvmTypeReference _type_2 = _from_3.getType();
-                final Procedure1<JvmField> _function_3 = new Procedure1<JvmField>() {
-                    public void apply(final JvmField it) {
-                      KeyAST _from = binding.getFrom();
-                      XAnnotation _annotation = _from.getAnnotation();
-                      HashSet<XAnnotation> _newHashSet = CollectionLiterals.<XAnnotation>newHashSet(_annotation);
-                      GuiceModulesJvmModelInferrer.this.builder.translateAnnotationsTo(_newHashSet, it);
-                      it.setVisibility(JvmVisibility.PRIVATE);
-                    }
-                  };
-                JvmField _field_2 = GuiceModulesJvmModelInferrer.this.builder.toField(binding, _syntheticName_1, _type_2, _function_3);
-                GuiceModulesJvmModelInferrer.this.builder.<JvmField>operator_add(_members_3, _field_2);
-              }
-            }
-          }
-          EList<JvmMember> _members_1 = it.getMembers();
-          JvmParameterizedTypeReference _createTypeRef_1 = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(voidType);
-          final Procedure1<JvmOperation> _function_1 = new Procedure1<JvmOperation>() {
-              public void apply(final JvmOperation it) {
-                EList<JvmFormalParameter> _parameters = it.getParameters();
-                JvmParameterizedTypeReference _createTypeRef = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(binderType);
-                JvmFormalParameter _parameter = GuiceModulesJvmModelInferrer.this.builder.toParameter(module, "binder", _createTypeRef);
-                GuiceModulesJvmModelInferrer.this.builder.<JvmFormalParameter>operator_add(_parameters, _parameter);
-                final Procedure1<ITreeAppendable> _function = new Procedure1<ITreeAppendable>() {
-                    public void apply(final ITreeAppendable it) {
-                      StringConcatenation _builder = new StringConcatenation();
-                      _builder.append("configure(binder, new ");
-                      JvmWildcardTypeReference _wildCard = GuiceModulesJvmModelInferrer.this._typeReferences.wildCard();
-                      JvmParameterizedTypeReference _createTypeRef = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(keyType, _wildCard);
-                      JvmParameterizedTypeReference _createTypeRef_1 = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(hashSetType, _createTypeRef);
-                      String _identifier = _createTypeRef_1.getIdentifier();
-                      _builder.append(_identifier, "");
-                      _builder.append("());");
-                      _builder.newLineIfNotEmpty();
-                      it.append(_builder);
-                    }
-                  };
-                GuiceModulesJvmModelInferrer.this.builder.setBody(it, _function);
+                GuiceModulesJvmModelInferrer.this.builder.setInitializer(it, _function);
               }
             };
-          JvmOperation _method = GuiceModulesJvmModelInferrer.this.builder.toMethod(module, "configure", _createTypeRef_1, _function_1);
-          GuiceModulesJvmModelInferrer.this.builder.<JvmOperation>operator_add(_members_1, _method);
-          EList<JvmMember> _members_2 = it.getMembers();
-          JvmParameterizedTypeReference _createTypeRef_2 = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(voidType);
-          final Procedure1<JvmOperation> _function_2 = new Procedure1<JvmOperation>() {
-              public void apply(final JvmOperation it) {
-                GuiceModulesJvmModelInferrer.this.builder.setDocumentation(it, "Registers bindings for keys not present in the given set.");
-                EList<JvmFormalParameter> _parameters = it.getParameters();
-                JvmParameterizedTypeReference _createTypeRef = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(binderType);
-                JvmFormalParameter _parameter = GuiceModulesJvmModelInferrer.this.builder.toParameter(module, "bind", _createTypeRef);
-                GuiceModulesJvmModelInferrer.this.builder.<JvmFormalParameter>operator_add(_parameters, _parameter);
-                EList<JvmFormalParameter> _parameters_1 = it.getParameters();
-                JvmWildcardTypeReference _wildCard = GuiceModulesJvmModelInferrer.this._typeReferences.wildCard();
-                JvmParameterizedTypeReference _createTypeRef_1 = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(keyType, _wildCard);
-                JvmParameterizedTypeReference _createTypeRef_2 = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(setType, _createTypeRef_1);
-                JvmFormalParameter _parameter_1 = GuiceModulesJvmModelInferrer.this.builder.toParameter(module, "usedKeys", _createTypeRef_2);
-                GuiceModulesJvmModelInferrer.this.builder.<JvmFormalParameter>operator_add(_parameters_1, _parameter_1);
-                final Procedure1<ITreeAppendable> _function = new Procedure1<ITreeAppendable>() {
-                    public void apply(final ITreeAppendable it) {
-                      StringConcatenation _builder = new StringConcatenation();
-                      _builder.append("try {");
-                      _builder.newLine();
-                      {
-                        EList<BindingAST> _bindings = module.getBindings();
-                        for(final BindingAST b : _bindings) {
-                          _builder.append("\t");
-                          _builder.append("{");
-                          _builder.newLine();
-                          _builder.append("\t");
-                          _builder.append("\t");
-                          KeyAST _from = b.getFrom();
-                          JvmTypeReference _type = _from.getType();
-                          JvmParameterizedTypeReference _createTypeRef = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(keyType, _type);
-                          String _identifier = _createTypeRef.getIdentifier();
-                          _builder.append(_identifier, "		");
-                          _builder.append(" key = ");
-                          _builder.newLineIfNotEmpty();
-                          _builder.append("\t");
-                          _builder.append("\t\t");
-                          KeyAST _from_1 = b.getFrom();
-                          CharSequence _guiceKey = GuiceModulesJvmModelInferrer.this.guiceKey(_from_1);
-                          _builder.append(_guiceKey, "			");
-                          _builder.append(";");
-                          _builder.newLineIfNotEmpty();
-                          _builder.append("\t");
-                          _builder.append("\t");
-                          _builder.append("if (usedKeys.add(key)) {");
-                          _builder.newLine();
-                          {
-                            XExpression _toInstance = b.getToInstance();
-                            boolean _notEquals = (!Objects.equal(_toInstance, null));
-                            if (_notEquals) {
-                              _builder.append("\t");
-                              _builder.append("\t\t");
-                              _builder.append("bind.bind(key).toInstance(");
-                              String _syntheticToInstanceName = GuiceModulesJvmModelInferrer.this.syntheticToInstanceName(b);
-                              _builder.append(_syntheticToInstanceName, "			");
-                              _builder.append("());");
-                              _builder.newLineIfNotEmpty();
-                            } else {
-                              _builder.append("\t");
-                              _builder.append("\t\t");
-                              _builder.append("bind.bind(key).to(");
-                              KeyAST _to = b.getTo();
-                              CharSequence _guiceKey_1 = GuiceModulesJvmModelInferrer.this.guiceKey(_to);
-                              _builder.append(_guiceKey_1, "			");
-                              _builder.append(");");
-                              _builder.newLineIfNotEmpty();
-                            }
-                          }
-                          _builder.append("\t");
-                          _builder.append("\t");
-                          _builder.append("}");
-                          _builder.newLine();
-                          _builder.append("\t");
-                          _builder.append("}");
-                          _builder.newLine();
-                        }
-                      }
-                      {
-                        EList<ModuleAST> _mixins = module.getMixins();
-                        for(final ModuleAST mix : _mixins) {
-                          _builder.append("\t");
-                          String _simpleName = GuiceModulesJvmModelInferrer.this.simpleName(mix);
-                          _builder.append(_simpleName, "	");
-                          _builder.append(".configure(bind, usedKeys);");
-                          _builder.newLineIfNotEmpty();
-                        }
-                      }
-                      _builder.append("} catch (Exception e) {");
-                      _builder.newLine();
-                      _builder.append("\t");
-                      _builder.append("throw new RuntimeException(e);");
-                      _builder.newLine();
-                      _builder.append("}");
-                      _builder.newLine();
-                      it.append(_builder);
-                    }
-                  };
-                GuiceModulesJvmModelInferrer.this.builder.setBody(it, _function);
-              }
-            };
-          JvmOperation _method_1 = GuiceModulesJvmModelInferrer.this.builder.toMethod(module, "configure", _createTypeRef_2, _function_2);
-          GuiceModulesJvmModelInferrer.this.builder.<JvmOperation>operator_add(_members_2, _method_1);
+            JvmField _field = GuiceModulesJvmModelInferrer.this.builder.toField(mixin, _simpleName, _newTypeRef, _function);
+            GuiceModulesJvmModelInferrer.this.builder.<JvmField>operator_add(_members, _field);
+          }
         }
-      };
+        EList<BindingAST> _bindings = module.getBindings();
+        for (final BindingAST binding : _bindings) {
+          {
+            XExpression _toInstance = binding.getToInstance();
+            boolean _notEquals = (!Objects.equal(_toInstance, null));
+            if (_notEquals) {
+              EList<JvmMember> _members_1 = it.getMembers();
+              String _syntheticToInstanceName = GuiceModulesJvmModelInferrer.this.syntheticToInstanceName(binding);
+              KeyAST _from = binding.getFrom();
+              JvmTypeReference _type = _from.getType();
+              final Procedure1<JvmOperation> _function_1 = new Procedure1<JvmOperation>() {
+                public void apply(final JvmOperation it) {
+                  it.setVisibility(JvmVisibility.PRIVATE);
+                  XExpression _toInstance = binding.getToInstance();
+                  GuiceModulesJvmModelInferrer.this.builder.setBody(it, _toInstance);
+                }
+              };
+              JvmOperation _method = GuiceModulesJvmModelInferrer.this.builder.toMethod(binding, _syntheticToInstanceName, _type, _function_1);
+              GuiceModulesJvmModelInferrer.this.builder.<JvmOperation>operator_add(_members_1, _method);
+            }
+            KeyAST _to = binding.getTo();
+            XAnnotation _annotation = null;
+            if (_to!=null) {
+              _annotation=_to.getAnnotation();
+            }
+            boolean _notEquals_1 = (!Objects.equal(_annotation, null));
+            if (_notEquals_1) {
+              EList<JvmMember> _members_2 = it.getMembers();
+              KeyAST _to_1 = binding.getTo();
+              String _syntheticName = GuiceModulesJvmModelInferrer.this.syntheticName(_to_1);
+              KeyAST _to_2 = binding.getTo();
+              JvmTypeReference _type_1 = _to_2.getType();
+              final Procedure1<JvmField> _function_2 = new Procedure1<JvmField>() {
+                public void apply(final JvmField it) {
+                  KeyAST _to = binding.getTo();
+                  XAnnotation _annotation = _to.getAnnotation();
+                  HashSet<XAnnotation> _newHashSet = CollectionLiterals.<XAnnotation>newHashSet(_annotation);
+                  GuiceModulesJvmModelInferrer.this.builder.translateAnnotationsTo(_newHashSet, it);
+                  it.setVisibility(JvmVisibility.PRIVATE);
+                }
+              };
+              JvmField _field_1 = GuiceModulesJvmModelInferrer.this.builder.toField(binding, _syntheticName, _type_1, _function_2);
+              GuiceModulesJvmModelInferrer.this.builder.<JvmField>operator_add(_members_2, _field_1);
+            }
+            KeyAST _from_1 = binding.getFrom();
+            XAnnotation _annotation_1 = _from_1.getAnnotation();
+            boolean _notEquals_2 = (!Objects.equal(_annotation_1, null));
+            if (_notEquals_2) {
+              EList<JvmMember> _members_3 = it.getMembers();
+              KeyAST _from_2 = binding.getFrom();
+              String _syntheticName_1 = GuiceModulesJvmModelInferrer.this.syntheticName(_from_2);
+              KeyAST _from_3 = binding.getFrom();
+              JvmTypeReference _type_2 = _from_3.getType();
+              final Procedure1<JvmField> _function_3 = new Procedure1<JvmField>() {
+                public void apply(final JvmField it) {
+                  KeyAST _from = binding.getFrom();
+                  XAnnotation _annotation = _from.getAnnotation();
+                  HashSet<XAnnotation> _newHashSet = CollectionLiterals.<XAnnotation>newHashSet(_annotation);
+                  GuiceModulesJvmModelInferrer.this.builder.translateAnnotationsTo(_newHashSet, it);
+                  it.setVisibility(JvmVisibility.PRIVATE);
+                }
+              };
+              JvmField _field_2 = GuiceModulesJvmModelInferrer.this.builder.toField(binding, _syntheticName_1, _type_2, _function_3);
+              GuiceModulesJvmModelInferrer.this.builder.<JvmField>operator_add(_members_3, _field_2);
+            }
+          }
+        }
+        EList<JvmMember> _members_1 = it.getMembers();
+        JvmParameterizedTypeReference _createTypeRef_1 = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(voidType);
+        final Procedure1<JvmOperation> _function_1 = new Procedure1<JvmOperation>() {
+          public void apply(final JvmOperation it) {
+            EList<JvmFormalParameter> _parameters = it.getParameters();
+            JvmParameterizedTypeReference _createTypeRef = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(binderType);
+            JvmFormalParameter _parameter = GuiceModulesJvmModelInferrer.this.builder.toParameter(module, "binder", _createTypeRef);
+            GuiceModulesJvmModelInferrer.this.builder.<JvmFormalParameter>operator_add(_parameters, _parameter);
+            final Procedure1<ITreeAppendable> _function = new Procedure1<ITreeAppendable>() {
+              public void apply(final ITreeAppendable it) {
+                StringConcatenation _builder = new StringConcatenation();
+                _builder.append("configure(binder, new ");
+                JvmWildcardTypeReference _wildCard = GuiceModulesJvmModelInferrer.this._typeReferences.wildCard();
+                JvmParameterizedTypeReference _createTypeRef = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(keyType, _wildCard);
+                JvmParameterizedTypeReference _createTypeRef_1 = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(hashSetType, _createTypeRef);
+                String _identifier = _createTypeRef_1.getIdentifier();
+                _builder.append(_identifier, "");
+                _builder.append("());");
+                _builder.newLineIfNotEmpty();
+                it.append(_builder);
+              }
+            };
+            GuiceModulesJvmModelInferrer.this.builder.setBody(it, _function);
+          }
+        };
+        JvmOperation _method = GuiceModulesJvmModelInferrer.this.builder.toMethod(module, "configure", _createTypeRef_1, _function_1);
+        GuiceModulesJvmModelInferrer.this.builder.<JvmOperation>operator_add(_members_1, _method);
+        EList<JvmMember> _members_2 = it.getMembers();
+        JvmParameterizedTypeReference _createTypeRef_2 = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(voidType);
+        final Procedure1<JvmOperation> _function_2 = new Procedure1<JvmOperation>() {
+          public void apply(final JvmOperation it) {
+            GuiceModulesJvmModelInferrer.this.builder.setDocumentation(it, "Registers bindings for keys not present in the given set.");
+            EList<JvmFormalParameter> _parameters = it.getParameters();
+            JvmParameterizedTypeReference _createTypeRef = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(binderType);
+            JvmFormalParameter _parameter = GuiceModulesJvmModelInferrer.this.builder.toParameter(module, "bind", _createTypeRef);
+            GuiceModulesJvmModelInferrer.this.builder.<JvmFormalParameter>operator_add(_parameters, _parameter);
+            EList<JvmFormalParameter> _parameters_1 = it.getParameters();
+            JvmWildcardTypeReference _wildCard = GuiceModulesJvmModelInferrer.this._typeReferences.wildCard();
+            JvmParameterizedTypeReference _createTypeRef_1 = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(keyType, _wildCard);
+            JvmParameterizedTypeReference _createTypeRef_2 = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(setType, _createTypeRef_1);
+            JvmFormalParameter _parameter_1 = GuiceModulesJvmModelInferrer.this.builder.toParameter(module, "usedKeys", _createTypeRef_2);
+            GuiceModulesJvmModelInferrer.this.builder.<JvmFormalParameter>operator_add(_parameters_1, _parameter_1);
+            final Procedure1<ITreeAppendable> _function = new Procedure1<ITreeAppendable>() {
+              public void apply(final ITreeAppendable it) {
+                StringConcatenation _builder = new StringConcatenation();
+                _builder.append("try {");
+                _builder.newLine();
+                {
+                  EList<BindingAST> _bindings = module.getBindings();
+                  for(final BindingAST b : _bindings) {
+                    _builder.append("\t");
+                    _builder.append("{");
+                    _builder.newLine();
+                    _builder.append("\t");
+                    _builder.append("\t");
+                    KeyAST _from = b.getFrom();
+                    JvmTypeReference _type = _from.getType();
+                    JvmParameterizedTypeReference _createTypeRef = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(keyType, _type);
+                    String _identifier = _createTypeRef.getIdentifier();
+                    _builder.append(_identifier, "		");
+                    _builder.append(" key = ");
+                    _builder.newLineIfNotEmpty();
+                    _builder.append("\t");
+                    _builder.append("\t\t");
+                    KeyAST _from_1 = b.getFrom();
+                    CharSequence _guiceKey = GuiceModulesJvmModelInferrer.this.guiceKey(_from_1);
+                    _builder.append(_guiceKey, "			");
+                    _builder.append(";");
+                    _builder.newLineIfNotEmpty();
+                    _builder.append("\t");
+                    _builder.append("\t");
+                    _builder.append("if (usedKeys.add(key)) {");
+                    _builder.newLine();
+                    {
+                      XExpression _toInstance = b.getToInstance();
+                      boolean _notEquals = (!Objects.equal(_toInstance, null));
+                      if (_notEquals) {
+                        _builder.append("\t");
+                        _builder.append("\t\t");
+                        _builder.append("bind.bind(key).toInstance(");
+                        String _syntheticToInstanceName = GuiceModulesJvmModelInferrer.this.syntheticToInstanceName(b);
+                        _builder.append(_syntheticToInstanceName, "			");
+                        _builder.append("());");
+                        _builder.newLineIfNotEmpty();
+                      } else {
+                        _builder.append("\t");
+                        _builder.append("\t\t");
+                        _builder.append("bind.bind(key).to(");
+                        KeyAST _to = b.getTo();
+                        CharSequence _guiceKey_1 = GuiceModulesJvmModelInferrer.this.guiceKey(_to);
+                        _builder.append(_guiceKey_1, "			");
+                        _builder.append(");");
+                        _builder.newLineIfNotEmpty();
+                      }
+                    }
+                    _builder.append("\t");
+                    _builder.append("\t");
+                    _builder.append("}");
+                    _builder.newLine();
+                    _builder.append("\t");
+                    _builder.append("}");
+                    _builder.newLine();
+                  }
+                }
+                {
+                  EList<ModuleAST> _mixins = module.getMixins();
+                  for(final ModuleAST mix : _mixins) {
+                    _builder.append("\t");
+                    String _simpleName = GuiceModulesJvmModelInferrer.this.simpleName(mix);
+                    _builder.append(_simpleName, "	");
+                    _builder.append(".configure(bind, usedKeys);");
+                    _builder.newLineIfNotEmpty();
+                  }
+                }
+                _builder.append("} catch (Exception e) {");
+                _builder.newLine();
+                _builder.append("\t");
+                _builder.append("throw new RuntimeException(e);");
+                _builder.newLine();
+                _builder.append("}");
+                _builder.newLine();
+                it.append(_builder);
+              }
+            };
+            GuiceModulesJvmModelInferrer.this.builder.setBody(it, _function);
+          }
+        };
+        JvmOperation _method_1 = GuiceModulesJvmModelInferrer.this.builder.toMethod(module, "configure", _createTypeRef_2, _function_2);
+        GuiceModulesJvmModelInferrer.this.builder.<JvmOperation>operator_add(_members_2, _method_1);
+      }
+    };
     _accept.initializeLater(_function);
   }
   

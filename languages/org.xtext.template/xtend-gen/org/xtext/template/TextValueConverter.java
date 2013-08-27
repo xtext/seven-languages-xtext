@@ -17,8 +17,8 @@ import org.eclipse.xtext.util.Strings;
 public class TextValueConverter extends STRINGValueConverter {
   protected String toEscapedString(final String value) {
     String _convertToJavaString = Strings.convertToJavaString(value, false);
-    String _plus = ("\u00BB" + _convertToJavaString);
-    String _plus_1 = (_plus + "\u00AB");
+    String _plus = ("»" + _convertToJavaString);
+    String _plus_1 = (_plus + "«");
     return _plus_1;
   }
 }

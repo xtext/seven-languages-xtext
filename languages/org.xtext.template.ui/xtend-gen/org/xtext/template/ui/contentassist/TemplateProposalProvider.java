@@ -21,7 +21,7 @@ import org.xtext.template.ui.contentassist.AbstractTemplateProposalProvider;
 public class TemplateProposalProvider extends AbstractTemplateProposalProvider {
   public void complete_TEXT(final EObject model, final RuleCall ruleCall, final ContentAssistContext context, final ICompletionProposalAcceptor acceptor) {
     int _offset = context.getOffset();
-    CompletionProposal _completionProposal = new CompletionProposal("\u00AB\u00BB", _offset, 0, 1);
+    CompletionProposal _completionProposal = new CompletionProposal("«»", _offset, 0, 1);
     acceptor.accept(_completionProposal);
   }
 }

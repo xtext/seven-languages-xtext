@@ -57,11 +57,11 @@ public class JavaCompiler {
     }
     Collection<File> _sources = params.getSources();
     final Function1<File,String> _function = new Function1<File,String>() {
-        public String apply(final File it) {
-          String _string = it.toString();
-          return _string;
-        }
-      };
+      public String apply(final File it) {
+        String _string = it.toString();
+        return _string;
+      }
+    };
     Iterable<String> _map = IterableExtensions.<File, String>map(_sources, _function);
     Iterables.<String>addAll(list, _map);
     InputOutput.<String>print("compiling Java files...");
@@ -77,16 +77,16 @@ public class JavaCompiler {
   
   public static ClassLoader newClasspath(final File... entries) {
     final Function1<File,URL> _function = new Function1<File,URL>() {
-        public URL apply(final File it) {
-          try {
-            URI _uRI = it.toURI();
-            URL _uRL = _uRI.toURL();
-            return _uRL;
-          } catch (Throwable _e) {
-            throw Exceptions.sneakyThrow(_e);
-          }
+      public URL apply(final File it) {
+        try {
+          URI _uRI = it.toURI();
+          URL _uRL = _uRI.toURL();
+          return _uRL;
+        } catch (Throwable _e) {
+          throw Exceptions.sneakyThrow(_e);
         }
-      };
+      }
+    };
     List<URL> _map = ListExtensions.<File, URL>map(((List<File>)Conversions.doWrapArray(entries)), _function);
     URLClassLoader _uRLClassLoader = new URLClassLoader(((URL[])Conversions.unwrapArray(_map, URL.class)));
     return _uRLClassLoader;

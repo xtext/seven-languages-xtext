@@ -58,33 +58,33 @@ public abstract class BuildScript {
         {
           Annotation[] _annotations = method.getAnnotations();
           final Function1<Annotation,Boolean> _function = new Function1<Annotation,Boolean>() {
-              public Boolean apply(final Annotation it) {
-                Class<? extends Annotation> _annotationType = it.annotationType();
-                boolean _equals = Objects.equal(_annotationType, DependsOn.class);
-                return Boolean.valueOf(_equals);
-              }
-            };
+            public Boolean apply(final Annotation it) {
+              Class<? extends Annotation> _annotationType = it.annotationType();
+              boolean _equals = Objects.equal(_annotationType, DependsOn.class);
+              return Boolean.valueOf(_equals);
+            }
+          };
           final Annotation taskAnnotation = IterableExtensions.<Annotation>findFirst(((Iterable<Annotation>)Conversions.doWrapArray(_annotations)), _function);
           boolean _notEquals = (!Objects.equal(taskAnnotation, null));
           if (_notEquals) {
             String _name = method.getName();
             final Procedure1<TaskDef> _function_1 = new Procedure1<TaskDef>() {
-                public void apply(final TaskDef it) {
-                  String[] _value = ((DependsOn) taskAnnotation).value();
-                  it.setPrerequisitedTasks(((List<String>)Conversions.doWrapArray(_value)));
-                  final Procedure0 _function = new Procedure0() {
-                      public void apply() {
-                        try {
-                          method.setAccessible(true);
-                          method.invoke(BuildScript.this);
-                        } catch (Throwable _e) {
-                          throw Exceptions.sneakyThrow(_e);
-                        }
-                      }
-                    };
-                  it.setRunnable(_function);
-                }
-              };
+              public void apply(final TaskDef it) {
+                String[] _value = ((DependsOn) taskAnnotation).value();
+                it.setPrerequisitedTasks(((List<String>)Conversions.doWrapArray(_value)));
+                final Procedure0 _function = new Procedure0() {
+                  public void apply() {
+                    try {
+                      method.setAccessible(true);
+                      method.invoke(BuildScript.this);
+                    } catch (Throwable _e) {
+                      throw Exceptions.sneakyThrow(_e);
+                    }
+                  }
+                };
+                it.setRunnable(_function);
+              }
+            };
             this.taskDef(_name, _function_1);
           }
         }
@@ -101,19 +101,19 @@ public abstract class BuildScript {
       Class<? extends BuildScript> _class = this.getClass();
       Field[] _declaredFields = _class.getDeclaredFields();
       final Function1<Field,Boolean> _function = new Function1<Field,Boolean>() {
-          public Boolean apply(final Field it) {
-            Annotation[] _annotations = it.getAnnotations();
-            final Function1<Annotation,Boolean> _function = new Function1<Annotation,Boolean>() {
-                public Boolean apply(final Annotation it) {
-                  Class<? extends Annotation> _annotationType = it.annotationType();
-                  boolean _equals = Objects.equal(_annotationType, Param.class);
-                  return Boolean.valueOf(_equals);
-                }
-              };
-            boolean _exists = IterableExtensions.<Annotation>exists(((Iterable<Annotation>)Conversions.doWrapArray(_annotations)), _function);
-            return Boolean.valueOf(_exists);
-          }
-        };
+        public Boolean apply(final Field it) {
+          Annotation[] _annotations = it.getAnnotations();
+          final Function1<Annotation,Boolean> _function = new Function1<Annotation,Boolean>() {
+            public Boolean apply(final Annotation it) {
+              Class<? extends Annotation> _annotationType = it.annotationType();
+              boolean _equals = Objects.equal(_annotationType, Param.class);
+              return Boolean.valueOf(_equals);
+            }
+          };
+          boolean _exists = IterableExtensions.<Annotation>exists(((Iterable<Annotation>)Conversions.doWrapArray(_annotations)), _function);
+          return Boolean.valueOf(_exists);
+        }
+      };
       Iterable<Field> _filter = IterableExtensions.<Field>filter(((Iterable<Field>)Conversions.doWrapArray(_declaredFields)), _function);
       for (final Field field : _filter) {
         String _name = field.getName();
@@ -203,10 +203,10 @@ public abstract class BuildScript {
       task.setIsExecuting(true);
       List<String> _prerequisitedTasks = task.getPrerequisitedTasks();
       final Procedure1<String> _function = new Procedure1<String>() {
-          public void apply(final String it) {
-            BuildScript.this._executeTask(it);
-          }
-        };
+        public void apply(final String it) {
+          BuildScript.this._executeTask(it);
+        }
+      };
       IterableExtensions.<String>forEach(_prerequisitedTasks, _function);
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("[Task \'");
@@ -230,18 +230,18 @@ public abstract class BuildScript {
       _or = true;
     } else {
       final Function1<String,Boolean> _function = new Function1<String,Boolean>() {
-          public Boolean apply(final String arg) {
-            boolean _or = false;
-            boolean _equals = Objects.equal("--help", arg);
-            if (_equals) {
-              _or = true;
-            } else {
-              boolean _equals_1 = Objects.equal("-h", arg);
-              _or = (_equals || _equals_1);
-            }
-            return Boolean.valueOf(_or);
+        public Boolean apply(final String arg) {
+          boolean _or = false;
+          boolean _equals = Objects.equal("--help", arg);
+          if (_equals) {
+            _or = true;
+          } else {
+            boolean _equals_1 = Objects.equal("-h", arg);
+            _or = (_equals || _equals_1);
           }
-        };
+          return Boolean.valueOf(_or);
+        }
+      };
       boolean _exists = IterableExtensions.<String>exists(((Iterable<String>)Conversions.doWrapArray(args)), _function);
       _or = (_isNullOrEmpty || _exists);
     }

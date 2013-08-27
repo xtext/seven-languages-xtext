@@ -71,139 +71,139 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
     JvmGenericType _class = this._jvmTypesBuilder.toClass(model, _javaClassName);
     IPostIndexingInitializing<JvmGenericType> _accept = acceptor.<JvmGenericType>accept(_class);
     final Procedure1<JvmGenericType> _function = new Procedure1<JvmGenericType>() {
-        public void apply(final JvmGenericType it) {
-          EList<JvmTypeReference> _superTypes = it.getSuperTypes();
-          JvmTypeReference _newTypeRef = RouteJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(model, RouteJvmModelInferrer.HTTP_SERVLET);
-          RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmTypeReference>operator_add(_superTypes, _newTypeRef);
-          EList<JvmAnnotationReference> _annotations = it.getAnnotations();
-          JvmAnnotationReference _annotation = RouteJvmModelInferrer.this._jvmTypesBuilder.toAnnotation(model, SuppressWarnings.class, "serial");
-          RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmAnnotationReference>operator_add(_annotations, _annotation);
-          EList<AbstractDeclaration> _declarations = model.getDeclarations();
-          Iterable<Dependency> _filter = Iterables.<Dependency>filter(_declarations, Dependency.class);
-          for (final Dependency field : _filter) {
-            EList<JvmMember> _members = it.getMembers();
-            String _name = field.getName();
-            JvmTypeReference _type = field.getType();
-            final Procedure1<JvmField> _function = new Procedure1<JvmField>() {
-                public void apply(final JvmField it) {
-                  EList<JvmAnnotationReference> _annotations = it.getAnnotations();
-                  JvmAnnotationReference _annotation = RouteJvmModelInferrer.this._jvmTypesBuilder.toAnnotation(field, Inject.class);
-                  RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmAnnotationReference>operator_add(_annotations, _annotation);
-                  EList<XAnnotation> _annotations_1 = field.getAnnotations();
-                  RouteJvmModelInferrer.this._jvmTypesBuilder.translateAnnotationsTo(_annotations_1, it);
-                }
-              };
-            JvmField _field = RouteJvmModelInferrer.this._jvmTypesBuilder.toField(field, _name, _type, _function);
-            RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmField>operator_add(_members, _field);
-          }
-          Iterable<Route> _routes = RouteJvmModelInferrer.this.routes(model);
-          final Function1<Route,Boolean> _function_1 = new Function1<Route,Boolean>() {
-              public Boolean apply(final Route it) {
-                URL _url = it.getUrl();
-                boolean _notEquals = (!Objects.equal(_url, null));
-                return Boolean.valueOf(_notEquals);
-              }
-            };
-          Iterable<Route> _filter_1 = IterableExtensions.<Route>filter(_routes, _function_1);
-          for (final Route route : _filter_1) {
-            {
-              EList<JvmMember> _members_1 = it.getMembers();
-              JvmField _routePatternField = RouteJvmModelInferrer.this.toRoutePatternField(route);
-              RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmField>operator_add(_members_1, _routePatternField);
-              XExpression _condition = route.getCondition();
-              boolean _notEquals = (!Objects.equal(_condition, null));
-              if (_notEquals) {
-                EList<JvmMember> _members_2 = it.getMembers();
-                JvmOperation _routeConditionMethod = RouteJvmModelInferrer.this.toRouteConditionMethod(route);
-                RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_2, _routeConditionMethod);
-              }
-              EList<JvmMember> _members_3 = it.getMembers();
-              JvmOperation _routeCallMethod = RouteJvmModelInferrer.this.toRouteCallMethod(route);
-              RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_3, _routeCallMethod);
+      public void apply(final JvmGenericType it) {
+        EList<JvmTypeReference> _superTypes = it.getSuperTypes();
+        JvmTypeReference _newTypeRef = RouteJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(model, RouteJvmModelInferrer.HTTP_SERVLET);
+        RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmTypeReference>operator_add(_superTypes, _newTypeRef);
+        EList<JvmAnnotationReference> _annotations = it.getAnnotations();
+        JvmAnnotationReference _annotation = RouteJvmModelInferrer.this._jvmTypesBuilder.toAnnotation(model, SuppressWarnings.class, "serial");
+        RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmAnnotationReference>operator_add(_annotations, _annotation);
+        EList<AbstractDeclaration> _declarations = model.getDeclarations();
+        Iterable<Dependency> _filter = Iterables.<Dependency>filter(_declarations, Dependency.class);
+        for (final Dependency field : _filter) {
+          EList<JvmMember> _members = it.getMembers();
+          String _name = field.getName();
+          JvmTypeReference _type = field.getType();
+          final Procedure1<JvmField> _function = new Procedure1<JvmField>() {
+            public void apply(final JvmField it) {
+              EList<JvmAnnotationReference> _annotations = it.getAnnotations();
+              JvmAnnotationReference _annotation = RouteJvmModelInferrer.this._jvmTypesBuilder.toAnnotation(field, Inject.class);
+              RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmAnnotationReference>operator_add(_annotations, _annotation);
+              EList<XAnnotation> _annotations_1 = field.getAnnotations();
+              RouteJvmModelInferrer.this._jvmTypesBuilder.translateAnnotationsTo(_annotations_1, it);
             }
+          };
+          JvmField _field = RouteJvmModelInferrer.this._jvmTypesBuilder.toField(field, _name, _type, _function);
+          RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmField>operator_add(_members, _field);
+        }
+        Iterable<Route> _routes = RouteJvmModelInferrer.this.routes(model);
+        final Function1<Route,Boolean> _function_1 = new Function1<Route,Boolean>() {
+          public Boolean apply(final Route it) {
+            URL _url = it.getUrl();
+            boolean _notEquals = (!Objects.equal(_url, null));
+            return Boolean.valueOf(_notEquals);
           }
-          Iterable<Route> _routes_1 = RouteJvmModelInferrer.this.routes(model);
-          final Function1<Route,Boolean> _function_2 = new Function1<Route,Boolean>() {
-              public Boolean apply(final Route it) {
-                RequestType _requestType = it.getRequestType();
-                boolean _equals = Objects.equal(_requestType, RequestType.GET);
-                return Boolean.valueOf(_equals);
-              }
-            };
-          final Iterable<Route> getRoutes = IterableExtensions.<Route>filter(_routes_1, _function_2);
-          boolean _isEmpty = IterableExtensions.isEmpty(getRoutes);
-          boolean _not = (!_isEmpty);
-          if (_not) {
+        };
+        Iterable<Route> _filter_1 = IterableExtensions.<Route>filter(_routes, _function_1);
+        for (final Route route : _filter_1) {
+          {
             EList<JvmMember> _members_1 = it.getMembers();
-            JvmOperation _requestHandlerMethod = RouteJvmModelInferrer.this.toRequestHandlerMethod(model, "doGet", getRoutes);
-            RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_1, _requestHandlerMethod);
-          }
-          Iterable<Route> _routes_2 = RouteJvmModelInferrer.this.routes(model);
-          final Function1<Route,Boolean> _function_3 = new Function1<Route,Boolean>() {
-              public Boolean apply(final Route it) {
-                RequestType _requestType = it.getRequestType();
-                boolean _equals = Objects.equal(_requestType, RequestType.POST);
-                return Boolean.valueOf(_equals);
-              }
-            };
-          final Iterable<Route> postRoutes = IterableExtensions.<Route>filter(_routes_2, _function_3);
-          boolean _isEmpty_1 = IterableExtensions.isEmpty(postRoutes);
-          boolean _not_1 = (!_isEmpty_1);
-          if (_not_1) {
-            EList<JvmMember> _members_2 = it.getMembers();
-            JvmOperation _requestHandlerMethod_1 = RouteJvmModelInferrer.this.toRequestHandlerMethod(model, "doPost", postRoutes);
-            RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_2, _requestHandlerMethod_1);
-          }
-          Iterable<Route> _routes_3 = RouteJvmModelInferrer.this.routes(model);
-          final Function1<Route,Boolean> _function_4 = new Function1<Route,Boolean>() {
-              public Boolean apply(final Route it) {
-                RequestType _requestType = it.getRequestType();
-                boolean _equals = Objects.equal(_requestType, RequestType.PUT);
-                return Boolean.valueOf(_equals);
-              }
-            };
-          final Iterable<Route> putRoutes = IterableExtensions.<Route>filter(_routes_3, _function_4);
-          boolean _isEmpty_2 = IterableExtensions.isEmpty(putRoutes);
-          boolean _not_2 = (!_isEmpty_2);
-          if (_not_2) {
+            JvmField _routePatternField = RouteJvmModelInferrer.this.toRoutePatternField(route);
+            RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmField>operator_add(_members_1, _routePatternField);
+            XExpression _condition = route.getCondition();
+            boolean _notEquals = (!Objects.equal(_condition, null));
+            if (_notEquals) {
+              EList<JvmMember> _members_2 = it.getMembers();
+              JvmOperation _routeConditionMethod = RouteJvmModelInferrer.this.toRouteConditionMethod(route);
+              RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_2, _routeConditionMethod);
+            }
             EList<JvmMember> _members_3 = it.getMembers();
-            JvmOperation _requestHandlerMethod_2 = RouteJvmModelInferrer.this.toRequestHandlerMethod(model, "doPut", putRoutes);
-            RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_3, _requestHandlerMethod_2);
-          }
-          Iterable<Route> _routes_4 = RouteJvmModelInferrer.this.routes(model);
-          final Function1<Route,Boolean> _function_5 = new Function1<Route,Boolean>() {
-              public Boolean apply(final Route it) {
-                RequestType _requestType = it.getRequestType();
-                boolean _equals = Objects.equal(_requestType, RequestType.DELETE);
-                return Boolean.valueOf(_equals);
-              }
-            };
-          final Iterable<Route> deleteRoutes = IterableExtensions.<Route>filter(_routes_4, _function_5);
-          boolean _isEmpty_3 = IterableExtensions.isEmpty(deleteRoutes);
-          boolean _not_3 = (!_isEmpty_3);
-          if (_not_3) {
-            EList<JvmMember> _members_4 = it.getMembers();
-            JvmOperation _requestHandlerMethod_3 = RouteJvmModelInferrer.this.toRequestHandlerMethod(model, "doDelete", deleteRoutes);
-            RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_4, _requestHandlerMethod_3);
-          }
-          Iterable<Route> _routes_5 = RouteJvmModelInferrer.this.routes(model);
-          final Function1<Route,Boolean> _function_6 = new Function1<Route,Boolean>() {
-              public Boolean apply(final Route it) {
-                RequestType _requestType = it.getRequestType();
-                boolean _equals = Objects.equal(_requestType, RequestType.HEAD);
-                return Boolean.valueOf(_equals);
-              }
-            };
-          final Iterable<Route> headRoutes = IterableExtensions.<Route>filter(_routes_5, _function_6);
-          boolean _isEmpty_4 = IterableExtensions.isEmpty(headRoutes);
-          boolean _not_4 = (!_isEmpty_4);
-          if (_not_4) {
-            EList<JvmMember> _members_5 = it.getMembers();
-            JvmOperation _requestHandlerMethod_4 = RouteJvmModelInferrer.this.toRequestHandlerMethod(model, "doHead", headRoutes);
-            RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_5, _requestHandlerMethod_4);
+            JvmOperation _routeCallMethod = RouteJvmModelInferrer.this.toRouteCallMethod(route);
+            RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_3, _routeCallMethod);
           }
         }
-      };
+        Iterable<Route> _routes_1 = RouteJvmModelInferrer.this.routes(model);
+        final Function1<Route,Boolean> _function_2 = new Function1<Route,Boolean>() {
+          public Boolean apply(final Route it) {
+            RequestType _requestType = it.getRequestType();
+            boolean _equals = Objects.equal(_requestType, RequestType.GET);
+            return Boolean.valueOf(_equals);
+          }
+        };
+        final Iterable<Route> getRoutes = IterableExtensions.<Route>filter(_routes_1, _function_2);
+        boolean _isEmpty = IterableExtensions.isEmpty(getRoutes);
+        boolean _not = (!_isEmpty);
+        if (_not) {
+          EList<JvmMember> _members_1 = it.getMembers();
+          JvmOperation _requestHandlerMethod = RouteJvmModelInferrer.this.toRequestHandlerMethod(model, "doGet", getRoutes);
+          RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_1, _requestHandlerMethod);
+        }
+        Iterable<Route> _routes_2 = RouteJvmModelInferrer.this.routes(model);
+        final Function1<Route,Boolean> _function_3 = new Function1<Route,Boolean>() {
+          public Boolean apply(final Route it) {
+            RequestType _requestType = it.getRequestType();
+            boolean _equals = Objects.equal(_requestType, RequestType.POST);
+            return Boolean.valueOf(_equals);
+          }
+        };
+        final Iterable<Route> postRoutes = IterableExtensions.<Route>filter(_routes_2, _function_3);
+        boolean _isEmpty_1 = IterableExtensions.isEmpty(postRoutes);
+        boolean _not_1 = (!_isEmpty_1);
+        if (_not_1) {
+          EList<JvmMember> _members_2 = it.getMembers();
+          JvmOperation _requestHandlerMethod_1 = RouteJvmModelInferrer.this.toRequestHandlerMethod(model, "doPost", postRoutes);
+          RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_2, _requestHandlerMethod_1);
+        }
+        Iterable<Route> _routes_3 = RouteJvmModelInferrer.this.routes(model);
+        final Function1<Route,Boolean> _function_4 = new Function1<Route,Boolean>() {
+          public Boolean apply(final Route it) {
+            RequestType _requestType = it.getRequestType();
+            boolean _equals = Objects.equal(_requestType, RequestType.PUT);
+            return Boolean.valueOf(_equals);
+          }
+        };
+        final Iterable<Route> putRoutes = IterableExtensions.<Route>filter(_routes_3, _function_4);
+        boolean _isEmpty_2 = IterableExtensions.isEmpty(putRoutes);
+        boolean _not_2 = (!_isEmpty_2);
+        if (_not_2) {
+          EList<JvmMember> _members_3 = it.getMembers();
+          JvmOperation _requestHandlerMethod_2 = RouteJvmModelInferrer.this.toRequestHandlerMethod(model, "doPut", putRoutes);
+          RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_3, _requestHandlerMethod_2);
+        }
+        Iterable<Route> _routes_4 = RouteJvmModelInferrer.this.routes(model);
+        final Function1<Route,Boolean> _function_5 = new Function1<Route,Boolean>() {
+          public Boolean apply(final Route it) {
+            RequestType _requestType = it.getRequestType();
+            boolean _equals = Objects.equal(_requestType, RequestType.DELETE);
+            return Boolean.valueOf(_equals);
+          }
+        };
+        final Iterable<Route> deleteRoutes = IterableExtensions.<Route>filter(_routes_4, _function_5);
+        boolean _isEmpty_3 = IterableExtensions.isEmpty(deleteRoutes);
+        boolean _not_3 = (!_isEmpty_3);
+        if (_not_3) {
+          EList<JvmMember> _members_4 = it.getMembers();
+          JvmOperation _requestHandlerMethod_3 = RouteJvmModelInferrer.this.toRequestHandlerMethod(model, "doDelete", deleteRoutes);
+          RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_4, _requestHandlerMethod_3);
+        }
+        Iterable<Route> _routes_5 = RouteJvmModelInferrer.this.routes(model);
+        final Function1<Route,Boolean> _function_6 = new Function1<Route,Boolean>() {
+          public Boolean apply(final Route it) {
+            RequestType _requestType = it.getRequestType();
+            boolean _equals = Objects.equal(_requestType, RequestType.HEAD);
+            return Boolean.valueOf(_equals);
+          }
+        };
+        final Iterable<Route> headRoutes = IterableExtensions.<Route>filter(_routes_5, _function_6);
+        boolean _isEmpty_4 = IterableExtensions.isEmpty(headRoutes);
+        boolean _not_4 = (!_isEmpty_4);
+        if (_not_4) {
+          EList<JvmMember> _members_5 = it.getMembers();
+          JvmOperation _requestHandlerMethod_4 = RouteJvmModelInferrer.this.toRequestHandlerMethod(model, "doHead", headRoutes);
+          RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_5, _requestHandlerMethod_4);
+        }
+      }
+    };
     _accept.initializeLater(_function);
   }
   
@@ -227,28 +227,28 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
     String _nameOfRouteMethod = this.nameOfRouteMethod(route);
     JvmTypeReference _newTypeRef = this._jvmTypesBuilder.newTypeRef(route, Void.TYPE);
     final Procedure1<JvmOperation> _function = new Procedure1<JvmOperation>() {
-        public void apply(final JvmOperation it) {
-          EList<JvmFormalParameter> _parameters = it.getParameters();
-          JvmTypeReference _newTypeRef = RouteJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(route, RouteJvmModelInferrer.HTTP_REQUEST);
-          JvmFormalParameter _parameter = RouteJvmModelInferrer.this._jvmTypesBuilder.toParameter(route, "request", _newTypeRef);
-          RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters, _parameter);
-          EList<JvmFormalParameter> _parameters_1 = it.getParameters();
-          JvmTypeReference _newTypeRef_1 = RouteJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(route, RouteJvmModelInferrer.HTTP_RESPONSE);
-          JvmFormalParameter _parameter_1 = RouteJvmModelInferrer.this._jvmTypesBuilder.toParameter(route, "response", _newTypeRef_1);
-          RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters_1, _parameter_1);
-          URL _url = route.getUrl();
-          EList<Variable> _variables = _url.getVariables();
-          for (final Variable variable : _variables) {
-            EList<JvmFormalParameter> _parameters_2 = it.getParameters();
-            String _name = variable.getName();
-            JvmTypeReference _newTypeRef_2 = RouteJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(route, String.class);
-            JvmFormalParameter _parameter_2 = RouteJvmModelInferrer.this._jvmTypesBuilder.toParameter(variable, _name, _newTypeRef_2);
-            RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters_2, _parameter_2);
-          }
-          XExpression _call = route.getCall();
-          RouteJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _call);
+      public void apply(final JvmOperation it) {
+        EList<JvmFormalParameter> _parameters = it.getParameters();
+        JvmTypeReference _newTypeRef = RouteJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(route, RouteJvmModelInferrer.HTTP_REQUEST);
+        JvmFormalParameter _parameter = RouteJvmModelInferrer.this._jvmTypesBuilder.toParameter(route, "request", _newTypeRef);
+        RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters, _parameter);
+        EList<JvmFormalParameter> _parameters_1 = it.getParameters();
+        JvmTypeReference _newTypeRef_1 = RouteJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(route, RouteJvmModelInferrer.HTTP_RESPONSE);
+        JvmFormalParameter _parameter_1 = RouteJvmModelInferrer.this._jvmTypesBuilder.toParameter(route, "response", _newTypeRef_1);
+        RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters_1, _parameter_1);
+        URL _url = route.getUrl();
+        EList<Variable> _variables = _url.getVariables();
+        for (final Variable variable : _variables) {
+          EList<JvmFormalParameter> _parameters_2 = it.getParameters();
+          String _name = variable.getName();
+          JvmTypeReference _newTypeRef_2 = RouteJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(route, String.class);
+          JvmFormalParameter _parameter_2 = RouteJvmModelInferrer.this._jvmTypesBuilder.toParameter(variable, _name, _newTypeRef_2);
+          RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters_2, _parameter_2);
         }
-      };
+        XExpression _call = route.getCall();
+        RouteJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _call);
+      }
+    };
     JvmOperation _method = this._jvmTypesBuilder.toMethod(route, _nameOfRouteMethod, _newTypeRef, _function);
     return _method;
   }
@@ -262,27 +262,27 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
     String _plus = ("_pattern" + Integer.valueOf(_index));
     JvmTypeReference _newTypeRef = this._jvmTypesBuilder.newTypeRef(route, Pattern.class);
     final Procedure1<JvmField> _function = new Procedure1<JvmField>() {
-        public void apply(final JvmField it) {
-          it.setStatic(true);
-          final Procedure1<ITreeAppendable> _function = new Procedure1<ITreeAppendable>() {
-              public void apply(final ITreeAppendable it) {
-                StringConcatenation _builder = new StringConcatenation();
-                _builder.append("Pattern.compile(\"");
-                URL _url = route.getUrl();
-                ICompositeNode _node = NodeModelUtils.getNode(_url);
-                String _text = _node.getText();
-                String _trim = _text.trim();
-                URL _url_1 = route.getUrl();
-                EList<Variable> _variables = _url_1.getVariables();
-                String _regExPattern = RouteJvmModelInferrer.this.getRegExPattern(_trim, _variables);
-                _builder.append(_regExPattern, "");
-                _builder.append("\")");
-                it.append(_builder);
-              }
-            };
-          RouteJvmModelInferrer.this._jvmTypesBuilder.setInitializer(it, _function);
-        }
-      };
+      public void apply(final JvmField it) {
+        it.setStatic(true);
+        final Procedure1<ITreeAppendable> _function = new Procedure1<ITreeAppendable>() {
+          public void apply(final ITreeAppendable it) {
+            StringConcatenation _builder = new StringConcatenation();
+            _builder.append("Pattern.compile(\"");
+            URL _url = route.getUrl();
+            ICompositeNode _node = NodeModelUtils.getNode(_url);
+            String _text = _node.getText();
+            String _trim = _text.trim();
+            URL _url_1 = route.getUrl();
+            EList<Variable> _variables = _url_1.getVariables();
+            String _regExPattern = RouteJvmModelInferrer.this.getRegExPattern(_trim, _variables);
+            _builder.append(_regExPattern, "");
+            _builder.append("\")");
+            it.append(_builder);
+          }
+        };
+        RouteJvmModelInferrer.this._jvmTypesBuilder.setInitializer(it, _function);
+      }
+    };
     JvmField _field = this._jvmTypesBuilder.toField(_url, _plus, _newTypeRef, _function);
     return _field;
   }
@@ -296,28 +296,28 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
     String _plus = (_nameOfRouteMethod + "Condition");
     JvmTypeReference _newTypeRef = this._jvmTypesBuilder.newTypeRef(route, Boolean.TYPE);
     final Procedure1<JvmOperation> _function = new Procedure1<JvmOperation>() {
-        public void apply(final JvmOperation it) {
-          EList<JvmFormalParameter> _parameters = it.getParameters();
-          JvmTypeReference _newTypeRef = RouteJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(route, RouteJvmModelInferrer.HTTP_REQUEST);
-          JvmFormalParameter _parameter = RouteJvmModelInferrer.this._jvmTypesBuilder.toParameter(route, "request", _newTypeRef);
-          RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters, _parameter);
-          EList<JvmFormalParameter> _parameters_1 = it.getParameters();
-          JvmTypeReference _newTypeRef_1 = RouteJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(route, RouteJvmModelInferrer.HTTP_RESPONSE);
-          JvmFormalParameter _parameter_1 = RouteJvmModelInferrer.this._jvmTypesBuilder.toParameter(route, "response", _newTypeRef_1);
-          RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters_1, _parameter_1);
-          URL _url = route.getUrl();
-          EList<Variable> _variables = _url.getVariables();
-          for (final Variable variable : _variables) {
-            EList<JvmFormalParameter> _parameters_2 = it.getParameters();
-            String _name = variable.getName();
-            JvmTypeReference _newTypeRef_2 = RouteJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(route, String.class);
-            JvmFormalParameter _parameter_2 = RouteJvmModelInferrer.this._jvmTypesBuilder.toParameter(variable, _name, _newTypeRef_2);
-            RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters_2, _parameter_2);
-          }
-          XExpression _condition = route.getCondition();
-          RouteJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _condition);
+      public void apply(final JvmOperation it) {
+        EList<JvmFormalParameter> _parameters = it.getParameters();
+        JvmTypeReference _newTypeRef = RouteJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(route, RouteJvmModelInferrer.HTTP_REQUEST);
+        JvmFormalParameter _parameter = RouteJvmModelInferrer.this._jvmTypesBuilder.toParameter(route, "request", _newTypeRef);
+        RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters, _parameter);
+        EList<JvmFormalParameter> _parameters_1 = it.getParameters();
+        JvmTypeReference _newTypeRef_1 = RouteJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(route, RouteJvmModelInferrer.HTTP_RESPONSE);
+        JvmFormalParameter _parameter_1 = RouteJvmModelInferrer.this._jvmTypesBuilder.toParameter(route, "response", _newTypeRef_1);
+        RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters_1, _parameter_1);
+        URL _url = route.getUrl();
+        EList<Variable> _variables = _url.getVariables();
+        for (final Variable variable : _variables) {
+          EList<JvmFormalParameter> _parameters_2 = it.getParameters();
+          String _name = variable.getName();
+          JvmTypeReference _newTypeRef_2 = RouteJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(route, String.class);
+          JvmFormalParameter _parameter_2 = RouteJvmModelInferrer.this._jvmTypesBuilder.toParameter(variable, _name, _newTypeRef_2);
+          RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters_2, _parameter_2);
         }
-      };
+        XExpression _condition = route.getCondition();
+        RouteJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _condition);
+      }
+    };
     JvmOperation _method = this._jvmTypesBuilder.toMethod(route, _plus, _newTypeRef, _function);
     return _method;
   }
@@ -328,128 +328,128 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
   protected JvmOperation toRequestHandlerMethod(final Model model, final String name, final Iterable<Route> routes) {
     JvmTypeReference _newTypeRef = this._jvmTypesBuilder.newTypeRef(model, Void.TYPE);
     final Procedure1<JvmOperation> _function = new Procedure1<JvmOperation>() {
-        public void apply(final JvmOperation it) {
-          EList<JvmAnnotationReference> _annotations = it.getAnnotations();
-          JvmAnnotationReference _annotation = RouteJvmModelInferrer.this._jvmTypesBuilder.toAnnotation(model, Override.class);
-          RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmAnnotationReference>operator_add(_annotations, _annotation);
-          EList<JvmFormalParameter> _parameters = it.getParameters();
-          JvmTypeReference _newTypeRef = RouteJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(model, RouteJvmModelInferrer.HTTP_REQUEST);
-          JvmFormalParameter _parameter = RouteJvmModelInferrer.this._jvmTypesBuilder.toParameter(model, "request", _newTypeRef);
-          RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters, _parameter);
-          EList<JvmFormalParameter> _parameters_1 = it.getParameters();
-          JvmTypeReference _newTypeRef_1 = RouteJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(model, RouteJvmModelInferrer.HTTP_RESPONSE);
-          JvmFormalParameter _parameter_1 = RouteJvmModelInferrer.this._jvmTypesBuilder.toParameter(model, "response", _newTypeRef_1);
-          RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters_1, _parameter_1);
-          final Procedure1<ITreeAppendable> _function = new Procedure1<ITreeAppendable>() {
-              public void apply(final ITreeAppendable it) {
-                StringConcatenation _builder = new StringConcatenation();
-                _builder.append("String url =  request.getRequestURL().toString();");
+      public void apply(final JvmOperation it) {
+        EList<JvmAnnotationReference> _annotations = it.getAnnotations();
+        JvmAnnotationReference _annotation = RouteJvmModelInferrer.this._jvmTypesBuilder.toAnnotation(model, Override.class);
+        RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmAnnotationReference>operator_add(_annotations, _annotation);
+        EList<JvmFormalParameter> _parameters = it.getParameters();
+        JvmTypeReference _newTypeRef = RouteJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(model, RouteJvmModelInferrer.HTTP_REQUEST);
+        JvmFormalParameter _parameter = RouteJvmModelInferrer.this._jvmTypesBuilder.toParameter(model, "request", _newTypeRef);
+        RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters, _parameter);
+        EList<JvmFormalParameter> _parameters_1 = it.getParameters();
+        JvmTypeReference _newTypeRef_1 = RouteJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(model, RouteJvmModelInferrer.HTTP_RESPONSE);
+        JvmFormalParameter _parameter_1 = RouteJvmModelInferrer.this._jvmTypesBuilder.toParameter(model, "response", _newTypeRef_1);
+        RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters_1, _parameter_1);
+        final Procedure1<ITreeAppendable> _function = new Procedure1<ITreeAppendable>() {
+          public void apply(final ITreeAppendable it) {
+            StringConcatenation _builder = new StringConcatenation();
+            _builder.append("String url =  request.getRequestURL().toString();");
+            _builder.newLine();
+            {
+              for(final Route route : routes) {
+                _builder.append("{");
+                _builder.newLine();
+                _builder.append("\t");
+                _builder.append("java.util.regex.Matcher _matcher = _pattern");
+                int _index = RouteJvmModelInferrer.this.index(route);
+                _builder.append(_index, "	");
+                _builder.append(".matcher(url);");
+                _builder.newLineIfNotEmpty();
+                _builder.append("\t");
+                _builder.append("if (_matcher.find()) {");
                 _builder.newLine();
                 {
-                  for(final Route route : routes) {
-                    _builder.append("{");
-                    _builder.newLine();
-                    _builder.append("\t");
-                    _builder.append("java.util.regex.Matcher _matcher = _pattern");
-                    int _index = RouteJvmModelInferrer.this.index(route);
-                    _builder.append(_index, "	");
-                    _builder.append(".matcher(url);");
-                    _builder.newLineIfNotEmpty();
-                    _builder.append("\t");
-                    _builder.append("if (_matcher.find()) {");
-                    _builder.newLine();
-                    {
-                      URL _url = route.getUrl();
-                      EList<Variable> _variables = _url.getVariables();
-                      for(final Variable variable : _variables) {
-                        _builder.append("\t\t");
-                        _builder.append("String ");
-                        String _name = variable.getName();
-                        _builder.append(_name, "		");
-                        _builder.append(" = _matcher.group(");
-                        int _index_1 = RouteJvmModelInferrer.this.index(variable);
-                        int _plus = (_index_1 + 1);
-                        _builder.append(_plus, "		");
-                        _builder.append(");");
-                        _builder.newLineIfNotEmpty();
-                      }
-                    }
+                  URL _url = route.getUrl();
+                  EList<Variable> _variables = _url.getVariables();
+                  for(final Variable variable : _variables) {
                     _builder.append("\t\t");
-                    StringConcatenation _builder_1 = new StringConcatenation();
-                    String _nameOfRouteMethod = RouteJvmModelInferrer.this.nameOfRouteMethod(route);
-                    _builder_1.append(_nameOfRouteMethod, "");
-                    _builder_1.append("(request, response");
-                    {
-                      URL _url_1 = route.getUrl();
-                      EList<Variable> _variables_1 = _url_1.getVariables();
-                      for(final Variable v : _variables_1) {
-                        _builder_1.append(", ");
-                        String _name_1 = v.getName();
-                        _builder_1.append(_name_1, "");
-                      }
-                    }
-                    _builder_1.append(");");
-                    final String routeMethodCall = _builder_1.toString();
+                    _builder.append("String ");
+                    String _name = variable.getName();
+                    _builder.append(_name, "		");
+                    _builder.append(" = _matcher.group(");
+                    int _index_1 = RouteJvmModelInferrer.this.index(variable);
+                    int _plus = (_index_1 + 1);
+                    _builder.append(_plus, "		");
+                    _builder.append(");");
                     _builder.newLineIfNotEmpty();
+                  }
+                }
+                _builder.append("\t\t");
+                StringConcatenation _builder_1 = new StringConcatenation();
+                String _nameOfRouteMethod = RouteJvmModelInferrer.this.nameOfRouteMethod(route);
+                _builder_1.append(_nameOfRouteMethod, "");
+                _builder_1.append("(request, response");
+                {
+                  URL _url_1 = route.getUrl();
+                  EList<Variable> _variables_1 = _url_1.getVariables();
+                  for(final Variable v : _variables_1) {
+                    _builder_1.append(", ");
+                    String _name_1 = v.getName();
+                    _builder_1.append(_name_1, "");
+                  }
+                }
+                _builder_1.append(");");
+                final String routeMethodCall = _builder_1.toString();
+                _builder.newLineIfNotEmpty();
+                {
+                  XExpression _condition = route.getCondition();
+                  boolean _notEquals = (!Objects.equal(_condition, null));
+                  if (_notEquals) {
+                    _builder.append("\t\t");
+                    _builder.append("if (");
+                    String _nameOfRouteMethod_1 = RouteJvmModelInferrer.this.nameOfRouteMethod(route);
+                    _builder.append(_nameOfRouteMethod_1, "		");
+                    _builder.append("Condition(request, response");
                     {
-                      XExpression _condition = route.getCondition();
-                      boolean _notEquals = (!Objects.equal(_condition, null));
-                      if (_notEquals) {
-                        _builder.append("\t\t");
-                        _builder.append("if (");
-                        String _nameOfRouteMethod_1 = RouteJvmModelInferrer.this.nameOfRouteMethod(route);
-                        _builder.append(_nameOfRouteMethod_1, "		");
-                        _builder.append("Condition(request, response");
-                        {
-                          URL _url_2 = route.getUrl();
-                          EList<Variable> _variables_2 = _url_2.getVariables();
-                          boolean _hasElements = false;
-                          for(final Variable v_1 : _variables_2) {
-                            if (!_hasElements) {
-                              _hasElements = true;
-                              _builder.append(", ", "		");
-                            } else {
-                              _builder.appendImmediate(", ", "		");
-                            }
-                            String _name_2 = v_1.getName();
-                            _builder.append(_name_2, "		");
-                          }
+                      URL _url_2 = route.getUrl();
+                      EList<Variable> _variables_2 = _url_2.getVariables();
+                      boolean _hasElements = false;
+                      for(final Variable v_1 : _variables_2) {
+                        if (!_hasElements) {
+                          _hasElements = true;
+                          _builder.append(", ", "		");
+                        } else {
+                          _builder.appendImmediate(", ", "		");
                         }
-                        _builder.append(")) {");
-                        _builder.newLineIfNotEmpty();
-                        _builder.append("\t\t");
-                        _builder.append("\t");
-                        _builder.append(routeMethodCall, "			");
-                        _builder.newLineIfNotEmpty();
-                        _builder.append("\t\t");
-                        _builder.append("\t");
-                        _builder.append("return;");
-                        _builder.newLine();
-                        _builder.append("\t\t");
-                        _builder.append("}");
-                        _builder.newLine();
-                      } else {
-                        _builder.append("\t\t");
-                        _builder.append(routeMethodCall, "		");
-                        _builder.newLineIfNotEmpty();
-                        _builder.append("\t\t");
-                        _builder.append("return;");
-                        _builder.newLine();
+                        String _name_2 = v_1.getName();
+                        _builder.append(_name_2, "		");
                       }
                     }
+                    _builder.append(")) {");
+                    _builder.newLineIfNotEmpty();
+                    _builder.append("\t\t");
                     _builder.append("\t");
+                    _builder.append(routeMethodCall, "			");
+                    _builder.newLineIfNotEmpty();
+                    _builder.append("\t\t");
+                    _builder.append("\t");
+                    _builder.append("return;");
+                    _builder.newLine();
+                    _builder.append("\t\t");
                     _builder.append("}");
                     _builder.newLine();
-                    _builder.append("}");
+                  } else {
+                    _builder.append("\t\t");
+                    _builder.append(routeMethodCall, "		");
+                    _builder.newLineIfNotEmpty();
+                    _builder.append("\t\t");
+                    _builder.append("return;");
                     _builder.newLine();
                   }
                 }
-                it.append(_builder);
+                _builder.append("\t");
+                _builder.append("}");
+                _builder.newLine();
+                _builder.append("}");
+                _builder.newLine();
               }
-            };
-          RouteJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _function);
-        }
-      };
+            }
+            it.append(_builder);
+          }
+        };
+        RouteJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _function);
+      }
+    };
     JvmOperation _method = this._jvmTypesBuilder.toMethod(model, name, _newTypeRef, _function);
     return _method;
   }

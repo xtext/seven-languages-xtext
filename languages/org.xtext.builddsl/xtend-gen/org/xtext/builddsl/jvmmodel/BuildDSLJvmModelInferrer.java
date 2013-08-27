@@ -67,135 +67,135 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
     JvmGenericType _class = this._jvmTypesBuilder.toClass(file, fqn);
     IPostIndexingInitializing<JvmGenericType> _accept = acceptor.<JvmGenericType>accept(_class);
     final Procedure1<JvmGenericType> _function = new Procedure1<JvmGenericType>() {
-        public void apply(final JvmGenericType it) {
-          EList<JvmTypeReference> _superTypes = it.getSuperTypes();
-          JvmTypeReference _newTypeRef = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(file, BuildScript.class);
-          BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmTypeReference>operator_add(_superTypes, _newTypeRef);
-          Iterable<Parameter> _parameters = BuildDSLJvmModelInferrer.this.getParameters(file);
-          for (final Parameter declaredParameter : _parameters) {
-            {
-              JvmTypeReference _elvis = null;
-              JvmTypeReference _elvis_1 = null;
-              JvmTypeReference _type = declaredParameter.getType();
-              if (_type != null) {
-                _elvis_1 = _type;
-              } else {
-                JvmTypeReference _inferredType = null;
-                XExpression _init = null;
-                if (declaredParameter!=null) {
-                  _init=declaredParameter.getInit();
-                }
-                if (_init!=null) {
-                  _inferredType=BuildDSLJvmModelInferrer.this._jvmTypesBuilder.inferredType(_init);
-                }
-                _elvis_1 = ObjectExtensions.<JvmTypeReference>operator_elvis(_type, _inferredType);
+      public void apply(final JvmGenericType it) {
+        EList<JvmTypeReference> _superTypes = it.getSuperTypes();
+        JvmTypeReference _newTypeRef = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(file, BuildScript.class);
+        BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmTypeReference>operator_add(_superTypes, _newTypeRef);
+        Iterable<Parameter> _parameters = BuildDSLJvmModelInferrer.this.getParameters(file);
+        for (final Parameter declaredParameter : _parameters) {
+          {
+            JvmTypeReference _elvis = null;
+            JvmTypeReference _elvis_1 = null;
+            JvmTypeReference _type = declaredParameter.getType();
+            if (_type != null) {
+              _elvis_1 = _type;
+            } else {
+              JvmTypeReference _inferredType = null;
+              XExpression _init = null;
+              if (declaredParameter!=null) {
+                _init=declaredParameter.getInit();
               }
-              if (_elvis_1 != null) {
-                _elvis = _elvis_1;
-              } else {
-                JvmTypeReference _newTypeRef_1 = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(file, String.class);
-                _elvis = ObjectExtensions.<JvmTypeReference>operator_elvis(_elvis_1, _newTypeRef_1);
+              if (_init!=null) {
+                _inferredType=BuildDSLJvmModelInferrer.this._jvmTypesBuilder.inferredType(_init);
               }
-              final JvmTypeReference type = _elvis;
-              EList<JvmMember> _members = it.getMembers();
-              String _name = declaredParameter.getName();
-              final Procedure1<JvmField> _function = new Procedure1<JvmField>() {
-                  public void apply(final JvmField it) {
-                    it.setVisibility(JvmVisibility.PUBLIC);
-                    EList<JvmAnnotationReference> _annotations = it.getAnnotations();
-                    JvmAnnotationReference _annotation = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.toAnnotation(declaredParameter, Param.class);
-                    BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmAnnotationReference>operator_add(_annotations, _annotation);
-                    XExpression _init = declaredParameter.getInit();
-                    BuildDSLJvmModelInferrer.this._jvmTypesBuilder.setInitializer(it, _init);
-                  }
-                };
-              JvmField _field = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.toField(declaredParameter, _name, type, _function);
-              BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmField>operator_add(_members, _field);
+              _elvis_1 = ObjectExtensions.<JvmTypeReference>operator_elvis(_type, _inferredType);
             }
-          }
-          JvmTypeReference _newTypeRef_1 = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(file, String.class);
-          final JvmTypeReference stringArray = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.addArrayTypeDimension(_newTypeRef_1);
-          EList<JvmMember> _members = it.getMembers();
-          JvmTypeReference _newTypeRef_2 = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(file, Void.TYPE);
-          final Procedure1<JvmOperation> _function = new Procedure1<JvmOperation>() {
-              public void apply(final JvmOperation it) {
-                EList<JvmFormalParameter> _parameters = it.getParameters();
-                JvmFormalParameter _parameter = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.toParameter(it, "args", stringArray);
-                BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters, _parameter);
-                it.setVarArgs(true);
-                it.setStatic(true);
-                final Procedure1<ITreeAppendable> _function = new Procedure1<ITreeAppendable>() {
-                    public void apply(final ITreeAppendable it) {
-                      StringConcatenation _builder = new StringConcatenation();
-                      _builder.append(scriptName, "");
-                      _builder.append(" script = new ");
-                      _builder.append(scriptName, "");
-                      _builder.append("();");
-                      _builder.newLineIfNotEmpty();
-                      _builder.append("if (script.showHelp(args)) {");
-                      _builder.newLine();
-                      _builder.append("\t");
-                      _builder.append("System.exit(HELP);");
-                      _builder.newLine();
-                      _builder.append("}");
-                      _builder.newLine();
-                      _builder.append("System.exit(script.doBuild(args));");
-                      _builder.newLine();
-                      it.append(_builder);
-                    }
-                  };
-                BuildDSLJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _function);
+            if (_elvis_1 != null) {
+              _elvis = _elvis_1;
+            } else {
+              JvmTypeReference _newTypeRef_1 = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(file, String.class);
+              _elvis = ObjectExtensions.<JvmTypeReference>operator_elvis(_elvis_1, _newTypeRef_1);
+            }
+            final JvmTypeReference type = _elvis;
+            EList<JvmMember> _members = it.getMembers();
+            String _name = declaredParameter.getName();
+            final Procedure1<JvmField> _function = new Procedure1<JvmField>() {
+              public void apply(final JvmField it) {
+                it.setVisibility(JvmVisibility.PUBLIC);
+                EList<JvmAnnotationReference> _annotations = it.getAnnotations();
+                JvmAnnotationReference _annotation = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.toAnnotation(declaredParameter, Param.class);
+                BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmAnnotationReference>operator_add(_annotations, _annotation);
+                XExpression _init = declaredParameter.getInit();
+                BuildDSLJvmModelInferrer.this._jvmTypesBuilder.setInitializer(it, _init);
               }
             };
-          JvmOperation _method = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.toMethod(file, "main", _newTypeRef_2, _function);
-          BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members, _method);
-          EList<JvmMember> _members_1 = it.getMembers();
-          Iterable<Task> _tasks = BuildDSLJvmModelInferrer.this.getTasks(file);
-          final Function1<Task,JvmOperation> _function_1 = new Function1<Task,JvmOperation>() {
-              public JvmOperation apply(final Task task) {
-                String _methodName = BuildDSLJvmModelInferrer.this.getMethodName(task);
-                JvmTypeReference _newTypeRef = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(task, Void.TYPE);
-                final Procedure1<JvmOperation> _function = new Procedure1<JvmOperation>() {
-                    public void apply(final JvmOperation it) {
-                      it.setVisibility(JvmVisibility.PROTECTED);
-                      EList<JvmAnnotationReference> _annotations = it.getAnnotations();
-                      JvmAnnotationReference _annotation = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.toAnnotation(task, DependsOn.class);
-                      final Procedure1<JvmAnnotationReference> _function = new Procedure1<JvmAnnotationReference>() {
-                          public void apply(final JvmAnnotationReference it) {
-                            EList<JvmAnnotationValue> _values = it.getValues();
-                            JvmStringAnnotationValue _createJvmStringAnnotationValue = BuildDSLJvmModelInferrer.this._typesFactory.createJvmStringAnnotationValue();
-                            final Procedure1<JvmStringAnnotationValue> _function = new Procedure1<JvmStringAnnotationValue>() {
-                                public void apply(final JvmStringAnnotationValue it) {
-                                  EList<String> _values = it.getValues();
-                                  EList<Task> _depends = task.getDepends();
-                                  final Function1<Task,String> _function = new Function1<Task,String>() {
-                                      public String apply(final Task it) {
-                                        String _name = it.getName();
-                                        return _name;
-                                      }
-                                    };
-                                  List<String> _map = ListExtensions.<Task, String>map(_depends, _function);
-                                  BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<String>operator_add(_values, _map);
-                                }
-                              };
-                            JvmStringAnnotationValue _doubleArrow = ObjectExtensions.<JvmStringAnnotationValue>operator_doubleArrow(_createJvmStringAnnotationValue, _function);
-                            BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmStringAnnotationValue>operator_add(_values, _doubleArrow);
+            JvmField _field = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.toField(declaredParameter, _name, type, _function);
+            BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmField>operator_add(_members, _field);
+          }
+        }
+        JvmTypeReference _newTypeRef_1 = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(file, String.class);
+        final JvmTypeReference stringArray = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.addArrayTypeDimension(_newTypeRef_1);
+        EList<JvmMember> _members = it.getMembers();
+        JvmTypeReference _newTypeRef_2 = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(file, Void.TYPE);
+        final Procedure1<JvmOperation> _function = new Procedure1<JvmOperation>() {
+          public void apply(final JvmOperation it) {
+            EList<JvmFormalParameter> _parameters = it.getParameters();
+            JvmFormalParameter _parameter = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.toParameter(it, "args", stringArray);
+            BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters, _parameter);
+            it.setVarArgs(true);
+            it.setStatic(true);
+            final Procedure1<ITreeAppendable> _function = new Procedure1<ITreeAppendable>() {
+              public void apply(final ITreeAppendable it) {
+                StringConcatenation _builder = new StringConcatenation();
+                _builder.append(scriptName, "");
+                _builder.append(" script = new ");
+                _builder.append(scriptName, "");
+                _builder.append("();");
+                _builder.newLineIfNotEmpty();
+                _builder.append("if (script.showHelp(args)) {");
+                _builder.newLine();
+                _builder.append("\t");
+                _builder.append("System.exit(HELP);");
+                _builder.newLine();
+                _builder.append("}");
+                _builder.newLine();
+                _builder.append("System.exit(script.doBuild(args));");
+                _builder.newLine();
+                it.append(_builder);
+              }
+            };
+            BuildDSLJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _function);
+          }
+        };
+        JvmOperation _method = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.toMethod(file, "main", _newTypeRef_2, _function);
+        BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members, _method);
+        EList<JvmMember> _members_1 = it.getMembers();
+        Iterable<Task> _tasks = BuildDSLJvmModelInferrer.this.getTasks(file);
+        final Function1<Task,JvmOperation> _function_1 = new Function1<Task,JvmOperation>() {
+          public JvmOperation apply(final Task task) {
+            String _methodName = BuildDSLJvmModelInferrer.this.getMethodName(task);
+            JvmTypeReference _newTypeRef = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(task, Void.TYPE);
+            final Procedure1<JvmOperation> _function = new Procedure1<JvmOperation>() {
+              public void apply(final JvmOperation it) {
+                it.setVisibility(JvmVisibility.PROTECTED);
+                EList<JvmAnnotationReference> _annotations = it.getAnnotations();
+                JvmAnnotationReference _annotation = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.toAnnotation(task, DependsOn.class);
+                final Procedure1<JvmAnnotationReference> _function = new Procedure1<JvmAnnotationReference>() {
+                  public void apply(final JvmAnnotationReference it) {
+                    EList<JvmAnnotationValue> _values = it.getValues();
+                    JvmStringAnnotationValue _createJvmStringAnnotationValue = BuildDSLJvmModelInferrer.this._typesFactory.createJvmStringAnnotationValue();
+                    final Procedure1<JvmStringAnnotationValue> _function = new Procedure1<JvmStringAnnotationValue>() {
+                      public void apply(final JvmStringAnnotationValue it) {
+                        EList<String> _values = it.getValues();
+                        EList<Task> _depends = task.getDepends();
+                        final Function1<Task,String> _function = new Function1<Task,String>() {
+                          public String apply(final Task it) {
+                            String _name = it.getName();
+                            return _name;
                           }
                         };
-                      JvmAnnotationReference _doubleArrow = ObjectExtensions.<JvmAnnotationReference>operator_doubleArrow(_annotation, _function);
-                      BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmAnnotationReference>operator_add(_annotations, _doubleArrow);
-                      XExpression _action = task.getAction();
-                      BuildDSLJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _action);
-                    }
-                  };
-                JvmOperation _method = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.toMethod(task, _methodName, _newTypeRef, _function);
-                return _method;
+                        List<String> _map = ListExtensions.<Task, String>map(_depends, _function);
+                        BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<String>operator_add(_values, _map);
+                      }
+                    };
+                    JvmStringAnnotationValue _doubleArrow = ObjectExtensions.<JvmStringAnnotationValue>operator_doubleArrow(_createJvmStringAnnotationValue, _function);
+                    BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmStringAnnotationValue>operator_add(_values, _doubleArrow);
+                  }
+                };
+                JvmAnnotationReference _doubleArrow = ObjectExtensions.<JvmAnnotationReference>operator_doubleArrow(_annotation, _function);
+                BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmAnnotationReference>operator_add(_annotations, _doubleArrow);
+                XExpression _action = task.getAction();
+                BuildDSLJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _action);
               }
             };
-          Iterable<JvmMember> _map = IterableExtensions.<Task, JvmMember>map(_tasks, _function_1);
-          BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members_1, _map);
-        }
-      };
+            JvmOperation _method = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.toMethod(task, _methodName, _newTypeRef, _function);
+            return _method;
+          }
+        };
+        Iterable<JvmMember> _map = IterableExtensions.<Task, JvmMember>map(_tasks, _function_1);
+        BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members_1, _map);
+      }
+    };
     _accept.initializeLater(_function);
   }
   

@@ -56,29 +56,29 @@ public class ExecutionTest {
   protected void compileAndExecuteMainAndExpect(final CharSequence script, final Object expectedResult) {
     try {
       final IAcceptor<Result> _function = new IAcceptor<Result>() {
-          public void accept(final Result it) {
+        public void accept(final Result it) {
+          try {
             try {
-              try {
-                Class<? extends Object> _compiledClass = it.getCompiledClass();
-                Object _newInstance = _compiledClass.newInstance();
-                ExecutionTest.this._reflectExtensions.invoke(_newInstance, "main", null);
-                Assert.fail("Expected ResultException not thrown.");
-              } catch (final Throwable _t) {
-                if (_t instanceof InvocationTargetException) {
-                  final InvocationTargetException exc = (InvocationTargetException)_t;
-                  String _string = expectedResult.toString();
-                  Throwable _cause = exc.getCause();
-                  String _message = _cause.getMessage();
-                  Assert.assertEquals(_string, _message);
-                } else {
-                  throw Exceptions.sneakyThrow(_t);
-                }
+              Class<? extends Object> _compiledClass = it.getCompiledClass();
+              Object _newInstance = _compiledClass.newInstance();
+              ExecutionTest.this._reflectExtensions.invoke(_newInstance, "main", null);
+              Assert.fail("Expected ResultException not thrown.");
+            } catch (final Throwable _t) {
+              if (_t instanceof InvocationTargetException) {
+                final InvocationTargetException exc = (InvocationTargetException)_t;
+                String _string = expectedResult.toString();
+                Throwable _cause = exc.getCause();
+                String _message = _cause.getMessage();
+                Assert.assertEquals(_string, _message);
+              } else {
+                throw Exceptions.sneakyThrow(_t);
               }
-            } catch (Throwable _e) {
-              throw Exceptions.sneakyThrow(_e);
             }
+          } catch (Throwable _e) {
+            throw Exceptions.sneakyThrow(_e);
           }
-        };
+        }
+      };
       this._compilationTestHelper.compile(script, _function);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);

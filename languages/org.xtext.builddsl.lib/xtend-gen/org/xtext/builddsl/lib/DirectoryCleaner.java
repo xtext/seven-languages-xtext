@@ -19,14 +19,14 @@ public class DirectoryCleaner {
     if (_isDirectory) {
       File[] _listFiles = file.listFiles();
       final Procedure1<File> _function = new Procedure1<File>() {
-          public void apply(final File it) {
-            boolean _isDirectory = it.isDirectory();
-            if (_isDirectory) {
-              DirectoryCleaner.deleteDirectoryContents(it);
-            }
-            it.delete();
+        public void apply(final File it) {
+          boolean _isDirectory = it.isDirectory();
+          if (_isDirectory) {
+            DirectoryCleaner.deleteDirectoryContents(it);
           }
-        };
+          it.delete();
+        }
+      };
       IterableExtensions.<File>forEach(((Iterable<File>)Conversions.doWrapArray(_listFiles)), _function);
     } else {
       file.delete();

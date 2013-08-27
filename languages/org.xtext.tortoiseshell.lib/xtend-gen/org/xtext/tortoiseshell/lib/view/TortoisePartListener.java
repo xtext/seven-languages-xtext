@@ -161,43 +161,43 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
         final IPath editorFilePath = editorFile.getFullPath();
         IResourceDelta _delta = event.getDelta();
         final IResourceDeltaVisitor _function = new IResourceDeltaVisitor() {
-            public boolean visit(final IResourceDelta it) throws CoreException {
-              boolean _xifexpression = false;
-              boolean _and = false;
-              boolean _and_1 = false;
-              IResource _resource = it.getResource();
-              boolean _equals = Objects.equal(_resource, editorFile);
-              if (!_equals) {
-                _and_1 = false;
-              } else {
-                int _kind = it.getKind();
-                boolean _equals_1 = (_kind == IResourceDelta.CHANGED);
-                _and_1 = (_equals && _equals_1);
-              }
-              if (!_and_1) {
-                _and = false;
-              } else {
-                int _flags = it.getFlags();
-                boolean _equals_2 = (_flags == IResourceDelta.CONTENT);
-                _and = (_and_1 && _equals_2);
-              }
-              if (_and) {
-                boolean _xblockexpression = false;
-                {
-                  int _minus = (-10);
-                  TortoisePartListener.this.view.show(TortoisePartListener.this.currentTortoiseEditor, _minus);
-                  _xblockexpression = (false);
-                }
-                _xifexpression = _xblockexpression;
-              } else {
-                IResource _resource_1 = it.getResource();
-                IPath _fullPath = _resource_1.getFullPath();
-                boolean _isPrefixOf = _fullPath.isPrefixOf(editorFilePath);
-                _xifexpression = _isPrefixOf;
-              }
-              return _xifexpression;
+          public boolean visit(final IResourceDelta it) throws CoreException {
+            boolean _xifexpression = false;
+            boolean _and = false;
+            boolean _and_1 = false;
+            IResource _resource = it.getResource();
+            boolean _equals = Objects.equal(_resource, editorFile);
+            if (!_equals) {
+              _and_1 = false;
+            } else {
+              int _kind = it.getKind();
+              boolean _equals_1 = (_kind == IResourceDelta.CHANGED);
+              _and_1 = (_equals && _equals_1);
             }
-          };
+            if (!_and_1) {
+              _and = false;
+            } else {
+              int _flags = it.getFlags();
+              boolean _equals_2 = (_flags == IResourceDelta.CONTENT);
+              _and = (_and_1 && _equals_2);
+            }
+            if (_and) {
+              boolean _xblockexpression = false;
+              {
+                int _minus = (-10);
+                TortoisePartListener.this.view.show(TortoisePartListener.this.currentTortoiseEditor, _minus);
+                _xblockexpression = (false);
+              }
+              _xifexpression = _xblockexpression;
+            } else {
+              IResource _resource_1 = it.getResource();
+              IPath _fullPath = _resource_1.getFullPath();
+              boolean _isPrefixOf = _fullPath.isPrefixOf(editorFilePath);
+              _xifexpression = _isPrefixOf;
+            }
+            return _xifexpression;
+          }
+        };
         _delta.accept(_function);
       }
     } catch (Throwable _e) {

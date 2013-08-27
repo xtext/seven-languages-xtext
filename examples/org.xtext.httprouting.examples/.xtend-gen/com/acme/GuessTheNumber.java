@@ -152,12 +152,12 @@ public class GuessTheNumber {
   private void send(final CharSequence answer) {
     try {
       final OutputSupplier<OutputStreamWriter> _function = new OutputSupplier<OutputStreamWriter>() {
-          public OutputStreamWriter getOutput() throws IOException {
-            ServletOutputStream _outputStream = GuessTheNumber.this.response.getOutputStream();
-            OutputStreamWriter _outputStreamWriter = new OutputStreamWriter(_outputStream);
-            return _outputStreamWriter;
-          }
-        };
+        public OutputStreamWriter getOutput() throws IOException {
+          ServletOutputStream _outputStream = GuessTheNumber.this.response.getOutputStream();
+          OutputStreamWriter _outputStreamWriter = new OutputStreamWriter(_outputStream);
+          return _outputStreamWriter;
+        }
+      };
       CharStreams.<OutputStreamWriter>write(answer, _function);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);

@@ -80,7 +80,7 @@ public class WrappingUtil {
   
   private static ClassLoader _classLoader = new Function0<ClassLoader>() {
     public ClassLoader apply() {
-      ClassLoader _classLoader = WrappingUtil.class.getClassLoader();
+      ClassLoader _classLoader = WrappingUtil.getClassLoader();
       return _classLoader;
     }
   }.apply();

@@ -236,11 +236,11 @@ public class CommandLineTest {
     try {
       final ArrayList<Class<? extends Object>> classes = CollectionLiterals.<Class<?>>newArrayList();
       final IAcceptor<Result> _function = new IAcceptor<Result>() {
-          public void accept(final Result it) {
-            Class<? extends Object> _compiledClass = it.getCompiledClass();
-            classes.add(_compiledClass);
-          }
-        };
+        public void accept(final Result it) {
+          Class<? extends Object> _compiledClass = it.getCompiledClass();
+          classes.add(_compiledClass);
+        }
+      };
       this._compilationTestHelper.compile(file, _function);
       final Class<? extends Object> clazz = IterableExtensions.<Class<? extends Object>>head(classes);
       ByteArrayOutputStream _byteArrayOutputStream = new ByteArrayOutputStream();
@@ -253,24 +253,24 @@ public class CommandLineTest {
         Class<? extends Object> _superclass = clazz.getSuperclass();
         Method[] _declaredMethods = _superclass.getDeclaredMethods();
         final Function1<Method,Boolean> _function_1 = new Function1<Method,Boolean>() {
-            public Boolean apply(final Method it) {
-              String _name = it.getName();
-              boolean _equals = Objects.equal(_name, "doBuild");
-              return Boolean.valueOf(_equals);
-            }
-          };
+          public Boolean apply(final Method it) {
+            String _name = it.getName();
+            boolean _equals = Objects.equal(_name, "doBuild");
+            return Boolean.valueOf(_equals);
+          }
+        };
         Method _findFirst = IterableExtensions.<Method>findFirst(((Iterable<Method>)Conversions.doWrapArray(_declaredMethods)), _function_1);
         final Procedure1<Method> _function_2 = new Procedure1<Method>() {
-            public void apply(final Method it) {
-              try {
-                it.setAccessible(true);
-                String[] _split = cmdline.split(" ");
-                it.invoke(instance, ((Object) _split));
-              } catch (Throwable _e) {
-                throw Exceptions.sneakyThrow(_e);
-              }
+          public void apply(final Method it) {
+            try {
+              it.setAccessible(true);
+              String[] _split = cmdline.split(" ");
+              it.invoke(instance, ((Object) _split));
+            } catch (Throwable _e) {
+              throw Exceptions.sneakyThrow(_e);
             }
-          };
+          }
+        };
         ObjectExtensions.<Method>operator_doubleArrow(_findFirst, _function_2);
       } finally {
         System.setOut(backup);

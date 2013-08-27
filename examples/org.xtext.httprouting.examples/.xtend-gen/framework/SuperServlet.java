@@ -41,25 +41,25 @@ public class SuperServlet extends NumberGuessing {
   public void init() throws ServletException {
     super.init();
     final Module _function = new Module() {
-        public void configure(final Binder it) {
-          AnnotatedBindingBuilder<HttpServletRequest> _bind = it.<HttpServletRequest>bind(HttpServletRequest.class);
-          final Provider<HttpServletRequest> _function = new Provider<HttpServletRequest>() {
-              public HttpServletRequest get() {
-                HttpServletRequest _get = SuperServlet.this.request.get();
-                return _get;
-              }
-            };
-          _bind.toProvider(_function);
-          AnnotatedBindingBuilder<HttpServletResponse> _bind_1 = it.<HttpServletResponse>bind(HttpServletResponse.class);
-          final Provider<HttpServletResponse> _function_1 = new Provider<HttpServletResponse>() {
-              public HttpServletResponse get() {
-                HttpServletResponse _get = SuperServlet.this.response.get();
-                return _get;
-              }
-            };
-          _bind_1.toProvider(_function_1);
-        }
-      };
+      public void configure(final Binder it) {
+        AnnotatedBindingBuilder<HttpServletRequest> _bind = it.<HttpServletRequest>bind(HttpServletRequest.class);
+        final Provider<HttpServletRequest> _function = new Provider<HttpServletRequest>() {
+          public HttpServletRequest get() {
+            HttpServletRequest _get = SuperServlet.this.request.get();
+            return _get;
+          }
+        };
+        _bind.toProvider(_function);
+        AnnotatedBindingBuilder<HttpServletResponse> _bind_1 = it.<HttpServletResponse>bind(HttpServletResponse.class);
+        final Provider<HttpServletResponse> _function_1 = new Provider<HttpServletResponse>() {
+          public HttpServletResponse get() {
+            HttpServletResponse _get = SuperServlet.this.response.get();
+            return _get;
+          }
+        };
+        _bind_1.toProvider(_function_1);
+      }
+    };
     Injector _createInjector = Guice.createInjector(_function);
     this.injector = _createInjector;
   }

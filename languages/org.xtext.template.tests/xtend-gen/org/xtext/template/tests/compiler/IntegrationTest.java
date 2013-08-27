@@ -44,17 +44,17 @@ public class IntegrationTest {
       _builder.newLine();
       String _replace = this.replace(_builder);
       final IAcceptor<Result> _function = new IAcceptor<Result>() {
-          public void accept(final Result it) {
-            try {
-              Class<? extends Object> _compiledClass = it.getCompiledClass();
-              Object _newInstance = _compiledClass.newInstance();
-              final Object result = IntegrationTest.this._reflectExtensions.invoke(_newInstance, "generate", null);
-              Assert.assertEquals("Hello World", result);
-            } catch (Throwable _e) {
-              throw Exceptions.sneakyThrow(_e);
-            }
+        public void accept(final Result it) {
+          try {
+            Class<? extends Object> _compiledClass = it.getCompiledClass();
+            Object _newInstance = _compiledClass.newInstance();
+            final Object result = IntegrationTest.this._reflectExtensions.invoke(_newInstance, "generate", null);
+            Assert.assertEquals("Hello World", result);
+          } catch (Throwable _e) {
+            throw Exceptions.sneakyThrow(_e);
           }
-        };
+        }
+      };
       this._compilationTestHelper.compile(_replace, _function);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
@@ -117,38 +117,38 @@ public class IntegrationTest {
       _builder.newLine();
       String _replace = this.replace(_builder);
       final IAcceptor<Result> _function = new IAcceptor<Result>() {
-          public void accept(final Result it) {
-            try {
-              Class<? extends Object> _compiledClass = it.getCompiledClass();
-              Object _newInstance = _compiledClass.newInstance();
-              final Object result = IntegrationTest.this._reflectExtensions.invoke(_newInstance, "generate", null);
-              StringConcatenation _builder = new StringConcatenation();
-              _builder.append("<html>");
-              _builder.newLine();
-              _builder.append("  ");
-              _builder.append("<title>Foo//</title>");
-              _builder.newLine();
-              _builder.append("      ");
-              _builder.append("<h1>one</h1>");
-              _builder.newLine();
-              _builder.append("      ");
-              _builder.append("<h2>two</h2>");
-              _builder.newLine();
-              _builder.append("      ");
-              _builder.append("<p>three</p>");
-              _builder.newLine();
-              _builder.append("      ");
-              _builder.append("<p>four</p>");
-              _builder.newLine();
-              _builder.append("</html>");
-              String _string = _builder.toString();
-              String _string_1 = result.toString();
-              Assert.assertEquals(_string, _string_1);
-            } catch (Throwable _e) {
-              throw Exceptions.sneakyThrow(_e);
-            }
+        public void accept(final Result it) {
+          try {
+            Class<? extends Object> _compiledClass = it.getCompiledClass();
+            Object _newInstance = _compiledClass.newInstance();
+            final Object result = IntegrationTest.this._reflectExtensions.invoke(_newInstance, "generate", null);
+            StringConcatenation _builder = new StringConcatenation();
+            _builder.append("<html>");
+            _builder.newLine();
+            _builder.append("  ");
+            _builder.append("<title>Foo//</title>");
+            _builder.newLine();
+            _builder.append("      ");
+            _builder.append("<h1>one</h1>");
+            _builder.newLine();
+            _builder.append("      ");
+            _builder.append("<h2>two</h2>");
+            _builder.newLine();
+            _builder.append("      ");
+            _builder.append("<p>three</p>");
+            _builder.newLine();
+            _builder.append("      ");
+            _builder.append("<p>four</p>");
+            _builder.newLine();
+            _builder.append("</html>");
+            String _string = _builder.toString();
+            String _string_1 = result.toString();
+            Assert.assertEquals(_string, _string_1);
+          } catch (Throwable _e) {
+            throw Exceptions.sneakyThrow(_e);
           }
-        };
+        }
+      };
       this._compilationTestHelper.compile(_replace, _function);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
@@ -157,8 +157,8 @@ public class IntegrationTest {
   
   public String replace(final CharSequence s) {
     String _string = s.toString();
-    String _replace = _string.replace("<<", "\u00AB");
-    String _replace_1 = _replace.replace(">>", "\u00BB");
+    String _replace = _string.replace("<<", "«");
+    String _replace_1 = _replace.replace(">>", "»");
     return _replace_1;
   }
 }

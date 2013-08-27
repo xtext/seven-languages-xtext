@@ -45,34 +45,34 @@ public class BuildDSLValidator extends XbaseJavaValidator {
   @Check
   public void checkNoRecursiveDependencies(final Task task) {
     final Procedure1<Set<Task>> _function = new Procedure1<Set<Task>>() {
-        public void apply(final Set<Task> cycle) {
-          int _size = cycle.size();
-          boolean _equals = (_size == 1);
-          if (_equals) {
-            StringConcatenation _builder = new StringConcatenation();
-            _builder.append("The task \'");
-            String _name = task.getName();
-            _builder.append(_name, "");
-            _builder.append("\' cannot depend on itself.");
-            Task _head = IterableExtensions.<Task>head(cycle);
-            BuildDSLValidator.this.error(_builder.toString(), _head, Literals.DECLARATION__NAME, BuildDSLValidator.CYCLIC_DEPENDENCY);
-          } else {
-            StringConcatenation _builder_1 = new StringConcatenation();
-            _builder_1.append("There is a cyclic dependency that involves tasks ");
-            final Function1<Task,String> _function = new Function1<Task,String>() {
-                public String apply(final Task it) {
-                  String _name = it.getName();
-                  return _name;
-                }
-              };
-            Iterable<String> _map = IterableExtensions.<Task, String>map(cycle, _function);
-            String _join = IterableExtensions.join(_map, ", ");
-            _builder_1.append(_join, "");
-            Task _head_1 = IterableExtensions.<Task>head(cycle);
-            BuildDSLValidator.this.error(_builder_1.toString(), _head_1, Literals.DECLARATION__NAME, BuildDSLValidator.CYCLIC_DEPENDENCY);
-          }
+      public void apply(final Set<Task> cycle) {
+        int _size = cycle.size();
+        boolean _equals = (_size == 1);
+        if (_equals) {
+          StringConcatenation _builder = new StringConcatenation();
+          _builder.append("The task \'");
+          String _name = task.getName();
+          _builder.append(_name, "");
+          _builder.append("\' cannot depend on itself.");
+          Task _head = IterableExtensions.<Task>head(cycle);
+          BuildDSLValidator.this.error(_builder.toString(), _head, Literals.DECLARATION__NAME, BuildDSLValidator.CYCLIC_DEPENDENCY);
+        } else {
+          StringConcatenation _builder_1 = new StringConcatenation();
+          _builder_1.append("There is a cyclic dependency that involves tasks ");
+          final Function1<Task,String> _function = new Function1<Task,String>() {
+            public String apply(final Task it) {
+              String _name = it.getName();
+              return _name;
+            }
+          };
+          Iterable<String> _map = IterableExtensions.<Task, String>map(cycle, _function);
+          String _join = IterableExtensions.join(_map, ", ");
+          _builder_1.append(_join, "");
+          Task _head_1 = IterableExtensions.<Task>head(cycle);
+          BuildDSLValidator.this.error(_builder_1.toString(), _head_1, Literals.DECLARATION__NAME, BuildDSLValidator.CYCLIC_DEPENDENCY);
         }
-      };
+      }
+    };
     this.findDependentTasks(task, _function);
   }
   

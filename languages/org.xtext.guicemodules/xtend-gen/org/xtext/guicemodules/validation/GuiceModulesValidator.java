@@ -39,12 +39,12 @@ public class GuiceModulesValidator extends XbaseWithAnnotationsJavaValidator {
         _matched=true;
         EList<JvmAnnotationReference> _annotations = _jvmAnnotationType.getAnnotations();
         final Function1<JvmAnnotationReference,Boolean> _function = new Function1<JvmAnnotationReference,Boolean>() {
-            public Boolean apply(final JvmAnnotationReference it) {
-              JvmAnnotationType _annotation = it.getAnnotation();
-              boolean _is = GuiceModulesValidator.this._typeReferences.is(_annotation, BindingAnnotation.class);
-              return Boolean.valueOf(_is);
-            }
-          };
+          public Boolean apply(final JvmAnnotationReference it) {
+            JvmAnnotationType _annotation = it.getAnnotation();
+            boolean _is = GuiceModulesValidator.this._typeReferences.is(_annotation, BindingAnnotation.class);
+            return Boolean.valueOf(_is);
+          }
+        };
         boolean _exists = IterableExtensions.<JvmAnnotationReference>exists(_annotations, _function);
         boolean _not = (!_exists);
         if (_not) {

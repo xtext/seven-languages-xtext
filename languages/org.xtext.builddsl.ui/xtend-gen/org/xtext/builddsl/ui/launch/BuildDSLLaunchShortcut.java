@@ -73,25 +73,25 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
       final int index = list.indexOf(start);
       IntegerRange _upTo = new IntegerRange(index, 0);
       final Function1<Integer,Boolean> _function = new Function1<Integer,Boolean>() {
-          public Boolean apply(final Integer it) {
-            ILeafNode _get = list.get((it).intValue());
-            boolean _isHidden = _get.isHidden();
-            boolean _not = (!_isHidden);
-            return Boolean.valueOf(_not);
-          }
-        };
+        public Boolean apply(final Integer it) {
+          ILeafNode _get = list.get((it).intValue());
+          boolean _isHidden = _get.isHidden();
+          boolean _not = (!_isHidden);
+          return Boolean.valueOf(_not);
+        }
+      };
       final Integer first = IterableExtensions.<Integer>findFirst(_upTo, _function);
       int _size = list.size();
       int _minus = (_size - 1);
       IntegerRange _upTo_1 = new IntegerRange(index, _minus);
       final Function1<Integer,Boolean> _function_1 = new Function1<Integer,Boolean>() {
-          public Boolean apply(final Integer it) {
-            ILeafNode _get = list.get((it).intValue());
-            boolean _isHidden = _get.isHidden();
-            boolean _not = (!_isHidden);
-            return Boolean.valueOf(_not);
-          }
-        };
+        public Boolean apply(final Integer it) {
+          ILeafNode _get = list.get((it).intValue());
+          boolean _isHidden = _get.isHidden();
+          boolean _not = (!_isHidden);
+          return Boolean.valueOf(_not);
+        }
+      };
       final Integer last = IterableExtensions.<Integer>findFirst(_upTo_1, _function_1);
       ILeafNode _get = list.get((first).intValue());
       EObject _semanticElement = _get.getSemanticElement();
@@ -140,23 +140,23 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
         final String project = _project.getName();
         IXtextDocument _document = xbaseEditor.getDocument();
         final IUnitOfWork<LaunchConfigurationInfo,XtextResource> _function = new IUnitOfWork<LaunchConfigurationInfo,XtextResource>() {
-            public LaunchConfigurationInfo exec(final XtextResource it) throws Exception {
-              LaunchConfigurationInfo _xblockexpression = null;
-              {
-                EList<EObject> _contents = it.getContents();
-                Iterable<JvmDeclaredType> _filter = Iterables.<JvmDeclaredType>filter(_contents, JvmDeclaredType.class);
-                final JvmDeclaredType file = IterableExtensions.<JvmDeclaredType>head(_filter);
-                String _identifier = null;
-                if (file!=null) {
-                  _identifier=file.getIdentifier();
-                }
-                String _findTask = BuildDSLLaunchShortcut.this.findTask(it, offset);
-                LaunchConfigurationInfo _launchConfigurationInfo = new LaunchConfigurationInfo(project, _identifier, _findTask);
-                _xblockexpression = (_launchConfigurationInfo);
+          public LaunchConfigurationInfo exec(final XtextResource it) throws Exception {
+            LaunchConfigurationInfo _xblockexpression = null;
+            {
+              EList<EObject> _contents = it.getContents();
+              Iterable<JvmDeclaredType> _filter = Iterables.<JvmDeclaredType>filter(_contents, JvmDeclaredType.class);
+              final JvmDeclaredType file = IterableExtensions.<JvmDeclaredType>head(_filter);
+              String _identifier = null;
+              if (file!=null) {
+                _identifier=file.getIdentifier();
               }
-              return _xblockexpression;
+              String _findTask = BuildDSLLaunchShortcut.this.findTask(it, offset);
+              LaunchConfigurationInfo _launchConfigurationInfo = new LaunchConfigurationInfo(project, _identifier, _findTask);
+              _xblockexpression = (_launchConfigurationInfo);
             }
-          };
+            return _xblockexpression;
+          }
+        };
         final LaunchConfigurationInfo info = _document.<LaunchConfigurationInfo>readOnly(_function);
         this.launch(mode, info);
         return;
@@ -187,11 +187,11 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
             final ILaunchConfiguration[] configs = _launchManager.getLaunchConfigurations();
             ILaunchConfiguration _elvis = null;
             final Function1<ILaunchConfiguration,Boolean> _function = new Function1<ILaunchConfiguration,Boolean>() {
-                public Boolean apply(final ILaunchConfiguration it) {
-                  boolean _configEquals = info.configEquals(it);
-                  return Boolean.valueOf(_configEquals);
-                }
-              };
+              public Boolean apply(final ILaunchConfiguration it) {
+                boolean _configEquals = info.configEquals(it);
+                return Boolean.valueOf(_configEquals);
+              }
+            };
             ILaunchConfiguration _findFirst = IterableExtensions.<ILaunchConfiguration>findFirst(((Iterable<ILaunchConfiguration>)Conversions.doWrapArray(configs)), _function);
             if (_findFirst != null) {
               _elvis = _findFirst;

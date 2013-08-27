@@ -58,20 +58,20 @@ public class FileExtensions {
       try {
         out.setMethod(JarOutputStream.DEFLATED);
         final Procedure1<File> _function = new Procedure1<File>() {
-            public void apply(final File file) {
-              try {
-                File _relativeTo = FileExtensions.relativeTo(file, directory);
-                String _path = _relativeTo.getPath();
-                ZipEntry _zipEntry = new ZipEntry(_path);
-                final ZipEntry entry = _zipEntry;
-                out.putNextEntry(entry);
-                Files.copy(file, out);
-                out.closeEntry();
-              } catch (Throwable _e) {
-                throw Exceptions.sneakyThrow(_e);
-              }
+          public void apply(final File file) {
+            try {
+              File _relativeTo = FileExtensions.relativeTo(file, directory);
+              String _path = _relativeTo.getPath();
+              ZipEntry _zipEntry = new ZipEntry(_path);
+              final ZipEntry entry = _zipEntry;
+              out.putNextEntry(entry);
+              Files.copy(file, out);
+              out.closeEntry();
+            } catch (Throwable _e) {
+              throw Exceptions.sneakyThrow(_e);
             }
-          };
+          }
+        };
         IterableExtensions.<File>forEach(files, _function);
         out.flush();
       } finally {

@@ -71,14 +71,14 @@ public class WrappingUtilTest {
       _builder.append("}");
       _builder.newLine();
       final IAcceptor<Result> _function = new IAcceptor<Result>() {
-          public void accept(final Result it) {
-            Class<? extends Object> _compiledClass = it.getCompiledClass();
-            WrappingUtilTest.this.setMongoBeanClass(_compiledClass);
-            Class<? extends Object> _compiledClass_1 = it.getCompiledClass();
-            ClassLoader _classLoader = _compiledClass_1.getClassLoader();
-            WrappingUtil.setClassLoader(_classLoader);
-          }
-        };
+        public void accept(final Result it) {
+          Class<? extends Object> _compiledClass = it.getCompiledClass();
+          WrappingUtilTest.this.setMongoBeanClass(_compiledClass);
+          Class<? extends Object> _compiledClass_1 = it.getCompiledClass();
+          ClassLoader _classLoader = _compiledClass_1.getClassLoader();
+          WrappingUtil.setClassLoader(_classLoader);
+        }
+      };
       this._compilationTestHelper.compile(_builder, _function);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
@@ -146,11 +146,11 @@ public class WrappingUtilTest {
   protected BasicDBObject newFooDbObject(final String bar) {
     BasicDBObject _basicDBObject = new BasicDBObject();
     final Procedure1<BasicDBObject> _function = new Procedure1<BasicDBObject>() {
-        public void apply(final BasicDBObject it) {
-          it.put(IMongoBean.JAVA_CLASS_KEY, "Foo");
-          it.put("bar", bar);
-        }
-      };
+      public void apply(final BasicDBObject it) {
+        it.put(IMongoBean.JAVA_CLASS_KEY, "Foo");
+        it.put("bar", bar);
+      }
+    };
     BasicDBObject _doubleArrow = ObjectExtensions.<BasicDBObject>operator_doubleArrow(_basicDBObject, _function);
     return _doubleArrow;
   }

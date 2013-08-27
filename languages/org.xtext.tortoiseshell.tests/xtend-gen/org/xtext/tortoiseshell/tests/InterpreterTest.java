@@ -49,6 +49,30 @@ public class InterpreterTest {
   public void testTortoiseDefaults() {
     Tortoise _tortoise = new Tortoise();
     final Procedure1<Tortoise> _function = new Procedure1<Tortoise>() {
+      public void apply(final Tortoise it) {
+        boolean _isPaint = it.isPaint();
+        Assert.assertTrue(_isPaint);
+        double _angle = it.getAngle();
+        Assert.assertEquals(0.0, _angle, 0.0);
+        Point _point = new Point(0, 0);
+        Point _position = it.getPosition();
+        Assert.assertEquals(_point, _position);
+        int _delay = it.getDelay();
+        Assert.assertEquals(200, _delay);
+        Color _lineColor = it.getLineColor();
+        Assert.assertEquals(ColorConstants.black, _lineColor);
+        int _lineWidth = it.getLineWidth();
+        Assert.assertEquals(1, _lineWidth);
+      }
+    };
+    ObjectExtensions.<Tortoise>operator_doubleArrow(_tortoise, _function);
+  }
+  
+  @Test
+  public void testTortoisProgram() {
+    try {
+      Tortoise _tortoise = new Tortoise();
+      final Procedure1<Tortoise> _function = new Procedure1<Tortoise>() {
         public void apply(final Tortoise it) {
           boolean _isPaint = it.isPaint();
           Assert.assertTrue(_isPaint);
@@ -65,30 +89,6 @@ public class InterpreterTest {
           Assert.assertEquals(1, _lineWidth);
         }
       };
-    ObjectExtensions.<Tortoise>operator_doubleArrow(_tortoise, _function);
-  }
-  
-  @Test
-  public void testTortoisProgram() {
-    try {
-      Tortoise _tortoise = new Tortoise();
-      final Procedure1<Tortoise> _function = new Procedure1<Tortoise>() {
-          public void apply(final Tortoise it) {
-            boolean _isPaint = it.isPaint();
-            Assert.assertTrue(_isPaint);
-            double _angle = it.getAngle();
-            Assert.assertEquals(0.0, _angle, 0.0);
-            Point _point = new Point(0, 0);
-            Point _position = it.getPosition();
-            Assert.assertEquals(_point, _position);
-            int _delay = it.getDelay();
-            Assert.assertEquals(200, _delay);
-            Color _lineColor = it.getLineColor();
-            Assert.assertEquals(ColorConstants.black, _lineColor);
-            int _lineWidth = it.getLineWidth();
-            Assert.assertEquals(1, _lineWidth);
-          }
-        };
       final Tortoise tortoise = ObjectExtensions.<Tortoise>operator_doubleArrow(_tortoise, _function);
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("begin");
@@ -117,23 +117,23 @@ public class InterpreterTest {
       int _minus = (-10);
       this._tortoiseShellInterpeter.run(tortoise, program, _minus);
       final Procedure1<Tortoise> _function_1 = new Procedure1<Tortoise>() {
-          public void apply(final Tortoise it) {
-            boolean _isPaint = it.isPaint();
-            Assert.assertFalse(_isPaint);
-            double _angle = it.getAngle();
-            Assert.assertEquals(10.0, _angle, 0.0);
-            int _minus = (-10);
-            Point _point = new Point(0, _minus);
-            Point _position = it.getPosition();
-            Assert.assertEquals(_point, _position);
-            int _delay = it.getDelay();
-            Assert.assertEquals(1, _delay);
-            Color _lineColor = it.getLineColor();
-            Assert.assertEquals(ColorConstants.blue, _lineColor);
-            int _lineWidth = it.getLineWidth();
-            Assert.assertEquals(2, _lineWidth);
-          }
-        };
+        public void apply(final Tortoise it) {
+          boolean _isPaint = it.isPaint();
+          Assert.assertFalse(_isPaint);
+          double _angle = it.getAngle();
+          Assert.assertEquals(10.0, _angle, 0.0);
+          int _minus = (-10);
+          Point _point = new Point(0, _minus);
+          Point _position = it.getPosition();
+          Assert.assertEquals(_point, _position);
+          int _delay = it.getDelay();
+          Assert.assertEquals(1, _delay);
+          Color _lineColor = it.getLineColor();
+          Assert.assertEquals(ColorConstants.blue, _lineColor);
+          int _lineWidth = it.getLineWidth();
+          Assert.assertEquals(2, _lineWidth);
+        }
+      };
       ObjectExtensions.<Tortoise>operator_doubleArrow(tortoise, _function_1);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
@@ -188,24 +188,24 @@ public class InterpreterTest {
       final ArrayList<MoveEvent> moveEvents = CollectionLiterals.<MoveEvent>newArrayList();
       final ArrayList<TurnEvent> turnEvents = CollectionLiterals.<TurnEvent>newArrayList();
       final Listener _function = new Listener() {
-          public void handleTortoiseEvent(final ITortoiseEvent it) {
-            boolean _matched = false;
-            if (!_matched) {
-              if (it instanceof MoveEvent) {
-                final MoveEvent _moveEvent = (MoveEvent)it;
-                _matched=true;
-                moveEvents.add(_moveEvent);
-              }
-            }
-            if (!_matched) {
-              if (it instanceof TurnEvent) {
-                final TurnEvent _turnEvent = (TurnEvent)it;
-                _matched=true;
-                turnEvents.add(_turnEvent);
-              }
+        public void handleTortoiseEvent(final ITortoiseEvent it) {
+          boolean _matched = false;
+          if (!_matched) {
+            if (it instanceof MoveEvent) {
+              final MoveEvent _moveEvent = (MoveEvent)it;
+              _matched=true;
+              moveEvents.add(_moveEvent);
             }
           }
-        };
+          if (!_matched) {
+            if (it instanceof TurnEvent) {
+              final TurnEvent _turnEvent = (TurnEvent)it;
+              _matched=true;
+              turnEvents.add(_turnEvent);
+            }
+          }
+        }
+      };
       tortoise.addListener(_function);
       int _minus = (-10);
       this._tortoiseShellInterpeter.run(tortoise, program, _minus);

@@ -33,15 +33,15 @@ public class MongoBeansQuickfixProvider extends XbaseWithAnnotationsQuickfixProv
     _builder.append(_head_1, "");
     _builder.append(".");
     final IModification _function = new IModification() {
-        public void apply(final IModificationContext it) throws Exception {
-          IXtextDocument _xtextDocument = it.getXtextDocument();
-          Integer _offset = issue.getOffset();
-          Integer _length = issue.getLength();
-          String[] _data = issue.getData();
-          String _head = IterableExtensions.<String>head(((Iterable<String>)Conversions.doWrapArray(_data)));
-          _xtextDocument.replace((_offset).intValue(), (_length).intValue(), _head);
-        }
-      };
+      public void apply(final IModificationContext it) throws Exception {
+        IXtextDocument _xtextDocument = it.getXtextDocument();
+        Integer _offset = issue.getOffset();
+        Integer _length = issue.getLength();
+        String[] _data = issue.getData();
+        String _head = IterableExtensions.<String>head(((Iterable<String>)Conversions.doWrapArray(_data)));
+        _xtextDocument.replace((_offset).intValue(), (_length).intValue(), _head);
+      }
+    };
     acceptor.accept(issue, _plus, _builder.toString(), null, _function);
   }
 }

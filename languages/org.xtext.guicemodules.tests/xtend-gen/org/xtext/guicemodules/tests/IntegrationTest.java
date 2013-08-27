@@ -158,21 +158,21 @@ public class IntegrationTest {
       _builder.append("}");
       _builder.newLine();
       final IAcceptor<Result> _function = new IAcceptor<Result>() {
-          public void accept(final Result it) {
-            try {
-              Class<? extends Object> _compiledClass = it.getCompiledClass();
-              Object _newInstance = _compiledClass.newInstance();
-              final Module module = ((Module) _newInstance);
-              Injector _createInjector = Guice.createInjector(module);
-              final InjectionTarget obj = _createInjector.<InjectionTarget>getInstance(InjectionTarget.class);
-              Object _head = IterableExtensions.head(obj.col);
-              Assert.assertEquals("one", _head);
-              Assert.assertEquals("hello annotation", obj.s);
-            } catch (Throwable _e) {
-              throw Exceptions.sneakyThrow(_e);
-            }
+        public void accept(final Result it) {
+          try {
+            Class<? extends Object> _compiledClass = it.getCompiledClass();
+            Object _newInstance = _compiledClass.newInstance();
+            final Module module = ((Module) _newInstance);
+            Injector _createInjector = Guice.createInjector(module);
+            final InjectionTarget obj = _createInjector.<InjectionTarget>getInstance(InjectionTarget.class);
+            Object _head = IterableExtensions.head(obj.col);
+            Assert.assertEquals("one", _head);
+            Assert.assertEquals("hello annotation", obj.s);
+          } catch (Throwable _e) {
+            throw Exceptions.sneakyThrow(_e);
           }
-        };
+        }
+      };
       this._compilationTestHelper.compile(_builder, _function);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
