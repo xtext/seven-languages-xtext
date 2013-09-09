@@ -33,7 +33,7 @@ import org.xtext.tortoiseshell.lib.TurnEvent
 @Singleton
 class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
 	
-	static val LOGGER = Logger::getLogger(TortoiseView)
+	static val LOGGER = Logger.getLogger(TortoiseView)
 	 
 	FigureCanvas canvas
 	
@@ -44,9 +44,9 @@ class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
 	@Inject Animator animator
 	
 	override createPartControl(Composite parent) {
-		canvas = new FigureCanvas(parent, SWT::DOUBLE_BUFFERED)
+		canvas = new FigureCanvas(parent, SWT.DOUBLE_BUFFERED)
 		canvas.viewport = new FreeformViewport
-		canvas.background = ColorConstants::white
+		canvas.background = ColorConstants.white
 		val pane = new FreeformLayeredPane
 		pane.font = parent.font
 		canvas.contents = pane
@@ -79,7 +79,7 @@ class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
 	
 	def show(XtextEditor tortoiseEditor, int stopAtLine) {
 		animator.setAnimated(stopAtLine < 0)
-		DisplayRunHelper::runSyncInDisplayThread[|reset]
+		DisplayRunHelper.runSyncInDisplayThread[|reset]
 		tortoiseEditor.document.readOnly [
 			if(it != null && !tortoiseEditor.hasError) {
 				val tortoise = new Tortoise
@@ -89,7 +89,7 @@ class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
 					try {
 						interpreter.run(tortoise, contents.get(0), stopAtLine)
 					} catch (Exception e) {
-						MessageDialog::openError(site.shell, "Error during Execution", '''
+						MessageDialog.openError(site.shell, "Error during Execution", '''
 						Error during execution:
 						  «e.message»
 						See log for details''')
@@ -106,7 +106,7 @@ class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
 		while(annotations != null && annotations.hasNext) {
 			val annotation = annotations.next
 			if(annotation instanceof Annotation && 
-				(annotation as Annotation).type == XtextEditor::ERROR_ANNOTATION_TYPE) 
+				(annotation as Annotation).type == XtextEditor.ERROR_ANNOTATION_TYPE) 
 				return true
 		}
 		false

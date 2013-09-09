@@ -15,7 +15,7 @@ import java.lang.annotation.Target
 /**
  * a parameter
  */
-@Retention(RetentionPolicy::RUNTIME)
-@Target(ElementType::FIELD)
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.FIELD)
 annotation Param {
 }

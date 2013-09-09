@@ -15,7 +15,7 @@ import org.xtext.mongobeans.validation.MongoBeansValidator
 
 class MongoBeansQuickfixProvider extends XbaseWithAnnotationsQuickfixProvider {
 
-	@Fix(MongoBeansValidator::ILLEGAL_PROPERTY_NAME)
+	@Fix(MongoBeansValidator.ILLEGAL_PROPERTY_NAME)
 	def void capitalizeName(Issue issue, IssueResolutionAcceptor acceptor) {
 		acceptor.accept(issue, 'Rename to ' + issue.data.head, '''Rename property to «issue.data.head».''', null) [
 			xtextDocument.replace(issue.offset, issue.length, issue.data.head)	

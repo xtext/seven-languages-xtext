@@ -27,8 +27,8 @@ class RootLayer extends FreeformLayer {
 			parentViewport.translateToAbsolute(viewDimension)
 			translateToRelative(viewDimension)
 			viewDimension.shrink(freeformExtent.size.width, freeformExtent.size.height)
-			viewDimension.width = Math::max(0, viewDimension.width)
-			viewDimension.height = Math::max(0, viewDimension.height)
+			viewDimension.width = Math.max(0, viewDimension.width)
+			viewDimension.height = Math.max(0, viewDimension.height)
 			freeformExtent.getExpanded(new Insets(viewDimension.height, viewDimension.width, viewDimension.height,
 					viewDimension.width))
 		} else { 

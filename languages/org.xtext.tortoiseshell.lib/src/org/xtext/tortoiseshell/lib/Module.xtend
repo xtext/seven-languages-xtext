@@ -14,7 +14,7 @@ import com.google.inject.Binder
 class Module extends AbstractGenericModule {
 	
 	override configure(Binder binder) {
-		binder.bind(AbstractUIPlugin).toInstance(Activator::instance)
+		binder.bind(AbstractUIPlugin).toInstance(Activator.instance)
 	}
 	
 }

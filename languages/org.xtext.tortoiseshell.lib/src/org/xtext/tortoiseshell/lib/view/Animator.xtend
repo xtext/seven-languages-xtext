@@ -38,7 +38,7 @@ class Animator extends UIJob {
 			if (!isScheduled && !isStop) {
 				schedule(UPDATE_INTERVAL)
 				isScheduled = true
-				lastStart = System::currentTimeMillis
+				lastStart = System.currentTimeMillis
 			}
 		} else {
 			animation.set(view.tortoiseFigure, 1)
@@ -53,8 +53,8 @@ class Animator extends UIJob {
 	def stop() {
 		isStop = true
 		while (isScheduled && isStop) {
-			if (Display::current != null)
-				Display::current.readAndDispatch
+			if (Display.current != null)
+				Display.current.readAndDispatch
 			else 
 				join
 		}
@@ -68,7 +68,7 @@ class Animator extends UIJob {
 			isStop = false
 			isScheduled = false
 		} else {
-			val now = System::currentTimeMillis
+			val now = System.currentTimeMillis
 			var currentAnimation = animationQueue.peek
 			while (currentAnimation != null && now >= lastStart + currentAnimation.delay) {
 				animationQueue.poll.set(view.tortoiseFigure, 1)
@@ -83,7 +83,7 @@ class Animator extends UIJob {
 				isScheduled = false
 			}
 		}
-		Status::OK_STATUS
+		Status.OK_STATUS
 	}
 }
 

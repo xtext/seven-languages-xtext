@@ -25,10 +25,10 @@ class BuildDSLValidator extends XbaseJavaValidator {
 	
 	override protected getEPackages() {
 	    newArrayList(
-		    BuildPackage::eINSTANCE,
-		    XbasePackage::eINSTANCE,
-		    TypesPackage::eINSTANCE,
-		    XtypePackage::eINSTANCE)
+		    BuildPackage.eINSTANCE,
+		    XbasePackage.eINSTANCE,
+		    TypesPackage.eINSTANCE,
+		    XtypePackage.eINSTANCE)
 	}
 	
 	@Check

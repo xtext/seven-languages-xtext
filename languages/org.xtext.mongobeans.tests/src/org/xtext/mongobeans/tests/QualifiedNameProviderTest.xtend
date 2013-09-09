@@ -38,7 +38,7 @@ class QualifiedNameProviderTest {
 				}
 			}
 		'''.parse.eAllContents.filter(MongoBean)
-		assertEquals(QualifiedName::create('pkg', 'Foo'), beans.head.fullyQualifiedName)
-		assertEquals(QualifiedName::create('pkg', 'Bar'), beans.last.fullyQualifiedName)
+		assertEquals(QualifiedName.create('pkg', 'Foo'), beans.head.fullyQualifiedName)
+		assertEquals(QualifiedName.create('pkg', 'Bar'), beans.last.fullyQualifiedName)
 	}
 }

@@ -48,7 +48,7 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
 			}
 			
 			members += element.toMethod("generate", element.newTypeRef(CharSequence)) [
-				visibility = JvmVisibility::PRIVATE
+				visibility = JvmVisibility.PRIVATE
 				body = element.body
 			]
 			

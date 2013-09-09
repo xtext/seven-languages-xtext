@@ -61,7 +61,7 @@ class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
 				// if it's a toInstance binding, create a synthetic method to give the expression a proper scope
 				if (binding.toInstance != null) {
 					members += binding.toMethod( binding.syntheticToInstanceName, binding.from.type) [
-						visibility = JvmVisibility::PRIVATE
+						visibility = JvmVisibility.PRIVATE
 						body = binding.toInstance
 					]
 				} 
@@ -69,13 +69,13 @@ class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
 				if (binding.to?.annotation != null) {
 					members += binding.toField(binding.to.syntheticName, binding.to.type) [
 						newHashSet(binding.to.annotation).translateAnnotationsTo(it)
-						visibility = JvmVisibility::PRIVATE
+						visibility = JvmVisibility.PRIVATE
 					]
 				}
 				if (binding.from.annotation != null) {
 					members += binding.toField(binding.from.syntheticName, binding.from.type) [
 						newHashSet(binding.from.annotation).translateAnnotationsTo(it)
-						visibility = JvmVisibility::PRIVATE
+						visibility = JvmVisibility.PRIVATE
 					]
 				}
 			}

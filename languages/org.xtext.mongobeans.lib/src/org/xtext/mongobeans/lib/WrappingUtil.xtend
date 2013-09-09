@@ -15,7 +15,7 @@ import com.mongodb.DBObject
 class WrappingUtil {
 	
 	def static IMongoBean wrap(DBObject dbObject) {
-		val javaClassName = dbObject.get(IMongoBean::JAVA_CLASS_KEY)?.toString
+		val javaClassName = dbObject.get(IMongoBean.JAVA_CLASS_KEY)?.toString
 		val javaClass = classLoader.loadClass(javaClassName)
 		if(IMongoBean.isAssignableFrom(javaClass)) {
 			val constructor = javaClass.getConstructor(DBObject)

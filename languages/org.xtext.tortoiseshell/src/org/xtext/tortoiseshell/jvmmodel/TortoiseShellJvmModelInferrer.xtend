@@ -24,7 +24,7 @@ class TortoiseShellJvmModelInferrer extends AbstractModelInferrer {
    		acceptor.accept(program.toClass(INFERRED_CLASS_NAME)).initializeLater [
    			superTypes += program.newTypeRef(Tortoise)
    			if (program.body != null)
-   				members += program.toMethod("main", program.newTypeRef(Void::TYPE)) [
+   				members += program.toMethod("main", program.newTypeRef(Void.TYPE)) [
    					body = program.body
    				]
    			for (subProgram : program.subPrograms)

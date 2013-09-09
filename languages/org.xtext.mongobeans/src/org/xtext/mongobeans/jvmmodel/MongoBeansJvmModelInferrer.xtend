@@ -141,7 +141,7 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 				} 
 			]
 		]
-		inferredType.members += property.toMethod('set' + property.name.toFirstUpper, property.newTypeRef(Void::TYPE)) [
+		inferredType.members += property.toMethod('set' + property.name.toFirstUpper, property.newTypeRef(Void.TYPE)) [
 			documentation = property.documentation
 			parameters += toParameter(property.name, property.jvmType)
 			body = [

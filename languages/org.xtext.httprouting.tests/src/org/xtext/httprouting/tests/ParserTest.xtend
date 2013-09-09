@@ -80,7 +80,7 @@ class ParserTest {
 	 * utility to create a proxy for a class and an invocation handler
 	 */
 	def private <T> T newProxy(Class<T> clazz, InvocationHandler handler) {
-		Proxy::newProxyInstance(getClass().classLoader,	newArrayList(clazz), handler) as T
+		Proxy.newProxyInstance(getClass().classLoader,	newArrayList(clazz), handler) as T
 	}
 }
 

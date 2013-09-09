@@ -63,23 +63,23 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 				}
 				
 				// implement the servlet handler methods depending on the request type
-				val getRoutes = model.routes.filter[ requestType == RequestType::GET ]
+				val getRoutes = model.routes.filter[ requestType == RequestType.GET ]
 				if (!getRoutes.empty)
 					members += model.toRequestHandlerMethod("doGet",  getRoutes)
 					
-				val postRoutes = model.routes.filter[ requestType == RequestType::POST ]
+				val postRoutes = model.routes.filter[ requestType == RequestType.POST ]
 				if (!postRoutes.empty)
 					members += model.toRequestHandlerMethod("doPost", postRoutes)
 				
-				val putRoutes = model.routes.filter[ requestType == RequestType::PUT ]
+				val putRoutes = model.routes.filter[ requestType == RequestType.PUT ]
 				if (!putRoutes.empty)
 					members += model.toRequestHandlerMethod("doPut",  putRoutes)
 				
-				val deleteRoutes = model.routes.filter[ requestType == RequestType::DELETE ]
+				val deleteRoutes = model.routes.filter[ requestType == RequestType.DELETE ]
 				if (!deleteRoutes.empty)
 					members += model.toRequestHandlerMethod("doDelete", deleteRoutes)
 				
-				val headRoutes = model.routes.filter[ requestType == RequestType::HEAD ]
+				val headRoutes = model.routes.filter[ requestType == RequestType.HEAD ]
 				if (!headRoutes.empty)
 					members += model.toRequestHandlerMethod("doHead", headRoutes)
 			]
@@ -97,7 +97,7 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 	 * Gives scope and live to the expression.
 	 */
 	def protected toRouteCallMethod(Route route) {
-		route.toMethod(route.nameOfRouteMethod, route.newTypeRef(Void::TYPE)) [
+		route.toMethod(route.nameOfRouteMethod, route.newTypeRef(Void.TYPE)) [
 			parameters += route.toParameter("request", route.newTypeRef(HTTP_REQUEST))
 			parameters += route.toParameter("response", route.newTypeRef(HTTP_RESPONSE))
 			for (variable : route.url.variables) {
@@ -124,7 +124,7 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 	 * Gives scope and live to the expression.
 	 */
 	def protected toRouteConditionMethod(Route route) {
-		route.toMethod(route.nameOfRouteMethod + "Condition", route.newTypeRef(Boolean::TYPE)) [
+		route.toMethod(route.nameOfRouteMethod + "Condition", route.newTypeRef(Boolean.TYPE)) [
 			parameters += route.toParameter("request", route.newTypeRef(HTTP_REQUEST))
 			parameters += route.toParameter("response", route.newTypeRef(HTTP_RESPONSE))
 			for (variable : route.url.variables){
@@ -138,7 +138,7 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 	 * Creates a servlet request handling method for the given routes
 	 */
 	def protected toRequestHandlerMethod(Model model, String name, Iterable<Route> routes) {
-		model.toMethod(name,model.newTypeRef(Void::TYPE)) [
+		model.toMethod(name,model.newTypeRef(Void.TYPE)) [
 			annotations += model.toAnnotation(Override)
 			parameters += model.toParameter("request", model.newTypeRef(HTTP_REQUEST))
 			parameters += model.toParameter("response", model.newTypeRef(HTTP_RESPONSE))

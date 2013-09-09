@@ -35,7 +35,7 @@ class BuildDSLLaunchShortcut implements ILaunchShortcut {
 	public static val String BUNDLE_ID = "org.xtext.builddsl.ui"
 
 	override launch(ISelection selection, String mode) {
-		MessageDialog::openError(null, "Unsupported Launch Selection.", 
+		MessageDialog.openError(null, "Unsupported Launch Selection.", 
 			"Please open the file inside an editor to launch a task."
 		)
 	}
@@ -86,9 +86,9 @@ class BuildDSLLaunchShortcut implements ILaunchShortcut {
 		else if (info.project.nullOrEmpty)  
 			openError(null, "Launch Error", "Could not determine the project that should be executed.")
 		else try {
-			val configs = DebugPlugin::getDefault.launchManager.launchConfigurations
+			val configs = DebugPlugin.getDefault.launchManager.launchConfigurations
 			val config = configs.findFirst[info.configEquals(it)] ?: info.createConfiguration 
-			DebugUITools::launch(config, mode)
+			DebugUITools.launch(config, mode)
 		} catch (CoreException e) {
 			openError(null, "Problem running workflow.", e.message)
 		}
@@ -101,19 +101,19 @@ class BuildDSLLaunchShortcut implements ILaunchShortcut {
 	val String task
 	
 	def getName() {
-		Strings::lastToken(clazz, ".")
+		Strings.lastToken(clazz, ".")
 	}
 	
 	def createConfiguration()  {
-		val launchManager = DebugPlugin::getDefault.launchManager
+		val launchManager = DebugPlugin.getDefault.launchManager
 		val configType = launchManager.getLaunchConfigurationType("org.xtext.builddsl.ui.BuildLaunchConfigurationType")
 		val wc = configType.newInstance(null, launchManager.generateUniqueLaunchConfigurationNameFrom(name))
 		wc.setAttribute(ATTR_PROJECT_NAME, project)
 		wc.setAttribute(ATTR_MAIN_TYPE_NAME, clazz)
 		wc.setAttribute(ATTR_STOP_IN_MAIN, false)
 		wc.setAttribute(ATTR_PROGRAM_ARGUMENTS, task)
-		wc.setAttribute(RefreshTab::ATTR_REFRESH_SCOPE, "${workspace}")
-		wc.setAttribute(RefreshTab::ATTR_REFRESH_RECURSIVE, true)
+		wc.setAttribute(RefreshTab.ATTR_REFRESH_SCOPE, "${workspace}")
+		wc.setAttribute(RefreshTab.ATTR_REFRESH_RECURSIVE, true)
 		wc.doSave
 	}
 

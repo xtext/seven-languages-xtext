@@ -40,6 +40,6 @@ class Activator extends AbstractUIPlugin {
 	}
 	
 	def protected createInjector() {
-		Guice::createInjector(new Module());
+		Guice.createInjector(new Module());
 	}
 }

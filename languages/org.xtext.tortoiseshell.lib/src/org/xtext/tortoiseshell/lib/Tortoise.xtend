@@ -23,7 +23,7 @@ class Tortoise {
 
 	boolean isPaint = true
 	@Property int lineWidth = 1
-	@Property Color lineColor = ColorConstants::black
+	@Property Color lineColor = ColorConstants.black
 
 	List<ITortoiseEvent.Listener> listeners = newArrayList
 	

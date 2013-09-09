@@ -30,6 +30,6 @@ class TemplateValueConverterService extends XbaseValueConverterService {
 class TextValueConverter extends STRINGValueConverter {
 	
 	override protected toEscapedString(String value) {
-		'»' + Strings::convertToJavaString(value, false) + '«'
+		'»' + Strings.convertToJavaString(value, false) + '«'
 	}		
 }

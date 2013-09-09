@@ -73,7 +73,7 @@ class CommandLineTest {
 				--file <File>
 
 		''')
-		file.assertExecute("Check --file " + System::getProperty('user.dir'), '''
+		file.assertExecute("Check --file " + System.getProperty('user.dir'), '''
 			[Task 'Check']
 			yes
 		''')
@@ -111,7 +111,7 @@ class CommandLineTest {
 	}
 	
 	@Test def testCompileJava() {
-		val tmpDir = System::getProperty('java.io.tmpdir')
+		val tmpDir = System.getProperty('java.io.tmpdir')
 		val file = '''
 			package foo
 			import java.io.File
@@ -142,8 +142,8 @@ class CommandLineTest {
 		file.compile[ classes += compiledClass ]
 		val clazz = classes.head
 		val out = new ByteArrayOutputStream()
-		val backup = System::out
-		System::setOut(new PrintStream(out))
+		val backup = System.out
+		System.setOut(new PrintStream(out))
 		try {
 			val instance = clazz.newInstance
 			clazz.superclass.declaredMethods.findFirst[name == 'doBuild'] => [
@@ -151,7 +151,7 @@ class CommandLineTest {
 				invoke(instance, cmdline.split(' ') as Object)	
 			]
 		} finally {
-			System::setOut(backup)
+			System.setOut(backup)
 		}
 		assertEquals(expectedOutput, out.toString)
 	} 

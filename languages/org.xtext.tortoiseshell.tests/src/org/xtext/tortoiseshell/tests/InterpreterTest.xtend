@@ -37,7 +37,7 @@ class InterpreterTest {
 			assertEquals(0.0, angle, 0.0)
 			assertEquals(new Point(0,0), position)
 			assertEquals(200, delay)
-			assertEquals(ColorConstants::black, lineColor)
+			assertEquals(ColorConstants.black, lineColor)
 			assertEquals(1, lineWidth)
 		]	
 	}
@@ -48,7 +48,7 @@ class InterpreterTest {
 			assertEquals(0.0, angle, 0.0)
 			assertEquals(new Point(0,0), position)
 			assertEquals(200, delay)
-			assertEquals(ColorConstants::black, lineColor)
+			assertEquals(ColorConstants.black, lineColor)
 			assertEquals(1, lineWidth)
 		]
 		val program = '''
@@ -67,7 +67,7 @@ class InterpreterTest {
 			assertEquals(10.0, angle, 0.0)
 			assertEquals(new Point(0,-10), position)
 			assertEquals(1, delay)
-			assertEquals(ColorConstants::blue, lineColor)
+			assertEquals(ColorConstants.blue, lineColor)
 			assertEquals(2, lineWidth)
 		]
 	}  

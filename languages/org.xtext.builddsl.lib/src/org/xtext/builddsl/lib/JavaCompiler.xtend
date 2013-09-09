@@ -32,7 +32,7 @@ class JavaCompiler {
 		}
 		list += params.sources.map [toString]
 		print("compiling Java files...")
-		val result = BatchCompiler::compile(list as String[], new PrintWriter(System::out), new PrintWriter(System::err), null)
+		val result = BatchCompiler.compile(list as String[], new PrintWriter(System.out), new PrintWriter(System.err), null)
 		if(result) 
 			println("success.")
 		else 

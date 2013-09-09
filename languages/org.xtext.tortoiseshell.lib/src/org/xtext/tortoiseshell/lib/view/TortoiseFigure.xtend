@@ -23,14 +23,14 @@ class TortoiseFigure extends ImageFigure {
 
 	@Inject 
 	new(PluginImageHelper imageHelper) {
-		super(imageHelper.getImage('Turtle.png'), PositionConstants::NORTH_EAST)
+		super(imageHelper.getImage('Turtle.png'), PositionConstants.NORTH_EAST)
 	}
 	
 	override protected paintFigure(Graphics graphics) {
 		graphics.pushState
 		val size = size
 		graphics.translate(location.x + size.width/2, location.y + size.width/2)
-		graphics.rotate(-Math::toDegrees(angle) as float) 
+		graphics.rotate(-Math.toDegrees(angle) as float) 
 		graphics.translate(-location.x - size.width/2, -location.y - size.width/2)
 		super.paintFigure(graphics)
 		graphics.popState 

@@ -24,6 +24,6 @@ class MongoQualifiedNameProvider extends XbaseQualifiedNameProvider {
 		if(packageDeclaration != null) 
 			packageDeclaration.fullyQualifiedName.append(mongoBean.name)
 		else
-			return QualifiedName::create(mongoBean.name)
+			return QualifiedName.create(mongoBean.name)
 	}
 }

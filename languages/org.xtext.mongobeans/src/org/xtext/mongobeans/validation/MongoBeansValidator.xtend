@@ -40,10 +40,10 @@ class MongoBeansValidator extends XbaseJavaValidator {
 	
 	override getEPackages() {
 		newArrayList(
-			MongoBeansPackage::eINSTANCE,
-			XbasePackage::eINSTANCE,
-			TypesPackage::eINSTANCE,
-			XtypePackage::eINSTANCE
+			MongoBeansPackage.eINSTANCE,
+			XbasePackage.eINSTANCE,
+			TypesPackage.eINSTANCE,
+			XtypePackage.eINSTANCE
 		)
 	}
 }

@@ -28,11 +28,11 @@ class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
 
 	@Inject extension JvmTypesBuilder
 	
-	extension TypesFactory = TypesFactory::eINSTANCE
+	extension TypesFactory = TypesFactory.eINSTANCE
 
    	def dispatch void infer(BuildFile file, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
    		val fqn = file.javaClassName
-   		val scriptName = Strings::lastToken(fqn, ".")
+   		val scriptName = Strings.lastToken(fqn, ".")
    		acceptor.accept(file.toClass(fqn)).initializeLater [
 			superTypes += file.newTypeRef(BuildScript)
 			
@@ -42,7 +42,7 @@ class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
 					?: declaredParameter?.init?.inferredType
 					?: file.newTypeRef(String)
 				members += declaredParameter.toField(declaredParameter.name, type) [
-					visibility = JvmVisibility::PUBLIC
+					visibility = JvmVisibility.PUBLIC
 					annotations += declaredParameter.toAnnotation(Param)
 					initializer = declaredParameter.init
 				]
@@ -50,7 +50,7 @@ class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
 			
 			// the main method		
    			val stringArray = file.newTypeRef(String).addArrayTypeDimension
-			members += file.toMethod("main", file.newTypeRef(Void::TYPE)) [
+			members += file.toMethod("main", file.newTypeRef(Void.TYPE)) [
 				parameters += toParameter("args", stringArray)
 				varArgs = true
 				static = true
@@ -64,8 +64,8 @@ class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
 			]
 			
 			// a method for the actual task body
-   			members += file.tasks.map[ task | task.toMethod(task.methodName, task.newTypeRef(Void::TYPE)) [
-   				visibility = JvmVisibility::PROTECTED
+   			members += file.tasks.map[ task | task.toMethod(task.methodName, task.newTypeRef(Void.TYPE)) [
+   				visibility = JvmVisibility.PROTECTED
    				annotations += task.toAnnotation(DependsOn) => [
    					values += createJvmStringAnnotationValue => [
    						values += task.depends.map[name]

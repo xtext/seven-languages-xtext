@@ -19,7 +19,7 @@ class ToggleStopModeAction extends Action {
 	@Inject
 	new(PluginImageHelper helper) {
 		super("Toggle stop mode")
-		setImageDescriptor(ImageDescriptor::createFromImage(helper.getImage('stopmode.gif')))
+		setImageDescriptor(ImageDescriptor.createFromImage(helper.getImage('stopmode.gif')))
 		checked = false
 	}
 	

@@ -15,8 +15,8 @@ import java.lang.annotation.Target
 /**
  * A task definition
  */
-@Retention(RetentionPolicy::RUNTIME)
-@Target(ElementType::METHOD)
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.METHOD)
 annotation DependsOn {
 	String[] value = #[]
 }

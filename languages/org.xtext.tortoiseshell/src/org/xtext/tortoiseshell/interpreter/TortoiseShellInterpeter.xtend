@@ -45,7 +45,7 @@ class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoiseInter
 	}
 	
 	override protected internalEvaluate(XExpression expression, IEvaluationContext context, CancelIndicator indicator) {
-		val line = NodeModelUtils::findActualNodeFor(expression)?.startLine
+		val line = NodeModelUtils.findActualNodeFor(expression)?.startLine
 		if (line-1 == stopAtLine)
 			throw new StopLineReachedException
 		super.internalEvaluate(expression, context, indicator)
@@ -55,13 +55,13 @@ class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoiseInter
 		val executable = operation.sourceElements.head
 		if (executable instanceof Executable) {
 			val context = createContext
-			context.newValue(XbaseScopeProvider::THIS, tortoise)
+			context.newValue(XbaseScopeProvider.THIS, tortoise)
 			var index = 0
 			for (param : operation.parameters) {
-				context.newValue(QualifiedName::create(param.name), argumentValues.get(index))
+				context.newValue(QualifiedName.create(param.name), argumentValues.get(index))
 				index = index + 1	
 			}
-			val result = evaluate((executable as Executable).body, context, CancelIndicator::NullImpl)
+			val result = evaluate((executable as Executable).body, context, CancelIndicator.NullImpl)
 			if(result.exception != null)
 				throw result.exception
 			result.result

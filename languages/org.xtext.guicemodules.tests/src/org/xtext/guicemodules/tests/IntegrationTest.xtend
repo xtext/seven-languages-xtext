@@ -82,7 +82,7 @@ class IntegrationTest {
 		'''
 		.compile[
 			val module = compiledClass.newInstance as Module
-			val obj = Guice::createInjector(module).getInstance(InjectionTarget)
+			val obj = Guice.createInjector(module).getInstance(InjectionTarget)
 			assertEquals('one', obj.col.head)
 			assertEquals('hello annotation', obj.s)
 		]

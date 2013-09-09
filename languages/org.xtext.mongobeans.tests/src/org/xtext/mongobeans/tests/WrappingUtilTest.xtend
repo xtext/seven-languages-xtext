@@ -41,7 +41,7 @@ class WrappingUtilTest {
 			}
 		'''.compile[
 			mongoBeanClass = compiledClass
-			WrappingUtil::setClassLoader(compiledClass.classLoader) 
+			WrappingUtil.setClassLoader(compiledClass.classLoader) 
 		]
 	}
 
@@ -53,8 +53,8 @@ class WrappingUtilTest {
 		(one.invoke('getFoos') as List<Object>).add(two)
 		(one.invoke('getFoos') as List<Object>).add(three)
 		
-		val oneDB = WrappingUtil::unwrap(one)
-		assertEquals('Foo', oneDB.get(IMongoBean::JAVA_CLASS_KEY))
+		val oneDB = WrappingUtil.unwrap(one)
+		assertEquals('Foo', oneDB.get(IMongoBean.JAVA_CLASS_KEY))
 		assertEquals('BAR', oneDB.get('bar'))
 		val foos = oneDB.get('foos') as List<?>
 		assertTrue(foos.contains(two.invoke('getDbObject')))
@@ -71,14 +71,14 @@ class WrappingUtilTest {
 		assertEquals('Foo', oneBean.class.name)
 		assertEquals('one', oneBean.invoke('getBar'))
 		val foos = oneBean.invoke('getFoos') as List<?>
-		assertEquals(WrappingUtil::unwrap(foos.head), twoDB)
-		assertEquals(WrappingUtil::unwrap(foos.last), threeDB)
+		assertEquals(WrappingUtil.unwrap(foos.head), twoDB)
+		assertEquals(WrappingUtil.unwrap(foos.last), threeDB)
 	}
 
 
 	def protected newFooDbObject(String bar) {
 		new BasicDBObject => [
-			put(IMongoBean::JAVA_CLASS_KEY, 'Foo')
+			put(IMongoBean.JAVA_CLASS_KEY, 'Foo')
 			put('bar', bar)
 		]
 	}
