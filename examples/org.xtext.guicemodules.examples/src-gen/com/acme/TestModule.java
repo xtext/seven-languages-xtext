@@ -13,10 +13,10 @@ public class TestModule implements Module {
   
   private DataProvider _toInstance0() {
     final DataProvider _function = new DataProvider() {
-        public String getData() {
-          return "dummy-data";
-        }
-      };
+      public String getData() {
+        return "dummy-data";
+      }
+    };
     return _function;
   }
   

@@ -62,11 +62,11 @@ public class Language {
         null, "default");
     }
     final Procedure1<String> _function = new Procedure1<String>() {
-        public void apply(final String it) {
-          char _charAt = it.charAt(0);
-          InputOutput.<Character>println(Character.valueOf(_charAt));
-        }
-      };
+      public void apply(final String it) {
+        char _charAt = it.charAt(0);
+        InputOutput.<Character>println(Character.valueOf(_charAt));
+      }
+    };
     ObjectExtensions.<String>operator_doubleArrow(
       "foo", _function);
     if (((String) null)!=null) {
@@ -75,27 +75,27 @@ public class Language {
     /* StringExtensions.isNullOrEmpty("foo bar"); */
     final String z = "Hello ";
     final Function1<String,String> _function_1 = new Function1<String,String>() {
-        public String apply(final String e) {
-          String _plus = (z + e);
-          return _plus;
-        }
-      };
+      public String apply(final String e) {
+        String _plus = (z + e);
+        return _plus;
+      }
+    };
     final Function1<String,String> f = _function_1;
     f.apply("World!");
     final ArrayList<String> list = CollectionLiterals.<String>newArrayList("a", "b", "c");
     final Function1<String,String> _function_2 = new Function1<String,String>() {
-        public String apply(final String e) {
-          String _upperCase = e.toUpperCase();
-          return _upperCase;
-        }
-      };
+      public String apply(final String e) {
+        String _upperCase = e.toUpperCase();
+        return _upperCase;
+      }
+    };
     /* ListExtensions.<String, String>map(list, _function_2); */
     final Function1<String,String> _function_3 = new Function1<String,String>() {
-        public String apply(final String it) {
-          String _upperCase = it.toUpperCase();
-          return _upperCase;
-        }
-      };
+      public String apply(final String it) {
+        String _upperCase = it.toUpperCase();
+        return _upperCase;
+      }
+    };
     /* ListExtensions.<String, String>map(list, _function_3); */
     String _xifexpression = null;
     int _length = "foo".length();
