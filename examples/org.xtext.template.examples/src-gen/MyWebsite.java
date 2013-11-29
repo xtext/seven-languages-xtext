@@ -101,6 +101,5 @@ public class MyWebsite {
     // trim multi-newline to single newline
     result = result.replaceAll("\\n\\s*\\n","\n");
     return result;
-    
   }
 }

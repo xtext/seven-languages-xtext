@@ -37,17 +37,14 @@ public class Animation {
     this.deltaAngle = 0.0;
     Point _copy = startPosition.getCopy();
     this.startPosition = _copy;
-    int _minus = (endPosition.x - startPosition.x);
-    int _minus_1 = (endPosition.y - startPosition.y);
-    Point _point = new Point(_minus, _minus_1);
+    Point _point = new Point((endPosition.x - startPosition.x), (endPosition.y - startPosition.y));
     this.delta = _point;
     this.delay = delay;
   }
   
   public Animation(final double startAngle, final double endAngle, final int delay) {
     this.startAngle = startAngle;
-    double _minus = (endAngle - startAngle);
-    this.deltaAngle = _minus;
+    this.deltaAngle = (endAngle - startAngle);
     this.delay = delay;
   }
   
@@ -56,20 +53,17 @@ public class Animation {
   }
   
   public void set(final TortoiseFigure figure, final double alpha) {
-    boolean _notEquals = (this.deltaAngle != 0.0);
-    if (_notEquals) {
-      double _multiply = (alpha * this.deltaAngle);
-      double _plus = (this.startAngle + _multiply);
-      figure.setAngle(_plus);
+    if ((this.deltaAngle != 0.0)) {
+      figure.setAngle((this.startAngle + (alpha * this.deltaAngle)));
     }
-    boolean _notEquals_1 = (!Objects.equal(this.startPosition, null));
-    if (_notEquals_1) {
+    boolean _notEquals = (!Objects.equal(this.startPosition, null));
+    if (_notEquals) {
       Point _point = new Point(this.delta);
       Point _scale = _point.scale(alpha);
       final Point currentLocation = _scale.translate(this.startPosition);
       figure.setTortoiseLocation(currentLocation);
-      boolean _notEquals_2 = (!Objects.equal(this.line, null));
-      if (_notEquals_2) {
+      boolean _notEquals_1 = (!Objects.equal(this.line, null));
+      if (_notEquals_1) {
         this.line.setEnd(currentLocation);
         IFigure _parent = this.line.getParent();
         boolean _equals = Objects.equal(_parent, null);

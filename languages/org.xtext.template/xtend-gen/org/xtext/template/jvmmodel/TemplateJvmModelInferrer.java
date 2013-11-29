@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.xtend2.lib.StringConcatenation;
+import org.eclipse.xtend2.lib.StringConcatenationClient;
 import org.eclipse.xtext.common.types.JvmField;
 import org.eclipse.xtext.common.types.JvmFormalParameter;
 import org.eclipse.xtext.common.types.JvmGenericType;
@@ -24,10 +24,8 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.eclipse.xtext.common.types.JvmVisibility;
 import org.eclipse.xtext.xbase.XBlockExpression;
 import org.eclipse.xtext.xbase.XExpression;
-import org.eclipse.xtext.xbase.compiler.output.ITreeAppendable;
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor;
-import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor.IPostIndexingInitializing;
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
@@ -62,7 +60,7 @@ public class TemplateJvmModelInferrer extends AbstractModelInferrer {
     }
     final String qualifiedName = _xifexpression;
     final JvmGenericType javaClass = this._jvmTypesBuilder.toClass(element, qualifiedName);
-    IPostIndexingInitializing<JvmGenericType> _accept = acceptor.<JvmGenericType>accept(javaClass);
+    IJvmDeclaredTypeAcceptor.IPostIndexingInitializing<JvmGenericType> _accept = acceptor.<JvmGenericType>accept(javaClass);
     final Procedure1<JvmGenericType> _function = new Procedure1<JvmGenericType>() {
       public void apply(final JvmGenericType it) {
         EList<Parameter> _params = element.getParams();
@@ -133,9 +131,9 @@ public class TemplateJvmModelInferrer extends AbstractModelInferrer {
             JvmFormalParameter _parameter = TemplateJvmModelInferrer.this._jvmTypesBuilder.toParameter(element, 
               "init", _newTypeRef_1);
             TemplateJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters, _parameter);
-            final Procedure1<ITreeAppendable> _function = new Procedure1<ITreeAppendable>() {
-              public void apply(final ITreeAppendable it) {
-                StringConcatenation _builder = new StringConcatenation();
+            StringConcatenationClient _client = new StringConcatenationClient() {
+              @Override
+              protected void appendTo(StringConcatenationClient.TargetStringConcatenation _builder) {
                 _builder.append("if (init != null)");
                 _builder.newLine();
                 _builder.append("\t");
@@ -153,10 +151,9 @@ public class TemplateJvmModelInferrer extends AbstractModelInferrer {
                 _builder.newLine();
                 _builder.append("return result;");
                 _builder.newLine();
-                it.append(_builder);
               }
             };
-            TemplateJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _function);
+            TemplateJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _client);
           }
         };
         JvmOperation _method_1 = TemplateJvmModelInferrer.this._jvmTypesBuilder.toMethod(element, "generate", _newTypeRef_1, _function_1);

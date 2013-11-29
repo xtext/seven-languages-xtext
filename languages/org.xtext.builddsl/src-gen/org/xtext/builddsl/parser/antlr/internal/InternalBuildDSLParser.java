@@ -55,8 +55,8 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
     public static final int T__58=58;
     public static final int T__16=16;
     public static final int T__51=51;
-    public static final int T__15=15;
     public static final int T__52=52;
+    public static final int T__15=15;
     public static final int T__53=53;
     public static final int T__18=18;
     public static final int T__54=54;
@@ -14319,7 +14319,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJvmTypeReference"
-    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4913:1: entryRuleJvmTypeReference returns [EObject current=null] : iv_ruleJvmTypeReference= ruleJvmTypeReference EOF ;
+    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4915:1: entryRuleJvmTypeReference returns [EObject current=null] : iv_ruleJvmTypeReference= ruleJvmTypeReference EOF ;
     public final EObject entryRuleJvmTypeReference() throws RecognitionException {
         EObject current = null;
 
@@ -14327,13 +14327,13 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4914:2: (iv_ruleJvmTypeReference= ruleJvmTypeReference EOF )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4915:2: iv_ruleJvmTypeReference= ruleJvmTypeReference EOF
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4916:2: (iv_ruleJvmTypeReference= ruleJvmTypeReference EOF )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4917:2: iv_ruleJvmTypeReference= ruleJvmTypeReference EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getJvmTypeReferenceRule()); 
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_entryRuleJvmTypeReference11532);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_entryRuleJvmTypeReference11534);
             iv_ruleJvmTypeReference=ruleJvmTypeReference();
 
             state._fsp--;
@@ -14341,7 +14341,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleJvmTypeReference; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmTypeReference11542); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmTypeReference11544); if (state.failed) return current;
 
             }
 
@@ -14359,7 +14359,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJvmTypeReference"
-    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4922:1: ruleJvmTypeReference returns [EObject current=null] : ( (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* ) | this_XFunctionTypeRef_3= ruleXFunctionTypeRef ) ;
+    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4924:1: ruleJvmTypeReference returns [EObject current=null] : ( (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* ) | this_XFunctionTypeRef_3= ruleXFunctionTypeRef ) ;
     public final EObject ruleJvmTypeReference() throws RecognitionException {
         EObject current = null;
 
@@ -14371,10 +14371,10 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4925:28: ( ( (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* ) | this_XFunctionTypeRef_3= ruleXFunctionTypeRef ) )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4926:1: ( (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* ) | this_XFunctionTypeRef_3= ruleXFunctionTypeRef )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4927:28: ( ( (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* ) | this_XFunctionTypeRef_3= ruleXFunctionTypeRef ) )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4928:1: ( (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* ) | this_XFunctionTypeRef_3= ruleXFunctionTypeRef )
             {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4926:1: ( (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* ) | this_XFunctionTypeRef_3= ruleXFunctionTypeRef )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4928:1: ( (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* ) | this_XFunctionTypeRef_3= ruleXFunctionTypeRef )
             int alt92=2;
             int LA92_0 = input.LA(1);
 
@@ -14393,17 +14393,17 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
             }
             switch (alt92) {
                 case 1 :
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4926:2: (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* )
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4928:2: (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* )
                     {
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4926:2: (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* )
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4927:5: this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )*
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4928:2: (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* )
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4929:5: this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )*
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getJvmTypeReferenceAccess().getJvmParameterizedTypeReferenceParserRuleCall_0_0()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleJvmParameterizedTypeReference_in_ruleJvmTypeReference11590);
+                    pushFollow(FOLLOW_ruleJvmParameterizedTypeReference_in_ruleJvmTypeReference11592);
                     this_JvmParameterizedTypeReference_0=ruleJvmParameterizedTypeReference();
 
                     state._fsp--;
@@ -14414,7 +14414,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
                               afterParserOrEnumRuleCall();
                           
                     }
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4935:1: ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )*
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4937:1: ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )*
                     loop91:
                     do {
                         int alt91=2;
@@ -14439,13 +14439,13 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
                         switch (alt91) {
                     	case 1 :
-                    	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4935:2: ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets )
+                    	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4937:2: ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets )
                     	    {
-                    	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4936:24: ( () ruleArrayBrackets )
-                    	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4936:25: () ruleArrayBrackets
+                    	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4938:24: ( () ruleArrayBrackets )
+                    	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4938:25: () ruleArrayBrackets
                     	    {
-                    	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4936:25: ()
-                    	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4937:5: 
+                    	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4938:25: ()
+                    	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4939:5: 
                     	    {
                     	    if ( state.backtracking==0 ) {
 
@@ -14462,7 +14462,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
                     	              newCompositeNode(grammarAccess.getJvmTypeReferenceAccess().getArrayBracketsParserRuleCall_0_1_0_1()); 
                     	          
                     	    }
-                    	    pushFollow(FOLLOW_ruleArrayBrackets_in_ruleJvmTypeReference11626);
+                    	    pushFollow(FOLLOW_ruleArrayBrackets_in_ruleJvmTypeReference11628);
                     	    ruleArrayBrackets();
 
                     	    state._fsp--;
@@ -14491,14 +14491,14 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4952:5: this_XFunctionTypeRef_3= ruleXFunctionTypeRef
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4954:5: this_XFunctionTypeRef_3= ruleXFunctionTypeRef
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getJvmTypeReferenceAccess().getXFunctionTypeRefParserRuleCall_1()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleXFunctionTypeRef_in_ruleJvmTypeReference11657);
+                    pushFollow(FOLLOW_ruleXFunctionTypeRef_in_ruleJvmTypeReference11659);
                     this_XFunctionTypeRef_3=ruleXFunctionTypeRef();
 
                     state._fsp--;
@@ -14535,7 +14535,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleArrayBrackets"
-    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4968:1: entryRuleArrayBrackets returns [String current=null] : iv_ruleArrayBrackets= ruleArrayBrackets EOF ;
+    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4970:1: entryRuleArrayBrackets returns [String current=null] : iv_ruleArrayBrackets= ruleArrayBrackets EOF ;
     public final String entryRuleArrayBrackets() throws RecognitionException {
         String current = null;
 
@@ -14543,13 +14543,13 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4969:2: (iv_ruleArrayBrackets= ruleArrayBrackets EOF )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4970:2: iv_ruleArrayBrackets= ruleArrayBrackets EOF
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4971:2: (iv_ruleArrayBrackets= ruleArrayBrackets EOF )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4972:2: iv_ruleArrayBrackets= ruleArrayBrackets EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getArrayBracketsRule()); 
             }
-            pushFollow(FOLLOW_ruleArrayBrackets_in_entryRuleArrayBrackets11693);
+            pushFollow(FOLLOW_ruleArrayBrackets_in_entryRuleArrayBrackets11695);
             iv_ruleArrayBrackets=ruleArrayBrackets();
 
             state._fsp--;
@@ -14557,7 +14557,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleArrayBrackets.getText(); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleArrayBrackets11704); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleArrayBrackets11706); if (state.failed) return current;
 
             }
 
@@ -14575,7 +14575,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleArrayBrackets"
-    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4977:1: ruleArrayBrackets returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '[' kw= ']' ) ;
+    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4979:1: ruleArrayBrackets returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '[' kw= ']' ) ;
     public final AntlrDatatypeRuleToken ruleArrayBrackets() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -14584,20 +14584,20 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4980:28: ( (kw= '[' kw= ']' ) )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4981:1: (kw= '[' kw= ']' )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4982:28: ( (kw= '[' kw= ']' ) )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4983:1: (kw= '[' kw= ']' )
             {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4981:1: (kw= '[' kw= ']' )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4982:2: kw= '[' kw= ']'
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4983:1: (kw= '[' kw= ']' )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4984:2: kw= '[' kw= ']'
             {
-            kw=(Token)match(input,55,FOLLOW_55_in_ruleArrayBrackets11742); if (state.failed) return current;
+            kw=(Token)match(input,55,FOLLOW_55_in_ruleArrayBrackets11744); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                       current.merge(kw);
                       newLeafNode(kw, grammarAccess.getArrayBracketsAccess().getLeftSquareBracketKeyword_0()); 
                   
             }
-            kw=(Token)match(input,56,FOLLOW_56_in_ruleArrayBrackets11755); if (state.failed) return current;
+            kw=(Token)match(input,56,FOLLOW_56_in_ruleArrayBrackets11757); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                       current.merge(kw);
@@ -14627,7 +14627,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleXFunctionTypeRef"
-    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5001:1: entryRuleXFunctionTypeRef returns [EObject current=null] : iv_ruleXFunctionTypeRef= ruleXFunctionTypeRef EOF ;
+    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5003:1: entryRuleXFunctionTypeRef returns [EObject current=null] : iv_ruleXFunctionTypeRef= ruleXFunctionTypeRef EOF ;
     public final EObject entryRuleXFunctionTypeRef() throws RecognitionException {
         EObject current = null;
 
@@ -14635,13 +14635,13 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5002:2: (iv_ruleXFunctionTypeRef= ruleXFunctionTypeRef EOF )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5003:2: iv_ruleXFunctionTypeRef= ruleXFunctionTypeRef EOF
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5004:2: (iv_ruleXFunctionTypeRef= ruleXFunctionTypeRef EOF )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5005:2: iv_ruleXFunctionTypeRef= ruleXFunctionTypeRef EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getXFunctionTypeRefRule()); 
             }
-            pushFollow(FOLLOW_ruleXFunctionTypeRef_in_entryRuleXFunctionTypeRef11795);
+            pushFollow(FOLLOW_ruleXFunctionTypeRef_in_entryRuleXFunctionTypeRef11797);
             iv_ruleXFunctionTypeRef=ruleXFunctionTypeRef();
 
             state._fsp--;
@@ -14649,7 +14649,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleXFunctionTypeRef; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXFunctionTypeRef11805); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXFunctionTypeRef11807); if (state.failed) return current;
 
             }
 
@@ -14667,7 +14667,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXFunctionTypeRef"
-    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5010:1: ruleXFunctionTypeRef returns [EObject current=null] : ( (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )? otherlv_5= '=>' ( (lv_returnType_6_0= ruleJvmTypeReference ) ) ) ;
+    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5012:1: ruleXFunctionTypeRef returns [EObject current=null] : ( (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )? otherlv_5= '=>' ( (lv_returnType_6_0= ruleJvmTypeReference ) ) ) ;
     public final EObject ruleXFunctionTypeRef() throws RecognitionException {
         EObject current = null;
 
@@ -14685,13 +14685,13 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5013:28: ( ( (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )? otherlv_5= '=>' ( (lv_returnType_6_0= ruleJvmTypeReference ) ) ) )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5014:1: ( (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )? otherlv_5= '=>' ( (lv_returnType_6_0= ruleJvmTypeReference ) ) )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5015:28: ( ( (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )? otherlv_5= '=>' ( (lv_returnType_6_0= ruleJvmTypeReference ) ) ) )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5016:1: ( (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )? otherlv_5= '=>' ( (lv_returnType_6_0= ruleJvmTypeReference ) ) )
             {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5014:1: ( (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )? otherlv_5= '=>' ( (lv_returnType_6_0= ruleJvmTypeReference ) ) )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5014:2: (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )? otherlv_5= '=>' ( (lv_returnType_6_0= ruleJvmTypeReference ) )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5016:1: ( (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )? otherlv_5= '=>' ( (lv_returnType_6_0= ruleJvmTypeReference ) ) )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5016:2: (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )? otherlv_5= '=>' ( (lv_returnType_6_0= ruleJvmTypeReference ) )
             {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5014:2: (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )?
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5016:2: (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )?
             int alt95=2;
             int LA95_0 = input.LA(1);
 
@@ -14700,15 +14700,15 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
             }
             switch (alt95) {
                 case 1 :
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5014:4: otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')'
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5016:4: otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')'
                     {
-                    otherlv_0=(Token)match(input,50,FOLLOW_50_in_ruleXFunctionTypeRef11843); if (state.failed) return current;
+                    otherlv_0=(Token)match(input,50,FOLLOW_50_in_ruleXFunctionTypeRef11845); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_0, grammarAccess.getXFunctionTypeRefAccess().getLeftParenthesisKeyword_0_0());
                           
                     }
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5018:1: ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )?
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5020:1: ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )?
                     int alt94=2;
                     int LA94_0 = input.LA(1);
 
@@ -14717,20 +14717,20 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
                     }
                     switch (alt94) {
                         case 1 :
-                            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5018:2: ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )*
+                            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5020:2: ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )*
                             {
-                            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5018:2: ( (lv_paramTypes_1_0= ruleJvmTypeReference ) )
-                            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5019:1: (lv_paramTypes_1_0= ruleJvmTypeReference )
+                            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5020:2: ( (lv_paramTypes_1_0= ruleJvmTypeReference ) )
+                            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5021:1: (lv_paramTypes_1_0= ruleJvmTypeReference )
                             {
-                            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5019:1: (lv_paramTypes_1_0= ruleJvmTypeReference )
-                            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5020:3: lv_paramTypes_1_0= ruleJvmTypeReference
+                            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5021:1: (lv_paramTypes_1_0= ruleJvmTypeReference )
+                            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5022:3: lv_paramTypes_1_0= ruleJvmTypeReference
                             {
                             if ( state.backtracking==0 ) {
                                
                               	        newCompositeNode(grammarAccess.getXFunctionTypeRefAccess().getParamTypesJvmTypeReferenceParserRuleCall_0_1_0_0()); 
                               	    
                             }
-                            pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef11865);
+                            pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef11867);
                             lv_paramTypes_1_0=ruleJvmTypeReference();
 
                             state._fsp--;
@@ -14754,7 +14754,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
                             }
 
-                            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5036:2: (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )*
+                            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5038:2: (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )*
                             loop93:
                             do {
                                 int alt93=2;
@@ -14767,26 +14767,26 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
                                 switch (alt93) {
                             	case 1 :
-                            	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5036:4: otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) )
+                            	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5038:4: otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) )
                             	    {
-                            	    otherlv_2=(Token)match(input,18,FOLLOW_18_in_ruleXFunctionTypeRef11878); if (state.failed) return current;
+                            	    otherlv_2=(Token)match(input,18,FOLLOW_18_in_ruleXFunctionTypeRef11880); if (state.failed) return current;
                             	    if ( state.backtracking==0 ) {
 
                             	          	newLeafNode(otherlv_2, grammarAccess.getXFunctionTypeRefAccess().getCommaKeyword_0_1_1_0());
                             	          
                             	    }
-                            	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5040:1: ( (lv_paramTypes_3_0= ruleJvmTypeReference ) )
-                            	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5041:1: (lv_paramTypes_3_0= ruleJvmTypeReference )
+                            	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5042:1: ( (lv_paramTypes_3_0= ruleJvmTypeReference ) )
+                            	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5043:1: (lv_paramTypes_3_0= ruleJvmTypeReference )
                             	    {
-                            	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5041:1: (lv_paramTypes_3_0= ruleJvmTypeReference )
-                            	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5042:3: lv_paramTypes_3_0= ruleJvmTypeReference
+                            	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5043:1: (lv_paramTypes_3_0= ruleJvmTypeReference )
+                            	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5044:3: lv_paramTypes_3_0= ruleJvmTypeReference
                             	    {
                             	    if ( state.backtracking==0 ) {
                             	       
                             	      	        newCompositeNode(grammarAccess.getXFunctionTypeRefAccess().getParamTypesJvmTypeReferenceParserRuleCall_0_1_1_1_0()); 
                             	      	    
                             	    }
-                            	    pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef11899);
+                            	    pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef11901);
                             	    lv_paramTypes_3_0=ruleJvmTypeReference();
 
                             	    state._fsp--;
@@ -14825,7 +14825,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_4=(Token)match(input,51,FOLLOW_51_in_ruleXFunctionTypeRef11915); if (state.failed) return current;
+                    otherlv_4=(Token)match(input,51,FOLLOW_51_in_ruleXFunctionTypeRef11917); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_4, grammarAccess.getXFunctionTypeRefAccess().getRightParenthesisKeyword_0_2());
@@ -14837,24 +14837,24 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,35,FOLLOW_35_in_ruleXFunctionTypeRef11929); if (state.failed) return current;
+            otherlv_5=(Token)match(input,35,FOLLOW_35_in_ruleXFunctionTypeRef11931); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_5, grammarAccess.getXFunctionTypeRefAccess().getEqualsSignGreaterThanSignKeyword_1());
                   
             }
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5066:1: ( (lv_returnType_6_0= ruleJvmTypeReference ) )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5067:1: (lv_returnType_6_0= ruleJvmTypeReference )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5068:1: ( (lv_returnType_6_0= ruleJvmTypeReference ) )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5069:1: (lv_returnType_6_0= ruleJvmTypeReference )
             {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5067:1: (lv_returnType_6_0= ruleJvmTypeReference )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5068:3: lv_returnType_6_0= ruleJvmTypeReference
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5069:1: (lv_returnType_6_0= ruleJvmTypeReference )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5070:3: lv_returnType_6_0= ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getXFunctionTypeRefAccess().getReturnTypeJvmTypeReferenceParserRuleCall_2_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef11950);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef11952);
             lv_returnType_6_0=ruleJvmTypeReference();
 
             state._fsp--;
@@ -14901,7 +14901,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJvmParameterizedTypeReference"
-    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5092:1: entryRuleJvmParameterizedTypeReference returns [EObject current=null] : iv_ruleJvmParameterizedTypeReference= ruleJvmParameterizedTypeReference EOF ;
+    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5094:1: entryRuleJvmParameterizedTypeReference returns [EObject current=null] : iv_ruleJvmParameterizedTypeReference= ruleJvmParameterizedTypeReference EOF ;
     public final EObject entryRuleJvmParameterizedTypeReference() throws RecognitionException {
         EObject current = null;
 
@@ -14909,13 +14909,13 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5093:2: (iv_ruleJvmParameterizedTypeReference= ruleJvmParameterizedTypeReference EOF )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5094:2: iv_ruleJvmParameterizedTypeReference= ruleJvmParameterizedTypeReference EOF
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5095:2: (iv_ruleJvmParameterizedTypeReference= ruleJvmParameterizedTypeReference EOF )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5096:2: iv_ruleJvmParameterizedTypeReference= ruleJvmParameterizedTypeReference EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getJvmParameterizedTypeReferenceRule()); 
             }
-            pushFollow(FOLLOW_ruleJvmParameterizedTypeReference_in_entryRuleJvmParameterizedTypeReference11986);
+            pushFollow(FOLLOW_ruleJvmParameterizedTypeReference_in_entryRuleJvmParameterizedTypeReference11988);
             iv_ruleJvmParameterizedTypeReference=ruleJvmParameterizedTypeReference();
 
             state._fsp--;
@@ -14923,7 +14923,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleJvmParameterizedTypeReference; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmParameterizedTypeReference11996); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmParameterizedTypeReference11998); if (state.failed) return current;
 
             }
 
@@ -14941,7 +14941,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJvmParameterizedTypeReference"
-    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5101:1: ruleJvmParameterizedTypeReference returns [EObject current=null] : ( ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )? ) ;
+    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5103:1: ruleJvmParameterizedTypeReference returns [EObject current=null] : ( ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )? ) ;
     public final EObject ruleJvmParameterizedTypeReference() throws RecognitionException {
         EObject current = null;
 
@@ -14956,17 +14956,17 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5104:28: ( ( ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )? ) )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5105:1: ( ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )? )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5106:28: ( ( ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )? ) )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5107:1: ( ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )? )
             {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5105:1: ( ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )? )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5105:2: ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )?
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5107:1: ( ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )? )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5107:2: ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )?
             {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5105:2: ( ( ruleQualifiedName ) )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5106:1: ( ruleQualifiedName )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5107:2: ( ( ruleQualifiedName ) )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5108:1: ( ruleQualifiedName )
             {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5106:1: ( ruleQualifiedName )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5107:3: ruleQualifiedName
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5108:1: ( ruleQualifiedName )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5109:3: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
 
@@ -14980,7 +14980,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getJvmParameterizedTypeReferenceAccess().getTypeJvmTypeCrossReference_0_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_ruleJvmParameterizedTypeReference12044);
+            pushFollow(FOLLOW_ruleQualifiedName_in_ruleJvmParameterizedTypeReference12046);
             ruleQualifiedName();
 
             state._fsp--;
@@ -14996,17 +14996,17 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5120:2: ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )?
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5122:2: ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )?
             int alt97=2;
             alt97 = dfa97.predict(input);
             switch (alt97) {
                 case 1 :
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5120:3: ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>'
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5122:3: ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>'
                     {
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5120:3: ( ( '<' )=>otherlv_1= '<' )
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5120:4: ( '<' )=>otherlv_1= '<'
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5122:3: ( ( '<' )=>otherlv_1= '<' )
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5122:4: ( '<' )=>otherlv_1= '<'
                     {
-                    otherlv_1=(Token)match(input,31,FOLLOW_31_in_ruleJvmParameterizedTypeReference12065); if (state.failed) return current;
+                    otherlv_1=(Token)match(input,31,FOLLOW_31_in_ruleJvmParameterizedTypeReference12067); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_1, grammarAccess.getJvmParameterizedTypeReferenceAccess().getLessThanSignKeyword_1_0());
@@ -15015,18 +15015,18 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5125:2: ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) )
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5126:1: (lv_arguments_2_0= ruleJvmArgumentTypeReference )
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5127:2: ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) )
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5128:1: (lv_arguments_2_0= ruleJvmArgumentTypeReference )
                     {
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5126:1: (lv_arguments_2_0= ruleJvmArgumentTypeReference )
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5127:3: lv_arguments_2_0= ruleJvmArgumentTypeReference
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5128:1: (lv_arguments_2_0= ruleJvmArgumentTypeReference )
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5129:3: lv_arguments_2_0= ruleJvmArgumentTypeReference
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getJvmParameterizedTypeReferenceAccess().getArgumentsJvmArgumentTypeReferenceParserRuleCall_1_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference12087);
+                    pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference12089);
                     lv_arguments_2_0=ruleJvmArgumentTypeReference();
 
                     state._fsp--;
@@ -15050,7 +15050,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5143:2: (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )*
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5145:2: (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )*
                     loop96:
                     do {
                         int alt96=2;
@@ -15063,26 +15063,26 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
                         switch (alt96) {
                     	case 1 :
-                    	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5143:4: otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) )
+                    	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5145:4: otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) )
                     	    {
-                    	    otherlv_3=(Token)match(input,18,FOLLOW_18_in_ruleJvmParameterizedTypeReference12100); if (state.failed) return current;
+                    	    otherlv_3=(Token)match(input,18,FOLLOW_18_in_ruleJvmParameterizedTypeReference12102); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_3, grammarAccess.getJvmParameterizedTypeReferenceAccess().getCommaKeyword_1_2_0());
                     	          
                     	    }
-                    	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5147:1: ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) )
-                    	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5148:1: (lv_arguments_4_0= ruleJvmArgumentTypeReference )
+                    	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5149:1: ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) )
+                    	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5150:1: (lv_arguments_4_0= ruleJvmArgumentTypeReference )
                     	    {
-                    	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5148:1: (lv_arguments_4_0= ruleJvmArgumentTypeReference )
-                    	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5149:3: lv_arguments_4_0= ruleJvmArgumentTypeReference
+                    	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5150:1: (lv_arguments_4_0= ruleJvmArgumentTypeReference )
+                    	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5151:3: lv_arguments_4_0= ruleJvmArgumentTypeReference
                     	    {
                     	    if ( state.backtracking==0 ) {
                     	       
                     	      	        newCompositeNode(grammarAccess.getJvmParameterizedTypeReferenceAccess().getArgumentsJvmArgumentTypeReferenceParserRuleCall_1_2_1_0()); 
                     	      	    
                     	    }
-                    	    pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference12121);
+                    	    pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference12123);
                     	    lv_arguments_4_0=ruleJvmArgumentTypeReference();
 
                     	    state._fsp--;
@@ -15115,7 +15115,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_5=(Token)match(input,30,FOLLOW_30_in_ruleJvmParameterizedTypeReference12135); if (state.failed) return current;
+                    otherlv_5=(Token)match(input,30,FOLLOW_30_in_ruleJvmParameterizedTypeReference12137); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_5, grammarAccess.getJvmParameterizedTypeReferenceAccess().getGreaterThanSignKeyword_1_3());
@@ -15150,7 +15150,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJvmArgumentTypeReference"
-    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5177:1: entryRuleJvmArgumentTypeReference returns [EObject current=null] : iv_ruleJvmArgumentTypeReference= ruleJvmArgumentTypeReference EOF ;
+    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5179:1: entryRuleJvmArgumentTypeReference returns [EObject current=null] : iv_ruleJvmArgumentTypeReference= ruleJvmArgumentTypeReference EOF ;
     public final EObject entryRuleJvmArgumentTypeReference() throws RecognitionException {
         EObject current = null;
 
@@ -15158,13 +15158,13 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5178:2: (iv_ruleJvmArgumentTypeReference= ruleJvmArgumentTypeReference EOF )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5179:2: iv_ruleJvmArgumentTypeReference= ruleJvmArgumentTypeReference EOF
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5180:2: (iv_ruleJvmArgumentTypeReference= ruleJvmArgumentTypeReference EOF )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5181:2: iv_ruleJvmArgumentTypeReference= ruleJvmArgumentTypeReference EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getJvmArgumentTypeReferenceRule()); 
             }
-            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_entryRuleJvmArgumentTypeReference12173);
+            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_entryRuleJvmArgumentTypeReference12175);
             iv_ruleJvmArgumentTypeReference=ruleJvmArgumentTypeReference();
 
             state._fsp--;
@@ -15172,7 +15172,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleJvmArgumentTypeReference; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmArgumentTypeReference12183); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmArgumentTypeReference12185); if (state.failed) return current;
 
             }
 
@@ -15190,7 +15190,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJvmArgumentTypeReference"
-    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5186:1: ruleJvmArgumentTypeReference returns [EObject current=null] : (this_JvmTypeReference_0= ruleJvmTypeReference | this_JvmWildcardTypeReference_1= ruleJvmWildcardTypeReference ) ;
+    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5188:1: ruleJvmArgumentTypeReference returns [EObject current=null] : (this_JvmTypeReference_0= ruleJvmTypeReference | this_JvmWildcardTypeReference_1= ruleJvmWildcardTypeReference ) ;
     public final EObject ruleJvmArgumentTypeReference() throws RecognitionException {
         EObject current = null;
 
@@ -15202,10 +15202,10 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5189:28: ( (this_JvmTypeReference_0= ruleJvmTypeReference | this_JvmWildcardTypeReference_1= ruleJvmWildcardTypeReference ) )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5190:1: (this_JvmTypeReference_0= ruleJvmTypeReference | this_JvmWildcardTypeReference_1= ruleJvmWildcardTypeReference )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5191:28: ( (this_JvmTypeReference_0= ruleJvmTypeReference | this_JvmWildcardTypeReference_1= ruleJvmWildcardTypeReference ) )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5192:1: (this_JvmTypeReference_0= ruleJvmTypeReference | this_JvmWildcardTypeReference_1= ruleJvmWildcardTypeReference )
             {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5190:1: (this_JvmTypeReference_0= ruleJvmTypeReference | this_JvmWildcardTypeReference_1= ruleJvmWildcardTypeReference )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5192:1: (this_JvmTypeReference_0= ruleJvmTypeReference | this_JvmWildcardTypeReference_1= ruleJvmWildcardTypeReference )
             int alt98=2;
             int LA98_0 = input.LA(1);
 
@@ -15224,14 +15224,14 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
             }
             switch (alt98) {
                 case 1 :
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5191:5: this_JvmTypeReference_0= ruleJvmTypeReference
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5193:5: this_JvmTypeReference_0= ruleJvmTypeReference
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getJvmArgumentTypeReferenceAccess().getJvmTypeReferenceParserRuleCall_0()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleJvmArgumentTypeReference12230);
+                    pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleJvmArgumentTypeReference12232);
                     this_JvmTypeReference_0=ruleJvmTypeReference();
 
                     state._fsp--;
@@ -15246,14 +15246,14 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5201:5: this_JvmWildcardTypeReference_1= ruleJvmWildcardTypeReference
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5203:5: this_JvmWildcardTypeReference_1= ruleJvmWildcardTypeReference
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getJvmArgumentTypeReferenceAccess().getJvmWildcardTypeReferenceParserRuleCall_1()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleJvmWildcardTypeReference_in_ruleJvmArgumentTypeReference12257);
+                    pushFollow(FOLLOW_ruleJvmWildcardTypeReference_in_ruleJvmArgumentTypeReference12259);
                     this_JvmWildcardTypeReference_1=ruleJvmWildcardTypeReference();
 
                     state._fsp--;
@@ -15290,7 +15290,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJvmWildcardTypeReference"
-    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5217:1: entryRuleJvmWildcardTypeReference returns [EObject current=null] : iv_ruleJvmWildcardTypeReference= ruleJvmWildcardTypeReference EOF ;
+    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5219:1: entryRuleJvmWildcardTypeReference returns [EObject current=null] : iv_ruleJvmWildcardTypeReference= ruleJvmWildcardTypeReference EOF ;
     public final EObject entryRuleJvmWildcardTypeReference() throws RecognitionException {
         EObject current = null;
 
@@ -15298,13 +15298,13 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5218:2: (iv_ruleJvmWildcardTypeReference= ruleJvmWildcardTypeReference EOF )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5219:2: iv_ruleJvmWildcardTypeReference= ruleJvmWildcardTypeReference EOF
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5220:2: (iv_ruleJvmWildcardTypeReference= ruleJvmWildcardTypeReference EOF )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5221:2: iv_ruleJvmWildcardTypeReference= ruleJvmWildcardTypeReference EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getJvmWildcardTypeReferenceRule()); 
             }
-            pushFollow(FOLLOW_ruleJvmWildcardTypeReference_in_entryRuleJvmWildcardTypeReference12292);
+            pushFollow(FOLLOW_ruleJvmWildcardTypeReference_in_entryRuleJvmWildcardTypeReference12294);
             iv_ruleJvmWildcardTypeReference=ruleJvmWildcardTypeReference();
 
             state._fsp--;
@@ -15312,7 +15312,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleJvmWildcardTypeReference; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmWildcardTypeReference12302); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmWildcardTypeReference12304); if (state.failed) return current;
 
             }
 
@@ -15330,7 +15330,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJvmWildcardTypeReference"
-    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5226:1: ruleJvmWildcardTypeReference returns [EObject current=null] : ( () otherlv_1= '?' ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) | ( (lv_constraints_3_0= ruleJvmLowerBound ) ) )? ) ;
+    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5228:1: ruleJvmWildcardTypeReference returns [EObject current=null] : ( () otherlv_1= '?' ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) | ( (lv_constraints_3_0= ruleJvmLowerBound ) ) )? ) ;
     public final EObject ruleJvmWildcardTypeReference() throws RecognitionException {
         EObject current = null;
 
@@ -15343,14 +15343,14 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5229:28: ( ( () otherlv_1= '?' ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) | ( (lv_constraints_3_0= ruleJvmLowerBound ) ) )? ) )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5230:1: ( () otherlv_1= '?' ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) | ( (lv_constraints_3_0= ruleJvmLowerBound ) ) )? )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5231:28: ( ( () otherlv_1= '?' ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) | ( (lv_constraints_3_0= ruleJvmLowerBound ) ) )? ) )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5232:1: ( () otherlv_1= '?' ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) | ( (lv_constraints_3_0= ruleJvmLowerBound ) ) )? )
             {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5230:1: ( () otherlv_1= '?' ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) | ( (lv_constraints_3_0= ruleJvmLowerBound ) ) )? )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5230:2: () otherlv_1= '?' ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) | ( (lv_constraints_3_0= ruleJvmLowerBound ) ) )?
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5232:1: ( () otherlv_1= '?' ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) | ( (lv_constraints_3_0= ruleJvmLowerBound ) ) )? )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5232:2: () otherlv_1= '?' ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) | ( (lv_constraints_3_0= ruleJvmLowerBound ) ) )?
             {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5230:2: ()
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5231:5: 
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5232:2: ()
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5233:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -15362,13 +15362,13 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,85,FOLLOW_85_in_ruleJvmWildcardTypeReference12348); if (state.failed) return current;
+            otherlv_1=(Token)match(input,85,FOLLOW_85_in_ruleJvmWildcardTypeReference12350); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getJvmWildcardTypeReferenceAccess().getQuestionMarkKeyword_1());
                   
             }
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5240:1: ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) | ( (lv_constraints_3_0= ruleJvmLowerBound ) ) )?
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5242:1: ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) | ( (lv_constraints_3_0= ruleJvmLowerBound ) ) )?
             int alt99=3;
             int LA99_0 = input.LA(1);
 
@@ -15380,20 +15380,20 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
             }
             switch (alt99) {
                 case 1 :
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5240:2: ( (lv_constraints_2_0= ruleJvmUpperBound ) )
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5242:2: ( (lv_constraints_2_0= ruleJvmUpperBound ) )
                     {
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5240:2: ( (lv_constraints_2_0= ruleJvmUpperBound ) )
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5241:1: (lv_constraints_2_0= ruleJvmUpperBound )
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5242:2: ( (lv_constraints_2_0= ruleJvmUpperBound ) )
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5243:1: (lv_constraints_2_0= ruleJvmUpperBound )
                     {
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5241:1: (lv_constraints_2_0= ruleJvmUpperBound )
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5242:3: lv_constraints_2_0= ruleJvmUpperBound
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5243:1: (lv_constraints_2_0= ruleJvmUpperBound )
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5244:3: lv_constraints_2_0= ruleJvmUpperBound
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getJvmWildcardTypeReferenceAccess().getConstraintsJvmUpperBoundParserRuleCall_2_0_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleJvmUpperBound_in_ruleJvmWildcardTypeReference12370);
+                    pushFollow(FOLLOW_ruleJvmUpperBound_in_ruleJvmWildcardTypeReference12372);
                     lv_constraints_2_0=ruleJvmUpperBound();
 
                     state._fsp--;
@@ -15421,20 +15421,20 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5259:6: ( (lv_constraints_3_0= ruleJvmLowerBound ) )
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5261:6: ( (lv_constraints_3_0= ruleJvmLowerBound ) )
                     {
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5259:6: ( (lv_constraints_3_0= ruleJvmLowerBound ) )
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5260:1: (lv_constraints_3_0= ruleJvmLowerBound )
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5261:6: ( (lv_constraints_3_0= ruleJvmLowerBound ) )
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5262:1: (lv_constraints_3_0= ruleJvmLowerBound )
                     {
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5260:1: (lv_constraints_3_0= ruleJvmLowerBound )
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5261:3: lv_constraints_3_0= ruleJvmLowerBound
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5262:1: (lv_constraints_3_0= ruleJvmLowerBound )
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5263:3: lv_constraints_3_0= ruleJvmLowerBound
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getJvmWildcardTypeReferenceAccess().getConstraintsJvmLowerBoundParserRuleCall_2_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleJvmLowerBound_in_ruleJvmWildcardTypeReference12397);
+                    pushFollow(FOLLOW_ruleJvmLowerBound_in_ruleJvmWildcardTypeReference12399);
                     lv_constraints_3_0=ruleJvmLowerBound();
 
                     state._fsp--;
@@ -15487,7 +15487,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJvmUpperBound"
-    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5285:1: entryRuleJvmUpperBound returns [EObject current=null] : iv_ruleJvmUpperBound= ruleJvmUpperBound EOF ;
+    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5287:1: entryRuleJvmUpperBound returns [EObject current=null] : iv_ruleJvmUpperBound= ruleJvmUpperBound EOF ;
     public final EObject entryRuleJvmUpperBound() throws RecognitionException {
         EObject current = null;
 
@@ -15495,13 +15495,13 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5286:2: (iv_ruleJvmUpperBound= ruleJvmUpperBound EOF )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5287:2: iv_ruleJvmUpperBound= ruleJvmUpperBound EOF
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5288:2: (iv_ruleJvmUpperBound= ruleJvmUpperBound EOF )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5289:2: iv_ruleJvmUpperBound= ruleJvmUpperBound EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getJvmUpperBoundRule()); 
             }
-            pushFollow(FOLLOW_ruleJvmUpperBound_in_entryRuleJvmUpperBound12435);
+            pushFollow(FOLLOW_ruleJvmUpperBound_in_entryRuleJvmUpperBound12437);
             iv_ruleJvmUpperBound=ruleJvmUpperBound();
 
             state._fsp--;
@@ -15509,7 +15509,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleJvmUpperBound; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmUpperBound12445); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmUpperBound12447); if (state.failed) return current;
 
             }
 
@@ -15527,7 +15527,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJvmUpperBound"
-    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5294:1: ruleJvmUpperBound returns [EObject current=null] : (otherlv_0= 'extends' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) ;
+    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5296:1: ruleJvmUpperBound returns [EObject current=null] : (otherlv_0= 'extends' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) ;
     public final EObject ruleJvmUpperBound() throws RecognitionException {
         EObject current = null;
 
@@ -15538,30 +15538,30 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5297:28: ( (otherlv_0= 'extends' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5298:1: (otherlv_0= 'extends' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5299:28: ( (otherlv_0= 'extends' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5300:1: (otherlv_0= 'extends' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
             {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5298:1: (otherlv_0= 'extends' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5298:3: otherlv_0= 'extends' ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5300:1: (otherlv_0= 'extends' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5300:3: otherlv_0= 'extends' ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
             {
-            otherlv_0=(Token)match(input,70,FOLLOW_70_in_ruleJvmUpperBound12482); if (state.failed) return current;
+            otherlv_0=(Token)match(input,70,FOLLOW_70_in_ruleJvmUpperBound12484); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getJvmUpperBoundAccess().getExtendsKeyword_0());
                   
             }
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5302:1: ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5303:1: (lv_typeReference_1_0= ruleJvmTypeReference )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5304:1: ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5305:1: (lv_typeReference_1_0= ruleJvmTypeReference )
             {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5303:1: (lv_typeReference_1_0= ruleJvmTypeReference )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5304:3: lv_typeReference_1_0= ruleJvmTypeReference
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5305:1: (lv_typeReference_1_0= ruleJvmTypeReference )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5306:3: lv_typeReference_1_0= ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getJvmUpperBoundAccess().getTypeReferenceJvmTypeReferenceParserRuleCall_1_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleJvmUpperBound12503);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleJvmUpperBound12505);
             lv_typeReference_1_0=ruleJvmTypeReference();
 
             state._fsp--;
@@ -15608,7 +15608,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJvmUpperBoundAnded"
-    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5328:1: entryRuleJvmUpperBoundAnded returns [EObject current=null] : iv_ruleJvmUpperBoundAnded= ruleJvmUpperBoundAnded EOF ;
+    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5330:1: entryRuleJvmUpperBoundAnded returns [EObject current=null] : iv_ruleJvmUpperBoundAnded= ruleJvmUpperBoundAnded EOF ;
     public final EObject entryRuleJvmUpperBoundAnded() throws RecognitionException {
         EObject current = null;
 
@@ -15616,13 +15616,13 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5329:2: (iv_ruleJvmUpperBoundAnded= ruleJvmUpperBoundAnded EOF )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5330:2: iv_ruleJvmUpperBoundAnded= ruleJvmUpperBoundAnded EOF
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5331:2: (iv_ruleJvmUpperBoundAnded= ruleJvmUpperBoundAnded EOF )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5332:2: iv_ruleJvmUpperBoundAnded= ruleJvmUpperBoundAnded EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getJvmUpperBoundAndedRule()); 
             }
-            pushFollow(FOLLOW_ruleJvmUpperBoundAnded_in_entryRuleJvmUpperBoundAnded12539);
+            pushFollow(FOLLOW_ruleJvmUpperBoundAnded_in_entryRuleJvmUpperBoundAnded12541);
             iv_ruleJvmUpperBoundAnded=ruleJvmUpperBoundAnded();
 
             state._fsp--;
@@ -15630,7 +15630,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleJvmUpperBoundAnded; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmUpperBoundAnded12549); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmUpperBoundAnded12551); if (state.failed) return current;
 
             }
 
@@ -15648,7 +15648,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJvmUpperBoundAnded"
-    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5337:1: ruleJvmUpperBoundAnded returns [EObject current=null] : (otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) ;
+    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5339:1: ruleJvmUpperBoundAnded returns [EObject current=null] : (otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) ;
     public final EObject ruleJvmUpperBoundAnded() throws RecognitionException {
         EObject current = null;
 
@@ -15659,30 +15659,30 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5340:28: ( (otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5341:1: (otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5342:28: ( (otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5343:1: (otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
             {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5341:1: (otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5341:3: otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5343:1: (otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5343:3: otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
             {
-            otherlv_0=(Token)match(input,86,FOLLOW_86_in_ruleJvmUpperBoundAnded12586); if (state.failed) return current;
+            otherlv_0=(Token)match(input,86,FOLLOW_86_in_ruleJvmUpperBoundAnded12588); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getJvmUpperBoundAndedAccess().getAmpersandKeyword_0());
                   
             }
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5345:1: ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5346:1: (lv_typeReference_1_0= ruleJvmTypeReference )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5347:1: ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5348:1: (lv_typeReference_1_0= ruleJvmTypeReference )
             {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5346:1: (lv_typeReference_1_0= ruleJvmTypeReference )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5347:3: lv_typeReference_1_0= ruleJvmTypeReference
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5348:1: (lv_typeReference_1_0= ruleJvmTypeReference )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5349:3: lv_typeReference_1_0= ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getJvmUpperBoundAndedAccess().getTypeReferenceJvmTypeReferenceParserRuleCall_1_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleJvmUpperBoundAnded12607);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleJvmUpperBoundAnded12609);
             lv_typeReference_1_0=ruleJvmTypeReference();
 
             state._fsp--;
@@ -15729,7 +15729,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJvmLowerBound"
-    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5371:1: entryRuleJvmLowerBound returns [EObject current=null] : iv_ruleJvmLowerBound= ruleJvmLowerBound EOF ;
+    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5373:1: entryRuleJvmLowerBound returns [EObject current=null] : iv_ruleJvmLowerBound= ruleJvmLowerBound EOF ;
     public final EObject entryRuleJvmLowerBound() throws RecognitionException {
         EObject current = null;
 
@@ -15737,13 +15737,13 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5372:2: (iv_ruleJvmLowerBound= ruleJvmLowerBound EOF )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5373:2: iv_ruleJvmLowerBound= ruleJvmLowerBound EOF
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5374:2: (iv_ruleJvmLowerBound= ruleJvmLowerBound EOF )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5375:2: iv_ruleJvmLowerBound= ruleJvmLowerBound EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getJvmLowerBoundRule()); 
             }
-            pushFollow(FOLLOW_ruleJvmLowerBound_in_entryRuleJvmLowerBound12643);
+            pushFollow(FOLLOW_ruleJvmLowerBound_in_entryRuleJvmLowerBound12645);
             iv_ruleJvmLowerBound=ruleJvmLowerBound();
 
             state._fsp--;
@@ -15751,7 +15751,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleJvmLowerBound; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmLowerBound12653); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmLowerBound12655); if (state.failed) return current;
 
             }
 
@@ -15769,7 +15769,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJvmLowerBound"
-    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5380:1: ruleJvmLowerBound returns [EObject current=null] : (otherlv_0= 'super' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) ;
+    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5382:1: ruleJvmLowerBound returns [EObject current=null] : (otherlv_0= 'super' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) ;
     public final EObject ruleJvmLowerBound() throws RecognitionException {
         EObject current = null;
 
@@ -15780,30 +15780,30 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5383:28: ( (otherlv_0= 'super' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5384:1: (otherlv_0= 'super' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5385:28: ( (otherlv_0= 'super' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5386:1: (otherlv_0= 'super' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
             {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5384:1: (otherlv_0= 'super' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5384:3: otherlv_0= 'super' ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5386:1: (otherlv_0= 'super' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5386:3: otherlv_0= 'super' ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
             {
-            otherlv_0=(Token)match(input,74,FOLLOW_74_in_ruleJvmLowerBound12690); if (state.failed) return current;
+            otherlv_0=(Token)match(input,74,FOLLOW_74_in_ruleJvmLowerBound12692); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getJvmLowerBoundAccess().getSuperKeyword_0());
                   
             }
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5388:1: ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5389:1: (lv_typeReference_1_0= ruleJvmTypeReference )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5390:1: ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5391:1: (lv_typeReference_1_0= ruleJvmTypeReference )
             {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5389:1: (lv_typeReference_1_0= ruleJvmTypeReference )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5390:3: lv_typeReference_1_0= ruleJvmTypeReference
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5391:1: (lv_typeReference_1_0= ruleJvmTypeReference )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5392:3: lv_typeReference_1_0= ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getJvmLowerBoundAccess().getTypeReferenceJvmTypeReferenceParserRuleCall_1_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleJvmLowerBound12711);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleJvmLowerBound12713);
             lv_typeReference_1_0=ruleJvmTypeReference();
 
             state._fsp--;
@@ -15850,7 +15850,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQualifiedNameWithWildcard"
-    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5416:1: entryRuleQualifiedNameWithWildcard returns [String current=null] : iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF ;
+    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5418:1: entryRuleQualifiedNameWithWildcard returns [String current=null] : iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF ;
     public final String entryRuleQualifiedNameWithWildcard() throws RecognitionException {
         String current = null;
 
@@ -15858,13 +15858,13 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5417:2: (iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5418:2: iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5419:2: (iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5420:2: iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getQualifiedNameWithWildcardRule()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedNameWithWildcard_in_entryRuleQualifiedNameWithWildcard12750);
+            pushFollow(FOLLOW_ruleQualifiedNameWithWildcard_in_entryRuleQualifiedNameWithWildcard12752);
             iv_ruleQualifiedNameWithWildcard=ruleQualifiedNameWithWildcard();
 
             state._fsp--;
@@ -15872,7 +15872,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleQualifiedNameWithWildcard.getText(); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQualifiedNameWithWildcard12761); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQualifiedNameWithWildcard12763); if (state.failed) return current;
 
             }
 
@@ -15890,7 +15890,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualifiedNameWithWildcard"
-    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5425:1: ruleQualifiedNameWithWildcard returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_QualifiedName_0= ruleQualifiedName kw= '.' kw= '*' ) ;
+    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5427:1: ruleQualifiedNameWithWildcard returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_QualifiedName_0= ruleQualifiedName kw= '.' kw= '*' ) ;
     public final AntlrDatatypeRuleToken ruleQualifiedNameWithWildcard() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -15901,18 +15901,18 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5428:28: ( (this_QualifiedName_0= ruleQualifiedName kw= '.' kw= '*' ) )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5429:1: (this_QualifiedName_0= ruleQualifiedName kw= '.' kw= '*' )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5430:28: ( (this_QualifiedName_0= ruleQualifiedName kw= '.' kw= '*' ) )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5431:1: (this_QualifiedName_0= ruleQualifiedName kw= '.' kw= '*' )
             {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5429:1: (this_QualifiedName_0= ruleQualifiedName kw= '.' kw= '*' )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5430:5: this_QualifiedName_0= ruleQualifiedName kw= '.' kw= '*'
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5431:1: (this_QualifiedName_0= ruleQualifiedName kw= '.' kw= '*' )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5432:5: this_QualifiedName_0= ruleQualifiedName kw= '.' kw= '*'
             {
             if ( state.backtracking==0 ) {
                
                       newCompositeNode(grammarAccess.getQualifiedNameWithWildcardAccess().getQualifiedNameParserRuleCall_0()); 
                   
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_ruleQualifiedNameWithWildcard12808);
+            pushFollow(FOLLOW_ruleQualifiedName_in_ruleQualifiedNameWithWildcard12810);
             this_QualifiedName_0=ruleQualifiedName();
 
             state._fsp--;
@@ -15927,14 +15927,14 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            kw=(Token)match(input,47,FOLLOW_47_in_ruleQualifiedNameWithWildcard12826); if (state.failed) return current;
+            kw=(Token)match(input,47,FOLLOW_47_in_ruleQualifiedNameWithWildcard12828); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                       current.merge(kw);
                       newLeafNode(kw, grammarAccess.getQualifiedNameWithWildcardAccess().getFullStopKeyword_1()); 
                   
             }
-            kw=(Token)match(input,41,FOLLOW_41_in_ruleQualifiedNameWithWildcard12839); if (state.failed) return current;
+            kw=(Token)match(input,41,FOLLOW_41_in_ruleQualifiedNameWithWildcard12841); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                       current.merge(kw);
@@ -15964,7 +15964,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleValidID"
-    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5460:1: entryRuleValidID returns [String current=null] : iv_ruleValidID= ruleValidID EOF ;
+    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5462:1: entryRuleValidID returns [String current=null] : iv_ruleValidID= ruleValidID EOF ;
     public final String entryRuleValidID() throws RecognitionException {
         String current = null;
 
@@ -15972,13 +15972,13 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5461:2: (iv_ruleValidID= ruleValidID EOF )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5462:2: iv_ruleValidID= ruleValidID EOF
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5463:2: (iv_ruleValidID= ruleValidID EOF )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5464:2: iv_ruleValidID= ruleValidID EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getValidIDRule()); 
             }
-            pushFollow(FOLLOW_ruleValidID_in_entryRuleValidID12880);
+            pushFollow(FOLLOW_ruleValidID_in_entryRuleValidID12882);
             iv_ruleValidID=ruleValidID();
 
             state._fsp--;
@@ -15986,7 +15986,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleValidID.getText(); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleValidID12891); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleValidID12893); if (state.failed) return current;
 
             }
 
@@ -16004,7 +16004,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleValidID"
-    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5469:1: ruleValidID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_ID_0= RULE_ID ;
+    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5471:1: ruleValidID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_ID_0= RULE_ID ;
     public final AntlrDatatypeRuleToken ruleValidID() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -16013,10 +16013,10 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5472:28: (this_ID_0= RULE_ID )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5473:5: this_ID_0= RULE_ID
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5474:28: (this_ID_0= RULE_ID )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5475:5: this_ID_0= RULE_ID
             {
-            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleValidID12930); if (state.failed) return current;
+            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleValidID12932); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               		current.merge(this_ID_0);
@@ -16047,7 +16047,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleXImportSection"
-    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5488:1: entryRuleXImportSection returns [EObject current=null] : iv_ruleXImportSection= ruleXImportSection EOF ;
+    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5490:1: entryRuleXImportSection returns [EObject current=null] : iv_ruleXImportSection= ruleXImportSection EOF ;
     public final EObject entryRuleXImportSection() throws RecognitionException {
         EObject current = null;
 
@@ -16055,13 +16055,13 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5489:2: (iv_ruleXImportSection= ruleXImportSection EOF )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5490:2: iv_ruleXImportSection= ruleXImportSection EOF
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5491:2: (iv_ruleXImportSection= ruleXImportSection EOF )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5492:2: iv_ruleXImportSection= ruleXImportSection EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getXImportSectionRule()); 
             }
-            pushFollow(FOLLOW_ruleXImportSection_in_entryRuleXImportSection12974);
+            pushFollow(FOLLOW_ruleXImportSection_in_entryRuleXImportSection12976);
             iv_ruleXImportSection=ruleXImportSection();
 
             state._fsp--;
@@ -16069,7 +16069,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleXImportSection; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXImportSection12984); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXImportSection12986); if (state.failed) return current;
 
             }
 
@@ -16087,7 +16087,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXImportSection"
-    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5497:1: ruleXImportSection returns [EObject current=null] : ( (lv_importDeclarations_0_0= ruleXImportDeclaration ) )+ ;
+    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5499:1: ruleXImportSection returns [EObject current=null] : ( (lv_importDeclarations_0_0= ruleXImportDeclaration ) )+ ;
     public final EObject ruleXImportSection() throws RecognitionException {
         EObject current = null;
 
@@ -16097,10 +16097,10 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5500:28: ( ( (lv_importDeclarations_0_0= ruleXImportDeclaration ) )+ )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5501:1: ( (lv_importDeclarations_0_0= ruleXImportDeclaration ) )+
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5502:28: ( ( (lv_importDeclarations_0_0= ruleXImportDeclaration ) )+ )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5503:1: ( (lv_importDeclarations_0_0= ruleXImportDeclaration ) )+
             {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5501:1: ( (lv_importDeclarations_0_0= ruleXImportDeclaration ) )+
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5503:1: ( (lv_importDeclarations_0_0= ruleXImportDeclaration ) )+
             int cnt100=0;
             loop100:
             do {
@@ -16114,17 +16114,17 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
                 switch (alt100) {
             	case 1 :
-            	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5502:1: (lv_importDeclarations_0_0= ruleXImportDeclaration )
+            	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5504:1: (lv_importDeclarations_0_0= ruleXImportDeclaration )
             	    {
-            	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5502:1: (lv_importDeclarations_0_0= ruleXImportDeclaration )
-            	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5503:3: lv_importDeclarations_0_0= ruleXImportDeclaration
+            	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5504:1: (lv_importDeclarations_0_0= ruleXImportDeclaration )
+            	    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5505:3: lv_importDeclarations_0_0= ruleXImportDeclaration
             	    {
             	    if ( state.backtracking==0 ) {
             	       
             	      	        newCompositeNode(grammarAccess.getXImportSectionAccess().getImportDeclarationsXImportDeclarationParserRuleCall_0()); 
             	      	    
             	    }
-            	    pushFollow(FOLLOW_ruleXImportDeclaration_in_ruleXImportSection13029);
+            	    pushFollow(FOLLOW_ruleXImportDeclaration_in_ruleXImportSection13031);
             	    lv_importDeclarations_0_0=ruleXImportDeclaration();
 
             	    state._fsp--;
@@ -16179,7 +16179,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleXImportDeclaration"
-    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5527:1: entryRuleXImportDeclaration returns [EObject current=null] : iv_ruleXImportDeclaration= ruleXImportDeclaration EOF ;
+    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5529:1: entryRuleXImportDeclaration returns [EObject current=null] : iv_ruleXImportDeclaration= ruleXImportDeclaration EOF ;
     public final EObject entryRuleXImportDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -16187,13 +16187,13 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5528:2: (iv_ruleXImportDeclaration= ruleXImportDeclaration EOF )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5529:2: iv_ruleXImportDeclaration= ruleXImportDeclaration EOF
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5530:2: (iv_ruleXImportDeclaration= ruleXImportDeclaration EOF )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5531:2: iv_ruleXImportDeclaration= ruleXImportDeclaration EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getXImportDeclarationRule()); 
             }
-            pushFollow(FOLLOW_ruleXImportDeclaration_in_entryRuleXImportDeclaration13065);
+            pushFollow(FOLLOW_ruleXImportDeclaration_in_entryRuleXImportDeclaration13067);
             iv_ruleXImportDeclaration=ruleXImportDeclaration();
 
             state._fsp--;
@@ -16201,7 +16201,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleXImportDeclaration; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXImportDeclaration13075); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXImportDeclaration13077); if (state.failed) return current;
 
             }
 
@@ -16219,7 +16219,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXImportDeclaration"
-    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5536:1: ruleXImportDeclaration returns [EObject current=null] : (otherlv_0= 'import' ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) ) (otherlv_8= ';' )? ) ;
+    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5538:1: ruleXImportDeclaration returns [EObject current=null] : (otherlv_0= 'import' ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) ) (otherlv_8= ';' )? ) ;
     public final EObject ruleXImportDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -16235,35 +16235,35 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5539:28: ( (otherlv_0= 'import' ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) ) (otherlv_8= ';' )? ) )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5540:1: (otherlv_0= 'import' ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) ) (otherlv_8= ';' )? )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5541:28: ( (otherlv_0= 'import' ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) ) (otherlv_8= ';' )? ) )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5542:1: (otherlv_0= 'import' ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) ) (otherlv_8= ';' )? )
             {
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5540:1: (otherlv_0= 'import' ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) ) (otherlv_8= ';' )? )
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5540:3: otherlv_0= 'import' ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) ) (otherlv_8= ';' )?
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5542:1: (otherlv_0= 'import' ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) ) (otherlv_8= ';' )? )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5542:3: otherlv_0= 'import' ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) ) (otherlv_8= ';' )?
             {
-            otherlv_0=(Token)match(input,72,FOLLOW_72_in_ruleXImportDeclaration13112); if (state.failed) return current;
+            otherlv_0=(Token)match(input,72,FOLLOW_72_in_ruleXImportDeclaration13114); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getXImportDeclarationAccess().getImportKeyword_0());
                   
             }
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5544:1: ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) )
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5546:1: ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) )
             int alt102=3;
             alt102 = dfa102.predict(input);
             switch (alt102) {
                 case 1 :
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5544:2: ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' )
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5546:2: ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' )
                     {
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5544:2: ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' )
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5544:3: ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*'
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5546:2: ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' )
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5546:3: ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*'
                     {
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5544:3: ( (lv_static_1_0= 'static' ) )
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5545:1: (lv_static_1_0= 'static' )
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5546:3: ( (lv_static_1_0= 'static' ) )
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5547:1: (lv_static_1_0= 'static' )
                     {
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5545:1: (lv_static_1_0= 'static' )
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5546:3: lv_static_1_0= 'static'
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5547:1: (lv_static_1_0= 'static' )
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5548:3: lv_static_1_0= 'static'
                     {
-                    lv_static_1_0=(Token)match(input,71,FOLLOW_71_in_ruleXImportDeclaration13132); if (state.failed) return current;
+                    lv_static_1_0=(Token)match(input,71,FOLLOW_71_in_ruleXImportDeclaration13134); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_static_1_0, grammarAccess.getXImportDeclarationAccess().getStaticStaticKeyword_1_0_0_0());
@@ -16283,7 +16283,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5559:2: ( (lv_extension_2_0= 'extension' ) )?
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5561:2: ( (lv_extension_2_0= 'extension' ) )?
                     int alt101=2;
                     int LA101_0 = input.LA(1);
 
@@ -16292,12 +16292,12 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
                     }
                     switch (alt101) {
                         case 1 :
-                            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5560:1: (lv_extension_2_0= 'extension' )
+                            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5562:1: (lv_extension_2_0= 'extension' )
                             {
-                            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5560:1: (lv_extension_2_0= 'extension' )
-                            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5561:3: lv_extension_2_0= 'extension'
+                            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5562:1: (lv_extension_2_0= 'extension' )
+                            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5563:3: lv_extension_2_0= 'extension'
                             {
-                            lv_extension_2_0=(Token)match(input,73,FOLLOW_73_in_ruleXImportDeclaration13163); if (state.failed) return current;
+                            lv_extension_2_0=(Token)match(input,73,FOLLOW_73_in_ruleXImportDeclaration13165); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
 
                                       newLeafNode(lv_extension_2_0, grammarAccess.getXImportDeclarationAccess().getExtensionExtensionKeyword_1_0_1_0());
@@ -16320,11 +16320,11 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5574:3: ( ( ruleQualifiedName ) )
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5575:1: ( ruleQualifiedName )
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5576:3: ( ( ruleQualifiedName ) )
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5577:1: ( ruleQualifiedName )
                     {
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5575:1: ( ruleQualifiedName )
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5576:3: ruleQualifiedName
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5577:1: ( ruleQualifiedName )
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5578:3: ruleQualifiedName
                     {
                     if ( state.backtracking==0 ) {
 
@@ -16338,7 +16338,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
                       	        newCompositeNode(grammarAccess.getXImportDeclarationAccess().getImportedTypeJvmDeclaredTypeCrossReference_1_0_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleQualifiedName_in_ruleXImportDeclaration13200);
+                    pushFollow(FOLLOW_ruleQualifiedName_in_ruleXImportDeclaration13202);
                     ruleQualifiedName();
 
                     state._fsp--;
@@ -16354,13 +16354,13 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_4=(Token)match(input,47,FOLLOW_47_in_ruleXImportDeclaration13212); if (state.failed) return current;
+                    otherlv_4=(Token)match(input,47,FOLLOW_47_in_ruleXImportDeclaration13214); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_4, grammarAccess.getXImportDeclarationAccess().getFullStopKeyword_1_0_3());
                           
                     }
-                    otherlv_5=(Token)match(input,41,FOLLOW_41_in_ruleXImportDeclaration13224); if (state.failed) return current;
+                    otherlv_5=(Token)match(input,41,FOLLOW_41_in_ruleXImportDeclaration13226); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_5, grammarAccess.getXImportDeclarationAccess().getAsteriskKeyword_1_0_4());
@@ -16373,13 +16373,13 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5598:6: ( ( ruleQualifiedName ) )
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5600:6: ( ( ruleQualifiedName ) )
                     {
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5598:6: ( ( ruleQualifiedName ) )
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5599:1: ( ruleQualifiedName )
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5600:6: ( ( ruleQualifiedName ) )
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5601:1: ( ruleQualifiedName )
                     {
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5599:1: ( ruleQualifiedName )
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5600:3: ruleQualifiedName
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5601:1: ( ruleQualifiedName )
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5602:3: ruleQualifiedName
                     {
                     if ( state.backtracking==0 ) {
 
@@ -16393,7 +16393,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
                       	        newCompositeNode(grammarAccess.getXImportDeclarationAccess().getImportedTypeJvmDeclaredTypeCrossReference_1_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleQualifiedName_in_ruleXImportDeclaration13254);
+                    pushFollow(FOLLOW_ruleQualifiedName_in_ruleXImportDeclaration13256);
                     ruleQualifiedName();
 
                     state._fsp--;
@@ -16413,20 +16413,20 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5614:6: ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) )
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5616:6: ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) )
                     {
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5614:6: ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) )
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5615:1: (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard )
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5616:6: ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) )
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5617:1: (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard )
                     {
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5615:1: (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard )
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5616:3: lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5617:1: (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard )
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5618:3: lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getXImportDeclarationAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleQualifiedNameWithWildcard_in_ruleXImportDeclaration13281);
+                    pushFollow(FOLLOW_ruleQualifiedNameWithWildcard_in_ruleXImportDeclaration13283);
                     lv_importedNamespace_7_0=ruleQualifiedNameWithWildcard();
 
                     state._fsp--;
@@ -16456,7 +16456,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5632:3: (otherlv_8= ';' )?
+            // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5634:3: (otherlv_8= ';' )?
             int alt103=2;
             int LA103_0 = input.LA(1);
 
@@ -16465,9 +16465,9 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
             }
             switch (alt103) {
                 case 1 :
-                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5632:5: otherlv_8= ';'
+                    // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5634:5: otherlv_8= ';'
                     {
-                    otherlv_8=(Token)match(input,58,FOLLOW_58_in_ruleXImportDeclaration13295); if (state.failed) return current;
+                    otherlv_8=(Token)match(input,58,FOLLOW_58_in_ruleXImportDeclaration13297); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_8, grammarAccess.getXImportDeclarationAccess().getSemicolonKeyword_2());
@@ -17835,18 +17835,18 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred38_InternalBuildDSL
     public final void synpred38_InternalBuildDSL_fragment() throws RecognitionException {   
-        // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4935:2: ( ( () ruleArrayBrackets ) )
-        // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4935:3: ( () ruleArrayBrackets )
+        // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4937:2: ( ( () ruleArrayBrackets ) )
+        // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4937:3: ( () ruleArrayBrackets )
         {
-        // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4935:3: ( () ruleArrayBrackets )
-        // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4935:4: () ruleArrayBrackets
+        // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4937:3: ( () ruleArrayBrackets )
+        // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4937:4: () ruleArrayBrackets
         {
-        // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4935:4: ()
-        // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4936:1: 
+        // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4937:4: ()
+        // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:4938:1: 
         {
         }
 
-        pushFollow(FOLLOW_ruleArrayBrackets_in_synpred38_InternalBuildDSL11605);
+        pushFollow(FOLLOW_ruleArrayBrackets_in_synpred38_InternalBuildDSL11607);
         ruleArrayBrackets();
 
         state._fsp--;
@@ -17861,10 +17861,10 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred39_InternalBuildDSL
     public final void synpred39_InternalBuildDSL_fragment() throws RecognitionException {   
-        // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5120:4: ( '<' )
-        // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5120:6: '<'
+        // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5122:4: ( '<' )
+        // ../org.xtext.builddsl/src-gen/org/xtext/builddsl/parser/antlr/internal/InternalBuildDSL.g:5122:6: '<'
         {
-        match(input,31,FOLLOW_31_in_synpred39_InternalBuildDSL12057); if (state.failed) return ;
+        match(input,31,FOLLOW_31_in_synpred39_InternalBuildDSL12059); if (state.failed) return ;
 
         }
     }
@@ -21108,7 +21108,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
             this.transition = DFA97_transition;
         }
         public String getDescription() {
-            return "5120:2: ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )?";
+            return "5122:2: ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -21189,7 +21189,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
             this.transition = DFA102_transition;
         }
         public String getDescription() {
-            return "5544:1: ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) )";
+            return "5546:1: ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) )";
         }
     }
  
@@ -21613,75 +21613,75 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_47_in_ruleNumber11437 = new BitSet(new long[]{0x00000000000000C0L});
     public static final BitSet FOLLOW_RULE_INT_in_ruleNumber11453 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_DECIMAL_in_ruleNumber11479 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_entryRuleJvmTypeReference11532 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJvmTypeReference11542 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmParameterizedTypeReference_in_ruleJvmTypeReference11590 = new BitSet(new long[]{0x0080000000000002L});
-    public static final BitSet FOLLOW_ruleArrayBrackets_in_ruleJvmTypeReference11626 = new BitSet(new long[]{0x0080000000000002L});
-    public static final BitSet FOLLOW_ruleXFunctionTypeRef_in_ruleJvmTypeReference11657 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleArrayBrackets_in_entryRuleArrayBrackets11693 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleArrayBrackets11704 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_55_in_ruleArrayBrackets11742 = new BitSet(new long[]{0x0100000000000000L});
-    public static final BitSet FOLLOW_56_in_ruleArrayBrackets11755 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXFunctionTypeRef_in_entryRuleXFunctionTypeRef11795 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXFunctionTypeRef11805 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_50_in_ruleXFunctionTypeRef11843 = new BitSet(new long[]{0x000C000800000100L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef11865 = new BitSet(new long[]{0x0008000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleXFunctionTypeRef11878 = new BitSet(new long[]{0x0004000800000100L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef11899 = new BitSet(new long[]{0x0008000000040000L});
-    public static final BitSet FOLLOW_51_in_ruleXFunctionTypeRef11915 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_35_in_ruleXFunctionTypeRef11929 = new BitSet(new long[]{0x0004000800000100L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef11950 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmParameterizedTypeReference_in_entryRuleJvmParameterizedTypeReference11986 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJvmParameterizedTypeReference11996 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleJvmParameterizedTypeReference12044 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_31_in_ruleJvmParameterizedTypeReference12065 = new BitSet(new long[]{0x0004000800000100L,0x0000000000200000L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference12087 = new BitSet(new long[]{0x0000000040040000L});
-    public static final BitSet FOLLOW_18_in_ruleJvmParameterizedTypeReference12100 = new BitSet(new long[]{0x0004000800000100L,0x0000000000200000L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference12121 = new BitSet(new long[]{0x0000000040040000L});
-    public static final BitSet FOLLOW_30_in_ruleJvmParameterizedTypeReference12135 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_entryRuleJvmArgumentTypeReference12173 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJvmArgumentTypeReference12183 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleJvmArgumentTypeReference12230 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmWildcardTypeReference_in_ruleJvmArgumentTypeReference12257 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmWildcardTypeReference_in_entryRuleJvmWildcardTypeReference12292 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJvmWildcardTypeReference12302 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_85_in_ruleJvmWildcardTypeReference12348 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000440L});
-    public static final BitSet FOLLOW_ruleJvmUpperBound_in_ruleJvmWildcardTypeReference12370 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmLowerBound_in_ruleJvmWildcardTypeReference12397 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmUpperBound_in_entryRuleJvmUpperBound12435 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJvmUpperBound12445 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_70_in_ruleJvmUpperBound12482 = new BitSet(new long[]{0x0004000800000100L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleJvmUpperBound12503 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmUpperBoundAnded_in_entryRuleJvmUpperBoundAnded12539 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJvmUpperBoundAnded12549 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_86_in_ruleJvmUpperBoundAnded12586 = new BitSet(new long[]{0x0004000800000100L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleJvmUpperBoundAnded12607 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmLowerBound_in_entryRuleJvmLowerBound12643 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJvmLowerBound12653 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_74_in_ruleJvmLowerBound12690 = new BitSet(new long[]{0x0004000800000100L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleJvmLowerBound12711 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedNameWithWildcard_in_entryRuleQualifiedNameWithWildcard12750 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedNameWithWildcard12761 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleQualifiedNameWithWildcard12808 = new BitSet(new long[]{0x0000800000000000L});
-    public static final BitSet FOLLOW_47_in_ruleQualifiedNameWithWildcard12826 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_41_in_ruleQualifiedNameWithWildcard12839 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValidID_in_entryRuleValidID12880 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleValidID12891 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleValidID12930 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXImportSection_in_entryRuleXImportSection12974 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXImportSection12984 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXImportDeclaration_in_ruleXImportSection13029 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000100L});
-    public static final BitSet FOLLOW_ruleXImportDeclaration_in_entryRuleXImportDeclaration13065 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXImportDeclaration13075 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_72_in_ruleXImportDeclaration13112 = new BitSet(new long[]{0x0000000000000100L,0x0000000000000080L});
-    public static final BitSet FOLLOW_71_in_ruleXImportDeclaration13132 = new BitSet(new long[]{0x0000000000000100L,0x0000000000000200L});
-    public static final BitSet FOLLOW_73_in_ruleXImportDeclaration13163 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleXImportDeclaration13200 = new BitSet(new long[]{0x0000800000000000L});
-    public static final BitSet FOLLOW_47_in_ruleXImportDeclaration13212 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_41_in_ruleXImportDeclaration13224 = new BitSet(new long[]{0x0400000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleXImportDeclaration13254 = new BitSet(new long[]{0x0400000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedNameWithWildcard_in_ruleXImportDeclaration13281 = new BitSet(new long[]{0x0400000000000002L});
-    public static final BitSet FOLLOW_58_in_ruleXImportDeclaration13295 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_entryRuleJvmTypeReference11534 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJvmTypeReference11544 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmParameterizedTypeReference_in_ruleJvmTypeReference11592 = new BitSet(new long[]{0x0080000000000002L});
+    public static final BitSet FOLLOW_ruleArrayBrackets_in_ruleJvmTypeReference11628 = new BitSet(new long[]{0x0080000000000002L});
+    public static final BitSet FOLLOW_ruleXFunctionTypeRef_in_ruleJvmTypeReference11659 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleArrayBrackets_in_entryRuleArrayBrackets11695 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleArrayBrackets11706 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_55_in_ruleArrayBrackets11744 = new BitSet(new long[]{0x0100000000000000L});
+    public static final BitSet FOLLOW_56_in_ruleArrayBrackets11757 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXFunctionTypeRef_in_entryRuleXFunctionTypeRef11797 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXFunctionTypeRef11807 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_ruleXFunctionTypeRef11845 = new BitSet(new long[]{0x000C000800000100L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef11867 = new BitSet(new long[]{0x0008000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleXFunctionTypeRef11880 = new BitSet(new long[]{0x0004000800000100L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef11901 = new BitSet(new long[]{0x0008000000040000L});
+    public static final BitSet FOLLOW_51_in_ruleXFunctionTypeRef11917 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_35_in_ruleXFunctionTypeRef11931 = new BitSet(new long[]{0x0004000800000100L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef11952 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmParameterizedTypeReference_in_entryRuleJvmParameterizedTypeReference11988 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJvmParameterizedTypeReference11998 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleJvmParameterizedTypeReference12046 = new BitSet(new long[]{0x0000000080000002L});
+    public static final BitSet FOLLOW_31_in_ruleJvmParameterizedTypeReference12067 = new BitSet(new long[]{0x0004000800000100L,0x0000000000200000L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference12089 = new BitSet(new long[]{0x0000000040040000L});
+    public static final BitSet FOLLOW_18_in_ruleJvmParameterizedTypeReference12102 = new BitSet(new long[]{0x0004000800000100L,0x0000000000200000L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference12123 = new BitSet(new long[]{0x0000000040040000L});
+    public static final BitSet FOLLOW_30_in_ruleJvmParameterizedTypeReference12137 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_entryRuleJvmArgumentTypeReference12175 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJvmArgumentTypeReference12185 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleJvmArgumentTypeReference12232 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmWildcardTypeReference_in_ruleJvmArgumentTypeReference12259 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmWildcardTypeReference_in_entryRuleJvmWildcardTypeReference12294 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJvmWildcardTypeReference12304 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_85_in_ruleJvmWildcardTypeReference12350 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000440L});
+    public static final BitSet FOLLOW_ruleJvmUpperBound_in_ruleJvmWildcardTypeReference12372 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmLowerBound_in_ruleJvmWildcardTypeReference12399 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmUpperBound_in_entryRuleJvmUpperBound12437 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJvmUpperBound12447 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_70_in_ruleJvmUpperBound12484 = new BitSet(new long[]{0x0004000800000100L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleJvmUpperBound12505 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmUpperBoundAnded_in_entryRuleJvmUpperBoundAnded12541 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJvmUpperBoundAnded12551 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_86_in_ruleJvmUpperBoundAnded12588 = new BitSet(new long[]{0x0004000800000100L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleJvmUpperBoundAnded12609 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmLowerBound_in_entryRuleJvmLowerBound12645 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJvmLowerBound12655 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_74_in_ruleJvmLowerBound12692 = new BitSet(new long[]{0x0004000800000100L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleJvmLowerBound12713 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedNameWithWildcard_in_entryRuleQualifiedNameWithWildcard12752 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedNameWithWildcard12763 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleQualifiedNameWithWildcard12810 = new BitSet(new long[]{0x0000800000000000L});
+    public static final BitSet FOLLOW_47_in_ruleQualifiedNameWithWildcard12828 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_41_in_ruleQualifiedNameWithWildcard12841 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValidID_in_entryRuleValidID12882 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleValidID12893 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleValidID12932 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXImportSection_in_entryRuleXImportSection12976 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXImportSection12986 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXImportDeclaration_in_ruleXImportSection13031 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000100L});
+    public static final BitSet FOLLOW_ruleXImportDeclaration_in_entryRuleXImportDeclaration13067 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXImportDeclaration13077 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_72_in_ruleXImportDeclaration13114 = new BitSet(new long[]{0x0000000000000100L,0x0000000000000080L});
+    public static final BitSet FOLLOW_71_in_ruleXImportDeclaration13134 = new BitSet(new long[]{0x0000000000000100L,0x0000000000000200L});
+    public static final BitSet FOLLOW_73_in_ruleXImportDeclaration13165 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleXImportDeclaration13202 = new BitSet(new long[]{0x0000800000000000L});
+    public static final BitSet FOLLOW_47_in_ruleXImportDeclaration13214 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_41_in_ruleXImportDeclaration13226 = new BitSet(new long[]{0x0400000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleXImportDeclaration13256 = new BitSet(new long[]{0x0400000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedNameWithWildcard_in_ruleXImportDeclaration13283 = new BitSet(new long[]{0x0400000000000002L});
+    public static final BitSet FOLLOW_58_in_ruleXImportDeclaration13297 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOpMultiAssign_in_synpred1_InternalBuildDSL953 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOpOr_in_synpred2_InternalBuildDSL1322 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOpAnd_in_synpred3_InternalBuildDSL1581 = new BitSet(new long[]{0x0000000000000002L});
@@ -21739,7 +21739,7 @@ public class InternalBuildDSLParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_84_in_synpred34_InternalBuildDSL10845 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_83_in_synpred35_InternalBuildDSL10875 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_47_in_synpred37_InternalBuildDSL11222 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleArrayBrackets_in_synpred38_InternalBuildDSL11605 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_synpred39_InternalBuildDSL12057 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleArrayBrackets_in_synpred38_InternalBuildDSL11607 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_synpred39_InternalBuildDSL12059 = new BitSet(new long[]{0x0000000000000002L});
 
 }

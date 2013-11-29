@@ -51,9 +51,7 @@ class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
 			for (mixin : module.mixins) {
 				if (!mixin.eIsProxy)
 					members += mixin.toField( mixin.simpleName, newTypeRef(mixin.fullyQualifiedName.toString)) [
-						setInitializer [
-							append('''new «mixin.name»()''')
-						]
+						initializer = '''new «mixin.name»()'''
 					]
 			}
 			
@@ -83,16 +81,16 @@ class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
 			// the main configure delegates to one accepting a set for the already bound keys.
 			members += module.toMethod("configure", voidType.createTypeRef) [
 				parameters += module.toParameter("binder", binderType.createTypeRef)
-				body = [append('''
+				body = '''
 					configure(binder, new «hashSetType.createTypeRef(keyType.createTypeRef(wildCard)).identifier»());
-				''')]
+				'''
 			]
 			
 			members += module.toMethod("configure", voidType.createTypeRef) [
 				documentation = 'Registers bindings for keys not present in the given set.'
 				parameters += module.toParameter("bind", binderType.createTypeRef)
 				parameters += module.toParameter("usedKeys", setType.createTypeRef( keyType.createTypeRef(wildCard)))
-				body = [append('''
+				body = '''
 					try {
 						«FOR b : module.bindings»
 							{
@@ -113,7 +111,7 @@ class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
 					} catch (Exception e) {
 						throw new RuntimeException(e);
 					}
-				''')]
+				'''
 			]
 			
 		]

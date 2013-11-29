@@ -27,7 +27,7 @@ class RouteLabelProvider extends XbaseLabelProvider {
 	}
 	
 	def String text(Route route) {
-		'''«route.requestType.name»«route.url.node.text»'''
+		'''«route.requestType.getName()»«route.url.node.text»'''
 	}
 
 }

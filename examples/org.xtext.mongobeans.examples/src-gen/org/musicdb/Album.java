@@ -18,7 +18,6 @@ public class Album implements IMongoBean {
    */
   public Album(final DBObject dbObject) {
     this._dbObject = dbObject;
-    
   }
   
   /**
@@ -27,7 +26,6 @@ public class Album implements IMongoBean {
   public Album() {
     _dbObject = new com.mongodb.BasicDBObject();
     _dbObject.put(JAVA_CLASS_KEY, "org.musicdb.Album");
-    
   }
   
   private DBObject _dbObject;
@@ -38,22 +36,18 @@ public class Album implements IMongoBean {
   
   public String getTitle() {
     return (java.lang.String) _dbObject.get("title");
-    
   }
   
   public void setTitle(final String title) {
     _dbObject.put("title", title);
-    
   }
   
   public int getYear() {
     return (java.lang.Integer) _dbObject.get("year");
-    
   }
   
   public void setYear(final int year) {
     _dbObject.put("year", year);
-    
   }
   
   public Duration getDuration() {
@@ -81,6 +75,5 @@ public class Album implements IMongoBean {
     if(_tracks==null)
     	_tracks = new org.xtext.mongobeans.lib.MongoBeanList<org.musicdb.Track>(_dbObject, "tracks");
     return _tracks;
-    
   }
 }

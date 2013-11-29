@@ -23,7 +23,6 @@ import org.eclipse.xtext.junit4.InjectWith;
 import org.eclipse.xtext.junit4.XtextRunner;
 import org.eclipse.xtext.util.IAcceptor;
 import org.eclipse.xtext.xbase.compiler.CompilationTestHelper;
-import org.eclipse.xtext.xbase.compiler.CompilationTestHelper.Result;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Exceptions;
@@ -51,8 +50,8 @@ public class ParserTest {
       _builder.newLine();
       _builder.append("GET /client/foo/:id/:name*  when id==\"42\" do response.addHeader(name + \"/\" + id, null)");
       _builder.newLine();
-      final IAcceptor<Result> _function = new IAcceptor<Result>() {
-        public void accept(final Result it) {
+      final IAcceptor<CompilationTestHelper.Result> _function = new IAcceptor<CompilationTestHelper.Result>() {
+        public void accept(final CompilationTestHelper.Result it) {
           try {
             Class<? extends Object> _compiledClass = it.getCompiledClass();
             Object _newInstance = _compiledClass.newInstance();
@@ -135,7 +134,7 @@ public class ParserTest {
       final HashSet<String> header = CollectionLiterals.<String>newHashSet();
       final InvocationHandler _function = new InvocationHandler() {
         public Object invoke(final Object proxy, final Method method, final Object[] args) throws Throwable {
-          Boolean _switchResult = null;
+          boolean _switchResult = false;
           String _name = method.getName();
           final String _switchValue = _name;
           boolean _matched = false;
@@ -144,7 +143,7 @@ public class ParserTest {
               _matched=true;
               Object _get = args[0];
               boolean _add = header.add(((String) _get));
-              _switchResult = Boolean.valueOf(_add);
+              _switchResult = _add;
             }
           }
           if (!_matched) {
@@ -152,10 +151,10 @@ public class ParserTest {
               _matched=true;
               Object _get_1 = args[0];
               boolean _contains = header.contains(_get_1);
-              _switchResult = Boolean.valueOf(_contains);
+              _switchResult = _contains;
             }
           }
-          return _switchResult;
+          return Boolean.valueOf(_switchResult);
         }
       };
       HttpServletResponse _newProxy = this.<HttpServletResponse>newProxy(HttpServletResponse.class, _function);

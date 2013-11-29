@@ -108,6 +108,5 @@ public class NumberGuessing extends HttpServlet {
     		return;
     	}
     }
-    
   }
 }

@@ -27,28 +27,24 @@ public class MongoBeansLabelProvider extends XbaseLabelProvider {
     boolean _matched = false;
     if (!_matched) {
       if (element instanceof MongoBean) {
-        final MongoBean _mongoBean = (MongoBean)element;
         _matched=true;
         _switchResult = "Letter-B-blue-icon.png";
       }
     }
     if (!_matched) {
       if (element instanceof MongoProperty) {
-        final MongoProperty _mongoProperty = (MongoProperty)element;
         _matched=true;
         _switchResult = "Letter-P-orange-icon.png";
       }
     }
     if (!_matched) {
       if (element instanceof MongoOperation) {
-        final MongoOperation _mongoOperation = (MongoOperation)element;
         _matched=true;
         _switchResult = "Letter-O-red-icon.png";
       }
     }
     if (!_matched) {
       if (element instanceof PackageDeclaration) {
-        final PackageDeclaration _packageDeclaration = (PackageDeclaration)element;
         _matched=true;
         _switchResult = "package_obj.gif";
       }

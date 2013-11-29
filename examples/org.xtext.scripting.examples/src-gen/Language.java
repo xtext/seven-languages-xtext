@@ -76,8 +76,7 @@ public class Language {
     final String z = "Hello ";
     final Function1<String,String> _function_1 = new Function1<String,String>() {
       public String apply(final String e) {
-        String _plus = (z + e);
-        return _plus;
+        return (z + e);
       }
     };
     final Function1<String,String> f = _function_1;
@@ -123,7 +122,6 @@ public class Language {
       }
       if (!_matched) {
         if (i instanceof Integer) {
-          final Integer _integer = (Integer)i;
           if (Objects.equal(i,123)) {
             _matched=true;
             /* "found integer" */
@@ -132,9 +130,8 @@ public class Language {
       }
       if (!_matched) {
         if (i instanceof BigInteger) {
-          final BigInteger _bigInteger = (BigInteger)i;
           _matched=true;
-          int _bitLength = _bigInteger.bitLength();
+          int _bitLength = ((BigInteger)i).bitLength();
           /* ("it\'s huge, soo long:" + Integer.valueOf(_bitLength)); */
         }
       }

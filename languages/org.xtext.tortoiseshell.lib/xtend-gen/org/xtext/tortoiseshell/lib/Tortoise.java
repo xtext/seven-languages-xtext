@@ -15,7 +15,6 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.xtext.tortoiseshell.lib.ITortoiseEvent;
-import org.xtext.tortoiseshell.lib.ITortoiseEvent.Listener;
 import org.xtext.tortoiseshell.lib.MoveEvent;
 import org.xtext.tortoiseshell.lib.TurnEvent;
 
@@ -59,19 +58,19 @@ public class Tortoise {
     this._lineColor = lineColor;
   }
   
-  private List<Listener> listeners = new Function0<List<Listener>>() {
-    public List<Listener> apply() {
-      ArrayList<Listener> _newArrayList = CollectionLiterals.<Listener>newArrayList();
+  private List<ITortoiseEvent.Listener> listeners = new Function0<List<ITortoiseEvent.Listener>>() {
+    public List<ITortoiseEvent.Listener> apply() {
+      ArrayList<ITortoiseEvent.Listener> _newArrayList = CollectionLiterals.<ITortoiseEvent.Listener>newArrayList();
       return _newArrayList;
     }
   }.apply();
   
-  public boolean addListener(final Listener listener) {
+  public boolean addListener(final ITortoiseEvent.Listener listener) {
     boolean _add = this.listeners.add(listener);
     return _add;
   }
   
-  public boolean removeListener(final Listener listener) {
+  public boolean removeListener(final ITortoiseEvent.Listener listener) {
     boolean _remove = this.listeners.remove(listener);
     return _remove;
   }
@@ -174,7 +173,7 @@ public class Tortoise {
   }
   
   protected void notifyListeners(final ITortoiseEvent event) {
-    for (final Listener listener : this.listeners) {
+    for (final ITortoiseEvent.Listener listener : this.listeners) {
       listener.handleTortoiseEvent(event);
     }
   }

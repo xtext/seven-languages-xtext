@@ -133,7 +133,7 @@ public class GuessTheNumber {
       if (_notEquals) {
         _builder.append("\t\t");
         _builder.append("<p>");
-        _builder.append(message, "		");
+        _builder.append(message, "\t\t");
         _builder.append("</p>");
         _builder.newLineIfNotEmpty();
       }

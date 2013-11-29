@@ -112,10 +112,8 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 	 */
 	def protected toRoutePatternField(Route route) {
 		route.url.toField("_pattern" + route.index , route.newTypeRef(Pattern)) [
-			setStatic(true)
-			setInitializer [
-				append('''Pattern.compile("«getRegExPattern(route.url.node.text.trim, route.url.variables)»")''')
-			]
+			static = true
+			initializer = '''Pattern.compile("«getRegExPattern(route.url.node.text.trim, route.url.variables)»")'''
 		]
 	}
 
@@ -142,7 +140,7 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 			annotations += model.toAnnotation(Override)
 			parameters += model.toParameter("request", model.newTypeRef(HTTP_REQUEST))
 			parameters += model.toParameter("response", model.newTypeRef(HTTP_RESPONSE))
-			body = [append('''
+			body = '''
 				String url =  request.getRequestURL().toString();
 				«FOR route : routes»
 					{
@@ -164,7 +162,7 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 						}
 					}
 				«ENDFOR»
-			''')]
+			'''
 		]
 	}
 

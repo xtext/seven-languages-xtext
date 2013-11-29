@@ -85,9 +85,7 @@ public class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoi
         _startLine=_findActualNodeFor.getStartLine();
       }
       final int line = _startLine;
-      int _minus = (line - 1);
-      boolean _equals = (_minus == this.stopAtLine);
-      if (_equals) {
+      if (((line - 1) == this.stopAtLine)) {
         StopLineReachedException _stopLineReachedException = new StopLineReachedException();
         throw _stopLineReachedException;
       }
@@ -117,8 +115,7 @@ public class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoi
                 QualifiedName _create = QualifiedName.create(_name);
                 Object _get = argumentValues.get(index);
                 context.newValue(_create, _get);
-                int _plus = (index + 1);
-                index = _plus;
+                index = (index + 1);
               }
             }
             XBlockExpression _body = ((Executable) executable).getBody();

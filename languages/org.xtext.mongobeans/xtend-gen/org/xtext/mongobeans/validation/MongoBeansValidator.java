@@ -23,7 +23,6 @@ import org.eclipse.xtext.xtype.XtypePackage;
 import org.xtext.mongobeans.jvmmodel.MongoTypes;
 import org.xtext.mongobeans.mongoBeans.MongoBean;
 import org.xtext.mongobeans.mongoBeans.MongoBeansPackage;
-import org.xtext.mongobeans.mongoBeans.MongoBeansPackage.Literals;
 import org.xtext.mongobeans.mongoBeans.MongoProperty;
 
 @SuppressWarnings("all")
@@ -45,7 +44,7 @@ public class MongoBeansValidator extends XbaseJavaValidator {
     if (_equals) {
       String _name_1 = it.getName();
       String _plus = ("__" + _name_1);
-      this.error("Illegal property name \'dbObject\'", Literals.ABSTRACT_FEATURE__NAME, MongoBeansValidator.ILLEGAL_PROPERTY_NAME, _plus);
+      this.error("Illegal property name \'dbObject\'", MongoBeansPackage.Literals.ABSTRACT_FEATURE__NAME, MongoBeansValidator.ILLEGAL_PROPERTY_NAME, _plus);
     }
     JvmTypeReference _type = it.getType();
     boolean _notEquals = (!Objects.equal(_type, null));
@@ -54,13 +53,13 @@ public class MongoBeansValidator extends XbaseJavaValidator {
       boolean _isMongoType = this.mongoTypes.isMongoType(_type_1);
       boolean _not = (!_isMongoType);
       if (_not) {
-        this.error("Only MongoBeans and mappable types are allowed", Literals.MONGO_PROPERTY__TYPE, MongoBeansValidator.ILLEGAL_TYPE);
+        this.error("Only MongoBeans and mappable types are allowed", MongoBeansPackage.Literals.MONGO_PROPERTY__TYPE, MongoBeansValidator.ILLEGAL_TYPE);
       }
     } else {
       MongoBean _inlineType = it.getInlineType();
       boolean _equals_1 = Objects.equal(_inlineType, null);
       if (_equals_1) {
-        this.error("Type must be set", Literals.ABSTRACT_FEATURE__NAME, MongoBeansValidator.MISSING_TYPE);
+        this.error("Type must be set", MongoBeansPackage.Literals.ABSTRACT_FEATURE__NAME, MongoBeansValidator.MISSING_TYPE);
       }
     }
   }

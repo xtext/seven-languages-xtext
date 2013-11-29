@@ -17,7 +17,6 @@ public class RuntimeModule implements Module {
   
   public void configure(final Binder binder) {
     configure(binder, new java.util.HashSet<com.google.inject.Key<?>>());
-    
   }
   
   /**
@@ -42,6 +41,5 @@ public class RuntimeModule implements Module {
     } catch (Exception e) {
     	throw new RuntimeException(e);
     }
-    
   }
 }

@@ -18,9 +18,8 @@ import org.eclipse.xtext.junit4.XtextRunner;
 import org.eclipse.xtext.junit4.util.ParseHelper;
 import org.eclipse.xtext.junit4.validation.ValidationTestHelper;
 import org.eclipse.xtext.util.IAcceptor;
-import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationsPackage.Literals;
+import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationsPackage;
 import org.eclipse.xtext.xbase.compiler.CompilationTestHelper;
-import org.eclipse.xtext.xbase.compiler.CompilationTestHelper.Result;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
@@ -109,7 +108,7 @@ public class IntegrationTest {
       _builder.append("}");
       _builder.newLine();
       ModulesAST _parse = this._parseHelper.parse(_builder);
-      this._validationTestHelper.assertError(_parse, Literals.XANNOTATION, null);
+      this._validationTestHelper.assertError(_parse, XAnnotationsPackage.Literals.XANNOTATION, null);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -157,8 +156,8 @@ public class IntegrationTest {
       _builder.newLine();
       _builder.append("}");
       _builder.newLine();
-      final IAcceptor<Result> _function = new IAcceptor<Result>() {
-        public void accept(final Result it) {
+      final IAcceptor<CompilationTestHelper.Result> _function = new IAcceptor<CompilationTestHelper.Result>() {
+        public void accept(final CompilationTestHelper.Result it) {
           try {
             Class<? extends Object> _compiledClass = it.getCompiledClass();
             Object _newInstance = _compiledClass.newInstance();

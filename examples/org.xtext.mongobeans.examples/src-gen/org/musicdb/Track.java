@@ -11,7 +11,6 @@ public class Track implements IMongoBean {
    */
   public Track(final DBObject dbObject) {
     this._dbObject = dbObject;
-    
   }
   
   /**
@@ -20,7 +19,6 @@ public class Track implements IMongoBean {
   public Track() {
     _dbObject = new com.mongodb.BasicDBObject();
     _dbObject.put(JAVA_CLASS_KEY, "org.musicdb.Track");
-    
   }
   
   private DBObject _dbObject;
@@ -31,22 +29,18 @@ public class Track implements IMongoBean {
   
   public String getTitle() {
     return (java.lang.String) _dbObject.get("title");
-    
   }
   
   public void setTitle(final String title) {
     _dbObject.put("title", title);
-    
   }
   
   public int getSeconds() {
     return (java.lang.Integer) _dbObject.get("seconds");
-    
   }
   
   public void setSeconds(final int seconds) {
     _dbObject.put("seconds", seconds);
-    
   }
   
   public Duration getDuration() {

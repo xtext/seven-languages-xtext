@@ -55,8 +55,8 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
     public static final int T__58=58;
     public static final int T__16=16;
     public static final int T__51=51;
-    public static final int T__15=15;
     public static final int T__52=52;
+    public static final int T__15=15;
     public static final int T__53=53;
     public static final int T__18=18;
     public static final int T__54=54;
@@ -14916,7 +14916,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJvmTypeReference"
-    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5115:1: entryRuleJvmTypeReference returns [EObject current=null] : iv_ruleJvmTypeReference= ruleJvmTypeReference EOF ;
+    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5117:1: entryRuleJvmTypeReference returns [EObject current=null] : iv_ruleJvmTypeReference= ruleJvmTypeReference EOF ;
     public final EObject entryRuleJvmTypeReference() throws RecognitionException {
         EObject current = null;
 
@@ -14924,13 +14924,13 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5116:2: (iv_ruleJvmTypeReference= ruleJvmTypeReference EOF )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5117:2: iv_ruleJvmTypeReference= ruleJvmTypeReference EOF
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5118:2: (iv_ruleJvmTypeReference= ruleJvmTypeReference EOF )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5119:2: iv_ruleJvmTypeReference= ruleJvmTypeReference EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getJvmTypeReferenceRule()); 
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_entryRuleJvmTypeReference11992);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_entryRuleJvmTypeReference11994);
             iv_ruleJvmTypeReference=ruleJvmTypeReference();
 
             state._fsp--;
@@ -14938,7 +14938,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleJvmTypeReference; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmTypeReference12002); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmTypeReference12004); if (state.failed) return current;
 
             }
 
@@ -14956,7 +14956,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJvmTypeReference"
-    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5124:1: ruleJvmTypeReference returns [EObject current=null] : ( (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* ) | this_XFunctionTypeRef_3= ruleXFunctionTypeRef ) ;
+    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5126:1: ruleJvmTypeReference returns [EObject current=null] : ( (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* ) | this_XFunctionTypeRef_3= ruleXFunctionTypeRef ) ;
     public final EObject ruleJvmTypeReference() throws RecognitionException {
         EObject current = null;
 
@@ -14968,10 +14968,10 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5127:28: ( ( (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* ) | this_XFunctionTypeRef_3= ruleXFunctionTypeRef ) )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5128:1: ( (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* ) | this_XFunctionTypeRef_3= ruleXFunctionTypeRef )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5129:28: ( ( (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* ) | this_XFunctionTypeRef_3= ruleXFunctionTypeRef ) )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5130:1: ( (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* ) | this_XFunctionTypeRef_3= ruleXFunctionTypeRef )
             {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5128:1: ( (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* ) | this_XFunctionTypeRef_3= ruleXFunctionTypeRef )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5130:1: ( (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* ) | this_XFunctionTypeRef_3= ruleXFunctionTypeRef )
             int alt94=2;
             int LA94_0 = input.LA(1);
 
@@ -14990,17 +14990,17 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
             }
             switch (alt94) {
                 case 1 :
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5128:2: (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* )
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5130:2: (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* )
                     {
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5128:2: (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* )
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5129:5: this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )*
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5130:2: (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* )
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5131:5: this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )*
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getJvmTypeReferenceAccess().getJvmParameterizedTypeReferenceParserRuleCall_0_0()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleJvmParameterizedTypeReference_in_ruleJvmTypeReference12050);
+                    pushFollow(FOLLOW_ruleJvmParameterizedTypeReference_in_ruleJvmTypeReference12052);
                     this_JvmParameterizedTypeReference_0=ruleJvmParameterizedTypeReference();
 
                     state._fsp--;
@@ -15011,7 +15011,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
                               afterParserOrEnumRuleCall();
                           
                     }
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5137:1: ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )*
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5139:1: ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )*
                     loop93:
                     do {
                         int alt93=2;
@@ -15036,13 +15036,13 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
                         switch (alt93) {
                     	case 1 :
-                    	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5137:2: ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets )
+                    	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5139:2: ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets )
                     	    {
-                    	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5138:24: ( () ruleArrayBrackets )
-                    	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5138:25: () ruleArrayBrackets
+                    	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5140:24: ( () ruleArrayBrackets )
+                    	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5140:25: () ruleArrayBrackets
                     	    {
-                    	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5138:25: ()
-                    	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5139:5: 
+                    	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5140:25: ()
+                    	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5141:5: 
                     	    {
                     	    if ( state.backtracking==0 ) {
 
@@ -15059,7 +15059,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
                     	              newCompositeNode(grammarAccess.getJvmTypeReferenceAccess().getArrayBracketsParserRuleCall_0_1_0_1()); 
                     	          
                     	    }
-                    	    pushFollow(FOLLOW_ruleArrayBrackets_in_ruleJvmTypeReference12086);
+                    	    pushFollow(FOLLOW_ruleArrayBrackets_in_ruleJvmTypeReference12088);
                     	    ruleArrayBrackets();
 
                     	    state._fsp--;
@@ -15088,14 +15088,14 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5154:5: this_XFunctionTypeRef_3= ruleXFunctionTypeRef
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5156:5: this_XFunctionTypeRef_3= ruleXFunctionTypeRef
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getJvmTypeReferenceAccess().getXFunctionTypeRefParserRuleCall_1()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleXFunctionTypeRef_in_ruleJvmTypeReference12117);
+                    pushFollow(FOLLOW_ruleXFunctionTypeRef_in_ruleJvmTypeReference12119);
                     this_XFunctionTypeRef_3=ruleXFunctionTypeRef();
 
                     state._fsp--;
@@ -15132,7 +15132,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleArrayBrackets"
-    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5170:1: entryRuleArrayBrackets returns [String current=null] : iv_ruleArrayBrackets= ruleArrayBrackets EOF ;
+    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5172:1: entryRuleArrayBrackets returns [String current=null] : iv_ruleArrayBrackets= ruleArrayBrackets EOF ;
     public final String entryRuleArrayBrackets() throws RecognitionException {
         String current = null;
 
@@ -15140,13 +15140,13 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5171:2: (iv_ruleArrayBrackets= ruleArrayBrackets EOF )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5172:2: iv_ruleArrayBrackets= ruleArrayBrackets EOF
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5173:2: (iv_ruleArrayBrackets= ruleArrayBrackets EOF )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5174:2: iv_ruleArrayBrackets= ruleArrayBrackets EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getArrayBracketsRule()); 
             }
-            pushFollow(FOLLOW_ruleArrayBrackets_in_entryRuleArrayBrackets12153);
+            pushFollow(FOLLOW_ruleArrayBrackets_in_entryRuleArrayBrackets12155);
             iv_ruleArrayBrackets=ruleArrayBrackets();
 
             state._fsp--;
@@ -15154,7 +15154,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleArrayBrackets.getText(); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleArrayBrackets12164); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleArrayBrackets12166); if (state.failed) return current;
 
             }
 
@@ -15172,7 +15172,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleArrayBrackets"
-    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5179:1: ruleArrayBrackets returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '[' kw= ']' ) ;
+    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5181:1: ruleArrayBrackets returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '[' kw= ']' ) ;
     public final AntlrDatatypeRuleToken ruleArrayBrackets() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -15181,20 +15181,20 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5182:28: ( (kw= '[' kw= ']' ) )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5183:1: (kw= '[' kw= ']' )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5184:28: ( (kw= '[' kw= ']' ) )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5185:1: (kw= '[' kw= ']' )
             {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5183:1: (kw= '[' kw= ']' )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5184:2: kw= '[' kw= ']'
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5185:1: (kw= '[' kw= ']' )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5186:2: kw= '[' kw= ']'
             {
-            kw=(Token)match(input,52,FOLLOW_52_in_ruleArrayBrackets12202); if (state.failed) return current;
+            kw=(Token)match(input,52,FOLLOW_52_in_ruleArrayBrackets12204); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                       current.merge(kw);
                       newLeafNode(kw, grammarAccess.getArrayBracketsAccess().getLeftSquareBracketKeyword_0()); 
                   
             }
-            kw=(Token)match(input,53,FOLLOW_53_in_ruleArrayBrackets12215); if (state.failed) return current;
+            kw=(Token)match(input,53,FOLLOW_53_in_ruleArrayBrackets12217); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                       current.merge(kw);
@@ -15224,7 +15224,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleXFunctionTypeRef"
-    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5203:1: entryRuleXFunctionTypeRef returns [EObject current=null] : iv_ruleXFunctionTypeRef= ruleXFunctionTypeRef EOF ;
+    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5205:1: entryRuleXFunctionTypeRef returns [EObject current=null] : iv_ruleXFunctionTypeRef= ruleXFunctionTypeRef EOF ;
     public final EObject entryRuleXFunctionTypeRef() throws RecognitionException {
         EObject current = null;
 
@@ -15232,13 +15232,13 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5204:2: (iv_ruleXFunctionTypeRef= ruleXFunctionTypeRef EOF )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5205:2: iv_ruleXFunctionTypeRef= ruleXFunctionTypeRef EOF
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5206:2: (iv_ruleXFunctionTypeRef= ruleXFunctionTypeRef EOF )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5207:2: iv_ruleXFunctionTypeRef= ruleXFunctionTypeRef EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getXFunctionTypeRefRule()); 
             }
-            pushFollow(FOLLOW_ruleXFunctionTypeRef_in_entryRuleXFunctionTypeRef12255);
+            pushFollow(FOLLOW_ruleXFunctionTypeRef_in_entryRuleXFunctionTypeRef12257);
             iv_ruleXFunctionTypeRef=ruleXFunctionTypeRef();
 
             state._fsp--;
@@ -15246,7 +15246,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleXFunctionTypeRef; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXFunctionTypeRef12265); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXFunctionTypeRef12267); if (state.failed) return current;
 
             }
 
@@ -15264,7 +15264,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXFunctionTypeRef"
-    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5212:1: ruleXFunctionTypeRef returns [EObject current=null] : ( (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )? otherlv_5= '=>' ( (lv_returnType_6_0= ruleJvmTypeReference ) ) ) ;
+    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5214:1: ruleXFunctionTypeRef returns [EObject current=null] : ( (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )? otherlv_5= '=>' ( (lv_returnType_6_0= ruleJvmTypeReference ) ) ) ;
     public final EObject ruleXFunctionTypeRef() throws RecognitionException {
         EObject current = null;
 
@@ -15282,13 +15282,13 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5215:28: ( ( (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )? otherlv_5= '=>' ( (lv_returnType_6_0= ruleJvmTypeReference ) ) ) )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5216:1: ( (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )? otherlv_5= '=>' ( (lv_returnType_6_0= ruleJvmTypeReference ) ) )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5217:28: ( ( (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )? otherlv_5= '=>' ( (lv_returnType_6_0= ruleJvmTypeReference ) ) ) )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5218:1: ( (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )? otherlv_5= '=>' ( (lv_returnType_6_0= ruleJvmTypeReference ) ) )
             {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5216:1: ( (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )? otherlv_5= '=>' ( (lv_returnType_6_0= ruleJvmTypeReference ) ) )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5216:2: (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )? otherlv_5= '=>' ( (lv_returnType_6_0= ruleJvmTypeReference ) )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5218:1: ( (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )? otherlv_5= '=>' ( (lv_returnType_6_0= ruleJvmTypeReference ) ) )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5218:2: (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )? otherlv_5= '=>' ( (lv_returnType_6_0= ruleJvmTypeReference ) )
             {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5216:2: (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )?
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5218:2: (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )?
             int alt97=2;
             int LA97_0 = input.LA(1);
 
@@ -15297,15 +15297,15 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
             }
             switch (alt97) {
                 case 1 :
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5216:4: otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')'
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5218:4: otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')'
                     {
-                    otherlv_0=(Token)match(input,17,FOLLOW_17_in_ruleXFunctionTypeRef12303); if (state.failed) return current;
+                    otherlv_0=(Token)match(input,17,FOLLOW_17_in_ruleXFunctionTypeRef12305); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_0, grammarAccess.getXFunctionTypeRefAccess().getLeftParenthesisKeyword_0_0());
                           
                     }
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5220:1: ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )?
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5222:1: ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )?
                     int alt96=2;
                     int LA96_0 = input.LA(1);
 
@@ -15314,20 +15314,20 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
                     }
                     switch (alt96) {
                         case 1 :
-                            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5220:2: ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )*
+                            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5222:2: ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )*
                             {
-                            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5220:2: ( (lv_paramTypes_1_0= ruleJvmTypeReference ) )
-                            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5221:1: (lv_paramTypes_1_0= ruleJvmTypeReference )
+                            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5222:2: ( (lv_paramTypes_1_0= ruleJvmTypeReference ) )
+                            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5223:1: (lv_paramTypes_1_0= ruleJvmTypeReference )
                             {
-                            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5221:1: (lv_paramTypes_1_0= ruleJvmTypeReference )
-                            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5222:3: lv_paramTypes_1_0= ruleJvmTypeReference
+                            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5223:1: (lv_paramTypes_1_0= ruleJvmTypeReference )
+                            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5224:3: lv_paramTypes_1_0= ruleJvmTypeReference
                             {
                             if ( state.backtracking==0 ) {
                                
                               	        newCompositeNode(grammarAccess.getXFunctionTypeRefAccess().getParamTypesJvmTypeReferenceParserRuleCall_0_1_0_0()); 
                               	    
                             }
-                            pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef12325);
+                            pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef12327);
                             lv_paramTypes_1_0=ruleJvmTypeReference();
 
                             state._fsp--;
@@ -15351,7 +15351,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
                             }
 
-                            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5238:2: (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )*
+                            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5240:2: (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )*
                             loop95:
                             do {
                                 int alt95=2;
@@ -15364,26 +15364,26 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
                                 switch (alt95) {
                             	case 1 :
-                            	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5238:4: otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) )
+                            	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5240:4: otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) )
                             	    {
-                            	    otherlv_2=(Token)match(input,18,FOLLOW_18_in_ruleXFunctionTypeRef12338); if (state.failed) return current;
+                            	    otherlv_2=(Token)match(input,18,FOLLOW_18_in_ruleXFunctionTypeRef12340); if (state.failed) return current;
                             	    if ( state.backtracking==0 ) {
 
                             	          	newLeafNode(otherlv_2, grammarAccess.getXFunctionTypeRefAccess().getCommaKeyword_0_1_1_0());
                             	          
                             	    }
-                            	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5242:1: ( (lv_paramTypes_3_0= ruleJvmTypeReference ) )
-                            	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5243:1: (lv_paramTypes_3_0= ruleJvmTypeReference )
+                            	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5244:1: ( (lv_paramTypes_3_0= ruleJvmTypeReference ) )
+                            	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5245:1: (lv_paramTypes_3_0= ruleJvmTypeReference )
                             	    {
-                            	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5243:1: (lv_paramTypes_3_0= ruleJvmTypeReference )
-                            	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5244:3: lv_paramTypes_3_0= ruleJvmTypeReference
+                            	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5245:1: (lv_paramTypes_3_0= ruleJvmTypeReference )
+                            	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5246:3: lv_paramTypes_3_0= ruleJvmTypeReference
                             	    {
                             	    if ( state.backtracking==0 ) {
                             	       
                             	      	        newCompositeNode(grammarAccess.getXFunctionTypeRefAccess().getParamTypesJvmTypeReferenceParserRuleCall_0_1_1_1_0()); 
                             	      	    
                             	    }
-                            	    pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef12359);
+                            	    pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef12361);
                             	    lv_paramTypes_3_0=ruleJvmTypeReference();
 
                             	    state._fsp--;
@@ -15422,7 +15422,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_4=(Token)match(input,19,FOLLOW_19_in_ruleXFunctionTypeRef12375); if (state.failed) return current;
+                    otherlv_4=(Token)match(input,19,FOLLOW_19_in_ruleXFunctionTypeRef12377); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_4, grammarAccess.getXFunctionTypeRefAccess().getRightParenthesisKeyword_0_2());
@@ -15434,24 +15434,24 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,37,FOLLOW_37_in_ruleXFunctionTypeRef12389); if (state.failed) return current;
+            otherlv_5=(Token)match(input,37,FOLLOW_37_in_ruleXFunctionTypeRef12391); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_5, grammarAccess.getXFunctionTypeRefAccess().getEqualsSignGreaterThanSignKeyword_1());
                   
             }
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5268:1: ( (lv_returnType_6_0= ruleJvmTypeReference ) )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5269:1: (lv_returnType_6_0= ruleJvmTypeReference )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5270:1: ( (lv_returnType_6_0= ruleJvmTypeReference ) )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5271:1: (lv_returnType_6_0= ruleJvmTypeReference )
             {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5269:1: (lv_returnType_6_0= ruleJvmTypeReference )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5270:3: lv_returnType_6_0= ruleJvmTypeReference
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5271:1: (lv_returnType_6_0= ruleJvmTypeReference )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5272:3: lv_returnType_6_0= ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getXFunctionTypeRefAccess().getReturnTypeJvmTypeReferenceParserRuleCall_2_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef12410);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef12412);
             lv_returnType_6_0=ruleJvmTypeReference();
 
             state._fsp--;
@@ -15498,7 +15498,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJvmParameterizedTypeReference"
-    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5294:1: entryRuleJvmParameterizedTypeReference returns [EObject current=null] : iv_ruleJvmParameterizedTypeReference= ruleJvmParameterizedTypeReference EOF ;
+    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5296:1: entryRuleJvmParameterizedTypeReference returns [EObject current=null] : iv_ruleJvmParameterizedTypeReference= ruleJvmParameterizedTypeReference EOF ;
     public final EObject entryRuleJvmParameterizedTypeReference() throws RecognitionException {
         EObject current = null;
 
@@ -15506,13 +15506,13 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5295:2: (iv_ruleJvmParameterizedTypeReference= ruleJvmParameterizedTypeReference EOF )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5296:2: iv_ruleJvmParameterizedTypeReference= ruleJvmParameterizedTypeReference EOF
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5297:2: (iv_ruleJvmParameterizedTypeReference= ruleJvmParameterizedTypeReference EOF )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5298:2: iv_ruleJvmParameterizedTypeReference= ruleJvmParameterizedTypeReference EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getJvmParameterizedTypeReferenceRule()); 
             }
-            pushFollow(FOLLOW_ruleJvmParameterizedTypeReference_in_entryRuleJvmParameterizedTypeReference12446);
+            pushFollow(FOLLOW_ruleJvmParameterizedTypeReference_in_entryRuleJvmParameterizedTypeReference12448);
             iv_ruleJvmParameterizedTypeReference=ruleJvmParameterizedTypeReference();
 
             state._fsp--;
@@ -15520,7 +15520,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleJvmParameterizedTypeReference; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmParameterizedTypeReference12456); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmParameterizedTypeReference12458); if (state.failed) return current;
 
             }
 
@@ -15538,7 +15538,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJvmParameterizedTypeReference"
-    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5303:1: ruleJvmParameterizedTypeReference returns [EObject current=null] : ( ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )? ) ;
+    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5305:1: ruleJvmParameterizedTypeReference returns [EObject current=null] : ( ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )? ) ;
     public final EObject ruleJvmParameterizedTypeReference() throws RecognitionException {
         EObject current = null;
 
@@ -15553,17 +15553,17 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5306:28: ( ( ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )? ) )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5307:1: ( ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )? )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5308:28: ( ( ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )? ) )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5309:1: ( ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )? )
             {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5307:1: ( ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )? )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5307:2: ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )?
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5309:1: ( ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )? )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5309:2: ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )?
             {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5307:2: ( ( ruleQualifiedName ) )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5308:1: ( ruleQualifiedName )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5309:2: ( ( ruleQualifiedName ) )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5310:1: ( ruleQualifiedName )
             {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5308:1: ( ruleQualifiedName )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5309:3: ruleQualifiedName
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5310:1: ( ruleQualifiedName )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5311:3: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
 
@@ -15577,7 +15577,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getJvmParameterizedTypeReferenceAccess().getTypeJvmTypeCrossReference_0_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_ruleJvmParameterizedTypeReference12504);
+            pushFollow(FOLLOW_ruleQualifiedName_in_ruleJvmParameterizedTypeReference12506);
             ruleQualifiedName();
 
             state._fsp--;
@@ -15593,17 +15593,17 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5322:2: ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )?
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5324:2: ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )?
             int alt99=2;
             alt99 = dfa99.predict(input);
             switch (alt99) {
                 case 1 :
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5322:3: ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>'
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5324:3: ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>'
                     {
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5322:3: ( ( '<' )=>otherlv_1= '<' )
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5322:4: ( '<' )=>otherlv_1= '<'
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5324:3: ( ( '<' )=>otherlv_1= '<' )
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5324:4: ( '<' )=>otherlv_1= '<'
                     {
-                    otherlv_1=(Token)match(input,33,FOLLOW_33_in_ruleJvmParameterizedTypeReference12525); if (state.failed) return current;
+                    otherlv_1=(Token)match(input,33,FOLLOW_33_in_ruleJvmParameterizedTypeReference12527); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_1, grammarAccess.getJvmParameterizedTypeReferenceAccess().getLessThanSignKeyword_1_0());
@@ -15612,18 +15612,18 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5327:2: ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) )
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5328:1: (lv_arguments_2_0= ruleJvmArgumentTypeReference )
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5329:2: ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) )
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5330:1: (lv_arguments_2_0= ruleJvmArgumentTypeReference )
                     {
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5328:1: (lv_arguments_2_0= ruleJvmArgumentTypeReference )
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5329:3: lv_arguments_2_0= ruleJvmArgumentTypeReference
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5330:1: (lv_arguments_2_0= ruleJvmArgumentTypeReference )
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5331:3: lv_arguments_2_0= ruleJvmArgumentTypeReference
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getJvmParameterizedTypeReferenceAccess().getArgumentsJvmArgumentTypeReferenceParserRuleCall_1_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference12547);
+                    pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference12549);
                     lv_arguments_2_0=ruleJvmArgumentTypeReference();
 
                     state._fsp--;
@@ -15647,7 +15647,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5345:2: (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )*
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5347:2: (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )*
                     loop98:
                     do {
                         int alt98=2;
@@ -15660,26 +15660,26 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
                         switch (alt98) {
                     	case 1 :
-                    	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5345:4: otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) )
+                    	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5347:4: otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) )
                     	    {
-                    	    otherlv_3=(Token)match(input,18,FOLLOW_18_in_ruleJvmParameterizedTypeReference12560); if (state.failed) return current;
+                    	    otherlv_3=(Token)match(input,18,FOLLOW_18_in_ruleJvmParameterizedTypeReference12562); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_3, grammarAccess.getJvmParameterizedTypeReferenceAccess().getCommaKeyword_1_2_0());
                     	          
                     	    }
-                    	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5349:1: ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) )
-                    	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5350:1: (lv_arguments_4_0= ruleJvmArgumentTypeReference )
+                    	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5351:1: ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) )
+                    	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5352:1: (lv_arguments_4_0= ruleJvmArgumentTypeReference )
                     	    {
-                    	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5350:1: (lv_arguments_4_0= ruleJvmArgumentTypeReference )
-                    	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5351:3: lv_arguments_4_0= ruleJvmArgumentTypeReference
+                    	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5352:1: (lv_arguments_4_0= ruleJvmArgumentTypeReference )
+                    	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5353:3: lv_arguments_4_0= ruleJvmArgumentTypeReference
                     	    {
                     	    if ( state.backtracking==0 ) {
                     	       
                     	      	        newCompositeNode(grammarAccess.getJvmParameterizedTypeReferenceAccess().getArgumentsJvmArgumentTypeReferenceParserRuleCall_1_2_1_0()); 
                     	      	    
                     	    }
-                    	    pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference12581);
+                    	    pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference12583);
                     	    lv_arguments_4_0=ruleJvmArgumentTypeReference();
 
                     	    state._fsp--;
@@ -15712,7 +15712,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_5=(Token)match(input,32,FOLLOW_32_in_ruleJvmParameterizedTypeReference12595); if (state.failed) return current;
+                    otherlv_5=(Token)match(input,32,FOLLOW_32_in_ruleJvmParameterizedTypeReference12597); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_5, grammarAccess.getJvmParameterizedTypeReferenceAccess().getGreaterThanSignKeyword_1_3());
@@ -15747,7 +15747,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJvmArgumentTypeReference"
-    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5379:1: entryRuleJvmArgumentTypeReference returns [EObject current=null] : iv_ruleJvmArgumentTypeReference= ruleJvmArgumentTypeReference EOF ;
+    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5381:1: entryRuleJvmArgumentTypeReference returns [EObject current=null] : iv_ruleJvmArgumentTypeReference= ruleJvmArgumentTypeReference EOF ;
     public final EObject entryRuleJvmArgumentTypeReference() throws RecognitionException {
         EObject current = null;
 
@@ -15755,13 +15755,13 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5380:2: (iv_ruleJvmArgumentTypeReference= ruleJvmArgumentTypeReference EOF )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5381:2: iv_ruleJvmArgumentTypeReference= ruleJvmArgumentTypeReference EOF
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5382:2: (iv_ruleJvmArgumentTypeReference= ruleJvmArgumentTypeReference EOF )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5383:2: iv_ruleJvmArgumentTypeReference= ruleJvmArgumentTypeReference EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getJvmArgumentTypeReferenceRule()); 
             }
-            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_entryRuleJvmArgumentTypeReference12633);
+            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_entryRuleJvmArgumentTypeReference12635);
             iv_ruleJvmArgumentTypeReference=ruleJvmArgumentTypeReference();
 
             state._fsp--;
@@ -15769,7 +15769,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleJvmArgumentTypeReference; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmArgumentTypeReference12643); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmArgumentTypeReference12645); if (state.failed) return current;
 
             }
 
@@ -15787,7 +15787,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJvmArgumentTypeReference"
-    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5388:1: ruleJvmArgumentTypeReference returns [EObject current=null] : (this_JvmTypeReference_0= ruleJvmTypeReference | this_JvmWildcardTypeReference_1= ruleJvmWildcardTypeReference ) ;
+    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5390:1: ruleJvmArgumentTypeReference returns [EObject current=null] : (this_JvmTypeReference_0= ruleJvmTypeReference | this_JvmWildcardTypeReference_1= ruleJvmWildcardTypeReference ) ;
     public final EObject ruleJvmArgumentTypeReference() throws RecognitionException {
         EObject current = null;
 
@@ -15799,10 +15799,10 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5391:28: ( (this_JvmTypeReference_0= ruleJvmTypeReference | this_JvmWildcardTypeReference_1= ruleJvmWildcardTypeReference ) )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5392:1: (this_JvmTypeReference_0= ruleJvmTypeReference | this_JvmWildcardTypeReference_1= ruleJvmWildcardTypeReference )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5393:28: ( (this_JvmTypeReference_0= ruleJvmTypeReference | this_JvmWildcardTypeReference_1= ruleJvmWildcardTypeReference ) )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5394:1: (this_JvmTypeReference_0= ruleJvmTypeReference | this_JvmWildcardTypeReference_1= ruleJvmWildcardTypeReference )
             {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5392:1: (this_JvmTypeReference_0= ruleJvmTypeReference | this_JvmWildcardTypeReference_1= ruleJvmWildcardTypeReference )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5394:1: (this_JvmTypeReference_0= ruleJvmTypeReference | this_JvmWildcardTypeReference_1= ruleJvmWildcardTypeReference )
             int alt100=2;
             int LA100_0 = input.LA(1);
 
@@ -15821,14 +15821,14 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
             }
             switch (alt100) {
                 case 1 :
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5393:5: this_JvmTypeReference_0= ruleJvmTypeReference
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5395:5: this_JvmTypeReference_0= ruleJvmTypeReference
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getJvmArgumentTypeReferenceAccess().getJvmTypeReferenceParserRuleCall_0()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleJvmArgumentTypeReference12690);
+                    pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleJvmArgumentTypeReference12692);
                     this_JvmTypeReference_0=ruleJvmTypeReference();
 
                     state._fsp--;
@@ -15843,14 +15843,14 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5403:5: this_JvmWildcardTypeReference_1= ruleJvmWildcardTypeReference
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5405:5: this_JvmWildcardTypeReference_1= ruleJvmWildcardTypeReference
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getJvmArgumentTypeReferenceAccess().getJvmWildcardTypeReferenceParserRuleCall_1()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleJvmWildcardTypeReference_in_ruleJvmArgumentTypeReference12717);
+                    pushFollow(FOLLOW_ruleJvmWildcardTypeReference_in_ruleJvmArgumentTypeReference12719);
                     this_JvmWildcardTypeReference_1=ruleJvmWildcardTypeReference();
 
                     state._fsp--;
@@ -15887,7 +15887,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJvmWildcardTypeReference"
-    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5419:1: entryRuleJvmWildcardTypeReference returns [EObject current=null] : iv_ruleJvmWildcardTypeReference= ruleJvmWildcardTypeReference EOF ;
+    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5421:1: entryRuleJvmWildcardTypeReference returns [EObject current=null] : iv_ruleJvmWildcardTypeReference= ruleJvmWildcardTypeReference EOF ;
     public final EObject entryRuleJvmWildcardTypeReference() throws RecognitionException {
         EObject current = null;
 
@@ -15895,13 +15895,13 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5420:2: (iv_ruleJvmWildcardTypeReference= ruleJvmWildcardTypeReference EOF )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5421:2: iv_ruleJvmWildcardTypeReference= ruleJvmWildcardTypeReference EOF
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5422:2: (iv_ruleJvmWildcardTypeReference= ruleJvmWildcardTypeReference EOF )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5423:2: iv_ruleJvmWildcardTypeReference= ruleJvmWildcardTypeReference EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getJvmWildcardTypeReferenceRule()); 
             }
-            pushFollow(FOLLOW_ruleJvmWildcardTypeReference_in_entryRuleJvmWildcardTypeReference12752);
+            pushFollow(FOLLOW_ruleJvmWildcardTypeReference_in_entryRuleJvmWildcardTypeReference12754);
             iv_ruleJvmWildcardTypeReference=ruleJvmWildcardTypeReference();
 
             state._fsp--;
@@ -15909,7 +15909,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleJvmWildcardTypeReference; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmWildcardTypeReference12762); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmWildcardTypeReference12764); if (state.failed) return current;
 
             }
 
@@ -15927,7 +15927,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJvmWildcardTypeReference"
-    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5428:1: ruleJvmWildcardTypeReference returns [EObject current=null] : ( () otherlv_1= '?' ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) | ( (lv_constraints_3_0= ruleJvmLowerBound ) ) )? ) ;
+    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5430:1: ruleJvmWildcardTypeReference returns [EObject current=null] : ( () otherlv_1= '?' ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) | ( (lv_constraints_3_0= ruleJvmLowerBound ) ) )? ) ;
     public final EObject ruleJvmWildcardTypeReference() throws RecognitionException {
         EObject current = null;
 
@@ -15940,14 +15940,14 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5431:28: ( ( () otherlv_1= '?' ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) | ( (lv_constraints_3_0= ruleJvmLowerBound ) ) )? ) )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5432:1: ( () otherlv_1= '?' ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) | ( (lv_constraints_3_0= ruleJvmLowerBound ) ) )? )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5433:28: ( ( () otherlv_1= '?' ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) | ( (lv_constraints_3_0= ruleJvmLowerBound ) ) )? ) )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5434:1: ( () otherlv_1= '?' ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) | ( (lv_constraints_3_0= ruleJvmLowerBound ) ) )? )
             {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5432:1: ( () otherlv_1= '?' ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) | ( (lv_constraints_3_0= ruleJvmLowerBound ) ) )? )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5432:2: () otherlv_1= '?' ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) | ( (lv_constraints_3_0= ruleJvmLowerBound ) ) )?
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5434:1: ( () otherlv_1= '?' ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) | ( (lv_constraints_3_0= ruleJvmLowerBound ) ) )? )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5434:2: () otherlv_1= '?' ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) | ( (lv_constraints_3_0= ruleJvmLowerBound ) ) )?
             {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5432:2: ()
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5433:5: 
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5434:2: ()
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5435:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -15959,13 +15959,13 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,82,FOLLOW_82_in_ruleJvmWildcardTypeReference12808); if (state.failed) return current;
+            otherlv_1=(Token)match(input,82,FOLLOW_82_in_ruleJvmWildcardTypeReference12810); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getJvmWildcardTypeReferenceAccess().getQuestionMarkKeyword_1());
                   
             }
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5442:1: ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) | ( (lv_constraints_3_0= ruleJvmLowerBound ) ) )?
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5444:1: ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) | ( (lv_constraints_3_0= ruleJvmLowerBound ) ) )?
             int alt101=3;
             int LA101_0 = input.LA(1);
 
@@ -15977,20 +15977,20 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
             }
             switch (alt101) {
                 case 1 :
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5442:2: ( (lv_constraints_2_0= ruleJvmUpperBound ) )
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5444:2: ( (lv_constraints_2_0= ruleJvmUpperBound ) )
                     {
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5442:2: ( (lv_constraints_2_0= ruleJvmUpperBound ) )
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5443:1: (lv_constraints_2_0= ruleJvmUpperBound )
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5444:2: ( (lv_constraints_2_0= ruleJvmUpperBound ) )
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5445:1: (lv_constraints_2_0= ruleJvmUpperBound )
                     {
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5443:1: (lv_constraints_2_0= ruleJvmUpperBound )
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5444:3: lv_constraints_2_0= ruleJvmUpperBound
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5445:1: (lv_constraints_2_0= ruleJvmUpperBound )
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5446:3: lv_constraints_2_0= ruleJvmUpperBound
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getJvmWildcardTypeReferenceAccess().getConstraintsJvmUpperBoundParserRuleCall_2_0_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleJvmUpperBound_in_ruleJvmWildcardTypeReference12830);
+                    pushFollow(FOLLOW_ruleJvmUpperBound_in_ruleJvmWildcardTypeReference12832);
                     lv_constraints_2_0=ruleJvmUpperBound();
 
                     state._fsp--;
@@ -16018,20 +16018,20 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5461:6: ( (lv_constraints_3_0= ruleJvmLowerBound ) )
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5463:6: ( (lv_constraints_3_0= ruleJvmLowerBound ) )
                     {
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5461:6: ( (lv_constraints_3_0= ruleJvmLowerBound ) )
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5462:1: (lv_constraints_3_0= ruleJvmLowerBound )
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5463:6: ( (lv_constraints_3_0= ruleJvmLowerBound ) )
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5464:1: (lv_constraints_3_0= ruleJvmLowerBound )
                     {
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5462:1: (lv_constraints_3_0= ruleJvmLowerBound )
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5463:3: lv_constraints_3_0= ruleJvmLowerBound
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5464:1: (lv_constraints_3_0= ruleJvmLowerBound )
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5465:3: lv_constraints_3_0= ruleJvmLowerBound
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getJvmWildcardTypeReferenceAccess().getConstraintsJvmLowerBoundParserRuleCall_2_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleJvmLowerBound_in_ruleJvmWildcardTypeReference12857);
+                    pushFollow(FOLLOW_ruleJvmLowerBound_in_ruleJvmWildcardTypeReference12859);
                     lv_constraints_3_0=ruleJvmLowerBound();
 
                     state._fsp--;
@@ -16084,7 +16084,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJvmUpperBound"
-    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5487:1: entryRuleJvmUpperBound returns [EObject current=null] : iv_ruleJvmUpperBound= ruleJvmUpperBound EOF ;
+    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5489:1: entryRuleJvmUpperBound returns [EObject current=null] : iv_ruleJvmUpperBound= ruleJvmUpperBound EOF ;
     public final EObject entryRuleJvmUpperBound() throws RecognitionException {
         EObject current = null;
 
@@ -16092,13 +16092,13 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5488:2: (iv_ruleJvmUpperBound= ruleJvmUpperBound EOF )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5489:2: iv_ruleJvmUpperBound= ruleJvmUpperBound EOF
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5490:2: (iv_ruleJvmUpperBound= ruleJvmUpperBound EOF )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5491:2: iv_ruleJvmUpperBound= ruleJvmUpperBound EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getJvmUpperBoundRule()); 
             }
-            pushFollow(FOLLOW_ruleJvmUpperBound_in_entryRuleJvmUpperBound12895);
+            pushFollow(FOLLOW_ruleJvmUpperBound_in_entryRuleJvmUpperBound12897);
             iv_ruleJvmUpperBound=ruleJvmUpperBound();
 
             state._fsp--;
@@ -16106,7 +16106,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleJvmUpperBound; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmUpperBound12905); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmUpperBound12907); if (state.failed) return current;
 
             }
 
@@ -16124,7 +16124,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJvmUpperBound"
-    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5496:1: ruleJvmUpperBound returns [EObject current=null] : (otherlv_0= 'extends' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) ;
+    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5498:1: ruleJvmUpperBound returns [EObject current=null] : (otherlv_0= 'extends' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) ;
     public final EObject ruleJvmUpperBound() throws RecognitionException {
         EObject current = null;
 
@@ -16135,30 +16135,30 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5499:28: ( (otherlv_0= 'extends' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5500:1: (otherlv_0= 'extends' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5501:28: ( (otherlv_0= 'extends' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5502:1: (otherlv_0= 'extends' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
             {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5500:1: (otherlv_0= 'extends' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5500:3: otherlv_0= 'extends' ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5502:1: (otherlv_0= 'extends' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5502:3: otherlv_0= 'extends' ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
             {
-            otherlv_0=(Token)match(input,67,FOLLOW_67_in_ruleJvmUpperBound12942); if (state.failed) return current;
+            otherlv_0=(Token)match(input,67,FOLLOW_67_in_ruleJvmUpperBound12944); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getJvmUpperBoundAccess().getExtendsKeyword_0());
                   
             }
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5504:1: ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5505:1: (lv_typeReference_1_0= ruleJvmTypeReference )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5506:1: ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5507:1: (lv_typeReference_1_0= ruleJvmTypeReference )
             {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5505:1: (lv_typeReference_1_0= ruleJvmTypeReference )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5506:3: lv_typeReference_1_0= ruleJvmTypeReference
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5507:1: (lv_typeReference_1_0= ruleJvmTypeReference )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5508:3: lv_typeReference_1_0= ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getJvmUpperBoundAccess().getTypeReferenceJvmTypeReferenceParserRuleCall_1_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleJvmUpperBound12963);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleJvmUpperBound12965);
             lv_typeReference_1_0=ruleJvmTypeReference();
 
             state._fsp--;
@@ -16205,7 +16205,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJvmUpperBoundAnded"
-    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5530:1: entryRuleJvmUpperBoundAnded returns [EObject current=null] : iv_ruleJvmUpperBoundAnded= ruleJvmUpperBoundAnded EOF ;
+    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5532:1: entryRuleJvmUpperBoundAnded returns [EObject current=null] : iv_ruleJvmUpperBoundAnded= ruleJvmUpperBoundAnded EOF ;
     public final EObject entryRuleJvmUpperBoundAnded() throws RecognitionException {
         EObject current = null;
 
@@ -16213,13 +16213,13 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5531:2: (iv_ruleJvmUpperBoundAnded= ruleJvmUpperBoundAnded EOF )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5532:2: iv_ruleJvmUpperBoundAnded= ruleJvmUpperBoundAnded EOF
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5533:2: (iv_ruleJvmUpperBoundAnded= ruleJvmUpperBoundAnded EOF )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5534:2: iv_ruleJvmUpperBoundAnded= ruleJvmUpperBoundAnded EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getJvmUpperBoundAndedRule()); 
             }
-            pushFollow(FOLLOW_ruleJvmUpperBoundAnded_in_entryRuleJvmUpperBoundAnded12999);
+            pushFollow(FOLLOW_ruleJvmUpperBoundAnded_in_entryRuleJvmUpperBoundAnded13001);
             iv_ruleJvmUpperBoundAnded=ruleJvmUpperBoundAnded();
 
             state._fsp--;
@@ -16227,7 +16227,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleJvmUpperBoundAnded; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmUpperBoundAnded13009); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmUpperBoundAnded13011); if (state.failed) return current;
 
             }
 
@@ -16245,7 +16245,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJvmUpperBoundAnded"
-    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5539:1: ruleJvmUpperBoundAnded returns [EObject current=null] : (otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) ;
+    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5541:1: ruleJvmUpperBoundAnded returns [EObject current=null] : (otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) ;
     public final EObject ruleJvmUpperBoundAnded() throws RecognitionException {
         EObject current = null;
 
@@ -16256,30 +16256,30 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5542:28: ( (otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5543:1: (otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5544:28: ( (otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5545:1: (otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
             {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5543:1: (otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5543:3: otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5545:1: (otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5545:3: otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
             {
-            otherlv_0=(Token)match(input,83,FOLLOW_83_in_ruleJvmUpperBoundAnded13046); if (state.failed) return current;
+            otherlv_0=(Token)match(input,83,FOLLOW_83_in_ruleJvmUpperBoundAnded13048); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getJvmUpperBoundAndedAccess().getAmpersandKeyword_0());
                   
             }
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5547:1: ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5548:1: (lv_typeReference_1_0= ruleJvmTypeReference )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5549:1: ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5550:1: (lv_typeReference_1_0= ruleJvmTypeReference )
             {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5548:1: (lv_typeReference_1_0= ruleJvmTypeReference )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5549:3: lv_typeReference_1_0= ruleJvmTypeReference
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5550:1: (lv_typeReference_1_0= ruleJvmTypeReference )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5551:3: lv_typeReference_1_0= ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getJvmUpperBoundAndedAccess().getTypeReferenceJvmTypeReferenceParserRuleCall_1_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleJvmUpperBoundAnded13067);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleJvmUpperBoundAnded13069);
             lv_typeReference_1_0=ruleJvmTypeReference();
 
             state._fsp--;
@@ -16326,7 +16326,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJvmLowerBound"
-    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5573:1: entryRuleJvmLowerBound returns [EObject current=null] : iv_ruleJvmLowerBound= ruleJvmLowerBound EOF ;
+    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5575:1: entryRuleJvmLowerBound returns [EObject current=null] : iv_ruleJvmLowerBound= ruleJvmLowerBound EOF ;
     public final EObject entryRuleJvmLowerBound() throws RecognitionException {
         EObject current = null;
 
@@ -16334,13 +16334,13 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5574:2: (iv_ruleJvmLowerBound= ruleJvmLowerBound EOF )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5575:2: iv_ruleJvmLowerBound= ruleJvmLowerBound EOF
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5576:2: (iv_ruleJvmLowerBound= ruleJvmLowerBound EOF )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5577:2: iv_ruleJvmLowerBound= ruleJvmLowerBound EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getJvmLowerBoundRule()); 
             }
-            pushFollow(FOLLOW_ruleJvmLowerBound_in_entryRuleJvmLowerBound13103);
+            pushFollow(FOLLOW_ruleJvmLowerBound_in_entryRuleJvmLowerBound13105);
             iv_ruleJvmLowerBound=ruleJvmLowerBound();
 
             state._fsp--;
@@ -16348,7 +16348,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleJvmLowerBound; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmLowerBound13113); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmLowerBound13115); if (state.failed) return current;
 
             }
 
@@ -16366,7 +16366,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJvmLowerBound"
-    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5582:1: ruleJvmLowerBound returns [EObject current=null] : (otherlv_0= 'super' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) ;
+    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5584:1: ruleJvmLowerBound returns [EObject current=null] : (otherlv_0= 'super' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) ;
     public final EObject ruleJvmLowerBound() throws RecognitionException {
         EObject current = null;
 
@@ -16377,30 +16377,30 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5585:28: ( (otherlv_0= 'super' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5586:1: (otherlv_0= 'super' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5587:28: ( (otherlv_0= 'super' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5588:1: (otherlv_0= 'super' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
             {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5586:1: (otherlv_0= 'super' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5586:3: otherlv_0= 'super' ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5588:1: (otherlv_0= 'super' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5588:3: otherlv_0= 'super' ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
             {
-            otherlv_0=(Token)match(input,71,FOLLOW_71_in_ruleJvmLowerBound13150); if (state.failed) return current;
+            otherlv_0=(Token)match(input,71,FOLLOW_71_in_ruleJvmLowerBound13152); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getJvmLowerBoundAccess().getSuperKeyword_0());
                   
             }
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5590:1: ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5591:1: (lv_typeReference_1_0= ruleJvmTypeReference )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5592:1: ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5593:1: (lv_typeReference_1_0= ruleJvmTypeReference )
             {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5591:1: (lv_typeReference_1_0= ruleJvmTypeReference )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5592:3: lv_typeReference_1_0= ruleJvmTypeReference
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5593:1: (lv_typeReference_1_0= ruleJvmTypeReference )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5594:3: lv_typeReference_1_0= ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getJvmLowerBoundAccess().getTypeReferenceJvmTypeReferenceParserRuleCall_1_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleJvmLowerBound13171);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleJvmLowerBound13173);
             lv_typeReference_1_0=ruleJvmTypeReference();
 
             state._fsp--;
@@ -16447,7 +16447,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQualifiedNameWithWildcard"
-    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5618:1: entryRuleQualifiedNameWithWildcard returns [String current=null] : iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF ;
+    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5620:1: entryRuleQualifiedNameWithWildcard returns [String current=null] : iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF ;
     public final String entryRuleQualifiedNameWithWildcard() throws RecognitionException {
         String current = null;
 
@@ -16455,13 +16455,13 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5619:2: (iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5620:2: iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5621:2: (iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5622:2: iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getQualifiedNameWithWildcardRule()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedNameWithWildcard_in_entryRuleQualifiedNameWithWildcard13210);
+            pushFollow(FOLLOW_ruleQualifiedNameWithWildcard_in_entryRuleQualifiedNameWithWildcard13212);
             iv_ruleQualifiedNameWithWildcard=ruleQualifiedNameWithWildcard();
 
             state._fsp--;
@@ -16469,7 +16469,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleQualifiedNameWithWildcard.getText(); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQualifiedNameWithWildcard13221); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQualifiedNameWithWildcard13223); if (state.failed) return current;
 
             }
 
@@ -16487,7 +16487,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualifiedNameWithWildcard"
-    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5627:1: ruleQualifiedNameWithWildcard returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_QualifiedName_0= ruleQualifiedName kw= '.' kw= '*' ) ;
+    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5629:1: ruleQualifiedNameWithWildcard returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_QualifiedName_0= ruleQualifiedName kw= '.' kw= '*' ) ;
     public final AntlrDatatypeRuleToken ruleQualifiedNameWithWildcard() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -16498,18 +16498,18 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5630:28: ( (this_QualifiedName_0= ruleQualifiedName kw= '.' kw= '*' ) )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5631:1: (this_QualifiedName_0= ruleQualifiedName kw= '.' kw= '*' )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5632:28: ( (this_QualifiedName_0= ruleQualifiedName kw= '.' kw= '*' ) )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5633:1: (this_QualifiedName_0= ruleQualifiedName kw= '.' kw= '*' )
             {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5631:1: (this_QualifiedName_0= ruleQualifiedName kw= '.' kw= '*' )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5632:5: this_QualifiedName_0= ruleQualifiedName kw= '.' kw= '*'
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5633:1: (this_QualifiedName_0= ruleQualifiedName kw= '.' kw= '*' )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5634:5: this_QualifiedName_0= ruleQualifiedName kw= '.' kw= '*'
             {
             if ( state.backtracking==0 ) {
                
                       newCompositeNode(grammarAccess.getQualifiedNameWithWildcardAccess().getQualifiedNameParserRuleCall_0()); 
                   
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_ruleQualifiedNameWithWildcard13268);
+            pushFollow(FOLLOW_ruleQualifiedName_in_ruleQualifiedNameWithWildcard13270);
             this_QualifiedName_0=ruleQualifiedName();
 
             state._fsp--;
@@ -16524,14 +16524,14 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            kw=(Token)match(input,48,FOLLOW_48_in_ruleQualifiedNameWithWildcard13286); if (state.failed) return current;
+            kw=(Token)match(input,48,FOLLOW_48_in_ruleQualifiedNameWithWildcard13288); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                       current.merge(kw);
                       newLeafNode(kw, grammarAccess.getQualifiedNameWithWildcardAccess().getFullStopKeyword_1()); 
                   
             }
-            kw=(Token)match(input,16,FOLLOW_16_in_ruleQualifiedNameWithWildcard13299); if (state.failed) return current;
+            kw=(Token)match(input,16,FOLLOW_16_in_ruleQualifiedNameWithWildcard13301); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                       current.merge(kw);
@@ -16561,7 +16561,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleValidID"
-    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5662:1: entryRuleValidID returns [String current=null] : iv_ruleValidID= ruleValidID EOF ;
+    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5664:1: entryRuleValidID returns [String current=null] : iv_ruleValidID= ruleValidID EOF ;
     public final String entryRuleValidID() throws RecognitionException {
         String current = null;
 
@@ -16569,13 +16569,13 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5663:2: (iv_ruleValidID= ruleValidID EOF )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5664:2: iv_ruleValidID= ruleValidID EOF
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5665:2: (iv_ruleValidID= ruleValidID EOF )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5666:2: iv_ruleValidID= ruleValidID EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getValidIDRule()); 
             }
-            pushFollow(FOLLOW_ruleValidID_in_entryRuleValidID13340);
+            pushFollow(FOLLOW_ruleValidID_in_entryRuleValidID13342);
             iv_ruleValidID=ruleValidID();
 
             state._fsp--;
@@ -16583,7 +16583,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleValidID.getText(); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleValidID13351); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleValidID13353); if (state.failed) return current;
 
             }
 
@@ -16601,7 +16601,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleValidID"
-    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5671:1: ruleValidID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_ID_0= RULE_ID ;
+    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5673:1: ruleValidID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_ID_0= RULE_ID ;
     public final AntlrDatatypeRuleToken ruleValidID() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -16610,10 +16610,10 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5674:28: (this_ID_0= RULE_ID )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5675:5: this_ID_0= RULE_ID
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5676:28: (this_ID_0= RULE_ID )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5677:5: this_ID_0= RULE_ID
             {
-            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleValidID13390); if (state.failed) return current;
+            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleValidID13392); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               		current.merge(this_ID_0);
@@ -16644,7 +16644,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleXImportSection"
-    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5690:1: entryRuleXImportSection returns [EObject current=null] : iv_ruleXImportSection= ruleXImportSection EOF ;
+    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5692:1: entryRuleXImportSection returns [EObject current=null] : iv_ruleXImportSection= ruleXImportSection EOF ;
     public final EObject entryRuleXImportSection() throws RecognitionException {
         EObject current = null;
 
@@ -16652,13 +16652,13 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5691:2: (iv_ruleXImportSection= ruleXImportSection EOF )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5692:2: iv_ruleXImportSection= ruleXImportSection EOF
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5693:2: (iv_ruleXImportSection= ruleXImportSection EOF )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5694:2: iv_ruleXImportSection= ruleXImportSection EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getXImportSectionRule()); 
             }
-            pushFollow(FOLLOW_ruleXImportSection_in_entryRuleXImportSection13434);
+            pushFollow(FOLLOW_ruleXImportSection_in_entryRuleXImportSection13436);
             iv_ruleXImportSection=ruleXImportSection();
 
             state._fsp--;
@@ -16666,7 +16666,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleXImportSection; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXImportSection13444); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXImportSection13446); if (state.failed) return current;
 
             }
 
@@ -16684,7 +16684,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXImportSection"
-    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5699:1: ruleXImportSection returns [EObject current=null] : ( (lv_importDeclarations_0_0= ruleXImportDeclaration ) )+ ;
+    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5701:1: ruleXImportSection returns [EObject current=null] : ( (lv_importDeclarations_0_0= ruleXImportDeclaration ) )+ ;
     public final EObject ruleXImportSection() throws RecognitionException {
         EObject current = null;
 
@@ -16694,10 +16694,10 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5702:28: ( ( (lv_importDeclarations_0_0= ruleXImportDeclaration ) )+ )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5703:1: ( (lv_importDeclarations_0_0= ruleXImportDeclaration ) )+
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5704:28: ( ( (lv_importDeclarations_0_0= ruleXImportDeclaration ) )+ )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5705:1: ( (lv_importDeclarations_0_0= ruleXImportDeclaration ) )+
             {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5703:1: ( (lv_importDeclarations_0_0= ruleXImportDeclaration ) )+
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5705:1: ( (lv_importDeclarations_0_0= ruleXImportDeclaration ) )+
             int cnt102=0;
             loop102:
             do {
@@ -16711,17 +16711,17 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
                 switch (alt102) {
             	case 1 :
-            	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5704:1: (lv_importDeclarations_0_0= ruleXImportDeclaration )
+            	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5706:1: (lv_importDeclarations_0_0= ruleXImportDeclaration )
             	    {
-            	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5704:1: (lv_importDeclarations_0_0= ruleXImportDeclaration )
-            	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5705:3: lv_importDeclarations_0_0= ruleXImportDeclaration
+            	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5706:1: (lv_importDeclarations_0_0= ruleXImportDeclaration )
+            	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5707:3: lv_importDeclarations_0_0= ruleXImportDeclaration
             	    {
             	    if ( state.backtracking==0 ) {
             	       
             	      	        newCompositeNode(grammarAccess.getXImportSectionAccess().getImportDeclarationsXImportDeclarationParserRuleCall_0()); 
             	      	    
             	    }
-            	    pushFollow(FOLLOW_ruleXImportDeclaration_in_ruleXImportSection13489);
+            	    pushFollow(FOLLOW_ruleXImportDeclaration_in_ruleXImportSection13491);
             	    lv_importDeclarations_0_0=ruleXImportDeclaration();
 
             	    state._fsp--;
@@ -16776,7 +16776,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleXImportDeclaration"
-    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5729:1: entryRuleXImportDeclaration returns [EObject current=null] : iv_ruleXImportDeclaration= ruleXImportDeclaration EOF ;
+    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5731:1: entryRuleXImportDeclaration returns [EObject current=null] : iv_ruleXImportDeclaration= ruleXImportDeclaration EOF ;
     public final EObject entryRuleXImportDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -16784,13 +16784,13 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5730:2: (iv_ruleXImportDeclaration= ruleXImportDeclaration EOF )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5731:2: iv_ruleXImportDeclaration= ruleXImportDeclaration EOF
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5732:2: (iv_ruleXImportDeclaration= ruleXImportDeclaration EOF )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5733:2: iv_ruleXImportDeclaration= ruleXImportDeclaration EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getXImportDeclarationRule()); 
             }
-            pushFollow(FOLLOW_ruleXImportDeclaration_in_entryRuleXImportDeclaration13525);
+            pushFollow(FOLLOW_ruleXImportDeclaration_in_entryRuleXImportDeclaration13527);
             iv_ruleXImportDeclaration=ruleXImportDeclaration();
 
             state._fsp--;
@@ -16798,7 +16798,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleXImportDeclaration; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXImportDeclaration13535); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXImportDeclaration13537); if (state.failed) return current;
 
             }
 
@@ -16816,7 +16816,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXImportDeclaration"
-    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5738:1: ruleXImportDeclaration returns [EObject current=null] : (otherlv_0= 'import' ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) ) (otherlv_8= ';' )? ) ;
+    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5740:1: ruleXImportDeclaration returns [EObject current=null] : (otherlv_0= 'import' ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) ) (otherlv_8= ';' )? ) ;
     public final EObject ruleXImportDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -16832,35 +16832,35 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5741:28: ( (otherlv_0= 'import' ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) ) (otherlv_8= ';' )? ) )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5742:1: (otherlv_0= 'import' ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) ) (otherlv_8= ';' )? )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5743:28: ( (otherlv_0= 'import' ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) ) (otherlv_8= ';' )? ) )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5744:1: (otherlv_0= 'import' ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) ) (otherlv_8= ';' )? )
             {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5742:1: (otherlv_0= 'import' ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) ) (otherlv_8= ';' )? )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5742:3: otherlv_0= 'import' ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) ) (otherlv_8= ';' )?
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5744:1: (otherlv_0= 'import' ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) ) (otherlv_8= ';' )? )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5744:3: otherlv_0= 'import' ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) ) (otherlv_8= ';' )?
             {
-            otherlv_0=(Token)match(input,69,FOLLOW_69_in_ruleXImportDeclaration13572); if (state.failed) return current;
+            otherlv_0=(Token)match(input,69,FOLLOW_69_in_ruleXImportDeclaration13574); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getXImportDeclarationAccess().getImportKeyword_0());
                   
             }
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5746:1: ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5748:1: ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) )
             int alt104=3;
             alt104 = dfa104.predict(input);
             switch (alt104) {
                 case 1 :
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5746:2: ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' )
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5748:2: ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' )
                     {
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5746:2: ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' )
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5746:3: ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*'
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5748:2: ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' )
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5748:3: ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*'
                     {
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5746:3: ( (lv_static_1_0= 'static' ) )
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5747:1: (lv_static_1_0= 'static' )
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5748:3: ( (lv_static_1_0= 'static' ) )
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5749:1: (lv_static_1_0= 'static' )
                     {
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5747:1: (lv_static_1_0= 'static' )
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5748:3: lv_static_1_0= 'static'
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5749:1: (lv_static_1_0= 'static' )
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5750:3: lv_static_1_0= 'static'
                     {
-                    lv_static_1_0=(Token)match(input,68,FOLLOW_68_in_ruleXImportDeclaration13592); if (state.failed) return current;
+                    lv_static_1_0=(Token)match(input,68,FOLLOW_68_in_ruleXImportDeclaration13594); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_static_1_0, grammarAccess.getXImportDeclarationAccess().getStaticStaticKeyword_1_0_0_0());
@@ -16880,7 +16880,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5761:2: ( (lv_extension_2_0= 'extension' ) )?
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5763:2: ( (lv_extension_2_0= 'extension' ) )?
                     int alt103=2;
                     int LA103_0 = input.LA(1);
 
@@ -16889,12 +16889,12 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
                     }
                     switch (alt103) {
                         case 1 :
-                            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5762:1: (lv_extension_2_0= 'extension' )
+                            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5764:1: (lv_extension_2_0= 'extension' )
                             {
-                            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5762:1: (lv_extension_2_0= 'extension' )
-                            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5763:3: lv_extension_2_0= 'extension'
+                            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5764:1: (lv_extension_2_0= 'extension' )
+                            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5765:3: lv_extension_2_0= 'extension'
                             {
-                            lv_extension_2_0=(Token)match(input,70,FOLLOW_70_in_ruleXImportDeclaration13623); if (state.failed) return current;
+                            lv_extension_2_0=(Token)match(input,70,FOLLOW_70_in_ruleXImportDeclaration13625); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
 
                                       newLeafNode(lv_extension_2_0, grammarAccess.getXImportDeclarationAccess().getExtensionExtensionKeyword_1_0_1_0());
@@ -16917,11 +16917,11 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5776:3: ( ( ruleQualifiedName ) )
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5777:1: ( ruleQualifiedName )
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5778:3: ( ( ruleQualifiedName ) )
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5779:1: ( ruleQualifiedName )
                     {
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5777:1: ( ruleQualifiedName )
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5778:3: ruleQualifiedName
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5779:1: ( ruleQualifiedName )
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5780:3: ruleQualifiedName
                     {
                     if ( state.backtracking==0 ) {
 
@@ -16935,7 +16935,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
                       	        newCompositeNode(grammarAccess.getXImportDeclarationAccess().getImportedTypeJvmDeclaredTypeCrossReference_1_0_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleQualifiedName_in_ruleXImportDeclaration13660);
+                    pushFollow(FOLLOW_ruleQualifiedName_in_ruleXImportDeclaration13662);
                     ruleQualifiedName();
 
                     state._fsp--;
@@ -16951,13 +16951,13 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_4=(Token)match(input,48,FOLLOW_48_in_ruleXImportDeclaration13672); if (state.failed) return current;
+                    otherlv_4=(Token)match(input,48,FOLLOW_48_in_ruleXImportDeclaration13674); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_4, grammarAccess.getXImportDeclarationAccess().getFullStopKeyword_1_0_3());
                           
                     }
-                    otherlv_5=(Token)match(input,16,FOLLOW_16_in_ruleXImportDeclaration13684); if (state.failed) return current;
+                    otherlv_5=(Token)match(input,16,FOLLOW_16_in_ruleXImportDeclaration13686); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_5, grammarAccess.getXImportDeclarationAccess().getAsteriskKeyword_1_0_4());
@@ -16970,13 +16970,13 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5800:6: ( ( ruleQualifiedName ) )
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5802:6: ( ( ruleQualifiedName ) )
                     {
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5800:6: ( ( ruleQualifiedName ) )
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5801:1: ( ruleQualifiedName )
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5802:6: ( ( ruleQualifiedName ) )
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5803:1: ( ruleQualifiedName )
                     {
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5801:1: ( ruleQualifiedName )
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5802:3: ruleQualifiedName
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5803:1: ( ruleQualifiedName )
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5804:3: ruleQualifiedName
                     {
                     if ( state.backtracking==0 ) {
 
@@ -16990,7 +16990,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
                       	        newCompositeNode(grammarAccess.getXImportDeclarationAccess().getImportedTypeJvmDeclaredTypeCrossReference_1_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleQualifiedName_in_ruleXImportDeclaration13714);
+                    pushFollow(FOLLOW_ruleQualifiedName_in_ruleXImportDeclaration13716);
                     ruleQualifiedName();
 
                     state._fsp--;
@@ -17010,20 +17010,20 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5816:6: ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) )
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5818:6: ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) )
                     {
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5816:6: ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) )
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5817:1: (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard )
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5818:6: ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) )
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5819:1: (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard )
                     {
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5817:1: (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard )
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5818:3: lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5819:1: (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard )
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5820:3: lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getXImportDeclarationAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleQualifiedNameWithWildcard_in_ruleXImportDeclaration13741);
+                    pushFollow(FOLLOW_ruleQualifiedNameWithWildcard_in_ruleXImportDeclaration13743);
                     lv_importedNamespace_7_0=ruleQualifiedNameWithWildcard();
 
                     state._fsp--;
@@ -17053,7 +17053,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5834:3: (otherlv_8= ';' )?
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5836:3: (otherlv_8= ';' )?
             int alt105=2;
             int LA105_0 = input.LA(1);
 
@@ -17062,9 +17062,9 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
             }
             switch (alt105) {
                 case 1 :
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5834:5: otherlv_8= ';'
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5836:5: otherlv_8= ';'
                     {
-                    otherlv_8=(Token)match(input,55,FOLLOW_55_in_ruleXImportDeclaration13755); if (state.failed) return current;
+                    otherlv_8=(Token)match(input,55,FOLLOW_55_in_ruleXImportDeclaration13757); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_8, grammarAccess.getXImportDeclarationAccess().getSemicolonKeyword_2());
@@ -18483,18 +18483,18 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred40_InternalMongoBeans
     public final void synpred40_InternalMongoBeans_fragment() throws RecognitionException {   
-        // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5137:2: ( ( () ruleArrayBrackets ) )
-        // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5137:3: ( () ruleArrayBrackets )
+        // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5139:2: ( ( () ruleArrayBrackets ) )
+        // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5139:3: ( () ruleArrayBrackets )
         {
-        // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5137:3: ( () ruleArrayBrackets )
-        // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5137:4: () ruleArrayBrackets
+        // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5139:3: ( () ruleArrayBrackets )
+        // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5139:4: () ruleArrayBrackets
         {
-        // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5137:4: ()
-        // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5138:1: 
+        // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5139:4: ()
+        // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5140:1: 
         {
         }
 
-        pushFollow(FOLLOW_ruleArrayBrackets_in_synpred40_InternalMongoBeans12065);
+        pushFollow(FOLLOW_ruleArrayBrackets_in_synpred40_InternalMongoBeans12067);
         ruleArrayBrackets();
 
         state._fsp--;
@@ -18509,10 +18509,10 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred41_InternalMongoBeans
     public final void synpred41_InternalMongoBeans_fragment() throws RecognitionException {   
-        // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5322:4: ( '<' )
-        // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5322:6: '<'
+        // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5324:4: ( '<' )
+        // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5324:6: '<'
         {
-        match(input,33,FOLLOW_33_in_synpred41_InternalMongoBeans12517); if (state.failed) return ;
+        match(input,33,FOLLOW_33_in_synpred41_InternalMongoBeans12519); if (state.failed) return ;
 
         }
     }
@@ -21743,7 +21743,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
             this.transition = DFA99_transition;
         }
         public String getDescription() {
-            return "5322:2: ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )?";
+            return "5324:2: ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -21824,7 +21824,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
             this.transition = DFA104_transition;
         }
         public String getDescription() {
-            return "5746:1: ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) )";
+            return "5748:1: ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) )";
         }
     }
  
@@ -22263,75 +22263,75 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_48_in_ruleNumber11897 = new BitSet(new long[]{0x00000000000000C0L});
     public static final BitSet FOLLOW_RULE_INT_in_ruleNumber11913 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_DECIMAL_in_ruleNumber11939 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_entryRuleJvmTypeReference11992 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJvmTypeReference12002 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmParameterizedTypeReference_in_ruleJvmTypeReference12050 = new BitSet(new long[]{0x0010000000000002L});
-    public static final BitSet FOLLOW_ruleArrayBrackets_in_ruleJvmTypeReference12086 = new BitSet(new long[]{0x0010000000000002L});
-    public static final BitSet FOLLOW_ruleXFunctionTypeRef_in_ruleJvmTypeReference12117 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleArrayBrackets_in_entryRuleArrayBrackets12153 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleArrayBrackets12164 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_52_in_ruleArrayBrackets12202 = new BitSet(new long[]{0x0020000000000000L});
-    public static final BitSet FOLLOW_53_in_ruleArrayBrackets12215 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXFunctionTypeRef_in_entryRuleXFunctionTypeRef12255 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXFunctionTypeRef12265 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_ruleXFunctionTypeRef12303 = new BitSet(new long[]{0x00000020000A2100L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef12325 = new BitSet(new long[]{0x00000000000C0000L});
-    public static final BitSet FOLLOW_18_in_ruleXFunctionTypeRef12338 = new BitSet(new long[]{0x0000002000022100L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef12359 = new BitSet(new long[]{0x00000000000C0000L});
-    public static final BitSet FOLLOW_19_in_ruleXFunctionTypeRef12375 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_37_in_ruleXFunctionTypeRef12389 = new BitSet(new long[]{0x0000002000022100L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef12410 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmParameterizedTypeReference_in_entryRuleJvmParameterizedTypeReference12446 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJvmParameterizedTypeReference12456 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleJvmParameterizedTypeReference12504 = new BitSet(new long[]{0x0000000200000002L});
-    public static final BitSet FOLLOW_33_in_ruleJvmParameterizedTypeReference12525 = new BitSet(new long[]{0x0000002000022100L,0x0000000000040000L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference12547 = new BitSet(new long[]{0x0000000100040000L});
-    public static final BitSet FOLLOW_18_in_ruleJvmParameterizedTypeReference12560 = new BitSet(new long[]{0x0000002000022100L,0x0000000000040000L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference12581 = new BitSet(new long[]{0x0000000100040000L});
-    public static final BitSet FOLLOW_32_in_ruleJvmParameterizedTypeReference12595 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_entryRuleJvmArgumentTypeReference12633 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJvmArgumentTypeReference12643 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleJvmArgumentTypeReference12690 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmWildcardTypeReference_in_ruleJvmArgumentTypeReference12717 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmWildcardTypeReference_in_entryRuleJvmWildcardTypeReference12752 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJvmWildcardTypeReference12762 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_82_in_ruleJvmWildcardTypeReference12808 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000088L});
-    public static final BitSet FOLLOW_ruleJvmUpperBound_in_ruleJvmWildcardTypeReference12830 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmLowerBound_in_ruleJvmWildcardTypeReference12857 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmUpperBound_in_entryRuleJvmUpperBound12895 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJvmUpperBound12905 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_67_in_ruleJvmUpperBound12942 = new BitSet(new long[]{0x0000002000022100L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleJvmUpperBound12963 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmUpperBoundAnded_in_entryRuleJvmUpperBoundAnded12999 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJvmUpperBoundAnded13009 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_83_in_ruleJvmUpperBoundAnded13046 = new BitSet(new long[]{0x0000002000022100L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleJvmUpperBoundAnded13067 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmLowerBound_in_entryRuleJvmLowerBound13103 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJvmLowerBound13113 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_71_in_ruleJvmLowerBound13150 = new BitSet(new long[]{0x0000002000022100L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleJvmLowerBound13171 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedNameWithWildcard_in_entryRuleQualifiedNameWithWildcard13210 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedNameWithWildcard13221 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleQualifiedNameWithWildcard13268 = new BitSet(new long[]{0x0001000000000000L});
-    public static final BitSet FOLLOW_48_in_ruleQualifiedNameWithWildcard13286 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleQualifiedNameWithWildcard13299 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValidID_in_entryRuleValidID13340 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleValidID13351 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleValidID13390 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXImportSection_in_entryRuleXImportSection13434 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXImportSection13444 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXImportDeclaration_in_ruleXImportSection13489 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleXImportDeclaration_in_entryRuleXImportDeclaration13525 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXImportDeclaration13535 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_69_in_ruleXImportDeclaration13572 = new BitSet(new long[]{0x0000000000002100L,0x0000000000000010L});
-    public static final BitSet FOLLOW_68_in_ruleXImportDeclaration13592 = new BitSet(new long[]{0x0000000000002100L,0x0000000000000040L});
-    public static final BitSet FOLLOW_70_in_ruleXImportDeclaration13623 = new BitSet(new long[]{0x0000000000002100L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleXImportDeclaration13660 = new BitSet(new long[]{0x0001000000000000L});
-    public static final BitSet FOLLOW_48_in_ruleXImportDeclaration13672 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleXImportDeclaration13684 = new BitSet(new long[]{0x0080000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleXImportDeclaration13714 = new BitSet(new long[]{0x0080000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedNameWithWildcard_in_ruleXImportDeclaration13741 = new BitSet(new long[]{0x0080000000000002L});
-    public static final BitSet FOLLOW_55_in_ruleXImportDeclaration13755 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_entryRuleJvmTypeReference11994 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJvmTypeReference12004 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmParameterizedTypeReference_in_ruleJvmTypeReference12052 = new BitSet(new long[]{0x0010000000000002L});
+    public static final BitSet FOLLOW_ruleArrayBrackets_in_ruleJvmTypeReference12088 = new BitSet(new long[]{0x0010000000000002L});
+    public static final BitSet FOLLOW_ruleXFunctionTypeRef_in_ruleJvmTypeReference12119 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleArrayBrackets_in_entryRuleArrayBrackets12155 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleArrayBrackets12166 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_52_in_ruleArrayBrackets12204 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_53_in_ruleArrayBrackets12217 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXFunctionTypeRef_in_entryRuleXFunctionTypeRef12257 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXFunctionTypeRef12267 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_ruleXFunctionTypeRef12305 = new BitSet(new long[]{0x00000020000A2100L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef12327 = new BitSet(new long[]{0x00000000000C0000L});
+    public static final BitSet FOLLOW_18_in_ruleXFunctionTypeRef12340 = new BitSet(new long[]{0x0000002000022100L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef12361 = new BitSet(new long[]{0x00000000000C0000L});
+    public static final BitSet FOLLOW_19_in_ruleXFunctionTypeRef12377 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_37_in_ruleXFunctionTypeRef12391 = new BitSet(new long[]{0x0000002000022100L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef12412 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmParameterizedTypeReference_in_entryRuleJvmParameterizedTypeReference12448 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJvmParameterizedTypeReference12458 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleJvmParameterizedTypeReference12506 = new BitSet(new long[]{0x0000000200000002L});
+    public static final BitSet FOLLOW_33_in_ruleJvmParameterizedTypeReference12527 = new BitSet(new long[]{0x0000002000022100L,0x0000000000040000L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference12549 = new BitSet(new long[]{0x0000000100040000L});
+    public static final BitSet FOLLOW_18_in_ruleJvmParameterizedTypeReference12562 = new BitSet(new long[]{0x0000002000022100L,0x0000000000040000L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference12583 = new BitSet(new long[]{0x0000000100040000L});
+    public static final BitSet FOLLOW_32_in_ruleJvmParameterizedTypeReference12597 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_entryRuleJvmArgumentTypeReference12635 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJvmArgumentTypeReference12645 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleJvmArgumentTypeReference12692 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmWildcardTypeReference_in_ruleJvmArgumentTypeReference12719 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmWildcardTypeReference_in_entryRuleJvmWildcardTypeReference12754 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJvmWildcardTypeReference12764 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_82_in_ruleJvmWildcardTypeReference12810 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000088L});
+    public static final BitSet FOLLOW_ruleJvmUpperBound_in_ruleJvmWildcardTypeReference12832 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmLowerBound_in_ruleJvmWildcardTypeReference12859 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmUpperBound_in_entryRuleJvmUpperBound12897 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJvmUpperBound12907 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_67_in_ruleJvmUpperBound12944 = new BitSet(new long[]{0x0000002000022100L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleJvmUpperBound12965 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmUpperBoundAnded_in_entryRuleJvmUpperBoundAnded13001 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJvmUpperBoundAnded13011 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_83_in_ruleJvmUpperBoundAnded13048 = new BitSet(new long[]{0x0000002000022100L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleJvmUpperBoundAnded13069 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmLowerBound_in_entryRuleJvmLowerBound13105 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJvmLowerBound13115 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_71_in_ruleJvmLowerBound13152 = new BitSet(new long[]{0x0000002000022100L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleJvmLowerBound13173 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedNameWithWildcard_in_entryRuleQualifiedNameWithWildcard13212 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedNameWithWildcard13223 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleQualifiedNameWithWildcard13270 = new BitSet(new long[]{0x0001000000000000L});
+    public static final BitSet FOLLOW_48_in_ruleQualifiedNameWithWildcard13288 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleQualifiedNameWithWildcard13301 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValidID_in_entryRuleValidID13342 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleValidID13353 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleValidID13392 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXImportSection_in_entryRuleXImportSection13436 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXImportSection13446 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXImportDeclaration_in_ruleXImportSection13491 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleXImportDeclaration_in_entryRuleXImportDeclaration13527 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXImportDeclaration13537 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_69_in_ruleXImportDeclaration13574 = new BitSet(new long[]{0x0000000000002100L,0x0000000000000010L});
+    public static final BitSet FOLLOW_68_in_ruleXImportDeclaration13594 = new BitSet(new long[]{0x0000000000002100L,0x0000000000000040L});
+    public static final BitSet FOLLOW_70_in_ruleXImportDeclaration13625 = new BitSet(new long[]{0x0000000000002100L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleXImportDeclaration13662 = new BitSet(new long[]{0x0001000000000000L});
+    public static final BitSet FOLLOW_48_in_ruleXImportDeclaration13674 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleXImportDeclaration13686 = new BitSet(new long[]{0x0080000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleXImportDeclaration13716 = new BitSet(new long[]{0x0080000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedNameWithWildcard_in_ruleXImportDeclaration13743 = new BitSet(new long[]{0x0080000000000002L});
+    public static final BitSet FOLLOW_55_in_ruleXImportDeclaration13757 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJvmTypeReference_in_synpred1_InternalMongoBeans648 = new BitSet(new long[]{0x0000000000002100L});
     public static final BitSet FOLLOW_ruleValidID_in_synpred1_InternalMongoBeans657 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_17_in_synpred1_InternalMongoBeans663 = new BitSet(new long[]{0x0000000000000002L});
@@ -22392,7 +22392,7 @@ public class InternalMongoBeansParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_81_in_synpred36_InternalMongoBeans11305 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_80_in_synpred37_InternalMongoBeans11335 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_48_in_synpred39_InternalMongoBeans11682 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleArrayBrackets_in_synpred40_InternalMongoBeans12065 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_synpred41_InternalMongoBeans12517 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleArrayBrackets_in_synpred40_InternalMongoBeans12067 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_synpred41_InternalMongoBeans12519 = new BitSet(new long[]{0x0000000000000002L});
 
 }

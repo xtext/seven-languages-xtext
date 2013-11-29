@@ -46,7 +46,6 @@ import org.eclipse.xtext.util.concurrent.IUnitOfWork;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.xtext.tortoiseshell.lib.ITortoiseEvent;
-import org.xtext.tortoiseshell.lib.ITortoiseEvent.Listener;
 import org.xtext.tortoiseshell.lib.ITortoiseInterpreter;
 import org.xtext.tortoiseshell.lib.MoveEvent;
 import org.xtext.tortoiseshell.lib.Tortoise;
@@ -60,7 +59,7 @@ import org.xtext.tortoiseshell.lib.view.TortoisePartListener;
 
 @Singleton
 @SuppressWarnings("all")
-public class TortoiseView extends ViewPart implements Listener {
+public class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
   private final static Logger LOGGER = new Function0<Logger>() {
     public Logger apply() {
       Logger _logger = Logger.getLogger(TortoiseView.class);
@@ -126,18 +125,13 @@ public class TortoiseView extends ViewPart implements Listener {
     this.tortoiseFigure.setTortoiseLocation(_point);
     this.tortoiseFigure.setAngle(0);
     final org.eclipse.swt.graphics.Point viewportSize = this.canvas.getSize();
-    int _minus = (-viewportSize.x);
-    int _divide = (_minus / 2);
-    int _minus_1 = (-viewportSize.y);
-    int _divide_1 = (_minus_1 / 2);
-    this.canvas.scrollTo(_divide, _divide_1);
+    this.canvas.scrollTo(((-viewportSize.x) / 2), ((-viewportSize.y) / 2));
   }
   
   public Boolean show(final XtextEditor tortoiseEditor, final int stopAtLine) {
     Boolean _xblockexpression = null;
     {
-      boolean _lessThan = (stopAtLine < 0);
-      this.animator.setAnimated(_lessThan);
+      this.animator.setAnimated((stopAtLine < 0));
       final Runnable _function = new Runnable() {
         public void run() {
           TortoiseView.this.reset();
@@ -147,7 +141,7 @@ public class TortoiseView extends ViewPart implements Listener {
       IXtextDocument _document = tortoiseEditor.getDocument();
       final IUnitOfWork<Boolean,XtextResource> _function_1 = new IUnitOfWork<Boolean,XtextResource>() {
         public Boolean exec(final XtextResource it) throws Exception {
-          Boolean _xifexpression = null;
+          boolean _xifexpression = false;
           boolean _and = false;
           boolean _notEquals = (!Objects.equal(it, null));
           if (!_notEquals) {
@@ -203,9 +197,9 @@ public class TortoiseView extends ViewPart implements Listener {
               boolean _removeListener = tortoise.removeListener(TortoiseView.this);
               _xblockexpression = (_removeListener);
             }
-            _xifexpression = Boolean.valueOf(_xblockexpression);
+            _xifexpression = _xblockexpression;
           }
-          return _xifexpression;
+          return Boolean.valueOf(_xifexpression);
         }
       };
       Boolean _readOnly = _document.<Boolean>readOnly(_function_1);
@@ -271,34 +265,33 @@ public class TortoiseView extends ViewPart implements Listener {
     boolean _matched = false;
     if (!_matched) {
       if (event instanceof MoveEvent) {
-        final MoveEvent _moveEvent = (MoveEvent)event;
         _matched=true;
-        Tortoise _tortoise = _moveEvent.getTortoise();
+        Tortoise _tortoise = ((MoveEvent)event).getTortoise();
         boolean _isPaint = _tortoise.isPaint();
         if (_isPaint) {
           Polyline _polyline = new Polyline();
           final Polyline line = _polyline;
-          Tortoise _tortoise_1 = _moveEvent.getTortoise();
+          Tortoise _tortoise_1 = ((MoveEvent)event).getTortoise();
           Color _lineColor = _tortoise_1.getLineColor();
           line.setForegroundColor(_lineColor);
-          Tortoise _tortoise_2 = _moveEvent.getTortoise();
+          Tortoise _tortoise_2 = ((MoveEvent)event).getTortoise();
           int _lineWidth = _tortoise_2.getLineWidth();
           line.setLineWidth(_lineWidth);
-          Point _oldPosition = _moveEvent.getOldPosition();
-          Point _oldPosition_1 = _moveEvent.getOldPosition();
+          Point _oldPosition = ((MoveEvent)event).getOldPosition();
+          Point _oldPosition_1 = ((MoveEvent)event).getOldPosition();
           line.setEndpoints(_oldPosition, _oldPosition_1);
-          Point _oldPosition_2 = _moveEvent.getOldPosition();
-          Tortoise _tortoise_3 = _moveEvent.getTortoise();
+          Point _oldPosition_2 = ((MoveEvent)event).getOldPosition();
+          Tortoise _tortoise_3 = ((MoveEvent)event).getTortoise();
           Point _position = _tortoise_3.getPosition();
-          Tortoise _tortoise_4 = _moveEvent.getTortoise();
+          Tortoise _tortoise_4 = ((MoveEvent)event).getTortoise();
           int _delay = _tortoise_4.getDelay();
           Animation _animation = new Animation(_oldPosition_2, _position, line, _delay);
           this.animator.addAnimation(_animation);
         } else {
-          Point _oldPosition_3 = _moveEvent.getOldPosition();
-          Tortoise _tortoise_5 = _moveEvent.getTortoise();
+          Point _oldPosition_3 = ((MoveEvent)event).getOldPosition();
+          Tortoise _tortoise_5 = ((MoveEvent)event).getTortoise();
           Point _position_1 = _tortoise_5.getPosition();
-          Tortoise _tortoise_6 = _moveEvent.getTortoise();
+          Tortoise _tortoise_6 = ((MoveEvent)event).getTortoise();
           int _delay_1 = _tortoise_6.getDelay();
           Animation _animation_1 = new Animation(_oldPosition_3, _position_1, _delay_1);
           this.animator.addAnimation(_animation_1);
@@ -307,12 +300,11 @@ public class TortoiseView extends ViewPart implements Listener {
     }
     if (!_matched) {
       if (event instanceof TurnEvent) {
-        final TurnEvent _turnEvent = (TurnEvent)event;
         _matched=true;
-        double _oldAngle = _turnEvent.getOldAngle();
-        Tortoise _tortoise = _turnEvent.getTortoise();
+        double _oldAngle = ((TurnEvent)event).getOldAngle();
+        Tortoise _tortoise = ((TurnEvent)event).getTortoise();
         double _angleInRadians = _tortoise.getAngleInRadians();
-        Tortoise _tortoise_1 = _turnEvent.getTortoise();
+        Tortoise _tortoise_1 = ((TurnEvent)event).getTortoise();
         int _delay = _tortoise_1.getDelay();
         Animation _animation = new Animation(_oldAngle, _angleInRadians, _delay);
         this.animator.addAnimation(_animation);

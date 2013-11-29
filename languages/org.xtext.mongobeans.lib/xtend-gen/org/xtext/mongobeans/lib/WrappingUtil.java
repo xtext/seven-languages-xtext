@@ -67,8 +67,7 @@ public class WrappingUtil {
   
   public static DBObject unwrap(final Object wrapper) {
     DBObject _xifexpression = null;
-    boolean _not = (!(wrapper instanceof IMongoBean));
-    if (_not) {
+    if ((!(wrapper instanceof IMongoBean))) {
       IllegalArgumentException _illegalArgumentException = new IllegalArgumentException("Invalid type");
       throw _illegalArgumentException;
     } else {

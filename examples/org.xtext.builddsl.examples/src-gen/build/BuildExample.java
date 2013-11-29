@@ -3,7 +3,6 @@ package build;
 import java.io.File;
 import java.util.Collection;
 import org.eclipse.xtext.xbase.lib.Exceptions;
-import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.xtext.builddsl.lib.BuildScript;
 import org.xtext.builddsl.lib.ClassExtensions;
@@ -17,37 +16,16 @@ import org.xtext.builddsl.lib.Param;
 @SuppressWarnings("all")
 public class BuildExample extends BuildScript {
   @Param
-  public File project = new Function0<File>() {
-    public File apply() {
-      File _file = FileExtensions.file("example-project");
-      return _file;
-    }
-  }.apply();
+  public File project = FileExtensions.file("example-project");
   
   @Param
-  public File source = new Function0<File>() {
-    public File apply() {
-      File _divide = FileExtensions.operator_divide(BuildExample.this.project, "src");
-      return _divide;
-    }
-  }.apply();
+  public File source = FileExtensions.operator_divide(this.project, "src");
   
   @Param
-  public File target = new Function0<File>() {
-    public File apply() {
-      File _divide = FileExtensions.operator_divide(BuildExample.this.project, "target");
-      return _divide;
-    }
-  }.apply();
+  public File target = FileExtensions.operator_divide(this.project, "target");
   
   @Param
-  public File jar = new Function0<File>() {
-    public File apply() {
-      File _divide = FileExtensions.operator_divide(BuildExample.this.project, "result");
-      File _divide_1 = FileExtensions.operator_divide(_divide, "foo.jar");
-      return _divide_1;
-    }
-  }.apply();
+  public File jar = FileExtensions.operator_divide(FileExtensions.operator_divide(this.project, "result"), "foo.jar");
   
   public static void main(final String... args) {
     BuildExample script = new BuildExample();
@@ -55,7 +33,6 @@ public class BuildExample extends BuildScript {
     	System.exit(HELP);
     }
     System.exit(script.doBuild(args));
-    
   }
   
   @DependsOn("Compile")

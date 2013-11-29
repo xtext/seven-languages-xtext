@@ -34,9 +34,8 @@ public class TemplateHighlightingCalculator extends XbaseHighlightingCalculator 
     boolean _matched = false;
     if (!_matched) {
       if (grammarElement instanceof RuleCall) {
-        final RuleCall _ruleCall = (RuleCall)grammarElement;
         _matched=true;
-        AbstractRule _rule = _ruleCall.getRule();
+        AbstractRule _rule = ((RuleCall)grammarElement).getRule();
         TerminalRule _tEXTRule = this.grammarAccess.getTEXTRule();
         boolean _equals = Objects.equal(_rule, _tEXTRule);
         _switchResult = _equals;

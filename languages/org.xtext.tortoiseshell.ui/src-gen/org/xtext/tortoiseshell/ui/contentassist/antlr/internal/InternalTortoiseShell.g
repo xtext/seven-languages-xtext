@@ -1753,6 +1753,8 @@ finally {
 
 
 
+
+
 // Entry rule entryRuleJvmTypeReference
 entryRuleJvmTypeReference 
 :
@@ -3148,7 +3150,6 @@ rule__JvmWildcardTypeReference__Alternatives_2
 finally {
 	restoreStackSize(stackSize);
 }
-
 
 rule__XImportDeclaration__Alternatives_1
     @init {
@@ -13791,6 +13792,7 @@ finally {
 
 
 
+
 rule__JvmTypeReference__Group_0__0
     @init {
 		int stackSize = keepStackSize();
@@ -17193,7 +17195,6 @@ rule__JvmLowerBound__TypeReferenceAssignment_1
 finally {
 	restoreStackSize(stackSize);
 }
-
 
 
 

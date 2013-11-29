@@ -14,8 +14,8 @@ import java.util.ArrayList;
 public class InternalScriptingLexer extends Lexer {
     public static final int T__68=68;
     public static final int T__69=69;
-    public static final int RULE_ID=4;
     public static final int T__66=66;
+    public static final int RULE_ID=4;
     public static final int T__67=67;
     public static final int T__29=29;
     public static final int T__64=64;
@@ -43,8 +43,8 @@ public class InternalScriptingLexer extends Lexer {
     public static final int T__58=58;
     public static final int T__16=16;
     public static final int T__51=51;
-    public static final int T__15=15;
     public static final int T__52=52;
+    public static final int T__15=15;
     public static final int T__53=53;
     public static final int T__18=18;
     public static final int T__54=54;
@@ -1558,10 +1558,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = RULE_HEX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16807:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16807:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16808:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16808:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             {
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16807:12: ( '0x' | '0X' )
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16808:12: ( '0x' | '0X' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1589,7 +1589,7 @@ public class InternalScriptingLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16807:13: '0x'
+                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16808:13: '0x'
                     {
                     match("0x"); 
 
@@ -1597,7 +1597,7 @@ public class InternalScriptingLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16807:18: '0X'
+                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16808:18: '0X'
                     {
                     match("0X"); 
 
@@ -1607,7 +1607,7 @@ public class InternalScriptingLexer extends Lexer {
 
             }
 
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16807:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16808:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
             int cnt2=0;
             loop2:
             do {
@@ -1645,7 +1645,7 @@ public class InternalScriptingLexer extends Lexer {
                 cnt2++;
             } while (true);
 
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16807:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16808:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1654,10 +1654,10 @@ public class InternalScriptingLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16807:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16808:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     {
                     match('#'); 
-                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16807:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16808:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     int alt3=2;
                     int LA3_0 = input.LA(1);
 
@@ -1675,7 +1675,7 @@ public class InternalScriptingLexer extends Lexer {
                     }
                     switch (alt3) {
                         case 1 :
-                            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16807:64: ( 'b' | 'B' ) ( 'i' | 'I' )
+                            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16808:64: ( 'b' | 'B' ) ( 'i' | 'I' )
                             {
                             if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                                 input.consume();
@@ -1699,7 +1699,7 @@ public class InternalScriptingLexer extends Lexer {
                             }
                             break;
                         case 2 :
-                            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16807:84: ( 'l' | 'L' )
+                            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16808:84: ( 'l' | 'L' )
                             {
                             if ( input.LA(1)=='L'||input.LA(1)=='l' ) {
                                 input.consume();
@@ -1738,11 +1738,11 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16809:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16809:12: '0' .. '9' ( '0' .. '9' | '_' )*
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16810:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16810:12: '0' .. '9' ( '0' .. '9' | '_' )*
             {
             matchRange('0','9'); 
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16809:21: ( '0' .. '9' | '_' )*
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16810:21: ( '0' .. '9' | '_' )*
             loop5:
             do {
                 int alt5=2;
@@ -1791,11 +1791,11 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = RULE_DECIMAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16811:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16811:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16812:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16812:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             {
             mRULE_INT(); 
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16811:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16812:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -1804,7 +1804,7 @@ public class InternalScriptingLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16811:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
+                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16812:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -1815,7 +1815,7 @@ public class InternalScriptingLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16811:36: ( '+' | '-' )?
+                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16812:36: ( '+' | '-' )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -1848,7 +1848,7 @@ public class InternalScriptingLexer extends Lexer {
 
             }
 
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16811:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16812:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             int alt8=3;
             int LA8_0 = input.LA(1);
 
@@ -1860,7 +1860,7 @@ public class InternalScriptingLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16811:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
+                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16812:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
                     {
                     if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                         input.consume();
@@ -1884,7 +1884,7 @@ public class InternalScriptingLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16811:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
+                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16812:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
                     {
                     if ( input.LA(1)=='D'||input.LA(1)=='F'||input.LA(1)=='L'||input.LA(1)=='d'||input.LA(1)=='f'||input.LA(1)=='l' ) {
                         input.consume();
@@ -1917,10 +1917,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16813:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16813:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16814:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16814:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             {
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16813:11: ( '^' )?
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16814:11: ( '^' )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -1929,7 +1929,7 @@ public class InternalScriptingLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16813:11: '^'
+                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16814:11: '^'
                     {
                     match('^'); 
 
@@ -1947,7 +1947,7 @@ public class InternalScriptingLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16813:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16814:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             loop10:
             do {
                 int alt10=2;
@@ -1996,10 +1996,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16815:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16815:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16816:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16816:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16815:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16816:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -2017,10 +2017,10 @@ public class InternalScriptingLexer extends Lexer {
             }
             switch (alt13) {
                 case 1 :
-                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16815:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16816:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16815:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16816:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop11:
                     do {
                         int alt11=3;
@@ -2036,7 +2036,7 @@ public class InternalScriptingLexer extends Lexer {
 
                         switch (alt11) {
                     	case 1 :
-                    	    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16815:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16816:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2052,7 +2052,7 @@ public class InternalScriptingLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16815:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16816:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2077,10 +2077,10 @@ public class InternalScriptingLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16815:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16816:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16815:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16816:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop12:
                     do {
                         int alt12=3;
@@ -2096,7 +2096,7 @@ public class InternalScriptingLexer extends Lexer {
 
                         switch (alt12) {
                     	case 1 :
-                    	    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16815:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16816:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2112,7 +2112,7 @@ public class InternalScriptingLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16815:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16816:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2155,12 +2155,12 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16817:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16817:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16818:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16818:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16817:24: ( options {greedy=false; } : . )*
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16818:24: ( options {greedy=false; } : . )*
             loop14:
             do {
                 int alt14=2;
@@ -2185,7 +2185,7 @@ public class InternalScriptingLexer extends Lexer {
 
                 switch (alt14) {
             	case 1 :
-            	    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16817:52: .
+            	    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16818:52: .
             	    {
             	    matchAny(); 
 
@@ -2215,12 +2215,12 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16819:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16819:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16820:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16820:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16819:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16820:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop15:
             do {
                 int alt15=2;
@@ -2233,7 +2233,7 @@ public class InternalScriptingLexer extends Lexer {
 
                 switch (alt15) {
             	case 1 :
-            	    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16819:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16820:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2253,7 +2253,7 @@ public class InternalScriptingLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16819:40: ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16820:40: ( ( '\\r' )? '\\n' )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -2262,9 +2262,9 @@ public class InternalScriptingLexer extends Lexer {
             }
             switch (alt17) {
                 case 1 :
-                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16819:41: ( '\\r' )? '\\n'
+                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16820:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16819:41: ( '\\r' )?
+                    // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16820:41: ( '\\r' )?
                     int alt16=2;
                     int LA16_0 = input.LA(1);
 
@@ -2273,7 +2273,7 @@ public class InternalScriptingLexer extends Lexer {
                     }
                     switch (alt16) {
                         case 1 :
-                            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16819:41: '\\r'
+                            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16820:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2305,10 +2305,10 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16821:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16821:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16822:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16822:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16821:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16822:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt18=0;
             loop18:
             do {
@@ -2362,8 +2362,8 @@ public class InternalScriptingLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16823:16: ( . )
-            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16823:18: .
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16824:16: ( . )
+            // ../org.xtext.scripting.ui/src-gen/org/xtext/scripting/ui/contentassist/antlr/internal/InternalScripting.g:16824:18: .
             {
             matchAny(); 
 

@@ -16,7 +16,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.xtend2.lib.StringConcatenation;
+import org.eclipse.xtend2.lib.StringConcatenationClient;
 import org.eclipse.xtext.common.types.JvmAnnotationReference;
 import org.eclipse.xtext.common.types.JvmAnnotationValue;
 import org.eclipse.xtext.common.types.JvmField;
@@ -30,10 +30,8 @@ import org.eclipse.xtext.common.types.JvmVisibility;
 import org.eclipse.xtext.common.types.TypesFactory;
 import org.eclipse.xtext.util.Strings;
 import org.eclipse.xtext.xbase.XExpression;
-import org.eclipse.xtext.xbase.compiler.output.ITreeAppendable;
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor;
-import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor.IPostIndexingInitializing;
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
@@ -65,7 +63,7 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
     final String fqn = this.getJavaClassName(file);
     final String scriptName = Strings.lastToken(fqn, ".");
     JvmGenericType _class = this._jvmTypesBuilder.toClass(file, fqn);
-    IPostIndexingInitializing<JvmGenericType> _accept = acceptor.<JvmGenericType>accept(_class);
+    IJvmDeclaredTypeAcceptor.IPostIndexingInitializing<JvmGenericType> _accept = acceptor.<JvmGenericType>accept(_class);
     final Procedure1<JvmGenericType> _function = new Procedure1<JvmGenericType>() {
       public void apply(final JvmGenericType it) {
         EList<JvmTypeReference> _superTypes = it.getSuperTypes();
@@ -124,9 +122,9 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
             BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters, _parameter);
             it.setVarArgs(true);
             it.setStatic(true);
-            final Procedure1<ITreeAppendable> _function = new Procedure1<ITreeAppendable>() {
-              public void apply(final ITreeAppendable it) {
-                StringConcatenation _builder = new StringConcatenation();
+            StringConcatenationClient _client = new StringConcatenationClient() {
+              @Override
+              protected void appendTo(StringConcatenationClient.TargetStringConcatenation _builder) {
                 _builder.append(scriptName, "");
                 _builder.append(" script = new ");
                 _builder.append(scriptName, "");
@@ -141,10 +139,9 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
                 _builder.newLine();
                 _builder.append("System.exit(script.doBuild(args));");
                 _builder.newLine();
-                it.append(_builder);
               }
             };
-            BuildDSLJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _function);
+            BuildDSLJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _client);
           }
         };
         JvmOperation _method = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.toMethod(file, "main", _newTypeRef_2, _function);

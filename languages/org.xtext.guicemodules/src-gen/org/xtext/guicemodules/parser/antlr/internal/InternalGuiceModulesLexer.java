@@ -14,8 +14,8 @@ import java.util.ArrayList;
 public class InternalGuiceModulesLexer extends Lexer {
     public static final int T__68=68;
     public static final int T__69=69;
-    public static final int RULE_ID=8;
     public static final int T__66=66;
+    public static final int RULE_ID=8;
     public static final int T__67=67;
     public static final int T__29=29;
     public static final int T__64=64;
@@ -43,8 +43,8 @@ public class InternalGuiceModulesLexer extends Lexer {
     public static final int T__58=58;
     public static final int T__16=16;
     public static final int T__51=51;
-    public static final int T__15=15;
     public static final int T__52=52;
+    public static final int T__15=15;
     public static final int T__53=53;
     public static final int T__18=18;
     public static final int T__54=54;
@@ -340,10 +340,10 @@ public class InternalGuiceModulesLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:22:7: ( '+' )
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:22:9: '+'
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:22:7: ( '#' )
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:22:9: '#'
             {
-            match('+'); 
+            match('#'); 
 
             }
 
@@ -360,10 +360,10 @@ public class InternalGuiceModulesLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:23:7: ( '.' )
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:23:9: '.'
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:23:7: ( '[' )
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:23:9: '['
             {
-            match('.'); 
+            match('['); 
 
             }
 
@@ -380,11 +380,10 @@ public class InternalGuiceModulesLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:24:7: ( '::' )
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:24:9: '::'
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:24:7: ( ']' )
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:24:9: ']'
             {
-            match("::"); 
-
+            match(']'); 
 
             }
 
@@ -819,10 +818,10 @@ public class InternalGuiceModulesLexer extends Lexer {
         try {
             int _type = T__47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:45:7: ( '-' )
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:45:9: '-'
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:45:7: ( '+' )
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:45:9: '+'
             {
-            match('-'); 
+            match('+'); 
 
             }
 
@@ -839,10 +838,10 @@ public class InternalGuiceModulesLexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:46:7: ( '*' )
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:46:9: '*'
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:46:7: ( '-' )
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:46:9: '-'
             {
-            match('*'); 
+            match('-'); 
 
             }
 
@@ -859,11 +858,10 @@ public class InternalGuiceModulesLexer extends Lexer {
         try {
             int _type = T__49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:47:7: ( '**' )
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:47:9: '**'
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:47:7: ( '*' )
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:47:9: '*'
             {
-            match("**"); 
-
+            match('*'); 
 
             }
 
@@ -880,10 +878,11 @@ public class InternalGuiceModulesLexer extends Lexer {
         try {
             int _type = T__50;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:48:7: ( '/' )
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:48:9: '/'
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:48:7: ( '**' )
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:48:9: '**'
             {
-            match('/'); 
+            match("**"); 
+
 
             }
 
@@ -900,10 +899,10 @@ public class InternalGuiceModulesLexer extends Lexer {
         try {
             int _type = T__51;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:49:7: ( '%' )
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:49:9: '%'
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:49:7: ( '/' )
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:49:9: '/'
             {
-            match('%'); 
+            match('/'); 
 
             }
 
@@ -920,10 +919,10 @@ public class InternalGuiceModulesLexer extends Lexer {
         try {
             int _type = T__52;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:50:7: ( '!' )
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:50:9: '!'
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:50:7: ( '%' )
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:50:9: '%'
             {
-            match('!'); 
+            match('%'); 
 
             }
 
@@ -940,11 +939,10 @@ public class InternalGuiceModulesLexer extends Lexer {
         try {
             int _type = T__53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:51:7: ( 'as' )
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:51:9: 'as'
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:51:7: ( '!' )
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:51:9: '!'
             {
-            match("as"); 
-
+            match('!'); 
 
             }
 
@@ -961,10 +959,10 @@ public class InternalGuiceModulesLexer extends Lexer {
         try {
             int _type = T__54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:52:7: ( '?.' )
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:52:9: '?.'
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:52:7: ( 'as' )
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:52:9: 'as'
             {
-            match("?."); 
+            match("as"); 
 
 
             }
@@ -982,10 +980,10 @@ public class InternalGuiceModulesLexer extends Lexer {
         try {
             int _type = T__55;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:53:7: ( '#' )
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:53:9: '#'
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:53:7: ( '.' )
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:53:9: '.'
             {
-            match('#'); 
+            match('.'); 
 
             }
 
@@ -1002,10 +1000,11 @@ public class InternalGuiceModulesLexer extends Lexer {
         try {
             int _type = T__56;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:54:7: ( '[' )
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:54:9: '['
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:54:7: ( '::' )
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:54:9: '::'
             {
-            match('['); 
+            match("::"); 
+
 
             }
 
@@ -1022,10 +1021,11 @@ public class InternalGuiceModulesLexer extends Lexer {
         try {
             int _type = T__57;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:55:7: ( ']' )
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:55:9: ']'
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:55:7: ( '?.' )
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:55:9: '?.'
             {
-            match(']'); 
+            match("?."); 
+
 
             }
 
@@ -1667,10 +1667,10 @@ public class InternalGuiceModulesLexer extends Lexer {
         try {
             int _type = RULE_HEX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6109:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6109:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5941:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5941:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             {
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6109:12: ( '0x' | '0X' )
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5941:12: ( '0x' | '0X' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1698,7 +1698,7 @@ public class InternalGuiceModulesLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6109:13: '0x'
+                    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5941:13: '0x'
                     {
                     match("0x"); 
 
@@ -1706,7 +1706,7 @@ public class InternalGuiceModulesLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6109:18: '0X'
+                    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5941:18: '0X'
                     {
                     match("0X"); 
 
@@ -1716,7 +1716,7 @@ public class InternalGuiceModulesLexer extends Lexer {
 
             }
 
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6109:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5941:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
             int cnt2=0;
             loop2:
             do {
@@ -1754,7 +1754,7 @@ public class InternalGuiceModulesLexer extends Lexer {
                 cnt2++;
             } while (true);
 
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6109:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5941:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1763,10 +1763,10 @@ public class InternalGuiceModulesLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6109:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5941:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     {
                     match('#'); 
-                    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6109:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5941:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     int alt3=2;
                     int LA3_0 = input.LA(1);
 
@@ -1784,7 +1784,7 @@ public class InternalGuiceModulesLexer extends Lexer {
                     }
                     switch (alt3) {
                         case 1 :
-                            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6109:64: ( 'b' | 'B' ) ( 'i' | 'I' )
+                            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5941:64: ( 'b' | 'B' ) ( 'i' | 'I' )
                             {
                             if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                                 input.consume();
@@ -1808,7 +1808,7 @@ public class InternalGuiceModulesLexer extends Lexer {
                             }
                             break;
                         case 2 :
-                            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6109:84: ( 'l' | 'L' )
+                            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5941:84: ( 'l' | 'L' )
                             {
                             if ( input.LA(1)=='L'||input.LA(1)=='l' ) {
                                 input.consume();
@@ -1847,11 +1847,11 @@ public class InternalGuiceModulesLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6111:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6111:12: '0' .. '9' ( '0' .. '9' | '_' )*
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5943:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5943:12: '0' .. '9' ( '0' .. '9' | '_' )*
             {
             matchRange('0','9'); 
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6111:21: ( '0' .. '9' | '_' )*
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5943:21: ( '0' .. '9' | '_' )*
             loop5:
             do {
                 int alt5=2;
@@ -1900,11 +1900,11 @@ public class InternalGuiceModulesLexer extends Lexer {
         try {
             int _type = RULE_DECIMAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6113:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6113:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5945:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5945:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             {
             mRULE_INT(); 
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6113:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5945:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -1913,7 +1913,7 @@ public class InternalGuiceModulesLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6113:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
+                    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5945:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -1924,7 +1924,7 @@ public class InternalGuiceModulesLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6113:36: ( '+' | '-' )?
+                    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5945:36: ( '+' | '-' )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -1957,7 +1957,7 @@ public class InternalGuiceModulesLexer extends Lexer {
 
             }
 
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6113:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5945:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             int alt8=3;
             int LA8_0 = input.LA(1);
 
@@ -1969,7 +1969,7 @@ public class InternalGuiceModulesLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6113:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
+                    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5945:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
                     {
                     if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                         input.consume();
@@ -1993,7 +1993,7 @@ public class InternalGuiceModulesLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6113:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
+                    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5945:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
                     {
                     if ( input.LA(1)=='D'||input.LA(1)=='F'||input.LA(1)=='L'||input.LA(1)=='d'||input.LA(1)=='f'||input.LA(1)=='l' ) {
                         input.consume();
@@ -2026,10 +2026,10 @@ public class InternalGuiceModulesLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6115:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6115:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5947:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5947:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             {
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6115:11: ( '^' )?
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5947:11: ( '^' )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -2038,7 +2038,7 @@ public class InternalGuiceModulesLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6115:11: '^'
+                    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5947:11: '^'
                     {
                     match('^'); 
 
@@ -2056,7 +2056,7 @@ public class InternalGuiceModulesLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6115:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5947:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             loop10:
             do {
                 int alt10=2;
@@ -2105,10 +2105,10 @@ public class InternalGuiceModulesLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6117:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6117:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5949:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5949:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6117:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5949:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -2126,10 +2126,10 @@ public class InternalGuiceModulesLexer extends Lexer {
             }
             switch (alt13) {
                 case 1 :
-                    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6117:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5949:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6117:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5949:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop11:
                     do {
                         int alt11=3;
@@ -2145,7 +2145,7 @@ public class InternalGuiceModulesLexer extends Lexer {
 
                         switch (alt11) {
                     	case 1 :
-                    	    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6117:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5949:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2161,7 +2161,7 @@ public class InternalGuiceModulesLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6117:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5949:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2186,10 +2186,10 @@ public class InternalGuiceModulesLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6117:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5949:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6117:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5949:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop12:
                     do {
                         int alt12=3;
@@ -2205,7 +2205,7 @@ public class InternalGuiceModulesLexer extends Lexer {
 
                         switch (alt12) {
                     	case 1 :
-                    	    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6117:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5949:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2221,7 +2221,7 @@ public class InternalGuiceModulesLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6117:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5949:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2264,12 +2264,12 @@ public class InternalGuiceModulesLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6119:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6119:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5951:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5951:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6119:24: ( options {greedy=false; } : . )*
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5951:24: ( options {greedy=false; } : . )*
             loop14:
             do {
                 int alt14=2;
@@ -2294,7 +2294,7 @@ public class InternalGuiceModulesLexer extends Lexer {
 
                 switch (alt14) {
             	case 1 :
-            	    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6119:52: .
+            	    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5951:52: .
             	    {
             	    matchAny(); 
 
@@ -2324,12 +2324,12 @@ public class InternalGuiceModulesLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6121:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6121:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5953:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5953:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6121:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5953:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop15:
             do {
                 int alt15=2;
@@ -2342,7 +2342,7 @@ public class InternalGuiceModulesLexer extends Lexer {
 
                 switch (alt15) {
             	case 1 :
-            	    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6121:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5953:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2362,7 +2362,7 @@ public class InternalGuiceModulesLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6121:40: ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5953:40: ( ( '\\r' )? '\\n' )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -2371,9 +2371,9 @@ public class InternalGuiceModulesLexer extends Lexer {
             }
             switch (alt17) {
                 case 1 :
-                    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6121:41: ( '\\r' )? '\\n'
+                    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5953:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6121:41: ( '\\r' )?
+                    // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5953:41: ( '\\r' )?
                     int alt16=2;
                     int LA16_0 = input.LA(1);
 
@@ -2382,7 +2382,7 @@ public class InternalGuiceModulesLexer extends Lexer {
                     }
                     switch (alt16) {
                         case 1 :
-                            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6121:41: '\\r'
+                            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5953:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2414,10 +2414,10 @@ public class InternalGuiceModulesLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6123:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6123:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5955:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5955:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6123:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5955:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt18=0;
             loop18:
             do {
@@ -2471,8 +2471,8 @@ public class InternalGuiceModulesLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6125:16: ( . )
-            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:6125:18: .
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5957:16: ( . )
+            // ../org.xtext.guicemodules/src-gen/org/xtext/guicemodules/parser/antlr/internal/InternalGuiceModules.g:5957:18: .
             {
             matchAny(); 
 
@@ -3087,13 +3087,13 @@ public class InternalGuiceModulesLexer extends Lexer {
 
     protected DFA19 dfa19 = new DFA19(this);
     static final String DFA19_eotS =
-        "\1\uffff\1\60\3\uffff\2\60\3\uffff\1\76\1\100\1\102\1\104\1\107"+
-        "\1\111\1\113\1\115\1\60\1\122\1\125\1\130\1\132\1\135\1\uffff\1"+
-        "\60\4\uffff\11\60\2\166\1\56\1\uffff\2\56\2\uffff\1\60\4\uffff\1"+
-        "\60\1\175\3\60\3\uffff\1\u0083\4\uffff\1\u0085\12\uffff\1\u0087"+
-        "\1\uffff\1\60\1\u0089\1\60\2\uffff\1\u008c\13\uffff\1\u008d\4\uffff"+
+        "\1\uffff\1\60\3\uffff\2\60\3\uffff\1\76\3\uffff\1\103\1\106\1\110"+
+        "\1\112\1\114\1\60\1\121\1\124\1\126\1\131\1\133\1\136\1\uffff\1"+
+        "\60\1\142\1\uffff\11\60\2\166\1\56\1\uffff\2\56\2\uffff\1\60\4\uffff"+
+        "\1\60\1\175\3\60\3\uffff\1\u0083\16\uffff\1\u0085\1\uffff\1\60\1"+
+        "\u0087\1\60\2\uffff\1\u008a\2\uffff\1\u008c\12\uffff\1\u008d\3\uffff"+
         "\6\60\1\u0094\11\60\1\uffff\1\166\4\uffff\2\60\2\uffff\1\60\1\u00a3"+
-        "\2\60\6\uffff\1\60\1\uffff\1\60\3\uffff\6\60\1\uffff\2\60\1\u00b0"+
+        "\2\60\4\uffff\1\60\1\uffff\1\60\5\uffff\6\60\1\uffff\2\60\1\u00b0"+
         "\3\60\1\u00b4\1\u00b5\1\u00b6\3\60\1\u00ba\1\u00bb\1\uffff\4\60"+
         "\1\u00c0\5\60\1\u00c6\1\60\1\uffff\3\60\3\uffff\1\u00cb\1\60\1\u00cd"+
         "\2\uffff\1\60\1\u00cf\2\60\1\uffff\3\60\1\u00d6\1\60\1\uffff\1\u00d8"+
@@ -3104,15 +3104,15 @@ public class InternalGuiceModulesLexer extends Lexer {
     static final String DFA19_eofS =
         "\u00f1\uffff";
     static final String DFA19_minS =
-        "\1\0\1\151\3\uffff\1\151\1\150\3\uffff\2\75\1\56\1\72\1\75\1\174"+
-        "\1\46\1\75\1\146\2\75\1\56\2\52\1\uffff\1\163\4\uffff\1\154\1\164"+
-        "\1\145\2\141\1\150\1\141\2\145\2\60\1\44\1\uffff\2\0\2\uffff\1\170"+
-        "\4\uffff\1\156\1\44\1\165\1\160\1\162\3\uffff\1\75\4\uffff\1\74"+
-        "\12\uffff\1\75\1\uffff\1\163\1\44\1\160\2\uffff\1\76\13\uffff\1"+
-        "\44\4\uffff\1\163\1\164\1\151\1\141\1\160\1\146\1\44\1\163\1\162"+
+        "\1\0\1\151\3\uffff\1\151\1\150\3\uffff\1\75\3\uffff\2\75\1\174\1"+
+        "\46\1\75\1\146\2\75\2\56\2\52\1\uffff\1\163\1\72\1\uffff\1\154\1"+
+        "\164\1\145\2\141\1\150\1\141\2\145\2\60\1\44\1\uffff\2\0\2\uffff"+
+        "\1\170\4\uffff\1\156\1\44\1\165\1\160\1\162\3\uffff\1\75\16\uffff"+
+        "\1\75\1\uffff\1\163\1\44\1\160\2\uffff\1\76\2\uffff\1\74\12\uffff"+
+        "\1\44\3\uffff\1\163\1\164\1\151\1\141\1\160\1\146\1\44\1\163\1\162"+
         "\1\154\1\156\1\151\1\154\1\167\1\154\1\164\1\uffff\1\60\4\uffff"+
-        "\1\151\1\144\2\uffff\1\145\1\44\1\145\1\157\6\uffff\1\164\1\uffff"+
-        "\1\157\3\uffff\2\145\2\164\1\145\1\141\1\uffff\1\145\1\143\1\44"+
+        "\1\151\1\144\2\uffff\1\145\1\44\1\145\1\157\4\uffff\1\164\1\uffff"+
+        "\1\157\5\uffff\2\145\2\164\1\145\1\141\1\uffff\1\145\1\143\1\44"+
         "\1\163\1\141\1\154\3\44\1\154\1\165\1\156\2\44\1\uffff\1\157\1\167"+
         "\1\141\1\162\1\44\1\156\1\143\1\151\1\162\1\165\1\44\1\150\1\uffff"+
         "\1\145\1\154\1\145\3\uffff\1\44\1\162\1\44\2\uffff\1\146\1\44\1"+
@@ -3122,46 +3122,46 @@ public class InternalGuiceModulesLexer extends Lexer {
         "\1\44\1\157\2\uffff\2\44\1\uffff\1\157\1\uffff\1\156\2\uffff\1\146"+
         "\2\44\2\uffff";
     static final String DFA19_maxS =
-        "\1\uffff\1\151\3\uffff\1\151\1\171\3\uffff\1\76\1\75\1\56\1\72\1"+
-        "\76\1\174\1\46\1\75\1\156\1\75\1\76\1\72\1\52\1\57\1\uffff\1\163"+
-        "\4\uffff\1\170\1\167\1\157\1\141\1\157\1\150\1\141\1\165\1\145\1"+
-        "\170\1\154\1\172\1\uffff\2\uffff\2\uffff\1\170\4\uffff\1\156\1\172"+
-        "\1\171\1\160\1\162\3\uffff\1\75\4\uffff\1\74\12\uffff\1\75\1\uffff"+
-        "\1\163\1\172\1\160\2\uffff\1\76\13\uffff\1\172\4\uffff\1\163\1\164"+
-        "\1\151\1\141\1\160\1\146\1\172\1\164\1\162\1\154\1\156\1\151\1\162"+
-        "\1\167\1\154\1\164\1\uffff\1\154\4\uffff\1\151\1\144\2\uffff\1\145"+
-        "\1\172\1\145\1\157\6\uffff\1\164\1\uffff\1\157\3\uffff\2\145\2\164"+
-        "\1\145\1\141\1\uffff\1\145\1\143\1\172\1\163\1\141\1\154\3\172\1"+
-        "\154\1\165\1\156\2\172\1\uffff\1\157\1\167\1\141\1\162\1\172\1\156"+
-        "\1\143\1\151\1\162\1\165\1\172\1\150\1\uffff\1\145\1\154\1\145\3"+
-        "\uffff\1\172\1\162\1\172\2\uffff\1\146\1\172\1\156\1\164\1\uffff"+
-        "\1\163\1\150\1\143\1\172\1\154\1\uffff\2\172\1\154\1\172\1\uffff"+
-        "\1\156\1\uffff\1\172\1\uffff\1\143\1\172\1\163\1\151\2\172\1\uffff"+
-        "\1\164\2\uffff\1\171\1\uffff\1\172\1\uffff\1\145\1\uffff\1\172\1"+
-        "\157\2\uffff\2\172\1\uffff\1\157\1\uffff\1\156\2\uffff\1\146\2\172"+
-        "\2\uffff";
+        "\1\uffff\1\151\3\uffff\1\151\1\171\3\uffff\1\76\3\uffff\1\75\1\76"+
+        "\1\174\1\46\1\75\1\156\1\75\1\76\1\56\1\72\1\52\1\57\1\uffff\1\163"+
+        "\1\72\1\uffff\1\170\1\167\1\157\1\141\1\157\1\150\1\141\1\165\1"+
+        "\145\1\170\1\154\1\172\1\uffff\2\uffff\2\uffff\1\170\4\uffff\1\156"+
+        "\1\172\1\171\1\160\1\162\3\uffff\1\75\16\uffff\1\75\1\uffff\1\163"+
+        "\1\172\1\160\2\uffff\1\76\2\uffff\1\74\12\uffff\1\172\3\uffff\1"+
+        "\163\1\164\1\151\1\141\1\160\1\146\1\172\1\164\1\162\1\154\1\156"+
+        "\1\151\1\162\1\167\1\154\1\164\1\uffff\1\154\4\uffff\1\151\1\144"+
+        "\2\uffff\1\145\1\172\1\145\1\157\4\uffff\1\164\1\uffff\1\157\5\uffff"+
+        "\2\145\2\164\1\145\1\141\1\uffff\1\145\1\143\1\172\1\163\1\141\1"+
+        "\154\3\172\1\154\1\165\1\156\2\172\1\uffff\1\157\1\167\1\141\1\162"+
+        "\1\172\1\156\1\143\1\151\1\162\1\165\1\172\1\150\1\uffff\1\145\1"+
+        "\154\1\145\3\uffff\1\172\1\162\1\172\2\uffff\1\146\1\172\1\156\1"+
+        "\164\1\uffff\1\163\1\150\1\143\1\172\1\154\1\uffff\2\172\1\154\1"+
+        "\172\1\uffff\1\156\1\uffff\1\172\1\uffff\1\143\1\172\1\163\1\151"+
+        "\2\172\1\uffff\1\164\2\uffff\1\171\1\uffff\1\172\1\uffff\1\145\1"+
+        "\uffff\1\172\1\157\2\uffff\2\172\1\uffff\1\157\1\uffff\1\156\2\uffff"+
+        "\1\146\2\172\2\uffff";
     static final String DFA19_acceptS =
-        "\2\uffff\1\2\1\3\1\4\2\uffff\1\10\1\11\1\12\16\uffff\1\47\1\uffff"+
-        "\1\53\1\54\1\55\1\57\14\uffff\1\117\2\uffff\1\123\1\124\1\uffff"+
-        "\1\117\1\2\1\3\1\4\5\uffff\1\10\1\11\1\12\1\uffff\1\37\1\13\1\17"+
-        "\1\14\1\uffff\1\15\1\16\1\63\1\20\1\34\1\43\1\21\1\56\1\22\1\113"+
-        "\1\uffff\1\50\3\uffff\1\30\1\32\1\uffff\1\40\1\33\1\41\1\52\1\112"+
-        "\1\45\1\44\1\121\1\122\1\46\1\47\1\uffff\1\53\1\54\1\55\1\57\20"+
-        "\uffff\1\114\1\uffff\1\115\1\116\1\120\1\123\2\uffff\1\7\1\6\4\uffff"+
-        "\1\25\1\23\1\35\1\36\1\26\1\24\1\uffff\1\60\1\uffff\1\42\1\31\1"+
-        "\51\6\uffff\1\70\16\uffff\1\107\14\uffff\1\66\3\uffff\1\71\1\72"+
-        "\1\100\3\uffff\1\5\1\102\4\uffff\1\61\5\uffff\1\65\4\uffff\1\103"+
-        "\1\uffff\1\1\1\uffff\1\105\6\uffff\1\77\1\uffff\1\111\1\101\1\uffff"+
-        "\1\67\1\uffff\1\104\1\uffff\1\75\2\uffff\1\62\1\74\2\uffff\1\106"+
-        "\1\uffff\1\73\1\uffff\1\64\1\110\3\uffff\1\76\1\27";
+        "\2\uffff\1\2\1\3\1\4\2\uffff\1\10\1\11\1\12\1\uffff\1\14\1\15\1"+
+        "\16\14\uffff\1\50\2\uffff\1\57\14\uffff\1\117\2\uffff\1\123\1\124"+
+        "\1\uffff\1\117\1\2\1\3\1\4\5\uffff\1\10\1\11\1\12\1\uffff\1\37\1"+
+        "\13\1\14\1\15\1\16\1\17\1\43\1\20\1\34\1\44\1\21\1\56\1\22\1\113"+
+        "\1\uffff\1\51\3\uffff\1\30\1\32\1\uffff\1\40\1\33\1\uffff\1\53\1"+
+        "\41\1\55\1\112\1\46\1\45\1\121\1\122\1\47\1\50\1\uffff\1\54\1\63"+
+        "\1\57\20\uffff\1\114\1\uffff\1\115\1\116\1\120\1\123\2\uffff\1\7"+
+        "\1\6\4\uffff\1\25\1\23\1\26\1\24\1\uffff\1\60\1\uffff\1\42\1\31"+
+        "\1\35\1\36\1\52\6\uffff\1\70\16\uffff\1\107\14\uffff\1\66\3\uffff"+
+        "\1\71\1\72\1\100\3\uffff\1\5\1\102\4\uffff\1\61\5\uffff\1\65\4\uffff"+
+        "\1\103\1\uffff\1\1\1\uffff\1\105\6\uffff\1\77\1\uffff\1\111\1\101"+
+        "\1\uffff\1\67\1\uffff\1\104\1\uffff\1\75\2\uffff\1\62\1\74\2\uffff"+
+        "\1\106\1\uffff\1\73\1\uffff\1\64\1\110\3\uffff\1\76\1\27";
     static final String DFA19_specialS =
         "\1\0\52\uffff\1\1\1\2\u00c4\uffff}>";
     static final String[] DFA19_transitionS = {
-            "\11\56\2\55\2\56\1\55\22\56\1\55\1\21\1\53\1\32\1\52\1\30\1"+
-            "\20\1\54\1\10\1\11\1\26\1\13\1\2\1\16\1\14\1\27\1\47\11\50\1"+
-            "\15\1\35\1\24\1\12\1\23\1\25\1\7\32\52\1\33\1\56\1\34\1\51\1"+
-            "\52\1\56\1\31\1\5\1\41\1\40\1\36\1\42\2\52\1\22\3\52\1\1\1\45"+
-            "\3\52\1\46\1\37\1\6\1\52\1\44\1\43\3\52\1\3\1\17\1\4\uff82\56",
+            "\11\56\2\55\2\56\1\55\22\56\1\55\1\22\1\53\1\13\1\52\1\32\1"+
+            "\21\1\54\1\10\1\11\1\30\1\16\1\2\1\17\1\26\1\31\1\47\11\50\1"+
+            "\34\1\35\1\25\1\12\1\24\1\27\1\7\32\52\1\14\1\56\1\15\1\51\1"+
+            "\52\1\56\1\33\1\5\1\41\1\40\1\36\1\42\2\52\1\23\3\52\1\1\1\45"+
+            "\3\52\1\46\1\37\1\6\1\52\1\44\1\43\3\52\1\3\1\20\1\4\uff82\56",
             "\1\57",
             "",
             "",
@@ -3172,24 +3172,24 @@ public class InternalGuiceModulesLexer extends Lexer {
             "",
             "",
             "\1\74\1\75",
-            "\1\77",
-            "\1\101",
-            "\1\103",
-            "\1\105\1\106",
-            "\1\110",
-            "\1\112",
-            "\1\114",
-            "\1\117\6\uffff\1\120\1\116",
-            "\1\121",
-            "\1\123\1\124",
-            "\1\127\13\uffff\1\126",
-            "\1\131",
-            "\1\133\4\uffff\1\134",
-            "",
-            "\1\137",
             "",
             "",
             "",
+            "\1\102",
+            "\1\104\1\105",
+            "\1\107",
+            "\1\111",
+            "\1\113",
+            "\1\116\6\uffff\1\117\1\115",
+            "\1\120",
+            "\1\122\1\123",
+            "\1\125",
+            "\1\130\13\uffff\1\127",
+            "\1\132",
+            "\1\134\4\uffff\1\135",
+            "",
+            "\1\140",
+            "\1\141",
             "",
             "\1\144\13\uffff\1\145",
             "\1\147\1\150\1\uffff\1\146",
@@ -3230,23 +3230,25 @@ public class InternalGuiceModulesLexer extends Lexer {
             "",
             "",
             "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\u0084",
             "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\u0086",
-            "",
-            "\1\u0088",
             "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
             "\60",
-            "\1\u008a",
+            "\1\u0088",
+            "",
+            "",
+            "\1\u0089",
             "",
             "",
             "\1\u008b",
@@ -3260,10 +3262,8 @@ public class InternalGuiceModulesLexer extends Lexer {
             "",
             "",
             "",
-            "",
             "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32"+
             "\60",
-            "",
             "",
             "",
             "",
@@ -3304,11 +3304,11 @@ public class InternalGuiceModulesLexer extends Lexer {
             "",
             "",
             "",
-            "",
-            "",
             "\1\u00a6",
             "",
             "\1\u00a7",
+            "",
+            "",
             "",
             "",
             "",
@@ -3498,41 +3498,41 @@ public class InternalGuiceModulesLexer extends Lexer {
 
                         else if ( (LA19_0=='=') ) {s = 10;}
 
-                        else if ( (LA19_0=='+') ) {s = 11;}
+                        else if ( (LA19_0=='#') ) {s = 11;}
 
-                        else if ( (LA19_0=='.') ) {s = 12;}
+                        else if ( (LA19_0=='[') ) {s = 12;}
 
-                        else if ( (LA19_0==':') ) {s = 13;}
+                        else if ( (LA19_0==']') ) {s = 13;}
 
-                        else if ( (LA19_0=='-') ) {s = 14;}
+                        else if ( (LA19_0=='+') ) {s = 14;}
 
-                        else if ( (LA19_0=='|') ) {s = 15;}
+                        else if ( (LA19_0=='-') ) {s = 15;}
 
-                        else if ( (LA19_0=='&') ) {s = 16;}
+                        else if ( (LA19_0=='|') ) {s = 16;}
 
-                        else if ( (LA19_0=='!') ) {s = 17;}
+                        else if ( (LA19_0=='&') ) {s = 17;}
 
-                        else if ( (LA19_0=='i') ) {s = 18;}
+                        else if ( (LA19_0=='!') ) {s = 18;}
 
-                        else if ( (LA19_0=='>') ) {s = 19;}
+                        else if ( (LA19_0=='i') ) {s = 19;}
 
-                        else if ( (LA19_0=='<') ) {s = 20;}
+                        else if ( (LA19_0=='>') ) {s = 20;}
 
-                        else if ( (LA19_0=='?') ) {s = 21;}
+                        else if ( (LA19_0=='<') ) {s = 21;}
 
-                        else if ( (LA19_0=='*') ) {s = 22;}
+                        else if ( (LA19_0=='.') ) {s = 22;}
 
-                        else if ( (LA19_0=='/') ) {s = 23;}
+                        else if ( (LA19_0=='?') ) {s = 23;}
 
-                        else if ( (LA19_0=='%') ) {s = 24;}
+                        else if ( (LA19_0=='*') ) {s = 24;}
 
-                        else if ( (LA19_0=='a') ) {s = 25;}
+                        else if ( (LA19_0=='/') ) {s = 25;}
 
-                        else if ( (LA19_0=='#') ) {s = 26;}
+                        else if ( (LA19_0=='%') ) {s = 26;}
 
-                        else if ( (LA19_0=='[') ) {s = 27;}
+                        else if ( (LA19_0=='a') ) {s = 27;}
 
-                        else if ( (LA19_0==']') ) {s = 28;}
+                        else if ( (LA19_0==':') ) {s = 28;}
 
                         else if ( (LA19_0==';') ) {s = 29;}
 

@@ -24,9 +24,8 @@ public class TemplateCompiler extends XbaseCompiler {
     boolean _matched = false;
     if (!_matched) {
       if (expr instanceof RichString) {
-        final RichString _richString = (RichString)expr;
         _matched=true;
-        final String name = it.declareVariable(_richString, "_appendable");
+        final String name = it.declareVariable(expr, "_appendable");
         it.newLine();
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("StringBuilder ");
@@ -34,7 +33,7 @@ public class TemplateCompiler extends XbaseCompiler {
         _builder.append(" = new StringBuilder();");
         _builder.newLineIfNotEmpty();
         it.append(_builder);
-        EList<XExpression> _expressions = _richString.getExpressions();
+        EList<XExpression> _expressions = ((RichString)expr).getExpressions();
         for (final XExpression nestedExpression : _expressions) {
           {
             this.internalToJavaStatement(nestedExpression, it, true);
@@ -51,14 +50,13 @@ public class TemplateCompiler extends XbaseCompiler {
     }
     if (!_matched) {
       if (expr instanceof RichStringForLoop) {
-        final RichStringForLoop _richStringForLoop = (RichStringForLoop)expr;
         _matched=true;
-        XExpression _forExpression = _richStringForLoop.getForExpression();
+        XExpression _forExpression = ((RichStringForLoop)expr).getForExpression();
         this.internalToJavaStatement(_forExpression, it, true);
         ITypeProvider _typeProvider = this.getTypeProvider();
-        JvmFormalParameter _declaredParam = _richStringForLoop.getDeclaredParam();
+        JvmFormalParameter _declaredParam = ((RichStringForLoop)expr).getDeclaredParam();
         final JvmTypeReference paramType = _typeProvider.getTypeForIdentifiable(_declaredParam);
-        final String name = it.declareVariable(_richStringForLoop, "_forLoopResult");
+        final String name = it.declareVariable(expr, "_forLoopResult");
         it.newLine();
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("StringBuilder ");
@@ -67,29 +65,29 @@ public class TemplateCompiler extends XbaseCompiler {
         _builder.newLineIfNotEmpty();
         _builder.append("for (final ");
         it.append(_builder);
-        this.serialize(paramType, _richStringForLoop, it);
+        this.serialize(paramType, expr, it);
         StringConcatenation _builder_1 = new StringConcatenation();
         _builder_1.append(" ");
-        JvmFormalParameter _declaredParam_1 = _richStringForLoop.getDeclaredParam();
-        JvmFormalParameter _declaredParam_2 = _richStringForLoop.getDeclaredParam();
+        JvmFormalParameter _declaredParam_1 = ((RichStringForLoop)expr).getDeclaredParam();
+        JvmFormalParameter _declaredParam_2 = ((RichStringForLoop)expr).getDeclaredParam();
         String _name = _declaredParam_2.getName();
         String _makeJavaIdentifier = this.makeJavaIdentifier(_name);
         String _declareVariable = it.declareVariable(_declaredParam_1, _makeJavaIdentifier);
         _builder_1.append(_declareVariable, " ");
         _builder_1.append(" : ");
         it.append(_builder_1);
-        XExpression _forExpression_1 = _richStringForLoop.getForExpression();
+        XExpression _forExpression_1 = ((RichStringForLoop)expr).getForExpression();
         this.internalToJavaExpression(_forExpression_1, it);
         ITreeAppendable _append = it.append(") {");
         _append.increaseIndentation();
-        XExpression _eachExpression = _richStringForLoop.getEachExpression();
+        XExpression _eachExpression = ((RichStringForLoop)expr).getEachExpression();
         this.internalToJavaStatement(_eachExpression, it, true);
         it.newLine();
         StringConcatenation _builder_2 = new StringConcatenation();
         _builder_2.append(name, "");
         _builder_2.append(".append(");
         it.append(_builder_2);
-        XExpression _eachExpression_1 = _richStringForLoop.getEachExpression();
+        XExpression _eachExpression_1 = ((RichStringForLoop)expr).getEachExpression();
         this.internalToJavaExpression(_eachExpression_1, it);
         it.append(");");
         ITreeAppendable _decreaseIndentation = it.decreaseIndentation();

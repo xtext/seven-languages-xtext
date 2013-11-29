@@ -19,7 +19,6 @@ import org.eclipse.xtext.junit4.InjectWith;
 import org.eclipse.xtext.junit4.XtextRunner;
 import org.eclipse.xtext.util.IAcceptor;
 import org.eclipse.xtext.xbase.compiler.CompilationTestHelper;
-import org.eclipse.xtext.xbase.compiler.CompilationTestHelper.Result;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
@@ -70,8 +69,8 @@ public class WrappingUtilTest {
       _builder.newLine();
       _builder.append("}");
       _builder.newLine();
-      final IAcceptor<Result> _function = new IAcceptor<Result>() {
-        public void accept(final Result it) {
+      final IAcceptor<CompilationTestHelper.Result> _function = new IAcceptor<CompilationTestHelper.Result>() {
+        public void accept(final CompilationTestHelper.Result it) {
           Class<? extends Object> _compiledClass = it.getCompiledClass();
           WrappingUtilTest.this.setMongoBeanClass(_compiledClass);
           Class<? extends Object> _compiledClass_1 = it.getCompiledClass();

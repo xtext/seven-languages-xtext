@@ -18,7 +18,6 @@ import org.eclipse.xtext.junit4.InjectWith;
 import org.eclipse.xtext.junit4.XtextRunner;
 import org.eclipse.xtext.util.IAcceptor;
 import org.eclipse.xtext.xbase.compiler.CompilationTestHelper;
-import org.eclipse.xtext.xbase.compiler.CompilationTestHelper.Result;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Exceptions;
@@ -221,7 +220,6 @@ public class CommandLineTest {
     _builder.append("} ");
     _builder.newLine();
     final String file = _builder.toString();
-    String _plus = ("Compile --source testdata/org/xtext/builddsl/tests/SimpleMain.java --dest " + tmpDir);
     StringConcatenation _builder_1 = new StringConcatenation();
     _builder_1.append("[Task \'Pre\']");
     _builder_1.newLine();
@@ -229,14 +227,14 @@ public class CommandLineTest {
     _builder_1.newLine();
     _builder_1.append("compiling Java files...success.");
     _builder_1.newLine();
-    this.assertExecute(file, _plus, _builder_1.toString());
+    this.assertExecute(file, ("Compile --source testdata/org/xtext/builddsl/tests/SimpleMain.java --dest " + tmpDir), _builder_1.toString());
   }
   
   protected void assertExecute(final CharSequence file, final String cmdline, final String expectedOutput) {
     try {
       final ArrayList<Class<? extends Object>> classes = CollectionLiterals.<Class<?>>newArrayList();
-      final IAcceptor<Result> _function = new IAcceptor<Result>() {
-        public void accept(final Result it) {
+      final IAcceptor<CompilationTestHelper.Result> _function = new IAcceptor<CompilationTestHelper.Result>() {
+        public void accept(final CompilationTestHelper.Result it) {
           Class<? extends Object> _compiledClass = it.getCompiledClass();
           classes.add(_compiledClass);
         }

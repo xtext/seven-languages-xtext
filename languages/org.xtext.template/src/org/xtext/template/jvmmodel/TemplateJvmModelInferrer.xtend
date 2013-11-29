@@ -58,18 +58,16 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
 					"init", 
 					element.newTypeRef(Procedures.Procedure1, newTypeRef(javaClass))
 				)
-				body = [
-					append('''
-						if (init != null)
-							init.apply(this);
-						String result = generate().toString();
-						// remove leading -->
-						result = result.replaceAll("^-->\\n","");
-						// trim multi-newline to single newline
-						result = result.replaceAll("\\n\\s*\\n","\n");
-						return result;
-					''')
-				]
+				body = '''
+					if (init != null)
+						init.apply(this);
+					String result = generate().toString();
+					// remove leading -->
+					result = result.replaceAll("^-->\\n","");
+					// trim multi-newline to single newline
+					result = result.replaceAll("\\n\\s*\\n","\n");
+					return result;
+				'''
 			]
 		]
 	}

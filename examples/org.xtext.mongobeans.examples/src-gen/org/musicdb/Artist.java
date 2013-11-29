@@ -18,7 +18,6 @@ public class Artist implements IMongoBean {
    */
   public Artist(final DBObject dbObject) {
     this._dbObject = dbObject;
-    
   }
   
   /**
@@ -27,7 +26,6 @@ public class Artist implements IMongoBean {
   public Artist() {
     _dbObject = new com.mongodb.BasicDBObject();
     _dbObject.put(JAVA_CLASS_KEY, "org.musicdb.Artist");
-    
   }
   
   private DBObject _dbObject;
@@ -38,12 +36,10 @@ public class Artist implements IMongoBean {
   
   public String getName() {
     return (java.lang.String) _dbObject.get("name");
-    
   }
   
   public void setName(final String name) {
     _dbObject.put("name", name);
-    
   }
   
   private MongoBeanList<Album> _albums;
@@ -52,7 +48,6 @@ public class Artist implements IMongoBean {
     if(_albums==null)
     	_albums = new org.xtext.mongobeans.lib.MongoBeanList<org.musicdb.Album>(_dbObject, "albums");
     return _albums;
-    
   }
   
   public Iterable<? extends Track> getOevre() {

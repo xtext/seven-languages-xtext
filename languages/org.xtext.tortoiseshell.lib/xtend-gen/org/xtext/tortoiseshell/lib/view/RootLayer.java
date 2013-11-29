@@ -70,9 +70,8 @@ public class RootLayer extends FreeformLayer {
     }
     if (!_matched) {
       if (figure instanceof Viewport) {
-        final Viewport _viewport = (Viewport)figure;
         _matched=true;
-        _switchResult = _viewport;
+        _switchResult = ((Viewport)figure);
       }
     }
     if (!_matched) {

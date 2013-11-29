@@ -22,8 +22,6 @@ public class RouteSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_URL_SolidusKeyword_1_0_q_or___SolidusKeyword_1_1_0_0_QualifiedNameParserRuleCall_1_1_0_1_0__p;
 	protected AbstractElementAlias match_URL___QualifiedNameParserRuleCall_1_1_0_1_0_SolidusKeyword_1_1_0_0__a;
 	protected AbstractElementAlias match_URL___SolidusKeyword_1_1_0_0_QualifiedNameParserRuleCall_1_1_0_1_0__a;
-	protected AbstractElementAlias match_XAnnotationElementValue_LeftParenthesisKeyword_7_0_a;
-	protected AbstractElementAlias match_XAnnotationElementValue_LeftParenthesisKeyword_7_0_p;
 	protected AbstractElementAlias match_XAnnotation___LeftParenthesisKeyword_3_0_RightParenthesisKeyword_3_2__q;
 	protected AbstractElementAlias match_XBlockExpression_SemicolonKeyword_2_1_q;
 	protected AbstractElementAlias match_XConstructorCall___LeftParenthesisKeyword_4_0_RightParenthesisKeyword_4_2__q;
@@ -39,8 +37,6 @@ public class RouteSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_URL_SolidusKeyword_1_0_q_or___SolidusKeyword_1_1_0_0_QualifiedNameParserRuleCall_1_1_0_1_0__p = new AlternativeAlias(false, false, new GroupAlias(true, false, new TokenAlias(false, false, grammarAccess.getURLAccess().getSolidusKeyword_1_1_0_0()), new TokenAlias(false, false, grammarAccess.getURLAccess().getQualifiedNameParserRuleCall_1_1_0_1_0())), new TokenAlias(false, true, grammarAccess.getURLAccess().getSolidusKeyword_1_0()));
 		match_URL___QualifiedNameParserRuleCall_1_1_0_1_0_SolidusKeyword_1_1_0_0__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getURLAccess().getQualifiedNameParserRuleCall_1_1_0_1_0()), new TokenAlias(false, false, grammarAccess.getURLAccess().getSolidusKeyword_1_1_0_0()));
 		match_URL___SolidusKeyword_1_1_0_0_QualifiedNameParserRuleCall_1_1_0_1_0__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getURLAccess().getSolidusKeyword_1_1_0_0()), new TokenAlias(false, false, grammarAccess.getURLAccess().getQualifiedNameParserRuleCall_1_1_0_1_0()));
-		match_XAnnotationElementValue_LeftParenthesisKeyword_7_0_a = new TokenAlias(true, true, grammarAccess.getXAnnotationElementValueAccess().getLeftParenthesisKeyword_7_0());
-		match_XAnnotationElementValue_LeftParenthesisKeyword_7_0_p = new TokenAlias(true, false, grammarAccess.getXAnnotationElementValueAccess().getLeftParenthesisKeyword_7_0());
 		match_XAnnotation___LeftParenthesisKeyword_3_0_RightParenthesisKeyword_3_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getXAnnotationAccess().getLeftParenthesisKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getXAnnotationAccess().getRightParenthesisKeyword_3_2()));
 		match_XBlockExpression_SemicolonKeyword_2_1_q = new TokenAlias(false, true, grammarAccess.getXBlockExpressionAccess().getSemicolonKeyword_2_1());
 		match_XConstructorCall___LeftParenthesisKeyword_4_0_RightParenthesisKeyword_4_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getXConstructorCallAccess().getLeftParenthesisKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getXConstructorCallAccess().getRightParenthesisKeyword_4_2()));
@@ -106,10 +102,6 @@ public class RouteSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_URL___QualifiedNameParserRuleCall_1_1_0_1_0_SolidusKeyword_1_1_0_0__a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_URL___SolidusKeyword_1_1_0_0_QualifiedNameParserRuleCall_1_1_0_1_0__a.equals(syntax))
 				emit_URL___SolidusKeyword_1_1_0_0_QualifiedNameParserRuleCall_1_1_0_1_0__a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_XAnnotationElementValue_LeftParenthesisKeyword_7_0_a.equals(syntax))
-				emit_XAnnotationElementValue_LeftParenthesisKeyword_7_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_XAnnotationElementValue_LeftParenthesisKeyword_7_0_p.equals(syntax))
-				emit_XAnnotationElementValue_LeftParenthesisKeyword_7_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_XAnnotation___LeftParenthesisKeyword_3_0_RightParenthesisKeyword_3_2__q.equals(syntax))
 				emit_XAnnotation___LeftParenthesisKeyword_3_0_RightParenthesisKeyword_3_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_XBlockExpression_SemicolonKeyword_2_1_q.equals(syntax))
@@ -132,7 +124,7 @@ public class RouteSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	/**
 	 * Syntax:
-	 *     ('/' QualifiedName)+ | '/'?
+	 *     '/'? | ('/' QualifiedName)+
 	 */
 	protected void emit_URL_SolidusKeyword_1_0_q_or___SolidusKeyword_1_1_0_0_QualifiedNameParserRuleCall_1_1_0_1_0__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -151,22 +143,6 @@ public class RouteSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('/' QualifiedName)*
 	 */
 	protected void emit_URL___SolidusKeyword_1_1_0_0_QualifiedNameParserRuleCall_1_1_0_1_0__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     '('*
-	 */
-	protected void emit_XAnnotationElementValue_LeftParenthesisKeyword_7_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     '('+
-	 */
-	protected void emit_XAnnotationElementValue_LeftParenthesisKeyword_7_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

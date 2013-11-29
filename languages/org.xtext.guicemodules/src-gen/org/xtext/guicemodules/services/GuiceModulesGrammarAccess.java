@@ -312,7 +312,7 @@ public class GuiceModulesGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XAnnotationElementValuePair:
-	//	element=[types::JvmOperation|ValidID] "=" value=XAnnotationElementValue;
+	//	=> (element=[types::JvmOperation|ValidID] "=") value=XAnnotationElementValue;
 	public XbaseWithAnnotationsGrammarAccess.XAnnotationElementValuePairElements getXAnnotationElementValuePairAccess() {
 		return gaXbaseWithAnnotations.getXAnnotationElementValuePairAccess();
 	}
@@ -321,47 +321,14 @@ public class GuiceModulesGrammarAccess extends AbstractGrammarElementFinder {
 		return getXAnnotationElementValuePairAccess().getRule();
 	}
 
-	//XAnnotationElementValueStringConcatenation returns xbase::XExpression:
-	//	XAnnotationElementValue ({XAnnotationElementValueBinaryOperation.leftOperand=current} operator="+"
-	//	rightOperand=XAnnotationElementValue)*;
-	public XbaseWithAnnotationsGrammarAccess.XAnnotationElementValueStringConcatenationElements getXAnnotationElementValueStringConcatenationAccess() {
-		return gaXbaseWithAnnotations.getXAnnotationElementValueStringConcatenationAccess();
-	}
-	
-	public ParserRule getXAnnotationElementValueStringConcatenationRule() {
-		return getXAnnotationElementValueStringConcatenationAccess().getRule();
-	}
-
 	//XAnnotationElementValue returns xbase::XExpression:
-	//	XAnnotation | XListLiteral | XStringLiteral | XBooleanLiteral | XNumberLiteral | XTypeLiteral |
-	//	XAnnotationValueMemberFieldReference | "(" XAnnotationElementValueStringConcatenation ")";
+	//	XAnnotation | {xbase::XListLiteral} => ("#" "[" elements+=XAnnotation) ("," elements+=XAnnotation)* "]" | XExpression;
 	public XbaseWithAnnotationsGrammarAccess.XAnnotationElementValueElements getXAnnotationElementValueAccess() {
 		return gaXbaseWithAnnotations.getXAnnotationElementValueAccess();
 	}
 	
 	public ParserRule getXAnnotationElementValueRule() {
 		return getXAnnotationElementValueAccess().getRule();
-	}
-
-	//XAnnotationValueMemberFieldReference returns xbase::XExpression:
-	//	XAnnotationValueFieldReference ({xbase::XMemberFeatureCall.memberCallTarget=current} ("." | explicitStatic?="::")
-	//	feature=[types::JvmIdentifiableElement|IdOrSuper])*;
-	public XbaseWithAnnotationsGrammarAccess.XAnnotationValueMemberFieldReferenceElements getXAnnotationValueMemberFieldReferenceAccess() {
-		return gaXbaseWithAnnotations.getXAnnotationValueMemberFieldReferenceAccess();
-	}
-	
-	public ParserRule getXAnnotationValueMemberFieldReferenceRule() {
-		return getXAnnotationValueMemberFieldReferenceAccess().getRule();
-	}
-
-	//XAnnotationValueFieldReference returns xbase::XExpression:
-	//	{xbase::XFeatureCall} feature=[types::JvmIdentifiableElement|IdOrSuper];
-	public XbaseWithAnnotationsGrammarAccess.XAnnotationValueFieldReferenceElements getXAnnotationValueFieldReferenceAccess() {
-		return gaXbaseWithAnnotations.getXAnnotationValueFieldReferenceAccess();
-	}
-	
-	public ParserRule getXAnnotationValueFieldReferenceRule() {
-		return getXAnnotationValueFieldReferenceAccess().getRule();
 	}
 
 	//XExpression:
@@ -962,6 +929,19 @@ public class GuiceModulesGrammarAccess extends AbstractGrammarElementFinder {
 		return getNumberAccess().getRule();
 	}
 
+	/// **
+	// * Dummy rule, for "better" downwards compatibility, since GrammarAccess generates non-static inner classes, 
+	// * which makes downstream grammars break on classloading, when a rule is removed.
+	// * / StaticQualifier:
+	//	(ValidID "::")+;
+	public XbaseGrammarAccess.StaticQualifierElements getStaticQualifierAccess() {
+		return gaXbaseWithAnnotations.getStaticQualifierAccess();
+	}
+	
+	public ParserRule getStaticQualifierRule() {
+		return getStaticQualifierAccess().getRule();
+	}
+
 	//terminal HEX:
 	//	("0x" | "0X") ("0".."9" | "a".."f" | "A".."F" | "_")+ ("#" (("b" | "B") ("i" | "I") | ("l" | "L")))?;
 	public TerminalRule getHEXRule() {
@@ -1073,7 +1053,7 @@ public class GuiceModulesGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//JvmTypeParameter:
-	//	name=ValidID (constraints+=JvmUpperBound constraints+=JvmUpperBoundAnded* | constraints+=JvmLowerBound)?;
+	//	name=ValidID (constraints+=JvmUpperBound constraints+=JvmUpperBoundAnded*)?;
 	public XtypeGrammarAccess.JvmTypeParameterElements getJvmTypeParameterAccess() {
 		return gaXbaseWithAnnotations.getJvmTypeParameterAccess();
 	}

@@ -94,8 +94,7 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
           _textWidget_1.addCaretListener(this);
         }
       } else {
-        int _minus = (-10);
-        this.view.show(this.currentTortoiseEditor, _minus);
+        this.view.show(this.currentTortoiseEditor, (-10));
       }
       IFile _editorFile_1 = null;
       if (this.currentTortoiseEditor!=null) {
@@ -184,8 +183,7 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
             if (_and) {
               boolean _xblockexpression = false;
               {
-                int _minus = (-10);
-                TortoisePartListener.this.view.show(TortoisePartListener.this.currentTortoiseEditor, _minus);
+                TortoisePartListener.this.view.show(TortoisePartListener.this.currentTortoiseEditor, (-10));
                 _xblockexpression = (false);
               }
               _xifexpression = _xblockexpression;
@@ -235,8 +233,7 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
       if (_textWidget!=null) {
         _textWidget.removeCaretListener(this);
       }
-      boolean _not = (!this.isStopMode);
-      this.isStopMode = _not;
+      this.isStopMode = (!this.isStopMode);
       if (this.isStopMode) {
         ISourceViewer _internalSourceViewer_1 = null;
         if (this.currentTortoiseEditor!=null) {

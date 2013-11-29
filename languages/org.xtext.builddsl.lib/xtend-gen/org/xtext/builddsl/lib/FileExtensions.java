@@ -88,8 +88,7 @@ public class FileExtensions {
       boolean _isDirectory = dir.isDirectory();
       boolean _not = (!_isDirectory);
       if (_not) {
-        String _plus = ("This is not a directory: " + dir);
-        IllegalStateException _illegalStateException = new IllegalStateException(_plus);
+        IllegalStateException _illegalStateException = new IllegalStateException(("This is not a directory: " + dir));
         throw _illegalStateException;
       }
       URI _uRI = dir.toURI();
@@ -107,8 +106,7 @@ public class FileExtensions {
       boolean _isDirectory = _file.isDirectory();
       boolean _not = (!_isDirectory);
       if (_not) {
-        String _plus = ("This is not a directory: " + dir);
-        IllegalStateException _illegalStateException = new IllegalStateException(_plus);
+        IllegalStateException _illegalStateException = new IllegalStateException(("This is not a directory: " + dir));
         throw _illegalStateException;
       }
       File _file_1 = FileExtensions.file(dir);

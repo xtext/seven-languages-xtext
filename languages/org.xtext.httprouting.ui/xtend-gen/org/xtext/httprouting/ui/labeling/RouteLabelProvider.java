@@ -40,7 +40,7 @@ public class RouteLabelProvider extends XbaseLabelProvider {
   public String text(final Route route) {
     StringConcatenation _builder = new StringConcatenation();
     RequestType _requestType = route.getRequestType();
-    String _name = _requestType.name();
+    String _name = _requestType.getName();
     _builder.append(_name, "");
     URL _url = route.getUrl();
     ICompositeNode _node = NodeModelUtils.getNode(_url);

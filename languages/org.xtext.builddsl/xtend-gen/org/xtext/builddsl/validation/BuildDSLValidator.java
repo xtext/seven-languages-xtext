@@ -26,7 +26,6 @@ import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.eclipse.xtext.xbase.validation.XbaseJavaValidator;
 import org.eclipse.xtext.xtype.XtypePackage;
 import org.xtext.builddsl.build.BuildPackage;
-import org.xtext.builddsl.build.BuildPackage.Literals;
 import org.xtext.builddsl.build.Task;
 
 @SuppressWarnings("all")
@@ -55,7 +54,7 @@ public class BuildDSLValidator extends XbaseJavaValidator {
           _builder.append(_name, "");
           _builder.append("\' cannot depend on itself.");
           Task _head = IterableExtensions.<Task>head(cycle);
-          BuildDSLValidator.this.error(_builder.toString(), _head, Literals.DECLARATION__NAME, BuildDSLValidator.CYCLIC_DEPENDENCY);
+          BuildDSLValidator.this.error(_builder.toString(), _head, BuildPackage.Literals.DECLARATION__NAME, BuildDSLValidator.CYCLIC_DEPENDENCY);
         } else {
           StringConcatenation _builder_1 = new StringConcatenation();
           _builder_1.append("There is a cyclic dependency that involves tasks ");
@@ -69,7 +68,7 @@ public class BuildDSLValidator extends XbaseJavaValidator {
           String _join = IterableExtensions.join(_map, ", ");
           _builder_1.append(_join, "");
           Task _head_1 = IterableExtensions.<Task>head(cycle);
-          BuildDSLValidator.this.error(_builder_1.toString(), _head_1, Literals.DECLARATION__NAME, BuildDSLValidator.CYCLIC_DEPENDENCY);
+          BuildDSLValidator.this.error(_builder_1.toString(), _head_1, BuildPackage.Literals.DECLARATION__NAME, BuildDSLValidator.CYCLIC_DEPENDENCY);
         }
       }
     };

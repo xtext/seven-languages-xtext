@@ -17,7 +17,7 @@ import org.eclipse.xtext.common.types.util.TypeReferences;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.xbase.annotations.validation.XbaseWithAnnotationsJavaValidator;
 import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotation;
-import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationsPackage.Literals;
+import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationsPackage;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
@@ -35,9 +35,8 @@ public class GuiceModulesValidator extends XbaseWithAnnotationsJavaValidator {
     boolean _matched = false;
     if (!_matched) {
       if (type instanceof JvmAnnotationType) {
-        final JvmAnnotationType _jvmAnnotationType = (JvmAnnotationType)type;
         _matched=true;
-        EList<JvmAnnotationReference> _annotations = _jvmAnnotationType.getAnnotations();
+        EList<JvmAnnotationReference> _annotations = ((JvmAnnotationType)type).getAnnotations();
         final Function1<JvmAnnotationReference,Boolean> _function = new Function1<JvmAnnotationReference,Boolean>() {
           public Boolean apply(final JvmAnnotationReference it) {
             JvmAnnotationType _annotation = it.getAnnotation();
@@ -48,7 +47,7 @@ public class GuiceModulesValidator extends XbaseWithAnnotationsJavaValidator {
         boolean _exists = IterableExtensions.<JvmAnnotationReference>exists(_annotations, _function);
         boolean _not = (!_exists);
         if (_not) {
-          this.error("The annotation is not annotated with @BindingAnnotation", Literals.XANNOTATION__ANNOTATION_TYPE);
+          this.error("The annotation is not annotated with @BindingAnnotation", XAnnotationsPackage.Literals.XANNOTATION__ANNOTATION_TYPE);
         }
       }
     }

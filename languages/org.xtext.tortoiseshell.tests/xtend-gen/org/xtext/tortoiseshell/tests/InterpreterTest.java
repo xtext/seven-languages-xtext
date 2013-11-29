@@ -27,7 +27,6 @@ import org.junit.runner.RunWith;
 import org.xtext.tortoiseshell.TortoiseShellInjectorProvider;
 import org.xtext.tortoiseshell.interpreter.TortoiseShellInterpeter;
 import org.xtext.tortoiseshell.lib.ITortoiseEvent;
-import org.xtext.tortoiseshell.lib.ITortoiseEvent.Listener;
 import org.xtext.tortoiseshell.lib.MoveEvent;
 import org.xtext.tortoiseshell.lib.Tortoise;
 import org.xtext.tortoiseshell.lib.TurnEvent;
@@ -114,16 +113,14 @@ public class InterpreterTest {
       _builder.append("end");
       _builder.newLine();
       final Program program = this._parseHelper.parse(_builder);
-      int _minus = (-10);
-      this._tortoiseShellInterpeter.run(tortoise, program, _minus);
+      this._tortoiseShellInterpeter.run(tortoise, program, (-10));
       final Procedure1<Tortoise> _function_1 = new Procedure1<Tortoise>() {
         public void apply(final Tortoise it) {
           boolean _isPaint = it.isPaint();
           Assert.assertFalse(_isPaint);
           double _angle = it.getAngle();
           Assert.assertEquals(10.0, _angle, 0.0);
-          int _minus = (-10);
-          Point _point = new Point(0, _minus);
+          Point _point = new Point(0, (-10));
           Point _position = it.getPosition();
           Assert.assertEquals(_point, _position);
           int _delay = it.getDelay();
@@ -187,28 +184,25 @@ public class InterpreterTest {
       final Program program = this._parseHelper.parse(_builder);
       final ArrayList<MoveEvent> moveEvents = CollectionLiterals.<MoveEvent>newArrayList();
       final ArrayList<TurnEvent> turnEvents = CollectionLiterals.<TurnEvent>newArrayList();
-      final Listener _function = new Listener() {
+      final ITortoiseEvent.Listener _function = new ITortoiseEvent.Listener() {
         public void handleTortoiseEvent(final ITortoiseEvent it) {
           boolean _matched = false;
           if (!_matched) {
             if (it instanceof MoveEvent) {
-              final MoveEvent _moveEvent = (MoveEvent)it;
               _matched=true;
-              moveEvents.add(_moveEvent);
+              moveEvents.add(((MoveEvent)it));
             }
           }
           if (!_matched) {
             if (it instanceof TurnEvent) {
-              final TurnEvent _turnEvent = (TurnEvent)it;
               _matched=true;
-              turnEvents.add(_turnEvent);
+              turnEvents.add(((TurnEvent)it));
             }
           }
         }
       };
       tortoise.addListener(_function);
-      int _minus = (-10);
-      this._tortoiseShellInterpeter.run(tortoise, program, _minus);
+      this._tortoiseShellInterpeter.run(tortoise, program, (-10));
       int _size = moveEvents.size();
       Assert.assertEquals(19, _size);
       int _size_1 = turnEvents.size();

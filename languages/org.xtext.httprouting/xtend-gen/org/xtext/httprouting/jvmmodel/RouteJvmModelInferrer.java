@@ -18,6 +18,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtend2.lib.StringConcatenation;
+import org.eclipse.xtend2.lib.StringConcatenationClient;
 import org.eclipse.xtext.common.types.JvmAnnotationReference;
 import org.eclipse.xtext.common.types.JvmField;
 import org.eclipse.xtext.common.types.JvmFormalParameter;
@@ -29,10 +30,8 @@ import org.eclipse.xtext.nodemodel.ICompositeNode;
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.eclipse.xtext.xbase.XExpression;
 import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotation;
-import org.eclipse.xtext.xbase.compiler.output.ITreeAppendable;
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor;
-import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor.IPostIndexingInitializing;
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
@@ -69,7 +68,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
   protected void _infer(final Model model, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {
     String _javaClassName = this.javaClassName(model);
     JvmGenericType _class = this._jvmTypesBuilder.toClass(model, _javaClassName);
-    IPostIndexingInitializing<JvmGenericType> _accept = acceptor.<JvmGenericType>accept(_class);
+    IJvmDeclaredTypeAcceptor.IPostIndexingInitializing<JvmGenericType> _accept = acceptor.<JvmGenericType>accept(_class);
     final Procedure1<JvmGenericType> _function = new Procedure1<JvmGenericType>() {
       public void apply(final JvmGenericType it) {
         EList<JvmTypeReference> _superTypes = it.getSuperTypes();
@@ -264,9 +263,9 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
     final Procedure1<JvmField> _function = new Procedure1<JvmField>() {
       public void apply(final JvmField it) {
         it.setStatic(true);
-        final Procedure1<ITreeAppendable> _function = new Procedure1<ITreeAppendable>() {
-          public void apply(final ITreeAppendable it) {
-            StringConcatenation _builder = new StringConcatenation();
+        StringConcatenationClient _client = new StringConcatenationClient() {
+          @Override
+          protected void appendTo(StringConcatenationClient.TargetStringConcatenation _builder) {
             _builder.append("Pattern.compile(\"");
             URL _url = route.getUrl();
             ICompositeNode _node = NodeModelUtils.getNode(_url);
@@ -277,10 +276,9 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
             String _regExPattern = RouteJvmModelInferrer.this.getRegExPattern(_trim, _variables);
             _builder.append(_regExPattern, "");
             _builder.append("\")");
-            it.append(_builder);
           }
         };
-        RouteJvmModelInferrer.this._jvmTypesBuilder.setInitializer(it, _function);
+        RouteJvmModelInferrer.this._jvmTypesBuilder.setInitializer(it, _client);
       }
     };
     JvmField _field = this._jvmTypesBuilder.toField(_url, _plus, _newTypeRef, _function);
@@ -340,9 +338,9 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
         JvmTypeReference _newTypeRef_1 = RouteJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(model, RouteJvmModelInferrer.HTTP_RESPONSE);
         JvmFormalParameter _parameter_1 = RouteJvmModelInferrer.this._jvmTypesBuilder.toParameter(model, "response", _newTypeRef_1);
         RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters_1, _parameter_1);
-        final Procedure1<ITreeAppendable> _function = new Procedure1<ITreeAppendable>() {
-          public void apply(final ITreeAppendable it) {
-            StringConcatenation _builder = new StringConcatenation();
+        StringConcatenationClient _client = new StringConcatenationClient() {
+          @Override
+          protected void appendTo(StringConcatenationClient.TargetStringConcatenation _builder) {
             _builder.append("String url =  request.getRequestURL().toString();");
             _builder.newLine();
             {
@@ -352,7 +350,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
                 _builder.append("\t");
                 _builder.append("java.util.regex.Matcher _matcher = _pattern");
                 int _index = RouteJvmModelInferrer.this.index(route);
-                _builder.append(_index, "	");
+                _builder.append(_index, "\t");
                 _builder.append(".matcher(url);");
                 _builder.newLineIfNotEmpty();
                 _builder.append("\t");
@@ -365,11 +363,11 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
                     _builder.append("\t\t");
                     _builder.append("String ");
                     String _name = variable.getName();
-                    _builder.append(_name, "		");
+                    _builder.append(_name, "\t\t");
                     _builder.append(" = _matcher.group(");
                     int _index_1 = RouteJvmModelInferrer.this.index(variable);
                     int _plus = (_index_1 + 1);
-                    _builder.append(_plus, "		");
+                    _builder.append(_plus, "\t\t");
                     _builder.append(");");
                     _builder.newLineIfNotEmpty();
                   }
@@ -398,7 +396,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
                     _builder.append("\t\t");
                     _builder.append("if (");
                     String _nameOfRouteMethod_1 = RouteJvmModelInferrer.this.nameOfRouteMethod(route);
-                    _builder.append(_nameOfRouteMethod_1, "		");
+                    _builder.append(_nameOfRouteMethod_1, "\t\t");
                     _builder.append("Condition(request, response");
                     {
                       URL _url_2 = route.getUrl();
@@ -407,19 +405,19 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
                       for(final Variable v_1 : _variables_2) {
                         if (!_hasElements) {
                           _hasElements = true;
-                          _builder.append(", ", "		");
+                          _builder.append(", ", "\t\t");
                         } else {
-                          _builder.appendImmediate(", ", "		");
+                          _builder.appendImmediate(", ", "\t\t");
                         }
                         String _name_2 = v_1.getName();
-                        _builder.append(_name_2, "		");
+                        _builder.append(_name_2, "\t\t");
                       }
                     }
                     _builder.append(")) {");
                     _builder.newLineIfNotEmpty();
                     _builder.append("\t\t");
                     _builder.append("\t");
-                    _builder.append(routeMethodCall, "			");
+                    _builder.append(routeMethodCall, "\t\t\t");
                     _builder.newLineIfNotEmpty();
                     _builder.append("\t\t");
                     _builder.append("\t");
@@ -430,7 +428,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
                     _builder.newLine();
                   } else {
                     _builder.append("\t\t");
-                    _builder.append(routeMethodCall, "		");
+                    _builder.append(routeMethodCall, "\t\t");
                     _builder.newLineIfNotEmpty();
                     _builder.append("\t\t");
                     _builder.append("return;");
@@ -444,10 +442,9 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
                 _builder.newLine();
               }
             }
-            it.append(_builder);
           }
         };
-        RouteJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _function);
+        RouteJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _client);
       }
     };
     JvmOperation _method = this._jvmTypesBuilder.toMethod(model, name, _newTypeRef, _function);
@@ -509,16 +506,15 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
     boolean _matched = false;
     if (!_matched) {
       if (parent instanceof URL) {
-        final URL _uRL = (URL)parent;
         _matched=true;
         boolean _and = false;
-        EList<Variable> _variables = _uRL.getVariables();
+        EList<Variable> _variables = ((URL)parent).getVariables();
         Variable _last = IterableExtensions.<Variable>last(_variables);
         boolean _equals = Objects.equal(_last, it);
         if (!_equals) {
           _and = false;
         } else {
-          boolean _isWildcard = _uRL.isWildcard();
+          boolean _isWildcard = ((URL)parent).isWildcard();
           _and = (_equals && _isWildcard);
         }
         _switchResult = _and;

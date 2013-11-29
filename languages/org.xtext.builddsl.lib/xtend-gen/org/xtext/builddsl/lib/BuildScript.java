@@ -183,9 +183,7 @@ public abstract class BuildScript {
     final TaskDef task = _tasks.get(name);
     boolean _equals = Objects.equal(task, null);
     if (_equals) {
-      String _plus = ("A task \'" + name);
-      String _plus_1 = (_plus + "\' does not exist.");
-      UnsupportedOperationException _unsupportedOperationException = new UnsupportedOperationException(_plus_1);
+      UnsupportedOperationException _unsupportedOperationException = new UnsupportedOperationException((("A task \'" + name) + "\' does not exist."));
       throw _unsupportedOperationException;
     }
     boolean _isExecuted = task.isExecuted();
@@ -194,9 +192,7 @@ public abstract class BuildScript {
     }
     boolean _isIsExecuting = task.isIsExecuting();
     if (_isIsExecuting) {
-      String _plus_2 = ("Recursion detected : The task \'" + name);
-      String _plus_3 = (_plus_2 + "\' already running.");
-      IllegalStateException _illegalStateException = new IllegalStateException(_plus_3);
+      IllegalStateException _illegalStateException = new IllegalStateException((("Recursion detected : The task \'" + name) + "\' already running."));
       throw _illegalStateException;
     }
     try {
@@ -262,7 +258,7 @@ public abstract class BuildScript {
         List<String> _sort = IterableExtensions.<String>sort(_keySet);
         for(final String task : _sort) {
           _builder.append("\t");
-          _builder.append(task, "	");
+          _builder.append(task, "\t");
           _builder.newLineIfNotEmpty();
         }
       }
@@ -281,11 +277,11 @@ public abstract class BuildScript {
               _builder.append("\t");
               _builder.append("--");
               String _name = it.getName();
-              _builder.append(_name, "	");
+              _builder.append(_name, "\t");
               _builder.append(" <");
               Class<? extends Object> _type = it.getType();
               String _simpleName_1 = _type.getSimpleName();
-              _builder.append(_simpleName_1, "	");
+              _builder.append(_simpleName_1, "\t");
               _builder.append(">");
               _builder.newLineIfNotEmpty();
             }
@@ -302,9 +298,7 @@ public abstract class BuildScript {
     Map<String,TaskDef> _tasks = this.getTasks();
     boolean _containsKey = _tasks.containsKey(name);
     if (_containsKey) {
-      String _plus = ("A task \'" + name);
-      String _plus_1 = (_plus + "\' is laready registered.");
-      IllegalArgumentException _illegalArgumentException = new IllegalArgumentException(_plus_1);
+      IllegalArgumentException _illegalArgumentException = new IllegalArgumentException((("A task \'" + name) + "\' is laready registered."));
       throw _illegalArgumentException;
     }
     TaskDef _taskDef = new TaskDef();

@@ -57,8 +57,7 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
   }
   
   public String findTask(final XtextResource res, final int offset) {
-    boolean _lessThan = (offset < 0);
-    if (_lessThan) {
+    if ((offset < 0)) {
       return null;
     }
     IParseResult _parseResult = res.getParseResult();
@@ -121,15 +120,13 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
       boolean _matched = false;
       if (!_matched) {
         if (it instanceof ITextSelection) {
-          final ITextSelection _iTextSelection = (ITextSelection)it;
           _matched=true;
-          int _offset = _iTextSelection.getOffset();
+          int _offset = ((ITextSelection)it).getOffset();
           _switchResult = _offset;
         }
       }
       if (!_matched) {
-        int _minus = (-1);
-        _switchResult = _minus;
+        _switchResult = (-1);
       }
       final int offset = _switchResult;
       IEditorInput _editorInput = xbaseEditor.getEditorInput();

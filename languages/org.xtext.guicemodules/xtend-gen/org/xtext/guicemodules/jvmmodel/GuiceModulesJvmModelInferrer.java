@@ -19,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.xtend2.lib.StringConcatenation;
+import org.eclipse.xtend2.lib.StringConcatenationClient;
 import org.eclipse.xtext.common.types.JvmField;
 import org.eclipse.xtext.common.types.JvmFormalParameter;
 import org.eclipse.xtext.common.types.JvmGenericType;
@@ -34,10 +35,8 @@ import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.xbase.XExpression;
 import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotation;
-import org.eclipse.xtext.xbase.compiler.output.ITreeAppendable;
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor;
-import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor.IPostIndexingInitializing;
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Conversions;
@@ -83,7 +82,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
     final JvmType voidType = _newTypeRef_6.getType();
     QualifiedName _fullyQualifiedName = this._iQualifiedNameProvider.getFullyQualifiedName(module);
     JvmGenericType _class = this.builder.toClass(module, _fullyQualifiedName);
-    IPostIndexingInitializing<JvmGenericType> _accept = acceptor.<JvmGenericType>accept(_class);
+    IJvmDeclaredTypeAcceptor.IPostIndexingInitializing<JvmGenericType> _accept = acceptor.<JvmGenericType>accept(_class);
     final Procedure1<JvmGenericType> _function = new Procedure1<JvmGenericType>() {
       public void apply(final JvmGenericType it) {
         String _documentation = GuiceModulesJvmModelInferrer.this.builder.getDocumentation(module);
@@ -103,17 +102,16 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
             JvmTypeReference _newTypeRef = GuiceModulesJvmModelInferrer.this.builder.newTypeRef(it, _string);
             final Procedure1<JvmField> _function = new Procedure1<JvmField>() {
               public void apply(final JvmField it) {
-                final Procedure1<ITreeAppendable> _function = new Procedure1<ITreeAppendable>() {
-                  public void apply(final ITreeAppendable it) {
-                    StringConcatenation _builder = new StringConcatenation();
+                StringConcatenationClient _client = new StringConcatenationClient() {
+                  @Override
+                  protected void appendTo(StringConcatenationClient.TargetStringConcatenation _builder) {
                     _builder.append("new ");
                     String _name = mixin.getName();
                     _builder.append(_name, "");
                     _builder.append("()");
-                    it.append(_builder);
                   }
                 };
-                GuiceModulesJvmModelInferrer.this.builder.setInitializer(it, _function);
+                GuiceModulesJvmModelInferrer.this.builder.setInitializer(it, _client);
               }
             };
             JvmField _field = GuiceModulesJvmModelInferrer.this.builder.toField(mixin, _simpleName, _newTypeRef, _function);
@@ -195,9 +193,9 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
             JvmParameterizedTypeReference _createTypeRef = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(binderType);
             JvmFormalParameter _parameter = GuiceModulesJvmModelInferrer.this.builder.toParameter(module, "binder", _createTypeRef);
             GuiceModulesJvmModelInferrer.this.builder.<JvmFormalParameter>operator_add(_parameters, _parameter);
-            final Procedure1<ITreeAppendable> _function = new Procedure1<ITreeAppendable>() {
-              public void apply(final ITreeAppendable it) {
-                StringConcatenation _builder = new StringConcatenation();
+            StringConcatenationClient _client = new StringConcatenationClient() {
+              @Override
+              protected void appendTo(StringConcatenationClient.TargetStringConcatenation _builder) {
                 _builder.append("configure(binder, new ");
                 JvmWildcardTypeReference _wildCard = GuiceModulesJvmModelInferrer.this._typeReferences.wildCard();
                 JvmParameterizedTypeReference _createTypeRef = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(keyType, _wildCard);
@@ -206,10 +204,9 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
                 _builder.append(_identifier, "");
                 _builder.append("());");
                 _builder.newLineIfNotEmpty();
-                it.append(_builder);
               }
             };
-            GuiceModulesJvmModelInferrer.this.builder.setBody(it, _function);
+            GuiceModulesJvmModelInferrer.this.builder.setBody(it, _client);
           }
         };
         JvmOperation _method = GuiceModulesJvmModelInferrer.this.builder.toMethod(module, "configure", _createTypeRef_1, _function_1);
@@ -229,9 +226,9 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
             JvmParameterizedTypeReference _createTypeRef_2 = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(setType, _createTypeRef_1);
             JvmFormalParameter _parameter_1 = GuiceModulesJvmModelInferrer.this.builder.toParameter(module, "usedKeys", _createTypeRef_2);
             GuiceModulesJvmModelInferrer.this.builder.<JvmFormalParameter>operator_add(_parameters_1, _parameter_1);
-            final Procedure1<ITreeAppendable> _function = new Procedure1<ITreeAppendable>() {
-              public void apply(final ITreeAppendable it) {
-                StringConcatenation _builder = new StringConcatenation();
+            StringConcatenationClient _client = new StringConcatenationClient() {
+              @Override
+              protected void appendTo(StringConcatenationClient.TargetStringConcatenation _builder) {
                 _builder.append("try {");
                 _builder.newLine();
                 {
@@ -246,14 +243,14 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
                     JvmTypeReference _type = _from.getType();
                     JvmParameterizedTypeReference _createTypeRef = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(keyType, _type);
                     String _identifier = _createTypeRef.getIdentifier();
-                    _builder.append(_identifier, "		");
+                    _builder.append(_identifier, "\t\t");
                     _builder.append(" key = ");
                     _builder.newLineIfNotEmpty();
                     _builder.append("\t");
                     _builder.append("\t\t");
                     KeyAST _from_1 = b.getFrom();
                     CharSequence _guiceKey = GuiceModulesJvmModelInferrer.this.guiceKey(_from_1);
-                    _builder.append(_guiceKey, "			");
+                    _builder.append(_guiceKey, "\t\t\t");
                     _builder.append(";");
                     _builder.newLineIfNotEmpty();
                     _builder.append("\t");
@@ -268,7 +265,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
                         _builder.append("\t\t");
                         _builder.append("bind.bind(key).toInstance(");
                         String _syntheticToInstanceName = GuiceModulesJvmModelInferrer.this.syntheticToInstanceName(b);
-                        _builder.append(_syntheticToInstanceName, "			");
+                        _builder.append(_syntheticToInstanceName, "\t\t\t");
                         _builder.append("());");
                         _builder.newLineIfNotEmpty();
                       } else {
@@ -277,7 +274,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
                         _builder.append("bind.bind(key).to(");
                         KeyAST _to = b.getTo();
                         CharSequence _guiceKey_1 = GuiceModulesJvmModelInferrer.this.guiceKey(_to);
-                        _builder.append(_guiceKey_1, "			");
+                        _builder.append(_guiceKey_1, "\t\t\t");
                         _builder.append(");");
                         _builder.newLineIfNotEmpty();
                       }
@@ -296,7 +293,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
                   for(final ModuleAST mix : _mixins) {
                     _builder.append("\t");
                     String _simpleName = GuiceModulesJvmModelInferrer.this.simpleName(mix);
-                    _builder.append(_simpleName, "	");
+                    _builder.append(_simpleName, "\t");
                     _builder.append(".configure(bind, usedKeys);");
                     _builder.newLineIfNotEmpty();
                   }
@@ -308,10 +305,9 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
                 _builder.newLine();
                 _builder.append("}");
                 _builder.newLine();
-                it.append(_builder);
               }
             };
-            GuiceModulesJvmModelInferrer.this.builder.setBody(it, _function);
+            GuiceModulesJvmModelInferrer.this.builder.setBody(it, _client);
           }
         };
         JvmOperation _method_1 = GuiceModulesJvmModelInferrer.this.builder.toMethod(module, "configure", _createTypeRef_2, _function_2);

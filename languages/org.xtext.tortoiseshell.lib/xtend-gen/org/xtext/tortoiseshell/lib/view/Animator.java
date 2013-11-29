@@ -53,12 +53,10 @@ public class Animator extends UIJob {
     if (this.isAnimated) {
       this.animationQueue.add(animation);
       boolean _and = false;
-      boolean _not = (!this.isScheduled);
-      if (!_not) {
+      if (!(!this.isScheduled)) {
         _and = false;
       } else {
-        boolean _not_1 = (!this.isStop);
-        _and = (_not && _not_1);
+        _and = ((!this.isScheduled) && (!this.isStop));
       }
       if (_and) {
         this.schedule(this.UPDATE_INTERVAL);
@@ -167,9 +165,8 @@ public class Animator extends UIJob {
         }
         boolean _notEquals_1 = (!Objects.equal(currentAnimation, null));
         if (_notEquals_1) {
-          long _minus = (now - this.lastStart);
           int _delay_1 = currentAnimation.getDelay();
-          final double alpha = (((double) _minus) / _delay_1);
+          final double alpha = (((double) (now - this.lastStart)) / _delay_1);
           TortoiseFigure _tortoiseFigure = this.view.getTortoiseFigure();
           currentAnimation.set(_tortoiseFigure, alpha);
           this.schedule(this.UPDATE_INTERVAL);
