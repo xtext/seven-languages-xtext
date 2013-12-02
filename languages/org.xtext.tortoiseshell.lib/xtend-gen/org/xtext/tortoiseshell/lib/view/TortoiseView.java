@@ -44,7 +44,6 @@ import org.eclipse.xtext.ui.editor.model.IXtextDocument;
 import org.eclipse.xtext.ui.util.DisplayRunHelper;
 import org.eclipse.xtext.util.concurrent.IUnitOfWork;
 import org.eclipse.xtext.xbase.lib.Exceptions;
-import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.xtext.tortoiseshell.lib.ITortoiseEvent;
 import org.xtext.tortoiseshell.lib.ITortoiseInterpreter;
 import org.xtext.tortoiseshell.lib.MoveEvent;
@@ -60,12 +59,7 @@ import org.xtext.tortoiseshell.lib.view.TortoisePartListener;
 @Singleton
 @SuppressWarnings("all")
 public class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
-  private final static Logger LOGGER = new Function0<Logger>() {
-    public Logger apply() {
-      Logger _logger = Logger.getLogger(TortoiseView.class);
-      return _logger;
-    }
-  }.apply();
+  private final static Logger LOGGER = Logger.getLogger(TortoiseView.class);
   
   private FigureCanvas canvas;
   

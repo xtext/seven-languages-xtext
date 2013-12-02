@@ -7,13 +7,11 @@
  */
 package org.xtext.tortoiseshell.lib;
 
-import java.util.ArrayList;
 import java.util.List;
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
-import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.xtext.tortoiseshell.lib.ITortoiseEvent;
 import org.xtext.tortoiseshell.lib.MoveEvent;
 import org.xtext.tortoiseshell.lib.TurnEvent;
@@ -58,12 +56,7 @@ public class Tortoise {
     this._lineColor = lineColor;
   }
   
-  private List<ITortoiseEvent.Listener> listeners = new Function0<List<ITortoiseEvent.Listener>>() {
-    public List<ITortoiseEvent.Listener> apply() {
-      ArrayList<ITortoiseEvent.Listener> _newArrayList = CollectionLiterals.<ITortoiseEvent.Listener>newArrayList();
-      return _newArrayList;
-    }
-  }.apply();
+  private List<ITortoiseEvent.Listener> listeners = CollectionLiterals.<ITortoiseEvent.Listener>newArrayList();
   
   public boolean addListener(final ITortoiseEvent.Listener listener) {
     boolean _add = this.listeners.add(listener);

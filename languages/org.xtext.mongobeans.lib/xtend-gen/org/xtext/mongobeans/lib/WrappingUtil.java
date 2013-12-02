@@ -11,7 +11,6 @@ import com.mongodb.DBObject;
 import java.lang.reflect.Constructor;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.Exceptions;
-import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.xtext.mongobeans.lib.IMongoBean;
 
 /**
@@ -77,12 +76,7 @@ public class WrappingUtil {
     return _xifexpression;
   }
   
-  private static ClassLoader _classLoader = new Function0<ClassLoader>() {
-    public ClassLoader apply() {
-      ClassLoader _classLoader = WrappingUtil.getClassLoader();
-      return _classLoader;
-    }
-  }.apply();
+  private static ClassLoader _classLoader = WrappingUtil.getClassLoader();
   
   public static ClassLoader getClassLoader() {
     return WrappingUtil._classLoader;

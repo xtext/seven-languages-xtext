@@ -17,7 +17,6 @@ import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.xtext.ui.PluginImageHelper;
-import org.eclipse.xtext.xbase.lib.Functions.Function0;
 
 @SuppressWarnings("all")
 public class TortoiseFigure extends ImageFigure {
@@ -29,24 +28,14 @@ public class TortoiseFigure extends ImageFigure {
   
   @Inject
   public TortoiseFigure(final PluginImageHelper imageHelper) {
-    super(new Function0<Image>() {
-      public Image apply() {
-        Image _image = imageHelper.getImage("Turtle.png");
-        return _image;
-      }
-    }.apply(), PositionConstants.NORTH_EAST);
+    super(imageHelper.getImage("Turtle.png"), PositionConstants.NORTH_EAST);
   }
   
   protected void paintFigure(final Graphics graphics) {
     graphics.pushState();
     final Dimension size = this.getSize();
     graphics.translate((this.getLocation().x + (size.width / 2)), (this.getLocation().y + (size.width / 2)));
-    graphics.rotate((-((float) Math.toDegrees(new Function0<Double>() {
-      public Double apply() {
-        double _angle = TortoiseFigure.this.getAngle();
-        return _angle;
-      }
-    }.apply()))));
+    graphics.rotate((-((float) Math.toDegrees(this.getAngle()))));
     graphics.translate(((-this.getLocation().x) - (size.width / 2)), ((-this.getLocation().y) - (size.width / 2)));
     super.paintFigure(graphics);
     graphics.popState();

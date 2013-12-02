@@ -7,10 +7,8 @@
  */
 package org.xtext.builddsl.lib;
 
-import java.util.ArrayList;
 import java.util.List;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
-import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure0;
 
 @SuppressWarnings("all")
@@ -35,12 +33,7 @@ public class TaskDef {
     this._name = name;
   }
   
-  private List<String> _prerequisitedTasks = new Function0<List<String>>() {
-    public List<String> apply() {
-      ArrayList<String> _newArrayList = CollectionLiterals.<String>newArrayList();
-      return _newArrayList;
-    }
-  }.apply();
+  private List<String> _prerequisitedTasks = CollectionLiterals.<String>newArrayList();
   
   public List<String> getPrerequisitedTasks() {
     return this._prerequisitedTasks;

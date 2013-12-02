@@ -8,19 +8,12 @@
 package org.xtext.builddsl.lib;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Collection;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
-import org.eclipse.xtext.xbase.lib.Functions.Function0;
 
 @SuppressWarnings("all")
 public class JavaCompilerParams {
-  private Collection<File> _sources = new Function0<Collection<File>>() {
-    public Collection<File> apply() {
-      ArrayList<File> _newArrayList = CollectionLiterals.<File>newArrayList();
-      return _newArrayList;
-    }
-  }.apply();
+  private Collection<File> _sources = CollectionLiterals.<File>newArrayList();
   
   public Collection<File> getSources() {
     return this._sources;
@@ -30,12 +23,7 @@ public class JavaCompilerParams {
     this._sources = sources;
   }
   
-  private Collection<File> _classpath = new Function0<Collection<File>>() {
-    public Collection<File> apply() {
-      ArrayList<File> _newArrayList = CollectionLiterals.<File>newArrayList();
-      return _newArrayList;
-    }
-  }.apply();
+  private Collection<File> _classpath = CollectionLiterals.<File>newArrayList();
   
   public Collection<File> getClasspath() {
     return this._classpath;
