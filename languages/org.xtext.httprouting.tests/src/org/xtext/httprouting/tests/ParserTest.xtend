@@ -72,6 +72,8 @@ class ParserTest {
 					header.add(args.get(0) as String)
 				case 'containsHeader' : 
 					header.contains(args.get(0))
+				default:
+					false
 			}
 		]
 	}

@@ -9,6 +9,7 @@ package org.xtext.mongobeans.jvmmodel;
 
 import com.google.common.base.Objects;
 import com.google.inject.Inject;
+import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 import java.util.Arrays;
 import java.util.List;
@@ -30,8 +31,6 @@ import org.eclipse.xtext.common.types.util.Primitives;
 import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.xbase.XExpression;
-import org.eclipse.xtext.xbase.compiler.IAppendable;
-import org.eclipse.xtext.xbase.compiler.TypeReferenceSerializer;
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmModelAssociations;
@@ -43,6 +42,9 @@ import org.eclipse.xtext.xbase.lib.ListExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 import org.xtext.mongobeans.jvmmodel.MongoTypes;
+import org.xtext.mongobeans.lib.IMongoBean;
+import org.xtext.mongobeans.lib.MongoBeanList;
+import org.xtext.mongobeans.lib.WrappingUtil;
 import org.xtext.mongobeans.mongoBeans.AbstractFeature;
 import org.xtext.mongobeans.mongoBeans.MongoBean;
 import org.xtext.mongobeans.mongoBeans.MongoFile;
@@ -62,10 +64,6 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
   @Inject
   @Extension
   private IQualifiedNameProvider _iQualifiedNameProvider;
-  
-  @Inject
-  @Extension
-  private TypeReferenceSerializer _typeReferenceSerializer;
   
   @Inject
   @Extension
@@ -90,7 +88,7 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
           String _documentation = MongoBeansJvmModelInferrer.this._jvmTypesBuilder.getDocumentation(bean);
           MongoBeansJvmModelInferrer.this._jvmTypesBuilder.setDocumentation(it, _documentation);
           EList<JvmTypeReference> _superTypes = it.getSuperTypes();
-          JvmTypeReference _newTypeRef = MongoBeansJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(bean, "org.xtext.mongobeans.lib.IMongoBean");
+          JvmTypeReference _newTypeRef = MongoBeansJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(bean, IMongoBean.class);
           MongoBeansJvmModelInferrer.this._jvmTypesBuilder.<JvmTypeReference>operator_add(_superTypes, _newTypeRef);
           MongoBeansJvmModelInferrer.this.addConstructors(it, bean);
           MongoBeansJvmModelInferrer.this.addDbObjectProperty(it, bean);
@@ -131,10 +129,13 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
           _builder.append("Creates a new ");
           String _name = bean.getName();
           _builder.append(_name, "");
-          _builder.append(" wrapping the given {@link DBObject}.");
+          _builder.append(" wrapping the given {@link ");
+          String _name_1 = DBObject.class.getName();
+          _builder.append(_name_1, "");
+          _builder.append("}.");
           MongoBeansJvmModelInferrer.this._jvmTypesBuilder.setDocumentation(it, _builder.toString());
           EList<JvmFormalParameter> _parameters = it.getParameters();
-          JvmTypeReference _newTypeRef = MongoBeansJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(bean, "com.mongodb.DBObject");
+          JvmTypeReference _newTypeRef = MongoBeansJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(bean, DBObject.class);
           JvmFormalParameter _parameter = MongoBeansJvmModelInferrer.this._jvmTypesBuilder.toParameter(it, "dbObject", _newTypeRef);
           MongoBeansJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters, _parameter);
           StringConcatenationClient _client = new StringConcatenationClient() {
@@ -156,13 +157,18 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
           _builder.append("Creates a new ");
           String _name = bean.getName();
           _builder.append(_name, "");
-          _builder.append(" wrapping a new {@link com.mongodb.BasicDBObject}.");
+          _builder.append(" wrapping a new {@link ");
+          String _name_1 = BasicDBObject.class.getName();
+          _builder.append(_name_1, "");
+          _builder.append("}.");
           MongoBeansJvmModelInferrer.this._jvmTypesBuilder.setDocumentation(it, _builder.toString());
           StringConcatenationClient _client = new StringConcatenationClient() {
             @Override
             protected void appendTo(StringConcatenationClient.TargetStringConcatenation _builder) {
-              _builder.append("_dbObject = new com.mongodb.BasicDBObject();");
-              _builder.newLine();
+              _builder.append("_dbObject = new ");
+              _builder.append(BasicDBObject.class, "");
+              _builder.append("();");
+              _builder.newLineIfNotEmpty();
               _builder.append("_dbObject.put(JAVA_CLASS_KEY, \"");
               String _identifier = inferredType.getIdentifier();
               _builder.append(_identifier, "");
@@ -184,11 +190,11 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
     boolean _xblockexpression = false;
     {
       EList<JvmMember> _members = inferredType.getMembers();
-      JvmTypeReference _newTypeRef = this._jvmTypesBuilder.newTypeRef(bean, "com.mongodb.DBObject");
+      JvmTypeReference _newTypeRef = this._jvmTypesBuilder.newTypeRef(bean, DBObject.class);
       JvmField _field = this._jvmTypesBuilder.toField(bean, "_dbObject", _newTypeRef);
       this._jvmTypesBuilder.<JvmField>operator_add(_members, _field);
       EList<JvmMember> _members_1 = inferredType.getMembers();
-      JvmTypeReference _newTypeRef_1 = this._jvmTypesBuilder.newTypeRef(bean, "com.mongodb.DBObject");
+      JvmTypeReference _newTypeRef_1 = this._jvmTypesBuilder.newTypeRef(bean, DBObject.class);
       JvmOperation _getter = this._jvmTypesBuilder.toGetter(bean, "dbObject", "_dbObject", _newTypeRef_1);
       boolean _add = this._jvmTypesBuilder.<JvmOperation>operator_add(_members_1, _getter);
       _xblockexpression = (_add);
@@ -208,7 +214,7 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
         String _name = property.getName();
         String _firstUpper = StringExtensions.toFirstUpper(_name);
         String _plus = ("get" + _firstUpper);
-        JvmTypeReference _newTypeRef = this._jvmTypesBuilder.newTypeRef(property, "java.util.List", propertyType);
+        JvmTypeReference _newTypeRef = this._jvmTypesBuilder.newTypeRef(property, List.class, propertyType);
         final Procedure1<JvmOperation> _function = new Procedure1<JvmOperation>() {
           public void apply(final JvmOperation it) {
             String _documentation = MongoBeansJvmModelInferrer.this._jvmTypesBuilder.getDocumentation(property);
@@ -216,9 +222,10 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
             StringConcatenationClient _client = new StringConcatenationClient() {
               @Override
               protected void appendTo(StringConcatenationClient.TargetStringConcatenation _builder) {
-                _builder.append("return (java.util.List<");
-                String _identifier = propertyType.getIdentifier();
-                _builder.append(_identifier, "");
+                _builder.append("return (");
+                _builder.append(List.class, "");
+                _builder.append("<");
+                _builder.append(propertyType, "");
                 _builder.append(">) _dbObject.get(\"");
                 String _name = property.getName();
                 _builder.append(_name, "");
@@ -238,14 +245,14 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
           EList<JvmMember> _members_1 = inferredType.getMembers();
           String _name_1 = property.getName();
           String _plus_1 = ("_" + _name_1);
-          JvmTypeReference _newTypeRef_1 = this._jvmTypesBuilder.newTypeRef(property, "org.xtext.mongobeans.lib.MongoBeanList", propertyType);
+          JvmTypeReference _newTypeRef_1 = this._jvmTypesBuilder.newTypeRef(property, MongoBeanList.class, propertyType);
           JvmField _field = this._jvmTypesBuilder.toField(property, _plus_1, _newTypeRef_1);
           this._jvmTypesBuilder.<JvmField>operator_add(_members_1, _field);
           EList<JvmMember> _members_2 = inferredType.getMembers();
           String _name_2 = property.getName();
           String _firstUpper_1 = StringExtensions.toFirstUpper(_name_2);
           String _plus_2 = ("get" + _firstUpper_1);
-          JvmTypeReference _newTypeRef_2 = this._jvmTypesBuilder.newTypeRef(property, "java.util.List", propertyType);
+          JvmTypeReference _newTypeRef_2 = this._jvmTypesBuilder.newTypeRef(property, List.class, propertyType);
           final Procedure1<JvmOperation> _function_1 = new Procedure1<JvmOperation>() {
             public void apply(final JvmOperation it) {
               String _documentation = MongoBeansJvmModelInferrer.this._jvmTypesBuilder.getDocumentation(property);
@@ -262,9 +269,10 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
                   _builder.append("_");
                   String _name_1 = property.getName();
                   _builder.append(_name_1, "\t");
-                  _builder.append(" = new org.xtext.mongobeans.lib.MongoBeanList<");
-                  String _identifier = propertyType.getIdentifier();
-                  _builder.append(_identifier, "\t");
+                  _builder.append(" = new ");
+                  _builder.append(MongoBeanList.class, "\t");
+                  _builder.append("<");
+                  _builder.append(propertyType, "\t");
                   _builder.append(">(_dbObject, \"");
                   String _name_2 = property.getName();
                   _builder.append(_name_2, "\t");
@@ -310,7 +318,11 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
                 JvmTypeReference _jvmType = MongoBeansJvmModelInferrer.this.getJvmType(property);
                 boolean _isMongoBean = MongoBeansJvmModelInferrer.this._mongoTypes.isMongoBean(_jvmType);
                 if (_isMongoBean) {
-                  _builder.append("return org.xtext.mongobeans.lib.WrappingUtil.wrapAndCast((com.mongodb.DBObject) _dbObject.get(\"");
+                  _builder.append("return ");
+                  _builder.append(WrappingUtil.class, "");
+                  _builder.append(".wrapAndCast((");
+                  _builder.append(DBObject.class, "");
+                  _builder.append(") _dbObject.get(\"");
                   String _name = property.getName();
                   _builder.append(_name, "");
                   _builder.append("\"));");
@@ -319,8 +331,7 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
                   _builder.append("return (");
                   JvmTypeReference _jvmType_1 = MongoBeansJvmModelInferrer.this.getJvmType(property);
                   JvmTypeReference _asWrapperTypeIfPrimitive = MongoBeansJvmModelInferrer.this._primitives.asWrapperTypeIfPrimitive(_jvmType_1);
-                  String _identifier = _asWrapperTypeIfPrimitive.getIdentifier();
-                  _builder.append(_identifier, "");
+                  _builder.append(_asWrapperTypeIfPrimitive, "");
                   _builder.append(") _dbObject.get(\"");
                   String _name_1 = property.getName();
                   _builder.append(_name_1, "");
@@ -359,7 +370,9 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
                   _builder.append("_dbObject.put(\"");
                   String _name = property.getName();
                   _builder.append(_name, "");
-                  _builder.append("\", org.xtext.mongobeans.lib.WrappingUtil.unwrap(");
+                  _builder.append("\", ");
+                  _builder.append(WrappingUtil.class, "");
+                  _builder.append(".unwrap(");
                   String _name_1 = property.getName();
                   _builder.append(_name_1, "");
                   _builder.append("));");
@@ -431,15 +444,6 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
       _xifexpression = _type;
     }
     return _xifexpression;
-  }
-  
-  protected void appendTypeRef(final IAppendable appendable, final EObject context, final String name, final JvmTypeReference... typeArguments) {
-    JvmTypeReference _newTypeRef = this._jvmTypesBuilder.newTypeRef(context, name, typeArguments);
-    this._typeReferenceSerializer.serialize(_newTypeRef, context, appendable);
-  }
-  
-  protected void appendTypeRef(final IAppendable appendable, final EObject context, final JvmTypeReference typeRef) {
-    this._typeReferenceSerializer.serialize(typeRef, context, appendable);
   }
   
   public void infer(final EObject file, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {

@@ -8,18 +8,19 @@
 package org.xtext.mongobeans.jvmmodel
 
 import com.google.inject.Inject
+import com.mongodb.BasicDBObject
 import com.mongodb.DBObject
-import org.eclipse.emf.ecore.EObject
+import java.util.List
 import org.eclipse.xtext.common.types.JvmDeclaredType
-import org.eclipse.xtext.common.types.JvmTypeReference
 import org.eclipse.xtext.common.types.util.Primitives
 import org.eclipse.xtext.naming.IQualifiedNameProvider
-import org.eclipse.xtext.xbase.compiler.IAppendable
-import org.eclipse.xtext.xbase.compiler.TypeReferenceSerializer
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.IJvmModelAssociations
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
+import org.xtext.mongobeans.lib.IMongoBean
+import org.xtext.mongobeans.lib.MongoBeanList
+import org.xtext.mongobeans.lib.WrappingUtil
 import org.xtext.mongobeans.mongoBeans.MongoBean
 import org.xtext.mongobeans.mongoBeans.MongoFile
 import org.xtext.mongobeans.mongoBeans.MongoOperation
@@ -37,8 +38,6 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 
 	@Inject extension IQualifiedNameProvider
 	
-	@Inject extension TypeReferenceSerializer
-	
 	@Inject extension MongoTypes
 	
 	@Inject extension Primitives
@@ -49,7 +48,7 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 		for(bean : file.eAllOfType(MongoBean)) {
 			acceptor.accept(bean.toClass(bean.fullyQualifiedName)).initializeLater [
 				documentation = bean.documentation
-				superTypes += bean.newTypeRef('org.xtext.mongobeans.lib.IMongoBean')
+				superTypes += bean.newTypeRef(IMongoBean)
 				addConstructors(bean)
 				addDbObjectProperty(bean)
 				for(feature: bean.features) {
@@ -69,49 +68,49 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 	
 	def protected addConstructors(JvmDeclaredType inferredType, MongoBean bean) {
 		inferredType.members += bean.toConstructor [
-			documentation = '''Creates a new «bean.name» wrapping the given {@link DBObject}.'''
-			parameters += toParameter("dbObject", newTypeRef(bean, 'com.mongodb.DBObject'))
+			documentation = '''Creates a new «bean.name» wrapping the given {@link «DBObject.name»}.'''
+			parameters += toParameter("dbObject", newTypeRef(bean, DBObject))
 			body = '''
 				this._dbObject = dbObject;
 			'''
 		]
 		inferredType.members += bean.toConstructor [
-			documentation = '''Creates a new «bean.name» wrapping a new {@link com.mongodb.BasicDBObject}.'''
+			documentation = '''Creates a new «bean.name» wrapping a new {@link «BasicDBObject.name»}.'''
 			body = '''
-				_dbObject = new com.mongodb.BasicDBObject();
+				_dbObject = new «BasicDBObject»();
 				_dbObject.put(JAVA_CLASS_KEY, "«inferredType.identifier»");
 			'''
 		]
 	}
 
 	def protected addDbObjectProperty(JvmDeclaredType inferredType, MongoBean bean) {
-		inferredType.members += bean.toField('_dbObject', newTypeRef(bean, 'com.mongodb.DBObject'))
-		inferredType.members += bean.toGetter('dbObject', '_dbObject', newTypeRef(bean, 'com.mongodb.DBObject'))
+		inferredType.members += bean.toField('_dbObject', newTypeRef(bean, DBObject))
+		inferredType.members += bean.toGetter('dbObject', '_dbObject', newTypeRef(bean, DBObject))
 	}
 
 	def protected addListAccessor(JvmDeclaredType inferredType, MongoProperty property) {
 		val propertyType = property.jvmType.asWrapperTypeIfPrimitive
 		if(propertyType.isMongoPrimitiveType) {
 			inferredType.members += property.toMethod('get' + property.name.toFirstUpper, 
-				newTypeRef(property, 'java.util.List', propertyType)
+				newTypeRef(property, List, propertyType)
 			) [
 				documentation = property.documentation
 				body = '''
-					return (java.util.List<«propertyType.identifier»>) _dbObject.get("«property.name»");
+					return («List»<«propertyType»>) _dbObject.get("«property.name»");
 				'''
 			]		
 		} else {
 			
 			inferredType.members += property.toField('_' + property.name, 
-				newTypeRef(property, 'org.xtext.mongobeans.lib.MongoBeanList', propertyType))
+				newTypeRef(property, MongoBeanList, propertyType))
 				
 			inferredType.members += property.toMethod('get' + property.name.toFirstUpper,
-				newTypeRef(property, 'java.util.List', propertyType)
+				newTypeRef(property, List, propertyType)
 			) [
 				documentation = property.documentation
 				body = '''
 					if(_«property.name»==null)
-						_«property.name» = new org.xtext.mongobeans.lib.MongoBeanList<«propertyType.identifier»>(_dbObject, "«property.name»");
+						_«property.name» = new «MongoBeanList»<«propertyType»>(_dbObject, "«property.name»");
 					return _«property.name»;
 				'''
 			]
@@ -123,9 +122,9 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 			documentation = property.documentation
 			body = '''
 				«IF property.jvmType.mongoBean»
-					return org.xtext.mongobeans.lib.WrappingUtil.wrapAndCast((com.mongodb.DBObject) _dbObject.get("«property.name»"));
+					return «WrappingUtil».wrapAndCast((«DBObject») _dbObject.get("«property.name»"));
 				«ELSE»
-					return («property.jvmType.asWrapperTypeIfPrimitive.identifier») _dbObject.get("«property.name»");
+					return («property.jvmType.asWrapperTypeIfPrimitive») _dbObject.get("«property.name»");
 				«ENDIF»
 			'''
 		]
@@ -134,7 +133,7 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 			parameters += toParameter(property.name, property.jvmType)
 			body = '''
 				«IF property.jvmType.mongoBean»
-					_dbObject.put("«property.name»", org.xtext.mongobeans.lib.WrappingUtil.unwrap(«property.name»));
+					_dbObject.put("«property.name»", «WrappingUtil».unwrap(«property.name»));
 				«ELSE»
 					_dbObject.put("«property.name»", «property.name»);
 				«ENDIF»
@@ -157,12 +156,5 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 			property.type
 	}
 
-	def protected appendTypeRef(IAppendable appendable, EObject context, String name, JvmTypeReference... typeArguments) {
-		serialize(context.newTypeRef(name, typeArguments), context, appendable)
-	}
-
-	def protected appendTypeRef(IAppendable appendable, EObject context, JvmTypeReference typeRef) {
-		serialize(typeRef, context, appendable)
-	}
 }
 

@@ -154,6 +154,9 @@ public class ParserTest {
               _switchResult = _contains;
             }
           }
+          if (!_matched) {
+            _switchResult = false;
+          }
           return Boolean.valueOf(_switchResult);
         }
       };

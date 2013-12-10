@@ -83,7 +83,7 @@ class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
 			members += module.toMethod("configure", voidType.createTypeRef) [
 				parameters += module.toParameter("binder", binderType.createTypeRef)
 				body = '''
-					configure(binder, new «HashSet»<«keyType.createTypeRef(wildCard)»>());
+					configure(binder, new «HashSet»<«keyType»<?>>());
 				'''
 			]
 			
@@ -95,7 +95,7 @@ class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
 					try {
 						«FOR b : module.bindings»
 							{
-								«keyType.createTypeRef(b.from.type)» key = «b.from.guiceKey»;
+								«keyType»<«b.from.type»> key = «b.from.guiceKey»;
 								if (usedKeys.add(key)) {
 									«IF b.toInstance != null»
 										bind.bind(key).toInstance(«b.syntheticToInstanceName»());

@@ -22,6 +22,7 @@ import org.xtext.httprouting.route.URL
 import org.xtext.httprouting.route.Variable
 
 import static extension org.eclipse.xtext.nodemodel.util.NodeModelUtils.*
+import java.util.regex.Matcher
 
 /**
  * Translates a file of routes to a Java Servlet class with 
@@ -113,7 +114,7 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 	def protected toRoutePatternField(Route route) {
 		route.url.toField("_pattern" + route.index , route.newTypeRef(Pattern)) [
 			static = true
-			initializer = '''Pattern.compile("«getRegExPattern(route.url.node.text.trim, route.url.variables)»")'''
+			initializer = '''«Pattern».compile("«getRegExPattern(route.url.node.text.trim, route.url.variables)»")'''
 		]
 	}
 
@@ -144,7 +145,7 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 				String url =  request.getRequestURL().toString();
 				«FOR route : routes»
 					{
-						java.util.regex.Matcher _matcher = _pattern«route.index».matcher(url);
+						«Matcher» _matcher = _pattern«route.index».matcher(url);
 						if (_matcher.find()) {
 							«FOR variable : route.url.variables»
 									String «variable.name» = _matcher.group(«variable.index + 1»);

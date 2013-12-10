@@ -118,7 +118,7 @@ public class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoi
                 index = (index + 1);
               }
             }
-            XBlockExpression _body = ((Executable) executable).getBody();
+            XBlockExpression _body = ((Executable)executable).getBody();
             final IEvaluationResult result = this.evaluate(_body, context, CancelIndicator.NullImpl);
             Throwable _exception = result.getException();
             boolean _notEquals = (!Objects.equal(_exception, null));

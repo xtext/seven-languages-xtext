@@ -12,6 +12,7 @@ import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
 import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
@@ -266,7 +267,8 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
         StringConcatenationClient _client = new StringConcatenationClient() {
           @Override
           protected void appendTo(StringConcatenationClient.TargetStringConcatenation _builder) {
-            _builder.append("Pattern.compile(\"");
+            _builder.append(Pattern.class, "");
+            _builder.append(".compile(\"");
             URL _url = route.getUrl();
             ICompositeNode _node = NodeModelUtils.getNode(_url);
             String _text = _node.getText();
@@ -348,7 +350,8 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
                 _builder.append("{");
                 _builder.newLine();
                 _builder.append("\t");
-                _builder.append("java.util.regex.Matcher _matcher = _pattern");
+                _builder.append(Matcher.class, "\t");
+                _builder.append(" _matcher = _pattern");
                 int _index = RouteJvmModelInferrer.this.index(route);
                 _builder.append(_index, "\t");
                 _builder.append(".matcher(url);");

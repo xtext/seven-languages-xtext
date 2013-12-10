@@ -12,9 +12,9 @@ class TemplateTypeComputer extends XbaseWithAnnotationsTypeComputer {
 	
 	override computeTypes(XExpression expression, ITypeComputationState state) {
 		if(expression instanceof RichString) {
-			_computeTypes(expression as RichString, state);
+			_computeTypes(expression, state);
 		} else if(expression instanceof RichStringForLoop) {
-			_computeTypes(expression as RichStringForLoop, state);
+			_computeTypes(expression, state);
 		} else {
 			super.computeTypes(expression, state)
 		}

@@ -197,10 +197,8 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
                 _builder.append("configure(binder, new ");
                 _builder.append(HashSet.class, "");
                 _builder.append("<");
-                JvmWildcardTypeReference _wildCard = GuiceModulesJvmModelInferrer.this._typeReferences.wildCard();
-                JvmParameterizedTypeReference _createTypeRef = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(keyType, _wildCard);
-                _builder.append(_createTypeRef, "");
-                _builder.append(">());");
+                _builder.append(keyType, "");
+                _builder.append("<?>>());");
                 _builder.newLineIfNotEmpty();
               }
             };
@@ -237,11 +235,12 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
                     _builder.newLine();
                     _builder.append("\t");
                     _builder.append("\t");
+                    _builder.append(keyType, "\t\t");
+                    _builder.append("<");
                     KeyAST _from = b.getFrom();
                     JvmTypeReference _type = _from.getType();
-                    JvmParameterizedTypeReference _createTypeRef = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(keyType, _type);
-                    _builder.append(_createTypeRef, "\t\t");
-                    _builder.append(" key = ");
+                    _builder.append(_type, "\t\t");
+                    _builder.append("> key = ");
                     KeyAST _from_1 = b.getFrom();
                     StringConcatenationClient _guiceKey = GuiceModulesJvmModelInferrer.this.guiceKey(_from_1);
                     _builder.append(_guiceKey, "\t\t");

@@ -13,10 +13,10 @@ import org.xtext.template.template.RichStringForLoop;
 public class TemplateTypeComputer extends XbaseWithAnnotationsTypeComputer {
   public void computeTypes(final XExpression expression, final ITypeComputationState state) {
     if ((expression instanceof RichString)) {
-      this._computeTypes(((RichString) expression), state);
+      this._computeTypes(((RichString)expression), state);
     } else {
       if ((expression instanceof RichStringForLoop)) {
-        this._computeTypes(((RichStringForLoop) expression), state);
+        this._computeTypes(((RichStringForLoop)expression), state);
       } else {
         super.computeTypes(expression, state);
       }
