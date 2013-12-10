@@ -2,7 +2,7 @@
 begin
 	val innerRadius = 100.0
 	val outerRadius = 140.0
-	val numPeaks = 10
+	val numPeaks = 5
 
 	val alpha = 360.0 / numPeaks
 	val innerEdge = 2 * innerRadius * sin(toRadians(alpha/2))

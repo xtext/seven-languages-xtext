@@ -22,6 +22,8 @@ import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
 import org.xtext.guicemodules.guiceModules.BindingAST
 import org.xtext.guicemodules.guiceModules.KeyAST
 import org.xtext.guicemodules.guiceModules.ModuleAST
+import org.eclipse.xtend2.lib.StringConcatenationClient
+import com.google.inject.TypeLiteral
 
 class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
 
@@ -37,7 +39,6 @@ class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
 		val keyType = module.newTypeRef(Key).type
 		val moduleType = module.newTypeRef(Module).type
 		val binderType = module.newTypeRef(Binder).type
-		val hashSetType = module.newTypeRef(HashSet).type
 		val setType = module.newTypeRef(Set).type
 		val voidType = module.newTypeRef('void').type
 
@@ -82,7 +83,7 @@ class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
 			members += module.toMethod("configure", voidType.createTypeRef) [
 				parameters += module.toParameter("binder", binderType.createTypeRef)
 				body = '''
-					configure(binder, new «hashSetType.createTypeRef(keyType.createTypeRef(wildCard)).identifier»());
+					configure(binder, new «HashSet»<«keyType.createTypeRef(wildCard)»>());
 				'''
 			]
 			
@@ -94,8 +95,7 @@ class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
 					try {
 						«FOR b : module.bindings»
 							{
-								«keyType.createTypeRef(b.from.type).identifier» key = 
-									«b.from.guiceKey»;
+								«keyType.createTypeRef(b.from.type)» key = «b.from.guiceKey»;
 								if (usedKeys.add(key)) {
 									«IF b.toInstance != null»
 										bind.bind(key).toInstance(«b.syntheticToInstanceName»());
@@ -108,8 +108,8 @@ class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
 						«FOR mix : module.mixins»
 							«mix.simpleName».configure(bind, usedKeys);
 						«ENDFOR»
-					} catch (Exception e) {
-						throw new RuntimeException(e);
+					} catch («Exception» e) {
+						throw new «RuntimeException»(e);
 					}
 				'''
 			]
@@ -117,8 +117,8 @@ class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
 		]
 	}
 	
-	def guiceKey(KeyAST it) '''
-		com.google.inject.Key.get(new com.google.inject.TypeLiteral<«type.identifier»>(){}«
+	def StringConcatenationClient guiceKey(KeyAST it) '''
+		«Key».get(new «TypeLiteral»<«type»>(){}«
 		IF annotation != null
 				», getClass().getDeclaredField("«syntheticName»").getAnnotations()[0]«
 		ENDIF»)'''
