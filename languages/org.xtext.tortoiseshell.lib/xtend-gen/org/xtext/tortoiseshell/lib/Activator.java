@@ -50,7 +50,6 @@ public class Activator extends AbstractUIPlugin {
   
   protected Injector createInjector() {
     Module _module = new Module();
-    Injector _createInjector = Guice.createInjector(_module);
-    return _createInjector;
+    return Guice.createInjector(_module);
   }
 }

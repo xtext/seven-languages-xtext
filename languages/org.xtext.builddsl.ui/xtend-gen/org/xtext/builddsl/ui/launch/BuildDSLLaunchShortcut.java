@@ -41,7 +41,6 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IntegerRange;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
-import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 import org.eclipse.xtext.xbase.ui.editor.XbaseEditor;
 import org.xtext.builddsl.build.Task;
@@ -75,8 +74,7 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
         public Boolean apply(final Integer it) {
           ILeafNode _get = list.get((it).intValue());
           boolean _isHidden = _get.isHidden();
-          boolean _not = (!_isHidden);
-          return Boolean.valueOf(_not);
+          return Boolean.valueOf((!_isHidden));
         }
       };
       final Integer first = IterableExtensions.<Integer>findFirst(_upTo, _function);
@@ -87,8 +85,7 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
         public Boolean apply(final Integer it) {
           ILeafNode _get = list.get((it).intValue());
           boolean _isHidden = _get.isHidden();
-          boolean _not = (!_isHidden);
-          return Boolean.valueOf(_not);
+          return Boolean.valueOf((!_isHidden));
         }
       };
       final Integer last = IterableExtensions.<Integer>findFirst(_upTo_1, _function_1);
@@ -121,8 +118,7 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
       if (!_matched) {
         if (it instanceof ITextSelection) {
           _matched=true;
-          int _offset = ((ITextSelection)it).getOffset();
-          _switchResult = _offset;
+          _switchResult = ((ITextSelection)it).getOffset();
         }
       }
       if (!_matched) {
@@ -148,8 +144,7 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
                 _identifier=file.getIdentifier();
               }
               String _findTask = BuildDSLLaunchShortcut.this.findTask(it, offset);
-              LaunchConfigurationInfo _launchConfigurationInfo = new LaunchConfigurationInfo(project, _identifier, _findTask);
-              _xblockexpression = (_launchConfigurationInfo);
+              _xblockexpression = (new LaunchConfigurationInfo(project, _identifier, _findTask));
             }
             return _xblockexpression;
           }
@@ -185,8 +180,7 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
             ILaunchConfiguration _elvis = null;
             final Function1<ILaunchConfiguration,Boolean> _function = new Function1<ILaunchConfiguration,Boolean>() {
               public Boolean apply(final ILaunchConfiguration it) {
-                boolean _configEquals = info.configEquals(it);
-                return Boolean.valueOf(_configEquals);
+                return Boolean.valueOf(info.configEquals(it));
               }
             };
             ILaunchConfiguration _findFirst = IterableExtensions.<ILaunchConfiguration>findFirst(((Iterable<ILaunchConfiguration>)Conversions.doWrapArray(configs)), _function);
@@ -194,7 +188,7 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
               _elvis = _findFirst;
             } else {
               ILaunchConfiguration _createConfiguration = info.createConfiguration();
-              _elvis = ObjectExtensions.<ILaunchConfiguration>operator_elvis(_findFirst, _createConfiguration);
+              _elvis = _createConfiguration;
             }
             final ILaunchConfiguration config = _elvis;
             DebugUITools.launch(config, mode);

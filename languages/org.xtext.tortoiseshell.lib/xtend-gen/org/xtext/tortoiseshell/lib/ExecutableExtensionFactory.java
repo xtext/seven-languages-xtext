@@ -16,13 +16,11 @@ import org.xtext.tortoiseshell.lib.Activator;
 public class ExecutableExtensionFactory extends AbstractGuiceAwareExecutableExtensionFactory {
   protected Bundle getBundle() {
     Activator _instance = Activator.getInstance();
-    Bundle _bundle = _instance.getBundle();
-    return _bundle;
+    return _instance.getBundle();
   }
   
   protected Injector getInjector() {
     Activator _instance = Activator.getInstance();
-    Injector _injector = _instance.getInjector();
-    return _injector;
+    return _instance.getInjector();
   }
 }

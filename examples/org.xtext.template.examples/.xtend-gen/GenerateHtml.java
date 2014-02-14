@@ -20,8 +20,7 @@ import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 @SuppressWarnings("all")
 public class GenerateHtml {
   public static void main(final String... args) {
-    MyWebsite _myWebsite = new MyWebsite();
-    final MyWebsite template = _myWebsite;
+    final MyWebsite template = new MyWebsite();
     final Procedure1<MyWebsite> _function = new Procedure1<MyWebsite>() {
       public void apply(final MyWebsite it) {
         it.setAuthor("Fred Flintstone");

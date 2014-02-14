@@ -59,23 +59,19 @@ public class Tortoise {
   private List<ITortoiseEvent.Listener> listeners = CollectionLiterals.<ITortoiseEvent.Listener>newArrayList();
   
   public boolean addListener(final ITortoiseEvent.Listener listener) {
-    boolean _add = this.listeners.add(listener);
-    return _add;
+    return this.listeners.add(listener);
   }
   
   public boolean removeListener(final ITortoiseEvent.Listener listener) {
-    boolean _remove = this.listeners.remove(listener);
-    return _remove;
+    return this.listeners.remove(listener);
   }
   
   public boolean penUp() {
-    boolean _isPaint = this.isPaint = false;
-    return _isPaint;
+    return this.isPaint = false;
   }
   
   public boolean penDown() {
-    boolean _isPaint = this.isPaint = true;
-    return _isPaint;
+    return this.isPaint = true;
   }
   
   public boolean isPaint() {
@@ -86,15 +82,13 @@ public class Tortoise {
     double _xblockexpression = (double) 0;
     {
       this.x = x;
-      double _y = this.y = y;
-      _xblockexpression = (_y);
+      _xblockexpression = (this.y = y);
     }
     return _xblockexpression;
   }
   
   public Point getPosition() {
-    Point _point = new Point(((int) this.x), ((int) this.y));
-    return _point;
+    return new Point(((int) this.x), ((int) this.y));
   }
   
   public void forward(final double amount) {
@@ -147,8 +141,7 @@ public class Tortoise {
   }
   
   public double getAngle() {
-    double _degrees = Math.toDegrees(this.angle);
-    return _degrees;
+    return Math.toDegrees(this.angle);
   }
   
   public double getAngleInRadians() {

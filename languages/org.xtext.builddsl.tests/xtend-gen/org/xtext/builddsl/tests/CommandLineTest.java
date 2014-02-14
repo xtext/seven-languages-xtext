@@ -241,8 +241,7 @@ public class CommandLineTest {
       };
       this._compilationTestHelper.compile(file, _function);
       final Class<? extends Object> clazz = IterableExtensions.<Class<? extends Object>>head(classes);
-      ByteArrayOutputStream _byteArrayOutputStream = new ByteArrayOutputStream();
-      final ByteArrayOutputStream out = _byteArrayOutputStream;
+      final ByteArrayOutputStream out = new ByteArrayOutputStream();
       final PrintStream backup = System.out;
       PrintStream _printStream = new PrintStream(out);
       System.setOut(_printStream);
@@ -253,8 +252,7 @@ public class CommandLineTest {
         final Function1<Method,Boolean> _function_1 = new Function1<Method,Boolean>() {
           public Boolean apply(final Method it) {
             String _name = it.getName();
-            boolean _equals = Objects.equal(_name, "doBuild");
-            return Boolean.valueOf(_equals);
+            return Boolean.valueOf(Objects.equal(_name, "doBuild"));
           }
         };
         Method _findFirst = IterableExtensions.<Method>findFirst(((Iterable<Method>)Conversions.doWrapArray(_declaredMethods)), _function_1);

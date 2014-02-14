@@ -1,6 +1,5 @@
 import com.google.common.base.Objects;
 import java.util.ArrayList;
-import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 
 @SuppressWarnings("all")
@@ -35,12 +34,7 @@ public class MyWebsite {
     return this.description;
   }
   
-  private ArrayList<Section> sections = new Function0<ArrayList<Section>>() {
-    public ArrayList<Section> apply() {
-      ArrayList<Section> _arrayList = new ArrayList<Section>();
-      return _arrayList;
-    }
-  }.apply();
+  private ArrayList<Section> sections = new ArrayList<Section>();
   
   public void setSections(final ArrayList<Section> sections) {
     this.sections = sections;

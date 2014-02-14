@@ -140,8 +140,7 @@ public class InterpreterTest {
   @Test
   public void testSubProgram() {
     try {
-      Tortoise _tortoise = new Tortoise();
-      final Tortoise tortoise = _tortoise;
+      final Tortoise tortoise = new Tortoise();
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("begin");
       _builder.newLine();

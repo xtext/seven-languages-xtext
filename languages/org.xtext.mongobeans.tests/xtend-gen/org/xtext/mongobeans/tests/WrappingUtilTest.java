@@ -150,16 +150,14 @@ public class WrappingUtilTest {
         it.put("bar", bar);
       }
     };
-    BasicDBObject _doubleArrow = ObjectExtensions.<BasicDBObject>operator_doubleArrow(_basicDBObject, _function);
-    return _doubleArrow;
+    return ObjectExtensions.<BasicDBObject>operator_doubleArrow(_basicDBObject, _function);
   }
   
   protected Object newFooMongoBean(final DBObject source) {
     try {
       Class<? extends Object> _mongoBeanClass = this.getMongoBeanClass();
       Constructor<? extends Object> _constructor = _mongoBeanClass.getConstructor(DBObject.class);
-      Object _newInstance = _constructor.newInstance(source);
-      return _newInstance;
+      return _constructor.newInstance(source);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }

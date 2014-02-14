@@ -1,5 +1,6 @@
 package org.musicdb;
 
+import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +15,7 @@ import org.xtext.mongobeans.lib.MongoBeanList;
 @SuppressWarnings("all")
 public class Artist implements IMongoBean {
   /**
-   * Creates a new Artist wrapping the given {@link DBObject}.
+   * Creates a new Artist wrapping the given {@link com.mongodb.DBObject}.
    */
   public Artist(final DBObject dbObject) {
     this._dbObject = dbObject;
@@ -24,7 +25,7 @@ public class Artist implements IMongoBean {
    * Creates a new Artist wrapping a new {@link com.mongodb.BasicDBObject}.
    */
   public Artist() {
-    _dbObject = new com.mongodb.BasicDBObject();
+    _dbObject = new BasicDBObject();
     _dbObject.put(JAVA_CLASS_KEY, "org.musicdb.Artist");
   }
   
@@ -35,7 +36,7 @@ public class Artist implements IMongoBean {
   }
   
   public String getName() {
-    return (java.lang.String) _dbObject.get("name");
+    return (String) _dbObject.get("name");
   }
   
   public void setName(final String name) {
@@ -46,13 +47,12 @@ public class Artist implements IMongoBean {
   
   public List<Album> getAlbums() {
     if(_albums==null)
-    	_albums = new org.xtext.mongobeans.lib.MongoBeanList<org.musicdb.Album>(_dbObject, "albums");
+    	_albums = new MongoBeanList<Album>(_dbObject, "albums");
     return _albums;
   }
   
   public Iterable<? extends Track> getOevre() {
-    ArrayList<Track> _arrayList = new ArrayList<Track>();
-    final List<Track> result = _arrayList;
+    final List<Track> result = new ArrayList<Track>();
     List<Album> _albums = this.getAlbums();
     for (final Album album : _albums) {
       List<Track> _tracks = album.getTracks();

@@ -24,7 +24,6 @@ public class BuildDSLImplicitlyImportedTypes extends ImplicitlyImportedTypes {
   protected List<Class<? extends Object>> getExtensionClasses() {
     List<Class<? extends Object>> _extensionClasses = super.getExtensionClasses();
     Iterable<Class<? extends Object>> _plus = Iterables.<Class<? extends Object>>concat(_extensionClasses, Collections.<Class<?>>unmodifiableList(Lists.<Class<?>>newArrayList(FileExtensions.class, ClassExtensions.class)));
-    List<Class<? extends Object>> _list = IterableExtensions.<Class<? extends Object>>toList(_plus);
-    return _list;
+    return IterableExtensions.<Class<? extends Object>>toList(_plus);
   }
 }

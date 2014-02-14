@@ -53,8 +53,7 @@ public class FileExtensions {
       final ArrayList<File> files = FileExtensions.listAllFiles(directory);
       FileOutputStream _fileOutputStream = new FileOutputStream(zipFile);
       BufferedOutputStream _bufferedOutputStream = new BufferedOutputStream(_fileOutputStream);
-      JarOutputStream _jarOutputStream = new JarOutputStream(_bufferedOutputStream);
-      final JarOutputStream out = _jarOutputStream;
+      final JarOutputStream out = new JarOutputStream(_bufferedOutputStream);
       try {
         out.setMethod(JarOutputStream.DEFLATED);
         final Procedure1<File> _function = new Procedure1<File>() {
@@ -62,8 +61,7 @@ public class FileExtensions {
             try {
               File _relativeTo = FileExtensions.relativeTo(file, directory);
               String _path = _relativeTo.getPath();
-              ZipEntry _zipEntry = new ZipEntry(_path);
-              final ZipEntry entry = _zipEntry;
+              final ZipEntry entry = new ZipEntry(_path);
               out.putNextEntry(entry);
               Files.copy(file, out);
               out.closeEntry();
@@ -88,13 +86,11 @@ public class FileExtensions {
       boolean _isDirectory = dir.isDirectory();
       boolean _not = (!_isDirectory);
       if (_not) {
-        IllegalStateException _illegalStateException = new IllegalStateException(("This is not a directory: " + dir));
-        throw _illegalStateException;
+        throw new IllegalStateException(("This is not a directory: " + dir));
       }
       URI _uRI = dir.toURI();
       URI _resolve = _uRI.resolve(name);
-      File _file = new File(_resolve);
-      _xblockexpression = (_file);
+      _xblockexpression = (new File(_resolve));
     }
     return _xblockexpression;
   }
@@ -106,19 +102,16 @@ public class FileExtensions {
       boolean _isDirectory = _file.isDirectory();
       boolean _not = (!_isDirectory);
       if (_not) {
-        IllegalStateException _illegalStateException = new IllegalStateException(("This is not a directory: " + dir));
-        throw _illegalStateException;
+        throw new IllegalStateException(("This is not a directory: " + dir));
       }
       File _file_1 = FileExtensions.file(dir);
-      File _file_2 = new File(_file_1, post);
-      _xblockexpression = (_file_2);
+      _xblockexpression = (new File(_file_1, post));
     }
     return _xblockexpression;
   }
   
   public static File file(final String path) {
-    File _file = new File(path);
-    return _file;
+    return new File(path);
   }
   
   public static File relativeTo(final File target, final File base) {
@@ -127,7 +120,6 @@ public class FileExtensions {
     URI _uRI_1 = target.toURI();
     URI _relativize = _uRI.relativize(_uRI_1);
     String _string = _relativize.toString();
-    File _file = new File(_string);
-    return _file;
+    return new File(_string);
   }
 }

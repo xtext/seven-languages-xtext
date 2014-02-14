@@ -103,17 +103,15 @@ public class ParserTest {
       public Object invoke(final Object proxy, final Method method, final Object[] args) throws Throwable {
         Object _switchResult = null;
         String _name = method.getName();
-        final String _switchValue = _name;
         boolean _matched = false;
         if (!_matched) {
-          if (Objects.equal(_switchValue,"getRequestURL")) {
+          if (Objects.equal(_name,"getRequestURL")) {
             _matched=true;
-            StringBuffer _stringBuffer = new StringBuffer(url);
-            _switchResult = _stringBuffer;
+            _switchResult = new StringBuffer(url);
           }
         }
         if (!_matched) {
-          if (Objects.equal(_switchValue,"getMethod")) {
+          if (Objects.equal(_name,"getMethod")) {
             _matched=true;
             _switchResult = "GET";
           }
@@ -121,8 +119,7 @@ public class ParserTest {
         return ((Serializable)_switchResult);
       }
     };
-    HttpServletRequest _newProxy = this.<HttpServletRequest>newProxy(HttpServletRequest.class, _function);
-    return _newProxy;
+    return this.<HttpServletRequest>newProxy(HttpServletRequest.class, _function);
   }
   
   /**
@@ -136,22 +133,19 @@ public class ParserTest {
         public Object invoke(final Object proxy, final Method method, final Object[] args) throws Throwable {
           boolean _switchResult = false;
           String _name = method.getName();
-          final String _switchValue = _name;
           boolean _matched = false;
           if (!_matched) {
-            if (Objects.equal(_switchValue,"addHeader")) {
+            if (Objects.equal(_name,"addHeader")) {
               _matched=true;
               Object _get = args[0];
-              boolean _add = header.add(((String) _get));
-              _switchResult = _add;
+              _switchResult = header.add(((String) _get));
             }
           }
           if (!_matched) {
-            if (Objects.equal(_switchValue,"containsHeader")) {
+            if (Objects.equal(_name,"containsHeader")) {
               _matched=true;
               Object _get_1 = args[0];
-              boolean _contains = header.contains(_get_1);
-              _switchResult = _contains;
+              _switchResult = header.contains(_get_1);
             }
           }
           if (!_matched) {
@@ -160,8 +154,7 @@ public class ParserTest {
           return Boolean.valueOf(_switchResult);
         }
       };
-      HttpServletResponse _newProxy = this.<HttpServletResponse>newProxy(HttpServletResponse.class, _function);
-      _xblockexpression = (_newProxy);
+      _xblockexpression = (this.<HttpServletResponse>newProxy(HttpServletResponse.class, _function));
     }
     return _xblockexpression;
   }

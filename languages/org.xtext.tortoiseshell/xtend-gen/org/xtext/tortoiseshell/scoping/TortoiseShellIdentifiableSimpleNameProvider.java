@@ -21,8 +21,7 @@ public class TortoiseShellIdentifiableSimpleNameProvider extends IdentifiableSim
     if (_equals) {
       _xifexpression = "this";
     } else {
-      String _simpleName_1 = super.getSimpleName(element);
-      _xifexpression = _simpleName_1;
+      _xifexpression = super.getSimpleName(element);
     }
     return _xifexpression;
   }

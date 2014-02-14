@@ -28,8 +28,7 @@ public class MongoTypes {
   
   public boolean isMongoPrimitiveType(final JvmTypeReference typeRef) {
     String _qualifiedName = typeRef.getQualifiedName();
-    boolean _contains = MongoTypes.mongoPrimitiveTypes.contains(_qualifiedName);
-    return _contains;
+    return MongoTypes.mongoPrimitiveTypes.contains(_qualifiedName);
   }
   
   public boolean isMongoType(final JvmTypeReference typeRef) {
@@ -39,14 +38,13 @@ public class MongoTypes {
       _or = true;
     } else {
       boolean _isMongoBean = this.isMongoBean(typeRef);
-      _or = (_isMongoPrimitiveType || _isMongoBean);
+      _or = _isMongoBean;
     }
     return _or;
   }
   
   public boolean isMongoBean(final JvmTypeReference typeRef) {
     Set<String> _collectSuperTypeNames = this._superTypeCollector.collectSuperTypeNames(typeRef);
-    boolean _contains = _collectSuperTypeNames.contains("org.xtext.mongobeans.lib.IMongoBean");
-    return _contains;
+    return _collectSuperTypeNames.contains("org.xtext.mongobeans.lib.IMongoBean");
   }
 }

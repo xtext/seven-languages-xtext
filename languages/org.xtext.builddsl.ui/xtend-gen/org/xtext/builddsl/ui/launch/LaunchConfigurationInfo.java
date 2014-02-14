@@ -44,8 +44,7 @@ public class LaunchConfigurationInfo {
   
   public String getName() {
     String _clazz = this.getClazz();
-    String _lastToken = Strings.lastToken(_clazz, ".");
-    return _lastToken;
+    return Strings.lastToken(_clazz, ".");
   }
   
   public ILaunchConfiguration createConfiguration() {
@@ -67,8 +66,7 @@ public class LaunchConfigurationInfo {
         wc.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROGRAM_ARGUMENTS, _task);
         wc.setAttribute(RefreshTab.ATTR_REFRESH_SCOPE, "${workspace}");
         wc.setAttribute(RefreshTab.ATTR_REFRESH_RECURSIVE, true);
-        ILaunchConfiguration _doSave = wc.doSave();
-        _xblockexpression = (_doSave);
+        _xblockexpression = (wc.doSave());
       }
       return _xblockexpression;
     } catch (Throwable _e) {
@@ -90,7 +88,7 @@ public class LaunchConfigurationInfo {
         String _attribute_1 = a.getAttribute(IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME, "X");
         String _project = this.getProject();
         boolean _equals_1 = Objects.equal(_attribute_1, _project);
-        _and_2 = (_equals && _equals_1);
+        _and_2 = _equals_1;
       }
       if (!_and_2) {
         _and_1 = false;
@@ -98,7 +96,7 @@ public class LaunchConfigurationInfo {
         String _attribute_2 = a.getAttribute(IJavaLaunchConfigurationConstants.ATTR_PROGRAM_ARGUMENTS, "X");
         String _task = this.getTask();
         boolean _contains = _attribute_2.contains(_task);
-        _and_1 = (_and_2 && _contains);
+        _and_1 = _contains;
       }
       if (!_and_1) {
         _and = false;
@@ -106,7 +104,7 @@ public class LaunchConfigurationInfo {
         ILaunchConfigurationType _type = a.getType();
         String _identifier = _type.getIdentifier();
         boolean _equals_2 = Objects.equal(_identifier, "org.xtext.builddsl.ui.BuildLaunchConfigurationType");
-        _and = (_and_1 && _equals_2);
+        _and = _equals_2;
       }
       return _and;
     } catch (Throwable _e) {
@@ -126,7 +124,7 @@ public class LaunchConfigurationInfo {
       String _project = this.getProject();
       boolean _isNullOrEmpty_1 = StringExtensions.isNullOrEmpty(_project);
       boolean _not_1 = (!_isNullOrEmpty_1);
-      _and_1 = (_not && _not_1);
+      _and_1 = _not_1;
     }
     if (!_and_1) {
       _and = false;
@@ -134,7 +132,7 @@ public class LaunchConfigurationInfo {
       String _task = this.getTask();
       boolean _isNullOrEmpty_2 = StringExtensions.isNullOrEmpty(_task);
       boolean _not_2 = (!_isNullOrEmpty_2);
-      _and = (_and_1 && _not_2);
+      _and = _not_2;
     }
     return _and;
   }

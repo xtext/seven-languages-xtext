@@ -17,7 +17,6 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.progress.UIJob;
 import org.eclipse.xtext.xbase.lib.Exceptions;
-import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.xtext.tortoiseshell.lib.view.Animation;
 import org.xtext.tortoiseshell.lib.view.TortoiseFigure;
 import org.xtext.tortoiseshell.lib.view.TortoiseView;
@@ -33,12 +32,7 @@ public class Animator extends UIJob {
   
   private boolean isScheduled;
   
-  private Queue<Animation> animationQueue = new Function0<Queue<Animation>>() {
-    public Queue<Animation> apply() {
-      ConcurrentLinkedQueue<Animation> _concurrentLinkedQueue = new ConcurrentLinkedQueue<Animation>();
-      return _concurrentLinkedQueue;
-    }
-  }.apply();
+  private Queue<Animation> animationQueue = new ConcurrentLinkedQueue<Animation>();
   
   private boolean isStop;
   
@@ -52,13 +46,7 @@ public class Animator extends UIJob {
   public void addAnimation(final Animation animation) {
     if (this.isAnimated) {
       this.animationQueue.add(animation);
-      boolean _and = false;
-      if (!(!this.isScheduled)) {
-        _and = false;
-      } else {
-        _and = ((!this.isScheduled) && (!this.isStop));
-      }
-      if (_and) {
+      if (((!this.isScheduled) && (!this.isStop))) {
         this.schedule(this.UPDATE_INTERVAL);
         this.isScheduled = true;
         long _currentTimeMillis = System.currentTimeMillis();
@@ -74,8 +62,7 @@ public class Animator extends UIJob {
     boolean _xblockexpression = false;
     {
       this.stop();
-      boolean _isAnimated = this.isAnimated = isAnimated;
-      _xblockexpression = (_isAnimated);
+      _xblockexpression = (this.isAnimated = isAnimated);
     }
     return _xblockexpression;
   }
@@ -89,7 +76,7 @@ public class Animator extends UIJob {
         if (!this.isScheduled) {
           _and = false;
         } else {
-          _and = (this.isScheduled && this.isStop);
+          _and = this.isStop;
         }
         boolean _while = _and;
         while (_while) {
@@ -105,14 +92,13 @@ public class Animator extends UIJob {
           if (!this.isScheduled) {
             _and_1 = false;
           } else {
-            _and_1 = (this.isScheduled && this.isStop);
+            _and_1 = this.isStop;
           }
           _while = _and_1;
         }
         this.animationQueue.clear();
         this.isStop = false;
-        boolean _isScheduled = this.isScheduled = false;
-        _xblockexpression = (_isScheduled);
+        _xblockexpression = (this.isScheduled = false);
       }
       return _xblockexpression;
     } catch (Throwable _e) {
@@ -137,7 +123,7 @@ public class Animator extends UIJob {
           int _delay = currentAnimation.getDelay();
           long _plus = (this.lastStart + _delay);
           boolean _greaterEqualsThan = (now >= _plus);
-          _and = (_notEquals && _greaterEqualsThan);
+          _and = _greaterEqualsThan;
         }
         boolean _while = _and;
         while (_while) {
@@ -159,7 +145,7 @@ public class Animator extends UIJob {
             int _delay_1 = currentAnimation.getDelay();
             long _plus_1 = (this.lastStart + _delay_1);
             boolean _greaterEqualsThan_1 = (now >= _plus_1);
-            _and_1 = (_notEquals_1 && _greaterEqualsThan_1);
+            _and_1 = _greaterEqualsThan_1;
           }
           _while = _and_1;
         }

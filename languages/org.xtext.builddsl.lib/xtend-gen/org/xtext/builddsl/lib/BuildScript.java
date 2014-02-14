@@ -60,8 +60,7 @@ public abstract class BuildScript {
           final Function1<Annotation,Boolean> _function = new Function1<Annotation,Boolean>() {
             public Boolean apply(final Annotation it) {
               Class<? extends Annotation> _annotationType = it.annotationType();
-              boolean _equals = Objects.equal(_annotationType, DependsOn.class);
-              return Boolean.valueOf(_equals);
+              return Boolean.valueOf(Objects.equal(_annotationType, DependsOn.class));
             }
           };
           final Annotation taskAnnotation = IterableExtensions.<Annotation>findFirst(((Iterable<Annotation>)Conversions.doWrapArray(_annotations)), _function);
@@ -106,12 +105,10 @@ public abstract class BuildScript {
           final Function1<Annotation,Boolean> _function = new Function1<Annotation,Boolean>() {
             public Boolean apply(final Annotation it) {
               Class<? extends Annotation> _annotationType = it.annotationType();
-              boolean _equals = Objects.equal(_annotationType, Param.class);
-              return Boolean.valueOf(_equals);
+              return Boolean.valueOf(Objects.equal(_annotationType, Param.class));
             }
           };
-          boolean _exists = IterableExtensions.<Annotation>exists(((Iterable<Annotation>)Conversions.doWrapArray(_annotations)), _function);
-          return Boolean.valueOf(_exists);
+          return Boolean.valueOf(IterableExtensions.<Annotation>exists(((Iterable<Annotation>)Conversions.doWrapArray(_annotations)), _function));
         }
       };
       Iterable<Field> _filter = IterableExtensions.<Field>filter(((Iterable<Field>)Conversions.doWrapArray(_declaredFields)), _function);
@@ -183,8 +180,7 @@ public abstract class BuildScript {
     final TaskDef task = _tasks.get(name);
     boolean _equals = Objects.equal(task, null);
     if (_equals) {
-      UnsupportedOperationException _unsupportedOperationException = new UnsupportedOperationException((("A task \'" + name) + "\' does not exist."));
-      throw _unsupportedOperationException;
+      throw new UnsupportedOperationException((("A task \'" + name) + "\' does not exist."));
     }
     boolean _isExecuted = task.isExecuted();
     if (_isExecuted) {
@@ -192,8 +188,7 @@ public abstract class BuildScript {
     }
     boolean _isIsExecuting = task.isIsExecuting();
     if (_isIsExecuting) {
-      IllegalStateException _illegalStateException = new IllegalStateException((("Recursion detected : The task \'" + name) + "\' already running."));
-      throw _illegalStateException;
+      throw new IllegalStateException((("Recursion detected : The task \'" + name) + "\' already running."));
     }
     try {
       task.setIsExecuting(true);
@@ -233,13 +228,13 @@ public abstract class BuildScript {
             _or = true;
           } else {
             boolean _equals_1 = Objects.equal("-h", arg);
-            _or = (_equals || _equals_1);
+            _or = _equals_1;
           }
           return Boolean.valueOf(_or);
         }
       };
       boolean _exists = IterableExtensions.<String>exists(((Iterable<String>)Conversions.doWrapArray(args)), _function);
-      _or = (_isNullOrEmpty || _exists);
+      _or = _exists;
     }
     if (_or) {
       StringConcatenation _builder = new StringConcatenation();
@@ -298,11 +293,9 @@ public abstract class BuildScript {
     Map<String,TaskDef> _tasks = this.getTasks();
     boolean _containsKey = _tasks.containsKey(name);
     if (_containsKey) {
-      IllegalArgumentException _illegalArgumentException = new IllegalArgumentException((("A task \'" + name) + "\' is laready registered."));
-      throw _illegalArgumentException;
+      throw new IllegalArgumentException((("A task \'" + name) + "\' is laready registered."));
     }
-    TaskDef _taskDef = new TaskDef();
-    final TaskDef task = _taskDef;
+    final TaskDef task = new TaskDef();
     init.apply(task);
     Map<String,TaskDef> _tasks_1 = this.getTasks();
     _tasks_1.put(name, task);
@@ -332,8 +325,7 @@ public abstract class BuildScript {
     if (!_matched) {
       if (Objects.equal(type,File.class)) {
         _matched=true;
-        File _file = new File(string);
-        _switchResult = _file;
+        _switchResult = new File(string);
       }
     }
     if (!_matched) {

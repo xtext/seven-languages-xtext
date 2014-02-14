@@ -31,7 +31,6 @@ public class MongoBeansOutlineTreeProvider extends DefaultOutlineTreeProvider {
   
   public boolean _isLeaf(final MongoProperty property) {
     MongoBean _inlineType = property.getInlineType();
-    boolean _equals = Objects.equal(_inlineType, null);
-    return _equals;
+    return Objects.equal(_inlineType, null);
   }
 }

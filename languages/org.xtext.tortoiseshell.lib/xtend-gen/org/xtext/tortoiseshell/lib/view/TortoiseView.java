@@ -84,8 +84,7 @@ public class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
     FreeformViewport _freeformViewport = new FreeformViewport();
     this.canvas.setViewport(_freeformViewport);
     this.canvas.setBackground(ColorConstants.white);
-    FreeformLayeredPane _freeformLayeredPane = new FreeformLayeredPane();
-    final FreeformLayeredPane pane = _freeformLayeredPane;
+    final FreeformLayeredPane pane = new FreeformLayeredPane();
     Font _font = parent.getFont();
     pane.setFont(_font);
     this.canvas.setContents(pane);
@@ -143,13 +142,12 @@ public class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
           } else {
             boolean _hasError = TortoiseView.this.hasError(tortoiseEditor);
             boolean _not = (!_hasError);
-            _and = (_notEquals && _not);
+            _and = _not;
           }
           if (_and) {
             boolean _xblockexpression = false;
             {
-              Tortoise _tortoise = new Tortoise();
-              final Tortoise tortoise = _tortoise;
+              final Tortoise tortoise = new Tortoise();
               tortoise.addListener(TortoiseView.this);
               IResourceServiceProvider _resourceServiceProvider = it.getResourceServiceProvider();
               final ITortoiseInterpreter interpreter = _resourceServiceProvider.<ITortoiseInterpreter>get(ITortoiseInterpreter.class);
@@ -161,7 +159,7 @@ public class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
                 EList<EObject> _contents = it.getContents();
                 boolean _isEmpty = _contents.isEmpty();
                 boolean _not_1 = (!_isEmpty);
-                _and_1 = (_notEquals_1 && _not_1);
+                _and_1 = _not_1;
               }
               if (_and_1) {
                 try {
@@ -188,16 +186,14 @@ public class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
                   }
                 }
               }
-              boolean _removeListener = tortoise.removeListener(TortoiseView.this);
-              _xblockexpression = (_removeListener);
+              _xblockexpression = (tortoise.removeListener(TortoiseView.this));
             }
             _xifexpression = _xblockexpression;
           }
           return Boolean.valueOf(_xifexpression);
         }
       };
-      Boolean _readOnly = _document.<Boolean>readOnly(_function_1);
-      _xblockexpression = (_readOnly);
+      _xblockexpression = (_document.<Boolean>readOnly(_function_1));
     }
     return _xblockexpression;
   }
@@ -222,7 +218,7 @@ public class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
         _and = false;
       } else {
         boolean _hasNext = annotations.hasNext();
-        _and = (_notEquals && _hasNext);
+        _and = _hasNext;
       }
       boolean _while = _and;
       while (_while) {
@@ -234,7 +230,7 @@ public class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
           } else {
             String _type = ((Annotation) annotation).getType();
             boolean _equals = Objects.equal(_type, XtextEditor.ERROR_ANNOTATION_TYPE);
-            _and_1 = ((annotation instanceof Annotation) && _equals);
+            _and_1 = _equals;
           }
           if (_and_1) {
             return true;
@@ -246,7 +242,7 @@ public class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
           _and_1 = false;
         } else {
           boolean _hasNext_1 = annotations.hasNext();
-          _and_1 = (_notEquals_1 && _hasNext_1);
+          _and_1 = _hasNext_1;
         }
         _while = _and_1;
       }
@@ -263,8 +259,7 @@ public class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
         Tortoise _tortoise = ((MoveEvent)event).getTortoise();
         boolean _isPaint = _tortoise.isPaint();
         if (_isPaint) {
-          Polyline _polyline = new Polyline();
-          final Polyline line = _polyline;
+          final Polyline line = new Polyline();
           Tortoise _tortoise_1 = ((MoveEvent)event).getTortoise();
           Color _lineColor = _tortoise_1.getLineColor();
           line.setForegroundColor(_lineColor);

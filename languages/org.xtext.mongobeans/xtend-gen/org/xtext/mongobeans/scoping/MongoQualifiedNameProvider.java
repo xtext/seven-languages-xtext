@@ -28,8 +28,7 @@ public class MongoQualifiedNameProvider extends XbaseQualifiedNameProvider {
       if (_notEquals) {
         QualifiedName _fullyQualifiedName = this.getFullyQualifiedName(packageDeclaration);
         String _name = mongoBean.getName();
-        QualifiedName _append = _fullyQualifiedName.append(_name);
-        _xifexpression = _append;
+        _xifexpression = _fullyQualifiedName.append(_name);
       } else {
         String _name_1 = mongoBean.getName();
         return QualifiedName.create(_name_1);

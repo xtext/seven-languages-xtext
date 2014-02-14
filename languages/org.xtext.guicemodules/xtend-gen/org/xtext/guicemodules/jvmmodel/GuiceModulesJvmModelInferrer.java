@@ -363,8 +363,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
     String _name = module.getName();
     String[] _split = _name.split("\\.");
     String _last = IterableExtensions.<String>last(((Iterable<String>)Conversions.doWrapArray(_split)));
-    String _firstLower = StringExtensions.toFirstLower(_last);
-    return _firstLower;
+    return StringExtensions.toFirstLower(_last);
   }
   
   public void infer(final EObject module, final IJvmDeclaredTypeAcceptor acceptor, final boolean preIndexingPhase) {

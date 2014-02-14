@@ -78,21 +78,21 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
             if (_type != null) {
               _elvis_1 = _type;
             } else {
-              JvmTypeReference _inferredType = null;
               XExpression _init = null;
               if (declaredParameter!=null) {
                 _init=declaredParameter.getInit();
               }
+              JvmTypeReference _inferredType = null;
               if (_init!=null) {
                 _inferredType=BuildDSLJvmModelInferrer.this._jvmTypesBuilder.inferredType(_init);
               }
-              _elvis_1 = ObjectExtensions.<JvmTypeReference>operator_elvis(_type, _inferredType);
+              _elvis_1 = _inferredType;
             }
             if (_elvis_1 != null) {
               _elvis = _elvis_1;
             } else {
               JvmTypeReference _newTypeRef_1 = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(file, String.class);
-              _elvis = ObjectExtensions.<JvmTypeReference>operator_elvis(_elvis_1, _newTypeRef_1);
+              _elvis = _newTypeRef_1;
             }
             final JvmTypeReference type = _elvis;
             EList<JvmMember> _members = it.getMembers();
@@ -167,8 +167,7 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
                         EList<Task> _depends = task.getDepends();
                         final Function1<Task,String> _function = new Function1<Task,String>() {
                           public String apply(final Task it) {
-                            String _name = it.getName();
-                            return _name;
+                            return it.getName();
                           }
                         };
                         List<String> _map = ListExtensions.<Task, String>map(_depends, _function);
@@ -185,8 +184,7 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
                 BuildDSLJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _action);
               }
             };
-            JvmOperation _method = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.toMethod(task, _methodName, _newTypeRef, _function);
-            return _method;
+            return BuildDSLJvmModelInferrer.this._jvmTypesBuilder.toMethod(task, _methodName, _newTypeRef, _function);
           }
         };
         Iterable<JvmMember> _map = IterableExtensions.<Task, JvmMember>map(_tasks, _function_1);
@@ -198,19 +196,16 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
   
   private Iterable<Task> getTasks(final BuildFile it) {
     EList<Declaration> _declarations = it.getDeclarations();
-    Iterable<Task> _filter = Iterables.<Task>filter(_declarations, Task.class);
-    return _filter;
+    return Iterables.<Task>filter(_declarations, Task.class);
   }
   
   private Iterable<Parameter> getParameters(final BuildFile it) {
     EList<Declaration> _declarations = it.getDeclarations();
-    Iterable<Parameter> _filter = Iterables.<Parameter>filter(_declarations, Parameter.class);
-    return _filter;
+    return Iterables.<Parameter>filter(_declarations, Parameter.class);
   }
   
   private String getMethodName(final Task it) {
-    String _name = it.getName();
-    return _name;
+    return it.getName();
   }
   
   public String getJavaClassName(final BuildFile it) {
@@ -221,17 +216,15 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
       Resource _eResource = it.eResource();
       URI _uRI = _eResource.getURI();
       URI _trimFileExtension = _uRI.trimFileExtension();
-      String _lastSegment = _trimFileExtension.lastSegment();
-      _xifexpression = _lastSegment;
+      _xifexpression = _trimFileExtension.lastSegment();
     } else {
       String _name_1 = it.getName();
       String _plus = (_name_1 + ".");
       Resource _eResource_1 = it.eResource();
       URI _uRI_1 = _eResource_1.getURI();
       URI _trimFileExtension_1 = _uRI_1.trimFileExtension();
-      String _lastSegment_1 = _trimFileExtension_1.lastSegment();
-      String _plus_1 = (_plus + _lastSegment_1);
-      _xifexpression = _plus_1;
+      String _lastSegment = _trimFileExtension_1.lastSegment();
+      _xifexpression = (_plus + _lastSegment);
     }
     return _xifexpression;
   }

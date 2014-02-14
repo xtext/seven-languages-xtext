@@ -39,7 +39,9 @@ public class GuiceModulesParser extends AbstractContentAssistParser {
 				{
 					put(grammarAccess.getBindingASTAccess().getAlternatives_2(), "rule__BindingAST__Alternatives_2");
 					put(grammarAccess.getXAnnotationAccess().getAlternatives_3_1(), "rule__XAnnotation__Alternatives_3_1");
+					put(grammarAccess.getXAnnotationElementValueOrCommaListAccess().getAlternatives(), "rule__XAnnotationElementValueOrCommaList__Alternatives");
 					put(grammarAccess.getXAnnotationElementValueAccess().getAlternatives(), "rule__XAnnotationElementValue__Alternatives");
+					put(grammarAccess.getXAnnotationOrExpressionAccess().getAlternatives(), "rule__XAnnotationOrExpression__Alternatives");
 					put(grammarAccess.getXAssignmentAccess().getAlternatives(), "rule__XAssignment__Alternatives");
 					put(grammarAccess.getOpMultiAssignAccess().getAlternatives(), "rule__OpMultiAssign__Alternatives");
 					put(grammarAccess.getOpEqualityAccess().getAlternatives(), "rule__OpEquality__Alternatives");
@@ -60,6 +62,7 @@ public class GuiceModulesParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXLiteralAccess().getAlternatives(), "rule__XLiteral__Alternatives");
 					put(grammarAccess.getXCollectionLiteralAccess().getAlternatives(), "rule__XCollectionLiteral__Alternatives");
 					put(grammarAccess.getXSwitchExpressionAccess().getAlternatives_2(), "rule__XSwitchExpression__Alternatives_2");
+					put(grammarAccess.getXCasePartAccess().getAlternatives_3(), "rule__XCasePart__Alternatives_3");
 					put(grammarAccess.getXExpressionInsideBlockAccess().getAlternatives(), "rule__XExpressionInsideBlock__Alternatives");
 					put(grammarAccess.getXVariableDeclarationAccess().getAlternatives_1(), "rule__XVariableDeclaration__Alternatives_1");
 					put(grammarAccess.getXVariableDeclarationAccess().getAlternatives_2(), "rule__XVariableDeclaration__Alternatives_2");
@@ -91,10 +94,19 @@ public class GuiceModulesParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXAnnotationElementValuePairAccess().getGroup(), "rule__XAnnotationElementValuePair__Group__0");
 					put(grammarAccess.getXAnnotationElementValuePairAccess().getGroup_0(), "rule__XAnnotationElementValuePair__Group_0__0");
 					put(grammarAccess.getXAnnotationElementValuePairAccess().getGroup_0_0(), "rule__XAnnotationElementValuePair__Group_0_0__0");
-					put(grammarAccess.getXAnnotationElementValueAccess().getGroup_1(), "rule__XAnnotationElementValue__Group_1__0");
-					put(grammarAccess.getXAnnotationElementValueAccess().getGroup_1_1(), "rule__XAnnotationElementValue__Group_1_1__0");
-					put(grammarAccess.getXAnnotationElementValueAccess().getGroup_1_1_0(), "rule__XAnnotationElementValue__Group_1_1_0__0");
-					put(grammarAccess.getXAnnotationElementValueAccess().getGroup_1_2(), "rule__XAnnotationElementValue__Group_1_2__0");
+					put(grammarAccess.getXAnnotationElementValueOrCommaListAccess().getGroup_0(), "rule__XAnnotationElementValueOrCommaList__Group_0__0");
+					put(grammarAccess.getXAnnotationElementValueOrCommaListAccess().getGroup_0_0(), "rule__XAnnotationElementValueOrCommaList__Group_0_0__0");
+					put(grammarAccess.getXAnnotationElementValueOrCommaListAccess().getGroup_0_0_0(), "rule__XAnnotationElementValueOrCommaList__Group_0_0_0__0");
+					put(grammarAccess.getXAnnotationElementValueOrCommaListAccess().getGroup_0_1(), "rule__XAnnotationElementValueOrCommaList__Group_0_1__0");
+					put(grammarAccess.getXAnnotationElementValueOrCommaListAccess().getGroup_0_1_1(), "rule__XAnnotationElementValueOrCommaList__Group_0_1_1__0");
+					put(grammarAccess.getXAnnotationElementValueOrCommaListAccess().getGroup_1(), "rule__XAnnotationElementValueOrCommaList__Group_1__0");
+					put(grammarAccess.getXAnnotationElementValueOrCommaListAccess().getGroup_1_1(), "rule__XAnnotationElementValueOrCommaList__Group_1_1__0");
+					put(grammarAccess.getXAnnotationElementValueOrCommaListAccess().getGroup_1_1_1(), "rule__XAnnotationElementValueOrCommaList__Group_1_1_1__0");
+					put(grammarAccess.getXAnnotationElementValueAccess().getGroup_0(), "rule__XAnnotationElementValue__Group_0__0");
+					put(grammarAccess.getXAnnotationElementValueAccess().getGroup_0_0(), "rule__XAnnotationElementValue__Group_0_0__0");
+					put(grammarAccess.getXAnnotationElementValueAccess().getGroup_0_0_0(), "rule__XAnnotationElementValue__Group_0_0_0__0");
+					put(grammarAccess.getXAnnotationElementValueAccess().getGroup_0_1(), "rule__XAnnotationElementValue__Group_0_1__0");
+					put(grammarAccess.getXAnnotationElementValueAccess().getGroup_0_1_1(), "rule__XAnnotationElementValue__Group_0_1_1__0");
 					put(grammarAccess.getXAssignmentAccess().getGroup_0(), "rule__XAssignment__Group_0__0");
 					put(grammarAccess.getXAssignmentAccess().getGroup_1(), "rule__XAssignment__Group_1__0");
 					put(grammarAccess.getXAssignmentAccess().getGroup_1_1(), "rule__XAssignment__Group_1_1__0");
@@ -187,7 +199,8 @@ public class GuiceModulesParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXSwitchExpressionAccess().getGroup_2_1_0_0(), "rule__XSwitchExpression__Group_2_1_0_0__0");
 					put(grammarAccess.getXSwitchExpressionAccess().getGroup_5(), "rule__XSwitchExpression__Group_5__0");
 					put(grammarAccess.getXCasePartAccess().getGroup(), "rule__XCasePart__Group__0");
-					put(grammarAccess.getXCasePartAccess().getGroup_1(), "rule__XCasePart__Group_1__0");
+					put(grammarAccess.getXCasePartAccess().getGroup_2(), "rule__XCasePart__Group_2__0");
+					put(grammarAccess.getXCasePartAccess().getGroup_3_0(), "rule__XCasePart__Group_3_0__0");
 					put(grammarAccess.getXForLoopExpressionAccess().getGroup(), "rule__XForLoopExpression__Group__0");
 					put(grammarAccess.getXWhileExpressionAccess().getGroup(), "rule__XWhileExpression__Group__0");
 					put(grammarAccess.getXDoWhileExpressionAccess().getGroup(), "rule__XDoWhileExpression__Group__0");
@@ -265,8 +278,11 @@ public class GuiceModulesParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXAnnotationAccess().getValueAssignment_3_1_1(), "rule__XAnnotation__ValueAssignment_3_1_1");
 					put(grammarAccess.getXAnnotationElementValuePairAccess().getElementAssignment_0_0_0(), "rule__XAnnotationElementValuePair__ElementAssignment_0_0_0");
 					put(grammarAccess.getXAnnotationElementValuePairAccess().getValueAssignment_1(), "rule__XAnnotationElementValuePair__ValueAssignment_1");
-					put(grammarAccess.getXAnnotationElementValueAccess().getElementsAssignment_1_1_0_2(), "rule__XAnnotationElementValue__ElementsAssignment_1_1_0_2");
-					put(grammarAccess.getXAnnotationElementValueAccess().getElementsAssignment_1_2_1(), "rule__XAnnotationElementValue__ElementsAssignment_1_2_1");
+					put(grammarAccess.getXAnnotationElementValueOrCommaListAccess().getElementsAssignment_0_1_0(), "rule__XAnnotationElementValueOrCommaList__ElementsAssignment_0_1_0");
+					put(grammarAccess.getXAnnotationElementValueOrCommaListAccess().getElementsAssignment_0_1_1_1(), "rule__XAnnotationElementValueOrCommaList__ElementsAssignment_0_1_1_1");
+					put(grammarAccess.getXAnnotationElementValueOrCommaListAccess().getElementsAssignment_1_1_1_1(), "rule__XAnnotationElementValueOrCommaList__ElementsAssignment_1_1_1_1");
+					put(grammarAccess.getXAnnotationElementValueAccess().getElementsAssignment_0_1_0(), "rule__XAnnotationElementValue__ElementsAssignment_0_1_0");
+					put(grammarAccess.getXAnnotationElementValueAccess().getElementsAssignment_0_1_1_1(), "rule__XAnnotationElementValue__ElementsAssignment_0_1_1_1");
 					put(grammarAccess.getXAssignmentAccess().getFeatureAssignment_0_1(), "rule__XAssignment__FeatureAssignment_0_1");
 					put(grammarAccess.getXAssignmentAccess().getValueAssignment_0_3(), "rule__XAssignment__ValueAssignment_0_3");
 					put(grammarAccess.getXAssignmentAccess().getFeatureAssignment_1_1_0_0_1(), "rule__XAssignment__FeatureAssignment_1_1_0_0_1");
@@ -324,9 +340,9 @@ public class GuiceModulesParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXSwitchExpressionAccess().getSwitchAssignment_2_1_1(), "rule__XSwitchExpression__SwitchAssignment_2_1_1");
 					put(grammarAccess.getXSwitchExpressionAccess().getCasesAssignment_4(), "rule__XSwitchExpression__CasesAssignment_4");
 					put(grammarAccess.getXSwitchExpressionAccess().getDefaultAssignment_5_2(), "rule__XSwitchExpression__DefaultAssignment_5_2");
-					put(grammarAccess.getXCasePartAccess().getTypeGuardAssignment_0(), "rule__XCasePart__TypeGuardAssignment_0");
-					put(grammarAccess.getXCasePartAccess().getCaseAssignment_1_1(), "rule__XCasePart__CaseAssignment_1_1");
-					put(grammarAccess.getXCasePartAccess().getThenAssignment_3(), "rule__XCasePart__ThenAssignment_3");
+					put(grammarAccess.getXCasePartAccess().getTypeGuardAssignment_1(), "rule__XCasePart__TypeGuardAssignment_1");
+					put(grammarAccess.getXCasePartAccess().getCaseAssignment_2_1(), "rule__XCasePart__CaseAssignment_2_1");
+					put(grammarAccess.getXCasePartAccess().getThenAssignment_3_0_1(), "rule__XCasePart__ThenAssignment_3_0_1");
 					put(grammarAccess.getXForLoopExpressionAccess().getDeclaredParamAssignment_3(), "rule__XForLoopExpression__DeclaredParamAssignment_3");
 					put(grammarAccess.getXForLoopExpressionAccess().getForExpressionAssignment_5(), "rule__XForLoopExpression__ForExpressionAssignment_5");
 					put(grammarAccess.getXForLoopExpressionAccess().getEachExpressionAssignment_7(), "rule__XForLoopExpression__EachExpressionAssignment_7");

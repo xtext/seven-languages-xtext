@@ -38,13 +38,13 @@ public class Language {
     if (!true) {
       _and = false;
     } else {
-      _and = (true && false);
+      _and = false;
     }
     boolean _or = false;
     if (true) {
       _or = true;
     } else {
-      _or = (true || false);
+      _or = false;
     }
     /* (1 == 2); */
     /* (1 != 2); */
@@ -58,8 +58,7 @@ public class Language {
     if (null != null) {
       _elvis = null;
     } else {
-      _elvis = ObjectExtensions.<String>operator_elvis(
-        null, "default");
+      _elvis = "default";
     }
     final Procedure1<String> _function = new Procedure1<String>() {
       public void apply(final String it) {
@@ -84,15 +83,13 @@ public class Language {
     final ArrayList<String> list = CollectionLiterals.<String>newArrayList("a", "b", "c");
     final Function1<String,String> _function_2 = new Function1<String,String>() {
       public String apply(final String e) {
-        String _upperCase = e.toUpperCase();
-        return _upperCase;
+        return e.toUpperCase();
       }
     };
     /* ListExtensions.<String, String>map(list, _function_2); */
     final Function1<String,String> _function_3 = new Function1<String,String>() {
       public String apply(final String it) {
-        String _upperCase = it.toUpperCase();
-        return _upperCase;
+        return it.toUpperCase();
       }
     };
     /* ListExtensions.<String, String>map(list, _function_3); */

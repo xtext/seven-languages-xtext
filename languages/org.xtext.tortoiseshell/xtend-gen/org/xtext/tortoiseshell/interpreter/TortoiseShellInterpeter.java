@@ -53,7 +53,7 @@ public class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoi
       _and = false;
     } else {
       boolean _notEquals_1 = (!Objects.equal(program, null));
-      _and = (_notEquals && _notEquals_1);
+      _and = _notEquals_1;
     }
     if (_and) {
       this.tortoise = tortoise;
@@ -86,11 +86,9 @@ public class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoi
       }
       final int line = _startLine;
       if (((line - 1) == this.stopAtLine)) {
-        StopLineReachedException _stopLineReachedException = new StopLineReachedException();
-        throw _stopLineReachedException;
+        throw new StopLineReachedException();
       }
-      Object _internalEvaluate = super.internalEvaluate(expression, context, indicator);
-      _xblockexpression = (_internalEvaluate);
+      _xblockexpression = (super.internalEvaluate(expression, context, indicator));
     }
     return _xblockexpression;
   }
@@ -125,13 +123,11 @@ public class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoi
             if (_notEquals) {
               throw result.getException();
             }
-            Object _result = result.getResult();
-            _xblockexpression_1 = (_result);
+            _xblockexpression_1 = (result.getResult());
           }
           _xifexpression = _xblockexpression_1;
         } else {
-          Object _invokeOperation = super.invokeOperation(operation, receiver, argumentValues);
-          _xifexpression = _invokeOperation;
+          _xifexpression = super.invokeOperation(operation, receiver, argumentValues);
         }
         _xblockexpression = (_xifexpression);
       }

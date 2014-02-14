@@ -31,8 +31,7 @@ import org.xtext.builddsl.lib.JavaCompilerParams;
 @SuppressWarnings("all")
 public class JavaCompiler {
   public static void javac(final Procedure1<? super JavaCompilerParams> init) {
-    JavaCompilerParams _javaCompilerParams = new JavaCompilerParams();
-    final JavaCompilerParams params = _javaCompilerParams;
+    final JavaCompilerParams params = new JavaCompilerParams();
     init.apply(params);
     final ArrayList<String> list = CollectionLiterals.<String>newArrayList();
     File _destination = params.getDestination();
@@ -58,8 +57,7 @@ public class JavaCompiler {
     Collection<File> _sources = params.getSources();
     final Function1<File,String> _function = new Function1<File,String>() {
       public String apply(final File it) {
-        String _string = it.toString();
-        return _string;
+        return it.toString();
       }
     };
     Iterable<String> _map = IterableExtensions.<File, String>map(_sources, _function);
@@ -80,15 +78,13 @@ public class JavaCompiler {
       public URL apply(final File it) {
         try {
           URI _uRI = it.toURI();
-          URL _uRL = _uRI.toURL();
-          return _uRL;
+          return _uRI.toURL();
         } catch (Throwable _e) {
           throw Exceptions.sneakyThrow(_e);
         }
       }
     };
     List<URL> _map = ListExtensions.<File, URL>map(((List<File>)Conversions.doWrapArray(entries)), _function);
-    URLClassLoader _uRLClassLoader = new URLClassLoader(((URL[])Conversions.unwrapArray(_map, URL.class)));
-    return _uRLClassLoader;
+    return new URLClassLoader(((URL[])Conversions.unwrapArray(_map, URL.class)));
   }
 }

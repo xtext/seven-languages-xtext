@@ -27,8 +27,7 @@ public class WordCount {
           final Function1<String,Integer> _function = new Function1<String,Integer>() {
             public Integer apply(final String it) {
               String[] _split = it.split("\\s*");
-              int _size = ((List<String>)Conversions.doWrapArray(_split)).size();
-              return Integer.valueOf(_size);
+              return Integer.valueOf(((List<String>)Conversions.doWrapArray(_split)).size());
             }
           };
           List<Integer> _map = ListExtensions.<String, Integer>map(lines, _function);

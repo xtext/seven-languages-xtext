@@ -46,8 +46,7 @@ public class TortoiseFigure extends ImageFigure {
     {
       Image _image = this.getImage();
       final Rectangle bounds = _image.getBounds();
-      Dimension _dimension = new Dimension(bounds.width, bounds.height);
-      _xblockexpression = (_dimension);
+      _xblockexpression = (new Dimension(bounds.width, bounds.height));
     }
     return _xblockexpression;
   }

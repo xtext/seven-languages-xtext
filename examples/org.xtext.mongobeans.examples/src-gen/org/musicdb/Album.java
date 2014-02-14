@@ -1,5 +1,6 @@
 package org.musicdb;
 
+import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 import java.util.List;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
@@ -14,7 +15,7 @@ import org.xtext.mongobeans.lib.MongoBeanList;
 @SuppressWarnings("all")
 public class Album implements IMongoBean {
   /**
-   * Creates a new Album wrapping the given {@link DBObject}.
+   * Creates a new Album wrapping the given {@link com.mongodb.DBObject}.
    */
   public Album(final DBObject dbObject) {
     this._dbObject = dbObject;
@@ -24,7 +25,7 @@ public class Album implements IMongoBean {
    * Creates a new Album wrapping a new {@link com.mongodb.BasicDBObject}.
    */
   public Album() {
-    _dbObject = new com.mongodb.BasicDBObject();
+    _dbObject = new BasicDBObject();
     _dbObject.put(JAVA_CLASS_KEY, "org.musicdb.Album");
   }
   
@@ -35,7 +36,7 @@ public class Album implements IMongoBean {
   }
   
   public String getTitle() {
-    return (java.lang.String) _dbObject.get("title");
+    return (String) _dbObject.get("title");
   }
   
   public void setTitle(final String title) {
@@ -43,7 +44,7 @@ public class Album implements IMongoBean {
   }
   
   public int getYear() {
-    return (java.lang.Integer) _dbObject.get("year");
+    return (Integer) _dbObject.get("year");
   }
   
   public void setYear(final int year) {
@@ -54,26 +55,23 @@ public class Album implements IMongoBean {
     List<Track> _tracks = this.getTracks();
     final Function1<Track,Duration> _function = new Function1<Track,Duration>() {
       public Duration apply(final Track it) {
-        Duration _duration = it.getDuration();
-        return _duration;
+        return it.getDuration();
       }
     };
     List<Duration> _map = ListExtensions.<Track, Duration>map(_tracks, _function);
     final Function2<Duration,Duration,Duration> _function_1 = new Function2<Duration,Duration,Duration>() {
       public Duration apply(final Duration a, final Duration b) {
-        Duration _plus = a.operator_plus(b);
-        return _plus;
+        return a.operator_plus(b);
       }
     };
-    Duration _reduce = IterableExtensions.<Duration>reduce(_map, _function_1);
-    return _reduce;
+    return IterableExtensions.<Duration>reduce(_map, _function_1);
   }
   
   private MongoBeanList<Track> _tracks;
   
   public List<Track> getTracks() {
     if(_tracks==null)
-    	_tracks = new org.xtext.mongobeans.lib.MongoBeanList<org.musicdb.Track>(_dbObject, "tracks");
+    	_tracks = new MongoBeanList<Track>(_dbObject, "tracks");
     return _tracks;
   }
 }

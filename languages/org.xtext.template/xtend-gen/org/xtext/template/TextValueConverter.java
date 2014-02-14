@@ -18,7 +18,6 @@ public class TextValueConverter extends STRINGValueConverter {
   protected String toEscapedString(final String value) {
     String _convertToJavaString = Strings.convertToJavaString(value, false);
     String _plus = ("»" + _convertToJavaString);
-    String _plus_1 = (_plus + "«");
-    return _plus_1;
+    return (_plus + "«");
   }
 }

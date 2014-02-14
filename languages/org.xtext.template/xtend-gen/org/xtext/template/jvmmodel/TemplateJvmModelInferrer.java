@@ -28,7 +28,6 @@ import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor;
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder;
 import org.eclipse.xtext.xbase.lib.Extension;
-import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.xtext.template.template.Parameter;
 import org.xtext.template.template.TemplateFile;
@@ -53,8 +52,7 @@ public class TemplateJvmModelInferrer extends AbstractModelInferrer {
     if (_notEquals) {
       String _package_1 = element.getPackage();
       String _plus = (_package_1 + ".");
-      String _plus_1 = (_plus + simpleName);
-      _xifexpression = _plus_1;
+      _xifexpression = (_plus + simpleName);
     } else {
       _xifexpression = simpleName;
     }
@@ -72,18 +70,18 @@ public class TemplateJvmModelInferrer extends AbstractModelInferrer {
             if (_type != null) {
               _elvis_1 = _type;
             } else {
-              JvmTypeReference _inferredType = null;
               XExpression _defaultexp = param.getDefaultexp();
+              JvmTypeReference _inferredType = null;
               if (_defaultexp!=null) {
                 _inferredType=TemplateJvmModelInferrer.this._jvmTypesBuilder.inferredType(_defaultexp);
               }
-              _elvis_1 = ObjectExtensions.<JvmTypeReference>operator_elvis(_type, _inferredType);
+              _elvis_1 = _inferredType;
             }
             if (_elvis_1 != null) {
               _elvis = _elvis_1;
             } else {
               JvmTypeReference _newTypeRef = TemplateJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(element, String.class);
-              _elvis = ObjectExtensions.<JvmTypeReference>operator_elvis(_elvis_1, _newTypeRef);
+              _elvis = _newTypeRef;
             }
             final JvmTypeReference type = _elvis;
             EList<JvmMember> _members = it.getMembers();

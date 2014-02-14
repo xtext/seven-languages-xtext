@@ -157,7 +157,6 @@ public class IntegrationTest {
   public String replace(final CharSequence s) {
     String _string = s.toString();
     String _replace = _string.replace("<<", "«");
-    String _replace_1 = _replace.replace(">>", "»");
-    return _replace_1;
+    return _replace.replace(">>", "»");
   }
 }

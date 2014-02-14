@@ -1580,10 +1580,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = RULE_HEX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5847:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5847:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5858:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5858:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5847:12: ( '0x' | '0X' )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5858:12: ( '0x' | '0X' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1611,7 +1611,7 @@ public class InternalMongoBeansLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5847:13: '0x'
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5858:13: '0x'
                     {
                     match("0x"); 
 
@@ -1619,7 +1619,7 @@ public class InternalMongoBeansLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5847:18: '0X'
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5858:18: '0X'
                     {
                     match("0X"); 
 
@@ -1629,7 +1629,7 @@ public class InternalMongoBeansLexer extends Lexer {
 
             }
 
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5847:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5858:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
             int cnt2=0;
             loop2:
             do {
@@ -1667,7 +1667,7 @@ public class InternalMongoBeansLexer extends Lexer {
                 cnt2++;
             } while (true);
 
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5847:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5858:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1676,10 +1676,10 @@ public class InternalMongoBeansLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5847:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5858:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     {
                     match('#'); 
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5847:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5858:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     int alt3=2;
                     int LA3_0 = input.LA(1);
 
@@ -1697,7 +1697,7 @@ public class InternalMongoBeansLexer extends Lexer {
                     }
                     switch (alt3) {
                         case 1 :
-                            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5847:64: ( 'b' | 'B' ) ( 'i' | 'I' )
+                            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5858:64: ( 'b' | 'B' ) ( 'i' | 'I' )
                             {
                             if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                                 input.consume();
@@ -1721,7 +1721,7 @@ public class InternalMongoBeansLexer extends Lexer {
                             }
                             break;
                         case 2 :
-                            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5847:84: ( 'l' | 'L' )
+                            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5858:84: ( 'l' | 'L' )
                             {
                             if ( input.LA(1)=='L'||input.LA(1)=='l' ) {
                                 input.consume();
@@ -1760,11 +1760,11 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5849:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5849:12: '0' .. '9' ( '0' .. '9' | '_' )*
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5860:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5860:12: '0' .. '9' ( '0' .. '9' | '_' )*
             {
             matchRange('0','9'); 
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5849:21: ( '0' .. '9' | '_' )*
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5860:21: ( '0' .. '9' | '_' )*
             loop5:
             do {
                 int alt5=2;
@@ -1813,11 +1813,11 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = RULE_DECIMAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5851:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5851:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5862:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5862:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             {
             mRULE_INT(); 
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5851:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5862:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -1826,7 +1826,7 @@ public class InternalMongoBeansLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5851:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5862:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -1837,7 +1837,7 @@ public class InternalMongoBeansLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5851:36: ( '+' | '-' )?
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5862:36: ( '+' | '-' )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -1870,7 +1870,7 @@ public class InternalMongoBeansLexer extends Lexer {
 
             }
 
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5851:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5862:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             int alt8=3;
             int LA8_0 = input.LA(1);
 
@@ -1882,7 +1882,7 @@ public class InternalMongoBeansLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5851:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5862:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
                     {
                     if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                         input.consume();
@@ -1906,7 +1906,7 @@ public class InternalMongoBeansLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5851:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5862:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
                     {
                     if ( input.LA(1)=='D'||input.LA(1)=='F'||input.LA(1)=='L'||input.LA(1)=='d'||input.LA(1)=='f'||input.LA(1)=='l' ) {
                         input.consume();
@@ -1939,10 +1939,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5853:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5853:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5864:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5864:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5853:11: ( '^' )?
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5864:11: ( '^' )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -1951,7 +1951,7 @@ public class InternalMongoBeansLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5853:11: '^'
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5864:11: '^'
                     {
                     match('^'); 
 
@@ -1969,7 +1969,7 @@ public class InternalMongoBeansLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5853:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5864:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             loop10:
             do {
                 int alt10=2;
@@ -2018,10 +2018,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5855:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5855:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5866:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5866:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5855:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5866:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -2039,10 +2039,10 @@ public class InternalMongoBeansLexer extends Lexer {
             }
             switch (alt13) {
                 case 1 :
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5855:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5866:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5855:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5866:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop11:
                     do {
                         int alt11=3;
@@ -2058,7 +2058,7 @@ public class InternalMongoBeansLexer extends Lexer {
 
                         switch (alt11) {
                     	case 1 :
-                    	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5855:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5866:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2074,7 +2074,7 @@ public class InternalMongoBeansLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5855:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5866:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2099,10 +2099,10 @@ public class InternalMongoBeansLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5855:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5866:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5855:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5866:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop12:
                     do {
                         int alt12=3;
@@ -2118,7 +2118,7 @@ public class InternalMongoBeansLexer extends Lexer {
 
                         switch (alt12) {
                     	case 1 :
-                    	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5855:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5866:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2134,7 +2134,7 @@ public class InternalMongoBeansLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5855:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5866:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2177,12 +2177,12 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5857:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5857:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5868:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5868:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5857:24: ( options {greedy=false; } : . )*
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5868:24: ( options {greedy=false; } : . )*
             loop14:
             do {
                 int alt14=2;
@@ -2207,7 +2207,7 @@ public class InternalMongoBeansLexer extends Lexer {
 
                 switch (alt14) {
             	case 1 :
-            	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5857:52: .
+            	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5868:52: .
             	    {
             	    matchAny(); 
 
@@ -2237,12 +2237,12 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5859:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5859:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5870:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5870:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5859:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5870:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop15:
             do {
                 int alt15=2;
@@ -2255,7 +2255,7 @@ public class InternalMongoBeansLexer extends Lexer {
 
                 switch (alt15) {
             	case 1 :
-            	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5859:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5870:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2275,7 +2275,7 @@ public class InternalMongoBeansLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5859:40: ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5870:40: ( ( '\\r' )? '\\n' )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -2284,9 +2284,9 @@ public class InternalMongoBeansLexer extends Lexer {
             }
             switch (alt17) {
                 case 1 :
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5859:41: ( '\\r' )? '\\n'
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5870:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5859:41: ( '\\r' )?
+                    // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5870:41: ( '\\r' )?
                     int alt16=2;
                     int LA16_0 = input.LA(1);
 
@@ -2295,7 +2295,7 @@ public class InternalMongoBeansLexer extends Lexer {
                     }
                     switch (alt16) {
                         case 1 :
-                            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5859:41: '\\r'
+                            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5870:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2327,10 +2327,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5861:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5861:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5872:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5872:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5861:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5872:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt18=0;
             loop18:
             do {
@@ -2384,8 +2384,8 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5863:16: ( . )
-            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5863:18: .
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5874:16: ( . )
+            // ../org.xtext.mongobeans/src-gen/org/xtext/mongobeans/parser/antlr/internal/InternalMongoBeans.g:5874:18: .
             {
             matchAny(); 
 

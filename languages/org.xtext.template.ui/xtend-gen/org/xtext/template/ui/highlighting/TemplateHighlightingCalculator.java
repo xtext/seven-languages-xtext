@@ -37,8 +37,7 @@ public class TemplateHighlightingCalculator extends XbaseHighlightingCalculator 
         _matched=true;
         AbstractRule _rule = ((RuleCall)grammarElement).getRule();
         TerminalRule _tEXTRule = this.grammarAccess.getTEXTRule();
-        boolean _equals = Objects.equal(_rule, _tEXTRule);
-        _switchResult = _equals;
+        _switchResult = Objects.equal(_rule, _tEXTRule);
       }
     }
     if (!_matched) {

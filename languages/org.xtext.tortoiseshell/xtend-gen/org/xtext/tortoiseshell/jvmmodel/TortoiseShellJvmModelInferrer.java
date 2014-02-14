@@ -22,7 +22,6 @@ import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor;
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder;
 import org.eclipse.xtext.xbase.lib.Extension;
-import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.xtext.tortoiseshell.lib.Tortoise;
 import org.xtext.tortoiseshell.tortoiseShell.Program;
@@ -69,7 +68,7 @@ public class TortoiseShellJvmModelInferrer extends AbstractModelInferrer {
           } else {
             XBlockExpression _body_1 = subProgram.getBody();
             JvmTypeReference _inferredType = TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.inferredType(_body_1);
-            _elvis = ObjectExtensions.<JvmTypeReference>operator_elvis(_returnType, _inferredType);
+            _elvis = _inferredType;
           }
           final Procedure1<JvmOperation> _function_1 = new Procedure1<JvmOperation>() {
             public void apply(final JvmOperation it) {

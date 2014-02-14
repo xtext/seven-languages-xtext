@@ -13,9 +13,9 @@ import java.io.IOException
 import javax.servlet.ServletException
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
-import org.eclipse.jetty.server.Server
-import org.eclipse.jetty.servlet.ServletContextHandler
-import org.eclipse.jetty.servlet.ServletHolder
+//import org.eclipse.jetty.server.Server
+//import org.eclipse.jetty.servlet.ServletContextHandler
+//import org.eclipse.jetty.servlet.ServletHolder
 import routes.NumberGuessing
 
 class StartServer {
@@ -24,16 +24,16 @@ class StartServer {
 	 * http://localhost:8080/guess/50
 	 */
 	def static void main(String[] args) {
-		val server = new Server(8080)
- 
-        val context = new ServletContextHandler(ServletContextHandler::SESSIONS)
-        context.contextPath = "/"
-        server.handler = context
- 
-        context.addServlet(new ServletHolder(new SuperServlet),"/*");
- 
-        server.start();
-        server.join();
+//		val server = new Server(8080)
+// 
+//        val context = new ServletContextHandler(ServletContextHandler::SESSIONS)
+//        context.contextPath = "/"
+//        server.handler = context
+// 
+//        context.addServlet(new ServletHolder(new SuperServlet),"/*");
+// 
+//        server.start();
+//        server.join();
 	}
 }
 

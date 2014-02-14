@@ -100,8 +100,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
         final Function1<Route,Boolean> _function_1 = new Function1<Route,Boolean>() {
           public Boolean apply(final Route it) {
             URL _url = it.getUrl();
-            boolean _notEquals = (!Objects.equal(_url, null));
-            return Boolean.valueOf(_notEquals);
+            return Boolean.valueOf((!Objects.equal(_url, null)));
           }
         };
         Iterable<Route> _filter_1 = IterableExtensions.<Route>filter(_routes, _function_1);
@@ -126,8 +125,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
         final Function1<Route,Boolean> _function_2 = new Function1<Route,Boolean>() {
           public Boolean apply(final Route it) {
             RequestType _requestType = it.getRequestType();
-            boolean _equals = Objects.equal(_requestType, RequestType.GET);
-            return Boolean.valueOf(_equals);
+            return Boolean.valueOf(Objects.equal(_requestType, RequestType.GET));
           }
         };
         final Iterable<Route> getRoutes = IterableExtensions.<Route>filter(_routes_1, _function_2);
@@ -142,8 +140,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
         final Function1<Route,Boolean> _function_3 = new Function1<Route,Boolean>() {
           public Boolean apply(final Route it) {
             RequestType _requestType = it.getRequestType();
-            boolean _equals = Objects.equal(_requestType, RequestType.POST);
-            return Boolean.valueOf(_equals);
+            return Boolean.valueOf(Objects.equal(_requestType, RequestType.POST));
           }
         };
         final Iterable<Route> postRoutes = IterableExtensions.<Route>filter(_routes_2, _function_3);
@@ -158,8 +155,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
         final Function1<Route,Boolean> _function_4 = new Function1<Route,Boolean>() {
           public Boolean apply(final Route it) {
             RequestType _requestType = it.getRequestType();
-            boolean _equals = Objects.equal(_requestType, RequestType.PUT);
-            return Boolean.valueOf(_equals);
+            return Boolean.valueOf(Objects.equal(_requestType, RequestType.PUT));
           }
         };
         final Iterable<Route> putRoutes = IterableExtensions.<Route>filter(_routes_3, _function_4);
@@ -174,8 +170,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
         final Function1<Route,Boolean> _function_5 = new Function1<Route,Boolean>() {
           public Boolean apply(final Route it) {
             RequestType _requestType = it.getRequestType();
-            boolean _equals = Objects.equal(_requestType, RequestType.DELETE);
-            return Boolean.valueOf(_equals);
+            return Boolean.valueOf(Objects.equal(_requestType, RequestType.DELETE));
           }
         };
         final Iterable<Route> deleteRoutes = IterableExtensions.<Route>filter(_routes_4, _function_5);
@@ -190,8 +185,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
         final Function1<Route,Boolean> _function_6 = new Function1<Route,Boolean>() {
           public Boolean apply(final Route it) {
             RequestType _requestType = it.getRequestType();
-            boolean _equals = Objects.equal(_requestType, RequestType.HEAD);
-            return Boolean.valueOf(_equals);
+            return Boolean.valueOf(Objects.equal(_requestType, RequestType.HEAD));
           }
         };
         final Iterable<Route> headRoutes = IterableExtensions.<Route>filter(_routes_5, _function_6);
@@ -215,8 +209,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
     URI _uRI = _eResource.getURI();
     URI _trimFileExtension = _uRI.trimFileExtension();
     String _lastSegment = _trimFileExtension.lastSegment();
-    String _plus = ("routes." + _lastSegment);
-    return _plus;
+    return ("routes." + _lastSegment);
   }
   
   /**
@@ -249,8 +242,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
         RouteJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _call);
       }
     };
-    JvmOperation _method = this._jvmTypesBuilder.toMethod(route, _nameOfRouteMethod, _newTypeRef, _function);
-    return _method;
+    return this._jvmTypesBuilder.toMethod(route, _nameOfRouteMethod, _newTypeRef, _function);
   }
   
   /**
@@ -283,8 +275,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
         RouteJvmModelInferrer.this._jvmTypesBuilder.setInitializer(it, _client);
       }
     };
-    JvmField _field = this._jvmTypesBuilder.toField(_url, _plus, _newTypeRef, _function);
-    return _field;
+    return this._jvmTypesBuilder.toField(_url, _plus, _newTypeRef, _function);
   }
   
   /**
@@ -318,8 +309,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
         RouteJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _condition);
       }
     };
-    JvmOperation _method = this._jvmTypesBuilder.toMethod(route, _plus, _newTypeRef, _function);
-    return _method;
+    return this._jvmTypesBuilder.toMethod(route, _plus, _newTypeRef, _function);
   }
   
   /**
@@ -450,8 +440,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
         RouteJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _client);
       }
     };
-    JvmOperation _method = this._jvmTypesBuilder.toMethod(model, name, _newTypeRef, _function);
-    return _method;
+    return this._jvmTypesBuilder.toMethod(model, name, _newTypeRef, _function);
   }
   
   protected String nameOfRouteMethod(final Route route) {
@@ -461,8 +450,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
     String _firstUpper = StringExtensions.toFirstUpper(_lowerCase);
     String _plus = ("_do" + _firstUpper);
     int _index = this.index(route);
-    String _plus_1 = (_plus + Integer.valueOf(_index));
-    return _plus_1;
+    return (_plus + Integer.valueOf(_index));
   }
   
   /**
@@ -471,8 +459,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
   protected int index(final EObject obj) {
     EObject _eContainer = obj.eContainer();
     EList<EObject> _eContents = _eContainer.eContents();
-    int _indexOf = _eContents.indexOf(obj);
-    return _indexOf;
+    return _eContents.indexOf(obj);
   }
   
   protected String getRegExPattern(final String originalPattern, final List<Variable> variables) {
@@ -498,8 +485,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
   
   public Iterable<Route> routes(final Model model) {
     EList<AbstractDeclaration> _declarations = model.getDeclarations();
-    Iterable<Route> _filter = Iterables.<Route>filter(_declarations, Route.class);
-    return _filter;
+    return Iterables.<Route>filter(_declarations, Route.class);
   }
   
   public boolean isWildcard(final Variable it) {
@@ -518,7 +504,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
           _and = false;
         } else {
           boolean _isWildcard = ((URL)parent).isWildcard();
-          _and = (_equals && _isWildcard);
+          _and = _isWildcard;
         }
         _switchResult = _and;
       }
