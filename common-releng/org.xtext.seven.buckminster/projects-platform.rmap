@@ -10,6 +10,8 @@
   <rm:locator pattern="^org\.antlr.*" searchPathRef="xtext"/>
   <rm:locator pattern="javax.inject" searchPathRef="xtext"/>
   <rm:locator pattern="^org\.objectweb\.asm.*" searchPathRef="xtext"/>
+  <rm:locator pattern="^org\.apache\.commons\.lang.*" searchPathRef="xtext"/>
+  <rm:locator pattern="^org\.apache\.log4j.*" searchPathRef="xtext"/>
   <rm:locator pattern="^org\.eclipse\.emf.*" searchPathRef="xtext"/>
   <rm:locator searchPathRef="eclipse"/>
   
