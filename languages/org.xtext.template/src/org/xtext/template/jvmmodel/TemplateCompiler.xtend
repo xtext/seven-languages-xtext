@@ -34,7 +34,7 @@ class TemplateCompiler extends XbaseCompiler {
 			
 			RichStringForLoop : {
 				expr.forExpression.internalToJavaStatement(it, true)
-				val paramType = typeProvider.getTypeForIdentifiable(expr.declaredParam)
+				val paramType = expr.declaredParam.type
 				val name = declareVariable(expr, '_forLoopResult')
 				newLine
 				append('''

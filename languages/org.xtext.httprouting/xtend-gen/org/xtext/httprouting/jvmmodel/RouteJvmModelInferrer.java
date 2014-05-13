@@ -97,7 +97,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
           RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmField>operator_add(_members, _field);
         }
         Iterable<Route> _routes = RouteJvmModelInferrer.this.routes(model);
-        final Function1<Route,Boolean> _function_1 = new Function1<Route,Boolean>() {
+        final Function1<Route, Boolean> _function_1 = new Function1<Route, Boolean>() {
           public Boolean apply(final Route it) {
             URL _url = it.getUrl();
             return Boolean.valueOf((!Objects.equal(_url, null)));
@@ -122,7 +122,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
           }
         }
         Iterable<Route> _routes_1 = RouteJvmModelInferrer.this.routes(model);
-        final Function1<Route,Boolean> _function_2 = new Function1<Route,Boolean>() {
+        final Function1<Route, Boolean> _function_2 = new Function1<Route, Boolean>() {
           public Boolean apply(final Route it) {
             RequestType _requestType = it.getRequestType();
             return Boolean.valueOf(Objects.equal(_requestType, RequestType.GET));
@@ -137,7 +137,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
           RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_1, _requestHandlerMethod);
         }
         Iterable<Route> _routes_2 = RouteJvmModelInferrer.this.routes(model);
-        final Function1<Route,Boolean> _function_3 = new Function1<Route,Boolean>() {
+        final Function1<Route, Boolean> _function_3 = new Function1<Route, Boolean>() {
           public Boolean apply(final Route it) {
             RequestType _requestType = it.getRequestType();
             return Boolean.valueOf(Objects.equal(_requestType, RequestType.POST));
@@ -152,7 +152,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
           RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_2, _requestHandlerMethod_1);
         }
         Iterable<Route> _routes_3 = RouteJvmModelInferrer.this.routes(model);
-        final Function1<Route,Boolean> _function_4 = new Function1<Route,Boolean>() {
+        final Function1<Route, Boolean> _function_4 = new Function1<Route, Boolean>() {
           public Boolean apply(final Route it) {
             RequestType _requestType = it.getRequestType();
             return Boolean.valueOf(Objects.equal(_requestType, RequestType.PUT));
@@ -167,7 +167,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
           RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_3, _requestHandlerMethod_2);
         }
         Iterable<Route> _routes_4 = RouteJvmModelInferrer.this.routes(model);
-        final Function1<Route,Boolean> _function_5 = new Function1<Route,Boolean>() {
+        final Function1<Route, Boolean> _function_5 = new Function1<Route, Boolean>() {
           public Boolean apply(final Route it) {
             RequestType _requestType = it.getRequestType();
             return Boolean.valueOf(Objects.equal(_requestType, RequestType.DELETE));
@@ -182,7 +182,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
           RouteJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_4, _requestHandlerMethod_3);
         }
         Iterable<Route> _routes_5 = RouteJvmModelInferrer.this.routes(model);
-        final Function1<Route,Boolean> _function_6 = new Function1<Route,Boolean>() {
+        final Function1<Route, Boolean> _function_6 = new Function1<Route, Boolean>() {
           public Boolean apply(final Route it) {
             RequestType _requestType = it.getRequestType();
             return Boolean.valueOf(Objects.equal(_requestType, RequestType.HEAD));

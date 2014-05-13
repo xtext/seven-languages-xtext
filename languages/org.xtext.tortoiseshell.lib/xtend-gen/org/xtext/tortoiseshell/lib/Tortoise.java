@@ -82,7 +82,7 @@ public class Tortoise {
     double _xblockexpression = (double) 0;
     {
       this.x = x;
-      _xblockexpression = (this.y = y);
+      _xblockexpression = this.y = y;
     }
     return _xblockexpression;
   }

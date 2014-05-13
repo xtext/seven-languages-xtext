@@ -55,7 +55,7 @@ public class JavaCompiler {
       list.add(_join);
     }
     Collection<File> _sources = params.getSources();
-    final Function1<File,String> _function = new Function1<File,String>() {
+    final Function1<File, String> _function = new Function1<File, String>() {
       public String apply(final File it) {
         return it.toString();
       }
@@ -74,7 +74,7 @@ public class JavaCompiler {
   }
   
   public static ClassLoader newClasspath(final File... entries) {
-    final Function1<File,URL> _function = new Function1<File,URL>() {
+    final Function1<File, URL> _function = new Function1<File, URL>() {
       public URL apply(final File it) {
         try {
           URI _uRI = it.toURI();

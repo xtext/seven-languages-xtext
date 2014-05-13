@@ -62,7 +62,7 @@ public class Animator extends UIJob {
     boolean _xblockexpression = false;
     {
       this.stop();
-      _xblockexpression = (this.isAnimated = isAnimated);
+      _xblockexpression = this.isAnimated = isAnimated;
     }
     return _xblockexpression;
   }
@@ -98,7 +98,7 @@ public class Animator extends UIJob {
         }
         this.animationQueue.clear();
         this.isStop = false;
-        _xblockexpression = (this.isScheduled = false);
+        _xblockexpression = this.isScheduled = false;
       }
       return _xblockexpression;
     } catch (Throwable _e) {
@@ -160,7 +160,7 @@ public class Animator extends UIJob {
           this.isScheduled = false;
         }
       }
-      _xblockexpression = (Status.OK_STATUS);
+      _xblockexpression = Status.OK_STATUS;
     }
     return _xblockexpression;
   }

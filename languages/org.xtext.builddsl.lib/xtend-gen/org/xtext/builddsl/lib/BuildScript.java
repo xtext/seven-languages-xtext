@@ -43,21 +43,21 @@ public abstract class BuildScript {
   
   public static int WRONG_PARAM = 3;
   
-  private Map<String,TaskDef> _tasks;
+  private Map<String, TaskDef> _tasks;
   
-  private Map<String,Field> _parameters;
+  private Map<String, Field> _parameters;
   
-  public Map<String,TaskDef> getTasks() {
+  public Map<String, TaskDef> getTasks() {
     boolean _equals = Objects.equal(this._tasks, null);
     if (_equals) {
-      HashMap<String,TaskDef> _newHashMap = CollectionLiterals.<String, TaskDef>newHashMap();
+      HashMap<String, TaskDef> _newHashMap = CollectionLiterals.<String, TaskDef>newHashMap();
       this._tasks = _newHashMap;
       Class<? extends BuildScript> _class = this.getClass();
       Method[] _declaredMethods = _class.getDeclaredMethods();
       for (final Method method : _declaredMethods) {
         {
           Annotation[] _annotations = method.getAnnotations();
-          final Function1<Annotation,Boolean> _function = new Function1<Annotation,Boolean>() {
+          final Function1<Annotation, Boolean> _function = new Function1<Annotation, Boolean>() {
             public Boolean apply(final Annotation it) {
               Class<? extends Annotation> _annotationType = it.annotationType();
               return Boolean.valueOf(Objects.equal(_annotationType, DependsOn.class));
@@ -92,17 +92,17 @@ public abstract class BuildScript {
     return this._tasks;
   }
   
-  public Map<String,Field> getParameters() {
+  public Map<String, Field> getParameters() {
     boolean _equals = Objects.equal(this._parameters, null);
     if (_equals) {
-      HashMap<String,Field> _newHashMap = CollectionLiterals.<String, Field>newHashMap();
+      HashMap<String, Field> _newHashMap = CollectionLiterals.<String, Field>newHashMap();
       this._parameters = _newHashMap;
       Class<? extends BuildScript> _class = this.getClass();
       Field[] _declaredFields = _class.getDeclaredFields();
-      final Function1<Field,Boolean> _function = new Function1<Field,Boolean>() {
+      final Function1<Field, Boolean> _function = new Function1<Field, Boolean>() {
         public Boolean apply(final Field it) {
           Annotation[] _annotations = it.getAnnotations();
-          final Function1<Annotation,Boolean> _function = new Function1<Annotation,Boolean>() {
+          final Function1<Annotation, Boolean> _function = new Function1<Annotation, Boolean>() {
             public Boolean apply(final Annotation it) {
               Class<? extends Annotation> _annotationType = it.annotationType();
               return Boolean.valueOf(Objects.equal(_annotationType, Param.class));
@@ -143,7 +143,7 @@ public abstract class BuildScript {
             return BuildScript.WRONG_PARAM;
           }
         } else {
-          Map<String,TaskDef> _tasks = this.getTasks();
+          Map<String, TaskDef> _tasks = this.getTasks();
           boolean _containsKey = _tasks.containsKey(p);
           boolean _not_1 = (!_containsKey);
           if (_not_1) {
@@ -176,7 +176,7 @@ public abstract class BuildScript {
   }
   
   public void _executeTask(final String name) {
-    Map<String,TaskDef> _tasks = this.getTasks();
+    Map<String, TaskDef> _tasks = this.getTasks();
     final TaskDef task = _tasks.get(name);
     boolean _equals = Objects.equal(task, null);
     if (_equals) {
@@ -216,11 +216,11 @@ public abstract class BuildScript {
   
   public boolean showHelp(final String[] args) {
     boolean _or = false;
-    boolean _isNullOrEmpty = IterableExtensions.isNullOrEmpty(((Iterable<? extends Object>)Conversions.doWrapArray(args)));
+    boolean _isNullOrEmpty = IterableExtensions.isNullOrEmpty(((Iterable<?>)Conversions.doWrapArray(args)));
     if (_isNullOrEmpty) {
       _or = true;
     } else {
-      final Function1<String,Boolean> _function = new Function1<String,Boolean>() {
+      final Function1<String, Boolean> _function = new Function1<String, Boolean>() {
         public Boolean apply(final String arg) {
           boolean _or = false;
           boolean _equals = Objects.equal("--help", arg);
@@ -248,7 +248,7 @@ public abstract class BuildScript {
       _builder.append("Tasks:");
       _builder.newLine();
       {
-        Map<String,TaskDef> _tasks = this.getTasks();
+        Map<String, TaskDef> _tasks = this.getTasks();
         Set<String> _keySet = _tasks.keySet();
         List<String> _sort = IterableExtensions.<String>sort(_keySet);
         for(final String task : _sort) {
@@ -259,14 +259,14 @@ public abstract class BuildScript {
       }
       _builder.newLine();
       {
-        Map<String,Field> _parameters = this.getParameters();
+        Map<String, Field> _parameters = this.getParameters();
         boolean _isEmpty = _parameters.isEmpty();
         boolean _not = (!_isEmpty);
         if (_not) {
           _builder.append("Parameters:");
           _builder.newLine();
           {
-            Map<String,Field> _parameters_1 = this.getParameters();
+            Map<String, Field> _parameters_1 = this.getParameters();
             Collection<Field> _values = _parameters_1.values();
             for(final Field it : _values) {
               _builder.append("\t");
@@ -274,7 +274,7 @@ public abstract class BuildScript {
               String _name = it.getName();
               _builder.append(_name, "\t");
               _builder.append(" <");
-              Class<? extends Object> _type = it.getType();
+              Class<?> _type = it.getType();
               String _simpleName_1 = _type.getSimpleName();
               _builder.append(_simpleName_1, "\t");
               _builder.append(">");
@@ -290,27 +290,27 @@ public abstract class BuildScript {
   }
   
   public void taskDef(final String name, final Procedure1<? super TaskDef> init) {
-    Map<String,TaskDef> _tasks = this.getTasks();
+    Map<String, TaskDef> _tasks = this.getTasks();
     boolean _containsKey = _tasks.containsKey(name);
     if (_containsKey) {
       throw new IllegalArgumentException((("A task \'" + name) + "\' is laready registered."));
     }
     final TaskDef task = new TaskDef();
     init.apply(task);
-    Map<String,TaskDef> _tasks_1 = this.getTasks();
+    Map<String, TaskDef> _tasks_1 = this.getTasks();
     _tasks_1.put(name, task);
   }
   
   public boolean _initParameter(final String name, final String value) {
     try {
-      Map<String,Field> _parameters = this.getParameters();
+      Map<String, Field> _parameters = this.getParameters();
       final Field field = _parameters.get(name);
       boolean _equals = Objects.equal(field, null);
       if (_equals) {
         return false;
       }
       field.setAccessible(true);
-      Class<? extends Object> _type = field.getType();
+      Class<?> _type = field.getType();
       Object __convertTo = this._convertTo(value, _type);
       field.set(this, __convertTo);
       return true;
@@ -319,11 +319,11 @@ public abstract class BuildScript {
     }
   }
   
-  public Object _convertTo(final String string, final Class<? extends Object> type) {
+  public Object _convertTo(final String string, final Class<?> type) {
     Object _switchResult = null;
     boolean _matched = false;
     if (!_matched) {
-      if (Objects.equal(type,File.class)) {
+      if (Objects.equal(type, File.class)) {
         _matched=true;
         _switchResult = new File(string);
       }

@@ -4,7 +4,7 @@
     editorDirectory="/org.xtext.guicemodules.editor/src" modelPluginID="org.xtext.guicemodules"
     forceOverwrite="true" modelName="GuiceModules" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="org.xtext.guicemodules.edit"
-    editorPluginID="org.xtext.guicemodules.editor" runtimeVersion="2.5" usedGenPackages="../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xAnnotations ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xtype">
+    editorPluginID="org.xtext.guicemodules.editor" runtimeVersion="2.5" usedGenPackages="platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel#//xAnnotations platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel#//xtype">
   <genPackages prefix="GuiceModules" basePackage="org.xtext.guicemodules" disposableProviderFactory="true"
       fileExtensions="guice" ecorePackage="GuiceModules.ecore#/">
     <genClasses ecoreClass="GuiceModules.ecore#//ModulesAST">

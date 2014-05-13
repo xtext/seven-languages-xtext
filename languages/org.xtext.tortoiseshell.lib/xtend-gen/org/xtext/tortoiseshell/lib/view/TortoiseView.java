@@ -132,7 +132,7 @@ public class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
       };
       DisplayRunHelper.runSyncInDisplayThread(_function);
       IXtextDocument _document = tortoiseEditor.getDocument();
-      final IUnitOfWork<Boolean,XtextResource> _function_1 = new IUnitOfWork<Boolean,XtextResource>() {
+      final IUnitOfWork<Boolean, XtextResource> _function_1 = new IUnitOfWork<Boolean, XtextResource>() {
         public Boolean exec(final XtextResource it) throws Exception {
           boolean _xifexpression = false;
           boolean _and = false;
@@ -186,14 +186,14 @@ public class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
                   }
                 }
               }
-              _xblockexpression = (tortoise.removeListener(TortoiseView.this));
+              _xblockexpression = tortoise.removeListener(TortoiseView.this);
             }
             _xifexpression = _xblockexpression;
           }
           return Boolean.valueOf(_xifexpression);
         }
       };
-      _xblockexpression = (_document.<Boolean>readOnly(_function_1));
+      _xblockexpression = _document.<Boolean>readOnly(_function_1);
     }
     return _xblockexpression;
   }
@@ -246,7 +246,7 @@ public class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
         }
         _while = _and_1;
       }
-      _xblockexpression = (false);
+      _xblockexpression = false;
     }
     return _xblockexpression;
   }

@@ -56,7 +56,7 @@ public class BuildDSLValidator extends XbaseJavaValidator {
         } else {
           StringConcatenation _builder_1 = new StringConcatenation();
           _builder_1.append("There is a cyclic dependency that involves tasks ");
-          final Function1<Task,String> _function = new Function1<Task,String>() {
+          final Function1<Task, String> _function = new Function1<Task, String>() {
             public String apply(final Task it) {
               return it.getName();
             }
@@ -108,7 +108,7 @@ public class BuildDSLValidator extends XbaseJavaValidator {
       if (_and) {
         cycleHandler.apply(tasks);
       }
-      _xblockexpression = (result);
+      _xblockexpression = result;
     }
     return _xblockexpression;
   }

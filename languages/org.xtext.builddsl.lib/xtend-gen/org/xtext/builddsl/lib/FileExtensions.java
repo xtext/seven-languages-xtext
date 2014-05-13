@@ -43,7 +43,7 @@ public class FileExtensions {
     {
       final ArrayList<File> files = CollectionLiterals.<File>newArrayList();
       FileExtensions.collectFiles(file, files);
-      _xblockexpression = (files);
+      _xblockexpression = files;
     }
     return _xblockexpression;
   }
@@ -90,7 +90,7 @@ public class FileExtensions {
       }
       URI _uRI = dir.toURI();
       URI _resolve = _uRI.resolve(name);
-      _xblockexpression = (new File(_resolve));
+      _xblockexpression = new File(_resolve);
     }
     return _xblockexpression;
   }
@@ -105,7 +105,7 @@ public class FileExtensions {
         throw new IllegalStateException(("This is not a directory: " + dir));
       }
       File _file_1 = FileExtensions.file(dir);
-      _xblockexpression = (new File(_file_1, post));
+      _xblockexpression = new File(_file_1, post);
     }
     return _xblockexpression;
   }

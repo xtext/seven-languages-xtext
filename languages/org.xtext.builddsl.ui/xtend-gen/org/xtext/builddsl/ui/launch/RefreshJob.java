@@ -44,7 +44,7 @@ public class RefreshJob extends Job {
           throw Exceptions.sneakyThrow(_t);
         }
       }
-      _xblockexpression = (Status.OK_STATUS);
+      _xblockexpression = Status.OK_STATUS;
     }
     return _xblockexpression;
   }

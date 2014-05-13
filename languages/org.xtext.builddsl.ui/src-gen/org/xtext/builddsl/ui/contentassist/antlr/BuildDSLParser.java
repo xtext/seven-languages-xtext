@@ -50,6 +50,7 @@ public class BuildDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getOpMultiAccess().getAlternatives(), "rule__OpMulti__Alternatives");
 					put(grammarAccess.getXUnaryOperationAccess().getAlternatives(), "rule__XUnaryOperation__Alternatives");
 					put(grammarAccess.getOpUnaryAccess().getAlternatives(), "rule__OpUnary__Alternatives");
+					put(grammarAccess.getOpPostfixAccess().getAlternatives(), "rule__OpPostfix__Alternatives");
 					put(grammarAccess.getXMemberFeatureCallAccess().getAlternatives_1(), "rule__XMemberFeatureCall__Alternatives_1");
 					put(grammarAccess.getXMemberFeatureCallAccess().getAlternatives_1_0_0_0_1(), "rule__XMemberFeatureCall__Alternatives_1_0_0_0_1");
 					put(grammarAccess.getXMemberFeatureCallAccess().getAlternatives_1_1_0_0_1(), "rule__XMemberFeatureCall__Alternatives_1_1_0_0_1");
@@ -59,7 +60,7 @@ public class BuildDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXCollectionLiteralAccess().getAlternatives(), "rule__XCollectionLiteral__Alternatives");
 					put(grammarAccess.getXSwitchExpressionAccess().getAlternatives_2(), "rule__XSwitchExpression__Alternatives_2");
 					put(grammarAccess.getXCasePartAccess().getAlternatives_3(), "rule__XCasePart__Alternatives_3");
-					put(grammarAccess.getXExpressionInsideBlockAccess().getAlternatives(), "rule__XExpressionInsideBlock__Alternatives");
+					put(grammarAccess.getXExpressionOrVarDeclarationAccess().getAlternatives(), "rule__XExpressionOrVarDeclaration__Alternatives");
 					put(grammarAccess.getXVariableDeclarationAccess().getAlternatives_1(), "rule__XVariableDeclaration__Alternatives_1");
 					put(grammarAccess.getXVariableDeclarationAccess().getAlternatives_2(), "rule__XVariableDeclaration__Alternatives_2");
 					put(grammarAccess.getXFeatureCallAccess().getAlternatives_3_1(), "rule__XFeatureCall__Alternatives_3_1");
@@ -75,6 +76,7 @@ public class BuildDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getJvmArgumentTypeReferenceAccess().getAlternatives(), "rule__JvmArgumentTypeReference__Alternatives");
 					put(grammarAccess.getJvmWildcardTypeReferenceAccess().getAlternatives_2(), "rule__JvmWildcardTypeReference__Alternatives_2");
 					put(grammarAccess.getXImportDeclarationAccess().getAlternatives_1(), "rule__XImportDeclaration__Alternatives_1");
+					put(grammarAccess.getXImportDeclarationAccess().getAlternatives_1_0_3(), "rule__XImportDeclaration__Alternatives_1_0_3");
 					put(grammarAccess.getBuildFileAccess().getGroup(), "rule__BuildFile__Group__0");
 					put(grammarAccess.getBuildFileAccess().getGroup_0(), "rule__BuildFile__Group_0__0");
 					put(grammarAccess.getParameterAccess().getGroup(), "rule__Parameter__Group__0");
@@ -87,6 +89,8 @@ public class BuildDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXAssignmentAccess().getGroup_1_1(), "rule__XAssignment__Group_1_1__0");
 					put(grammarAccess.getXAssignmentAccess().getGroup_1_1_0(), "rule__XAssignment__Group_1_1_0__0");
 					put(grammarAccess.getXAssignmentAccess().getGroup_1_1_0_0(), "rule__XAssignment__Group_1_1_0_0__0");
+					put(grammarAccess.getOpMultiAssignAccess().getGroup_5(), "rule__OpMultiAssign__Group_5__0");
+					put(grammarAccess.getOpMultiAssignAccess().getGroup_6(), "rule__OpMultiAssign__Group_6__0");
 					put(grammarAccess.getXOrExpressionAccess().getGroup(), "rule__XOrExpression__Group__0");
 					put(grammarAccess.getXOrExpressionAccess().getGroup_1(), "rule__XOrExpression__Group_1__0");
 					put(grammarAccess.getXOrExpressionAccess().getGroup_1_0(), "rule__XOrExpression__Group_1_0__0");
@@ -106,6 +110,7 @@ public class BuildDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXRelationalExpressionAccess().getGroup_1_1(), "rule__XRelationalExpression__Group_1_1__0");
 					put(grammarAccess.getXRelationalExpressionAccess().getGroup_1_1_0(), "rule__XRelationalExpression__Group_1_1_0__0");
 					put(grammarAccess.getXRelationalExpressionAccess().getGroup_1_1_0_0(), "rule__XRelationalExpression__Group_1_1_0_0__0");
+					put(grammarAccess.getOpCompareAccess().getGroup_1(), "rule__OpCompare__Group_1__0");
 					put(grammarAccess.getXOtherOperatorExpressionAccess().getGroup(), "rule__XOtherOperatorExpression__Group__0");
 					put(grammarAccess.getXOtherOperatorExpressionAccess().getGroup_1(), "rule__XOtherOperatorExpression__Group_1__0");
 					put(grammarAccess.getXOtherOperatorExpressionAccess().getGroup_1_0(), "rule__XOtherOperatorExpression__Group_1_0__0");
@@ -130,6 +135,9 @@ public class BuildDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXCastedExpressionAccess().getGroup_1(), "rule__XCastedExpression__Group_1__0");
 					put(grammarAccess.getXCastedExpressionAccess().getGroup_1_0(), "rule__XCastedExpression__Group_1_0__0");
 					put(grammarAccess.getXCastedExpressionAccess().getGroup_1_0_0(), "rule__XCastedExpression__Group_1_0_0__0");
+					put(grammarAccess.getXPostfixOperationAccess().getGroup(), "rule__XPostfixOperation__Group__0");
+					put(grammarAccess.getXPostfixOperationAccess().getGroup_1(), "rule__XPostfixOperation__Group_1__0");
+					put(grammarAccess.getXPostfixOperationAccess().getGroup_1_0(), "rule__XPostfixOperation__Group_1_0__0");
 					put(grammarAccess.getXMemberFeatureCallAccess().getGroup(), "rule__XMemberFeatureCall__Group__0");
 					put(grammarAccess.getXMemberFeatureCallAccess().getGroup_1_0(), "rule__XMemberFeatureCall__Group_1_0__0");
 					put(grammarAccess.getXMemberFeatureCallAccess().getGroup_1_0_0(), "rule__XMemberFeatureCall__Group_1_0_0__0");
@@ -177,6 +185,13 @@ public class BuildDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXCasePartAccess().getGroup_2(), "rule__XCasePart__Group_2__0");
 					put(grammarAccess.getXCasePartAccess().getGroup_3_0(), "rule__XCasePart__Group_3_0__0");
 					put(grammarAccess.getXForLoopExpressionAccess().getGroup(), "rule__XForLoopExpression__Group__0");
+					put(grammarAccess.getXForLoopExpressionAccess().getGroup_0(), "rule__XForLoopExpression__Group_0__0");
+					put(grammarAccess.getXForLoopExpressionAccess().getGroup_0_0(), "rule__XForLoopExpression__Group_0_0__0");
+					put(grammarAccess.getXBasicForLoopExpressionAccess().getGroup(), "rule__XBasicForLoopExpression__Group__0");
+					put(grammarAccess.getXBasicForLoopExpressionAccess().getGroup_3(), "rule__XBasicForLoopExpression__Group_3__0");
+					put(grammarAccess.getXBasicForLoopExpressionAccess().getGroup_3_1(), "rule__XBasicForLoopExpression__Group_3_1__0");
+					put(grammarAccess.getXBasicForLoopExpressionAccess().getGroup_7(), "rule__XBasicForLoopExpression__Group_7__0");
+					put(grammarAccess.getXBasicForLoopExpressionAccess().getGroup_7_1(), "rule__XBasicForLoopExpression__Group_7_1__0");
 					put(grammarAccess.getXWhileExpressionAccess().getGroup(), "rule__XWhileExpression__Group__0");
 					put(grammarAccess.getXDoWhileExpressionAccess().getGroup(), "rule__XDoWhileExpression__Group__0");
 					put(grammarAccess.getXBlockExpressionAccess().getGroup(), "rule__XBlockExpression__Group__0");
@@ -210,6 +225,9 @@ public class BuildDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXTryCatchFinallyExpressionAccess().getGroup_3_0(), "rule__XTryCatchFinallyExpression__Group_3_0__0");
 					put(grammarAccess.getXTryCatchFinallyExpressionAccess().getGroup_3_0_1(), "rule__XTryCatchFinallyExpression__Group_3_0_1__0");
 					put(grammarAccess.getXTryCatchFinallyExpressionAccess().getGroup_3_1(), "rule__XTryCatchFinallyExpression__Group_3_1__0");
+					put(grammarAccess.getXSynchronizedExpressionAccess().getGroup(), "rule__XSynchronizedExpression__Group__0");
+					put(grammarAccess.getXSynchronizedExpressionAccess().getGroup_0(), "rule__XSynchronizedExpression__Group_0__0");
+					put(grammarAccess.getXSynchronizedExpressionAccess().getGroup_0_0(), "rule__XSynchronizedExpression__Group_0_0__0");
 					put(grammarAccess.getXCatchClauseAccess().getGroup(), "rule__XCatchClause__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
@@ -236,6 +254,7 @@ public class BuildDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getQualifiedNameWithWildcardAccess().getGroup(), "rule__QualifiedNameWithWildcard__Group__0");
 					put(grammarAccess.getXImportDeclarationAccess().getGroup(), "rule__XImportDeclaration__Group__0");
 					put(grammarAccess.getXImportDeclarationAccess().getGroup_1_0(), "rule__XImportDeclaration__Group_1_0__0");
+					put(grammarAccess.getQualifiedNameInStaticImportAccess().getGroup(), "rule__QualifiedNameInStaticImport__Group__0");
 					put(grammarAccess.getBuildFileAccess().getNameAssignment_0_1(), "rule__BuildFile__NameAssignment_0_1");
 					put(grammarAccess.getBuildFileAccess().getImportSectionAssignment_1(), "rule__BuildFile__ImportSectionAssignment_1");
 					put(grammarAccess.getBuildFileAccess().getDeclarationsAssignment_2(), "rule__BuildFile__DeclarationsAssignment_2");
@@ -268,6 +287,7 @@ public class BuildDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXUnaryOperationAccess().getFeatureAssignment_0_1(), "rule__XUnaryOperation__FeatureAssignment_0_1");
 					put(grammarAccess.getXUnaryOperationAccess().getOperandAssignment_0_2(), "rule__XUnaryOperation__OperandAssignment_0_2");
 					put(grammarAccess.getXCastedExpressionAccess().getTypeAssignment_1_1(), "rule__XCastedExpression__TypeAssignment_1_1");
+					put(grammarAccess.getXPostfixOperationAccess().getFeatureAssignment_1_0_1(), "rule__XPostfixOperation__FeatureAssignment_1_0_1");
 					put(grammarAccess.getXMemberFeatureCallAccess().getExplicitStaticAssignment_1_0_0_0_1_1(), "rule__XMemberFeatureCall__ExplicitStaticAssignment_1_0_0_0_1_1");
 					put(grammarAccess.getXMemberFeatureCallAccess().getFeatureAssignment_1_0_0_0_2(), "rule__XMemberFeatureCall__FeatureAssignment_1_0_0_0_2");
 					put(grammarAccess.getXMemberFeatureCallAccess().getValueAssignment_1_0_1(), "rule__XMemberFeatureCall__ValueAssignment_1_0_1");
@@ -297,18 +317,24 @@ public class BuildDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXIfExpressionAccess().getIfAssignment_3(), "rule__XIfExpression__IfAssignment_3");
 					put(grammarAccess.getXIfExpressionAccess().getThenAssignment_5(), "rule__XIfExpression__ThenAssignment_5");
 					put(grammarAccess.getXIfExpressionAccess().getElseAssignment_6_1(), "rule__XIfExpression__ElseAssignment_6_1");
-					put(grammarAccess.getXSwitchExpressionAccess().getLocalVarNameAssignment_2_0_0_0_0(), "rule__XSwitchExpression__LocalVarNameAssignment_2_0_0_0_0");
+					put(grammarAccess.getXSwitchExpressionAccess().getDeclaredParamAssignment_2_0_0_0_1(), "rule__XSwitchExpression__DeclaredParamAssignment_2_0_0_0_1");
 					put(grammarAccess.getXSwitchExpressionAccess().getSwitchAssignment_2_0_1(), "rule__XSwitchExpression__SwitchAssignment_2_0_1");
-					put(grammarAccess.getXSwitchExpressionAccess().getLocalVarNameAssignment_2_1_0_0_1(), "rule__XSwitchExpression__LocalVarNameAssignment_2_1_0_0_1");
+					put(grammarAccess.getXSwitchExpressionAccess().getDeclaredParamAssignment_2_1_0_0_0(), "rule__XSwitchExpression__DeclaredParamAssignment_2_1_0_0_0");
 					put(grammarAccess.getXSwitchExpressionAccess().getSwitchAssignment_2_1_1(), "rule__XSwitchExpression__SwitchAssignment_2_1_1");
 					put(grammarAccess.getXSwitchExpressionAccess().getCasesAssignment_4(), "rule__XSwitchExpression__CasesAssignment_4");
 					put(grammarAccess.getXSwitchExpressionAccess().getDefaultAssignment_5_2(), "rule__XSwitchExpression__DefaultAssignment_5_2");
 					put(grammarAccess.getXCasePartAccess().getTypeGuardAssignment_1(), "rule__XCasePart__TypeGuardAssignment_1");
 					put(grammarAccess.getXCasePartAccess().getCaseAssignment_2_1(), "rule__XCasePart__CaseAssignment_2_1");
 					put(grammarAccess.getXCasePartAccess().getThenAssignment_3_0_1(), "rule__XCasePart__ThenAssignment_3_0_1");
-					put(grammarAccess.getXForLoopExpressionAccess().getDeclaredParamAssignment_3(), "rule__XForLoopExpression__DeclaredParamAssignment_3");
-					put(grammarAccess.getXForLoopExpressionAccess().getForExpressionAssignment_5(), "rule__XForLoopExpression__ForExpressionAssignment_5");
-					put(grammarAccess.getXForLoopExpressionAccess().getEachExpressionAssignment_7(), "rule__XForLoopExpression__EachExpressionAssignment_7");
+					put(grammarAccess.getXForLoopExpressionAccess().getDeclaredParamAssignment_0_0_3(), "rule__XForLoopExpression__DeclaredParamAssignment_0_0_3");
+					put(grammarAccess.getXForLoopExpressionAccess().getForExpressionAssignment_1(), "rule__XForLoopExpression__ForExpressionAssignment_1");
+					put(grammarAccess.getXForLoopExpressionAccess().getEachExpressionAssignment_3(), "rule__XForLoopExpression__EachExpressionAssignment_3");
+					put(grammarAccess.getXBasicForLoopExpressionAccess().getInitExpressionsAssignment_3_0(), "rule__XBasicForLoopExpression__InitExpressionsAssignment_3_0");
+					put(grammarAccess.getXBasicForLoopExpressionAccess().getInitExpressionsAssignment_3_1_1(), "rule__XBasicForLoopExpression__InitExpressionsAssignment_3_1_1");
+					put(grammarAccess.getXBasicForLoopExpressionAccess().getExpressionAssignment_5(), "rule__XBasicForLoopExpression__ExpressionAssignment_5");
+					put(grammarAccess.getXBasicForLoopExpressionAccess().getUpdateExpressionsAssignment_7_0(), "rule__XBasicForLoopExpression__UpdateExpressionsAssignment_7_0");
+					put(grammarAccess.getXBasicForLoopExpressionAccess().getUpdateExpressionsAssignment_7_1_1(), "rule__XBasicForLoopExpression__UpdateExpressionsAssignment_7_1_1");
+					put(grammarAccess.getXBasicForLoopExpressionAccess().getEachExpressionAssignment_9(), "rule__XBasicForLoopExpression__EachExpressionAssignment_9");
 					put(grammarAccess.getXWhileExpressionAccess().getPredicateAssignment_3(), "rule__XWhileExpression__PredicateAssignment_3");
 					put(grammarAccess.getXWhileExpressionAccess().getBodyAssignment_5(), "rule__XWhileExpression__BodyAssignment_5");
 					put(grammarAccess.getXDoWhileExpressionAccess().getBodyAssignment_2(), "rule__XDoWhileExpression__BodyAssignment_2");
@@ -334,6 +360,7 @@ public class BuildDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXConstructorCallAccess().getConstructorAssignment_2(), "rule__XConstructorCall__ConstructorAssignment_2");
 					put(grammarAccess.getXConstructorCallAccess().getTypeArgumentsAssignment_3_1(), "rule__XConstructorCall__TypeArgumentsAssignment_3_1");
 					put(grammarAccess.getXConstructorCallAccess().getTypeArgumentsAssignment_3_2_1(), "rule__XConstructorCall__TypeArgumentsAssignment_3_2_1");
+					put(grammarAccess.getXConstructorCallAccess().getExplicitConstructorCallAssignment_4_0(), "rule__XConstructorCall__ExplicitConstructorCallAssignment_4_0");
 					put(grammarAccess.getXConstructorCallAccess().getArgumentsAssignment_4_1_0(), "rule__XConstructorCall__ArgumentsAssignment_4_1_0");
 					put(grammarAccess.getXConstructorCallAccess().getArgumentsAssignment_4_1_1_0(), "rule__XConstructorCall__ArgumentsAssignment_4_1_1_0");
 					put(grammarAccess.getXConstructorCallAccess().getArgumentsAssignment_4_1_1_1_1(), "rule__XConstructorCall__ArgumentsAssignment_4_1_1_1_1");
@@ -349,6 +376,8 @@ public class BuildDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXTryCatchFinallyExpressionAccess().getCatchClausesAssignment_3_0_0(), "rule__XTryCatchFinallyExpression__CatchClausesAssignment_3_0_0");
 					put(grammarAccess.getXTryCatchFinallyExpressionAccess().getFinallyExpressionAssignment_3_0_1_1(), "rule__XTryCatchFinallyExpression__FinallyExpressionAssignment_3_0_1_1");
 					put(grammarAccess.getXTryCatchFinallyExpressionAccess().getFinallyExpressionAssignment_3_1_1(), "rule__XTryCatchFinallyExpression__FinallyExpressionAssignment_3_1_1");
+					put(grammarAccess.getXSynchronizedExpressionAccess().getParamAssignment_1(), "rule__XSynchronizedExpression__ParamAssignment_1");
+					put(grammarAccess.getXSynchronizedExpressionAccess().getExpressionAssignment_3(), "rule__XSynchronizedExpression__ExpressionAssignment_3");
 					put(grammarAccess.getXCatchClauseAccess().getDeclaredParamAssignment_2(), "rule__XCatchClause__DeclaredParamAssignment_2");
 					put(grammarAccess.getXCatchClauseAccess().getExpressionAssignment_4(), "rule__XCatchClause__ExpressionAssignment_4");
 					put(grammarAccess.getXFunctionTypeRefAccess().getParamTypesAssignment_0_1_0(), "rule__XFunctionTypeRef__ParamTypesAssignment_0_1_0");
@@ -369,6 +398,8 @@ public class BuildDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXImportDeclarationAccess().getStaticAssignment_1_0_0(), "rule__XImportDeclaration__StaticAssignment_1_0_0");
 					put(grammarAccess.getXImportDeclarationAccess().getExtensionAssignment_1_0_1(), "rule__XImportDeclaration__ExtensionAssignment_1_0_1");
 					put(grammarAccess.getXImportDeclarationAccess().getImportedTypeAssignment_1_0_2(), "rule__XImportDeclaration__ImportedTypeAssignment_1_0_2");
+					put(grammarAccess.getXImportDeclarationAccess().getWildcardAssignment_1_0_3_0(), "rule__XImportDeclaration__WildcardAssignment_1_0_3_0");
+					put(grammarAccess.getXImportDeclarationAccess().getMemberNameAssignment_1_0_3_1(), "rule__XImportDeclaration__MemberNameAssignment_1_0_3_1");
 					put(grammarAccess.getXImportDeclarationAccess().getImportedTypeAssignment_1_1(), "rule__XImportDeclaration__ImportedTypeAssignment_1_1");
 					put(grammarAccess.getXImportDeclarationAccess().getImportedNamespaceAssignment_1_2(), "rule__XImportDeclaration__ImportedNamespaceAssignment_1_2");
 				}

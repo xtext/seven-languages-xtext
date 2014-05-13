@@ -232,24 +232,24 @@ public class CommandLineTest {
   
   protected void assertExecute(final CharSequence file, final String cmdline, final String expectedOutput) {
     try {
-      final ArrayList<Class<? extends Object>> classes = CollectionLiterals.<Class<?>>newArrayList();
+      final ArrayList<Class<?>> classes = CollectionLiterals.<Class<?>>newArrayList();
       final IAcceptor<CompilationTestHelper.Result> _function = new IAcceptor<CompilationTestHelper.Result>() {
         public void accept(final CompilationTestHelper.Result it) {
-          Class<? extends Object> _compiledClass = it.getCompiledClass();
+          Class<?> _compiledClass = it.getCompiledClass();
           classes.add(_compiledClass);
         }
       };
       this._compilationTestHelper.compile(file, _function);
-      final Class<? extends Object> clazz = IterableExtensions.<Class<? extends Object>>head(classes);
+      final Class<?> clazz = IterableExtensions.<Class<?>>head(classes);
       final ByteArrayOutputStream out = new ByteArrayOutputStream();
       final PrintStream backup = System.out;
       PrintStream _printStream = new PrintStream(out);
       System.setOut(_printStream);
       try {
         final Object instance = clazz.newInstance();
-        Class<? extends Object> _superclass = clazz.getSuperclass();
+        Class<?> _superclass = clazz.getSuperclass();
         Method[] _declaredMethods = _superclass.getDeclaredMethods();
-        final Function1<Method,Boolean> _function_1 = new Function1<Method,Boolean>() {
+        final Function1<Method, Boolean> _function_1 = new Function1<Method, Boolean>() {
           public Boolean apply(final Method it) {
             String _name = it.getName();
             return Boolean.valueOf(Objects.equal(_name, "doBuild"));

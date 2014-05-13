@@ -10,9 +10,9 @@ import org.eclipse.xtext.xbase.scoping.batch.ImplicitlyImportedTypes;
 
 @SuppressWarnings("all")
 public class TortoiseShellImplicitlyImportedTypes extends ImplicitlyImportedTypes {
-  protected List<Class<? extends Object>> getStaticImportClasses() {
-    List<Class<? extends Object>> _staticImportClasses = super.getStaticImportClasses();
-    Iterable<Class<? extends Object>> _plus = Iterables.<Class<? extends Object>>concat(_staticImportClasses, Collections.<Class<?>>unmodifiableList(Lists.<Class<?>>newArrayList(Math.class, ColorConstants.class)));
-    return IterableExtensions.<Class<? extends Object>>toList(_plus);
+  protected List<Class<?>> getStaticImportClasses() {
+    List<Class<?>> _staticImportClasses = super.getStaticImportClasses();
+    Iterable<Class<?>> _plus = Iterables.<Class<?>>concat(_staticImportClasses, Collections.<Class<?>>unmodifiableList(Lists.<Class<?>>newArrayList(Math.class, ColorConstants.class)));
+    return IterableExtensions.<Class<?>>toList(_plus);
   }
 }

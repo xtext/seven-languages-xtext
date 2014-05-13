@@ -70,7 +70,7 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
       final List<ILeafNode> list = IterableExtensions.<ILeafNode>toList(_leafNodes);
       final int index = list.indexOf(start);
       IntegerRange _upTo = new IntegerRange(index, 0);
-      final Function1<Integer,Boolean> _function = new Function1<Integer,Boolean>() {
+      final Function1<Integer, Boolean> _function = new Function1<Integer, Boolean>() {
         public Boolean apply(final Integer it) {
           ILeafNode _get = list.get((it).intValue());
           boolean _isHidden = _get.isHidden();
@@ -81,7 +81,7 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
       int _size = list.size();
       int _minus = (_size - 1);
       IntegerRange _upTo_1 = new IntegerRange(index, _minus);
-      final Function1<Integer,Boolean> _function_1 = new Function1<Integer,Boolean>() {
+      final Function1<Integer, Boolean> _function_1 = new Function1<Integer, Boolean>() {
         public Boolean apply(final Integer it) {
           ILeafNode _get = list.get((it).intValue());
           boolean _isHidden = _get.isHidden();
@@ -132,7 +132,7 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
         IProject _project = _file.getProject();
         final String project = _project.getName();
         IXtextDocument _document = xbaseEditor.getDocument();
-        final IUnitOfWork<LaunchConfigurationInfo,XtextResource> _function = new IUnitOfWork<LaunchConfigurationInfo,XtextResource>() {
+        final IUnitOfWork<LaunchConfigurationInfo, XtextResource> _function = new IUnitOfWork<LaunchConfigurationInfo, XtextResource>() {
           public LaunchConfigurationInfo exec(final XtextResource it) throws Exception {
             LaunchConfigurationInfo _xblockexpression = null;
             {
@@ -144,7 +144,7 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
                 _identifier=file.getIdentifier();
               }
               String _findTask = BuildDSLLaunchShortcut.this.findTask(it, offset);
-              _xblockexpression = (new LaunchConfigurationInfo(project, _identifier, _findTask));
+              _xblockexpression = new LaunchConfigurationInfo(project, _identifier, _findTask);
             }
             return _xblockexpression;
           }
@@ -178,7 +178,7 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
             ILaunchManager _launchManager = _default.getLaunchManager();
             final ILaunchConfiguration[] configs = _launchManager.getLaunchConfigurations();
             ILaunchConfiguration _elvis = null;
-            final Function1<ILaunchConfiguration,Boolean> _function = new Function1<ILaunchConfiguration,Boolean>() {
+            final Function1<ILaunchConfiguration, Boolean> _function = new Function1<ILaunchConfiguration, Boolean>() {
               public Boolean apply(final ILaunchConfiguration it) {
                 return Boolean.valueOf(info.configEquals(it));
               }

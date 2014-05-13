@@ -58,7 +58,7 @@ public class ExecutionTest {
         public void accept(final CompilationTestHelper.Result it) {
           try {
             try {
-              Class<? extends Object> _compiledClass = it.getCompiledClass();
+              Class<?> _compiledClass = it.getCompiledClass();
               Object _newInstance = _compiledClass.newInstance();
               ExecutionTest.this._reflectExtensions.invoke(_newInstance, "main", null);
               Assert.fail("Expected ResultException not thrown.");

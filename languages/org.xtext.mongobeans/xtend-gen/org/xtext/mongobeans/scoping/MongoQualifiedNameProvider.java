@@ -33,7 +33,7 @@ public class MongoQualifiedNameProvider extends XbaseQualifiedNameProvider {
         String _name_1 = mongoBean.getName();
         return QualifiedName.create(_name_1);
       }
-      _xblockexpression = (_xifexpression);
+      _xblockexpression = _xifexpression;
     }
     return _xblockexpression;
   }

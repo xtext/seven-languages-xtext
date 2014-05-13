@@ -66,7 +66,7 @@ public class LaunchConfigurationInfo {
         wc.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROGRAM_ARGUMENTS, _task);
         wc.setAttribute(RefreshTab.ATTR_REFRESH_SCOPE, "${workspace}");
         wc.setAttribute(RefreshTab.ATTR_REFRESH_RECURSIVE, true);
-        _xblockexpression = (wc.doSave());
+        _xblockexpression = wc.doSave();
       }
       return _xblockexpression;
     } catch (Throwable _e) {

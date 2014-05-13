@@ -148,7 +148,7 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
         BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members, _method);
         EList<JvmMember> _members_1 = it.getMembers();
         Iterable<Task> _tasks = BuildDSLJvmModelInferrer.this.getTasks(file);
-        final Function1<Task,JvmOperation> _function_1 = new Function1<Task,JvmOperation>() {
+        final Function1<Task, JvmOperation> _function_1 = new Function1<Task, JvmOperation>() {
           public JvmOperation apply(final Task task) {
             String _methodName = BuildDSLJvmModelInferrer.this.getMethodName(task);
             JvmTypeReference _newTypeRef = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(task, Void.TYPE);
@@ -165,7 +165,7 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
                       public void apply(final JvmStringAnnotationValue it) {
                         EList<String> _values = it.getValues();
                         EList<Task> _depends = task.getDepends();
-                        final Function1<Task,String> _function = new Function1<Task,String>() {
+                        final Function1<Task, String> _function = new Function1<Task, String>() {
                           public String apply(final Task it) {
                             return it.getName();
                           }
@@ -175,7 +175,7 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
                       }
                     };
                     JvmStringAnnotationValue _doubleArrow = ObjectExtensions.<JvmStringAnnotationValue>operator_doubleArrow(_createJvmStringAnnotationValue, _function);
-                    BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmStringAnnotationValue>operator_add(_values, _doubleArrow);
+                    BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmAnnotationValue>operator_add(_values, _doubleArrow);
                   }
                 };
                 JvmAnnotationReference _doubleArrow = ObjectExtensions.<JvmAnnotationReference>operator_doubleArrow(_annotation, _function);

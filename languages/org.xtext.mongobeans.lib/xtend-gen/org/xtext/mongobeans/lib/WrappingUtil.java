@@ -29,15 +29,15 @@ public class WrappingUtil {
         }
         final String javaClassName = _string;
         ClassLoader _classLoader = WrappingUtil.getClassLoader();
-        final Class<? extends Object> javaClass = _classLoader.loadClass(javaClassName);
+        final Class<?> javaClass = _classLoader.loadClass(javaClassName);
         IMongoBean _xifexpression = null;
         boolean _isAssignableFrom = IMongoBean.class.isAssignableFrom(javaClass);
         if (_isAssignableFrom) {
           IMongoBean _xblockexpression_1 = null;
           {
-            final Constructor<? extends Object> constructor = javaClass.getConstructor(DBObject.class);
+            final Constructor<?> constructor = javaClass.getConstructor(DBObject.class);
             Object _newInstance = constructor.newInstance(dbObject);
-            _xblockexpression_1 = (((IMongoBean) _newInstance));
+            _xblockexpression_1 = ((IMongoBean) _newInstance);
           }
           _xifexpression = _xblockexpression_1;
         } else {
@@ -50,7 +50,7 @@ public class WrappingUtil {
           _builder.append("\'.");
           throw new IllegalStateException(_builder.toString());
         }
-        _xblockexpression = (_xifexpression);
+        _xblockexpression = _xifexpression;
       }
       return _xblockexpression;
     } catch (Throwable _e) {

@@ -184,7 +184,7 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
               boolean _xblockexpression = false;
               {
                 TortoisePartListener.this.view.show(TortoisePartListener.this.currentTortoiseEditor, (-10));
-                _xblockexpression = (false);
+                _xblockexpression = false;
               }
               _xifexpression = _xblockexpression;
             } else {
@@ -245,7 +245,7 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
           _textWidget_1.addCaretListener(this);
         }
       }
-      _xblockexpression = (this.isStopMode);
+      _xblockexpression = this.isStopMode;
     }
     return _xblockexpression;
   }

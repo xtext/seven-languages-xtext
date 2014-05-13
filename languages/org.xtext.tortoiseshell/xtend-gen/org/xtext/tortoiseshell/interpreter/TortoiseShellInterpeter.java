@@ -30,7 +30,7 @@ import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
-import org.eclipse.xtext.xbase.scoping.XbaseScopeProvider;
+import org.eclipse.xtext.xbase.scoping.batch.IFeatureNames;
 import org.xtext.tortoiseshell.interpreter.StopLineReachedException;
 import org.xtext.tortoiseshell.lib.ITortoiseInterpreter;
 import org.xtext.tortoiseshell.lib.Tortoise;
@@ -88,7 +88,7 @@ public class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoi
       if (((line - 1) == this.stopAtLine)) {
         throw new StopLineReachedException();
       }
-      _xblockexpression = (super.internalEvaluate(expression, context, indicator));
+      _xblockexpression = super.internalEvaluate(expression, context, indicator);
     }
     return _xblockexpression;
   }
@@ -104,7 +104,7 @@ public class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoi
           Object _xblockexpression_1 = null;
           {
             final IEvaluationContext context = this.createContext();
-            context.newValue(XbaseScopeProvider.THIS, this.tortoise);
+            context.newValue(IFeatureNames.THIS, this.tortoise);
             int index = 0;
             EList<JvmFormalParameter> _parameters = operation.getParameters();
             for (final JvmFormalParameter param : _parameters) {
@@ -123,13 +123,13 @@ public class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoi
             if (_notEquals) {
               throw result.getException();
             }
-            _xblockexpression_1 = (result.getResult());
+            _xblockexpression_1 = result.getResult();
           }
           _xifexpression = _xblockexpression_1;
         } else {
           _xifexpression = super.invokeOperation(operation, receiver, argumentValues);
         }
-        _xblockexpression = (_xifexpression);
+        _xblockexpression = _xifexpression;
       }
       return _xblockexpression;
     } catch (Throwable _e) {

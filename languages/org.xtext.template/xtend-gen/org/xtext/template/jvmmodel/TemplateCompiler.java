@@ -14,7 +14,6 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.eclipse.xtext.xbase.XExpression;
 import org.eclipse.xtext.xbase.compiler.XbaseCompiler;
 import org.eclipse.xtext.xbase.compiler.output.ITreeAppendable;
-import org.eclipse.xtext.xbase.typing.ITypeProvider;
 import org.xtext.template.template.RichString;
 import org.xtext.template.template.RichStringForLoop;
 
@@ -53,9 +52,8 @@ public class TemplateCompiler extends XbaseCompiler {
         _matched=true;
         XExpression _forExpression = ((RichStringForLoop)expr).getForExpression();
         this.internalToJavaStatement(_forExpression, it, true);
-        ITypeProvider _typeProvider = this.getTypeProvider();
         JvmFormalParameter _declaredParam = ((RichStringForLoop)expr).getDeclaredParam();
-        final JvmTypeReference paramType = _typeProvider.getTypeForIdentifiable(_declaredParam);
+        final JvmTypeReference paramType = this.getType(_declaredParam);
         final String name = it.declareVariable(expr, "_forLoopResult");
         it.newLine();
         StringConcatenation _builder = new StringConcatenation();

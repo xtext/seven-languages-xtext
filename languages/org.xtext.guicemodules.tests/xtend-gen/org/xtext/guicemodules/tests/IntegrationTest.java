@@ -159,7 +159,7 @@ public class IntegrationTest {
       final IAcceptor<CompilationTestHelper.Result> _function = new IAcceptor<CompilationTestHelper.Result>() {
         public void accept(final CompilationTestHelper.Result it) {
           try {
-            Class<? extends Object> _compiledClass = it.getCompiledClass();
+            Class<?> _compiledClass = it.getCompiledClass();
             Object _newInstance = _compiledClass.newInstance();
             final Module module = ((Module) _newInstance);
             Injector _createInjector = Guice.createInjector(module);

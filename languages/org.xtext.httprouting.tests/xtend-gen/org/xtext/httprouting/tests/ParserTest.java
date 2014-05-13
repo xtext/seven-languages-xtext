@@ -53,7 +53,7 @@ public class ParserTest {
       final IAcceptor<CompilationTestHelper.Result> _function = new IAcceptor<CompilationTestHelper.Result>() {
         public void accept(final CompilationTestHelper.Result it) {
           try {
-            Class<? extends Object> _compiledClass = it.getCompiledClass();
+            Class<?> _compiledClass = it.getCompiledClass();
             Object _newInstance = _compiledClass.newInstance();
             final HttpServlet servlet = ((HttpServlet) _newInstance);
             HttpServletResponse _response = ParserTest.this.response();
@@ -105,13 +105,13 @@ public class ParserTest {
         String _name = method.getName();
         boolean _matched = false;
         if (!_matched) {
-          if (Objects.equal(_name,"getRequestURL")) {
+          if (Objects.equal(_name, "getRequestURL")) {
             _matched=true;
             _switchResult = new StringBuffer(url);
           }
         }
         if (!_matched) {
-          if (Objects.equal(_name,"getMethod")) {
+          if (Objects.equal(_name, "getMethod")) {
             _matched=true;
             _switchResult = "GET";
           }
@@ -135,14 +135,14 @@ public class ParserTest {
           String _name = method.getName();
           boolean _matched = false;
           if (!_matched) {
-            if (Objects.equal(_name,"addHeader")) {
+            if (Objects.equal(_name, "addHeader")) {
               _matched=true;
               Object _get = args[0];
               _switchResult = header.add(((String) _get));
             }
           }
           if (!_matched) {
-            if (Objects.equal(_name,"containsHeader")) {
+            if (Objects.equal(_name, "containsHeader")) {
               _matched=true;
               Object _get_1 = args[0];
               _switchResult = header.contains(_get_1);
@@ -154,7 +154,7 @@ public class ParserTest {
           return Boolean.valueOf(_switchResult);
         }
       };
-      _xblockexpression = (this.<HttpServletResponse>newProxy(HttpServletResponse.class, _function));
+      _xblockexpression = this.<HttpServletResponse>newProxy(HttpServletResponse.class, _function);
     }
     return _xblockexpression;
   }
@@ -165,8 +165,8 @@ public class ParserTest {
   private <T extends Object> T newProxy(final Class<T> clazz, final InvocationHandler handler) {
     Class<? extends ParserTest> _class = this.getClass();
     ClassLoader _classLoader = _class.getClassLoader();
-    ArrayList<Class<? extends Object>> _newArrayList = CollectionLiterals.<Class<? extends Object>>newArrayList(clazz);
-    Object _newProxyInstance = Proxy.newProxyInstance(_classLoader, ((Class<? extends Object>[])Conversions.unwrapArray(_newArrayList, Class.class)), handler);
+    ArrayList<Class<?>> _newArrayList = CollectionLiterals.<Class<?>>newArrayList(clazz);
+    Object _newProxyInstance = Proxy.newProxyInstance(_classLoader, ((Class<?>[])Conversions.unwrapArray(_newArrayList, Class.class)), handler);
     return ((T) _newProxyInstance);
   }
 }

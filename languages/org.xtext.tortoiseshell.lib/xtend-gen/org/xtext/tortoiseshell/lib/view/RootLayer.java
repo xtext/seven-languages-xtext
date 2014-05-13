@@ -47,13 +47,13 @@ public class RootLayer extends FreeformLayer {
           viewDimension.height = _max_1;
           Insets _insets = new Insets(viewDimension.height, viewDimension.width, viewDimension.height, 
             viewDimension.width);
-          _xblockexpression_1 = (freeformExtent.getExpanded(_insets));
+          _xblockexpression_1 = freeformExtent.getExpanded(_insets);
         }
         _xifexpression = _xblockexpression_1;
       } else {
         _xifexpression = freeformExtent;
       }
-      _xblockexpression = (_xifexpression);
+      _xblockexpression = _xifexpression;
     }
     return _xblockexpression;
   }
@@ -62,7 +62,7 @@ public class RootLayer extends FreeformLayer {
     Viewport _switchResult = null;
     boolean _matched = false;
     if (!_matched) {
-      if (Objects.equal(figure,null)) {
+      if (Objects.equal(figure, null)) {
         _matched=true;
         _switchResult = null;
       }
