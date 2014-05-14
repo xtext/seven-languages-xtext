@@ -53,12 +53,9 @@ class CompilationTest {
 			public class MyFile {
 			  public static void main(final String... args) {
 			    try {
-			      File _file = new File("test");
-			      final File file = _file;
-			      FileOutputStream _fileOutputStream = new FileOutputStream(file);
-			      final FileOutputStream stream = _fileOutputStream;
-			      BufferedOutputStream _bufferedOutputStream = new BufferedOutputStream(stream);
-			      final BufferedOutputStream buffered = _bufferedOutputStream;
+			      final File file = new File("test");
+			      final FileOutputStream stream = new FileOutputStream(file);
+			      final BufferedOutputStream buffered = new BufferedOutputStream(stream);
 			    } catch (Throwable _e) {
 			      throw Exceptions.sneakyThrow(_e);
 			    }

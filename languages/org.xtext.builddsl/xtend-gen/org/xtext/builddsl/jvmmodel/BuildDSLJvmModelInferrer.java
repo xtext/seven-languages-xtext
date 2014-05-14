@@ -159,7 +159,7 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
                 JvmAnnotationReference _annotation = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.toAnnotation(task, DependsOn.class);
                 final Procedure1<JvmAnnotationReference> _function = new Procedure1<JvmAnnotationReference>() {
                   public void apply(final JvmAnnotationReference it) {
-                    EList<JvmAnnotationValue> _values = it.getValues();
+                    EList<JvmAnnotationValue> _explicitValues = it.getExplicitValues();
                     JvmStringAnnotationValue _createJvmStringAnnotationValue = BuildDSLJvmModelInferrer.this._typesFactory.createJvmStringAnnotationValue();
                     final Procedure1<JvmStringAnnotationValue> _function = new Procedure1<JvmStringAnnotationValue>() {
                       public void apply(final JvmStringAnnotationValue it) {
@@ -175,7 +175,7 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
                       }
                     };
                     JvmStringAnnotationValue _doubleArrow = ObjectExtensions.<JvmStringAnnotationValue>operator_doubleArrow(_createJvmStringAnnotationValue, _function);
-                    BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmAnnotationValue>operator_add(_values, _doubleArrow);
+                    BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmAnnotationValue>operator_add(_explicitValues, _doubleArrow);
                   }
                 };
                 JvmAnnotationReference _doubleArrow = ObjectExtensions.<JvmAnnotationReference>operator_doubleArrow(_annotation, _function);
