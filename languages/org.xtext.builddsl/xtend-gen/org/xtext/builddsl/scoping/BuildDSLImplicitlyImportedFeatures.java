@@ -12,12 +12,12 @@ import com.google.common.collect.Lists;
 import java.util.Collections;
 import java.util.List;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
-import org.eclipse.xtext.xbase.scoping.batch.ImplicitlyImportedTypes;
+import org.eclipse.xtext.xbase.scoping.batch.ImplicitlyImportedFeatures;
 import org.xtext.builddsl.lib.ClassExtensions;
 import org.xtext.builddsl.lib.FileExtensions;
 
 @SuppressWarnings("all")
-public class BuildDSLImplicitlyImportedTypes extends ImplicitlyImportedTypes {
+public class BuildDSLImplicitlyImportedFeatures extends ImplicitlyImportedFeatures {
   /**
    * Add methods from {@link FileExtensions} and {@link ClassExtensions} to the extension scope.
    */

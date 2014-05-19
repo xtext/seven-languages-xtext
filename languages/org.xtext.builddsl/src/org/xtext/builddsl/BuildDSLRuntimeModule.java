@@ -8,8 +8,8 @@
 package org.xtext.builddsl;
 
 import org.eclipse.xtext.service.SingletonBinding;
-import org.eclipse.xtext.xbase.scoping.batch.ImplicitlyImportedTypes;
-import org.xtext.builddsl.scoping.BuildDSLImplicitlyImportedTypes;
+import org.eclipse.xtext.xbase.scoping.batch.ImplicitlyImportedFeatures;
+import org.xtext.builddsl.scoping.BuildDSLImplicitlyImportedFeatures;
 import org.xtext.builddsl.validation.BuildDSLValidator;
 
 /**
@@ -22,8 +22,8 @@ public class BuildDSLRuntimeModule extends org.xtext.builddsl.AbstractBuildDSLRu
 		return BuildDSLValidator.class;
 	}
 
-	public Class<? extends ImplicitlyImportedTypes> bindImplicitlyImportedTypes() {
-		return BuildDSLImplicitlyImportedTypes.class;
+	public Class<? extends ImplicitlyImportedFeatures> bindImplicitlyImportedTypes() {
+		return BuildDSLImplicitlyImportedFeatures.class;
 	}
 	
 }

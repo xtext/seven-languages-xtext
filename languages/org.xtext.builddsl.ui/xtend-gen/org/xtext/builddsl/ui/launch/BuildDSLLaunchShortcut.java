@@ -51,7 +51,9 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
   public final static String BUNDLE_ID = "org.xtext.builddsl.ui";
   
   public void launch(final ISelection selection, final String mode) {
-    MessageDialog.openError(null, "Unsupported Launch Selection.", 
+    MessageDialog.openError(
+      null, 
+      "Unsupported Launch Selection.", 
       "Please open the file inside an editor to launch a task.");
   }
   
@@ -62,54 +64,60 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
     IParseResult _parseResult = res.getParseResult();
     ICompositeNode _rootNode = _parseResult.getRootNode();
     final ILeafNode start = NodeModelUtils.findLeafNodeAtOffset(_rootNode, offset);
-    boolean _isHidden = start.isHidden();
-    if (_isHidden) {
-      IParseResult _parseResult_1 = res.getParseResult();
-      ICompositeNode _rootNode_1 = _parseResult_1.getRootNode();
-      Iterable<ILeafNode> _leafNodes = _rootNode_1.getLeafNodes();
-      final List<ILeafNode> list = IterableExtensions.<ILeafNode>toList(_leafNodes);
-      final int index = list.indexOf(start);
-      IntegerRange _upTo = new IntegerRange(index, 0);
-      final Function1<Integer, Boolean> _function = new Function1<Integer, Boolean>() {
-        public Boolean apply(final Integer it) {
-          ILeafNode _get = list.get((it).intValue());
-          boolean _isHidden = _get.isHidden();
-          return Boolean.valueOf((!_isHidden));
+    boolean _notEquals = (!Objects.equal(start, null));
+    if (_notEquals) {
+      boolean _isHidden = start.isHidden();
+      if (_isHidden) {
+        IParseResult _parseResult_1 = res.getParseResult();
+        ICompositeNode _rootNode_1 = _parseResult_1.getRootNode();
+        Iterable<ILeafNode> _leafNodes = _rootNode_1.getLeafNodes();
+        final List<ILeafNode> list = IterableExtensions.<ILeafNode>toList(_leafNodes);
+        final int index = list.indexOf(start);
+        IntegerRange _upTo = new IntegerRange(index, 0);
+        final Function1<Integer, Boolean> _function = new Function1<Integer, Boolean>() {
+          public Boolean apply(final Integer it) {
+            ILeafNode _get = list.get((it).intValue());
+            boolean _isHidden = _get.isHidden();
+            return Boolean.valueOf((!_isHidden));
+          }
+        };
+        final Integer first = IterableExtensions.<Integer>findFirst(_upTo, _function);
+        int _size = list.size();
+        int _minus = (_size - 1);
+        IntegerRange _upTo_1 = new IntegerRange(index, _minus);
+        final Function1<Integer, Boolean> _function_1 = new Function1<Integer, Boolean>() {
+          public Boolean apply(final Integer it) {
+            ILeafNode _get = list.get((it).intValue());
+            boolean _isHidden = _get.isHidden();
+            return Boolean.valueOf((!_isHidden));
+          }
+        };
+        final Integer last = IterableExtensions.<Integer>findFirst(_upTo_1, _function_1);
+        ILeafNode _get = list.get((first).intValue());
+        EObject _semanticElement = _get.getSemanticElement();
+        final Task task1 = EcoreUtil2.<Task>getContainerOfType(_semanticElement, Task.class);
+        ILeafNode _get_1 = list.get((last).intValue());
+        EObject _semanticElement_1 = _get_1.getSemanticElement();
+        final Task task2 = EcoreUtil2.<Task>getContainerOfType(_semanticElement_1, Task.class);
+        boolean _equals = Objects.equal(task1, task2);
+        if (_equals) {
+          return task1.getName();
         }
-      };
-      final Integer first = IterableExtensions.<Integer>findFirst(_upTo, _function);
-      int _size = list.size();
-      int _minus = (_size - 1);
-      IntegerRange _upTo_1 = new IntegerRange(index, _minus);
-      final Function1<Integer, Boolean> _function_1 = new Function1<Integer, Boolean>() {
-        public Boolean apply(final Integer it) {
-          ILeafNode _get = list.get((it).intValue());
-          boolean _isHidden = _get.isHidden();
-          return Boolean.valueOf((!_isHidden));
+      } else {
+        EObject _semanticElement_2 = start.getSemanticElement();
+        final Task task = EcoreUtil2.<Task>getContainerOfType(_semanticElement_2, Task.class);
+        boolean _notEquals_1 = (!Objects.equal(task, null));
+        if (_notEquals_1) {
+          return task.getName();
         }
-      };
-      final Integer last = IterableExtensions.<Integer>findFirst(_upTo_1, _function_1);
-      ILeafNode _get = list.get((first).intValue());
-      EObject _semanticElement = _get.getSemanticElement();
-      final Task task1 = EcoreUtil2.<Task>getContainerOfType(_semanticElement, Task.class);
-      ILeafNode _get_1 = list.get((last).intValue());
-      EObject _semanticElement_1 = _get_1.getSemanticElement();
-      final Task task2 = EcoreUtil2.<Task>getContainerOfType(_semanticElement_1, Task.class);
-      boolean _equals = Objects.equal(task1, task2);
-      if (_equals) {
-        return task1.getName();
       }
-    } else {
-      EObject _semanticElement_2 = start.getSemanticElement();
-      Task _containerOfType = EcoreUtil2.<Task>getContainerOfType(_semanticElement_2, Task.class);
-      return _containerOfType.getName();
     }
     return null;
   }
   
   public void launch(final IEditorPart editor, final String mode) {
     if ((editor instanceof XbaseEditor)) {
-      final XbaseEditor xbaseEditor = ((XbaseEditor) editor);
+      final XbaseEditor xbaseEditor = ((XbaseEditor)editor);
       int _switchResult = (int) 0;
       ISelectionProvider _selectionProvider = xbaseEditor.getSelectionProvider();
       ISelection _selection = _selectionProvider.getSelection();

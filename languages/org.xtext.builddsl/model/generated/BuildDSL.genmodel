@@ -4,7 +4,7 @@
     editorDirectory="/org.xtext.builddsl.editor/src" modelPluginID="org.xtext.builddsl"
     forceOverwrite="true" modelName="BuildDSL" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="org.xtext.builddsl.edit"
-    editorPluginID="org.xtext.builddsl.editor" runtimeVersion="2.5" usedGenPackages="platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel#//xtype">
+    editorPluginID="org.xtext.builddsl.editor" runtimeVersion="2.10" usedGenPackages="platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel#//xtype">
   <genPackages prefix="Build" basePackage="org.xtext.builddsl" disposableProviderFactory="true"
       fileExtensions="build" ecorePackage="BuildDSL.ecore#/">
     <genClasses ecoreClass="BuildDSL.ecore#//BuildFile">

@@ -7,11 +7,11 @@
  ******************************************************************************/
 package org.xtext.builddsl.scoping
 
-import org.eclipse.xtext.xbase.scoping.batch.ImplicitlyImportedTypes
 import org.xtext.builddsl.lib.FileExtensions
 import org.xtext.builddsl.lib.ClassExtensions
+import org.eclipse.xtext.xbase.scoping.batch.ImplicitlyImportedFeatures
 
-class BuildDSLImplicitlyImportedTypes extends ImplicitlyImportedTypes {
+class BuildDSLImplicitlyImportedFeatures extends ImplicitlyImportedFeatures {
 	
 	/**
 	 * Add methods from {@link FileExtensions} and {@link ClassExtensions} to the extension scope.
