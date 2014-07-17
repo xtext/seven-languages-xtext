@@ -22,7 +22,7 @@ SubProgram:
 Body returns XBlockExpression:
 	{XBlockExpression}
 	'begin'
-	(expressions+=XExpressionInsideBlock ';'?)*
+	(expressions+=XExpressionOrVarDeclaration ';'?)*
 	'end';
 	
 Executable:

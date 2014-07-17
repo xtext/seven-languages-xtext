@@ -29,6 +29,10 @@ Workflow {
     component = DirectoryCleaner {
     	directory = "${runtimeProject}/src-gen"
     }
+
+    component = DirectoryCleaner {
+    	directory = "${runtimeProject}/model"
+    }
     
     component = DirectoryCleaner {
     	directory = "${runtimeProject}.ui/src-gen"
@@ -47,7 +51,7 @@ Workflow {
     		fragment = grammarAccess.GrammarAccessFragment auto-inject {}
     
     		// generates Java API for the generated EPackages
-    		fragment = ecore.EcoreGeneratorFragment auto-inject {
+    		fragment = ecore.EMFGeneratorFragment auto-inject {
     			emfRuntimeVersion = "2.5"
     			
     		// referencedGenModels = "
