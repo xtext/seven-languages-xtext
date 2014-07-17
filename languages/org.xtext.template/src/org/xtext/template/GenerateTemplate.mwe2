@@ -16,6 +16,7 @@ var fileExtensions = "template"
 var projectName = "org.xtext.template"
 var runtimeProject = "../${projectName}"
 var generateStub = false
+var encoding = "UTF-8"
 
 Workflow {
     bean = StandaloneSetup {
@@ -44,6 +45,7 @@ Workflow {
     	pathTestProject = "${runtimeProject}.tests"
     	projectNameRt = projectName
     	projectNameUi = "${projectName}.ui"
+		encoding = encoding
     	language = auto-inject {
     		uri = grammarURI
     
