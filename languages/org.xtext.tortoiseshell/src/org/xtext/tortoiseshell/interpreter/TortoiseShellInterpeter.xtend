@@ -18,7 +18,7 @@ import org.eclipse.xtext.xbase.XExpression
 import org.eclipse.xtext.xbase.interpreter.IEvaluationContext
 import org.eclipse.xtext.xbase.interpreter.impl.XbaseInterpreter
 import org.eclipse.xtext.xbase.jvmmodel.IJvmModelAssociations
-import org.eclipse.xtext.xbase.scoping.XbaseScopeProvider
+import org.eclipse.xtext.xbase.scoping.batch.IFeatureNames
 import org.xtext.tortoiseshell.lib.ITortoiseInterpreter
 import org.xtext.tortoiseshell.lib.Tortoise
 import org.xtext.tortoiseshell.tortoiseShell.Executable
@@ -55,7 +55,7 @@ class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoiseInter
 		val executable = operation.sourceElements.head
 		if (executable instanceof Executable) {
 			val context = createContext
-			context.newValue(XbaseScopeProvider.THIS, tortoise)
+			context.newValue(IFeatureNames.THIS, tortoise)
 			var index = 0
 			for (param : operation.parameters) {
 				context.newValue(QualifiedName.create(param.name), argumentValues.get(index))

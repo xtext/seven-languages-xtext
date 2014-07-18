@@ -7,7 +7,7 @@
     <package 
        uri = "http://www.xtext.org/template/Template" 
        class = "org.xtext.template.template.TemplatePackage"
-       genModel = "org/xtext/template/Template.genmodel" /> 
+       genModel = "model/generated/Template.genmodel" /> 
 	
   </extension>
 

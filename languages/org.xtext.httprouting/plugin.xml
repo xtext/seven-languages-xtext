@@ -7,7 +7,7 @@
     <package 
        uri = "http://www.xtext.org/httprouting/Route" 
        class = "org.xtext.httprouting.route.RoutePackage"
-       genModel = "org/xtext/httprouting/Route.genmodel" /> 
+       genModel = "model/generated/Route.genmodel" /> 
 	
   </extension>
 

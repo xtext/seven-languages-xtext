@@ -7,13 +7,17 @@
  ******************************************************************************/
 package org.xtext.template.jvmmodel
 
+import com.google.inject.Inject
 import org.eclipse.xtext.xbase.XExpression
 import org.eclipse.xtext.xbase.compiler.XbaseCompiler
 import org.eclipse.xtext.xbase.compiler.output.ITreeAppendable
+import org.eclipse.xtext.xbase.typesystem.IBatchTypeResolver
 import org.xtext.template.template.RichString
 import org.xtext.template.template.RichStringForLoop
 
 class TemplateCompiler extends XbaseCompiler {
+	
+	@Inject IBatchTypeResolver typeResolver
 	
 	override protected doInternalToJavaStatement(XExpression expr, ITreeAppendable it, boolean isReferenced) {
 		switch expr {
@@ -34,13 +38,14 @@ class TemplateCompiler extends XbaseCompiler {
 			
 			RichStringForLoop : {
 				expr.forExpression.internalToJavaStatement(it, true)
-				val paramType = typeProvider.getTypeForIdentifiable(expr.declaredParam)
+				val resolvedTypes = typeResolver.resolveTypes(expr.declaredParam)
+				val paramType = resolvedTypes.getActualType(expr.declaredParam)
 				val name = declareVariable(expr, '_forLoopResult')
 				newLine
 				append('''
 					StringBuilder «name» = new StringBuilder();
 					for (final ''')
-				serialize(paramType, expr, it);
+				append(paramType)
 				append(''' «declareVariable(expr.declaredParam, makeJavaIdentifier(expr.declaredParam.name))» : ''')
 				internalToJavaExpression(expr.forExpression, it)
 				append(") {").increaseIndentation

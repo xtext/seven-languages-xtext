@@ -7,7 +7,7 @@
     <package 
        uri = "http://www.xtext.org/tortoiseshell/TortoiseShell" 
        class = "org.xtext.tortoiseshell.tortoiseShell.TortoiseShellPackage"
-       genModel = "org/xtext/tortoiseshell/TortoiseShell.genmodel" /> 
+       genModel = "model/generated/TortoiseShell.genmodel" /> 
 	
   </extension>
 </plugin>

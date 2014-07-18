@@ -7,7 +7,7 @@
     <package 
        uri = "http://www.xtext.org/guicemodules/GuiceModules" 
        class = "org.xtext.guicemodules.guiceModules.GuiceModulesPackage"
-       genModel = "org/xtext/guicemodules/GuiceModules.genmodel" /> 
+       genModel = "model/generated/GuiceModules.genmodel" /> 
 	
   </extension>
 
