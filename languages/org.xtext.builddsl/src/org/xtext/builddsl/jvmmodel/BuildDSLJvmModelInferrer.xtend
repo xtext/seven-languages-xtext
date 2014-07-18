@@ -27,9 +27,10 @@ import org.xtext.builddsl.lib.Param
 class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
 
 	@Inject extension JvmTypesBuilder
-	
-	extension TypesFactory = TypesFactory.eINSTANCE
 
+	@Inject
+	private TypesFactory typesFactory;
+	
    	def dispatch void infer(BuildFile file, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
    		val fqn = file.javaClassName
    		val scriptName = Strings.lastToken(fqn, ".")
@@ -66,11 +67,13 @@ class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
 			// a method for the actual task body
    			members += file.tasks.map[ task | task.toMethod(task.methodName, task.newTypeRef(Void.TYPE)) [
    				visibility = JvmVisibility.PROTECTED
-   				annotations += task.toAnnotation(DependsOn) => [
-   					values += createJvmStringAnnotationValue => [
-   						values += task.depends.map[name]
-   					]
-   				]
+   				val annotationRef = task.toAnnotation(DependsOn)
+   				if(task.depends.size > 0) {
+					annotationRef.getExplicitValues().add(typesFactory.createJvmStringAnnotationValue() => [
+						values += task.depends.map[name]
+					])
+   				}
+   				annotations += annotationRef 
    				body = task.action
    			]]
    			
