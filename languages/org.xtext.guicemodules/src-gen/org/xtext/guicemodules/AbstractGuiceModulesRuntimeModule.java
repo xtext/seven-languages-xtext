@@ -115,8 +115,8 @@ public abstract class AbstractGuiceModulesRuntimeModule extends DefaultRuntimeMo
 	}
 
 	// contributed by org.eclipse.xtext.generator.builder.BuilderIntegrationFragment
-	public void configureIResourceDescriptionsBuilderScope(com.google.inject.Binder binder) {
-		binder.bind(org.eclipse.xtext.resource.IResourceDescriptions.class).annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.resource.impl.ResourceDescriptionsProvider.NAMED_BUILDER_SCOPE)).to(org.eclipse.xtext.resource.impl.ResourceSetBasedResourceDescriptions.class);
+	public void configureIResourceDescriptionsPersisted(com.google.inject.Binder binder) {
+		binder.bind(org.eclipse.xtext.resource.IResourceDescriptions.class).annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.resource.impl.ResourceDescriptionsProvider.PERSISTED_DESCRIPTIONS)).to(org.eclipse.xtext.resource.impl.ResourceSetBasedResourceDescriptions.class);
 	}
 
 	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
@@ -165,6 +165,11 @@ public abstract class AbstractGuiceModulesRuntimeModule extends DefaultRuntimeMo
 	}
 
 	// contributed by org.eclipse.xtext.generator.xbase.XbaseGeneratorFragment
+	public Class<? extends org.eclipse.xtext.scoping.IScopeProvider> bindIScopeProvider() {
+		return org.eclipse.xtext.xbase.scoping.batch.IBatchScopeProvider.class;
+	}
+
+	// contributed by org.eclipse.xtext.generator.xbase.XbaseGeneratorFragment
 	public void configureLinkingIScopeProvider(com.google.inject.Binder binder) {
 		binder.bind(org.eclipse.xtext.scoping.IScopeProvider.class).annotatedWith(org.eclipse.xtext.linking.LinkingScopeProviderBinding.class).to(org.eclipse.xtext.xbase.scoping.batch.IBatchScopeProvider.class);
 	}
@@ -175,11 +180,6 @@ public abstract class AbstractGuiceModulesRuntimeModule extends DefaultRuntimeMo
 	}
 
 	// contributed by org.eclipse.xtext.generator.xbase.XbaseGeneratorFragment
-	public Class<? extends org.eclipse.xtext.xbase.typing.ITypeProvider> bindITypeProvider() {
-		return org.eclipse.xtext.xbase.typesystem.legacy.XbaseBatchTypeProvider.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.xbase.XbaseGeneratorFragment
 	public void configureIScopeProviderDelegate(com.google.inject.Binder binder) {
 		binder.bind(org.eclipse.xtext.scoping.IScopeProvider.class).annotatedWith(Names.named(org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider.NAMED_DELEGATE)).to(org.eclipse.xtext.xbase.scoping.XImportSectionNamespaceScopeProvider.class);
 	}
@@ -187,11 +187,6 @@ public abstract class AbstractGuiceModulesRuntimeModule extends DefaultRuntimeMo
 	// contributed by org.eclipse.xtext.generator.xbase.XbaseGeneratorFragment
 	public Class<? extends org.eclipse.xtext.linking.ILinker> bindILinker() {
 		return org.eclipse.xtext.xbase.linking.XbaseLazyLinker.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.xbase.XbaseGeneratorFragment
-	public Class<? extends org.eclipse.xtext.common.types.util.TypeConformanceComputer> bindTypeConformanceComputer() {
-		return org.eclipse.xtext.xbase.typesystem.legacy.LegacyTypeConformanceComputer.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.xbase.XbaseGeneratorFragment
@@ -230,11 +225,6 @@ public abstract class AbstractGuiceModulesRuntimeModule extends DefaultRuntimeMo
 	}
 
 	// contributed by org.eclipse.xtext.generator.xbase.XbaseGeneratorFragment
-	public Class<? extends org.eclipse.xtext.common.types.util.TypeArgumentContextProvider> bindTypeArgumentContextProvider() {
-		return org.eclipse.xtext.xbase.typesystem.legacy.LegacyTypeArgumentContextProvider.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.xbase.XbaseGeneratorFragment
 	public Class<? extends org.eclipse.xtext.debug.IStratumBreakpointSupport> bindIStratumBreakpointSupport() {
 		return org.eclipse.xtext.xbase.debug.XbaseStratumBreakpointSupport.class;
 	}
@@ -260,16 +250,6 @@ public abstract class AbstractGuiceModulesRuntimeModule extends DefaultRuntimeMo
 	}
 
 	// contributed by org.eclipse.xtext.generator.xbase.XbaseGeneratorFragment
-	public Class<? extends org.eclipse.xtext.common.types.util.VisibilityService> bindVisibilityService() {
-		return org.eclipse.xtext.xbase.typesystem.legacy.LegacyVisibilityService.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.xbase.XbaseGeneratorFragment
-	public Class<? extends org.eclipse.xtext.common.types.util.FeatureOverridesService> bindFeatureOverridesService() {
-		return org.eclipse.xtext.xbase.typesystem.legacy.LegacyFeatureOverridesService.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.xbase.XbaseGeneratorFragment
 	public Class<? extends org.eclipse.xtext.resource.EObjectAtOffsetHelper> bindEObjectAtOffsetHelper() {
 		return org.eclipse.xtext.xbase.linking.BrokenConstructorCallAwareEObjectAtOffsetHelper.class;
 	}
@@ -285,13 +265,23 @@ public abstract class AbstractGuiceModulesRuntimeModule extends DefaultRuntimeMo
 	}
 
 	// contributed by org.eclipse.xtext.generator.xbase.XbaseGeneratorFragment
-	public Class<? extends org.eclipse.xtext.xbase.typesystem.computation.ITypeComputer> bindITypeComputer() {
-		return org.eclipse.xtext.xbase.annotations.typesystem.XbaseWithAnnotationsTypeComputer.class;
+	public Class<? extends org.eclipse.xtend.lib.macro.file.MutableFileSystemSupport> bindMutableFileSystemSupport() {
+		return org.eclipse.xtext.xbase.file.JavaIOFileSystemSupport.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.xbase.XbaseGeneratorFragment
-	public Class<? extends org.eclipse.xtext.scoping.IScopeProvider> bindIScopeProvider() {
-		return org.eclipse.xtext.xbase.annotations.scoping.XbaseWithAnnotationsScopeProvider.class;
+	public Class<? extends org.eclipse.xtend.lib.macro.file.FileLocations> bindFileLocations() {
+		return org.eclipse.xtext.xbase.file.FileLocationsImpl.class;
+	}
+
+	// contributed by org.eclipse.xtext.generator.xbase.XbaseGeneratorFragment
+	public Class<? extends com.google.inject.Provider<org.eclipse.xtext.xbase.file.WorkspaceConfig>> provideWorkspaceConfig() {
+		return org.eclipse.xtext.xbase.file.RuntimeWorkspaceConfigProvider.class;
+	}
+
+	// contributed by org.eclipse.xtext.generator.xbase.XbaseGeneratorFragment
+	public Class<? extends org.eclipse.xtext.xbase.typesystem.computation.ITypeComputer> bindITypeComputer() {
+		return org.eclipse.xtext.xbase.annotations.typesystem.XbaseWithAnnotationsTypeComputer.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.xbase.XbaseGeneratorFragment

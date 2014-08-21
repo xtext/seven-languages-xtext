@@ -9,7 +9,6 @@ package org.xtext.mongobeans.validation;
 
 import com.google.common.base.Objects;
 import com.google.inject.Inject;
-import java.util.ArrayList;
 import java.util.List;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.xtext.common.types.JvmTypeReference;
@@ -65,11 +64,10 @@ public class MongoBeansValidator extends XbaseJavaValidator {
   }
   
   public List<EPackage> getEPackages() {
-    ArrayList<EPackage> _newArrayList = CollectionLiterals.<EPackage>newArrayList(
+    return CollectionLiterals.<EPackage>newArrayList(
       MongoBeansPackage.eINSTANCE, 
       XbasePackage.eINSTANCE, 
       TypesPackage.eINSTANCE, 
       XtypePackage.eINSTANCE);
-    return _newArrayList;
   }
 }

@@ -8,7 +8,6 @@
 package org.xtext.builddsl.validation;
 
 import com.google.common.base.Objects;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -33,12 +32,11 @@ public class BuildDSLValidator extends XbaseJavaValidator {
   public final static String CYCLIC_DEPENDENCY = "build.issue.cyclicDependency";
   
   protected List<EPackage> getEPackages() {
-    ArrayList<EPackage> _newArrayList = CollectionLiterals.<EPackage>newArrayList(
+    return CollectionLiterals.<EPackage>newArrayList(
       BuildPackage.eINSTANCE, 
       XbasePackage.eINSTANCE, 
       TypesPackage.eINSTANCE, 
       XtypePackage.eINSTANCE);
-    return _newArrayList;
   }
   
   @Check
@@ -58,10 +56,9 @@ public class BuildDSLValidator extends XbaseJavaValidator {
         } else {
           StringConcatenation _builder_1 = new StringConcatenation();
           _builder_1.append("There is a cyclic dependency that involves tasks ");
-          final Function1<Task,String> _function = new Function1<Task,String>() {
+          final Function1<Task, String> _function = new Function1<Task, String>() {
             public String apply(final Task it) {
-              String _name = it.getName();
-              return _name;
+              return it.getName();
             }
           };
           Iterable<String> _map = IterableExtensions.<Task, String>map(cycle, _function);
@@ -82,8 +79,7 @@ public class BuildDSLValidator extends XbaseJavaValidator {
       this.internalFindDependentTasksRec(it, tasks);
       final LinkedHashSet<Task> result = CollectionLiterals.<Task>newLinkedHashSet();
       boolean changed = true;
-      boolean _while = changed;
-      while (_while) {
+      while (changed) {
         {
           changed = false;
           List<Task> _list = IterableExtensions.<Task>toList(tasks);
@@ -97,7 +93,6 @@ public class BuildDSLValidator extends XbaseJavaValidator {
             }
           }
         }
-        _while = changed;
       }
       boolean _and = false;
       boolean _isEmpty = tasks.isEmpty();
@@ -106,12 +101,12 @@ public class BuildDSLValidator extends XbaseJavaValidator {
         _and = false;
       } else {
         boolean _notEquals = (!Objects.equal(cycleHandler, null));
-        _and = (_not && _notEquals);
+        _and = _notEquals;
       }
       if (_and) {
         cycleHandler.apply(tasks);
       }
-      _xblockexpression = (result);
+      _xblockexpression = result;
     }
     return _xblockexpression;
   }

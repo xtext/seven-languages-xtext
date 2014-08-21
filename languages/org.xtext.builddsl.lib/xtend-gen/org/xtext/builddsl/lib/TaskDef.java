@@ -8,13 +8,29 @@
 package org.xtext.builddsl.lib;
 
 import java.util.List;
+import org.eclipse.xtend.lib.Property;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure0;
+import org.eclipse.xtext.xbase.lib.Pure;
 
 @SuppressWarnings("all")
 public class TaskDef {
+  @Property
   private Procedure0 _runnable;
   
+  @Property
+  private String _name;
+  
+  @Property
+  private List<String> _prerequisitedTasks = CollectionLiterals.<String>newArrayList();
+  
+  @Property
+  private boolean _executed = false;
+  
+  @Property
+  private boolean _isExecuting = false;
+  
+  @Pure
   public Procedure0 getRunnable() {
     return this._runnable;
   }
@@ -23,8 +39,7 @@ public class TaskDef {
     this._runnable = runnable;
   }
   
-  private String _name;
-  
+  @Pure
   public String getName() {
     return this._name;
   }
@@ -33,8 +48,7 @@ public class TaskDef {
     this._name = name;
   }
   
-  private List<String> _prerequisitedTasks = CollectionLiterals.<String>newArrayList();
-  
+  @Pure
   public List<String> getPrerequisitedTasks() {
     return this._prerequisitedTasks;
   }
@@ -43,8 +57,7 @@ public class TaskDef {
     this._prerequisitedTasks = prerequisitedTasks;
   }
   
-  private boolean _executed = false;
-  
+  @Pure
   public boolean isExecuted() {
     return this._executed;
   }
@@ -53,8 +66,7 @@ public class TaskDef {
     this._executed = executed;
   }
   
-  private boolean _isExecuting = false;
-  
+  @Pure
   public boolean isIsExecuting() {
     return this._isExecuting;
   }

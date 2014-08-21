@@ -9,7 +9,6 @@ package org.xtext.builddsl.jvmmodel
 
 import com.google.inject.Inject
 import org.eclipse.xtext.common.types.JvmVisibility
-import org.eclipse.xtext.common.types.TypesFactory
 import org.eclipse.xtext.util.Strings
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
@@ -28,20 +27,18 @@ class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
 
 	@Inject extension JvmTypesBuilder
 	
-	extension TypesFactory = TypesFactory.eINSTANCE
-
-   	def dispatch void infer(BuildFile file, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
-   		val fqn = file.javaClassName
-   		val scriptName = Strings.lastToken(fqn, ".")
-   		acceptor.accept(file.toClass(fqn)).initializeLater [
-			superTypes += file.newTypeRef(BuildScript)
+   	def dispatch void infer(BuildFile file, extension IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+   		val qualifiedName = file.javaClassName
+   		val simpleName = Strings.lastToken(qualifiedName, ".")
+   		accept (file.toClass(qualifiedName)) [
+			superTypes += typeRef(BuildScript)
 			
 			// parameters become Java fields
 			for (declaredParameter : file.parameters) {
 				val type = declaredParameter.type 
-					?: declaredParameter?.init?.inferredType
-					?: file.newTypeRef(String)
-				members += declaredParameter.toField(declaredParameter.name, type) [
+						?: declaredParameter?.init?.inferredType
+						?: typeRef(String)
+				members += declaredParameter.toField (declaredParameter.name, type) [
 					visibility = JvmVisibility.PUBLIC
 					annotations += declaredParameter.toAnnotation(Param)
 					initializer = declaredParameter.init
@@ -49,13 +46,13 @@ class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
 			}
 			
 			// the main method		
-   			val stringArray = file.newTypeRef(String).addArrayTypeDimension
-			members += file.toMethod("main", file.newTypeRef(Void.TYPE)) [
+   			val stringArray = typeRef(String).addArrayTypeDimension
+			members += file.toMethod ("main", typeRef(Void.TYPE)) [
 				parameters += toParameter("args", stringArray)
 				varArgs = true
 				static = true
 				body = '''
-					«scriptName» script = new «scriptName»();
+					«simpleName» script = new «simpleName»();
 					if (script.showHelp(args)) {
 						System.exit(HELP);
 					}
@@ -64,13 +61,9 @@ class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
 			]
 			
 			// a method for the actual task body
-   			members += file.tasks.map[ task | task.toMethod(task.methodName, task.newTypeRef(Void.TYPE)) [
+   			members += file.tasks.map[ task | task.toMethod (task.methodName, typeRef(Void.TYPE)) [
    				visibility = JvmVisibility.PROTECTED
-   				annotations += task.toAnnotation(DependsOn) => [
-   					values += createJvmStringAnnotationValue => [
-   						values += task.depends.map[name]
-   					]
-   				]
+   				annotations += annotationRef(DependsOn, task.depends.map[name])
    				body = task.action
    			]]
    			

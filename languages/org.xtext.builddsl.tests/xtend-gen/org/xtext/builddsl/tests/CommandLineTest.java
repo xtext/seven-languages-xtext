@@ -15,6 +15,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.junit4.InjectWith;
+import org.eclipse.xtext.junit4.TemporaryFolder;
 import org.eclipse.xtext.junit4.XtextRunner;
 import org.eclipse.xtext.util.IAcceptor;
 import org.eclipse.xtext.xbase.compiler.CompilationTestHelper;
@@ -27,6 +28,7 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.junit.Assert;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.xtext.builddsl.BuildDSLInjectorProvider;
@@ -38,6 +40,9 @@ public class CommandLineTest {
   @Inject
   @Extension
   private CompilationTestHelper _compilationTestHelper;
+  
+  @Rule
+  public TemporaryFolder temporaryFolder;
   
   @Test
   public void testStringParameterWithDefault() {
@@ -232,29 +237,27 @@ public class CommandLineTest {
   
   protected void assertExecute(final CharSequence file, final String cmdline, final String expectedOutput) {
     try {
-      final ArrayList<Class<? extends Object>> classes = CollectionLiterals.<Class<?>>newArrayList();
+      final ArrayList<Class<?>> classes = CollectionLiterals.<Class<?>>newArrayList();
       final IAcceptor<CompilationTestHelper.Result> _function = new IAcceptor<CompilationTestHelper.Result>() {
         public void accept(final CompilationTestHelper.Result it) {
-          Class<? extends Object> _compiledClass = it.getCompiledClass();
+          Class<?> _compiledClass = it.getCompiledClass();
           classes.add(_compiledClass);
         }
       };
       this._compilationTestHelper.compile(file, _function);
-      final Class<? extends Object> clazz = IterableExtensions.<Class<? extends Object>>head(classes);
-      ByteArrayOutputStream _byteArrayOutputStream = new ByteArrayOutputStream();
-      final ByteArrayOutputStream out = _byteArrayOutputStream;
+      final Class<?> clazz = IterableExtensions.<Class<?>>head(classes);
+      final ByteArrayOutputStream out = new ByteArrayOutputStream();
       final PrintStream backup = System.out;
       PrintStream _printStream = new PrintStream(out);
       System.setOut(_printStream);
       try {
         final Object instance = clazz.newInstance();
-        Class<? extends Object> _superclass = clazz.getSuperclass();
+        Class<?> _superclass = clazz.getSuperclass();
         Method[] _declaredMethods = _superclass.getDeclaredMethods();
-        final Function1<Method,Boolean> _function_1 = new Function1<Method,Boolean>() {
+        final Function1<Method, Boolean> _function_1 = new Function1<Method, Boolean>() {
           public Boolean apply(final Method it) {
             String _name = it.getName();
-            boolean _equals = Objects.equal(_name, "doBuild");
-            return Boolean.valueOf(_equals);
+            return Boolean.valueOf(Objects.equal(_name, "doBuild"));
           }
         };
         Method _findFirst = IterableExtensions.<Method>findFirst(((Iterable<Method>)Conversions.doWrapArray(_declaredMethods)), _function_1);

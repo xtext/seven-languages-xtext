@@ -3,7 +3,7 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="guiceModules" nsURI="http://www.xtext.org/guicemodules/GuiceModules"
     nsPrefix="guiceModules">
   <eClassifiers xsi:type="ecore:EClass" name="ModulesAST">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="importSection" eType="ecore:EClass ../../../../../org.eclipse.xtext.xbase/model/Xtype.ecore#//XImportSection"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="importSection" eType="ecore:EClass platform:/resource/org.eclipse.xtext.xbase/model/Xtype.ecore#//XImportSection"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="modules" upperBound="-1"
         eType="#//ModuleAST" containment="true"/>
@@ -19,13 +19,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//KeyAST"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//KeyAST" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="toInstance" eType="ecore:EClass ../../../../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XExpression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="toInstance" eType="ecore:EClass platform:/resource/org.eclipse.xtext.xbase/model/Xbase.ecore#//XExpression"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="KeyAST">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="annotation" eType="ecore:EClass ../../../../../org.eclipse.xtext.xbase/model/XAnnotations.ecore#//XAnnotation"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="annotation" eType="ecore:EClass platform:/resource/org.eclipse.xtext.xbase/model/XAnnotations.ecore#//XAnnotation"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass ../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.ecore#//JvmTypeReference"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.ecore#//JvmTypeReference"
         containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

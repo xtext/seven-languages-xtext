@@ -11,7 +11,9 @@ import java.util.List;
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.xtend.lib.Property;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
+import org.eclipse.xtext.xbase.lib.Pure;
 import org.xtext.tortoiseshell.lib.ITortoiseEvent;
 import org.xtext.tortoiseshell.lib.MoveEvent;
 import org.xtext.tortoiseshell.lib.TurnEvent;
@@ -24,58 +26,33 @@ public class Tortoise {
   
   private double y;
   
+  @Property
   private int _delay = 200;
-  
-  public int getDelay() {
-    return this._delay;
-  }
-  
-  public void setDelay(final int delay) {
-    this._delay = delay;
-  }
   
   private boolean isPaint = true;
   
+  @Property
   private int _lineWidth = 1;
   
-  public int getLineWidth() {
-    return this._lineWidth;
-  }
-  
-  public void setLineWidth(final int lineWidth) {
-    this._lineWidth = lineWidth;
-  }
-  
+  @Property
   private Color _lineColor = ColorConstants.black;
-  
-  public Color getLineColor() {
-    return this._lineColor;
-  }
-  
-  public void setLineColor(final Color lineColor) {
-    this._lineColor = lineColor;
-  }
   
   private List<ITortoiseEvent.Listener> listeners = CollectionLiterals.<ITortoiseEvent.Listener>newArrayList();
   
   public boolean addListener(final ITortoiseEvent.Listener listener) {
-    boolean _add = this.listeners.add(listener);
-    return _add;
+    return this.listeners.add(listener);
   }
   
   public boolean removeListener(final ITortoiseEvent.Listener listener) {
-    boolean _remove = this.listeners.remove(listener);
-    return _remove;
+    return this.listeners.remove(listener);
   }
   
   public boolean penUp() {
-    boolean _isPaint = this.isPaint = false;
-    return _isPaint;
+    return this.isPaint = false;
   }
   
   public boolean penDown() {
-    boolean _isPaint = this.isPaint = true;
-    return _isPaint;
+    return this.isPaint = true;
   }
   
   public boolean isPaint() {
@@ -86,15 +63,13 @@ public class Tortoise {
     double _xblockexpression = (double) 0;
     {
       this.x = x;
-      double _y = this.y = y;
-      _xblockexpression = (_y);
+      _xblockexpression = this.y = y;
     }
     return _xblockexpression;
   }
   
   public Point getPosition() {
-    Point _point = new Point(((int) this.x), ((int) this.y));
-    return _point;
+    return new Point(((int) this.x), ((int) this.y));
   }
   
   public void forward(final double amount) {
@@ -147,8 +122,7 @@ public class Tortoise {
   }
   
   public double getAngle() {
-    double _degrees = Math.toDegrees(this.angle);
-    return _degrees;
+    return Math.toDegrees(this.angle);
   }
   
   public double getAngleInRadians() {
@@ -169,5 +143,32 @@ public class Tortoise {
     for (final ITortoiseEvent.Listener listener : this.listeners) {
       listener.handleTortoiseEvent(event);
     }
+  }
+  
+  @Pure
+  public int getDelay() {
+    return this._delay;
+  }
+  
+  public void setDelay(final int delay) {
+    this._delay = delay;
+  }
+  
+  @Pure
+  public int getLineWidth() {
+    return this._lineWidth;
+  }
+  
+  public void setLineWidth(final int lineWidth) {
+    this._lineWidth = lineWidth;
+  }
+  
+  @Pure
+  public Color getLineColor() {
+    return this._lineColor;
+  }
+  
+  public void setLineColor(final Color lineColor) {
+    this._lineColor = lineColor;
   }
 }

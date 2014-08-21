@@ -7,29 +7,24 @@
  */
 package org.xtext.mongobeans.jvmmodel;
 
-import com.google.common.collect.Sets;
-import com.google.inject.Inject;
+import com.google.common.base.Objects;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.Set;
+import org.eclipse.xtext.common.types.JvmType;
 import org.eclipse.xtext.common.types.JvmTypeReference;
-import org.eclipse.xtext.common.types.util.SuperTypeCollector;
-import org.eclipse.xtext.xbase.lib.Extension;
+import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 
 /**
  * Helper methods to decide if types are compatible with the mongoDB driver.
  */
 @SuppressWarnings("all")
 public class MongoTypes {
-  @Inject
-  @Extension
-  private SuperTypeCollector _superTypeCollector;
-  
-  public final static Set<String> mongoPrimitiveTypes = Collections.<String>unmodifiableSet(Sets.<String>newHashSet("double", "java.lang.Double", "java.lang.String", "byte[]", "boolean", "java.lang.Boolean", "java.util.Date", "void", "java.lang.Void", "java.util.regex.Pattern", "int", "java.lang.Integer", "long", "java.lang.Long"));
+  public final static Set<String> mongoPrimitiveTypes = Collections.<String>unmodifiableSet(CollectionLiterals.<String>newHashSet("double", "java.lang.Double", "java.lang.String", "byte[]", "boolean", "java.lang.Boolean", "java.util.Date", "void", "java.lang.Void", "java.util.regex.Pattern", "int", "java.lang.Integer", "long", "java.lang.Long"));
   
   public boolean isMongoPrimitiveType(final JvmTypeReference typeRef) {
     String _qualifiedName = typeRef.getQualifiedName();
-    boolean _contains = MongoTypes.mongoPrimitiveTypes.contains(_qualifiedName);
-    return _contains;
+    return MongoTypes.mongoPrimitiveTypes.contains(_qualifiedName);
   }
   
   public boolean isMongoType(final JvmTypeReference typeRef) {
@@ -38,15 +33,25 @@ public class MongoTypes {
     if (_isMongoPrimitiveType) {
       _or = true;
     } else {
-      boolean _isMongoBean = this.isMongoBean(typeRef);
-      _or = (_isMongoPrimitiveType || _isMongoBean);
+      JvmType _type = typeRef.getType();
+      boolean _isMongoBean = this.isMongoBean(_type);
+      _or = _isMongoBean;
     }
     return _or;
   }
   
-  public boolean isMongoBean(final JvmTypeReference typeRef) {
-    Set<String> _collectSuperTypeNames = this._superTypeCollector.collectSuperTypeNames(typeRef);
-    boolean _contains = _collectSuperTypeNames.contains("org.xtext.mongobeans.lib.IMongoBean");
-    return _contains;
+  public boolean isMongoBean(final JvmType type) {
+    HashSet<JvmType> _newHashSet = CollectionLiterals.<JvmType>newHashSet();
+    return this.internalIsMongoBean(type, _newHashSet);
+  }
+  
+  public boolean internalIsMongoBean(final JvmType type, final Set<JvmType> checked) {
+    boolean _add = checked.add(type);
+    boolean _not = (!_add);
+    if (_not) {
+      return false;
+    }
+    String _qualifiedName = type.getQualifiedName();
+    return Objects.equal(_qualifiedName, "org.xtext.mongobeans.lib.IMongoBean");
   }
 }

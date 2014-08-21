@@ -46,9 +46,9 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 
 	def dispatch void infer(MongoFile file, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
 		for(bean : file.eAllOfType(MongoBean)) {
-			acceptor.accept(bean.toClass(bean.fullyQualifiedName)).initializeLater [
+			acceptor.accept(bean.toClass(bean.fullyQualifiedName)) [
 				documentation = bean.documentation
-				superTypes += bean.newTypeRef(IMongoBean)
+				superTypes += typeRef(IMongoBean)
 				addConstructors(bean)
 				addDbObjectProperty(bean)
 				for(feature: bean.features) {
@@ -69,7 +69,7 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 	def protected addConstructors(JvmDeclaredType inferredType, MongoBean bean) {
 		inferredType.members += bean.toConstructor [
 			documentation = '''Creates a new «bean.name» wrapping the given {@link «DBObject.name»}.'''
-			parameters += toParameter("dbObject", newTypeRef(bean, DBObject))
+			parameters += toParameter("dbObject", typeRef(DBObject))
 			body = '''
 				this._dbObject = dbObject;
 			'''
@@ -84,8 +84,8 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 	}
 
 	def protected addDbObjectProperty(JvmDeclaredType inferredType, MongoBean bean) {
-		inferredType.members += bean.toField('_dbObject', newTypeRef(bean, DBObject))
-		inferredType.members += bean.toGetter('dbObject', '_dbObject', newTypeRef(bean, DBObject))
+		inferredType.members += bean.toField('_dbObject', typeRef(DBObject))
+		inferredType.members += bean.toGetter('dbObject', '_dbObject', typeRef(DBObject))
 	}
 
 	def protected addListAccessor(JvmDeclaredType inferredType, MongoProperty property) {
@@ -121,7 +121,7 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 		inferredType.members += property.toMethod('get' + property.name.toFirstUpper, property.jvmType) [
 			documentation = property.documentation
 			body = '''
-				«IF property.jvmType.mongoBean»
+				«IF property.jvmType.type.isMongoBean»
 					return «WrappingUtil».wrapAndCast((«DBObject») _dbObject.get("«property.name»"));
 				«ELSE»
 					return («property.jvmType.asWrapperTypeIfPrimitive») _dbObject.get("«property.name»");
@@ -132,7 +132,7 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 			documentation = property.documentation
 			parameters += toParameter(property.name, property.jvmType)
 			body = '''
-				«IF property.jvmType.mongoBean»
+				«IF property.jvmType.type.isMongoBean»
 					_dbObject.put("«property.name»", «WrappingUtil».unwrap(«property.name»));
 				«ELSE»
 					_dbObject.put("«property.name»", «property.name»);

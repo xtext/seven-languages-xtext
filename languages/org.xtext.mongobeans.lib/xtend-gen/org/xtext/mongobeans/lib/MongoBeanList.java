@@ -44,38 +44,32 @@ public class MongoBeanList<T extends IMongoBean> implements List<T> {
   }
   
   public int size() {
-    int _size = this.delegate.size();
-    return _size;
+    return this.delegate.size();
   }
   
   public boolean isEmpty() {
-    boolean _isEmpty = this.delegate.isEmpty();
-    return _isEmpty;
+    return this.delegate.isEmpty();
   }
   
   public boolean contains(final Object o) {
     DBObject _unwrap = WrappingUtil.unwrap(o);
-    boolean _contains = this.delegate.contains(_unwrap);
-    return _contains;
+    return this.delegate.contains(_unwrap);
   }
   
   public Iterator<T> iterator() {
-    final Function1<DBObject,T> _function = new Function1<DBObject,T>() {
+    final Function1<DBObject, T> _function = new Function1<DBObject, T>() {
       public T apply(final DBObject it) {
-        T _wrapAndCast = WrappingUtil.<T>wrapAndCast(it);
-        return _wrapAndCast;
+        return WrappingUtil.<T>wrapAndCast(it);
       }
     };
     List<T> _map = ListExtensions.<DBObject, T>map(this.delegate, _function);
-    Iterator<T> _iterator = _map.iterator();
-    return _iterator;
+    return _map.iterator();
   }
   
   public T[] toArray() {
-    final Function1<DBObject,IMongoBean> _function = new Function1<DBObject,IMongoBean>() {
+    final Function1<DBObject, IMongoBean> _function = new Function1<DBObject, IMongoBean>() {
       public IMongoBean apply(final DBObject it) {
-        IMongoBean _wrap = WrappingUtil.wrap(it);
-        return _wrap;
+        return WrappingUtil.wrap(it);
       }
     };
     List<IMongoBean> _map = ListExtensions.<DBObject, IMongoBean>map(this.delegate, _function);
@@ -91,8 +85,8 @@ public class MongoBeanList<T extends IMongoBean> implements List<T> {
       int _size_1 = this.size();
       boolean _lessThan = (_size < _size_1);
       if (_lessThan) {
-        Class<? extends Object> _class = a.getClass();
-        Class<? extends Object> _componentType = _class.getComponentType();
+        Class<?> _class = a.getClass();
+        Class<?> _componentType = _class.getComponentType();
         int _size_2 = this.size();
         Object _newInstance = Array.newInstance(_componentType, _size_2);
         _xifexpression = ((Object[]) _newInstance);
@@ -100,7 +94,7 @@ public class MongoBeanList<T extends IMongoBean> implements List<T> {
         _xifexpression = a;
       }
       final Object[] result = _xifexpression;
-      final Procedure2<T,Integer> _function = new Procedure2<T,Integer>() {
+      final Procedure2<T, Integer> _function = new Procedure2<T, Integer>() {
         public void apply(final T elem, final Integer idx) {
           result[(idx).intValue()] = elem;
         }
@@ -113,34 +107,30 @@ public class MongoBeanList<T extends IMongoBean> implements List<T> {
         int _size_5 = this.size();
         result[_size_5] = null;
       }
-      _xblockexpression = (((R[]) result));
+      _xblockexpression = ((R[]) result);
     }
     return _xblockexpression;
   }
   
   public boolean add(final T e) {
     DBObject _unwrap = WrappingUtil.unwrap(e);
-    boolean _add = this.delegate.add(_unwrap);
-    return _add;
+    return this.delegate.add(_unwrap);
   }
   
   public boolean remove(final Object o) {
     DBObject _unwrap = WrappingUtil.unwrap(o);
-    boolean _remove = this.delegate.remove(_unwrap);
-    return _remove;
+    return this.delegate.remove(_unwrap);
   }
   
-  public boolean containsAll(final Collection<? extends Object> c) {
-    final Function1<Object,DBObject> _function = new Function1<Object,DBObject>() {
+  public boolean containsAll(final Collection<?> c) {
+    final Function1<Object, DBObject> _function = new Function1<Object, DBObject>() {
       public DBObject apply(final Object it) {
-        DBObject _unwrap = WrappingUtil.unwrap(it);
-        return _unwrap;
+        return WrappingUtil.unwrap(it);
       }
     };
     Iterable<DBObject> _map = IterableExtensions.map(c, _function);
     List<DBObject> _list = IterableExtensions.<DBObject>toList(_map);
-    boolean _containsAll = this.delegate.containsAll(_list);
-    return _containsAll;
+    return this.delegate.containsAll(_list);
   }
   
   public boolean addAll(final Collection<? extends T> c) {
@@ -151,8 +141,7 @@ public class MongoBeanList<T extends IMongoBean> implements List<T> {
         this.delegate.add(_unwrap);
       }
       boolean _isEmpty = c.isEmpty();
-      boolean _not = (!_isEmpty);
-      _xblockexpression = (_not);
+      _xblockexpression = (!_isEmpty);
     }
     return _xblockexpression;
   }
@@ -162,10 +151,9 @@ public class MongoBeanList<T extends IMongoBean> implements List<T> {
     {
       List<? extends T> _list = IterableExtensions.toList(c);
       List<? extends T> _reverse = ListExtensions.reverse(_list);
-      final Function1<T,DBObject> _function = new Function1<T,DBObject>() {
+      final Function1<T, DBObject> _function = new Function1<T, DBObject>() {
         public DBObject apply(final T it) {
-          DBObject _unwrap = WrappingUtil.unwrap(it);
-          return _unwrap;
+          return WrappingUtil.unwrap(it);
         }
       };
       List<DBObject> _map = ListExtensions.map(_reverse, _function);
@@ -173,36 +161,31 @@ public class MongoBeanList<T extends IMongoBean> implements List<T> {
         this.delegate.add(index, element);
       }
       boolean _isEmpty = c.isEmpty();
-      boolean _not = (!_isEmpty);
-      _xblockexpression = (_not);
+      _xblockexpression = (!_isEmpty);
     }
     return _xblockexpression;
   }
   
-  public boolean removeAll(final Collection<? extends Object> c) {
-    final Function1<Object,DBObject> _function = new Function1<Object,DBObject>() {
+  public boolean removeAll(final Collection<?> c) {
+    final Function1<Object, DBObject> _function = new Function1<Object, DBObject>() {
       public DBObject apply(final Object it) {
-        DBObject _unwrap = WrappingUtil.unwrap(it);
-        return _unwrap;
+        return WrappingUtil.unwrap(it);
       }
     };
     Iterable<DBObject> _map = IterableExtensions.map(c, _function);
     List<DBObject> _list = IterableExtensions.<DBObject>toList(_map);
-    boolean _removeAll = this.delegate.removeAll(_list);
-    return _removeAll;
+    return this.delegate.removeAll(_list);
   }
   
-  public boolean retainAll(final Collection<? extends Object> c) {
-    final Function1<Object,DBObject> _function = new Function1<Object,DBObject>() {
+  public boolean retainAll(final Collection<?> c) {
+    final Function1<Object, DBObject> _function = new Function1<Object, DBObject>() {
       public DBObject apply(final Object it) {
-        DBObject _unwrap = WrappingUtil.unwrap(it);
-        return _unwrap;
+        return WrappingUtil.unwrap(it);
       }
     };
     Iterable<DBObject> _map = IterableExtensions.map(c, _function);
     List<DBObject> _list = IterableExtensions.<DBObject>toList(_map);
-    boolean _retainAll = this.delegate.retainAll(_list);
-    return _retainAll;
+    return this.delegate.retainAll(_list);
   }
   
   public void clear() {
@@ -210,26 +193,22 @@ public class MongoBeanList<T extends IMongoBean> implements List<T> {
   }
   
   public boolean equals(final Object o) {
-    boolean _equals = this.delegate.equals(o);
-    return _equals;
+    return this.delegate.equals(o);
   }
   
   public int hashCode() {
-    int _hashCode = this.delegate.hashCode();
-    return _hashCode;
+    return this.delegate.hashCode();
   }
   
   public T get(final int index) {
     DBObject _get = this.delegate.get(index);
-    T _wrapAndCast = WrappingUtil.<T>wrapAndCast(_get);
-    return _wrapAndCast;
+    return WrappingUtil.<T>wrapAndCast(_get);
   }
   
   public T set(final int index, final T element) {
     DBObject _unwrap = WrappingUtil.unwrap(element);
     DBObject _set = this.delegate.set(index, _unwrap);
-    T _wrapAndCast = WrappingUtil.<T>wrapAndCast(_set);
-    return _wrapAndCast;
+    return WrappingUtil.<T>wrapAndCast(_set);
   }
   
   public void add(final int index, final T element) {
@@ -239,53 +218,44 @@ public class MongoBeanList<T extends IMongoBean> implements List<T> {
   
   public T remove(final int index) {
     DBObject _remove = this.delegate.remove(index);
-    T _wrapAndCast = WrappingUtil.<T>wrapAndCast(_remove);
-    return _wrapAndCast;
+    return WrappingUtil.<T>wrapAndCast(_remove);
   }
   
   public int indexOf(final Object o) {
-    int _indexOf = this.delegate.indexOf(o);
-    return _indexOf;
+    return this.delegate.indexOf(o);
   }
   
   public int lastIndexOf(final Object o) {
-    int _lastIndexOf = this.delegate.lastIndexOf(o);
-    return _lastIndexOf;
+    return this.delegate.lastIndexOf(o);
   }
   
   public ListIterator<T> listIterator() {
-    final Function1<DBObject,T> _function = new Function1<DBObject,T>() {
+    final Function1<DBObject, T> _function = new Function1<DBObject, T>() {
       public T apply(final DBObject it) {
-        T _wrapAndCast = WrappingUtil.<T>wrapAndCast(it);
-        return _wrapAndCast;
+        return WrappingUtil.<T>wrapAndCast(it);
       }
     };
     List<T> _map = ListExtensions.<DBObject, T>map(this.delegate, _function);
-    ListIterator<T> _listIterator = _map.listIterator();
-    return _listIterator;
+    return _map.listIterator();
   }
   
   public ListIterator<T> listIterator(final int index) {
-    final Function1<DBObject,T> _function = new Function1<DBObject,T>() {
+    final Function1<DBObject, T> _function = new Function1<DBObject, T>() {
       public T apply(final DBObject it) {
-        T _wrapAndCast = WrappingUtil.<T>wrapAndCast(it);
-        return _wrapAndCast;
+        return WrappingUtil.<T>wrapAndCast(it);
       }
     };
     List<T> _map = ListExtensions.<DBObject, T>map(this.delegate, _function);
-    ListIterator<T> _listIterator = _map.listIterator(index);
-    return _listIterator;
+    return _map.listIterator(index);
   }
   
   public List<T> subList(final int fromIndex, final int toIndex) {
-    final Function1<DBObject,T> _function = new Function1<DBObject,T>() {
+    final Function1<DBObject, T> _function = new Function1<DBObject, T>() {
       public T apply(final DBObject it) {
-        T _wrapAndCast = WrappingUtil.<T>wrapAndCast(it);
-        return _wrapAndCast;
+        return WrappingUtil.<T>wrapAndCast(it);
       }
     };
     List<T> _map = ListExtensions.<DBObject, T>map(this.delegate, _function);
-    List<T> _subList = _map.subList(fromIndex, toIndex);
-    return _subList;
+    return _map.subList(fromIndex, toIndex);
   }
 }

@@ -30,7 +30,7 @@ RichStringLiteral returns xbase::XStringLiteral:
 	{RichStringLiteral} value=TEXT;
 
 RichStringPart returns xbase::XExpression:
-	XExpressionInsideBlock |
+	XExpressionOrVarDeclaration |
 	RichStringForLoop |
 	RichStringIf;
 

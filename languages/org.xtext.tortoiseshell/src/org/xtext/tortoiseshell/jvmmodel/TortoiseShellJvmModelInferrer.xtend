@@ -21,10 +21,10 @@ class TortoiseShellJvmModelInferrer extends AbstractModelInferrer {
 	@Inject extension JvmTypesBuilder
 
    	def dispatch void infer(Program program, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
-   		acceptor.accept(program.toClass(INFERRED_CLASS_NAME)).initializeLater [
-   			superTypes += program.newTypeRef(Tortoise)
+   		acceptor.accept(program.toClass(INFERRED_CLASS_NAME)) [
+   			superTypes += typeRef(Tortoise)
    			if (program.body != null)
-   				members += program.toMethod("main", program.newTypeRef(Void.TYPE)) [
+   				members += program.toMethod("main", typeRef(void)) [
    					body = program.body
    				]
    			for (subProgram : program.subPrograms)

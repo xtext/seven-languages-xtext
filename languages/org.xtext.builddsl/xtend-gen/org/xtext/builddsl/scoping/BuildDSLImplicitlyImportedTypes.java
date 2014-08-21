@@ -8,23 +8,22 @@
 package org.xtext.builddsl.scoping;
 
 import com.google.common.collect.Iterables;
-import com.google.common.collect.Lists;
 import java.util.Collections;
 import java.util.List;
+import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
-import org.eclipse.xtext.xbase.scoping.batch.ImplicitlyImportedTypes;
+import org.eclipse.xtext.xbase.scoping.batch.ImplicitlyImportedFeatures;
 import org.xtext.builddsl.lib.ClassExtensions;
 import org.xtext.builddsl.lib.FileExtensions;
 
 @SuppressWarnings("all")
-public class BuildDSLImplicitlyImportedTypes extends ImplicitlyImportedTypes {
+public class BuildDSLImplicitlyImportedTypes extends ImplicitlyImportedFeatures {
   /**
    * Add methods from {@link FileExtensions} and {@link ClassExtensions} to the extension scope.
    */
-  protected List<Class<? extends Object>> getExtensionClasses() {
-    List<Class<? extends Object>> _extensionClasses = super.getExtensionClasses();
-    Iterable<Class<? extends Object>> _plus = Iterables.<Class<? extends Object>>concat(_extensionClasses, Collections.<Class<?>>unmodifiableList(Lists.<Class<?>>newArrayList(FileExtensions.class, ClassExtensions.class)));
-    List<Class<? extends Object>> _list = IterableExtensions.<Class<? extends Object>>toList(_plus);
-    return _list;
+  protected List<Class<?>> getExtensionClasses() {
+    List<Class<?>> _extensionClasses = super.getExtensionClasses();
+    Iterable<Class<?>> _plus = Iterables.<Class<?>>concat(_extensionClasses, Collections.<Class<?>>unmodifiableList(CollectionLiterals.<Class<?>>newArrayList(FileExtensions.class, ClassExtensions.class)));
+    return IterableExtensions.<Class<?>>toList(_plus);
   }
 }

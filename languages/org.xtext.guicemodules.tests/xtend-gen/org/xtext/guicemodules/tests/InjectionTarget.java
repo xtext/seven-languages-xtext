@@ -18,5 +18,5 @@ public class InjectionTarget {
   public String s;
   
   @Inject
-  public Collection<? extends Object> col;
+  public Collection<?> col;
 }

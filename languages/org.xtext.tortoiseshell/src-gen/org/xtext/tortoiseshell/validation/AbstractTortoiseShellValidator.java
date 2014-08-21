@@ -11,7 +11,7 @@ public class AbstractTortoiseShellValidator extends org.eclipse.xtext.xbase.vali
 
 	@Override
 	protected List<EPackage> getEPackages() {
-	    List<EPackage> result = new ArrayList<EPackage>();
+	    List<EPackage> result = new ArrayList<EPackage>(super.getEPackages());
 	    result.add(org.xtext.tortoiseshell.tortoiseShell.TortoiseShellPackage.eINSTANCE);
 	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.eclipse.org/xtext/xbase/Xbase"));
 	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.eclipse.org/xtext/common/JavaVMTypes"));

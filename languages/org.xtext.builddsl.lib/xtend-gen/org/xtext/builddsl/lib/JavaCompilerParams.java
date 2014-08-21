@@ -9,12 +9,22 @@ package org.xtext.builddsl.lib;
 
 import java.io.File;
 import java.util.Collection;
+import org.eclipse.xtend.lib.Property;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
+import org.eclipse.xtext.xbase.lib.Pure;
 
 @SuppressWarnings("all")
 public class JavaCompilerParams {
+  @Property
   private Collection<File> _sources = CollectionLiterals.<File>newArrayList();
   
+  @Property
+  private Collection<File> _classpath = CollectionLiterals.<File>newArrayList();
+  
+  @Property
+  private File _destination;
+  
+  @Pure
   public Collection<File> getSources() {
     return this._sources;
   }
@@ -23,8 +33,7 @@ public class JavaCompilerParams {
     this._sources = sources;
   }
   
-  private Collection<File> _classpath = CollectionLiterals.<File>newArrayList();
-  
+  @Pure
   public Collection<File> getClasspath() {
     return this._classpath;
   }
@@ -33,8 +42,7 @@ public class JavaCompilerParams {
     this._classpath = classpath;
   }
   
-  private File _destination;
-  
+  @Pure
   public File getDestination() {
     return this._destination;
   }

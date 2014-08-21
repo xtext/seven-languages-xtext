@@ -50,8 +50,7 @@ public class MongoBeansLabelProvider extends XbaseLabelProvider {
       }
     }
     if (!_matched) {
-      Object _doGetImage = super.doGetImage(element);
-      _switchResult = _doGetImage;
+      _switchResult = super.doGetImage(element);
     }
     return _switchResult;
   }

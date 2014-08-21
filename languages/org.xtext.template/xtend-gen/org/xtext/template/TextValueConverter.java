@@ -7,7 +7,9 @@
  */
 package org.xtext.template;
 
+import org.eclipse.xtext.conversion.ValueConverterWithValueException;
 import org.eclipse.xtext.conversion.impl.STRINGValueConverter;
+import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.util.Strings;
 
 /**
@@ -18,7 +20,12 @@ public class TextValueConverter extends STRINGValueConverter {
   protected String toEscapedString(final String value) {
     String _convertToJavaString = Strings.convertToJavaString(value, false);
     String _plus = ("»" + _convertToJavaString);
-    String _plus_1 = (_plus + "«");
-    return _plus_1;
+    return (_plus + "«");
+  }
+  
+  protected String convertFromString(final String literal, final INode node) throws ValueConverterWithValueException {
+    int _length = literal.length();
+    int _minus = (_length - 1);
+    return literal.substring(1, _minus);
   }
 }

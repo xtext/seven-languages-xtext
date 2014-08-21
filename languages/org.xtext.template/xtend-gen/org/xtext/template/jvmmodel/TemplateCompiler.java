@@ -7,14 +7,14 @@
  */
 package org.xtext.template.jvmmodel;
 
+import com.google.common.base.Objects;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.common.types.JvmFormalParameter;
-import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.eclipse.xtext.xbase.XExpression;
 import org.eclipse.xtext.xbase.compiler.XbaseCompiler;
 import org.eclipse.xtext.xbase.compiler.output.ITreeAppendable;
-import org.eclipse.xtext.xbase.typing.ITypeProvider;
+import org.eclipse.xtext.xbase.typesystem.references.LightweightTypeReference;
 import org.xtext.template.template.RichString;
 import org.xtext.template.template.RichStringForLoop;
 
@@ -53,9 +53,8 @@ public class TemplateCompiler extends XbaseCompiler {
         _matched=true;
         XExpression _forExpression = ((RichStringForLoop)expr).getForExpression();
         this.internalToJavaStatement(_forExpression, it, true);
-        ITypeProvider _typeProvider = this.getTypeProvider();
         JvmFormalParameter _declaredParam = ((RichStringForLoop)expr).getDeclaredParam();
-        final JvmTypeReference paramType = _typeProvider.getTypeForIdentifiable(_declaredParam);
+        final LightweightTypeReference paramType = this.getLightweightType(_declaredParam);
         final String name = it.declareVariable(expr, "_forLoopResult");
         it.newLine();
         StringConcatenation _builder = new StringConcatenation();
@@ -65,7 +64,12 @@ public class TemplateCompiler extends XbaseCompiler {
         _builder.newLineIfNotEmpty();
         _builder.append("for (final ");
         it.append(_builder);
-        this.serialize(paramType, expr, it);
+        boolean _notEquals = (!Objects.equal(paramType, null));
+        if (_notEquals) {
+          it.append(paramType);
+        } else {
+          it.append("Object");
+        }
         StringConcatenation _builder_1 = new StringConcatenation();
         _builder_1.append(" ");
         JvmFormalParameter _declaredParam_1 = ((RichStringForLoop)expr).getDeclaredParam();

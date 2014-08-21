@@ -45,10 +45,11 @@ public class IntegrationTest {
       final IAcceptor<CompilationTestHelper.Result> _function = new IAcceptor<CompilationTestHelper.Result>() {
         public void accept(final CompilationTestHelper.Result it) {
           try {
-            Class<? extends Object> _compiledClass = it.getCompiledClass();
+            Class<?> _compiledClass = it.getCompiledClass();
             Object _newInstance = _compiledClass.newInstance();
             final Object result = IntegrationTest.this._reflectExtensions.invoke(_newInstance, "generate", null);
-            Assert.assertEquals("Hello World", result);
+            String _string = result.toString();
+            Assert.assertEquals("Hello World", _string);
           } catch (Throwable _e) {
             throw Exceptions.sneakyThrow(_e);
           }
@@ -118,7 +119,7 @@ public class IntegrationTest {
       final IAcceptor<CompilationTestHelper.Result> _function = new IAcceptor<CompilationTestHelper.Result>() {
         public void accept(final CompilationTestHelper.Result it) {
           try {
-            Class<? extends Object> _compiledClass = it.getCompiledClass();
+            Class<?> _compiledClass = it.getCompiledClass();
             Object _newInstance = _compiledClass.newInstance();
             final Object result = IntegrationTest.this._reflectExtensions.invoke(_newInstance, "generate", null);
             StringConcatenation _builder = new StringConcatenation();
@@ -157,7 +158,6 @@ public class IntegrationTest {
   public String replace(final CharSequence s) {
     String _string = s.toString();
     String _replace = _string.replace("<<", "«");
-    String _replace_1 = _replace.replace(">>", "»");
-    return _replace_1;
+    return _replace.replace(">>", "»");
   }
 }

@@ -43,14 +43,13 @@ public class Activator extends AbstractUIPlugin {
         Injector _createInjector = this.createInjector();
         this.injector = _createInjector;
       }
-      _xblockexpression = (this.injector);
+      _xblockexpression = this.injector;
     }
     return _xblockexpression;
   }
   
   protected Injector createInjector() {
     Module _module = new Module();
-    Injector _createInjector = Guice.createInjector(_module);
-    return _createInjector;
+    return Guice.createInjector(_module);
   }
 }

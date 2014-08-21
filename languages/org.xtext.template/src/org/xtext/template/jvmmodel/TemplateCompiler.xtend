@@ -34,13 +34,17 @@ class TemplateCompiler extends XbaseCompiler {
 			
 			RichStringForLoop : {
 				expr.forExpression.internalToJavaStatement(it, true)
-				val paramType = typeProvider.getTypeForIdentifiable(expr.declaredParam)
+				val paramType = getLightweightType(expr.declaredParam)
 				val name = declareVariable(expr, '_forLoopResult')
 				newLine
 				append('''
 					StringBuilder «name» = new StringBuilder();
 					for (final ''')
-				serialize(paramType, expr, it);
+				if (paramType != null) {
+					append(paramType);
+				} else {
+					append("Object");
+				}
 				append(''' «declareVariable(expr.declaredParam, makeJavaIdentifier(expr.declaredParam.name))» : ''')
 				internalToJavaExpression(expr.forExpression, it)
 				append(") {").increaseIndentation

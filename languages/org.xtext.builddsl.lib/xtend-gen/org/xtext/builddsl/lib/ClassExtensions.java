@@ -14,7 +14,7 @@ import org.xtext.builddsl.lib.impl.RunUtil;
 
 @SuppressWarnings("all")
 public class ClassExtensions {
-  public static void runMain(final Class<? extends Object> clazz) {
+  public static void runMain(final Class<?> clazz) {
     List<String> _emptyList = CollectionLiterals.<String>emptyList();
     RunUtil.runMain(clazz, ((String[])Conversions.unwrapArray(_emptyList, String.class)));
   }

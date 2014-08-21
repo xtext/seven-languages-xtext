@@ -16,15 +16,14 @@ import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Rectangle;
+import org.eclipse.xtend.lib.Property;
 import org.eclipse.xtext.ui.PluginImageHelper;
+import org.eclipse.xtext.xbase.lib.Pure;
 
 @SuppressWarnings("all")
 public class TortoiseFigure extends ImageFigure {
+  @Property
   private double _angle;
-  
-  public double getAngle() {
-    return this._angle;
-  }
   
   @Inject
   public TortoiseFigure(final PluginImageHelper imageHelper) {
@@ -46,8 +45,7 @@ public class TortoiseFigure extends ImageFigure {
     {
       Image _image = this.getImage();
       final Rectangle bounds = _image.getBounds();
-      Dimension _dimension = new Dimension(bounds.width, bounds.height);
-      _xblockexpression = (_dimension);
+      _xblockexpression = new Dimension(bounds.width, bounds.height);
     }
     return _xblockexpression;
   }
@@ -66,5 +64,10 @@ public class TortoiseFigure extends ImageFigure {
   public void setAngle(final double angle) {
     this._angle = angle;
     this.revalidate();
+  }
+  
+  @Pure
+  public double getAngle() {
+    return this._angle;
   }
 }

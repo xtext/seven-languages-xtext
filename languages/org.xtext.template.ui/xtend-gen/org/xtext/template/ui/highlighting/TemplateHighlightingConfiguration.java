@@ -44,8 +44,7 @@ public class TemplateHighlightingConfiguration extends XbaseHighlightingConfigur
         it.setColor(_rGB);
       }
     };
-    TextStyle _doubleArrow = ObjectExtensions.<TextStyle>operator_doubleArrow(_copy, _function);
-    return _doubleArrow;
+    return ObjectExtensions.<TextStyle>operator_doubleArrow(_copy, _function);
   }
   
   public TextStyle staticEscape() {
@@ -59,7 +58,6 @@ public class TemplateHighlightingConfiguration extends XbaseHighlightingConfigur
         it.setBackgroundColor(_rGB_1);
       }
     };
-    TextStyle _doubleArrow = ObjectExtensions.<TextStyle>operator_doubleArrow(_copy, _function);
-    return _doubleArrow;
+    return ObjectExtensions.<TextStyle>operator_doubleArrow(_copy, _function);
   }
 }

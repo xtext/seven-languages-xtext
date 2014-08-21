@@ -31,7 +31,7 @@ class IntegrationTest {
 			Hello World
 		'''.replace.compile [
 			val result = compiledClass.newInstance.invoke('generate', null)
-			assertEquals('Hello World',result)
+			assertEquals('Hello World',result.toString)
 		]
 	}
 	

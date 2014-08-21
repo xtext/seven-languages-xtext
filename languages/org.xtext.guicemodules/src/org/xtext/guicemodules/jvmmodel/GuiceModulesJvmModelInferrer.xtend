@@ -11,10 +11,11 @@ import com.google.inject.Binder
 import com.google.inject.Inject
 import com.google.inject.Key
 import com.google.inject.Module
+import com.google.inject.TypeLiteral
 import java.util.HashSet
 import java.util.Set
+import org.eclipse.xtend2.lib.StringConcatenationClient
 import org.eclipse.xtext.common.types.JvmVisibility
-import org.eclipse.xtext.common.types.util.TypeReferences
 import org.eclipse.xtext.naming.IQualifiedNameProvider
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
@@ -22,31 +23,17 @@ import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
 import org.xtext.guicemodules.guiceModules.BindingAST
 import org.xtext.guicemodules.guiceModules.KeyAST
 import org.xtext.guicemodules.guiceModules.ModuleAST
-import org.eclipse.xtend2.lib.StringConcatenationClient
-import com.google.inject.TypeLiteral
 
 class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
 
 	@Inject extension JvmTypesBuilder builder
 	@Inject extension IQualifiedNameProvider
-	@Inject extension TypeReferences
 
 	def dispatch void infer(ModuleAST module, IJvmDeclaredTypeAcceptor acceptor, boolean preIndexingPhase) {
-		// leave if Guice is not on the classpath
-		if(module.newTypeRef(Key) == null) return;
-		
-		// declare the needed types :
-		val keyType = module.newTypeRef(Key).type
-		val moduleType = module.newTypeRef(Module).type
-		val binderType = module.newTypeRef(Binder).type
-		val setType = module.newTypeRef(Set).type
-		val voidType = module.newTypeRef('void').type
-
-		
 		// create a class for a module
-		acceptor.accept( module.toClass( module.fullyQualifiedName ) ).initializeLater [
+		acceptor.accept( module.toClass( module.fullyQualifiedName ) ) [
 			documentation = module.documentation
-			superTypes += moduleType.createTypeRef
+			superTypes += typeRef(Module)
 			
 			// declare a field for each mixed-in module
 			for (mixin : module.mixins) {
@@ -67,35 +54,35 @@ class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
 				// if a key has an annotation, declare a field so we can use that annotation via reflection later.
 				if (binding.to?.annotation != null) {
 					members += binding.toField(binding.to.syntheticName, binding.to.type) [
-						newHashSet(binding.to.annotation).translateAnnotationsTo(it)
+						addAnnotation(binding.to.annotation)
 						visibility = JvmVisibility.PRIVATE
 					]
 				}
 				if (binding.from.annotation != null) {
 					members += binding.toField(binding.from.syntheticName, binding.from.type) [
-						newHashSet(binding.from.annotation).translateAnnotationsTo(it)
+						addAnnotation(binding.from.annotation)
 						visibility = JvmVisibility.PRIVATE
 					]
 				}
 			}
 			
 			// the main configure delegates to one accepting a set for the already bound keys.
-			members += module.toMethod("configure", voidType.createTypeRef) [
-				parameters += module.toParameter("binder", binderType.createTypeRef)
+			members += module.toMethod("configure", typeRef(void)) [
+				parameters += module.toParameter("binder", typeRef(Binder))
 				body = '''
-					configure(binder, new «HashSet»<«keyType»<?>>());
+					configure(binder, new «HashSet»<«typeRef(Key, wildCard)»>());
 				'''
 			]
 			
-			members += module.toMethod("configure", voidType.createTypeRef) [
+			members += module.toMethod("configure", typeRef(void)) [
 				documentation = 'Registers bindings for keys not present in the given set.'
-				parameters += module.toParameter("bind", binderType.createTypeRef)
-				parameters += module.toParameter("usedKeys", setType.createTypeRef( keyType.createTypeRef(wildCard)))
+				parameters += module.toParameter("bind", typeRef(Binder))
+				parameters += module.toParameter("usedKeys", typeRef(Set, typeRef(Key, wildCard)))
 				body = '''
 					try {
 						«FOR b : module.bindings»
 							{
-								«keyType»<«b.from.type»> key = «b.from.guiceKey»;
+								«typeRef(Key, b.from.type)» key = «b.from.guiceKey»;
 								if (usedKeys.add(key)) {
 									«IF b.toInstance != null»
 										bind.bind(key).toInstance(«b.syntheticToInstanceName»());

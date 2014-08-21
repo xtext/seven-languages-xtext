@@ -7,14 +7,8 @@
  ******************************************************************************/
 package org.xtext.httprouting.validation
 
-import org.eclipse.xtext.xbase.XExpression
 import org.eclipse.xtext.xbase.annotations.validation.XbaseWithAnnotationsJavaValidator
 
 class RouteValidator extends XbaseWithAnnotationsJavaValidator{
 
-	/**
-	 * disable this check
-	 */
-	override protected isImplicitReturn(XExpression expr) { false }
-	
 }

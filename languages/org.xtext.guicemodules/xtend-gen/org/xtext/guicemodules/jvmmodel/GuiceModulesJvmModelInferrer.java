@@ -25,12 +25,8 @@ import org.eclipse.xtext.common.types.JvmFormalParameter;
 import org.eclipse.xtext.common.types.JvmGenericType;
 import org.eclipse.xtext.common.types.JvmMember;
 import org.eclipse.xtext.common.types.JvmOperation;
-import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
-import org.eclipse.xtext.common.types.JvmType;
 import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.eclipse.xtext.common.types.JvmVisibility;
-import org.eclipse.xtext.common.types.JvmWildcardTypeReference;
-import org.eclipse.xtext.common.types.util.TypeReferences;
 import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.xbase.XExpression;
@@ -38,7 +34,6 @@ import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotation;
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor;
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder;
-import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
@@ -58,36 +53,16 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
   @Extension
   private IQualifiedNameProvider _iQualifiedNameProvider;
   
-  @Inject
-  @Extension
-  private TypeReferences _typeReferences;
-  
   protected void _infer(final ModuleAST module, final IJvmDeclaredTypeAcceptor acceptor, final boolean preIndexingPhase) {
-    JvmTypeReference _newTypeRef = this.builder.newTypeRef(module, Key.class);
-    boolean _equals = Objects.equal(_newTypeRef, null);
-    if (_equals) {
-      return;
-    }
-    JvmTypeReference _newTypeRef_1 = this.builder.newTypeRef(module, Key.class);
-    final JvmType keyType = _newTypeRef_1.getType();
-    JvmTypeReference _newTypeRef_2 = this.builder.newTypeRef(module, Module.class);
-    final JvmType moduleType = _newTypeRef_2.getType();
-    JvmTypeReference _newTypeRef_3 = this.builder.newTypeRef(module, Binder.class);
-    final JvmType binderType = _newTypeRef_3.getType();
-    JvmTypeReference _newTypeRef_4 = this.builder.newTypeRef(module, Set.class);
-    final JvmType setType = _newTypeRef_4.getType();
-    JvmTypeReference _newTypeRef_5 = this.builder.newTypeRef(module, "void");
-    final JvmType voidType = _newTypeRef_5.getType();
     QualifiedName _fullyQualifiedName = this._iQualifiedNameProvider.getFullyQualifiedName(module);
     JvmGenericType _class = this.builder.toClass(module, _fullyQualifiedName);
-    IJvmDeclaredTypeAcceptor.IPostIndexingInitializing<JvmGenericType> _accept = acceptor.<JvmGenericType>accept(_class);
     final Procedure1<JvmGenericType> _function = new Procedure1<JvmGenericType>() {
       public void apply(final JvmGenericType it) {
         String _documentation = GuiceModulesJvmModelInferrer.this.builder.getDocumentation(module);
         GuiceModulesJvmModelInferrer.this.builder.setDocumentation(it, _documentation);
         EList<JvmTypeReference> _superTypes = it.getSuperTypes();
-        JvmParameterizedTypeReference _createTypeRef = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(moduleType);
-        GuiceModulesJvmModelInferrer.this.builder.<JvmParameterizedTypeReference>operator_add(_superTypes, _createTypeRef);
+        JvmTypeReference _typeRef = GuiceModulesJvmModelInferrer.this._typeReferenceBuilder.typeRef(Module.class);
+        GuiceModulesJvmModelInferrer.this.builder.<JvmTypeReference>operator_add(_superTypes, _typeRef);
         EList<ModuleAST> _mixins = module.getMixins();
         for (final ModuleAST mixin : _mixins) {
           boolean _eIsProxy = mixin.eIsProxy();
@@ -152,8 +127,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
                 public void apply(final JvmField it) {
                   KeyAST _to = binding.getTo();
                   XAnnotation _annotation = _to.getAnnotation();
-                  HashSet<XAnnotation> _newHashSet = CollectionLiterals.<XAnnotation>newHashSet(_annotation);
-                  GuiceModulesJvmModelInferrer.this.builder.translateAnnotationsTo(_newHashSet, it);
+                  GuiceModulesJvmModelInferrer.this.builder.addAnnotation(it, _annotation);
                   it.setVisibility(JvmVisibility.PRIVATE);
                 }
               };
@@ -173,8 +147,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
                 public void apply(final JvmField it) {
                   KeyAST _from = binding.getFrom();
                   XAnnotation _annotation = _from.getAnnotation();
-                  HashSet<XAnnotation> _newHashSet = CollectionLiterals.<XAnnotation>newHashSet(_annotation);
-                  GuiceModulesJvmModelInferrer.this.builder.translateAnnotationsTo(_newHashSet, it);
+                  GuiceModulesJvmModelInferrer.this.builder.addAnnotation(it, _annotation);
                   it.setVisibility(JvmVisibility.PRIVATE);
                 }
               };
@@ -184,12 +157,12 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
           }
         }
         EList<JvmMember> _members_1 = it.getMembers();
-        JvmParameterizedTypeReference _createTypeRef_1 = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(voidType);
+        JvmTypeReference _typeRef_1 = GuiceModulesJvmModelInferrer.this._typeReferenceBuilder.typeRef(void.class);
         final Procedure1<JvmOperation> _function_1 = new Procedure1<JvmOperation>() {
           public void apply(final JvmOperation it) {
             EList<JvmFormalParameter> _parameters = it.getParameters();
-            JvmParameterizedTypeReference _createTypeRef = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(binderType);
-            JvmFormalParameter _parameter = GuiceModulesJvmModelInferrer.this.builder.toParameter(module, "binder", _createTypeRef);
+            JvmTypeReference _typeRef = GuiceModulesJvmModelInferrer.this._typeReferenceBuilder.typeRef(Binder.class);
+            JvmFormalParameter _parameter = GuiceModulesJvmModelInferrer.this.builder.toParameter(module, "binder", _typeRef);
             GuiceModulesJvmModelInferrer.this.builder.<JvmFormalParameter>operator_add(_parameters, _parameter);
             StringConcatenationClient _client = new StringConcatenationClient() {
               @Override
@@ -197,30 +170,32 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
                 _builder.append("configure(binder, new ");
                 _builder.append(HashSet.class, "");
                 _builder.append("<");
-                _builder.append(keyType, "");
-                _builder.append("<?>>());");
+                JvmTypeReference _wildCard = GuiceModulesJvmModelInferrer.this._typeReferenceBuilder.wildCard();
+                JvmTypeReference _typeRef = GuiceModulesJvmModelInferrer.this._typeReferenceBuilder.typeRef(Key.class, _wildCard);
+                _builder.append(_typeRef, "");
+                _builder.append(">());");
                 _builder.newLineIfNotEmpty();
               }
             };
             GuiceModulesJvmModelInferrer.this.builder.setBody(it, _client);
           }
         };
-        JvmOperation _method = GuiceModulesJvmModelInferrer.this.builder.toMethod(module, "configure", _createTypeRef_1, _function_1);
+        JvmOperation _method = GuiceModulesJvmModelInferrer.this.builder.toMethod(module, "configure", _typeRef_1, _function_1);
         GuiceModulesJvmModelInferrer.this.builder.<JvmOperation>operator_add(_members_1, _method);
         EList<JvmMember> _members_2 = it.getMembers();
-        JvmParameterizedTypeReference _createTypeRef_2 = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(voidType);
+        JvmTypeReference _typeRef_2 = GuiceModulesJvmModelInferrer.this._typeReferenceBuilder.typeRef(void.class);
         final Procedure1<JvmOperation> _function_2 = new Procedure1<JvmOperation>() {
           public void apply(final JvmOperation it) {
             GuiceModulesJvmModelInferrer.this.builder.setDocumentation(it, "Registers bindings for keys not present in the given set.");
             EList<JvmFormalParameter> _parameters = it.getParameters();
-            JvmParameterizedTypeReference _createTypeRef = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(binderType);
-            JvmFormalParameter _parameter = GuiceModulesJvmModelInferrer.this.builder.toParameter(module, "bind", _createTypeRef);
+            JvmTypeReference _typeRef = GuiceModulesJvmModelInferrer.this._typeReferenceBuilder.typeRef(Binder.class);
+            JvmFormalParameter _parameter = GuiceModulesJvmModelInferrer.this.builder.toParameter(module, "bind", _typeRef);
             GuiceModulesJvmModelInferrer.this.builder.<JvmFormalParameter>operator_add(_parameters, _parameter);
             EList<JvmFormalParameter> _parameters_1 = it.getParameters();
-            JvmWildcardTypeReference _wildCard = GuiceModulesJvmModelInferrer.this._typeReferences.wildCard();
-            JvmParameterizedTypeReference _createTypeRef_1 = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(keyType, _wildCard);
-            JvmParameterizedTypeReference _createTypeRef_2 = GuiceModulesJvmModelInferrer.this._typeReferences.createTypeRef(setType, _createTypeRef_1);
-            JvmFormalParameter _parameter_1 = GuiceModulesJvmModelInferrer.this.builder.toParameter(module, "usedKeys", _createTypeRef_2);
+            JvmTypeReference _wildCard = GuiceModulesJvmModelInferrer.this._typeReferenceBuilder.wildCard();
+            JvmTypeReference _typeRef_1 = GuiceModulesJvmModelInferrer.this._typeReferenceBuilder.typeRef(Key.class, _wildCard);
+            JvmTypeReference _typeRef_2 = GuiceModulesJvmModelInferrer.this._typeReferenceBuilder.typeRef(Set.class, _typeRef_1);
+            JvmFormalParameter _parameter_1 = GuiceModulesJvmModelInferrer.this.builder.toParameter(module, "usedKeys", _typeRef_2);
             GuiceModulesJvmModelInferrer.this.builder.<JvmFormalParameter>operator_add(_parameters_1, _parameter_1);
             StringConcatenationClient _client = new StringConcatenationClient() {
               @Override
@@ -235,12 +210,11 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
                     _builder.newLine();
                     _builder.append("\t");
                     _builder.append("\t");
-                    _builder.append(keyType, "\t\t");
-                    _builder.append("<");
                     KeyAST _from = b.getFrom();
                     JvmTypeReference _type = _from.getType();
-                    _builder.append(_type, "\t\t");
-                    _builder.append("> key = ");
+                    JvmTypeReference _typeRef = GuiceModulesJvmModelInferrer.this._typeReferenceBuilder.typeRef(Key.class, _type);
+                    _builder.append(_typeRef, "\t\t");
+                    _builder.append(" key = ");
                     KeyAST _from_1 = b.getFrom();
                     StringConcatenationClient _guiceKey = GuiceModulesJvmModelInferrer.this.guiceKey(_from_1);
                     _builder.append(_guiceKey, "\t\t");
@@ -307,11 +281,11 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
             GuiceModulesJvmModelInferrer.this.builder.setBody(it, _client);
           }
         };
-        JvmOperation _method_1 = GuiceModulesJvmModelInferrer.this.builder.toMethod(module, "configure", _createTypeRef_2, _function_2);
+        JvmOperation _method_1 = GuiceModulesJvmModelInferrer.this.builder.toMethod(module, "configure", _typeRef_2, _function_2);
         GuiceModulesJvmModelInferrer.this.builder.<JvmOperation>operator_add(_members_2, _method_1);
       }
     };
-    _accept.initializeLater(_function);
+    acceptor.<JvmGenericType>accept(_class, _function);
   }
   
   public StringConcatenationClient guiceKey(final KeyAST it) {
@@ -363,8 +337,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
     String _name = module.getName();
     String[] _split = _name.split("\\.");
     String _last = IterableExtensions.<String>last(((Iterable<String>)Conversions.doWrapArray(_split)));
-    String _firstLower = StringExtensions.toFirstLower(_last);
-    return _firstLower;
+    return StringExtensions.toFirstLower(_last);
   }
   
   public void infer(final EObject module, final IJvmDeclaredTypeAcceptor acceptor, final boolean preIndexingPhase) {

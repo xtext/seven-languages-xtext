@@ -7,17 +7,14 @@
  ******************************************************************************/
 package org.xtext.mongobeans.jvmmodel
 
-import com.google.inject.Inject
+import java.util.Set
+import org.eclipse.xtext.common.types.JvmType
 import org.eclipse.xtext.common.types.JvmTypeReference
-import org.eclipse.xtext.common.types.util.SuperTypeCollector
 
 /** 
  * Helper methods to decide if types are compatible with the mongoDB driver. 
  */
 class MongoTypes {
-
-	// TODO: replace with non-deprecated solution
-	@Inject extension SuperTypeCollector
 	
 	public static val mongoPrimitiveTypes = #{
 		'double',
@@ -41,11 +38,17 @@ class MongoTypes {
 	}
 	
 	def isMongoType(JvmTypeReference typeRef) {
-		typeRef.isMongoPrimitiveType || typeRef.isMongoBean
+		typeRef.isMongoPrimitiveType || typeRef.type.isMongoBean
 	}
 	
-	def isMongoBean(JvmTypeReference typeRef) {
-		typeRef.collectSuperTypeNames.contains('org.xtext.mongobeans.lib.IMongoBean')
+	def isMongoBean(JvmType type) {
+		return internalIsMongoBean(type, newHashSet)
+	}
+	
+	def boolean internalIsMongoBean(JvmType type, Set<JvmType> checked) {
+		if (!checked.add(type))
+			return false;
+		return type.qualifiedName == 'org.xtext.mongobeans.lib.IMongoBean'
 	}
 	
 }

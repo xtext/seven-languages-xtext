@@ -29,7 +29,7 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
    			else 
    				simpleName
 		val javaClass = element.toClass(qualifiedName)
-   		acceptor.accept(javaClass).initializeLater [
+   		acceptor.accept(javaClass) [
 			
 			for (param : element.params) {
 				// try compute the type 
@@ -38,7 +38,7 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
 				// catch-all) just String 
 				val type = param.type 
 					?: param.defaultexp?.inferredType 
-					?: element.newTypeRef(String)
+					?: typeRef(String)
 				members += param.toField(param.name, type) [
 					if (param.defaultexp != null)
 						initializer = param.defaultexp
@@ -55,8 +55,7 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
 			// generate a method accepting an initializer lambda expression
 			members += element.toMethod("generate", element.newTypeRef(String)) [
 				parameters += element.toParameter(
-					"init", 
-					element.newTypeRef(Procedures.Procedure1, newTypeRef(javaClass))
+					"init", typeRef(Procedures.Procedure1, typeRef(javaClass))
 				)
 				body = '''
 					if (init != null)

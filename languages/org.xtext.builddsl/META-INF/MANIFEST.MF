@@ -5,8 +5,8 @@ Bundle-Vendor: Eclipse Modeling Project
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: org.xtext.builddsl;singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: org.eclipse.xtext;bundle-version="2.4.0";visibility:=reexport,
- org.eclipse.xtext.xbase;bundle-version="2.4.0";resolution:=optional;visibility:=reexport,
+Require-Bundle: org.eclipse.xtext;bundle-version="2.7.0";visibility:=reexport,
+ org.eclipse.xtext.xbase;bundle-version="2.7.0";resolution:=optional;visibility:=reexport,
  org.eclipse.xtext.generator;resolution:=optional,
  org.eclipse.emf.codegen.ecore;resolution:=optional,
  org.eclipse.emf.mwe.utils;resolution:=optional,
@@ -17,7 +17,8 @@ Require-Bundle: org.eclipse.xtext;bundle-version="2.4.0";visibility:=reexport,
  org.antlr.runtime,
  org.eclipse.xtext.common.types,
  org.eclipse.xtext.xbase.lib,
- org.xtext.builddsl.lib
+ org.xtext.builddsl.lib,
+ org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional
 Import-Package: org.apache.log4j,
  org.apache.commons.logging,
  org.eclipse.xtext.xbase.lib

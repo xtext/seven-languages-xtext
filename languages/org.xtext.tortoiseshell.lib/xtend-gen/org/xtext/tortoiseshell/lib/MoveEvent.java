@@ -9,6 +9,7 @@ package org.xtext.tortoiseshell.lib;
 
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.xtend.lib.Data;
+import org.eclipse.xtext.xbase.lib.Pure;
 import org.eclipse.xtext.xbase.lib.util.ToStringHelper;
 import org.xtext.tortoiseshell.lib.ITortoiseEvent;
 import org.xtext.tortoiseshell.lib.Tortoise;
@@ -18,15 +19,7 @@ import org.xtext.tortoiseshell.lib.Tortoise;
 public class MoveEvent implements ITortoiseEvent {
   private final Tortoise _tortoise;
   
-  public Tortoise getTortoise() {
-    return this._tortoise;
-  }
-  
   private final Point _oldPosition;
-  
-  public Point getOldPosition() {
-    return this._oldPosition;
-  }
   
   public MoveEvent(final Tortoise tortoise, final Point oldPosition) {
     super();
@@ -35,15 +28,17 @@ public class MoveEvent implements ITortoiseEvent {
   }
   
   @Override
+  @Pure
   public int hashCode() {
     final int prime = 31;
     int result = 1;
-    result = prime * result + ((_tortoise== null) ? 0 : _tortoise.hashCode());
-    result = prime * result + ((_oldPosition== null) ? 0 : _oldPosition.hashCode());
+    result = prime * result + ((this._tortoise== null) ? 0 : this._tortoise.hashCode());
+    result = prime * result + ((this._oldPosition== null) ? 0 : this._oldPosition.hashCode());
     return result;
   }
   
   @Override
+  @Pure
   public boolean equals(final Object obj) {
     if (this == obj)
       return true;
@@ -52,22 +47,33 @@ public class MoveEvent implements ITortoiseEvent {
     if (getClass() != obj.getClass())
       return false;
     MoveEvent other = (MoveEvent) obj;
-    if (_tortoise == null) {
+    if (this._tortoise == null) {
       if (other._tortoise != null)
         return false;
-    } else if (!_tortoise.equals(other._tortoise))
+    } else if (!this._tortoise.equals(other._tortoise))
       return false;
-    if (_oldPosition == null) {
+    if (this._oldPosition == null) {
       if (other._oldPosition != null)
         return false;
-    } else if (!_oldPosition.equals(other._oldPosition))
+    } else if (!this._oldPosition.equals(other._oldPosition))
       return false;
     return true;
   }
   
   @Override
+  @Pure
   public String toString() {
     String result = new ToStringHelper().toString(this);
     return result;
+  }
+  
+  @Pure
+  public Tortoise getTortoise() {
+    return this._tortoise;
+  }
+  
+  @Pure
+  public Point getOldPosition() {
+    return this._oldPosition;
   }
 }

@@ -40,17 +40,16 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 	 * The main entry point for this class.
 	 */
 	def dispatch void infer(Model model, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
-		acceptor.accept(model.toClass(model.javaClassName))
-			.initializeLater [
-				superTypes += model.newTypeRef(HTTP_SERVLET)
+		acceptor.accept(model.toClass(model.javaClassName)) [
+				superTypes += typeRef(HTTP_SERVLET)
 				// get rid of the annoying serial warning
-				annotations += model.toAnnotation(SuppressWarnings, "serial")
+				annotations += annotationRef(SuppressWarnings, "serial")
 
 				// translate the dependencies to fields annotated with @Inject
 				for (field : model.declarations.filter(Dependency)) {
 					members += field.toField(field.name, field.type) [
-						annotations += field.toAnnotation(Inject)
-						field.annotations.translateAnnotationsTo(it)
+						annotations += annotationRef(Inject)
+						addAnnotations(field.annotations)
 					]
 				}
 
@@ -98,11 +97,11 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 	 * Gives scope and live to the expression.
 	 */
 	def protected toRouteCallMethod(Route route) {
-		route.toMethod(route.nameOfRouteMethod, route.newTypeRef(Void.TYPE)) [
-			parameters += route.toParameter("request", route.newTypeRef(HTTP_REQUEST))
-			parameters += route.toParameter("response", route.newTypeRef(HTTP_RESPONSE))
+		route.toMethod(route.nameOfRouteMethod, typeRef(void)) [
+			parameters += route.toParameter("request", typeRef(HTTP_REQUEST))
+			parameters += route.toParameter("response", typeRef(HTTP_RESPONSE))
 			for (variable : route.url.variables) {
-				parameters += variable.toParameter(variable.name, route.newTypeRef(String))
+				parameters += variable.toParameter(variable.name, typeRef(String))
 			}
 			body = route.call
 		]
@@ -112,7 +111,7 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 	 * Creates a field for the URL pattern
 	 */
 	def protected toRoutePatternField(Route route) {
-		route.url.toField("_pattern" + route.index , route.newTypeRef(Pattern)) [
+		route.url.toField("_pattern" + route.index , typeRef(Pattern)) [
 			static = true
 			initializer = '''«Pattern».compile("«getRegExPattern(route.url.node.text.trim, route.url.variables)»")'''
 		]
@@ -123,11 +122,11 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 	 * Gives scope and live to the expression.
 	 */
 	def protected toRouteConditionMethod(Route route) {
-		route.toMethod(route.nameOfRouteMethod + "Condition", route.newTypeRef(Boolean.TYPE)) [
-			parameters += route.toParameter("request", route.newTypeRef(HTTP_REQUEST))
-			parameters += route.toParameter("response", route.newTypeRef(HTTP_RESPONSE))
+		route.toMethod(route.nameOfRouteMethod + "Condition", typeRef(Boolean.TYPE)) [
+			parameters += route.toParameter("request", typeRef(HTTP_REQUEST))
+			parameters += route.toParameter("response", typeRef(HTTP_RESPONSE))
 			for (variable : route.url.variables){
-				parameters += variable.toParameter(variable.name, route.newTypeRef(String))
+				parameters += variable.toParameter(variable.name, typeRef(String))
 			}
 			body = route.condition
 		]
@@ -137,10 +136,10 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 	 * Creates a servlet request handling method for the given routes
 	 */
 	def protected toRequestHandlerMethod(Model model, String name, Iterable<Route> routes) {
-		model.toMethod(name,model.newTypeRef(Void.TYPE)) [
-			annotations += model.toAnnotation(Override)
-			parameters += model.toParameter("request", model.newTypeRef(HTTP_REQUEST))
-			parameters += model.toParameter("response", model.newTypeRef(HTTP_RESPONSE))
+		model.toMethod(name, typeRef(Void.TYPE)) [
+			annotations += annotationRef(Override)
+			parameters += model.toParameter("request", typeRef(HTTP_REQUEST))
+			parameters += model.toParameter("response", typeRef(HTTP_RESPONSE))
 			body = '''
 				String url =  request.getRequestURL().toString();
 				«FOR route : routes»

@@ -50,7 +50,7 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
       IWorkbenchPartSite _site = part.getSite();
       String _id = _site.getId();
       boolean _equals = Objects.equal(_id, "org.xtext.tortoiseshell.TortoiseShell");
-      _and = ((part instanceof XtextEditor) && _equals);
+      _and = _equals;
     }
     return _and;
   }
@@ -171,27 +171,26 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
             } else {
               int _kind = it.getKind();
               boolean _equals_1 = (_kind == IResourceDelta.CHANGED);
-              _and_1 = (_equals && _equals_1);
+              _and_1 = _equals_1;
             }
             if (!_and_1) {
               _and = false;
             } else {
               int _flags = it.getFlags();
               boolean _equals_2 = (_flags == IResourceDelta.CONTENT);
-              _and = (_and_1 && _equals_2);
+              _and = _equals_2;
             }
             if (_and) {
               boolean _xblockexpression = false;
               {
                 TortoisePartListener.this.view.show(TortoisePartListener.this.currentTortoiseEditor, (-10));
-                _xblockexpression = (false);
+                _xblockexpression = false;
               }
               _xifexpression = _xblockexpression;
             } else {
               IResource _resource_1 = it.getResource();
               IPath _fullPath = _resource_1.getFullPath();
-              boolean _isPrefixOf = _fullPath.isPrefixOf(editorFilePath);
-              _xifexpression = _isPrefixOf;
+              _xifexpression = _fullPath.isPrefixOf(editorFilePath);
             }
             return _xifexpression;
           }
@@ -211,8 +210,7 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
     }
     if ((_editorInput instanceof IFileEditorInput)) {
       IEditorInput _editorInput_1 = editor.getEditorInput();
-      IFile _file = ((IFileEditorInput) _editorInput_1).getFile();
-      _xifexpression = _file;
+      _xifexpression = ((IFileEditorInput) _editorInput_1).getFile();
     } else {
       _xifexpression = null;
     }
@@ -247,7 +245,7 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
           _textWidget_1.addCaretListener(this);
         }
       }
-      _xblockexpression = (this.isStopMode);
+      _xblockexpression = this.isStopMode;
     }
     return _xblockexpression;
   }

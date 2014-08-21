@@ -22,7 +22,6 @@ import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor;
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder;
 import org.eclipse.xtext.xbase.lib.Extension;
-import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.xtext.tortoiseshell.lib.Tortoise;
 import org.xtext.tortoiseshell.tortoiseShell.Program;
@@ -38,24 +37,23 @@ public class TortoiseShellJvmModelInferrer extends AbstractModelInferrer {
   
   protected void _infer(final Program program, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {
     JvmGenericType _class = this._jvmTypesBuilder.toClass(program, TortoiseShellJvmModelInferrer.INFERRED_CLASS_NAME);
-    IJvmDeclaredTypeAcceptor.IPostIndexingInitializing<JvmGenericType> _accept = acceptor.<JvmGenericType>accept(_class);
     final Procedure1<JvmGenericType> _function = new Procedure1<JvmGenericType>() {
       public void apply(final JvmGenericType it) {
         EList<JvmTypeReference> _superTypes = it.getSuperTypes();
-        JvmTypeReference _newTypeRef = TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(program, Tortoise.class);
-        TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.<JvmTypeReference>operator_add(_superTypes, _newTypeRef);
+        JvmTypeReference _typeRef = TortoiseShellJvmModelInferrer.this._typeReferenceBuilder.typeRef(Tortoise.class);
+        TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.<JvmTypeReference>operator_add(_superTypes, _typeRef);
         XBlockExpression _body = program.getBody();
         boolean _notEquals = (!Objects.equal(_body, null));
         if (_notEquals) {
           EList<JvmMember> _members = it.getMembers();
-          JvmTypeReference _newTypeRef_1 = TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(program, Void.TYPE);
+          JvmTypeReference _typeRef_1 = TortoiseShellJvmModelInferrer.this._typeReferenceBuilder.typeRef(void.class);
           final Procedure1<JvmOperation> _function = new Procedure1<JvmOperation>() {
             public void apply(final JvmOperation it) {
               XBlockExpression _body = program.getBody();
               TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _body);
             }
           };
-          JvmOperation _method = TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.toMethod(program, "main", _newTypeRef_1, _function);
+          JvmOperation _method = TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.toMethod(program, "main", _typeRef_1, _function);
           TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members, _method);
         }
         EList<SubProgram> _subPrograms = program.getSubPrograms();
@@ -69,7 +67,7 @@ public class TortoiseShellJvmModelInferrer extends AbstractModelInferrer {
           } else {
             XBlockExpression _body_1 = subProgram.getBody();
             JvmTypeReference _inferredType = TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.inferredType(_body_1);
-            _elvis = ObjectExtensions.<JvmTypeReference>operator_elvis(_returnType, _inferredType);
+            _elvis = _inferredType;
           }
           final Procedure1<JvmOperation> _function_1 = new Procedure1<JvmOperation>() {
             public void apply(final JvmOperation it) {
@@ -90,7 +88,7 @@ public class TortoiseShellJvmModelInferrer extends AbstractModelInferrer {
         }
       }
     };
-    _accept.initializeLater(_function);
+    acceptor.<JvmGenericType>accept(_class, _function);
   }
   
   public void infer(final EObject program, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {

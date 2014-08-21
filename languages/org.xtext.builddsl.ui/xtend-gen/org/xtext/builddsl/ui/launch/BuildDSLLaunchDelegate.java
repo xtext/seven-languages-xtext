@@ -38,7 +38,7 @@ public class BuildDSLLaunchDelegate extends JavaLaunchDelegate {
               } else {
                 int _kind = event.getKind();
                 boolean _equals = (_kind == DebugEvent.TERMINATE);
-                _and = ((_source instanceof IProcess) && _equals);
+                _and = _equals;
               }
               if (_and) {
                 Object _source_1 = event.getSource();

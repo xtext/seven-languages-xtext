@@ -29,15 +29,15 @@ public class WrappingUtil {
         }
         final String javaClassName = _string;
         ClassLoader _classLoader = WrappingUtil.getClassLoader();
-        final Class<? extends Object> javaClass = _classLoader.loadClass(javaClassName);
+        final Class<?> javaClass = _classLoader.loadClass(javaClassName);
         IMongoBean _xifexpression = null;
         boolean _isAssignableFrom = IMongoBean.class.isAssignableFrom(javaClass);
         if (_isAssignableFrom) {
           IMongoBean _xblockexpression_1 = null;
           {
-            final Constructor<? extends Object> constructor = javaClass.getConstructor(DBObject.class);
+            final Constructor<?> constructor = javaClass.getConstructor(DBObject.class);
             Object _newInstance = constructor.newInstance(dbObject);
-            _xblockexpression_1 = (((IMongoBean) _newInstance));
+            _xblockexpression_1 = ((IMongoBean) _newInstance);
           }
           _xifexpression = _xblockexpression_1;
         } else {
@@ -48,10 +48,9 @@ public class WrappingUtil {
           String _simpleName = IMongoBean.class.getSimpleName();
           _builder.append(_simpleName, "");
           _builder.append("\'.");
-          IllegalStateException _illegalStateException = new IllegalStateException(_builder.toString());
-          throw _illegalStateException;
+          throw new IllegalStateException(_builder.toString());
         }
-        _xblockexpression = (_xifexpression);
+        _xblockexpression = _xifexpression;
       }
       return _xblockexpression;
     } catch (Throwable _e) {
@@ -67,11 +66,9 @@ public class WrappingUtil {
   public static DBObject unwrap(final Object wrapper) {
     DBObject _xifexpression = null;
     if ((!(wrapper instanceof IMongoBean))) {
-      IllegalArgumentException _illegalArgumentException = new IllegalArgumentException("Invalid type");
-      throw _illegalArgumentException;
+      throw new IllegalArgumentException("Invalid type");
     } else {
-      DBObject _dbObject = ((IMongoBean) wrapper).getDbObject();
-      _xifexpression = _dbObject;
+      _xifexpression = ((IMongoBean) wrapper).getDbObject();
     }
     return _xifexpression;
   }
@@ -83,7 +80,6 @@ public class WrappingUtil {
   }
   
   public static ClassLoader setClassLoader(final ClassLoader classLoader) {
-    ClassLoader __classLoader = WrappingUtil._classLoader = classLoader;
-    return __classLoader;
+    return WrappingUtil._classLoader = classLoader;
   }
 }

@@ -26,6 +26,7 @@ import org.eclipse.xtext.common.types.JvmFormalParameter;
 import org.eclipse.xtext.common.types.JvmGenericType;
 import org.eclipse.xtext.common.types.JvmMember;
 import org.eclipse.xtext.common.types.JvmOperation;
+import org.eclipse.xtext.common.types.JvmType;
 import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.eclipse.xtext.common.types.util.Primitives;
 import org.eclipse.xtext.naming.IQualifiedNameProvider;
@@ -82,14 +83,13 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
     for (final MongoBean bean : _eAllOfType) {
       QualifiedName _fullyQualifiedName = this._iQualifiedNameProvider.getFullyQualifiedName(bean);
       JvmGenericType _class = this._jvmTypesBuilder.toClass(bean, _fullyQualifiedName);
-      IJvmDeclaredTypeAcceptor.IPostIndexingInitializing<JvmGenericType> _accept = acceptor.<JvmGenericType>accept(_class);
       final Procedure1<JvmGenericType> _function = new Procedure1<JvmGenericType>() {
         public void apply(final JvmGenericType it) {
           String _documentation = MongoBeansJvmModelInferrer.this._jvmTypesBuilder.getDocumentation(bean);
           MongoBeansJvmModelInferrer.this._jvmTypesBuilder.setDocumentation(it, _documentation);
           EList<JvmTypeReference> _superTypes = it.getSuperTypes();
-          JvmTypeReference _newTypeRef = MongoBeansJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(bean, IMongoBean.class);
-          MongoBeansJvmModelInferrer.this._jvmTypesBuilder.<JvmTypeReference>operator_add(_superTypes, _newTypeRef);
+          JvmTypeReference _typeRef = MongoBeansJvmModelInferrer.this._typeReferenceBuilder.typeRef(IMongoBean.class);
+          MongoBeansJvmModelInferrer.this._jvmTypesBuilder.<JvmTypeReference>operator_add(_superTypes, _typeRef);
           MongoBeansJvmModelInferrer.this.addConstructors(it, bean);
           MongoBeansJvmModelInferrer.this.addDbObjectProperty(it, bean);
           EList<AbstractFeature> _features = bean.getFeatures();
@@ -115,7 +115,7 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
           }
         }
       };
-      _accept.initializeLater(_function);
+      acceptor.<JvmGenericType>accept(_class, _function);
     }
   }
   
@@ -135,8 +135,8 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
           _builder.append("}.");
           MongoBeansJvmModelInferrer.this._jvmTypesBuilder.setDocumentation(it, _builder.toString());
           EList<JvmFormalParameter> _parameters = it.getParameters();
-          JvmTypeReference _newTypeRef = MongoBeansJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(bean, DBObject.class);
-          JvmFormalParameter _parameter = MongoBeansJvmModelInferrer.this._jvmTypesBuilder.toParameter(it, "dbObject", _newTypeRef);
+          JvmTypeReference _typeRef = MongoBeansJvmModelInferrer.this._typeReferenceBuilder.typeRef(DBObject.class);
+          JvmFormalParameter _parameter = MongoBeansJvmModelInferrer.this._jvmTypesBuilder.toParameter(it, "dbObject", _typeRef);
           MongoBeansJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters, _parameter);
           StringConcatenationClient _client = new StringConcatenationClient() {
             @Override
@@ -180,8 +180,7 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
         }
       };
       JvmConstructor _constructor_1 = this._jvmTypesBuilder.toConstructor(bean, _function_1);
-      boolean _add = this._jvmTypesBuilder.<JvmConstructor>operator_add(_members_1, _constructor_1);
-      _xblockexpression = (_add);
+      _xblockexpression = this._jvmTypesBuilder.<JvmConstructor>operator_add(_members_1, _constructor_1);
     }
     return _xblockexpression;
   }
@@ -190,14 +189,13 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
     boolean _xblockexpression = false;
     {
       EList<JvmMember> _members = inferredType.getMembers();
-      JvmTypeReference _newTypeRef = this._jvmTypesBuilder.newTypeRef(bean, DBObject.class);
-      JvmField _field = this._jvmTypesBuilder.toField(bean, "_dbObject", _newTypeRef);
+      JvmTypeReference _typeRef = this._typeReferenceBuilder.typeRef(DBObject.class);
+      JvmField _field = this._jvmTypesBuilder.toField(bean, "_dbObject", _typeRef);
       this._jvmTypesBuilder.<JvmField>operator_add(_members, _field);
       EList<JvmMember> _members_1 = inferredType.getMembers();
-      JvmTypeReference _newTypeRef_1 = this._jvmTypesBuilder.newTypeRef(bean, DBObject.class);
-      JvmOperation _getter = this._jvmTypesBuilder.toGetter(bean, "dbObject", "_dbObject", _newTypeRef_1);
-      boolean _add = this._jvmTypesBuilder.<JvmOperation>operator_add(_members_1, _getter);
-      _xblockexpression = (_add);
+      JvmTypeReference _typeRef_1 = this._typeReferenceBuilder.typeRef(DBObject.class);
+      JvmOperation _getter = this._jvmTypesBuilder.toGetter(bean, "dbObject", "_dbObject", _typeRef_1);
+      _xblockexpression = this._jvmTypesBuilder.<JvmOperation>operator_add(_members_1, _getter);
     }
     return _xblockexpression;
   }
@@ -237,8 +235,7 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
           }
         };
         JvmOperation _method = this._jvmTypesBuilder.toMethod(property, _plus, _newTypeRef, _function);
-        boolean _add = this._jvmTypesBuilder.<JvmOperation>operator_add(_members, _method);
-        _xifexpression = _add;
+        _xifexpression = this._jvmTypesBuilder.<JvmOperation>operator_add(_members, _method);
       } else {
         boolean _xblockexpression_1 = false;
         {
@@ -289,12 +286,11 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
             }
           };
           JvmOperation _method_1 = this._jvmTypesBuilder.toMethod(property, _plus_2, _newTypeRef_2, _function_1);
-          boolean _add_1 = this._jvmTypesBuilder.<JvmOperation>operator_add(_members_2, _method_1);
-          _xblockexpression_1 = (_add_1);
+          _xblockexpression_1 = this._jvmTypesBuilder.<JvmOperation>operator_add(_members_2, _method_1);
         }
         _xifexpression = _xblockexpression_1;
       }
-      _xblockexpression = (_xifexpression);
+      _xblockexpression = _xifexpression;
     }
     return _xblockexpression;
   }
@@ -316,7 +312,8 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
             protected void appendTo(StringConcatenationClient.TargetStringConcatenation _builder) {
               {
                 JvmTypeReference _jvmType = MongoBeansJvmModelInferrer.this.getJvmType(property);
-                boolean _isMongoBean = MongoBeansJvmModelInferrer.this._mongoTypes.isMongoBean(_jvmType);
+                JvmType _type = _jvmType.getType();
+                boolean _isMongoBean = MongoBeansJvmModelInferrer.this._mongoTypes.isMongoBean(_type);
                 if (_isMongoBean) {
                   _builder.append("return ");
                   _builder.append(WrappingUtil.class, "");
@@ -365,7 +362,8 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
             protected void appendTo(StringConcatenationClient.TargetStringConcatenation _builder) {
               {
                 JvmTypeReference _jvmType = MongoBeansJvmModelInferrer.this.getJvmType(property);
-                boolean _isMongoBean = MongoBeansJvmModelInferrer.this._mongoTypes.isMongoBean(_jvmType);
+                JvmType _type = _jvmType.getType();
+                boolean _isMongoBean = MongoBeansJvmModelInferrer.this._mongoTypes.isMongoBean(_type);
                 if (_isMongoBean) {
                   _builder.append("_dbObject.put(\"");
                   String _name = property.getName();
@@ -394,8 +392,7 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
         }
       };
       JvmOperation _method_1 = this._jvmTypesBuilder.toMethod(property, _plus_1, _newTypeRef, _function_1);
-      boolean _add = this._jvmTypesBuilder.<JvmOperation>operator_add(_members_1, _method_1);
-      _xblockexpression = (_add);
+      _xblockexpression = this._jvmTypesBuilder.<JvmOperation>operator_add(_members_1, _method_1);
     }
     return _xblockexpression;
   }
@@ -410,12 +407,11 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
         MongoBeansJvmModelInferrer.this._jvmTypesBuilder.setDocumentation(it, _documentation);
         EList<JvmFormalParameter> _parameters = it.getParameters();
         EList<JvmFormalParameter> _parameters_1 = operation.getParameters();
-        final Function1<JvmFormalParameter,JvmFormalParameter> _function = new Function1<JvmFormalParameter,JvmFormalParameter>() {
+        final Function1<JvmFormalParameter, JvmFormalParameter> _function = new Function1<JvmFormalParameter, JvmFormalParameter>() {
           public JvmFormalParameter apply(final JvmFormalParameter it) {
             String _name = it.getName();
             JvmTypeReference _parameterType = it.getParameterType();
-            JvmFormalParameter _parameter = MongoBeansJvmModelInferrer.this._jvmTypesBuilder.toParameter(it, _name, _parameterType);
-            return _parameter;
+            return MongoBeansJvmModelInferrer.this._jvmTypesBuilder.toParameter(it, _name, _parameterType);
           }
         };
         List<JvmFormalParameter> _map = ListExtensions.<JvmFormalParameter, JvmFormalParameter>map(_parameters_1, _function);
@@ -425,8 +421,7 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
       }
     };
     JvmOperation _method = this._jvmTypesBuilder.toMethod(operation, _name, _returnType, _function);
-    boolean _add = this._jvmTypesBuilder.<JvmOperation>operator_add(_members, _method);
-    return _add;
+    return this._jvmTypesBuilder.<JvmOperation>operator_add(_members, _method);
   }
   
   protected JvmTypeReference getJvmType(final MongoProperty property) {
@@ -437,11 +432,9 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
       MongoBean _inlineType_1 = property.getInlineType();
       Set<EObject> _jvmElements = this.associations.getJvmElements(_inlineType_1);
       EObject _head = IterableExtensions.<EObject>head(_jvmElements);
-      JvmTypeReference _newTypeRef = this._jvmTypesBuilder.newTypeRef(((JvmDeclaredType) _head));
-      _xifexpression = _newTypeRef;
+      _xifexpression = this._jvmTypesBuilder.newTypeRef(((JvmDeclaredType) _head));
     } else {
-      JvmTypeReference _type = property.getType();
-      _xifexpression = _type;
+      _xifexpression = property.getType();
     }
     return _xifexpression;
   }

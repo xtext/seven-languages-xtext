@@ -11,7 +11,7 @@ public class AbstractRouteValidator extends org.eclipse.xtext.xbase.annotations.
 
 	@Override
 	protected List<EPackage> getEPackages() {
-	    List<EPackage> result = new ArrayList<EPackage>();
+	    List<EPackage> result = new ArrayList<EPackage>(super.getEPackages());
 	    result.add(org.xtext.httprouting.route.RoutePackage.eINSTANCE);
 	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.eclipse.org/Xtext/Xbase/XAnnotations"));
 	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.eclipse.org/xtext/xbase/Xbase"));

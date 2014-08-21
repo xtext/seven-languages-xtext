@@ -18,12 +18,15 @@ import org.junit.runner.RunWith
 import org.xtext.builddsl.BuildDSLInjectorProvider
 
 import static org.junit.Assert.*
+import org.junit.Rule
+import org.eclipse.xtext.junit4.TemporaryFolder
 
 @RunWith(XtextRunner)
 @InjectWith(BuildDSLInjectorProvider)
 class CommandLineTest {
 	
 	@Inject extension CompilationTestHelper
+	@Rule public TemporaryFolder temporaryFolder
 	
 	@Test def testStringParameterWithDefault() {
 		val file = '''

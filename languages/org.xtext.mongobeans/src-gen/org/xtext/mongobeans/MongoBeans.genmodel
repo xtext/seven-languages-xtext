@@ -4,7 +4,7 @@
     editorDirectory="/org.xtext.mongobeans.editor/src" modelPluginID="org.xtext.mongobeans"
     forceOverwrite="true" modelName="MongoBeans" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="org.xtext.mongobeans.edit"
-    editorPluginID="org.xtext.mongobeans.editor" runtimeVersion="2.5" usedGenPackages="../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xtype">
+    editorPluginID="org.xtext.mongobeans.editor" runtimeVersion="2.5" usedGenPackages="platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel#//xtype">
   <genPackages prefix="MongoBeans" basePackage="org.xtext.mongobeans" disposableProviderFactory="true"
       fileExtensions="mongo" ecorePackage="MongoBeans.ecore#/">
     <genClasses ecoreClass="MongoBeans.ecore#//MongoFile">

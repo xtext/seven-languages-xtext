@@ -14,8 +14,8 @@ import java.util.ArrayList;
 public class InternalMongoBeansLexer extends Lexer {
     public static final int T__68=68;
     public static final int T__69=69;
-    public static final int T__66=66;
     public static final int RULE_ID=4;
+    public static final int T__66=66;
     public static final int T__67=67;
     public static final int T__29=29;
     public static final int T__64=64;
@@ -43,8 +43,8 @@ public class InternalMongoBeansLexer extends Lexer {
     public static final int T__58=58;
     public static final int T__16=16;
     public static final int T__51=51;
-    public static final int T__52=52;
     public static final int T__15=15;
+    public static final int T__52=52;
     public static final int T__53=53;
     public static final int T__18=18;
     public static final int T__54=54;
@@ -69,7 +69,11 @@ public class InternalMongoBeansLexer extends Lexer {
     public static final int T__83=83;
     public static final int T__48=48;
     public static final int T__49=49;
+    public static final int T__85=85;
+    public static final int T__84=84;
     public static final int RULE_SL_COMMENT=10;
+    public static final int T__87=87;
+    public static final int T__86=86;
     public static final int RULE_ML_COMMENT=9;
     public static final int T__30=30;
     public static final int T__31=31;
@@ -216,10 +220,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:16:7: ( '==' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:16:9: '=='
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:16:7: ( '*=' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:16:9: '*='
             {
-            match("=="); 
+            match("*="); 
 
 
             }
@@ -237,10 +241,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:17:7: ( '!=' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:17:9: '!='
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:17:7: ( '/=' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:17:9: '/='
             {
-            match("!="); 
+            match("/="); 
 
 
             }
@@ -258,10 +262,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18:7: ( '===' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18:9: '==='
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18:7: ( '%=' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18:9: '%='
             {
-            match("==="); 
+            match("%="); 
 
 
             }
@@ -279,10 +283,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:19:7: ( '!==' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:19:9: '!=='
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:19:7: ( '==' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:19:9: '=='
             {
-            match("!=="); 
+            match("=="); 
 
 
             }
@@ -300,10 +304,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20:7: ( '>=' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20:9: '>='
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20:7: ( '!=' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20:9: '!='
             {
-            match(">="); 
+            match("!="); 
 
 
             }
@@ -321,10 +325,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:21:7: ( '<=' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:21:9: '<='
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:21:7: ( '===' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:21:9: '==='
             {
-            match("<="); 
+            match("==="); 
 
 
             }
@@ -342,10 +346,11 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:22:7: ( '>' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:22:9: '>'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:22:7: ( '!==' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:22:9: '!=='
             {
-            match('>'); 
+            match("!=="); 
+
 
             }
 
@@ -362,10 +367,11 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:23:7: ( '<' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:23:9: '<'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:23:7: ( '>=' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:23:9: '>='
             {
-            match('<'); 
+            match(">="); 
+
 
             }
 
@@ -382,11 +388,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:24:7: ( '->' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:24:9: '->'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:24:7: ( '>' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:24:9: '>'
             {
-            match("->"); 
-
+            match('>'); 
 
             }
 
@@ -403,11 +408,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:25:7: ( '..<' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:25:9: '..<'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:25:7: ( '<' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:25:9: '<'
             {
-            match("..<"); 
-
+            match('<'); 
 
             }
 
@@ -424,10 +428,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:26:7: ( '..' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:26:9: '..'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:26:7: ( '->' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:26:9: '->'
             {
-            match(".."); 
+            match("->"); 
 
 
             }
@@ -445,10 +449,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:27:7: ( '=>' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:27:9: '=>'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:27:7: ( '..<' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:27:9: '..<'
             {
-            match("=>"); 
+            match("..<"); 
 
 
             }
@@ -466,10 +470,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:28:7: ( '<>' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:28:9: '<>'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:28:7: ( '..' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:28:9: '..'
             {
-            match("<>"); 
+            match(".."); 
 
 
             }
@@ -487,10 +491,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:29:7: ( '?:' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:29:9: '?:'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:29:7: ( '=>' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:29:9: '=>'
             {
-            match("?:"); 
+            match("=>"); 
 
 
             }
@@ -508,10 +512,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:30:7: ( '<=>' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:30:9: '<=>'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:30:7: ( '<>' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:30:9: '<>'
             {
-            match("<=>"); 
+            match("<>"); 
 
 
             }
@@ -529,10 +533,11 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:31:7: ( '+' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:31:9: '+'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:31:7: ( '?:' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:31:9: '?:'
             {
-            match('+'); 
+            match("?:"); 
+
 
             }
 
@@ -549,10 +554,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:32:7: ( '-' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:32:9: '-'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:32:7: ( '+' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:32:9: '+'
             {
-            match('-'); 
+            match('+'); 
 
             }
 
@@ -569,10 +574,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:33:7: ( '*' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:33:9: '*'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:33:7: ( '-' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:33:9: '-'
             {
-            match('*'); 
+            match('-'); 
 
             }
 
@@ -589,11 +594,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:34:7: ( '**' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:34:9: '**'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:34:7: ( '*' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:34:9: '*'
             {
-            match("**"); 
-
+            match('*'); 
 
             }
 
@@ -610,10 +614,11 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:35:7: ( '/' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:35:9: '/'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:35:7: ( '**' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:35:9: '**'
             {
-            match('/'); 
+            match("**"); 
+
 
             }
 
@@ -630,10 +635,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:36:7: ( '%' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:36:9: '%'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:36:7: ( '/' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:36:9: '/'
             {
-            match('%'); 
+            match('/'); 
 
             }
 
@@ -650,10 +655,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:37:7: ( '!' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:37:9: '!'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:37:7: ( '%' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:37:9: '%'
             {
-            match('!'); 
+            match('%'); 
 
             }
 
@@ -670,10 +675,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:38:7: ( '.' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:38:9: '.'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:38:7: ( '!' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:38:9: '!'
             {
-            match('.'); 
+            match('!'); 
 
             }
 
@@ -690,10 +695,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:39:7: ( 'val' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:39:9: 'val'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:39:7: ( '++' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:39:9: '++'
             {
-            match("val"); 
+            match("++"); 
 
 
             }
@@ -711,10 +716,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:40:7: ( 'extends' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:40:9: 'extends'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:40:7: ( '--' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:40:9: '--'
             {
-            match("extends"); 
+            match("--"); 
 
 
             }
@@ -732,11 +737,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:41:7: ( 'static' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:41:9: 'static'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:41:7: ( '.' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:41:9: '.'
             {
-            match("static"); 
-
+            match('.'); 
 
             }
 
@@ -753,10 +757,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__44;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:42:7: ( 'import' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:42:9: 'import'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:42:7: ( 'val' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:42:9: 'val'
             {
-            match("import"); 
+            match("val"); 
 
 
             }
@@ -774,10 +778,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:43:7: ( 'extension' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:43:9: 'extension'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:43:7: ( 'extends' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:43:9: 'extends'
             {
-            match("extension"); 
+            match("extends"); 
 
 
             }
@@ -795,10 +799,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__46;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:44:7: ( 'super' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:44:9: 'super'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:44:7: ( 'static' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:44:9: 'static'
             {
-            match("super"); 
+            match("static"); 
 
 
             }
@@ -816,10 +820,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:45:7: ( 'false' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:45:9: 'false'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:45:7: ( 'import' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:45:9: 'import'
             {
-            match("false"); 
+            match("import"); 
 
 
             }
@@ -837,10 +841,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:46:7: ( 'package' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:46:9: 'package'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:46:7: ( 'extension' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:46:9: 'extension'
             {
-            match("package"); 
+            match("extension"); 
 
 
             }
@@ -858,10 +862,11 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:47:7: ( '{' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:47:9: '{'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:47:7: ( 'super' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:47:9: 'super'
             {
-            match('{'); 
+            match("super"); 
+
 
             }
 
@@ -878,10 +883,11 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__50;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:48:7: ( '}' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:48:9: '}'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:48:7: ( 'false' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:48:9: 'false'
             {
-            match('}'); 
+            match("false"); 
+
 
             }
 
@@ -898,10 +904,11 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__51;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:49:7: ( ')' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:49:9: ')'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:49:7: ( 'package' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:49:9: 'package'
             {
-            match(')'); 
+            match("package"); 
+
 
             }
 
@@ -918,10 +925,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__52;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:50:7: ( '(' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:50:9: '('
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:50:7: ( '{' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:50:9: '{'
             {
-            match('('); 
+            match('{'); 
 
             }
 
@@ -938,10 +945,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:51:7: ( ',' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:51:9: ','
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:51:7: ( '}' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:51:9: '}'
             {
-            match(','); 
+            match('}'); 
 
             }
 
@@ -958,11 +965,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:52:7: ( 'instanceof' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:52:9: 'instanceof'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:52:7: ( ')' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:52:9: ')'
             {
-            match("instanceof"); 
-
+            match(')'); 
 
             }
 
@@ -979,11 +985,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__55;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:53:7: ( 'as' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:53:9: 'as'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:53:7: ( '(' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:53:9: '('
             {
-            match("as"); 
-
+            match('('); 
 
             }
 
@@ -1000,10 +1005,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__56;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:54:7: ( '#' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:54:9: '#'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:54:7: ( ',' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:54:9: ','
             {
-            match('#'); 
+            match(','); 
 
             }
 
@@ -1020,10 +1025,11 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__57;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:55:7: ( '[' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:55:9: '['
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:55:7: ( 'instanceof' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:55:9: 'instanceof'
             {
-            match('['); 
+            match("instanceof"); 
+
 
             }
 
@@ -1040,10 +1046,11 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__58;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:56:7: ( ']' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:56:9: ']'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:56:7: ( 'as' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:56:9: 'as'
             {
-            match(']'); 
+            match("as"); 
+
 
             }
 
@@ -1060,10 +1067,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__59;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:57:7: ( ';' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:57:9: ';'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:57:7: ( '#' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:57:9: '#'
             {
-            match(';'); 
+            match('#'); 
 
             }
 
@@ -1080,11 +1087,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__60;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:58:7: ( 'if' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:58:9: 'if'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:58:7: ( '[' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:58:9: '['
             {
-            match("if"); 
-
+            match('['); 
 
             }
 
@@ -1101,11 +1107,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__61;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:59:7: ( 'else' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:59:9: 'else'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:59:7: ( ']' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:59:9: ']'
             {
-            match("else"); 
-
+            match(']'); 
 
             }
 
@@ -1122,11 +1127,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__62;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:60:7: ( 'switch' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:60:9: 'switch'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:60:7: ( ';' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:60:9: ';'
             {
-            match("switch"); 
-
+            match(';'); 
 
             }
 
@@ -1143,10 +1147,11 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__63;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:61:7: ( ':' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:61:9: ':'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:61:7: ( 'if' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:61:9: 'if'
             {
-            match(':'); 
+            match("if"); 
+
 
             }
 
@@ -1163,10 +1168,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__64;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:62:7: ( 'default' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:62:9: 'default'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:62:7: ( 'else' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:62:9: 'else'
             {
-            match("default"); 
+            match("else"); 
 
 
             }
@@ -1184,10 +1189,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__65;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:63:7: ( 'case' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:63:9: 'case'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:63:7: ( 'switch' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:63:9: 'switch'
             {
-            match("case"); 
+            match("switch"); 
 
 
             }
@@ -1205,11 +1210,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__66;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:64:7: ( 'for' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:64:9: 'for'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:64:7: ( ':' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:64:9: ':'
             {
-            match("for"); 
-
+            match(':'); 
 
             }
 
@@ -1226,10 +1230,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__67;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:65:7: ( 'while' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:65:9: 'while'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:65:7: ( 'default' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:65:9: 'default'
             {
-            match("while"); 
+            match("default"); 
 
 
             }
@@ -1247,10 +1251,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__68;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:66:7: ( 'do' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:66:9: 'do'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:66:7: ( 'case' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:66:9: 'case'
             {
-            match("do"); 
+            match("case"); 
 
 
             }
@@ -1268,10 +1272,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__69;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:67:7: ( 'new' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:67:9: 'new'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:67:7: ( 'for' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:67:9: 'for'
             {
-            match("new"); 
+            match("for"); 
 
 
             }
@@ -1289,10 +1293,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__70;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:68:7: ( 'null' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:68:9: 'null'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:68:7: ( 'while' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:68:9: 'while'
             {
-            match("null"); 
+            match("while"); 
 
 
             }
@@ -1310,10 +1314,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__71;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:69:7: ( 'typeof' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:69:9: 'typeof'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:69:7: ( 'do' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:69:9: 'do'
             {
-            match("typeof"); 
+            match("do"); 
 
 
             }
@@ -1331,10 +1335,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__72;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:70:7: ( 'throw' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:70:9: 'throw'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:70:7: ( 'new' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:70:9: 'new'
             {
-            match("throw"); 
+            match("new"); 
 
 
             }
@@ -1352,10 +1356,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__73;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:71:7: ( 'return' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:71:9: 'return'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:71:7: ( 'null' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:71:9: 'null'
             {
-            match("return"); 
+            match("null"); 
 
 
             }
@@ -1373,10 +1377,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__74;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:72:7: ( 'try' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:72:9: 'try'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:72:7: ( 'typeof' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:72:9: 'typeof'
             {
-            match("try"); 
+            match("typeof"); 
 
 
             }
@@ -1394,10 +1398,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__75;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:73:7: ( 'finally' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:73:9: 'finally'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:73:7: ( 'throw' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:73:9: 'throw'
             {
-            match("finally"); 
+            match("throw"); 
 
 
             }
@@ -1415,10 +1419,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__76;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:74:7: ( 'catch' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:74:9: 'catch'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:74:7: ( 'return' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:74:9: 'return'
             {
-            match("catch"); 
+            match("return"); 
 
 
             }
@@ -1436,10 +1440,11 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__77;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:75:7: ( '?' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:75:9: '?'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:75:7: ( 'try' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:75:9: 'try'
             {
-            match('?'); 
+            match("try"); 
+
 
             }
 
@@ -1456,10 +1461,11 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__78;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:76:7: ( '&' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:76:9: '&'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:76:7: ( 'finally' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:76:9: 'finally'
             {
-            match('&'); 
+            match("finally"); 
+
 
             }
 
@@ -1476,10 +1482,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__79;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:77:7: ( '::' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:77:9: '::'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:77:7: ( 'synchronized' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:77:9: 'synchronized'
             {
-            match("::"); 
+            match("synchronized"); 
 
 
             }
@@ -1497,10 +1503,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__80;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:78:7: ( '?.' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:78:9: '?.'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:78:7: ( 'catch' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:78:9: 'catch'
             {
-            match("?."); 
+            match("catch"); 
 
 
             }
@@ -1518,10 +1524,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__81;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:79:7: ( '|' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:79:9: '|'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:79:7: ( '?' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:79:9: '?'
             {
-            match('|'); 
+            match('?'); 
 
             }
 
@@ -1538,11 +1544,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__82;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:80:7: ( 'var' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:80:9: 'var'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:80:7: ( '&' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:80:9: '&'
             {
-            match("var"); 
-
+            match('&'); 
 
             }
 
@@ -1559,10 +1564,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = T__83;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:81:7: ( 'true' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:81:9: 'true'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:81:7: ( '::' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:81:9: '::'
             {
-            match("true"); 
+            match("::"); 
 
 
             }
@@ -1575,15 +1580,98 @@ public class InternalMongoBeansLexer extends Lexer {
     }
     // $ANTLR end "T__83"
 
+    // $ANTLR start "T__84"
+    public final void mT__84() throws RecognitionException {
+        try {
+            int _type = T__84;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:82:7: ( '?.' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:82:9: '?.'
+            {
+            match("?."); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__84"
+
+    // $ANTLR start "T__85"
+    public final void mT__85() throws RecognitionException {
+        try {
+            int _type = T__85;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:83:7: ( '|' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:83:9: '|'
+            {
+            match('|'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__85"
+
+    // $ANTLR start "T__86"
+    public final void mT__86() throws RecognitionException {
+        try {
+            int _type = T__86;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:84:7: ( 'var' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:84:9: 'var'
+            {
+            match("var"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__86"
+
+    // $ANTLR start "T__87"
+    public final void mT__87() throws RecognitionException {
+        try {
+            int _type = T__87;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:85:7: ( 'true' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:85:9: 'true'
+            {
+            match("true"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__87"
+
     // $ANTLR start "RULE_HEX"
     public final void mRULE_HEX() throws RecognitionException {
         try {
             int _type = RULE_HEX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:17994:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:17994:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20574:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20574:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             {
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:17994:12: ( '0x' | '0X' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20574:12: ( '0x' | '0X' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1611,7 +1699,7 @@ public class InternalMongoBeansLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:17994:13: '0x'
+                    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20574:13: '0x'
                     {
                     match("0x"); 
 
@@ -1619,7 +1707,7 @@ public class InternalMongoBeansLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:17994:18: '0X'
+                    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20574:18: '0X'
                     {
                     match("0X"); 
 
@@ -1629,7 +1717,7 @@ public class InternalMongoBeansLexer extends Lexer {
 
             }
 
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:17994:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20574:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
             int cnt2=0;
             loop2:
             do {
@@ -1667,7 +1755,7 @@ public class InternalMongoBeansLexer extends Lexer {
                 cnt2++;
             } while (true);
 
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:17994:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20574:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1676,10 +1764,10 @@ public class InternalMongoBeansLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:17994:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20574:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     {
                     match('#'); 
-                    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:17994:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20574:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     int alt3=2;
                     int LA3_0 = input.LA(1);
 
@@ -1697,7 +1785,7 @@ public class InternalMongoBeansLexer extends Lexer {
                     }
                     switch (alt3) {
                         case 1 :
-                            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:17994:64: ( 'b' | 'B' ) ( 'i' | 'I' )
+                            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20574:64: ( 'b' | 'B' ) ( 'i' | 'I' )
                             {
                             if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                                 input.consume();
@@ -1721,7 +1809,7 @@ public class InternalMongoBeansLexer extends Lexer {
                             }
                             break;
                         case 2 :
-                            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:17994:84: ( 'l' | 'L' )
+                            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20574:84: ( 'l' | 'L' )
                             {
                             if ( input.LA(1)=='L'||input.LA(1)=='l' ) {
                                 input.consume();
@@ -1760,11 +1848,11 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:17996:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:17996:12: '0' .. '9' ( '0' .. '9' | '_' )*
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20576:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20576:12: '0' .. '9' ( '0' .. '9' | '_' )*
             {
             matchRange('0','9'); 
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:17996:21: ( '0' .. '9' | '_' )*
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20576:21: ( '0' .. '9' | '_' )*
             loop5:
             do {
                 int alt5=2;
@@ -1813,11 +1901,11 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = RULE_DECIMAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:17998:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:17998:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20578:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20578:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             {
             mRULE_INT(); 
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:17998:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20578:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -1826,7 +1914,7 @@ public class InternalMongoBeansLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:17998:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
+                    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20578:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -1837,7 +1925,7 @@ public class InternalMongoBeansLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:17998:36: ( '+' | '-' )?
+                    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20578:36: ( '+' | '-' )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -1870,7 +1958,7 @@ public class InternalMongoBeansLexer extends Lexer {
 
             }
 
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:17998:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20578:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             int alt8=3;
             int LA8_0 = input.LA(1);
 
@@ -1882,7 +1970,7 @@ public class InternalMongoBeansLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:17998:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
+                    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20578:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
                     {
                     if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                         input.consume();
@@ -1906,7 +1994,7 @@ public class InternalMongoBeansLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:17998:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
+                    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20578:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
                     {
                     if ( input.LA(1)=='D'||input.LA(1)=='F'||input.LA(1)=='L'||input.LA(1)=='d'||input.LA(1)=='f'||input.LA(1)=='l' ) {
                         input.consume();
@@ -1939,10 +2027,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18000:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18000:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20580:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20580:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             {
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18000:11: ( '^' )?
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20580:11: ( '^' )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -1951,7 +2039,7 @@ public class InternalMongoBeansLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18000:11: '^'
+                    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20580:11: '^'
                     {
                     match('^'); 
 
@@ -1969,7 +2057,7 @@ public class InternalMongoBeansLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18000:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20580:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             loop10:
             do {
                 int alt10=2;
@@ -2018,31 +2106,31 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18002:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18002:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20582:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? ) )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20582:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
             {
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18002:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
-            int alt13=2;
-            int LA13_0 = input.LA(1);
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20582:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
+            int alt15=2;
+            int LA15_0 = input.LA(1);
 
-            if ( (LA13_0=='\"') ) {
-                alt13=1;
+            if ( (LA15_0=='\"') ) {
+                alt15=1;
             }
-            else if ( (LA13_0=='\'') ) {
-                alt13=2;
+            else if ( (LA15_0=='\'') ) {
+                alt15=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 13, 0, input);
+                    new NoViableAltException("", 15, 0, input);
 
                 throw nvae;
             }
-            switch (alt13) {
+            switch (alt15) {
                 case 1 :
-                    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18002:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20582:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )?
                     {
                     match('\"'); 
-                    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18002:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20582:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop11:
                     do {
                         int alt11=3;
@@ -2058,23 +2146,15 @@ public class InternalMongoBeansLexer extends Lexer {
 
                         switch (alt11) {
                     	case 1 :
-                    	    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18002:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20582:21: '\\\\' .
                     	    {
                     	    match('\\'); 
-                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
-                    	        input.consume();
-
-                    	    }
-                    	    else {
-                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
-                    	        recover(mse);
-                    	        throw mse;}
-
+                    	    matchAny(); 
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18002:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20582:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2094,47 +2174,56 @@ public class InternalMongoBeansLexer extends Lexer {
                         }
                     } while (true);
 
-                    match('\"'); 
+                    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20582:44: ( '\"' )?
+                    int alt12=2;
+                    int LA12_0 = input.LA(1);
+
+                    if ( (LA12_0=='\"') ) {
+                        alt12=1;
+                    }
+                    switch (alt12) {
+                        case 1 :
+                            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20582:44: '\"'
+                            {
+                            match('\"'); 
+
+                            }
+                            break;
+
+                    }
+
 
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18002:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20582:49: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )?
                     {
                     match('\''); 
-                    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18002:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
-                    loop12:
+                    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20582:54: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    loop13:
                     do {
-                        int alt12=3;
-                        int LA12_0 = input.LA(1);
+                        int alt13=3;
+                        int LA13_0 = input.LA(1);
 
-                        if ( (LA12_0=='\\') ) {
-                            alt12=1;
+                        if ( (LA13_0=='\\') ) {
+                            alt13=1;
                         }
-                        else if ( ((LA12_0>='\u0000' && LA12_0<='&')||(LA12_0>='(' && LA12_0<='[')||(LA12_0>=']' && LA12_0<='\uFFFF')) ) {
-                            alt12=2;
+                        else if ( ((LA13_0>='\u0000' && LA13_0<='&')||(LA13_0>='(' && LA13_0<='[')||(LA13_0>=']' && LA13_0<='\uFFFF')) ) {
+                            alt13=2;
                         }
 
 
-                        switch (alt12) {
+                        switch (alt13) {
                     	case 1 :
-                    	    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18002:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20582:55: '\\\\' .
                     	    {
                     	    match('\\'); 
-                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
-                    	        input.consume();
-
-                    	    }
-                    	    else {
-                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
-                    	        recover(mse);
-                    	        throw mse;}
-
+                    	    matchAny(); 
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18002:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20582:62: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2150,11 +2239,28 @@ public class InternalMongoBeansLexer extends Lexer {
                     	    break;
 
                     	default :
-                    	    break loop12;
+                    	    break loop13;
                         }
                     } while (true);
 
-                    match('\''); 
+                    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20582:79: ( '\\'' )?
+                    int alt14=2;
+                    int LA14_0 = input.LA(1);
+
+                    if ( (LA14_0=='\'') ) {
+                        alt14=1;
+                    }
+                    switch (alt14) {
+                        case 1 :
+                            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20582:79: '\\''
+                            {
+                            match('\''); 
+
+                            }
+                            break;
+
+                    }
+
 
                     }
                     break;
@@ -2177,37 +2283,37 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18004:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18004:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20584:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20584:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18004:24: ( options {greedy=false; } : . )*
-            loop14:
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20584:24: ( options {greedy=false; } : . )*
+            loop16:
             do {
-                int alt14=2;
-                int LA14_0 = input.LA(1);
+                int alt16=2;
+                int LA16_0 = input.LA(1);
 
-                if ( (LA14_0=='*') ) {
-                    int LA14_1 = input.LA(2);
+                if ( (LA16_0=='*') ) {
+                    int LA16_1 = input.LA(2);
 
-                    if ( (LA14_1=='/') ) {
-                        alt14=2;
+                    if ( (LA16_1=='/') ) {
+                        alt16=2;
                     }
-                    else if ( ((LA14_1>='\u0000' && LA14_1<='.')||(LA14_1>='0' && LA14_1<='\uFFFF')) ) {
-                        alt14=1;
+                    else if ( ((LA16_1>='\u0000' && LA16_1<='.')||(LA16_1>='0' && LA16_1<='\uFFFF')) ) {
+                        alt16=1;
                     }
 
 
                 }
-                else if ( ((LA14_0>='\u0000' && LA14_0<=')')||(LA14_0>='+' && LA14_0<='\uFFFF')) ) {
-                    alt14=1;
+                else if ( ((LA16_0>='\u0000' && LA16_0<=')')||(LA16_0>='+' && LA16_0<='\uFFFF')) ) {
+                    alt16=1;
                 }
 
 
-                switch (alt14) {
+                switch (alt16) {
             	case 1 :
-            	    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18004:52: .
+            	    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20584:52: .
             	    {
             	    matchAny(); 
 
@@ -2215,7 +2321,7 @@ public class InternalMongoBeansLexer extends Lexer {
             	    break;
 
             	default :
-            	    break loop14;
+            	    break loop16;
                 }
             } while (true);
 
@@ -2237,25 +2343,25 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18006:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18006:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20586:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20586:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18006:24: (~ ( ( '\\n' | '\\r' ) ) )*
-            loop15:
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20586:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            loop17:
             do {
-                int alt15=2;
-                int LA15_0 = input.LA(1);
+                int alt17=2;
+                int LA17_0 = input.LA(1);
 
-                if ( ((LA15_0>='\u0000' && LA15_0<='\t')||(LA15_0>='\u000B' && LA15_0<='\f')||(LA15_0>='\u000E' && LA15_0<='\uFFFF')) ) {
-                    alt15=1;
+                if ( ((LA17_0>='\u0000' && LA17_0<='\t')||(LA17_0>='\u000B' && LA17_0<='\f')||(LA17_0>='\u000E' && LA17_0<='\uFFFF')) ) {
+                    alt17=1;
                 }
 
 
-                switch (alt15) {
+                switch (alt17) {
             	case 1 :
-            	    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18006:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20586:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2271,31 +2377,31 @@ public class InternalMongoBeansLexer extends Lexer {
             	    break;
 
             	default :
-            	    break loop15;
+            	    break loop17;
                 }
             } while (true);
 
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18006:40: ( ( '\\r' )? '\\n' )?
-            int alt17=2;
-            int LA17_0 = input.LA(1);
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20586:40: ( ( '\\r' )? '\\n' )?
+            int alt19=2;
+            int LA19_0 = input.LA(1);
 
-            if ( (LA17_0=='\n'||LA17_0=='\r') ) {
-                alt17=1;
+            if ( (LA19_0=='\n'||LA19_0=='\r') ) {
+                alt19=1;
             }
-            switch (alt17) {
+            switch (alt19) {
                 case 1 :
-                    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18006:41: ( '\\r' )? '\\n'
+                    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20586:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18006:41: ( '\\r' )?
-                    int alt16=2;
-                    int LA16_0 = input.LA(1);
+                    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20586:41: ( '\\r' )?
+                    int alt18=2;
+                    int LA18_0 = input.LA(1);
 
-                    if ( (LA16_0=='\r') ) {
-                        alt16=1;
+                    if ( (LA18_0=='\r') ) {
+                        alt18=1;
                     }
-                    switch (alt16) {
+                    switch (alt18) {
                         case 1 :
-                            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18006:41: '\\r'
+                            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20586:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2327,22 +2433,22 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18008:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18008:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20588:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20588:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18008:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
-            int cnt18=0;
-            loop18:
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20588:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            int cnt20=0;
+            loop20:
             do {
-                int alt18=2;
-                int LA18_0 = input.LA(1);
+                int alt20=2;
+                int LA20_0 = input.LA(1);
 
-                if ( ((LA18_0>='\t' && LA18_0<='\n')||LA18_0=='\r'||LA18_0==' ') ) {
-                    alt18=1;
+                if ( ((LA20_0>='\t' && LA20_0<='\n')||LA20_0=='\r'||LA20_0==' ') ) {
+                    alt20=1;
                 }
 
 
-                switch (alt18) {
+                switch (alt20) {
             	case 1 :
             	    // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:
             	    {
@@ -2360,12 +2466,12 @@ public class InternalMongoBeansLexer extends Lexer {
             	    break;
 
             	default :
-            	    if ( cnt18 >= 1 ) break loop18;
+            	    if ( cnt20 >= 1 ) break loop20;
                         EarlyExitException eee =
-                            new EarlyExitException(18, input);
+                            new EarlyExitException(20, input);
                         throw eee;
                 }
-                cnt18++;
+                cnt20++;
             } while (true);
 
 
@@ -2384,8 +2490,8 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18010:16: ( . )
-            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:18010:18: .
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20590:16: ( . )
+            // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:20590:18: .
             {
             matchAny(); 
 
@@ -2400,10 +2506,10 @@ public class InternalMongoBeansLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:1:8: ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt19=80;
-        alt19 = dfa19.predict(input);
-        switch (alt19) {
+        // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:1:8: ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt21=84;
+        alt21 = dfa21.predict(input);
+        switch (alt21) {
             case 1 :
                 // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:1:10: T__13
                 {
@@ -2902,63 +3008,91 @@ public class InternalMongoBeansLexer extends Lexer {
                 }
                 break;
             case 72 :
-                // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:1:436: RULE_HEX
+                // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:1:436: T__84
+                {
+                mT__84(); 
+
+                }
+                break;
+            case 73 :
+                // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:1:442: T__85
+                {
+                mT__85(); 
+
+                }
+                break;
+            case 74 :
+                // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:1:448: T__86
+                {
+                mT__86(); 
+
+                }
+                break;
+            case 75 :
+                // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:1:454: T__87
+                {
+                mT__87(); 
+
+                }
+                break;
+            case 76 :
+                // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:1:460: RULE_HEX
                 {
                 mRULE_HEX(); 
 
                 }
                 break;
-            case 73 :
-                // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:1:445: RULE_INT
+            case 77 :
+                // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:1:469: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 74 :
-                // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:1:454: RULE_DECIMAL
+            case 78 :
+                // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:1:478: RULE_DECIMAL
                 {
                 mRULE_DECIMAL(); 
 
                 }
                 break;
-            case 75 :
-                // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:1:467: RULE_ID
+            case 79 :
+                // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:1:491: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 76 :
-                // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:1:475: RULE_STRING
+            case 80 :
+                // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:1:499: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 77 :
-                // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:1:487: RULE_ML_COMMENT
+            case 81 :
+                // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:1:511: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 78 :
-                // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:1:503: RULE_SL_COMMENT
+            case 82 :
+                // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:1:527: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 79 :
-                // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:1:519: RULE_WS
+            case 83 :
+                // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:1:543: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 80 :
-                // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:1:527: RULE_ANY_OTHER
+            case 84 :
+                // ../org.xtext.mongobeans.ui/src-gen/org/xtext/mongobeans/ui/contentassist/antlr/internal/InternalMongoBeans.g:1:551: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -2970,147 +3104,66 @@ public class InternalMongoBeansLexer extends Lexer {
     }
 
 
-    protected DFA19 dfa19 = new DFA19(this);
-    static final String DFA19_eotS =
-        "\1\uffff\1\57\1\61\1\63\1\65\1\70\1\72\1\74\1\77\1\101\1\104\1\106"+
-        "\1\111\1\uffff\6\114\5\uffff\1\114\4\uffff\1\144\6\114\2\161\1\54"+
-        "\1\uffff\2\54\2\uffff\1\166\13\uffff\1\170\3\uffff\1\172\2\uffff"+
-        "\1\174\12\uffff\1\114\1\uffff\7\114\1\u0086\4\114\5\uffff\1\u008b"+
-        "\6\uffff\1\114\1\u008d\10\114\1\uffff\1\161\14\uffff\1\u0098\1\u0099"+
-        "\7\114\1\uffff\1\114\1\u00a2\2\114\1\uffff\1\114\1\uffff\3\114\1"+
-        "\u00a9\3\114\1\u00ad\2\114\2\uffff\1\114\1\u00b1\6\114\1\uffff\3"+
-        "\114\1\u00bb\2\114\1\uffff\1\u00be\2\114\1\uffff\1\u00c1\2\114\1"+
-        "\uffff\1\114\1\u00c6\3\114\1\u00ca\3\114\1\uffff\1\u00ce\1\u00cf"+
-        "\1\uffff\1\114\1\u00d1\1\uffff\3\114\1\u00d5\1\uffff\1\u00d6\1\u00d7"+
-        "\1\114\1\uffff\3\114\2\uffff\1\u00dc\1\uffff\1\u00dd\1\u00de\1\114"+
-        "\3\uffff\1\114\1\u00e1\1\u00e2\1\u00e3\3\uffff\2\114\3\uffff\1\u00e6"+
-        "\1\114\1\uffff\1\u00e8\1\uffff";
-    static final String DFA19_eofS =
-        "\u00e9\uffff";
-    static final String DFA19_minS =
-        "\1\0\1\75\1\174\1\46\5\75\2\56\2\52\1\uffff\1\141\1\154\1\164\1"+
-        "\146\2\141\5\uffff\1\163\4\uffff\1\72\1\145\1\141\1\150\1\145\1"+
-        "\150\1\145\2\60\1\44\1\uffff\2\0\2\uffff\1\75\13\uffff\1\75\3\uffff"+
-        "\1\76\2\uffff\1\74\12\uffff\1\154\1\uffff\1\164\1\163\1\141\1\160"+
-        "\1\151\1\160\1\163\1\44\1\154\1\162\1\156\1\143\5\uffff\1\44\6\uffff"+
-        "\1\146\1\44\1\163\1\151\1\167\1\154\1\160\1\162\1\165\1\164\1\uffff"+
-        "\1\60\14\uffff\2\44\2\145\1\164\1\145\1\164\1\157\1\164\1\uffff"+
-        "\1\163\1\44\1\141\1\153\1\uffff\1\141\1\uffff\1\145\1\143\1\154"+
-        "\1\44\1\154\1\145\1\157\1\44\1\145\1\165\2\uffff\1\156\1\44\1\151"+
-        "\1\162\1\143\1\162\1\141\1\145\1\uffff\1\154\1\141\1\165\1\44\1"+
-        "\150\1\145\1\uffff\1\44\1\157\1\167\1\uffff\1\44\1\162\1\144\1\uffff"+
-        "\1\143\1\44\1\150\1\164\1\156\1\44\1\154\1\147\1\154\1\uffff\2\44"+
-        "\1\uffff\1\146\1\44\1\uffff\1\156\1\163\1\151\1\44\1\uffff\2\44"+
-        "\1\143\1\uffff\1\171\1\145\1\164\2\uffff\1\44\1\uffff\2\44\1\157"+
-        "\3\uffff\1\145\3\44\3\uffff\1\156\1\157\3\uffff\1\44\1\146\1\uffff"+
-        "\1\44\1\uffff";
-    static final String DFA19_maxS =
-        "\1\uffff\1\76\1\174\1\46\1\75\1\76\2\75\1\76\1\56\1\72\1\52\1\57"+
-        "\1\uffff\1\141\1\170\1\167\1\156\1\157\1\141\5\uffff\1\163\4\uffff"+
-        "\1\72\1\157\1\141\1\150\1\165\1\171\1\145\1\170\1\154\1\172\1\uffff"+
-        "\2\uffff\2\uffff\1\75\13\uffff\1\75\3\uffff\1\76\2\uffff\1\74\12"+
-        "\uffff\1\162\1\uffff\1\164\1\163\1\141\1\160\1\151\1\160\1\163\1"+
-        "\172\1\154\1\162\1\156\1\143\5\uffff\1\172\6\uffff\1\146\1\172\1"+
-        "\164\1\151\1\167\1\154\1\160\1\162\1\171\1\164\1\uffff\1\154\14"+
-        "\uffff\2\172\2\145\1\164\1\145\1\164\1\157\1\164\1\uffff\1\163\1"+
-        "\172\1\141\1\153\1\uffff\1\141\1\uffff\1\145\1\143\1\154\1\172\1"+
-        "\154\1\145\1\157\1\172\1\145\1\165\2\uffff\1\156\1\172\1\151\1\162"+
-        "\1\143\1\162\1\141\1\145\1\uffff\1\154\1\141\1\165\1\172\1\150\1"+
-        "\145\1\uffff\1\172\1\157\1\167\1\uffff\1\172\1\162\1\163\1\uffff"+
-        "\1\143\1\172\1\150\1\164\1\156\1\172\1\154\1\147\1\154\1\uffff\2"+
-        "\172\1\uffff\1\146\1\172\1\uffff\1\156\1\163\1\151\1\172\1\uffff"+
-        "\2\172\1\143\1\uffff\1\171\1\145\1\164\2\uffff\1\172\1\uffff\2\172"+
-        "\1\157\3\uffff\1\145\3\172\3\uffff\1\156\1\157\3\uffff\1\172\1\146"+
-        "\1\uffff\1\172\1\uffff";
-    static final String DFA19_acceptS =
-        "\15\uffff\1\32\6\uffff\1\45\1\46\1\47\1\50\1\51\1\uffff\1\54\1\55"+
-        "\1\56\1\57\12\uffff\1\113\2\uffff\1\117\1\120\1\uffff\1\21\1\1\1"+
-        "\2\1\105\1\3\1\102\1\4\1\25\1\5\1\16\1\26\1\uffff\1\33\1\12\1\14"+
-        "\1\uffff\1\22\1\15\1\uffff\1\34\1\23\1\104\1\101\1\30\1\27\1\115"+
-        "\1\116\1\31\1\32\1\uffff\1\113\14\uffff\1\45\1\46\1\47\1\50\1\51"+
-        "\1\uffff\1\54\1\55\1\56\1\57\1\103\1\63\12\uffff\1\110\1\uffff\1"+
-        "\111\1\112\1\114\1\117\1\10\1\6\1\11\1\7\1\24\1\13\1\17\1\20\11"+
-        "\uffff\1\60\4\uffff\1\53\1\uffff\1\70\12\uffff\1\35\1\106\10\uffff"+
-        "\1\66\6\uffff\1\71\3\uffff\1\76\3\uffff\1\61\11\uffff\1\65\2\uffff"+
-        "\1\72\2\uffff\1\107\4\uffff\1\42\3\uffff\1\43\3\uffff\1\100\1\67"+
-        "\1\uffff\1\74\3\uffff\1\37\1\62\1\40\4\uffff\1\73\1\75\1\36\2\uffff"+
-        "\1\77\1\44\1\64\2\uffff\1\41\1\uffff\1\52";
-    static final String DFA19_specialS =
-        "\1\1\50\uffff\1\0\1\2\u00be\uffff}>";
-    static final String[] DFA19_transitionS = {
-            "\11\54\2\53\2\54\1\53\22\54\1\53\1\6\1\51\1\32\1\50\1\15\1\3"+
-            "\1\52\1\27\1\26\1\13\1\4\1\30\1\5\1\11\1\14\1\45\11\46\1\36"+
-            "\1\35\1\10\1\1\1\7\1\12\1\54\32\50\1\33\1\54\1\34\1\47\1\50"+
-            "\1\54\1\31\1\50\1\40\1\37\1\17\1\22\2\50\1\21\4\50\1\42\1\50"+
-            "\1\23\1\50\1\44\1\20\1\43\1\50\1\16\1\41\3\50\1\24\1\2\1\25"+
-            "\uff82\54",
+    protected DFA21 dfa21 = new DFA21(this);
+    static final String DFA21_eotS =
+        "\1\uffff\1\57\1\61\1\63\1\66\1\72\1\75\1\101\1\103\1\105\1\107\1\111\1\113\1\116\6\120\5\uffff\1\120\4\uffff\1\151\6\120\2\165\1\54\5\uffff\1\173\26\uffff\1\175\5\uffff\1\177\4\uffff\1\120\1\uffff\10\120\1\u008a\4\120\5\uffff\1\u008f\6\uffff\1\120\1\u0091\10\120\2\uffff\1\165\11\uffff\1\u009c\1\u009d\10\120\1\uffff\1\120\1\u00a7\2\120\1\uffff\1\120\1\uffff\3\120\1\u00ae\3\120\1\u00b2\2\120\2\uffff\1\120\1\u00b6\7\120\1\uffff\3\120\1\u00c1\2\120\1\uffff\1\u00c4\2\120\1\uffff\1\u00c7\2\120\1\uffff\1\120\1\u00cc\4\120\1\u00d1\3\120\1\uffff\1\u00d5\1\u00d6\1\uffff\1\120\1\u00d8\1\uffff\3\120\1\u00dc\1\uffff\1\u00dd\1\120\1\u00df\1\120\1\uffff\3\120\2\uffff\1\u00e4\1\uffff\1\u00e5\1\u00e6\1\120\2\uffff\1\120\1\uffff\1\120\1\u00ea\1\u00eb\1\u00ec\3\uffff\3\120\3\uffff\1\u00f0\2\120\1\uffff\1\120\1\u00f4\1\120\1\uffff\1\u00f6\1\uffff";
+    static final String DFA21_eofS =
+        "\u00f7\uffff";
+    static final String DFA21_minS =
+        "\1\0\1\75\1\174\1\46\1\53\1\55\2\52\3\75\1\76\2\56\1\141\1\154\1\164\1\146\2\141\5\uffff\1\163\4\uffff\1\72\1\145\1\141\1\150\1\145\1\150\1\145\2\60\1\44\5\uffff\1\75\26\uffff\1\75\5\uffff\1\74\4\uffff\1\154\1\uffff\1\164\1\163\1\141\1\160\1\151\1\156\1\160\1\163\1\44\1\154\1\162\1\156\1\143\5\uffff\1\44\6\uffff\1\146\1\44\1\163\1\151\1\167\1\154\1\160\1\162\1\165\1\164\2\uffff\1\60\11\uffff\2\44\2\145\1\164\1\145\1\164\1\143\1\157\1\164\1\uffff\1\163\1\44\1\141\1\153\1\uffff\1\141\1\uffff\1\145\1\143\1\154\1\44\1\154\1\145\1\157\1\44\1\145\1\165\2\uffff\1\156\1\44\1\151\1\162\1\143\1\150\1\162\1\141\1\145\1\uffff\1\154\1\141\1\165\1\44\1\150\1\145\1\uffff\1\44\1\157\1\167\1\uffff\1\44\1\162\1\144\1\uffff\1\143\1\44\1\150\1\162\1\164\1\156\1\44\1\154\1\147\1\154\1\uffff\2\44\1\uffff\1\146\1\44\1\uffff\1\156\1\163\1\151\1\44\1\uffff\1\44\1\157\1\44\1\143\1\uffff\1\171\1\145\1\164\2\uffff\1\44\1\uffff\2\44\1\157\2\uffff\1\156\1\uffff\1\145\3\44\3\uffff\1\156\1\151\1\157\3\uffff\1\44\1\172\1\146\1\uffff\1\145\1\44\1\144\1\uffff\1\44\1\uffff";
+    static final String DFA21_maxS =
+        "\1\uffff\1\76\1\174\1\46\1\75\1\76\5\75\1\76\1\56\1\72\1\141\1\170\1\171\1\156\1\157\1\141\5\uffff\1\163\4\uffff\1\72\1\157\1\141\1\150\1\165\1\171\1\145\1\170\1\154\1\172\5\uffff\1\75\26\uffff\1\75\5\uffff\1\74\4\uffff\1\162\1\uffff\1\164\1\163\1\141\1\160\1\151\1\156\1\160\1\163\1\172\1\154\1\162\1\156\1\143\5\uffff\1\172\6\uffff\1\146\1\172\1\164\1\151\1\167\1\154\1\160\1\162\1\171\1\164\2\uffff\1\154\11\uffff\2\172\2\145\1\164\1\145\1\164\1\143\1\157\1\164\1\uffff\1\163\1\172\1\141\1\153\1\uffff\1\141\1\uffff\1\145\1\143\1\154\1\172\1\154\1\145\1\157\1\172\1\145\1\165\2\uffff\1\156\1\172\1\151\1\162\1\143\1\150\1\162\1\141\1\145\1\uffff\1\154\1\141\1\165\1\172\1\150\1\145\1\uffff\1\172\1\157\1\167\1\uffff\1\172\1\162\1\163\1\uffff\1\143\1\172\1\150\1\162\1\164\1\156\1\172\1\154\1\147\1\154\1\uffff\2\172\1\uffff\1\146\1\172\1\uffff\1\156\1\163\1\151\1\172\1\uffff\1\172\1\157\1\172\1\143\1\uffff\1\171\1\145\1\164\2\uffff\1\172\1\uffff\2\172\1\157\2\uffff\1\156\1\uffff\1\145\3\172\3\uffff\1\156\1\151\1\157\3\uffff\2\172\1\146\1\uffff\1\145\1\172\1\144\1\uffff\1\172\1\uffff";
+    static final String DFA21_acceptS =
+        "\24\uffff\1\50\1\51\1\52\1\53\1\54\1\uffff\1\57\1\60\1\61\1\62\12\uffff\1\117\2\120\1\123\1\124\1\uffff\1\23\1\1\1\2\1\111\1\3\1\106\1\4\1\35\1\26\1\5\1\20\1\36\1\27\1\6\1\31\1\30\1\7\1\121\1\122\1\32\1\10\1\33\1\uffff\1\34\1\15\1\16\1\24\1\17\1\uffff\1\37\1\25\1\110\1\105\1\uffff\1\117\15\uffff\1\50\1\51\1\52\1\53\1\54\1\uffff\1\57\1\60\1\61\1\62\1\107\1\66\12\uffff\1\114\1\115\1\uffff\1\116\1\120\1\123\1\13\1\11\1\14\1\12\1\21\1\22\12\uffff\1\63\4\uffff\1\56\1\uffff\1\73\12\uffff\1\40\1\112\11\uffff\1\71\6\uffff\1\74\3\uffff\1\101\3\uffff\1\64\12\uffff\1\70\2\uffff\1\75\2\uffff\1\113\4\uffff\1\45\4\uffff\1\46\3\uffff\1\104\1\72\1\uffff\1\77\3\uffff\1\42\1\65\1\uffff\1\43\4\uffff\1\76\1\100\1\41\3\uffff\1\102\1\47\1\67\3\uffff\1\44\3\uffff\1\55\1\uffff\1\103";
+    static final String DFA21_specialS =
+        "\1\0\u00f6\uffff}>";
+    static final String[] DFA21_transitionS = {
+            "\11\54\2\53\2\54\1\53\22\54\1\53\1\11\1\51\1\32\1\50\1\10\1\3\1\52\1\27\1\26\1\6\1\4\1\30\1\5\1\14\1\7\1\45\11\46\1\36\1\35\1\13\1\1\1\12\1\15\1\54\32\50\1\33\1\54\1\34\1\47\1\50\1\54\1\31\1\50\1\40\1\37\1\17\1\22\2\50\1\21\4\50\1\42\1\50\1\23\1\50\1\44\1\20\1\43\1\50\1\16\1\41\3\50\1\24\1\2\1\25\uff82\54",
             "\1\55\1\56",
             "\1\60",
             "\1\62",
-            "\1\64",
-            "\1\66\1\67",
-            "\1\71",
-            "\1\73",
-            "\1\75\1\76",
-            "\1\100",
-            "\1\103\13\uffff\1\102",
-            "\1\105",
-            "\1\107\4\uffff\1\110",
+            "\1\65\21\uffff\1\64",
+            "\1\71\17\uffff\1\67\1\70",
+            "\1\74\22\uffff\1\73",
+            "\1\77\4\uffff\1\100\15\uffff\1\76",
+            "\1\102",
+            "\1\104",
+            "\1\106",
+            "\1\110",
+            "\1\112",
+            "\1\115\13\uffff\1\114",
+            "\1\117",
+            "\1\122\13\uffff\1\121",
+            "\1\123\1\124\1\uffff\1\125\1\uffff\1\126",
+            "\1\131\6\uffff\1\127\1\130",
+            "\1\132\7\uffff\1\134\5\uffff\1\133",
+            "\1\135",
             "",
-            "\1\113",
-            "\1\116\13\uffff\1\115",
-            "\1\117\1\120\1\uffff\1\121",
-            "\1\124\6\uffff\1\122\1\123",
-            "\1\125\7\uffff\1\127\5\uffff\1\126",
-            "\1\130",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\136",
             "",
             "",
             "",
             "",
             "\1\143",
-            "\1\145\11\uffff\1\146",
-            "\1\147",
+            "",
+            "",
+            "",
+            "",
             "\1\150",
-            "\1\151\17\uffff\1\152",
-            "\1\154\11\uffff\1\155\6\uffff\1\153",
-            "\1\156",
-            "\12\160\10\uffff\1\162\1\uffff\3\162\5\uffff\1\162\13\uffff"+
-            "\1\157\6\uffff\1\160\2\uffff\1\162\1\uffff\3\162\5\uffff\1\162"+
-            "\13\uffff\1\157",
-            "\12\160\10\uffff\1\162\1\uffff\3\162\5\uffff\1\162\22\uffff"+
-            "\1\160\2\uffff\1\162\1\uffff\3\162\5\uffff\1\162",
-            "\1\114\34\uffff\32\114\4\uffff\1\114\1\uffff\32\114",
-            "",
-            "\0\163",
-            "\0\163",
-            "",
-            "",
-            "\1\165",
+            "\1\152\11\uffff\1\153",
+            "\1\154",
+            "\1\155",
+            "\1\156\17\uffff\1\157",
+            "\1\161\11\uffff\1\162\6\uffff\1\160",
+            "\1\163",
+            "\12\166\10\uffff\1\167\1\uffff\3\167\5\uffff\1\167\13\uffff\1\164\6\uffff\1\166\2\uffff\1\167\1\uffff\3\167\5\uffff\1\167\13\uffff\1\164",
+            "\12\166\10\uffff\1\167\1\uffff\3\167\5\uffff\1\167\22\uffff\1\166\2\uffff\1\167\1\uffff\3\167\5\uffff\1\167",
+            "\1\120\34\uffff\32\120\4\uffff\1\120\1\uffff\32\120",
             "",
             "",
             "",
             "",
             "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\167",
-            "",
-            "",
-            "",
-            "\1\171",
-            "",
-            "",
-            "\1\173",
+            "\1\172",
             "",
             "",
             "",
@@ -3121,348 +3174,332 @@ public class InternalMongoBeansLexer extends Lexer {
             "",
             "",
             "",
-            "\1\175\5\uffff\1\176",
             "",
-            "\1\177",
-            "\1\u0080",
-            "\1\u0081",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\174",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\176",
+            "",
+            "",
+            "",
+            "",
+            "\1\u0080\5\uffff\1\u0081",
+            "",
             "\1\u0082",
             "\1\u0083",
             "\1\u0084",
             "\1\u0085",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "\1\u0086",
             "\1\u0087",
             "\1\u0088",
             "\1\u0089",
-            "\1\u008a",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
+            "\1\120\13\uffff\12\120\7\uffff\32\120\4\uffff\1\120\1\uffff\32\120",
+            "\1\u008b",
             "\1\u008c",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
-            "\1\u008e\1\u008f",
+            "\1\u008d",
+            "\1\u008e",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\120\13\uffff\12\120\7\uffff\32\120\4\uffff\1\120\1\uffff\32\120",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\u0090",
-            "\1\u0091",
-            "\1\u0092",
-            "\1\u0093",
+            "\1\120\13\uffff\12\120\7\uffff\32\120\4\uffff\1\120\1\uffff\32\120",
+            "\1\u0092\1\u0093",
             "\1\u0094",
-            "\1\u0096\3\uffff\1\u0095",
+            "\1\u0095",
+            "\1\u0096",
             "\1\u0097",
-            "",
-            "\12\160\10\uffff\1\162\1\uffff\3\162\5\uffff\1\162\22\uffff"+
-            "\1\160\2\uffff\1\162\1\uffff\3\162\5\uffff\1\162",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
-            "\1\u009a",
+            "\1\u0098",
+            "\1\u009a\3\uffff\1\u0099",
             "\1\u009b",
-            "\1\u009c",
-            "\1\u009d",
+            "",
+            "",
+            "\12\166\10\uffff\1\167\1\uffff\3\167\5\uffff\1\167\22\uffff\1\166\2\uffff\1\167\1\uffff\3\167\5\uffff\1\167",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\120\13\uffff\12\120\7\uffff\32\120\4\uffff\1\120\1\uffff\32\120",
+            "\1\120\13\uffff\12\120\7\uffff\32\120\4\uffff\1\120\1\uffff\32\120",
             "\1\u009e",
             "\1\u009f",
             "\1\u00a0",
-            "",
             "\1\u00a1",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "\1\u00a2",
             "\1\u00a3",
             "\1\u00a4",
-            "",
             "\1\u00a5",
             "",
             "\1\u00a6",
-            "\1\u00a7",
+            "\1\120\13\uffff\12\120\7\uffff\32\120\4\uffff\1\120\1\uffff\32\120",
             "\1\u00a8",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "\1\u00a9",
+            "",
             "\1\u00aa",
+            "",
             "\1\u00ab",
             "\1\u00ac",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
-            "\1\u00ae",
+            "\1\u00ad",
+            "\1\120\13\uffff\12\120\7\uffff\32\120\4\uffff\1\120\1\uffff\32\120",
             "\1\u00af",
-            "",
-            "",
             "\1\u00b0",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
-            "\1\u00b2",
+            "\1\u00b1",
+            "\1\120\13\uffff\12\120\7\uffff\32\120\4\uffff\1\120\1\uffff\32\120",
             "\1\u00b3",
             "\1\u00b4",
-            "\1\u00b5",
-            "\1\u00b6",
-            "\1\u00b7",
             "",
+            "",
+            "\1\u00b5",
+            "\1\120\13\uffff\12\120\7\uffff\32\120\4\uffff\1\120\1\uffff\32\120",
+            "\1\u00b7",
             "\1\u00b8",
             "\1\u00b9",
             "\1\u00ba",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "\1\u00bb",
             "\1\u00bc",
             "\1\u00bd",
             "",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "\1\u00be",
             "\1\u00bf",
             "\1\u00c0",
-            "",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "\1\120\13\uffff\12\120\7\uffff\32\120\4\uffff\1\120\1\uffff\32\120",
             "\1\u00c2",
-            "\1\u00c3\16\uffff\1\u00c4",
+            "\1\u00c3",
             "",
+            "\1\120\13\uffff\12\120\7\uffff\32\120\4\uffff\1\120\1\uffff\32\120",
             "\1\u00c5",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
-            "\1\u00c7",
+            "\1\u00c6",
+            "",
+            "\1\120\13\uffff\12\120\7\uffff\32\120\4\uffff\1\120\1\uffff\32\120",
             "\1\u00c8",
-            "\1\u00c9",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "\1\u00c9\16\uffff\1\u00ca",
+            "",
             "\1\u00cb",
-            "\1\u00cc",
+            "\1\120\13\uffff\12\120\7\uffff\32\120\4\uffff\1\120\1\uffff\32\120",
             "\1\u00cd",
-            "",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
-            "",
+            "\1\u00ce",
+            "\1\u00cf",
             "\1\u00d0",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
-            "",
+            "\1\120\13\uffff\12\120\7\uffff\32\120\4\uffff\1\120\1\uffff\32\120",
             "\1\u00d2",
             "\1\u00d3",
             "\1\u00d4",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
             "",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
-            "\1\u00d8",
+            "\1\120\13\uffff\12\120\7\uffff\32\120\4\uffff\1\120\1\uffff\32\120",
+            "\1\120\13\uffff\12\120\7\uffff\32\120\4\uffff\1\120\1\uffff\32\120",
+            "",
+            "\1\u00d7",
+            "\1\120\13\uffff\12\120\7\uffff\32\120\4\uffff\1\120\1\uffff\32\120",
             "",
             "\1\u00d9",
             "\1\u00da",
             "\1\u00db",
+            "\1\120\13\uffff\12\120\7\uffff\32\120\4\uffff\1\120\1\uffff\32\120",
             "",
-            "",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
-            "",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
-            "\1\u00df",
-            "",
-            "",
-            "",
+            "\1\120\13\uffff\12\120\7\uffff\32\120\4\uffff\1\120\1\uffff\32\120",
+            "\1\u00de",
+            "\1\120\13\uffff\12\120\7\uffff\32\120\4\uffff\1\120\1\uffff\32\120",
             "\1\u00e0",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "",
+            "\1\u00e1",
+            "\1\u00e2",
+            "\1\u00e3",
             "",
             "",
+            "\1\120\13\uffff\12\120\7\uffff\32\120\4\uffff\1\120\1\uffff\32\120",
             "",
-            "\1\u00e4",
-            "\1\u00e5",
-            "",
-            "",
-            "",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "\1\120\13\uffff\12\120\7\uffff\32\120\4\uffff\1\120\1\uffff\32\120",
+            "\1\120\13\uffff\12\120\7\uffff\32\120\4\uffff\1\120\1\uffff\32\120",
             "\1\u00e7",
             "",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "",
+            "\1\u00e8",
+            "",
+            "\1\u00e9",
+            "\1\120\13\uffff\12\120\7\uffff\32\120\4\uffff\1\120\1\uffff\32\120",
+            "\1\120\13\uffff\12\120\7\uffff\32\120\4\uffff\1\120\1\uffff\32\120",
+            "\1\120\13\uffff\12\120\7\uffff\32\120\4\uffff\1\120\1\uffff\32\120",
+            "",
+            "",
+            "",
+            "\1\u00ed",
+            "\1\u00ee",
+            "\1\u00ef",
+            "",
+            "",
+            "",
+            "\1\120\13\uffff\12\120\7\uffff\32\120\4\uffff\1\120\1\uffff\32\120",
+            "\1\u00f1",
+            "\1\u00f2",
+            "",
+            "\1\u00f3",
+            "\1\120\13\uffff\12\120\7\uffff\32\120\4\uffff\1\120\1\uffff\32\120",
+            "\1\u00f5",
+            "",
+            "\1\120\13\uffff\12\120\7\uffff\32\120\4\uffff\1\120\1\uffff\32\120",
             ""
     };
 
-    static final short[] DFA19_eot = DFA.unpackEncodedString(DFA19_eotS);
-    static final short[] DFA19_eof = DFA.unpackEncodedString(DFA19_eofS);
-    static final char[] DFA19_min = DFA.unpackEncodedStringToUnsignedChars(DFA19_minS);
-    static final char[] DFA19_max = DFA.unpackEncodedStringToUnsignedChars(DFA19_maxS);
-    static final short[] DFA19_accept = DFA.unpackEncodedString(DFA19_acceptS);
-    static final short[] DFA19_special = DFA.unpackEncodedString(DFA19_specialS);
-    static final short[][] DFA19_transition;
+    static final short[] DFA21_eot = DFA.unpackEncodedString(DFA21_eotS);
+    static final short[] DFA21_eof = DFA.unpackEncodedString(DFA21_eofS);
+    static final char[] DFA21_min = DFA.unpackEncodedStringToUnsignedChars(DFA21_minS);
+    static final char[] DFA21_max = DFA.unpackEncodedStringToUnsignedChars(DFA21_maxS);
+    static final short[] DFA21_accept = DFA.unpackEncodedString(DFA21_acceptS);
+    static final short[] DFA21_special = DFA.unpackEncodedString(DFA21_specialS);
+    static final short[][] DFA21_transition;
 
     static {
-        int numStates = DFA19_transitionS.length;
-        DFA19_transition = new short[numStates][];
+        int numStates = DFA21_transitionS.length;
+        DFA21_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA19_transition[i] = DFA.unpackEncodedString(DFA19_transitionS[i]);
+            DFA21_transition[i] = DFA.unpackEncodedString(DFA21_transitionS[i]);
         }
     }
 
-    class DFA19 extends DFA {
+    class DFA21 extends DFA {
 
-        public DFA19(BaseRecognizer recognizer) {
+        public DFA21(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 19;
-            this.eot = DFA19_eot;
-            this.eof = DFA19_eof;
-            this.min = DFA19_min;
-            this.max = DFA19_max;
-            this.accept = DFA19_accept;
-            this.special = DFA19_special;
-            this.transition = DFA19_transition;
+            this.decisionNumber = 21;
+            this.eot = DFA21_eot;
+            this.eof = DFA21_eof;
+            this.min = DFA21_min;
+            this.max = DFA21_max;
+            this.accept = DFA21_accept;
+            this.special = DFA21_special;
+            this.transition = DFA21_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA19_41 = input.LA(1);
+                        int LA21_0 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA19_41>='\u0000' && LA19_41<='\uFFFF')) ) {s = 115;}
+                        if ( (LA21_0=='=') ) {s = 1;}
 
-                        else s = 44;
+                        else if ( (LA21_0=='|') ) {s = 2;}
 
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA19_0 = input.LA(1);
+                        else if ( (LA21_0=='&') ) {s = 3;}
 
-                        s = -1;
-                        if ( (LA19_0=='=') ) {s = 1;}
+                        else if ( (LA21_0=='+') ) {s = 4;}
 
-                        else if ( (LA19_0=='|') ) {s = 2;}
+                        else if ( (LA21_0=='-') ) {s = 5;}
 
-                        else if ( (LA19_0=='&') ) {s = 3;}
+                        else if ( (LA21_0=='*') ) {s = 6;}
 
-                        else if ( (LA19_0=='+') ) {s = 4;}
+                        else if ( (LA21_0=='/') ) {s = 7;}
 
-                        else if ( (LA19_0=='-') ) {s = 5;}
+                        else if ( (LA21_0=='%') ) {s = 8;}
 
-                        else if ( (LA19_0=='!') ) {s = 6;}
+                        else if ( (LA21_0=='!') ) {s = 9;}
 
-                        else if ( (LA19_0=='>') ) {s = 7;}
+                        else if ( (LA21_0=='>') ) {s = 10;}
 
-                        else if ( (LA19_0=='<') ) {s = 8;}
+                        else if ( (LA21_0=='<') ) {s = 11;}
 
-                        else if ( (LA19_0=='.') ) {s = 9;}
+                        else if ( (LA21_0=='.') ) {s = 12;}
 
-                        else if ( (LA19_0=='?') ) {s = 10;}
+                        else if ( (LA21_0=='?') ) {s = 13;}
 
-                        else if ( (LA19_0=='*') ) {s = 11;}
+                        else if ( (LA21_0=='v') ) {s = 14;}
 
-                        else if ( (LA19_0=='/') ) {s = 12;}
+                        else if ( (LA21_0=='e') ) {s = 15;}
 
-                        else if ( (LA19_0=='%') ) {s = 13;}
+                        else if ( (LA21_0=='s') ) {s = 16;}
 
-                        else if ( (LA19_0=='v') ) {s = 14;}
+                        else if ( (LA21_0=='i') ) {s = 17;}
 
-                        else if ( (LA19_0=='e') ) {s = 15;}
+                        else if ( (LA21_0=='f') ) {s = 18;}
 
-                        else if ( (LA19_0=='s') ) {s = 16;}
+                        else if ( (LA21_0=='p') ) {s = 19;}
 
-                        else if ( (LA19_0=='i') ) {s = 17;}
+                        else if ( (LA21_0=='{') ) {s = 20;}
 
-                        else if ( (LA19_0=='f') ) {s = 18;}
+                        else if ( (LA21_0=='}') ) {s = 21;}
 
-                        else if ( (LA19_0=='p') ) {s = 19;}
+                        else if ( (LA21_0==')') ) {s = 22;}
 
-                        else if ( (LA19_0=='{') ) {s = 20;}
+                        else if ( (LA21_0=='(') ) {s = 23;}
 
-                        else if ( (LA19_0=='}') ) {s = 21;}
+                        else if ( (LA21_0==',') ) {s = 24;}
 
-                        else if ( (LA19_0==')') ) {s = 22;}
+                        else if ( (LA21_0=='a') ) {s = 25;}
 
-                        else if ( (LA19_0=='(') ) {s = 23;}
+                        else if ( (LA21_0=='#') ) {s = 26;}
 
-                        else if ( (LA19_0==',') ) {s = 24;}
+                        else if ( (LA21_0=='[') ) {s = 27;}
 
-                        else if ( (LA19_0=='a') ) {s = 25;}
+                        else if ( (LA21_0==']') ) {s = 28;}
 
-                        else if ( (LA19_0=='#') ) {s = 26;}
+                        else if ( (LA21_0==';') ) {s = 29;}
 
-                        else if ( (LA19_0=='[') ) {s = 27;}
+                        else if ( (LA21_0==':') ) {s = 30;}
 
-                        else if ( (LA19_0==']') ) {s = 28;}
+                        else if ( (LA21_0=='d') ) {s = 31;}
 
-                        else if ( (LA19_0==';') ) {s = 29;}
+                        else if ( (LA21_0=='c') ) {s = 32;}
 
-                        else if ( (LA19_0==':') ) {s = 30;}
+                        else if ( (LA21_0=='w') ) {s = 33;}
 
-                        else if ( (LA19_0=='d') ) {s = 31;}
+                        else if ( (LA21_0=='n') ) {s = 34;}
 
-                        else if ( (LA19_0=='c') ) {s = 32;}
+                        else if ( (LA21_0=='t') ) {s = 35;}
 
-                        else if ( (LA19_0=='w') ) {s = 33;}
+                        else if ( (LA21_0=='r') ) {s = 36;}
 
-                        else if ( (LA19_0=='n') ) {s = 34;}
+                        else if ( (LA21_0=='0') ) {s = 37;}
 
-                        else if ( (LA19_0=='t') ) {s = 35;}
+                        else if ( ((LA21_0>='1' && LA21_0<='9')) ) {s = 38;}
 
-                        else if ( (LA19_0=='r') ) {s = 36;}
+                        else if ( (LA21_0=='^') ) {s = 39;}
 
-                        else if ( (LA19_0=='0') ) {s = 37;}
+                        else if ( (LA21_0=='$'||(LA21_0>='A' && LA21_0<='Z')||LA21_0=='_'||LA21_0=='b'||(LA21_0>='g' && LA21_0<='h')||(LA21_0>='j' && LA21_0<='m')||LA21_0=='o'||LA21_0=='q'||LA21_0=='u'||(LA21_0>='x' && LA21_0<='z')) ) {s = 40;}
 
-                        else if ( ((LA19_0>='1' && LA19_0<='9')) ) {s = 38;}
+                        else if ( (LA21_0=='\"') ) {s = 41;}
 
-                        else if ( (LA19_0=='^') ) {s = 39;}
+                        else if ( (LA21_0=='\'') ) {s = 42;}
 
-                        else if ( (LA19_0=='$'||(LA19_0>='A' && LA19_0<='Z')||LA19_0=='_'||LA19_0=='b'||(LA19_0>='g' && LA19_0<='h')||(LA19_0>='j' && LA19_0<='m')||LA19_0=='o'||LA19_0=='q'||LA19_0=='u'||(LA19_0>='x' && LA19_0<='z')) ) {s = 40;}
+                        else if ( ((LA21_0>='\t' && LA21_0<='\n')||LA21_0=='\r'||LA21_0==' ') ) {s = 43;}
 
-                        else if ( (LA19_0=='\"') ) {s = 41;}
-
-                        else if ( (LA19_0=='\'') ) {s = 42;}
-
-                        else if ( ((LA19_0>='\t' && LA19_0<='\n')||LA19_0=='\r'||LA19_0==' ') ) {s = 43;}
-
-                        else if ( ((LA19_0>='\u0000' && LA19_0<='\b')||(LA19_0>='\u000B' && LA19_0<='\f')||(LA19_0>='\u000E' && LA19_0<='\u001F')||LA19_0=='@'||LA19_0=='\\'||LA19_0=='`'||(LA19_0>='~' && LA19_0<='\uFFFF')) ) {s = 44;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA19_42 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA19_42>='\u0000' && LA19_42<='\uFFFF')) ) {s = 115;}
-
-                        else s = 44;
+                        else if ( ((LA21_0>='\u0000' && LA21_0<='\b')||(LA21_0>='\u000B' && LA21_0<='\f')||(LA21_0>='\u000E' && LA21_0<='\u001F')||LA21_0=='@'||LA21_0=='\\'||LA21_0=='`'||(LA21_0>='~' && LA21_0<='\uFFFF')) ) {s = 44;}
 
                         if ( s>=0 ) return s;
                         break;
             }
             NoViableAltException nvae =
-                new NoViableAltException(getDescription(), 19, _s, input);
+                new NoViableAltException(getDescription(), 21, _s, input);
             error(nvae);
             throw nvae;
         }
