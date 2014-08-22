@@ -94,8 +94,8 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
               public void apply(final JvmField it) {
                 it.setVisibility(JvmVisibility.PUBLIC);
                 EList<JvmAnnotationReference> _annotations = it.getAnnotations();
-                JvmAnnotationReference _annotation = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.toAnnotation(declaredParameter, Param.class);
-                BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmAnnotationReference>operator_add(_annotations, _annotation);
+                JvmAnnotationReference _annotationRef = BuildDSLJvmModelInferrer.this._annotationTypesBuilder.annotationRef(Param.class);
+                BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmAnnotationReference>operator_add(_annotations, _annotationRef);
                 XExpression _init = declaredParameter.getInit();
                 BuildDSLJvmModelInferrer.this._jvmTypesBuilder.setInitializer(it, _init);
               }
@@ -107,7 +107,7 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
         JvmTypeReference _typeRef_1 = BuildDSLJvmModelInferrer.this._typeReferenceBuilder.typeRef(String.class);
         final JvmTypeReference stringArray = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.addArrayTypeDimension(_typeRef_1);
         EList<JvmMember> _members = it.getMembers();
-        JvmTypeReference _typeRef_2 = BuildDSLJvmModelInferrer.this._typeReferenceBuilder.typeRef(Void.TYPE);
+        JvmTypeReference _typeRef_2 = BuildDSLJvmModelInferrer.this._typeReferenceBuilder.typeRef(void.class);
         final Procedure1<JvmOperation> _function = new Procedure1<JvmOperation>() {
           public void apply(final JvmOperation it) {
             EList<JvmFormalParameter> _parameters = it.getParameters();
@@ -144,7 +144,7 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
         final Function1<Task, JvmOperation> _function_1 = new Function1<Task, JvmOperation>() {
           public JvmOperation apply(final Task task) {
             String _methodName = BuildDSLJvmModelInferrer.this.getMethodName(task);
-            JvmTypeReference _typeRef = BuildDSLJvmModelInferrer.this._typeReferenceBuilder.typeRef(Void.TYPE);
+            JvmTypeReference _typeRef = BuildDSLJvmModelInferrer.this._typeReferenceBuilder.typeRef(void.class);
             final Procedure1<JvmOperation> _function = new Procedure1<JvmOperation>() {
               public void apply(final JvmOperation it) {
                 it.setVisibility(JvmVisibility.PROTECTED);

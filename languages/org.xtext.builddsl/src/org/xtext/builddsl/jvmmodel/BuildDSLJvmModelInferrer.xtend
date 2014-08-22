@@ -40,14 +40,14 @@ class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
 						?: typeRef(String)
 				members += declaredParameter.toField (declaredParameter.name, type) [
 					visibility = JvmVisibility.PUBLIC
-					annotations += declaredParameter.toAnnotation(Param)
+					annotations += annotationRef(Param)
 					initializer = declaredParameter.init
 				]
 			}
 			
 			// the main method		
    			val stringArray = typeRef(String).addArrayTypeDimension
-			members += file.toMethod ("main", typeRef(Void.TYPE)) [
+			members += file.toMethod ("main", typeRef(void)) [
 				parameters += toParameter("args", stringArray)
 				varArgs = true
 				static = true
@@ -61,7 +61,7 @@ class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
 			]
 			
 			// a method for the actual task body
-   			members += file.tasks.map[ task | task.toMethod (task.methodName, typeRef(Void.TYPE)) [
+   			members += file.tasks.map[ task | task.toMethod (task.methodName, typeRef(void)) [
    				visibility = JvmVisibility.PROTECTED
    				annotations += annotationRef(DependsOn, task.depends.map[name])
    				body = task.action
