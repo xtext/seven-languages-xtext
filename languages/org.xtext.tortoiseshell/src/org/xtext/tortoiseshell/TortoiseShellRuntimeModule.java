@@ -9,20 +9,20 @@ package org.xtext.tortoiseshell;
 
 import org.eclipse.xtext.generator.IGenerator;
 import org.eclipse.xtext.xbase.featurecalls.IdentifiableSimpleNameProvider;
-import org.eclipse.xtext.xbase.scoping.batch.ImplicitlyImportedTypes;
+import org.eclipse.xtext.xbase.scoping.batch.ImplicitlyImportedFeatures;
 import org.xtext.tortoiseshell.interpreter.NullGenerator;
 import org.xtext.tortoiseshell.interpreter.TortoiseShellInterpeter;
 import org.xtext.tortoiseshell.lib.ITortoiseInterpreter;
 import org.xtext.tortoiseshell.scoping.TortoiseShellIdentifiableSimpleNameProvider;
-import org.xtext.tortoiseshell.scoping.TortoiseShellImplicitlyImportedTypes;
+import org.xtext.tortoiseshell.scoping.TortoiseShellImplicitlyImportedFeatures;
 
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
 public class TortoiseShellRuntimeModule extends org.xtext.tortoiseshell.AbstractTortoiseShellRuntimeModule {
 
-	public Class<? extends ImplicitlyImportedTypes> bindImplicitlyImportedTypes() {
-		return TortoiseShellImplicitlyImportedTypes.class;
+	public Class<? extends ImplicitlyImportedFeatures> bindImplicitlyImportedTypes() {
+		return TortoiseShellImplicitlyImportedFeatures.class;
 	}
 	
 	public Class<? extends ITortoiseInterpreter> bindITortoiseInterpreter() {
