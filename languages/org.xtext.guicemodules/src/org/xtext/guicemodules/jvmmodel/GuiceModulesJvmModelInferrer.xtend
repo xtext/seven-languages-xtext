@@ -70,14 +70,14 @@ class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
 			members += module.toMethod("configure", typeRef(void)) [
 				parameters += module.toParameter("binder", typeRef(Binder))
 				body = '''
-					configure(binder, new «HashSet»<«typeRef(Key, wildCard)»>());
+					configure(binder, new «HashSet»<«typeRef(Key, wildcard)»>());
 				'''
 			]
 			
 			members += module.toMethod("configure", typeRef(void)) [
 				documentation = 'Registers bindings for keys not present in the given set.'
 				parameters += module.toParameter("bind", typeRef(Binder))
-				parameters += module.toParameter("usedKeys", typeRef(Set, typeRef(Key, wildCard)))
+				parameters += module.toParameter("usedKeys", typeRef(Set, typeRef(Key, wildcard)))
 				body = '''
 					try {
 						«FOR b : module.bindings»

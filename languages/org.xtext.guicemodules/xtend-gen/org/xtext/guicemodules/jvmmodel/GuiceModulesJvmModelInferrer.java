@@ -170,8 +170,8 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
                 _builder.append("configure(binder, new ");
                 _builder.append(HashSet.class, "");
                 _builder.append("<");
-                JvmTypeReference _wildCard = GuiceModulesJvmModelInferrer.this._typeReferenceBuilder.wildCard();
-                JvmTypeReference _typeRef = GuiceModulesJvmModelInferrer.this._typeReferenceBuilder.typeRef(Key.class, _wildCard);
+                JvmTypeReference _wildcard = GuiceModulesJvmModelInferrer.this._typeReferenceBuilder.wildcard();
+                JvmTypeReference _typeRef = GuiceModulesJvmModelInferrer.this._typeReferenceBuilder.typeRef(Key.class, _wildcard);
                 _builder.append(_typeRef, "");
                 _builder.append(">());");
                 _builder.newLineIfNotEmpty();
@@ -192,8 +192,8 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
             JvmFormalParameter _parameter = GuiceModulesJvmModelInferrer.this.builder.toParameter(module, "bind", _typeRef);
             GuiceModulesJvmModelInferrer.this.builder.<JvmFormalParameter>operator_add(_parameters, _parameter);
             EList<JvmFormalParameter> _parameters_1 = it.getParameters();
-            JvmTypeReference _wildCard = GuiceModulesJvmModelInferrer.this._typeReferenceBuilder.wildCard();
-            JvmTypeReference _typeRef_1 = GuiceModulesJvmModelInferrer.this._typeReferenceBuilder.typeRef(Key.class, _wildCard);
+            JvmTypeReference _wildcard = GuiceModulesJvmModelInferrer.this._typeReferenceBuilder.wildcard();
+            JvmTypeReference _typeRef_1 = GuiceModulesJvmModelInferrer.this._typeReferenceBuilder.typeRef(Key.class, _wildcard);
             JvmTypeReference _typeRef_2 = GuiceModulesJvmModelInferrer.this._typeReferenceBuilder.typeRef(Set.class, _typeRef_1);
             JvmFormalParameter _parameter_1 = GuiceModulesJvmModelInferrer.this.builder.toParameter(module, "usedKeys", _typeRef_2);
             GuiceModulesJvmModelInferrer.this.builder.<JvmFormalParameter>operator_add(_parameters_1, _parameter_1);
