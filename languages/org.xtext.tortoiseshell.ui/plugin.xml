@@ -464,19 +464,6 @@
 	             id="org.xtext.tortoiseshell.TortoiseShell.doubleClickBreakpointAction"/>
 	  </editorContribution>
    </extension>
-   <extension point="org.eclipse.ui.popupMenus">
-      <viewerContribution
-         targetID="example.rulerContextMenuId"
-         id="org.xtext.tortoiseshell.TortoiseShell.ide.RulerPopupActions">
-         <action
-            label="Toggle Breakpoint"
-            class="org.xtext.tortoiseshell.ui.TortoiseShellExecutableExtensionFactory:org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate"
-            menubarPath="additions"
-            id="org.xtext.tortoiseshell.TortoiseShell.ide.rulerContextMenu.toggleBreakpointAction">
-         </action>
-      </viewerContribution>
-   </extension>
-   
     <!-- Introduce Local Variable Refactoring -->
 	<extension point="org.eclipse.ui.handlers">
 		<handler 
@@ -502,6 +489,30 @@
          </command>
       </menuContribution>
    </extension>  
+   <!-- Open implementation -->
+   <extension point="org.eclipse.ui.handlers">
+      <handler
+            class="org.xtext.tortoiseshell.ui.TortoiseShellExecutableExtensionFactory:org.eclipse.xtext.xbase.ui.navigation.OpenImplementationHandler"
+            commandId="org.eclipse.xtext.xbase.ui.OpenImplementationCommand">
+            <activeWhen>
+				<reference
+					definitionId="org.xtext.tortoiseshell.TortoiseShell.Editor.opened">
+				</reference>
+			</activeWhen>
+      </handler>
+   </extension>
+ <extension point="org.eclipse.ui.menus">
+       <menuContribution
+            locationURI="menu:navigate?after=open.ext4">
+         <command commandId="org.eclipse.xtext.xbase.ui.OpenImplementationCommand">
+		<visibleWhen checkEnabled="false">
+              <reference
+                 definitionId="org.xtext.tortoiseshell.TortoiseShell.Editor.opened">
+              </reference>
+		</visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
 
   <extension point="org.eclipse.compare.contentViewers">
     <viewer id="org.xtext.tortoiseshell.TortoiseShell.compare.contentViewers"
