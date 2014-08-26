@@ -39,7 +39,7 @@ class FileExtensions {
 		try {
 			out.method = JarOutputStream.DEFLATED
 			files.forEach [ file |
-				val entry = new ZipEntry(file.relativeTo(directory).path)
+				val entry = new ZipEntry(file.relativeTo(directory).path.replace("\\", "/"))
 				out.putNextEntry(entry)
 				file.copy(out)
 				out.closeEntry
