@@ -73,7 +73,7 @@ public class WrappingUtil {
     return _xifexpression;
   }
   
-  private static ClassLoader _classLoader = WrappingUtil.getClassLoader();
+  private static ClassLoader _classLoader = WrappingUtil.class.getClassLoader();
   
   public static ClassLoader getClassLoader() {
     return WrappingUtil._classLoader;

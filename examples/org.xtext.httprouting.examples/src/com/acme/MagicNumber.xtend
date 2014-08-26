@@ -19,7 +19,7 @@ class MagicNumber {
 	}
 	
 	def seedNumber() {
-		val number = Math::abs(new Random().nextInt % 100)
+		val number = Math.abs(new Random().nextInt % 100)
 		request.session.setAttribute('number', number)
 	}
 	

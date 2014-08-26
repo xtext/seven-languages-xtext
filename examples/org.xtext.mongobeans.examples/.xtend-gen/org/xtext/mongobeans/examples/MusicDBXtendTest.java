@@ -13,7 +13,6 @@ import com.mongodb.Mongo;
 import java.util.List;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Extension;
-import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
@@ -28,18 +27,12 @@ import org.xtext.mongobeans.lib.MongoExtensions;
 @SuppressWarnings("all")
 public class MusicDBXtendTest {
   @Extension
-  private MongoExtensions _mongoExtensions = new Function0<MongoExtensions>() {
-    public MongoExtensions apply() {
-      MongoExtensions _mongoExtensions = new MongoExtensions();
-      return _mongoExtensions;
-    }
-  }.apply();
+  private MongoExtensions _mongoExtensions = new MongoExtensions();
   
   @Test
   public void testMongoFacade() {
     try {
-      Mongo _mongo = new Mongo();
-      final Mongo mongo = _mongo;
+      final Mongo mongo = new Mongo();
       try {
         final DB db = mongo.getDB("testdb");
         final DBCollection dbCollection = db.getCollection("testCollection");
@@ -72,8 +65,8 @@ public class MusicDBXtendTest {
           }
         };
         final Artist john = ObjectExtensions.<Artist>operator_doubleArrow(_artist, _function);
-        Iterable<? extends Track> _oevre = john.getOevre();
-        int _size = IterableExtensions.size(_oevre);
+        Iterable<? extends Track> _oeuvre = john.getOeuvre();
+        int _size = IterableExtensions.size(_oeuvre);
         Assert.assertEquals(8, _size);
         this._mongoExtensions.save(dbCollection, john);
         Artist _artist_1 = new Artist();
@@ -105,8 +98,7 @@ public class MusicDBXtendTest {
     List<Album> _albums = it.getAlbums();
     Album _album = new Album();
     Album _doubleArrow = ObjectExtensions.<Album>operator_doubleArrow(_album, initializer);
-    boolean _add = _albums.add(_doubleArrow);
-    return _add;
+    return _albums.add(_doubleArrow);
   }
   
   protected boolean addTrack(final Album it, final String trackTitle, final String trackDuration) {
@@ -121,7 +113,6 @@ public class MusicDBXtendTest {
       }
     };
     Track _doubleArrow = ObjectExtensions.<Track>operator_doubleArrow(_track, _function);
-    boolean _add = _tracks.add(_doubleArrow);
-    return _add;
+    return _tracks.add(_doubleArrow);
   }
 }

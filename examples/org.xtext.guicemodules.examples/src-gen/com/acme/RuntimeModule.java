@@ -1,9 +1,13 @@
 package com.acme;
 
+import com.acme.DataProvider;
 import com.acme.impl.DataFile;
+import com.acme.impl.FileDataProvider;
 import com.google.inject.Binder;
 import com.google.inject.Key;
 import com.google.inject.Module;
+import com.google.inject.TypeLiteral;
+import java.util.HashSet;
 import java.util.Set;
 
 @SuppressWarnings("all")
@@ -16,24 +20,22 @@ public class RuntimeModule implements Module {
   private String _from1;
   
   public void configure(final Binder binder) {
-    configure(binder, new java.util.HashSet<com.google.inject.Key<?>>());
+    configure(binder, new HashSet<Key<?>>());
   }
   
   /**
    * Registers bindings for keys not present in the given set.
    */
-  public void configure(final Binder bind, final Set<Key<? extends Object>> usedKeys) {
+  public void configure(final Binder bind, final Set<Key<?>> usedKeys) {
     try {
     	{
-    		com.google.inject.Key<com.acme.DataProvider> key = 
-    			com.google.inject.Key.get(new com.google.inject.TypeLiteral<com.acme.DataProvider>(){});
+    		Key<DataProvider> key = Key.get(new TypeLiteral<DataProvider>(){});
     		if (usedKeys.add(key)) {
-    			bind.bind(key).to(com.google.inject.Key.get(new com.google.inject.TypeLiteral<com.acme.impl.FileDataProvider>(){}));
+    			bind.bind(key).to(Key.get(new TypeLiteral<FileDataProvider>(){}));
     		}
     	}
     	{
-    		com.google.inject.Key<java.lang.String> key = 
-    			com.google.inject.Key.get(new com.google.inject.TypeLiteral<java.lang.String>(){}, getClass().getDeclaredField("_from1").getAnnotations()[0]);
+    		Key<String> key = Key.get(new TypeLiteral<String>(){}, getClass().getDeclaredField("_from1").getAnnotations()[0]);
     		if (usedKeys.add(key)) {
     			bind.bind(key).toInstance(_toInstance1());
     		}

@@ -36,7 +36,7 @@ class WrappingUtil {
 			(wrapper as IMongoBean).getDbObject
 	}
 	
-	static ClassLoader _classLoader = WrappingUtil.classLoader
+	static ClassLoader _classLoader = typeof(WrappingUtil).classLoader
 	
 	def static getClassLoader() {
 		_classLoader

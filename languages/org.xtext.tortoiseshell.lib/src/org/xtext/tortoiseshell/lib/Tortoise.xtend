@@ -8,22 +8,23 @@
 package org.xtext.tortoiseshell.lib
 
 import java.util.List
-import org.eclipse.xtend.lib.Data
+import org.eclipse.draw2d.ColorConstants
+import org.eclipse.draw2d.geometry.Point
+import org.eclipse.swt.graphics.Color
+import org.eclipse.xtend.lib.annotations.Accessors
+import org.eclipse.xtend.lib.annotations.Data
 
 import static java.lang.Math.*
-import org.eclipse.swt.graphics.Color
-import org.eclipse.draw2d.geometry.Point
-import org.eclipse.draw2d.ColorConstants
 
 class Tortoise {
 	double angle
 	double x
 	double y
-	@Property int delay = 200
+	@Accessors int delay = 200
 
 	boolean isPaint = true
-	@Property int lineWidth = 1
-	@Property Color lineColor = ColorConstants.black
+	@Accessors int lineWidth = 1
+	@Accessors Color lineColor = ColorConstants.black
 
 	List<ITortoiseEvent.Listener> listeners = newArrayList
 	

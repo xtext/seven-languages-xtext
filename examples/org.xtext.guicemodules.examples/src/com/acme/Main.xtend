@@ -20,12 +20,12 @@ class Main {
 
 	def static void main(String[] args) {
 		val instance = new Main
-		Guice::createInjector(new RuntimeModule).injectMembers(instance)
+		Guice.createInjector(new RuntimeModule).injectMembers(instance)
 		instance.logTheData
 	}
 	
 	@Test def testTheSystem() {
-		Guice::createInjector(new TestModule).injectMembers(this)
+		Guice.createInjector(new TestModule).injectMembers(this)
 		logTheData
 		assertEquals('dummy-data', logger.toString)
 	}

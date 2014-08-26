@@ -9,9 +9,9 @@ package org.xtext.builddsl.lib.impl
 
 class RunUtil {
 	
-	def static void runMain(Class<?> clazz, String[] argument) {
-		val mainMethod = clazz.getDeclaredMethod("main", Class.forName('[Ljava.lang.String;'))
-		mainMethod.invoke(null, #[argument])
+	def static void runMain(Class<?> clazz, String[] arguments) {
+		val mainMethod = clazz.getDeclaredMethod("main", typeof(String[]))
+		mainMethod.invoke(null, #[arguments])
 	}
 
 }

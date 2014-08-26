@@ -2,6 +2,7 @@ package routes;
 
 import com.acme.GuessTheNumber;
 import com.google.inject.Inject;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -68,7 +69,7 @@ public class NumberGuessing extends HttpServlet {
   public void doGet(final HttpServletRequest request, final HttpServletResponse response) {
     String url =  request.getRequestURL().toString();
     {
-    	java.util.regex.Matcher _matcher = _pattern2.matcher(url);
+    	Matcher _matcher = _pattern2.matcher(url);
     	if (_matcher.find()) {
     		String myGuess = _matcher.group(1);
     		if (_doGet2Condition(request, response, myGuess)) {
@@ -78,7 +79,7 @@ public class NumberGuessing extends HttpServlet {
     	}
     }
     {
-    	java.util.regex.Matcher _matcher = _pattern3.matcher(url);
+    	Matcher _matcher = _pattern3.matcher(url);
     	if (_matcher.find()) {
     		if (_doGet3Condition(request, response)) {
     			_doGet3(request, response);
@@ -87,7 +88,7 @@ public class NumberGuessing extends HttpServlet {
     	}
     }
     {
-    	java.util.regex.Matcher _matcher = _pattern4.matcher(url);
+    	Matcher _matcher = _pattern4.matcher(url);
     	if (_matcher.find()) {
     		String myGuess = _matcher.group(1);
     		_doGet4(request, response, myGuess);
@@ -95,14 +96,14 @@ public class NumberGuessing extends HttpServlet {
     	}
     }
     {
-    	java.util.regex.Matcher _matcher = _pattern5.matcher(url);
+    	Matcher _matcher = _pattern5.matcher(url);
     	if (_matcher.find()) {
     		_doGet5(request, response);
     		return;
     	}
     }
     {
-    	java.util.regex.Matcher _matcher = _pattern6.matcher(url);
+    	Matcher _matcher = _pattern6.matcher(url);
     	if (_matcher.find()) {
     		_doGet6(request, response);
     		return;

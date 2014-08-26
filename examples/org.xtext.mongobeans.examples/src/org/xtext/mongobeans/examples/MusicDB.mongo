@@ -8,8 +8,8 @@ package org.musicdb {
 	 */
 	Artist {
 		String name
-		Album* albums
-		Iterable<? extends Track> getOevre() {
+		Album* albums 
+		Iterable<? extends Track> getOeuvre() {
 			// Xbase can look like Java
 			val List<Track> result = new ArrayList<Track>();
 			for(Album album: getAlbums()) {
@@ -21,13 +21,13 @@ package org.musicdb {
 			// albums.map[tracks].flatten
 		}
 	}
-
+ 
 	Album {
 		String title
 		int year
 		Duration getDuration() {
 			tracks.map[duration].reduce[a, b | a + b]
-		} 
+		}
 		Track {
 			String title
 			int seconds

@@ -9,45 +9,43 @@ package org.xtext.builddsl.lib;
 
 import java.io.File;
 import java.util.Collection;
-import org.eclipse.xtend.lib.Property;
+import org.eclipse.xtend.lib.annotations.Accessors;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Pure;
 
+@Accessors
 @SuppressWarnings("all")
 public class JavaCompilerParams {
-  @Property
-  private Collection<File> _sources = CollectionLiterals.<File>newArrayList();
+  private Collection<File> sources = CollectionLiterals.<File>newArrayList();
   
-  @Property
-  private Collection<File> _classpath = CollectionLiterals.<File>newArrayList();
+  private Collection<File> classpath = CollectionLiterals.<File>newArrayList();
   
-  @Property
-  private File _destination;
+  private File destination;
   
   @Pure
   public Collection<File> getSources() {
-    return this._sources;
+    return this.sources;
   }
   
   public void setSources(final Collection<File> sources) {
-    this._sources = sources;
+    this.sources = sources;
   }
   
   @Pure
   public Collection<File> getClasspath() {
-    return this._classpath;
+    return this.classpath;
   }
   
   public void setClasspath(final Collection<File> classpath) {
-    this._classpath = classpath;
+    this.classpath = classpath;
   }
   
   @Pure
   public File getDestination() {
-    return this._destination;
+    return this.destination;
   }
   
   public void setDestination(final File destination) {
-    this._destination = destination;
+    this.destination = destination;
   }
 }

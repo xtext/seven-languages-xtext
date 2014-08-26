@@ -17,6 +17,7 @@ import org.eclipse.jetty.server.Server
 import org.eclipse.jetty.servlet.ServletContextHandler
 import org.eclipse.jetty.servlet.ServletHolder
 import routes.NumberGuessing
+import com.google.inject.Binder
 
 class StartServer {
 	/**
@@ -26,7 +27,7 @@ class StartServer {
 	def static void main(String[] args) {
 		val server = new Server(8080)
  
-        val context = new ServletContextHandler(ServletContextHandler::SESSIONS)
+        val context = new ServletContextHandler(ServletContextHandler.SESSIONS)
         context.contextPath = "/"
         server.handler = context
  
@@ -45,9 +46,9 @@ class SuperServlet extends NumberGuessing {
 	
 	override init() throws ServletException {
 		super.init()
-		injector = Guice::createInjector [
-			bind(HttpServletRequest).toProvider [|request.get]
-			bind(HttpServletResponse).toProvider [|response.get]
+		injector = Guice.createInjector [Binder it|
+			bind(HttpServletRequest).toProvider[request.get]
+			bind(HttpServletResponse).toProvider[response.get]
 		]
 	}
 	

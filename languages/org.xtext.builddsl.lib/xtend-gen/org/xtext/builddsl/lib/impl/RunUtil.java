@@ -12,11 +12,10 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
 
 @SuppressWarnings("all")
 public class RunUtil {
-  public static void runMain(final Class<?> clazz, final String[] argument) {
+  public static void runMain(final Class<?> clazz, final String[] arguments) {
     try {
-      Class<?> _forName = Class.forName("[Ljava.lang.String;");
-      final Method mainMethod = clazz.getDeclaredMethod("main", _forName);
-      mainMethod.invoke(null, new Object[] { argument });
+      final Method mainMethod = clazz.getDeclaredMethod("main", String[].class);
+      mainMethod.invoke(null, new Object[] { arguments });
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }

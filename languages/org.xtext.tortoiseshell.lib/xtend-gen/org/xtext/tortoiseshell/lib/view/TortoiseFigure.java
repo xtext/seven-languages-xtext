@@ -16,14 +16,14 @@ import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Rectangle;
-import org.eclipse.xtend.lib.Property;
+import org.eclipse.xtend.lib.annotations.Accessors;
 import org.eclipse.xtext.ui.PluginImageHelper;
 import org.eclipse.xtext.xbase.lib.Pure;
 
 @SuppressWarnings("all")
 public class TortoiseFigure extends ImageFigure {
-  @Property
-  private double _angle;
+  @Accessors
+  private double angle;
   
   @Inject
   public TortoiseFigure(final PluginImageHelper imageHelper) {
@@ -34,7 +34,7 @@ public class TortoiseFigure extends ImageFigure {
     graphics.pushState();
     final Dimension size = this.getSize();
     graphics.translate((this.getLocation().x + (size.width / 2)), (this.getLocation().y + (size.width / 2)));
-    graphics.rotate((-((float) Math.toDegrees(this.getAngle()))));
+    graphics.rotate((-((float) Math.toDegrees(this.angle))));
     graphics.translate(((-this.getLocation().x) - (size.width / 2)), ((-this.getLocation().y) - (size.width / 2)));
     super.paintFigure(graphics);
     graphics.popState();
@@ -62,12 +62,12 @@ public class TortoiseFigure extends ImageFigure {
   }
   
   public void setAngle(final double angle) {
-    this._angle = angle;
+    this.angle = angle;
     this.revalidate();
   }
   
   @Pure
   public double getAngle() {
-    return this._angle;
+    return this.angle;
   }
 }

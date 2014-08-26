@@ -65,6 +65,6 @@ class GuessTheNumber {
 	
 	
 	def private send(CharSequence answer) {
-		answer.write [|new OutputStreamWriter(response.outputStream)]
+		answer.write [new OutputStreamWriter(response.outputStream)]
 	}
 }

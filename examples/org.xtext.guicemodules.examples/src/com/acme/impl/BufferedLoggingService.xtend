@@ -8,10 +8,11 @@
 package com.acme.impl
 
 import com.acme.LoggingService
+import org.eclipse.xtend.lib.annotations.Accessors
 
 class BufferedLoggingService implements LoggingService {
 	
-	@Property StringBuilder buffer = new StringBuilder
+	@Accessors StringBuilder buffer = new StringBuilder
 
 	override logMessage(String msg) {
 		buffer.append(msg)

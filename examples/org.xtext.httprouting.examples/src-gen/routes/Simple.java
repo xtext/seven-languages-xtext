@@ -1,6 +1,7 @@
 package routes;
 
 import com.google.inject.Inject;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -28,7 +29,7 @@ public class Simple extends HttpServlet {
   public void doGet(final HttpServletRequest request, final HttpServletResponse response) {
     String url =  request.getRequestURL().toString();
     {
-    	java.util.regex.Matcher _matcher = _pattern1.matcher(url);
+    	Matcher _matcher = _pattern1.matcher(url);
     	if (_matcher.find()) {
     		String someValue = _matcher.group(1);
     		_doGet1(request, response, someValue);
@@ -36,7 +37,7 @@ public class Simple extends HttpServlet {
     	}
     }
     {
-    	java.util.regex.Matcher _matcher = _pattern3.matcher(url);
+    	Matcher _matcher = _pattern3.matcher(url);
     	if (_matcher.find()) {
     		String someValue = _matcher.group(1);
     		_doGet3(request, response, someValue);
