@@ -65,8 +65,8 @@ public class MusicDBXtendTest {
           }
         };
         final Artist john = ObjectExtensions.<Artist>operator_doubleArrow(_artist, _function);
-        Iterable<? extends Track> _oevre = john.getOevre();
-        int _size = IterableExtensions.size(_oevre);
+        Iterable<? extends Track> _oeuvre = john.getOeuvre();
+        int _size = IterableExtensions.size(_oeuvre);
         Assert.assertEquals(8, _size);
         this._mongoExtensions.save(dbCollection, john);
         Artist _artist_1 = new Artist();

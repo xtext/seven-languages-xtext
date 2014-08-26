@@ -1,21 +1,21 @@
-import org.eclipse.xtend.lib.Data;
+import org.eclipse.xtend.lib.annotations.Data;
 import org.eclipse.xtext.xbase.lib.Pure;
-import org.eclipse.xtext.xbase.lib.util.ToStringHelper;
+import org.eclipse.xtext.xbase.lib.util.ToStringBuilder;
 
 @Data
 @SuppressWarnings("all")
 public class Section {
-  private final String _title;
+  private final String title;
   
-  private final String _description;
+  private final String description;
   
-  private final String _body;
+  private final String body;
   
   public Section(final String title, final String description, final String body) {
     super();
-    this._title = title;
-    this._description = description;
-    this._body = body;
+    this.title = title;
+    this.description = description;
+    this.body = body;
   }
   
   @Override
@@ -23,9 +23,9 @@ public class Section {
   public int hashCode() {
     final int prime = 31;
     int result = 1;
-    result = prime * result + ((this._title== null) ? 0 : this._title.hashCode());
-    result = prime * result + ((this._description== null) ? 0 : this._description.hashCode());
-    result = prime * result + ((this._body== null) ? 0 : this._body.hashCode());
+    result = prime * result + ((this.title== null) ? 0 : this.title.hashCode());
+    result = prime * result + ((this.description== null) ? 0 : this.description.hashCode());
+    result = prime * result + ((this.body== null) ? 0 : this.body.hashCode());
     return result;
   }
   
@@ -39,20 +39,20 @@ public class Section {
     if (getClass() != obj.getClass())
       return false;
     Section other = (Section) obj;
-    if (this._title == null) {
-      if (other._title != null)
+    if (this.title == null) {
+      if (other.title != null)
         return false;
-    } else if (!this._title.equals(other._title))
+    } else if (!this.title.equals(other.title))
       return false;
-    if (this._description == null) {
-      if (other._description != null)
+    if (this.description == null) {
+      if (other.description != null)
         return false;
-    } else if (!this._description.equals(other._description))
+    } else if (!this.description.equals(other.description))
       return false;
-    if (this._body == null) {
-      if (other._body != null)
+    if (this.body == null) {
+      if (other.body != null)
         return false;
-    } else if (!this._body.equals(other._body))
+    } else if (!this.body.equals(other.body))
       return false;
     return true;
   }
@@ -60,22 +60,25 @@ public class Section {
   @Override
   @Pure
   public String toString() {
-    String result = new ToStringHelper().toString(this);
-    return result;
+    ToStringBuilder b = new ToStringBuilder(this);
+    b.add("title", this.title);
+    b.add("description", this.description);
+    b.add("body", this.body);
+    return b.toString();
   }
   
   @Pure
   public String getTitle() {
-    return this._title;
+    return this.title;
   }
   
   @Pure
   public String getDescription() {
-    return this._description;
+    return this.description;
   }
   
   @Pure
   public String getBody() {
-    return this._body;
+    return this.body;
   }
 }

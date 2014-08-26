@@ -107,11 +107,11 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
         JvmTypeReference _typeRef_1 = BuildDSLJvmModelInferrer.this._typeReferenceBuilder.typeRef(String.class);
         final JvmTypeReference stringArray = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.addArrayTypeDimension(_typeRef_1);
         EList<JvmMember> _members = it.getMembers();
-        JvmTypeReference _typeRef_2 = BuildDSLJvmModelInferrer.this._typeReferenceBuilder.typeRef(Void.TYPE);
+        JvmTypeReference _typeRef_2 = BuildDSLJvmModelInferrer.this._typeReferenceBuilder.typeRef(void.class);
         final Procedure1<JvmOperation> _function = new Procedure1<JvmOperation>() {
           public void apply(final JvmOperation it) {
             EList<JvmFormalParameter> _parameters = it.getParameters();
-            JvmFormalParameter _parameter = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.toParameter(it, "args", stringArray);
+            JvmFormalParameter _parameter = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.toParameter(file, "args", stringArray);
             BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters, _parameter);
             it.setVarArgs(true);
             it.setStatic(true);

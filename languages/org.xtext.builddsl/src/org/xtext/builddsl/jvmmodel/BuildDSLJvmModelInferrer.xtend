@@ -47,8 +47,8 @@ class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
 			
 			// the main method		
    			val stringArray = typeRef(String).addArrayTypeDimension
-			members += file.toMethod ("main", typeRef(Void.TYPE)) [
-				parameters += toParameter("args", stringArray)
+			members += file.toMethod ("main", typeRef(void)) [
+				parameters += file.toParameter("args", stringArray)
 				varArgs = true
 				static = true
 				body = '''

@@ -18,7 +18,7 @@ class FileDataProvider implements DataProvider {
 	@Inject @DataFile String dataFile
 
 	override getData() {
-		new File(dataFile).readLines(Charsets::UTF_8).join('\n')
+		new File(dataFile).readLines(Charsets.UTF_8).join('\n')
 	}
 	
 }

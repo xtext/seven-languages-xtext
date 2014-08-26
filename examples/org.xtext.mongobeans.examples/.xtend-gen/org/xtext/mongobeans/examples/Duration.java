@@ -7,16 +7,16 @@
  */
 package org.xtext.mongobeans.examples;
 
-import org.eclipse.xtend.lib.Property;
+import org.eclipse.xtend.lib.annotations.Accessors;
 import org.eclipse.xtext.xbase.lib.Pure;
 
 @SuppressWarnings("all")
 public class Duration {
-  @Property
-  private int _seconds;
+  @Accessors
+  private int seconds;
   
   public Duration(final int seconds) {
-    this.setSeconds(seconds);
+    this.seconds = seconds;
   }
   
   public Duration(final String duration) {
@@ -27,33 +27,26 @@ public class Duration {
     String _get_1 = split[1];
     int _parseInt_1 = Integer.parseInt(_get_1);
     int _plus = (_multiply + _parseInt_1);
-    this.setSeconds(_plus);
+    this.seconds = _plus;
   }
   
   public String toString() {
-    int _seconds = this.getSeconds();
-    int _divide = (_seconds / 60);
-    String _string = Integer.toString(_divide);
+    String _string = Integer.toString((this.seconds / 60));
     String _plus = (_string + ":");
-    int _seconds_1 = this.getSeconds();
-    int _modulo = (_seconds_1 % 60);
-    String _string_1 = Integer.toString(_modulo);
+    String _string_1 = Integer.toString((this.seconds % 60));
     return (_plus + _string_1);
   }
   
   public Duration operator_plus(final Duration other) {
-    int _seconds = this.getSeconds();
-    int _seconds_1 = other.getSeconds();
-    int _plus = (_seconds + _seconds_1);
-    return new Duration(_plus);
+    return new Duration((this.seconds + other.seconds));
   }
   
   @Pure
   public int getSeconds() {
-    return this._seconds;
+    return this.seconds;
   }
   
   public void setSeconds(final int seconds) {
-    this._seconds = seconds;
+    this.seconds = seconds;
   }
 }

@@ -11,7 +11,7 @@ import java.util.List;
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.swt.graphics.Color;
-import org.eclipse.xtend.lib.Property;
+import org.eclipse.xtend.lib.annotations.Accessors;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Pure;
 import org.xtext.tortoiseshell.lib.ITortoiseEvent;
@@ -26,16 +26,16 @@ public class Tortoise {
   
   private double y;
   
-  @Property
-  private int _delay = 200;
+  @Accessors
+  private int delay = 200;
   
   private boolean isPaint = true;
   
-  @Property
-  private int _lineWidth = 1;
+  @Accessors
+  private int lineWidth = 1;
   
-  @Property
-  private Color _lineColor = ColorConstants.black;
+  @Accessors
+  private Color lineColor = ColorConstants.black;
   
   private List<ITortoiseEvent.Listener> listeners = CollectionLiterals.<ITortoiseEvent.Listener>newArrayList();
   
@@ -147,28 +147,28 @@ public class Tortoise {
   
   @Pure
   public int getDelay() {
-    return this._delay;
+    return this.delay;
   }
   
   public void setDelay(final int delay) {
-    this._delay = delay;
+    this.delay = delay;
   }
   
   @Pure
   public int getLineWidth() {
-    return this._lineWidth;
+    return this.lineWidth;
   }
   
   public void setLineWidth(final int lineWidth) {
-    this._lineWidth = lineWidth;
+    this.lineWidth = lineWidth;
   }
   
   @Pure
   public Color getLineColor() {
-    return this._lineColor;
+    return this.lineColor;
   }
   
   public void setLineColor(final Color lineColor) {
-    this._lineColor = lineColor;
+    this.lineColor = lineColor;
   }
 }

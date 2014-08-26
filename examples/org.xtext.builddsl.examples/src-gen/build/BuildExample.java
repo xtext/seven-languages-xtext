@@ -56,14 +56,14 @@ public class BuildExample extends BuildScript {
   protected void Run() {
     try {
       final ClassLoader classpath = JavaCompiler.newClasspath(this.jar);
-      final Class<? extends Object> clazz = classpath.loadClass("helloworld.HelloWorld");
+      final Class<?> clazz = classpath.loadClass("helloworld.HelloWorld");
       ClassExtensions.runMain(clazz);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
   }
   
-  @DependsOn()
+  @DependsOn
   protected void Clean() {
     DirectoryCleaner.deleteDirectoryContents(this.target);
     this.jar.delete();

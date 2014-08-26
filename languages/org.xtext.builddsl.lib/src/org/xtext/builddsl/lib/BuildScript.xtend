@@ -11,6 +11,7 @@ import java.io.File
 import java.lang.reflect.Field
 import java.util.List
 import java.util.Map
+import org.eclipse.xtend.lib.annotations.Accessors
 
 abstract class BuildScript {
 	
@@ -30,7 +31,7 @@ abstract class BuildScript {
 				if (taskAnnotation != null) {
 					taskDef(method.name) [
 						prerequisitedTasks = (taskAnnotation as DependsOn).value
-						runnable = [|
+						runnable = [
 							method.accessible = true
 							method.invoke(this)
 						]
@@ -147,11 +148,12 @@ abstract class BuildScript {
 
 }
 
+@Accessors
 class TaskDef {
-	@Property ()=>void runnable
-	@Property String name
-	@Property List<String> prerequisitedTasks = newArrayList
-	@Property boolean executed = false
-	@Property boolean isExecuting = false
+	()=>void runnable
+	String name
+	List<String> prerequisitedTasks = newArrayList
+	boolean executed = false
+	boolean isExecuting = false
 }
 

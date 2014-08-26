@@ -71,6 +71,7 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 		inferredType.members += bean.toConstructor [
 			documentation = '''Creates a new «bean.name» wrapping the given {@link «DBObject.name»}.'''
 			parameters += bean.toParameter("dbObject", typeRef1)
+
 			body = '''
 				this._dbObject = dbObject;
 			'''
@@ -129,11 +130,7 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 				«ENDIF»
 			'''
 		]
-<<<<<<< HEAD
-		inferredType.members += property.toMethod('set' + property.name.toFirstUpper,  typeRef(Void.TYPE)) [
-=======
 		inferredType.members += property.toMethod('set' + property.name.toFirstUpper, typeRef(Void.TYPE)) [
->>>>>>> regenerated and updated to latest changes
 			documentation = property.documentation
 			parameters += property.toParameter(property.name, property.jvmType)
 			body = '''
@@ -156,11 +153,7 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 
 	def protected getJvmType(MongoProperty property) {
 		if(property.inlineType != null)
-<<<<<<< HEAD
-			(property.inlineType.jvmElements.head as JvmDeclaredType).typeRef
-=======
 			typeRef(property.inlineType.jvmElements.head as JvmDeclaredType)
->>>>>>> regenerated and updated to latest changes
 		else		
 			property.type
 	}

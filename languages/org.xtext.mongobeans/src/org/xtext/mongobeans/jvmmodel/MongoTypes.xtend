@@ -18,6 +18,9 @@ import org.eclipse.xtext.common.types.util.RawSuperTypes
 class MongoTypes {
 	@Inject extension RawSuperTypes
 	
+	@Inject
+	RawSuperTypes superTypes 
+	
 	public static val mongoPrimitiveTypes = #{
 		'double',
 		'java.lang.Double',

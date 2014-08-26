@@ -8,23 +8,23 @@
 package org.xtext.tortoiseshell.lib;
 
 import org.eclipse.draw2d.geometry.Point;
-import org.eclipse.xtend.lib.Data;
+import org.eclipse.xtend.lib.annotations.Data;
 import org.eclipse.xtext.xbase.lib.Pure;
-import org.eclipse.xtext.xbase.lib.util.ToStringHelper;
+import org.eclipse.xtext.xbase.lib.util.ToStringBuilder;
 import org.xtext.tortoiseshell.lib.ITortoiseEvent;
 import org.xtext.tortoiseshell.lib.Tortoise;
 
 @Data
 @SuppressWarnings("all")
 public class MoveEvent implements ITortoiseEvent {
-  private final Tortoise _tortoise;
+  private final Tortoise tortoise;
   
-  private final Point _oldPosition;
+  private final Point oldPosition;
   
   public MoveEvent(final Tortoise tortoise, final Point oldPosition) {
     super();
-    this._tortoise = tortoise;
-    this._oldPosition = oldPosition;
+    this.tortoise = tortoise;
+    this.oldPosition = oldPosition;
   }
   
   @Override
@@ -32,8 +32,8 @@ public class MoveEvent implements ITortoiseEvent {
   public int hashCode() {
     final int prime = 31;
     int result = 1;
-    result = prime * result + ((this._tortoise== null) ? 0 : this._tortoise.hashCode());
-    result = prime * result + ((this._oldPosition== null) ? 0 : this._oldPosition.hashCode());
+    result = prime * result + ((this.tortoise== null) ? 0 : this.tortoise.hashCode());
+    result = prime * result + ((this.oldPosition== null) ? 0 : this.oldPosition.hashCode());
     return result;
   }
   
@@ -47,15 +47,15 @@ public class MoveEvent implements ITortoiseEvent {
     if (getClass() != obj.getClass())
       return false;
     MoveEvent other = (MoveEvent) obj;
-    if (this._tortoise == null) {
-      if (other._tortoise != null)
+    if (this.tortoise == null) {
+      if (other.tortoise != null)
         return false;
-    } else if (!this._tortoise.equals(other._tortoise))
+    } else if (!this.tortoise.equals(other.tortoise))
       return false;
-    if (this._oldPosition == null) {
-      if (other._oldPosition != null)
+    if (this.oldPosition == null) {
+      if (other.oldPosition != null)
         return false;
-    } else if (!this._oldPosition.equals(other._oldPosition))
+    } else if (!this.oldPosition.equals(other.oldPosition))
       return false;
     return true;
   }
@@ -63,17 +63,19 @@ public class MoveEvent implements ITortoiseEvent {
   @Override
   @Pure
   public String toString() {
-    String result = new ToStringHelper().toString(this);
-    return result;
+    ToStringBuilder b = new ToStringBuilder(this);
+    b.add("tortoise", this.tortoise);
+    b.add("oldPosition", this.oldPosition);
+    return b.toString();
   }
   
   @Pure
   public Tortoise getTortoise() {
-    return this._tortoise;
+    return this.tortoise;
   }
   
   @Pure
   public Point getOldPosition() {
-    return this._oldPosition;
+    return this.oldPosition;
   }
 }

@@ -7,23 +7,23 @@
  */
 package org.xtext.tortoiseshell.lib;
 
-import org.eclipse.xtend.lib.Data;
+import org.eclipse.xtend.lib.annotations.Data;
 import org.eclipse.xtext.xbase.lib.Pure;
-import org.eclipse.xtext.xbase.lib.util.ToStringHelper;
+import org.eclipse.xtext.xbase.lib.util.ToStringBuilder;
 import org.xtext.tortoiseshell.lib.ITortoiseEvent;
 import org.xtext.tortoiseshell.lib.Tortoise;
 
 @Data
 @SuppressWarnings("all")
 public class TurnEvent implements ITortoiseEvent {
-  private final Tortoise _tortoise;
+  private final Tortoise tortoise;
   
-  private final double _oldAngle;
+  private final double oldAngle;
   
   public TurnEvent(final Tortoise tortoise, final double oldAngle) {
     super();
-    this._tortoise = tortoise;
-    this._oldAngle = oldAngle;
+    this.tortoise = tortoise;
+    this.oldAngle = oldAngle;
   }
   
   @Override
@@ -31,8 +31,8 @@ public class TurnEvent implements ITortoiseEvent {
   public int hashCode() {
     final int prime = 31;
     int result = 1;
-    result = prime * result + ((this._tortoise== null) ? 0 : this._tortoise.hashCode());
-    result = prime * result + (int) (Double.doubleToLongBits(this._oldAngle) ^ (Double.doubleToLongBits(this._oldAngle) >>> 32));
+    result = prime * result + ((this.tortoise== null) ? 0 : this.tortoise.hashCode());
+    result = prime * result + (int) (Double.doubleToLongBits(this.oldAngle) ^ (Double.doubleToLongBits(this.oldAngle) >>> 32));
     return result;
   }
   
@@ -46,12 +46,12 @@ public class TurnEvent implements ITortoiseEvent {
     if (getClass() != obj.getClass())
       return false;
     TurnEvent other = (TurnEvent) obj;
-    if (this._tortoise == null) {
-      if (other._tortoise != null)
+    if (this.tortoise == null) {
+      if (other.tortoise != null)
         return false;
-    } else if (!this._tortoise.equals(other._tortoise))
+    } else if (!this.tortoise.equals(other.tortoise))
       return false;
-    if (Double.doubleToLongBits(other._oldAngle) != Double.doubleToLongBits(this._oldAngle))
+    if (Double.doubleToLongBits(other.oldAngle) != Double.doubleToLongBits(this.oldAngle))
       return false; 
     return true;
   }
@@ -59,17 +59,19 @@ public class TurnEvent implements ITortoiseEvent {
   @Override
   @Pure
   public String toString() {
-    String result = new ToStringHelper().toString(this);
-    return result;
+    ToStringBuilder b = new ToStringBuilder(this);
+    b.add("tortoise", this.tortoise);
+    b.add("oldAngle", this.oldAngle);
+    return b.toString();
   }
   
   @Pure
   public Tortoise getTortoise() {
-    return this._tortoise;
+    return this.tortoise;
   }
   
   @Pure
   public double getOldAngle() {
-    return this._oldAngle;
+    return this.oldAngle;
   }
 }

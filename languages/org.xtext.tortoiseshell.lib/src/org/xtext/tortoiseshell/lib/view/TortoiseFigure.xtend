@@ -14,12 +14,12 @@ import org.eclipse.draw2d.PositionConstants
 import org.eclipse.draw2d.geometry.Dimension
 import org.eclipse.draw2d.geometry.Point
 import org.eclipse.draw2d.geometry.Rectangle
-import org.eclipse.xtend.lib.Property
+import org.eclipse.xtend.lib.annotations.Accessors
 import org.eclipse.xtext.ui.PluginImageHelper
 
 class TortoiseFigure extends ImageFigure {
 
-	@Property double angle
+	@Accessors double angle
 
 	@Inject 
 	new(PluginImageHelper imageHelper) {
@@ -52,7 +52,7 @@ class TortoiseFigure extends ImageFigure {
 	}
 
 	def setAngle(double angle) {
-		_angle = angle
+		this.angle = angle
 		revalidate
 	}
 

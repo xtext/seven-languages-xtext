@@ -23,9 +23,9 @@ public class Language {
     /* String.class */
     /* CollectionLiterals.<Integer>newArrayList(Integer.valueOf(3), Integer.valueOf(5), Integer.valueOf(7)); */
     /* CollectionLiterals.<String>newHashSet("foo", "bar", "baz"); */
-    Pair<Integer,String> _mappedTo = Pair.<Integer, String>of(Integer.valueOf(1), "one");
-    Pair<Integer,String> _mappedTo_1 = Pair.<Integer, String>of(Integer.valueOf(2), "two");
-    Pair<Integer,String> _mappedTo_2 = Pair.<Integer, String>of(Integer.valueOf(3), "three");
+    Pair<Integer, String> _mappedTo = Pair.<Integer, String>of(Integer.valueOf(1), "one");
+    Pair<Integer, String> _mappedTo_1 = Pair.<Integer, String>of(Integer.valueOf(2), "two");
+    Pair<Integer, String> _mappedTo_2 = Pair.<Integer, String>of(Integer.valueOf(3), "three");
     /* CollectionLiterals.<Integer, String>newHashMap(_mappedTo, _mappedTo_1, _mappedTo_2); */
     final String x = "A final value";
     String y = "A non-final variable";
@@ -38,13 +38,13 @@ public class Language {
     if (!true) {
       _and = false;
     } else {
-      _and = (true && false);
+      _and = false;
     }
     boolean _or = false;
     if (true) {
       _or = true;
     } else {
-      _or = (true || false);
+      _or = false;
     }
     /* (1 == 2); */
     /* (1 != 2); */
@@ -58,8 +58,7 @@ public class Language {
     if (null != null) {
       _elvis = null;
     } else {
-      _elvis = ObjectExtensions.<String>operator_elvis(
-        null, "default");
+      _elvis = "default";
     }
     final Procedure1<String> _function = new Procedure1<String>() {
       public void apply(final String it) {
@@ -74,25 +73,23 @@ public class Language {
     }
     /* StringExtensions.isNullOrEmpty("foo bar"); */
     final String z = "Hello ";
-    final Function1<String,String> _function_1 = new Function1<String,String>() {
+    final Function1<String, String> _function_1 = new Function1<String, String>() {
       public String apply(final String e) {
         return (z + e);
       }
     };
-    final Function1<String,String> f = _function_1;
+    final Function1<String, String> f = _function_1;
     f.apply("World!");
     final ArrayList<String> list = CollectionLiterals.<String>newArrayList("a", "b", "c");
-    final Function1<String,String> _function_2 = new Function1<String,String>() {
+    final Function1<String, String> _function_2 = new Function1<String, String>() {
       public String apply(final String e) {
-        String _upperCase = e.toUpperCase();
-        return _upperCase;
+        return e.toUpperCase();
       }
     };
     /* ListExtensions.<String, String>map(list, _function_2); */
-    final Function1<String,String> _function_3 = new Function1<String,String>() {
+    final Function1<String, String> _function_3 = new Function1<String, String>() {
       public String apply(final String it) {
-        String _upperCase = it.toUpperCase();
-        return _upperCase;
+        return it.toUpperCase();
       }
     };
     /* ListExtensions.<String, String>map(list, _function_3); */
@@ -109,20 +106,20 @@ public class Language {
     for (final Object i : itemis) {
       boolean _matched = false;
       if (!_matched) {
-        if (Objects.equal(i,"foo")) {
+        if (Objects.equal(i, "foo")) {
           _matched=true;
           /* "it\'s foo" */
         }
       }
       if (!_matched) {
-        if (Objects.equal(i,"bar")) {
+        if (Objects.equal(i, "bar")) {
           _matched=true;
           /* "a bar" */
         }
       }
       if (!_matched) {
         if (i instanceof Integer) {
-          if (Objects.equal(i,123)) {
+          if (Objects.equal(i, 123)) {
             _matched=true;
             /* "found integer" */
           }
