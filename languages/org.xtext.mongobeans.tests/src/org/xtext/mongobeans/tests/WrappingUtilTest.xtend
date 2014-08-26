@@ -23,6 +23,7 @@ import org.xtext.mongobeans.lib.IMongoBean
 import org.xtext.mongobeans.lib.WrappingUtil
 
 import static org.junit.Assert.*
+import org.eclipse.xtend.lib.annotations.Accessors
 
 @RunWith(XtextRunner)
 @InjectWith(MongoBeansInjectorProvider)
@@ -31,7 +32,7 @@ class WrappingUtilTest {
 	@Inject extension CompilationTestHelper
 	@Inject extension ReflectExtensions
 
-	@Property Class<?> mongoBeanClass
+	@Accessors Class<?> mongoBeanClass
 
 	@Before def setUp() {
 		'''

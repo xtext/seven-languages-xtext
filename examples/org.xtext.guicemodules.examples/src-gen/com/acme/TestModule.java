@@ -1,10 +1,14 @@
 package com.acme;
 
 import com.acme.DataProvider;
+import com.acme.LoggingService;
 import com.acme.RuntimeModule;
+import com.acme.impl.BufferedLoggingService;
 import com.google.inject.Binder;
 import com.google.inject.Key;
 import com.google.inject.Module;
+import com.google.inject.TypeLiteral;
+import java.util.HashSet;
 import java.util.Set;
 
 @SuppressWarnings("all")
@@ -21,26 +25,24 @@ public class TestModule implements Module {
   }
   
   public void configure(final Binder binder) {
-    configure(binder, new java.util.HashSet<com.google.inject.Key<?>>());
+    configure(binder, new HashSet<Key<?>>());
   }
   
   /**
    * Registers bindings for keys not present in the given set.
    */
-  public void configure(final Binder bind, final Set<Key<? extends Object>> usedKeys) {
+  public void configure(final Binder bind, final Set<Key<?>> usedKeys) {
     try {
     	{
-    		com.google.inject.Key<com.acme.DataProvider> key = 
-    			com.google.inject.Key.get(new com.google.inject.TypeLiteral<com.acme.DataProvider>(){});
+    		Key<DataProvider> key = Key.get(new TypeLiteral<DataProvider>(){});
     		if (usedKeys.add(key)) {
     			bind.bind(key).toInstance(_toInstance0());
     		}
     	}
     	{
-    		com.google.inject.Key<com.acme.LoggingService> key = 
-    			com.google.inject.Key.get(new com.google.inject.TypeLiteral<com.acme.LoggingService>(){});
+    		Key<LoggingService> key = Key.get(new TypeLiteral<LoggingService>(){});
     		if (usedKeys.add(key)) {
-    			bind.bind(key).to(com.google.inject.Key.get(new com.google.inject.TypeLiteral<com.acme.impl.BufferedLoggingService>(){}));
+    			bind.bind(key).to(Key.get(new TypeLiteral<BufferedLoggingService>(){}));
     		}
     	}
     	runtimeModule.configure(bind, usedKeys);

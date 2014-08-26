@@ -21,10 +21,8 @@ public class StartServer {
    */
   public static void main(final String[] args) {
     try {
-      Server _server = new Server(8080);
-      final Server server = _server;
-      ServletContextHandler _servletContextHandler = new ServletContextHandler(ServletContextHandler.SESSIONS);
-      final ServletContextHandler context = _servletContextHandler;
+      final Server server = new Server(8080);
+      final ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
       context.setContextPath("/");
       server.setHandler(context);
       SuperServlet _superServlet = new SuperServlet();

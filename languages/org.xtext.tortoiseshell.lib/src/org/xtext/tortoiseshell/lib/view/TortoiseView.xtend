@@ -79,7 +79,7 @@ class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
 	
 	def show(XtextEditor tortoiseEditor, int stopAtLine) {
 		animator.setAnimated(stopAtLine < 0)
-		DisplayRunHelper.runSyncInDisplayThread[|reset]
+		DisplayRunHelper.runSyncInDisplayThread[reset]
 		tortoiseEditor.document.readOnly [
 			if(it != null && !tortoiseEditor.hasError) {
 				val tortoise = new Tortoise

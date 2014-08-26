@@ -24,15 +24,14 @@ public class WordCount {
           File _file = new File(arg);
           final List<String> lines = Files.readLines(_file, 
             Charsets.UTF_8);
-          final Function1<String,Integer> _function = new Function1<String,Integer>() {
+          final Function1<String, Integer> _function = new Function1<String, Integer>() {
             public Integer apply(final String it) {
               String[] _split = it.split("\\s*");
-              int _size = ((List<String>)Conversions.doWrapArray(_split)).size();
-              return Integer.valueOf(_size);
+              return Integer.valueOf(((List<String>)Conversions.doWrapArray(_split)).size());
             }
           };
           List<Integer> _map = ListExtensions.<String, Integer>map(lines, _function);
-          final Function2<Integer,Integer,Integer> _function_1 = new Function2<Integer,Integer,Integer>() {
+          final Function2<Integer, Integer, Integer> _function_1 = new Function2<Integer, Integer, Integer>() {
             public Integer apply(final Integer a, final Integer b) {
               return Integer.valueOf(((a).intValue() + (b).intValue()));
             }

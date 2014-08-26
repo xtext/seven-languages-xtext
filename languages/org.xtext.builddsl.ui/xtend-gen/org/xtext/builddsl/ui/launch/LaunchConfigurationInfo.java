@@ -15,25 +15,24 @@ import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.debug.core.ILaunchManager;
 import org.eclipse.debug.ui.RefreshTab;
 import org.eclipse.jdt.launching.IJavaLaunchConfigurationConstants;
-import org.eclipse.xtend.lib.Data;
+import org.eclipse.xtend.lib.annotations.Data;
 import org.eclipse.xtext.util.Strings;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Pure;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
-import org.eclipse.xtext.xbase.lib.util.ToStringHelper;
+import org.eclipse.xtext.xbase.lib.util.ToStringBuilder;
 
 @Data
 @SuppressWarnings("all")
 public class LaunchConfigurationInfo {
-  private final String _project;
+  private final String project;
   
-  private final String _clazz;
+  private final String clazz;
   
-  private final String _task;
+  private final String task;
   
   public String getName() {
-    String _clazz = this.getClazz();
-    return Strings.lastToken(_clazz, ".");
+    return Strings.lastToken(this.clazz, ".");
   }
   
   public ILaunchConfiguration createConfiguration() {
@@ -46,13 +45,10 @@ public class LaunchConfigurationInfo {
         String _name = this.getName();
         String _generateUniqueLaunchConfigurationNameFrom = launchManager.generateUniqueLaunchConfigurationNameFrom(_name);
         final ILaunchConfigurationWorkingCopy wc = configType.newInstance(null, _generateUniqueLaunchConfigurationNameFrom);
-        String _project = this.getProject();
-        wc.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROJECT_NAME, _project);
-        String _clazz = this.getClazz();
-        wc.setAttribute(IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME, _clazz);
+        wc.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROJECT_NAME, this.project);
+        wc.setAttribute(IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME, this.clazz);
         wc.setAttribute(IJavaLaunchConfigurationConstants.ATTR_STOP_IN_MAIN, false);
-        String _task = this.getTask();
-        wc.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROGRAM_ARGUMENTS, _task);
+        wc.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROGRAM_ARGUMENTS, this.task);
         wc.setAttribute(RefreshTab.ATTR_REFRESH_SCOPE, "${workspace}");
         wc.setAttribute(RefreshTab.ATTR_REFRESH_RECURSIVE, true);
         _xblockexpression = wc.doSave();
@@ -69,22 +65,19 @@ public class LaunchConfigurationInfo {
       boolean _and_1 = false;
       boolean _and_2 = false;
       String _attribute = a.getAttribute(IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME, "X");
-      String _clazz = this.getClazz();
-      boolean _equals = Objects.equal(_attribute, _clazz);
+      boolean _equals = Objects.equal(_attribute, this.clazz);
       if (!_equals) {
         _and_2 = false;
       } else {
         String _attribute_1 = a.getAttribute(IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME, "X");
-        String _project = this.getProject();
-        boolean _equals_1 = Objects.equal(_attribute_1, _project);
+        boolean _equals_1 = Objects.equal(_attribute_1, this.project);
         _and_2 = _equals_1;
       }
       if (!_and_2) {
         _and_1 = false;
       } else {
         String _attribute_2 = a.getAttribute(IJavaLaunchConfigurationConstants.ATTR_PROGRAM_ARGUMENTS, "X");
-        String _task = this.getTask();
-        boolean _contains = _attribute_2.contains(_task);
+        boolean _contains = _attribute_2.contains(this.task);
         _and_1 = _contains;
       }
       if (!_and_1) {
@@ -104,22 +97,19 @@ public class LaunchConfigurationInfo {
   public boolean isValid() {
     boolean _and = false;
     boolean _and_1 = false;
-    String _clazz = this.getClazz();
-    boolean _isNullOrEmpty = StringExtensions.isNullOrEmpty(_clazz);
+    boolean _isNullOrEmpty = StringExtensions.isNullOrEmpty(this.clazz);
     boolean _not = (!_isNullOrEmpty);
     if (!_not) {
       _and_1 = false;
     } else {
-      String _project = this.getProject();
-      boolean _isNullOrEmpty_1 = StringExtensions.isNullOrEmpty(_project);
+      boolean _isNullOrEmpty_1 = StringExtensions.isNullOrEmpty(this.project);
       boolean _not_1 = (!_isNullOrEmpty_1);
       _and_1 = _not_1;
     }
     if (!_and_1) {
       _and = false;
     } else {
-      String _task = this.getTask();
-      boolean _isNullOrEmpty_2 = StringExtensions.isNullOrEmpty(_task);
+      boolean _isNullOrEmpty_2 = StringExtensions.isNullOrEmpty(this.task);
       boolean _not_2 = (!_isNullOrEmpty_2);
       _and = _not_2;
     }
@@ -128,9 +118,9 @@ public class LaunchConfigurationInfo {
   
   public LaunchConfigurationInfo(final String project, final String clazz, final String task) {
     super();
-    this._project = project;
-    this._clazz = clazz;
-    this._task = task;
+    this.project = project;
+    this.clazz = clazz;
+    this.task = task;
   }
   
   @Override
@@ -138,9 +128,9 @@ public class LaunchConfigurationInfo {
   public int hashCode() {
     final int prime = 31;
     int result = 1;
-    result = prime * result + ((this._project== null) ? 0 : this._project.hashCode());
-    result = prime * result + ((this._clazz== null) ? 0 : this._clazz.hashCode());
-    result = prime * result + ((this._task== null) ? 0 : this._task.hashCode());
+    result = prime * result + ((this.project== null) ? 0 : this.project.hashCode());
+    result = prime * result + ((this.clazz== null) ? 0 : this.clazz.hashCode());
+    result = prime * result + ((this.task== null) ? 0 : this.task.hashCode());
     return result;
   }
   
@@ -154,20 +144,20 @@ public class LaunchConfigurationInfo {
     if (getClass() != obj.getClass())
       return false;
     LaunchConfigurationInfo other = (LaunchConfigurationInfo) obj;
-    if (this._project == null) {
-      if (other._project != null)
+    if (this.project == null) {
+      if (other.project != null)
         return false;
-    } else if (!this._project.equals(other._project))
+    } else if (!this.project.equals(other.project))
       return false;
-    if (this._clazz == null) {
-      if (other._clazz != null)
+    if (this.clazz == null) {
+      if (other.clazz != null)
         return false;
-    } else if (!this._clazz.equals(other._clazz))
+    } else if (!this.clazz.equals(other.clazz))
       return false;
-    if (this._task == null) {
-      if (other._task != null)
+    if (this.task == null) {
+      if (other.task != null)
         return false;
-    } else if (!this._task.equals(other._task))
+    } else if (!this.task.equals(other.task))
       return false;
     return true;
   }
@@ -175,22 +165,25 @@ public class LaunchConfigurationInfo {
   @Override
   @Pure
   public String toString() {
-    String result = new ToStringHelper().toString(this);
-    return result;
+    ToStringBuilder b = new ToStringBuilder(this);
+    b.add("project", this.project);
+    b.add("clazz", this.clazz);
+    b.add("task", this.task);
+    return b.toString();
   }
   
   @Pure
   public String getProject() {
-    return this._project;
+    return this.project;
   }
   
   @Pure
   public String getClazz() {
-    return this._clazz;
+    return this.clazz;
   }
   
   @Pure
   public String getTask() {
-    return this._task;
+    return this.task;
   }
 }

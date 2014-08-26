@@ -12,6 +12,7 @@ import java.io.PrintWriter
 import java.net.URLClassLoader
 import java.util.Collection
 import org.eclipse.jdt.core.compiler.batch.BatchCompiler
+import org.eclipse.xtend.lib.annotations.Accessors
 
 class JavaCompiler {
 	
@@ -43,9 +44,9 @@ class JavaCompiler {
 		new URLClassLoader(entries.map[toURI.toURL])
 	}
 }
-
+@Accessors
 class JavaCompilerParams {
-	@Property Collection<File> sources = newArrayList()
-	@Property Collection<File> classpath = newArrayList()
-	@Property File destination; 
+	Collection<File> sources = newArrayList()
+	Collection<File> classpath = newArrayList()
+	File destination; 
 }

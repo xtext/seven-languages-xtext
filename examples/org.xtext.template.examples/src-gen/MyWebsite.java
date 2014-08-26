@@ -1,6 +1,5 @@
 import com.google.common.base.Objects;
 import java.util.ArrayList;
-import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 
 @SuppressWarnings("all")
@@ -35,12 +34,7 @@ public class MyWebsite {
     return this.description;
   }
   
-  private ArrayList<Section> sections = new Function0<ArrayList<Section>>() {
-    public ArrayList<Section> apply() {
-      ArrayList<Section> _arrayList = new ArrayList<Section>();
-      return _arrayList;
-    }
-  }.apply();
+  private ArrayList<Section> sections = new ArrayList<Section>();
   
   public void setSections(final ArrayList<Section> sections) {
     this.sections = sections;
@@ -78,7 +72,7 @@ public class MyWebsite {
         String _description_1 = element.getDescription();
         _appendable_2.append(org.eclipse.xtext.xbase.lib.ObjectExtensions.operator_elvis(_description_1,""));
         _appendable_2.append(org.eclipse.xtext.xbase.lib.ObjectExtensions.operator_elvis("</p>\n\t\t",""));
-        _richstringif = _appendable_2;
+        _richstringif = ((Object)_appendable_2);
       }
       _appendable_1.append(org.eclipse.xtext.xbase.lib.ObjectExtensions.operator_elvis(_richstringif,""));
       _appendable_1.append(org.eclipse.xtext.xbase.lib.ObjectExtensions.operator_elvis("\n\t\t<p>",""));

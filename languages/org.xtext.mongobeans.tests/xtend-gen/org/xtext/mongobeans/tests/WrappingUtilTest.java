@@ -13,7 +13,7 @@ import com.mongodb.DBObject;
 import java.lang.reflect.Constructor;
 import java.util.Collections;
 import java.util.List;
-import org.eclipse.xtend.lib.Property;
+import org.eclipse.xtend.lib.annotations.Accessors;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.junit4.InjectWith;
 import org.eclipse.xtext.junit4.XtextRunner;
@@ -47,8 +47,8 @@ public class WrappingUtilTest {
   @Extension
   private ReflectExtensions _reflectExtensions;
   
-  @Property
-  private Class<?> _mongoBeanClass;
+  @Accessors
+  private Class<?> mongoBeanClass;
   
   @Before
   public void setUp() {
@@ -67,7 +67,7 @@ public class WrappingUtilTest {
       final IAcceptor<CompilationTestHelper.Result> _function = new IAcceptor<CompilationTestHelper.Result>() {
         public void accept(final CompilationTestHelper.Result it) {
           Class<?> _compiledClass = it.getCompiledClass();
-          WrappingUtilTest.this.setMongoBeanClass(_compiledClass);
+          WrappingUtilTest.this.mongoBeanClass = _compiledClass;
           Class<?> _compiledClass_1 = it.getCompiledClass();
           ClassLoader _classLoader = _compiledClass_1.getClassLoader();
           WrappingUtil.setClassLoader(_classLoader);
@@ -82,12 +82,9 @@ public class WrappingUtilTest {
   @Test
   public void testUnwrap() {
     try {
-      Class<?> _mongoBeanClass = this.getMongoBeanClass();
-      final Object one = _mongoBeanClass.newInstance();
-      Class<?> _mongoBeanClass_1 = this.getMongoBeanClass();
-      final Object two = _mongoBeanClass_1.newInstance();
-      Class<?> _mongoBeanClass_2 = this.getMongoBeanClass();
-      final Object three = _mongoBeanClass_2.newInstance();
+      final Object one = this.mongoBeanClass.newInstance();
+      final Object two = this.mongoBeanClass.newInstance();
+      final Object three = this.mongoBeanClass.newInstance();
       this._reflectExtensions.invoke(one, "setBar", "BAR");
       Object _invoke = this._reflectExtensions.invoke(one, "getFoos");
       ((List<Object>) _invoke).add(two);
@@ -150,8 +147,7 @@ public class WrappingUtilTest {
   
   protected Object newFooMongoBean(final DBObject source) {
     try {
-      Class<?> _mongoBeanClass = this.getMongoBeanClass();
-      Constructor<?> _constructor = _mongoBeanClass.getConstructor(DBObject.class);
+      Constructor<?> _constructor = this.mongoBeanClass.getConstructor(DBObject.class);
       return _constructor.newInstance(source);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
@@ -160,10 +156,10 @@ public class WrappingUtilTest {
   
   @Pure
   public Class<?> getMongoBeanClass() {
-    return this._mongoBeanClass;
+    return this.mongoBeanClass;
   }
   
   public void setMongoBeanClass(final Class<?> mongoBeanClass) {
-    this._mongoBeanClass = mongoBeanClass;
+    this.mongoBeanClass = mongoBeanClass;
   }
 }

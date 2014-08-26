@@ -45,7 +45,7 @@ class MusicDBXtendTest {
 					addTrack('After the Rain', '4:07') 
 				]
 			]
-			assertEquals(8, john.oevre.size)
+			assertEquals(8, john.oeuvre.size)
 			dbCollection.save(john)
 	
 			val johnFromDb = dbCollection.findOneBean(new Artist => [

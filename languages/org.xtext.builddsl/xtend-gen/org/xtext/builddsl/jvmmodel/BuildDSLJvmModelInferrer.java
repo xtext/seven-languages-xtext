@@ -111,7 +111,7 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
         final Procedure1<JvmOperation> _function = new Procedure1<JvmOperation>() {
           public void apply(final JvmOperation it) {
             EList<JvmFormalParameter> _parameters = it.getParameters();
-            JvmFormalParameter _parameter = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.toParameter(it, "args", stringArray);
+            JvmFormalParameter _parameter = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.toParameter(file, "args", stringArray);
             BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters, _parameter);
             it.setVarArgs(true);
             it.setStatic(true);

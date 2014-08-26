@@ -69,7 +69,7 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 	def protected addConstructors(JvmDeclaredType inferredType, MongoBean bean) {
 		inferredType.members += bean.toConstructor [
 			documentation = '''Creates a new «bean.name» wrapping the given {@link «DBObject.name»}.'''
-			parameters += toParameter("dbObject", typeRef(DBObject))
+			parameters += bean.toParameter("dbObject", typeRef(DBObject))
 			body = '''
 				this._dbObject = dbObject;
 			'''
@@ -130,7 +130,7 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 		]
 		inferredType.members += property.toMethod('set' + property.name.toFirstUpper, property.newTypeRef(Void.TYPE)) [
 			documentation = property.documentation
-			parameters += toParameter(property.name, property.jvmType)
+			parameters += property.toParameter(property.name, property.jvmType)
 			body = '''
 				«IF property.jvmType.type.isMongoBean»
 					_dbObject.put("«property.name»", «WrappingUtil».unwrap(«property.name»));

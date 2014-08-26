@@ -8,6 +8,6 @@ com.acme.RuntimeModule {
 }
 
 com.acme.TestModule mixin RuntimeModule {
-	bind DataProvider to-instance [| 'dummy-data' ]
+	bind DataProvider to-instance ['dummy-data' ]
 	bind LoggingService to BufferedLoggingService
 }

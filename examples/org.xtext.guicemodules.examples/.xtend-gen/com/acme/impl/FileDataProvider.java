@@ -27,8 +27,7 @@ public class FileDataProvider implements DataProvider {
     try {
       File _file = new File(this.dataFile);
       List<String> _readLines = Files.readLines(_file, Charsets.UTF_8);
-      String _join = IterableExtensions.join(_readLines, "\n");
-      return _join;
+      return IterableExtensions.join(_readLines, "\n");
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }

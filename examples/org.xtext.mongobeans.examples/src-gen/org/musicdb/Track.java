@@ -1,5 +1,6 @@
 package org.musicdb;
 
+import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 import org.xtext.mongobeans.examples.Duration;
 import org.xtext.mongobeans.lib.IMongoBean;
@@ -7,7 +8,7 @@ import org.xtext.mongobeans.lib.IMongoBean;
 @SuppressWarnings("all")
 public class Track implements IMongoBean {
   /**
-   * Creates a new Track wrapping the given {@link DBObject}.
+   * Creates a new Track wrapping the given {@link com.mongodb.DBObject}.
    */
   public Track(final DBObject dbObject) {
     this._dbObject = dbObject;
@@ -17,7 +18,7 @@ public class Track implements IMongoBean {
    * Creates a new Track wrapping a new {@link com.mongodb.BasicDBObject}.
    */
   public Track() {
-    _dbObject = new com.mongodb.BasicDBObject();
+    _dbObject = new BasicDBObject();
     _dbObject.put(JAVA_CLASS_KEY, "org.musicdb.Track");
   }
   
@@ -28,7 +29,7 @@ public class Track implements IMongoBean {
   }
   
   public String getTitle() {
-    return (java.lang.String) _dbObject.get("title");
+    return (String) _dbObject.get("title");
   }
   
   public void setTitle(final String title) {
@@ -36,7 +37,7 @@ public class Track implements IMongoBean {
   }
   
   public int getSeconds() {
-    return (java.lang.Integer) _dbObject.get("seconds");
+    return (Integer) _dbObject.get("seconds");
   }
   
   public void setSeconds(final int seconds) {
@@ -45,7 +46,6 @@ public class Track implements IMongoBean {
   
   public Duration getDuration() {
     int _seconds = this.getSeconds();
-    Duration _duration = new Duration(_seconds);
-    return _duration;
+    return new Duration(_seconds);
   }
 }

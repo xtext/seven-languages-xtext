@@ -136,7 +136,7 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
           MongoBeansJvmModelInferrer.this._jvmTypesBuilder.setDocumentation(it, _builder.toString());
           EList<JvmFormalParameter> _parameters = it.getParameters();
           JvmTypeReference _typeRef = MongoBeansJvmModelInferrer.this._typeReferenceBuilder.typeRef(DBObject.class);
-          JvmFormalParameter _parameter = MongoBeansJvmModelInferrer.this._jvmTypesBuilder.toParameter(it, "dbObject", _typeRef);
+          JvmFormalParameter _parameter = MongoBeansJvmModelInferrer.this._jvmTypesBuilder.toParameter(bean, "dbObject", _typeRef);
           MongoBeansJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters, _parameter);
           StringConcatenationClient _client = new StringConcatenationClient() {
             @Override
@@ -355,7 +355,7 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
           EList<JvmFormalParameter> _parameters = it.getParameters();
           String _name = property.getName();
           JvmTypeReference _jvmType = MongoBeansJvmModelInferrer.this.getJvmType(property);
-          JvmFormalParameter _parameter = MongoBeansJvmModelInferrer.this._jvmTypesBuilder.toParameter(it, _name, _jvmType);
+          JvmFormalParameter _parameter = MongoBeansJvmModelInferrer.this._jvmTypesBuilder.toParameter(property, _name, _jvmType);
           MongoBeansJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters, _parameter);
           StringConcatenationClient _client = new StringConcatenationClient() {
             @Override

@@ -8,33 +8,28 @@
 package com.acme.impl;
 
 import com.acme.LoggingService;
-import org.eclipse.xtext.xbase.lib.Functions.Function0;
+import org.eclipse.xtend.lib.annotations.Accessors;
+import org.eclipse.xtext.xbase.lib.Pure;
 
 @SuppressWarnings("all")
 public class BufferedLoggingService implements LoggingService {
-  private StringBuilder _buffer = new Function0<StringBuilder>() {
-    public StringBuilder apply() {
-      StringBuilder _stringBuilder = new StringBuilder();
-      return _stringBuilder;
-    }
-  }.apply();
-  
-  public StringBuilder getBuffer() {
-    return this._buffer;
-  }
-  
-  public void setBuffer(final StringBuilder buffer) {
-    this._buffer = buffer;
-  }
+  @Accessors
+  private StringBuilder buffer = new StringBuilder();
   
   public void logMessage(final String msg) {
-    StringBuilder _buffer = this.getBuffer();
-    _buffer.append(msg);
+    this.buffer.append(msg);
   }
   
   public String toString() {
-    StringBuilder _buffer = this.getBuffer();
-    String _string = _buffer.toString();
-    return _string;
+    return this.buffer.toString();
+  }
+  
+  @Pure
+  public StringBuilder getBuffer() {
+    return this.buffer;
+  }
+  
+  public void setBuffer(final StringBuilder buffer) {
+    this.buffer = buffer;
   }
 }

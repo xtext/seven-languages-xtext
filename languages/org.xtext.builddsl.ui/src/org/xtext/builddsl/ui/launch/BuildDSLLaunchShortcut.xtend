@@ -29,6 +29,7 @@ import static org.eclipse.jface.dialogs.MessageDialog.*
 
 import static extension org.eclipse.xtext.EcoreUtil2.*
 import static extension org.eclipse.xtext.nodemodel.util.NodeModelUtils.*
+import org.eclipse.xtend.lib.annotations.Data
 
 class BuildDSLLaunchShortcut implements ILaunchShortcut {
 
