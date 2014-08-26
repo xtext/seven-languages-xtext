@@ -61,7 +61,8 @@ public class FileExtensions {
             try {
               File _relativeTo = FileExtensions.relativeTo(file, directory);
               String _path = _relativeTo.getPath();
-              final ZipEntry entry = new ZipEntry(_path);
+              String _replace = _path.replace("\\", "/");
+              final ZipEntry entry = new ZipEntry(_replace);
               out.putNextEntry(entry);
               Files.copy(file, out);
               out.closeEntry();
