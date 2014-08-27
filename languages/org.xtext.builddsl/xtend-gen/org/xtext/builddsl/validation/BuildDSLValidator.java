@@ -8,7 +8,6 @@
 package org.xtext.builddsl.validation;
 
 import com.google.common.base.Objects;
-import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
@@ -72,11 +71,11 @@ public class BuildDSLValidator extends XbaseJavaValidator {
     this.findDependentTasks(task, _function);
   }
   
-  private Collection<Task> findDependentTasks(final Task it, final Procedure1<? super Set<Task>> cycleHandler) {
+  private LinkedHashSet<Task> findDependentTasks(final Task it, final Procedure1<? super Set<Task>> cycleHandler) {
     LinkedHashSet<Task> _xblockexpression = null;
     {
       final LinkedHashSet<Task> tasks = CollectionLiterals.<Task>newLinkedHashSet();
-      this.internalFindDependentTasksRec(it, tasks);
+      this.findDependentTasksRec(it, tasks);
       final LinkedHashSet<Task> result = CollectionLiterals.<Task>newLinkedHashSet();
       boolean changed = true;
       while (changed) {
@@ -111,7 +110,7 @@ public class BuildDSLValidator extends XbaseJavaValidator {
     return _xblockexpression;
   }
   
-  private void internalFindDependentTasksRec(final Task task, final Set<Task> set) {
+  private void findDependentTasksRec(final Task task, final Set<Task> set) {
     boolean _add = set.add(task);
     boolean _not = (!_add);
     if (_not) {
@@ -119,7 +118,7 @@ public class BuildDSLValidator extends XbaseJavaValidator {
     }
     EList<Task> _depends = task.getDepends();
     for (final Task t : _depends) {
-      this.internalFindDependentTasksRec(t, set);
+      this.findDependentTasksRec(t, set);
     }
   }
 }

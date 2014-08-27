@@ -7,6 +7,7 @@
  */
 package org.xtext.template;
 
+import com.google.common.base.CharMatcher;
 import org.eclipse.xtext.conversion.ValueConverterWithValueException;
 import org.eclipse.xtext.conversion.impl.STRINGValueConverter;
 import org.eclipse.xtext.nodemodel.INode;
@@ -24,8 +25,9 @@ public class TextValueConverter extends STRINGValueConverter {
   }
   
   protected String convertFromString(final String literal, final INode node) throws ValueConverterWithValueException {
-    int _length = literal.length();
-    int _minus = (_length - 1);
-    return literal.substring(1, _minus);
+    CharMatcher _is = CharMatcher.is('»');
+    final String startTrimmed = _is.trimLeadingFrom(literal);
+    CharMatcher _is_1 = CharMatcher.is('«');
+    return _is_1.trimTrailingFrom(startTrimmed);
   }
 }

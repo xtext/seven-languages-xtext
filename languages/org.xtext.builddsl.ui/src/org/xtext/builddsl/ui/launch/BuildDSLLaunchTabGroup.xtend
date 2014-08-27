@@ -21,7 +21,7 @@ import org.eclipse.jdt.debug.ui.launchConfigurations.JavaMainTab
 class BuildDSLLaunchTabGroup extends AbstractLaunchConfigurationTabGroup {
 
 	override createTabs(ILaunchConfigurationDialog dialog, String mode) {
-		val tabs = newArrayList(
+		val tabs = #[
 			new JavaMainTab,
 			new RefreshTab,
 			new JavaArgumentsTab,
@@ -30,7 +30,7 @@ class BuildDSLLaunchTabGroup extends AbstractLaunchConfigurationTabGroup {
 			new SourceLookupTab,
 			new EnvironmentTab,
 			new CommonTab
-		)
+		]
 		setTabs(tabs)
 	}
 }

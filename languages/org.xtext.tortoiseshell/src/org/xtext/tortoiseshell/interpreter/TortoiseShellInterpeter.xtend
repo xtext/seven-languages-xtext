@@ -36,7 +36,7 @@ class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoiseInter
 			this.stopAtLine = stopAtLine
 			try {
 				program.jvmElements.filter(JvmOperation).head
-					?.invokeOperation(null, emptyList)
+					?.invokeOperation(null, #[])
 			} catch (StopLineReachedException exc) {
 				// ignore
 			}
@@ -55,11 +55,9 @@ class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoiseInter
 		if (executable instanceof Executable) {
 			val context = createContext
 			context.newValue(QualifiedName.create("this"), tortoise)
-			var index = 0
-			for (param : operation.parameters) {
-				context.newValue(QualifiedName.create(param.name), argumentValues.get(index))
-				index = index + 1	
-			}
+			operation.parameters.forEach[p, i|
+				context.newValue(QualifiedName.create(p.name), argumentValues.get(i))
+			]
 			val result = evaluate(executable.body, context, CancelIndicator.NullImpl)
 			if(result.exception != null)
 				throw result.exception

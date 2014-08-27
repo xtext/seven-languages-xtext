@@ -61,14 +61,13 @@ class BuildDSLLaunchShortcut implements ILaunchShortcut {
 
 	override launch(IEditorPart editor, String mode) {
 		if (editor instanceof XbaseEditor) {
-			val xbaseEditor = editor as XbaseEditor
-			val offset = switch it:xbaseEditor.selectionProvider.selection { 
+			val offset = switch it:editor.selectionProvider.selection { 
 				ITextSelection: it.offset 
 				default: -1
 			}
-			if (xbaseEditor.editorInput instanceof IFileEditorInput) {
-				val project = (xbaseEditor.editorInput as IFileEditorInput).file.project.name
-				val info = xbaseEditor.document.readOnly [
+			if (editor.editorInput instanceof IFileEditorInput) {
+				val project = (editor.editorInput as IFileEditorInput).file.project.name
+				val info = editor.document.readOnly [
 					val file = contents.filter(JvmDeclaredType).head
 					new LaunchConfigurationInfo(project, file?.identifier, findTask(offset))
 				]
@@ -97,9 +96,9 @@ class BuildDSLLaunchShortcut implements ILaunchShortcut {
 }
 
 @Data class LaunchConfigurationInfo {
-	val String project
-	val String clazz
-	val String task
+	String project
+	String clazz
+	String task
 	
 	def getName() {
 		Strings.lastToken(clazz, ".")

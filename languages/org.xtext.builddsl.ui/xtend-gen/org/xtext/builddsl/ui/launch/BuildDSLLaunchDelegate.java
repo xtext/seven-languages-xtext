@@ -29,8 +29,8 @@ public class BuildDSLLaunchDelegate extends JavaLaunchDelegate {
       if (_notEquals) {
         DebugPlugin _default = DebugPlugin.getDefault();
         final IDebugEventSetListener _function = new IDebugEventSetListener() {
-          public void handleDebugEvents(final DebugEvent[] it) {
-            for (final DebugEvent event : it) {
+          public void handleDebugEvents(final DebugEvent[] events) {
+            for (final DebugEvent event : events) {
               boolean _and = false;
               Object _source = event.getSource();
               if (!(_source instanceof IProcess)) {

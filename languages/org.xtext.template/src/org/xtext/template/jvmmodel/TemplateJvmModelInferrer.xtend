@@ -47,13 +47,13 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
 				members += param.toGetter(param.name, type)
 			}
 			
-			members += element.toMethod("generate", element.newTypeRef(CharSequence)) [
+			members += element.toMethod("generate", typeRef(CharSequence)) [
 				visibility = JvmVisibility.PRIVATE
 				body = element.body
 			]
 			
 			// generate a method accepting an initializer lambda expression
-			members += element.toMethod("generate", element.newTypeRef(String)) [
+			members += element.toMethod("generate", typeRef(String)) [
 				parameters += element.toParameter(
 					"init", typeRef(Procedures.Procedure1, typeRef(javaClass))
 				)
@@ -62,9 +62,9 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
 						init.apply(this);
 					String result = generate().toString();
 					// remove leading -->
-					result = result.replaceAll("^-->\\n","");
+					result = result.replaceAll("^-->\\r?\\n","");
 					// trim multi-newline to single newline
-					result = result.replaceAll("\\n\\s*\\n","\n");
+					result = result.replaceAll("\\r?\\n\\s*\\r?\\n", System.getProperty("line.separator"));
 					return result;
 				'''
 			]

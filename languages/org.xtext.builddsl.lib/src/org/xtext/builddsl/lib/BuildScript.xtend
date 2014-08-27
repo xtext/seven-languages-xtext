@@ -27,10 +27,10 @@ abstract class BuildScript {
 		if (_tasks == null) {
 			_tasks = newHashMap
 			for (method : class.declaredMethods) {
-				val taskAnnotation = method.annotations.findFirst[annotationType == DependsOn]
+				val taskAnnotation = method.getAnnotation(DependsOn)
 				if (taskAnnotation != null) {
 					taskDef(method.name) [
-						prerequisitedTasks = (taskAnnotation as DependsOn).value
+						prerequisitedTasks = taskAnnotation.value
 						runnable = [
 							method.accessible = true
 							method.invoke(this)
@@ -45,7 +45,7 @@ abstract class BuildScript {
 	def getParameters() {
 		if (_parameters == null) {
 			_parameters = newHashMap
-			for (field : class.declaredFields.filter[ annotations.exists[annotationType == Param] ]) {
+			for (field : class.declaredFields.filter[isAnnotationPresent(Param)]) {
 				_parameters.put(field.name, field)
 			}
 		}

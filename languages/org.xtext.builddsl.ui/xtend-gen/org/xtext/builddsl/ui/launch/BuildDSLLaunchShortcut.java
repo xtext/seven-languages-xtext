@@ -109,9 +109,8 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
   
   public void launch(final IEditorPart editor, final String mode) {
     if ((editor instanceof XbaseEditor)) {
-      final XbaseEditor xbaseEditor = ((XbaseEditor) editor);
       int _switchResult = (int) 0;
-      ISelectionProvider _selectionProvider = xbaseEditor.getSelectionProvider();
+      ISelectionProvider _selectionProvider = ((XbaseEditor)editor).getSelectionProvider();
       ISelection _selection = _selectionProvider.getSelection();
       final ISelection it = _selection;
       boolean _matched = false;
@@ -125,13 +124,13 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
         _switchResult = (-1);
       }
       final int offset = _switchResult;
-      IEditorInput _editorInput = xbaseEditor.getEditorInput();
+      IEditorInput _editorInput = ((XbaseEditor)editor).getEditorInput();
       if ((_editorInput instanceof IFileEditorInput)) {
-        IEditorInput _editorInput_1 = xbaseEditor.getEditorInput();
+        IEditorInput _editorInput_1 = ((XbaseEditor)editor).getEditorInput();
         IFile _file = ((IFileEditorInput) _editorInput_1).getFile();
         IProject _project = _file.getProject();
         final String project = _project.getName();
-        IXtextDocument _document = xbaseEditor.getDocument();
+        IXtextDocument _document = ((XbaseEditor)editor).getDocument();
         final IUnitOfWork<LaunchConfigurationInfo, XtextResource> _function = new IUnitOfWork<LaunchConfigurationInfo, XtextResource>() {
           public LaunchConfigurationInfo exec(final XtextResource it) throws Exception {
             LaunchConfigurationInfo _xblockexpression = null;
