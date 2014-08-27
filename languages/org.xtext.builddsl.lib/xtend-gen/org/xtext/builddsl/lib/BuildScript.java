@@ -10,7 +10,6 @@ package org.xtext.builddsl.lib;
 import com.google.common.base.Objects;
 import java.io.File;
 import java.io.Serializable;
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -56,20 +55,13 @@ public abstract class BuildScript {
       Method[] _declaredMethods = _class.getDeclaredMethods();
       for (final Method method : _declaredMethods) {
         {
-          Annotation[] _annotations = method.getAnnotations();
-          final Function1<Annotation, Boolean> _function = new Function1<Annotation, Boolean>() {
-            public Boolean apply(final Annotation it) {
-              Class<? extends Annotation> _annotationType = it.annotationType();
-              return Boolean.valueOf(Objects.equal(_annotationType, DependsOn.class));
-            }
-          };
-          final Annotation taskAnnotation = IterableExtensions.<Annotation>findFirst(((Iterable<Annotation>)Conversions.doWrapArray(_annotations)), _function);
+          final DependsOn taskAnnotation = method.<DependsOn>getAnnotation(DependsOn.class);
           boolean _notEquals = (!Objects.equal(taskAnnotation, null));
           if (_notEquals) {
             String _name = method.getName();
-            final Procedure1<TaskDef> _function_1 = new Procedure1<TaskDef>() {
+            final Procedure1<TaskDef> _function = new Procedure1<TaskDef>() {
               public void apply(final TaskDef it) {
-                String[] _value = ((DependsOn) taskAnnotation).value();
+                String[] _value = taskAnnotation.value();
                 it.setPrerequisitedTasks(((List<String>)Conversions.doWrapArray(_value)));
                 final Procedure0 _function = new Procedure0() {
                   public void apply() {
@@ -84,7 +76,7 @@ public abstract class BuildScript {
                 it.setRunnable(_function);
               }
             };
-            this.taskDef(_name, _function_1);
+            this.taskDef(_name, _function);
           }
         }
       }
@@ -101,14 +93,7 @@ public abstract class BuildScript {
       Field[] _declaredFields = _class.getDeclaredFields();
       final Function1<Field, Boolean> _function = new Function1<Field, Boolean>() {
         public Boolean apply(final Field it) {
-          Annotation[] _annotations = it.getAnnotations();
-          final Function1<Annotation, Boolean> _function = new Function1<Annotation, Boolean>() {
-            public Boolean apply(final Annotation it) {
-              Class<? extends Annotation> _annotationType = it.annotationType();
-              return Boolean.valueOf(Objects.equal(_annotationType, Param.class));
-            }
-          };
-          return Boolean.valueOf(IterableExtensions.<Annotation>exists(((Iterable<Annotation>)Conversions.doWrapArray(_annotations)), _function));
+          return Boolean.valueOf(it.isAnnotationPresent(Param.class));
         }
       };
       Iterable<Field> _filter = IterableExtensions.<Field>filter(((Iterable<Field>)Conversions.doWrapArray(_declaredFields)), _function);

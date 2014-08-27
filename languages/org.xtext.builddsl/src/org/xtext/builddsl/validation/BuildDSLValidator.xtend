@@ -7,7 +7,6 @@
  ******************************************************************************/
 package org.xtext.builddsl.validation
 
-import java.util.Collection
 import java.util.Set
 import org.eclipse.xtext.common.types.TypesPackage
 import org.eclipse.xtext.validation.Check
@@ -44,11 +43,11 @@ class BuildDSLValidator extends XbaseJavaValidator {
 		]
 	}
 	
-	def private Collection<Task> findDependentTasks(Task it, (Set<Task>) => void cycleHandler) {
+	def private findDependentTasks(Task it, (Set<Task>) => void cycleHandler) {
 		
 		// 1. collect all tasks that we depend on
 		val tasks = <Task>newLinkedHashSet
-		internalFindDependentTasksRec(it, tasks)
+		findDependentTasksRec(tasks)
 		
 		// 2. sort them so that dependents come after dependees  
 		val result = <Task>newLinkedHashSet
@@ -67,11 +66,11 @@ class BuildDSLValidator extends XbaseJavaValidator {
 		result
 	}
 	
-	def private void internalFindDependentTasksRec(Task task, Set<Task> set) {
+	def private void findDependentTasksRec(Task task, Set<Task> set) {
 		if (!set.add(task))
 			return;
 		for (t : task.depends) 
-			internalFindDependentTasksRec(t, set)
+			findDependentTasksRec(t, set)
 	}
 
 }

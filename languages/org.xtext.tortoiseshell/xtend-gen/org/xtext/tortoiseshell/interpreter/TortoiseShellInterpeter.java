@@ -10,6 +10,7 @@ package org.xtext.tortoiseshell.interpreter;
 import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 import org.eclipse.emf.common.util.EList;
@@ -30,6 +31,7 @@ import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.Procedures.Procedure2;
 import org.xtext.tortoiseshell.interpreter.StopLineReachedException;
 import org.xtext.tortoiseshell.lib.ITortoiseInterpreter;
 import org.xtext.tortoiseshell.lib.Tortoise;
@@ -62,8 +64,7 @@ public class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoi
         Iterable<JvmOperation> _filter = Iterables.<JvmOperation>filter(_jvmElements, JvmOperation.class);
         JvmOperation _head = IterableExtensions.<JvmOperation>head(_filter);
         if (_head!=null) {
-          List<Object> _emptyList = CollectionLiterals.<Object>emptyList();
-          this.invokeOperation(_head, null, _emptyList);
+          this.invokeOperation(_head, null, Collections.<Object>unmodifiableList(CollectionLiterals.<Object>newArrayList()));
         }
       } catch (final Throwable _t) {
         if (_t instanceof StopLineReachedException) {
@@ -105,17 +106,16 @@ public class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoi
             final IEvaluationContext context = this.createContext();
             QualifiedName _create = QualifiedName.create("this");
             context.newValue(_create, this.tortoise);
-            int index = 0;
             EList<JvmFormalParameter> _parameters = operation.getParameters();
-            for (final JvmFormalParameter param : _parameters) {
-              {
-                String _name = param.getName();
-                QualifiedName _create_1 = QualifiedName.create(_name);
-                Object _get = argumentValues.get(index);
-                context.newValue(_create_1, _get);
-                index = (index + 1);
+            final Procedure2<JvmFormalParameter, Integer> _function = new Procedure2<JvmFormalParameter, Integer>() {
+              public void apply(final JvmFormalParameter p, final Integer i) {
+                String _name = p.getName();
+                QualifiedName _create = QualifiedName.create(_name);
+                Object _get = argumentValues.get((i).intValue());
+                context.newValue(_create, _get);
               }
-            }
+            };
+            IterableExtensions.<JvmFormalParameter>forEach(_parameters, _function);
             XBlockExpression _body = ((Executable)executable).getBody();
             final IEvaluationResult result = this.evaluate(_body, context, CancelIndicator.NullImpl);
             Throwable _exception = result.getException();

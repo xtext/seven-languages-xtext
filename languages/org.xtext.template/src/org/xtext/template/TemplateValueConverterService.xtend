@@ -7,14 +7,15 @@
  ******************************************************************************/
 package org.xtext.template
 
+import com.google.common.base.CharMatcher
 import com.google.inject.Inject
 import org.eclipse.xtext.conversion.IValueConverter
 import org.eclipse.xtext.conversion.ValueConverter
-import org.eclipse.xtext.conversion.impl.STRINGValueConverter
-import org.eclipse.xtext.xbase.conversion.XbaseValueConverterService
-import org.eclipse.xtext.util.Strings
-import org.eclipse.xtext.nodemodel.INode
 import org.eclipse.xtext.conversion.ValueConverterWithValueException
+import org.eclipse.xtext.conversion.impl.STRINGValueConverter
+import org.eclipse.xtext.nodemodel.INode
+import org.eclipse.xtext.util.Strings
+import org.eclipse.xtext.xbase.conversion.XbaseValueConverterService
 
 class TemplateValueConverterService extends XbaseValueConverterService {
 
@@ -35,9 +36,9 @@ class TextValueConverter extends STRINGValueConverter {
 		'»' + Strings.convertToJavaString(value, false) + '«'
 	}		
 	
-	//TODO why is this needed?
 	override protected convertFromString(String literal, INode node) throws ValueConverterWithValueException {
-		return literal.substring(1, literal.length-1)
+		val startTrimmed = CharMatcher.is('»').trimLeadingFrom(literal)
+		return CharMatcher.is('«').trimTrailingFrom(startTrimmed)
 	}
 	
 }

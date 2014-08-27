@@ -27,8 +27,8 @@ class BuildDSLLaunchDelegate extends JavaLaunchDelegate {
 		            ILaunch launch, 
 		            IProgressMonitor monitor) {
 		if (RefreshTab.getRefreshScope(configuration) != null) {
-			DebugPlugin.getDefault.addDebugEventListener [
-				for (event : it) {
+			DebugPlugin.getDefault.addDebugEventListener [events|
+				for (event : events) {
 					if (event.source instanceof IProcess && event.kind == DebugEvent.TERMINATE) {
 						val process = event.source as IProcess
 						if (configuration == process.launch.launchConfiguration) {

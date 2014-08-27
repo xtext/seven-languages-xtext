@@ -17,6 +17,7 @@ import org.eclipse.xtext.xbase.compiler.CompilationTestHelper
 import org.eclipse.xtext.xbase.lib.util.ReflectExtensions
 
 import static org.junit.Assert.*
+import org.eclipse.xtext.util.Strings
 
 @RunWith(XtextRunner)
 @InjectWith(TemplateInjectorProvider)
@@ -31,7 +32,7 @@ class IntegrationTest {
 			Hello World
 		'''.replace.compile [
 			val result = compiledClass.newInstance.invoke('generate', null)
-			assertEquals('Hello World',result.toString)
+			assertEquals('Hello World'+Strings.newLine,result.toString)
 		]
 	}
 	
@@ -64,7 +65,8 @@ class IntegrationTest {
 				      <h2>two</h2>
 				      <p>three</p>
 				      <p>four</p>
-				</html>'''.toString,result.toString)
+				</html>
+			'''.toString,result.toString)
 		]
 	}
 	

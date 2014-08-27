@@ -82,7 +82,7 @@ public class MyWebsite {
       _forLoopResult.append(_appendable_1);
     }
     _appendable.append(org.eclipse.xtext.xbase.lib.ObjectExtensions.operator_elvis(_forLoopResult,""));
-    _appendable.append(org.eclipse.xtext.xbase.lib.ObjectExtensions.operator_elvis("\n</body>\n</html>",""));
+    _appendable.append(org.eclipse.xtext.xbase.lib.ObjectExtensions.operator_elvis("\n</body>\n</html>\n",""));
     return ((CharSequence)_appendable);
   }
   
@@ -91,9 +91,9 @@ public class MyWebsite {
     	init.apply(this);
     String result = generate().toString();
     // remove leading -->
-    result = result.replaceAll("^-->\\n","");
+    result = result.replaceAll("^-->\\r?\\n","");
     // trim multi-newline to single newline
-    result = result.replaceAll("\\n\\s*\\n","\n");
+    result = result.replaceAll("\\r?\\n\\s*\\r?\\n", System.getProperty("line.separator"));
     return result;
   }
 }

@@ -17,7 +17,7 @@ class BuildDSLImplicitlyImportedTypes extends ImplicitlyImportedFeatures {
 	 * Add methods from {@link FileExtensions} and {@link ClassExtensions} to the extension scope.
 	 */
 	override protected getExtensionClasses() {
-		(super.getExtensionClasses() + #[FileExtensions, ClassExtensions]).toList
+		(super.extensionClasses + #[FileExtensions, ClassExtensions]).toList
 	}
 	
 }

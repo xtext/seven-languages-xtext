@@ -13,7 +13,6 @@ import java.io.Serializable;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
-import java.util.ArrayList;
 import java.util.HashSet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -24,7 +23,6 @@ import org.eclipse.xtext.junit4.XtextRunner;
 import org.eclipse.xtext.util.IAcceptor;
 import org.eclipse.xtext.xbase.compiler.CompilationTestHelper;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
-import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
@@ -165,8 +163,7 @@ public class ParserTest {
   private <T extends Object> T newProxy(final Class<T> clazz, final InvocationHandler handler) {
     Class<? extends ParserTest> _class = this.getClass();
     ClassLoader _classLoader = _class.getClassLoader();
-    ArrayList<Class<?>> _newArrayList = CollectionLiterals.<Class<?>>newArrayList(clazz);
-    Object _newProxyInstance = Proxy.newProxyInstance(_classLoader, ((Class<?>[])Conversions.unwrapArray(_newArrayList, Class.class)), handler);
+    Object _newProxyInstance = Proxy.newProxyInstance(_classLoader, new Class<?>[] { clazz }, handler);
     return ((T) _newProxyInstance);
   }
 }

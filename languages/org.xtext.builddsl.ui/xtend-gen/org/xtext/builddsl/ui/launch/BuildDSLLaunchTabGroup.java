@@ -7,7 +7,8 @@
  */
 package org.xtext.builddsl.ui.launch;
 
-import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import org.eclipse.debug.ui.AbstractLaunchConfigurationTab;
 import org.eclipse.debug.ui.AbstractLaunchConfigurationTabGroup;
 import org.eclipse.debug.ui.CommonTab;
@@ -34,7 +35,7 @@ public class BuildDSLLaunchTabGroup extends AbstractLaunchConfigurationTabGroup 
     SourceLookupTab _sourceLookupTab = new SourceLookupTab();
     EnvironmentTab _environmentTab = new EnvironmentTab();
     CommonTab _commonTab = new CommonTab();
-    final ArrayList<AbstractLaunchConfigurationTab> tabs = CollectionLiterals.<AbstractLaunchConfigurationTab>newArrayList(_javaMainTab, _refreshTab, _javaArgumentsTab, _javaJRETab, _javaClasspathTab, _sourceLookupTab, _environmentTab, _commonTab);
+    final List<? extends AbstractLaunchConfigurationTab> tabs = Collections.<AbstractLaunchConfigurationTab>unmodifiableList(CollectionLiterals.<AbstractLaunchConfigurationTab>newArrayList(_javaMainTab, _refreshTab, _javaArgumentsTab, _javaJRETab, _javaClasspathTab, _sourceLookupTab, _environmentTab, _commonTab));
     this.setTabs(((ILaunchConfigurationTab[])Conversions.unwrapArray(tabs, ILaunchConfigurationTab.class)));
   }
 }

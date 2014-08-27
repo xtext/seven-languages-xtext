@@ -91,22 +91,15 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 	def protected addListAccessor(JvmDeclaredType inferredType, MongoProperty property) {
 		val propertyType = property.jvmType.asWrapperTypeIfPrimitive
 		if(propertyType.isMongoPrimitiveType) {
-			inferredType.members += property.toMethod('get' + property.name.toFirstUpper, 
-				newTypeRef(property, List, propertyType)
-			) [
+			inferredType.members += property.toMethod('get' + property.name.toFirstUpper, typeRef(List, propertyType)) [
 				documentation = property.documentation
 				body = '''
 					return («List»<«propertyType»>) _dbObject.get("«property.name»");
 				'''
 			]		
 		} else {
-			
-			inferredType.members += property.toField('_' + property.name, 
-				newTypeRef(property, MongoBeanList, propertyType))
-				
-			inferredType.members += property.toMethod('get' + property.name.toFirstUpper,
-				newTypeRef(property, List, propertyType)
-			) [
+			inferredType.members += property.toField('_' + property.name,typeRef(MongoBeanList, propertyType))
+			inferredType.members += property.toMethod('get' + property.name.toFirstUpper, typeRef(List, propertyType)) [
 				documentation = property.documentation
 				body = '''
 					if(_«property.name»==null)
@@ -128,7 +121,7 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 				«ENDIF»
 			'''
 		]
-		inferredType.members += property.toMethod('set' + property.name.toFirstUpper, property.newTypeRef(Void.TYPE)) [
+		inferredType.members += property.toMethod('set' + property.name.toFirstUpper, typeRef(Void.TYPE)) [
 			documentation = property.documentation
 			parameters += property.toParameter(property.name, property.jvmType)
 			body = '''
@@ -151,7 +144,7 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 
 	def protected getJvmType(MongoProperty property) {
 		if(property.inlineType != null)
-			(property.inlineType.jvmElements.head as JvmDeclaredType).newTypeRef
+			(property.inlineType.jvmElements.head as JvmDeclaredType).typeRef
 		else		
 			property.type
 	}

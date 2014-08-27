@@ -12,6 +12,7 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.junit4.InjectWith;
 import org.eclipse.xtext.junit4.XtextRunner;
 import org.eclipse.xtext.util.IAcceptor;
+import org.eclipse.xtext.util.Strings;
 import org.eclipse.xtext.xbase.compiler.CompilationTestHelper;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Extension;
@@ -48,8 +49,10 @@ public class IntegrationTest {
             Class<?> _compiledClass = it.getCompiledClass();
             Object _newInstance = _compiledClass.newInstance();
             final Object result = IntegrationTest.this._reflectExtensions.invoke(_newInstance, "generate", null);
+            String _newLine = Strings.newLine();
+            String _plus = ("Hello World" + _newLine);
             String _string = result.toString();
-            Assert.assertEquals("Hello World", _string);
+            Assert.assertEquals(_plus, _string);
           } catch (Throwable _e) {
             throw Exceptions.sneakyThrow(_e);
           }
@@ -141,6 +144,7 @@ public class IntegrationTest {
             _builder.append("<p>four</p>");
             _builder.newLine();
             _builder.append("</html>");
+            _builder.newLine();
             String _string = _builder.toString();
             String _string_1 = result.toString();
             Assert.assertEquals(_string, _string_1);

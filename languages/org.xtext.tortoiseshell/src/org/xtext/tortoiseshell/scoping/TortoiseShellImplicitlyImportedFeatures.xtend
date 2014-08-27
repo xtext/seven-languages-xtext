@@ -6,6 +6,6 @@ import org.eclipse.xtext.xbase.scoping.batch.ImplicitlyImportedFeatures
 class TortoiseShellImplicitlyImportedFeatures extends ImplicitlyImportedFeatures {
 	
 	override protected getStaticImportClasses() {
-		(super.getStaticImportClasses() + #[Math, ColorConstants]).toList
+		(super.staticImportClasses + #[Math, ColorConstants]).toList
 	}
 }
