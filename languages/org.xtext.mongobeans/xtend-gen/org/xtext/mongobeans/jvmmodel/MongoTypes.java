@@ -7,19 +7,24 @@
  */
 package org.xtext.mongobeans.jvmmodel;
 
-import com.google.common.base.Objects;
+import com.google.inject.Inject;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.Set;
 import org.eclipse.xtext.common.types.JvmType;
 import org.eclipse.xtext.common.types.JvmTypeReference;
+import org.eclipse.xtext.common.types.util.RawSuperTypes;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
+import org.eclipse.xtext.xbase.lib.Extension;
 
 /**
  * Helper methods to decide if types are compatible with the mongoDB driver.
  */
 @SuppressWarnings("all")
 public class MongoTypes {
+  @Inject
+  @Extension
+  private RawSuperTypes _rawSuperTypes;
+  
   public final static Set<String> mongoPrimitiveTypes = Collections.<String>unmodifiableSet(CollectionLiterals.<String>newHashSet("double", "java.lang.Double", "java.lang.String", "byte[]", "boolean", "java.lang.Boolean", "java.util.Date", "void", "java.lang.Void", "java.util.regex.Pattern", "int", "java.lang.Integer", "long", "java.lang.Long"));
   
   public boolean isMongoPrimitiveType(final JvmTypeReference typeRef) {
@@ -41,17 +46,7 @@ public class MongoTypes {
   }
   
   public boolean isMongoBean(final JvmType type) {
-    HashSet<JvmType> _newHashSet = CollectionLiterals.<JvmType>newHashSet();
-    return this.internalIsMongoBean(type, _newHashSet);
-  }
-  
-  public boolean internalIsMongoBean(final JvmType type, final Set<JvmType> checked) {
-    boolean _add = checked.add(type);
-    boolean _not = (!_add);
-    if (_not) {
-      return false;
-    }
-    String _qualifiedName = type.getQualifiedName();
-    return Objects.equal(_qualifiedName, "org.xtext.mongobeans.lib.IMongoBean");
+    Set<String> _collectNames = this._rawSuperTypes.collectNames(type);
+    return _collectNames.contains("org.xtext.mongobeans.lib.IMongoBean");
   }
 }
