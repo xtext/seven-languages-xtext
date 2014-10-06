@@ -9,7 +9,7 @@ package org.xtext.tortoiseshell;
 
 import org.eclipse.xtext.generator.IGenerator;
 import org.eclipse.xtext.xbase.featurecalls.IdentifiableSimpleNameProvider;
-import org.eclipse.xtext.xbase.scoping.batch.ImplicitlyImportedTypes;
+import org.eclipse.xtext.xbase.scoping.batch.ImplicitlyImportedFeatures;
 import org.xtext.tortoiseshell.interpreter.NullGenerator;
 import org.xtext.tortoiseshell.interpreter.TortoiseShellInterpeter;
 import org.xtext.tortoiseshell.lib.ITortoiseInterpreter;
@@ -21,7 +21,7 @@ import org.xtext.tortoiseshell.scoping.TortoiseShellImplicitlyImportedTypes;
  */
 public class TortoiseShellRuntimeModule extends org.xtext.tortoiseshell.AbstractTortoiseShellRuntimeModule {
 
-	public Class<? extends ImplicitlyImportedTypes> bindImplicitlyImportedTypes() {
+	public Class<? extends ImplicitlyImportedFeatures> bindImplicitlyImportedTypes() {
 		return TortoiseShellImplicitlyImportedTypes.class;
 	}
 	
