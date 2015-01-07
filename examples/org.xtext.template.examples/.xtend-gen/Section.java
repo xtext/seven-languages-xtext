@@ -1,11 +1,5 @@
-/**
- * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- */
 import org.eclipse.xtend.lib.Data;
+import org.eclipse.xtext.xbase.lib.Pure;
 import org.eclipse.xtext.xbase.lib.util.ToStringHelper;
 
 @Data
@@ -13,21 +7,9 @@ import org.eclipse.xtext.xbase.lib.util.ToStringHelper;
 public class Section {
   private final String _title;
   
-  public String getTitle() {
-    return this._title;
-  }
-  
   private final String _description;
   
-  public String getDescription() {
-    return this._description;
-  }
-  
   private final String _body;
-  
-  public String getBody() {
-    return this._body;
-  }
   
   public Section(final String title, final String description, final String body) {
     super();
@@ -37,16 +19,18 @@ public class Section {
   }
   
   @Override
+  @Pure
   public int hashCode() {
     final int prime = 31;
     int result = 1;
-    result = prime * result + ((_title== null) ? 0 : _title.hashCode());
-    result = prime * result + ((_description== null) ? 0 : _description.hashCode());
-    result = prime * result + ((_body== null) ? 0 : _body.hashCode());
+    result = prime * result + ((this._title== null) ? 0 : this._title.hashCode());
+    result = prime * result + ((this._description== null) ? 0 : this._description.hashCode());
+    result = prime * result + ((this._body== null) ? 0 : this._body.hashCode());
     return result;
   }
   
   @Override
+  @Pure
   public boolean equals(final Object obj) {
     if (this == obj)
       return true;
@@ -55,27 +39,43 @@ public class Section {
     if (getClass() != obj.getClass())
       return false;
     Section other = (Section) obj;
-    if (_title == null) {
+    if (this._title == null) {
       if (other._title != null)
         return false;
-    } else if (!_title.equals(other._title))
+    } else if (!this._title.equals(other._title))
       return false;
-    if (_description == null) {
+    if (this._description == null) {
       if (other._description != null)
         return false;
-    } else if (!_description.equals(other._description))
+    } else if (!this._description.equals(other._description))
       return false;
-    if (_body == null) {
+    if (this._body == null) {
       if (other._body != null)
         return false;
-    } else if (!_body.equals(other._body))
+    } else if (!this._body.equals(other._body))
       return false;
     return true;
   }
   
   @Override
+  @Pure
   public String toString() {
     String result = new ToStringHelper().toString(this);
     return result;
+  }
+  
+  @Pure
+  public String getTitle() {
+    return this._title;
+  }
+  
+  @Pure
+  public String getDescription() {
+    return this._description;
+  }
+  
+  @Pure
+  public String getBody() {
+    return this._body;
   }
 }

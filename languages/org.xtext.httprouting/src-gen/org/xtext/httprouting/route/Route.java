@@ -11,13 +11,13 @@ import org.eclipse.xtext.xbase.XExpression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.httprouting.route.Route#getRequestType <em>Request Type</em>}</li>
  *   <li>{@link org.xtext.httprouting.route.Route#getUrl <em>Url</em>}</li>
  *   <li>{@link org.xtext.httprouting.route.Route#getCondition <em>Condition</em>}</li>
  *   <li>{@link org.xtext.httprouting.route.Route#getCall <em>Call</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.httprouting.route.RoutePackage#getRoute()
  * @model

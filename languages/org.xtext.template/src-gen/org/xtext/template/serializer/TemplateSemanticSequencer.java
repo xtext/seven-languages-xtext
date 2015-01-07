@@ -76,6 +76,7 @@ public class TemplateSemanticSequencer extends XbaseWithAnnotationsSemanticSeque
 	@Inject
 	private TemplateGrammarAccess grammarAccess;
 	
+	@Override
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == TemplatePackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case TemplatePackage.PARAMETER:

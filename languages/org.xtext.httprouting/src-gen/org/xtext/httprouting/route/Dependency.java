@@ -15,12 +15,12 @@ import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotation;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.httprouting.route.Dependency#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link org.xtext.httprouting.route.Dependency#getType <em>Type</em>}</li>
  *   <li>{@link org.xtext.httprouting.route.Dependency#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.httprouting.route.RoutePackage#getDependency()
  * @model

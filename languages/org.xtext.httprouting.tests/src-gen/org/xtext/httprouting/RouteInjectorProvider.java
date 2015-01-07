@@ -20,6 +20,7 @@ public class RouteInjectorProvider implements IInjectorProvider, IRegistryConfig
 		GlobalRegistries.initializeDefaults();
 	}
 
+	@Override
 	public Injector getInjector()
 	{
 		if (injector == null) {
@@ -34,10 +35,12 @@ public class RouteInjectorProvider implements IInjectorProvider, IRegistryConfig
 	    return new RouteStandaloneSetup().createInjectorAndDoEMFRegistration();
 	}
 
+	@Override
 	public void restoreRegistry() {
 		stateBeforeInjectorCreation.restoreGlobalState();
 	}
 
+	@Override
 	public void setupRegistry() {
 		getInjector();
 		stateAfterInjectorCreation.restoreGlobalState();

@@ -30,7 +30,7 @@ public class RouteGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Model:
 		//	importSection=XImportSection? declarations+=AbstractDeclaration*;
-		public ParserRule getRule() { return rule; }
+		@Override public ParserRule getRule() { return rule; }
 
 		//importSection=XImportSection? declarations+=AbstractDeclaration*
 		public Group getGroup() { return cGroup; }
@@ -56,7 +56,7 @@ public class RouteGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//AbstractDeclaration:
 		//	Dependency | Route;
-		public ParserRule getRule() { return rule; }
+		@Override public ParserRule getRule() { return rule; }
 
 		//Dependency | Route
 		public Alternatives getAlternatives() { return cAlternatives; }
@@ -81,7 +81,7 @@ public class RouteGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Dependency:
 		//	"inject" annotations+=XAnnotation? type=JvmTypeReference name=ID;
-		public ParserRule getRule() { return rule; }
+		@Override public ParserRule getRule() { return rule; }
 
 		//"inject" annotations+=XAnnotation? type=JvmTypeReference name=ID
 		public Group getGroup() { return cGroup; }
@@ -125,7 +125,7 @@ public class RouteGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Route:
 		//	requestType=RequestType url=URL ("when" condition=XExpression)? "do" call=XExpression;
-		public ParserRule getRule() { return rule; }
+		@Override public ParserRule getRule() { return rule; }
 
 		//requestType=RequestType url=URL ("when" condition=XExpression)? "do" call=XExpression
 		public Group getGroup() { return cGroup; }
@@ -190,7 +190,7 @@ public class RouteGrammarAccess extends AbstractGrammarElementFinder {
 		// * 	'/customer/:customerID/save'
 		// * / URL:
 		//	{URL} ("/" | ("/" (QualifiedName | variables+=Variable))* ("/" variables+=Variable wildcard?="*")?);
-		public ParserRule getRule() { return rule; }
+		@Override public ParserRule getRule() { return rule; }
 
 		//{URL} ("/" | ("/" (QualifiedName | variables+=Variable))* ("/" variables+=Variable wildcard?="*")?)
 		public Group getGroup() { return cGroup; }
@@ -253,7 +253,7 @@ public class RouteGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Variable:
 		//	":" name=ID;
-		public ParserRule getRule() { return rule; }
+		@Override public ParserRule getRule() { return rule; }
 
 		//":" name=ID
 		public Group getGroup() { return cGroup; }
@@ -363,7 +363,7 @@ public class RouteGrammarAccess extends AbstractGrammarElementFinder {
 		return grammar;
 	}
 	
-	
+	@Override
 	public Grammar getGrammar() {
 		return grammar;
 	}

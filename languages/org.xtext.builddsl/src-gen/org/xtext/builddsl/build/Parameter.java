@@ -13,11 +13,11 @@ import org.eclipse.xtext.xbase.XExpression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.builddsl.build.Parameter#getType <em>Type</em>}</li>
  *   <li>{@link org.xtext.builddsl.build.Parameter#getInit <em>Init</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.builddsl.build.BuildPackage#getParameter()
  * @model

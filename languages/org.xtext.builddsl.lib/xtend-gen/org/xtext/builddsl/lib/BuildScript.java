@@ -182,8 +182,8 @@ public abstract class BuildScript {
     if (_isExecuted) {
       return;
     }
-    boolean _isIsExecuting = task.isIsExecuting();
-    if (_isIsExecuting) {
+    boolean _isExecuting = task.isExecuting();
+    if (_isExecuting) {
       throw new IllegalStateException((("Recursion detected : The task \'" + name) + "\' already running."));
     }
     try {

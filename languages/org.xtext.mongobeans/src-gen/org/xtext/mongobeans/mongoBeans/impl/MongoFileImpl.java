@@ -29,12 +29,13 @@ import org.xtext.mongobeans.mongoBeans.MongoFile;
  * An implementation of the model object '<em><b>Mongo File</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.mongobeans.mongoBeans.impl.MongoFileImpl#getImportSection <em>Import Section</em>}</li>
  *   <li>{@link org.xtext.mongobeans.mongoBeans.impl.MongoFileImpl#getElements <em>Elements</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

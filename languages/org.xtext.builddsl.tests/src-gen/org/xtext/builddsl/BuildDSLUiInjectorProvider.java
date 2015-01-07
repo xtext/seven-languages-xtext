@@ -9,6 +9,7 @@ import com.google.inject.Injector;
 
 public class BuildDSLUiInjectorProvider implements IInjectorProvider {
 	
+	@Override
 	public Injector getInjector() {
 		return org.xtext.builddsl.ui.internal.BuildDSLActivator.getInstance().getInjector("org.xtext.builddsl.BuildDSL");
 	}

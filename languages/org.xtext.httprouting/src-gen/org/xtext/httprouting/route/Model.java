@@ -15,11 +15,11 @@ import org.eclipse.xtext.xtype.XImportSection;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.httprouting.route.Model#getImportSection <em>Import Section</em>}</li>
  *   <li>{@link org.xtext.httprouting.route.Model#getDeclarations <em>Declarations</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.httprouting.route.RoutePackage#getModel()
  * @model

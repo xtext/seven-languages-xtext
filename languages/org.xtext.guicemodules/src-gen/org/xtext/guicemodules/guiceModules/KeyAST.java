@@ -15,11 +15,11 @@ import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotation;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.guicemodules.guiceModules.KeyAST#getAnnotation <em>Annotation</em>}</li>
  *   <li>{@link org.xtext.guicemodules.guiceModules.KeyAST#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.guicemodules.guiceModules.GuiceModulesPackage#getKeyAST()
  * @model

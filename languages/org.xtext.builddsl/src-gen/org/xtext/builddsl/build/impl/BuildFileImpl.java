@@ -29,13 +29,14 @@ import org.xtext.builddsl.build.Declaration;
  * An implementation of the model object '<em><b>File</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.builddsl.build.impl.BuildFileImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.builddsl.build.impl.BuildFileImpl#getImportSection <em>Import Section</em>}</li>
  *   <li>{@link org.xtext.builddsl.build.impl.BuildFileImpl#getDeclarations <em>Declarations</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

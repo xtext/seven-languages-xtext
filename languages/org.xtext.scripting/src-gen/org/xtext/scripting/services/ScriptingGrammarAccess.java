@@ -30,7 +30,7 @@ public class ScriptingGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Script returns XBlockExpression:
 		//	{Script} (expressions+=XExpressionOrVarDeclaration ";"?)*;
-		public ParserRule getRule() { return rule; }
+		@Override public ParserRule getRule() { return rule; }
 
 		//{Script} (expressions+=XExpressionOrVarDeclaration ";"?)*
 		public Group getGroup() { return cGroup; }
@@ -82,7 +82,7 @@ public class ScriptingGrammarAccess extends AbstractGrammarElementFinder {
 		return grammar;
 	}
 	
-	
+	@Override
 	public Grammar getGrammar() {
 		return grammar;
 	}

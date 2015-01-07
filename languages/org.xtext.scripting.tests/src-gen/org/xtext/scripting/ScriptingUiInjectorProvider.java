@@ -9,6 +9,7 @@ import com.google.inject.Injector;
 
 public class ScriptingUiInjectorProvider implements IInjectorProvider {
 	
+	@Override
 	public Injector getInjector() {
 		return org.xtext.scripting.ui.internal.ScriptingActivator.getInstance().getInjector("org.xtext.scripting.Scripting");
 	}

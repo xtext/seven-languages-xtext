@@ -14,8 +14,10 @@ import javax.servlet.http.HttpServlet
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 import org.eclipse.xtext.junit4.InjectWith
+import org.eclipse.xtext.junit4.TemporaryFolder
 import org.eclipse.xtext.junit4.XtextRunner
 import org.eclipse.xtext.xbase.compiler.CompilationTestHelper
+import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.xtext.httprouting.RouteInjectorProvider
@@ -27,6 +29,7 @@ import static org.junit.Assert.*
 class ParserTest {
 	
 	@Inject extension CompilationTestHelper
+	@Rule public TemporaryFolder tempFolder = new TemporaryFolder();
 	
 	@Test 
 	def testFirstRuleDoesNotMatch() {'''

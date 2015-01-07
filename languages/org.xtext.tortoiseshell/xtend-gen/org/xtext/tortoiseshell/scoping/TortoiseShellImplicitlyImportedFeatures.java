@@ -9,7 +9,7 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.scoping.batch.ImplicitlyImportedFeatures;
 
 @SuppressWarnings("all")
-public class TortoiseShellImplicitlyImportedTypes extends ImplicitlyImportedFeatures {
+public class TortoiseShellImplicitlyImportedFeatures extends ImplicitlyImportedFeatures {
   protected List<Class<?>> getStaticImportClasses() {
     List<Class<?>> _staticImportClasses = super.getStaticImportClasses();
     Iterable<Class<?>> _plus = Iterables.<Class<?>>concat(_staticImportClasses, Collections.<Class<?>>unmodifiableList(CollectionLiterals.<Class<?>>newArrayList(Math.class, ColorConstants.class)));

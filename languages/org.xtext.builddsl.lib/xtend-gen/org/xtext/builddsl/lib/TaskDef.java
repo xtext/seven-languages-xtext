@@ -67,7 +67,7 @@ public class TaskDef {
   }
   
   @Pure
-  public boolean isIsExecuting() {
+  public boolean isExecuting() {
     return this._isExecuting;
   }
   

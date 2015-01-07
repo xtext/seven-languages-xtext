@@ -30,13 +30,14 @@ import org.xtext.mongobeans.mongoBeans.MongoOperation;
  * An implementation of the model object '<em><b>Mongo Operation</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.mongobeans.mongoBeans.impl.MongoOperationImpl#getReturnType <em>Return Type</em>}</li>
  *   <li>{@link org.xtext.mongobeans.mongoBeans.impl.MongoOperationImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link org.xtext.mongobeans.mongoBeans.impl.MongoOperationImpl#getBody <em>Body</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

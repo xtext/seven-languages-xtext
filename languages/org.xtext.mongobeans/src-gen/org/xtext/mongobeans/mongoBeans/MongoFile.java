@@ -15,11 +15,11 @@ import org.eclipse.xtext.xtype.XImportSection;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.mongobeans.mongoBeans.MongoFile#getImportSection <em>Import Section</em>}</li>
  *   <li>{@link org.xtext.mongobeans.mongoBeans.MongoFile#getElements <em>Elements</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.mongobeans.mongoBeans.MongoBeansPackage#getMongoFile()
  * @model

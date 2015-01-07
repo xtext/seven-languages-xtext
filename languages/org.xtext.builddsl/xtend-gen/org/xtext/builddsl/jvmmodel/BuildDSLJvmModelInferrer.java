@@ -94,8 +94,8 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
               public void apply(final JvmField it) {
                 it.setVisibility(JvmVisibility.PUBLIC);
                 EList<JvmAnnotationReference> _annotations = it.getAnnotations();
-                JvmAnnotationReference _annotation = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.toAnnotation(declaredParameter, Param.class);
-                BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmAnnotationReference>operator_add(_annotations, _annotation);
+                JvmAnnotationReference _annotationRef = BuildDSLJvmModelInferrer.this._annotationTypesBuilder.annotationRef(Param.class);
+                BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmAnnotationReference>operator_add(_annotations, _annotationRef);
                 XExpression _init = declaredParameter.getInit();
                 BuildDSLJvmModelInferrer.this._jvmTypesBuilder.setInitializer(it, _init);
               }

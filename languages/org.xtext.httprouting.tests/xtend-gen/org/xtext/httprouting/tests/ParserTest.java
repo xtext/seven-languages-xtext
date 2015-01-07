@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.junit4.InjectWith;
+import org.eclipse.xtext.junit4.TemporaryFolder;
 import org.eclipse.xtext.junit4.XtextRunner;
 import org.eclipse.xtext.util.IAcceptor;
 import org.eclipse.xtext.xbase.compiler.CompilationTestHelper;
@@ -30,6 +31,7 @@ import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.junit.Assert;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.xtext.httprouting.RouteInjectorProvider;
@@ -41,6 +43,9 @@ public class ParserTest {
   @Inject
   @Extension
   private CompilationTestHelper _compilationTestHelper;
+  
+  @Rule
+  public TemporaryFolder tempFolder = new TemporaryFolder();
   
   @Test
   public void testFirstRuleDoesNotMatch() {

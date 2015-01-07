@@ -21,13 +21,14 @@ import org.xtext.mongobeans.mongoBeans.MongoProperty;
  * An implementation of the model object '<em><b>Mongo Property</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.mongobeans.mongoBeans.impl.MongoPropertyImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.xtext.mongobeans.mongoBeans.impl.MongoPropertyImpl#getInlineType <em>Inline Type</em>}</li>
  *   <li>{@link org.xtext.mongobeans.mongoBeans.impl.MongoPropertyImpl#isMany <em>Many</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

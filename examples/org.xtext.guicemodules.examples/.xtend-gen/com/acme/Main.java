@@ -26,8 +26,7 @@ public class Main {
   private LoggingService logger;
   
   public static void main(final String[] args) {
-    Main _main = new Main();
-    final Main instance = _main;
+    final Main instance = new Main();
     RuntimeModule _runtimeModule = new RuntimeModule();
     Injector _createInjector = Guice.createInjector(_runtimeModule);
     _createInjector.injectMembers(instance);

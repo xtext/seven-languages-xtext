@@ -23,11 +23,12 @@ import org.xtext.tortoiseshell.tortoiseShell.TortoiseShellPackage;
  * An implementation of the model object '<em><b>Program</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.tortoiseshell.tortoiseShell.impl.ProgramImpl#getSubPrograms <em>Sub Programs</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

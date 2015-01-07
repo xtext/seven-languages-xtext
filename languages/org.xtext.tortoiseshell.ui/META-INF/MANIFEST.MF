@@ -21,7 +21,7 @@ Require-Bundle: org.xtext.tortoiseshell;visibility:=reexport,
  org.eclipse.jdt.debug.ui
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.xtext.tortoiseshell.ui.contentassist.antlr,
  org.xtext.tortoiseshell.ui.internal,
  org.xtext.tortoiseshell.ui.contentassist

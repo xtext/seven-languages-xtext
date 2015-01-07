@@ -29,7 +29,7 @@ public class TortoiseShellGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Program:
 		//	body=Body subPrograms+=SubProgram*;
-		public ParserRule getRule() { return rule; }
+		@Override public ParserRule getRule() { return rule; }
 
 		//body=Body subPrograms+=SubProgram*
 		public Group getGroup() { return cGroup; }
@@ -64,7 +64,7 @@ public class TortoiseShellGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//SubProgram:
 		//	"sub" name=ValidID (":" returnType=JvmTypeReference)? parameters+=FullJvmFormalParameter* body=Body;
-		public ParserRule getRule() { return rule; }
+		@Override public ParserRule getRule() { return rule; }
 
 		//"sub" name=ValidID (":" returnType=JvmTypeReference)? parameters+=FullJvmFormalParameter* body=Body
 		public Group getGroup() { return cGroup; }
@@ -116,7 +116,7 @@ public class TortoiseShellGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Body returns XBlockExpression:
 		//	{XBlockExpression} "begin" (expressions+=XExpressionOrVarDeclaration ";"?)* "end";
-		public ParserRule getRule() { return rule; }
+		@Override public ParserRule getRule() { return rule; }
 
 		//{XBlockExpression} "begin" (expressions+=XExpressionOrVarDeclaration ";"?)* "end"
 		public Group getGroup() { return cGroup; }
@@ -151,7 +151,7 @@ public class TortoiseShellGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Executable:
 		//	Program | SubProgram;
-		public ParserRule getRule() { return rule; }
+		@Override public ParserRule getRule() { return rule; }
 
 		//Program | SubProgram
 		public Alternatives getAlternatives() { return cAlternatives; }
@@ -200,7 +200,7 @@ public class TortoiseShellGrammarAccess extends AbstractGrammarElementFinder {
 		return grammar;
 	}
 	
-	
+	@Override
 	public Grammar getGrammar() {
 		return grammar;
 	}

@@ -30,7 +30,7 @@ public class GuiceModulesGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//ModulesAST:
 		//	importSection=XImportSection? modules+=ModuleAST*;
-		public ParserRule getRule() { return rule; }
+		@Override public ParserRule getRule() { return rule; }
 
 		//importSection=XImportSection? modules+=ModuleAST*
 		public Group getGroup() { return cGroup; }
@@ -71,7 +71,7 @@ public class GuiceModulesGrammarAccess extends AbstractGrammarElementFinder {
 		//ModuleAST:
 		//	name=QualifiedName ("mixin" mixins+=[ModuleAST|QualifiedName] ("," mixins+=[ModuleAST|QualifiedName])*)? "{"
 		//	bindings+=BindingAST* "}";
-		public ParserRule getRule() { return rule; }
+		@Override public ParserRule getRule() { return rule; }
 
 		//name=QualifiedName ("mixin" mixins+=[ModuleAST|QualifiedName] ("," mixins+=[ModuleAST|QualifiedName])*)? "{"
 		//bindings+=BindingAST* "}"
@@ -144,7 +144,7 @@ public class GuiceModulesGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//BindingAST:
 		//	"bind" from=KeyAST ("to" to=KeyAST | "to-instance" toInstance=XExpression)?;
-		public ParserRule getRule() { return rule; }
+		@Override public ParserRule getRule() { return rule; }
 
 		//"bind" from=KeyAST ("to" to=KeyAST | "to-instance" toInstance=XExpression)?
 		public Group getGroup() { return cGroup; }
@@ -196,7 +196,7 @@ public class GuiceModulesGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//KeyAST:
 		//	annotation=XAnnotation? type=JvmTypeReference;
-		public ParserRule getRule() { return rule; }
+		@Override public ParserRule getRule() { return rule; }
 
 		//annotation=XAnnotation? type=JvmTypeReference
 		public Group getGroup() { return cGroup; }
@@ -251,7 +251,7 @@ public class GuiceModulesGrammarAccess extends AbstractGrammarElementFinder {
 		return grammar;
 	}
 	
-	
+	@Override
 	public Grammar getGrammar() {
 		return grammar;
 	}

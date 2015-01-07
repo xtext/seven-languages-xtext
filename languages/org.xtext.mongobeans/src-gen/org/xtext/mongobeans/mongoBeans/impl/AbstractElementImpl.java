@@ -17,11 +17,12 @@ import org.xtext.mongobeans.mongoBeans.MongoBeansPackage;
  * An implementation of the model object '<em><b>Abstract Element</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.mongobeans.mongoBeans.impl.AbstractElementImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

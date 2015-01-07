@@ -17,7 +17,7 @@ import org.xtext.builddsl.lib.ClassExtensions;
 import org.xtext.builddsl.lib.FileExtensions;
 
 @SuppressWarnings("all")
-public class BuildDSLImplicitlyImportedTypes extends ImplicitlyImportedFeatures {
+public class BuildDSLImplicitlyImportedFeatures extends ImplicitlyImportedFeatures {
   /**
    * Add methods from {@link FileExtensions} and {@link ClassExtensions} to the extension scope.
    */

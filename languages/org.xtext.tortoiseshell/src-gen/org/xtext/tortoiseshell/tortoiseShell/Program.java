@@ -11,10 +11,10 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.tortoiseshell.tortoiseShell.Program#getSubPrograms <em>Sub Programs</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.tortoiseshell.tortoiseShell.TortoiseShellPackage#getProgram()
  * @model

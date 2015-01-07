@@ -9,6 +9,7 @@ import com.google.inject.Injector;
 
 public class MongoBeansUiInjectorProvider implements IInjectorProvider {
 	
+	@Override
 	public Injector getInjector() {
 		return org.xtext.mongobeans.ui.internal.MongoBeansActivator.getInstance().getInjector("org.xtext.mongobeans.MongoBeans");
 	}

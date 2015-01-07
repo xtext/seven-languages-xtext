@@ -13,10 +13,10 @@ import org.eclipse.xtext.xbase.XBlockExpression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.tortoiseshell.tortoiseShell.Executable#getBody <em>Body</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.tortoiseshell.tortoiseShell.TortoiseShellPackage#getExecutable()
  * @model

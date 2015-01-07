@@ -6,5 +6,6 @@ bin
 *.DS_Store
 *.java._trace
 *.java_trace
+*.xtendbin
 plugin.xml_gen
 .metadata

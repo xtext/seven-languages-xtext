@@ -14,7 +14,6 @@ import org.xtext.template.template.TemplatePackage;
  * An implementation of the model object '<em><b>Rich String For Loop</b></em>'.
  * <!-- end-user-doc -->
  * <p>
- * </p>
  *
  * @generated
  */

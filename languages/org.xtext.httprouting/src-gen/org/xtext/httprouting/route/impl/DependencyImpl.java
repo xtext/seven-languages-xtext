@@ -29,13 +29,14 @@ import org.xtext.httprouting.route.RoutePackage;
  * An implementation of the model object '<em><b>Dependency</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.httprouting.route.impl.DependencyImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link org.xtext.httprouting.route.impl.DependencyImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.xtext.httprouting.route.impl.DependencyImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

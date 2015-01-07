@@ -108,7 +108,7 @@ public class TemplateJvmModelInferrer extends AbstractModelInferrer {
           }
         }
         EList<JvmMember> _members = it.getMembers();
-        JvmTypeReference _newTypeRef = TemplateJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(element, CharSequence.class);
+        JvmTypeReference _typeRef = TemplateJvmModelInferrer.this._typeReferenceBuilder.typeRef(CharSequence.class);
         final Procedure1<JvmOperation> _function = new Procedure1<JvmOperation>() {
           public void apply(final JvmOperation it) {
             it.setVisibility(JvmVisibility.PRIVATE);
@@ -116,10 +116,10 @@ public class TemplateJvmModelInferrer extends AbstractModelInferrer {
             TemplateJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _body);
           }
         };
-        JvmOperation _method = TemplateJvmModelInferrer.this._jvmTypesBuilder.toMethod(element, "generate", _newTypeRef, _function);
+        JvmOperation _method = TemplateJvmModelInferrer.this._jvmTypesBuilder.toMethod(element, "generate", _typeRef, _function);
         TemplateJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members, _method);
         EList<JvmMember> _members_1 = it.getMembers();
-        JvmTypeReference _newTypeRef_1 = TemplateJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(element, String.class);
+        JvmTypeReference _typeRef_1 = TemplateJvmModelInferrer.this._typeReferenceBuilder.typeRef(String.class);
         final Procedure1<JvmOperation> _function_1 = new Procedure1<JvmOperation>() {
           public void apply(final JvmOperation it) {
             EList<JvmFormalParameter> _parameters = it.getParameters();
@@ -153,7 +153,7 @@ public class TemplateJvmModelInferrer extends AbstractModelInferrer {
             TemplateJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _client);
           }
         };
-        JvmOperation _method_1 = TemplateJvmModelInferrer.this._jvmTypesBuilder.toMethod(element, "generate", _newTypeRef_1, _function_1);
+        JvmOperation _method_1 = TemplateJvmModelInferrer.this._jvmTypesBuilder.toMethod(element, "generate", _typeRef_1, _function_1);
         TemplateJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_1, _method_1);
       }
     };

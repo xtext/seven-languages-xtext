@@ -38,7 +38,7 @@ class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
 			// declare a field for each mixed-in module
 			for (mixin : module.mixins) {
 				if (!mixin.eIsProxy)
-					members += mixin.toField( mixin.simpleName, newTypeRef(mixin.fullyQualifiedName.toString)) [
+					members += mixin.toField( mixin.simpleName, typeRef(mixin.fullyQualifiedName.toString)) [
 						initializer = '''new «mixin.name»()'''
 					]
 			}

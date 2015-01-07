@@ -33,7 +33,7 @@ public class BuildDSLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//BuildFile:
 		//	("package" name=QualifiedName)? importSection=XImportSection? declarations+=Declaration*;
-		public ParserRule getRule() { return rule; }
+		@Override public ParserRule getRule() { return rule; }
 
 		//("package" name=QualifiedName)? importSection=XImportSection? declarations+=Declaration*
 		public Group getGroup() { return cGroup; }
@@ -71,7 +71,7 @@ public class BuildDSLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Declaration:
 		//	Task | Parameter;
-		public ParserRule getRule() { return rule; }
+		@Override public ParserRule getRule() { return rule; }
 
 		//Task | Parameter
 		public Alternatives getAlternatives() { return cAlternatives; }
@@ -98,7 +98,7 @@ public class BuildDSLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Parameter:
 		//	"param" type=JvmTypeReference? name=ValidID ("=" init=XExpression)?;
-		public ParserRule getRule() { return rule; }
+		@Override public ParserRule getRule() { return rule; }
 
 		//"param" type=JvmTypeReference? name=ValidID ("=" init=XExpression)?
 		public Group getGroup() { return cGroup; }
@@ -152,7 +152,7 @@ public class BuildDSLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Task:
 		//	"task" name=ValidID ("depends" depends+=[Task|ValidID] ("," depends+=[Task|ValidID])*)? action=XBlockExpression;
-		public ParserRule getRule() { return rule; }
+		@Override public ParserRule getRule() { return rule; }
 
 		//"task" name=ValidID ("depends" depends+=[Task|ValidID] ("," depends+=[Task|ValidID])*)? action=XBlockExpression
 		public Group getGroup() { return cGroup; }
@@ -240,7 +240,7 @@ public class BuildDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return grammar;
 	}
 	
-	
+	@Override
 	public Grammar getGrammar() {
 		return grammar;
 	}

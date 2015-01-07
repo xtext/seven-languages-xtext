@@ -9,6 +9,7 @@ import com.google.inject.Injector;
 
 public class TortoiseShellUiInjectorProvider implements IInjectorProvider {
 	
+	@Override
 	public Injector getInjector() {
 		return org.xtext.tortoiseshell.ui.internal.TortoiseShellActivator.getInstance().getInjector("org.xtext.tortoiseshell.TortoiseShell");
 	}

@@ -14,12 +14,12 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.tortoiseshell.tortoiseShell.SubProgram#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.tortoiseshell.tortoiseShell.SubProgram#getReturnType <em>Return Type</em>}</li>
  *   <li>{@link org.xtext.tortoiseshell.tortoiseShell.SubProgram#getParameters <em>Parameters</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.tortoiseshell.tortoiseShell.TortoiseShellPackage#getSubProgram()
  * @model

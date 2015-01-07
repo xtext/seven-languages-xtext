@@ -13,12 +13,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.guicemodules.guiceModules.ModuleAST#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.guicemodules.guiceModules.ModuleAST#getMixins <em>Mixins</em>}</li>
  *   <li>{@link org.xtext.guicemodules.guiceModules.ModuleAST#getBindings <em>Bindings</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.guicemodules.guiceModules.GuiceModulesPackage#getModuleAST()
  * @model

@@ -15,12 +15,12 @@ import org.eclipse.xtext.xtype.XImportSection;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.builddsl.build.BuildFile#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.builddsl.build.BuildFile#getImportSection <em>Import Section</em>}</li>
  *   <li>{@link org.xtext.builddsl.build.BuildFile#getDeclarations <em>Declarations</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.builddsl.build.BuildPackage#getBuildFile()
  * @model

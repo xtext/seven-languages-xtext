@@ -17,26 +17,15 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import routes.NumberGuessing;
 
 @SuppressWarnings("all")
 public class SuperServlet extends NumberGuessing {
   private Injector injector;
   
-  private ThreadLocal<HttpServletRequest> request = new Function0<ThreadLocal<HttpServletRequest>>() {
-    public ThreadLocal<HttpServletRequest> apply() {
-      ThreadLocal<HttpServletRequest> _threadLocal = new ThreadLocal<HttpServletRequest>();
-      return _threadLocal;
-    }
-  }.apply();
+  private ThreadLocal<HttpServletRequest> request = new ThreadLocal<HttpServletRequest>();
   
-  private ThreadLocal<HttpServletResponse> response = new Function0<ThreadLocal<HttpServletResponse>>() {
-    public ThreadLocal<HttpServletResponse> apply() {
-      ThreadLocal<HttpServletResponse> _threadLocal = new ThreadLocal<HttpServletResponse>();
-      return _threadLocal;
-    }
-  }.apply();
+  private ThreadLocal<HttpServletResponse> response = new ThreadLocal<HttpServletResponse>();
   
   public void init() throws ServletException {
     super.init();
@@ -45,16 +34,14 @@ public class SuperServlet extends NumberGuessing {
         AnnotatedBindingBuilder<HttpServletRequest> _bind = it.<HttpServletRequest>bind(HttpServletRequest.class);
         final Provider<HttpServletRequest> _function = new Provider<HttpServletRequest>() {
           public HttpServletRequest get() {
-            HttpServletRequest _get = SuperServlet.this.request.get();
-            return _get;
+            return SuperServlet.this.request.get();
           }
         };
         _bind.toProvider(_function);
         AnnotatedBindingBuilder<HttpServletResponse> _bind_1 = it.<HttpServletResponse>bind(HttpServletResponse.class);
         final Provider<HttpServletResponse> _function_1 = new Provider<HttpServletResponse>() {
           public HttpServletResponse get() {
-            HttpServletResponse _get = SuperServlet.this.response.get();
-            return _get;
+            return SuperServlet.this.response.get();
           }
         };
         _bind_1.toProvider(_function_1);

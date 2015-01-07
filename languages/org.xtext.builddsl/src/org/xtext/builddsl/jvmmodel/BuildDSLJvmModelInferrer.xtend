@@ -40,7 +40,7 @@ class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
 						?: typeRef(String)
 				members += declaredParameter.toField (declaredParameter.name, type) [
 					visibility = JvmVisibility.PUBLIC
-					annotations += declaredParameter.toAnnotation(Param)
+					annotations += annotationRef(Param)
 					initializer = declaredParameter.init
 				]
 			}

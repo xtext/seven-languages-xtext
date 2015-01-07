@@ -67,6 +67,7 @@ public class BuildDSLSemanticSequencer extends XbaseSemanticSequencer {
 	@Inject
 	private BuildDSLGrammarAccess grammarAccess;
 	
+	@Override
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == BuildPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case BuildPackage.BUILD_FILE:

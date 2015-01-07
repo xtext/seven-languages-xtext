@@ -11,12 +11,12 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.mongobeans.mongoBeans.MongoProperty#getType <em>Type</em>}</li>
  *   <li>{@link org.xtext.mongobeans.mongoBeans.MongoProperty#getInlineType <em>Inline Type</em>}</li>
  *   <li>{@link org.xtext.mongobeans.mongoBeans.MongoProperty#isMany <em>Many</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.mongobeans.mongoBeans.MongoBeansPackage#getMongoProperty()
  * @model

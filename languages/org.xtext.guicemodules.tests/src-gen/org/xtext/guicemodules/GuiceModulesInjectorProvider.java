@@ -20,6 +20,7 @@ public class GuiceModulesInjectorProvider implements IInjectorProvider, IRegistr
 		GlobalRegistries.initializeDefaults();
 	}
 
+	@Override
 	public Injector getInjector()
 	{
 		if (injector == null) {
@@ -34,10 +35,12 @@ public class GuiceModulesInjectorProvider implements IInjectorProvider, IRegistr
 	    return new GuiceModulesStandaloneSetup().createInjectorAndDoEMFRegistration();
 	}
 
+	@Override
 	public void restoreRegistry() {
 		stateBeforeInjectorCreation.restoreGlobalState();
 	}
 
+	@Override
 	public void setupRegistry() {
 		getInjector();
 		stateAfterInjectorCreation.restoreGlobalState();

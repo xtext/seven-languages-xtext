@@ -22,7 +22,7 @@ Require-Bundle: org.eclipse.xtext;bundle-version="2.7.0";visibility:=reexport,
 Import-Package: org.apache.log4j,
  org.apache.commons.logging,
  org.eclipse.xtext.xbase.lib
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.xtext.builddsl,
  org.xtext.builddsl.build,
  org.xtext.builddsl.build.impl,

@@ -15,11 +15,11 @@ import org.eclipse.xtext.xtype.XImportSection;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.guicemodules.guiceModules.ModulesAST#getImportSection <em>Import Section</em>}</li>
  *   <li>{@link org.xtext.guicemodules.guiceModules.ModulesAST#getModules <em>Modules</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.guicemodules.guiceModules.GuiceModulesPackage#getModulesAST()
  * @model

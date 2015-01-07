@@ -23,11 +23,12 @@ import org.xtext.mongobeans.mongoBeans.MongoBeansPackage;
  * An implementation of the model object '<em><b>Mongo Bean</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.mongobeans.mongoBeans.impl.MongoBeanImpl#getFeatures <em>Features</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

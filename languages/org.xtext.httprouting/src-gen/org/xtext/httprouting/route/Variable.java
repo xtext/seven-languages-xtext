@@ -11,10 +11,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.httprouting.route.Variable#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.httprouting.route.RoutePackage#getVariable()
  * @model

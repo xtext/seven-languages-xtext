@@ -23,7 +23,7 @@ Require-Bundle: org.xtext.mongobeans;visibility:=reexport,
  org.eclipse.jdt.debug.ui
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.xtext.mongobeans.ui.contentassist.antlr,
  org.xtext.mongobeans.ui.internal,
  org.xtext.mongobeans.ui.contentassist,

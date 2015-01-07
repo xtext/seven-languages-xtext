@@ -72,7 +72,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
             String _simpleName = GuiceModulesJvmModelInferrer.this.simpleName(mixin);
             QualifiedName _fullyQualifiedName = GuiceModulesJvmModelInferrer.this._iQualifiedNameProvider.getFullyQualifiedName(mixin);
             String _string = _fullyQualifiedName.toString();
-            JvmTypeReference _newTypeRef = GuiceModulesJvmModelInferrer.this.builder.newTypeRef(it, _string);
+            JvmTypeReference _typeRef_1 = GuiceModulesJvmModelInferrer.this._typeReferenceBuilder.typeRef(_string);
             final Procedure1<JvmField> _function = new Procedure1<JvmField>() {
               public void apply(final JvmField it) {
                 StringConcatenationClient _client = new StringConcatenationClient() {
@@ -87,7 +87,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
                 GuiceModulesJvmModelInferrer.this.builder.setInitializer(it, _client);
               }
             };
-            JvmField _field = GuiceModulesJvmModelInferrer.this.builder.toField(mixin, _simpleName, _newTypeRef, _function);
+            JvmField _field = GuiceModulesJvmModelInferrer.this.builder.toField(mixin, _simpleName, _typeRef_1, _function);
             GuiceModulesJvmModelInferrer.this.builder.<JvmField>operator_add(_members, _field);
           }
         }
@@ -157,7 +157,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
           }
         }
         EList<JvmMember> _members_1 = it.getMembers();
-        JvmTypeReference _typeRef_1 = GuiceModulesJvmModelInferrer.this._typeReferenceBuilder.typeRef(void.class);
+        JvmTypeReference _typeRef_2 = GuiceModulesJvmModelInferrer.this._typeReferenceBuilder.typeRef(void.class);
         final Procedure1<JvmOperation> _function_1 = new Procedure1<JvmOperation>() {
           public void apply(final JvmOperation it) {
             EList<JvmFormalParameter> _parameters = it.getParameters();
@@ -180,10 +180,10 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
             GuiceModulesJvmModelInferrer.this.builder.setBody(it, _client);
           }
         };
-        JvmOperation _method = GuiceModulesJvmModelInferrer.this.builder.toMethod(module, "configure", _typeRef_1, _function_1);
+        JvmOperation _method = GuiceModulesJvmModelInferrer.this.builder.toMethod(module, "configure", _typeRef_2, _function_1);
         GuiceModulesJvmModelInferrer.this.builder.<JvmOperation>operator_add(_members_1, _method);
         EList<JvmMember> _members_2 = it.getMembers();
-        JvmTypeReference _typeRef_2 = GuiceModulesJvmModelInferrer.this._typeReferenceBuilder.typeRef(void.class);
+        JvmTypeReference _typeRef_3 = GuiceModulesJvmModelInferrer.this._typeReferenceBuilder.typeRef(void.class);
         final Procedure1<JvmOperation> _function_2 = new Procedure1<JvmOperation>() {
           public void apply(final JvmOperation it) {
             GuiceModulesJvmModelInferrer.this.builder.setDocumentation(it, "Registers bindings for keys not present in the given set.");
@@ -281,7 +281,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
             GuiceModulesJvmModelInferrer.this.builder.setBody(it, _client);
           }
         };
-        JvmOperation _method_1 = GuiceModulesJvmModelInferrer.this.builder.toMethod(module, "configure", _typeRef_2, _function_2);
+        JvmOperation _method_1 = GuiceModulesJvmModelInferrer.this.builder.toMethod(module, "configure", _typeRef_3, _function_2);
         GuiceModulesJvmModelInferrer.this.builder.<JvmOperation>operator_add(_members_2, _method_1);
       }
     };

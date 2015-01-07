@@ -16,12 +16,12 @@ import org.eclipse.xtext.xbase.XExpression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.mongobeans.mongoBeans.MongoOperation#getReturnType <em>Return Type</em>}</li>
  *   <li>{@link org.xtext.mongobeans.mongoBeans.MongoOperation#getParameters <em>Parameters</em>}</li>
  *   <li>{@link org.xtext.mongobeans.mongoBeans.MongoOperation#getBody <em>Body</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.mongobeans.mongoBeans.MongoBeansPackage#getMongoOperation()
  * @model

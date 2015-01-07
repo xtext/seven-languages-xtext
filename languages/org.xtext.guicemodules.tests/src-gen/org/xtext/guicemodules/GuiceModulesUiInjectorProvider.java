@@ -9,6 +9,7 @@ import com.google.inject.Injector;
 
 public class GuiceModulesUiInjectorProvider implements IInjectorProvider {
 	
+	@Override
 	public Injector getInjector() {
 		return org.xtext.guicemodules.ui.internal.GuiceModulesActivator.getInstance().getInjector("org.xtext.guicemodules.GuiceModules");
 	}

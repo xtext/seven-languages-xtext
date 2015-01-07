@@ -28,13 +28,14 @@ import org.xtext.tortoiseshell.tortoiseShell.TortoiseShellPackage;
  * An implementation of the model object '<em><b>Sub Program</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.tortoiseshell.tortoiseShell.impl.SubProgramImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.tortoiseshell.tortoiseShell.impl.SubProgramImpl#getReturnType <em>Return Type</em>}</li>
  *   <li>{@link org.xtext.tortoiseshell.tortoiseShell.impl.SubProgramImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

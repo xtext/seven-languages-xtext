@@ -13,11 +13,11 @@ import org.eclipse.xtext.xbase.XExpression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.builddsl.build.Task#getDepends <em>Depends</em>}</li>
  *   <li>{@link org.xtext.builddsl.build.Task#getAction <em>Action</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.builddsl.build.BuildPackage#getTask()
  * @model

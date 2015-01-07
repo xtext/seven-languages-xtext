@@ -29,7 +29,7 @@ public class MongoBeansGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//MongoFile:
 		//	importSection=XImportSection? elements+=AbstractElement*;
-		public ParserRule getRule() { return rule; }
+		@Override public ParserRule getRule() { return rule; }
 
 		//importSection=XImportSection? elements+=AbstractElement*
 		public Group getGroup() { return cGroup; }
@@ -55,7 +55,7 @@ public class MongoBeansGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//AbstractElement:
 		//	PackageDeclaration | MongoBean;
-		public ParserRule getRule() { return rule; }
+		@Override public ParserRule getRule() { return rule; }
 
 		//PackageDeclaration | MongoBean
 		public Alternatives getAlternatives() { return cAlternatives; }
@@ -80,7 +80,7 @@ public class MongoBeansGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//PackageDeclaration:
 		//	"package" name=QualifiedName "{" elements+=AbstractElement* "}";
-		public ParserRule getRule() { return rule; }
+		@Override public ParserRule getRule() { return rule; }
 
 		//"package" name=QualifiedName "{" elements+=AbstractElement* "}"
 		public Group getGroup() { return cGroup; }
@@ -119,7 +119,7 @@ public class MongoBeansGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//MongoBean:
 		//	name=ValidID "{" features+=AbstractFeature* "}";
-		public ParserRule getRule() { return rule; }
+		@Override public ParserRule getRule() { return rule; }
 
 		//name=ValidID "{" features+=AbstractFeature* "}"
 		public Group getGroup() { return cGroup; }
@@ -151,7 +151,7 @@ public class MongoBeansGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//AbstractFeature:
 		//	MongoOperation | MongoProperty;
-		public ParserRule getRule() { return rule; }
+		@Override public ParserRule getRule() { return rule; }
 
 		//MongoOperation | MongoProperty
 		public Alternatives getAlternatives() { return cAlternatives; }
@@ -178,7 +178,7 @@ public class MongoBeansGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//MongoProperty:
 		//	(type=JvmTypeReference | inlineType=MongoBean) many?="*"? name=ValidID;
-		public ParserRule getRule() { return rule; }
+		@Override public ParserRule getRule() { return rule; }
 
 		//(type=JvmTypeReference | inlineType=MongoBean) many?="*"? name=ValidID
 		public Group getGroup() { return cGroup; }
@@ -235,7 +235,7 @@ public class MongoBeansGrammarAccess extends AbstractGrammarElementFinder {
 		//MongoOperation:
 		//	=> (returnType=JvmTypeReference name=ValidID "(") (parameters+=FullJvmFormalParameter (","
 		//	parameters+=FullJvmFormalParameter)*)? ")" body=XBlockExpression;
-		public ParserRule getRule() { return rule; }
+		@Override public ParserRule getRule() { return rule; }
 
 		//=> (returnType=JvmTypeReference name=ValidID "(") (parameters+=FullJvmFormalParameter (","
 		//parameters+=FullJvmFormalParameter)*)? ")" body=XBlockExpression
@@ -336,7 +336,7 @@ public class MongoBeansGrammarAccess extends AbstractGrammarElementFinder {
 		return grammar;
 	}
 	
-	
+	@Override
 	public Grammar getGrammar() {
 		return grammar;
 	}

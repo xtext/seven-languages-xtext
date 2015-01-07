@@ -22,13 +22,14 @@ import org.xtext.guicemodules.guiceModules.KeyAST;
  * An implementation of the model object '<em><b>Binding AST</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.guicemodules.guiceModules.impl.BindingASTImpl#getFrom <em>From</em>}</li>
  *   <li>{@link org.xtext.guicemodules.guiceModules.impl.BindingASTImpl#getTo <em>To</em>}</li>
  *   <li>{@link org.xtext.guicemodules.guiceModules.impl.BindingASTImpl#getToInstance <em>To Instance</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

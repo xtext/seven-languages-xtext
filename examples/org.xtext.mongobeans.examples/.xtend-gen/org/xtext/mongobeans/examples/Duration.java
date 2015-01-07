@@ -7,17 +7,13 @@
  */
 package org.xtext.mongobeans.examples;
 
+import org.eclipse.xtend.lib.Property;
+import org.eclipse.xtext.xbase.lib.Pure;
+
 @SuppressWarnings("all")
 public class Duration {
+  @Property
   private int _seconds;
-  
-  public int getSeconds() {
-    return this._seconds;
-  }
-  
-  public void setSeconds(final int seconds) {
-    this._seconds = seconds;
-  }
   
   public Duration(final int seconds) {
     this.setSeconds(seconds);
@@ -42,15 +38,22 @@ public class Duration {
     int _seconds_1 = this.getSeconds();
     int _modulo = (_seconds_1 % 60);
     String _string_1 = Integer.toString(_modulo);
-    String _plus_1 = (_plus + _string_1);
-    return _plus_1;
+    return (_plus + _string_1);
   }
   
   public Duration operator_plus(final Duration other) {
     int _seconds = this.getSeconds();
     int _seconds_1 = other.getSeconds();
     int _plus = (_seconds + _seconds_1);
-    Duration _duration = new Duration(_plus);
-    return _duration;
+    return new Duration(_plus);
+  }
+  
+  @Pure
+  public int getSeconds() {
+    return this._seconds;
+  }
+  
+  public void setSeconds(final int seconds) {
+    this._seconds = seconds;
   }
 }

@@ -66,6 +66,7 @@ public class TortoiseShellSemanticSequencer extends XbaseSemanticSequencer {
 	@Inject
 	private TortoiseShellGrammarAccess grammarAccess;
 	
+	@Override
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == TortoiseShellPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case TortoiseShellPackage.PROGRAM:

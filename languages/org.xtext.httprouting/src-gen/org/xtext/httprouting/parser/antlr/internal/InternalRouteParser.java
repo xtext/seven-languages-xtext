@@ -21892,11 +21892,11 @@ public class InternalRouteParser extends AbstractInternalAntlrParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred15_InternalRoute() {
+    public final boolean synpred27_InternalRoute() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred15_InternalRoute_fragment(); // can never throw exception
+            synpred27_InternalRoute_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -21906,11 +21906,11 @@ public class InternalRouteParser extends AbstractInternalAntlrParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred27_InternalRoute() {
+    public final boolean synpred15_InternalRoute() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred27_InternalRoute_fragment(); // can never throw exception
+            synpred15_InternalRoute_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }

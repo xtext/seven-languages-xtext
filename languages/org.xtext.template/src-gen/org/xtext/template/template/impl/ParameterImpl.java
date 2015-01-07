@@ -32,14 +32,15 @@ import org.xtext.template.template.TemplatePackage;
  * An implementation of the model object '<em><b>Parameter</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.template.template.impl.ParameterImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link org.xtext.template.template.impl.ParameterImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.xtext.template.template.impl.ParameterImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.template.template.impl.ParameterImpl#getDefaultexp <em>Defaultexp</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -23,12 +23,13 @@ import org.xtext.guicemodules.guiceModules.KeyAST;
  * An implementation of the model object '<em><b>Key AST</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.guicemodules.guiceModules.impl.KeyASTImpl#getAnnotation <em>Annotation</em>}</li>
  *   <li>{@link org.xtext.guicemodules.guiceModules.impl.KeyASTImpl#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

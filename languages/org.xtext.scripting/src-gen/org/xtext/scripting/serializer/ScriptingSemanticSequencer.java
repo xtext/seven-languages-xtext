@@ -65,6 +65,7 @@ public class ScriptingSemanticSequencer extends XbaseSemanticSequencer {
 	@Inject
 	private ScriptingGrammarAccess grammarAccess;
 	
+	@Override
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == ScriptingPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case ScriptingPackage.SCRIPT:

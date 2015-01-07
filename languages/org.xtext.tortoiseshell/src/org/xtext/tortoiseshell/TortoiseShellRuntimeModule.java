@@ -14,7 +14,7 @@ import org.xtext.tortoiseshell.interpreter.NullGenerator;
 import org.xtext.tortoiseshell.interpreter.TortoiseShellInterpeter;
 import org.xtext.tortoiseshell.lib.ITortoiseInterpreter;
 import org.xtext.tortoiseshell.scoping.TortoiseShellIdentifiableSimpleNameProvider;
-import org.xtext.tortoiseshell.scoping.TortoiseShellImplicitlyImportedTypes;
+import org.xtext.tortoiseshell.scoping.TortoiseShellImplicitlyImportedFeatures;
 
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
@@ -22,7 +22,11 @@ import org.xtext.tortoiseshell.scoping.TortoiseShellImplicitlyImportedTypes;
 public class TortoiseShellRuntimeModule extends org.xtext.tortoiseshell.AbstractTortoiseShellRuntimeModule {
 
 	public Class<? extends ImplicitlyImportedFeatures> bindImplicitlyImportedTypes() {
+<<<<<<< HEAD
 		return TortoiseShellImplicitlyImportedTypes.class;
+=======
+		return TortoiseShellImplicitlyImportedFeatures.class;
+>>>>>>> regenerated and updated to latest changes
 	}
 	
 	public Class<? extends ITortoiseInterpreter> bindITortoiseInterpreter() {

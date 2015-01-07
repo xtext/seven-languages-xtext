@@ -13,12 +13,12 @@ import org.eclipse.xtext.xbase.XExpression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.guicemodules.guiceModules.BindingAST#getFrom <em>From</em>}</li>
  *   <li>{@link org.xtext.guicemodules.guiceModules.BindingAST#getTo <em>To</em>}</li>
  *   <li>{@link org.xtext.guicemodules.guiceModules.BindingAST#getToInstance <em>To Instance</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.guicemodules.guiceModules.GuiceModulesPackage#getBindingAST()
  * @model

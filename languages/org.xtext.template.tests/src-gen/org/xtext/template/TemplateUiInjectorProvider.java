@@ -9,6 +9,7 @@ import com.google.inject.Injector;
 
 public class TemplateUiInjectorProvider implements IInjectorProvider {
 	
+	@Override
 	public Injector getInjector() {
 		return org.xtext.template.ui.internal.TemplateActivator.getInstance().getInjector("org.xtext.template.Template");
 	}

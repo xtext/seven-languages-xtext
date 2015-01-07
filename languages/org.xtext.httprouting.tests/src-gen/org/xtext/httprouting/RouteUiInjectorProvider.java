@@ -9,6 +9,7 @@ import com.google.inject.Injector;
 
 public class RouteUiInjectorProvider implements IInjectorProvider {
 	
+	@Override
 	public Injector getInjector() {
 		return org.xtext.httprouting.ui.internal.RouteActivator.getInstance().getInjector("org.xtext.httprouting.Route");
 	}

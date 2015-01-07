@@ -14,7 +14,6 @@ import org.xtext.scripting.scripting.ScriptingPackage;
  * An implementation of the model object '<em><b>Script</b></em>'.
  * <!-- end-user-doc -->
  * <p>
- * </p>
  *
  * @generated
  */

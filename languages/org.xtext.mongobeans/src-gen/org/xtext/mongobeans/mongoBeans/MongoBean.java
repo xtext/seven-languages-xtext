@@ -11,10 +11,10 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.mongobeans.mongoBeans.MongoBean#getFeatures <em>Features</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.mongobeans.mongoBeans.MongoBeansPackage#getMongoBean()
  * @model

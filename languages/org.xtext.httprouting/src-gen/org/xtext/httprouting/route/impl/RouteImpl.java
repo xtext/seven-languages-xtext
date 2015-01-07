@@ -22,14 +22,15 @@ import org.xtext.httprouting.route.URL;
  * An implementation of the model object '<em><b>Route</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.httprouting.route.impl.RouteImpl#getRequestType <em>Request Type</em>}</li>
  *   <li>{@link org.xtext.httprouting.route.impl.RouteImpl#getUrl <em>Url</em>}</li>
  *   <li>{@link org.xtext.httprouting.route.impl.RouteImpl#getCondition <em>Condition</em>}</li>
  *   <li>{@link org.xtext.httprouting.route.impl.RouteImpl#getCall <em>Call</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

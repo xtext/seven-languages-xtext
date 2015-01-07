@@ -26,12 +26,13 @@ import org.xtext.builddsl.build.Task;
  * An implementation of the model object '<em><b>Task</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.builddsl.build.impl.TaskImpl#getDepends <em>Depends</em>}</li>
  *   <li>{@link org.xtext.builddsl.build.impl.TaskImpl#getAction <em>Action</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

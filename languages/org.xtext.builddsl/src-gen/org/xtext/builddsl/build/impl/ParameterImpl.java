@@ -22,12 +22,13 @@ import org.xtext.builddsl.build.Parameter;
  * An implementation of the model object '<em><b>Parameter</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.builddsl.build.impl.ParameterImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.xtext.builddsl.build.impl.ParameterImpl#getInit <em>Init</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

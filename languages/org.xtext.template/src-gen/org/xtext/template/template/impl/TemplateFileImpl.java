@@ -31,14 +31,15 @@ import org.xtext.template.template.TemplatePackage;
  * An implementation of the model object '<em><b>File</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.template.template.impl.TemplateFileImpl#getPackage <em>Package</em>}</li>
  *   <li>{@link org.xtext.template.template.impl.TemplateFileImpl#getImportSection <em>Import Section</em>}</li>
  *   <li>{@link org.xtext.template.template.impl.TemplateFileImpl#getParams <em>Params</em>}</li>
  *   <li>{@link org.xtext.template.template.impl.TemplateFileImpl#getBody <em>Body</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

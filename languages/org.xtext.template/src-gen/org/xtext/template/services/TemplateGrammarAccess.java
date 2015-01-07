@@ -38,7 +38,7 @@ public class TemplateGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//TemplateFile:
 		//	"<!--" "«" ("package" package=QualifiedName)? importSection=XImportSection? params+=Parameter* body=RichString;
-		public ParserRule getRule() { return rule; }
+		@Override public ParserRule getRule() { return rule; }
 
 		//"<!--" "«" ("package" package=QualifiedName)? importSection=XImportSection? params+=Parameter* body=RichString
 		public Group getGroup() { return cGroup; }
@@ -97,7 +97,7 @@ public class TemplateGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Parameter:
 		//	annotations+=XAnnotation* "param" type=JvmTypeReference? name=ID ("=" defaultexp=XExpression)?;
-		public ParserRule getRule() { return rule; }
+		@Override public ParserRule getRule() { return rule; }
 
 		//annotations+=XAnnotation* "param" type=JvmTypeReference? name=ID ("=" defaultexp=XExpression)?
 		public Group getGroup() { return cGroup; }
@@ -150,7 +150,7 @@ public class TemplateGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//RichString returns xbase::XBlockExpression:
 		//	{RichString} expressions+=RichStringLiteral (expressions+=RichStringPart expressions+=RichStringLiteral)*;
-		public ParserRule getRule() { return rule; }
+		@Override public ParserRule getRule() { return rule; }
 
 		//{RichString} expressions+=RichStringLiteral (expressions+=RichStringPart expressions+=RichStringLiteral)*
 		public Group getGroup() { return cGroup; }
@@ -189,7 +189,7 @@ public class TemplateGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//RichStringLiteral returns xbase::XStringLiteral:
 		//	{RichStringLiteral} value=TEXT;
-		public ParserRule getRule() { return rule; }
+		@Override public ParserRule getRule() { return rule; }
 
 		//{RichStringLiteral} value=TEXT
 		public Group getGroup() { return cGroup; }
@@ -213,7 +213,7 @@ public class TemplateGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//RichStringPart returns xbase::XExpression:
 		//	XExpressionOrVarDeclaration | RichStringForLoop | RichStringIf;
-		public ParserRule getRule() { return rule; }
+		@Override public ParserRule getRule() { return rule; }
 
 		//XExpressionOrVarDeclaration | RichStringForLoop | RichStringIf
 		public Alternatives getAlternatives() { return cAlternatives; }
@@ -245,7 +245,7 @@ public class TemplateGrammarAccess extends AbstractGrammarElementFinder {
 		//RichStringForLoop returns xbase::XForLoopExpression:
 		//	{RichStringForLoop} "FOR" declaredParam=JvmFormalParameter ":" forExpression=XExpression eachExpression=RichString
 		//	"ENDFOR";
-		public ParserRule getRule() { return rule; }
+		@Override public ParserRule getRule() { return rule; }
 
 		//{RichStringForLoop} "FOR" declaredParam=JvmFormalParameter ":" forExpression=XExpression eachExpression=RichString
 		//"ENDFOR"
@@ -302,7 +302,7 @@ public class TemplateGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//RichStringIf returns xbase::XIfExpression:
 		//	{RichStringIf} "IF" if=XExpression then=RichString (else=RichStringElseIf | "ELSE" else=RichString)? "ENDIF";
-		public ParserRule getRule() { return rule; }
+		@Override public ParserRule getRule() { return rule; }
 
 		//{RichStringIf} "IF" if=XExpression then=RichString (else=RichStringElseIf | "ELSE" else=RichString)? "ENDIF"
 		public Group getGroup() { return cGroup; }
@@ -369,7 +369,7 @@ public class TemplateGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//RichStringElseIf returns xbase::XIfExpression:
 		//	{RichStringIf} "ELSEIF" if=XExpression then=RichString (else=RichStringElseIf | "ELSE" else=RichString)?;
-		public ParserRule getRule() { return rule; }
+		@Override public ParserRule getRule() { return rule; }
 
 		//{RichStringIf} "ELSEIF" if=XExpression then=RichString (else=RichStringElseIf | "ELSE" else=RichString)?
 		public Group getGroup() { return cGroup; }
@@ -461,7 +461,7 @@ public class TemplateGrammarAccess extends AbstractGrammarElementFinder {
 		return grammar;
 	}
 	
-	
+	@Override
 	public Grammar getGrammar() {
 		return grammar;
 	}

@@ -29,12 +29,13 @@ import org.xtext.guicemodules.guiceModules.ModulesAST;
  * An implementation of the model object '<em><b>Modules AST</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.guicemodules.guiceModules.impl.ModulesASTImpl#getImportSection <em>Import Section</em>}</li>
  *   <li>{@link org.xtext.guicemodules.guiceModules.impl.ModulesASTImpl#getModules <em>Modules</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

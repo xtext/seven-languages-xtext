@@ -14,7 +14,6 @@ import org.xtext.httprouting.route.RoutePackage;
  * An implementation of the model object '<em><b>Abstract Declaration</b></em>'.
  * <!-- end-user-doc -->
  * <p>
- * </p>
  *
  * @generated
  */

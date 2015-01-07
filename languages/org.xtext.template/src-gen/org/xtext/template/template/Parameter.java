@@ -19,13 +19,13 @@ import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotation;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.template.template.Parameter#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link org.xtext.template.template.Parameter#getType <em>Type</em>}</li>
  *   <li>{@link org.xtext.template.template.Parameter#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.template.template.Parameter#getDefaultexp <em>Defaultexp</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.template.template.TemplatePackage#getParameter()
  * @model

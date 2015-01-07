@@ -11,7 +11,7 @@ import org.eclipse.xtext.xbase.scoping.batch.ImplicitlyImportedFeatures
 import org.xtext.builddsl.lib.ClassExtensions
 import org.xtext.builddsl.lib.FileExtensions
 
-class BuildDSLImplicitlyImportedTypes extends ImplicitlyImportedFeatures {
+class BuildDSLImplicitlyImportedFeatures extends ImplicitlyImportedFeatures {
 	
 	/**
 	 * Add methods from {@link FileExtensions} and {@link ClassExtensions} to the extension scope.

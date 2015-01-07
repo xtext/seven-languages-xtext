@@ -16,6 +16,7 @@ import com.google.inject.Injector;
 @SuppressWarnings("all")
 public class MongoBeansStandaloneSetupGenerated implements ISetup {
 
+	@Override
 	public Injector createInjectorAndDoEMFRegistration() {
 		org.eclipse.xtext.xbase.XbaseStandaloneSetup.doSetup();
 

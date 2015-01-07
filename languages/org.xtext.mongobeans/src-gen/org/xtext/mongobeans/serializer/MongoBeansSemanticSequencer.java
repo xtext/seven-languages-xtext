@@ -69,6 +69,7 @@ public class MongoBeansSemanticSequencer extends XbaseSemanticSequencer {
 	@Inject
 	private MongoBeansGrammarAccess grammarAccess;
 	
+	@Override
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == MongoBeansPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case MongoBeansPackage.MONGO_BEAN:

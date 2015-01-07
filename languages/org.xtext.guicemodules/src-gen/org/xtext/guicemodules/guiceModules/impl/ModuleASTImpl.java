@@ -28,13 +28,14 @@ import org.xtext.guicemodules.guiceModules.ModuleAST;
  * An implementation of the model object '<em><b>Module AST</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.guicemodules.guiceModules.impl.ModuleASTImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.guicemodules.guiceModules.impl.ModuleASTImpl#getMixins <em>Mixins</em>}</li>
  *   <li>{@link org.xtext.guicemodules.guiceModules.impl.ModuleASTImpl#getBindings <em>Bindings</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

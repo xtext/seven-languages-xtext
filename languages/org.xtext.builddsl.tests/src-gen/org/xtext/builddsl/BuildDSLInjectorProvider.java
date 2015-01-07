@@ -20,6 +20,7 @@ public class BuildDSLInjectorProvider implements IInjectorProvider, IRegistryCon
 		GlobalRegistries.initializeDefaults();
 	}
 
+	@Override
 	public Injector getInjector()
 	{
 		if (injector == null) {
@@ -34,10 +35,12 @@ public class BuildDSLInjectorProvider implements IInjectorProvider, IRegistryCon
 	    return new BuildDSLStandaloneSetup().createInjectorAndDoEMFRegistration();
 	}
 
+	@Override
 	public void restoreRegistry() {
 		stateBeforeInjectorCreation.restoreGlobalState();
 	}
 
+	@Override
 	public void setupRegistry() {
 		getInjector();
 		stateAfterInjectorCreation.restoreGlobalState();

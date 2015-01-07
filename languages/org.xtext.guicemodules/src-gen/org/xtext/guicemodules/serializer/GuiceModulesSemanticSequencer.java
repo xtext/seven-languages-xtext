@@ -71,6 +71,7 @@ public class GuiceModulesSemanticSequencer extends XbaseWithAnnotationsSemanticS
 	@Inject
 	private GuiceModulesGrammarAccess grammarAccess;
 	
+	@Override
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == GuiceModulesPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case GuiceModulesPackage.BINDING_AST:

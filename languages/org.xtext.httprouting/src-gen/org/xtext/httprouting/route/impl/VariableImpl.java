@@ -17,11 +17,12 @@ import org.xtext.httprouting.route.Variable;
  * An implementation of the model object '<em><b>Variable</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.httprouting.route.impl.VariableImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
