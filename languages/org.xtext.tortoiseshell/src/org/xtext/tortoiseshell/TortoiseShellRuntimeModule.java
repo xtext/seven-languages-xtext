@@ -22,11 +22,7 @@ import org.xtext.tortoiseshell.scoping.TortoiseShellImplicitlyImportedFeatures;
 public class TortoiseShellRuntimeModule extends org.xtext.tortoiseshell.AbstractTortoiseShellRuntimeModule {
 
 	public Class<? extends ImplicitlyImportedFeatures> bindImplicitlyImportedTypes() {
-<<<<<<< HEAD
-		return TortoiseShellImplicitlyImportedTypes.class;
-=======
 		return TortoiseShellImplicitlyImportedFeatures.class;
->>>>>>> regenerated and updated to latest changes
 	}
 	
 	public Class<? extends ITortoiseInterpreter> bindITortoiseInterpreter() {
