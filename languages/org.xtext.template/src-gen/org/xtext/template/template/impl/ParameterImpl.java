@@ -122,7 +122,8 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<XAnnotation> getAnnotations()
+  @Override
+public EList<XAnnotation> getAnnotations()
   {
     if (annotations == null)
     {
@@ -136,7 +137,8 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
    * <!-- end-user-doc -->
    * @generated
    */
-  public JvmTypeReference getType()
+  @Override
+public JvmTypeReference getType()
   {
     return type;
   }
@@ -163,7 +165,8 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(JvmTypeReference newType)
+  @Override
+public void setType(JvmTypeReference newType)
   {
     if (newType != type)
     {
@@ -184,7 +187,8 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  @Override
+public String getName()
   {
     return name;
   }
@@ -194,7 +198,8 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(String newName)
+  @Override
+public void setName(String newName)
   {
     String oldName = name;
     name = newName;
@@ -207,7 +212,8 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
    * <!-- end-user-doc -->
    * @generated
    */
-  public XExpression getDefaultexp()
+  @Override
+public XExpression getDefaultexp()
   {
     return defaultexp;
   }
@@ -234,7 +240,8 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setDefaultexp(XExpression newDefaultexp)
+  @Override
+public void setDefaultexp(XExpression newDefaultexp)
   {
     if (newDefaultexp != defaultexp)
     {

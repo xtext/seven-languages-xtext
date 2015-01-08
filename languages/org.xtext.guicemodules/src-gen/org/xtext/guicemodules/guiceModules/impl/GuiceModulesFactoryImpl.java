@@ -78,7 +78,8 @@ public class GuiceModulesFactoryImpl extends EFactoryImpl implements GuiceModule
    * <!-- end-user-doc -->
    * @generated
    */
-  public ModulesAST createModulesAST()
+  @Override
+public ModulesAST createModulesAST()
   {
     ModulesASTImpl modulesAST = new ModulesASTImpl();
     return modulesAST;
@@ -89,7 +90,8 @@ public class GuiceModulesFactoryImpl extends EFactoryImpl implements GuiceModule
    * <!-- end-user-doc -->
    * @generated
    */
-  public ModuleAST createModuleAST()
+  @Override
+public ModuleAST createModuleAST()
   {
     ModuleASTImpl moduleAST = new ModuleASTImpl();
     return moduleAST;
@@ -100,7 +102,8 @@ public class GuiceModulesFactoryImpl extends EFactoryImpl implements GuiceModule
    * <!-- end-user-doc -->
    * @generated
    */
-  public BindingAST createBindingAST()
+  @Override
+public BindingAST createBindingAST()
   {
     BindingASTImpl bindingAST = new BindingASTImpl();
     return bindingAST;
@@ -111,7 +114,8 @@ public class GuiceModulesFactoryImpl extends EFactoryImpl implements GuiceModule
    * <!-- end-user-doc -->
    * @generated
    */
-  public KeyAST createKeyAST()
+  @Override
+public KeyAST createKeyAST()
   {
     KeyASTImpl keyAST = new KeyASTImpl();
     return keyAST;
@@ -122,7 +126,8 @@ public class GuiceModulesFactoryImpl extends EFactoryImpl implements GuiceModule
    * <!-- end-user-doc -->
    * @generated
    */
-  public GuiceModulesPackage getGuiceModulesPackage()
+  @Override
+public GuiceModulesPackage getGuiceModulesPackage()
   {
     return (GuiceModulesPackage)getEPackage();
   }

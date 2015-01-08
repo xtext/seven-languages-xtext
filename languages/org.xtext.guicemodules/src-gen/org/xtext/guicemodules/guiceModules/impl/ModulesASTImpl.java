@@ -87,7 +87,8 @@ public class ModulesASTImpl extends MinimalEObjectImpl.Container implements Modu
    * <!-- end-user-doc -->
    * @generated
    */
-  public XImportSection getImportSection()
+  @Override
+public XImportSection getImportSection()
   {
     return importSection;
   }
@@ -114,7 +115,8 @@ public class ModulesASTImpl extends MinimalEObjectImpl.Container implements Modu
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setImportSection(XImportSection newImportSection)
+  @Override
+public void setImportSection(XImportSection newImportSection)
   {
     if (newImportSection != importSection)
     {
@@ -135,7 +137,8 @@ public class ModulesASTImpl extends MinimalEObjectImpl.Container implements Modu
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ModuleAST> getModules()
+  @Override
+public EList<ModuleAST> getModules()
   {
     if (modules == null)
     {

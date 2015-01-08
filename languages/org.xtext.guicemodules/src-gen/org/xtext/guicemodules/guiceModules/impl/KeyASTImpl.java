@@ -81,7 +81,8 @@ public class KeyASTImpl extends MinimalEObjectImpl.Container implements KeyAST
    * <!-- end-user-doc -->
    * @generated
    */
-  public XAnnotation getAnnotation()
+  @Override
+public XAnnotation getAnnotation()
   {
     return annotation;
   }
@@ -108,7 +109,8 @@ public class KeyASTImpl extends MinimalEObjectImpl.Container implements KeyAST
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setAnnotation(XAnnotation newAnnotation)
+  @Override
+public void setAnnotation(XAnnotation newAnnotation)
   {
     if (newAnnotation != annotation)
     {
@@ -129,7 +131,8 @@ public class KeyASTImpl extends MinimalEObjectImpl.Container implements KeyAST
    * <!-- end-user-doc -->
    * @generated
    */
-  public JvmTypeReference getType()
+  @Override
+public JvmTypeReference getType()
   {
     return type;
   }
@@ -156,7 +159,8 @@ public class KeyASTImpl extends MinimalEObjectImpl.Container implements KeyAST
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(JvmTypeReference newType)
+  @Override
+public void setType(JvmTypeReference newType)
   {
     if (newType != type)
     {

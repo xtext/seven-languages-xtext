@@ -133,7 +133,8 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getModulesAST()
+  @Override
+public EClass getModulesAST()
   {
     return modulesASTEClass;
   }
@@ -143,7 +144,8 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModulesAST_ImportSection()
+  @Override
+public EReference getModulesAST_ImportSection()
   {
     return (EReference)modulesASTEClass.getEStructuralFeatures().get(0);
   }
@@ -153,7 +155,8 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModulesAST_Modules()
+  @Override
+public EReference getModulesAST_Modules()
   {
     return (EReference)modulesASTEClass.getEStructuralFeatures().get(1);
   }
@@ -163,7 +166,8 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getModuleAST()
+  @Override
+public EClass getModuleAST()
   {
     return moduleASTEClass;
   }
@@ -173,7 +177,8 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getModuleAST_Name()
+  @Override
+public EAttribute getModuleAST_Name()
   {
     return (EAttribute)moduleASTEClass.getEStructuralFeatures().get(0);
   }
@@ -183,7 +188,8 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModuleAST_Mixins()
+  @Override
+public EReference getModuleAST_Mixins()
   {
     return (EReference)moduleASTEClass.getEStructuralFeatures().get(1);
   }
@@ -193,7 +199,8 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModuleAST_Bindings()
+  @Override
+public EReference getModuleAST_Bindings()
   {
     return (EReference)moduleASTEClass.getEStructuralFeatures().get(2);
   }
@@ -203,7 +210,8 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getBindingAST()
+  @Override
+public EClass getBindingAST()
   {
     return bindingASTEClass;
   }
@@ -213,7 +221,8 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBindingAST_From()
+  @Override
+public EReference getBindingAST_From()
   {
     return (EReference)bindingASTEClass.getEStructuralFeatures().get(0);
   }
@@ -223,7 +232,8 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBindingAST_To()
+  @Override
+public EReference getBindingAST_To()
   {
     return (EReference)bindingASTEClass.getEStructuralFeatures().get(1);
   }
@@ -233,7 +243,8 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBindingAST_ToInstance()
+  @Override
+public EReference getBindingAST_ToInstance()
   {
     return (EReference)bindingASTEClass.getEStructuralFeatures().get(2);
   }
@@ -243,7 +254,8 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getKeyAST()
+  @Override
+public EClass getKeyAST()
   {
     return keyASTEClass;
   }
@@ -253,7 +265,8 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getKeyAST_Annotation()
+  @Override
+public EReference getKeyAST_Annotation()
   {
     return (EReference)keyASTEClass.getEStructuralFeatures().get(0);
   }
@@ -263,7 +276,8 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getKeyAST_Type()
+  @Override
+public EReference getKeyAST_Type()
   {
     return (EReference)keyASTEClass.getEStructuralFeatures().get(1);
   }
@@ -273,7 +287,8 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
    * <!-- end-user-doc -->
    * @generated
    */
-  public GuiceModulesFactory getGuiceModulesFactory()
+  @Override
+public GuiceModulesFactory getGuiceModulesFactory()
   {
     return (GuiceModulesFactory)getEFactoryInstance();
   }

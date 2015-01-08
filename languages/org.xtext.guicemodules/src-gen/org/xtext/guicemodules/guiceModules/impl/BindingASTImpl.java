@@ -91,7 +91,8 @@ public class BindingASTImpl extends MinimalEObjectImpl.Container implements Bind
    * <!-- end-user-doc -->
    * @generated
    */
-  public KeyAST getFrom()
+  @Override
+public KeyAST getFrom()
   {
     return from;
   }
@@ -118,7 +119,8 @@ public class BindingASTImpl extends MinimalEObjectImpl.Container implements Bind
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setFrom(KeyAST newFrom)
+  @Override
+public void setFrom(KeyAST newFrom)
   {
     if (newFrom != from)
     {
@@ -139,7 +141,8 @@ public class BindingASTImpl extends MinimalEObjectImpl.Container implements Bind
    * <!-- end-user-doc -->
    * @generated
    */
-  public KeyAST getTo()
+  @Override
+public KeyAST getTo()
   {
     return to;
   }
@@ -166,7 +169,8 @@ public class BindingASTImpl extends MinimalEObjectImpl.Container implements Bind
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTo(KeyAST newTo)
+  @Override
+public void setTo(KeyAST newTo)
   {
     if (newTo != to)
     {
@@ -187,7 +191,8 @@ public class BindingASTImpl extends MinimalEObjectImpl.Container implements Bind
    * <!-- end-user-doc -->
    * @generated
    */
-  public XExpression getToInstance()
+  @Override
+public XExpression getToInstance()
   {
     return toInstance;
   }
@@ -214,7 +219,8 @@ public class BindingASTImpl extends MinimalEObjectImpl.Container implements Bind
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setToInstance(XExpression newToInstance)
+  @Override
+public void setToInstance(XExpression newToInstance)
   {
     if (newToInstance != toInstance)
     {

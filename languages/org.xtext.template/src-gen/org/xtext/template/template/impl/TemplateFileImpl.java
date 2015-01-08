@@ -121,7 +121,8 @@ public class TemplateFileImpl extends MinimalEObjectImpl.Container implements Te
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getPackage()
+  @Override
+public String getPackage()
   {
     return package_;
   }
@@ -131,7 +132,8 @@ public class TemplateFileImpl extends MinimalEObjectImpl.Container implements Te
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setPackage(String newPackage)
+  @Override
+public void setPackage(String newPackage)
   {
     String oldPackage = package_;
     package_ = newPackage;
@@ -144,7 +146,8 @@ public class TemplateFileImpl extends MinimalEObjectImpl.Container implements Te
    * <!-- end-user-doc -->
    * @generated
    */
-  public XImportSection getImportSection()
+  @Override
+public XImportSection getImportSection()
   {
     return importSection;
   }
@@ -171,7 +174,8 @@ public class TemplateFileImpl extends MinimalEObjectImpl.Container implements Te
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setImportSection(XImportSection newImportSection)
+  @Override
+public void setImportSection(XImportSection newImportSection)
   {
     if (newImportSection != importSection)
     {
@@ -192,7 +196,8 @@ public class TemplateFileImpl extends MinimalEObjectImpl.Container implements Te
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Parameter> getParams()
+  @Override
+public EList<Parameter> getParams()
   {
     if (params == null)
     {
@@ -206,7 +211,8 @@ public class TemplateFileImpl extends MinimalEObjectImpl.Container implements Te
    * <!-- end-user-doc -->
    * @generated
    */
-  public XBlockExpression getBody()
+  @Override
+public XBlockExpression getBody()
   {
     return body;
   }
@@ -233,7 +239,8 @@ public class TemplateFileImpl extends MinimalEObjectImpl.Container implements Te
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setBody(XBlockExpression newBody)
+  @Override
+public void setBody(XBlockExpression newBody)
   {
     if (newBody != body)
     {

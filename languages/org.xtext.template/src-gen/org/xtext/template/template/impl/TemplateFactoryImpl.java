@@ -80,7 +80,8 @@ public class TemplateFactoryImpl extends EFactoryImpl implements TemplateFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public TemplateFile createTemplateFile()
+  @Override
+public TemplateFile createTemplateFile()
   {
     TemplateFileImpl templateFile = new TemplateFileImpl();
     return templateFile;
@@ -91,7 +92,8 @@ public class TemplateFactoryImpl extends EFactoryImpl implements TemplateFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Parameter createParameter()
+  @Override
+public Parameter createParameter()
   {
     ParameterImpl parameter = new ParameterImpl();
     return parameter;
@@ -102,7 +104,8 @@ public class TemplateFactoryImpl extends EFactoryImpl implements TemplateFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public RichString createRichString()
+  @Override
+public RichString createRichString()
   {
     RichStringImpl richString = new RichStringImpl();
     return richString;
@@ -113,7 +116,8 @@ public class TemplateFactoryImpl extends EFactoryImpl implements TemplateFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public RichStringLiteral createRichStringLiteral()
+  @Override
+public RichStringLiteral createRichStringLiteral()
   {
     RichStringLiteralImpl richStringLiteral = new RichStringLiteralImpl();
     return richStringLiteral;
@@ -124,7 +128,8 @@ public class TemplateFactoryImpl extends EFactoryImpl implements TemplateFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public RichStringForLoop createRichStringForLoop()
+  @Override
+public RichStringForLoop createRichStringForLoop()
   {
     RichStringForLoopImpl richStringForLoop = new RichStringForLoopImpl();
     return richStringForLoop;
@@ -135,7 +140,8 @@ public class TemplateFactoryImpl extends EFactoryImpl implements TemplateFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public RichStringIf createRichStringIf()
+  @Override
+public RichStringIf createRichStringIf()
   {
     RichStringIfImpl richStringIf = new RichStringIfImpl();
     return richStringIf;
@@ -146,7 +152,8 @@ public class TemplateFactoryImpl extends EFactoryImpl implements TemplateFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public TemplatePackage getTemplatePackage()
+  @Override
+public TemplatePackage getTemplatePackage()
   {
     return (TemplatePackage)getEPackage();
   }

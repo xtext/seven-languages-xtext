@@ -149,7 +149,8 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getTemplateFile()
+  @Override
+public EClass getTemplateFile()
   {
     return templateFileEClass;
   }
@@ -159,7 +160,8 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTemplateFile_Package()
+  @Override
+public EAttribute getTemplateFile_Package()
   {
     return (EAttribute)templateFileEClass.getEStructuralFeatures().get(0);
   }
@@ -169,7 +171,8 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTemplateFile_ImportSection()
+  @Override
+public EReference getTemplateFile_ImportSection()
   {
     return (EReference)templateFileEClass.getEStructuralFeatures().get(1);
   }
@@ -179,7 +182,8 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTemplateFile_Params()
+  @Override
+public EReference getTemplateFile_Params()
   {
     return (EReference)templateFileEClass.getEStructuralFeatures().get(2);
   }
@@ -189,7 +193,8 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTemplateFile_Body()
+  @Override
+public EReference getTemplateFile_Body()
   {
     return (EReference)templateFileEClass.getEStructuralFeatures().get(3);
   }
@@ -199,7 +204,8 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getParameter()
+  @Override
+public EClass getParameter()
   {
     return parameterEClass;
   }
@@ -209,7 +215,8 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getParameter_Annotations()
+  @Override
+public EReference getParameter_Annotations()
   {
     return (EReference)parameterEClass.getEStructuralFeatures().get(0);
   }
@@ -219,7 +226,8 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getParameter_Type()
+  @Override
+public EReference getParameter_Type()
   {
     return (EReference)parameterEClass.getEStructuralFeatures().get(1);
   }
@@ -229,7 +237,8 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getParameter_Name()
+  @Override
+public EAttribute getParameter_Name()
   {
     return (EAttribute)parameterEClass.getEStructuralFeatures().get(2);
   }
@@ -239,7 +248,8 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getParameter_Defaultexp()
+  @Override
+public EReference getParameter_Defaultexp()
   {
     return (EReference)parameterEClass.getEStructuralFeatures().get(3);
   }
@@ -249,7 +259,8 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getRichString()
+  @Override
+public EClass getRichString()
   {
     return richStringEClass;
   }
@@ -259,7 +270,8 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getRichStringLiteral()
+  @Override
+public EClass getRichStringLiteral()
   {
     return richStringLiteralEClass;
   }
@@ -269,7 +281,8 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getRichStringForLoop()
+  @Override
+public EClass getRichStringForLoop()
   {
     return richStringForLoopEClass;
   }
@@ -279,7 +292,8 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getRichStringIf()
+  @Override
+public EClass getRichStringIf()
   {
     return richStringIfEClass;
   }
@@ -289,7 +303,8 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public TemplateFactory getTemplateFactory()
+  @Override
+public TemplateFactory getTemplateFactory()
   {
     return (TemplateFactory)getEFactoryInstance();
   }

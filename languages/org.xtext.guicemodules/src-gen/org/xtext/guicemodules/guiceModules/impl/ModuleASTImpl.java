@@ -107,7 +107,8 @@ public class ModuleASTImpl extends MinimalEObjectImpl.Container implements Modul
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  @Override
+public String getName()
   {
     return name;
   }
@@ -117,7 +118,8 @@ public class ModuleASTImpl extends MinimalEObjectImpl.Container implements Modul
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(String newName)
+  @Override
+public void setName(String newName)
   {
     String oldName = name;
     name = newName;
@@ -130,7 +132,8 @@ public class ModuleASTImpl extends MinimalEObjectImpl.Container implements Modul
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ModuleAST> getMixins()
+  @Override
+public EList<ModuleAST> getMixins()
   {
     if (mixins == null)
     {
@@ -144,7 +147,8 @@ public class ModuleASTImpl extends MinimalEObjectImpl.Container implements Modul
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<BindingAST> getBindings()
+  @Override
+public EList<BindingAST> getBindings()
   {
     if (bindings == null)
     {
