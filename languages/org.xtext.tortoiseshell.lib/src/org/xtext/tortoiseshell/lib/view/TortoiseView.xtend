@@ -77,7 +77,7 @@ class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
 		canvas.scrollTo(-viewportSize.x / 2, -viewportSize.y/ 2)
 	}
 	
-	def show(XtextEditor tortoiseEditor, int stopAtLine) {
+	def void show(XtextEditor tortoiseEditor, int stopAtLine) {
 		animator.setAnimated(stopAtLine < 0)
 		DisplayRunHelper.runSyncInDisplayThread[reset]
 		tortoiseEditor.document.readOnly [
@@ -98,6 +98,7 @@ class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
 				}
 				tortoise.removeListener(this)
 			}
+			return null
 		]
 	}
 	

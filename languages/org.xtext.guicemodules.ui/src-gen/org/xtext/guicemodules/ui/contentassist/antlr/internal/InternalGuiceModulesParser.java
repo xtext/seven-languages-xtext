@@ -34,8 +34,8 @@ public class InternalGuiceModulesParser extends AbstractInternalContentAssistPar
     public static final int T__24=24;
     public static final int T__23=23;
     public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=12;
     public static final int T__21=21;
+    public static final int RULE_ANY_OTHER=12;
     public static final int T__20=20;
     public static final int EOF=-1;
     public static final int T__19=19;
@@ -63816,20 +63816,6 @@ public class InternalGuiceModulesParser extends AbstractInternalContentAssistPar
 
     // Delegated rules
 
-    public final boolean synpred119_InternalGuiceModules() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred119_InternalGuiceModules_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
     public final boolean synpred78_InternalGuiceModules() {
         state.backtracking++;
         int start = input.mark();
@@ -63849,6 +63835,20 @@ public class InternalGuiceModulesParser extends AbstractInternalContentAssistPar
         int start = input.mark();
         try {
             synpred106_InternalGuiceModules_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred119_InternalGuiceModules() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred119_InternalGuiceModules_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }

@@ -149,8 +149,7 @@ public class TemplatePackageImpl extends EPackageImpl implements TemplatePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getTemplateFile()
+  public EClass getTemplateFile()
   {
     return templateFileEClass;
   }
@@ -160,8 +159,7 @@ public EClass getTemplateFile()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getTemplateFile_Package()
+  public EAttribute getTemplateFile_Package()
   {
     return (EAttribute)templateFileEClass.getEStructuralFeatures().get(0);
   }
@@ -171,8 +169,7 @@ public EAttribute getTemplateFile_Package()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getTemplateFile_ImportSection()
+  public EReference getTemplateFile_ImportSection()
   {
     return (EReference)templateFileEClass.getEStructuralFeatures().get(1);
   }
@@ -182,8 +179,7 @@ public EReference getTemplateFile_ImportSection()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getTemplateFile_Params()
+  public EReference getTemplateFile_Params()
   {
     return (EReference)templateFileEClass.getEStructuralFeatures().get(2);
   }
@@ -193,8 +189,7 @@ public EReference getTemplateFile_Params()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getTemplateFile_Body()
+  public EReference getTemplateFile_Body()
   {
     return (EReference)templateFileEClass.getEStructuralFeatures().get(3);
   }
@@ -204,8 +199,7 @@ public EReference getTemplateFile_Body()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getParameter()
+  public EClass getParameter()
   {
     return parameterEClass;
   }
@@ -215,8 +209,7 @@ public EClass getParameter()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getParameter_Annotations()
+  public EReference getParameter_Annotations()
   {
     return (EReference)parameterEClass.getEStructuralFeatures().get(0);
   }
@@ -226,8 +219,7 @@ public EReference getParameter_Annotations()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getParameter_Type()
+  public EReference getParameter_Type()
   {
     return (EReference)parameterEClass.getEStructuralFeatures().get(1);
   }
@@ -237,8 +229,7 @@ public EReference getParameter_Type()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getParameter_Name()
+  public EAttribute getParameter_Name()
   {
     return (EAttribute)parameterEClass.getEStructuralFeatures().get(2);
   }
@@ -248,8 +239,7 @@ public EAttribute getParameter_Name()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getParameter_Defaultexp()
+  public EReference getParameter_Defaultexp()
   {
     return (EReference)parameterEClass.getEStructuralFeatures().get(3);
   }
@@ -259,8 +249,7 @@ public EReference getParameter_Defaultexp()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getRichString()
+  public EClass getRichString()
   {
     return richStringEClass;
   }
@@ -270,8 +259,7 @@ public EClass getRichString()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getRichStringLiteral()
+  public EClass getRichStringLiteral()
   {
     return richStringLiteralEClass;
   }
@@ -281,8 +269,7 @@ public EClass getRichStringLiteral()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getRichStringForLoop()
+  public EClass getRichStringForLoop()
   {
     return richStringForLoopEClass;
   }
@@ -292,8 +279,7 @@ public EClass getRichStringForLoop()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getRichStringIf()
+  public EClass getRichStringIf()
   {
     return richStringIfEClass;
   }
@@ -303,8 +289,7 @@ public EClass getRichStringIf()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public TemplateFactory getTemplateFactory()
+  public TemplateFactory getTemplateFactory()
   {
     return (TemplateFactory)getEFactoryInstance();
   }

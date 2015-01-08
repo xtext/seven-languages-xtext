@@ -121,8 +121,7 @@ public class TemplateFileImpl extends MinimalEObjectImpl.Container implements Te
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public String getPackage()
+  public String getPackage()
   {
     return package_;
   }
@@ -132,8 +131,7 @@ public String getPackage()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setPackage(String newPackage)
+  public void setPackage(String newPackage)
   {
     String oldPackage = package_;
     package_ = newPackage;
@@ -146,8 +144,7 @@ public void setPackage(String newPackage)
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public XImportSection getImportSection()
+  public XImportSection getImportSection()
   {
     return importSection;
   }
@@ -174,8 +171,7 @@ public XImportSection getImportSection()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setImportSection(XImportSection newImportSection)
+  public void setImportSection(XImportSection newImportSection)
   {
     if (newImportSection != importSection)
     {
@@ -196,8 +192,7 @@ public void setImportSection(XImportSection newImportSection)
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EList<Parameter> getParams()
+  public EList<Parameter> getParams()
   {
     if (params == null)
     {
@@ -211,8 +206,7 @@ public EList<Parameter> getParams()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public XBlockExpression getBody()
+  public XBlockExpression getBody()
   {
     return body;
   }
@@ -239,8 +233,7 @@ public XBlockExpression getBody()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setBody(XBlockExpression newBody)
+  public void setBody(XBlockExpression newBody)
   {
     if (newBody != body)
     {

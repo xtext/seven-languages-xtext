@@ -133,8 +133,7 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getModulesAST()
+  public EClass getModulesAST()
   {
     return modulesASTEClass;
   }
@@ -144,8 +143,7 @@ public EClass getModulesAST()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getModulesAST_ImportSection()
+  public EReference getModulesAST_ImportSection()
   {
     return (EReference)modulesASTEClass.getEStructuralFeatures().get(0);
   }
@@ -155,8 +153,7 @@ public EReference getModulesAST_ImportSection()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getModulesAST_Modules()
+  public EReference getModulesAST_Modules()
   {
     return (EReference)modulesASTEClass.getEStructuralFeatures().get(1);
   }
@@ -166,8 +163,7 @@ public EReference getModulesAST_Modules()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getModuleAST()
+  public EClass getModuleAST()
   {
     return moduleASTEClass;
   }
@@ -177,8 +173,7 @@ public EClass getModuleAST()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getModuleAST_Name()
+  public EAttribute getModuleAST_Name()
   {
     return (EAttribute)moduleASTEClass.getEStructuralFeatures().get(0);
   }
@@ -188,8 +183,7 @@ public EAttribute getModuleAST_Name()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getModuleAST_Mixins()
+  public EReference getModuleAST_Mixins()
   {
     return (EReference)moduleASTEClass.getEStructuralFeatures().get(1);
   }
@@ -199,8 +193,7 @@ public EReference getModuleAST_Mixins()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getModuleAST_Bindings()
+  public EReference getModuleAST_Bindings()
   {
     return (EReference)moduleASTEClass.getEStructuralFeatures().get(2);
   }
@@ -210,8 +203,7 @@ public EReference getModuleAST_Bindings()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getBindingAST()
+  public EClass getBindingAST()
   {
     return bindingASTEClass;
   }
@@ -221,8 +213,7 @@ public EClass getBindingAST()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getBindingAST_From()
+  public EReference getBindingAST_From()
   {
     return (EReference)bindingASTEClass.getEStructuralFeatures().get(0);
   }
@@ -232,8 +223,7 @@ public EReference getBindingAST_From()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getBindingAST_To()
+  public EReference getBindingAST_To()
   {
     return (EReference)bindingASTEClass.getEStructuralFeatures().get(1);
   }
@@ -243,8 +233,7 @@ public EReference getBindingAST_To()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getBindingAST_ToInstance()
+  public EReference getBindingAST_ToInstance()
   {
     return (EReference)bindingASTEClass.getEStructuralFeatures().get(2);
   }
@@ -254,8 +243,7 @@ public EReference getBindingAST_ToInstance()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getKeyAST()
+  public EClass getKeyAST()
   {
     return keyASTEClass;
   }
@@ -265,8 +253,7 @@ public EClass getKeyAST()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getKeyAST_Annotation()
+  public EReference getKeyAST_Annotation()
   {
     return (EReference)keyASTEClass.getEStructuralFeatures().get(0);
   }
@@ -276,8 +263,7 @@ public EReference getKeyAST_Annotation()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getKeyAST_Type()
+  public EReference getKeyAST_Type()
   {
     return (EReference)keyASTEClass.getEStructuralFeatures().get(1);
   }
@@ -287,8 +273,7 @@ public EReference getKeyAST_Type()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public GuiceModulesFactory getGuiceModulesFactory()
+  public GuiceModulesFactory getGuiceModulesFactory()
   {
     return (GuiceModulesFactory)getEFactoryInstance();
   }

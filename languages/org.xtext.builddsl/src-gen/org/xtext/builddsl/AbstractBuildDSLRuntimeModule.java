@@ -163,4 +163,9 @@ public abstract class AbstractBuildDSLRuntimeModule extends org.eclipse.xtext.xb
 		return org.xtext.builddsl.jvmmodel.BuildDSLJvmModelInferrer.class;
 	}
 
+	// contributed by org.eclipse.xtext.generator.xbase.XbaseGeneratorFragment
+	public void configureIScopeProviderDelegate(com.google.inject.Binder binder) {
+		binder.bind(org.eclipse.xtext.scoping.IScopeProvider.class).annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider.NAMED_DELEGATE)).to(org.eclipse.xtext.xbase.scoping.XImportSectionNamespaceScopeProvider.class);
+	}
+
 }

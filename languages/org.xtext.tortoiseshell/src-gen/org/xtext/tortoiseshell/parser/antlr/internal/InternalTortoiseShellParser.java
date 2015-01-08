@@ -55,8 +55,8 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
     public static final int T__58=58;
     public static final int T__16=16;
     public static final int T__51=51;
-    public static final int T__52=52;
     public static final int T__15=15;
+    public static final int T__52=52;
     public static final int T__53=53;
     public static final int T__18=18;
     public static final int T__54=54;
@@ -19931,11 +19931,11 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred10_InternalTortoiseShell() {
+    public final boolean synpred13_InternalTortoiseShell() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred10_InternalTortoiseShell_fragment(); // can never throw exception
+            synpred13_InternalTortoiseShell_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -19945,11 +19945,11 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred13_InternalTortoiseShell() {
+    public final boolean synpred10_InternalTortoiseShell() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred13_InternalTortoiseShell_fragment(); // can never throw exception
+            synpred10_InternalTortoiseShell_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }

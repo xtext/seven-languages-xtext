@@ -22942,20 +22942,6 @@ public class InternalTemplateParser extends AbstractInternalAntlrParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred27_InternalTemplate() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred27_InternalTemplate_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
     public final boolean synpred12_InternalTemplate() {
         state.backtracking++;
         int start = input.mark();
@@ -22975,6 +22961,20 @@ public class InternalTemplateParser extends AbstractInternalAntlrParser {
         int start = input.mark();
         try {
             synpred17_InternalTemplate_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred27_InternalTemplate() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred27_InternalTemplate_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }

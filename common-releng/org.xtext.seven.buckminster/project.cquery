@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<cq:componentQuery xmlns:cq="http://www.eclipse.org/buckminster/CQuery-1.0" resourceMap="project.rmap">
+<?xml version="1.0" encoding="UTF-8"?><cq:componentQuery xmlns:cq="http://www.eclipse.org/buckminster/CQuery-1.0" resourceMap="project.rmap">
     <cq:rootRequest name="org.xtext.seven.site" componentType="eclipse.feature"/>
+    <cq:property key="pde.bundle.range.generation" value="false"/>
+    <cq:property key="pde.match.rule.bundle" value="greaterOrEqual"/>
+    <cq:property key="pde.match.rule.bundle.lower" value="greaterOrEqual"/>
 </cq:componentQuery>

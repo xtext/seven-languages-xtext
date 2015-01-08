@@ -80,8 +80,7 @@ public class TemplateFactoryImpl extends EFactoryImpl implements TemplateFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public TemplateFile createTemplateFile()
+  public TemplateFile createTemplateFile()
   {
     TemplateFileImpl templateFile = new TemplateFileImpl();
     return templateFile;
@@ -92,8 +91,7 @@ public TemplateFile createTemplateFile()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public Parameter createParameter()
+  public Parameter createParameter()
   {
     ParameterImpl parameter = new ParameterImpl();
     return parameter;
@@ -104,8 +102,7 @@ public Parameter createParameter()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public RichString createRichString()
+  public RichString createRichString()
   {
     RichStringImpl richString = new RichStringImpl();
     return richString;
@@ -116,8 +113,7 @@ public RichString createRichString()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public RichStringLiteral createRichStringLiteral()
+  public RichStringLiteral createRichStringLiteral()
   {
     RichStringLiteralImpl richStringLiteral = new RichStringLiteralImpl();
     return richStringLiteral;
@@ -128,8 +124,7 @@ public RichStringLiteral createRichStringLiteral()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public RichStringForLoop createRichStringForLoop()
+  public RichStringForLoop createRichStringForLoop()
   {
     RichStringForLoopImpl richStringForLoop = new RichStringForLoopImpl();
     return richStringForLoop;
@@ -140,8 +135,7 @@ public RichStringForLoop createRichStringForLoop()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public RichStringIf createRichStringIf()
+  public RichStringIf createRichStringIf()
   {
     RichStringIfImpl richStringIf = new RichStringIfImpl();
     return richStringIf;
@@ -152,8 +146,7 @@ public RichStringIf createRichStringIf()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public TemplatePackage getTemplatePackage()
+  public TemplatePackage getTemplatePackage()
   {
     return (TemplatePackage)getEPackage();
   }

@@ -121,81 +121,72 @@ public class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
     this.canvas.scrollTo(((-viewportSize.x) / 2), ((-viewportSize.y) / 2));
   }
   
-  public Boolean show(final XtextEditor tortoiseEditor, final int stopAtLine) {
-    Boolean _xblockexpression = null;
-    {
-      this.animator.setAnimated((stopAtLine < 0));
-      final Runnable _function = new Runnable() {
-        public void run() {
-          TortoiseView.this.reset();
+  public void show(final XtextEditor tortoiseEditor, final int stopAtLine) {
+    this.animator.setAnimated((stopAtLine < 0));
+    final Runnable _function = new Runnable() {
+      public void run() {
+        TortoiseView.this.reset();
+      }
+    };
+    DisplayRunHelper.runSyncInDisplayThread(_function);
+    IXtextDocument _document = tortoiseEditor.getDocument();
+    final IUnitOfWork<Object, XtextResource> _function_1 = new IUnitOfWork<Object, XtextResource>() {
+      public Object exec(final XtextResource it) throws Exception {
+        boolean _and = false;
+        boolean _notEquals = (!Objects.equal(it, null));
+        if (!_notEquals) {
+          _and = false;
+        } else {
+          boolean _hasError = TortoiseView.this.hasError(tortoiseEditor);
+          boolean _not = (!_hasError);
+          _and = _not;
         }
-      };
-      DisplayRunHelper.runSyncInDisplayThread(_function);
-      IXtextDocument _document = tortoiseEditor.getDocument();
-      final IUnitOfWork<Boolean, XtextResource> _function_1 = new IUnitOfWork<Boolean, XtextResource>() {
-        public Boolean exec(final XtextResource it) throws Exception {
-          boolean _xifexpression = false;
-          boolean _and = false;
-          boolean _notEquals = (!Objects.equal(it, null));
-          if (!_notEquals) {
-            _and = false;
+        if (_and) {
+          final Tortoise tortoise = new Tortoise();
+          tortoise.addListener(TortoiseView.this);
+          IResourceServiceProvider _resourceServiceProvider = it.getResourceServiceProvider();
+          final ITortoiseInterpreter interpreter = _resourceServiceProvider.<ITortoiseInterpreter>get(ITortoiseInterpreter.class);
+          boolean _and_1 = false;
+          boolean _notEquals_1 = (!Objects.equal(interpreter, null));
+          if (!_notEquals_1) {
+            _and_1 = false;
           } else {
-            boolean _hasError = TortoiseView.this.hasError(tortoiseEditor);
-            boolean _not = (!_hasError);
-            _and = _not;
+            EList<EObject> _contents = it.getContents();
+            boolean _isEmpty = _contents.isEmpty();
+            boolean _not_1 = (!_isEmpty);
+            _and_1 = _not_1;
           }
-          if (_and) {
-            boolean _xblockexpression = false;
-            {
-              final Tortoise tortoise = new Tortoise();
-              tortoise.addListener(TortoiseView.this);
-              IResourceServiceProvider _resourceServiceProvider = it.getResourceServiceProvider();
-              final ITortoiseInterpreter interpreter = _resourceServiceProvider.<ITortoiseInterpreter>get(ITortoiseInterpreter.class);
-              boolean _and_1 = false;
-              boolean _notEquals_1 = (!Objects.equal(interpreter, null));
-              if (!_notEquals_1) {
-                _and_1 = false;
+          if (_and_1) {
+            try {
+              EList<EObject> _contents_1 = it.getContents();
+              EObject _get = _contents_1.get(0);
+              interpreter.run(tortoise, _get, stopAtLine);
+            } catch (final Throwable _t) {
+              if (_t instanceof Exception) {
+                final Exception e = (Exception)_t;
+                IWorkbenchPartSite _site = TortoiseView.this.getSite();
+                Shell _shell = _site.getShell();
+                StringConcatenation _builder = new StringConcatenation();
+                _builder.append("Error during execution:");
+                _builder.newLine();
+                _builder.append("  ");
+                String _message = e.getMessage();
+                _builder.append(_message, "  ");
+                _builder.newLineIfNotEmpty();
+                _builder.append("See log for details");
+                MessageDialog.openError(_shell, "Error during Execution", _builder.toString());
+                TortoiseView.LOGGER.error("Error executing TortoiseScript", e);
               } else {
-                EList<EObject> _contents = it.getContents();
-                boolean _isEmpty = _contents.isEmpty();
-                boolean _not_1 = (!_isEmpty);
-                _and_1 = _not_1;
+                throw Exceptions.sneakyThrow(_t);
               }
-              if (_and_1) {
-                try {
-                  EList<EObject> _contents_1 = it.getContents();
-                  EObject _get = _contents_1.get(0);
-                  interpreter.run(tortoise, _get, stopAtLine);
-                } catch (final Throwable _t) {
-                  if (_t instanceof Exception) {
-                    final Exception e = (Exception)_t;
-                    IWorkbenchPartSite _site = TortoiseView.this.getSite();
-                    Shell _shell = _site.getShell();
-                    StringConcatenation _builder = new StringConcatenation();
-                    _builder.append("Error during execution:");
-                    _builder.newLine();
-                    _builder.append("  ");
-                    String _message = e.getMessage();
-                    _builder.append(_message, "  ");
-                    _builder.newLineIfNotEmpty();
-                    _builder.append("See log for details");
-                    MessageDialog.openError(_shell, "Error during Execution", _builder.toString());
-                    TortoiseView.LOGGER.error("Error executing TortoiseScript", e);
-                  } else {
-                    throw Exceptions.sneakyThrow(_t);
-                  }
-                }
-              }
-              _xblockexpression = tortoise.removeListener(TortoiseView.this);
             }
-            _xifexpression = _xblockexpression;
           }
-          return Boolean.valueOf(_xifexpression);
+          tortoise.removeListener(TortoiseView.this);
         }
-      };
-      _xblockexpression = _document.<Boolean>readOnly(_function_1);
-    }
-    return _xblockexpression;
+        return null;
+      }
+    };
+    _document.<Object>readOnly(_function_1);
   }
   
   public boolean hasError(final XtextEditor tortoiseEditor) {

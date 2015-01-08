@@ -163,4 +163,9 @@ public abstract class AbstractGuiceModulesRuntimeModule extends org.eclipse.xtex
 		return org.xtext.guicemodules.jvmmodel.GuiceModulesJvmModelInferrer.class;
 	}
 
+	// contributed by org.eclipse.xtext.generator.xbase.XbaseGeneratorFragment
+	public void configureIScopeProviderDelegate(com.google.inject.Binder binder) {
+		binder.bind(org.eclipse.xtext.scoping.IScopeProvider.class).annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider.NAMED_DELEGATE)).to(org.eclipse.xtext.xbase.scoping.XImportSectionNamespaceScopeProvider.class);
+	}
+
 }
