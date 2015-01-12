@@ -7,7 +7,7 @@
     <package 
        uri = "http://www.xtext.org/scripting/Scripting" 
        class = "org.xtext.scripting.scripting.ScriptingPackage"
-       genModel = "org/xtext/scripting/Scripting.genmodel" /> 
+       genModel = "model/generated/Scripting.genmodel" /> 
 	
   </extension>
 

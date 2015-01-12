@@ -4,7 +4,7 @@
     editorDirectory="/org.xtext.scripting.editor/src" modelPluginID="org.xtext.scripting"
     forceOverwrite="true" modelName="Scripting" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="6.0" copyrightFields="false" editPluginID="org.xtext.scripting.edit"
-    editorPluginID="org.xtext.scripting.editor" runtimeVersion="2.5" usedGenPackages="platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase">
+    editorPluginID="org.xtext.scripting.editor" runtimeVersion="2.10" usedGenPackages="platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase">
   <genPackages prefix="Scripting" basePackage="org.xtext.scripting" disposableProviderFactory="true"
       fileExtensions="script" ecorePackage="Scripting.ecore#/">
     <genClasses ecoreClass="Scripting.ecore#//Script"/>

@@ -4,7 +4,7 @@
     editorDirectory="/org.xtext.httprouting.editor/src" modelPluginID="org.xtext.httprouting"
     forceOverwrite="true" modelName="Route" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="6.0" copyrightFields="false" editPluginID="org.xtext.httprouting.edit"
-    editorPluginID="org.xtext.httprouting.editor" runtimeVersion="2.5" usedGenPackages="platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel#//xAnnotations platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel#//xtype">
+    editorPluginID="org.xtext.httprouting.editor" runtimeVersion="2.10" usedGenPackages="platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel#//xAnnotations platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel#//xtype">
   <genPackages prefix="Route" basePackage="org.xtext.httprouting" disposableProviderFactory="true"
       fileExtensions="route" ecorePackage="Route.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="Route.ecore#//RequestType">
