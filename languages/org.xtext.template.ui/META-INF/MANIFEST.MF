@@ -21,8 +21,7 @@ Require-Bundle: org.xtext.template;visibility:=reexport,
  com.google.guava,
  org.eclipse.xtext.xbase.lib,
  org.eclipse.jdt.debug.ui
-Import-Package: org.apache.log4j,
- org.eclipse.xtext.xbase.lib
+Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.xtext.template.ui.contentassist.antlr,
  org.xtext.template.ui.internal,
