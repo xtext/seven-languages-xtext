@@ -56,6 +56,7 @@ public class JavaCompiler {
     }
     Collection<File> _sources = params.getSources();
     final Function1<File, String> _function = new Function1<File, String>() {
+      @Override
       public String apply(final File it) {
         return it.toString();
       }
@@ -75,6 +76,7 @@ public class JavaCompiler {
   
   public static ClassLoader newClasspath(final File... entries) {
     final Function1<File, URL> _function = new Function1<File, URL>() {
+      @Override
       public URL apply(final File it) {
         try {
           URI _uRI = it.toURI();

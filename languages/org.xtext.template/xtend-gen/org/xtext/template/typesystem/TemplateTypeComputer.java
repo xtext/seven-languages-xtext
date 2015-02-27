@@ -11,6 +11,7 @@ import org.xtext.template.template.RichStringForLoop;
 
 @SuppressWarnings("all")
 public class TemplateTypeComputer extends XbaseWithAnnotationsTypeComputer {
+  @Override
   public void computeTypes(final XExpression expression, final ITypeComputationState state) {
     if ((expression instanceof RichString)) {
       this._computeTypes(((RichString)expression), state);

@@ -84,6 +84,7 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
       QualifiedName _fullyQualifiedName = this._iQualifiedNameProvider.getFullyQualifiedName(bean);
       JvmGenericType _class = this._jvmTypesBuilder.toClass(bean, _fullyQualifiedName);
       final Procedure1<JvmGenericType> _function = new Procedure1<JvmGenericType>() {
+        @Override
         public void apply(final JvmGenericType it) {
           String _documentation = MongoBeansJvmModelInferrer.this._jvmTypesBuilder.getDocumentation(bean);
           MongoBeansJvmModelInferrer.this._jvmTypesBuilder.setDocumentation(it, _documentation);
@@ -125,6 +126,7 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
       final JvmTypeReference typeRef1 = this._typeReferenceBuilder.typeRef(DBObject.class);
       EList<JvmMember> _members = inferredType.getMembers();
       final Procedure1<JvmConstructor> _function = new Procedure1<JvmConstructor>() {
+        @Override
         public void apply(final JvmConstructor it) {
           StringConcatenation _builder = new StringConcatenation();
           _builder.append("Creates a new ");
@@ -152,6 +154,7 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
       this._jvmTypesBuilder.<JvmConstructor>operator_add(_members, _constructor);
       EList<JvmMember> _members_1 = inferredType.getMembers();
       final Procedure1<JvmConstructor> _function_1 = new Procedure1<JvmConstructor>() {
+        @Override
         public void apply(final JvmConstructor it) {
           StringConcatenation _builder = new StringConcatenation();
           _builder.append("Creates a new ");
@@ -214,6 +217,7 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
         String _plus = ("get" + _firstUpper);
         JvmTypeReference _typeRef = this._typeReferenceBuilder.typeRef(List.class, propertyType);
         final Procedure1<JvmOperation> _function = new Procedure1<JvmOperation>() {
+          @Override
           public void apply(final JvmOperation it) {
             String _documentation = MongoBeansJvmModelInferrer.this._jvmTypesBuilder.getDocumentation(property);
             MongoBeansJvmModelInferrer.this._jvmTypesBuilder.setDocumentation(it, _documentation);
@@ -251,6 +255,7 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
           String _plus_2 = ("get" + _firstUpper_1);
           JvmTypeReference _typeRef_2 = this._typeReferenceBuilder.typeRef(List.class, propertyType);
           final Procedure1<JvmOperation> _function_1 = new Procedure1<JvmOperation>() {
+            @Override
             public void apply(final JvmOperation it) {
               String _documentation = MongoBeansJvmModelInferrer.this._jvmTypesBuilder.getDocumentation(property);
               MongoBeansJvmModelInferrer.this._jvmTypesBuilder.setDocumentation(it, _documentation);
@@ -304,6 +309,7 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
       String _plus = ("get" + _firstUpper);
       JvmTypeReference _jvmType = this.getJvmType(property);
       final Procedure1<JvmOperation> _function = new Procedure1<JvmOperation>() {
+        @Override
         public void apply(final JvmOperation it) {
           String _documentation = MongoBeansJvmModelInferrer.this._jvmTypesBuilder.getDocumentation(property);
           MongoBeansJvmModelInferrer.this._jvmTypesBuilder.setDocumentation(it, _documentation);
@@ -349,6 +355,7 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
       String _plus_1 = ("set" + _firstUpper_1);
       JvmTypeReference _typeRef = this._typeReferenceBuilder.typeRef(Void.TYPE);
       final Procedure1<JvmOperation> _function_1 = new Procedure1<JvmOperation>() {
+        @Override
         public void apply(final JvmOperation it) {
           String _documentation = MongoBeansJvmModelInferrer.this._jvmTypesBuilder.getDocumentation(property);
           MongoBeansJvmModelInferrer.this._jvmTypesBuilder.setDocumentation(it, _documentation);
@@ -402,12 +409,14 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
     String _name = operation.getName();
     JvmTypeReference _returnType = operation.getReturnType();
     final Procedure1<JvmOperation> _function = new Procedure1<JvmOperation>() {
+      @Override
       public void apply(final JvmOperation it) {
         String _documentation = MongoBeansJvmModelInferrer.this._jvmTypesBuilder.getDocumentation(operation);
         MongoBeansJvmModelInferrer.this._jvmTypesBuilder.setDocumentation(it, _documentation);
         EList<JvmFormalParameter> _parameters = it.getParameters();
         EList<JvmFormalParameter> _parameters_1 = operation.getParameters();
         final Function1<JvmFormalParameter, JvmFormalParameter> _function = new Function1<JvmFormalParameter, JvmFormalParameter>() {
+          @Override
           public JvmFormalParameter apply(final JvmFormalParameter it) {
             String _name = it.getName();
             JvmTypeReference _parameterType = it.getParameterType();

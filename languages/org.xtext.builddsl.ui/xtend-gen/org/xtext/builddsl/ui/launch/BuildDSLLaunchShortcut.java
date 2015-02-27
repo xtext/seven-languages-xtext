@@ -50,6 +50,7 @@ import org.xtext.builddsl.ui.launch.LaunchConfigurationInfo;
 public class BuildDSLLaunchShortcut implements ILaunchShortcut {
   public final static String BUNDLE_ID = "org.xtext.builddsl.ui";
   
+  @Override
   public void launch(final ISelection selection, final String mode) {
     MessageDialog.openError(null, "Unsupported Launch Selection.", 
       "Please open the file inside an editor to launch a task.");
@@ -71,6 +72,7 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
       final int index = list.indexOf(start);
       IntegerRange _upTo = new IntegerRange(index, 0);
       final Function1<Integer, Boolean> _function = new Function1<Integer, Boolean>() {
+        @Override
         public Boolean apply(final Integer it) {
           ILeafNode _get = list.get((it).intValue());
           boolean _isHidden = _get.isHidden();
@@ -82,6 +84,7 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
       int _minus = (_size - 1);
       IntegerRange _upTo_1 = new IntegerRange(index, _minus);
       final Function1<Integer, Boolean> _function_1 = new Function1<Integer, Boolean>() {
+        @Override
         public Boolean apply(final Integer it) {
           ILeafNode _get = list.get((it).intValue());
           boolean _isHidden = _get.isHidden();
@@ -107,6 +110,7 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
     return null;
   }
   
+  @Override
   public void launch(final IEditorPart editor, final String mode) {
     if ((editor instanceof XbaseEditor)) {
       int _switchResult = (int) 0;
@@ -132,6 +136,7 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
         final String project = _project.getName();
         IXtextDocument _document = ((XbaseEditor)editor).getDocument();
         final IUnitOfWork<LaunchConfigurationInfo, XtextResource> _function = new IUnitOfWork<LaunchConfigurationInfo, XtextResource>() {
+          @Override
           public LaunchConfigurationInfo exec(final XtextResource it) throws Exception {
             LaunchConfigurationInfo _xblockexpression = null;
             {
@@ -178,6 +183,7 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
             final ILaunchConfiguration[] configs = _launchManager.getLaunchConfigurations();
             ILaunchConfiguration _elvis = null;
             final Function1<ILaunchConfiguration, Boolean> _function = new Function1<ILaunchConfiguration, Boolean>() {
+              @Override
               public Boolean apply(final ILaunchConfiguration it) {
                 return Boolean.valueOf(info.configEquals(it));
               }

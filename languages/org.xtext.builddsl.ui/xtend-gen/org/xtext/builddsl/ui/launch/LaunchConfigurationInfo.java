@@ -43,8 +43,8 @@ public class LaunchConfigurationInfo {
         final ILaunchManager launchManager = _default.getLaunchManager();
         final ILaunchConfigurationType configType = launchManager.getLaunchConfigurationType("org.xtext.builddsl.ui.BuildLaunchConfigurationType");
         String _name = this.getName();
-        String _generateUniqueLaunchConfigurationNameFrom = launchManager.generateUniqueLaunchConfigurationNameFrom(_name);
-        final ILaunchConfigurationWorkingCopy wc = configType.newInstance(null, _generateUniqueLaunchConfigurationNameFrom);
+        String _generateLaunchConfigurationName = launchManager.generateLaunchConfigurationName(_name);
+        final ILaunchConfigurationWorkingCopy wc = configType.newInstance(null, _generateLaunchConfigurationName);
         wc.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROJECT_NAME, this.project);
         wc.setAttribute(IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME, this.clazz);
         wc.setAttribute(IJavaLaunchConfigurationConstants.ATTR_STOP_IN_MAIN, false);

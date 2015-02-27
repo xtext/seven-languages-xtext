@@ -46,6 +46,7 @@ public class TemplateHighlightingCalculator extends XbaseHighlightingCalculator 
     return _switchResult;
   }
   
+  @Override
   public void doProvideHighlightingFor(final XtextResource resource, final IHighlightedPositionAcceptor acceptor) {
     super.doProvideHighlightingFor(resource, acceptor);
     acceptor.addPosition(0, 4, TemplateHighlightingConfiguration.TEXT);

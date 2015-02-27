@@ -20,12 +20,14 @@ public class TemplateHighlightingConfiguration extends XbaseHighlightingConfigur
   
   public final static String ESCAPE = "teamplate.escape";
   
+  @Override
   public void configure(final IHighlightingConfigurationAcceptor acceptor) {
     TextStyle _staticText = this.staticText();
     acceptor.acceptDefaultHighlighting(TemplateHighlightingConfiguration.TEXT, "Text", _staticText);
     TextStyle _staticEscape = this.staticEscape();
     acceptor.acceptDefaultHighlighting(TemplateHighlightingConfiguration.ESCAPE, "Statement/Expression Escape Symbols", _staticEscape);
     final IHighlightingConfigurationAcceptor _function = new IHighlightingConfigurationAcceptor() {
+      @Override
       public void acceptDefaultHighlighting(final String id, final String name, final TextStyle style) {
         RGB _rGB = new RGB(230, 230, 230);
         style.setBackgroundColor(_rGB);
@@ -39,6 +41,7 @@ public class TemplateHighlightingConfiguration extends XbaseHighlightingConfigur
     TextStyle _defaultTextStyle = this.defaultTextStyle();
     TextStyle _copy = _defaultTextStyle.copy();
     final Procedure1<TextStyle> _function = new Procedure1<TextStyle>() {
+      @Override
       public void apply(final TextStyle it) {
         RGB _rGB = new RGB(0, 0, 0);
         it.setColor(_rGB);
@@ -51,6 +54,7 @@ public class TemplateHighlightingConfiguration extends XbaseHighlightingConfigur
     TextStyle _defaultTextStyle = this.defaultTextStyle();
     TextStyle _copy = _defaultTextStyle.copy();
     final Procedure1<TextStyle> _function = new Procedure1<TextStyle>() {
+      @Override
       public void apply(final TextStyle it) {
         RGB _rGB = new RGB(180, 180, 180);
         it.setColor(_rGB);

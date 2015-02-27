@@ -22,7 +22,6 @@ import org.xtext.httprouting.route.URL;
  * An implementation of the model object '<em><b>Route</b></em>'.
  * <!-- end-user-doc -->
  * <p>
- * <p>
  * The following features are implemented:
  * </p>
  * <ul>

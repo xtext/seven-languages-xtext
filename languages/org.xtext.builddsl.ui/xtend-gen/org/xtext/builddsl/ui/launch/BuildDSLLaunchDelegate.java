@@ -22,6 +22,7 @@ import org.xtext.builddsl.ui.launch.RefreshJob;
 
 @SuppressWarnings("all")
 public class BuildDSLLaunchDelegate extends JavaLaunchDelegate {
+  @Override
   public void launch(final ILaunchConfiguration configuration, final String mode, final ILaunch launch, final IProgressMonitor monitor) {
     try {
       String _refreshScope = RefreshTab.getRefreshScope(configuration);
@@ -29,6 +30,7 @@ public class BuildDSLLaunchDelegate extends JavaLaunchDelegate {
       if (_notEquals) {
         DebugPlugin _default = DebugPlugin.getDefault();
         final IDebugEventSetListener _function = new IDebugEventSetListener() {
+          @Override
           public void handleDebugEvents(final DebugEvent[] it) {
             for (final DebugEvent event : it) {
               boolean _and = false;

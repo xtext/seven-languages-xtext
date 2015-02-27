@@ -27,12 +27,15 @@ public class SuperServlet extends NumberGuessing {
   
   private ThreadLocal<HttpServletResponse> response = new ThreadLocal<HttpServletResponse>();
   
+  @Override
   public void init() throws ServletException {
     super.init();
     final Module _function = new Module() {
+      @Override
       public void configure(final Binder it) {
         AnnotatedBindingBuilder<HttpServletRequest> _bind = it.<HttpServletRequest>bind(HttpServletRequest.class);
         final Provider<HttpServletRequest> _function = new Provider<HttpServletRequest>() {
+          @Override
           public HttpServletRequest get() {
             return SuperServlet.this.request.get();
           }
@@ -40,6 +43,7 @@ public class SuperServlet extends NumberGuessing {
         _bind.toProvider(_function);
         AnnotatedBindingBuilder<HttpServletResponse> _bind_1 = it.<HttpServletResponse>bind(HttpServletResponse.class);
         final Provider<HttpServletResponse> _function_1 = new Provider<HttpServletResponse>() {
+          @Override
           public HttpServletResponse get() {
             return SuperServlet.this.response.get();
           }
@@ -51,6 +55,7 @@ public class SuperServlet extends NumberGuessing {
     this.injector = _createInjector;
   }
   
+  @Override
   protected void service(final HttpServletRequest req, final HttpServletResponse resp) throws ServletException, IOException {
     this.request.set(req);
     this.response.set(resp);

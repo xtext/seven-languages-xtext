@@ -48,6 +48,7 @@ public class InterpreterTest {
   public void testTortoiseDefaults() {
     Tortoise _tortoise = new Tortoise();
     final Procedure1<Tortoise> _function = new Procedure1<Tortoise>() {
+      @Override
       public void apply(final Tortoise it) {
         boolean _isPaint = it.isPaint();
         Assert.assertTrue(_isPaint);
@@ -72,6 +73,7 @@ public class InterpreterTest {
     try {
       Tortoise _tortoise = new Tortoise();
       final Procedure1<Tortoise> _function = new Procedure1<Tortoise>() {
+        @Override
         public void apply(final Tortoise it) {
           boolean _isPaint = it.isPaint();
           Assert.assertTrue(_isPaint);
@@ -115,6 +117,7 @@ public class InterpreterTest {
       final Program program = this._parseHelper.parse(_builder);
       this._tortoiseShellInterpeter.run(tortoise, program, (-10));
       final Procedure1<Tortoise> _function_1 = new Procedure1<Tortoise>() {
+        @Override
         public void apply(final Tortoise it) {
           boolean _isPaint = it.isPaint();
           Assert.assertFalse(_isPaint);
@@ -184,6 +187,7 @@ public class InterpreterTest {
       final ArrayList<MoveEvent> moveEvents = CollectionLiterals.<MoveEvent>newArrayList();
       final ArrayList<TurnEvent> turnEvents = CollectionLiterals.<TurnEvent>newArrayList();
       final ITortoiseEvent.Listener _function = new ITortoiseEvent.Listener() {
+        @Override
         public void handleTortoiseEvent(final ITortoiseEvent it) {
           boolean _matched = false;
           if (!_matched) {

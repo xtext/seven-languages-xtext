@@ -29,6 +29,7 @@ public class RefreshJob extends Job {
     this.configuration = configuration;
   }
   
+  @Override
   public IStatus run(final IProgressMonitor monitor) {
     IStatus _xblockexpression = null;
     {

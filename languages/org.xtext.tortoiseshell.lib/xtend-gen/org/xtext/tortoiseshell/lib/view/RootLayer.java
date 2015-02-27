@@ -23,6 +23,7 @@ public class RootLayer extends FreeformLayer {
     this.setLayoutManager(_freeformLayout);
   }
   
+  @Override
   public Rectangle getFreeformExtent() {
     Rectangle _xblockexpression = null;
     {

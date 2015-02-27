@@ -13,7 +13,7 @@ import com.google.inject.name.Names;
 /**
  * Manual modifications go to {org.xtext.guicemodules.GuiceModulesRuntimeModule}
  */
- @SuppressWarnings("all")
+@SuppressWarnings("all")
 public abstract class AbstractGuiceModulesRuntimeModule extends org.eclipse.xtext.xbase.annotations.DefaultXbaseWithAnnotationsRuntimeModule {
 
 	protected Properties properties = null;

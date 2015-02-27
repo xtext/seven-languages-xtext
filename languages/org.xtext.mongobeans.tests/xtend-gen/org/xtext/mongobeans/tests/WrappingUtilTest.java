@@ -65,6 +65,7 @@ public class WrappingUtilTest {
       _builder.append("}");
       _builder.newLine();
       final IAcceptor<CompilationTestHelper.Result> _function = new IAcceptor<CompilationTestHelper.Result>() {
+        @Override
         public void accept(final CompilationTestHelper.Result it) {
           Class<?> _compiledClass = it.getCompiledClass();
           WrappingUtilTest.this.mongoBeanClass = _compiledClass;
@@ -137,6 +138,7 @@ public class WrappingUtilTest {
   protected BasicDBObject newFooDbObject(final String bar) {
     BasicDBObject _basicDBObject = new BasicDBObject();
     final Procedure1<BasicDBObject> _function = new Procedure1<BasicDBObject>() {
+      @Override
       public void apply(final BasicDBObject it) {
         it.put(IMongoBean.JAVA_CLASS_KEY, "Foo");
         it.put("bar", bar);

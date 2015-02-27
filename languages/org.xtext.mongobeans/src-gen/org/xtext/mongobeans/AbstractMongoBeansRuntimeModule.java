@@ -13,7 +13,7 @@ import com.google.inject.name.Names;
 /**
  * Manual modifications go to {org.xtext.mongobeans.MongoBeansRuntimeModule}
  */
- @SuppressWarnings("all")
+@SuppressWarnings("all")
 public abstract class AbstractMongoBeansRuntimeModule extends org.eclipse.xtext.xbase.DefaultXbaseRuntimeModule {
 
 	protected Properties properties = null;

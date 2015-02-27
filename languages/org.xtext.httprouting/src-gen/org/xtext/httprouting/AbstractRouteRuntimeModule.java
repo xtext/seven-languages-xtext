@@ -13,7 +13,7 @@ import com.google.inject.name.Names;
 /**
  * Manual modifications go to {org.xtext.httprouting.RouteRuntimeModule}
  */
- @SuppressWarnings("all")
+@SuppressWarnings("all")
 public abstract class AbstractRouteRuntimeModule extends org.eclipse.xtext.xbase.annotations.DefaultXbaseWithAnnotationsRuntimeModule {
 
 	protected Properties properties = null;

@@ -30,7 +30,6 @@ import org.xtext.mongobeans.mongoBeans.MongoOperation;
  * An implementation of the model object '<em><b>Mongo Operation</b></em>'.
  * <!-- end-user-doc -->
  * <p>
- * <p>
  * The following features are implemented:
  * </p>
  * <ul>

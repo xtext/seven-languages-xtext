@@ -5,6 +5,7 @@ import org.xtext.scripting.validation.AbstractScriptingValidator;
 
 @SuppressWarnings("all")
 public class ScriptingValidator extends AbstractScriptingValidator {
+  @Override
   public void checkInnerExpressions(final XExpression expr) {
   }
 }

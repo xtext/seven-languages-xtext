@@ -107,7 +107,7 @@ class BuildDSLLaunchShortcut implements ILaunchShortcut {
 	def createConfiguration()  {
 		val launchManager = DebugPlugin.getDefault.launchManager
 		val configType = launchManager.getLaunchConfigurationType("org.xtext.builddsl.ui.BuildLaunchConfigurationType")
-		val wc = configType.newInstance(null, launchManager.generateUniqueLaunchConfigurationNameFrom(name))
+		val wc = configType.newInstance(null, launchManager.generateLaunchConfigurationName(name))
 		wc.setAttribute(ATTR_PROJECT_NAME, project)
 		wc.setAttribute(ATTR_MAIN_TYPE_NAME, clazz)
 		wc.setAttribute(ATTR_STOP_IN_MAIN, false)

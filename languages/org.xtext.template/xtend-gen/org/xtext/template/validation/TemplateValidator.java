@@ -12,6 +12,7 @@ import org.xtext.template.validation.AbstractTemplateValidator;
 
 @SuppressWarnings("all")
 public class TemplateValidator extends AbstractTemplateValidator {
+  @Override
   public void checkInnerExpressions(final XExpression expr) {
   }
 }

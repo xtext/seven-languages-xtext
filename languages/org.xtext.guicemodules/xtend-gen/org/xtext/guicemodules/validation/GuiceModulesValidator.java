@@ -38,6 +38,7 @@ public class GuiceModulesValidator extends XbaseWithAnnotationsJavaValidator {
         _matched=true;
         EList<JvmAnnotationReference> _annotations = ((JvmAnnotationType)type).getAnnotations();
         final Function1<JvmAnnotationReference, Boolean> _function = new Function1<JvmAnnotationReference, Boolean>() {
+          @Override
           public Boolean apply(final JvmAnnotationReference it) {
             JvmAnnotationType _annotation = it.getAnnotation();
             return Boolean.valueOf(GuiceModulesValidator.this._typeReferences.is(_annotation, BindingAnnotation.class));

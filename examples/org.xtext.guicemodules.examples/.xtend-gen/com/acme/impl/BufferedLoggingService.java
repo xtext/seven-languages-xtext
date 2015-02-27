@@ -16,10 +16,12 @@ public class BufferedLoggingService implements LoggingService {
   @Accessors
   private StringBuilder buffer = new StringBuilder();
   
+  @Override
   public void logMessage(final String msg) {
     this.buffer.append(msg);
   }
   
+  @Override
   public String toString() {
     return this.buffer.toString();
   }

@@ -19,6 +19,7 @@ public class DirectoryCleaner {
     if (_isDirectory) {
       File[] _listFiles = file.listFiles();
       final Procedure1<File> _function = new Procedure1<File>() {
+        @Override
         public void apply(final File it) {
           boolean _isDirectory = it.isDirectory();
           if (_isDirectory) {

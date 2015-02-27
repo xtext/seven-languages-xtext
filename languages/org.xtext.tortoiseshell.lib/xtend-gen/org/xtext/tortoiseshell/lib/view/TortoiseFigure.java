@@ -30,6 +30,7 @@ public class TortoiseFigure extends ImageFigure {
     super(imageHelper.getImage("Turtle.png"), PositionConstants.NORTH_EAST);
   }
   
+  @Override
   protected void paintFigure(final Graphics graphics) {
     graphics.pushState();
     final Dimension size = this.getSize();
@@ -40,6 +41,7 @@ public class TortoiseFigure extends ImageFigure {
     graphics.popState();
   }
   
+  @Override
   public Dimension getMinimumSize(final int wHint, final int hHint) {
     Dimension _xblockexpression = null;
     {

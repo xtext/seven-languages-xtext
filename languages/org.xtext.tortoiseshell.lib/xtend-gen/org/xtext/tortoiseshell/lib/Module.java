@@ -15,6 +15,7 @@ import org.xtext.tortoiseshell.lib.Activator;
 
 @SuppressWarnings("all")
 public class Module extends AbstractGenericModule {
+  @Override
   public void configure(final Binder binder) {
     AnnotatedBindingBuilder<AbstractUIPlugin> _bind = binder.<AbstractUIPlugin>bind(AbstractUIPlugin.class);
     Activator _instance = Activator.getInstance();

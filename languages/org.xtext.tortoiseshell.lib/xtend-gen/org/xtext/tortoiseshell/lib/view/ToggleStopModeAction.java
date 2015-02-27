@@ -29,6 +29,7 @@ public class ToggleStopModeAction extends Action {
     this.setChecked(false);
   }
   
+  @Override
   public void run() {
     TortoisePartListener _tortoisePartListener = this.view.getTortoisePartListener();
     boolean _ggleStopMode = _tortoisePartListener.toggleStopMode();

@@ -13,6 +13,7 @@ import org.eclipse.xtext.generator.IGenerator;
 
 @SuppressWarnings("all")
 public class NullGenerator implements IGenerator {
+  @Override
   public void doGenerate(final Resource input, final IFileSystemAccess fsa) {
   }
 }

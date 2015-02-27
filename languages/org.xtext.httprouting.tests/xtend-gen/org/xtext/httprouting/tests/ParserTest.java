@@ -56,6 +56,7 @@ public class ParserTest {
       _builder.append("GET /client/foo/:id/:name*  when id==\"42\" do response.addHeader(name + \"/\" + id, null)");
       _builder.newLine();
       final IAcceptor<CompilationTestHelper.Result> _function = new IAcceptor<CompilationTestHelper.Result>() {
+        @Override
         public void accept(final CompilationTestHelper.Result it) {
           try {
             Class<?> _compiledClass = it.getCompiledClass();
@@ -63,6 +64,7 @@ public class ParserTest {
             final HttpServlet servlet = ((HttpServlet) _newInstance);
             HttpServletResponse _response = ParserTest.this.response();
             final Procedure1<HttpServletResponse> _function = new Procedure1<HttpServletResponse>() {
+              @Override
               public void apply(final HttpServletResponse it) {
                 try {
                   HttpServletRequest _request = ParserTest.this.request("/client/foo/42/rest/of");
@@ -77,6 +79,7 @@ public class ParserTest {
             ObjectExtensions.<HttpServletResponse>operator_doubleArrow(_response, _function);
             HttpServletResponse _response_1 = ParserTest.this.response();
             final Procedure1<HttpServletResponse> _function_1 = new Procedure1<HttpServletResponse>() {
+              @Override
               public void apply(final HttpServletResponse it) {
                 try {
                   HttpServletRequest _request = ParserTest.this.request("/client/foo/43/rest/of");
@@ -105,6 +108,7 @@ public class ParserTest {
    */
   public HttpServletRequest request(final String url) {
     final InvocationHandler _function = new InvocationHandler() {
+      @Override
       public Object invoke(final Object proxy, final Method method, final Object[] args) throws Throwable {
         Object _switchResult = null;
         String _name = method.getName();
@@ -135,6 +139,7 @@ public class ParserTest {
     {
       final HashSet<String> header = CollectionLiterals.<String>newHashSet();
       final InvocationHandler _function = new InvocationHandler() {
+        @Override
         public Object invoke(final Object proxy, final Method method, final Object[] args) throws Throwable {
           boolean _switchResult = false;
           String _name = method.getName();

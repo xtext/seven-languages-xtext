@@ -20,11 +20,13 @@ public class Activator extends AbstractUIPlugin {
   
   private Injector injector;
   
+  @Override
   public void start(final BundleContext context) throws Exception {
     super.start(context);
     Activator.INSTANCE = this;
   }
   
+  @Override
   public void stop(final BundleContext context) throws Exception {
     super.stop(context);
     Activator.INSTANCE = null;

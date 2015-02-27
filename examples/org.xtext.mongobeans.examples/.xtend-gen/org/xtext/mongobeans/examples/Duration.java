@@ -30,6 +30,7 @@ public class Duration {
     this.seconds = _plus;
   }
   
+  @Override
   public String toString() {
     String _string = Integer.toString((this.seconds / 60));
     String _plus = (_string + ":");

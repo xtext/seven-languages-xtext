@@ -13,7 +13,6 @@ import org.xtext.httprouting.route.RoutePackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Abstract Declaration</b></em>'.
  * <!-- end-user-doc -->
- * <p>
  *
  * @generated
  */

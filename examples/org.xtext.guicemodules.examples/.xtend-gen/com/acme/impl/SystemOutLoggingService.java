@@ -12,6 +12,7 @@ import org.eclipse.xtext.xbase.lib.InputOutput;
 
 @SuppressWarnings("all")
 public class SystemOutLoggingService implements LoggingService {
+  @Override
   public void logMessage(final String msg) {
     InputOutput.<String>println(msg);
   }

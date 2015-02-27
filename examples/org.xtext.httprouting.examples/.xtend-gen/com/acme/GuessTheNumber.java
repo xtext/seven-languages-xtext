@@ -152,6 +152,7 @@ public class GuessTheNumber {
   private void send(final CharSequence answer) {
     try {
       final OutputSupplier<OutputStreamWriter> _function = new OutputSupplier<OutputStreamWriter>() {
+        @Override
         public OutputStreamWriter getOutput() throws IOException {
           ServletOutputStream _outputStream = GuessTheNumber.this.response.getOutputStream();
           return new OutputStreamWriter(_outputStream);

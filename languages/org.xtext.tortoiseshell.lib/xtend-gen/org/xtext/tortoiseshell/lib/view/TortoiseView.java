@@ -78,6 +78,7 @@ public class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
   @Inject
   private Animator animator;
   
+  @Override
   public void createPartControl(final Composite parent) {
     FigureCanvas _figureCanvas = new FigureCanvas(parent, SWT.DOUBLE_BUFFERED);
     this.canvas = _figureCanvas;
@@ -99,6 +100,7 @@ public class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
     _toolBarManager.add(this.action);
   }
   
+  @Override
   public void setFocus() {
     this.canvas.setFocus();
   }
@@ -124,6 +126,7 @@ public class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
   public void show(final XtextEditor tortoiseEditor, final int stopAtLine) {
     this.animator.setAnimated((stopAtLine < 0));
     final Runnable _function = new Runnable() {
+      @Override
       public void run() {
         TortoiseView.this.reset();
       }
@@ -131,6 +134,7 @@ public class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
     DisplayRunHelper.runSyncInDisplayThread(_function);
     IXtextDocument _document = tortoiseEditor.getDocument();
     final IUnitOfWork<Object, XtextResource> _function_1 = new IUnitOfWork<Object, XtextResource>() {
+      @Override
       public Object exec(final XtextResource it) throws Exception {
         boolean _and = false;
         boolean _notEquals = (!Objects.equal(it, null));
@@ -224,6 +228,7 @@ public class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
     return _xblockexpression;
   }
   
+  @Override
   public void handleTortoiseEvent(final ITortoiseEvent event) {
     boolean _matched = false;
     if (!_matched) {

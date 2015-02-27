@@ -57,6 +57,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
     QualifiedName _fullyQualifiedName = this._iQualifiedNameProvider.getFullyQualifiedName(module);
     JvmGenericType _class = this.builder.toClass(module, _fullyQualifiedName);
     final Procedure1<JvmGenericType> _function = new Procedure1<JvmGenericType>() {
+      @Override
       public void apply(final JvmGenericType it) {
         String _documentation = GuiceModulesJvmModelInferrer.this.builder.getDocumentation(module);
         GuiceModulesJvmModelInferrer.this.builder.setDocumentation(it, _documentation);
@@ -74,6 +75,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
             String _string = _fullyQualifiedName.toString();
             JvmTypeReference _typeRef_1 = GuiceModulesJvmModelInferrer.this._typeReferenceBuilder.typeRef(_string);
             final Procedure1<JvmField> _function = new Procedure1<JvmField>() {
+              @Override
               public void apply(final JvmField it) {
                 StringConcatenationClient _client = new StringConcatenationClient() {
                   @Override
@@ -102,6 +104,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
               KeyAST _from = binding.getFrom();
               JvmTypeReference _type = _from.getType();
               final Procedure1<JvmOperation> _function_1 = new Procedure1<JvmOperation>() {
+                @Override
                 public void apply(final JvmOperation it) {
                   it.setVisibility(JvmVisibility.PRIVATE);
                   XExpression _toInstance = binding.getToInstance();
@@ -124,6 +127,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
               KeyAST _to_2 = binding.getTo();
               JvmTypeReference _type_1 = _to_2.getType();
               final Procedure1<JvmField> _function_2 = new Procedure1<JvmField>() {
+                @Override
                 public void apply(final JvmField it) {
                   KeyAST _to = binding.getTo();
                   XAnnotation _annotation = _to.getAnnotation();
@@ -144,6 +148,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
               KeyAST _from_3 = binding.getFrom();
               JvmTypeReference _type_2 = _from_3.getType();
               final Procedure1<JvmField> _function_3 = new Procedure1<JvmField>() {
+                @Override
                 public void apply(final JvmField it) {
                   KeyAST _from = binding.getFrom();
                   XAnnotation _annotation = _from.getAnnotation();
@@ -159,6 +164,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
         EList<JvmMember> _members_1 = it.getMembers();
         JvmTypeReference _typeRef_2 = GuiceModulesJvmModelInferrer.this._typeReferenceBuilder.typeRef(void.class);
         final Procedure1<JvmOperation> _function_1 = new Procedure1<JvmOperation>() {
+          @Override
           public void apply(final JvmOperation it) {
             EList<JvmFormalParameter> _parameters = it.getParameters();
             JvmTypeReference _typeRef = GuiceModulesJvmModelInferrer.this._typeReferenceBuilder.typeRef(Binder.class);
@@ -185,6 +191,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
         EList<JvmMember> _members_2 = it.getMembers();
         JvmTypeReference _typeRef_3 = GuiceModulesJvmModelInferrer.this._typeReferenceBuilder.typeRef(void.class);
         final Procedure1<JvmOperation> _function_2 = new Procedure1<JvmOperation>() {
+          @Override
           public void apply(final JvmOperation it) {
             GuiceModulesJvmModelInferrer.this.builder.setDocumentation(it, "Registers bindings for keys not present in the given set.");
             EList<JvmFormalParameter> _parameters = it.getParameters();

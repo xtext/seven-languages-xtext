@@ -58,6 +58,7 @@ public abstract class BuildScript {
         {
           Annotation[] _annotations = method.getAnnotations();
           final Function1<Annotation, Boolean> _function = new Function1<Annotation, Boolean>() {
+            @Override
             public Boolean apply(final Annotation it) {
               Class<? extends Annotation> _annotationType = it.annotationType();
               return Boolean.valueOf(Objects.equal(_annotationType, DependsOn.class));
@@ -68,10 +69,12 @@ public abstract class BuildScript {
           if (_notEquals) {
             String _name = method.getName();
             final Procedure1<TaskDef> _function_1 = new Procedure1<TaskDef>() {
+              @Override
               public void apply(final TaskDef it) {
                 String[] _value = ((DependsOn) taskAnnotation).value();
                 it.setPrerequisitedTasks(((List<String>)Conversions.doWrapArray(_value)));
                 final Procedure0 _function = new Procedure0() {
+                  @Override
                   public void apply() {
                     try {
                       method.setAccessible(true);
@@ -100,9 +103,11 @@ public abstract class BuildScript {
       Class<? extends BuildScript> _class = this.getClass();
       Field[] _declaredFields = _class.getDeclaredFields();
       final Function1<Field, Boolean> _function = new Function1<Field, Boolean>() {
+        @Override
         public Boolean apply(final Field it) {
           Annotation[] _annotations = it.getAnnotations();
           final Function1<Annotation, Boolean> _function = new Function1<Annotation, Boolean>() {
+            @Override
             public Boolean apply(final Annotation it) {
               Class<? extends Annotation> _annotationType = it.annotationType();
               return Boolean.valueOf(Objects.equal(_annotationType, Param.class));
@@ -190,6 +195,7 @@ public abstract class BuildScript {
       task.setIsExecuting(true);
       List<String> _prerequisitedTasks = task.getPrerequisitedTasks();
       final Procedure1<String> _function = new Procedure1<String>() {
+        @Override
         public void apply(final String it) {
           BuildScript.this._executeTask(it);
         }
@@ -217,6 +223,7 @@ public abstract class BuildScript {
       _or = true;
     } else {
       final Function1<String, Boolean> _function = new Function1<String, Boolean>() {
+        @Override
         public Boolean apply(final String arg) {
           boolean _or = false;
           boolean _equals = Objects.equal("--help", arg);

@@ -17,7 +17,6 @@ import org.xtext.builddsl.build.Declaration;
  * An implementation of the model object '<em><b>Declaration</b></em>'.
  * <!-- end-user-doc -->
  * <p>
- * <p>
  * The following features are implemented:
  * </p>
  * <ul>

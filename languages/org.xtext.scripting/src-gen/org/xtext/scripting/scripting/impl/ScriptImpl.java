@@ -13,7 +13,6 @@ import org.xtext.scripting.scripting.ScriptingPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Script</b></em>'.
  * <!-- end-user-doc -->
- * <p>
  *
  * @generated
  */

@@ -13,7 +13,6 @@ import org.xtext.template.template.TemplatePackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Rich String If</b></em>'.
  * <!-- end-user-doc -->
- * <p>
  *
  * @generated
  */

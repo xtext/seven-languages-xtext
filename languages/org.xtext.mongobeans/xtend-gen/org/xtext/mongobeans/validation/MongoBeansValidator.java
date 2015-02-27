@@ -63,6 +63,7 @@ public class MongoBeansValidator extends XbaseJavaValidator {
     }
   }
   
+  @Override
   public List<EPackage> getEPackages() {
     return CollectionLiterals.<EPackage>newArrayList(
       MongoBeansPackage.eINSTANCE, 

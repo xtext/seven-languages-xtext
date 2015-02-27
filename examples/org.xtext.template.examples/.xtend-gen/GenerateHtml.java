@@ -15,6 +15,7 @@ public class GenerateHtml {
   public static void main(final String... args) {
     final MyWebsite template = new MyWebsite();
     final Procedure1<MyWebsite> _function = new Procedure1<MyWebsite>() {
+      @Override
       public void apply(final MyWebsite it) {
         it.setAuthor("Fred Flintstone");
         it.setTitle("My Website");

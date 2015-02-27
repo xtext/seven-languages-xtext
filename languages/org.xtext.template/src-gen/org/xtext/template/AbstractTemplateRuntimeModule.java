@@ -13,7 +13,7 @@ import com.google.inject.name.Names;
 /**
  * Manual modifications go to {org.xtext.template.TemplateRuntimeModule}
  */
- @SuppressWarnings("all")
+@SuppressWarnings("all")
 public abstract class AbstractTemplateRuntimeModule extends org.eclipse.xtext.xbase.annotations.DefaultXbaseWithAnnotationsRuntimeModule {
 
 	protected Properties properties = null;

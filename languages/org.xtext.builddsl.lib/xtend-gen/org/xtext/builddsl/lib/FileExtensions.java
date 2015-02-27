@@ -57,6 +57,7 @@ public class FileExtensions {
       try {
         out.setMethod(JarOutputStream.DEFLATED);
         final Procedure1<File> _function = new Procedure1<File>() {
+          @Override
           public void apply(final File file) {
             try {
               File _relativeTo = FileExtensions.relativeTo(file, directory);

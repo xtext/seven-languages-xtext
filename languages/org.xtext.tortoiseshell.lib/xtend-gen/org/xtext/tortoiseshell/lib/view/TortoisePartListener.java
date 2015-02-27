@@ -55,6 +55,7 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
     return _and;
   }
   
+  @Override
   public void partActivated(final IWorkbenchPart part) {
     boolean _isTortoiseEditor = this.isTortoiseEditor(part);
     if (_isTortoiseEditor) {
@@ -110,12 +111,15 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
     }
   }
   
+  @Override
   public void partBroughtToTop(final IWorkbenchPart part) {
   }
   
+  @Override
   public void partClosed(final IWorkbenchPart part) {
   }
   
+  @Override
   public void partDeactivated(final IWorkbenchPart part) {
     boolean _equals = Objects.equal(part, this.currentTortoiseEditor);
     if (_equals) {
@@ -145,9 +149,11 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
     }
   }
   
+  @Override
   public void partOpened(final IWorkbenchPart part) {
   }
   
+  @Override
   public void resourceChanged(final IResourceChangeEvent event) {
     try {
       IFile _editorFile = null;
@@ -160,6 +166,7 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
         final IPath editorFilePath = editorFile.getFullPath();
         IResourceDelta _delta = event.getDelta();
         final IResourceDeltaVisitor _function = new IResourceDeltaVisitor() {
+          @Override
           public boolean visit(final IResourceDelta it) throws CoreException {
             boolean _xifexpression = false;
             boolean _and = false;
@@ -250,6 +257,7 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
     return _xblockexpression;
   }
   
+  @Override
   public void caretMoved(final CaretEvent event) {
     try {
       IXtextDocument _document = this.currentTortoiseEditor.getDocument();

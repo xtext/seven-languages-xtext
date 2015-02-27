@@ -25,6 +25,7 @@ import org.eclipse.xtext.xbase.lib.Conversions;
 
 @SuppressWarnings("all")
 public class BuildDSLLaunchTabGroup extends AbstractLaunchConfigurationTabGroup {
+  @Override
   public void createTabs(final ILaunchConfigurationDialog dialog, final String mode) {
     JavaMainTab _javaMainTab = new JavaMainTab();
     RefreshTab _refreshTab = new RefreshTab();

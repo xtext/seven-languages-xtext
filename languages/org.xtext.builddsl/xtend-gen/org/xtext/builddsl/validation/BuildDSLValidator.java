@@ -31,6 +31,7 @@ import org.xtext.builddsl.build.Task;
 public class BuildDSLValidator extends XbaseJavaValidator {
   public final static String CYCLIC_DEPENDENCY = "build.issue.cyclicDependency";
   
+  @Override
   protected List<EPackage> getEPackages() {
     return CollectionLiterals.<EPackage>newArrayList(
       BuildPackage.eINSTANCE, 
@@ -42,6 +43,7 @@ public class BuildDSLValidator extends XbaseJavaValidator {
   @Check
   public void checkNoRecursiveDependencies(final Task task) {
     final Procedure1<Set<Task>> _function = new Procedure1<Set<Task>>() {
+      @Override
       public void apply(final Set<Task> cycle) {
         int _size = cycle.size();
         boolean _equals = (_size == 1);
@@ -57,6 +59,7 @@ public class BuildDSLValidator extends XbaseJavaValidator {
           StringConcatenation _builder_1 = new StringConcatenation();
           _builder_1.append("There is a cyclic dependency that involves tasks ");
           final Function1<Task, String> _function = new Function1<Task, String>() {
+            @Override
             public String apply(final Task it) {
               return it.getName();
             }

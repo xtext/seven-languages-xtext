@@ -22,7 +22,6 @@ import org.xtext.guicemodules.guiceModules.KeyAST;
  * An implementation of the model object '<em><b>Binding AST</b></em>'.
  * <!-- end-user-doc -->
  * <p>
- * <p>
  * The following features are implemented:
  * </p>
  * <ul>

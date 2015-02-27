@@ -92,6 +92,7 @@ public class Animator extends UIJob {
     }
   }
   
+  @Override
   public IStatus runInUIThread(final IProgressMonitor monitor) {
     IStatus _xblockexpression = null;
     {

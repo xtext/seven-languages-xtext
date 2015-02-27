@@ -17,12 +17,14 @@ import org.eclipse.xtext.util.Strings;
  */
 @SuppressWarnings("all")
 public class TextValueConverter extends STRINGValueConverter {
+  @Override
   protected String toEscapedString(final String value) {
     String _convertToJavaString = Strings.convertToJavaString(value, false);
     String _plus = ("»" + _convertToJavaString);
     return (_plus + "«");
   }
   
+  @Override
   protected String convertFromString(final String literal, final INode node) throws ValueConverterWithValueException {
     int _length = literal.length();
     int _minus = (_length - 1);

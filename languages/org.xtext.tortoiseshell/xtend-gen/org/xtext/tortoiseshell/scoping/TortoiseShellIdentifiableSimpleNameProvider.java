@@ -14,6 +14,7 @@ import org.xtext.tortoiseshell.jvmmodel.TortoiseShellJvmModelInferrer;
 
 @SuppressWarnings("all")
 public class TortoiseShellIdentifiableSimpleNameProvider extends IdentifiableSimpleNameProvider {
+  @Override
   public String getSimpleName(final JvmIdentifiableElement element) {
     String _xifexpression = null;
     String _simpleName = element.getSimpleName();

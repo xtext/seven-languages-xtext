@@ -38,9 +38,11 @@ public class MusicDBXtendTest {
         final DBCollection dbCollection = db.getCollection("testCollection");
         Artist _artist = new Artist();
         final Procedure1<Artist> _function = new Procedure1<Artist>() {
+          @Override
           public void apply(final Artist it) {
             it.setName("John Coltrane");
             final Procedure1<Album> _function = new Procedure1<Album>() {
+              @Override
               public void apply(final Album it) {
                 it.setTitle("A Love Supreme");
                 it.setYear(1965);
@@ -52,6 +54,7 @@ public class MusicDBXtendTest {
             };
             MusicDBXtendTest.this.addAlbum(it, _function);
             final Procedure1<Album> _function_1 = new Procedure1<Album>() {
+              @Override
               public void apply(final Album it) {
                 it.setTitle("Impressions");
                 it.setYear(1961);
@@ -71,6 +74,7 @@ public class MusicDBXtendTest {
         this._mongoExtensions.save(dbCollection, john);
         Artist _artist_1 = new Artist();
         final Procedure1<Artist> _function_1 = new Procedure1<Artist>() {
+          @Override
           public void apply(final Artist it) {
             it.setName("John Coltrane");
           }
@@ -105,6 +109,7 @@ public class MusicDBXtendTest {
     List<Track> _tracks = it.getTracks();
     Track _track = new Track();
     final Procedure1<Track> _function = new Procedure1<Track>() {
+      @Override
       public void apply(final Track it) {
         it.setTitle(trackTitle);
         Duration _duration = new Duration(trackDuration);

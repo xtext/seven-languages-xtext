@@ -58,6 +58,7 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
     final String simpleName = Strings.lastToken(qualifiedName, ".");
     JvmGenericType _class = this._jvmTypesBuilder.toClass(file, qualifiedName);
     final Procedure1<JvmGenericType> _function = new Procedure1<JvmGenericType>() {
+      @Override
       public void apply(final JvmGenericType it) {
         EList<JvmTypeReference> _superTypes = it.getSuperTypes();
         JvmTypeReference _typeRef = BuildDSLJvmModelInferrer.this._typeReferenceBuilder.typeRef(BuildScript.class);
@@ -91,6 +92,7 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
             EList<JvmMember> _members = it.getMembers();
             String _name = declaredParameter.getName();
             final Procedure1<JvmField> _function = new Procedure1<JvmField>() {
+              @Override
               public void apply(final JvmField it) {
                 it.setVisibility(JvmVisibility.PUBLIC);
                 EList<JvmAnnotationReference> _annotations = it.getAnnotations();
@@ -109,6 +111,7 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
         EList<JvmMember> _members = it.getMembers();
         JvmTypeReference _typeRef_2 = BuildDSLJvmModelInferrer.this._typeReferenceBuilder.typeRef(void.class);
         final Procedure1<JvmOperation> _function = new Procedure1<JvmOperation>() {
+          @Override
           public void apply(final JvmOperation it) {
             EList<JvmFormalParameter> _parameters = it.getParameters();
             JvmFormalParameter _parameter = BuildDSLJvmModelInferrer.this._jvmTypesBuilder.toParameter(file, "args", stringArray);
@@ -142,15 +145,18 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
         EList<JvmMember> _members_1 = it.getMembers();
         Iterable<Task> _tasks = BuildDSLJvmModelInferrer.this.getTasks(file);
         final Function1<Task, JvmOperation> _function_1 = new Function1<Task, JvmOperation>() {
+          @Override
           public JvmOperation apply(final Task task) {
             String _methodName = BuildDSLJvmModelInferrer.this.getMethodName(task);
             JvmTypeReference _typeRef = BuildDSLJvmModelInferrer.this._typeReferenceBuilder.typeRef(Void.TYPE);
             final Procedure1<JvmOperation> _function = new Procedure1<JvmOperation>() {
+              @Override
               public void apply(final JvmOperation it) {
                 it.setVisibility(JvmVisibility.PROTECTED);
                 EList<JvmAnnotationReference> _annotations = it.getAnnotations();
                 EList<Task> _depends = task.getDepends();
                 final Function1<Task, String> _function = new Function1<Task, String>() {
+                  @Override
                   public String apply(final Task it) {
                     return it.getName();
                   }
@@ -165,7 +171,7 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
             return BuildDSLJvmModelInferrer.this._jvmTypesBuilder.toMethod(task, _methodName, _typeRef, _function);
           }
         };
-        Iterable<JvmMember> _map = IterableExtensions.<Task, JvmMember>map(_tasks, _function_1);
+        Iterable<JvmOperation> _map = IterableExtensions.<Task, JvmOperation>map(_tasks, _function_1);
         BuildDSLJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members_1, _map);
       }
     };

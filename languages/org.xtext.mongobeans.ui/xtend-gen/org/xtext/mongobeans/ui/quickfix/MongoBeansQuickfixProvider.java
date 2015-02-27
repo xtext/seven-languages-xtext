@@ -33,6 +33,7 @@ public class MongoBeansQuickfixProvider extends XbaseWithAnnotationsQuickfixProv
     _builder.append(_head_1, "");
     _builder.append(".");
     final IModification _function = new IModification() {
+      @Override
       public void apply(final IModificationContext it) throws Exception {
         IXtextDocument _xtextDocument = it.getXtextDocument();
         Integer _offset = issue.getOffset();

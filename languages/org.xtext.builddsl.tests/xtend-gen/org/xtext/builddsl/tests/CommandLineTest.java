@@ -239,6 +239,7 @@ public class CommandLineTest {
     try {
       final ArrayList<Class<?>> classes = CollectionLiterals.<Class<?>>newArrayList();
       final IAcceptor<CompilationTestHelper.Result> _function = new IAcceptor<CompilationTestHelper.Result>() {
+        @Override
         public void accept(final CompilationTestHelper.Result it) {
           Class<?> _compiledClass = it.getCompiledClass();
           classes.add(_compiledClass);
@@ -255,6 +256,7 @@ public class CommandLineTest {
         Class<?> _superclass = clazz.getSuperclass();
         Method[] _declaredMethods = _superclass.getDeclaredMethods();
         final Function1<Method, Boolean> _function_1 = new Function1<Method, Boolean>() {
+          @Override
           public Boolean apply(final Method it) {
             String _name = it.getName();
             return Boolean.valueOf(Objects.equal(_name, "doBuild"));
@@ -262,6 +264,7 @@ public class CommandLineTest {
         };
         Method _findFirst = IterableExtensions.<Method>findFirst(((Iterable<Method>)Conversions.doWrapArray(_declaredMethods)), _function_1);
         final Procedure1<Method> _function_2 = new Procedure1<Method>() {
+          @Override
           public void apply(final Method it) {
             try {
               it.setAccessible(true);

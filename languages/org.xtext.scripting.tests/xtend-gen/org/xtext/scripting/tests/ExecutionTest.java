@@ -55,6 +55,7 @@ public class ExecutionTest {
   protected void compileAndExecuteMainAndExpect(final CharSequence script, final Object expectedResult) {
     try {
       final IAcceptor<CompilationTestHelper.Result> _function = new IAcceptor<CompilationTestHelper.Result>() {
+        @Override
         public void accept(final CompilationTestHelper.Result it) {
           try {
             try {

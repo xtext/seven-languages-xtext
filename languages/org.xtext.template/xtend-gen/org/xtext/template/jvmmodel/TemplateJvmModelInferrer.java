@@ -59,6 +59,7 @@ public class TemplateJvmModelInferrer extends AbstractModelInferrer {
     final String qualifiedName = _xifexpression;
     final JvmGenericType javaClass = this._jvmTypesBuilder.toClass(element, qualifiedName);
     final Procedure1<JvmGenericType> _function = new Procedure1<JvmGenericType>() {
+      @Override
       public void apply(final JvmGenericType it) {
         EList<Parameter> _params = element.getParams();
         for (final Parameter param : _params) {
@@ -86,6 +87,7 @@ public class TemplateJvmModelInferrer extends AbstractModelInferrer {
             EList<JvmMember> _members = it.getMembers();
             String _name = param.getName();
             final Procedure1<JvmField> _function = new Procedure1<JvmField>() {
+              @Override
               public void apply(final JvmField it) {
                 XExpression _defaultexp = param.getDefaultexp();
                 boolean _notEquals = (!Objects.equal(_defaultexp, null));
@@ -110,6 +112,7 @@ public class TemplateJvmModelInferrer extends AbstractModelInferrer {
         EList<JvmMember> _members = it.getMembers();
         JvmTypeReference _typeRef = TemplateJvmModelInferrer.this._typeReferenceBuilder.typeRef(CharSequence.class);
         final Procedure1<JvmOperation> _function = new Procedure1<JvmOperation>() {
+          @Override
           public void apply(final JvmOperation it) {
             it.setVisibility(JvmVisibility.PRIVATE);
             XBlockExpression _body = element.getBody();
@@ -121,6 +124,7 @@ public class TemplateJvmModelInferrer extends AbstractModelInferrer {
         EList<JvmMember> _members_1 = it.getMembers();
         JvmTypeReference _typeRef_1 = TemplateJvmModelInferrer.this._typeReferenceBuilder.typeRef(String.class);
         final Procedure1<JvmOperation> _function_1 = new Procedure1<JvmOperation>() {
+          @Override
           public void apply(final JvmOperation it) {
             EList<JvmFormalParameter> _parameters = it.getParameters();
             JvmTypeReference _typeRef = TemplateJvmModelInferrer.this._typeReferenceBuilder.typeRef(javaClass);

@@ -20,6 +20,7 @@ import org.xtext.template.template.RichStringForLoop;
 
 @SuppressWarnings("all")
 public class TemplateCompiler extends XbaseCompiler {
+  @Override
   protected void doInternalToJavaStatement(final XExpression expr, final ITreeAppendable it, final boolean isReferenced) {
     boolean _matched = false;
     if (!_matched) {
@@ -104,6 +105,7 @@ public class TemplateCompiler extends XbaseCompiler {
     }
   }
   
+  @Override
   protected void internalToConvertedExpression(final XExpression obj, final ITreeAppendable it) {
     boolean _hasName = it.hasName(obj);
     if (_hasName) {

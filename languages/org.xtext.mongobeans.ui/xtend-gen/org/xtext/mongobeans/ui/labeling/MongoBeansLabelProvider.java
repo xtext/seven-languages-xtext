@@ -22,6 +22,7 @@ public class MongoBeansLabelProvider extends XbaseLabelProvider {
     super(delegate);
   }
   
+  @Override
   protected Object doGetImage(final Object element) {
     Object _switchResult = null;
     boolean _matched = false;

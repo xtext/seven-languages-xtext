@@ -45,6 +45,7 @@ public class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoi
   
   private int stopAtLine;
   
+  @Override
   public void run(final Tortoise tortoise, final EObject program, final int stopAtLine) {
     boolean _and = false;
     boolean _notEquals = (!Objects.equal(tortoise, null));
@@ -75,6 +76,7 @@ public class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoi
     }
   }
   
+  @Override
   protected Object internalEvaluate(final XExpression expression, final IEvaluationContext context, final CancelIndicator indicator) {
     Object _xblockexpression = null;
     {
@@ -92,6 +94,7 @@ public class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoi
     return _xblockexpression;
   }
   
+  @Override
   protected Object invokeOperation(final JvmOperation operation, final Object receiver, final List<Object> argumentValues) {
     try {
       Object _xblockexpression = null;
