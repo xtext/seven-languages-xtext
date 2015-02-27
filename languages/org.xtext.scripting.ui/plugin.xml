@@ -252,7 +252,9 @@
    <extension
          point="org.eclipse.xtext.builder.participant">
       <participant
-            class="org.xtext.scripting.ui.ScriptingExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant">
+            class="org.xtext.scripting.ui.ScriptingExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
+            fileExtensions="script"
+            >
       </participant>
    </extension>
    <extension
@@ -279,6 +281,27 @@
 	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
         </page>
     </extension>
+    <extension point="org.eclipse.ui.menus">
+		<menuContribution locationURI="popup:#TextEditorContext?after=xtext.ui.openDeclaration">
+			<command
+				commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand"
+				id="org.xtext.scripting.Scripting.OpenGeneratedCode"
+				style="push">
+					<visibleWhen checkEnabled="false">
+						<reference definitionId="org.xtext.scripting.Scripting.Editor.opened" />
+					</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+	<extension point="org.eclipse.ui.handlers">
+		<handler
+			class="org.xtext.scripting.ui.ScriptingExecutableExtensionFactory:org.eclipse.xtext.ui.generator.trace.OpenGeneratedFileHandler"
+			commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand">
+				<activeWhen>
+					<reference definitionId="org.xtext.scripting.Scripting.Editor.opened" />
+				</activeWhen>
+		</handler>
+	</extension>
 
 	<!-- Quick Outline -->
 	<extension
@@ -397,30 +420,8 @@
 				</reference>
 			</activeWhen>
 		</handler>
-		<handler
-            class="org.xtext.scripting.ui.ScriptingExecutableExtensionFactory:org.eclipse.xtext.xbase.ui.imports.OrganizeImportsHandler"
-            commandId="org.eclipse.xtext.xbase.ui.organizeImports">
-           	<activeWhen>
-				<reference
-					definitionId="org.xtext.scripting.Scripting.Editor.opened">
-				</reference>
-			</activeWhen>
-        </handler>
 	</extension>
 	<extension point="org.eclipse.ui.menus">
-	    <menuContribution
-            locationURI="popup:#TextEditorContext?after=group.edit">
-             <command
-                 commandId="org.eclipse.xtext.xbase.ui.organizeImports"
-                 style="push"
-                 tooltip="Organize Imports">
-                <visibleWhen checkEnabled="false">
-                    <reference
-                        definitionId="org.xtext.scripting.Scripting.Editor.opened">
-                    </reference>
-                </visibleWhen>
-            </command>  
-        </menuContribution>
 		<menuContribution
 			locationURI="popup:#TextEditorContext?after=group.open">
 			<command commandId="org.eclipse.xtext.xbase.ui.hierarchy.OpenTypeHierarchy"
@@ -477,7 +478,7 @@
    </extension>
    <extension point="org.eclipse.ui.editorActions">
       <editorContribution targetID="org.xtext.scripting.Scripting" 
-                          id="org.xtext.scripting.Scripting.ide.rulerActions">
+                          id="org.xtext.scripting.Scripting.rulerActions">
 	     <action
 	             label="Not Used"
 	             class="org.xtext.scripting.ui.ScriptingExecutableExtensionFactory:org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate"
@@ -488,17 +489,29 @@
    </extension>
    <extension point="org.eclipse.ui.popupMenus">
       <viewerContribution
-         targetID="example.rulerContextMenuId"
-         id="org.xtext.scripting.Scripting.ide.RulerPopupActions">
+         targetID="org.xtext.scripting.Scripting.RulerContext"
+         id="org.xtext.scripting.Scripting.RulerPopupActions">
          <action
             label="Toggle Breakpoint"
             class="org.xtext.scripting.ui.ScriptingExecutableExtensionFactory:org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate"
-            menubarPath="additions"
-            id="org.xtext.scripting.Scripting.ide.rulerContextMenu.toggleBreakpointAction">
+            menubarPath="debug"
+            id="org.xtext.scripting.Scripting.rulerContextMenu.toggleBreakpointAction">
+         </action>
+         <action
+            label="Not used"
+            class="org.xtext.scripting.ui.ScriptingExecutableExtensionFactory:org.eclipse.debug.ui.actions.RulerEnableDisableBreakpointActionDelegate"
+            menubarPath="debug"
+            id="org.xtext.scripting.Scripting.rulerContextMenu.enableDisableBreakpointAction">
+         </action>
+         <action
+           label="Breakpoint Properties"
+           helpContextId="breakpoint_properties_action_context"
+           class="org.xtext.scripting.ui.ScriptingExecutableExtensionFactory:org.eclipse.jdt.debug.ui.actions.JavaBreakpointPropertiesRulerActionDelegate"
+           menubarPath="group.properties"
+           id="org.xtext.scripting.Scripting.rulerContextMenu.openBreapointPropertiesAction">
          </action>
       </viewerContribution>
    </extension>
-   
     <!-- Introduce Local Variable Refactoring -->
 	<extension point="org.eclipse.ui.handlers">
 		<handler 
@@ -524,6 +537,30 @@
          </command>
       </menuContribution>
    </extension>  
+   <!-- Open implementation -->
+   <extension point="org.eclipse.ui.handlers">
+      <handler
+            class="org.xtext.scripting.ui.ScriptingExecutableExtensionFactory:org.eclipse.xtext.xbase.ui.navigation.OpenImplementationHandler"
+            commandId="org.eclipse.xtext.xbase.ui.OpenImplementationCommand">
+            <activeWhen>
+				<reference
+					definitionId="org.xtext.scripting.Scripting.Editor.opened">
+				</reference>
+			</activeWhen>
+      </handler>
+   </extension>
+ <extension point="org.eclipse.ui.menus">
+       <menuContribution
+            locationURI="menu:navigate?after=open.ext4">
+         <command commandId="org.eclipse.xtext.xbase.ui.OpenImplementationCommand">
+		<visibleWhen checkEnabled="false">
+              <reference
+                 definitionId="org.xtext.scripting.Scripting.Editor.opened">
+              </reference>
+		</visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
 
   <extension point="org.eclipse.compare.contentViewers">
     <viewer id="org.xtext.scripting.Scripting.compare.contentViewers"
@@ -542,6 +579,12 @@
             class="org.xtext.scripting.ui.ScriptingExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
             extensions="script">
     </provider>
+  </extension>
+  <extension point="org.eclipse.team.core.fileTypes">
+    <fileTypes
+            extension="script"
+            type="text">
+    </fileTypes>
   </extension>
 
 </plugin>
