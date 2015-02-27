@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import simple.SimpleClazz;
 
-@SuppressWarnings("all")
+@SuppressWarnings("serial")
 public class Simple extends HttpServlet {
   @Inject
   private SimpleClazz simpleClazz;

@@ -43,6 +43,7 @@ public class BuildExample extends BuildScript {
   @DependsOn("Clean")
   protected void Compile() {
     final Procedure1<JavaCompilerParams> _function = new Procedure1<JavaCompilerParams>() {
+      @Override
       public void apply(final JavaCompilerParams it) {
         Collection<File> _sources = it.getSources();
         _sources.add(BuildExample.this.source);

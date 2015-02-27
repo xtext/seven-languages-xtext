@@ -54,12 +54,14 @@ public class Album implements IMongoBean {
   public Duration getDuration() {
     List<Track> _tracks = this.getTracks();
     final Function1<Track, Duration> _function = new Function1<Track, Duration>() {
+      @Override
       public Duration apply(final Track it) {
         return it.getDuration();
       }
     };
     List<Duration> _map = ListExtensions.<Track, Duration>map(_tracks, _function);
     final Function2<Duration, Duration, Duration> _function_1 = new Function2<Duration, Duration, Duration>() {
+      @Override
       public Duration apply(final Duration a, final Duration b) {
         return a.operator_plus(b);
       }

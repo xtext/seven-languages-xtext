@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 
-@SuppressWarnings("all")
+@SuppressWarnings("serial")
 public class NumberGuessing extends HttpServlet {
   @Inject
   private GuessTheNumber controller;

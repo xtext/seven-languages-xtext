@@ -25,6 +25,7 @@ public class WordCount {
           final List<String> lines = Files.readLines(_file, 
             Charsets.UTF_8);
           final Function1<String, Integer> _function = new Function1<String, Integer>() {
+            @Override
             public Integer apply(final String it) {
               String[] _split = it.split("\\s*");
               return Integer.valueOf(((List<String>)Conversions.doWrapArray(_split)).size());
@@ -32,6 +33,7 @@ public class WordCount {
           };
           List<Integer> _map = ListExtensions.<String, Integer>map(lines, _function);
           final Function2<Integer, Integer, Integer> _function_1 = new Function2<Integer, Integer, Integer>() {
+            @Override
             public Integer apply(final Integer a, final Integer b) {
               return Integer.valueOf(((a).intValue() + (b).intValue()));
             }

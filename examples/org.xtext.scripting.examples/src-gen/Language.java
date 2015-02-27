@@ -61,6 +61,7 @@ public class Language {
       _elvis = "default";
     }
     final Procedure1<String> _function = new Procedure1<String>() {
+      @Override
       public void apply(final String it) {
         char _charAt = it.charAt(0);
         InputOutput.<Character>println(Character.valueOf(_charAt));
@@ -74,6 +75,7 @@ public class Language {
     /* StringExtensions.isNullOrEmpty("foo bar"); */
     final String z = "Hello ";
     final Function1<String, String> _function_1 = new Function1<String, String>() {
+      @Override
       public String apply(final String e) {
         return (z + e);
       }
@@ -82,12 +84,14 @@ public class Language {
     f.apply("World!");
     final ArrayList<String> list = CollectionLiterals.<String>newArrayList("a", "b", "c");
     final Function1<String, String> _function_2 = new Function1<String, String>() {
+      @Override
       public String apply(final String e) {
         return e.toUpperCase();
       }
     };
     /* ListExtensions.<String, String>map(list, _function_2); */
     final Function1<String, String> _function_3 = new Function1<String, String>() {
+      @Override
       public String apply(final String it) {
         return it.toUpperCase();
       }
