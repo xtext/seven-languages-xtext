@@ -8,11 +8,13 @@
 package org.xtext.tortoiseshell;
 
 import org.eclipse.xtext.generator.IGenerator;
+import org.eclipse.xtext.resource.IDefaultResourceDescriptionStrategy;
 import org.eclipse.xtext.xbase.featurecalls.IdentifiableSimpleNameProvider;
 import org.eclipse.xtext.xbase.scoping.batch.ImplicitlyImportedFeatures;
 import org.xtext.tortoiseshell.interpreter.NullGenerator;
 import org.xtext.tortoiseshell.interpreter.TortoiseShellInterpeter;
 import org.xtext.tortoiseshell.lib.ITortoiseInterpreter;
+import org.xtext.tortoiseshell.scoping.TortoiseResourceDescriptionStrategy;
 import org.xtext.tortoiseshell.scoping.TortoiseShellIdentifiableSimpleNameProvider;
 import org.xtext.tortoiseshell.scoping.TortoiseShellImplicitlyImportedFeatures;
 
@@ -37,5 +39,10 @@ public class TortoiseShellRuntimeModule extends org.xtext.tortoiseshell.Abstract
 	@Override
 	public Class<? extends IGenerator> bindIGenerator() {
 		return NullGenerator.class;
+	}
+	
+	@Override
+	public Class<? extends IDefaultResourceDescriptionStrategy> bindIDefaultResourceDescriptionStrategy() {
+		return TortoiseResourceDescriptionStrategy.class;
 	}
 }
