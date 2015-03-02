@@ -1,6 +1,9 @@
 seven-languages-xtext
 =====================
 
+Juhuuu!
+-------
+
 Seven Languages in Seven Weeks (with Xtext)
 
 This is an example project of Xtext (http://xtext.org). 
