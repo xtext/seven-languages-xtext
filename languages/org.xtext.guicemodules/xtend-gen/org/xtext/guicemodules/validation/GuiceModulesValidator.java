@@ -15,7 +15,7 @@ import org.eclipse.xtext.common.types.JvmAnnotationType;
 import org.eclipse.xtext.common.types.JvmType;
 import org.eclipse.xtext.common.types.util.TypeReferences;
 import org.eclipse.xtext.validation.Check;
-import org.eclipse.xtext.xbase.annotations.validation.XbaseWithAnnotationsJavaValidator;
+import org.eclipse.xtext.xbase.annotations.validation.XbaseWithAnnotationsValidator;
 import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotation;
 import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationsPackage;
 import org.eclipse.xtext.xbase.lib.Extension;
@@ -23,7 +23,7 @@ import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 
 @SuppressWarnings("all")
-public class GuiceModulesValidator extends XbaseWithAnnotationsJavaValidator {
+public class GuiceModulesValidator extends XbaseWithAnnotationsValidator {
   @Inject
   @Extension
   private TypeReferences _typeReferences;

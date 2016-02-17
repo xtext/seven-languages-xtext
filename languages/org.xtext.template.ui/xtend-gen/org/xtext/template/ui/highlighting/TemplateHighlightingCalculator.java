@@ -13,12 +13,13 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.AbstractRule;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.TerminalRule;
+import org.eclipse.xtext.ide.editor.syntaxcoloring.IHighlightedPositionAcceptor;
 import org.eclipse.xtext.nodemodel.ICompositeNode;
 import org.eclipse.xtext.nodemodel.ILeafNode;
 import org.eclipse.xtext.parser.IParseResult;
 import org.eclipse.xtext.resource.XtextResource;
-import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightedPositionAcceptor;
-import org.eclipse.xtext.xbase.ui.highlighting.XbaseHighlightingCalculator;
+import org.eclipse.xtext.util.CancelIndicator;
+import org.eclipse.xtext.xbase.ide.highlighting.XbaseHighlightingCalculator;
 import org.xtext.template.services.TemplateGrammarAccess;
 import org.xtext.template.ui.highlighting.TemplateHighlightingConfiguration;
 
@@ -47,8 +48,8 @@ public class TemplateHighlightingCalculator extends XbaseHighlightingCalculator 
   }
   
   @Override
-  public void doProvideHighlightingFor(final XtextResource resource, final IHighlightedPositionAcceptor acceptor) {
-    super.doProvideHighlightingFor(resource, acceptor);
+  protected void doProvideHighlightingFor(final XtextResource resource, final IHighlightedPositionAcceptor acceptor, final CancelIndicator cancelIndicator) {
+    super.doProvideHighlightingFor(resource, acceptor, cancelIndicator);
     acceptor.addPosition(0, 4, TemplateHighlightingConfiguration.TEXT);
     acceptor.addPosition(4, 1, TemplateHighlightingConfiguration.ESCAPE);
     IParseResult _parseResult = resource.getParseResult();

@@ -17,7 +17,7 @@ import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.xbase.XbasePackage;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Extension;
-import org.eclipse.xtext.xbase.validation.XbaseJavaValidator;
+import org.eclipse.xtext.xbase.validation.XbaseValidator;
 import org.eclipse.xtext.xtype.XtypePackage;
 import org.xtext.mongobeans.jvmmodel.MongoTypes;
 import org.xtext.mongobeans.mongoBeans.MongoBean;
@@ -25,7 +25,7 @@ import org.xtext.mongobeans.mongoBeans.MongoBeansPackage;
 import org.xtext.mongobeans.mongoBeans.MongoProperty;
 
 @SuppressWarnings("all")
-public class MongoBeansValidator extends XbaseJavaValidator {
+public class MongoBeansValidator extends XbaseValidator {
   public final static String ILLEGAL_TYPE = "issue.illegalType";
   
   public final static String MISSING_TYPE = "issue.missingType";

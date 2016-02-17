@@ -7,9 +7,7 @@
  */
 package org.xtext.httprouting.tests;
 
-import com.google.common.base.Objects;
 import com.google.inject.Inject;
-import java.io.Serializable;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
@@ -112,20 +110,15 @@ public class ParserTest {
       public Object invoke(final Object proxy, final Method method, final Object[] args) throws Throwable {
         Object _switchResult = null;
         String _name = method.getName();
-        boolean _matched = false;
-        if (!_matched) {
-          if (Objects.equal(_name, "getRequestURL")) {
-            _matched=true;
+        switch (_name) {
+          case "getRequestURL":
             _switchResult = new StringBuffer(url);
-          }
-        }
-        if (!_matched) {
-          if (Objects.equal(_name, "getMethod")) {
-            _matched=true;
+            break;
+          case "getMethod":
             _switchResult = "GET";
-          }
+            break;
         }
-        return ((Serializable)_switchResult);
+        return _switchResult;
       }
     };
     return this.<HttpServletRequest>newProxy(HttpServletRequest.class, _function);
@@ -143,23 +136,18 @@ public class ParserTest {
         public Object invoke(final Object proxy, final Method method, final Object[] args) throws Throwable {
           boolean _switchResult = false;
           String _name = method.getName();
-          boolean _matched = false;
-          if (!_matched) {
-            if (Objects.equal(_name, "addHeader")) {
-              _matched=true;
+          switch (_name) {
+            case "addHeader":
               Object _get = args[0];
               _switchResult = header.add(((String) _get));
-            }
-          }
-          if (!_matched) {
-            if (Objects.equal(_name, "containsHeader")) {
-              _matched=true;
+              break;
+            case "containsHeader":
               Object _get_1 = args[0];
               _switchResult = header.contains(_get_1);
-            }
-          }
-          if (!_matched) {
-            _switchResult = false;
+              break;
+            default:
+              _switchResult = false;
+              break;
           }
           return Boolean.valueOf(_switchResult);
         }

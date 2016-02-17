@@ -7,14 +7,16 @@
  ******************************************************************************/
 package org.xtext.template.ui.highlighting
 
-import org.eclipse.xtext.xbase.ui.highlighting.XbaseHighlightingCalculator
 import com.google.inject.Inject
-import org.xtext.template.services.TemplateGrammarAccess
-import org.eclipse.xtext.nodemodel.ILeafNode
 import org.eclipse.xtext.RuleCall
+import org.eclipse.xtext.ide.editor.syntaxcoloring.IHighlightedPositionAcceptor
+import org.eclipse.xtext.nodemodel.ILeafNode
 import org.eclipse.xtext.resource.XtextResource
-import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightedPositionAcceptor
+import org.eclipse.xtext.xbase.ide.highlighting.XbaseHighlightingCalculator
+import org.xtext.template.services.TemplateGrammarAccess
+
 import static org.xtext.template.ui.highlighting.TemplateHighlightingConfiguration.*
+import org.eclipse.xtext.util.CancelIndicator
 
 class TemplateHighlightingCalculator extends XbaseHighlightingCalculator {
 
@@ -29,8 +31,8 @@ class TemplateHighlightingCalculator extends XbaseHighlightingCalculator {
 		}
 	}
 
-	override doProvideHighlightingFor(XtextResource resource, IHighlightedPositionAcceptor acceptor) {
-		super.doProvideHighlightingFor(resource, acceptor)
+	override protected doProvideHighlightingFor(XtextResource resource, IHighlightedPositionAcceptor acceptor, CancelIndicator cancelIndicator) {
+		super.doProvideHighlightingFor(resource, acceptor, cancelIndicator)
 		acceptor.addPosition(0, 4, TEXT)
 		acceptor.addPosition(4, 1, ESCAPE)
 		for (leafNode : resource.parseResult.rootNode.leafNodes) {

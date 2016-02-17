@@ -9,7 +9,6 @@ package org.xtext.builddsl.lib;
 
 import com.google.common.base.Objects;
 import java.io.File;
-import java.io.Serializable;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -334,6 +333,6 @@ public abstract class BuildScript {
     if (!_matched) {
       _switchResult = string;
     }
-    return ((Serializable)_switchResult);
+    return _switchResult;
   }
 }

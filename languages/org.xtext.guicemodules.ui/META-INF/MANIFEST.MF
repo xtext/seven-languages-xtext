@@ -20,8 +20,9 @@ Require-Bundle: org.xtext.guicemodules;visibility:=reexport,
  org.eclipse.jdt.debug.ui
 Import-Package: org.apache.log4j,
  org.apache.commons.logging
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: org.xtext.guicemodules.ui.contentassist.antlr,
  org.xtext.guicemodules.ui.internal,
- org.xtext.guicemodules.ui.contentassist
+ org.xtext.guicemodules.ui.contentassist,
+ org.xtext.guicemodules.ui.contentassist.antlr.internal
 Bundle-Activator: org.xtext.guicemodules.ui.internal.GuiceModulesActivator

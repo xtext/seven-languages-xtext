@@ -11,7 +11,7 @@ import com.google.inject.Inject
 import org.eclipse.xtext.common.types.TypesPackage
 import org.eclipse.xtext.validation.Check
 import org.eclipse.xtext.xbase.XbasePackage
-import org.eclipse.xtext.xbase.validation.XbaseJavaValidator
+import org.eclipse.xtext.xbase.validation.XbaseValidator
 import org.eclipse.xtext.xtype.XtypePackage
 import org.xtext.mongobeans.jvmmodel.MongoTypes
 import org.xtext.mongobeans.mongoBeans.MongoBeansPackage
@@ -19,7 +19,7 @@ import org.xtext.mongobeans.mongoBeans.MongoProperty
 
 import static org.xtext.mongobeans.mongoBeans.MongoBeansPackage.Literals.*
 
-class MongoBeansValidator extends XbaseJavaValidator {
+class MongoBeansValidator extends XbaseValidator {
 	
 	public static val ILLEGAL_TYPE = 'issue.illegalType'
 	public static val MISSING_TYPE = 'issue.missingType'

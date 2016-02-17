@@ -11,13 +11,13 @@ import com.google.inject.BindingAnnotation
 import com.google.inject.Inject
 import org.eclipse.xtext.common.types.util.TypeReferences
 import org.eclipse.xtext.validation.Check
-import org.eclipse.xtext.xbase.annotations.validation.XbaseWithAnnotationsJavaValidator
+import org.eclipse.xtext.xbase.annotations.validation.XbaseWithAnnotationsValidator
 import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotation
 
 import static org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationsPackage.Literals.*
 import org.eclipse.xtext.common.types.JvmAnnotationType
 
-class GuiceModulesValidator extends XbaseWithAnnotationsJavaValidator {
+class GuiceModulesValidator extends XbaseWithAnnotationsValidator {
 	
 	@Inject extension TypeReferences
 

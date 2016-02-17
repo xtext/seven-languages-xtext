@@ -22,13 +22,13 @@ import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
-import org.eclipse.xtext.xbase.validation.XbaseJavaValidator;
+import org.eclipse.xtext.xbase.validation.XbaseValidator;
 import org.eclipse.xtext.xtype.XtypePackage;
 import org.xtext.builddsl.build.BuildPackage;
 import org.xtext.builddsl.build.Task;
 
 @SuppressWarnings("all")
-public class BuildDSLValidator extends XbaseJavaValidator {
+public class BuildDSLValidator extends XbaseValidator {
   public final static String CYCLIC_DEPENDENCY = "build.issue.cyclicDependency";
   
   @Override

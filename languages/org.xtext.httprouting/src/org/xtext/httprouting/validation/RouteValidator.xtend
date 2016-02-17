@@ -7,8 +7,8 @@
  ******************************************************************************/
 package org.xtext.httprouting.validation
 
-import org.eclipse.xtext.xbase.annotations.validation.XbaseWithAnnotationsJavaValidator
+import org.eclipse.xtext.xbase.annotations.validation.XbaseWithAnnotationsValidator
 
-class RouteValidator extends XbaseWithAnnotationsJavaValidator{
+class RouteValidator extends XbaseWithAnnotationsValidator{
 
 }

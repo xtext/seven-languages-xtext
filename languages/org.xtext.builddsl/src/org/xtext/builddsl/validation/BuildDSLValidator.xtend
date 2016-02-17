@@ -12,14 +12,14 @@ import java.util.Set
 import org.eclipse.xtext.common.types.TypesPackage
 import org.eclipse.xtext.validation.Check
 import org.eclipse.xtext.xbase.XbasePackage
-import org.eclipse.xtext.xbase.validation.XbaseJavaValidator
+import org.eclipse.xtext.xbase.validation.XbaseValidator
 import org.eclipse.xtext.xtype.XtypePackage
 import org.xtext.builddsl.build.BuildPackage
 import org.xtext.builddsl.build.Task
 
 import static org.xtext.builddsl.build.BuildPackage.Literals.*
 
-class BuildDSLValidator extends XbaseJavaValidator {
+class BuildDSLValidator extends XbaseValidator {
 	
 	public static val CYCLIC_DEPENDENCY = "build.issue.cyclicDependency"
 	

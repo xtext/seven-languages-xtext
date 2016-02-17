@@ -35,7 +35,9 @@ public class TortoiseFigure extends ImageFigure {
     graphics.pushState();
     final Dimension size = this.getSize();
     graphics.translate((this.getLocation().x + (size.width / 2)), (this.getLocation().y + (size.width / 2)));
-    graphics.rotate((-((float) Math.toDegrees(this.angle))));
+    double _degrees = Math.toDegrees(this.angle);
+    float _minus = (-((float) _degrees));
+    graphics.rotate(_minus);
     graphics.translate(((-this.getLocation().x) - (size.width / 2)), ((-this.getLocation().y) - (size.width / 2)));
     super.paintFigure(graphics);
     graphics.popState();
