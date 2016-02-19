@@ -1,8 +1,8 @@
-package org.xtext.httprouting.ui.contentassist.antlr.internal;
+package org.xtext.httprouting.ide.contentassist.antlr.internal;
 
 // Hack: Use our own Lexer superclass by means of import. 
 // Currently there is no other way to specify the superclass for the lexer.
-import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.Lexer;
+import org.eclipse.xtext.ide.editor.contentassist.antlr.internal.Lexer;
 
 
 import org.antlr.runtime.*;
@@ -12,9 +12,65 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalRouteLexer extends Lexer {
+    public static final int RULE_ID=4;
+    public static final int T__29=29;
+    public static final int T__28=28;
+    public static final int T__27=27;
+    public static final int T__26=26;
+    public static final int T__25=25;
+    public static final int T__24=24;
+    public static final int T__23=23;
+    public static final int T__22=22;
+    public static final int RULE_ANY_OTHER=12;
+    public static final int T__21=21;
+    public static final int T__20=20;
+    public static final int EOF=-1;
+    public static final int T__93=93;
+    public static final int T__19=19;
+    public static final int T__94=94;
+    public static final int T__91=91;
     public static final int RULE_HEX=5;
-    public static final int T__50=50;
-    public static final int T__59=59;
+    public static final int T__92=92;
+    public static final int T__16=16;
+    public static final int T__90=90;
+    public static final int T__15=15;
+    public static final int T__18=18;
+    public static final int T__17=17;
+    public static final int T__14=14;
+    public static final int T__13=13;
+    public static final int RULE_DECIMAL=7;
+    public static final int T__80=80;
+    public static final int T__81=81;
+    public static final int T__82=82;
+    public static final int T__83=83;
+    public static final int T__85=85;
+    public static final int T__84=84;
+    public static final int T__87=87;
+    public static final int T__86=86;
+    public static final int T__89=89;
+    public static final int T__88=88;
+    public static final int RULE_ML_COMMENT=9;
+    public static final int RULE_STRING=8;
+    public static final int T__71=71;
+    public static final int T__72=72;
+    public static final int T__70=70;
+    public static final int T__76=76;
+    public static final int T__75=75;
+    public static final int T__74=74;
+    public static final int T__73=73;
+    public static final int T__79=79;
+    public static final int T__78=78;
+    public static final int T__77=77;
+    public static final int T__68=68;
+    public static final int T__69=69;
+    public static final int T__66=66;
+    public static final int T__67=67;
+    public static final int T__64=64;
+    public static final int T__65=65;
+    public static final int T__62=62;
+    public static final int T__63=63;
+    public static final int T__61=61;
+    public static final int T__60=60;
     public static final int T__55=55;
     public static final int T__56=56;
     public static final int T__57=57;
@@ -23,87 +79,31 @@ public class InternalRouteLexer extends Lexer {
     public static final int T__52=52;
     public static final int T__53=53;
     public static final int T__54=54;
-    public static final int T__60=60;
-    public static final int T__61=61;
-    public static final int RULE_ID=4;
+    public static final int T__59=59;
     public static final int RULE_INT=6;
-    public static final int T__66=66;
-    public static final int RULE_ML_COMMENT=9;
-    public static final int T__67=67;
-    public static final int T__68=68;
-    public static final int T__69=69;
-    public static final int T__62=62;
-    public static final int T__63=63;
-    public static final int T__64=64;
-    public static final int T__65=65;
-    public static final int T__37=37;
-    public static final int T__38=38;
-    public static final int T__39=39;
+    public static final int T__50=50;
+    public static final int T__42=42;
+    public static final int T__43=43;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__46=46;
+    public static final int T__47=47;
+    public static final int T__44=44;
+    public static final int T__45=45;
+    public static final int T__48=48;
+    public static final int T__49=49;
+    public static final int RULE_SL_COMMENT=10;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
     public static final int T__33=33;
     public static final int T__34=34;
     public static final int T__35=35;
     public static final int T__36=36;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int T__32=32;
-    public static final int T__48=48;
-    public static final int T__49=49;
-    public static final int T__44=44;
-    public static final int T__45=45;
-    public static final int T__46=46;
-    public static final int T__47=47;
-    public static final int T__40=40;
-    public static final int T__41=41;
-    public static final int T__42=42;
-    public static final int T__43=43;
-    public static final int T__91=91;
-    public static final int T__92=92;
-    public static final int T__93=93;
-    public static final int T__94=94;
-    public static final int T__90=90;
-    public static final int T__19=19;
-    public static final int T__15=15;
-    public static final int T__16=16;
-    public static final int T__17=17;
-    public static final int T__18=18;
-    public static final int T__13=13;
-    public static final int T__14=14;
-    public static final int RULE_DECIMAL=7;
-    public static final int T__26=26;
-    public static final int T__27=27;
-    public static final int T__28=28;
-    public static final int T__29=29;
-    public static final int T__22=22;
-    public static final int T__23=23;
-    public static final int T__24=24;
-    public static final int T__25=25;
-    public static final int T__20=20;
-    public static final int T__21=21;
-    public static final int T__70=70;
-    public static final int T__71=71;
-    public static final int T__72=72;
-    public static final int RULE_STRING=8;
-    public static final int RULE_SL_COMMENT=10;
-    public static final int T__77=77;
-    public static final int T__78=78;
-    public static final int T__79=79;
-    public static final int T__73=73;
-    public static final int EOF=-1;
-    public static final int T__74=74;
-    public static final int T__75=75;
-    public static final int T__76=76;
-    public static final int T__80=80;
-    public static final int T__81=81;
-    public static final int T__82=82;
-    public static final int T__83=83;
+    public static final int T__37=37;
+    public static final int T__38=38;
+    public static final int T__39=39;
     public static final int RULE_WS=11;
-    public static final int RULE_ANY_OTHER=12;
-    public static final int T__88=88;
-    public static final int T__89=89;
-    public static final int T__84=84;
-    public static final int T__85=85;
-    public static final int T__86=86;
-    public static final int T__87=87;
 
     // delegates
     // delegators
@@ -1821,10 +1821,10 @@ public class InternalRouteLexer extends Lexer {
         try {
             int _type = RULE_HEX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRoute.g:22306:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
-            // InternalRoute.g:22306:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // InternalRoute.g:19639:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
+            // InternalRoute.g:19639:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             {
-            // InternalRoute.g:22306:12: ( '0x' | '0X' )
+            // InternalRoute.g:19639:12: ( '0x' | '0X' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1852,7 +1852,7 @@ public class InternalRouteLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalRoute.g:22306:13: '0x'
+                    // InternalRoute.g:19639:13: '0x'
                     {
                     match("0x"); 
 
@@ -1860,7 +1860,7 @@ public class InternalRouteLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalRoute.g:22306:18: '0X'
+                    // InternalRoute.g:19639:18: '0X'
                     {
                     match("0X"); 
 
@@ -1870,7 +1870,7 @@ public class InternalRouteLexer extends Lexer {
 
             }
 
-            // InternalRoute.g:22306:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
+            // InternalRoute.g:19639:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
             int cnt2=0;
             loop2:
             do {
@@ -1908,7 +1908,7 @@ public class InternalRouteLexer extends Lexer {
                 cnt2++;
             } while (true);
 
-            // InternalRoute.g:22306:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // InternalRoute.g:19639:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1917,10 +1917,10 @@ public class InternalRouteLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // InternalRoute.g:22306:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // InternalRoute.g:19639:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     {
                     match('#'); 
-                    // InternalRoute.g:22306:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // InternalRoute.g:19639:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     int alt3=2;
                     int LA3_0 = input.LA(1);
 
@@ -1938,7 +1938,7 @@ public class InternalRouteLexer extends Lexer {
                     }
                     switch (alt3) {
                         case 1 :
-                            // InternalRoute.g:22306:64: ( 'b' | 'B' ) ( 'i' | 'I' )
+                            // InternalRoute.g:19639:64: ( 'b' | 'B' ) ( 'i' | 'I' )
                             {
                             if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                                 input.consume();
@@ -1962,7 +1962,7 @@ public class InternalRouteLexer extends Lexer {
                             }
                             break;
                         case 2 :
-                            // InternalRoute.g:22306:84: ( 'l' | 'L' )
+                            // InternalRoute.g:19639:84: ( 'l' | 'L' )
                             {
                             if ( input.LA(1)=='L'||input.LA(1)=='l' ) {
                                 input.consume();
@@ -2001,11 +2001,11 @@ public class InternalRouteLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRoute.g:22308:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
-            // InternalRoute.g:22308:12: '0' .. '9' ( '0' .. '9' | '_' )*
+            // InternalRoute.g:19641:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
+            // InternalRoute.g:19641:12: '0' .. '9' ( '0' .. '9' | '_' )*
             {
             matchRange('0','9'); 
-            // InternalRoute.g:22308:21: ( '0' .. '9' | '_' )*
+            // InternalRoute.g:19641:21: ( '0' .. '9' | '_' )*
             loop5:
             do {
                 int alt5=2;
@@ -2054,11 +2054,11 @@ public class InternalRouteLexer extends Lexer {
         try {
             int _type = RULE_DECIMAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRoute.g:22310:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
-            // InternalRoute.g:22310:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // InternalRoute.g:19643:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
+            // InternalRoute.g:19643:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             {
             mRULE_INT(); 
-            // InternalRoute.g:22310:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
+            // InternalRoute.g:19643:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -2067,7 +2067,7 @@ public class InternalRouteLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // InternalRoute.g:22310:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
+                    // InternalRoute.g:19643:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -2078,7 +2078,7 @@ public class InternalRouteLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // InternalRoute.g:22310:36: ( '+' | '-' )?
+                    // InternalRoute.g:19643:36: ( '+' | '-' )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -2111,7 +2111,7 @@ public class InternalRouteLexer extends Lexer {
 
             }
 
-            // InternalRoute.g:22310:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // InternalRoute.g:19643:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             int alt8=3;
             int LA8_0 = input.LA(1);
 
@@ -2123,7 +2123,7 @@ public class InternalRouteLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // InternalRoute.g:22310:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
+                    // InternalRoute.g:19643:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
                     {
                     if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                         input.consume();
@@ -2147,7 +2147,7 @@ public class InternalRouteLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalRoute.g:22310:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
+                    // InternalRoute.g:19643:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
                     {
                     if ( input.LA(1)=='D'||input.LA(1)=='F'||input.LA(1)=='L'||input.LA(1)=='d'||input.LA(1)=='f'||input.LA(1)=='l' ) {
                         input.consume();
@@ -2180,10 +2180,10 @@ public class InternalRouteLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRoute.g:22312:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
-            // InternalRoute.g:22312:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // InternalRoute.g:19645:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
+            // InternalRoute.g:19645:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             {
-            // InternalRoute.g:22312:11: ( '^' )?
+            // InternalRoute.g:19645:11: ( '^' )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -2192,7 +2192,7 @@ public class InternalRouteLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // InternalRoute.g:22312:11: '^'
+                    // InternalRoute.g:19645:11: '^'
                     {
                     match('^'); 
 
@@ -2210,7 +2210,7 @@ public class InternalRouteLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalRoute.g:22312:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // InternalRoute.g:19645:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             loop10:
             do {
                 int alt10=2;
@@ -2259,10 +2259,10 @@ public class InternalRouteLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRoute.g:22314:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? ) )
-            // InternalRoute.g:22314:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
+            // InternalRoute.g:19647:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? ) )
+            // InternalRoute.g:19647:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
             {
-            // InternalRoute.g:22314:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
+            // InternalRoute.g:19647:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -2280,10 +2280,10 @@ public class InternalRouteLexer extends Lexer {
             }
             switch (alt15) {
                 case 1 :
-                    // InternalRoute.g:22314:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )?
+                    // InternalRoute.g:19647:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )?
                     {
                     match('\"'); 
-                    // InternalRoute.g:22314:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalRoute.g:19647:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop11:
                     do {
                         int alt11=3;
@@ -2299,7 +2299,7 @@ public class InternalRouteLexer extends Lexer {
 
                         switch (alt11) {
                     	case 1 :
-                    	    // InternalRoute.g:22314:21: '\\\\' .
+                    	    // InternalRoute.g:19647:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2307,7 +2307,7 @@ public class InternalRouteLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalRoute.g:22314:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalRoute.g:19647:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2327,7 +2327,7 @@ public class InternalRouteLexer extends Lexer {
                         }
                     } while (true);
 
-                    // InternalRoute.g:22314:44: ( '\"' )?
+                    // InternalRoute.g:19647:44: ( '\"' )?
                     int alt12=2;
                     int LA12_0 = input.LA(1);
 
@@ -2336,7 +2336,7 @@ public class InternalRouteLexer extends Lexer {
                     }
                     switch (alt12) {
                         case 1 :
-                            // InternalRoute.g:22314:44: '\"'
+                            // InternalRoute.g:19647:44: '\"'
                             {
                             match('\"'); 
 
@@ -2349,10 +2349,10 @@ public class InternalRouteLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalRoute.g:22314:49: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )?
+                    // InternalRoute.g:19647:49: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )?
                     {
                     match('\''); 
-                    // InternalRoute.g:22314:54: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalRoute.g:19647:54: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop13:
                     do {
                         int alt13=3;
@@ -2368,7 +2368,7 @@ public class InternalRouteLexer extends Lexer {
 
                         switch (alt13) {
                     	case 1 :
-                    	    // InternalRoute.g:22314:55: '\\\\' .
+                    	    // InternalRoute.g:19647:55: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2376,7 +2376,7 @@ public class InternalRouteLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalRoute.g:22314:62: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalRoute.g:19647:62: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2396,7 +2396,7 @@ public class InternalRouteLexer extends Lexer {
                         }
                     } while (true);
 
-                    // InternalRoute.g:22314:79: ( '\\'' )?
+                    // InternalRoute.g:19647:79: ( '\\'' )?
                     int alt14=2;
                     int LA14_0 = input.LA(1);
 
@@ -2405,7 +2405,7 @@ public class InternalRouteLexer extends Lexer {
                     }
                     switch (alt14) {
                         case 1 :
-                            // InternalRoute.g:22314:79: '\\''
+                            // InternalRoute.g:19647:79: '\\''
                             {
                             match('\''); 
 
@@ -2436,12 +2436,12 @@ public class InternalRouteLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRoute.g:22316:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalRoute.g:22316:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalRoute.g:19649:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalRoute.g:19649:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalRoute.g:22316:24: ( options {greedy=false; } : . )*
+            // InternalRoute.g:19649:24: ( options {greedy=false; } : . )*
             loop16:
             do {
                 int alt16=2;
@@ -2466,7 +2466,7 @@ public class InternalRouteLexer extends Lexer {
 
                 switch (alt16) {
             	case 1 :
-            	    // InternalRoute.g:22316:52: .
+            	    // InternalRoute.g:19649:52: .
             	    {
             	    matchAny(); 
 
@@ -2496,12 +2496,12 @@ public class InternalRouteLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRoute.g:22318:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalRoute.g:22318:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalRoute.g:19651:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalRoute.g:19651:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalRoute.g:22318:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalRoute.g:19651:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop17:
             do {
                 int alt17=2;
@@ -2514,7 +2514,7 @@ public class InternalRouteLexer extends Lexer {
 
                 switch (alt17) {
             	case 1 :
-            	    // InternalRoute.g:22318:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalRoute.g:19651:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2534,7 +2534,7 @@ public class InternalRouteLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalRoute.g:22318:40: ( ( '\\r' )? '\\n' )?
+            // InternalRoute.g:19651:40: ( ( '\\r' )? '\\n' )?
             int alt19=2;
             int LA19_0 = input.LA(1);
 
@@ -2543,9 +2543,9 @@ public class InternalRouteLexer extends Lexer {
             }
             switch (alt19) {
                 case 1 :
-                    // InternalRoute.g:22318:41: ( '\\r' )? '\\n'
+                    // InternalRoute.g:19651:41: ( '\\r' )? '\\n'
                     {
-                    // InternalRoute.g:22318:41: ( '\\r' )?
+                    // InternalRoute.g:19651:41: ( '\\r' )?
                     int alt18=2;
                     int LA18_0 = input.LA(1);
 
@@ -2554,7 +2554,7 @@ public class InternalRouteLexer extends Lexer {
                     }
                     switch (alt18) {
                         case 1 :
-                            // InternalRoute.g:22318:41: '\\r'
+                            // InternalRoute.g:19651:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2586,10 +2586,10 @@ public class InternalRouteLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRoute.g:22320:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalRoute.g:22320:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalRoute.g:19653:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalRoute.g:19653:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalRoute.g:22320:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalRoute.g:19653:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt20=0;
             loop20:
             do {
@@ -2643,8 +2643,8 @@ public class InternalRouteLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRoute.g:22322:16: ( . )
-            // InternalRoute.g:22322:18: .
+            // InternalRoute.g:19655:16: ( . )
+            // InternalRoute.g:19655:18: .
             {
             matchAny(); 
 

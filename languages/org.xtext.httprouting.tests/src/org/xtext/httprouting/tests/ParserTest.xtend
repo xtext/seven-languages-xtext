@@ -20,7 +20,6 @@ import org.eclipse.xtext.xbase.compiler.CompilationTestHelper
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.xtext.httprouting.RouteInjectorProvider
 
 import static org.junit.Assert.*
 

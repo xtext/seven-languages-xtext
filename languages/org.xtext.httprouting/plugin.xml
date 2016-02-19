@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.0"?>
-
 <plugin>
-
-  <extension point="org.eclipse.emf.ecore.generated_package">
-    <package 
-       uri = "http://www.xtext.org/httprouting/Route" 
-       class = "org.xtext.httprouting.route.RoutePackage"
-       genModel = "model/generated/Route.genmodel" /> 
-	
-  </extension>
-
-
-
-
-
+	<extension point="org.eclipse.emf.ecore.generated_package">
+		<package 
+			uri = "http://www.xtext.org/httprouting/Route"
+			class = "org.xtext.httprouting.route.RoutePackage"
+			genModel = "model/generated/Route.genmodel" />
+	</extension>
 </plugin>
