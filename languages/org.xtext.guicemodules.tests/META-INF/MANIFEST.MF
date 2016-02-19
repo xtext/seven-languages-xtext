@@ -6,7 +6,6 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: org.xtext.guicemodules.tests;singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.xtext.guicemodules,
- org.xtext.guicemodules.ui,
  org.eclipse.core.runtime,
  org.eclipse.xtext,
  org.eclipse.xtext.junit4,

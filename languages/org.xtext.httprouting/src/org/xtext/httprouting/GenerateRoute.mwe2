@@ -22,7 +22,7 @@ Workflow {
 					enabled = true
 				}
 				genericIde = {
-					enabled = false
+					enabled = true
 				}
 				eclipsePlugin = {
 					enabled = true
