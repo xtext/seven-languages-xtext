@@ -15,7 +15,6 @@ import org.eclipse.xtext.xbase.compiler.CompilationTestHelper
 import org.eclipse.xtext.xbase.lib.util.ReflectExtensions
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.xtext.scripting.ScriptingInjectorProvider
 
 import static org.junit.Assert.*
 

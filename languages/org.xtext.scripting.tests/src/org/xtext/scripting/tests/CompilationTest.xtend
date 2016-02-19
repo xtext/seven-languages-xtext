@@ -13,7 +13,6 @@ import org.eclipse.xtext.junit4.XtextRunner
 import org.eclipse.xtext.xbase.compiler.CompilationTestHelper
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.xtext.scripting.ScriptingInjectorProvider
 
 @RunWith(XtextRunner)
 @InjectWith(ScriptingInjectorProvider)

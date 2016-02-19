@@ -20,7 +20,7 @@ import org.eclipse.xtext.xbase.lib.util.ReflectExtensions;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.xtext.scripting.ScriptingInjectorProvider;
+import org.xtext.scripting.tests.ScriptingInjectorProvider;
 
 @RunWith(XtextRunner.class)
 @InjectWith(ScriptingInjectorProvider.class)
