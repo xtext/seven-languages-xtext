@@ -26,9 +26,9 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.xtext.guicemodules.GuiceModulesInjectorProvider;
 import org.xtext.guicemodules.guiceModules.ModuleAST;
 import org.xtext.guicemodules.guiceModules.ModulesAST;
+import org.xtext.guicemodules.tests.GuiceModulesInjectorProvider;
 import org.xtext.guicemodules.tests.InjectionTarget;
 
 @RunWith(XtextRunner.class)

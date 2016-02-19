@@ -19,7 +19,6 @@ import org.eclipse.xtext.junit4.validation.ValidationTestHelper
 import org.eclipse.xtext.xbase.compiler.CompilationTestHelper
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.xtext.guicemodules.GuiceModulesInjectorProvider
 import org.xtext.guicemodules.guiceModules.ModulesAST
 
 import static org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationsPackage.Literals.*

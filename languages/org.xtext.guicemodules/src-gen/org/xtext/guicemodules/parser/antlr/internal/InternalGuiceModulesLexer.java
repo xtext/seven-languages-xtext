@@ -12,9 +12,62 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalGuiceModulesLexer extends Lexer {
+    public static final int RULE_ID=8;
+    public static final int T__29=29;
+    public static final int T__28=28;
+    public static final int T__27=27;
+    public static final int T__26=26;
+    public static final int T__25=25;
+    public static final int T__24=24;
+    public static final int T__23=23;
+    public static final int T__22=22;
+    public static final int RULE_ANY_OTHER=12;
+    public static final int T__21=21;
+    public static final int T__20=20;
+    public static final int EOF=-1;
+    public static final int T__19=19;
+    public static final int T__91=91;
     public static final int RULE_HEX=5;
-    public static final int T__50=50;
-    public static final int T__59=59;
+    public static final int T__16=16;
+    public static final int T__90=90;
+    public static final int T__15=15;
+    public static final int T__18=18;
+    public static final int T__17=17;
+    public static final int T__14=14;
+    public static final int T__13=13;
+    public static final int RULE_DECIMAL=7;
+    public static final int T__80=80;
+    public static final int T__81=81;
+    public static final int T__82=82;
+    public static final int T__83=83;
+    public static final int T__85=85;
+    public static final int T__84=84;
+    public static final int T__87=87;
+    public static final int T__86=86;
+    public static final int T__89=89;
+    public static final int T__88=88;
+    public static final int RULE_ML_COMMENT=9;
+    public static final int RULE_STRING=4;
+    public static final int T__71=71;
+    public static final int T__72=72;
+    public static final int T__70=70;
+    public static final int T__76=76;
+    public static final int T__75=75;
+    public static final int T__74=74;
+    public static final int T__73=73;
+    public static final int T__79=79;
+    public static final int T__78=78;
+    public static final int T__77=77;
+    public static final int T__68=68;
+    public static final int T__69=69;
+    public static final int T__66=66;
+    public static final int T__67=67;
+    public static final int T__64=64;
+    public static final int T__65=65;
+    public static final int T__62=62;
+    public static final int T__63=63;
+    public static final int T__61=61;
+    public static final int T__60=60;
     public static final int T__55=55;
     public static final int T__56=56;
     public static final int T__57=57;
@@ -23,84 +76,31 @@ public class InternalGuiceModulesLexer extends Lexer {
     public static final int T__52=52;
     public static final int T__53=53;
     public static final int T__54=54;
-    public static final int T__60=60;
-    public static final int T__61=61;
-    public static final int RULE_ID=8;
+    public static final int T__59=59;
     public static final int RULE_INT=6;
-    public static final int T__66=66;
-    public static final int RULE_ML_COMMENT=9;
-    public static final int T__67=67;
-    public static final int T__68=68;
-    public static final int T__69=69;
-    public static final int T__62=62;
-    public static final int T__63=63;
-    public static final int T__64=64;
-    public static final int T__65=65;
-    public static final int T__37=37;
-    public static final int T__38=38;
-    public static final int T__39=39;
+    public static final int T__50=50;
+    public static final int T__42=42;
+    public static final int T__43=43;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__46=46;
+    public static final int T__47=47;
+    public static final int T__44=44;
+    public static final int T__45=45;
+    public static final int T__48=48;
+    public static final int T__49=49;
+    public static final int RULE_SL_COMMENT=10;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
     public static final int T__33=33;
     public static final int T__34=34;
     public static final int T__35=35;
     public static final int T__36=36;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int T__32=32;
-    public static final int T__48=48;
-    public static final int T__49=49;
-    public static final int T__44=44;
-    public static final int T__45=45;
-    public static final int T__46=46;
-    public static final int T__47=47;
-    public static final int T__40=40;
-    public static final int T__41=41;
-    public static final int T__42=42;
-    public static final int T__43=43;
-    public static final int T__91=91;
-    public static final int T__90=90;
-    public static final int T__19=19;
-    public static final int T__15=15;
-    public static final int T__16=16;
-    public static final int T__17=17;
-    public static final int T__18=18;
-    public static final int T__13=13;
-    public static final int T__14=14;
-    public static final int RULE_DECIMAL=7;
-    public static final int T__26=26;
-    public static final int T__27=27;
-    public static final int T__28=28;
-    public static final int T__29=29;
-    public static final int T__22=22;
-    public static final int T__23=23;
-    public static final int T__24=24;
-    public static final int T__25=25;
-    public static final int T__20=20;
-    public static final int T__21=21;
-    public static final int T__70=70;
-    public static final int T__71=71;
-    public static final int T__72=72;
-    public static final int RULE_STRING=4;
-    public static final int RULE_SL_COMMENT=10;
-    public static final int T__77=77;
-    public static final int T__78=78;
-    public static final int T__79=79;
-    public static final int T__73=73;
-    public static final int EOF=-1;
-    public static final int T__74=74;
-    public static final int T__75=75;
-    public static final int T__76=76;
-    public static final int T__80=80;
-    public static final int T__81=81;
-    public static final int T__82=82;
-    public static final int T__83=83;
+    public static final int T__37=37;
+    public static final int T__38=38;
+    public static final int T__39=39;
     public static final int RULE_WS=11;
-    public static final int RULE_ANY_OTHER=12;
-    public static final int T__88=88;
-    public static final int T__89=89;
-    public static final int T__84=84;
-    public static final int T__85=85;
-    public static final int T__86=86;
-    public static final int T__87=87;
 
     // delegates
     // delegators
@@ -1755,10 +1755,10 @@ public class InternalGuiceModulesLexer extends Lexer {
         try {
             int _type = RULE_HEX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGuiceModules.g:6803:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
-            // InternalGuiceModules.g:6803:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // InternalGuiceModules.g:7199:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
+            // InternalGuiceModules.g:7199:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             {
-            // InternalGuiceModules.g:6803:12: ( '0x' | '0X' )
+            // InternalGuiceModules.g:7199:12: ( '0x' | '0X' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1786,7 +1786,7 @@ public class InternalGuiceModulesLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalGuiceModules.g:6803:13: '0x'
+                    // InternalGuiceModules.g:7199:13: '0x'
                     {
                     match("0x"); 
 
@@ -1794,7 +1794,7 @@ public class InternalGuiceModulesLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalGuiceModules.g:6803:18: '0X'
+                    // InternalGuiceModules.g:7199:18: '0X'
                     {
                     match("0X"); 
 
@@ -1804,7 +1804,7 @@ public class InternalGuiceModulesLexer extends Lexer {
 
             }
 
-            // InternalGuiceModules.g:6803:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
+            // InternalGuiceModules.g:7199:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
             int cnt2=0;
             loop2:
             do {
@@ -1842,7 +1842,7 @@ public class InternalGuiceModulesLexer extends Lexer {
                 cnt2++;
             } while (true);
 
-            // InternalGuiceModules.g:6803:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // InternalGuiceModules.g:7199:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1851,10 +1851,10 @@ public class InternalGuiceModulesLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // InternalGuiceModules.g:6803:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // InternalGuiceModules.g:7199:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     {
                     match('#'); 
-                    // InternalGuiceModules.g:6803:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // InternalGuiceModules.g:7199:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     int alt3=2;
                     int LA3_0 = input.LA(1);
 
@@ -1872,7 +1872,7 @@ public class InternalGuiceModulesLexer extends Lexer {
                     }
                     switch (alt3) {
                         case 1 :
-                            // InternalGuiceModules.g:6803:64: ( 'b' | 'B' ) ( 'i' | 'I' )
+                            // InternalGuiceModules.g:7199:64: ( 'b' | 'B' ) ( 'i' | 'I' )
                             {
                             if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                                 input.consume();
@@ -1896,7 +1896,7 @@ public class InternalGuiceModulesLexer extends Lexer {
                             }
                             break;
                         case 2 :
-                            // InternalGuiceModules.g:6803:84: ( 'l' | 'L' )
+                            // InternalGuiceModules.g:7199:84: ( 'l' | 'L' )
                             {
                             if ( input.LA(1)=='L'||input.LA(1)=='l' ) {
                                 input.consume();
@@ -1935,11 +1935,11 @@ public class InternalGuiceModulesLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGuiceModules.g:6805:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
-            // InternalGuiceModules.g:6805:12: '0' .. '9' ( '0' .. '9' | '_' )*
+            // InternalGuiceModules.g:7201:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
+            // InternalGuiceModules.g:7201:12: '0' .. '9' ( '0' .. '9' | '_' )*
             {
             matchRange('0','9'); 
-            // InternalGuiceModules.g:6805:21: ( '0' .. '9' | '_' )*
+            // InternalGuiceModules.g:7201:21: ( '0' .. '9' | '_' )*
             loop5:
             do {
                 int alt5=2;
@@ -1988,11 +1988,11 @@ public class InternalGuiceModulesLexer extends Lexer {
         try {
             int _type = RULE_DECIMAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGuiceModules.g:6807:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
-            // InternalGuiceModules.g:6807:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // InternalGuiceModules.g:7203:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
+            // InternalGuiceModules.g:7203:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             {
             mRULE_INT(); 
-            // InternalGuiceModules.g:6807:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
+            // InternalGuiceModules.g:7203:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -2001,7 +2001,7 @@ public class InternalGuiceModulesLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // InternalGuiceModules.g:6807:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
+                    // InternalGuiceModules.g:7203:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -2012,7 +2012,7 @@ public class InternalGuiceModulesLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // InternalGuiceModules.g:6807:36: ( '+' | '-' )?
+                    // InternalGuiceModules.g:7203:36: ( '+' | '-' )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -2045,7 +2045,7 @@ public class InternalGuiceModulesLexer extends Lexer {
 
             }
 
-            // InternalGuiceModules.g:6807:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // InternalGuiceModules.g:7203:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             int alt8=3;
             int LA8_0 = input.LA(1);
 
@@ -2057,7 +2057,7 @@ public class InternalGuiceModulesLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // InternalGuiceModules.g:6807:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
+                    // InternalGuiceModules.g:7203:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
                     {
                     if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                         input.consume();
@@ -2081,7 +2081,7 @@ public class InternalGuiceModulesLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalGuiceModules.g:6807:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
+                    // InternalGuiceModules.g:7203:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
                     {
                     if ( input.LA(1)=='D'||input.LA(1)=='F'||input.LA(1)=='L'||input.LA(1)=='d'||input.LA(1)=='f'||input.LA(1)=='l' ) {
                         input.consume();
@@ -2114,10 +2114,10 @@ public class InternalGuiceModulesLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGuiceModules.g:6809:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
-            // InternalGuiceModules.g:6809:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // InternalGuiceModules.g:7205:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
+            // InternalGuiceModules.g:7205:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             {
-            // InternalGuiceModules.g:6809:11: ( '^' )?
+            // InternalGuiceModules.g:7205:11: ( '^' )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -2126,7 +2126,7 @@ public class InternalGuiceModulesLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // InternalGuiceModules.g:6809:11: '^'
+                    // InternalGuiceModules.g:7205:11: '^'
                     {
                     match('^'); 
 
@@ -2144,7 +2144,7 @@ public class InternalGuiceModulesLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalGuiceModules.g:6809:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // InternalGuiceModules.g:7205:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             loop10:
             do {
                 int alt10=2;
@@ -2193,10 +2193,10 @@ public class InternalGuiceModulesLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGuiceModules.g:6811:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? ) )
-            // InternalGuiceModules.g:6811:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
+            // InternalGuiceModules.g:7207:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? ) )
+            // InternalGuiceModules.g:7207:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
             {
-            // InternalGuiceModules.g:6811:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
+            // InternalGuiceModules.g:7207:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -2214,10 +2214,10 @@ public class InternalGuiceModulesLexer extends Lexer {
             }
             switch (alt15) {
                 case 1 :
-                    // InternalGuiceModules.g:6811:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )?
+                    // InternalGuiceModules.g:7207:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )?
                     {
                     match('\"'); 
-                    // InternalGuiceModules.g:6811:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalGuiceModules.g:7207:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop11:
                     do {
                         int alt11=3;
@@ -2233,7 +2233,7 @@ public class InternalGuiceModulesLexer extends Lexer {
 
                         switch (alt11) {
                     	case 1 :
-                    	    // InternalGuiceModules.g:6811:21: '\\\\' .
+                    	    // InternalGuiceModules.g:7207:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2241,7 +2241,7 @@ public class InternalGuiceModulesLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalGuiceModules.g:6811:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalGuiceModules.g:7207:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2261,7 +2261,7 @@ public class InternalGuiceModulesLexer extends Lexer {
                         }
                     } while (true);
 
-                    // InternalGuiceModules.g:6811:44: ( '\"' )?
+                    // InternalGuiceModules.g:7207:44: ( '\"' )?
                     int alt12=2;
                     int LA12_0 = input.LA(1);
 
@@ -2270,7 +2270,7 @@ public class InternalGuiceModulesLexer extends Lexer {
                     }
                     switch (alt12) {
                         case 1 :
-                            // InternalGuiceModules.g:6811:44: '\"'
+                            // InternalGuiceModules.g:7207:44: '\"'
                             {
                             match('\"'); 
 
@@ -2283,10 +2283,10 @@ public class InternalGuiceModulesLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalGuiceModules.g:6811:49: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )?
+                    // InternalGuiceModules.g:7207:49: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )?
                     {
                     match('\''); 
-                    // InternalGuiceModules.g:6811:54: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalGuiceModules.g:7207:54: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop13:
                     do {
                         int alt13=3;
@@ -2302,7 +2302,7 @@ public class InternalGuiceModulesLexer extends Lexer {
 
                         switch (alt13) {
                     	case 1 :
-                    	    // InternalGuiceModules.g:6811:55: '\\\\' .
+                    	    // InternalGuiceModules.g:7207:55: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2310,7 +2310,7 @@ public class InternalGuiceModulesLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalGuiceModules.g:6811:62: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalGuiceModules.g:7207:62: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2330,7 +2330,7 @@ public class InternalGuiceModulesLexer extends Lexer {
                         }
                     } while (true);
 
-                    // InternalGuiceModules.g:6811:79: ( '\\'' )?
+                    // InternalGuiceModules.g:7207:79: ( '\\'' )?
                     int alt14=2;
                     int LA14_0 = input.LA(1);
 
@@ -2339,7 +2339,7 @@ public class InternalGuiceModulesLexer extends Lexer {
                     }
                     switch (alt14) {
                         case 1 :
-                            // InternalGuiceModules.g:6811:79: '\\''
+                            // InternalGuiceModules.g:7207:79: '\\''
                             {
                             match('\''); 
 
@@ -2370,12 +2370,12 @@ public class InternalGuiceModulesLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGuiceModules.g:6813:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalGuiceModules.g:6813:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalGuiceModules.g:7209:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalGuiceModules.g:7209:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalGuiceModules.g:6813:24: ( options {greedy=false; } : . )*
+            // InternalGuiceModules.g:7209:24: ( options {greedy=false; } : . )*
             loop16:
             do {
                 int alt16=2;
@@ -2400,7 +2400,7 @@ public class InternalGuiceModulesLexer extends Lexer {
 
                 switch (alt16) {
             	case 1 :
-            	    // InternalGuiceModules.g:6813:52: .
+            	    // InternalGuiceModules.g:7209:52: .
             	    {
             	    matchAny(); 
 
@@ -2430,12 +2430,12 @@ public class InternalGuiceModulesLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGuiceModules.g:6815:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalGuiceModules.g:6815:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalGuiceModules.g:7211:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalGuiceModules.g:7211:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalGuiceModules.g:6815:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalGuiceModules.g:7211:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop17:
             do {
                 int alt17=2;
@@ -2448,7 +2448,7 @@ public class InternalGuiceModulesLexer extends Lexer {
 
                 switch (alt17) {
             	case 1 :
-            	    // InternalGuiceModules.g:6815:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalGuiceModules.g:7211:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2468,7 +2468,7 @@ public class InternalGuiceModulesLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalGuiceModules.g:6815:40: ( ( '\\r' )? '\\n' )?
+            // InternalGuiceModules.g:7211:40: ( ( '\\r' )? '\\n' )?
             int alt19=2;
             int LA19_0 = input.LA(1);
 
@@ -2477,9 +2477,9 @@ public class InternalGuiceModulesLexer extends Lexer {
             }
             switch (alt19) {
                 case 1 :
-                    // InternalGuiceModules.g:6815:41: ( '\\r' )? '\\n'
+                    // InternalGuiceModules.g:7211:41: ( '\\r' )? '\\n'
                     {
-                    // InternalGuiceModules.g:6815:41: ( '\\r' )?
+                    // InternalGuiceModules.g:7211:41: ( '\\r' )?
                     int alt18=2;
                     int LA18_0 = input.LA(1);
 
@@ -2488,7 +2488,7 @@ public class InternalGuiceModulesLexer extends Lexer {
                     }
                     switch (alt18) {
                         case 1 :
-                            // InternalGuiceModules.g:6815:41: '\\r'
+                            // InternalGuiceModules.g:7211:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2520,10 +2520,10 @@ public class InternalGuiceModulesLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGuiceModules.g:6817:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalGuiceModules.g:6817:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalGuiceModules.g:7213:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalGuiceModules.g:7213:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalGuiceModules.g:6817:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalGuiceModules.g:7213:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt20=0;
             loop20:
             do {
@@ -2577,8 +2577,8 @@ public class InternalGuiceModulesLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGuiceModules.g:6819:16: ( . )
-            // InternalGuiceModules.g:6819:18: .
+            // InternalGuiceModules.g:7215:16: ( . )
+            // InternalGuiceModules.g:7215:18: .
             {
             matchAny(); 
 
