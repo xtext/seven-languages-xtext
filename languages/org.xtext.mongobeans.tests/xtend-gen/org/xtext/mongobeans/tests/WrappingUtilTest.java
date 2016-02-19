@@ -31,9 +31,9 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.xtext.mongobeans.MongoBeansInjectorProvider;
 import org.xtext.mongobeans.lib.IMongoBean;
 import org.xtext.mongobeans.lib.WrappingUtil;
+import org.xtext.mongobeans.tests.MongoBeansInjectorProvider;
 
 @RunWith(XtextRunner.class)
 @InjectWith(MongoBeansInjectorProvider.class)

@@ -20,12 +20,11 @@ Require-Bundle: org.xtext.mongobeans;visibility:=reexport,
  org.eclipse.xtend.lib,
  com.google.guava,
  org.eclipse.xtext.xbase.lib,
- org.eclipse.jdt.debug.ui
+ org.eclipse.jdt.debug.ui,
+ org.xtext.mongobeans.ide;bundle-version="1.0.0"
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: org.xtext.mongobeans.ui.contentassist.antlr,
- org.xtext.mongobeans.ui.internal,
+Export-Package: org.xtext.mongobeans.ui.internal,
  org.xtext.mongobeans.ui.contentassist,
- org.xtext.mongobeans.ui.quickfix,
- org.xtext.mongobeans.ui.contentassist.antlr.internal
-Bundle-Activator: org.xtext.mongobeans.ui.internal.MongoBeansActivator
+ org.xtext.mongobeans.ui.quickfix
+Bundle-Activator: org.xtext.mongobeans.ui.internal.MongobeansActivator

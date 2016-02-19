@@ -15,7 +15,6 @@ import org.eclipse.xtext.naming.IQualifiedNameProvider
 import org.eclipse.xtext.naming.QualifiedName
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.xtext.mongobeans.MongoBeansInjectorProvider
 import org.xtext.mongobeans.mongoBeans.MongoBean
 import org.xtext.mongobeans.mongoBeans.MongoFile
 

@@ -11,6 +11,7 @@ import com.google.inject.Inject
 import com.mongodb.BasicDBObject
 import com.mongodb.DBObject
 import java.util.List
+import org.eclipse.xtend.lib.annotations.Accessors
 import org.eclipse.xtext.junit4.InjectWith
 import org.eclipse.xtext.junit4.XtextRunner
 import org.eclipse.xtext.xbase.compiler.CompilationTestHelper
@@ -18,12 +19,10 @@ import org.eclipse.xtext.xbase.lib.util.ReflectExtensions
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.xtext.mongobeans.MongoBeansInjectorProvider
 import org.xtext.mongobeans.lib.IMongoBean
 import org.xtext.mongobeans.lib.WrappingUtil
 
 import static org.junit.Assert.*
-import org.eclipse.xtend.lib.annotations.Accessors
 
 @RunWith(XtextRunner)
 @InjectWith(MongoBeansInjectorProvider)

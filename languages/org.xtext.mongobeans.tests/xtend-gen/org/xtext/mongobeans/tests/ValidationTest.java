@@ -22,10 +22,10 @@ import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.xtext.mongobeans.MongoBeansInjectorProvider;
 import org.xtext.mongobeans.mongoBeans.MongoBeansPackage;
 import org.xtext.mongobeans.mongoBeans.MongoFile;
 import org.xtext.mongobeans.mongoBeans.MongoProperty;
+import org.xtext.mongobeans.tests.MongoBeansInjectorProvider;
 import org.xtext.mongobeans.validation.MongoBeansValidator;
 
 @RunWith(XtextRunner.class)

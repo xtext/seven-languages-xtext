@@ -1,8 +1,8 @@
-package org.xtext.mongobeans.ui.contentassist.antlr.internal;
+package org.xtext.mongobeans.ide.contentassist.antlr.internal;
 
 // Hack: Use our own Lexer superclass by means of import. 
 // Currently there is no other way to specify the superclass for the lexer.
-import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.Lexer;
+import org.eclipse.xtext.ide.editor.contentassist.antlr.internal.Lexer;
 
 
 import org.antlr.runtime.*;
@@ -12,91 +12,91 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalMongoBeansLexer extends Lexer {
-    public static final int RULE_HEX=5;
-    public static final int T__50=50;
-    public static final int T__19=19;
-    public static final int T__15=15;
-    public static final int T__59=59;
-    public static final int T__16=16;
-    public static final int T__17=17;
-    public static final int T__18=18;
+    public static final int T__68=68;
+    public static final int T__69=69;
+    public static final int T__66=66;
+    public static final int RULE_ID=4;
+    public static final int T__67=67;
+    public static final int T__29=29;
+    public static final int T__64=64;
+    public static final int T__28=28;
+    public static final int T__65=65;
+    public static final int T__27=27;
+    public static final int T__62=62;
+    public static final int T__26=26;
+    public static final int T__63=63;
+    public static final int T__25=25;
+    public static final int T__24=24;
+    public static final int T__23=23;
+    public static final int T__22=22;
+    public static final int RULE_ANY_OTHER=12;
+    public static final int T__21=21;
+    public static final int T__20=20;
+    public static final int T__61=61;
+    public static final int EOF=-1;
+    public static final int T__60=60;
     public static final int T__55=55;
     public static final int T__56=56;
-    public static final int T__13=13;
+    public static final int T__19=19;
     public static final int T__57=57;
-    public static final int T__14=14;
+    public static final int RULE_HEX=5;
     public static final int T__58=58;
+    public static final int T__16=16;
     public static final int T__51=51;
     public static final int T__52=52;
+    public static final int T__15=15;
     public static final int T__53=53;
+    public static final int T__18=18;
     public static final int T__54=54;
-    public static final int T__60=60;
-    public static final int T__61=61;
-    public static final int RULE_ID=4;
-    public static final int RULE_DECIMAL=7;
-    public static final int T__26=26;
-    public static final int T__27=27;
-    public static final int T__28=28;
+    public static final int T__17=17;
+    public static final int T__14=14;
+    public static final int T__13=13;
+    public static final int T__59=59;
     public static final int RULE_INT=6;
-    public static final int T__29=29;
-    public static final int T__22=22;
-    public static final int T__66=66;
-    public static final int RULE_ML_COMMENT=9;
-    public static final int T__23=23;
-    public static final int T__67=67;
-    public static final int T__24=24;
-    public static final int T__68=68;
-    public static final int T__25=25;
-    public static final int T__69=69;
-    public static final int T__62=62;
-    public static final int T__63=63;
-    public static final int T__20=20;
-    public static final int T__64=64;
-    public static final int T__21=21;
-    public static final int T__65=65;
-    public static final int T__70=70;
-    public static final int T__71=71;
-    public static final int T__72=72;
-    public static final int RULE_STRING=8;
+    public static final int RULE_DECIMAL=7;
+    public static final int T__50=50;
+    public static final int T__42=42;
+    public static final int T__43=43;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__46=46;
+    public static final int T__80=80;
+    public static final int T__47=47;
+    public static final int T__81=81;
+    public static final int T__44=44;
+    public static final int T__82=82;
+    public static final int T__45=45;
+    public static final int T__83=83;
+    public static final int T__48=48;
+    public static final int T__49=49;
+    public static final int T__85=85;
+    public static final int T__84=84;
     public static final int RULE_SL_COMMENT=10;
+    public static final int T__87=87;
+    public static final int T__86=86;
+    public static final int RULE_ML_COMMENT=9;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
+    public static final int RULE_STRING=8;
+    public static final int T__33=33;
+    public static final int T__71=71;
+    public static final int T__34=34;
+    public static final int T__72=72;
+    public static final int T__35=35;
+    public static final int T__36=36;
+    public static final int T__70=70;
     public static final int T__37=37;
     public static final int T__38=38;
     public static final int T__39=39;
-    public static final int T__33=33;
-    public static final int T__77=77;
-    public static final int T__34=34;
-    public static final int T__78=78;
-    public static final int T__35=35;
-    public static final int T__79=79;
-    public static final int T__36=36;
-    public static final int T__73=73;
-    public static final int EOF=-1;
-    public static final int T__30=30;
-    public static final int T__74=74;
-    public static final int T__31=31;
-    public static final int T__75=75;
-    public static final int T__32=32;
     public static final int T__76=76;
-    public static final int T__80=80;
-    public static final int T__81=81;
-    public static final int T__82=82;
-    public static final int T__83=83;
     public static final int RULE_WS=11;
-    public static final int RULE_ANY_OTHER=12;
-    public static final int T__48=48;
-    public static final int T__49=49;
-    public static final int T__44=44;
-    public static final int T__45=45;
-    public static final int T__46=46;
-    public static final int T__47=47;
-    public static final int T__40=40;
-    public static final int T__84=84;
-    public static final int T__41=41;
-    public static final int T__85=85;
-    public static final int T__42=42;
-    public static final int T__86=86;
-    public static final int T__43=43;
-    public static final int T__87=87;
+    public static final int T__75=75;
+    public static final int T__74=74;
+    public static final int T__73=73;
+    public static final int T__79=79;
+    public static final int T__78=78;
+    public static final int T__77=77;
 
     // delegates
     // delegators
@@ -1668,10 +1668,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = RULE_HEX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMongoBeans.g:20574:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
-            // InternalMongoBeans.g:20574:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // InternalMongoBeans.g:18116:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
+            // InternalMongoBeans.g:18116:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             {
-            // InternalMongoBeans.g:20574:12: ( '0x' | '0X' )
+            // InternalMongoBeans.g:18116:12: ( '0x' | '0X' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1699,7 +1699,7 @@ public class InternalMongoBeansLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalMongoBeans.g:20574:13: '0x'
+                    // InternalMongoBeans.g:18116:13: '0x'
                     {
                     match("0x"); 
 
@@ -1707,7 +1707,7 @@ public class InternalMongoBeansLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalMongoBeans.g:20574:18: '0X'
+                    // InternalMongoBeans.g:18116:18: '0X'
                     {
                     match("0X"); 
 
@@ -1717,7 +1717,7 @@ public class InternalMongoBeansLexer extends Lexer {
 
             }
 
-            // InternalMongoBeans.g:20574:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
+            // InternalMongoBeans.g:18116:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
             int cnt2=0;
             loop2:
             do {
@@ -1755,7 +1755,7 @@ public class InternalMongoBeansLexer extends Lexer {
                 cnt2++;
             } while (true);
 
-            // InternalMongoBeans.g:20574:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // InternalMongoBeans.g:18116:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1764,10 +1764,10 @@ public class InternalMongoBeansLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // InternalMongoBeans.g:20574:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // InternalMongoBeans.g:18116:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     {
                     match('#'); 
-                    // InternalMongoBeans.g:20574:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // InternalMongoBeans.g:18116:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     int alt3=2;
                     int LA3_0 = input.LA(1);
 
@@ -1785,7 +1785,7 @@ public class InternalMongoBeansLexer extends Lexer {
                     }
                     switch (alt3) {
                         case 1 :
-                            // InternalMongoBeans.g:20574:64: ( 'b' | 'B' ) ( 'i' | 'I' )
+                            // InternalMongoBeans.g:18116:64: ( 'b' | 'B' ) ( 'i' | 'I' )
                             {
                             if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                                 input.consume();
@@ -1809,7 +1809,7 @@ public class InternalMongoBeansLexer extends Lexer {
                             }
                             break;
                         case 2 :
-                            // InternalMongoBeans.g:20574:84: ( 'l' | 'L' )
+                            // InternalMongoBeans.g:18116:84: ( 'l' | 'L' )
                             {
                             if ( input.LA(1)=='L'||input.LA(1)=='l' ) {
                                 input.consume();
@@ -1848,11 +1848,11 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMongoBeans.g:20576:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
-            // InternalMongoBeans.g:20576:12: '0' .. '9' ( '0' .. '9' | '_' )*
+            // InternalMongoBeans.g:18118:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
+            // InternalMongoBeans.g:18118:12: '0' .. '9' ( '0' .. '9' | '_' )*
             {
             matchRange('0','9'); 
-            // InternalMongoBeans.g:20576:21: ( '0' .. '9' | '_' )*
+            // InternalMongoBeans.g:18118:21: ( '0' .. '9' | '_' )*
             loop5:
             do {
                 int alt5=2;
@@ -1901,11 +1901,11 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = RULE_DECIMAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMongoBeans.g:20578:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
-            // InternalMongoBeans.g:20578:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // InternalMongoBeans.g:18120:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
+            // InternalMongoBeans.g:18120:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             {
             mRULE_INT(); 
-            // InternalMongoBeans.g:20578:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
+            // InternalMongoBeans.g:18120:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -1914,7 +1914,7 @@ public class InternalMongoBeansLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // InternalMongoBeans.g:20578:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
+                    // InternalMongoBeans.g:18120:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -1925,7 +1925,7 @@ public class InternalMongoBeansLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // InternalMongoBeans.g:20578:36: ( '+' | '-' )?
+                    // InternalMongoBeans.g:18120:36: ( '+' | '-' )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -1958,7 +1958,7 @@ public class InternalMongoBeansLexer extends Lexer {
 
             }
 
-            // InternalMongoBeans.g:20578:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // InternalMongoBeans.g:18120:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             int alt8=3;
             int LA8_0 = input.LA(1);
 
@@ -1970,7 +1970,7 @@ public class InternalMongoBeansLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // InternalMongoBeans.g:20578:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
+                    // InternalMongoBeans.g:18120:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
                     {
                     if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                         input.consume();
@@ -1994,7 +1994,7 @@ public class InternalMongoBeansLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalMongoBeans.g:20578:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
+                    // InternalMongoBeans.g:18120:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
                     {
                     if ( input.LA(1)=='D'||input.LA(1)=='F'||input.LA(1)=='L'||input.LA(1)=='d'||input.LA(1)=='f'||input.LA(1)=='l' ) {
                         input.consume();
@@ -2027,10 +2027,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMongoBeans.g:20580:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
-            // InternalMongoBeans.g:20580:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // InternalMongoBeans.g:18122:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
+            // InternalMongoBeans.g:18122:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             {
-            // InternalMongoBeans.g:20580:11: ( '^' )?
+            // InternalMongoBeans.g:18122:11: ( '^' )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -2039,7 +2039,7 @@ public class InternalMongoBeansLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // InternalMongoBeans.g:20580:11: '^'
+                    // InternalMongoBeans.g:18122:11: '^'
                     {
                     match('^'); 
 
@@ -2057,7 +2057,7 @@ public class InternalMongoBeansLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalMongoBeans.g:20580:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // InternalMongoBeans.g:18122:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             loop10:
             do {
                 int alt10=2;
@@ -2106,10 +2106,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMongoBeans.g:20582:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? ) )
-            // InternalMongoBeans.g:20582:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
+            // InternalMongoBeans.g:18124:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? ) )
+            // InternalMongoBeans.g:18124:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
             {
-            // InternalMongoBeans.g:20582:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
+            // InternalMongoBeans.g:18124:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -2127,10 +2127,10 @@ public class InternalMongoBeansLexer extends Lexer {
             }
             switch (alt15) {
                 case 1 :
-                    // InternalMongoBeans.g:20582:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )?
+                    // InternalMongoBeans.g:18124:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )?
                     {
                     match('\"'); 
-                    // InternalMongoBeans.g:20582:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalMongoBeans.g:18124:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop11:
                     do {
                         int alt11=3;
@@ -2146,7 +2146,7 @@ public class InternalMongoBeansLexer extends Lexer {
 
                         switch (alt11) {
                     	case 1 :
-                    	    // InternalMongoBeans.g:20582:21: '\\\\' .
+                    	    // InternalMongoBeans.g:18124:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2154,7 +2154,7 @@ public class InternalMongoBeansLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalMongoBeans.g:20582:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalMongoBeans.g:18124:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2174,7 +2174,7 @@ public class InternalMongoBeansLexer extends Lexer {
                         }
                     } while (true);
 
-                    // InternalMongoBeans.g:20582:44: ( '\"' )?
+                    // InternalMongoBeans.g:18124:44: ( '\"' )?
                     int alt12=2;
                     int LA12_0 = input.LA(1);
 
@@ -2183,7 +2183,7 @@ public class InternalMongoBeansLexer extends Lexer {
                     }
                     switch (alt12) {
                         case 1 :
-                            // InternalMongoBeans.g:20582:44: '\"'
+                            // InternalMongoBeans.g:18124:44: '\"'
                             {
                             match('\"'); 
 
@@ -2196,10 +2196,10 @@ public class InternalMongoBeansLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalMongoBeans.g:20582:49: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )?
+                    // InternalMongoBeans.g:18124:49: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )?
                     {
                     match('\''); 
-                    // InternalMongoBeans.g:20582:54: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalMongoBeans.g:18124:54: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop13:
                     do {
                         int alt13=3;
@@ -2215,7 +2215,7 @@ public class InternalMongoBeansLexer extends Lexer {
 
                         switch (alt13) {
                     	case 1 :
-                    	    // InternalMongoBeans.g:20582:55: '\\\\' .
+                    	    // InternalMongoBeans.g:18124:55: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2223,7 +2223,7 @@ public class InternalMongoBeansLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalMongoBeans.g:20582:62: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalMongoBeans.g:18124:62: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2243,7 +2243,7 @@ public class InternalMongoBeansLexer extends Lexer {
                         }
                     } while (true);
 
-                    // InternalMongoBeans.g:20582:79: ( '\\'' )?
+                    // InternalMongoBeans.g:18124:79: ( '\\'' )?
                     int alt14=2;
                     int LA14_0 = input.LA(1);
 
@@ -2252,7 +2252,7 @@ public class InternalMongoBeansLexer extends Lexer {
                     }
                     switch (alt14) {
                         case 1 :
-                            // InternalMongoBeans.g:20582:79: '\\''
+                            // InternalMongoBeans.g:18124:79: '\\''
                             {
                             match('\''); 
 
@@ -2283,12 +2283,12 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMongoBeans.g:20584:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalMongoBeans.g:20584:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalMongoBeans.g:18126:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalMongoBeans.g:18126:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalMongoBeans.g:20584:24: ( options {greedy=false; } : . )*
+            // InternalMongoBeans.g:18126:24: ( options {greedy=false; } : . )*
             loop16:
             do {
                 int alt16=2;
@@ -2313,7 +2313,7 @@ public class InternalMongoBeansLexer extends Lexer {
 
                 switch (alt16) {
             	case 1 :
-            	    // InternalMongoBeans.g:20584:52: .
+            	    // InternalMongoBeans.g:18126:52: .
             	    {
             	    matchAny(); 
 
@@ -2343,12 +2343,12 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMongoBeans.g:20586:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalMongoBeans.g:20586:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalMongoBeans.g:18128:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalMongoBeans.g:18128:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalMongoBeans.g:20586:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalMongoBeans.g:18128:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop17:
             do {
                 int alt17=2;
@@ -2361,7 +2361,7 @@ public class InternalMongoBeansLexer extends Lexer {
 
                 switch (alt17) {
             	case 1 :
-            	    // InternalMongoBeans.g:20586:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalMongoBeans.g:18128:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2381,7 +2381,7 @@ public class InternalMongoBeansLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalMongoBeans.g:20586:40: ( ( '\\r' )? '\\n' )?
+            // InternalMongoBeans.g:18128:40: ( ( '\\r' )? '\\n' )?
             int alt19=2;
             int LA19_0 = input.LA(1);
 
@@ -2390,9 +2390,9 @@ public class InternalMongoBeansLexer extends Lexer {
             }
             switch (alt19) {
                 case 1 :
-                    // InternalMongoBeans.g:20586:41: ( '\\r' )? '\\n'
+                    // InternalMongoBeans.g:18128:41: ( '\\r' )? '\\n'
                     {
-                    // InternalMongoBeans.g:20586:41: ( '\\r' )?
+                    // InternalMongoBeans.g:18128:41: ( '\\r' )?
                     int alt18=2;
                     int LA18_0 = input.LA(1);
 
@@ -2401,7 +2401,7 @@ public class InternalMongoBeansLexer extends Lexer {
                     }
                     switch (alt18) {
                         case 1 :
-                            // InternalMongoBeans.g:20586:41: '\\r'
+                            // InternalMongoBeans.g:18128:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2433,10 +2433,10 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMongoBeans.g:20588:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalMongoBeans.g:20588:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalMongoBeans.g:18130:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalMongoBeans.g:18130:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalMongoBeans.g:20588:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalMongoBeans.g:18130:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt20=0;
             loop20:
             do {
@@ -2490,8 +2490,8 @@ public class InternalMongoBeansLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMongoBeans.g:20590:16: ( . )
-            // InternalMongoBeans.g:20590:18: .
+            // InternalMongoBeans.g:18132:16: ( . )
+            // InternalMongoBeans.g:18132:18: .
             {
             matchAny(); 
 
