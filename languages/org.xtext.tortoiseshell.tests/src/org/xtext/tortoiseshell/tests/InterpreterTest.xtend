@@ -7,21 +7,21 @@
  ******************************************************************************/
 package org.xtext.tortoiseshell.tests
 
-import org.xtext.tortoiseshell.TortoiseShellInjectorProvider
-import org.eclipse.xtext.junit4.XtextRunner
-import org.junit.runner.RunWith
-import org.eclipse.xtext.junit4.InjectWith
 import com.google.inject.Inject
-import org.xtext.tortoiseshell.interpreter.TortoiseShellInterpeter
-import org.eclipse.xtext.junit4.util.ParseHelper
-import org.xtext.tortoiseshell.tortoiseShell.Program
-import org.junit.Test
-import org.xtext.tortoiseshell.lib.Tortoise
-import static org.junit.Assert.*
-import org.eclipse.draw2d.geometry.Point
 import org.eclipse.draw2d.ColorConstants
+import org.eclipse.draw2d.geometry.Point
+import org.eclipse.xtext.junit4.InjectWith
+import org.eclipse.xtext.junit4.XtextRunner
+import org.eclipse.xtext.junit4.util.ParseHelper
+import org.junit.Test
+import org.junit.runner.RunWith
+import org.xtext.tortoiseshell.interpreter.TortoiseShellInterpeter
 import org.xtext.tortoiseshell.lib.MoveEvent
+import org.xtext.tortoiseshell.lib.Tortoise
 import org.xtext.tortoiseshell.lib.TurnEvent
+import org.xtext.tortoiseshell.tortoiseShell.Program
+
+import static org.junit.Assert.*
 
 @RunWith(XtextRunner)
 @InjectWith(TortoiseShellInjectorProvider)

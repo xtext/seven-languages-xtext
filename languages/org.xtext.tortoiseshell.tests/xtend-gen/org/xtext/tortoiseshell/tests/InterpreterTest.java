@@ -24,12 +24,12 @@ import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.xtext.tortoiseshell.TortoiseShellInjectorProvider;
 import org.xtext.tortoiseshell.interpreter.TortoiseShellInterpeter;
 import org.xtext.tortoiseshell.lib.ITortoiseEvent;
 import org.xtext.tortoiseshell.lib.MoveEvent;
 import org.xtext.tortoiseshell.lib.Tortoise;
 import org.xtext.tortoiseshell.lib.TurnEvent;
+import org.xtext.tortoiseshell.tests.TortoiseShellInjectorProvider;
 import org.xtext.tortoiseshell.tortoiseShell.Program;
 
 @RunWith(XtextRunner.class)

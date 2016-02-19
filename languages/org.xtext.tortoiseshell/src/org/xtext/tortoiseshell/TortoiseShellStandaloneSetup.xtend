@@ -1,20 +1,18 @@
-/*******************************************************************************
+/** 
  * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- ******************************************************************************/
-package org.xtext.tortoiseshell;
+ */
+package org.xtext.tortoiseshell
 
-/**
+/** 
  * Initialization support for running Xtext languages 
  * without equinox extension registry
  */
-public class TortoiseShellStandaloneSetup extends TortoiseShellStandaloneSetupGenerated{
-
-	public static void doSetup() {
-		new TortoiseShellStandaloneSetup().createInjectorAndDoEMFRegistration();
+class TortoiseShellStandaloneSetup extends TortoiseShellStandaloneSetupGenerated {
+	def static void doSetup() {
+		new TortoiseShellStandaloneSetup().createInjectorAndDoEMFRegistration()
 	}
 }
-
