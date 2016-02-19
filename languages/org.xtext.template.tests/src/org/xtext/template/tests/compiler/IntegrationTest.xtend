@@ -7,14 +7,14 @@
  ******************************************************************************/
 package org.xtext.template.tests.compiler
 
-import org.junit.runner.RunWith
-import org.eclipse.xtext.junit4.XtextRunner
-import org.eclipse.xtext.junit4.InjectWith
-import org.xtext.template.TemplateInjectorProvider
-import org.junit.Test
 import com.google.inject.Inject
+import org.eclipse.xtext.junit4.InjectWith
+import org.eclipse.xtext.junit4.XtextRunner
 import org.eclipse.xtext.xbase.compiler.CompilationTestHelper
 import org.eclipse.xtext.xbase.lib.util.ReflectExtensions
+import org.junit.Test
+import org.junit.runner.RunWith
+import org.xtext.template.tests.TemplateInjectorProvider
 
 import static org.junit.Assert.*
 

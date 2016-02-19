@@ -19,7 +19,7 @@ import org.eclipse.xtext.xbase.lib.util.ReflectExtensions;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.xtext.template.TemplateInjectorProvider;
+import org.xtext.template.tests.TemplateInjectorProvider;
 
 @RunWith(XtextRunner.class)
 @InjectWith(TemplateInjectorProvider.class)

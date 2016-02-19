@@ -6,6 +6,7 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: org.xtext.template.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.xtext.template;visibility:=reexport,
+ org.xtext.template.ide;bundle-version="1.0.0",
  org.eclipse.xtext.ui,
  org.eclipse.ui.editors;bundle-version="3.5.0",
  org.eclipse.ui.ide;bundle-version="3.5.0",
@@ -17,14 +18,13 @@ Require-Bundle: org.xtext.template;visibility:=reexport,
  org.eclipse.xtext.common.types.ui,
  org.eclipse.xtext.ui.codetemplates.ui,
  org.eclipse.compare,
- org.eclipse.xtend.lib,
+ org.eclipse.xtend.lib;resolution:=optional,
  com.google.guava,
  org.eclipse.xtext.xbase.lib,
  org.eclipse.jdt.debug.ui
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: org.xtext.template.ui.contentassist.antlr,
- org.xtext.template.ui.internal,
+Export-Package: org.xtext.template.ui.internal,
  org.xtext.template.ui.contentassist,
- org.xtext.template.ui.contentassist.antlr.internal
+ org.xtext.template.ui.quickfix
 Bundle-Activator: org.xtext.template.ui.internal.TemplateActivator

@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.0"?>
-
 <plugin>
-
-  <extension point="org.eclipse.emf.ecore.generated_package">
-    <package 
-       uri = "http://www.xtext.org/template/Template" 
-       class = "org.xtext.template.template.TemplatePackage"
-       genModel = "model/generated/Template.genmodel" /> 
-	
-  </extension>
-
-
-
-
-
+	<extension point="org.eclipse.emf.ecore.generated_package">
+		<package 
+			uri = "http://www.xtext.org/template/Template"
+			class = "org.xtext.template.template.TemplatePackage"
+			genModel = "model/generated/Template.genmodel" />
+	</extension>
 </plugin>
