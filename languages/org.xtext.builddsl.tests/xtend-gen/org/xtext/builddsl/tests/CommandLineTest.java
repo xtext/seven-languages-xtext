@@ -31,7 +31,7 @@ import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.xtext.builddsl.BuildDSLInjectorProvider;
+import org.xtext.builddsl.tests.BuildDSLInjectorProvider;
 
 @RunWith(XtextRunner.class)
 @InjectWith(BuildDSLInjectorProvider.class)

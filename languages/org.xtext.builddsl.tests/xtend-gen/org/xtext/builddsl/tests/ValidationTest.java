@@ -17,9 +17,9 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.xtext.builddsl.BuildDSLInjectorProvider;
 import org.xtext.builddsl.build.BuildFile;
 import org.xtext.builddsl.build.BuildPackage;
+import org.xtext.builddsl.tests.BuildDSLInjectorProvider;
 import org.xtext.builddsl.validation.BuildDSLValidator;
 
 @RunWith(XtextRunner.class)

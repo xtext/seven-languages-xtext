@@ -6,6 +6,7 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: org.xtext.builddsl.ui;singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.xtext.builddsl;visibility:=reexport,
+ org.xtext.builddsl.ide,
  org.eclipse.xtext.ui,
  org.eclipse.ui.editors;bundle-version="3.5.0",
  org.eclipse.ui.ide;bundle-version="3.5.0",
@@ -18,7 +19,7 @@ Require-Bundle: org.xtext.builddsl;visibility:=reexport,
  org.eclipse.xtext.ui.codetemplates.ui,
  org.eclipse.compare,
  org.junit;bundle-version="4.8.2",
- org.eclipse.xtend.lib,
+ org.eclipse.xtend.lib;resolution:=optional,
  com.google.guava,
  org.eclipse.xtext.xbase.lib,
  org.xtext.builddsl.lib;bundle-version="1.0.0",
@@ -30,8 +31,7 @@ Import-Package: org.apache.commons.logging,
  org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: org.xtext.builddsl.ui,
- org.xtext.builddsl.ui.contentassist.antlr,
  org.xtext.builddsl.ui.internal,
  org.xtext.builddsl.ui.contentassist,
- org.xtext.builddsl.ui.contentassist.antlr.internal
-Bundle-Activator: org.xtext.builddsl.ui.internal.BuildDSLActivator
+ org.xtext.builddsl.ui.quickfix
+Bundle-Activator: org.xtext.builddsl.ui.internal.BuilddslActivator

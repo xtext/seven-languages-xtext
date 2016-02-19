@@ -28,4 +28,4 @@ Import-Package: org.apache.log4j,
  org.hamcrest,
  org.hamcrest.core
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: org.xtext.builddsl
+Export-Package: org.xtext.builddsl.tests

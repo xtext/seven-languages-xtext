@@ -11,15 +11,14 @@ import com.google.inject.Inject
 import java.io.ByteArrayOutputStream
 import java.io.PrintStream
 import org.eclipse.xtext.junit4.InjectWith
+import org.eclipse.xtext.junit4.TemporaryFolder
 import org.eclipse.xtext.junit4.XtextRunner
 import org.eclipse.xtext.xbase.compiler.CompilationTestHelper
+import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.xtext.builddsl.BuildDSLInjectorProvider
 
 import static org.junit.Assert.*
-import org.junit.Rule
-import org.eclipse.xtext.junit4.TemporaryFolder
 
 @RunWith(XtextRunner)
 @InjectWith(BuildDSLInjectorProvider)
