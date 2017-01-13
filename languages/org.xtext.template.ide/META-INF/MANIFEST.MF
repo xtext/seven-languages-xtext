@@ -4,7 +4,7 @@ Bundle-Name: org.xtext.template.ide
 Bundle-SymbolicName: org.xtext.template.ide
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: Eclipse Modeling Project
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.xtext.template;bundle-version="1.0.0",
  org.eclipse.xtext.ide;bundle-version="2.9.1",
  org.eclipse.xtext.xbase.ide;bundle-version="2.9.1"

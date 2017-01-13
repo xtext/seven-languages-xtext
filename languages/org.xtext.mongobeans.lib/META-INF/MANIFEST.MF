@@ -4,7 +4,7 @@ Bundle-Name: MongoDSL Runtime Plug-in
 Bundle-SymbolicName: org.xtext.mongobeans.lib
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: Eclipse Modeling Project
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.eclipse.xtend.lib,
  com.google.guava,
  org.eclipse.xtext.xbase.lib,

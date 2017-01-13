@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: org.xtext.builddsl.ide
 Bundle-SymbolicName: org.xtext.builddsl.ide
 Bundle-Version: 1.0.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: Eclipse Modeling Project
 Export-Package: org.xtext.builddsl.ide.contentassist.antlr,
  org.xtext.builddsl.ide.contentassist.antlr.internal

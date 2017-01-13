@@ -23,7 +23,7 @@ Require-Bundle: org.xtext.httprouting;visibility:=reexport,
  org.eclipse.xtext.xbase.lib,
  org.eclipse.jdt.debug.ui
 Import-Package: org.apache.log4j
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.xtext.httprouting.ui.contentassist,
  org.xtext.httprouting.ui.internal,
  org.xtext.httprouting.ui.quickfix

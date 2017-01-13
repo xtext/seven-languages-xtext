@@ -22,7 +22,7 @@ Require-Bundle: org.eclipse.xtext;bundle-version="2.7.0";visibility:=reexport,
  org.eclipse.equinox.common;bundle-version="3.4",
  org.eclipse.xtend.lib
 Import-Package: org.apache.log4j
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.xtext.httprouting,
  org.xtext.httprouting.services,
  org.xtext.httprouting.route,

@@ -4,7 +4,7 @@ Bundle-Name: org.xtext.httprouting.ide
 Bundle-SymbolicName: org.xtext.httprouting.ide
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: Eclipse Modeling Project
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.xtext.httprouting.ide.contentassist.antlr,
  org.xtext.httprouting.ide.contentassist.antlr.internal
 Require-Bundle: org.xtext.httprouting;bundle-version="1.0.0",

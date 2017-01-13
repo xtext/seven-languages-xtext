@@ -23,7 +23,7 @@ Require-Bundle: org.xtext.template;visibility:=reexport,
  org.eclipse.xtext.xbase.lib,
  org.eclipse.jdt.debug.ui
 Import-Package: org.apache.log4j
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.xtext.template.ui.internal,
  org.xtext.template.ui.contentassist,
  org.xtext.template.ui.quickfix
