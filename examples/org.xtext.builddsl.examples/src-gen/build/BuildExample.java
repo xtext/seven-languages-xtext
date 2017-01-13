@@ -42,13 +42,10 @@ public class BuildExample extends BuildScript {
   
   @DependsOn("Clean")
   protected void Compile() {
-    final Procedure1<JavaCompilerParams> _function = new Procedure1<JavaCompilerParams>() {
-      @Override
-      public void apply(final JavaCompilerParams it) {
-        Collection<File> _sources = it.getSources();
-        _sources.add(BuildExample.this.source);
-        it.setDestination(BuildExample.this.target);
-      }
+    final Procedure1<JavaCompilerParams> _function = (JavaCompilerParams it) -> {
+      Collection<File> _sources = it.getSources();
+      _sources.add(this.source);
+      it.setDestination(this.target);
     };
     JavaCompiler.javac(_function);
   }

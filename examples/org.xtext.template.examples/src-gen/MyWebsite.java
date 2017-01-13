@@ -1,4 +1,3 @@
-import com.google.common.base.Objects;
 import java.util.ArrayList;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 
@@ -64,8 +63,8 @@ public class MyWebsite {
       _appendable_1.append(org.eclipse.xtext.xbase.lib.ObjectExtensions.operator_elvis("</h1>\n\t\t",""));
       Object _richstringif = null;
       String _description = element.getDescription();
-      boolean _notEquals = (!Objects.equal(_description, null));
-      if (_notEquals) {
+      boolean _tripleNotEquals = (_description != null);
+      if (_tripleNotEquals) {
         StringBuilder _appendable_2 = new StringBuilder();
         
         _appendable_2.append(org.eclipse.xtext.xbase.lib.ObjectExtensions.operator_elvis("\n\t\t\t<p>",""));

@@ -50,8 +50,7 @@ public class NumberGuessing extends HttpServlet {
   private static Pattern _pattern5 = Pattern.compile("/guess");
   
   public void _doGet5(final HttpServletRequest request, final HttpServletResponse response) {
-    String _parameter = request.getParameter("theGuess");
-    this.controller.handleGuess(_parameter);
+    this.controller.handleGuess(request.getParameter("theGuess"));
   }
   
   private static Pattern _pattern6 = Pattern.compile("/");

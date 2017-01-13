@@ -20,7 +20,7 @@
 «FOR element : sections»
 	<div class="section">
 		<h1>«element.title»</h1>
-		«IF element.description != null»
+		«IF element.description !== null»
 			<p>«element.description»</p>
 		«ENDIF»
 		<p>«element.body»</p>
