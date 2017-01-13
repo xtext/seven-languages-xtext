@@ -30,22 +30,15 @@ public class RootLayer extends FreeformLayer {
       final Rectangle freeformExtent = super.getFreeformExtent();
       final Viewport parentViewport = this.findViewport(this);
       Rectangle _xifexpression = null;
-      boolean _notEquals = (!Objects.equal(parentViewport, null));
-      if (_notEquals) {
+      if ((parentViewport != null)) {
         Rectangle _xblockexpression_1 = null;
         {
-          IFigure _parent = parentViewport.getParent();
-          Rectangle _bounds = _parent.getBounds();
-          final Dimension viewDimension = _bounds.getSize();
+          final Dimension viewDimension = parentViewport.getParent().getBounds().getSize();
           parentViewport.translateToAbsolute(viewDimension);
           this.translateToRelative(viewDimension);
-          Dimension _size = freeformExtent.getSize();
-          Dimension _size_1 = freeformExtent.getSize();
-          viewDimension.shrink(_size.width, _size_1.height);
-          int _max = Math.max(0, viewDimension.width);
-          viewDimension.width = _max;
-          int _max_1 = Math.max(0, viewDimension.height);
-          viewDimension.height = _max_1;
+          viewDimension.shrink(freeformExtent.getSize().width, freeformExtent.getSize().height);
+          viewDimension.width = Math.max(0, viewDimension.width);
+          viewDimension.height = Math.max(0, viewDimension.height);
           Insets _insets = new Insets(viewDimension.height, viewDimension.width, viewDimension.height, 
             viewDimension.width);
           _xblockexpression_1 = freeformExtent.getExpanded(_insets);
@@ -62,11 +55,9 @@ public class RootLayer extends FreeformLayer {
   protected Viewport findViewport(final IFigure figure) {
     Viewport _switchResult = null;
     boolean _matched = false;
-    if (!_matched) {
-      if (Objects.equal(figure, null)) {
-        _matched=true;
-        _switchResult = null;
-      }
+    if (Objects.equal(figure, null)) {
+      _matched=true;
+      _switchResult = null;
     }
     if (!_matched) {
       if (figure instanceof Viewport) {
@@ -75,8 +66,7 @@ public class RootLayer extends FreeformLayer {
       }
     }
     if (!_matched) {
-      IFigure _parent = figure.getParent();
-      _switchResult = this.findViewport(_parent);
+      _switchResult = this.findViewport(figure.getParent());
     }
     return _switchResult;
   }

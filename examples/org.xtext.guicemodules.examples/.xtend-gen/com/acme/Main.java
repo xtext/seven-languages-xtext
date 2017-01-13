@@ -13,7 +13,6 @@ import com.acme.RuntimeModule;
 import com.acme.TestModule;
 import com.google.inject.Guice;
 import com.google.inject.Inject;
-import com.google.inject.Injector;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -28,23 +27,19 @@ public class Main {
   public static void main(final String[] args) {
     final Main instance = new Main();
     RuntimeModule _runtimeModule = new RuntimeModule();
-    Injector _createInjector = Guice.createInjector(_runtimeModule);
-    _createInjector.injectMembers(instance);
+    Guice.createInjector(_runtimeModule).injectMembers(instance);
     instance.logTheData();
   }
   
   @Test
   public void testTheSystem() {
     TestModule _testModule = new TestModule();
-    Injector _createInjector = Guice.createInjector(_testModule);
-    _createInjector.injectMembers(this);
+    Guice.createInjector(_testModule).injectMembers(this);
     this.logTheData();
-    String _string = this.logger.toString();
-    Assert.assertEquals("dummy-data", _string);
+    Assert.assertEquals("dummy-data", this.logger.toString());
   }
   
   public void logTheData() {
-    String _data = this.provider.getData();
-    this.logger.logMessage(_data);
+    this.logger.logMessage(this.provider.getData());
   }
 }

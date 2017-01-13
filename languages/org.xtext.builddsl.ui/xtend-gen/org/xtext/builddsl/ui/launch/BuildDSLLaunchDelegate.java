@@ -26,40 +26,27 @@ public class BuildDSLLaunchDelegate extends JavaLaunchDelegate {
   public void launch(final ILaunchConfiguration configuration, final String mode, final ILaunch launch, final IProgressMonitor monitor) {
     try {
       String _refreshScope = RefreshTab.getRefreshScope(configuration);
-      boolean _notEquals = (!Objects.equal(_refreshScope, null));
-      if (_notEquals) {
-        DebugPlugin _default = DebugPlugin.getDefault();
+      boolean _tripleNotEquals = (_refreshScope != null);
+      if (_tripleNotEquals) {
         final IDebugEventSetListener _function = new IDebugEventSetListener() {
           @Override
           public void handleDebugEvents(final DebugEvent[] it) {
             for (final DebugEvent event : it) {
-              boolean _and = false;
-              Object _source = event.getSource();
-              if (!(_source instanceof IProcess)) {
-                _and = false;
-              } else {
-                int _kind = event.getKind();
-                boolean _equals = (_kind == DebugEvent.TERMINATE);
-                _and = _equals;
-              }
-              if (_and) {
-                Object _source_1 = event.getSource();
-                final IProcess process = ((IProcess) _source_1);
-                ILaunch _launch = process.getLaunch();
-                ILaunchConfiguration _launchConfiguration = _launch.getLaunchConfiguration();
-                boolean _equals_1 = Objects.equal(configuration, _launchConfiguration);
-                if (_equals_1) {
-                  DebugPlugin _default = DebugPlugin.getDefault();
-                  _default.removeDebugEventListener(this);
-                  RefreshJob _refreshJob = new RefreshJob(configuration);
-                  _refreshJob.schedule();
+              if (((event.getSource() instanceof IProcess) && (event.getKind() == DebugEvent.TERMINATE))) {
+                Object _source = event.getSource();
+                final IProcess process = ((IProcess) _source);
+                ILaunchConfiguration _launchConfiguration = process.getLaunch().getLaunchConfiguration();
+                boolean _equals = Objects.equal(configuration, _launchConfiguration);
+                if (_equals) {
+                  DebugPlugin.getDefault().removeDebugEventListener(this);
+                  new RefreshJob(configuration).schedule();
                   return;
                 }
               }
             }
           }
         };
-        _default.addDebugEventListener(_function);
+        DebugPlugin.getDefault().addDebugEventListener(_function);
       }
       super.launch(configuration, mode, launch, monitor);
     } catch (Throwable _e) {

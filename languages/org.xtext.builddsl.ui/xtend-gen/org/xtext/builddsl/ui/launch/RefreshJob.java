@@ -38,8 +38,7 @@ public class RefreshJob extends Job {
       } catch (final Throwable _t) {
         if (_t instanceof CoreException) {
           final CoreException e = (CoreException)_t;
-          String _message = e.getMessage();
-          RefreshJob.logger.error(_message, e);
+          RefreshJob.logger.error(e.getMessage(), e);
           return e.getStatus();
         } else {
           throw Exceptions.sneakyThrow(_t);

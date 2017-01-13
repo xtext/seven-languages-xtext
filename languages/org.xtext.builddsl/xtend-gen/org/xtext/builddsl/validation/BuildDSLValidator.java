@@ -7,7 +7,6 @@
  */
 package org.xtext.builddsl.validation;
 
-import com.google.common.base.Objects;
 import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -51,10 +50,10 @@ public class BuildDSLValidator extends XbaseValidator {
           StringConcatenation _builder = new StringConcatenation();
           _builder.append("The task \'");
           String _name = task.getName();
-          _builder.append(_name, "");
+          _builder.append(_name);
           _builder.append("\' cannot depend on itself.");
-          Task _head = IterableExtensions.<Task>head(cycle);
-          BuildDSLValidator.this.error(_builder.toString(), _head, BuildPackage.Literals.DECLARATION__NAME, BuildDSLValidator.CYCLIC_DEPENDENCY);
+          BuildDSLValidator.this.error(_builder.toString(), 
+            IterableExtensions.<Task>head(cycle), BuildPackage.Literals.DECLARATION__NAME, BuildDSLValidator.CYCLIC_DEPENDENCY);
         } else {
           StringConcatenation _builder_1 = new StringConcatenation();
           _builder_1.append("There is a cyclic dependency that involves tasks ");
@@ -64,11 +63,10 @@ public class BuildDSLValidator extends XbaseValidator {
               return it.getName();
             }
           };
-          Iterable<String> _map = IterableExtensions.<Task, String>map(cycle, _function);
-          String _join = IterableExtensions.join(_map, ", ");
-          _builder_1.append(_join, "");
-          Task _head_1 = IterableExtensions.<Task>head(cycle);
-          BuildDSLValidator.this.error(_builder_1.toString(), _head_1, BuildPackage.Literals.DECLARATION__NAME, BuildDSLValidator.CYCLIC_DEPENDENCY);
+          String _join = IterableExtensions.join(IterableExtensions.<Task, String>map(cycle, _function), ", ");
+          _builder_1.append(_join);
+          BuildDSLValidator.this.error(_builder_1.toString(), 
+            IterableExtensions.<Task>head(cycle), BuildPackage.Literals.DECLARATION__NAME, BuildDSLValidator.CYCLIC_DEPENDENCY);
         }
       }
     };
@@ -87,8 +85,7 @@ public class BuildDSLValidator extends XbaseValidator {
           changed = false;
           List<Task> _list = IterableExtensions.<Task>toList(tasks);
           for (final Task t : _list) {
-            EList<Task> _depends = t.getDepends();
-            boolean _containsAll = result.containsAll(_depends);
+            boolean _containsAll = result.containsAll(t.getDepends());
             if (_containsAll) {
               changed = true;
               result.add(t);
@@ -97,16 +94,7 @@ public class BuildDSLValidator extends XbaseValidator {
           }
         }
       }
-      boolean _and = false;
-      boolean _isEmpty = tasks.isEmpty();
-      boolean _not = (!_isEmpty);
-      if (!_not) {
-        _and = false;
-      } else {
-        boolean _notEquals = (!Objects.equal(cycleHandler, null));
-        _and = _notEquals;
-      }
-      if (_and) {
+      if (((!tasks.isEmpty()) && (cycleHandler != null))) {
         cycleHandler.apply(tasks);
       }
       _xblockexpression = result;

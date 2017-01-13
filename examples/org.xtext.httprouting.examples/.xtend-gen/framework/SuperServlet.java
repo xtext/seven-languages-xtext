@@ -12,7 +12,6 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.google.inject.Module;
 import com.google.inject.Provider;
-import com.google.inject.binder.AnnotatedBindingBuilder;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -33,26 +32,23 @@ public class SuperServlet extends NumberGuessing {
     final Module _function = new Module() {
       @Override
       public void configure(final Binder it) {
-        AnnotatedBindingBuilder<HttpServletRequest> _bind = it.<HttpServletRequest>bind(HttpServletRequest.class);
         final Provider<HttpServletRequest> _function = new Provider<HttpServletRequest>() {
           @Override
           public HttpServletRequest get() {
             return SuperServlet.this.request.get();
           }
         };
-        _bind.toProvider(_function);
-        AnnotatedBindingBuilder<HttpServletResponse> _bind_1 = it.<HttpServletResponse>bind(HttpServletResponse.class);
+        it.<HttpServletRequest>bind(HttpServletRequest.class).toProvider(_function);
         final Provider<HttpServletResponse> _function_1 = new Provider<HttpServletResponse>() {
           @Override
           public HttpServletResponse get() {
             return SuperServlet.this.response.get();
           }
         };
-        _bind_1.toProvider(_function_1);
+        it.<HttpServletResponse>bind(HttpServletResponse.class).toProvider(_function_1);
       }
     };
-    Injector _createInjector = Guice.createInjector(_function);
-    this.injector = _createInjector;
+    this.injector = Guice.createInjector(_function);
   }
   
   @Override

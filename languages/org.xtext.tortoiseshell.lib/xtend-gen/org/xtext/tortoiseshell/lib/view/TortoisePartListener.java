@@ -10,7 +10,6 @@ package org.xtext.tortoiseshell.lib.view;
 import com.google.common.base.Objects;
 import com.google.inject.Inject;
 import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceChangeEvent;
 import org.eclipse.core.resources.IResourceChangeListener;
 import org.eclipse.core.resources.IResourceDelta;
@@ -27,9 +26,7 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.ui.IPartListener;
 import org.eclipse.ui.IWorkbenchPart;
-import org.eclipse.ui.IWorkbenchPartSite;
 import org.eclipse.xtext.ui.editor.XtextEditor;
-import org.eclipse.xtext.ui.editor.model.IXtextDocument;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.xtext.tortoiseshell.lib.view.TortoiseView;
 
@@ -43,16 +40,7 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
   private boolean isStopMode;
   
   public boolean isTortoiseEditor(final IWorkbenchPart part) {
-    boolean _and = false;
-    if (!(part instanceof XtextEditor)) {
-      _and = false;
-    } else {
-      IWorkbenchPartSite _site = part.getSite();
-      String _id = _site.getId();
-      boolean _equals = Objects.equal(_id, "org.xtext.tortoiseshell.TortoiseShell");
-      _and = _equals;
-    }
-    return _and;
+    return ((part instanceof XtextEditor) && Objects.equal(part.getSite().getId(), "org.xtext.tortoiseshell.TortoiseShell"));
   }
   
   @Override
@@ -161,33 +149,13 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
         _editorFile=this.getEditorFile(this.currentTortoiseEditor);
       }
       final IFile editorFile = _editorFile;
-      boolean _notEquals = (!Objects.equal(editorFile, null));
-      if (_notEquals) {
+      if ((editorFile != null)) {
         final IPath editorFilePath = editorFile.getFullPath();
-        IResourceDelta _delta = event.getDelta();
         final IResourceDeltaVisitor _function = new IResourceDeltaVisitor() {
           @Override
           public boolean visit(final IResourceDelta it) throws CoreException {
             boolean _xifexpression = false;
-            boolean _and = false;
-            boolean _and_1 = false;
-            IResource _resource = it.getResource();
-            boolean _equals = Objects.equal(_resource, editorFile);
-            if (!_equals) {
-              _and_1 = false;
-            } else {
-              int _kind = it.getKind();
-              boolean _equals_1 = (_kind == IResourceDelta.CHANGED);
-              _and_1 = _equals_1;
-            }
-            if (!_and_1) {
-              _and = false;
-            } else {
-              int _flags = it.getFlags();
-              boolean _equals_2 = (_flags == IResourceDelta.CONTENT);
-              _and = _equals_2;
-            }
-            if (_and) {
+            if (((Objects.equal(it.getResource(), editorFile) && (it.getKind() == IResourceDelta.CHANGED)) && (it.getFlags() == IResourceDelta.CONTENT))) {
               boolean _xblockexpression = false;
               {
                 TortoisePartListener.this.view.show(TortoisePartListener.this.currentTortoiseEditor, (-10));
@@ -195,14 +163,12 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
               }
               _xifexpression = _xblockexpression;
             } else {
-              IResource _resource_1 = it.getResource();
-              IPath _fullPath = _resource_1.getFullPath();
-              _xifexpression = _fullPath.isPrefixOf(editorFilePath);
+              _xifexpression = it.getResource().getFullPath().isPrefixOf(editorFilePath);
             }
             return _xifexpression;
           }
         };
-        _delta.accept(_function);
+        event.getDelta().accept(_function);
       }
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
@@ -260,8 +226,7 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
   @Override
   public void caretMoved(final CaretEvent event) {
     try {
-      IXtextDocument _document = this.currentTortoiseEditor.getDocument();
-      final int stopAtLine = _document.getLineOfOffset(event.caretOffset);
+      final int stopAtLine = this.currentTortoiseEditor.getDocument().getLineOfOffset(event.caretOffset);
       this.view.show(this.currentTortoiseEditor, stopAtLine);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);

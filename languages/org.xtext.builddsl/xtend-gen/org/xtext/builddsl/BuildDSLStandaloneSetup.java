@@ -15,7 +15,6 @@ import org.xtext.builddsl.BuildDSLStandaloneSetupGenerated;
 @SuppressWarnings("all")
 public class BuildDSLStandaloneSetup extends BuildDSLStandaloneSetupGenerated {
   public static void doSetup() {
-    BuildDSLStandaloneSetup _buildDSLStandaloneSetup = new BuildDSLStandaloneSetup();
-    _buildDSLStandaloneSetup.createInjectorAndDoEMFRegistration();
+    new BuildDSLStandaloneSetup().createInjectorAndDoEMFRegistration();
   }
 }

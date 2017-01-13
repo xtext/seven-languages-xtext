@@ -60,9 +60,7 @@ public class FileExtensions {
           @Override
           public void apply(final File file) {
             try {
-              File _relativeTo = FileExtensions.relativeTo(file, directory);
-              String _path = _relativeTo.getPath();
-              String _replace = _path.replace("\\", "/");
+              String _replace = FileExtensions.relativeTo(file, directory).getPath().replace("\\", "/");
               final ZipEntry entry = new ZipEntry(_replace);
               out.putNextEntry(entry);
               Files.copy(file, out);
@@ -90,8 +88,7 @@ public class FileExtensions {
       if (_not) {
         throw new IllegalStateException(("This is not a directory: " + dir));
       }
-      URI _uRI = dir.toURI();
-      URI _resolve = _uRI.resolve(name);
+      URI _resolve = dir.toURI().resolve(name);
       _xblockexpression = new File(_resolve);
     }
     return _xblockexpression;
@@ -100,14 +97,13 @@ public class FileExtensions {
   public static File operator_divide(final String dir, final String post) {
     File _xblockexpression = null;
     {
-      File _file = FileExtensions.file(dir);
-      boolean _isDirectory = _file.isDirectory();
+      boolean _isDirectory = FileExtensions.file(dir).isDirectory();
       boolean _not = (!_isDirectory);
       if (_not) {
         throw new IllegalStateException(("This is not a directory: " + dir));
       }
-      File _file_1 = FileExtensions.file(dir);
-      _xblockexpression = new File(_file_1, post);
+      File _file = FileExtensions.file(dir);
+      _xblockexpression = new File(_file, post);
     }
     return _xblockexpression;
   }
@@ -117,11 +113,7 @@ public class FileExtensions {
   }
   
   public static File relativeTo(final File target, final File base) {
-    File _absoluteFile = base.getAbsoluteFile();
-    URI _uRI = _absoluteFile.toURI();
-    URI _uRI_1 = target.toURI();
-    URI _relativize = _uRI.relativize(_uRI_1);
-    String _string = _relativize.toString();
+    String _string = base.getAbsoluteFile().toURI().relativize(target.toURI()).toString();
     return new File(_string);
   }
 }

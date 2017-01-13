@@ -68,9 +68,7 @@ public class MusicDBXtendTest {
           }
         };
         final Artist john = ObjectExtensions.<Artist>operator_doubleArrow(_artist, _function);
-        Iterable<? extends Track> _oeuvre = john.getOeuvre();
-        int _size = IterableExtensions.size(_oeuvre);
-        Assert.assertEquals(8, _size);
+        Assert.assertEquals(8, IterableExtensions.size(john.getOeuvre()));
         this._mongoExtensions.save(dbCollection, john);
         Artist _artist_1 = new Artist();
         final Procedure1<Artist> _function_1 = new Procedure1<Artist>() {
@@ -82,14 +80,9 @@ public class MusicDBXtendTest {
         Artist _doubleArrow = ObjectExtensions.<Artist>operator_doubleArrow(_artist_1, _function_1);
         final Artist johnFromDb = this._mongoExtensions.<Artist>findOneBean(dbCollection, _doubleArrow);
         Assert.assertNotNull(johnFromDb);
-        List<Album> _albums = johnFromDb.getAlbums();
-        int _size_1 = _albums.size();
-        Assert.assertEquals(2, _size_1);
-        List<Album> _albums_1 = johnFromDb.getAlbums();
-        final Album albumFromDb = _albums_1.get(1);
-        Duration _duration = albumFromDb.getDuration();
-        String _string = _duration.toString();
-        Assert.assertEquals("35:51", _string);
+        Assert.assertEquals(2, johnFromDb.getAlbums().size());
+        final Album albumFromDb = johnFromDb.getAlbums().get(1);
+        Assert.assertEquals("35:51", albumFromDb.getDuration().toString());
       } finally {
         mongo.close();
       }
@@ -112,9 +105,7 @@ public class MusicDBXtendTest {
       @Override
       public void apply(final Track it) {
         it.setTitle(trackTitle);
-        Duration _duration = new Duration(trackDuration);
-        int _seconds = _duration.getSeconds();
-        it.setSeconds(_seconds);
+        it.setSeconds(new Duration(trackDuration).getSeconds());
       }
     };
     Track _doubleArrow = ObjectExtensions.<Track>operator_doubleArrow(_track, _function);

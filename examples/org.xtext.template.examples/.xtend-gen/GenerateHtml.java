@@ -62,7 +62,6 @@ public class GenerateHtml {
         _sections_1.add(_section_1);
       }
     };
-    String _generate = template.generate(_function);
-    InputOutput.<String>println(_generate);
+    InputOutput.<String>println(template.generate(_function));
   }
 }

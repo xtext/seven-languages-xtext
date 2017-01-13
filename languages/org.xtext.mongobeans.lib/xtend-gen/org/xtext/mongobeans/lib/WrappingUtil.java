@@ -28,8 +28,7 @@ public class WrappingUtil {
           _string=_get.toString();
         }
         final String javaClassName = _string;
-        ClassLoader _classLoader = WrappingUtil.getClassLoader();
-        final Class<?> javaClass = _classLoader.loadClass(javaClassName);
+        final Class<?> javaClass = WrappingUtil.getClassLoader().loadClass(javaClassName);
         IMongoBean _xifexpression = null;
         boolean _isAssignableFrom = IMongoBean.class.isAssignableFrom(javaClass);
         if (_isAssignableFrom) {
@@ -43,10 +42,10 @@ public class WrappingUtil {
         } else {
           StringConcatenation _builder = new StringConcatenation();
           _builder.append("Stored javaClass \'");
-          _builder.append(javaClassName, "");
+          _builder.append(javaClassName);
           _builder.append("\' does not extend \'");
           String _simpleName = IMongoBean.class.getSimpleName();
-          _builder.append(_simpleName, "");
+          _builder.append(_simpleName);
           _builder.append("\'.");
           throw new IllegalStateException(_builder.toString());
         }

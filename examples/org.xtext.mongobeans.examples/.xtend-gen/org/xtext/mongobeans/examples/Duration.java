@@ -21,11 +21,9 @@ public class Duration {
   
   public Duration(final String duration) {
     final String[] split = duration.split(":");
-    String _get = split[0];
-    int _parseInt = Integer.parseInt(_get);
+    int _parseInt = Integer.parseInt(split[0]);
     int _multiply = (_parseInt * 60);
-    String _get_1 = split[1];
-    int _parseInt_1 = Integer.parseInt(_get_1);
+    int _parseInt_1 = Integer.parseInt(split[1]);
     int _plus = (_multiply + _parseInt_1);
     this.seconds = _plus;
   }

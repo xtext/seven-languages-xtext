@@ -17,7 +17,6 @@ public class DirectoryCleaner {
   public static void deleteDirectoryContents(final File file) {
     boolean _isDirectory = file.isDirectory();
     if (_isDirectory) {
-      File[] _listFiles = file.listFiles();
       final Procedure1<File> _function = new Procedure1<File>() {
         @Override
         public void apply(final File it) {
@@ -28,7 +27,7 @@ public class DirectoryCleaner {
           it.delete();
         }
       };
-      IterableExtensions.<File>forEach(((Iterable<File>)Conversions.doWrapArray(_listFiles)), _function);
+      IterableExtensions.<File>forEach(((Iterable<File>)Conversions.doWrapArray(file.listFiles())), _function);
     } else {
       file.delete();
     }

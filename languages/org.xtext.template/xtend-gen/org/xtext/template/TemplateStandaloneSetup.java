@@ -16,7 +16,6 @@ import org.xtext.template.TemplateStandaloneSetupGenerated;
 @SuppressWarnings("all")
 public class TemplateStandaloneSetup extends TemplateStandaloneSetupGenerated {
   public static void doSetup() {
-    TemplateStandaloneSetup _templateStandaloneSetup = new TemplateStandaloneSetup();
-    _templateStandaloneSetup.createInjectorAndDoEMFRegistration();
+    new TemplateStandaloneSetup().createInjectorAndDoEMFRegistration();
   }
 }

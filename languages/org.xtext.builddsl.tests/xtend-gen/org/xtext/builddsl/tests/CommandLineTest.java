@@ -253,8 +253,6 @@ public class CommandLineTest {
       System.setOut(_printStream);
       try {
         final Object instance = clazz.newInstance();
-        Class<?> _superclass = clazz.getSuperclass();
-        Method[] _declaredMethods = _superclass.getDeclaredMethods();
         final Function1<Method, Boolean> _function_1 = new Function1<Method, Boolean>() {
           @Override
           public Boolean apply(final Method it) {
@@ -262,7 +260,7 @@ public class CommandLineTest {
             return Boolean.valueOf(Objects.equal(_name, "doBuild"));
           }
         };
-        Method _findFirst = IterableExtensions.<Method>findFirst(((Iterable<Method>)Conversions.doWrapArray(_declaredMethods)), _function_1);
+        Method _findFirst = IterableExtensions.<Method>findFirst(((Iterable<Method>)Conversions.doWrapArray(clazz.getSuperclass().getDeclaredMethods())), _function_1);
         final Procedure1<Method> _function_2 = new Procedure1<Method>() {
           @Override
           public void apply(final Method it) {
@@ -279,8 +277,7 @@ public class CommandLineTest {
       } finally {
         System.setOut(backup);
       }
-      String _string = out.toString();
-      Assert.assertEquals(expectedOutput, _string);
+      Assert.assertEquals(expectedOutput, out.toString());
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }

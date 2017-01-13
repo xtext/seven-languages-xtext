@@ -28,25 +28,14 @@ public class MongoTypes {
   public final static Set<String> mongoPrimitiveTypes = Collections.<String>unmodifiableSet(CollectionLiterals.<String>newHashSet("double", "java.lang.Double", "java.lang.String", "byte[]", "boolean", "java.lang.Boolean", "java.util.Date", "void", "java.lang.Void", "java.util.regex.Pattern", "int", "java.lang.Integer", "long", "java.lang.Long"));
   
   public boolean isMongoPrimitiveType(final JvmTypeReference typeRef) {
-    String _qualifiedName = typeRef.getQualifiedName();
-    return MongoTypes.mongoPrimitiveTypes.contains(_qualifiedName);
+    return MongoTypes.mongoPrimitiveTypes.contains(typeRef.getQualifiedName());
   }
   
   public boolean isMongoType(final JvmTypeReference typeRef) {
-    boolean _or = false;
-    boolean _isMongoPrimitiveType = this.isMongoPrimitiveType(typeRef);
-    if (_isMongoPrimitiveType) {
-      _or = true;
-    } else {
-      JvmType _type = typeRef.getType();
-      boolean _isMongoBean = this.isMongoBean(_type);
-      _or = _isMongoBean;
-    }
-    return _or;
+    return (this.isMongoPrimitiveType(typeRef) || this.isMongoBean(typeRef.getType()));
   }
   
   public boolean isMongoBean(final JvmType type) {
-    Set<String> _collectNames = this._rawSuperTypes.collectNames(type);
-    return _collectNames.contains("org.xtext.mongobeans.lib.IMongoBean");
+    return this._rawSuperTypes.collectNames(type).contains("org.xtext.mongobeans.lib.IMongoBean");
   }
 }

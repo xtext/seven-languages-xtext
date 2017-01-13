@@ -10,31 +10,22 @@ package org.xtext.builddsl.ui.launch;
 import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import java.util.List;
-import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.debug.core.DebugPlugin;
 import org.eclipse.debug.core.ILaunchConfiguration;
-import org.eclipse.debug.core.ILaunchManager;
 import org.eclipse.debug.ui.DebugUITools;
 import org.eclipse.debug.ui.ILaunchShortcut;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.text.ITextSelection;
 import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.common.types.JvmDeclaredType;
-import org.eclipse.xtext.nodemodel.ICompositeNode;
 import org.eclipse.xtext.nodemodel.ILeafNode;
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
-import org.eclipse.xtext.parser.IParseResult;
 import org.eclipse.xtext.resource.XtextResource;
-import org.eclipse.xtext.ui.editor.model.IXtextDocument;
 import org.eclipse.xtext.util.concurrent.IUnitOfWork;
 import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Exceptions;
@@ -60,52 +51,37 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
     if ((offset < 0)) {
       return null;
     }
-    IParseResult _parseResult = res.getParseResult();
-    ICompositeNode _rootNode = _parseResult.getRootNode();
-    final ILeafNode start = NodeModelUtils.findLeafNodeAtOffset(_rootNode, offset);
+    final ILeafNode start = NodeModelUtils.findLeafNodeAtOffset(res.getParseResult().getRootNode(), offset);
     boolean _isHidden = start.isHidden();
     if (_isHidden) {
-      IParseResult _parseResult_1 = res.getParseResult();
-      ICompositeNode _rootNode_1 = _parseResult_1.getRootNode();
-      Iterable<ILeafNode> _leafNodes = _rootNode_1.getLeafNodes();
-      final List<ILeafNode> list = IterableExtensions.<ILeafNode>toList(_leafNodes);
+      final List<ILeafNode> list = IterableExtensions.<ILeafNode>toList(res.getParseResult().getRootNode().getLeafNodes());
       final int index = list.indexOf(start);
-      IntegerRange _upTo = new IntegerRange(index, 0);
       final Function1<Integer, Boolean> _function = new Function1<Integer, Boolean>() {
         @Override
         public Boolean apply(final Integer it) {
-          ILeafNode _get = list.get((it).intValue());
-          boolean _isHidden = _get.isHidden();
+          boolean _isHidden = list.get((it).intValue()).isHidden();
           return Boolean.valueOf((!_isHidden));
         }
       };
-      final Integer first = IterableExtensions.<Integer>findFirst(_upTo, _function);
+      final Integer first = IterableExtensions.<Integer>findFirst(new IntegerRange(index, 0), _function);
       int _size = list.size();
       int _minus = (_size - 1);
-      IntegerRange _upTo_1 = new IntegerRange(index, _minus);
       final Function1<Integer, Boolean> _function_1 = new Function1<Integer, Boolean>() {
         @Override
         public Boolean apply(final Integer it) {
-          ILeafNode _get = list.get((it).intValue());
-          boolean _isHidden = _get.isHidden();
+          boolean _isHidden = list.get((it).intValue()).isHidden();
           return Boolean.valueOf((!_isHidden));
         }
       };
-      final Integer last = IterableExtensions.<Integer>findFirst(_upTo_1, _function_1);
-      ILeafNode _get = list.get((first).intValue());
-      EObject _semanticElement = _get.getSemanticElement();
-      final Task task1 = EcoreUtil2.<Task>getContainerOfType(_semanticElement, Task.class);
-      ILeafNode _get_1 = list.get((last).intValue());
-      EObject _semanticElement_1 = _get_1.getSemanticElement();
-      final Task task2 = EcoreUtil2.<Task>getContainerOfType(_semanticElement_1, Task.class);
+      final Integer last = IterableExtensions.<Integer>findFirst(new IntegerRange(index, _minus), _function_1);
+      final Task task1 = EcoreUtil2.<Task>getContainerOfType(list.get((first).intValue()).getSemanticElement(), Task.class);
+      final Task task2 = EcoreUtil2.<Task>getContainerOfType(list.get((last).intValue()).getSemanticElement(), Task.class);
       boolean _equals = Objects.equal(task1, task2);
       if (_equals) {
         return task1.getName();
       }
     } else {
-      EObject _semanticElement_2 = start.getSemanticElement();
-      Task _containerOfType = EcoreUtil2.<Task>getContainerOfType(_semanticElement_2, Task.class);
-      return _containerOfType.getName();
+      return EcoreUtil2.<Task>getContainerOfType(start.getSemanticElement(), Task.class).getName();
     }
     return null;
   }
@@ -114,15 +90,12 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
   public void launch(final IEditorPart editor, final String mode) {
     if ((editor instanceof XbaseEditor)) {
       int _switchResult = (int) 0;
-      ISelectionProvider _selectionProvider = ((XbaseEditor)editor).getSelectionProvider();
-      ISelection _selection = _selectionProvider.getSelection();
+      ISelection _selection = ((XbaseEditor)editor).getSelectionProvider().getSelection();
       final ISelection it = _selection;
       boolean _matched = false;
-      if (!_matched) {
-        if (it instanceof ITextSelection) {
-          _matched=true;
-          _switchResult = ((ITextSelection)it).getOffset();
-        }
+      if (it instanceof ITextSelection) {
+        _matched=true;
+        _switchResult = ((ITextSelection)it).getOffset();
       }
       if (!_matched) {
         _switchResult = (-1);
@@ -131,18 +104,13 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
       IEditorInput _editorInput = ((XbaseEditor)editor).getEditorInput();
       if ((_editorInput instanceof IFileEditorInput)) {
         IEditorInput _editorInput_1 = ((XbaseEditor)editor).getEditorInput();
-        IFile _file = ((IFileEditorInput) _editorInput_1).getFile();
-        IProject _project = _file.getProject();
-        final String project = _project.getName();
-        IXtextDocument _document = ((XbaseEditor)editor).getDocument();
+        final String project = ((IFileEditorInput) _editorInput_1).getFile().getProject().getName();
         final IUnitOfWork<LaunchConfigurationInfo, XtextResource> _function = new IUnitOfWork<LaunchConfigurationInfo, XtextResource>() {
           @Override
           public LaunchConfigurationInfo exec(final XtextResource it) throws Exception {
             LaunchConfigurationInfo _xblockexpression = null;
             {
-              EList<EObject> _contents = it.getContents();
-              Iterable<JvmDeclaredType> _filter = Iterables.<JvmDeclaredType>filter(_contents, JvmDeclaredType.class);
-              final JvmDeclaredType file = IterableExtensions.<JvmDeclaredType>head(_filter);
+              final JvmDeclaredType file = IterableExtensions.<JvmDeclaredType>head(Iterables.<JvmDeclaredType>filter(it.getContents(), JvmDeclaredType.class));
               String _identifier = null;
               if (file!=null) {
                 _identifier=file.getIdentifier();
@@ -153,7 +121,7 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
             return _xblockexpression;
           }
         };
-        final LaunchConfigurationInfo info = _document.<LaunchConfigurationInfo>readOnly(_function);
+        final LaunchConfigurationInfo info = ((XbaseEditor)editor).getDocument().<LaunchConfigurationInfo>readOnly(_function);
         this.launch(mode, info);
         return;
       }
@@ -162,25 +130,20 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
   }
   
   public void launch(final String mode, final LaunchConfigurationInfo info) {
-    String _task = info.getTask();
-    boolean _isNullOrEmpty = StringExtensions.isNullOrEmpty(_task);
+    boolean _isNullOrEmpty = StringExtensions.isNullOrEmpty(info.getTask());
     if (_isNullOrEmpty) {
       MessageDialog.openError(null, "Launch Error", "Could not determine the task that should be executed.");
     } else {
-      String _clazz = info.getClazz();
-      boolean _isNullOrEmpty_1 = StringExtensions.isNullOrEmpty(_clazz);
+      boolean _isNullOrEmpty_1 = StringExtensions.isNullOrEmpty(info.getClazz());
       if (_isNullOrEmpty_1) {
         MessageDialog.openError(null, "Launch Error", "Could not determine the class that should be executed.");
       } else {
-        String _project = info.getProject();
-        boolean _isNullOrEmpty_2 = StringExtensions.isNullOrEmpty(_project);
+        boolean _isNullOrEmpty_2 = StringExtensions.isNullOrEmpty(info.getProject());
         if (_isNullOrEmpty_2) {
           MessageDialog.openError(null, "Launch Error", "Could not determine the project that should be executed.");
         } else {
           try {
-            DebugPlugin _default = DebugPlugin.getDefault();
-            ILaunchManager _launchManager = _default.getLaunchManager();
-            final ILaunchConfiguration[] configs = _launchManager.getLaunchConfigurations();
+            final ILaunchConfiguration[] configs = DebugPlugin.getDefault().getLaunchManager().getLaunchConfigurations();
             ILaunchConfiguration _elvis = null;
             final Function1<ILaunchConfiguration, Boolean> _function = new Function1<ILaunchConfiguration, Boolean>() {
               @Override
@@ -200,8 +163,7 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
           } catch (final Throwable _t) {
             if (_t instanceof CoreException) {
               final CoreException e = (CoreException)_t;
-              String _message = e.getMessage();
-              MessageDialog.openError(null, "Problem running workflow.", _message);
+              MessageDialog.openError(null, "Problem running workflow.", e.getMessage());
             } else {
               throw Exceptions.sneakyThrow(_t);
             }

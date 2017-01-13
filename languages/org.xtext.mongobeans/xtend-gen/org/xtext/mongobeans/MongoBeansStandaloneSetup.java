@@ -16,7 +16,6 @@ import org.xtext.mongobeans.MongoBeansStandaloneSetupGenerated;
 @SuppressWarnings("all")
 public class MongoBeansStandaloneSetup extends MongoBeansStandaloneSetupGenerated {
   public static void doSetup() {
-    MongoBeansStandaloneSetup _mongoBeansStandaloneSetup = new MongoBeansStandaloneSetup();
-    _mongoBeansStandaloneSetup.createInjectorAndDoEMFRegistration();
+    new MongoBeansStandaloneSetup().createInjectorAndDoEMFRegistration();
   }
 }

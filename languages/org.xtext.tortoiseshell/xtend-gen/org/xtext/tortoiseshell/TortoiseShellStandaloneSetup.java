@@ -16,7 +16,6 @@ import org.xtext.tortoiseshell.TortoiseShellStandaloneSetupGenerated;
 @SuppressWarnings("all")
 public class TortoiseShellStandaloneSetup extends TortoiseShellStandaloneSetupGenerated {
   public static void doSetup() {
-    TortoiseShellStandaloneSetup _tortoiseShellStandaloneSetup = new TortoiseShellStandaloneSetup();
-    _tortoiseShellStandaloneSetup.createInjectorAndDoEMFRegistration();
+    new TortoiseShellStandaloneSetup().createInjectorAndDoEMFRegistration();
   }
 }

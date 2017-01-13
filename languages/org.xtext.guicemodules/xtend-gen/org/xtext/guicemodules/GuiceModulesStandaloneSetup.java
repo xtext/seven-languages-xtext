@@ -16,7 +16,6 @@ import org.xtext.guicemodules.GuiceModulesStandaloneSetupGenerated;
 @SuppressWarnings("all")
 public class GuiceModulesStandaloneSetup extends GuiceModulesStandaloneSetupGenerated {
   public static void doSetup() {
-    GuiceModulesStandaloneSetup _guiceModulesStandaloneSetup = new GuiceModulesStandaloneSetup();
-    _guiceModulesStandaloneSetup.createInjectorAndDoEMFRegistration();
+    new GuiceModulesStandaloneSetup().createInjectorAndDoEMFRegistration();
   }
 }

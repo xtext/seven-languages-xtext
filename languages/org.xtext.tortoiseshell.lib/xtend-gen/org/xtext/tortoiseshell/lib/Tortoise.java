@@ -116,8 +116,7 @@ public class Tortoise {
   
   public void turnTo(final double angle) {
     final double oldAngle = this.angle;
-    double _radians = Math.toRadians(angle);
-    this.angle = _radians;
+    this.angle = Math.toRadians(angle);
     this.fireTurnEvent(oldAngle);
   }
   

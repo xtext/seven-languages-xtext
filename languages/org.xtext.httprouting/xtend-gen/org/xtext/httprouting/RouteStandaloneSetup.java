@@ -15,7 +15,6 @@ import org.xtext.httprouting.RouteStandaloneSetupGenerated;
 @SuppressWarnings("all")
 public class RouteStandaloneSetup extends RouteStandaloneSetupGenerated {
   public static void doSetup() {
-    RouteStandaloneSetup _routeStandaloneSetup = new RouteStandaloneSetup();
-    _routeStandaloneSetup.createInjectorAndDoEMFRegistration();
+    new RouteStandaloneSetup().createInjectorAndDoEMFRegistration();
   }
 }

@@ -19,8 +19,7 @@ import org.xtext.mongobeans.lib.WrappingUtil;
 @SuppressWarnings("all")
 public class MongoExtensions {
   public <T extends IMongoBean> T findOneBean(final DBCollection collection, final T wrapper) {
-    DBObject _dbObject = wrapper.getDbObject();
-    DBObject _findOne = collection.findOne(_dbObject);
+    DBObject _findOne = collection.findOne(wrapper.getDbObject());
     IMongoBean _wrap = null;
     if (_findOne!=null) {
       _wrap=WrappingUtil.wrap(_findOne);
@@ -29,7 +28,6 @@ public class MongoExtensions {
   }
   
   public WriteResult save(final DBCollection collection, final IMongoBean wrapper) {
-    DBObject _dbObject = wrapper.getDbObject();
-    return collection.save(_dbObject);
+    return collection.save(wrapper.getDbObject());
   }
 }

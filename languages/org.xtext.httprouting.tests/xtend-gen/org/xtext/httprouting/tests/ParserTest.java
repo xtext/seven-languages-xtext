@@ -11,7 +11,6 @@ import com.google.inject.Inject;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
-import java.util.ArrayList;
 import java.util.HashSet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -57,18 +56,15 @@ public class ParserTest {
         @Override
         public void accept(final CompilationTestHelper.Result it) {
           try {
-            Class<?> _compiledClass = it.getCompiledClass();
-            Object _newInstance = _compiledClass.newInstance();
+            Object _newInstance = it.getCompiledClass().newInstance();
             final HttpServlet servlet = ((HttpServlet) _newInstance);
             HttpServletResponse _response = ParserTest.this.response();
             final Procedure1<HttpServletResponse> _function = new Procedure1<HttpServletResponse>() {
               @Override
               public void apply(final HttpServletResponse it) {
                 try {
-                  HttpServletRequest _request = ParserTest.this.request("/client/foo/42/rest/of");
-                  servlet.service(_request, it);
-                  boolean _containsHeader = it.containsHeader("rest/of/42");
-                  Assert.assertTrue("containsHeader(\'rest/of/42\')", _containsHeader);
+                  servlet.service(ParserTest.this.request("/client/foo/42/rest/of"), it);
+                  Assert.assertTrue("containsHeader(\'rest/of/42\')", it.containsHeader("rest/of/42"));
                 } catch (Throwable _e) {
                   throw Exceptions.sneakyThrow(_e);
                 }
@@ -80,10 +76,8 @@ public class ParserTest {
               @Override
               public void apply(final HttpServletResponse it) {
                 try {
-                  HttpServletRequest _request = ParserTest.this.request("/client/foo/43/rest/of");
-                  servlet.service(_request, it);
-                  boolean _containsHeader = it.containsHeader("43");
-                  Assert.assertTrue("containsHeader(\'43\')", _containsHeader);
+                  servlet.service(ParserTest.this.request("/client/foo/43/rest/of"), it);
+                  Assert.assertTrue("containsHeader(\'43\')", it.containsHeader("43"));
                 } catch (Throwable _e) {
                   throw Exceptions.sneakyThrow(_e);
                 }
@@ -110,13 +104,15 @@ public class ParserTest {
       public Object invoke(final Object proxy, final Method method, final Object[] args) throws Throwable {
         Object _switchResult = null;
         String _name = method.getName();
-        switch (_name) {
-          case "getRequestURL":
-            _switchResult = new StringBuffer(url);
-            break;
-          case "getMethod":
-            _switchResult = "GET";
-            break;
+        if (_name != null) {
+          switch (_name) {
+            case "getRequestURL":
+              _switchResult = new StringBuffer(url);
+              break;
+            case "getMethod":
+              _switchResult = "GET";
+              break;
+          }
         }
         return _switchResult;
       }
@@ -136,18 +132,21 @@ public class ParserTest {
         public Object invoke(final Object proxy, final Method method, final Object[] args) throws Throwable {
           boolean _switchResult = false;
           String _name = method.getName();
-          switch (_name) {
-            case "addHeader":
-              Object _get = args[0];
-              _switchResult = header.add(((String) _get));
-              break;
-            case "containsHeader":
-              Object _get_1 = args[0];
-              _switchResult = header.contains(_get_1);
-              break;
-            default:
-              _switchResult = false;
-              break;
+          if (_name != null) {
+            switch (_name) {
+              case "addHeader":
+                Object _get = args[0];
+                _switchResult = header.add(((String) _get));
+                break;
+              case "containsHeader":
+                _switchResult = header.contains(args[0]);
+                break;
+              default:
+                _switchResult = false;
+                break;
+            }
+          } else {
+            _switchResult = false;
           }
           return Boolean.valueOf(_switchResult);
         }
@@ -161,10 +160,7 @@ public class ParserTest {
    * utility to create a proxy for a class and an invocation handler
    */
   private <T extends Object> T newProxy(final Class<T> clazz, final InvocationHandler handler) {
-    Class<? extends ParserTest> _class = this.getClass();
-    ClassLoader _classLoader = _class.getClassLoader();
-    ArrayList<Class<?>> _newArrayList = CollectionLiterals.<Class<?>>newArrayList(clazz);
-    Object _newProxyInstance = Proxy.newProxyInstance(_classLoader, ((Class<?>[])Conversions.unwrapArray(_newArrayList, Class.class)), handler);
+    Object _newProxyInstance = Proxy.newProxyInstance(this.getClass().getClassLoader(), ((Class<?>[])Conversions.unwrapArray(CollectionLiterals.<Class<?>>newArrayList(clazz), Class.class)), handler);
     return ((T) _newProxyInstance);
   }
 }

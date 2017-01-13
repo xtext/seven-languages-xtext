@@ -39,12 +39,9 @@ public class LaunchConfigurationInfo {
     try {
       ILaunchConfiguration _xblockexpression = null;
       {
-        DebugPlugin _default = DebugPlugin.getDefault();
-        final ILaunchManager launchManager = _default.getLaunchManager();
+        final ILaunchManager launchManager = DebugPlugin.getDefault().getLaunchManager();
         final ILaunchConfigurationType configType = launchManager.getLaunchConfigurationType("org.xtext.builddsl.ui.BuildLaunchConfigurationType");
-        String _name = this.getName();
-        String _generateLaunchConfigurationName = launchManager.generateLaunchConfigurationName(_name);
-        final ILaunchConfigurationWorkingCopy wc = configType.newInstance(null, _generateLaunchConfigurationName);
+        final ILaunchConfigurationWorkingCopy wc = configType.newInstance(null, launchManager.generateLaunchConfigurationName(this.getName()));
         wc.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROJECT_NAME, this.project);
         wc.setAttribute(IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME, this.clazz);
         wc.setAttribute(IJavaLaunchConfigurationConstants.ATTR_STOP_IN_MAIN, false);
@@ -61,59 +58,17 @@ public class LaunchConfigurationInfo {
   
   public boolean configEquals(final ILaunchConfiguration a) {
     try {
-      boolean _and = false;
-      boolean _and_1 = false;
-      boolean _and_2 = false;
-      String _attribute = a.getAttribute(IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME, "X");
-      boolean _equals = Objects.equal(_attribute, this.clazz);
-      if (!_equals) {
-        _and_2 = false;
-      } else {
-        String _attribute_1 = a.getAttribute(IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME, "X");
-        boolean _equals_1 = Objects.equal(_attribute_1, this.project);
-        _and_2 = _equals_1;
-      }
-      if (!_and_2) {
-        _and_1 = false;
-      } else {
-        String _attribute_2 = a.getAttribute(IJavaLaunchConfigurationConstants.ATTR_PROGRAM_ARGUMENTS, "X");
-        boolean _contains = _attribute_2.contains(this.task);
-        _and_1 = _contains;
-      }
-      if (!_and_1) {
-        _and = false;
-      } else {
-        ILaunchConfigurationType _type = a.getType();
-        String _identifier = _type.getIdentifier();
-        boolean _equals_2 = Objects.equal(_identifier, "org.xtext.builddsl.ui.BuildLaunchConfigurationType");
-        _and = _equals_2;
-      }
-      return _and;
+      return (((Objects.equal(a.getAttribute(IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME, "X"), this.clazz) && 
+        Objects.equal(a.getAttribute(IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME, "X"), this.project)) && 
+        a.getAttribute(IJavaLaunchConfigurationConstants.ATTR_PROGRAM_ARGUMENTS, "X").contains(this.task)) && 
+        Objects.equal(a.getType().getIdentifier(), "org.xtext.builddsl.ui.BuildLaunchConfigurationType"));
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
   }
   
   public boolean isValid() {
-    boolean _and = false;
-    boolean _and_1 = false;
-    boolean _isNullOrEmpty = StringExtensions.isNullOrEmpty(this.clazz);
-    boolean _not = (!_isNullOrEmpty);
-    if (!_not) {
-      _and_1 = false;
-    } else {
-      boolean _isNullOrEmpty_1 = StringExtensions.isNullOrEmpty(this.project);
-      boolean _not_1 = (!_isNullOrEmpty_1);
-      _and_1 = _not_1;
-    }
-    if (!_and_1) {
-      _and = false;
-    } else {
-      boolean _isNullOrEmpty_2 = StringExtensions.isNullOrEmpty(this.task);
-      boolean _not_2 = (!_isNullOrEmpty_2);
-      _and = _not_2;
-    }
-    return _and;
+    return (((!StringExtensions.isNullOrEmpty(this.clazz)) && (!StringExtensions.isNullOrEmpty(this.project))) && (!StringExtensions.isNullOrEmpty(this.task)));
   }
   
   public LaunchConfigurationInfo(final String project, final String clazz, final String task) {

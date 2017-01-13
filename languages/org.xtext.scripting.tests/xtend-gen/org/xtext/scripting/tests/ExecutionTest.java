@@ -59,17 +59,12 @@ public class ExecutionTest {
         public void accept(final CompilationTestHelper.Result it) {
           try {
             try {
-              Class<?> _compiledClass = it.getCompiledClass();
-              Object _newInstance = _compiledClass.newInstance();
-              ExecutionTest.this._reflectExtensions.invoke(_newInstance, "main", null);
+              ExecutionTest.this._reflectExtensions.invoke(it.getCompiledClass().newInstance(), "main", null);
               Assert.fail("Expected ResultException not thrown.");
             } catch (final Throwable _t) {
               if (_t instanceof InvocationTargetException) {
                 final InvocationTargetException exc = (InvocationTargetException)_t;
-                String _string = expectedResult.toString();
-                Throwable _cause = exc.getCause();
-                String _message = _cause.getMessage();
-                Assert.assertEquals(_string, _message);
+                Assert.assertEquals(expectedResult.toString(), exc.getCause().getMessage());
               } else {
                 throw Exceptions.sneakyThrow(_t);
               }
