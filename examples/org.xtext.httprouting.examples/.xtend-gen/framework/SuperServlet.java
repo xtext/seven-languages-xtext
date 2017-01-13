@@ -29,24 +29,15 @@ public class SuperServlet extends NumberGuessing {
   @Override
   public void init() throws ServletException {
     super.init();
-    final Module _function = new Module() {
-      @Override
-      public void configure(final Binder it) {
-        final Provider<HttpServletRequest> _function = new Provider<HttpServletRequest>() {
-          @Override
-          public HttpServletRequest get() {
-            return SuperServlet.this.request.get();
-          }
-        };
-        it.<HttpServletRequest>bind(HttpServletRequest.class).toProvider(_function);
-        final Provider<HttpServletResponse> _function_1 = new Provider<HttpServletResponse>() {
-          @Override
-          public HttpServletResponse get() {
-            return SuperServlet.this.response.get();
-          }
-        };
-        it.<HttpServletResponse>bind(HttpServletResponse.class).toProvider(_function_1);
-      }
+    final Module _function = (Binder it) -> {
+      final Provider<HttpServletRequest> _function_1 = () -> {
+        return this.request.get();
+      };
+      it.<HttpServletRequest>bind(HttpServletRequest.class).toProvider(_function_1);
+      final Provider<HttpServletResponse> _function_2 = () -> {
+        return this.response.get();
+      };
+      it.<HttpServletResponse>bind(HttpServletResponse.class).toProvider(_function_2);
     };
     this.injector = Guice.createInjector(_function);
   }

@@ -33,24 +33,18 @@ public class ScriptingJvmModelInferrer extends AbstractModelInferrer {
   
   protected void _infer(final Script script, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {
     final String className = script.eResource().getURI().trimFileExtension().lastSegment();
-    final Procedure1<JvmGenericType> _function = new Procedure1<JvmGenericType>() {
-      @Override
-      public void apply(final JvmGenericType it) {
-        EList<JvmMember> _members = it.getMembers();
-        final Procedure1<JvmOperation> _function = new Procedure1<JvmOperation>() {
-          @Override
-          public void apply(final JvmOperation it) {
-            EList<JvmFormalParameter> _parameters = it.getParameters();
-            JvmFormalParameter _parameter = ScriptingJvmModelInferrer.this._jvmTypesBuilder.toParameter(script, "args", ScriptingJvmModelInferrer.this._jvmTypesBuilder.addArrayTypeDimension(ScriptingJvmModelInferrer.this._typeReferenceBuilder.typeRef(String.class)));
-            ScriptingJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters, _parameter);
-            it.setStatic(true);
-            it.setVarArgs(true);
-            ScriptingJvmModelInferrer.this._jvmTypesBuilder.setBody(it, script);
-          }
-        };
-        JvmOperation _method = ScriptingJvmModelInferrer.this._jvmTypesBuilder.toMethod(script, "main", ScriptingJvmModelInferrer.this._typeReferenceBuilder.typeRef(Void.TYPE), _function);
-        ScriptingJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members, _method);
-      }
+    final Procedure1<JvmGenericType> _function = (JvmGenericType it) -> {
+      EList<JvmMember> _members = it.getMembers();
+      final Procedure1<JvmOperation> _function_1 = (JvmOperation it_1) -> {
+        EList<JvmFormalParameter> _parameters = it_1.getParameters();
+        JvmFormalParameter _parameter = this._jvmTypesBuilder.toParameter(script, "args", this._jvmTypesBuilder.addArrayTypeDimension(this._typeReferenceBuilder.typeRef(String.class)));
+        this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters, _parameter);
+        it_1.setStatic(true);
+        it_1.setVarArgs(true);
+        this._jvmTypesBuilder.setBody(it_1, script);
+      };
+      JvmOperation _method = this._jvmTypesBuilder.toMethod(script, "main", this._typeReferenceBuilder.typeRef(Void.TYPE), _function_1);
+      this._jvmTypesBuilder.<JvmOperation>operator_add(_members, _method);
     };
     acceptor.<JvmGenericType>accept(this._jvmTypesBuilder.toClass(script, className), _function);
   }

@@ -56,22 +56,16 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
     if (_isHidden) {
       final List<ILeafNode> list = IterableExtensions.<ILeafNode>toList(res.getParseResult().getRootNode().getLeafNodes());
       final int index = list.indexOf(start);
-      final Function1<Integer, Boolean> _function = new Function1<Integer, Boolean>() {
-        @Override
-        public Boolean apply(final Integer it) {
-          boolean _isHidden = list.get((it).intValue()).isHidden();
-          return Boolean.valueOf((!_isHidden));
-        }
+      final Function1<Integer, Boolean> _function = (Integer it) -> {
+        boolean _isHidden_1 = list.get((it).intValue()).isHidden();
+        return Boolean.valueOf((!_isHidden_1));
       };
       final Integer first = IterableExtensions.<Integer>findFirst(new IntegerRange(index, 0), _function);
       int _size = list.size();
       int _minus = (_size - 1);
-      final Function1<Integer, Boolean> _function_1 = new Function1<Integer, Boolean>() {
-        @Override
-        public Boolean apply(final Integer it) {
-          boolean _isHidden = list.get((it).intValue()).isHidden();
-          return Boolean.valueOf((!_isHidden));
-        }
+      final Function1<Integer, Boolean> _function_1 = (Integer it) -> {
+        boolean _isHidden_1 = list.get((it).intValue()).isHidden();
+        return Boolean.valueOf((!_isHidden_1));
       };
       final Integer last = IterableExtensions.<Integer>findFirst(new IntegerRange(index, _minus), _function_1);
       final Task task1 = EcoreUtil2.<Task>getContainerOfType(list.get((first).intValue()).getSemanticElement(), Task.class);
@@ -105,21 +99,18 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
       if ((_editorInput instanceof IFileEditorInput)) {
         IEditorInput _editorInput_1 = ((XbaseEditor)editor).getEditorInput();
         final String project = ((IFileEditorInput) _editorInput_1).getFile().getProject().getName();
-        final IUnitOfWork<LaunchConfigurationInfo, XtextResource> _function = new IUnitOfWork<LaunchConfigurationInfo, XtextResource>() {
-          @Override
-          public LaunchConfigurationInfo exec(final XtextResource it) throws Exception {
-            LaunchConfigurationInfo _xblockexpression = null;
-            {
-              final JvmDeclaredType file = IterableExtensions.<JvmDeclaredType>head(Iterables.<JvmDeclaredType>filter(it.getContents(), JvmDeclaredType.class));
-              String _identifier = null;
-              if (file!=null) {
-                _identifier=file.getIdentifier();
-              }
-              String _findTask = BuildDSLLaunchShortcut.this.findTask(it, offset);
-              _xblockexpression = new LaunchConfigurationInfo(project, _identifier, _findTask);
+        final IUnitOfWork<LaunchConfigurationInfo, XtextResource> _function = (XtextResource it_1) -> {
+          LaunchConfigurationInfo _xblockexpression = null;
+          {
+            final JvmDeclaredType file = IterableExtensions.<JvmDeclaredType>head(Iterables.<JvmDeclaredType>filter(it_1.getContents(), JvmDeclaredType.class));
+            String _identifier = null;
+            if (file!=null) {
+              _identifier=file.getIdentifier();
             }
-            return _xblockexpression;
+            String _findTask = this.findTask(it_1, offset);
+            _xblockexpression = new LaunchConfigurationInfo(project, _identifier, _findTask);
           }
+          return _xblockexpression;
         };
         final LaunchConfigurationInfo info = ((XbaseEditor)editor).getDocument().<LaunchConfigurationInfo>readOnly(_function);
         this.launch(mode, info);
@@ -145,11 +136,8 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
           try {
             final ILaunchConfiguration[] configs = DebugPlugin.getDefault().getLaunchManager().getLaunchConfigurations();
             ILaunchConfiguration _elvis = null;
-            final Function1<ILaunchConfiguration, Boolean> _function = new Function1<ILaunchConfiguration, Boolean>() {
-              @Override
-              public Boolean apply(final ILaunchConfiguration it) {
-                return Boolean.valueOf(info.configEquals(it));
-              }
+            final Function1<ILaunchConfiguration, Boolean> _function = (ILaunchConfiguration it) -> {
+              return Boolean.valueOf(info.configEquals(it));
             };
             ILaunchConfiguration _findFirst = IterableExtensions.<ILaunchConfiguration>findFirst(((Iterable<ILaunchConfiguration>)Conversions.doWrapArray(configs)), _function);
             if (_findFirst != null) {

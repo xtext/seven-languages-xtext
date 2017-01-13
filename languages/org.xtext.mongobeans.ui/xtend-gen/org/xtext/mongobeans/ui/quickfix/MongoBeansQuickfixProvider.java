@@ -29,11 +29,8 @@ public class MongoBeansQuickfixProvider extends XbaseWithAnnotationsQuickfixProv
     String _head_1 = IterableExtensions.<String>head(((Iterable<String>)Conversions.doWrapArray(issue.getData())));
     _builder.append(_head_1);
     _builder.append(".");
-    final IModification _function = new IModification() {
-      @Override
-      public void apply(final IModificationContext it) throws Exception {
-        it.getXtextDocument().replace((issue.getOffset()).intValue(), (issue.getLength()).intValue(), IterableExtensions.<String>head(((Iterable<String>)Conversions.doWrapArray(issue.getData()))));
-      }
+    final IModification _function = (IModificationContext it) -> {
+      it.getXtextDocument().replace((issue.getOffset()).intValue(), (issue.getLength()).intValue(), IterableExtensions.<String>head(((Iterable<String>)Conversions.doWrapArray(issue.getData()))));
     };
     acceptor.accept(issue, _plus, _builder.toString(), null, _function);
   }

@@ -48,11 +48,8 @@ public class JavaCompiler {
       String _join = IterableExtensions.join(params.getClasspath(), ":");
       list.add(_join);
     }
-    final Function1<File, String> _function = new Function1<File, String>() {
-      @Override
-      public String apply(final File it) {
-        return it.toString();
-      }
+    final Function1<File, String> _function = (File it) -> {
+      return it.toString();
     };
     Iterable<String> _map = IterableExtensions.<File, String>map(params.getSources(), _function);
     Iterables.<String>addAll(list, _map);
@@ -68,14 +65,11 @@ public class JavaCompiler {
   }
   
   public static ClassLoader newClasspath(final File... entries) {
-    final Function1<File, URL> _function = new Function1<File, URL>() {
-      @Override
-      public URL apply(final File it) {
-        try {
-          return it.toURI().toURL();
-        } catch (Throwable _e) {
-          throw Exceptions.sneakyThrow(_e);
-        }
+    final Function1<File, URL> _function = (File it) -> {
+      try {
+        return it.toURI().toURL();
+      } catch (Throwable _e) {
+        throw Exceptions.sneakyThrow(_e);
       }
     };
     List<URL> _map = ListExtensions.<File, URL>map(((List<File>)Conversions.doWrapArray(entries)), _function);

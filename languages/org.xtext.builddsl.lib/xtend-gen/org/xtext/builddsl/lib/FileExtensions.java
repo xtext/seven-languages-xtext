@@ -14,12 +14,11 @@ import java.io.FileOutputStream;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.jar.JarOutputStream;
 import java.util.zip.ZipEntry;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Exceptions;
-import org.eclipse.xtext.xbase.lib.IterableExtensions;
-import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 
 @SuppressWarnings("all")
 public class FileExtensions {
@@ -56,21 +55,18 @@ public class FileExtensions {
       final JarOutputStream out = new JarOutputStream(_bufferedOutputStream);
       try {
         out.setMethod(JarOutputStream.DEFLATED);
-        final Procedure1<File> _function = new Procedure1<File>() {
-          @Override
-          public void apply(final File file) {
-            try {
-              String _replace = FileExtensions.relativeTo(file, directory).getPath().replace("\\", "/");
-              final ZipEntry entry = new ZipEntry(_replace);
-              out.putNextEntry(entry);
-              Files.copy(file, out);
-              out.closeEntry();
-            } catch (Throwable _e) {
-              throw Exceptions.sneakyThrow(_e);
-            }
+        final Consumer<File> _function = (File file) -> {
+          try {
+            String _replace = FileExtensions.relativeTo(file, directory).getPath().replace("\\", "/");
+            final ZipEntry entry = new ZipEntry(_replace);
+            out.putNextEntry(entry);
+            Files.copy(file, out);
+            out.closeEntry();
+          } catch (Throwable _e) {
+            throw Exceptions.sneakyThrow(_e);
           }
         };
-        IterableExtensions.<File>forEach(files, _function);
+        files.forEach(_function);
         out.flush();
       } finally {
         out.close();

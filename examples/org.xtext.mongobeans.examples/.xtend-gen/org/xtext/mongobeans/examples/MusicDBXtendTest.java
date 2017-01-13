@@ -37,45 +37,33 @@ public class MusicDBXtendTest {
         final DB db = mongo.getDB("testdb");
         final DBCollection dbCollection = db.getCollection("testCollection");
         Artist _artist = new Artist();
-        final Procedure1<Artist> _function = new Procedure1<Artist>() {
-          @Override
-          public void apply(final Artist it) {
-            it.setName("John Coltrane");
-            final Procedure1<Album> _function = new Procedure1<Album>() {
-              @Override
-              public void apply(final Album it) {
-                it.setTitle("A Love Supreme");
-                it.setYear(1965);
-                MusicDBXtendTest.this.addTrack(it, "Part 1: Acknowledgement", "7:43");
-                MusicDBXtendTest.this.addTrack(it, "Part 2: Resolution", "7:20");
-                MusicDBXtendTest.this.addTrack(it, "Part 3: Pursuance", "10:42");
-                MusicDBXtendTest.this.addTrack(it, "Part 4: Psalm", "7:05");
-              }
-            };
-            MusicDBXtendTest.this.addAlbum(it, _function);
-            final Procedure1<Album> _function_1 = new Procedure1<Album>() {
-              @Override
-              public void apply(final Album it) {
-                it.setTitle("Impressions");
-                it.setYear(1961);
-                MusicDBXtendTest.this.addTrack(it, "India", "13:52");
-                MusicDBXtendTest.this.addTrack(it, "Up \'gainst the Wall", "3:12");
-                MusicDBXtendTest.this.addTrack(it, "Impressions", "14:40");
-                MusicDBXtendTest.this.addTrack(it, "After the Rain", "4:07");
-              }
-            };
-            MusicDBXtendTest.this.addAlbum(it, _function_1);
-          }
+        final Procedure1<Artist> _function = (Artist it) -> {
+          it.setName("John Coltrane");
+          final Procedure1<Album> _function_1 = (Album it_1) -> {
+            it_1.setTitle("A Love Supreme");
+            it_1.setYear(1965);
+            this.addTrack(it_1, "Part 1: Acknowledgement", "7:43");
+            this.addTrack(it_1, "Part 2: Resolution", "7:20");
+            this.addTrack(it_1, "Part 3: Pursuance", "10:42");
+            this.addTrack(it_1, "Part 4: Psalm", "7:05");
+          };
+          this.addAlbum(it, _function_1);
+          final Procedure1<Album> _function_2 = (Album it_1) -> {
+            it_1.setTitle("Impressions");
+            it_1.setYear(1961);
+            this.addTrack(it_1, "India", "13:52");
+            this.addTrack(it_1, "Up \'gainst the Wall", "3:12");
+            this.addTrack(it_1, "Impressions", "14:40");
+            this.addTrack(it_1, "After the Rain", "4:07");
+          };
+          this.addAlbum(it, _function_2);
         };
         final Artist john = ObjectExtensions.<Artist>operator_doubleArrow(_artist, _function);
         Assert.assertEquals(8, IterableExtensions.size(john.getOeuvre()));
         this._mongoExtensions.save(dbCollection, john);
         Artist _artist_1 = new Artist();
-        final Procedure1<Artist> _function_1 = new Procedure1<Artist>() {
-          @Override
-          public void apply(final Artist it) {
-            it.setName("John Coltrane");
-          }
+        final Procedure1<Artist> _function_1 = (Artist it) -> {
+          it.setName("John Coltrane");
         };
         Artist _doubleArrow = ObjectExtensions.<Artist>operator_doubleArrow(_artist_1, _function_1);
         final Artist johnFromDb = this._mongoExtensions.<Artist>findOneBean(dbCollection, _doubleArrow);
@@ -101,12 +89,9 @@ public class MusicDBXtendTest {
   protected boolean addTrack(final Album it, final String trackTitle, final String trackDuration) {
     List<Track> _tracks = it.getTracks();
     Track _track = new Track();
-    final Procedure1<Track> _function = new Procedure1<Track>() {
-      @Override
-      public void apply(final Track it) {
-        it.setTitle(trackTitle);
-        it.setSeconds(new Duration(trackDuration).getSeconds());
-      }
+    final Procedure1<Track> _function = (Track it_1) -> {
+      it_1.setTitle(trackTitle);
+      it_1.setSeconds(new Duration(trackDuration).getSeconds());
     };
     Track _doubleArrow = ObjectExtensions.<Track>operator_doubleArrow(_track, _function);
     return _tracks.add(_doubleArrow);

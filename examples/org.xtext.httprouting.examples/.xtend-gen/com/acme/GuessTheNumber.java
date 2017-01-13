@@ -11,7 +11,6 @@ import com.acme.MagicNumber;
 import com.google.common.io.CharStreams;
 import com.google.common.io.OutputSupplier;
 import com.google.inject.Inject;
-import java.io.IOException;
 import java.io.OutputStreamWriter;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
@@ -139,12 +138,9 @@ public class GuessTheNumber {
   
   private void send(final CharSequence answer) {
     try {
-      final OutputSupplier<OutputStreamWriter> _function = new OutputSupplier<OutputStreamWriter>() {
-        @Override
-        public OutputStreamWriter getOutput() throws IOException {
-          ServletOutputStream _outputStream = GuessTheNumber.this.response.getOutputStream();
-          return new OutputStreamWriter(_outputStream);
-        }
+      final OutputSupplier<OutputStreamWriter> _function = () -> {
+        ServletOutputStream _outputStream = this.response.getOutputStream();
+        return new OutputStreamWriter(_outputStream);
       };
       CharStreams.<OutputStreamWriter>write(answer, _function);
     } catch (Throwable _e) {

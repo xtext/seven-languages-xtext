@@ -54,24 +54,21 @@ public class ExecutionTest {
   
   protected void compileAndExecuteMainAndExpect(final CharSequence script, final Object expectedResult) {
     try {
-      final IAcceptor<CompilationTestHelper.Result> _function = new IAcceptor<CompilationTestHelper.Result>() {
-        @Override
-        public void accept(final CompilationTestHelper.Result it) {
+      final IAcceptor<CompilationTestHelper.Result> _function = (CompilationTestHelper.Result it) -> {
+        try {
           try {
-            try {
-              ExecutionTest.this._reflectExtensions.invoke(it.getCompiledClass().newInstance(), "main", null);
-              Assert.fail("Expected ResultException not thrown.");
-            } catch (final Throwable _t) {
-              if (_t instanceof InvocationTargetException) {
-                final InvocationTargetException exc = (InvocationTargetException)_t;
-                Assert.assertEquals(expectedResult.toString(), exc.getCause().getMessage());
-              } else {
-                throw Exceptions.sneakyThrow(_t);
-              }
+            this._reflectExtensions.invoke(it.getCompiledClass().newInstance(), "main", null);
+            Assert.fail("Expected ResultException not thrown.");
+          } catch (final Throwable _t) {
+            if (_t instanceof InvocationTargetException) {
+              final InvocationTargetException exc = (InvocationTargetException)_t;
+              Assert.assertEquals(expectedResult.toString(), exc.getCause().getMessage());
+            } else {
+              throw Exceptions.sneakyThrow(_t);
             }
-          } catch (Throwable _e) {
-            throw Exceptions.sneakyThrow(_e);
           }
+        } catch (Throwable _e) {
+          throw Exceptions.sneakyThrow(_e);
         }
       };
       this._compilationTestHelper.compile(script, _function);

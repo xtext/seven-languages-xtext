@@ -35,52 +35,43 @@ public class TortoiseShellJvmModelInferrer extends AbstractModelInferrer {
   private JvmTypesBuilder _jvmTypesBuilder;
   
   protected void _infer(final Program program, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {
-    final Procedure1<JvmGenericType> _function = new Procedure1<JvmGenericType>() {
-      @Override
-      public void apply(final JvmGenericType it) {
-        EList<JvmTypeReference> _superTypes = it.getSuperTypes();
-        JvmTypeReference _typeRef = TortoiseShellJvmModelInferrer.this._typeReferenceBuilder.typeRef(Tortoise.class);
-        TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.<JvmTypeReference>operator_add(_superTypes, _typeRef);
-        XBlockExpression _body = program.getBody();
-        boolean _tripleNotEquals = (_body != null);
-        if (_tripleNotEquals) {
-          EList<JvmMember> _members = it.getMembers();
-          final Procedure1<JvmOperation> _function = new Procedure1<JvmOperation>() {
-            @Override
-            public void apply(final JvmOperation it) {
-              TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.setBody(it, program.getBody());
-            }
-          };
-          JvmOperation _method = TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.toMethod(program, "main", TortoiseShellJvmModelInferrer.this._typeReferenceBuilder.typeRef(void.class), _function);
-          TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members, _method);
+    final Procedure1<JvmGenericType> _function = (JvmGenericType it) -> {
+      EList<JvmTypeReference> _superTypes = it.getSuperTypes();
+      JvmTypeReference _typeRef = this._typeReferenceBuilder.typeRef(Tortoise.class);
+      this._jvmTypesBuilder.<JvmTypeReference>operator_add(_superTypes, _typeRef);
+      XBlockExpression _body = program.getBody();
+      boolean _tripleNotEquals = (_body != null);
+      if (_tripleNotEquals) {
+        EList<JvmMember> _members = it.getMembers();
+        final Procedure1<JvmOperation> _function_1 = (JvmOperation it_1) -> {
+          this._jvmTypesBuilder.setBody(it_1, program.getBody());
+        };
+        JvmOperation _method = this._jvmTypesBuilder.toMethod(program, "main", this._typeReferenceBuilder.typeRef(void.class), _function_1);
+        this._jvmTypesBuilder.<JvmOperation>operator_add(_members, _method);
+      }
+      EList<SubProgram> _subPrograms = program.getSubPrograms();
+      for (final SubProgram subProgram : _subPrograms) {
+        EList<JvmMember> _members_1 = it.getMembers();
+        String _name = subProgram.getName();
+        JvmTypeReference _elvis = null;
+        JvmTypeReference _returnType = subProgram.getReturnType();
+        if (_returnType != null) {
+          _elvis = _returnType;
+        } else {
+          JvmTypeReference _inferredType = this._jvmTypesBuilder.inferredType(subProgram.getBody());
+          _elvis = _inferredType;
         }
-        EList<SubProgram> _subPrograms = program.getSubPrograms();
-        for (final SubProgram subProgram : _subPrograms) {
-          EList<JvmMember> _members_1 = it.getMembers();
-          String _name = subProgram.getName();
-          JvmTypeReference _elvis = null;
-          JvmTypeReference _returnType = subProgram.getReturnType();
-          if (_returnType != null) {
-            _elvis = _returnType;
-          } else {
-            JvmTypeReference _inferredType = TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.inferredType(subProgram.getBody());
-            _elvis = _inferredType;
+        final Procedure1<JvmOperation> _function_2 = (JvmOperation it_1) -> {
+          EList<JvmFormalParameter> _parameters = subProgram.getParameters();
+          for (final JvmFormalParameter subParameter : _parameters) {
+            EList<JvmFormalParameter> _parameters_1 = it_1.getParameters();
+            JvmFormalParameter _parameter = this._jvmTypesBuilder.toParameter(subParameter, subParameter.getName(), subParameter.getParameterType());
+            this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters_1, _parameter);
           }
-          final Procedure1<JvmOperation> _function_1 = new Procedure1<JvmOperation>() {
-            @Override
-            public void apply(final JvmOperation it) {
-              EList<JvmFormalParameter> _parameters = subProgram.getParameters();
-              for (final JvmFormalParameter subParameter : _parameters) {
-                EList<JvmFormalParameter> _parameters_1 = it.getParameters();
-                JvmFormalParameter _parameter = TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.toParameter(subParameter, subParameter.getName(), subParameter.getParameterType());
-                TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters_1, _parameter);
-              }
-              TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.setBody(it, subProgram.getBody());
-            }
-          };
-          JvmOperation _method_1 = TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.toMethod(subProgram, _name, _elvis, _function_1);
-          TortoiseShellJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_1, _method_1);
-        }
+          this._jvmTypesBuilder.setBody(it_1, subProgram.getBody());
+        };
+        JvmOperation _method_1 = this._jvmTypesBuilder.toMethod(subProgram, _name, _elvis, _function_2);
+        this._jvmTypesBuilder.<JvmOperation>operator_add(_members_1, _method_1);
       }
     };
     acceptor.<JvmGenericType>accept(this._jvmTypesBuilder.toClass(program, TortoiseShellJvmModelInferrer.INFERRED_CLASS_NAME), _function);

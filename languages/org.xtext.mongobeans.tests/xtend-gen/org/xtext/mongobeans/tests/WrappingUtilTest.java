@@ -63,12 +63,9 @@ public class WrappingUtilTest {
       _builder.newLine();
       _builder.append("}");
       _builder.newLine();
-      final IAcceptor<CompilationTestHelper.Result> _function = new IAcceptor<CompilationTestHelper.Result>() {
-        @Override
-        public void accept(final CompilationTestHelper.Result it) {
-          WrappingUtilTest.this.mongoBeanClass = it.getCompiledClass();
-          WrappingUtil.setClassLoader(it.getCompiledClass().getClassLoader());
-        }
+      final IAcceptor<CompilationTestHelper.Result> _function = (CompilationTestHelper.Result it) -> {
+        this.mongoBeanClass = it.getCompiledClass();
+        WrappingUtil.setClassLoader(it.getCompiledClass().getClassLoader());
       };
       this._compilationTestHelper.compile(_builder, _function);
     } catch (Throwable _e) {
@@ -120,12 +117,9 @@ public class WrappingUtilTest {
   
   protected BasicDBObject newFooDbObject(final String bar) {
     BasicDBObject _basicDBObject = new BasicDBObject();
-    final Procedure1<BasicDBObject> _function = new Procedure1<BasicDBObject>() {
-      @Override
-      public void apply(final BasicDBObject it) {
-        it.put(IMongoBean.JAVA_CLASS_KEY, "Foo");
-        it.put("bar", bar);
-      }
+    final Procedure1<BasicDBObject> _function = (BasicDBObject it) -> {
+      it.put(IMongoBean.JAVA_CLASS_KEY, "Foo");
+      it.put("bar", bar);
     };
     return ObjectExtensions.<BasicDBObject>operator_doubleArrow(_basicDBObject, _function);
   }

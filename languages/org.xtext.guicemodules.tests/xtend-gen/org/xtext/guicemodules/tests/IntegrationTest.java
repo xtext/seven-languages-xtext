@@ -137,18 +137,15 @@ public class IntegrationTest {
       _builder.newLine();
       _builder.append("}");
       _builder.newLine();
-      final IAcceptor<CompilationTestHelper.Result> _function = new IAcceptor<CompilationTestHelper.Result>() {
-        @Override
-        public void accept(final CompilationTestHelper.Result it) {
-          try {
-            Object _newInstance = it.getCompiledClass().newInstance();
-            final Module module = ((Module) _newInstance);
-            final InjectionTarget obj = Guice.createInjector(module).<InjectionTarget>getInstance(InjectionTarget.class);
-            Assert.assertEquals("one", IterableExtensions.head(obj.col));
-            Assert.assertEquals("hello annotation", obj.s);
-          } catch (Throwable _e) {
-            throw Exceptions.sneakyThrow(_e);
-          }
+      final IAcceptor<CompilationTestHelper.Result> _function = (CompilationTestHelper.Result it) -> {
+        try {
+          Object _newInstance = it.getCompiledClass().newInstance();
+          final Module module = ((Module) _newInstance);
+          final InjectionTarget obj = Guice.createInjector(module).<InjectionTarget>getInstance(InjectionTarget.class);
+          Assert.assertEquals("one", IterableExtensions.head(obj.col));
+          Assert.assertEquals("hello annotation", obj.s);
+        } catch (Throwable _e) {
+          throw Exceptions.sneakyThrow(_e);
         }
       };
       this._compilationTestHelper.compile(_builder, _function);

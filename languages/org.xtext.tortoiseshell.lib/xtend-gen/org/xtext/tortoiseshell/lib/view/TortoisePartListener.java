@@ -15,7 +15,6 @@ import org.eclipse.core.resources.IResourceChangeListener;
 import org.eclipse.core.resources.IResourceDelta;
 import org.eclipse.core.resources.IResourceDeltaVisitor;
 import org.eclipse.core.resources.IWorkspace;
-import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.jface.text.source.ISourceViewer;
 import org.eclipse.swt.custom.CaretEvent;
@@ -151,22 +150,19 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
       final IFile editorFile = _editorFile;
       if ((editorFile != null)) {
         final IPath editorFilePath = editorFile.getFullPath();
-        final IResourceDeltaVisitor _function = new IResourceDeltaVisitor() {
-          @Override
-          public boolean visit(final IResourceDelta it) throws CoreException {
-            boolean _xifexpression = false;
-            if (((Objects.equal(it.getResource(), editorFile) && (it.getKind() == IResourceDelta.CHANGED)) && (it.getFlags() == IResourceDelta.CONTENT))) {
-              boolean _xblockexpression = false;
-              {
-                TortoisePartListener.this.view.show(TortoisePartListener.this.currentTortoiseEditor, (-10));
-                _xblockexpression = false;
-              }
-              _xifexpression = _xblockexpression;
-            } else {
-              _xifexpression = it.getResource().getFullPath().isPrefixOf(editorFilePath);
+        final IResourceDeltaVisitor _function = (IResourceDelta it) -> {
+          boolean _xifexpression = false;
+          if (((Objects.equal(it.getResource(), editorFile) && (it.getKind() == IResourceDelta.CHANGED)) && (it.getFlags() == IResourceDelta.CONTENT))) {
+            boolean _xblockexpression = false;
+            {
+              this.view.show(this.currentTortoiseEditor, (-10));
+              _xblockexpression = false;
             }
-            return _xifexpression;
+            _xifexpression = _xblockexpression;
+          } else {
+            _xifexpression = it.getResource().getFullPath().isPrefixOf(editorFilePath);
           }
+          return _xifexpression;
         };
         event.getDelta().accept(_function);
       }

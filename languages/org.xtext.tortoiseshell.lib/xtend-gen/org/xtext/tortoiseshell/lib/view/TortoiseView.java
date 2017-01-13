@@ -110,46 +110,40 @@ public class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
   
   public void show(final XtextEditor tortoiseEditor, final int stopAtLine) {
     this.animator.setAnimated((stopAtLine < 0));
-    final Runnable _function = new Runnable() {
-      @Override
-      public void run() {
-        TortoiseView.this.reset();
-      }
+    final Runnable _function = () -> {
+      this.reset();
     };
     DisplayRunHelper.runSyncInDisplayThread(_function);
-    final IUnitOfWork<Object, XtextResource> _function_1 = new IUnitOfWork<Object, XtextResource>() {
-      @Override
-      public Object exec(final XtextResource it) throws Exception {
-        if (((it != null) && (!TortoiseView.this.hasError(tortoiseEditor)))) {
-          final Tortoise tortoise = new Tortoise();
-          tortoise.addListener(TortoiseView.this);
-          final ITortoiseInterpreter interpreter = it.getResourceServiceProvider().<ITortoiseInterpreter>get(ITortoiseInterpreter.class);
-          if (((interpreter != null) && (!it.getContents().isEmpty()))) {
-            try {
-              interpreter.run(tortoise, it.getContents().get(0), stopAtLine);
-            } catch (final Throwable _t) {
-              if (_t instanceof Exception) {
-                final Exception e = (Exception)_t;
-                Shell _shell = TortoiseView.this.getSite().getShell();
-                StringConcatenation _builder = new StringConcatenation();
-                _builder.append("Error during execution:");
-                _builder.newLine();
-                _builder.append("  ");
-                String _message = e.getMessage();
-                _builder.append(_message, "  ");
-                _builder.newLineIfNotEmpty();
-                _builder.append("See log for details");
-                MessageDialog.openError(_shell, "Error during Execution", _builder.toString());
-                TortoiseView.LOGGER.error("Error executing TortoiseScript", e);
-              } else {
-                throw Exceptions.sneakyThrow(_t);
-              }
+    final IUnitOfWork<Object, XtextResource> _function_1 = (XtextResource it) -> {
+      if (((it != null) && (!this.hasError(tortoiseEditor)))) {
+        final Tortoise tortoise = new Tortoise();
+        tortoise.addListener(this);
+        final ITortoiseInterpreter interpreter = it.getResourceServiceProvider().<ITortoiseInterpreter>get(ITortoiseInterpreter.class);
+        if (((interpreter != null) && (!it.getContents().isEmpty()))) {
+          try {
+            interpreter.run(tortoise, it.getContents().get(0), stopAtLine);
+          } catch (final Throwable _t) {
+            if (_t instanceof Exception) {
+              final Exception e = (Exception)_t;
+              Shell _shell = this.getSite().getShell();
+              StringConcatenation _builder = new StringConcatenation();
+              _builder.append("Error during execution:");
+              _builder.newLine();
+              _builder.append("  ");
+              String _message = e.getMessage();
+              _builder.append(_message, "  ");
+              _builder.newLineIfNotEmpty();
+              _builder.append("See log for details");
+              MessageDialog.openError(_shell, "Error during Execution", _builder.toString());
+              TortoiseView.LOGGER.error("Error executing TortoiseScript", e);
+            } else {
+              throw Exceptions.sneakyThrow(_t);
             }
           }
-          tortoise.removeListener(TortoiseView.this);
         }
-        return null;
+        tortoise.removeListener(this);
       }
+      return null;
     };
     tortoiseEditor.getDocument().<Object>readOnly(_function_1);
   }
