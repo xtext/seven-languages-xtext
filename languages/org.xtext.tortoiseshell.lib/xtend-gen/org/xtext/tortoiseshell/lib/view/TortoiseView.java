@@ -164,8 +164,9 @@ public class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
       while (((annotations != null) && annotations.hasNext())) {
         {
           final Annotation annotation = annotations.next();
-          if (((annotation instanceof Annotation) && 
-            Objects.equal(((Annotation) annotation).getType(), XtextEditor.ERROR_ANNOTATION_TYPE))) {
+          String _type = annotation.getType();
+          boolean _equals = Objects.equal(_type, XtextEditor.ERROR_ANNOTATION_TYPE);
+          if (_equals) {
             return true;
           }
         }

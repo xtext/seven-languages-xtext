@@ -8,15 +8,16 @@ Bundle-ActivationPolicy: lazy
 Require-Bundle: org.xtext.guicemodules,
  org.eclipse.core.runtime,
  org.eclipse.xtext,
- org.eclipse.xtext.junit4,
  org.eclipse.ui.workbench;resolution:=optional,
  org.eclipse.xtend.lib,
  com.google.guava,
  org.eclipse.xtext.xbase.lib,
- org.eclipse.xtext.xbase.junit;bundle-version="2.7.0",
  org.eclipse.jdt.core;bundle-version="3.5.0",
  org.junit;bundle-version="4.8.2",
- org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional
+ org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional,
+ org.eclipse.xtext.testing,
+ org.eclipse.xtext.xbase.testing,
+ org.eclipse.xtext.xbase
 Import-Package: org.apache.log4j,
  org.apache.commons.logging,
  org.junit.runner;version="4.5.0",
@@ -27,4 +28,4 @@ Import-Package: org.apache.log4j,
  org.hamcrest.core,
  org.junit;version="4.5.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: org.xtext.guicemodules.tests
+Export-Package: org.xtext.guicemodules.tests;x-internal=true

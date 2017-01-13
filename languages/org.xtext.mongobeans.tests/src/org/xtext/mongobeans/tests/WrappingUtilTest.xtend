@@ -12,10 +12,10 @@ import com.mongodb.BasicDBObject
 import com.mongodb.DBObject
 import java.util.List
 import org.eclipse.xtend.lib.annotations.Accessors
-import org.eclipse.xtext.junit4.InjectWith
-import org.eclipse.xtext.junit4.XtextRunner
-import org.eclipse.xtext.xbase.compiler.CompilationTestHelper
+import org.eclipse.xtext.testing.InjectWith
+import org.eclipse.xtext.testing.XtextRunner
 import org.eclipse.xtext.xbase.lib.util.ReflectExtensions
+import org.eclipse.xtext.xbase.testing.CompilationTestHelper
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
