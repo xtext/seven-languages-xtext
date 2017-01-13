@@ -45,20 +45,20 @@ class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
 			
 			for (binding : module.bindings) {
 				// if it's a toInstance binding, create a synthetic method to give the expression a proper scope
-				if (binding.toInstance != null) {
+				if (binding.toInstance !== null) {
 					members += binding.toMethod( binding.syntheticToInstanceName, binding.from.type) [
 						visibility = JvmVisibility.PRIVATE
 						body = binding.toInstance
 					]
 				} 
 				// if a key has an annotation, declare a field so we can use that annotation via reflection later.
-				if (binding.to?.annotation != null) {
+				if (binding.to?.annotation !== null) {
 					members += binding.toField(binding.to.syntheticName, binding.to.type) [
 						addAnnotation(binding.to.annotation)
 						visibility = JvmVisibility.PRIVATE
 					]
 				}
-				if (binding.from.annotation != null) {
+				if (binding.from.annotation !== null) {
 					members += binding.toField(binding.from.syntheticName, binding.from.type) [
 						addAnnotation(binding.from.annotation)
 						visibility = JvmVisibility.PRIVATE
@@ -84,7 +84,7 @@ class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
 							{
 								«typeRef(Key, b.from.type)» key = «b.from.guiceKey»;
 								if (usedKeys.add(key)) {
-									«IF b.toInstance != null»
+									«IF b.toInstance !== null»
 										bind.bind(key).toInstance(«b.syntheticToInstanceName»());
 									«ELSE»
 										bind.bind(key).to(«b.to.guiceKey»);
@@ -106,7 +106,7 @@ class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
 	
 	def StringConcatenationClient guiceKey(KeyAST it) '''
 		«Key».get(new «TypeLiteral»<«type»>(){}«
-		IF annotation != null
+		IF annotation !== null
 				», getClass().getDeclaredField("«syntheticName»").getAnnotations()[0]«
 		ENDIF»)'''
 	

@@ -22,7 +22,7 @@ class RootLayer extends FreeformLayer {
 	override getFreeformExtent() {
 		val freeformExtent = super.freeformExtent
 		val parentViewport = findViewport(this)
-		if (parentViewport != null) {
+		if (parentViewport !== null) {
 			val viewDimension = parentViewport.parent.bounds.size
 			parentViewport.translateToAbsolute(viewDimension)
 			translateToRelative(viewDimension)

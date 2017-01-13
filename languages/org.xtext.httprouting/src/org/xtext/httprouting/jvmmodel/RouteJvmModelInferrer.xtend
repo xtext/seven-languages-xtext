@@ -55,9 +55,9 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 
 				// declare fields for the URL regexp, a method for each when-part 
 				// and of course the call part of a route
-				for (route : model.routes.filter[ url != null ]) {
+				for (route : model.routes.filter[ url !== null ]) {
 					members += route.toRoutePatternField
-					if (route.condition != null)
+					if (route.condition !== null)
 						members += route.toRouteConditionMethod
 					members += route.toRouteCallMethod
 				}
@@ -150,7 +150,7 @@ class RouteJvmModelInferrer extends AbstractModelInferrer {
 									String «variable.name» = _matcher.group(«variable.index + 1»);
 							«ENDFOR»
 							«val routeMethodCall = '''«route.nameOfRouteMethod»(request, response«FOR v : route.url.variables», «v.name»«ENDFOR»);'''»
-							«IF route.condition != null»
+							«IF route.condition !== null»
 								if («route.nameOfRouteMethod»Condition(request, response«FOR v : route.url.variables BEFORE ", " SEPARATOR ", "»«v.name»«ENDFOR»)) {
 									«routeMethodCall»
 									return;

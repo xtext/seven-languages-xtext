@@ -26,7 +26,7 @@ class BuildDSLLaunchDelegate extends JavaLaunchDelegate {
 		            String mode,
 		            ILaunch launch, 
 		            IProgressMonitor monitor) {
-		if (RefreshTab.getRefreshScope(configuration) != null) {
+		if (RefreshTab.getRefreshScope(configuration) !== null) {
 			DebugPlugin.getDefault.addDebugEventListener [
 				for (event : it) {
 					if (event.source instanceof IProcess && event.kind == DebugEvent.TERMINATE) {

@@ -24,11 +24,11 @@ abstract class BuildScript {
 	Map<String,Field> _parameters
 	
 	def getTasks() {
-		if (_tasks == null) {
+		if (_tasks === null) {
 			_tasks = newHashMap
 			for (method : class.declaredMethods) {
 				val taskAnnotation = method.annotations.findFirst[annotationType == DependsOn]
-				if (taskAnnotation != null) {
+				if (taskAnnotation !== null) {
 					taskDef(method.name) [
 						prerequisitedTasks = (taskAnnotation as DependsOn).value
 						runnable = [
@@ -43,7 +43,7 @@ abstract class BuildScript {
 	}
 	
 	def getParameters() {
-		if (_parameters == null) {
+		if (_parameters === null) {
 			_parameters = newHashMap
 			for (field : class.declaredFields.filter[ annotations.exists[annotationType == Param] ]) {
 				_parameters.put(field.name, field)
@@ -83,7 +83,7 @@ abstract class BuildScript {
 	
 	def void _executeTask(String name) {
 		val task = tasks.get(name)
-		if (task == null)
+		if (task === null)
 			throw new UnsupportedOperationException("A task '"+name+"' does not exist.")
 		if (task.executed) 
 			return;
@@ -132,7 +132,7 @@ abstract class BuildScript {
 	
 	def boolean _initParameter(String name, String value) {
 		val field = parameters.get(name)
-		if (field == null)
+		if (field === null)
 			return false
 		field.accessible = true
 		field.set(this, value._convertTo(field.type))

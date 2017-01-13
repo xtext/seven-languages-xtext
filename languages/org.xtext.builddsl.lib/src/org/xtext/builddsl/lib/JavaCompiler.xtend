@@ -20,7 +20,7 @@ class JavaCompiler {
 		val params = new JavaCompilerParams
 		init.apply(params)
 		val list = <String>newArrayList
-		if(params.destination == null) { 
+		if(params.destination === null) { 
 			list += "-d"
 			list += "none"
 		} else {

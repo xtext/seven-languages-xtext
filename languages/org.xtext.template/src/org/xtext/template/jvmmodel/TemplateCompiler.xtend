@@ -40,7 +40,7 @@ class TemplateCompiler extends XbaseCompiler {
 				append('''
 					StringBuilder «name» = new StringBuilder();
 					for (final ''')
-				if (paramType != null) {
+				if (paramType !== null) {
 					append(paramType);
 				} else {
 					append("Object");

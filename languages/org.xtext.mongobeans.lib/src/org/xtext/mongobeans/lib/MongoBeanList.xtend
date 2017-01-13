@@ -24,7 +24,7 @@ class MongoBeanList <T extends IMongoBean> implements List<T> {
 	
 	new(DBObject owner, String key) {
 		val value = owner.get(key)
-		if(value == null) {
+		if(value === null) {
 			delegate = newArrayList
 			owner.put(key, delegate);
 		} else {

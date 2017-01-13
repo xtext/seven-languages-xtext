@@ -21,11 +21,11 @@ class MongoBeansOutlineTreeProvider extends DefaultOutlineTreeProvider {
 	
 	// show inline declared MongoBeans
 	def _createChildren(IOutlineNode parentNode, MongoProperty property) {
-		if(property.inlineType != null)
+		if(property.inlineType !== null)
 			parentNode.createNode(property.inlineType)
 	}
 	
 	def _isLeaf(MongoProperty property) {
-		property.inlineType == null
+		property.inlineType === null
 	}
 }

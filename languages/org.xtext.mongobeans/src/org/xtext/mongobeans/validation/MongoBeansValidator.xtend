@@ -30,10 +30,10 @@ class MongoBeansValidator extends XbaseValidator {
 	@Check def checkMongoProperty(MongoProperty it) {
 		if (name == 'dbObject') 
 			error("Illegal property name 'dbObject'", ABSTRACT_FEATURE__NAME, ILLEGAL_PROPERTY_NAME, '__' + name)
-		if (type != null) {
+		if (type !== null) {
 			if (!type.isMongoType)
 				error('Only MongoBeans and mappable types are allowed', MONGO_PROPERTY__TYPE, ILLEGAL_TYPE)
-		} else if (inlineType == null) {
+		} else if (inlineType === null) {
 			error('Type must be set', ABSTRACT_FEATURE__NAME, MISSING_TYPE)
 		}
 	}

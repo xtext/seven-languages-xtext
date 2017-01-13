@@ -21,7 +21,7 @@ class MongoQualifiedNameProvider extends XbaseQualifiedNameProvider {
 	
 	def qualifiedName(MongoBean mongoBean) {
 		val packageDeclaration = mongoBean.getContainerOfType(PackageDeclaration)
-		if(packageDeclaration != null) 
+		if(packageDeclaration !== null) 
 			packageDeclaration.fullyQualifiedName.append(mongoBean.name)
 		else
 			return QualifiedName.create(mongoBean.name)
