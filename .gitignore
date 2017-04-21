@@ -7,3 +7,4 @@ bin
 *.xtendbin
 plugin.xml_gen
 .metadata
+.gitignore
