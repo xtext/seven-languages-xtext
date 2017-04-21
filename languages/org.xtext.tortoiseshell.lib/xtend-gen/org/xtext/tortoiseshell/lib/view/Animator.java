@@ -7,7 +7,6 @@
  */
 package org.xtext.tortoiseshell.lib.view;
 
-import com.google.common.base.Objects;
 import com.google.inject.Inject;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -18,7 +17,6 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.progress.UIJob;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.xtext.tortoiseshell.lib.view.Animation;
-import org.xtext.tortoiseshell.lib.view.TortoiseFigure;
 import org.xtext.tortoiseshell.lib.view.TortoiseView;
 
 @SuppressWarnings("all")
@@ -49,12 +47,10 @@ public class Animator extends UIJob {
       if (((!this.isScheduled) && (!this.isStop))) {
         this.schedule(this.UPDATE_INTERVAL);
         this.isScheduled = true;
-        long _currentTimeMillis = System.currentTimeMillis();
-        this.lastStart = _currentTimeMillis;
+        this.lastStart = System.currentTimeMillis();
       }
     } else {
-      TortoiseFigure _tortoiseFigure = this.view.getTortoiseFigure();
-      animation.set(_tortoiseFigure, 1);
+      animation.set(this.view.getTortoiseFigure(), 1);
     }
   }
   
@@ -74,10 +70,9 @@ public class Animator extends UIJob {
         this.isStop = true;
         while ((this.isScheduled && this.isStop)) {
           Display _current = Display.getCurrent();
-          boolean _notEquals = (!Objects.equal(_current, null));
-          if (_notEquals) {
-            Display _current_1 = Display.getCurrent();
-            _current_1.readAndDispatch();
+          boolean _tripleNotEquals = (_current != null);
+          if (_tripleNotEquals) {
+            Display.getCurrent().readAndDispatch();
           } else {
             this.join();
           }
@@ -102,24 +97,19 @@ public class Animator extends UIJob {
       } else {
         final long now = System.currentTimeMillis();
         Animation currentAnimation = this.animationQueue.peek();
-        while (((!Objects.equal(currentAnimation, null)) && (now >= (this.lastStart + currentAnimation.getDelay())))) {
+        while (((currentAnimation != null) && (now >= (this.lastStart + currentAnimation.getDelay())))) {
           {
-            Animation _poll = this.animationQueue.poll();
-            TortoiseFigure _tortoiseFigure = this.view.getTortoiseFigure();
-            _poll.set(_tortoiseFigure, 1);
+            this.animationQueue.poll().set(this.view.getTortoiseFigure(), 1);
             int _delay = currentAnimation.getDelay();
             long _plus = (this.lastStart + _delay);
             this.lastStart = _plus;
-            Animation _peek = this.animationQueue.peek();
-            currentAnimation = _peek;
+            currentAnimation = this.animationQueue.peek();
           }
         }
-        boolean _notEquals = (!Objects.equal(currentAnimation, null));
-        if (_notEquals) {
+        if ((currentAnimation != null)) {
           int _delay = currentAnimation.getDelay();
           final double alpha = (((double) (now - this.lastStart)) / _delay);
-          TortoiseFigure _tortoiseFigure = this.view.getTortoiseFigure();
-          currentAnimation.set(_tortoiseFigure, alpha);
+          currentAnimation.set(this.view.getTortoiseFigure(), alpha);
           this.schedule(this.UPDATE_INTERVAL);
         } else {
           this.isScheduled = false;

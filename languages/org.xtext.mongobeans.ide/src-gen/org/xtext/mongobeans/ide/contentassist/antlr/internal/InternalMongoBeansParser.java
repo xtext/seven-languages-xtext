@@ -25,91 +25,91 @@ public class InternalMongoBeansParser extends AbstractInternalContentAssistParse
     public static final String[] tokenNames = new String[] {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_HEX", "RULE_INT", "RULE_DECIMAL", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'='", "'||'", "'&&'", "'+='", "'-='", "'*='", "'/='", "'%='", "'=='", "'!='", "'==='", "'!=='", "'>='", "'>'", "'<'", "'->'", "'..<'", "'..'", "'=>'", "'<>'", "'?:'", "'+'", "'-'", "'*'", "'**'", "'/'", "'%'", "'!'", "'++'", "'--'", "'.'", "'val'", "'extends'", "'static'", "'import'", "'extension'", "'super'", "'false'", "'package'", "'{'", "'}'", "')'", "'('", "','", "'instanceof'", "'as'", "'#'", "'['", "']'", "';'", "'if'", "'else'", "'switch'", "':'", "'default'", "'case'", "'for'", "'while'", "'do'", "'new'", "'null'", "'typeof'", "'throw'", "'return'", "'try'", "'finally'", "'synchronized'", "'catch'", "'?'", "'&'", "'::'", "'?.'", "'|'", "'var'", "'true'"
     };
-    public static final int T__68=68;
-    public static final int T__69=69;
-    public static final int RULE_ID=4;
-    public static final int T__66=66;
-    public static final int T__67=67;
-    public static final int T__64=64;
-    public static final int T__29=29;
-    public static final int T__65=65;
-    public static final int T__28=28;
-    public static final int T__62=62;
-    public static final int T__27=27;
-    public static final int T__63=63;
-    public static final int T__26=26;
-    public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
-    public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=12;
-    public static final int T__21=21;
-    public static final int T__20=20;
-    public static final int T__61=61;
-    public static final int T__60=60;
-    public static final int EOF=-1;
+    public static final int RULE_HEX=5;
+    public static final int T__50=50;
+    public static final int T__19=19;
+    public static final int T__15=15;
+    public static final int T__59=59;
+    public static final int T__16=16;
+    public static final int T__17=17;
+    public static final int T__18=18;
     public static final int T__55=55;
     public static final int T__56=56;
-    public static final int T__19=19;
+    public static final int T__13=13;
     public static final int T__57=57;
-    public static final int RULE_HEX=5;
+    public static final int T__14=14;
     public static final int T__58=58;
-    public static final int T__16=16;
     public static final int T__51=51;
     public static final int T__52=52;
-    public static final int T__15=15;
     public static final int T__53=53;
-    public static final int T__18=18;
     public static final int T__54=54;
-    public static final int T__17=17;
-    public static final int T__14=14;
-    public static final int T__13=13;
-    public static final int T__59=59;
-    public static final int RULE_INT=6;
+    public static final int T__60=60;
+    public static final int T__61=61;
+    public static final int RULE_ID=4;
     public static final int RULE_DECIMAL=7;
-    public static final int T__50=50;
-    public static final int T__42=42;
-    public static final int T__43=43;
-    public static final int T__40=40;
-    public static final int T__41=41;
-    public static final int T__80=80;
-    public static final int T__46=46;
-    public static final int T__81=81;
-    public static final int T__47=47;
-    public static final int T__82=82;
-    public static final int T__44=44;
-    public static final int T__83=83;
-    public static final int T__45=45;
-    public static final int T__48=48;
-    public static final int T__49=49;
-    public static final int T__85=85;
-    public static final int RULE_SL_COMMENT=10;
-    public static final int T__84=84;
-    public static final int T__87=87;
-    public static final int T__86=86;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
+    public static final int RULE_INT=6;
+    public static final int T__29=29;
+    public static final int T__22=22;
+    public static final int T__66=66;
     public static final int RULE_ML_COMMENT=9;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int RULE_STRING=8;
-    public static final int T__32=32;
-    public static final int T__71=71;
-    public static final int T__33=33;
-    public static final int T__72=72;
-    public static final int T__34=34;
-    public static final int T__35=35;
+    public static final int T__23=23;
+    public static final int T__67=67;
+    public static final int T__24=24;
+    public static final int T__68=68;
+    public static final int T__25=25;
+    public static final int T__69=69;
+    public static final int T__62=62;
+    public static final int T__63=63;
+    public static final int T__20=20;
+    public static final int T__64=64;
+    public static final int T__21=21;
+    public static final int T__65=65;
     public static final int T__70=70;
-    public static final int T__36=36;
+    public static final int T__71=71;
+    public static final int T__72=72;
+    public static final int RULE_STRING=8;
+    public static final int RULE_SL_COMMENT=10;
     public static final int T__37=37;
     public static final int T__38=38;
     public static final int T__39=39;
-    public static final int RULE_WS=11;
-    public static final int T__76=76;
-    public static final int T__75=75;
-    public static final int T__74=74;
-    public static final int T__73=73;
-    public static final int T__79=79;
-    public static final int T__78=78;
+    public static final int T__33=33;
     public static final int T__77=77;
+    public static final int T__34=34;
+    public static final int T__78=78;
+    public static final int T__35=35;
+    public static final int T__79=79;
+    public static final int T__36=36;
+    public static final int T__73=73;
+    public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__74=74;
+    public static final int T__31=31;
+    public static final int T__75=75;
+    public static final int T__32=32;
+    public static final int T__76=76;
+    public static final int T__80=80;
+    public static final int T__81=81;
+    public static final int T__82=82;
+    public static final int T__83=83;
+    public static final int RULE_WS=11;
+    public static final int RULE_ANY_OTHER=12;
+    public static final int T__48=48;
+    public static final int T__49=49;
+    public static final int T__44=44;
+    public static final int T__45=45;
+    public static final int T__46=46;
+    public static final int T__47=47;
+    public static final int T__40=40;
+    public static final int T__84=84;
+    public static final int T__41=41;
+    public static final int T__85=85;
+    public static final int T__42=42;
+    public static final int T__86=86;
+    public static final int T__43=43;
+    public static final int T__87=87;
 
     // delegates
     // delegators
@@ -7510,11 +7510,11 @@ public class InternalMongoBeansParser extends AbstractInternalContentAssistParse
             if ( (LA5_0==RULE_ID) ) {
                 int LA5_1 = input.LA(2);
 
-                if ( (LA5_1==52) ) {
-                    alt5=2;
-                }
-                else if ( (LA5_1==RULE_ID||LA5_1==27||LA5_1==36||LA5_1==43||LA5_1==60) ) {
+                if ( (LA5_1==RULE_ID||LA5_1==27||LA5_1==36||LA5_1==43||LA5_1==60) ) {
                     alt5=1;
+                }
+                else if ( (LA5_1==52) ) {
+                    alt5=2;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -7662,11 +7662,11 @@ public class InternalMongoBeansParser extends AbstractInternalContentAssistParse
                 {
                 int LA6_3 = input.LA(2);
 
-                if ( (LA6_3==13) ) {
-                    alt6=1;
-                }
-                else if ( (LA6_3==EOF||(LA6_3>=RULE_ID && LA6_3<=RULE_STRING)||(LA6_3>=14 && LA6_3<=50)||(LA6_3>=52 && LA6_3<=80)||(LA6_3>=83 && LA6_3<=84)||(LA6_3>=86 && LA6_3<=87)) ) {
+                if ( (LA6_3==EOF||(LA6_3>=RULE_ID && LA6_3<=RULE_STRING)||(LA6_3>=14 && LA6_3<=50)||(LA6_3>=52 && LA6_3<=80)||(LA6_3>=83 && LA6_3<=84)||(LA6_3>=86 && LA6_3<=87)) ) {
                     alt6=2;
+                }
+                else if ( (LA6_3==13) ) {
+                    alt6=1;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -7681,11 +7681,11 @@ public class InternalMongoBeansParser extends AbstractInternalContentAssistParse
                 {
                 int LA6_4 = input.LA(2);
 
-                if ( (LA6_4==13) ) {
-                    alt6=1;
-                }
-                else if ( (LA6_4==EOF||(LA6_4>=RULE_ID && LA6_4<=RULE_STRING)||(LA6_4>=14 && LA6_4<=50)||(LA6_4>=52 && LA6_4<=80)||(LA6_4>=83 && LA6_4<=84)||(LA6_4>=86 && LA6_4<=87)) ) {
+                if ( (LA6_4==EOF||(LA6_4>=RULE_ID && LA6_4<=RULE_STRING)||(LA6_4>=14 && LA6_4<=50)||(LA6_4>=52 && LA6_4<=80)||(LA6_4>=83 && LA6_4<=84)||(LA6_4>=86 && LA6_4<=87)) ) {
                     alt6=2;
+                }
+                else if ( (LA6_4==13) ) {
+                    alt6=1;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -7700,11 +7700,11 @@ public class InternalMongoBeansParser extends AbstractInternalContentAssistParse
                 {
                 int LA6_5 = input.LA(2);
 
-                if ( (LA6_5==13) ) {
-                    alt6=1;
-                }
-                else if ( (LA6_5==EOF||(LA6_5>=RULE_ID && LA6_5<=RULE_STRING)||(LA6_5>=14 && LA6_5<=50)||(LA6_5>=52 && LA6_5<=80)||(LA6_5>=83 && LA6_5<=84)||(LA6_5>=86 && LA6_5<=87)) ) {
+                if ( (LA6_5==EOF||(LA6_5>=RULE_ID && LA6_5<=RULE_STRING)||(LA6_5>=14 && LA6_5<=50)||(LA6_5>=52 && LA6_5<=80)||(LA6_5>=83 && LA6_5<=84)||(LA6_5>=86 && LA6_5<=87)) ) {
                     alt6=2;
+                }
+                else if ( (LA6_5==13) ) {
+                    alt6=1;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -10414,11 +10414,11 @@ public class InternalMongoBeansParser extends AbstractInternalContentAssistParse
             if ( (LA25_0==59) ) {
                 int LA25_1 = input.LA(2);
 
-                if ( (LA25_1==60) ) {
-                    alt25=2;
-                }
-                else if ( (LA25_1==52) ) {
+                if ( (LA25_1==52) ) {
                     alt25=1;
+                }
+                else if ( (LA25_1==60) ) {
+                    alt25=2;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -59758,221 +59758,11 @@ public class InternalMongoBeansParser extends AbstractInternalContentAssistParse
 
     // Delegated rules
 
-    public final boolean synpred105_InternalMongoBeans() {
+    public final boolean synpred29_InternalMongoBeans() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred105_InternalMongoBeans_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred155_InternalMongoBeans() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred155_InternalMongoBeans_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred127_InternalMongoBeans() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred127_InternalMongoBeans_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred153_InternalMongoBeans() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred153_InternalMongoBeans_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred146_InternalMongoBeans() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred146_InternalMongoBeans_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred109_InternalMongoBeans() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred109_InternalMongoBeans_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred161_InternalMongoBeans() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred161_InternalMongoBeans_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred4_InternalMongoBeans() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred4_InternalMongoBeans_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred154_InternalMongoBeans() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred154_InternalMongoBeans_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred145_InternalMongoBeans() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred145_InternalMongoBeans_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred69_InternalMongoBeans() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred69_InternalMongoBeans_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred98_InternalMongoBeans() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred98_InternalMongoBeans_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred99_InternalMongoBeans() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred99_InternalMongoBeans_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred117_InternalMongoBeans() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred117_InternalMongoBeans_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred152_InternalMongoBeans() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred152_InternalMongoBeans_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred124_InternalMongoBeans() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred124_InternalMongoBeans_fragment(); // can never throw exception
+            synpred29_InternalMongoBeans_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -59996,11 +59786,81 @@ public class InternalMongoBeansParser extends AbstractInternalContentAssistParse
         state.failed=false;
         return success;
     }
-    public final boolean synpred76_InternalMongoBeans() {
+    public final boolean synpred4_InternalMongoBeans() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred76_InternalMongoBeans_fragment(); // can never throw exception
+            synpred4_InternalMongoBeans_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred30_InternalMongoBeans() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred30_InternalMongoBeans_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred117_InternalMongoBeans() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred117_InternalMongoBeans_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred124_InternalMongoBeans() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred124_InternalMongoBeans_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred154_InternalMongoBeans() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred154_InternalMongoBeans_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred102_InternalMongoBeans() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred102_InternalMongoBeans_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -60038,6 +59898,20 @@ public class InternalMongoBeansParser extends AbstractInternalContentAssistParse
         state.failed=false;
         return success;
     }
+    public final boolean synpred65_InternalMongoBeans() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred65_InternalMongoBeans_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
     public final boolean synpred103_InternalMongoBeans() {
         state.backtracking++;
         int start = input.mark();
@@ -60052,11 +59926,11 @@ public class InternalMongoBeansParser extends AbstractInternalContentAssistParse
         state.failed=false;
         return success;
     }
-    public final boolean synpred163_InternalMongoBeans() {
+    public final boolean synpred155_InternalMongoBeans() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred163_InternalMongoBeans_fragment(); // can never throw exception
+            synpred155_InternalMongoBeans_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -60066,11 +59940,11 @@ public class InternalMongoBeansParser extends AbstractInternalContentAssistParse
         state.failed=false;
         return success;
     }
-    public final boolean synpred30_InternalMongoBeans() {
+    public final boolean synpred152_InternalMongoBeans() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred30_InternalMongoBeans_fragment(); // can never throw exception
+            synpred152_InternalMongoBeans_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -60080,25 +59954,11 @@ public class InternalMongoBeansParser extends AbstractInternalContentAssistParse
         state.failed=false;
         return success;
     }
-    public final boolean synpred102_InternalMongoBeans() {
+    public final boolean synpred153_InternalMongoBeans() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred102_InternalMongoBeans_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred164_InternalMongoBeans() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred164_InternalMongoBeans_fragment(); // can never throw exception
+            synpred153_InternalMongoBeans_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -60122,11 +59982,11 @@ public class InternalMongoBeansParser extends AbstractInternalContentAssistParse
         state.failed=false;
         return success;
     }
-    public final boolean synpred65_InternalMongoBeans() {
+    public final boolean synpred109_InternalMongoBeans() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred65_InternalMongoBeans_fragment(); // can never throw exception
+            synpred109_InternalMongoBeans_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -60136,109 +59996,11 @@ public class InternalMongoBeansParser extends AbstractInternalContentAssistParse
         state.failed=false;
         return success;
     }
-    public final boolean synpred106_InternalMongoBeans() {
+    public final boolean synpred69_InternalMongoBeans() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred106_InternalMongoBeans_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred95_InternalMongoBeans() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred95_InternalMongoBeans_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred104_InternalMongoBeans() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred104_InternalMongoBeans_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred141_InternalMongoBeans() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred141_InternalMongoBeans_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred29_InternalMongoBeans() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred29_InternalMongoBeans_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred51_InternalMongoBeans() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred51_InternalMongoBeans_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred97_InternalMongoBeans() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred97_InternalMongoBeans_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred140_InternalMongoBeans() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred140_InternalMongoBeans_fragment(); // can never throw exception
+            synpred69_InternalMongoBeans_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -60262,11 +60024,235 @@ public class InternalMongoBeansParser extends AbstractInternalContentAssistParse
         state.failed=false;
         return success;
     }
+    public final boolean synpred97_InternalMongoBeans() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred97_InternalMongoBeans_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred95_InternalMongoBeans() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred95_InternalMongoBeans_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred108_InternalMongoBeans() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred108_InternalMongoBeans_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred106_InternalMongoBeans() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred106_InternalMongoBeans_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred105_InternalMongoBeans() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred105_InternalMongoBeans_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred104_InternalMongoBeans() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred104_InternalMongoBeans_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred164_InternalMongoBeans() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred164_InternalMongoBeans_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred98_InternalMongoBeans() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred98_InternalMongoBeans_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred99_InternalMongoBeans() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred99_InternalMongoBeans_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred163_InternalMongoBeans() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred163_InternalMongoBeans_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
     public final boolean synpred70_InternalMongoBeans() {
         state.backtracking++;
         int start = input.mark();
         try {
             synpred70_InternalMongoBeans_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred161_InternalMongoBeans() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred161_InternalMongoBeans_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred127_InternalMongoBeans() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred127_InternalMongoBeans_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred51_InternalMongoBeans() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred51_InternalMongoBeans_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred76_InternalMongoBeans() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred76_InternalMongoBeans_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred141_InternalMongoBeans() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred141_InternalMongoBeans_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred140_InternalMongoBeans() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred140_InternalMongoBeans_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -60290,11 +60276,25 @@ public class InternalMongoBeansParser extends AbstractInternalContentAssistParse
         state.failed=false;
         return success;
     }
-    public final boolean synpred108_InternalMongoBeans() {
+    public final boolean synpred145_InternalMongoBeans() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred108_InternalMongoBeans_fragment(); // can never throw exception
+            synpred145_InternalMongoBeans_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred146_InternalMongoBeans() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred146_InternalMongoBeans_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -60866,7 +60866,7 @@ public class InternalMongoBeansParser extends AbstractInternalContentAssistParse
     static final String dfa_39s = "\1\4\7\0\2\uffff";
     static final String dfa_40s = "\1\127\7\0\2\uffff";
     static final String dfa_41s = "\10\uffff\1\2\1\1";
-    static final String dfa_42s = "\1\uffff\1\4\1\6\1\2\1\1\1\3\1\0\1\5\2\uffff}>";
+    static final String dfa_42s = "\1\uffff\1\3\1\5\1\0\1\1\1\4\1\6\1\2\2\uffff}>";
     static final String[] dfa_43s = {
             "\5\10\5\uffff\2\10\1\1\1\2\1\3\1\4\1\5\5\10\1\7\1\6\27\10\1\uffff\35\10\2\uffff\2\10\1\uffff\2\10",
             "\1\uffff",
@@ -60907,10 +60907,10 @@ public class InternalMongoBeansParser extends AbstractInternalContentAssistParse
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA52_6 = input.LA(1);
+                        int LA52_3 = input.LA(1);
 
                          
-                        int index52_6 = input.index();
+                        int index52_3 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred95_InternalMongoBeans()) ) {s = 9;}
@@ -60918,7 +60918,7 @@ public class InternalMongoBeansParser extends AbstractInternalContentAssistParse
                         else if ( (true) ) {s = 8;}
 
                          
-                        input.seek(index52_6);
+                        input.seek(index52_3);
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
@@ -60937,51 +60937,6 @@ public class InternalMongoBeansParser extends AbstractInternalContentAssistParse
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA52_3 = input.LA(1);
-
-                         
-                        int index52_3 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred95_InternalMongoBeans()) ) {s = 9;}
-
-                        else if ( (true) ) {s = 8;}
-
-                         
-                        input.seek(index52_3);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
-                        int LA52_5 = input.LA(1);
-
-                         
-                        int index52_5 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred95_InternalMongoBeans()) ) {s = 9;}
-
-                        else if ( (true) ) {s = 8;}
-
-                         
-                        input.seek(index52_5);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 4 : 
-                        int LA52_1 = input.LA(1);
-
-                         
-                        int index52_1 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred95_InternalMongoBeans()) ) {s = 9;}
-
-                        else if ( (true) ) {s = 8;}
-
-                         
-                        input.seek(index52_1);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 5 : 
                         int LA52_7 = input.LA(1);
 
                          
@@ -60996,7 +60951,37 @@ public class InternalMongoBeansParser extends AbstractInternalContentAssistParse
                         input.seek(index52_7);
                         if ( s>=0 ) return s;
                         break;
-                    case 6 : 
+                    case 3 : 
+                        int LA52_1 = input.LA(1);
+
+                         
+                        int index52_1 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred95_InternalMongoBeans()) ) {s = 9;}
+
+                        else if ( (true) ) {s = 8;}
+
+                         
+                        input.seek(index52_1);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 4 : 
+                        int LA52_5 = input.LA(1);
+
+                         
+                        int index52_5 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred95_InternalMongoBeans()) ) {s = 9;}
+
+                        else if ( (true) ) {s = 8;}
+
+                         
+                        input.seek(index52_5);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 5 : 
                         int LA52_2 = input.LA(1);
 
                          
@@ -61011,6 +60996,21 @@ public class InternalMongoBeansParser extends AbstractInternalContentAssistParse
                         input.seek(index52_2);
                         if ( s>=0 ) return s;
                         break;
+                    case 6 : 
+                        int LA52_6 = input.LA(1);
+
+                         
+                        int index52_6 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred95_InternalMongoBeans()) ) {s = 9;}
+
+                        else if ( (true) ) {s = 8;}
+
+                         
+                        input.seek(index52_6);
+                        if ( s>=0 ) return s;
+                        break;
             }
             if (state.backtracking>0) {state.failed=true; return -1;}
             NoViableAltException nvae =
@@ -61023,7 +61023,7 @@ public class InternalMongoBeansParser extends AbstractInternalContentAssistParse
     static final String dfa_45s = "\1\4\1\uffff\10\0\1\uffff";
     static final String dfa_46s = "\1\127\1\uffff\10\0\1\uffff";
     static final String dfa_47s = "\1\uffff\1\2\10\uffff\1\1";
-    static final String dfa_48s = "\2\uffff\1\0\1\5\1\2\1\3\1\7\1\1\1\6\1\4\1\uffff}>";
+    static final String dfa_48s = "\2\uffff\1\7\1\0\1\1\1\5\1\4\1\2\1\3\1\6\1\uffff}>";
     static final String[] dfa_49s = {
             "\5\1\5\uffff\14\1\1\3\1\2\1\4\1\5\1\6\1\7\1\10\1\11\21\1\1\uffff\35\1\2\uffff\2\1\1\uffff\2\1",
             "",
@@ -61065,81 +61065,6 @@ public class InternalMongoBeansParser extends AbstractInternalContentAssistParse
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA58_2 = input.LA(1);
-
-                         
-                        int index58_2 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred101_InternalMongoBeans()) ) {s = 10;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index58_2);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA58_7 = input.LA(1);
-
-                         
-                        int index58_7 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred101_InternalMongoBeans()) ) {s = 10;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index58_7);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA58_4 = input.LA(1);
-
-                         
-                        int index58_4 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred101_InternalMongoBeans()) ) {s = 10;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index58_4);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
-                        int LA58_5 = input.LA(1);
-
-                         
-                        int index58_5 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred101_InternalMongoBeans()) ) {s = 10;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index58_5);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 4 : 
-                        int LA58_9 = input.LA(1);
-
-                         
-                        int index58_9 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred101_InternalMongoBeans()) ) {s = 10;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index58_9);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 5 : 
                         int LA58_3 = input.LA(1);
 
                          
@@ -61154,7 +61079,37 @@ public class InternalMongoBeansParser extends AbstractInternalContentAssistParse
                         input.seek(index58_3);
                         if ( s>=0 ) return s;
                         break;
-                    case 6 : 
+                    case 1 : 
+                        int LA58_4 = input.LA(1);
+
+                         
+                        int index58_4 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred101_InternalMongoBeans()) ) {s = 10;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index58_4);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA58_7 = input.LA(1);
+
+                         
+                        int index58_7 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred101_InternalMongoBeans()) ) {s = 10;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index58_7);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 3 : 
                         int LA58_8 = input.LA(1);
 
                          
@@ -61169,7 +61124,7 @@ public class InternalMongoBeansParser extends AbstractInternalContentAssistParse
                         input.seek(index58_8);
                         if ( s>=0 ) return s;
                         break;
-                    case 7 : 
+                    case 4 : 
                         int LA58_6 = input.LA(1);
 
                          
@@ -61182,6 +61137,51 @@ public class InternalMongoBeansParser extends AbstractInternalContentAssistParse
 
                          
                         input.seek(index58_6);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 5 : 
+                        int LA58_5 = input.LA(1);
+
+                         
+                        int index58_5 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred101_InternalMongoBeans()) ) {s = 10;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index58_5);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 6 : 
+                        int LA58_9 = input.LA(1);
+
+                         
+                        int index58_9 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred101_InternalMongoBeans()) ) {s = 10;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index58_9);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 7 : 
+                        int LA58_2 = input.LA(1);
+
+                         
+                        int index58_2 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred101_InternalMongoBeans()) ) {s = 10;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index58_2);
                         if ( s>=0 ) return s;
                         break;
             }

@@ -53,7 +53,7 @@ class Animator extends UIJob {
 	def stop() {
 		isStop = true
 		while (isScheduled && isStop) {
-			if (Display.current != null)
+			if (Display.current !== null)
 				Display.current.readAndDispatch
 			else 
 				join
@@ -70,12 +70,12 @@ class Animator extends UIJob {
 		} else {
 			val now = System.currentTimeMillis
 			var currentAnimation = animationQueue.peek
-			while (currentAnimation != null && now >= lastStart + currentAnimation.delay) {
+			while (currentAnimation !== null && now >= lastStart + currentAnimation.delay) {
 				animationQueue.poll.set(view.tortoiseFigure, 1)
 				lastStart = lastStart + currentAnimation.delay
 				currentAnimation = animationQueue.peek
 			}
-			if (currentAnimation != null) {
+			if (currentAnimation !== null) {
 				val alpha = (now - lastStart) as double / currentAnimation.delay 
 				currentAnimation.set(view.tortoiseFigure, alpha)
 				schedule(UPDATE_INTERVAL)

@@ -24,21 +24,13 @@ public class WordCount {
           File _file = new File(arg);
           final List<String> lines = Files.readLines(_file, 
             Charsets.UTF_8);
-          final Function1<String, Integer> _function = new Function1<String, Integer>() {
-            @Override
-            public Integer apply(final String it) {
-              String[] _split = it.split("\\s*");
-              return Integer.valueOf(((List<String>)Conversions.doWrapArray(_split)).size());
-            }
+          final Function1<String, Integer> _function = (String it) -> {
+            return Integer.valueOf(((List<String>)Conversions.doWrapArray(it.split("\\s*"))).size());
           };
-          List<Integer> _map = ListExtensions.<String, Integer>map(lines, _function);
-          final Function2<Integer, Integer, Integer> _function_1 = new Function2<Integer, Integer, Integer>() {
-            @Override
-            public Integer apply(final Integer a, final Integer b) {
-              return Integer.valueOf(((a).intValue() + (b).intValue()));
-            }
+          final Function2<Integer, Integer, Integer> _function_1 = (Integer a, Integer b) -> {
+            return Integer.valueOf(((a).intValue() + (b).intValue()));
           };
-          Integer wordsInFile = IterableExtensions.<Integer>reduce(_map, _function_1);
+          Integer wordsInFile = IterableExtensions.<Integer>reduce(ListExtensions.<String, Integer>map(lines, _function), _function_1);
           int _size_1 = lines.size();
           String _plus = ((((("File " + arg) + ": ") + wordsInFile) + " words, ") + Integer.valueOf(_size_1));
           String _plus_1 = (_plus + " lines.");

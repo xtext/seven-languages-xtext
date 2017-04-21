@@ -10,13 +10,11 @@ package org.xtext.mongobeans.tests;
 import com.google.common.collect.Iterators;
 import com.google.inject.Inject;
 import java.util.Iterator;
-import org.eclipse.emf.common.util.TreeIterator;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtend2.lib.StringConcatenation;
-import org.eclipse.xtext.junit4.InjectWith;
-import org.eclipse.xtext.junit4.XtextRunner;
-import org.eclipse.xtext.junit4.util.ParseHelper;
-import org.eclipse.xtext.junit4.validation.ValidationTestHelper;
+import org.eclipse.xtext.testing.InjectWith;
+import org.eclipse.xtext.testing.XtextRunner;
+import org.eclipse.xtext.testing.util.ParseHelper;
+import org.eclipse.xtext.testing.validation.ValidationTestHelper;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
@@ -60,8 +58,7 @@ public class ValidationTest {
       _builder.newLine();
       _builder.append("}");
       _builder.newLine();
-      MongoFile _parse = this._parseHelper.parse(_builder);
-      this._validationTestHelper.assertNoErrors(_parse);
+      this._validationTestHelper.assertNoErrors(this._parseHelper.parse(_builder));
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -81,13 +78,9 @@ public class ValidationTest {
       _builder.newLine();
       _builder.append("}");
       _builder.newLine();
-      MongoFile _parse = this._parseHelper.parse(_builder);
-      TreeIterator<EObject> _eAllContents = _parse.eAllContents();
-      final Iterator<MongoProperty> properties = Iterators.<MongoProperty>filter(_eAllContents, MongoProperty.class);
-      MongoProperty _head = IteratorExtensions.<MongoProperty>head(properties);
-      this._validationTestHelper.assertError(_head, MongoBeansPackage.Literals.MONGO_PROPERTY, MongoBeansValidator.ILLEGAL_TYPE);
-      MongoProperty _last = IteratorExtensions.<MongoProperty>last(properties);
-      this._validationTestHelper.assertError(_last, MongoBeansPackage.Literals.MONGO_PROPERTY, MongoBeansValidator.ILLEGAL_TYPE);
+      final Iterator<MongoProperty> properties = Iterators.<MongoProperty>filter(this._parseHelper.parse(_builder).eAllContents(), MongoProperty.class);
+      this._validationTestHelper.assertError(IteratorExtensions.<MongoProperty>head(properties), MongoBeansPackage.Literals.MONGO_PROPERTY, MongoBeansValidator.ILLEGAL_TYPE);
+      this._validationTestHelper.assertError(IteratorExtensions.<MongoProperty>last(properties), MongoBeansPackage.Literals.MONGO_PROPERTY, MongoBeansValidator.ILLEGAL_TYPE);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -104,10 +97,7 @@ public class ValidationTest {
       _builder.newLine();
       _builder.append("}");
       _builder.newLine();
-      MongoFile _parse = this._parseHelper.parse(_builder);
-      TreeIterator<EObject> _eAllContents = _parse.eAllContents();
-      Iterator<MongoProperty> _filter = Iterators.<MongoProperty>filter(_eAllContents, MongoProperty.class);
-      final MongoProperty property = IteratorExtensions.<MongoProperty>head(_filter);
+      final MongoProperty property = IteratorExtensions.<MongoProperty>head(Iterators.<MongoProperty>filter(this._parseHelper.parse(_builder).eAllContents(), MongoProperty.class));
       this._validationTestHelper.assertError(property, MongoBeansPackage.Literals.MONGO_PROPERTY, MongoBeansValidator.ILLEGAL_PROPERTY_NAME);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);

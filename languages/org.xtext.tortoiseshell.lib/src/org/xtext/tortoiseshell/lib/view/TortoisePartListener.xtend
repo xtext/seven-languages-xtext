@@ -63,7 +63,7 @@ class TortoisePartListener implements IPartListener, IResourceChangeListener, Ca
 
 	override resourceChanged(IResourceChangeEvent event) {
 		val editorFile = currentTortoiseEditor?.editorFile
-		if (editorFile != null) {
+		if (editorFile !== null) {
 			val editorFilePath = editorFile.fullPath 
 			event.delta.accept [
 				if (resource == editorFile && kind==IResourceDelta.CHANGED && flags==IResourceDelta.CONTENT) {

@@ -60,12 +60,8 @@ public class Language {
     } else {
       _elvis = "default";
     }
-    final Procedure1<String> _function = new Procedure1<String>() {
-      @Override
-      public void apply(final String it) {
-        char _charAt = it.charAt(0);
-        InputOutput.<Character>println(Character.valueOf(_charAt));
-      }
+    final Procedure1<String> _function = (String it) -> {
+      InputOutput.<Character>println(Character.valueOf(it.charAt(0)));
     };
     ObjectExtensions.<String>operator_doubleArrow(
       "foo", _function);
@@ -74,27 +70,18 @@ public class Language {
     }
     /* StringExtensions.isNullOrEmpty("foo bar"); */
     final String z = "Hello ";
-    final Function1<String, String> _function_1 = new Function1<String, String>() {
-      @Override
-      public String apply(final String e) {
-        return (z + e);
-      }
+    final Function1<String, String> _function_1 = (String e) -> {
+      return (z + e);
     };
     final Function1<String, String> f = _function_1;
     f.apply("World!");
     final ArrayList<String> list = CollectionLiterals.<String>newArrayList("a", "b", "c");
-    final Function1<String, String> _function_2 = new Function1<String, String>() {
-      @Override
-      public String apply(final String e) {
-        return e.toUpperCase();
-      }
+    final Function1<String, String> _function_2 = (String e) -> {
+      return e.toUpperCase();
     };
     /* ListExtensions.<String, String>map(list, _function_2); */
-    final Function1<String, String> _function_3 = new Function1<String, String>() {
-      @Override
-      public String apply(final String it) {
-        return it.toUpperCase();
-      }
+    final Function1<String, String> _function_3 = (String it) -> {
+      return it.toUpperCase();
     };
     /* ListExtensions.<String, String>map(list, _function_3); */
     String _xifexpression = null;
@@ -109,11 +96,9 @@ public class Language {
     final ArrayList<Object> itemis = CollectionLiterals.<Object>newArrayList("foo", "bar", Integer.valueOf(123), BigInteger.valueOf(123456789L));
     for (final Object i : itemis) {
       boolean _matched = false;
-      if (!_matched) {
-        if (Objects.equal(i, "foo")) {
-          _matched=true;
-          /* "it\'s foo" */
-        }
+      if (Objects.equal(i, "foo")) {
+        _matched=true;
+        /* "it\'s foo" */
       }
       if (!_matched) {
         if (Objects.equal(i, "bar")) {

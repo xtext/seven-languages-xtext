@@ -20,10 +20,10 @@ class GuessTheNumber {
 	@Inject HttpServletResponse response
 	
 	def handleGuess(String theGuess) {
-		if (theGuess == null || number == null)
+		if (theGuess === null || number === null)
 			seedNumber
 		
-		if (theGuess == null) {
+		if (theGuess === null) {
 			sendAnswer(null)
 			return
 		}
@@ -54,7 +54,7 @@ class GuessTheNumber {
 			</head>
 			<body onload="document.guessTheNumber.theGuess.focus();">
 				<h1>Guess a Number between 1 and 100</h1>
-				«IF message != null»
+				«IF message !== null»
 					<p>«message»</p>
 				«ENDIF»
 				<form name="guessTheNumber" action="/guess"><input name="theGuess" type="text" focus="true"></action>

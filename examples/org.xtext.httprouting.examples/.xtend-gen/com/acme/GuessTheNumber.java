@@ -8,11 +8,9 @@
 package com.acme;
 
 import com.acme.MagicNumber;
-import com.google.common.base.Objects;
 import com.google.common.io.CharStreams;
 import com.google.common.io.OutputSupplier;
 import com.google.inject.Inject;
-import java.io.IOException;
 import java.io.OutputStreamWriter;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
@@ -30,20 +28,10 @@ public class GuessTheNumber {
   private HttpServletResponse response;
   
   public void handleGuess(final String theGuess) {
-    boolean _or = false;
-    boolean _equals = Objects.equal(theGuess, null);
-    if (_equals) {
-      _or = true;
-    } else {
-      Integer _number = this._magicNumber.getNumber();
-      boolean _equals_1 = Objects.equal(_number, null);
-      _or = _equals_1;
-    }
-    if (_or) {
+    if (((theGuess == null) || (this._magicNumber.getNumber() == null))) {
       this._magicNumber.seedNumber();
     }
-    boolean _equals_2 = Objects.equal(theGuess, null);
-    if (_equals_2) {
+    if ((theGuess == null)) {
       this.sendAnswer(null);
       return;
     }
@@ -58,7 +46,7 @@ public class GuessTheNumber {
       if (_t instanceof NumberFormatException) {
         final NumberFormatException e = (NumberFormatException)_t;
         StringConcatenation _builder = new StringConcatenation();
-        _builder.append(theGuess, "");
+        _builder.append(theGuess);
         _builder.append(" is not a number.");
         this.sendAnswer(_builder);
         return;
@@ -67,29 +55,29 @@ public class GuessTheNumber {
       }
     }
     final int guess = _xtrycatchfinallyexpression;
-    Integer _number_1 = this._magicNumber.getNumber();
-    boolean _equals_3 = (guess == (_number_1).intValue());
-    if (_equals_3) {
+    Integer _number = this._magicNumber.getNumber();
+    boolean _equals = (guess == (_number).intValue());
+    if (_equals) {
       StringConcatenation _builder_1 = new StringConcatenation();
       _builder_1.append("You did it! The correct number is ");
-      _builder_1.append(guess, "");
+      _builder_1.append(guess);
       _builder_1.append(".");
       this.sendAnswer(_builder_1);
       this._magicNumber.cleanNumber();
     } else {
-      Integer _number_2 = this._magicNumber.getNumber();
-      boolean _lessThan = (guess < (_number_2).intValue());
+      Integer _number_1 = this._magicNumber.getNumber();
+      boolean _lessThan = (guess < (_number_1).intValue());
       if (_lessThan) {
         StringConcatenation _builder_2 = new StringConcatenation();
-        _builder_2.append(guess, "");
+        _builder_2.append(guess);
         _builder_2.append(" is too small.");
         this.sendAnswer(_builder_2);
       } else {
-        Integer _number_3 = this._magicNumber.getNumber();
-        boolean _greaterThan = (guess > (_number_3).intValue());
+        Integer _number_2 = this._magicNumber.getNumber();
+        boolean _greaterThan = (guess > (_number_2).intValue());
         if (_greaterThan) {
           StringConcatenation _builder_3 = new StringConcatenation();
-          _builder_3.append(guess, "");
+          _builder_3.append(guess);
           _builder_3.append(" is too high.");
           this.sendAnswer(_builder_3);
         }
@@ -129,8 +117,7 @@ public class GuessTheNumber {
     _builder.append("<h1>Guess a Number between 1 and 100</h1>");
     _builder.newLine();
     {
-      boolean _notEquals = (!Objects.equal(message, null));
-      if (_notEquals) {
+      if ((message != null)) {
         _builder.append("\t\t");
         _builder.append("<p>");
         _builder.append(message, "\t\t");
@@ -151,12 +138,9 @@ public class GuessTheNumber {
   
   private void send(final CharSequence answer) {
     try {
-      final OutputSupplier<OutputStreamWriter> _function = new OutputSupplier<OutputStreamWriter>() {
-        @Override
-        public OutputStreamWriter getOutput() throws IOException {
-          ServletOutputStream _outputStream = GuessTheNumber.this.response.getOutputStream();
-          return new OutputStreamWriter(_outputStream);
-        }
+      final OutputSupplier<OutputStreamWriter> _function = () -> {
+        ServletOutputStream _outputStream = this.response.getOutputStream();
+        return new OutputStreamWriter(_outputStream);
       };
       CharStreams.<OutputStreamWriter>write(answer, _function);
     } catch (Throwable _e) {

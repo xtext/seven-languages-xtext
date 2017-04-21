@@ -9,24 +9,21 @@ package org.xtext.guicemodules.tests;
 
 import com.google.inject.Guice;
 import com.google.inject.Inject;
-import com.google.inject.Injector;
 import com.google.inject.Module;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtend2.lib.StringConcatenation;
-import org.eclipse.xtext.junit4.InjectWith;
-import org.eclipse.xtext.junit4.XtextRunner;
-import org.eclipse.xtext.junit4.util.ParseHelper;
-import org.eclipse.xtext.junit4.validation.ValidationTestHelper;
+import org.eclipse.xtext.testing.InjectWith;
+import org.eclipse.xtext.testing.XtextRunner;
+import org.eclipse.xtext.testing.util.ParseHelper;
+import org.eclipse.xtext.testing.validation.ValidationTestHelper;
 import org.eclipse.xtext.util.IAcceptor;
 import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationsPackage;
-import org.eclipse.xtext.xbase.compiler.CompilationTestHelper;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.testing.CompilationTestHelper;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.xtext.guicemodules.guiceModules.ModuleAST;
 import org.xtext.guicemodules.guiceModules.ModulesAST;
 import org.xtext.guicemodules.tests.GuiceModulesInjectorProvider;
 import org.xtext.guicemodules.tests.InjectionTarget;
@@ -74,23 +71,9 @@ public class IntegrationTest {
       _builder.append("}");
       _builder.newLine();
       final ModulesAST it = this._parseHelper.parse(_builder);
-      EList<ModuleAST> _modules = it.getModules();
-      int _size = _modules.size();
-      Assert.assertEquals(3, _size);
-      EList<ModuleAST> _modules_1 = it.getModules();
-      ModuleAST _get = _modules_1.get(0);
-      EList<ModuleAST> _modules_2 = it.getModules();
-      ModuleAST _get_1 = _modules_2.get(2);
-      EList<ModuleAST> _mixins = _get_1.getMixins();
-      ModuleAST _get_2 = _mixins.get(0);
-      Assert.assertEquals(_get, _get_2);
-      EList<ModuleAST> _modules_3 = it.getModules();
-      ModuleAST _get_3 = _modules_3.get(1);
-      EList<ModuleAST> _modules_4 = it.getModules();
-      ModuleAST _get_4 = _modules_4.get(2);
-      EList<ModuleAST> _mixins_1 = _get_4.getMixins();
-      ModuleAST _get_5 = _mixins_1.get(1);
-      Assert.assertEquals(_get_3, _get_5);
+      Assert.assertEquals(3, it.getModules().size());
+      Assert.assertEquals(it.getModules().get(0), it.getModules().get(2).getMixins().get(0));
+      Assert.assertEquals(it.getModules().get(1), it.getModules().get(2).getMixins().get(1));
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -107,8 +90,7 @@ public class IntegrationTest {
       _builder.newLine();
       _builder.append("}");
       _builder.newLine();
-      ModulesAST _parse = this._parseHelper.parse(_builder);
-      this._validationTestHelper.assertError(_parse, XAnnotationsPackage.Literals.XANNOTATION, null);
+      this._validationTestHelper.assertError(this._parseHelper.parse(_builder), XAnnotationsPackage.Literals.XANNOTATION, null);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -125,8 +107,7 @@ public class IntegrationTest {
       _builder.newLine();
       _builder.append("}");
       _builder.newLine();
-      ModulesAST _parse = this._parseHelper.parse(_builder);
-      this._validationTestHelper.assertNoErrors(_parse);
+      this._validationTestHelper.assertNoErrors(this._parseHelper.parse(_builder));
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -156,21 +137,15 @@ public class IntegrationTest {
       _builder.newLine();
       _builder.append("}");
       _builder.newLine();
-      final IAcceptor<CompilationTestHelper.Result> _function = new IAcceptor<CompilationTestHelper.Result>() {
-        @Override
-        public void accept(final CompilationTestHelper.Result it) {
-          try {
-            Class<?> _compiledClass = it.getCompiledClass();
-            Object _newInstance = _compiledClass.newInstance();
-            final Module module = ((Module) _newInstance);
-            Injector _createInjector = Guice.createInjector(module);
-            final InjectionTarget obj = _createInjector.<InjectionTarget>getInstance(InjectionTarget.class);
-            Object _head = IterableExtensions.head(obj.col);
-            Assert.assertEquals("one", _head);
-            Assert.assertEquals("hello annotation", obj.s);
-          } catch (Throwable _e) {
-            throw Exceptions.sneakyThrow(_e);
-          }
+      final IAcceptor<CompilationTestHelper.Result> _function = (CompilationTestHelper.Result it) -> {
+        try {
+          Object _newInstance = it.getCompiledClass().newInstance();
+          final Module module = ((Module) _newInstance);
+          final InjectionTarget obj = Guice.createInjector(module).<InjectionTarget>getInstance(InjectionTarget.class);
+          Assert.assertEquals("one", IterableExtensions.head(obj.col));
+          Assert.assertEquals("hello annotation", obj.s);
+        } catch (Throwable _e) {
+          throw Exceptions.sneakyThrow(_e);
         }
       };
       this._compilationTestHelper.compile(_builder, _function);

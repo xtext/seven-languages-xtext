@@ -13,7 +13,6 @@ public class TortoiseShellImplicitlyImportedFeatures extends ImplicitlyImportedF
   @Override
   protected List<Class<?>> getStaticImportClasses() {
     List<Class<?>> _staticImportClasses = super.getStaticImportClasses();
-    Iterable<Class<?>> _plus = Iterables.<Class<?>>concat(_staticImportClasses, Collections.<Class<?>>unmodifiableList(CollectionLiterals.<Class<?>>newArrayList(Math.class, ColorConstants.class)));
-    return IterableExtensions.<Class<?>>toList(_plus);
+    return IterableExtensions.<Class<?>>toList(Iterables.<Class<?>>concat(_staticImportClasses, Collections.<Class<?>>unmodifiableList(CollectionLiterals.<Class<?>>newArrayList(Math.class, ColorConstants.class))));
   }
 }

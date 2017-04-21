@@ -8,7 +8,6 @@
 package org.xtext.tortoiseshell.lib;
 
 import com.google.inject.Binder;
-import com.google.inject.binder.AnnotatedBindingBuilder;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.xtext.service.AbstractGenericModule;
 import org.xtext.tortoiseshell.lib.Activator;
@@ -17,8 +16,6 @@ import org.xtext.tortoiseshell.lib.Activator;
 public class Module extends AbstractGenericModule {
   @Override
   public void configure(final Binder binder) {
-    AnnotatedBindingBuilder<AbstractUIPlugin> _bind = binder.<AbstractUIPlugin>bind(AbstractUIPlugin.class);
-    Activator _instance = Activator.getInstance();
-    _bind.toInstance(_instance);
+    binder.<AbstractUIPlugin>bind(AbstractUIPlugin.class).toInstance(Activator.getInstance());
   }
 }

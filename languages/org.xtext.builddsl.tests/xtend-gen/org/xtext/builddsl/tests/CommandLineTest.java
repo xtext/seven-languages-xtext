@@ -14,11 +14,9 @@ import java.io.PrintStream;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import org.eclipse.xtend2.lib.StringConcatenation;
-import org.eclipse.xtext.junit4.InjectWith;
-import org.eclipse.xtext.junit4.TemporaryFolder;
-import org.eclipse.xtext.junit4.XtextRunner;
+import org.eclipse.xtext.testing.InjectWith;
+import org.eclipse.xtext.testing.XtextRunner;
 import org.eclipse.xtext.util.IAcceptor;
-import org.eclipse.xtext.xbase.compiler.CompilationTestHelper;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Exceptions;
@@ -27,6 +25,8 @@ import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
+import org.eclipse.xtext.xbase.testing.CompilationTestHelper;
+import org.eclipse.xtext.xbase.testing.TemporaryFolder;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
@@ -238,12 +238,9 @@ public class CommandLineTest {
   protected void assertExecute(final CharSequence file, final String cmdline, final String expectedOutput) {
     try {
       final ArrayList<Class<?>> classes = CollectionLiterals.<Class<?>>newArrayList();
-      final IAcceptor<CompilationTestHelper.Result> _function = new IAcceptor<CompilationTestHelper.Result>() {
-        @Override
-        public void accept(final CompilationTestHelper.Result it) {
-          Class<?> _compiledClass = it.getCompiledClass();
-          classes.add(_compiledClass);
-        }
+      final IAcceptor<CompilationTestHelper.Result> _function = (CompilationTestHelper.Result it) -> {
+        Class<?> _compiledClass = it.getCompiledClass();
+        classes.add(_compiledClass);
       };
       this._compilationTestHelper.compile(file, _function);
       final Class<?> clazz = IterableExtensions.<Class<?>>head(classes);
@@ -253,34 +250,25 @@ public class CommandLineTest {
       System.setOut(_printStream);
       try {
         final Object instance = clazz.newInstance();
-        Class<?> _superclass = clazz.getSuperclass();
-        Method[] _declaredMethods = _superclass.getDeclaredMethods();
-        final Function1<Method, Boolean> _function_1 = new Function1<Method, Boolean>() {
-          @Override
-          public Boolean apply(final Method it) {
-            String _name = it.getName();
-            return Boolean.valueOf(Objects.equal(_name, "doBuild"));
-          }
+        final Function1<Method, Boolean> _function_1 = (Method it) -> {
+          String _name = it.getName();
+          return Boolean.valueOf(Objects.equal(_name, "doBuild"));
         };
-        Method _findFirst = IterableExtensions.<Method>findFirst(((Iterable<Method>)Conversions.doWrapArray(_declaredMethods)), _function_1);
-        final Procedure1<Method> _function_2 = new Procedure1<Method>() {
-          @Override
-          public void apply(final Method it) {
-            try {
-              it.setAccessible(true);
-              String[] _split = cmdline.split(" ");
-              it.invoke(instance, ((Object) _split));
-            } catch (Throwable _e) {
-              throw Exceptions.sneakyThrow(_e);
-            }
+        Method _findFirst = IterableExtensions.<Method>findFirst(((Iterable<Method>)Conversions.doWrapArray(clazz.getSuperclass().getDeclaredMethods())), _function_1);
+        final Procedure1<Method> _function_2 = (Method it) -> {
+          try {
+            it.setAccessible(true);
+            String[] _split = cmdline.split(" ");
+            it.invoke(instance, ((Object) _split));
+          } catch (Throwable _e) {
+            throw Exceptions.sneakyThrow(_e);
           }
         };
         ObjectExtensions.<Method>operator_doubleArrow(_findFirst, _function_2);
       } finally {
         System.setOut(backup);
       }
-      String _string = out.toString();
-      Assert.assertEquals(expectedOutput, _string);
+      Assert.assertEquals(expectedOutput, out.toString());
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }

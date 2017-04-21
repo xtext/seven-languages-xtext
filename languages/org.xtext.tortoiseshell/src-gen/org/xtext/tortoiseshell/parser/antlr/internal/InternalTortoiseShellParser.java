@@ -24,93 +24,93 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_HEX", "RULE_INT", "RULE_DECIMAL", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'sub'", "':'", "'begin'", "';'", "'end'", "'='", "'+='", "'-='", "'*='", "'/='", "'%='", "'<'", "'>'", "'>='", "'||'", "'&&'", "'=='", "'!='", "'==='", "'!=='", "'instanceof'", "'->'", "'..<'", "'..'", "'=>'", "'<>'", "'?:'", "'+'", "'-'", "'*'", "'**'", "'/'", "'%'", "'!'", "'as'", "'++'", "'--'", "'.'", "'::'", "'?.'", "','", "'('", "')'", "'#'", "'{'", "'}'", "'['", "']'", "'|'", "'if'", "'else'", "'switch'", "'default'", "'case'", "'for'", "'while'", "'do'", "'var'", "'val'", "'extends'", "'static'", "'import'", "'extension'", "'super'", "'new'", "'false'", "'true'", "'null'", "'typeof'", "'throw'", "'return'", "'try'", "'finally'", "'synchronized'", "'catch'", "'?'", "'&'"
     };
-    public static final int T__68=68;
-    public static final int T__69=69;
-    public static final int RULE_ID=8;
-    public static final int T__66=66;
-    public static final int T__67=67;
-    public static final int T__64=64;
-    public static final int T__29=29;
-    public static final int T__65=65;
-    public static final int T__28=28;
-    public static final int T__62=62;
-    public static final int T__27=27;
-    public static final int T__63=63;
-    public static final int T__26=26;
-    public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
-    public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=12;
-    public static final int T__21=21;
-    public static final int T__20=20;
-    public static final int T__61=61;
-    public static final int T__60=60;
-    public static final int EOF=-1;
+    public static final int RULE_HEX=5;
+    public static final int T__50=50;
+    public static final int T__19=19;
+    public static final int T__15=15;
+    public static final int T__59=59;
+    public static final int T__16=16;
+    public static final int T__17=17;
+    public static final int T__18=18;
     public static final int T__55=55;
     public static final int T__56=56;
-    public static final int T__19=19;
+    public static final int T__13=13;
     public static final int T__57=57;
-    public static final int RULE_HEX=5;
+    public static final int T__14=14;
     public static final int T__58=58;
-    public static final int T__16=16;
     public static final int T__51=51;
     public static final int T__52=52;
-    public static final int T__15=15;
     public static final int T__53=53;
-    public static final int T__18=18;
     public static final int T__54=54;
-    public static final int T__17=17;
-    public static final int T__14=14;
-    public static final int T__13=13;
-    public static final int T__59=59;
-    public static final int RULE_INT=6;
+    public static final int T__60=60;
+    public static final int T__61=61;
+    public static final int RULE_ID=8;
     public static final int RULE_DECIMAL=7;
-    public static final int T__50=50;
-    public static final int T__42=42;
-    public static final int T__43=43;
-    public static final int T__40=40;
-    public static final int T__41=41;
-    public static final int T__80=80;
-    public static final int T__46=46;
-    public static final int T__81=81;
-    public static final int T__47=47;
-    public static final int T__82=82;
-    public static final int T__44=44;
-    public static final int T__83=83;
-    public static final int T__45=45;
-    public static final int T__48=48;
-    public static final int T__49=49;
-    public static final int T__85=85;
-    public static final int RULE_SL_COMMENT=10;
-    public static final int T__84=84;
-    public static final int T__87=87;
-    public static final int T__86=86;
-    public static final int T__89=89;
-    public static final int T__88=88;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
+    public static final int RULE_INT=6;
+    public static final int T__29=29;
+    public static final int T__22=22;
+    public static final int T__66=66;
     public static final int RULE_ML_COMMENT=9;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int RULE_STRING=4;
-    public static final int T__32=32;
-    public static final int T__71=71;
-    public static final int T__33=33;
-    public static final int T__72=72;
-    public static final int T__34=34;
-    public static final int T__35=35;
+    public static final int T__23=23;
+    public static final int T__67=67;
+    public static final int T__24=24;
+    public static final int T__68=68;
+    public static final int T__25=25;
+    public static final int T__69=69;
+    public static final int T__62=62;
+    public static final int T__63=63;
+    public static final int T__20=20;
+    public static final int T__64=64;
+    public static final int T__21=21;
+    public static final int T__65=65;
     public static final int T__70=70;
-    public static final int T__36=36;
+    public static final int T__71=71;
+    public static final int T__72=72;
+    public static final int RULE_STRING=4;
+    public static final int RULE_SL_COMMENT=10;
     public static final int T__37=37;
     public static final int T__38=38;
     public static final int T__39=39;
-    public static final int RULE_WS=11;
-    public static final int T__76=76;
-    public static final int T__75=75;
-    public static final int T__74=74;
-    public static final int T__73=73;
-    public static final int T__79=79;
-    public static final int T__78=78;
+    public static final int T__33=33;
     public static final int T__77=77;
+    public static final int T__34=34;
+    public static final int T__78=78;
+    public static final int T__35=35;
+    public static final int T__79=79;
+    public static final int T__36=36;
+    public static final int T__73=73;
+    public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__74=74;
+    public static final int T__31=31;
+    public static final int T__75=75;
+    public static final int T__32=32;
+    public static final int T__76=76;
+    public static final int T__80=80;
+    public static final int T__81=81;
+    public static final int T__82=82;
+    public static final int T__83=83;
+    public static final int RULE_WS=11;
+    public static final int RULE_ANY_OTHER=12;
+    public static final int T__48=48;
+    public static final int T__49=49;
+    public static final int T__44=44;
+    public static final int T__88=88;
+    public static final int T__45=45;
+    public static final int T__89=89;
+    public static final int T__46=46;
+    public static final int T__47=47;
+    public static final int T__40=40;
+    public static final int T__84=84;
+    public static final int T__41=41;
+    public static final int T__85=85;
+    public static final int T__42=42;
+    public static final int T__86=86;
+    public static final int T__43=43;
+    public static final int T__87=87;
 
     // delegates
     // delegators
@@ -950,11 +950,11 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
                 {
                 int LA7_1 = input.LA(2);
 
-                if ( (LA7_1==18) ) {
-                    alt7=1;
-                }
-                else if ( (LA7_1==EOF||(LA7_1>=RULE_STRING && LA7_1<=RULE_ID)||LA7_1==14||(LA7_1>=16 && LA7_1<=17)||(LA7_1>=19 && LA7_1<=60)||(LA7_1>=62 && LA7_1<=87)) ) {
+                if ( (LA7_1==EOF||(LA7_1>=RULE_STRING && LA7_1<=RULE_ID)||LA7_1==14||(LA7_1>=16 && LA7_1<=17)||(LA7_1>=19 && LA7_1<=60)||(LA7_1>=62 && LA7_1<=87)) ) {
                     alt7=2;
+                }
+                else if ( (LA7_1==18) ) {
+                    alt7=1;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return current;}
@@ -988,11 +988,11 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
                 {
                 int LA7_3 = input.LA(2);
 
-                if ( (LA7_3==18) ) {
-                    alt7=1;
-                }
-                else if ( (LA7_3==EOF||(LA7_3>=RULE_STRING && LA7_3<=RULE_ID)||LA7_3==14||(LA7_3>=16 && LA7_3<=17)||(LA7_3>=19 && LA7_3<=60)||(LA7_3>=62 && LA7_3<=87)) ) {
+                if ( (LA7_3==EOF||(LA7_3>=RULE_STRING && LA7_3<=RULE_ID)||LA7_3==14||(LA7_3>=16 && LA7_3<=17)||(LA7_3>=19 && LA7_3<=60)||(LA7_3>=62 && LA7_3<=87)) ) {
                     alt7=2;
+                }
+                else if ( (LA7_3==18) ) {
+                    alt7=1;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return current;}
@@ -1026,11 +1026,11 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
                 {
                 int LA7_5 = input.LA(2);
 
-                if ( (LA7_5==18) ) {
-                    alt7=1;
-                }
-                else if ( (LA7_5==EOF||(LA7_5>=RULE_STRING && LA7_5<=RULE_ID)||LA7_5==14||(LA7_5>=16 && LA7_5<=17)||(LA7_5>=19 && LA7_5<=60)||(LA7_5>=62 && LA7_5<=87)) ) {
+                if ( (LA7_5==EOF||(LA7_5>=RULE_STRING && LA7_5<=RULE_ID)||LA7_5==14||(LA7_5>=16 && LA7_5<=17)||(LA7_5>=19 && LA7_5<=60)||(LA7_5>=62 && LA7_5<=87)) ) {
                     alt7=2;
+                }
+                else if ( (LA7_5==18) ) {
+                    alt7=1;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return current;}
@@ -3635,11 +3635,11 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
                     if ( (LA17_0==25) ) {
                         int LA17_1 = input.LA(2);
 
-                        if ( (LA17_1==EOF||(LA17_1>=RULE_STRING && LA17_1<=RULE_ID)||LA17_1==24||(LA17_1>=40 && LA17_1<=41)||LA17_1==46||LA17_1==54||(LA17_1>=56 && LA17_1<=57)||LA17_1==59||LA17_1==62||LA17_1==64||(LA17_1>=67 && LA17_1<=69)||(LA17_1>=72 && LA17_1<=84)||LA17_1==86) ) {
-                            alt17=2;
-                        }
-                        else if ( (LA17_1==25) && (synpred8_InternalTortoiseShell())) {
+                        if ( (LA17_1==25) && (synpred8_InternalTortoiseShell())) {
                             alt17=1;
+                        }
+                        else if ( (LA17_1==EOF||(LA17_1>=RULE_STRING && LA17_1<=RULE_ID)||LA17_1==24||(LA17_1>=40 && LA17_1<=41)||LA17_1==46||LA17_1==54||(LA17_1>=56 && LA17_1<=57)||LA17_1==59||LA17_1==62||LA17_1==64||(LA17_1>=67 && LA17_1<=69)||(LA17_1>=72 && LA17_1<=84)||LA17_1==86) ) {
+                            alt17=2;
                         }
                         else {
                             if (state.backtracking>0) {state.failed=true; return current;}
@@ -19760,473 +19760,11 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
 
     // Delegated rules
 
-    public final boolean synpred20_InternalTortoiseShell() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred20_InternalTortoiseShell_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred21_InternalTortoiseShell() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred21_InternalTortoiseShell_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred25_InternalTortoiseShell() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred25_InternalTortoiseShell_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred14_InternalTortoiseShell() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred14_InternalTortoiseShell_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred46_InternalTortoiseShell() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred46_InternalTortoiseShell_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred33_InternalTortoiseShell() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred33_InternalTortoiseShell_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred26_InternalTortoiseShell() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred26_InternalTortoiseShell_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred30_InternalTortoiseShell() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred30_InternalTortoiseShell_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred31_InternalTortoiseShell() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred31_InternalTortoiseShell_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred16_InternalTortoiseShell() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred16_InternalTortoiseShell_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred34_InternalTortoiseShell() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred34_InternalTortoiseShell_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred32_InternalTortoiseShell() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred32_InternalTortoiseShell_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred19_InternalTortoiseShell() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred19_InternalTortoiseShell_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred38_InternalTortoiseShell() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred38_InternalTortoiseShell_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred2_InternalTortoiseShell() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred2_InternalTortoiseShell_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred9_InternalTortoiseShell() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred9_InternalTortoiseShell_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred8_InternalTortoiseShell() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred8_InternalTortoiseShell_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred18_InternalTortoiseShell() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred18_InternalTortoiseShell_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred3_InternalTortoiseShell() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred3_InternalTortoiseShell_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred1_InternalTortoiseShell() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred1_InternalTortoiseShell_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred17_InternalTortoiseShell() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred17_InternalTortoiseShell_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred6_InternalTortoiseShell() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred6_InternalTortoiseShell_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred45_InternalTortoiseShell() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred45_InternalTortoiseShell_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred42_InternalTortoiseShell() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred42_InternalTortoiseShell_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
     public final boolean synpred5_InternalTortoiseShell() {
         state.backtracking++;
         int start = input.mark();
         try {
             synpred5_InternalTortoiseShell_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred29_InternalTortoiseShell() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred29_InternalTortoiseShell_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred35_InternalTortoiseShell() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred35_InternalTortoiseShell_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred4_InternalTortoiseShell() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred4_InternalTortoiseShell_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred44_InternalTortoiseShell() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred44_InternalTortoiseShell_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred10_InternalTortoiseShell() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred10_InternalTortoiseShell_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred13_InternalTortoiseShell() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred13_InternalTortoiseShell_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred23_InternalTortoiseShell() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred23_InternalTortoiseShell_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred43_InternalTortoiseShell() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred43_InternalTortoiseShell_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred37_InternalTortoiseShell() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred37_InternalTortoiseShell_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -20250,11 +19788,11 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred39_InternalTortoiseShell() {
+    public final boolean synpred44_InternalTortoiseShell() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred39_InternalTortoiseShell_fragment(); // can never throw exception
+            synpred44_InternalTortoiseShell_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -20264,11 +19802,67 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred15_InternalTortoiseShell() {
+    public final boolean synpred1_InternalTortoiseShell() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred15_InternalTortoiseShell_fragment(); // can never throw exception
+            synpred1_InternalTortoiseShell_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred32_InternalTortoiseShell() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred32_InternalTortoiseShell_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred9_InternalTortoiseShell() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred9_InternalTortoiseShell_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred16_InternalTortoiseShell() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred16_InternalTortoiseShell_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred31_InternalTortoiseShell() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred31_InternalTortoiseShell_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -20292,11 +19886,95 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred27_InternalTortoiseShell() {
+    public final boolean synpred37_InternalTortoiseShell() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred27_InternalTortoiseShell_fragment(); // can never throw exception
+            synpred37_InternalTortoiseShell_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred6_InternalTortoiseShell() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred6_InternalTortoiseShell_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred29_InternalTortoiseShell() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred29_InternalTortoiseShell_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred45_InternalTortoiseShell() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred45_InternalTortoiseShell_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred25_InternalTortoiseShell() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred25_InternalTortoiseShell_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred33_InternalTortoiseShell() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred33_InternalTortoiseShell_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred2_InternalTortoiseShell() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred2_InternalTortoiseShell_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -20320,11 +19998,333 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
         state.failed=false;
         return success;
     }
+    public final boolean synpred20_InternalTortoiseShell() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred20_InternalTortoiseShell_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred17_InternalTortoiseShell() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred17_InternalTortoiseShell_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred38_InternalTortoiseShell() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred38_InternalTortoiseShell_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred3_InternalTortoiseShell() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred3_InternalTortoiseShell_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
     public final boolean synpred7_InternalTortoiseShell() {
         state.backtracking++;
         int start = input.mark();
         try {
             synpred7_InternalTortoiseShell_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred42_InternalTortoiseShell() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred42_InternalTortoiseShell_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred34_InternalTortoiseShell() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred34_InternalTortoiseShell_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred14_InternalTortoiseShell() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred14_InternalTortoiseShell_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred13_InternalTortoiseShell() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred13_InternalTortoiseShell_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred18_InternalTortoiseShell() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred18_InternalTortoiseShell_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred26_InternalTortoiseShell() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred26_InternalTortoiseShell_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred21_InternalTortoiseShell() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred21_InternalTortoiseShell_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred46_InternalTortoiseShell() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred46_InternalTortoiseShell_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred4_InternalTortoiseShell() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred4_InternalTortoiseShell_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred43_InternalTortoiseShell() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred43_InternalTortoiseShell_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred39_InternalTortoiseShell() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred39_InternalTortoiseShell_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred35_InternalTortoiseShell() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred35_InternalTortoiseShell_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred19_InternalTortoiseShell() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred19_InternalTortoiseShell_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred23_InternalTortoiseShell() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred23_InternalTortoiseShell_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred8_InternalTortoiseShell() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred8_InternalTortoiseShell_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred10_InternalTortoiseShell() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred10_InternalTortoiseShell_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred15_InternalTortoiseShell() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred15_InternalTortoiseShell_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred30_InternalTortoiseShell() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred30_InternalTortoiseShell_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred27_InternalTortoiseShell() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred27_InternalTortoiseShell_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -20362,7 +20362,7 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
     static final String dfa_3s = "\1\4\7\0\2\uffff";
     static final String dfa_4s = "\1\127\7\0\2\uffff";
     static final String dfa_5s = "\10\uffff\1\2\1\1";
-    static final String dfa_6s = "\1\uffff\1\1\1\0\1\5\1\6\1\3\1\2\1\4\2\uffff}>";
+    static final String dfa_6s = "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\0\1\6\2\uffff}>";
     static final String[] dfa_7s = {
             "\5\10\5\uffff\1\10\1\uffff\2\10\1\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\43\10\1\uffff\32\10",
             "\1\uffff",
@@ -20405,10 +20405,10 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA6_2 = input.LA(1);
+                        int LA6_6 = input.LA(1);
 
                          
-                        int index6_2 = input.index();
+                        int index6_6 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred1_InternalTortoiseShell()) ) {s = 9;}
@@ -20416,7 +20416,7 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 8;}
 
                          
-                        input.seek(index6_2);
+                        input.seek(index6_6);
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
@@ -20435,10 +20435,10 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA6_6 = input.LA(1);
+                        int LA6_2 = input.LA(1);
 
                          
-                        int index6_6 = input.index();
+                        int index6_2 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred1_InternalTortoiseShell()) ) {s = 9;}
@@ -20446,40 +20446,10 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 8;}
 
                          
-                        input.seek(index6_6);
+                        input.seek(index6_2);
                         if ( s>=0 ) return s;
                         break;
                     case 3 : 
-                        int LA6_5 = input.LA(1);
-
-                         
-                        int index6_5 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred1_InternalTortoiseShell()) ) {s = 9;}
-
-                        else if ( (true) ) {s = 8;}
-
-                         
-                        input.seek(index6_5);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 4 : 
-                        int LA6_7 = input.LA(1);
-
-                         
-                        int index6_7 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred1_InternalTortoiseShell()) ) {s = 9;}
-
-                        else if ( (true) ) {s = 8;}
-
-                         
-                        input.seek(index6_7);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 5 : 
                         int LA6_3 = input.LA(1);
 
                          
@@ -20494,7 +20464,7 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
                         input.seek(index6_3);
                         if ( s>=0 ) return s;
                         break;
-                    case 6 : 
+                    case 4 : 
                         int LA6_4 = input.LA(1);
 
                          
@@ -20507,6 +20477,36 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
 
                          
                         input.seek(index6_4);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 5 : 
+                        int LA6_5 = input.LA(1);
+
+                         
+                        int index6_5 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred1_InternalTortoiseShell()) ) {s = 9;}
+
+                        else if ( (true) ) {s = 8;}
+
+                         
+                        input.seek(index6_5);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 6 : 
+                        int LA6_7 = input.LA(1);
+
+                         
+                        int index6_7 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred1_InternalTortoiseShell()) ) {s = 9;}
+
+                        else if ( (true) ) {s = 8;}
+
+                         
+                        input.seek(index6_7);
                         if ( s>=0 ) return s;
                         break;
             }
@@ -20522,7 +20522,7 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
     static final String dfa_10s = "\1\4\1\uffff\10\0\1\uffff";
     static final String dfa_11s = "\1\127\1\uffff\10\0\1\uffff";
     static final String dfa_12s = "\1\uffff\1\2\10\uffff\1\1";
-    static final String dfa_13s = "\2\uffff\1\7\1\0\1\3\1\5\1\6\1\4\1\1\1\2\1\uffff}>";
+    static final String dfa_13s = "\2\uffff\1\0\1\3\1\1\1\2\1\4\1\7\1\5\1\6\1\uffff}>";
     static final String[] dfa_14s = {
             "\5\1\5\uffff\1\1\1\uffff\2\1\1\uffff\5\1\1\2\1\3\10\1\1\4\1\5\1\6\1\7\1\10\1\11\25\1\1\uffff\32\1",
             "",
@@ -20566,111 +20566,6 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA16_3 = input.LA(1);
-
-                         
-                        int index16_3 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred7_InternalTortoiseShell()) ) {s = 10;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index16_3);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA16_8 = input.LA(1);
-
-                         
-                        int index16_8 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred7_InternalTortoiseShell()) ) {s = 10;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index16_8);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA16_9 = input.LA(1);
-
-                         
-                        int index16_9 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred7_InternalTortoiseShell()) ) {s = 10;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index16_9);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
-                        int LA16_4 = input.LA(1);
-
-                         
-                        int index16_4 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred7_InternalTortoiseShell()) ) {s = 10;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index16_4);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 4 : 
-                        int LA16_7 = input.LA(1);
-
-                         
-                        int index16_7 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred7_InternalTortoiseShell()) ) {s = 10;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index16_7);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 5 : 
-                        int LA16_5 = input.LA(1);
-
-                         
-                        int index16_5 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred7_InternalTortoiseShell()) ) {s = 10;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index16_5);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 6 : 
-                        int LA16_6 = input.LA(1);
-
-                         
-                        int index16_6 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred7_InternalTortoiseShell()) ) {s = 10;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index16_6);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 7 : 
                         int LA16_2 = input.LA(1);
 
                          
@@ -20685,6 +20580,111 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
                         input.seek(index16_2);
                         if ( s>=0 ) return s;
                         break;
+                    case 1 : 
+                        int LA16_4 = input.LA(1);
+
+                         
+                        int index16_4 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred7_InternalTortoiseShell()) ) {s = 10;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index16_4);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA16_5 = input.LA(1);
+
+                         
+                        int index16_5 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred7_InternalTortoiseShell()) ) {s = 10;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index16_5);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 3 : 
+                        int LA16_3 = input.LA(1);
+
+                         
+                        int index16_3 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred7_InternalTortoiseShell()) ) {s = 10;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index16_3);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 4 : 
+                        int LA16_6 = input.LA(1);
+
+                         
+                        int index16_6 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred7_InternalTortoiseShell()) ) {s = 10;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index16_6);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 5 : 
+                        int LA16_8 = input.LA(1);
+
+                         
+                        int index16_8 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred7_InternalTortoiseShell()) ) {s = 10;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index16_8);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 6 : 
+                        int LA16_9 = input.LA(1);
+
+                         
+                        int index16_9 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred7_InternalTortoiseShell()) ) {s = 10;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index16_9);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 7 : 
+                        int LA16_7 = input.LA(1);
+
+                         
+                        int index16_7 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred7_InternalTortoiseShell()) ) {s = 10;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index16_7);
+                        if ( s>=0 ) return s;
+                        break;
             }
             if (state.backtracking>0) {state.failed=true; return -1;}
             NoViableAltException nvae =
@@ -20695,13 +20695,13 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
     }
     static final String dfa_15s = "\1\30\2\uffff\1\31\7\uffff";
     static final String dfa_16s = "\1\47\2\uffff\1\44\7\uffff";
-    static final String dfa_17s = "\1\uffff\1\1\1\2\1\uffff\1\4\1\5\1\7\1\10\1\11\1\6\1\3";
+    static final String dfa_17s = "\1\uffff\1\1\1\2\1\uffff\1\4\1\5\1\7\1\10\1\11\1\3\1\6";
     static final String dfa_18s = "\13\uffff}>";
     static final String[] dfa_19s = {
             "\1\6\1\3\10\uffff\1\1\1\2\1\4\1\5\1\7\1\10",
             "",
             "",
-            "\1\11\12\uffff\1\12",
+            "\1\12\12\uffff\1\11",
             "",
             "",
             "",
@@ -22863,19 +22863,19 @@ public class InternalTortoiseShellParser extends AbstractInternalAntlrParser {
         }
     }
     static final String dfa_72s = "\7\uffff";
-    static final String dfa_73s = "\2\uffff\1\4\3\uffff\1\4";
-    static final String dfa_74s = "\1\10\1\uffff\1\20\1\10\2\uffff\1\20";
-    static final String dfa_75s = "\1\111\1\uffff\1\62\1\52\2\uffff\1\62";
-    static final String dfa_76s = "\1\uffff\1\1\2\uffff\1\2\1\3\1\uffff";
+    static final String dfa_73s = "\2\uffff\1\4\2\uffff\1\4\1\uffff";
+    static final String dfa_74s = "\1\10\1\uffff\1\20\1\10\1\uffff\1\20\1\uffff";
+    static final String dfa_75s = "\1\111\1\uffff\1\62\1\52\1\uffff\1\62\1\uffff";
+    static final String dfa_76s = "\1\uffff\1\1\2\uffff\1\2\1\uffff\1\3";
     static final String dfa_77s = "\7\uffff}>";
     static final String[] dfa_78s = {
             "\1\2\100\uffff\1\1",
             "",
             "\1\4\41\uffff\1\3",
-            "\1\6\41\uffff\1\5",
+            "\1\5\41\uffff\1\6",
             "",
-            "",
-            "\1\4\41\uffff\1\3"
+            "\1\4\41\uffff\1\3",
+            ""
     };
 
     static final short[] dfa_72 = DFA.unpackEncodedString(dfa_72s);

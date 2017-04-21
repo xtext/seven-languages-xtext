@@ -3,5 +3,5 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Examples
 Bundle-SymbolicName: org.xtext.scripting.examples
 Bundle-Version: 1.0.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.eclipse.xtext.xbase.lib;bundle-version="2.4.0"

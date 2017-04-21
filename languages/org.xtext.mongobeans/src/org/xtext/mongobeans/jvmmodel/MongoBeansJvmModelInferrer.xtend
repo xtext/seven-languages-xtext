@@ -152,7 +152,7 @@ class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
 	}
 
 	def protected getJvmType(MongoProperty property) {
-		if(property.inlineType != null)
+		if(property.inlineType !== null)
 			typeRef(property.inlineType.jvmElements.head as JvmDeclaredType)
 		else		
 			property.type

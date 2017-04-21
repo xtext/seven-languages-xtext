@@ -18,29 +18,19 @@ import org.eclipse.draw2d.FreeformLayeredPane;
 import org.eclipse.draw2d.FreeformViewport;
 import org.eclipse.draw2d.Polyline;
 import org.eclipse.draw2d.geometry.Point;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.text.source.Annotation;
 import org.eclipse.jface.text.source.IAnnotationModel;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.graphics.Color;
-import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Shell;
-import org.eclipse.ui.IActionBars;
-import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IViewSite;
-import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPartSite;
 import org.eclipse.ui.part.ViewPart;
 import org.eclipse.ui.texteditor.IDocumentProvider;
 import org.eclipse.xtend2.lib.StringConcatenation;
-import org.eclipse.xtext.resource.IResourceServiceProvider;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.XtextEditor;
-import org.eclipse.xtext.ui.editor.model.IXtextDocument;
 import org.eclipse.xtext.ui.util.DisplayRunHelper;
 import org.eclipse.xtext.util.concurrent.IUnitOfWork;
 import org.eclipse.xtext.xbase.lib.Exceptions;
@@ -86,18 +76,13 @@ public class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
     this.canvas.setViewport(_freeformViewport);
     this.canvas.setBackground(ColorConstants.white);
     final FreeformLayeredPane pane = new FreeformLayeredPane();
-    Font _font = parent.getFont();
-    pane.setFont(_font);
+    pane.setFont(parent.getFont());
     this.canvas.setContents(pane);
     pane.add(this.rootFigure, "primary");
     this.reset();
+    this.getSite().getPage().addPartListener(this.listener);
     IWorkbenchPartSite _site = this.getSite();
-    IWorkbenchPage _page = _site.getPage();
-    _page.addPartListener(this.listener);
-    IWorkbenchPartSite _site_1 = this.getSite();
-    IActionBars _actionBars = ((IViewSite) _site_1).getActionBars();
-    IToolBarManager _toolBarManager = _actionBars.getToolBarManager();
-    _toolBarManager.add(this.action);
+    ((IViewSite) _site).getActionBars().getToolBarManager().add(this.action);
   }
   
   @Override
@@ -125,72 +110,42 @@ public class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
   
   public void show(final XtextEditor tortoiseEditor, final int stopAtLine) {
     this.animator.setAnimated((stopAtLine < 0));
-    final Runnable _function = new Runnable() {
-      @Override
-      public void run() {
-        TortoiseView.this.reset();
-      }
+    final Runnable _function = () -> {
+      this.reset();
     };
     DisplayRunHelper.runSyncInDisplayThread(_function);
-    IXtextDocument _document = tortoiseEditor.getDocument();
-    final IUnitOfWork<Object, XtextResource> _function_1 = new IUnitOfWork<Object, XtextResource>() {
-      @Override
-      public Object exec(final XtextResource it) throws Exception {
-        boolean _and = false;
-        boolean _notEquals = (!Objects.equal(it, null));
-        if (!_notEquals) {
-          _and = false;
-        } else {
-          boolean _hasError = TortoiseView.this.hasError(tortoiseEditor);
-          boolean _not = (!_hasError);
-          _and = _not;
-        }
-        if (_and) {
-          final Tortoise tortoise = new Tortoise();
-          tortoise.addListener(TortoiseView.this);
-          IResourceServiceProvider _resourceServiceProvider = it.getResourceServiceProvider();
-          final ITortoiseInterpreter interpreter = _resourceServiceProvider.<ITortoiseInterpreter>get(ITortoiseInterpreter.class);
-          boolean _and_1 = false;
-          boolean _notEquals_1 = (!Objects.equal(interpreter, null));
-          if (!_notEquals_1) {
-            _and_1 = false;
-          } else {
-            EList<EObject> _contents = it.getContents();
-            boolean _isEmpty = _contents.isEmpty();
-            boolean _not_1 = (!_isEmpty);
-            _and_1 = _not_1;
-          }
-          if (_and_1) {
-            try {
-              EList<EObject> _contents_1 = it.getContents();
-              EObject _get = _contents_1.get(0);
-              interpreter.run(tortoise, _get, stopAtLine);
-            } catch (final Throwable _t) {
-              if (_t instanceof Exception) {
-                final Exception e = (Exception)_t;
-                IWorkbenchPartSite _site = TortoiseView.this.getSite();
-                Shell _shell = _site.getShell();
-                StringConcatenation _builder = new StringConcatenation();
-                _builder.append("Error during execution:");
-                _builder.newLine();
-                _builder.append("  ");
-                String _message = e.getMessage();
-                _builder.append(_message, "  ");
-                _builder.newLineIfNotEmpty();
-                _builder.append("See log for details");
-                MessageDialog.openError(_shell, "Error during Execution", _builder.toString());
-                TortoiseView.LOGGER.error("Error executing TortoiseScript", e);
-              } else {
-                throw Exceptions.sneakyThrow(_t);
-              }
+    final IUnitOfWork<Object, XtextResource> _function_1 = (XtextResource it) -> {
+      if (((it != null) && (!this.hasError(tortoiseEditor)))) {
+        final Tortoise tortoise = new Tortoise();
+        tortoise.addListener(this);
+        final ITortoiseInterpreter interpreter = it.getResourceServiceProvider().<ITortoiseInterpreter>get(ITortoiseInterpreter.class);
+        if (((interpreter != null) && (!it.getContents().isEmpty()))) {
+          try {
+            interpreter.run(tortoise, it.getContents().get(0), stopAtLine);
+          } catch (final Throwable _t) {
+            if (_t instanceof Exception) {
+              final Exception e = (Exception)_t;
+              Shell _shell = this.getSite().getShell();
+              StringConcatenation _builder = new StringConcatenation();
+              _builder.append("Error during execution:");
+              _builder.newLine();
+              _builder.append("  ");
+              String _message = e.getMessage();
+              _builder.append(_message, "  ");
+              _builder.newLineIfNotEmpty();
+              _builder.append("See log for details");
+              MessageDialog.openError(_shell, "Error during Execution", _builder.toString());
+              TortoiseView.LOGGER.error("Error executing TortoiseScript", e);
+            } else {
+              throw Exceptions.sneakyThrow(_t);
             }
           }
-          tortoise.removeListener(TortoiseView.this);
         }
-        return null;
+        tortoise.removeListener(this);
       }
+      return null;
     };
-    _document.<Object>readOnly(_function_1);
+    tortoiseEditor.getDocument().<Object>readOnly(_function_1);
   }
   
   public boolean hasError(final XtextEditor tortoiseEditor) {
@@ -199,26 +154,19 @@ public class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
       IDocumentProvider _documentProvider = tortoiseEditor.getDocumentProvider();
       IAnnotationModel _annotationModel = null;
       if (_documentProvider!=null) {
-        IEditorInput _editorInput = tortoiseEditor.getEditorInput();
-        _annotationModel=_documentProvider.getAnnotationModel(_editorInput);
+        _annotationModel=_documentProvider.getAnnotationModel(tortoiseEditor.getEditorInput());
       }
-      Iterator _annotationIterator = null;
+      Iterator<Annotation> _annotationIterator = null;
       if (_annotationModel!=null) {
         _annotationIterator=_annotationModel.getAnnotationIterator();
       }
-      final Iterator annotations = _annotationIterator;
-      while (((!Objects.equal(annotations, null)) && annotations.hasNext())) {
+      final Iterator<Annotation> annotations = _annotationIterator;
+      while (((annotations != null) && annotations.hasNext())) {
         {
-          final Object annotation = annotations.next();
-          boolean _and = false;
-          if (!(annotation instanceof Annotation)) {
-            _and = false;
-          } else {
-            String _type = ((Annotation) annotation).getType();
-            boolean _equals = Objects.equal(_type, XtextEditor.ERROR_ANNOTATION_TYPE);
-            _and = _equals;
-          }
-          if (_and) {
+          final Annotation annotation = annotations.next();
+          String _type = annotation.getType();
+          boolean _equals = Objects.equal(_type, XtextEditor.ERROR_ANNOTATION_TYPE);
+          if (_equals) {
             return true;
           }
         }
@@ -231,48 +179,33 @@ public class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
   @Override
   public void handleTortoiseEvent(final ITortoiseEvent event) {
     boolean _matched = false;
-    if (!_matched) {
-      if (event instanceof MoveEvent) {
-        _matched=true;
-        Tortoise _tortoise = ((MoveEvent)event).getTortoise();
-        boolean _isPaint = _tortoise.isPaint();
-        if (_isPaint) {
-          final Polyline line = new Polyline();
-          Tortoise _tortoise_1 = ((MoveEvent)event).getTortoise();
-          Color _lineColor = _tortoise_1.getLineColor();
-          line.setForegroundColor(_lineColor);
-          Tortoise _tortoise_2 = ((MoveEvent)event).getTortoise();
-          int _lineWidth = _tortoise_2.getLineWidth();
-          line.setLineWidth(_lineWidth);
-          Point _oldPosition = ((MoveEvent)event).getOldPosition();
-          Point _oldPosition_1 = ((MoveEvent)event).getOldPosition();
-          line.setEndpoints(_oldPosition, _oldPosition_1);
-          Point _oldPosition_2 = ((MoveEvent)event).getOldPosition();
-          Tortoise _tortoise_3 = ((MoveEvent)event).getTortoise();
-          Point _position = _tortoise_3.getPosition();
-          Tortoise _tortoise_4 = ((MoveEvent)event).getTortoise();
-          int _delay = _tortoise_4.getDelay();
-          Animation _animation = new Animation(_oldPosition_2, _position, line, _delay);
-          this.animator.addAnimation(_animation);
-        } else {
-          Point _oldPosition_3 = ((MoveEvent)event).getOldPosition();
-          Tortoise _tortoise_5 = ((MoveEvent)event).getTortoise();
-          Point _position_1 = _tortoise_5.getPosition();
-          Tortoise _tortoise_6 = ((MoveEvent)event).getTortoise();
-          int _delay_1 = _tortoise_6.getDelay();
-          Animation _animation_1 = new Animation(_oldPosition_3, _position_1, _delay_1);
-          this.animator.addAnimation(_animation_1);
-        }
+    if (event instanceof MoveEvent) {
+      _matched=true;
+      boolean _isPaint = ((MoveEvent)event).getTortoise().isPaint();
+      if (_isPaint) {
+        final Polyline line = new Polyline();
+        line.setForegroundColor(((MoveEvent)event).getTortoise().getLineColor());
+        line.setLineWidth(((MoveEvent)event).getTortoise().getLineWidth());
+        line.setEndpoints(((MoveEvent)event).getOldPosition(), ((MoveEvent)event).getOldPosition());
+        Point _oldPosition = ((MoveEvent)event).getOldPosition();
+        Point _position = ((MoveEvent)event).getTortoise().getPosition();
+        int _delay = ((MoveEvent)event).getTortoise().getDelay();
+        Animation _animation = new Animation(_oldPosition, _position, line, _delay);
+        this.animator.addAnimation(_animation);
+      } else {
+        Point _oldPosition_1 = ((MoveEvent)event).getOldPosition();
+        Point _position_1 = ((MoveEvent)event).getTortoise().getPosition();
+        int _delay_1 = ((MoveEvent)event).getTortoise().getDelay();
+        Animation _animation_1 = new Animation(_oldPosition_1, _position_1, _delay_1);
+        this.animator.addAnimation(_animation_1);
       }
     }
     if (!_matched) {
       if (event instanceof TurnEvent) {
         _matched=true;
         double _oldAngle = ((TurnEvent)event).getOldAngle();
-        Tortoise _tortoise = ((TurnEvent)event).getTortoise();
-        double _angleInRadians = _tortoise.getAngleInRadians();
-        Tortoise _tortoise_1 = ((TurnEvent)event).getTortoise();
-        int _delay = _tortoise_1.getDelay();
+        double _angleInRadians = ((TurnEvent)event).getTortoise().getAngleInRadians();
+        int _delay = ((TurnEvent)event).getTortoise().getDelay();
         Animation _animation = new Animation(_oldAngle, _angleInRadians, _delay);
         this.animator.addAnimation(_animation);
       }

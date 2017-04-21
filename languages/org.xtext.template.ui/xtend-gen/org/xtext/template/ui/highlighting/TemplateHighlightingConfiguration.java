@@ -22,45 +22,32 @@ public class TemplateHighlightingConfiguration extends XbaseHighlightingConfigur
   
   @Override
   public void configure(final IHighlightingConfigurationAcceptor acceptor) {
-    TextStyle _staticText = this.staticText();
-    acceptor.acceptDefaultHighlighting(TemplateHighlightingConfiguration.TEXT, "Text", _staticText);
-    TextStyle _staticEscape = this.staticEscape();
-    acceptor.acceptDefaultHighlighting(TemplateHighlightingConfiguration.ESCAPE, "Statement/Expression Escape Symbols", _staticEscape);
-    final IHighlightingConfigurationAcceptor _function = new IHighlightingConfigurationAcceptor() {
-      @Override
-      public void acceptDefaultHighlighting(final String id, final String name, final TextStyle style) {
-        RGB _rGB = new RGB(230, 230, 230);
-        style.setBackgroundColor(_rGB);
-        acceptor.acceptDefaultHighlighting(id, name, style);
-      }
+    acceptor.acceptDefaultHighlighting(TemplateHighlightingConfiguration.TEXT, "Text", this.staticText());
+    acceptor.acceptDefaultHighlighting(TemplateHighlightingConfiguration.ESCAPE, "Statement/Expression Escape Symbols", this.staticEscape());
+    final IHighlightingConfigurationAcceptor _function = (String id, String name, TextStyle style) -> {
+      RGB _rGB = new RGB(230, 230, 230);
+      style.setBackgroundColor(_rGB);
+      acceptor.acceptDefaultHighlighting(id, name, style);
     };
     super.configure(_function);
   }
   
   public TextStyle staticText() {
-    TextStyle _defaultTextStyle = this.defaultTextStyle();
-    TextStyle _copy = _defaultTextStyle.copy();
-    final Procedure1<TextStyle> _function = new Procedure1<TextStyle>() {
-      @Override
-      public void apply(final TextStyle it) {
-        RGB _rGB = new RGB(0, 0, 0);
-        it.setColor(_rGB);
-      }
+    TextStyle _copy = this.defaultTextStyle().copy();
+    final Procedure1<TextStyle> _function = (TextStyle it) -> {
+      RGB _rGB = new RGB(0, 0, 0);
+      it.setColor(_rGB);
     };
     return ObjectExtensions.<TextStyle>operator_doubleArrow(_copy, _function);
   }
   
   public TextStyle staticEscape() {
-    TextStyle _defaultTextStyle = this.defaultTextStyle();
-    TextStyle _copy = _defaultTextStyle.copy();
-    final Procedure1<TextStyle> _function = new Procedure1<TextStyle>() {
-      @Override
-      public void apply(final TextStyle it) {
-        RGB _rGB = new RGB(180, 180, 180);
-        it.setColor(_rGB);
-        RGB _rGB_1 = new RGB(230, 230, 230);
-        it.setBackgroundColor(_rGB_1);
-      }
+    TextStyle _copy = this.defaultTextStyle().copy();
+    final Procedure1<TextStyle> _function = (TextStyle it) -> {
+      RGB _rGB = new RGB(180, 180, 180);
+      it.setColor(_rGB);
+      RGB _rGB_1 = new RGB(230, 230, 230);
+      it.setBackgroundColor(_rGB_1);
     };
     return ObjectExtensions.<TextStyle>operator_doubleArrow(_copy, _function);
   }

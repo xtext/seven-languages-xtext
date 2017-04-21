@@ -46,18 +46,17 @@ public class MongoBeansValidator extends XbaseValidator {
       this.error("Illegal property name \'dbObject\'", MongoBeansPackage.Literals.ABSTRACT_FEATURE__NAME, MongoBeansValidator.ILLEGAL_PROPERTY_NAME, _plus);
     }
     JvmTypeReference _type = it.getType();
-    boolean _notEquals = (!Objects.equal(_type, null));
-    if (_notEquals) {
-      JvmTypeReference _type_1 = it.getType();
-      boolean _isMongoType = this.mongoTypes.isMongoType(_type_1);
+    boolean _tripleNotEquals = (_type != null);
+    if (_tripleNotEquals) {
+      boolean _isMongoType = this.mongoTypes.isMongoType(it.getType());
       boolean _not = (!_isMongoType);
       if (_not) {
         this.error("Only MongoBeans and mappable types are allowed", MongoBeansPackage.Literals.MONGO_PROPERTY__TYPE, MongoBeansValidator.ILLEGAL_TYPE);
       }
     } else {
       MongoBean _inlineType = it.getInlineType();
-      boolean _equals_1 = Objects.equal(_inlineType, null);
-      if (_equals_1) {
+      boolean _tripleEquals = (_inlineType == null);
+      if (_tripleEquals) {
         this.error("Type must be set", MongoBeansPackage.Literals.ABSTRACT_FEATURE__NAME, MongoBeansValidator.MISSING_TYPE);
       }
     }

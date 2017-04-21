@@ -7,7 +7,6 @@
  */
 package org.xtext.mongobeans.ui.outline;
 
-import com.google.common.base.Objects;
 import org.eclipse.xtext.ui.editor.outline.IOutlineNode;
 import org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider;
 import org.xtext.mongobeans.mongoBeans.MongoBean;
@@ -22,15 +21,14 @@ public class MongoBeansOutlineTreeProvider extends DefaultOutlineTreeProvider {
   
   public void _createChildren(final IOutlineNode parentNode, final MongoProperty property) {
     MongoBean _inlineType = property.getInlineType();
-    boolean _notEquals = (!Objects.equal(_inlineType, null));
-    if (_notEquals) {
-      MongoBean _inlineType_1 = property.getInlineType();
-      this.createNode(parentNode, _inlineType_1);
+    boolean _tripleNotEquals = (_inlineType != null);
+    if (_tripleNotEquals) {
+      this.createNode(parentNode, property.getInlineType());
     }
   }
   
   public boolean _isLeaf(final MongoProperty property) {
     MongoBean _inlineType = property.getInlineType();
-    return Objects.equal(_inlineType, null);
+    return (_inlineType == null);
   }
 }

@@ -24,7 +24,7 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
 	
    	def dispatch void infer(TemplateFile element, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
    		val simpleName = element.eResource.URI.trimFileExtension.lastSegment
-   		val qualifiedName = if(element.getPackage != null) 
+   		val qualifiedName = if(element.getPackage !== null) 
    				element.getPackage + "." + simpleName
    			else 
    				simpleName
@@ -40,7 +40,7 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
 					?: param.defaultexp?.inferredType 
 					?: typeRef(String)
 				members += param.toField(param.name, type) [
-					if (param.defaultexp != null)
+					if (param.defaultexp !== null)
 						initializer = param.defaultexp
 				]
 				members += param.toSetter(param.name, type)

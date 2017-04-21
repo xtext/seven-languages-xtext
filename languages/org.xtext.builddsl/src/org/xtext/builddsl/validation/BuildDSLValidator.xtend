@@ -62,7 +62,7 @@ class BuildDSLValidator extends XbaseValidator {
 					tasks.remove(t)
 				}
 		}
-		if (!tasks.empty && cycleHandler != null)
+		if (!tasks.empty && cycleHandler !== null)
 			cycleHandler.apply(tasks)
 		result
 	}

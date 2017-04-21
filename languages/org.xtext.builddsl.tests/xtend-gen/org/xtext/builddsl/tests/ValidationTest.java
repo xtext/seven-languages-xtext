@@ -9,10 +9,10 @@ package org.xtext.builddsl.tests;
 
 import com.google.inject.Inject;
 import org.eclipse.xtend2.lib.StringConcatenation;
-import org.eclipse.xtext.junit4.InjectWith;
-import org.eclipse.xtext.junit4.XtextRunner;
-import org.eclipse.xtext.junit4.util.ParseHelper;
-import org.eclipse.xtext.junit4.validation.ValidationTestHelper;
+import org.eclipse.xtext.testing.InjectWith;
+import org.eclipse.xtext.testing.XtextRunner;
+import org.eclipse.xtext.testing.util.ParseHelper;
+import org.eclipse.xtext.testing.validation.ValidationTestHelper;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.junit.Test;
@@ -40,8 +40,7 @@ public class ValidationTest {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("task Foo depends Foo {}");
       _builder.newLine();
-      BuildFile _parse = this._parseHelper.parse(_builder);
-      this._validationTestHelper.assertError(_parse, BuildPackage.Literals.TASK, BuildDSLValidator.CYCLIC_DEPENDENCY);
+      this._validationTestHelper.assertError(this._parseHelper.parse(_builder), BuildPackage.Literals.TASK, BuildDSLValidator.CYCLIC_DEPENDENCY);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -57,8 +56,7 @@ public class ValidationTest {
       _builder.newLine();
       _builder.append("task Baz depends Foo {}");
       _builder.newLine();
-      BuildFile _parse = this._parseHelper.parse(_builder);
-      this._validationTestHelper.assertError(_parse, BuildPackage.Literals.TASK, BuildDSLValidator.CYCLIC_DEPENDENCY);
+      this._validationTestHelper.assertError(this._parseHelper.parse(_builder), BuildPackage.Literals.TASK, BuildDSLValidator.CYCLIC_DEPENDENCY);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -74,8 +72,7 @@ public class ValidationTest {
       _builder.newLine();
       _builder.append("task Baz {}");
       _builder.newLine();
-      BuildFile _parse = this._parseHelper.parse(_builder);
-      this._validationTestHelper.assertNoError(_parse, BuildDSLValidator.CYCLIC_DEPENDENCY);
+      this._validationTestHelper.assertNoError(this._parseHelper.parse(_builder), BuildDSLValidator.CYCLIC_DEPENDENCY);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }

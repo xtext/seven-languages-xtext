@@ -7,15 +7,12 @@
  */
 package org.xtext.builddsl.lib;
 
-import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import java.io.File;
 import java.io.PrintWriter;
-import java.net.URI;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import org.eclipse.jdt.core.compiler.batch.BatchCompiler;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
@@ -35,33 +32,26 @@ public class JavaCompiler {
     init.apply(params);
     final ArrayList<String> list = CollectionLiterals.<String>newArrayList();
     File _destination = params.getDestination();
-    boolean _equals = Objects.equal(_destination, null);
-    if (_equals) {
+    boolean _tripleEquals = (_destination == null);
+    if (_tripleEquals) {
       list.add("-d");
       list.add("none");
     } else {
       list.add("-d");
-      File _destination_1 = params.getDestination();
-      String _string = _destination_1.toString();
+      String _string = params.getDestination().toString();
       list.add(_string);
     }
-    Collection<File> _classpath = params.getClasspath();
-    boolean _isEmpty = _classpath.isEmpty();
+    boolean _isEmpty = params.getClasspath().isEmpty();
     boolean _not = (!_isEmpty);
     if (_not) {
       list.add("-classpath");
-      Collection<File> _classpath_1 = params.getClasspath();
-      String _join = IterableExtensions.join(_classpath_1, ":");
+      String _join = IterableExtensions.join(params.getClasspath(), ":");
       list.add(_join);
     }
-    Collection<File> _sources = params.getSources();
-    final Function1<File, String> _function = new Function1<File, String>() {
-      @Override
-      public String apply(final File it) {
-        return it.toString();
-      }
+    final Function1<File, String> _function = (File it) -> {
+      return it.toString();
     };
-    Iterable<String> _map = IterableExtensions.<File, String>map(_sources, _function);
+    Iterable<String> _map = IterableExtensions.<File, String>map(params.getSources(), _function);
     Iterables.<String>addAll(list, _map);
     InputOutput.<String>print("compiling Java files...");
     PrintWriter _printWriter = new PrintWriter(System.out);
@@ -75,15 +65,11 @@ public class JavaCompiler {
   }
   
   public static ClassLoader newClasspath(final File... entries) {
-    final Function1<File, URL> _function = new Function1<File, URL>() {
-      @Override
-      public URL apply(final File it) {
-        try {
-          URI _uRI = it.toURI();
-          return _uRI.toURL();
-        } catch (Throwable _e) {
-          throw Exceptions.sneakyThrow(_e);
-        }
+    final Function1<File, URL> _function = (File it) -> {
+      try {
+        return it.toURI().toURL();
+      } catch (Throwable _e) {
+        throw Exceptions.sneakyThrow(_e);
       }
     };
     List<URL> _map = ListExtensions.<File, URL>map(((List<File>)Conversions.doWrapArray(entries)), _function);

@@ -26,11 +26,9 @@ public class MongoBeansLabelProvider extends XbaseLabelProvider {
   protected Object doGetImage(final Object element) {
     Object _switchResult = null;
     boolean _matched = false;
-    if (!_matched) {
-      if (element instanceof MongoBean) {
-        _matched=true;
-        _switchResult = "Letter-B-blue-icon.png";
-      }
+    if (element instanceof MongoBean) {
+      _matched=true;
+      _switchResult = "Letter-B-blue-icon.png";
     }
     if (!_matched) {
       if (element instanceof MongoProperty) {

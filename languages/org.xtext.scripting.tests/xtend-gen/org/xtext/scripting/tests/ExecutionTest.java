@@ -10,13 +10,13 @@ package org.xtext.scripting.tests;
 import com.google.inject.Inject;
 import java.lang.reflect.InvocationTargetException;
 import org.eclipse.xtend2.lib.StringConcatenation;
-import org.eclipse.xtext.junit4.InjectWith;
-import org.eclipse.xtext.junit4.XtextRunner;
+import org.eclipse.xtext.testing.InjectWith;
+import org.eclipse.xtext.testing.XtextRunner;
 import org.eclipse.xtext.util.IAcceptor;
-import org.eclipse.xtext.xbase.compiler.CompilationTestHelper;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.util.ReflectExtensions;
+import org.eclipse.xtext.xbase.testing.CompilationTestHelper;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -54,29 +54,21 @@ public class ExecutionTest {
   
   protected void compileAndExecuteMainAndExpect(final CharSequence script, final Object expectedResult) {
     try {
-      final IAcceptor<CompilationTestHelper.Result> _function = new IAcceptor<CompilationTestHelper.Result>() {
-        @Override
-        public void accept(final CompilationTestHelper.Result it) {
+      final IAcceptor<CompilationTestHelper.Result> _function = (CompilationTestHelper.Result it) -> {
+        try {
           try {
-            try {
-              Class<?> _compiledClass = it.getCompiledClass();
-              Object _newInstance = _compiledClass.newInstance();
-              ExecutionTest.this._reflectExtensions.invoke(_newInstance, "main", null);
-              Assert.fail("Expected ResultException not thrown.");
-            } catch (final Throwable _t) {
-              if (_t instanceof InvocationTargetException) {
-                final InvocationTargetException exc = (InvocationTargetException)_t;
-                String _string = expectedResult.toString();
-                Throwable _cause = exc.getCause();
-                String _message = _cause.getMessage();
-                Assert.assertEquals(_string, _message);
-              } else {
-                throw Exceptions.sneakyThrow(_t);
-              }
+            this._reflectExtensions.invoke(it.getCompiledClass().newInstance(), "main", null);
+            Assert.fail("Expected ResultException not thrown.");
+          } catch (final Throwable _t) {
+            if (_t instanceof InvocationTargetException) {
+              final InvocationTargetException exc = (InvocationTargetException)_t;
+              Assert.assertEquals(expectedResult.toString(), exc.getCause().getMessage());
+            } else {
+              throw Exceptions.sneakyThrow(_t);
             }
-          } catch (Throwable _e) {
-            throw Exceptions.sneakyThrow(_e);
           }
+        } catch (Throwable _e) {
+          throw Exceptions.sneakyThrow(_e);
         }
       };
       this._compilationTestHelper.compile(script, _function);

@@ -24,7 +24,6 @@ public class BuildDSLImplicitlyImportedFeatures extends ImplicitlyImportedFeatur
   @Override
   protected List<Class<?>> getExtensionClasses() {
     List<Class<?>> _extensionClasses = super.getExtensionClasses();
-    Iterable<Class<?>> _plus = Iterables.<Class<?>>concat(_extensionClasses, Collections.<Class<?>>unmodifiableList(CollectionLiterals.<Class<?>>newArrayList(FileExtensions.class, ClassExtensions.class)));
-    return IterableExtensions.<Class<?>>toList(_plus);
+    return IterableExtensions.<Class<?>>toList(Iterables.<Class<?>>concat(_extensionClasses, Collections.<Class<?>>unmodifiableList(CollectionLiterals.<Class<?>>newArrayList(FileExtensions.class, ClassExtensions.class))));
   }
 }

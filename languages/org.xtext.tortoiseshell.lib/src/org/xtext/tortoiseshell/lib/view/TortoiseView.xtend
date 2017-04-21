@@ -17,7 +17,6 @@ import org.eclipse.draw2d.FreeformViewport
 import org.eclipse.draw2d.Polyline
 import org.eclipse.draw2d.geometry.Point
 import org.eclipse.jface.dialogs.MessageDialog
-import org.eclipse.jface.text.source.Annotation
 import org.eclipse.swt.SWT
 import org.eclipse.swt.widgets.Composite
 import org.eclipse.ui.IViewSite
@@ -81,11 +80,11 @@ class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
 		animator.setAnimated(stopAtLine < 0)
 		DisplayRunHelper.runSyncInDisplayThread[reset]
 		tortoiseEditor.document.readOnly [
-			if(it != null && !tortoiseEditor.hasError) {
+			if(it !== null && !tortoiseEditor.hasError) {
 				val tortoise = new Tortoise
 				tortoise.addListener(this)
 				val interpreter = resourceServiceProvider.get(ITortoiseInterpreter)
-				if(interpreter != null && !contents.empty) {
+				if(interpreter !== null && !contents.empty) {
 					try {
 						interpreter.run(tortoise, contents.get(0), stopAtLine)
 					} catch (Exception e) {
@@ -104,10 +103,9 @@ class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
 	
 	def hasError(XtextEditor tortoiseEditor) {
 		val annotations = tortoiseEditor.documentProvider?.getAnnotationModel(tortoiseEditor.editorInput)?.annotationIterator
-		while(annotations != null && annotations.hasNext) {
+		while(annotations !== null && annotations.hasNext) {
 			val annotation = annotations.next
-			if(annotation instanceof Annotation && 
-				(annotation as Annotation).type == XtextEditor.ERROR_ANNOTATION_TYPE) 
+			if(annotation.type == XtextEditor.ERROR_ANNOTATION_TYPE) 
 				return true
 		}
 		false

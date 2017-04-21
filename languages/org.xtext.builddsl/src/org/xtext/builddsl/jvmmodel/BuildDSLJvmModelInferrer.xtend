@@ -83,7 +83,7 @@ class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
    	}
    	
    	def getJavaClassName(BuildFile it) {
-		if (name == null)
+		if (name === null)
 			eResource.URI.trimFileExtension.lastSegment
 		else
 			name + "." + eResource.URI.trimFileExtension.lastSegment

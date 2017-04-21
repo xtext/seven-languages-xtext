@@ -7,11 +7,9 @@
  */
 package org.xtext.tortoiseshell.interpreter;
 
-import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
 import java.util.List;
-import java.util.Set;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.common.types.JvmFormalParameter;
@@ -20,7 +18,6 @@ import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.nodemodel.ICompositeNode;
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.eclipse.xtext.util.CancelIndicator;
-import org.eclipse.xtext.xbase.XBlockExpression;
 import org.eclipse.xtext.xbase.XExpression;
 import org.eclipse.xtext.xbase.interpreter.IEvaluationContext;
 import org.eclipse.xtext.xbase.interpreter.IEvaluationResult;
@@ -47,24 +44,13 @@ public class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoi
   
   @Override
   public void run(final Tortoise tortoise, final EObject program, final int stopAtLine) {
-    boolean _and = false;
-    boolean _notEquals = (!Objects.equal(tortoise, null));
-    if (!_notEquals) {
-      _and = false;
-    } else {
-      boolean _notEquals_1 = (!Objects.equal(program, null));
-      _and = _notEquals_1;
-    }
-    if (_and) {
+    if (((tortoise != null) && (program != null))) {
       this.tortoise = tortoise;
       this.stopAtLine = stopAtLine;
       try {
-        Set<EObject> _jvmElements = this._iJvmModelAssociations.getJvmElements(program);
-        Iterable<JvmOperation> _filter = Iterables.<JvmOperation>filter(_jvmElements, JvmOperation.class);
-        JvmOperation _head = IterableExtensions.<JvmOperation>head(_filter);
+        JvmOperation _head = IterableExtensions.<JvmOperation>head(Iterables.<JvmOperation>filter(this._iJvmModelAssociations.getJvmElements(program), JvmOperation.class));
         if (_head!=null) {
-          List<Object> _emptyList = CollectionLiterals.<Object>emptyList();
-          this.invokeOperation(_head, null, _emptyList);
+          this.invokeOperation(_head, null, CollectionLiterals.<Object>emptyList());
         }
       } catch (final Throwable _t) {
         if (_t instanceof StopLineReachedException) {
@@ -99,31 +85,25 @@ public class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoi
     try {
       Object _xblockexpression = null;
       {
-        Set<EObject> _sourceElements = this._iJvmModelAssociations.getSourceElements(operation);
-        final EObject executable = IterableExtensions.<EObject>head(_sourceElements);
+        final EObject executable = IterableExtensions.<EObject>head(this._iJvmModelAssociations.getSourceElements(operation));
         Object _xifexpression = null;
         if ((executable instanceof Executable)) {
           Object _xblockexpression_1 = null;
           {
             final IEvaluationContext context = this.createContext();
-            QualifiedName _create = QualifiedName.create("this");
-            context.newValue(_create, this.tortoise);
+            context.newValue(QualifiedName.create("this"), this.tortoise);
             int index = 0;
             EList<JvmFormalParameter> _parameters = operation.getParameters();
             for (final JvmFormalParameter param : _parameters) {
               {
-                String _name = param.getName();
-                QualifiedName _create_1 = QualifiedName.create(_name);
-                Object _get = argumentValues.get(index);
-                context.newValue(_create_1, _get);
+                context.newValue(QualifiedName.create(param.getName()), argumentValues.get(index));
                 index = (index + 1);
               }
             }
-            XBlockExpression _body = ((Executable)executable).getBody();
-            final IEvaluationResult result = this.evaluate(_body, context, CancelIndicator.NullImpl);
+            final IEvaluationResult result = this.evaluate(((Executable)executable).getBody(), context, CancelIndicator.NullImpl);
             Throwable _exception = result.getException();
-            boolean _notEquals = (!Objects.equal(_exception, null));
-            if (_notEquals) {
+            boolean _tripleNotEquals = (_exception != null);
+            if (_tripleNotEquals) {
               throw result.getException();
             }
             _xblockexpression_1 = result.getResult();

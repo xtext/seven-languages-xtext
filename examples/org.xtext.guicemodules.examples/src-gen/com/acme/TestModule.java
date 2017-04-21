@@ -16,11 +16,8 @@ public class TestModule implements Module {
   private RuntimeModule runtimeModule = new com.acme.RuntimeModule();
   
   private DataProvider _toInstance0() {
-    final DataProvider _function = new DataProvider() {
-      @Override
-      public String getData() {
-        return "dummy-data";
-      }
+    final DataProvider _function = () -> {
+      return "dummy-data";
     };
     return _function;
   }

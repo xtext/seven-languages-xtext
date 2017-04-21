@@ -31,7 +31,7 @@ class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoiseInter
 	int stopAtLine
 	
 	override run(Tortoise tortoise, EObject program, int stopAtLine) {
-		if (tortoise != null && program != null) {
+		if (tortoise !== null && program !== null) {
 			this.tortoise = tortoise
 			this.stopAtLine = stopAtLine
 			try {
@@ -61,7 +61,7 @@ class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoiseInter
 				index = index + 1	
 			}
 			val result = evaluate(executable.body, context, CancelIndicator.NullImpl)
-			if(result.exception != null)
+			if(result.exception !== null)
 				throw result.exception
 			result.result
 		} else {

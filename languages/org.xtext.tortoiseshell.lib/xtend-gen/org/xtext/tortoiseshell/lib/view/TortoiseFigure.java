@@ -14,7 +14,6 @@ import org.eclipse.draw2d.ImageFigure;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
-import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.xtend.lib.annotations.Accessors;
 import org.eclipse.xtext.ui.PluginImageHelper;
@@ -47,8 +46,7 @@ public class TortoiseFigure extends ImageFigure {
   public Dimension getMinimumSize(final int wHint, final int hHint) {
     Dimension _xblockexpression = null;
     {
-      Image _image = this.getImage();
-      final Rectangle bounds = _image.getBounds();
+      final Rectangle bounds = this.getImage().getBounds();
       _xblockexpression = new Dimension(bounds.width, bounds.height);
     }
     return _xblockexpression;

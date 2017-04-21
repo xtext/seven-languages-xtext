@@ -7,10 +7,8 @@
  */
 package org.xtext.template.jvmmodel;
 
-import com.google.common.base.Objects;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtend2.lib.StringConcatenation;
-import org.eclipse.xtext.common.types.JvmFormalParameter;
 import org.eclipse.xtext.xbase.XExpression;
 import org.eclipse.xtext.xbase.compiler.XbaseCompiler;
 import org.eclipse.xtext.xbase.compiler.output.ITreeAppendable;
@@ -23,81 +21,66 @@ public class TemplateCompiler extends XbaseCompiler {
   @Override
   protected void doInternalToJavaStatement(final XExpression expr, final ITreeAppendable it, final boolean isReferenced) {
     boolean _matched = false;
-    if (!_matched) {
-      if (expr instanceof RichString) {
-        _matched=true;
-        final String name = it.declareVariable(expr, "_appendable");
-        it.newLine();
-        StringConcatenation _builder = new StringConcatenation();
-        _builder.append("StringBuilder ");
-        _builder.append(name, "");
-        _builder.append(" = new StringBuilder();");
-        _builder.newLineIfNotEmpty();
-        it.append(_builder);
-        EList<XExpression> _expressions = ((RichString)expr).getExpressions();
-        for (final XExpression nestedExpression : _expressions) {
-          {
-            this.internalToJavaStatement(nestedExpression, it, true);
-            it.newLine();
-            StringConcatenation _builder_1 = new StringConcatenation();
-            _builder_1.append(name, "");
-            _builder_1.append(".append(org.eclipse.xtext.xbase.lib.ObjectExtensions.operator_elvis(");
-            it.append(_builder_1);
-            this.internalToJavaExpression(nestedExpression, it);
-            it.append(",\"\"));");
-          }
+    if (expr instanceof RichString) {
+      _matched=true;
+      final String name = it.declareVariable(expr, "_appendable");
+      it.newLine();
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("StringBuilder ");
+      _builder.append(name);
+      _builder.append(" = new StringBuilder();");
+      _builder.newLineIfNotEmpty();
+      it.append(_builder);
+      EList<XExpression> _expressions = ((RichString)expr).getExpressions();
+      for (final XExpression nestedExpression : _expressions) {
+        {
+          this.internalToJavaStatement(nestedExpression, it, true);
+          it.newLine();
+          StringConcatenation _builder_1 = new StringConcatenation();
+          _builder_1.append(name);
+          _builder_1.append(".append(org.eclipse.xtext.xbase.lib.ObjectExtensions.operator_elvis(");
+          it.append(_builder_1);
+          this.internalToJavaExpression(nestedExpression, it);
+          it.append(",\"\"));");
         }
       }
     }
     if (!_matched) {
       if (expr instanceof RichStringForLoop) {
         _matched=true;
-        XExpression _forExpression = ((RichStringForLoop)expr).getForExpression();
-        this.internalToJavaStatement(_forExpression, it, true);
-        JvmFormalParameter _declaredParam = ((RichStringForLoop)expr).getDeclaredParam();
-        final LightweightTypeReference paramType = this.getLightweightType(_declaredParam);
+        this.internalToJavaStatement(((RichStringForLoop)expr).getForExpression(), it, true);
+        final LightweightTypeReference paramType = this.getLightweightType(((RichStringForLoop)expr).getDeclaredParam());
         final String name = it.declareVariable(expr, "_forLoopResult");
         it.newLine();
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("StringBuilder ");
-        _builder.append(name, "");
+        _builder.append(name);
         _builder.append(" = new StringBuilder();");
         _builder.newLineIfNotEmpty();
         _builder.append("for (final ");
         it.append(_builder);
-        boolean _notEquals = (!Objects.equal(paramType, null));
-        if (_notEquals) {
+        if ((paramType != null)) {
           it.append(paramType);
         } else {
           it.append("Object");
         }
         StringConcatenation _builder_1 = new StringConcatenation();
         _builder_1.append(" ");
-        JvmFormalParameter _declaredParam_1 = ((RichStringForLoop)expr).getDeclaredParam();
-        JvmFormalParameter _declaredParam_2 = ((RichStringForLoop)expr).getDeclaredParam();
-        String _name = _declaredParam_2.getName();
-        String _makeJavaIdentifier = this.makeJavaIdentifier(_name);
-        String _declareVariable = it.declareVariable(_declaredParam_1, _makeJavaIdentifier);
+        String _declareVariable = it.declareVariable(((RichStringForLoop)expr).getDeclaredParam(), this.makeJavaIdentifier(((RichStringForLoop)expr).getDeclaredParam().getName()));
         _builder_1.append(_declareVariable, " ");
         _builder_1.append(" : ");
         it.append(_builder_1);
-        XExpression _forExpression_1 = ((RichStringForLoop)expr).getForExpression();
-        this.internalToJavaExpression(_forExpression_1, it);
-        ITreeAppendable _append = it.append(") {");
-        _append.increaseIndentation();
-        XExpression _eachExpression = ((RichStringForLoop)expr).getEachExpression();
-        this.internalToJavaStatement(_eachExpression, it, true);
+        this.internalToJavaExpression(((RichStringForLoop)expr).getForExpression(), it);
+        it.append(") {").increaseIndentation();
+        this.internalToJavaStatement(((RichStringForLoop)expr).getEachExpression(), it, true);
         it.newLine();
         StringConcatenation _builder_2 = new StringConcatenation();
-        _builder_2.append(name, "");
+        _builder_2.append(name);
         _builder_2.append(".append(");
         it.append(_builder_2);
-        XExpression _eachExpression_1 = ((RichStringForLoop)expr).getEachExpression();
-        this.internalToJavaExpression(_eachExpression_1, it);
+        this.internalToJavaExpression(((RichStringForLoop)expr).getEachExpression(), it);
         it.append(");");
-        ITreeAppendable _decreaseIndentation = it.decreaseIndentation();
-        ITreeAppendable _newLine = _decreaseIndentation.newLine();
-        _newLine.append("}");
+        it.decreaseIndentation().newLine().append("}");
       }
     }
     if (!_matched) {
@@ -109,8 +92,7 @@ public class TemplateCompiler extends XbaseCompiler {
   protected void internalToConvertedExpression(final XExpression obj, final ITreeAppendable it) {
     boolean _hasName = it.hasName(obj);
     if (_hasName) {
-      String _name = it.getName(obj);
-      it.append(_name);
+      it.append(it.getName(obj));
     } else {
       super.internalToConvertedExpression(obj, it);
     }

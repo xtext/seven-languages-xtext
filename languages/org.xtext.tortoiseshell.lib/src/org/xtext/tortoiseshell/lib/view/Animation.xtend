@@ -45,12 +45,12 @@ class Animation {
 		if (deltaAngle != 0.0) {
 			figure.angle = startAngle + alpha * deltaAngle
 		}
-		if (startPosition != null) {
+		if (startPosition !== null) {
 			val currentLocation = new Point(delta).scale(alpha).translate(startPosition)
 			figure.tortoiseLocation = currentLocation
-			if (line != null) {
+			if (line !== null) {
 				line.end = currentLocation
-				if (line.parent == null)
+				if (line.parent === null)
 					figure.parent.add(line, figure.parent.children.size -2)
 			}
 		}

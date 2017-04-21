@@ -16,7 +16,6 @@ import org.xtext.scripting.ScriptingStandaloneSetupGenerated;
 @SuppressWarnings("all")
 public class ScriptingStandaloneSetup extends ScriptingStandaloneSetupGenerated {
   public static void doSetup() {
-    ScriptingStandaloneSetup _scriptingStandaloneSetup = new ScriptingStandaloneSetup();
-    _scriptingStandaloneSetup.createInjectorAndDoEMFRegistration();
+    new ScriptingStandaloneSetup().createInjectorAndDoEMFRegistration();
   }
 }

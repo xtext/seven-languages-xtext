@@ -7,8 +7,6 @@
  */
 package org.xtext.tortoiseshell.lib.view;
 
-import com.google.common.base.Objects;
-import java.util.List;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Polyline;
 import org.eclipse.draw2d.geometry.Point;
@@ -35,8 +33,7 @@ public class Animation {
   
   public Animation(final Point startPosition, final Point endPosition, final int delay) {
     this.deltaAngle = 0.0;
-    Point _copy = startPosition.getCopy();
-    this.startPosition = _copy;
+    this.startPosition = startPosition.getCopy();
     Point _point = new Point((endPosition.x - startPosition.x), (endPosition.y - startPosition.y));
     this.delta = _point;
     this.delay = delay;
@@ -56,22 +53,16 @@ public class Animation {
     if ((this.deltaAngle != 0.0)) {
       figure.setAngle((this.startAngle + (alpha * this.deltaAngle)));
     }
-    boolean _notEquals = (!Objects.equal(this.startPosition, null));
-    if (_notEquals) {
-      Point _point = new Point(this.delta);
-      Point _scale = _point.scale(alpha);
-      final Point currentLocation = _scale.translate(this.startPosition);
+    if ((this.startPosition != null)) {
+      final Point currentLocation = new Point(this.delta).scale(alpha).translate(this.startPosition);
       figure.setTortoiseLocation(currentLocation);
-      boolean _notEquals_1 = (!Objects.equal(this.line, null));
-      if (_notEquals_1) {
+      if ((this.line != null)) {
         this.line.setEnd(currentLocation);
         IFigure _parent = this.line.getParent();
-        boolean _equals = Objects.equal(_parent, null);
-        if (_equals) {
+        boolean _tripleEquals = (_parent == null);
+        if (_tripleEquals) {
           IFigure _parent_1 = figure.getParent();
-          IFigure _parent_2 = figure.getParent();
-          List _children = _parent_2.getChildren();
-          int _size = _children.size();
+          int _size = figure.getParent().getChildren().size();
           int _minus = (_size - 2);
           _parent_1.add(this.line, _minus);
         }

@@ -7,7 +7,6 @@
  */
 package org.xtext.mongobeans.scoping;
 
-import com.google.common.base.Objects;
 import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.xbase.scoping.XbaseQualifiedNameProvider;
@@ -24,14 +23,10 @@ public class MongoQualifiedNameProvider extends XbaseQualifiedNameProvider {
     {
       final PackageDeclaration packageDeclaration = EcoreUtil2.<PackageDeclaration>getContainerOfType(mongoBean, PackageDeclaration.class);
       QualifiedName _xifexpression = null;
-      boolean _notEquals = (!Objects.equal(packageDeclaration, null));
-      if (_notEquals) {
-        QualifiedName _fullyQualifiedName = this.getFullyQualifiedName(packageDeclaration);
-        String _name = mongoBean.getName();
-        _xifexpression = _fullyQualifiedName.append(_name);
+      if ((packageDeclaration != null)) {
+        _xifexpression = this.getFullyQualifiedName(packageDeclaration).append(mongoBean.getName());
       } else {
-        String _name_1 = mongoBean.getName();
-        return QualifiedName.create(_name_1);
+        return QualifiedName.create(mongoBean.getName());
       }
       _xblockexpression = _xifexpression;
     }

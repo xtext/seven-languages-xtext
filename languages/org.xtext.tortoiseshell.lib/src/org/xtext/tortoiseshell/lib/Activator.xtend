@@ -34,7 +34,7 @@ class Activator extends AbstractUIPlugin {
 	}
 	
 	def getInjector() {
-		if(injector == null)
+		if(injector === null)
 			injector = createInjector
 		injector
 	}
