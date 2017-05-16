@@ -1,4 +1,4 @@
-# Little Tortoise {#tortoise}
+# Little Tortoise
 
 Do you remember the programming language [Logo](http://en.wikipedia.org/wiki/Logo_%28programming_language%29)? Logo was used in computer science classes to teach children how to program. In fact, it was a adaptation of LISP! But the remarkable part was the so-called *turtle*, a graphical cursor that can be given commands to move and turn, thereby drawing lines.
 
@@ -6,7 +6,7 @@ Do you remember the programming language [Logo](http://en.wikipedia.org/wiki/Log
 
 The goal is a language to control a turtle drawing an image. Technically, this example will teach you how to adapt and use the [XbaseInterpreter](https://github.com/eclipse/xtext-extras/blob/master/org.eclipse.xtext.xbase/src/org/eclipse/xtext/xbase/interpreter/impl/XbaseInterpreter.java) for your own languages. 
 
-## Overview {#tortoise-solution}
+## Overview
 
 We have built a language that allows to define *Programs* and *SubPrograms*. Each of these has a body, which can contain any number of expressions. In addition to the standard Xbase expressions, we are able to issue commands to the tortoise. Here is an example explaining the concepts in comments: 
 
@@ -61,13 +61,13 @@ class Tortoise {
 
 When a method changes the state of the tortoise, an event is thrown. These events are consumed by a GEF based view and turned into animations of a [TortoiseFigure](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.tortoiseshell.lib/src/org/xtext/tortoiseshell/lib/view/TortoiseFigure.xtend). This loose coupling of model and view allows for easier testing.
 
-## Running the Example {#tortoise-running}
+## Running the Example
 
 In the runtime Eclipse, open the *Tortoise View* (*Window &rarr; Show View &rarr; Other &rarr; Xtext &rarr; TortoiseView*). Then open one of the example files in *org.eclipse.xtext.tortoiseshell.examples*. The *Program* is interpreted on editor activation and on save. An additional toggle button *Step Mode* in the *Tortoise View* allows to execute the code live from the editor up to the caret's current line.
 
 ![Tortoise takes a rest after running the Pythagoras example](images/Pythagoras.png)
 
-## Grammar {#tortoise-grammar}
+## Grammar
 
 The grammar is very short. Once again, we inherit from the Xbase language to have nice Java integration and rich expressions. A user can define a *Program*, which can have *SubPrograms* with parameters. The *Executable* rule is never called, but defines a common supertype for *Program* and *SubProgram* that will hold their common member `body`. A *Body* is an *XBlockExpression* from Xbase, but with the keywords `begin` and `end` instead of the curly braces.
 
@@ -97,7 +97,7 @@ Executable:
   Program | SubProgram;
 ```
 
-## Translation to Java {#tortoise-inferrer}
+## Translation to Java
 
 With the tortoise commands defined as methods in the runtime library class [Tortoise](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.tortoiseshell.lib/src/org/xtext/tortoiseshell/lib/Tortoise.java), we have to infer a Java class that inherits from this. Within this class, we create a method for each *Program* and *SubProgram*. The resulting code looks like this:
 
@@ -128,7 +128,7 @@ class TortoiseShellJvmModelInferrer extends AbstractModelInferrer {
  }
 ```
 
-## Interpreter {#tortoise-interpreter}
+## Interpreter
 
 The Xbase language library does not only provide a compiler that generates Java code, but also an [interpreter](https://github.com/eclipse/xtext-extras/blob/master/org.eclipse.xtext.xbase/src/org/eclipse/xtext/xbase/interpreter/impl/XbaseInterpreter.java). This has been adapted to execute our *Programs*. 
 
@@ -191,7 +191,7 @@ The [StopLineReachedException](https://github.com/xtext/seven-languages-xtext/bl
   }
 ```
 
-## Literal Classes {#tortoise-additions}
+## Literal Classes
 
 To make the static methods and fields of [Math](http://docs.oracle.com/javase/8/docs/api/java/lang/Math.md) and [ColorConstants](https://github.com/eclipse/gef/blob/master/org.eclipse.draw2d/src/org/eclipse/draw2d/ColorConstants.java) callable directly, we provided the [TortoiseShellImplicitlyImportedFeatures](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.tortoiseshell/src/org/xtext/tortoiseshell/scoping/TortoiseShellImplicitlyImportedFeatures.xtend):
 

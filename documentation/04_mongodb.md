@@ -1,4 +1,4 @@
-# DSL for MongoDB {#mongoDB}
+# DSL for MongoDB
 
 [MongoDB](http://www.mongodb.org) is a very popular document-based database management system. In mongoDB, database entries (AKA *documents*) have fields, which are essentially *(key, value)* pairs. MongoDB is schema free, i.e. there are no rules, which fields have to be defined and of what type they are. This allows for very flexible and heterogeneous data structures and is a perfect match with JSON. 
 
@@ -8,7 +8,7 @@ OTOH, Java is statically typed: The available types, their field names and field
 
 With this language you can describe statically typed Java-facades for MongoDB documents without hiding the dynamic nature of them. The language uses a tree-like syntax similar to JSON but lets you add static Java type information.
 
-## Overview {#mongo-solution}
+## Overview
 
 In this project, we have created a small DSL *mongoBeans* based on Xtext that allows to create basic entity classes. These are backed by mongoDB objects but provide a statically typed JavaBeans API. Think of the language as a description how to map mongoDB documents to JavaBeans, in analogy to well known object relational mappers.
 
@@ -79,13 +79,13 @@ DBCollection dbCollection = ... // standard mongoDB driver code
 dbCollection.save(john.getDBObject())
 ```
 
-## Running the Example {#mongo-running}
+## Running the Example
 
 In addition to the [common requirements](01_introduction.md#common-requirements), you need the [mongoDB implementation](http://www.mongodb.org/downloads) for your platform. We have included the mongoDB Java driver from [Eclipse Orbit](http://download.eclipse.org/tools/orbit/downloads/) in the code base. 
 
 Import the projects into an Eclipse workspace and run the launch configuration *Run (org.eclipse.xtext.mongobeans)*. Import the example plug-in into the new workspace and run `MusicDBXtendTest` as a JUnit test.
 
-## Grammar {#mongo-grammar}
+## Grammar
 
 The complete mongoBeans grammar looks like this: 
 
@@ -128,7 +128,7 @@ MongoOperation:
 
 The language inherits from the `Xbase` grammar in order to allow Xbase expressions and references to Java elements. A *MongoFile* starts with an import section (see [Build DSL](03_builddsl.md#builddsl-imports) for details). The import section is followed by any number of *AbstractElements*, which can be *PackageDeclarations* or *MongoBeans*. Note that as opposed to Java, *PackageDeclarations* can be nested. *MongoBeans* define statically typed *MongoProperties*, which can be single-valued or multi-valued denoted by an `*` following the type name. The type of a *MongoProperty* can also be defined inline. *MongoBeans* can also define *MongoOperations*. The body of such an operation is an *XBlockExpression* from Xbase. 
 
-## Translation to Java {#mongo-inferrer}
+## Translation to Java
 
 The JVM model inference is implemented in the [MongoBeansJvmModelInferrer](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.mongobeans/src/org/xtext/mongobeans/jvmmodel/MongoBeansJvmModelInferrer.xtend). As the generated code is quite rich, this is the most complex component of this language.
 
@@ -333,7 +333,7 @@ def protected addMethod(JvmDeclaredType inferredType,
 }
 ```
 
-## Qualified Name Provider {#mongo-name-provider}
+## Qualified Name Provider
 
 By default, the qualified name of an element is calculated by joining all the simple names of its containers with a dot. In our example, the *MongoBean* `Track` would consequently be named `org.musicdb.Album.track.Track`. To ignore properties and beans on the path, we implemented our own [MongoQualifiedNameProvider](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.mongobeans/src/org/xtext/mongobeans/scoping/MongoQualifiedNameProvider.xtend). 
 
@@ -362,7 +362,7 @@ public Class<? extends IQualifiedNameProvider> bindIQualifiedNameProvider() {
 
 See [Dependency Injection](https://www.eclipse.org/Xtext/documentation/302_configuration.html#dependency-injection) to learn more about Xtext's dependency injection.
 
-## Validation {#mongo-validation}
+## Validation
 
 The Java driver for mongoDB cannot map all Java types to mongoDB types. To enforce that constraint, we have added the [MongoBeansValidator](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.mongobeans/src/org/xtext/mongobeans/validation/MongoBeansValidator.xtend). It also checks for missing types and avoids name collisions in the generated code with the implicitly defined property `dbObject`.
 
@@ -388,7 +388,7 @@ class MongoBeansValidator extends XbaseJavaValidator {
 ...
 ```
 
-## IDE Enhancements {#mongo-visual}
+## IDE Enhancements
 
 The validator from the previous section raises an error `ILLEGAL_PROPERTY_NAME` when a property is named [DBObject](http://api.mongodb.org/java/2.6/com/mongodb/DBObject.md). We have implemented a quick fix to replace the invalid name: 
 

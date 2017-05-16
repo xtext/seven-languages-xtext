@@ -1,10 +1,10 @@
-# Scripting Language {#scripting}
+# Scripting Language
 
 The scripting language allows writing code without any preludes such as package, class or method declarations. Just open a file and start coding. It's the simplest of the seven languages and is therefore a good starting point.
 
 ![](images/scripting_screenshot.png)
 
-## Overview {#scripting-solution}
+## Overview
 
 As you can see the language is straightforward: All you can do is write expressions. The expressions you see are the same as in Xtend and they are defined in its own grammar (called Xbase). They are syntactically very close to Java, but feature advanced concepts like lambda expressions and operator overloading. They support local type inference so you do not have to write types everywhere like in Java, but the expressions are still statically typed. For a Java developer, the code should be self-explanatory. The Xbase expression language is exhaustively covered in the [Xtext documentation](https://www.eclipse.org/Xtext/documentation/305_xbase.html).
 
@@ -28,11 +28,11 @@ public class Application {
 
 Note that the core language infrastructure such as the parser, linker and compiler does not depend on Eclipse, but the compilation is integrated with Eclipse for convenience reasons. All 7 languages can be parsed, compiled and executed without Eclipse. We could also make use of the interpreter, which might make more sense for a scripting language. How to use and integrate the interpreter is explained in the section describing the [Tortoise](08_tortoise.md) language.
 
-## Running the Example {#scripting-running}
+## Running the Example
 
 Make sure you have the projects *org.xtext.scripting* and *org.xtext.scripting.ui* in your workspace. Then start a new Eclipse by choosing *Run &rarr; Run Configurations... &rarr; Eclipse Application &rarr; Run (org.xtext.scripting)*. Import the project *org.xtext.scripting.examples* into the newly spawned workspace using the *Import existing projects into workspace* wizard.
 
-## Grammar {#scripting-grammar}
+## Grammar
 
 To build a language with Xtext, you first have to define a grammar. As opposed to other parser generators, an Xtext grammar defines both, the lexical structure of the language and an object model (the AST or semantic model) that is build during parsing. For a more detailed description of the Xtext grammar language, please see the respective [documentation section](https://www.eclipse.org/Xtext/documentation/301_grammarlanguage.html).
 
@@ -51,7 +51,7 @@ Script returns XBlockExpression:
 
 The main rule *Script* is defined to produce an object of type `Script`, which is a subtype of `XBlockExpression`. A block expression simply contains any number of expressions. The rule `XExpressionOrVarDeclaration` is defined in the Xbase grammar. Usually block expressions are surrounded by curly braces, but of course we do not want to force anybody to write curly braces at the beginning and the end of a simple script.
 
-## Translation to Java {#scripting-inferrer}
+## Translation to Java
 
 To make our language executable, we have to define how its concepts relate to Java concepts. In Xtext, this is defined by the [IJvmModelInferrer](https://github.com/eclipse/xtext-extras/blob/master/org.eclipse.xtext.xbase/src/org/eclipse/xtext/xbase/jvmmodel/IJvmModelInferrer.java). The language generator automatically generates an Xtend stub for it. Nevertheless, it is up to the language developer to implement the `infer()` method. 
 

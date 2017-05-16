@@ -1,10 +1,10 @@
-# HTTP Routing Language {#http-routing}
+# HTTP Routing Language
 
 This is a little language that lets you dispatch incoming HTTP requests.
 
 ![](images/httprouting_screenshot.png)
 
-## Overview {#routing-solution}
+## Overview
 
 For server-side web development one needs to match any incoming HTTP requests to some handling code. A request is defined by a HTTP method (i.e. GET, POST, etc.), a URL and maybe some other data (headers, parameters, etc.). In the Java world there are many different solutions to this problem. Java Servlets come with an external configuration (web.xml), where you configure what servlet should be called for which URLs. JAX-RS (JSR-311) uses annotations to match incoming URLs and other frameworks have their own external DSLs for that.
 
@@ -30,11 +30,11 @@ GET /guess/:theGuess
   do controller.handleGuess(theGuess)
 ```
 
-## Running the Example {#routing-running}
+## Running the Example
 
 The example project's name is *org.xtext.httprouting.examples* and includes a simple but runnable number guessing game. Just start the server (an embedded Jetty) by running `framework.StartServer` as a Java Application. Then point your browser to the URL [http://localhost:8080/guess](http://localhost:8080/guess).
 
-## Grammar {#routing-grammar}
+## Grammar
 
 The Routing DSL extends *org.eclipse.xtext.xbase.annotations.XbaseWithAnnotations* to make use of expressions predefined by [Xbase](https://www.eclipse.org/Xtext/documentation/305_xbase.html#xbase-expressions) plus support for Annotations. 
 
@@ -80,7 +80,7 @@ Variable :
 
 There should not be any surprises if you know the grammar language: A *Model* consists of an *XImportSection* followed by any number of *Dependencies* and *Routes*. A *Route* starts with a *RequestType*, i.e. HTTP method, followed by a *URL* pattern. Then an optional when-clause can be specified followed by a mandatory do-clause.
 
-## Translation to Java {#routing-inferrer}
+## Translation to Java
 
 In [RouteJvmModelInferrer](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.httprouting/src/org/xtext/httprouting/jvmmodel/RouteJvmModelInferrer.xtend) you can see that a Java class extending the class [HttpServlet](https://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServlet.md) is derived. First the *Dependencies* are translated to Java fields. This is almost a one-to-one mapping.
 

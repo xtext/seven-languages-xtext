@@ -1,4 +1,4 @@
-# Build Language {#builddsl}
+# Build Language
 
 Build tools like Ant or [Gradle](http://gradle.org/) decompose the build process into a set of tasks. A task can stand for a compilation step, copying some files, bundling, running tests etc. The order of execution is calculated from the dependencies of the defined tasks.
 
@@ -6,7 +6,7 @@ Build tools like Ant or [Gradle](http://gradle.org/) decompose the build process
 
 This build language combines the declarative approach of defining tasks and dependencies with the full power of a modern expression language. It is a bit similar to Ant but statically typed and with very good IDE support.
 
-## Overview {#builddsl-solution}
+## Overview
 
 The above screenshot shows an exemplary build script. A script has a couple of parameters. The tasks define dependencies to other tasks. What happens if the task is executed is defined in a block within curly braces. 
 
@@ -14,11 +14,11 @@ A build script can be run from the command line, assigning values to the paramet
 
 We have put most functionality of the language in the runtime library: Detecting the order of execution, parsing parameters, etc. The language itself focusses on the structural parts, and leaves the actions to Xbase. This allows both us and future users to add new tasks as library methods instead of hard-coding them in the language.
 
-## Running the Example {#builddsl-running}
+## Running the Example
 
 In the runtime workspace, open the *BuildExample.build* in the editor. The example project comes with some sample java code to compile in the *example-project* folder. Choose *Run as &rarr; Build Task* from the context menu of any task to execute it. 
 
-## Grammar {#builddsl-grammar}
+## Grammar
 
 The grammar of the DSL is once again quite slim: 
 
@@ -46,7 +46,7 @@ Task:
 
 A *BuildFile* starts with a *package* declaration. The generated Java class will be located in this namespace. The next part is an *importSection*. Since version 2.4, Xbase includes extensive tooling to validate and organize import statements. To make this available in your language, you just have to include an *XImportSection* as in this example. The imports are followed by the *Declarations*. A *Declaration* can be a *Task* or a *Parameter*. A *Parameter* can declare a type and an initialization expression. *Tasks* define dependencies on other tasks by means of an Xtext cross-reference. They also contain an action, which is a [XBlockExpression](https://github.com/eclipse/xtext-extras/blob/master/org.eclipse.xtext.xbase/emf-gen/org/eclipse/xtext/xbase/XBlockExpression.java) from Xbase, thus everthing is possible within a task.
 
-## Translation to Java {#builddsl-inferrer}
+## Translation to Java
 
 For each *BuildFile* we create a Java class that extends the library class [BuildScript](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.builddsl.lib/src/org/xtext/builddsl/lib/BuildScript.xtend). We generate a main method allowing to execute the script as a Java application with command line parameters. The use of `System.exit` allows to return error codes to the caller. 
 
@@ -159,7 +159,7 @@ val type = declaredParameter.type
 	?: typeRef(String)
 ```
 
-## Validation {#builddsl-validation}
+## Validation
 
 When *Tasks* are depending on each other, cycles will break the computation of the execution order. There is a check for this constraint in the validator [BuildDSLValidator](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.builddsl/src/org/xtext/builddsl/validation/BuildDSLValidator.xtend):
 
@@ -182,7 +182,7 @@ class BuildDSLValidator extends XbaseJavaValidator {
 ...
 ```
 
-## Imports {#builddsl-imports}
+## Imports
 
 By using the *XImportSection* form Xbase, the language automatically supports the notion of *plain imports*, *static imports* and *static extension imports*. While the first two work as in Java, a static extension import puts the static methods of the specified calls on the extension scope, such that it can be called as if it were a method on the first argument. See the [Xtend primer](01_introduction.md#xtend_extension) for a more detailed description.
 
@@ -213,7 +213,7 @@ public class BuildDSLRuntimeModule
 }
 ```
 
-## Operator Overloading {#builddsl-library}
+## Operator Overloading
 
 As we expect a build language to deal with files and directories a lot, we have extended the syntax around these in the [FileExtensions](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.builddsl.lib/src/org/xtext/builddsl/lib/FileExtensions.xtend). We leverage the fact that Xbase allows to overload operators by means of library extensions. The following examples show how to avoid the noisy constructor calls to [File](http://docs.oracle.com/javase/8/docs/api/java/io/File.md):
 
@@ -236,7 +236,7 @@ As we expect a build language to deal with files and directories a lot, we have 
 
 The compiler replaces operators with method calls to methods named `operator_<operatorName>()`. These have to be callable on the left operand, i.e. be a method of the left operands type or be added as an extension to the left operand type. In this case, we use the latter approach, since [File](http://docs.oracle.com/javase/8/docs/api/java/io/File.md) as well as [String](http://docs.oracle.com/javase/8/docs/api/java/lang/String.md) are sealed types. To learn more about operators and operator overloading please consult the [Xbase documentation](https://www.eclipse.org/Xtext/documentation/305_xbase.html#xbase-expressions-operators).
 
-## Run as... Integration {#builddsl-launch}
+## Run as... Integration
 
 To facilitate executing build scripts from within Java, we have extended Eclipse's launch support. The respective classes are [BuildDSLLaunchDelegate](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.builddsl.ui/src/org/xtext/builddsl/ui/launch/BuildDSLLaunchDelegate.xtend), [BuildDSLLaunchShortcut](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.builddsl.ui/src/org/xtext/builddsl/ui/launch/BuildDSLLaunchShortcut.xtend) and [BuildDSLLaunchTabGroup](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.builddsl.ui/src/org/xtext/builddsl/ui/launch/BuildDSLLaunchTabGroup.xtend). Describing all the details would be a bit lengthy but it is quite straightforward if you are familiar with the launching API. 
 

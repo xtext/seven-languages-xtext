@@ -1,4 +1,4 @@
-# Template Language {#template}
+# Template Language
 
 This is a little template language specialized in generating HTML documents.
 
@@ -6,7 +6,7 @@ This is a little template language specialized in generating HTML documents.
 
 The language allows web designers to do their job and lets developers put in the dynamic parts. The syntax and terminals are chosen to be readable and allow rendering the templates in the browser as well as in any HTML 5 compatible WYSIWYG editors. Still, when opened in the DSL editor you get the fully featured, statically typed Eclipse editor.
 
-## Overview {#templates-solution}
+## Overview
 
 A template language works in two modes: Plain text mode, where everything goes directly into the output and the expression mode, where expressions have to be evaluated and the result is inserted into the text. To switch between text mode and expression mode, we use the French quotes `«` and `»`. A document starts in text mode.
 
@@ -14,11 +14,11 @@ The template will be compiled to a Java class with a `generate(params)` method. 
 
 We provide additional `FOR-ENDFOR` and `IF-ELSE-ENDIF` statements to iterate / branch over fixed text blocks. To distinguish them from the Xbase expressions with the same names, they are in uppercase.
 
-## Running the Example {#templates-running}
+## Running the Example
 
 In the runtime workspace, run the *GenerateHtml* file as a Java application (*Run as... &rarr; Java Application* from the context menu). This will execute the template *MyWebsite* and print the result to the console. 
 
-## Grammar {#templates-grammar}
+## Grammar
 
 This is the grammar of the templates DSL: 
 
@@ -79,7 +79,7 @@ It becomes quite straightforward once you have understood the escaping. Have a l
 
 A *TemplateFile* starts with a comment and switches to the expression mode for the preamble part consisting of the package declaration, the imports and the parameter declaration. The body is a *RichString*, which is an alternating sequence of *RichStringLiterals* and *RichStringPart*. The *RichStringLiterals* is essentially a text block (in inverted French quotes). The *RichStringPart* is either an Xbase expression, a *RichStringForLoop* or a *RichStringIf*. The latter inherit from the Xbase expressions with the same name to reuse as much of the Xbase infrastructure as possible. The rest should be easy.
 
-## Translation to Java {#templates-inferrer}
+## Translation to Java
 
 Each *TemplateFile* is compiled to a Java class with a `generate` method that takes a lambda expression as a parameter. The lambda expression is called to initialize the template's properties, by handling the template itself as an argument. This comes along nicely, especially when called from Xtend.
 
@@ -209,7 +209,7 @@ The body of the template is compiled into a big private `generate()` method. We 
     ...
     ```
 
-## Extending the Compiler {#templates-compiler}
+## Extending the Compiler
 
 We have added additional expressions to Xbase, so we have to tell the compiler how to translate them to Java. The [XbaseCompiler](https://github.com/eclipse/xtext-extras/blob/master/org.eclipse.xtext.xbase/src/org/eclipse/xtext/xbase/compiler/XbaseCompiler.java) has a method `doInternalToJavaStatement` that dispatches the compilation with regard to the type of the current expression. This is where we have to hook in with our [TemplateCompiler](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.template/src/org/xtext/template/jvmmodel/TemplateCompiler.xtend):
 
@@ -289,7 +289,7 @@ override protected internalToConvertedExpression(XExpression obj,
 
 As usual, we have to bind our [TemplateCompiler](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.template/src/org/xtext/template/jvmmodel/TemplateCompiler.xtend) in the [TemplateRuntimeModule](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.template/src/org/xtext/template/TemplateRuntimeModule.java) in order to be picked up as the [XbaseCompiler](https://github.com/eclipse/xtext-extras/blob/master/org.eclipse.xtext.xbase/src/org/eclipse/xtext/xbase/compiler/XbaseCompiler.java) in the context of our language.
 
-## Type Computation {#templates-type-provider}
+## Type Computation
 
 The type system has to know how to determine the types of our new expressions. This is the job of the [TemplateTypeComputer](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.template/src/org/xtext/template/typesystem/TemplateTypeComputer.xtend): *RichString* becomes a [StringBuilder](http://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.md). As opposed to its super type [XForLoopExpression](https://github.com/eclipse/xtext-extras/blob/master/org.eclipse.xtext.xbase/emf-gen/org/eclipse/xtext/xbase/XForLoopExpression.java) a *RichStringForLoop* is of type [StringBuilder](http://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.md) as well. The for-loop's body is expected to have a type, as the results must be concatenatable, which is different from Xbase's for-loop.
 
@@ -310,11 +310,11 @@ class TemplateTypeComputer extends XbaseWithAnnotationsTypeComputer {
 
 Like the compiler, we have to bind this implementation in our [runtime module](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.template/src/org/xtext/template/TemplateRuntimeModule.java) as well.
 
-## Value Converter {#templates-value-converter}
+## Value Converter
 
 The *RichStringLiterals* still have the French quotes around their values. As we do not want to see them in the output, we have implemented the [TemplateValueConverterService](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.template/src/org/xtext/template/TemplateValueConverterService.xtend) and bound it in the [runtime module](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.template/src/org/xtext/template/TemplateRuntimeModule.java).
 
-## Content Assist {#templates-content-assist}
+## Content Assist
 
 The French quotes are not easy to type on every keyboard. We have adapted content assist to insert them when the cursor is inside a TEXT terminal:
 
@@ -332,7 +332,7 @@ public class TemplateProposalProvider
 }
 ```
 
-## Syntax Highlighting {#templates-highlighting}
+## Syntax Highlighting
 
 Sometimes it is hard to see whether you are in text mode or in expression mode. To give the user better feedback, we have changed the way the text is highlighted. This customization consists of two parts: Add new highlighting styles in the [TemplateHighlightingConfiguration](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.template.ui/src/org/xtext/template/ui/highlighting/TemplateHighlightingConfiguration.xtend) and apply them to the text in the [TemplateHighlightingCalculator](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.template.ui/src/org/xtext/template/ui/highlighting/TemplateHighlightingCalculator.xtend). As this is rather extensively covered in the [Xtext documentation](310_eclipse_support.html#highlighting), we skip a deeper explanation here. 
 

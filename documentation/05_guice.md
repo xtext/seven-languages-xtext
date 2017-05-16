@@ -1,10 +1,10 @@
-# DSL for Guice {#guice}
+# DSL for Guice
 
 The Guice DSL is a little language that lets you define Guice modules in a readable and declarative way. 
 
 ![](images/guicemodules_screenshot.png)
 
-## Overview {#guice-solution}
+## Overview
 
 Guice is a great dependency injection container, which uses Java types and annotations to declare and refer to injection points. You could for instance have the following field:
 
@@ -44,7 +44,7 @@ The Guice DSL described in this section lets you describe the module above like 
 
 This not only uses the exact same syntax one uses in any injection points, but also opens up all kinds of possibilities for static analysis. Usually the instantiation of a Guice injector at runtime takes quite some time, because then all the very helpful validation is done. A language like the one described in this section could do all theses analysis at compile time, that way speeding up start up of the whole application significantly. 
 
-## Running the Example {#guice-running}
+## Running the Example
 
 In the example located in the project *org.xtext.guicemodules.examples* two modules are declared, one for a possible runtime scenario and one for a test scenario (yes, you sometimes want a module for tests).
 
@@ -65,7 +65,7 @@ com.acme.TestModule mixin RuntimeModule {
 
 You can see the two modules in action by running `com.acme.Main` from the context menu as a *Java application* or as a *JUnit test*. 
 
-## Grammar {#guice-grammar}
+## Grammar
 
 The grammar is less than 30 lines long. It allows declaring any number of imports using the import mechanism already described for the [scripting language](02_scripting.md#scripting-grammar). A module can 'mixin' any number of other modules, which allows to reuse existing modules but override keys with different bindings. The mixin feature is described as a cross reference to another `ModuleAST`. Cross references are covered in detail in the respective [documentation section](https://www.eclipse.org/Xtext/documentation/301_grammarlanguage.html#cross-references).
 
@@ -101,7 +101,7 @@ KeyAST:
 
 ```
 
-## Translation to Java {#guice-inferrer}
+## Translation to Java
 
 A module is mapped to a single java class. The 'mixin' modules are not translated to Java inheritance but to a delegation approach. Here is how a simple module declaration with a single mixed-in module is translated.
 
@@ -237,7 +237,7 @@ def guiceKey(KeyAST it) '''
 
 That is basically it. The rest should hopefully be self-explanatory.
 
-## Validation {#guice-validation}
+## Validation
 
 One of the sweet spots for a Guice modules DSL is the ability to do a lot of the validation usually done at runtime during compile time. Since this is just an example it just scratches the surface. There is just a single compiler check validating whether any used annotation is itself annotated with `BindingAnnotation`.
 

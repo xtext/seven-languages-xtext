@@ -1,4 +1,4 @@
-# Introduction {#sevenlang-introduction}
+# Introduction
 
 Building a domain-specific language (DSL) for structural parts of an application has always been rather easy with Xtext. But structure alone is not sufficient in many cases. When it comes to the behavioral aspects users often fall back to implementing them in Java. The reasons are obvious: expressions and statements are hard to get right and extremely complex and therefore costly to implement.
 
@@ -28,11 +28,11 @@ To illustrate the power and flexibility of these two abstractions, we have built
 
 Each language is very simple and focuses on the value a DSL can add to the respective viewpoint. It is meant to give you an idea of what is possible without being a complete practical solution. Yet the languages are flexible and come with powerful core abstractions. We also covered different technical aspects of customizing to the language infrastructure. Some languages have special syntax coloring, others provide customized outline views or content assist. All aspects of a language are still fully customizable when using Xbase.
 
-## CAUTION: This is Provisional API {#provisional-API}
+## CAUTION: This is Provisional API
 
 **Please be aware that some of the new API covered in this document is not yet finalized and will likely be improved in future releases in incompatible ways. Usages of such API are marked with a warning.**
 
-## Common Requirements {#common-requirements}
+## Common Requirements
 
 To run any of the examples, you will need [Eclipse 3.6 or better](http://www.eclipse.org/downloads/) for your platform. In addition, you have to install [Xtend](http://www.eclipse.org/xtend/download.md) and of course [Xtext](http://www.eclipse.org/Xtext/download.md).
 
@@ -40,7 +40,7 @@ If you prefer a simple all-inclusive installation, consider downloading the late
 
 Additional requirements are mentioned in the *Running the Example* section of each chapter.
 
-## Getting the Code {#installation}
+## Getting the Code
 
 You can get the source code for all languages from the github repository at [github.com/xtext-dev/seven-languages-xtext](https://github.com/xtext-dev/seven-languages-xtext.git). The repository contains two folders *languages* and *examples*. Download the plug-ins from *languages* into the root workspace and the *examples* into the runtime workspace spawned from the root one using *Run &rarr; Run Configurations... &rarr; Eclipse Application &rarr; Run (\<language\>)*.
 
@@ -55,7 +55,7 @@ Each language consists of several Eclipse projects
 
 Some of the languages do not include all of these plug-ins but the general structure is always the same.
 
-## A Short Xtend Primer {#xtend-primer}
+## A Short Xtend Primer
 
 Any general code in the examples is implemented in [Xtend](http://www.xtend-lang.org). Xtend is a more expressive and less verbose way to implement Java applications. It is 100% interoperable with Java APIs and compiles to readable Java code. In addition, it uses the same expressions that we use in our example languages. In fact it is built with the very same API that is described in this document. This should give you a taste of how powerful JVM-languages built with Xtext can actually be. 
 
