@@ -82,7 +82,7 @@ There should not be any surprises if you know the grammar language: A *Model* co
 
 ## Translation to Java
 
-In [RouteJvmModelInferrer](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.httprouting/src/org/xtext/httprouting/jvmmodel/RouteJvmModelInferrer.xtend) you can see that a Java class extending the class [HttpServlet](https://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServlet.md) is derived. First the *Dependencies* are translated to Java fields. This is almost a one-to-one mapping.
+In [RouteJvmModelInferrer](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.httprouting/src/org/xtext/httprouting/jvmmodel/RouteJvmModelInferrer.xtend) you can see that a Java class extending the class [HttpServlet](https://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServlet.html) is derived. First the *Dependencies* are translated to Java fields. This is almost a one-to-one mapping.
 
 ```xtend
 // translate the dependencies to fields annotated with @Inject
@@ -109,7 +109,7 @@ for (route : model.routes.filter[ url != null ]) {
 
 Note that the code in a model inferrer has to be very defensive, because it is called for any kind of broken models. You just cannot assume that the URL is set although it is mandatory in the grammar, because the user might have written syntactically incorrect code.
 
-Next up the handler methods from [HttpServlet](https://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServlet.md) are implemented such that they dispatch according the URL patterns and when-clauses. Here is a translated example:
+Next up the handler methods from [HttpServlet](https://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServlet.html) are implemented such that they dispatch according the URL patterns and when-clauses. Here is a translated example:
 
 *   DSL:
     

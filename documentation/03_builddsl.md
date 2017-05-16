@@ -149,7 +149,7 @@ Finally, we create a field with the [Param](https://github.com/xtext/seven-langu
     public String name = "World";
     ```
 
-The type can be skipped. If there is an initialization expression, the parameter's type is inferred from the initialization expression. If that one is missing, too, [String](http://docs.oracle.com/javase/8/docs/api/java/lang/String.md) is assumed. The Elvis-operator `?:` comes handy for this use case. The different sources are tried to find the best type for the field. In the inferrer, this looks like:
+The type can be skipped. If there is an initialization expression, the parameter's type is inferred from the initialization expression. If that one is missing, too, [String](http://docs.oracle.com/javase/8/docs/api/java/lang/String.html) is assumed. The Elvis-operator `?:` comes handy for this use case. The different sources are tried to find the best type for the field. In the inferrer, this looks like:
 
 ```xtend
 @Inject ITypeProvider typeProvider
@@ -186,7 +186,7 @@ class BuildDSLValidator extends XbaseJavaValidator {
 
 By using the *XImportSection* form Xbase, the language automatically supports the notion of *plain imports*, *static imports* and *static extension imports*. While the first two work as in Java, a static extension import puts the static methods of the specified calls on the extension scope, such that it can be called as if it were a method on the first argument. See the [Xtend primer](01_introduction.md#xtend_extension) for a more detailed description.
 
-We ship some predefined extension classes to enhance the Java classes [File](http://docs.oracle.com/javase/8/docs/api/java/io/File.md) and [Class](http://docs.oracle.com/javase/8/docs/api/java/lang/Class.md). These are always put onto the extension scope by a customized [BuildDSLImplicitlyImportedFeatures](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.builddsl/src/org/xtext/builddsl/scoping/BuildDSLImplicitlyImportedFeatures.xtend):
+We ship some predefined extension classes to enhance the Java classes [File](http://docs.oracle.com/javase/8/docs/api/java/io/File.html) and [Class](http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html). These are always put onto the extension scope by a customized [BuildDSLImplicitlyImportedFeatures](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.builddsl/src/org/xtext/builddsl/scoping/BuildDSLImplicitlyImportedFeatures.xtend):
 
 ```xtend
 class BuildDSLImplicitlyImportedFeatures extends ImplicitlyImportedFeatures {
@@ -215,7 +215,7 @@ public class BuildDSLRuntimeModule
 
 ## Operator Overloading
 
-As we expect a build language to deal with files and directories a lot, we have extended the syntax around these in the [FileExtensions](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.builddsl.lib/src/org/xtext/builddsl/lib/FileExtensions.xtend). We leverage the fact that Xbase allows to overload operators by means of library extensions. The following examples show how to avoid the noisy constructor calls to [File](http://docs.oracle.com/javase/8/docs/api/java/io/File.md):
+As we expect a build language to deal with files and directories a lot, we have extended the syntax around these in the [FileExtensions](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.builddsl.lib/src/org/xtext/builddsl/lib/FileExtensions.xtend). We leverage the fact that Xbase allows to overload operators by means of library extensions. The following examples show how to avoid the noisy constructor calls to [File](http://docs.oracle.com/javase/8/docs/api/java/io/File.html):
 
 *   DSL:
     
@@ -234,7 +234,7 @@ As we expect a build language to deal with files and directories a lot, we have 
         "fileName.txt");
     ```
 
-The compiler replaces operators with method calls to methods named `operator_<operatorName>()`. These have to be callable on the left operand, i.e. be a method of the left operands type or be added as an extension to the left operand type. In this case, we use the latter approach, since [File](http://docs.oracle.com/javase/8/docs/api/java/io/File.md) as well as [String](http://docs.oracle.com/javase/8/docs/api/java/lang/String.md) are sealed types. To learn more about operators and operator overloading please consult the [Xbase documentation](https://www.eclipse.org/Xtext/documentation/305_xbase.html#xbase-expressions-operators).
+The compiler replaces operators with method calls to methods named `operator_<operatorName>()`. These have to be callable on the left operand, i.e. be a method of the left operands type or be added as an extension to the left operand type. In this case, we use the latter approach, since [File](http://docs.oracle.com/javase/8/docs/api/java/io/File.html) as well as [String](http://docs.oracle.com/javase/8/docs/api/java/lang/String.html) are sealed types. To learn more about operators and operator overloading please consult the [Xbase documentation](https://www.eclipse.org/Xtext/documentation/305_xbase.html#xbase-expressions-operators).
 
 ## Run as... Integration
 

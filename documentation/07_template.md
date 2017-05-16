@@ -164,7 +164,7 @@ Each *Parameter* becomes a Java property, i.e. a field with a getter and a sette
     }
     ```
 
-In the inferrer, note that we derive the property's type in three steps: Take the declared one, if there is none, derive it from the initializer and if even that fails, use [String](http://docs.oracle.com/javase/8/docs/api/java/lang/String.md) as default. 
+In the inferrer, note that we derive the property's type in three steps: Take the declared one, if there is none, derive it from the initializer and if even that fails, use [String](http://docs.oracle.com/javase/8/docs/api/java/lang/String.html) as default. 
 
 ```xtend
 for (param : element.params) {
@@ -231,7 +231,7 @@ class TemplateCompiler extends XbaseCompiler {
 ...
 ```
 
-For a *RichString*, we declare a variable `_appendable` of type [StringBuilder](http://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.md) and append the results of all its evaluated expressions. Remember from the grammar that every second expression is a *RichStringPart* which can be `null`, so we use the 'elvis operator' `?:` to insert an empty string in this case. 
+For a *RichString*, we declare a variable `_appendable` of type [StringBuilder](http://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html) and append the results of all its evaluated expressions. Remember from the grammar that every second expression is a *RichStringPart* which can be `null`, so we use the 'elvis operator' `?:` to insert an empty string in this case. 
 
 ```xtend
 RichString : {
@@ -291,7 +291,7 @@ As usual, we have to bind our [TemplateCompiler](https://github.com/xtext/seven-
 
 ## Type Computation
 
-The type system has to know how to determine the types of our new expressions. This is the job of the [TemplateTypeComputer](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.template/src/org/xtext/template/typesystem/TemplateTypeComputer.xtend): *RichString* becomes a [StringBuilder](http://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.md). As opposed to its super type [XForLoopExpression](https://github.com/eclipse/xtext-extras/blob/master/org.eclipse.xtext.xbase/emf-gen/org/eclipse/xtext/xbase/XForLoopExpression.java) a *RichStringForLoop* is of type [StringBuilder](http://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.md) as well. The for-loop's body is expected to have a type, as the results must be concatenatable, which is different from Xbase's for-loop.
+The type system has to know how to determine the types of our new expressions. This is the job of the [TemplateTypeComputer](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.template/src/org/xtext/template/typesystem/TemplateTypeComputer.xtend): *RichString* becomes a [StringBuilder](http://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html). As opposed to its super type [XForLoopExpression](https://github.com/eclipse/xtext-extras/blob/master/org.eclipse.xtext.xbase/emf-gen/org/eclipse/xtext/xbase/XForLoopExpression.java) a *RichStringForLoop* is of type [StringBuilder](http://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html) as well. The for-loop's body is expected to have a type, as the results must be concatenatable, which is different from Xbase's for-loop.
 
 ```xtend
 class TemplateTypeComputer extends XbaseWithAnnotationsTypeComputer {

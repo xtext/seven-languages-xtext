@@ -41,7 +41,7 @@ package org.musicdb {
 }
 ```
 
-For each *MongoBean* definition in a *MongoFile* file, we generate a Java class that wraps a [DBObject](http://api.mongodb.org/java/2.6/com/mongodb/DBObject.md). The class provides statically typed getter and setter methods for all defined *MongoProperties*. In the implementation of these accessor methods we delegate to the wrapped [DBObject](http://api.mongodb.org/java/2.6/com/mongodb/DBObject.md) and do all the casting and conversion work. For the `Artist` in the above example, this would look like
+For each *MongoBean* definition in a *MongoFile* file, we generate a Java class that wraps a [DBObject](http://api.mongodb.org/java/2.6/com/mongodb/DBObject.html). The class provides statically typed getter and setter methods for all defined *MongoProperties*. In the implementation of these accessor methods we delegate to the wrapped [DBObject](http://api.mongodb.org/java/2.6/com/mongodb/DBObject.html) and do all the casting and conversion work. For the `Artist` in the above example, this would look like
 
 ```java
 public class Artist implements IMongoBean {
@@ -170,7 +170,7 @@ def dispatch void infer(MongoFile file,
 
 First, it finds all elements of type *MongoBean* in the given *MongoFile*. For each of these, it creates a new Java class. Then the documentation is copied and the interface [IMongoBean](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.mongobeans.lib/src/org/xtext/mongobeans/lib/IMongoBean.xtend) is added to the list of supertypes. This will also insert a Java import at the appropriate location. 
 
-Each *MongoBean* wraps a [DBObject](http://api.mongodb.org/java/2.6/com/mongodb/DBObject.md), which is represented as a Java field with a getter. There are two constructors, one for a given [DBObject](http://api.mongodb.org/java/2.6/com/mongodb/DBObject.md) and one that creates a new one. We have to store the class name in the DB object, if we want to be able to restore JavaBeans from query results.
+Each *MongoBean* wraps a [DBObject](http://api.mongodb.org/java/2.6/com/mongodb/DBObject.html), which is represented as a Java field with a getter. There are two constructors, one for a given [DBObject](http://api.mongodb.org/java/2.6/com/mongodb/DBObject.html) and one that creates a new one. We have to store the class name in the DB object, if we want to be able to restore JavaBeans from query results.
 
 *   DSL:
     
@@ -227,7 +227,7 @@ def protected addConstructors(JvmDeclaredType inferredType,
 }
 ```
 
-Next on our list are the getters and setters delegating to the `_dbObject`. We have to handle four cases: Properties with a type that can be handled by the mongoDB Java-driver directly (most primitive types, [String](http://docs.oracle.com/javase/8/docs/api/java/lang/String.md), [Date](http://docs.oracle.com/javase/8/docs/api/java/util/Date.md), etc.), [IMongoBean](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.mongobeans.lib/src/org/xtext/mongobeans/lib/IMongoBean.xtend) properties, and their respective multi-valued counterparts: 
+Next on our list are the getters and setters delegating to the `_dbObject`. We have to handle four cases: Properties with a type that can be handled by the mongoDB Java-driver directly (most primitive types, [String](http://docs.oracle.com/javase/8/docs/api/java/lang/String.html), [Date](http://docs.oracle.com/javase/8/docs/api/java/util/Date.html), etc.), [IMongoBean](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.mongobeans.lib/src/org/xtext/mongobeans/lib/IMongoBean.xtend) properties, and their respective multi-valued counterparts: 
 
 *   DSL:
     
@@ -271,7 +271,7 @@ Next on our list are the getters and setters delegating to the `_dbObject`. We h
     ...
     ```
 
-The runtime helper class [WrappingUtil](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.mongobeans.lib/src/org/xtext/mongobeans/lib/WrappingUtil.xtend) does the conversion between [DBObject](http://api.mongodb.org/java/2.6/com/mongodb/DBObject.md) and [IMongoBean](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.mongobeans.lib/src/org/xtext/mongobeans/lib/IMongoBean.xtend). For multi-valued *MongoProperties* we need getters only. If they have a primitive type, they can be handled by the Java-driver directly. Multi-valued *MongoBean* typed properties require a special [MongoBeanList](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.mongobeans.lib/src/org/xtext/mongobeans/lib/MongoBeanList.xtend) to automatically wrap/unwrap the elements. 
+The runtime helper class [WrappingUtil](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.mongobeans.lib/src/org/xtext/mongobeans/lib/WrappingUtil.xtend) does the conversion between [DBObject](http://api.mongodb.org/java/2.6/com/mongodb/DBObject.html) and [IMongoBean](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.mongobeans.lib/src/org/xtext/mongobeans/lib/IMongoBean.xtend). For multi-valued *MongoProperties* we need getters only. If they have a primitive type, they can be handled by the Java-driver directly. Multi-valued *MongoBean* typed properties require a special [MongoBeanList](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.mongobeans.lib/src/org/xtext/mongobeans/lib/MongoBeanList.xtend) to automatically wrap/unwrap the elements. 
 
 The corresponding inferrer code does not show anything particularly new so we skip most of it for brevity. To detect whether a type is an [IMongoBean](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.mongobeans.lib/src/org/xtext/mongobeans/lib/IMongoBean.xtend) or a primitive mongoDB type, we use the last helper class [MongoTypes](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.mongobeans/src/org/xtext/mongobeans/jvmmodel/MongoTypes.xtend). The following snippet shows the inference of the getter for multi-valued properties:
 
@@ -390,7 +390,7 @@ class MongoBeansValidator extends XbaseJavaValidator {
 
 ## IDE Enhancements
 
-The validator from the previous section raises an error `ILLEGAL_PROPERTY_NAME` when a property is named [DBObject](http://api.mongodb.org/java/2.6/com/mongodb/DBObject.md). We have implemented a quick fix to replace the invalid name: 
+The validator from the previous section raises an error `ILLEGAL_PROPERTY_NAME` when a property is named [DBObject](http://api.mongodb.org/java/2.6/com/mongodb/DBObject.html). We have implemented a quick fix to replace the invalid name: 
 
 ```xtend
 class MongoBeansQuickfixProvider extends XbaseWithAnnotationsQuickfixProvider {

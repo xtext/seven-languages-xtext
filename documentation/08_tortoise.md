@@ -193,7 +193,7 @@ The [StopLineReachedException](https://github.com/xtext/seven-languages-xtext/bl
 
 ## Literal Classes
 
-To make the static methods and fields of [Math](http://docs.oracle.com/javase/8/docs/api/java/lang/Math.md) and [ColorConstants](https://github.com/eclipse/gef/blob/master/org.eclipse.draw2d/src/org/eclipse/draw2d/ColorConstants.java) callable directly, we provided the [TortoiseShellImplicitlyImportedFeatures](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.tortoiseshell/src/org/xtext/tortoiseshell/scoping/TortoiseShellImplicitlyImportedFeatures.xtend):
+To make the static methods and fields of [Math](http://docs.oracle.com/javase/8/docs/api/java/lang/Math.html) and [ColorConstants](https://github.com/eclipse/gef/blob/master/org.eclipse.draw2d/src/org/eclipse/draw2d/ColorConstants.java) callable directly, we provided the [TortoiseShellImplicitlyImportedFeatures](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.tortoiseshell/src/org/xtext/tortoiseshell/scoping/TortoiseShellImplicitlyImportedFeatures.xtend):
 
 ```xtend
 class TortoiseShellImplicitlyImportedFeatures extends ImplicitlyImportedFeatures {

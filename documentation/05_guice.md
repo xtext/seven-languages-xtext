@@ -133,7 +133,7 @@ A module is mapped to a single java class. The 'mixin' modules are not translate
     }
     ```
 
-As you can see, the language simply leverages the nice `equals`/`hashCode` implementation of Guice's [Key](https://google.github.io/guice/api-docs/latest/javadoc/com/google/inject/Key.md) to implement the override semantics of mixed-in modules.
+As you can see, the language simply leverages the nice `equals`/`hashCode` implementation of Guice's [Key](https://google.github.io/guice/api-docs/latest/javadoc/com/google/inject/Key.html) to implement the override semantics of mixed-in modules.
 
 The corresponding parts in [GuiceModulesJvmModelInferrer](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.guicemodules/src/org/xtext/guicemodules/jvmmodel/GuiceModulesJvmModelInferrer.xtend) are:
 
@@ -183,7 +183,7 @@ for (binding : module.bindings) {
 ...
 ```
 
-In order to obtain instances of annotations as required by Guice's [Binder](https://google.github.io/guice/api-docs/latest/javadoc/com/google/inject/Binder.md), we declare dummy fields for annotated types and use reflection to get corresponding instances.
+In order to obtain instances of annotations as required by Guice's [Binder](https://google.github.io/guice/api-docs/latest/javadoc/com/google/inject/Binder.html), we declare dummy fields for annotated types and use reflection to get corresponding instances.
 
 *   DSL:
     
@@ -256,7 +256,7 @@ This is the relevant code from [GuiceModulesValidator](https://github.com/xtext/
   }
 ```
 
-It would be really cool to leverage the full information, which is available and analyze the dependencies transitively so you get feedback while you type for any unfulfilled dependencies. Also using all the information to compile a ready to use [Injector](https://google.github.io/guice/api-docs/latest/javadoc/com/google/inject/Injector.md) instead of a module seems interesting. 
+It would be really cool to leverage the full information, which is available and analyze the dependencies transitively so you get feedback while you type for any unfulfilled dependencies. Also using all the information to compile a ready to use [Injector](https://google.github.io/guice/api-docs/latest/javadoc/com/google/inject/Injector.html) instead of a module seems interesting. 
 
 ---
 
