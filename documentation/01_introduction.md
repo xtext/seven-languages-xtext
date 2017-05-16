@@ -46,12 +46,11 @@ You can get the source code for all languages from the github repository at [git
 
 Each language consists of several Eclipse projects 
 
-|:---|:---|
-|*org.xtext.\<language\>*|The base infrastructure|
-|*org.xtext.\<language\>.ui*|The editor based on Eclipse|
-|*org.xtext.\<language\>.tests*|Tests for the language|
-|*org.xtext.\<language\>.lib*|Runtime library|
-|*org.xtext.\<language\>.example*|Examples for using the language|
+ * `org.xtext.<language>` &ndash; The base infrastructure
+ * `org.xtext.<language>.ui` &ndash; The editor based on Eclipse
+ * `org.xtext.<language>.tests` &ndash; Tests for the language
+ * `org.xtext.<language>.lib` &ndash; Runtime library
+ * `org.xtext.<language>.example` &ndash; Examples for using the language
 
 Some of the languages do not include all of these plug-ins but the general structure is always the same.
 
