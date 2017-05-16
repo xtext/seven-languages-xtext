@@ -287,7 +287,7 @@ override protected internalToConvertedExpression(XExpression obj,
 }
 ```
 
-As usual, we have to bind our [TemplateCompiler](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.template/src/org/xtext/template/jvmmodel/TemplateCompiler.xtend) in the [TemplateRuntimeModule](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.template/src/org/xtext/template/TemplateRuntimeModule.java) in order to be picked up as the [XbaseCompiler](https://github.com/eclipse/xtext-extras/blob/master/org.eclipse.xtext.xbase/src/org/eclipse/xtext/xbase/compiler/XbaseCompiler.java) in the context of our language.
+As usual, we have to bind our [TemplateCompiler](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.template/src/org/xtext/template/jvmmodel/TemplateCompiler.xtend) in the [TemplateRuntimeModule](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.template/src/org/xtext/template/TemplateRuntimeModule.xtend) in order to be picked up as the [XbaseCompiler](https://github.com/eclipse/xtext-extras/blob/master/org.eclipse.xtext.xbase/src/org/eclipse/xtext/xbase/compiler/XbaseCompiler.java) in the context of our language.
 
 ## Type Computation
 
@@ -308,11 +308,11 @@ class TemplateTypeComputer extends XbaseWithAnnotationsTypeComputer {
 }
 ```
 
-Like the compiler, we have to bind this implementation in our [runtime module](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.template/src/org/xtext/template/TemplateRuntimeModule.java) as well.
+Like the compiler, we have to bind this implementation in our [runtime module](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.template/src/org/xtext/template/TemplateRuntimeModule.xtend) as well.
 
 ## Value Converter
 
-The *RichStringLiterals* still have the French quotes around their values. As we do not want to see them in the output, we have implemented the [TemplateValueConverterService](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.template/src/org/xtext/template/TemplateValueConverterService.xtend) and bound it in the [runtime module](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.template/src/org/xtext/template/TemplateRuntimeModule.java).
+The *RichStringLiterals* still have the French quotes around their values. As we do not want to see them in the output, we have implemented the [TemplateValueConverterService](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.template/src/org/xtext/template/TemplateValueConverterService.xtend) and bound it in the [runtime module](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.template/src/org/xtext/template/TemplateRuntimeModule.xtend).
 
 ## Content Assist
 

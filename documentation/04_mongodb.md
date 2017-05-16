@@ -351,7 +351,7 @@ class MongoQualifiedNameProvider extends XbaseQualifiedNameProvider {
 }
 ```
 
-To make the framework pick up our customization, we have to add a binding in the respective [Guice module](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.mongobeans/src/org/xtext/mongobeans/MongoBeansRuntimeModule.java). 
+To make the framework pick up our customization, we have to add a binding in the respective [Guice module](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.mongobeans/src/org/xtext/mongobeans/MongoBeansRuntimeModule.xtend). 
 
 ```java
 @Override

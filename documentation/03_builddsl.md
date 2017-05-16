@@ -200,7 +200,7 @@ class BuildDSLImplicitlyImportedFeatures extends ImplicitlyImportedFeatures {
 }
 ```
 
-As always, such an implementation has to be bound in the [BuildDSLRuntimeModule](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.builddsl/src/org/xtext/builddsl/BuildDSLRuntimeModule.java):
+As always, such an implementation has to be bound in the [BuildDSLRuntimeModule](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.builddsl/src/org/xtext/builddsl/BuildDSLRuntimeModule.xtend):
 
 ```java
 public class BuildDSLRuntimeModule 
