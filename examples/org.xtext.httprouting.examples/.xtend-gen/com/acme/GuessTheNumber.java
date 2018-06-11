@@ -8,10 +8,11 @@
 package com.acme;
 
 import com.acme.MagicNumber;
-import com.google.common.io.CharStreams;
-import com.google.common.io.OutputSupplier;
+import com.google.common.io.CharSink;
 import com.google.inject.Inject;
+import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.io.Writer;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import org.eclipse.xtend2.lib.StringConcatenation;
@@ -44,7 +45,6 @@ public class GuessTheNumber {
       _xtrycatchfinallyexpression = _parseInt;
     } catch (final Throwable _t) {
       if (_t instanceof NumberFormatException) {
-        final NumberFormatException e = (NumberFormatException)_t;
         StringConcatenation _builder = new StringConcatenation();
         _builder.append(theGuess);
         _builder.append(" is not a number.");
@@ -138,11 +138,15 @@ public class GuessTheNumber {
   
   private void send(final CharSequence answer) {
     try {
-      final OutputSupplier<OutputStreamWriter> _function = () -> {
-        ServletOutputStream _outputStream = this.response.getOutputStream();
-        return new OutputStreamWriter(_outputStream);
+      final CharSink _function = new CharSink() {
+        @Override
+        public Writer openStream() throws IOException {
+          ServletOutputStream _outputStream = GuessTheNumber.this.response.getOutputStream();
+          return new OutputStreamWriter(_outputStream);
+        }
       };
-      CharStreams.<OutputStreamWriter>write(answer, _function);
+      CharSink sink = _function;
+      sink.write(answer);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }

@@ -10,7 +10,6 @@ package org.xtext.guicemodules.jvmmodel;
 import com.google.inject.Binder;
 import com.google.inject.Inject;
 import com.google.inject.Key;
-import com.google.inject.Module;
 import com.google.inject.TypeLiteral;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -54,7 +53,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
     final Procedure1<JvmGenericType> _function = (JvmGenericType it) -> {
       this.builder.setDocumentation(it, this.builder.getDocumentation(module));
       EList<JvmTypeReference> _superTypes = it.getSuperTypes();
-      JvmTypeReference _typeRef = this._typeReferenceBuilder.typeRef(Module.class);
+      JvmTypeReference _typeRef = this._typeReferenceBuilder.typeRef(com.google.inject.Module.class);
       this.builder.<JvmTypeReference>operator_add(_superTypes, _typeRef);
       EList<ModuleAST> _mixins = module.getMixins();
       for (final ModuleAST mixin : _mixins) {

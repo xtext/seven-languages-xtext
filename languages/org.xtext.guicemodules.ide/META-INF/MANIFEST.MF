@@ -11,4 +11,5 @@ Require-Bundle: org.xtext.guicemodules;bundle-version="1.0.0",
 Export-Package: org.xtext.guicemodules.ide.contentassist.antlr,
  org.xtext.guicemodules.ide.contentassist.antlr.internal
 Bundle-Vendor: Eclipse Modeling Project
+Automatic-Module-Name: org.xtext.guicemodules.ide
 

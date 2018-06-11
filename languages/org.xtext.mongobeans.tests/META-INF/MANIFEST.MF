@@ -10,10 +10,10 @@ Require-Bundle: org.xtext.mongobeans,
  org.eclipse.ui.workbench;resolution:=optional,
  org.eclipse.xtend.lib,
  com.google.guava,
- org.eclipse.xtext.xbase.lib,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
  org.xtext.mongobeans.lib;bundle-version="1.0.0",
  org.eclipse.jdt.core;bundle-version="3.5.2",
- org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional,
+ org.objectweb.asm;bundle-version="[6.1.1,6.2.0)";resolution:=optional,
  org.eclipse.xtext.testing,
  org.eclipse.xtext.xbase.testing
 Import-Package: org.apache.log4j,
@@ -26,3 +26,4 @@ Import-Package: org.apache.log4j,
  org.hamcrest.core
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.xtext.mongobeans.tests;x-internal=true
+Automatic-Module-Name: org.xtext.mongobeans.tests

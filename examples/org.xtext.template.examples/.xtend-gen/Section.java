@@ -25,8 +25,7 @@ public class Section {
     int result = 1;
     result = prime * result + ((this.title== null) ? 0 : this.title.hashCode());
     result = prime * result + ((this.description== null) ? 0 : this.description.hashCode());
-    result = prime * result + ((this.body== null) ? 0 : this.body.hashCode());
-    return result;
+    return prime * result + ((this.body== null) ? 0 : this.body.hashCode());
   }
   
   @Override

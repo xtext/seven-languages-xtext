@@ -33,8 +33,7 @@ public class MoveEvent implements ITortoiseEvent {
     final int prime = 31;
     int result = 1;
     result = prime * result + ((this.tortoise== null) ? 0 : this.tortoise.hashCode());
-    result = prime * result + ((this.oldPosition== null) ? 0 : this.oldPosition.hashCode());
-    return result;
+    return prime * result + ((this.oldPosition== null) ? 0 : this.oldPosition.hashCode());
   }
   
   @Override

@@ -59,7 +59,7 @@ public class LaunchConfigurationInfo {
   public boolean configEquals(final ILaunchConfiguration a) {
     try {
       return (((Objects.equal(a.getAttribute(IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME, "X"), this.clazz) && 
-        Objects.equal(a.getAttribute(IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME, "X"), this.project)) && 
+        Objects.equal(a.getAttribute(IJavaLaunchConfigurationConstants.ATTR_PROJECT_NAME, "X"), this.project)) && 
         a.getAttribute(IJavaLaunchConfigurationConstants.ATTR_PROGRAM_ARGUMENTS, "X").contains(this.task)) && 
         Objects.equal(a.getType().getIdentifier(), "org.xtext.builddsl.ui.BuildLaunchConfigurationType"));
     } catch (Throwable _e) {
@@ -85,8 +85,7 @@ public class LaunchConfigurationInfo {
     int result = 1;
     result = prime * result + ((this.project== null) ? 0 : this.project.hashCode());
     result = prime * result + ((this.clazz== null) ? 0 : this.clazz.hashCode());
-    result = prime * result + ((this.task== null) ? 0 : this.task.hashCode());
-    return result;
+    return prime * result + ((this.task== null) ? 0 : this.task.hashCode());
   }
   
   @Override

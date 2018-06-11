@@ -10,3 +10,4 @@ Require-Bundle: org.eclipse.xtext.xbase.lib;bundle-version="2.7.0";visibility:=r
  org.eclipse.emf.mwe2.launch;bundle-version="2.7.0";resolution:=optional;visibility:=reexport,
  org.eclipse.xtend.lib;bundle-version="2.7.0";visibility:=reexport,
  org.eclipse.jdt.core;bundle-version="3.5.0";visibility:=reexport
+Automatic-Module-Name: org.xtext.builddsl.lib

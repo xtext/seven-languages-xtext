@@ -7,11 +7,11 @@
  ******************************************************************************/
 package com.acme
 
+import com.google.common.io.CharSink
 import com.google.inject.Inject
 import java.io.OutputStreamWriter
 import javax.servlet.http.HttpServletResponse
 
-import static extension com.google.common.io.CharStreams.*
 import static extension java.lang.Integer.*
 
 class GuessTheNumber {
@@ -64,7 +64,8 @@ class GuessTheNumber {
 	
 	
 	
-	def private send(CharSequence answer) {
-		answer.write [new OutputStreamWriter(response.outputStream)]
+	def private void send(CharSequence answer) {
+		var CharSink sink = [ new OutputStreamWriter(response.outputStream) ];
+		sink.write(answer)
 	}
 }

@@ -23,3 +23,4 @@ Import-Package: com.mongodb;version="2.6.3",
  org.bson.io;version="2.6.3",
  org.bson.types;version="2.6.3",
  org.bson.util;version="2.6.3"
+Automatic-Module-Name: org.eclipse.orbit.mongodb

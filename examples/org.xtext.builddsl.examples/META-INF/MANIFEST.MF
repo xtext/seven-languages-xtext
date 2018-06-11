@@ -15,3 +15,4 @@ Require-Bundle: org.eclipse.xtext.xbase.lib,
  org.eclipse.core.runtime,
  org.eclipse.jdt.core,
  org.eclipse.swt;bundle-version="3.5.0"
+Automatic-Module-Name: org.xtext.builddsl.examples
