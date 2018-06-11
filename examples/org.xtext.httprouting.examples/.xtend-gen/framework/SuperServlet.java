@@ -10,7 +10,6 @@ package framework;
 import com.google.inject.Binder;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import com.google.inject.Module;
 import com.google.inject.Provider;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -29,7 +28,7 @@ public class SuperServlet extends NumberGuessing {
   @Override
   public void init() throws ServletException {
     super.init();
-    final Module _function = (Binder it) -> {
+    final com.google.inject.Module _function = (Binder it) -> {
       final Provider<HttpServletRequest> _function_1 = () -> {
         return this.request.get();
       };

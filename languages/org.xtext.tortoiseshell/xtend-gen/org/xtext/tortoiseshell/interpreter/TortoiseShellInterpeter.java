@@ -54,7 +54,6 @@ public class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoi
         }
       } catch (final Throwable _t) {
         if (_t instanceof StopLineReachedException) {
-          final StopLineReachedException exc = (StopLineReachedException)_t;
         } else {
           throw Exceptions.sneakyThrow(_t);
         }

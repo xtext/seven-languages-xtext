@@ -9,7 +9,6 @@ package org.xtext.guicemodules.tests;
 
 import com.google.inject.Guice;
 import com.google.inject.Inject;
-import com.google.inject.Module;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.testing.InjectWith;
 import org.eclipse.xtext.testing.XtextRunner;
@@ -140,7 +139,7 @@ public class IntegrationTest {
       final IAcceptor<CompilationTestHelper.Result> _function = (CompilationTestHelper.Result it) -> {
         try {
           Object _newInstance = it.getCompiledClass().newInstance();
-          final Module module = ((Module) _newInstance);
+          final com.google.inject.Module module = ((com.google.inject.Module) _newInstance);
           final InjectionTarget obj = Guice.createInjector(module).<InjectionTarget>getInstance(InjectionTarget.class);
           Assert.assertEquals("one", IterableExtensions.head(obj.col));
           Assert.assertEquals("hello annotation", obj.s);

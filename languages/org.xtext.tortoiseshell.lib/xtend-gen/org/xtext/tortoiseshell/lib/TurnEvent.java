@@ -32,8 +32,7 @@ public class TurnEvent implements ITortoiseEvent {
     final int prime = 31;
     int result = 1;
     result = prime * result + ((this.tortoise== null) ? 0 : this.tortoise.hashCode());
-    result = prime * result + (int) (Double.doubleToLongBits(this.oldAngle) ^ (Double.doubleToLongBits(this.oldAngle) >>> 32));
-    return result;
+    return prime * result + (int) (Double.doubleToLongBits(this.oldAngle) ^ (Double.doubleToLongBits(this.oldAngle) >>> 32));
   }
   
   @Override

@@ -11,7 +11,6 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
-import org.xtext.tortoiseshell.lib.Module;
 
 @SuppressWarnings("all")
 public class Activator extends AbstractUIPlugin {
@@ -48,7 +47,7 @@ public class Activator extends AbstractUIPlugin {
   }
   
   protected Injector createInjector() {
-    Module _module = new Module();
+    org.xtext.tortoiseshell.lib.Module _module = new org.xtext.tortoiseshell.lib.Module();
     return Guice.createInjector(_module);
   }
 }
