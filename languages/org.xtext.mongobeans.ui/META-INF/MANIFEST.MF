@@ -17,7 +17,7 @@ Require-Bundle: org.xtext.mongobeans;visibility:=reexport,
  org.eclipse.xtext.common.types.ui,
  org.eclipse.xtext.ui.codetemplates.ui,
  org.eclipse.compare,
- org.eclipse.xtend.lib,
+ org.eclipse.xtend.lib;bundle-version="2.14.0",
  com.google.guava,
  org.eclipse.xtext.xbase.lib,
  org.eclipse.jdt.debug.ui,
@@ -26,6 +26,7 @@ Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.xtext.mongobeans.ui.internal,
  org.xtext.mongobeans.ui.contentassist,
- org.xtext.mongobeans.ui.quickfix
+ org.xtext.mongobeans.ui.quickfix,
+ org.xtext.mongobeans.ui.editor
 Bundle-Activator: org.xtext.mongobeans.ui.internal.MongobeansActivator
 Automatic-Module-Name: org.xtext.mongobeans.ui
