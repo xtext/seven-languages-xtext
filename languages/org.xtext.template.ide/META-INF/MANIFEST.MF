@@ -11,4 +11,5 @@ Require-Bundle: org.xtext.template;bundle-version="1.0.0",
  org.antlr.runtime
 Export-Package: org.xtext.template.ide.contentassist.antlr,
  org.xtext.template.ide.contentassist.antlr.internal
+Automatic-Module-Name: org.xtext.template.ide
 

@@ -28,3 +28,4 @@ Export-Package: org.xtext.httprouting.ui.contentassist,
  org.xtext.httprouting.ui.internal,
  org.xtext.httprouting.ui.quickfix
 Bundle-Activator: org.xtext.httprouting.ui.internal.HttproutingActivator
+Automatic-Module-Name: org.xtext.httprouting.ui

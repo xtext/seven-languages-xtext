@@ -35,3 +35,4 @@ Export-Package: org.xtext.tortoiseshell,
  org.xtext.tortoiseshell.tortoiseShell.impl,
  org.xtext.tortoiseshell.tortoiseShell.util,
  org.xtext.tortoiseshell.validation
+Automatic-Module-Name: org.xtext.tortoiseshell

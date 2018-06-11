@@ -28,3 +28,4 @@ Import-Package: org.apache.log4j,
  org.hamcrest.core
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.xtext.builddsl.tests;x-internal=true
+Automatic-Module-Name: org.xtext.builddsl.tests

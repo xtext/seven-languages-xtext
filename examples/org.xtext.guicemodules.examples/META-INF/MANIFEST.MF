@@ -10,3 +10,4 @@ Require-Bundle: com.google.inject;bundle-version="3.0.0",
  org.eclipse.xtext.xbase.lib,
  org.junit;bundle-version="4.8.2",
  javax.inject;bundle-version="1.0.0"
+Automatic-Module-Name: org.xtext.guicemodules.examples

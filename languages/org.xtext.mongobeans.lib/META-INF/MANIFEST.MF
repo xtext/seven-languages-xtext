@@ -10,4 +10,5 @@ Require-Bundle: org.eclipse.xtend.lib,
  org.eclipse.xtext.xbase.lib,
  org.eclipse.orbit.mongodb;bundle-version="2.6.3";visibility:=reexport
 Export-Package: org.xtext.mongobeans.lib
+Automatic-Module-Name: org.xtext.mongobeans.lib
 

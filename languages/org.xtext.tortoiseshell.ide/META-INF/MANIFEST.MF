@@ -11,4 +11,5 @@ Require-Bundle: org.xtext.tortoiseshell;bundle-version="1.0.0",
  org.antlr.runtime
 Export-Package: org.xtext.tortoiseshell.ide.contentassist.antlr,
  org.xtext.tortoiseshell.ide.contentassist.antlr.internal
+Automatic-Module-Name: org.xtext.tortoiseshell.ide
 

@@ -26,3 +26,4 @@ Export-Package: org.xtext.scripting.ui.internal,
  org.xtext.scripting.ui.contentassist,
  org.xtext.scripting.ui.quickfix
 Bundle-Activator: org.xtext.scripting.ui.internal.ScriptingActivator
+Automatic-Module-Name: org.xtext.scripting.ui

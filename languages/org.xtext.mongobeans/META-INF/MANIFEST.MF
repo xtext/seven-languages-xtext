@@ -35,3 +35,4 @@ Export-Package: org.xtext.mongobeans,
  org.xtext.mongobeans.serializer,
  org.xtext.mongobeans.services,
  org.xtext.mongobeans.validation
+Automatic-Module-Name: org.xtext.mongobeans

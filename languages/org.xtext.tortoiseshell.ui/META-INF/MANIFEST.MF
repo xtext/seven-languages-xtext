@@ -28,3 +28,4 @@ Export-Package: org.xtext.tortoiseshell.ui.contentassist,
  org.xtext.tortoiseshell.ui.internal,
  org.xtext.tortoiseshell.ui.quickfix
 Bundle-Activator: org.xtext.tortoiseshell.ui.internal.TortoiseshellActivator
+Automatic-Module-Name: org.xtext.tortoiseshell.ui

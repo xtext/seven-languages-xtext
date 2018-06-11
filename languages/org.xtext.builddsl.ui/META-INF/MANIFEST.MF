@@ -35,3 +35,4 @@ Export-Package: org.xtext.builddsl.ui,
  org.xtext.builddsl.ui.contentassist,
  org.xtext.builddsl.ui.quickfix
 Bundle-Activator: org.xtext.builddsl.ui.internal.BuilddslActivator
+Automatic-Module-Name: org.xtext.builddsl.ui

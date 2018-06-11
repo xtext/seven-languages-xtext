@@ -10,4 +10,5 @@ Require-Bundle: org.eclipse.xtend.lib,
  org.eclipse.xtext.xbase.lib,
  org.junit;bundle-version="4.8.2",
  org.xtext.mongobeans.lib;bundle-version="1.0.0"
+Automatic-Module-Name: org.xtext.mongobeans.examples
 

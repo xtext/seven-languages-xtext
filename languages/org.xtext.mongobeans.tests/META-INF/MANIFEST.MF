@@ -26,3 +26,4 @@ Import-Package: org.apache.log4j,
  org.hamcrest.core
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.xtext.mongobeans.tests;x-internal=true
+Automatic-Module-Name: org.xtext.mongobeans.tests

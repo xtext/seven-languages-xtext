@@ -28,3 +28,4 @@ Export-Package: org.xtext.template.ui.internal,
  org.xtext.template.ui.contentassist,
  org.xtext.template.ui.quickfix
 Bundle-Activator: org.xtext.template.ui.internal.TemplateActivator
+Automatic-Module-Name: org.xtext.template.ui

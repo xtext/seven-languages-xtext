@@ -33,3 +33,4 @@ Export-Package: org.xtext.scripting,
  org.xtext.scripting.scripting.impl,
  org.xtext.scripting.scripting.util,
  org.xtext.scripting.validation
+Automatic-Module-Name: org.xtext.scripting

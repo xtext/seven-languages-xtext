@@ -35,3 +35,4 @@ Export-Package: org.xtext.guicemodules.guiceModules,
  org.xtext.guicemodules.jvmmodel,
  org.xtext.guicemodules.validation,
  org.xtext.guicemodules.serializer
+Automatic-Module-Name: org.xtext.guicemodules
