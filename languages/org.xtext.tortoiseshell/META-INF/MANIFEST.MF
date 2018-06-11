@@ -20,7 +20,7 @@ Require-Bundle: org.eclipse.xtext;bundle-version="2.7.0";visibility:=reexport,
  org.eclipse.xtext.xbase.lib,
  org.xtext.tortoiseshell.lib;bundle-version="1.0.0";visibility:=reexport,
  org.eclipse.draw2d;bundle-version="3.5.0";visibility:=reexport,
- org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional,
+ org.objectweb.asm;bundle-version="[6.1.1,6.2.0)";resolution:=optional,
  org.eclipse.xtend.lib
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
