@@ -16,9 +16,9 @@ import org.eclipse.xtext.xbase.ui.highlighting.XbaseHighlightingConfiguration;
 
 @SuppressWarnings("all")
 public class TemplateHighlightingConfiguration extends XbaseHighlightingConfiguration {
-  public final static String TEXT = "template.text";
+  public static final String TEXT = "template.text";
   
-  public final static String ESCAPE = "teamplate.escape";
+  public static final String ESCAPE = "teamplate.escape";
   
   @Override
   public void configure(final IHighlightingConfigurationAcceptor acceptor) {

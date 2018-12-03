@@ -48,11 +48,11 @@ import org.xtext.httprouting.route.Variable;
  */
 @SuppressWarnings("all")
 public class RouteJvmModelInferrer extends AbstractModelInferrer {
-  private final static String HTTP_REQUEST = "javax.servlet.http.HttpServletRequest";
+  private static final String HTTP_REQUEST = "javax.servlet.http.HttpServletRequest";
   
-  private final static String HTTP_RESPONSE = "javax.servlet.http.HttpServletResponse";
+  private static final String HTTP_RESPONSE = "javax.servlet.http.HttpServletResponse";
   
-  private final static String HTTP_SERVLET = "javax.servlet.http.HttpServlet";
+  private static final String HTTP_SERVLET = "javax.servlet.http.HttpServlet";
   
   @Inject
   @Extension

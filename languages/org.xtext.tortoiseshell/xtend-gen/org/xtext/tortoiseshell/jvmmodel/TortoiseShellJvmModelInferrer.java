@@ -28,7 +28,7 @@ import org.xtext.tortoiseshell.tortoiseShell.SubProgram;
 
 @SuppressWarnings("all")
 public class TortoiseShellJvmModelInferrer extends AbstractModelInferrer {
-  public final static String INFERRED_CLASS_NAME = "MyTortoiseProgram";
+  public static final String INFERRED_CLASS_NAME = "MyTortoiseProgram";
   
   @Inject
   @Extension

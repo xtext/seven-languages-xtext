@@ -26,11 +26,11 @@ import org.xtext.mongobeans.mongoBeans.MongoProperty;
 
 @SuppressWarnings("all")
 public class MongoBeansValidator extends XbaseValidator {
-  public final static String ILLEGAL_TYPE = "issue.illegalType";
+  public static final String ILLEGAL_TYPE = "issue.illegalType";
   
-  public final static String MISSING_TYPE = "issue.missingType";
+  public static final String MISSING_TYPE = "issue.missingType";
   
-  public final static String ILLEGAL_PROPERTY_NAME = "issue.illegalPropertyName";
+  public static final String ILLEGAL_PROPERTY_NAME = "issue.illegalPropertyName";
   
   @Inject
   @Extension

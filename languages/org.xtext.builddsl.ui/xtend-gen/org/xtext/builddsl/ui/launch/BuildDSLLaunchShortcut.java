@@ -39,7 +39,7 @@ import org.xtext.builddsl.ui.launch.LaunchConfigurationInfo;
 
 @SuppressWarnings("all")
 public class BuildDSLLaunchShortcut implements ILaunchShortcut {
-  public final static String BUNDLE_ID = "org.xtext.builddsl.ui";
+  public static final String BUNDLE_ID = "org.xtext.builddsl.ui";
   
   @Override
   public void launch(final ISelection selection, final String mode) {

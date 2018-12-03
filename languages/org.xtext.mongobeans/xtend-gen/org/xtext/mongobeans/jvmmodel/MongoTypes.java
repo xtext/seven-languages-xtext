@@ -25,7 +25,7 @@ public class MongoTypes {
   @Extension
   private RawSuperTypes _rawSuperTypes;
   
-  public final static Set<String> mongoPrimitiveTypes = Collections.<String>unmodifiableSet(CollectionLiterals.<String>newHashSet("double", "java.lang.Double", "java.lang.String", "byte[]", "boolean", "java.lang.Boolean", "java.util.Date", "void", "java.lang.Void", "java.util.regex.Pattern", "int", "java.lang.Integer", "long", "java.lang.Long"));
+  public static final Set<String> mongoPrimitiveTypes = Collections.<String>unmodifiableSet(CollectionLiterals.<String>newHashSet("double", "java.lang.Double", "java.lang.String", "byte[]", "boolean", "java.lang.Boolean", "java.util.Date", "void", "java.lang.Void", "java.util.regex.Pattern", "int", "java.lang.Integer", "long", "java.lang.Long"));
   
   public boolean isMongoPrimitiveType(final JvmTypeReference typeRef) {
     return MongoTypes.mongoPrimitiveTypes.contains(typeRef.getQualifiedName());
