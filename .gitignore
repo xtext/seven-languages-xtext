@@ -8,3 +8,4 @@ bin
 plugin.xml_gen
 .metadata
 .gitignore
+.antlr-generator-3.2.0-patch.jar
