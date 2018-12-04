@@ -5,13 +5,12 @@ import com.acme.impl.DataFile;
 import com.acme.impl.FileDataProvider;
 import com.google.inject.Binder;
 import com.google.inject.Key;
-import com.google.inject.Module;
 import com.google.inject.TypeLiteral;
 import java.util.HashSet;
 import java.util.Set;
 
 @SuppressWarnings("all")
-public class RuntimeModule implements Module {
+public class RuntimeModule implements com.google.inject.Module {
   private String _toInstance1() {
     return "my-data.txt";
   }

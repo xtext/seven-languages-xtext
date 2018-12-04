@@ -20,7 +20,7 @@ import org.xtext.builddsl.ui.launch.BuildDSLLaunchDelegate;
 
 @SuppressWarnings("all")
 public class RefreshJob extends Job {
-  private final static Logger logger = Logger.getLogger(BuildDSLLaunchDelegate.class);
+  private static final Logger logger = Logger.getLogger(BuildDSLLaunchDelegate.class);
   
   private ILaunchConfiguration configuration;
   

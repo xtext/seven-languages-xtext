@@ -49,7 +49,7 @@ import org.xtext.tortoiseshell.lib.view.TortoisePartListener;
 @Singleton
 @SuppressWarnings("all")
 public class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
-  private final static Logger LOGGER = Logger.getLogger(TortoiseView.class);
+  private static final Logger LOGGER = Logger.getLogger(TortoiseView.class);
   
   private FigureCanvas canvas;
   

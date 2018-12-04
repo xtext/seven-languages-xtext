@@ -28,7 +28,7 @@ import org.xtext.builddsl.build.Task;
 
 @SuppressWarnings("all")
 public class BuildDSLValidator extends XbaseValidator {
-  public final static String CYCLIC_DEPENDENCY = "build.issue.cyclicDependency";
+  public static final String CYCLIC_DEPENDENCY = "build.issue.cyclicDependency";
   
   @Override
   protected List<EPackage> getEPackages() {

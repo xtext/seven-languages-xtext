@@ -6,13 +6,12 @@ import com.acme.RuntimeModule;
 import com.acme.impl.BufferedLoggingService;
 import com.google.inject.Binder;
 import com.google.inject.Key;
-import com.google.inject.Module;
 import com.google.inject.TypeLiteral;
 import java.util.HashSet;
 import java.util.Set;
 
 @SuppressWarnings("all")
-public class TestModule implements Module {
+public class TestModule implements com.google.inject.Module {
   private RuntimeModule runtimeModule = new com.acme.RuntimeModule();
   
   private DataProvider _toInstance0() {
