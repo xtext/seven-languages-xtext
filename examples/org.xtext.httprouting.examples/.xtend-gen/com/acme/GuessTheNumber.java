@@ -58,28 +58,28 @@ public class GuessTheNumber {
     Integer _number = this._magicNumber.getNumber();
     boolean _equals = (guess == (_number).intValue());
     if (_equals) {
-      StringConcatenation _builder_1 = new StringConcatenation();
-      _builder_1.append("You did it! The correct number is ");
-      _builder_1.append(guess);
-      _builder_1.append(".");
-      this.sendAnswer(_builder_1);
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("You did it! The correct number is ");
+      _builder.append(guess);
+      _builder.append(".");
+      this.sendAnswer(_builder);
       this._magicNumber.cleanNumber();
     } else {
       Integer _number_1 = this._magicNumber.getNumber();
       boolean _lessThan = (guess < (_number_1).intValue());
       if (_lessThan) {
-        StringConcatenation _builder_2 = new StringConcatenation();
-        _builder_2.append(guess);
-        _builder_2.append(" is too small.");
-        this.sendAnswer(_builder_2);
+        StringConcatenation _builder_1 = new StringConcatenation();
+        _builder_1.append(guess);
+        _builder_1.append(" is too small.");
+        this.sendAnswer(_builder_1);
       } else {
         Integer _number_2 = this._magicNumber.getNumber();
         boolean _greaterThan = (guess > (_number_2).intValue());
         if (_greaterThan) {
-          StringConcatenation _builder_3 = new StringConcatenation();
-          _builder_3.append(guess);
-          _builder_3.append(" is too high.");
-          this.sendAnswer(_builder_3);
+          StringConcatenation _builder_2 = new StringConcatenation();
+          _builder_2.append(guess);
+          _builder_2.append(" is too high.");
+          this.sendAnswer(_builder_2);
         }
       }
     }
