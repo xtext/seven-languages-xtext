@@ -89,7 +89,7 @@ In [RouteJvmModelInferrer](https://github.com/xtext/seven-languages-xtext/blob/m
 for (field : model.declarations.filter(Dependency)) {
   members += field.toField(field.name, field.type) [
     annotations += annotationRef(Inject)
-		addAnnotations(field.annotations)
+    addAnnotations(field.annotations)
   ]
 }
 ```
@@ -99,9 +99,9 @@ Next up a field for the *URL* patterns is generated and a method for the used ex
 ```xtend
 // declare fields for the URL regexp, a method for each when-part 
 // and of course the call part of a route
-for (route : model.routes.filter[ url != null ]) {
+for (route : model.routes.filter[ url !== null ]) {
   members += route.toRoutePatternField
-  if (route.condition != null)
+  if (route.condition !== null)
     members += route.toRouteConditionMethod
   members += route.toRouteCallMethod
 }
@@ -160,7 +160,7 @@ As you can see the expression `controller.handleGuess(theGuess)` is put into a m
    * Gives scope and live to the expression.
    */
   def protected toRouteCallMethod(Route route) {
-    route.toMethod(route.nameOfRouteMethod, typeRef(Void.TYPE)) [
+    route.toMethod(route.nameOfRouteMethod, typeRef(void)) [
       parameters += route.toParameter("request",  typeRef(HTTP_REQUEST))
       parameters += route.toParameter("response", typeRef(HTTP_RESPONSE))
       for (variable : route.url.variables) {

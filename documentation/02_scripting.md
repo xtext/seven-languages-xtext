@@ -17,11 +17,11 @@ println('Hello World!')
 is compiled to the following Java source code
 
 ```java
-package my.first;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 
 public class Application {
   public static void main(String... args) {
-    System.out.println("Hello World!");
+    InputOutput.<String>println("Hello World!");
   }
 }
 ```
@@ -30,13 +30,13 @@ Note that the core language infrastructure such as the parser, linker and compil
 
 ## Running the Example
 
-Make sure you have the projects *org.xtext.scripting* and *org.xtext.scripting.ui* in your workspace. Then start a new Eclipse by choosing *Run &rarr; Run Configurations... &rarr; Eclipse Application &rarr; Run (org.xtext.scripting)*. Import the project *org.xtext.scripting.examples* into the newly spawned workspace using the *Import existing projects into workspace* wizard.
+Make sure you have the projects *org.xtext.scripting*, *org.xtext.scripting.ide* and *org.xtext.scripting.ui* in your workspace. Then start a new Eclipse by choosing *Run &rarr; Run Configurations... &rarr; Eclipse Application &rarr; Run (org.xtext.scripting)*. Import the project *org.xtext.scripting.examples* into the newly spawned workspace using the *Import existing projects into workspace* wizard.
 
 ## Grammar
 
-To build a language with Xtext, you first have to define a grammar. As opposed to other parser generators, an Xtext grammar defines both, the lexical structure of the language and an object model (the AST or semantic model) that is build during parsing. For a more detailed description of the Xtext grammar language, please see the respective [documentation section](https://www.eclipse.org/Xtext/documentation/301_grammarlanguage.html).
+To build a language with Xtext, you first have to define a grammar. As opposed to other parser generators, an Xtext grammar defines both, the lexical structure of the language and an object model (the AST or semantic model) that is built during parsing. For a more detailed description of the Xtext grammar language, please see the respective [documentation section](https://www.eclipse.org/Xtext/documentation/301_grammarlanguage.html).
 
-The grammar for our DSL is rather simple. We inherit from `org.eclipse.xtext.xbase.Xbase` to get the syntax of the expressions. As we want to refer to the type [XBlockExpression](https://github.com/eclipse/xtext-extras/blob/master/org.eclipse.xtext.xbase/emf-gen/org/eclipse/xtext/xbase/XBlockExpression.java), we have to import Xbase's Ecore model. The single type inferred from this grammar goes into the Ecore model `simpleExpressions`.
+The grammar for our DSL is rather simple. We inherit from `org.eclipse.xtext.xbase.Xbase` to get the syntax of the expressions. As we want to refer to the type [XBlockExpression](https://github.com/eclipse/xtext-extras/blob/master/org.eclipse.xtext.xbase/emf-gen/org/eclipse/xtext/xbase/XBlockExpression.java), we have to import Xbase's Ecore model. The single type inferred from this grammar goes into the Ecore model `Scripting.ecore`.
 
 ```xtext
 grammar org.xtext.scripting.Scripting with org.eclipse.xtext.xbase.Xbase
@@ -57,7 +57,7 @@ To make our language executable, we have to define how its concepts relate to Ja
 
 This hook is not only used to explain how to generate Java code, but also to give expressions a proper scope and to make your DSL constructs visible by other JVM languages. The Java type system is used as a common hub to integrate arbitrary languages with each other.
 
-The inferrer is written in Xtend, if you are not yet familiar with it, you should read at least the [Xtend Primer](01_introduction.md#xtend-primer) first.
+The inferrer is written in Xtend, if you are not yet familiar with it, you should read at least the [Xtend Primer](01_introduction.md#a-short-xtend-primer) first.
 
 The JVM model inferrer code for the scripting language looks like this: 
 
@@ -70,11 +70,11 @@ class ScriptingJvmModelInferrer extends AbstractModelInferrer {
                           IJvmDeclaredTypeAcceptor acceptor, 
                           boolean isPreIndexingPhase) {
     val className = script.eResource.URI.trimFileExtension.lastSegment
-   	acceptor.accept(script.toClass(className))[
+    acceptor.accept(script.toClass(className))[
       // the class gets one main method
       members += script.toMethod('main', typeRef(Void.TYPE)) [
-   	    parameters += script.toParameter("args",  typeRef(String).addArrayTypeDimension)
-   	    static = true
+        parameters += script.toParameter("args",  typeRef(String).addArrayTypeDimension)
+        static = true
         varArgs = true
         // Associate the script as the body of the main method
         body = script

@@ -81,7 +81,7 @@ dbCollection.save(john.getDBObject())
 
 ## Running the Example
 
-In addition to the [common requirements](01_introduction.md#common-requirements), you need the [mongoDB implementation](http://www.mongodb.org/downloads) for your platform. We have included the mongoDB Java driver from [Eclipse Orbit](http://download.eclipse.org/tools/orbit/downloads/) in the code base. 
+In addition to the [common requirements](01_introduction.md#common-requirements), you need the [mongoDB implementation](http://www.mongodb.org/downloads) for your platform. We have included the mongoDB Java driver from [Eclipse Orbit](http://download.eclipse.org/tools/orbit/downloads/) in the [code base](https://github.com/xtext/seven-languages-xtext/tree/master/languages/org.eclipse.orbit.mongodb). 
 
 Import the projects into an Eclipse workspace and run the launch configuration *Run (org.eclipse.xtext.mongobeans)*. Import the example plug-in into the new workspace and run `MusicDBXtendTest` as a JUnit test.
 
@@ -126,7 +126,7 @@ MongoOperation:
 	body=XBlockExpression;
 ```
 
-The language inherits from the `Xbase` grammar in order to allow Xbase expressions and references to Java elements. A *MongoFile* starts with an import section (see [Build DSL](03_builddsl.md#builddsl-imports) for details). The import section is followed by any number of *AbstractElements*, which can be *PackageDeclarations* or *MongoBeans*. Note that as opposed to Java, *PackageDeclarations* can be nested. *MongoBeans* define statically typed *MongoProperties*, which can be single-valued or multi-valued denoted by an `*` following the type name. The type of a *MongoProperty* can also be defined inline. *MongoBeans* can also define *MongoOperations*. The body of such an operation is an *XBlockExpression* from Xbase. 
+The language inherits from the `Xbase` grammar in order to allow Xbase expressions and references to Java elements. A *MongoFile* starts with an import section (see [Build DSL](03_builddsl.md#builddsl-imports) for details). The import section is followed by any number of *AbstractElements*, which can be *PackageDeclarations* or *MongoBeans*. Note that as opposed to Java, *PackageDeclarations* can be nested. *MongoBeans* define statically typed *MongoProperties*, which can be single-valued or multi-valued denoted by an `*` following the type name. The type of a *MongoProperty* can also be defined inline. *MongoBeans* can also define *MongoOperations*. The body of such an operation is an [XBlockExpression](https://github.com/eclipse/xtext-extras/blob/master/org.eclipse.xtext.xbase/emf-gen/org/eclipse/xtext/xbase/XBlockExpression.java) from Xbase. 
 
 ## Translation to Java
 
@@ -210,9 +210,10 @@ def protected addDbObjectProperty(JvmDeclaredType
 
 def protected addConstructors(JvmDeclaredType inferredType, 
                               MongoBean bean) {
+  val typeRef1 = typeRef(DBObject)
   inferredType.members += bean.toConstructor [
     documentation = '''...'''
-    parameters += bean.toParameter("dbObject", typeRef(DBObject))
+    parameters += bean.toParameter("dbObject", typeRef1)
     body = '''
       this._dbObject = dbObject;
     '''
@@ -220,7 +221,7 @@ def protected addConstructors(JvmDeclaredType inferredType,
   inferredType.members += bean.toConstructor [
     documentation = '''...'''
     body = '''
-      _dbObject = new com.mongodb.BasicDBObject();
+      _dbObject = new «BasicDBObject»();
       _dbObject.put(JAVA_CLASS_KEY, "«inferredType.identifier»");
     '''
   ]
@@ -325,9 +326,7 @@ def protected addMethod(JvmDeclaredType inferredType,
   inferredType.members += operation.toMethod(operation.name, 
       operation.returnType) [
     documentation = operation.documentation
-    for(parameter: operation.parameters)
-      parameters += parameter.toParameter(parameter.name, 
-          parameter.parameterType)
+    parameters += operation.parameters.map[operation.toParameter(name, parameterType)]
     body = operation.body
   ]
 }
@@ -353,10 +352,9 @@ class MongoQualifiedNameProvider extends XbaseQualifiedNameProvider {
 
 To make the framework pick up our customization, we have to add a binding in the respective [Guice module](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.mongobeans/src/org/xtext/mongobeans/MongoBeansRuntimeModule.xtend). 
 
-```java
-@Override
-public Class<? extends IQualifiedNameProvider> bindIQualifiedNameProvider() {
-  return MongoQualifiedNameProvider.class;
+```xtend
+override Class<? extends IQualifiedNameProvider> bindIQualifiedNameProvider() {
+	return MongoQualifiedNameProvider
 }
 ```
 
@@ -367,7 +365,7 @@ See [Dependency Injection](https://www.eclipse.org/Xtext/documentation/302_confi
 The Java driver for mongoDB cannot map all Java types to mongoDB types. To enforce that constraint, we have added the [MongoBeansValidator](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.mongobeans/src/org/xtext/mongobeans/validation/MongoBeansValidator.xtend). It also checks for missing types and avoids name collisions in the generated code with the implicitly defined property `dbObject`.
 
 ```xtend
-class MongoBeansValidator extends XbaseJavaValidator {
+class MongoBeansValidator extends XbaseValidator {
 ...
   @Inject extension MongoTypes mongoTypes
   
@@ -377,11 +375,11 @@ class MongoBeansValidator extends XbaseJavaValidator {
             ABSTRACT_FEATURE__NAME, 
             ILLEGAL_PROPERTY_NAME, 
             '_' + name)
-    if (type != null) {
+    if (type !== null) {
       if (!type.isMongoType)
         error('Only MongoBeans and mappable types are allowed',
               MONGO_PROPERTY__TYPE, ILLEGAL_TYPE)
-    } else if (inlineType == null) {
+    } else if (inlineType === null) {
       error('Type must be set', ABSTRACT_FEATURE__NAME, MISSING_TYPE)
     }
   }
@@ -390,7 +388,7 @@ class MongoBeansValidator extends XbaseJavaValidator {
 
 ## IDE Enhancements
 
-The validator from the previous section raises an error `ILLEGAL_PROPERTY_NAME` when a property is named [DBObject](http://api.mongodb.org/java/2.6/com/mongodb/DBObject.html). We have implemented a quick fix to replace the invalid name: 
+The validator from the previous section raises an error `ILLEGAL_PROPERTY_NAME` when a property is named [DBObject](http://api.mongodb.org/java/2.6/com/mongodb/DBObject.html). We have implemented a quick fix in the [MongoBeansQuickfixProvider](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.mongobeans.ui/src/org/xtext/mongobeans/ui/quickfix/MongoBeansQuickfixProvider.xtend) class to replace the invalid name: 
 
 ```xtend
 class MongoBeansQuickfixProvider extends XbaseWithAnnotationsQuickfixProvider {
@@ -418,12 +416,12 @@ class MongoBeansOutlineTreeProvider extends DefaultOutlineTreeProvider {
   
   // show inline declared MongoBeans
   def _createChildren(IOutlineNode parentNode, MongoProperty property) {
-    if(property.inlineType != null)
+    if(property.inlineType !== null)
       parentNode.createNode(property.inlineType)
   }
   
   def _isLeaf(MongoProperty property) {
-    property.inlineType == null
+    property.inlineType === null
   }
 }
 ```

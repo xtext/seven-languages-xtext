@@ -1,6 +1,6 @@
 # Build Language
 
-Build tools like Ant or [Gradle](http://gradle.org/) decompose the build process into a set of tasks. A task can stand for a compilation step, copying some files, bundling, running tests etc. The order of execution is calculated from the dependencies of the defined tasks.
+Build tools like [Ant](https://ant.apache.org/) or [Gradle](http://gradle.org/) decompose the build process into a set of tasks. A task can stand for a compilation step, copying some files, bundling, running tests etc. The order of execution is calculated from the dependencies of the defined tasks.
 
 ![](images/builddsl_screenshot.png)
 
@@ -44,7 +44,7 @@ Task:
 	action=XBlockExpression;
 ```
 
-A *BuildFile* starts with a *package* declaration. The generated Java class will be located in this namespace. The next part is an *importSection*. Since version 2.4, Xbase includes extensive tooling to validate and organize import statements. To make this available in your language, you just have to include an *XImportSection* as in this example. The imports are followed by the *Declarations*. A *Declaration* can be a *Task* or a *Parameter*. A *Parameter* can declare a type and an initialization expression. *Tasks* define dependencies on other tasks by means of an Xtext cross-reference. They also contain an action, which is a [XBlockExpression](https://github.com/eclipse/xtext-extras/blob/master/org.eclipse.xtext.xbase/emf-gen/org/eclipse/xtext/xbase/XBlockExpression.java) from Xbase, thus everthing is possible within a task.
+A *BuildFile* starts with a *package* declaration. The generated Java class will be located in this namespace. The next part is an *importSection*. Since version 2.4, Xbase includes extensive tooling to validate and organize import statements. To make this available in your language, you just have to include an *XImportSection* as in this example. The imports are followed by the *Declarations*. A *Declaration* can be a *Task* or a *Parameter*. A *Parameter* can declare a type and an initialization expression. *Tasks* define dependencies on other tasks by means of an Xtext cross-reference. They also contain an action, which is an [XBlockExpression](https://github.com/eclipse/xtext-extras/blob/master/org.eclipse.xtext.xbase/emf-gen/org/eclipse/xtext/xbase/XBlockExpression.java) from Xbase, thus everthing is possible within a task.
 
 ## Translation to Java
 
@@ -85,7 +85,7 @@ class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
                           boolean isPreIndexingPhase) {
     val qualifiedName = file.javaClassName
     val simpleName = Strings.lastToken(qualifiedName, ".")
-    accept(file.toClass(fqn))[
+    accept(file.toClass(qualifiedName))[
       superTypes += typeRef(BuildScript)
 ...      
       val stringArray = typeRef(String).addArrayTypeDimension
@@ -127,12 +127,11 @@ The annotation part may be interesting, so here is the snippet from the inferrer
 
 ```xtend
 // a method for the actual task body
-members += file.tasks.map[ task | toMethod(task.methodName, typeRef(Void.TYPE)) [
+members += file.tasks.map[ task | task.toMethod(task.methodName, typeRef(Void.TYPE)) [
   visibility = JvmVisibility.PROTECTED
   annotations += annotationRef(DependsOn, task.depends.map[name])
   body = task.action
-  ]
-]
+]]
 ```
 
 Finally, we create a field with the [Param](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.builddsl.lib/src/org/xtext/builddsl/lib/Param.xtend) annotation from each *Parameter*. The superclass will make the so marked fields initializable from command line arguments. 
@@ -164,7 +163,7 @@ val type = declaredParameter.type
 When *Tasks* are depending on each other, cycles will break the computation of the execution order. There is a check for this constraint in the validator [BuildDSLValidator](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.builddsl/src/org/xtext/builddsl/validation/BuildDSLValidator.xtend):
 
 ```xtend
-class BuildDSLValidator extends XbaseJavaValidator {
+class BuildDSLValidator extends XbaseValidator {
 ...
   @Check
   def void checkNoRecursiveDependencies(Task task) {
@@ -207,8 +206,8 @@ public class BuildDSLRuntimeModule
     extends org.xtext.builddsl.AbstractBuildDSLRuntimeModule {
 ...
   public Class<? extends ImplicitlyImportedFeatures> 
-      bindImplicitlyImportedFeatures() {
-    return BuildDSLImplicitlyImportedTypes.class;
+      bindImplicitlyImportedTypes() {
+    return BuildDSLImplicitlyImportedFeatures
   }
 }
 ```
