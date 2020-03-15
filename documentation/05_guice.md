@@ -42,15 +42,16 @@ The Guice DSL described in this section lets you describe the module above like 
   }
 ```
 
-This not only uses the exact same syntax one uses in any injection points, but also opens up all kinds of possibilities for static analysis. Usually the instantiation of a Guice injector at runtime takes quite some time, because then all the very helpful validation is done. A language like the one described in this section could do all theses analysis at compile time, that way speeding up start up of the whole application significantly. 
+This not only uses the exact same syntax one uses in any injection points, but also opens up all kinds of possibilities for static analysis. Usually the instantiation of a Guice injector at runtime takes quite some time, because then all the very helpful validation is done. A language like the one described in this section could do all theses analysis at compile time, that way speeding up the start-up of the whole application significantly. 
 
 ## Running the Example
 
 In the example located in the project *org.xtext.guicemodules.examples* two modules are declared, one for a possible runtime scenario and one for a test scenario (yes, you sometimes want a module for tests).
 
 ```guice
-import com.acme.*
-import com.acme.impl.*
+import com.acme.impl.BufferedLoggingService
+import com.acme.impl.DataFile
+import com.acme.impl.FileDataProvider
 
 com.acme.RuntimeModule {
   bind DataProvider to FileDataProvider
@@ -108,24 +109,30 @@ A module is mapped to a single java class. The 'mixin' modules are not translate
 *   DSL:
     
     ```guice
-    MyModule mixin OtherModule { 
-    }
+    OtherModule {}
+    MyModule mixin OtherModule {}
     ```
 *   Java:
     
     ```java
-    public class MyModule implements Module {
-    
+    import com.google.inject.Binder;
+    import com.google.inject.Key;
+    import java.util.HashSet;
+    import java.util.Set;
+
+    public class MyModule implements com.google.inject.Module {
       private OtherModule otherModule = new OtherModule();
-    
+
       public void configure(final Binder binder) {
-        configure(binder, new HashSet<com.google.inject.Key<?>>());
+        configure(binder, new HashSet<Key<?>>());
       }
-    
-      public void configure(final Binder bind, 
-          final Set<Key<? extends Object>> usedKeys) {
+
+      /**
+       * Registers bindings for keys not present in the given set.
+       */
+      public void configure(final Binder bind, final Set<Key<?>> usedKeys) {
         try {
-          testModule.configure(bind, usedKeys);
+          otherModule.configure(bind, usedKeys);
         } catch (Exception e) {
           throw new RuntimeException(e);
         }
@@ -160,8 +167,8 @@ accept(module.toClass(module.fullyQualifiedName))[
         «FOR mix : module.mixins»
           «mix.simpleName».configure(bind, usedKeys);
         «ENDFOR»
-      } catch (Exception e) {
-        throw new RuntimeException(e);
+      } catch («Exception» e) {
+        throw new «RuntimeException»(e);
       }
     '''
   ]
@@ -173,7 +180,7 @@ Expressions are used in `to-instance` bindings and as always they need a proper 
 for (binding : module.bindings) {
   // if it's a toInstance binding, create a synthetic
   // method to give the expression a proper scope
-  if (binding.toInstance != null) {
+  if (binding.toInstance !== null) {
     members += binding.toMethod(binding.syntheticToInstanceName, 
         binding.from.type) [
       visibility = JvmVisibility.PRIVATE
@@ -228,9 +235,9 @@ for (binding : module.bindings) {
 }
 
 // and the following method
-def guiceKey(KeyAST it) '''
+def StringConcatenationClient guiceKey(KeyAST it) '''
   Key.get(new TypeLiteral<«type>(){}«
-  IF annotation != null
+  IF annotation !== null
   », getClass().getDeclaredField("«syntheticName»").getAnnotations()[0]«
   ENDIF»)'''
 ```

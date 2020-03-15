@@ -1,6 +1,6 @@
 # Little Tortoise
 
-Do you remember the programming language [Logo](http://en.wikipedia.org/wiki/Logo_%28programming_language%29)? Logo was used in computer science classes to teach children how to program. In fact, it was a adaptation of LISP! But the remarkable part was the so-called *turtle*, a graphical cursor that can be given commands to move and turn, thereby drawing lines.
+Do you remember the programming language [Logo](http://en.wikipedia.org/wiki/Logo_%28programming_language%29)? Logo was used in computer science classes to teach children how to program. In fact, it was an adaptation of LISP! But the remarkable part was the so-called *turtle*, a graphical cursor that can be given commands to move and turn, thereby drawing lines.
 
 ![](images/tortoise_screenshot.png)
 
@@ -40,9 +40,9 @@ begin
 end  // sub square
 ```
 
-The main trick about our solution is to *not* bake in the turtle commands into the language itself, but define it in the runtime library. This way, the language stays as slim as can be and additions can be easily added without the need to regenerate the whole language infrastructure.
+The main trick about our solution is *not* to bake in the turtle commands into the language itself, but define it in the runtime library. This way, the language stays as slim as it can be and additions can be easily added without the need to regenerate the whole language infrastructure.
 
-The core of the runtime library is the class [Tortoise](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.tortoiseshell.lib/src/org/xtext/tortoiseshell/lib/Tortoise.java). You can think of it as of our only domainmodel class: It keeps the current state of the tortoise and allows modifying it using methods. Here is an excerpt of its code:
+The core of the runtime library is the class [Tortoise](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.tortoiseshell.lib/src/org/xtext/tortoiseshell/lib/Tortoise.xtend). You can think of it as of our only domainmodel class: It keeps the current state of the tortoise and allows modifying it using methods. Here is an excerpt of its code:
 
 ```xtend
 class Tortoise {
@@ -55,7 +55,7 @@ class Tortoise {
   @Accessors int lineWidth
   @Accessors Color lineColor
 
-  List<ITortoiseEvent.Listener> listeners = newArrayList()
+  List<ITortoiseEvent.Listener> listeners = newArrayList
 ...
 ```
 
@@ -99,10 +99,11 @@ Executable:
 
 ## Translation to Java
 
-With the tortoise commands defined as methods in the runtime library class [Tortoise](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.tortoiseshell.lib/src/org/xtext/tortoiseshell/lib/Tortoise.java), we have to infer a Java class that inherits from this. Within this class, we create a method for each *Program* and *SubProgram*. The resulting code looks like this:
+With the tortoise commands defined as methods in the runtime library class [Tortoise](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.tortoiseshell.lib/src/org/xtext/tortoiseshell/lib/Tortoise.xtend), we have to infer a Java class that inherits from this. Within this class, we create a method for each *Program* and *SubProgram*. The resulting code looks like this:
 
 ```xtend
 class TortoiseShellJvmModelInferrer extends AbstractModelInferrer {
+
   public static val INFERRED_CLASS_NAME = 'MyTortoiseProgram'
   
   @Inject extension JvmTypesBuilder
@@ -113,7 +114,7 @@ class TortoiseShellJvmModelInferrer extends AbstractModelInferrer {
     acceptor.accept(program.toClass(INFERRED_CLASS_NAME))[
       superTypes += typeRef(Tortoise)
       if(program.body != null)
-        members += program.toMethod("main", typeRef(Void.TYPE)) [
+        members += program.toMethod("main", typeRef(void)) [
           body = program.body
         ]
       for(subProgram: program.subPrograms)
@@ -146,9 +147,11 @@ The first thing we have to cope with is the mixture of existing Java methods (fr
     if (executable instanceof Executable) {
       val context = createContext
       context.newValue(QualifiedName.create("this"), tortoise)
-      operation.parameters.forEach[p, i|
-        context.newValue(QualifiedName.create(p.name), argumentValues.get(i))
-      ]
+      var index = 0
+      for (param : operation.parameters) {
+        context.newValue(QualifiedName.create(param.name), argumentValues.get(index))
+        index = index + 1	
+      }
       val result = evaluate(executable.body, context, CancelIndicator.NullImpl)
       if(result.exception != null)
         throw result.exception
@@ -165,12 +168,12 @@ To start the interpretation we have to do almost the same: Setup the execution c
 
 ```xtend
   override run(Tortoise tortoise, EObject program, int stopAtLine) {
-    if(tortoise != null && program != null) {
+    if (tortoise != null && program != null) {
       this.tortoise = tortoise
       this.stopAtLine = stopAtLine
       try {
         program.jvmElements.filter(JvmOperation).head
-          ?.invokeOperation(null, #[])
+          ?.invokeOperation(null, emptyList)
       } catch (StopLineReachedException exc) {
         // ignore
       }
@@ -185,7 +188,7 @@ The [StopLineReachedException](https://github.com/xtext/seven-languages-xtext/bl
                                       IEvaluationContext context, 
                                       CancelIndicator indicator) {
     val line = NodeModelUtils.findActualNodeFor(expression)?.startLine
-    if(line-1 == stopAtLine)
+    if (line-1 == stopAtLine)
       throw new StopLineReachedException
     super.internalEvaluate(expression, context, indicator)
   }
@@ -193,14 +196,13 @@ The [StopLineReachedException](https://github.com/xtext/seven-languages-xtext/bl
 
 ## Literal Classes
 
-To make the static methods and fields of [Math](http://docs.oracle.com/javase/8/docs/api/java/lang/Math.html) and [ColorConstants](https://github.com/eclipse/gef/blob/master/org.eclipse.draw2d/src/org/eclipse/draw2d/ColorConstants.java) callable directly, we provided the [TortoiseShellImplicitlyImportedFeatures](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.tortoiseshell/src/org/xtext/tortoiseshell/scoping/TortoiseShellImplicitlyImportedFeatures.xtend):
+To make the static methods and fields of [Math](http://docs.oracle.com/javase/8/docs/api/java/lang/Math.html) and [ColorConstants](https://github.com/eclipse/gef-legacy/blob/master/org.eclipse.draw2d/src/org/eclipse/draw2d/ColorConstants.java) callable directly, we provided the [TortoiseShellImplicitlyImportedFeatures](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.tortoiseshell/src/org/xtext/tortoiseshell/scoping/TortoiseShellImplicitlyImportedFeatures.xtend):
 
 ```xtend
 class TortoiseShellImplicitlyImportedFeatures extends ImplicitlyImportedFeatures {
+
   override protected getStaticImportClasses() {
-    (super.getStaticImportClasses() + #[Math, ColorConstants])
-      .toList
-	}
+    (super.getStaticImportClasses() + #[Math, ColorConstants]).toList
   }
 }
 ```

@@ -42,11 +42,12 @@ Additional requirements are mentioned in the *Running the Example* section of ea
 
 ## Getting the Code
 
-You can get the source code for all languages from the github repository at [github.com/xtext-dev/seven-languages-xtext](https://github.com/xtext-dev/seven-languages-xtext.git). The repository contains two folders *languages* and *examples*. Download the plug-ins from *languages* into the root workspace and the *examples* into the runtime workspace spawned from the root one using *Run &rarr; Run Configurations... &rarr; Eclipse Application &rarr; Run (\<language\>)*.
+You can get the source code for all languages from the github repository at [https://github.com/xtext/seven-languages-xtext](https://github.com/xtext/seven-languages-xtext.git). The repository contains two folders *languages* and *examples*. Download the plug-ins from *languages* into the root workspace and the *examples* into the runtime workspace spawned from the root one using *Run &rarr; Run Configurations... &rarr; Eclipse Application &rarr; Run (\<language\>)*.
 
 Each language consists of several Eclipse projects 
 
  * `org.xtext.<language>` &ndash; The base infrastructure
+ * `org.xtext.<language>.ide` -> The generic IDE services
  * `org.xtext.<language>.ui` &ndash; The editor based on Eclipse
  * `org.xtext.<language>.tests` &ndash; Tests for the language
  * `org.xtext.<language>.lib` &ndash; Runtime library
@@ -56,9 +57,9 @@ Some of the languages do not include all of these plug-ins but the general struc
 
 ## A Short Xtend Primer
 
-Any general code in the examples is implemented in [Xtend](http://www.xtend-lang.org). Xtend is a more expressive and less verbose way to implement Java applications. It is 100% interoperable with Java APIs and compiles to readable Java code. In addition, it uses the same expressions that we use in our example languages. In fact it is built with the very same API that is described in this document. This should give you a taste of how powerful JVM-languages built with Xtext can actually be. 
+Any general code in the examples is implemented in [Xtend](http://www.eclipse.org/xtend). Xtend is a more expressive and less verbose way to implement Java applications. It is 100% interoperable with Java APIs and compiles to readable Java code. In addition, it uses the same expressions that we use in our example languages. In fact it is built with the very same API that is described in this document. This should give you a taste of how powerful JVM-languages built with Xtext can actually be. 
 
-Xtend is designed to be easy to learn for Java developers. In this section we will shortly describe the most important language features that were used in our examples. For a full description of the Xtend language, please refer to the [Xtend documentation](http://www.xtend-lang.org/documentation). 
+Xtend is designed to be easy to learn for Java developers. In this section we will shortly describe the most important language features that were used in our examples. For a full description of the Xtend language, please refer to the [Xtend documentation](http://www.eclipse.org/xtend/documentation). 
 
 Just like a Java file, an Xtend file starts with a `package` declaration and an `import` section followed by one or more class declarations. Semicolons are optional. All types are `public` by default. Xtend classes can extend other classes and implement interfaces just like in Java. It does not make any difference whether they were originally declared in Xtend or in Java.
 
@@ -107,7 +108,7 @@ Static methods can be put on the extension scope with a `static extension` impor
 ```xtend
 import static extension java.util.Collections.*
 ...
-val foo = singleton('foo') // calls Collections.<String>singleton('foo')
+val foo = 'foo'.singleton // calls Collections.<String>singleton('foo')
 ```
 
 <a name="xtend_it"/> In addition to Java's `this`, you can define another implicit receiver variable named `it`. As with `this`, you can omit `it` in feature calls, i.e. 

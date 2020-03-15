@@ -20,7 +20,7 @@ In the runtime workspace, run the *GenerateHtml* file as a Java application (*Ru
 
 ## Grammar
 
-This is the grammar of the templates DSL: 
+This is the grammar of the template DSL: 
 
 ```xtext
 grammar org.xtext.template.Template 
@@ -109,7 +109,7 @@ Each *TemplateFile* is compiled to a Java class with a `generate` method that ta
     }
     ```
 
-The corresponding code in the [TemplateJvmModelInferrer](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.template/src/org/xtext/template/jvmmodel/TemplateJvmModelInferrer.java) is:
+The corresponding code in the [TemplateJvmModelInferrer](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.template/src/org/xtext/template/jvmmodel/TemplateJvmModelInferrer.xtend) is:
 
 ```xtend
 class TemplateJvmModelInferrer extends AbstractModelInferrer {
@@ -118,7 +118,7 @@ class TemplateJvmModelInferrer extends AbstractModelInferrer {
                              IJvmDeclaredTypeAcceptor acceptor, 
                              boolean isPreIndexingPhase) {
        val simpleName = element.eResource.URI.trimFileExtension.lastSegment
-       val qualifiedName = if(element.getPackage != null) 
+       val qualifiedName = if(element.getPackage !== null) 
            element.getPackage + "." + simpleName
          else 
            simpleName
@@ -172,7 +172,7 @@ for (param : element.params) {
     ?: param.defaultexp?.inferredType 
     ?: typeRef(String)
   members += param.toField(param.name, type) [
-    if (param.defaultexp != null)
+    if (param.defaultexp !== null)
       initializer = param.defaultexp
   ]
   members += param.toSetter(param.name, type)
@@ -180,7 +180,7 @@ for (param : element.params) {
 }
 ```
 
-The body of the template is compiled into a big private `generate()` method. We skip the inferrer code here, as it is straightforward. But we had to extend the compiler to support rich strings and the new `FOR` loop our new control structures. This is described in the [next section](07_template.md#templates-compiler).
+The body of the template is compiled into a big private `generate()` method. We skip the inferrer code here, as it is straightforward. But we had to extend the compiler to support rich strings and the new `FOR` loop our new control structures. This is described in the [next section](07_template.md#extending-the-compiler).
 
 *   DSL:
     
@@ -318,14 +318,14 @@ The *RichStringLiterals* still have the French quotes around their values. As we
 
 The French quotes are not easy to type on every keyboard. We have adapted content assist to insert them when the cursor is inside a TEXT terminal:
 
-```java
-public class TemplateProposalProvider 
+```xtend
+class TemplateProposalProvider 
     extends AbstractTemplateProposalProvider {
-  @Override
-  public void complete_TEXT(EObject model, 
-                            RuleCall ruleCall, 
-                            ContentAssistContext context,
-      ICompletionProposalAcceptor acceptor) {
+  
+  override complete_TEXT(EObject model, 
+                         RuleCall ruleCall, 
+                         ContentAssistContext context,
+                         ICompletionProposalAcceptor acceptor) {
     acceptor.accept(new CompletionProposal("«»", 
         context.getOffset(), 0, 1));
   }
@@ -334,7 +334,7 @@ public class TemplateProposalProvider
 
 ## Syntax Highlighting
 
-Sometimes it is hard to see whether you are in text mode or in expression mode. To give the user better feedback, we have changed the way the text is highlighted. This customization consists of two parts: Add new highlighting styles in the [TemplateHighlightingConfiguration](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.template.ui/src/org/xtext/template/ui/highlighting/TemplateHighlightingConfiguration.xtend) and apply them to the text in the [TemplateHighlightingCalculator](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.template.ui/src/org/xtext/template/ui/highlighting/TemplateHighlightingCalculator.xtend). As this is rather extensively covered in the [Xtext documentation](310_eclipse_support.html#highlighting), we skip a deeper explanation here. 
+Sometimes it is hard to see whether you are in text mode or in expression mode. To give the user better feedback, we have changed the way the text is highlighted. This customization consists of two parts: Add new highlighting styles in the [TemplateHighlightingConfiguration](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.template.ui/src/org/xtext/template/ui/highlighting/TemplateHighlightingConfiguration.xtend) and apply them to the text in the [TemplateHighlightingCalculator](https://github.com/xtext/seven-languages-xtext/blob/master/languages/org.xtext.template.ui/src/org/xtext/template/ui/highlighting/TemplateHighlightingCalculator.xtend). As this is rather extensively covered in the [Xtext documentation](https://www.eclipse.org/Xtext/documentation/310_eclipse_support.html#highlighting), we skip a deeper explanation here. 
 
 ---
 
