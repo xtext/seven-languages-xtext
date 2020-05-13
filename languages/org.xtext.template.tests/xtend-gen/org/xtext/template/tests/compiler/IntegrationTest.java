@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
+ * Copyright (c) 2012, 2020 itemis AG (http://www.itemis.eu) and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,6 +12,7 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.testing.InjectWith;
 import org.eclipse.xtext.testing.XtextRunner;
 import org.eclipse.xtext.util.IAcceptor;
+import org.eclipse.xtext.util.Strings;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.util.ReflectExtensions;
@@ -49,7 +50,7 @@ public class IntegrationTest {
           throw Exceptions.sneakyThrow(_e);
         }
       };
-      this._compilationTestHelper.compile(this.replace(_builder), _function);
+      this._compilationTestHelper.compile(this.replace(Strings.toUnixLineSeparator(_builder)), _function);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -131,12 +132,12 @@ public class IntegrationTest {
           _builder_1.append("<p>four</p>");
           _builder_1.newLine();
           _builder_1.append("</html>");
-          Assert.assertEquals(_builder_1.toString(), result.toString());
+          Assert.assertEquals(Strings.toUnixLineSeparator(_builder_1).toString(), result.toString());
         } catch (Throwable _e) {
           throw Exceptions.sneakyThrow(_e);
         }
       };
-      this._compilationTestHelper.compile(this.replace(_builder), _function);
+      this._compilationTestHelper.compile(this.replace(Strings.toUnixLineSeparator(_builder)), _function);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
