@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
+ * Copyright (c) 2012, 2020 itemis AG (http://www.itemis.eu) and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,6 +18,8 @@ import org.xtext.template.tests.TemplateInjectorProvider
 
 import static org.junit.Assert.*
 
+import static extension org.eclipse.xtext.util.Strings.toUnixLineSeparator
+
 @RunWith(XtextRunner)
 @InjectWith(TemplateInjectorProvider)
 class IntegrationTest {
@@ -29,7 +31,7 @@ class IntegrationTest {
 		'''
 			<!--<< >>-->
 			Hello World
-		'''.replace.compile [
+		'''.toUnixLineSeparator.replace.compile [
 			val result = compiledClass.newInstance.invoke('generate', null)
 			assertEquals('Hello World',result.toString)
 		]
@@ -55,7 +57,7 @@ class IntegrationTest {
 			    <<ENDIF>>
 			  <<ENDFOR>>
 			</html>
-		'''.replace.compile [
+		'''.toUnixLineSeparator.replace.compile [
 			val result = compiledClass.newInstance.invoke('generate', null)
 			assertEquals('''
 				<html>
@@ -64,7 +66,7 @@ class IntegrationTest {
 				      <h2>two</h2>
 				      <p>three</p>
 				      <p>four</p>
-				</html>'''.toString,result.toString)
+				</html>'''.toUnixLineSeparator.toString,result.toString)
 		]
 	}
 	
