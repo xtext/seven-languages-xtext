@@ -2,7 +2,7 @@
 <?eclipse version="3.0"?>
 <plugin>
 	<extension point="org.eclipse.emf.ecore.generated_package">
-		<package 
+		<package
 			uri = "http://www.xtext.org/template/Template"
 			class = "org.xtext.template.template.TemplatePackage"
 			genModel = "model/generated/Template.genmodel" />

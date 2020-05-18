@@ -2,7 +2,7 @@
 <?eclipse version="3.0"?>
 <plugin>
 	<extension point="org.eclipse.emf.ecore.generated_package">
-		<package 
+		<package
 			uri = "http://www.xtext.org/tortoiseshell/TortoiseShell"
 			class = "org.xtext.tortoiseshell.tortoiseShell.TortoiseShellPackage"
 			genModel = "model/generated/TortoiseShell.genmodel" />

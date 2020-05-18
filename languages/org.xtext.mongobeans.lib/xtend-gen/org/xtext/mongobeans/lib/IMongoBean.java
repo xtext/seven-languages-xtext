@@ -14,7 +14,7 @@ import com.mongodb.DBObject;
  */
 @SuppressWarnings("all")
 public interface IMongoBean {
-  public static final String JAVA_CLASS_KEY = "JavaClass";
+  static final String JAVA_CLASS_KEY = "JavaClass";
   
-  public abstract DBObject getDbObject();
+  DBObject getDbObject();
 }
