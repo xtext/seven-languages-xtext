@@ -8,7 +8,7 @@
 			contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
 			default="true"
 			extensions="script"
-            icon="icons/scripting_16.png"
+			icon="icons/scripting_16.png"
 			id="org.xtext.scripting.Scripting"
 			matchingStrategy="org.xtext.scripting.ui.ScriptingExecutableExtensionFactory:org.eclipse.xtext.xbase.ui.editor.JavaEditorInputMatcher"
 			name="Scripting Editor">
@@ -28,11 +28,11 @@
 		<handler
 			class="org.xtext.scripting.ui.ScriptingExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
 			commandId="org.xtext.scripting.Scripting.validate">
-		<activeWhen>
-			<reference
+			<activeWhen>
+				<reference
 					definitionId="org.xtext.scripting.Scripting.Editor.opened">
-			</reference>
-		</activeWhen>
+				</reference>
+			</activeWhen>
 		</handler>
 		<!-- copy qualified name -->
 		<handler
@@ -60,20 +60,20 @@
 			<and>
 				<reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
 				<with variable="activeEditor">
-					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
-						value="org.xtext.scripting.Scripting" 
+					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName"
+						value="org.xtext.scripting.Scripting"
 						forcePluginActivation="true"/>
-				</with>		
+				</with>
 			</and>
 		</definition>
 		<definition id="org.xtext.scripting.Scripting.XtextEditor.opened">
 			<and>
 				<reference definitionId="isXtextEditorActive"/>
 				<with variable="activeEditor">
-					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
-						value="org.xtext.scripting.Scripting" 
+					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName"
+						value="org.xtext.scripting.Scripting"
 						forcePluginActivation="true"/>
-				</with>		
+				</with>
 			</and>
 		</definition>
 	</extension>
@@ -121,47 +121,47 @@
 	</extension>
 	<extension
 		point="org.eclipse.ui.commands">
-	<command
+		<command
 			description="Trigger expensive validation"
 			id="org.xtext.scripting.Scripting.validate"
 			name="Validate">
-	</command>
-	<!-- copy qualified name -->
-	<command
+		</command>
+		<!-- copy qualified name -->
+		<command
 			id="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
 			categoryId="org.eclipse.ui.category.edit"
 			description="Copy the qualified name for the selected element"
 			name="Copy Qualified Name">
-	</command>
-	<command
+		</command>
+		<command
 			id="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName"
 			categoryId="org.eclipse.ui.category.edit"
 			description="Copy the qualified name for the selected element"
 			name="Copy Qualified Name">
-	</command>
+		</command>
 	</extension>
 	<extension point="org.eclipse.ui.menus">
 		<menuContribution
 			locationURI="popup:#TextEditorContext?after=group.edit">
-			 <command
-				 commandId="org.xtext.scripting.Scripting.validate"
-				 style="push"
-				 tooltip="Trigger expensive validation">
-			<visibleWhen checkEnabled="false">
-				<reference
-					definitionId="org.xtext.scripting.Scripting.Editor.opened">
-				</reference>
-			</visibleWhen>
-		</command>  
+			<command
+				commandId="org.xtext.scripting.Scripting.validate"
+				style="push"
+				tooltip="Trigger expensive validation">
+				<visibleWhen checkEnabled="false">
+					<reference
+						definitionId="org.xtext.scripting.Scripting.Editor.opened">
+					</reference>
+				</visibleWhen>
+			</command>
 		</menuContribution>
 		<!-- copy qualified name -->
 		<menuContribution locationURI="popup:#TextEditorContext?after=copy">
-			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName" 
+			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
 				style="push" tooltip="Copy Qualified Name">
 				<visibleWhen checkEnabled="false">
 					<reference definitionId="org.xtext.scripting.Scripting.Editor.opened" />
 				</visibleWhen>
-			</command>  
+			</command>
 		</menuContribution>
 		<menuContribution locationURI="menu:edit?after=copy">
 			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
@@ -169,10 +169,10 @@
 				<visibleWhen checkEnabled="false">
 					<reference definitionId="org.xtext.scripting.Scripting.Editor.opened" />
 				</visibleWhen>
-			</command>  
+			</command>
 		</menuContribution>
 		<menuContribution locationURI="popup:org.eclipse.xtext.ui.outline?after=additions">
-			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName" 
+			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName"
 				style="push" tooltip="Copy Qualified Name">
 				<visibleWhen checkEnabled="false">
 					<and>
@@ -206,6 +206,15 @@
 			</activeWhen>
 		</handler>
 	</extension>
+	<extension point="org.eclipse.core.contenttype.contentTypes">
+		<content-type
+			base-type="org.eclipse.core.runtime.text"
+			file-extensions="script"
+			id="org.xtext.scripting.Scripting.contenttype"
+			name="Scripting File"
+			priority="normal">
+		</content-type>
+	</extension>
 	<!-- adding resource factories -->
 	<extension
 		point="org.eclipse.emf.ecore.extension_parser">
@@ -215,10 +224,10 @@
 		</parser>
 	</extension>
 	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
-	    <resourceServiceProvider
-	        class="org.xtext.scripting.ui.ScriptingExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
-	        uriExtension="script">
-	    </resourceServiceProvider>
+		<resourceServiceProvider
+			class="org.xtext.scripting.ui.ScriptingExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+			uriExtension="script">
+		</resourceServiceProvider>
 	</extension>
 	<!-- marker definitions for org.xtext.scripting.Scripting -->
 	<extension
@@ -293,7 +302,7 @@
 	<!-- Quick Outline -->
 	<extension
 		point="org.eclipse.ui.handlers">
-		<handler 
+		<handler
 			class="org.xtext.scripting.ui.ScriptingExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
 			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
 			<activeWhen>
@@ -325,7 +334,7 @@
 	</extension>
 	<!-- Rename Refactoring -->
 	<extension point="org.eclipse.ui.handlers">
-		<handler 
+		<handler
 			class="org.xtext.scripting.ui.ScriptingExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
 			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
 			<activeWhen>
@@ -359,7 +368,7 @@
 	</extension>
 	<!-- Type Hierarchy  -->
 	<extension point="org.eclipse.ui.handlers">
-		<handler 
+		<handler
 			class="org.xtext.scripting.ui.ScriptingExecutableExtensionFactory:org.eclipse.xtext.xbase.ui.hierarchy.OpenTypeHierarchyHandler"
 			commandId="org.eclipse.xtext.xbase.ui.hierarchy.OpenTypeHierarchy">
 			<activeWhen>
@@ -368,7 +377,7 @@
 				</reference>
 			</activeWhen>
 		</handler>
-		<handler 
+		<handler
 			class="org.xtext.scripting.ui.ScriptingExecutableExtensionFactory:org.eclipse.xtext.xbase.ui.hierarchy.QuickTypeHierarchyHandler"
 			commandId="org.eclipse.jdt.ui.edit.text.java.open.hierarchy">
 			<activeWhen>
@@ -402,7 +411,7 @@
 	</extension>
 	<!-- Call Hierachy -->
 	<extension point="org.eclipse.ui.handlers">
-		<handler 
+		<handler
 			class="org.xtext.scripting.ui.ScriptingExecutableExtensionFactory:org.eclipse.xtext.xbase.ui.hierarchy.OpenCallHierachyHandler"
 			commandId="org.eclipse.xtext.xbase.ui.hierarchy.OpenCallHierarchy">
 			<activeWhen>
@@ -428,14 +437,14 @@
 		<factory class="org.xtext.scripting.ui.ScriptingExecutableExtensionFactory:org.eclipse.xtext.builder.smap.StratumBreakpointAdapterFactory"
 			adaptableType="org.eclipse.xtext.ui.editor.XtextEditor">
 			<adapter type="org.eclipse.debug.ui.actions.IToggleBreakpointsTarget"/>
-		</factory> 
+		</factory>
 	</extension>
 	<extension point="org.eclipse.ui.editorActions">
-		<editorContribution targetID="org.xtext.scripting.Scripting" 
+		<editorContribution targetID="org.xtext.scripting.Scripting"
 			id="org.xtext.scripting.Scripting.rulerActions">
 			<action
 				label="Not Used"
-	 			class="org.xtext.scripting.ui.ScriptingExecutableExtensionFactory:org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate"
+				class="org.xtext.scripting.ui.ScriptingExecutableExtensionFactory:org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate"
 				style="push"
 				actionID="RulerDoubleClick"
 				id="org.xtext.scripting.Scripting.doubleClickBreakpointAction"/>
@@ -468,7 +477,7 @@
 	</extension>
 	<!-- Introduce Local Variable Refactoring -->
 	<extension point="org.eclipse.ui.handlers">
-		<handler 
+		<handler
 			class="org.xtext.scripting.ui.ScriptingExecutableExtensionFactory:org.eclipse.xtext.xbase.ui.refactoring.ExtractVariableHandler"
 			commandId="org.eclipse.xtext.xbase.ui.refactoring.ExtractLocalVariable">
 			<activeWhen>
@@ -490,7 +499,7 @@
 				</visibleWhen>
 			</command>
 		</menuContribution>
-	</extension>  
+	</extension>
 	<!-- Open implementation -->
 	<extension point="org.eclipse.ui.handlers">
 		<handler
@@ -520,12 +529,18 @@
 			class="org.xtext.scripting.ui.ScriptingExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
 			extensions="script">
 		</viewer>
+		<contentTypeBinding
+			contentTypeId="org.xtext.scripting.Scripting.contenttype"
+			contentViewerId="org.xtext.scripting.Scripting.compare.contentViewers" />
 	</extension>
 	<extension point="org.eclipse.compare.contentMergeViewers">
 		<viewer id="org.xtext.scripting.Scripting.compare.contentMergeViewers"
 			class="org.xtext.scripting.ui.ScriptingExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
 			extensions="script" label="Scripting Compare">
 		</viewer>
+		<contentTypeBinding
+			contentTypeId="org.xtext.scripting.Scripting.contenttype"
+			contentMergeViewerId="org.xtext.scripting.Scripting.compare.contentMergeViewers" />
 	</extension>
 	<extension point="org.eclipse.ui.editors.documentProviders">
 		<provider id="org.xtext.scripting.Scripting.editors.documentProviders"

@@ -8,7 +8,7 @@
 			contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
 			default="true"
 			extensions="build"
-            icon="icons/build_16.png"
+			icon="icons/build_16.png"
 			id="org.xtext.builddsl.BuildDSL"
 			matchingStrategy="org.xtext.builddsl.ui.BuildDSLExecutableExtensionFactory:org.eclipse.xtext.xbase.ui.editor.JavaEditorInputMatcher"
 			name="BuildDSL Editor">
@@ -28,11 +28,11 @@
 		<handler
 			class="org.xtext.builddsl.ui.BuildDSLExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
 			commandId="org.xtext.builddsl.BuildDSL.validate">
-		<activeWhen>
-			<reference
+			<activeWhen>
+				<reference
 					definitionId="org.xtext.builddsl.BuildDSL.Editor.opened">
-			</reference>
-		</activeWhen>
+				</reference>
+			</activeWhen>
 		</handler>
 		<!-- copy qualified name -->
 		<handler
@@ -60,20 +60,20 @@
 			<and>
 				<reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
 				<with variable="activeEditor">
-					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
-						value="org.xtext.builddsl.BuildDSL" 
+					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName"
+						value="org.xtext.builddsl.BuildDSL"
 						forcePluginActivation="true"/>
-				</with>		
+				</with>
 			</and>
 		</definition>
 		<definition id="org.xtext.builddsl.BuildDSL.XtextEditor.opened">
 			<and>
 				<reference definitionId="isXtextEditorActive"/>
 				<with variable="activeEditor">
-					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
-						value="org.xtext.builddsl.BuildDSL" 
+					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName"
+						value="org.xtext.builddsl.BuildDSL"
 						forcePluginActivation="true"/>
-				</with>		
+				</with>
 			</and>
 		</definition>
 	</extension>
@@ -121,47 +121,47 @@
 	</extension>
 	<extension
 		point="org.eclipse.ui.commands">
-	<command
+		<command
 			description="Trigger expensive validation"
 			id="org.xtext.builddsl.BuildDSL.validate"
 			name="Validate">
-	</command>
-	<!-- copy qualified name -->
-	<command
+		</command>
+		<!-- copy qualified name -->
+		<command
 			id="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
 			categoryId="org.eclipse.ui.category.edit"
 			description="Copy the qualified name for the selected element"
 			name="Copy Qualified Name">
-	</command>
-	<command
+		</command>
+		<command
 			id="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName"
 			categoryId="org.eclipse.ui.category.edit"
 			description="Copy the qualified name for the selected element"
 			name="Copy Qualified Name">
-	</command>
+		</command>
 	</extension>
 	<extension point="org.eclipse.ui.menus">
 		<menuContribution
 			locationURI="popup:#TextEditorContext?after=group.edit">
-			 <command
-				 commandId="org.xtext.builddsl.BuildDSL.validate"
-				 style="push"
-				 tooltip="Trigger expensive validation">
-			<visibleWhen checkEnabled="false">
-				<reference
-					definitionId="org.xtext.builddsl.BuildDSL.Editor.opened">
-				</reference>
-			</visibleWhen>
-		</command>  
+			<command
+				commandId="org.xtext.builddsl.BuildDSL.validate"
+				style="push"
+				tooltip="Trigger expensive validation">
+				<visibleWhen checkEnabled="false">
+					<reference
+						definitionId="org.xtext.builddsl.BuildDSL.Editor.opened">
+					</reference>
+				</visibleWhen>
+			</command>
 		</menuContribution>
 		<!-- copy qualified name -->
 		<menuContribution locationURI="popup:#TextEditorContext?after=copy">
-			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName" 
+			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
 				style="push" tooltip="Copy Qualified Name">
 				<visibleWhen checkEnabled="false">
 					<reference definitionId="org.xtext.builddsl.BuildDSL.Editor.opened" />
 				</visibleWhen>
-			</command>  
+			</command>
 		</menuContribution>
 		<menuContribution locationURI="menu:edit?after=copy">
 			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
@@ -169,10 +169,10 @@
 				<visibleWhen checkEnabled="false">
 					<reference definitionId="org.xtext.builddsl.BuildDSL.Editor.opened" />
 				</visibleWhen>
-			</command>  
+			</command>
 		</menuContribution>
 		<menuContribution locationURI="popup:org.eclipse.xtext.ui.outline?after=additions">
-			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName" 
+			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName"
 				style="push" tooltip="Copy Qualified Name">
 				<visibleWhen checkEnabled="false">
 					<and>
@@ -206,6 +206,15 @@
 			</activeWhen>
 		</handler>
 	</extension>
+	<extension point="org.eclipse.core.contenttype.contentTypes">
+		<content-type
+			base-type="org.eclipse.core.runtime.text"
+			file-extensions="build"
+			id="org.xtext.builddsl.BuildDSL.contenttype"
+			name="BuildDSL File"
+			priority="normal">
+		</content-type>
+	</extension>
 	<!-- adding resource factories -->
 	<extension
 		point="org.eclipse.emf.ecore.extension_parser">
@@ -215,10 +224,10 @@
 		</parser>
 	</extension>
 	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
-	    <resourceServiceProvider
-	        class="org.xtext.builddsl.ui.BuildDSLExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
-	        uriExtension="build">
-	    </resourceServiceProvider>
+		<resourceServiceProvider
+			class="org.xtext.builddsl.ui.BuildDSLExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+			uriExtension="build">
+		</resourceServiceProvider>
 	</extension>
 	<!-- marker definitions for org.xtext.builddsl.BuildDSL -->
 	<extension
@@ -293,7 +302,7 @@
 	<!-- Quick Outline -->
 	<extension
 		point="org.eclipse.ui.handlers">
-		<handler 
+		<handler
 			class="org.xtext.builddsl.ui.BuildDSLExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
 			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
 			<activeWhen>
@@ -325,7 +334,7 @@
 	</extension>
 	<!-- Rename Refactoring -->
 	<extension point="org.eclipse.ui.handlers">
-		<handler 
+		<handler
 			class="org.xtext.builddsl.ui.BuildDSLExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
 			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
 			<activeWhen>
@@ -359,7 +368,7 @@
 	</extension>
 	<!-- Type Hierarchy  -->
 	<extension point="org.eclipse.ui.handlers">
-		<handler 
+		<handler
 			class="org.xtext.builddsl.ui.BuildDSLExecutableExtensionFactory:org.eclipse.xtext.xbase.ui.hierarchy.OpenTypeHierarchyHandler"
 			commandId="org.eclipse.xtext.xbase.ui.hierarchy.OpenTypeHierarchy">
 			<activeWhen>
@@ -368,7 +377,7 @@
 				</reference>
 			</activeWhen>
 		</handler>
-		<handler 
+		<handler
 			class="org.xtext.builddsl.ui.BuildDSLExecutableExtensionFactory:org.eclipse.xtext.xbase.ui.hierarchy.QuickTypeHierarchyHandler"
 			commandId="org.eclipse.jdt.ui.edit.text.java.open.hierarchy">
 			<activeWhen>
@@ -390,16 +399,16 @@
 	<extension point="org.eclipse.ui.menus">
 		<menuContribution
 			locationURI="popup:#TextEditorContext?after=group.edit">
-			 <command
-				 commandId="org.eclipse.xtext.xbase.ui.organizeImports"
-				 style="push"
-				 tooltip="Organize Imports">
+			<command
+				commandId="org.eclipse.xtext.xbase.ui.organizeImports"
+				style="push"
+				tooltip="Organize Imports">
 				<visibleWhen checkEnabled="false">
 					<reference
 						definitionId="org.xtext.builddsl.BuildDSL.Editor.opened">
 					</reference>
 				</visibleWhen>
-			</command>  
+			</command>
 		</menuContribution>
 		<menuContribution
 			locationURI="popup:#TextEditorContext?after=group.open">
@@ -424,7 +433,7 @@
 	</extension>
 	<!-- Call Hierachy -->
 	<extension point="org.eclipse.ui.handlers">
-		<handler 
+		<handler
 			class="org.xtext.builddsl.ui.BuildDSLExecutableExtensionFactory:org.eclipse.xtext.xbase.ui.hierarchy.OpenCallHierachyHandler"
 			commandId="org.eclipse.xtext.xbase.ui.hierarchy.OpenCallHierarchy">
 			<activeWhen>
@@ -450,14 +459,14 @@
 		<factory class="org.xtext.builddsl.ui.BuildDSLExecutableExtensionFactory:org.eclipse.xtext.builder.smap.StratumBreakpointAdapterFactory"
 			adaptableType="org.eclipse.xtext.ui.editor.XtextEditor">
 			<adapter type="org.eclipse.debug.ui.actions.IToggleBreakpointsTarget"/>
-		</factory> 
+		</factory>
 	</extension>
 	<extension point="org.eclipse.ui.editorActions">
-		<editorContribution targetID="org.xtext.builddsl.BuildDSL" 
+		<editorContribution targetID="org.xtext.builddsl.BuildDSL"
 			id="org.xtext.builddsl.BuildDSL.rulerActions">
 			<action
 				label="Not Used"
-	 			class="org.xtext.builddsl.ui.BuildDSLExecutableExtensionFactory:org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate"
+				class="org.xtext.builddsl.ui.BuildDSLExecutableExtensionFactory:org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate"
 				style="push"
 				actionID="RulerDoubleClick"
 				id="org.xtext.builddsl.BuildDSL.doubleClickBreakpointAction"/>
@@ -490,7 +499,7 @@
 	</extension>
 	<!-- Introduce Local Variable Refactoring -->
 	<extension point="org.eclipse.ui.handlers">
-		<handler 
+		<handler
 			class="org.xtext.builddsl.ui.BuildDSLExecutableExtensionFactory:org.eclipse.xtext.xbase.ui.refactoring.ExtractVariableHandler"
 			commandId="org.eclipse.xtext.xbase.ui.refactoring.ExtractLocalVariable">
 			<activeWhen>
@@ -512,7 +521,7 @@
 				</visibleWhen>
 			</command>
 		</menuContribution>
-	</extension>  
+	</extension>
 	<!-- Open implementation -->
 	<extension point="org.eclipse.ui.handlers">
 		<handler
@@ -542,12 +551,18 @@
 			class="org.xtext.builddsl.ui.BuildDSLExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
 			extensions="build">
 		</viewer>
+		<contentTypeBinding
+			contentTypeId="org.xtext.builddsl.BuildDSL.contenttype"
+			contentViewerId="org.xtext.builddsl.BuildDSL.compare.contentViewers" />
 	</extension>
 	<extension point="org.eclipse.compare.contentMergeViewers">
 		<viewer id="org.xtext.builddsl.BuildDSL.compare.contentMergeViewers"
 			class="org.xtext.builddsl.ui.BuildDSLExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
 			extensions="build" label="BuildDSL Compare">
 		</viewer>
+		<contentTypeBinding
+			contentTypeId="org.xtext.builddsl.BuildDSL.contenttype"
+			contentMergeViewerId="org.xtext.builddsl.BuildDSL.compare.contentMergeViewers" />
 	</extension>
 	<extension point="org.eclipse.ui.editors.documentProviders">
 		<provider id="org.xtext.builddsl.BuildDSL.editors.documentProviders"
@@ -561,76 +576,69 @@
 			type="text">
 		</fileTypes>
 	</extension>
-
-     <extension
-         point="org.eclipse.debug.core.launchConfigurationTypes">
-      <launchConfigurationType
-            id="org.xtext.builddsl.ui.BuildLaunchConfigurationType"
-            modes="run, debug"
-            name="Build Launch"
-            delegate="org.xtext.builddsl.ui.launch.BuildDSLLaunchDelegate"
-            sourceLocatorId="org.eclipse.jdt.launching.sourceLocator.JavaSourceLookupDirector"
-            sourcePathComputerId="org.eclipse.jdt.launching.sourceLookup.javaSourcePathComputer"/>
-   </extension>
-   
-   <extension
-         point="org.eclipse.debug.ui.launchConfigurationTabGroups">
-      <launchConfigurationTabGroup
-            class="org.xtext.builddsl.ui.launch.BuildDSLLaunchTabGroup"
-            id="org.xtext.builddsl.ui.BuildLaunchConfigurationTabGroup"
-            type="org.xtext.builddsl.ui.BuildLaunchConfigurationType">
-            <launchMode 
-                  mode="debug"
-                  perspective="org.eclipse.debug.ui.DebugPerspective"
-                  description="Debug a Build File">
-            </launchMode>
-            <launchMode
-                  mode="run"
-                  description="Run a Build File">
-            </launchMode>
-      </launchConfigurationTabGroup>
-   </extension>
-
-   <extension
-         point="org.eclipse.debug.ui.launchConfigurationTypeImages">
-      <launchConfigurationTypeImage
-            configTypeID="org.xtext.builddsl.ui.BuildLaunchConfigurationType"
-            icon="icons/buildlaunch16.gif"
-            id="org.xtext.builddsl.ui.BuildLaunchConfigurationTypeImage"/>
-   </extension>
-
-
-   <extension
-         point="org.eclipse.debug.ui.launchShortcuts">
-      <shortcut
-            class="org.xtext.builddsl.ui.launch.BuildDSLLaunchShortcut"
-            description="Launches a Build File"
-            icon="icons/buildlaunch16.gif"
-            id="org.xtext.builddsl.ui.launch.shortcut1"
-            label="Build Tasks"
-            modes="run, debug">
-          <contextualLaunch>
-           <enablement>
-             <with variable="selection">
-               <count value="1"/>
-               <iterate
-                     ifEmpty="false"
-                     operator="and">
-                  <adapt type="org.eclipse.core.resources.IFile"/>
-                    <test property="org.eclipse.debug.ui.matchesPattern"
-                          value="*.build"/>
-               </iterate>
-             </with>
-           </enablement>
-           <contextLabel
-              mode="run"
-              label="Build Task"/>
-          <contextLabel
-              mode="debug"
-              label="Build Task"/>
-         </contextualLaunch>
-      </shortcut>
-   </extension>
-  
-
+	<extension
+		point="org.eclipse.debug.core.launchConfigurationTypes">
+		<launchConfigurationType
+			id="org.xtext.builddsl.ui.BuildLaunchConfigurationType"
+			modes="run, debug"
+			name="Build Launch"
+			delegate="org.xtext.builddsl.ui.launch.BuildDSLLaunchDelegate"
+			sourceLocatorId="org.eclipse.jdt.launching.sourceLocator.JavaSourceLookupDirector"
+			sourcePathComputerId="org.eclipse.jdt.launching.sourceLookup.javaSourcePathComputer"/>
+	</extension>
+	<extension
+		point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+		<launchConfigurationTabGroup
+			class="org.xtext.builddsl.ui.launch.BuildDSLLaunchTabGroup"
+			id="org.xtext.builddsl.ui.BuildLaunchConfigurationTabGroup"
+			type="org.xtext.builddsl.ui.BuildLaunchConfigurationType">
+			<launchMode
+				mode="debug"
+				perspective="org.eclipse.debug.ui.DebugPerspective"
+				description="Debug a Build File">
+			</launchMode>
+			<launchMode
+				mode="run"
+				description="Run a Build File">
+			</launchMode>
+		</launchConfigurationTabGroup>
+	</extension>
+	<extension
+		point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+		<launchConfigurationTypeImage
+			configTypeID="org.xtext.builddsl.ui.BuildLaunchConfigurationType"
+			icon="icons/buildlaunch16.gif"
+			id="org.xtext.builddsl.ui.BuildLaunchConfigurationTypeImage"/>
+	</extension>
+	<extension
+		point="org.eclipse.debug.ui.launchShortcuts">
+		<shortcut
+			class="org.xtext.builddsl.ui.launch.BuildDSLLaunchShortcut"
+			description="Launches a Build File"
+			icon="icons/buildlaunch16.gif"
+			id="org.xtext.builddsl.ui.launch.shortcut1"
+			label="Build Tasks"
+			modes="run, debug">
+			<contextualLaunch>
+				<enablement>
+					<with variable="selection">
+						<count value="1"/>
+						<iterate
+							ifEmpty="false"
+							operator="and">
+							<adapt type="org.eclipse.core.resources.IFile"/>
+							<test property="org.eclipse.debug.ui.matchesPattern"
+							value="*.build"/>
+						</iterate>
+					</with>
+				</enablement>
+				<contextLabel
+					mode="run"
+					label="Build Task"/>
+				<contextLabel
+					mode="debug"
+					label="Build Task"/>
+			</contextualLaunch>
+		</shortcut>
+	</extension>
 </plugin>

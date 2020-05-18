@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.0"?>
-
 <plugin>
 	<extension point="org.eclipse.emf.ecore.generated_package">
-		<package 
+		<package
 			uri = "http://www.xtext.org/guicemodules/GuiceModules"
 			class = "org.xtext.guicemodules.guiceModules.GuiceModulesPackage"
 			genModel = "model/generated/GuiceModules.genmodel" />
