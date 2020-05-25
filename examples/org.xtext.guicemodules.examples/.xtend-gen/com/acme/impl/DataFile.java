@@ -16,5 +16,6 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
 @BindingAnnotation
+@SuppressWarnings("all")
 public @interface DataFile {
 }

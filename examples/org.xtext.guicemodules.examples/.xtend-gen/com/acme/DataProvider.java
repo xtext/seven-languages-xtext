@@ -9,5 +9,5 @@ package com.acme;
 
 @SuppressWarnings("all")
 public interface DataProvider {
-  public abstract String getData();
+  String getData();
 }
