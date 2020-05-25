@@ -435,7 +435,7 @@
 	</extension>
 	<extension point="org.eclipse.core.runtime.adapters">
 		<factory class="org.xtext.tortoiseshell.ui.TortoiseShellExecutableExtensionFactory:org.eclipse.xtext.builder.smap.StratumBreakpointAdapterFactory"
-			adaptableType="org.eclipse.xtext.ui.editor.XtextEditor">
+			adaptableType="org.xtext.tortoiseshell.ui.editor.TortoiseShellEditor">
 			<adapter type="org.eclipse.debug.ui.actions.IToggleBreakpointsTarget"/>
 		</factory>
 	</extension>
