@@ -13,5 +13,5 @@ import com.google.inject.ImplementedBy;
 @ImplementedBy(SystemOutLoggingService.class)
 @SuppressWarnings("all")
 public interface LoggingService {
-  public abstract void logMessage(final String msg);
+  void logMessage(final String msg);
 }
