@@ -4,9 +4,9 @@
 package org.xtext.mongobeans.ui;
 
 import com.google.inject.Injector;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
+import org.osgi.framework.FrameworkUtil;
 import org.xtext.mongobeans.ui.internal.MongobeansActivator;
 
 /**
@@ -17,7 +17,7 @@ public class MongoBeansExecutableExtensionFactory extends AbstractGuiceAwareExec
 
 	@Override
 	protected Bundle getBundle() {
-		return Platform.getBundle(MongobeansActivator.PLUGIN_ID);
+		return FrameworkUtil.getBundle(MongobeansActivator.class);
 	}
 	
 	@Override

@@ -4,9 +4,9 @@
 package org.xtext.scripting.ui;
 
 import com.google.inject.Injector;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
+import org.osgi.framework.FrameworkUtil;
 import org.xtext.scripting.ui.internal.ScriptingActivator;
 
 /**
@@ -17,7 +17,7 @@ public class ScriptingExecutableExtensionFactory extends AbstractGuiceAwareExecu
 
 	@Override
 	protected Bundle getBundle() {
-		return Platform.getBundle(ScriptingActivator.PLUGIN_ID);
+		return FrameworkUtil.getBundle(ScriptingActivator.class);
 	}
 	
 	@Override

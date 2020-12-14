@@ -4,9 +4,9 @@
 package org.xtext.builddsl.ui;
 
 import com.google.inject.Injector;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
+import org.osgi.framework.FrameworkUtil;
 import org.xtext.builddsl.ui.internal.BuilddslActivator;
 
 /**
@@ -17,7 +17,7 @@ public class BuildDSLExecutableExtensionFactory extends AbstractGuiceAwareExecut
 
 	@Override
 	protected Bundle getBundle() {
-		return Platform.getBundle(BuilddslActivator.PLUGIN_ID);
+		return FrameworkUtil.getBundle(BuilddslActivator.class);
 	}
 	
 	@Override

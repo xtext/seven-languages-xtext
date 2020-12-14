@@ -36,7 +36,8 @@ public class MongoBeansGrammarAccess extends AbstractElementFinder.AbstractGramm
 		//	elements+=AbstractElement*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//importSection=XImportSection? elements+=AbstractElement*
+		//importSection=XImportSection?
+		//elements+=AbstractElement*
 		public Group getGroup() { return cGroup; }
 		
 		//importSection=XImportSection?
@@ -87,7 +88,9 @@ public class MongoBeansGrammarAccess extends AbstractElementFinder.AbstractGramm
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'package' name=QualifiedName '{' elements+=AbstractElement* '}'
+		//'package' name=QualifiedName '{'
+		//elements+=AbstractElement*
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//'package'
@@ -127,7 +130,9 @@ public class MongoBeansGrammarAccess extends AbstractElementFinder.AbstractGramm
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ValidID '{' features+=AbstractFeature* '}'
+		//name=ValidID '{'
+		//features+=AbstractFeature*
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//name=ValidID
@@ -243,7 +248,9 @@ public class MongoBeansGrammarAccess extends AbstractElementFinder.AbstractGramm
 		@Override public ParserRule getRule() { return rule; }
 		
 		//=> (returnType=JvmTypeReference name=ValidID '(') (parameters+=FullJvmFormalParameter (','
-		//parameters+=FullJvmFormalParameter)*)? ')' body=XBlockExpression
+		//parameters+=FullJvmFormalParameter)*)?
+		//')'
+		//body=XBlockExpression
 		public Group getGroup() { return cGroup; }
 		
 		//=> (returnType=JvmTypeReference name=ValidID '(')
@@ -692,7 +699,7 @@ public class MongoBeansGrammarAccess extends AbstractElementFinder.AbstractGramm
 	//	feature=[types::JvmIdentifiableElement|FeatureCallID] OpSingleAssign) value=XAssignment
 	//	| => ({XMemberFeatureCall.memberCallTarget=current} ("." | nullSafe?="?." | explicitStatic?="::")) ('<'
 	//	typeArguments+=JvmArgumentTypeReference (',' typeArguments+=JvmArgumentTypeReference)* '>')?
-	//	feature=[types::JvmIdentifiableElement|IdOrSuper] (=> explicitOperationCall?='(' (memberCallArguments+=XShortClosure
+	//	feature=[types::JvmIdentifiableElement|IdOrSuper] (=>explicitOperationCall?='(' (memberCallArguments+=XShortClosure
 	//	| memberCallArguments+=XExpression (',' memberCallArguments+=XExpression)*)?
 	//	')')?
 	//	memberCallArguments+=XClosure?)*;
@@ -805,7 +812,7 @@ public class MongoBeansGrammarAccess extends AbstractElementFinder.AbstractGramm
 	//XIfExpression XExpression:
 	//	{XIfExpression}
 	//	'if' '(' if=XExpression ')'
-	//	then=XExpression (=> 'else' else=XExpression)?;
+	//	then=XExpression (=>'else' else=XExpression)?;
 	public XbaseGrammarAccess.XIfExpressionElements getXIfExpressionAccess() {
 		return gaXbase.getXIfExpressionAccess();
 	}
@@ -943,7 +950,7 @@ public class MongoBeansGrammarAccess extends AbstractElementFinder.AbstractGramm
 	
 	//XFeatureCall XExpression:
 	//	{XFeatureCall} ('<' typeArguments+=JvmArgumentTypeReference (',' typeArguments+=JvmArgumentTypeReference)* '>')?
-	//	feature=[types::JvmIdentifiableElement|IdOrSuper] (=> explicitOperationCall?='(' (featureCallArguments+=XShortClosure
+	//	feature=[types::JvmIdentifiableElement|IdOrSuper] (=>explicitOperationCall?='(' (featureCallArguments+=XShortClosure
 	//	| featureCallArguments+=XExpression (',' featureCallArguments+=XExpression)*)?
 	//	')')?
 	//	featureCallArguments+=XClosure?;
@@ -977,8 +984,8 @@ public class MongoBeansGrammarAccess extends AbstractElementFinder.AbstractGramm
 	
 	//XConstructorCall XExpression:
 	//	{XConstructorCall}
-	//	'new' constructor=[types::JvmConstructor|QualifiedName] (=> '<' typeArguments+=JvmArgumentTypeReference (','
-	//	typeArguments+=JvmArgumentTypeReference)* '>')? (=> explicitConstructorCall?='(' (arguments+=XShortClosure
+	//	'new' constructor=[types::JvmConstructor|QualifiedName] (=>'<' typeArguments+=JvmArgumentTypeReference (','
+	//	typeArguments+=JvmArgumentTypeReference)* '>')? (=>explicitConstructorCall?='(' (arguments+=XShortClosure
 	//	| arguments+=XExpression (',' arguments+=XExpression)*)?
 	//	')')?
 	//	arguments+=XClosure?;
@@ -1051,7 +1058,7 @@ public class MongoBeansGrammarAccess extends AbstractElementFinder.AbstractGramm
 	}
 	
 	//XReturnExpression XExpression:
-	//	{XReturnExpression} 'return' -> expression=XExpression?;
+	//	{XReturnExpression} 'return' ->expression=XExpression?;
 	public XbaseGrammarAccess.XReturnExpressionElements getXReturnExpressionAccess() {
 		return gaXbase.getXReturnExpressionAccess();
 	}
@@ -1063,7 +1070,7 @@ public class MongoBeansGrammarAccess extends AbstractElementFinder.AbstractGramm
 	//XTryCatchFinallyExpression XExpression:
 	//	{XTryCatchFinallyExpression}
 	//	'try'
-	//	expression=XExpression (catchClauses+=XCatchClause+ (=> 'finally' finallyExpression=XExpression)?
+	//	expression=XExpression (catchClauses+=XCatchClause+ (=>'finally' finallyExpression=XExpression)?
 	//	| 'finally' finallyExpression=XExpression);
 	public XbaseGrammarAccess.XTryCatchFinallyExpressionElements getXTryCatchFinallyExpressionAccess() {
 		return gaXbase.getXTryCatchFinallyExpressionAccess();
@@ -1085,7 +1092,7 @@ public class MongoBeansGrammarAccess extends AbstractElementFinder.AbstractGramm
 	}
 	
 	//XCatchClause:
-	//	=> 'catch' '(' declaredParam=FullJvmFormalParameter ')' expression=XExpression;
+	//	=>'catch' '(' declaredParam=FullJvmFormalParameter ')' expression=XExpression;
 	public XbaseGrammarAccess.XCatchClauseElements getXCatchClauseAccess() {
 		return gaXbase.getXCatchClauseAccess();
 	}
@@ -1096,7 +1103,7 @@ public class MongoBeansGrammarAccess extends AbstractElementFinder.AbstractGramm
 	
 	//@Override
 	//QualifiedName:
-	//	ValidID (=> '.' ValidID)*;
+	//	ValidID (=>'.' ValidID)*;
 	public XbaseGrammarAccess.QualifiedNameElements getQualifiedNameAccess() {
 		return gaXbase.getQualifiedNameAccess();
 	}
@@ -1118,7 +1125,8 @@ public class MongoBeansGrammarAccess extends AbstractElementFinder.AbstractGramm
 	///**
 	// * Dummy rule, for "better" downwards compatibility, since GrammarAccess generates non-static inner classes,
 	// * which makes downstream grammars break on classloading, when a rule is removed.
-	// */ StaticQualifier:
+	// */
+	//StaticQualifier:
 	//	(ValidID '::')+;
 	public XbaseGrammarAccess.StaticQualifierElements getStaticQualifierAccess() {
 		return gaXbase.getStaticQualifierAccess();
@@ -1178,9 +1186,9 @@ public class MongoBeansGrammarAccess extends AbstractElementFinder.AbstractGramm
 	}
 	
 	//JvmParameterizedTypeReference:
-	//	type=[JvmType|super::QualifiedName] (=> '<' arguments+=JvmArgumentTypeReference (','
-	//	arguments+=JvmArgumentTypeReference)* '>' (=> ({JvmInnerTypeReference.outer=current} '.') type=[JvmType|ValidID] (=>
-	//	'<' arguments+=JvmArgumentTypeReference (',' arguments+=JvmArgumentTypeReference)* '>')?)*)?;
+	//	type=[JvmType|super::QualifiedName] (=>'<' arguments+=JvmArgumentTypeReference (','
+	//	arguments+=JvmArgumentTypeReference)* '>' (=> ({JvmInnerTypeReference.outer=current} '.') type=[JvmType|ValidID] (
+	//	=>'<' arguments+=JvmArgumentTypeReference (',' arguments+=JvmArgumentTypeReference)* '>')?)*)?;
 	public XtypeGrammarAccess.JvmParameterizedTypeReferenceElements getJvmParameterizedTypeReferenceAccess() {
 		return gaXtype.getJvmParameterizedTypeReferenceAccess();
 	}

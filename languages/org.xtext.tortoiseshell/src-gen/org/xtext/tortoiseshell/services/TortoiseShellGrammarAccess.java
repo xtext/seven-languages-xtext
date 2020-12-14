@@ -37,7 +37,8 @@ public class TortoiseShellGrammarAccess extends AbstractElementFinder.AbstractGr
 		//	subPrograms+=SubProgram*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//body=Body subPrograms+=SubProgram*
+		//body=Body
+		//subPrograms+=SubProgram*
 		public Group getGroup() { return cGroup; }
 		
 		//body=Body
@@ -73,7 +74,9 @@ public class TortoiseShellGrammarAccess extends AbstractElementFinder.AbstractGr
 		//	body=Body;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'sub' name=ValidID (':' returnType=JvmTypeReference)? parameters+=FullJvmFormalParameter* body=Body
+		//'sub' name=ValidID (':' returnType=JvmTypeReference)?
+		//parameters+=FullJvmFormalParameter*
+		//body=Body
 		public Group getGroup() { return cGroup; }
 		
 		//'sub'
@@ -126,7 +129,9 @@ public class TortoiseShellGrammarAccess extends AbstractElementFinder.AbstractGr
 		//	'end';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{XBlockExpression} 'begin' (expressions+=XExpressionOrVarDeclaration ';'?)* 'end'
+		//{XBlockExpression}
+		//'begin' (expressions+=XExpressionOrVarDeclaration ';'?)*
+		//'end'
 		public Group getGroup() { return cGroup; }
 		
 		//{XBlockExpression}
@@ -525,7 +530,7 @@ public class TortoiseShellGrammarAccess extends AbstractElementFinder.AbstractGr
 	//	feature=[types::JvmIdentifiableElement|FeatureCallID] OpSingleAssign) value=XAssignment
 	//	| => ({XMemberFeatureCall.memberCallTarget=current} ("." | nullSafe?="?." | explicitStatic?="::")) ('<'
 	//	typeArguments+=JvmArgumentTypeReference (',' typeArguments+=JvmArgumentTypeReference)* '>')?
-	//	feature=[types::JvmIdentifiableElement|IdOrSuper] (=> explicitOperationCall?='(' (memberCallArguments+=XShortClosure
+	//	feature=[types::JvmIdentifiableElement|IdOrSuper] (=>explicitOperationCall?='(' (memberCallArguments+=XShortClosure
 	//	| memberCallArguments+=XExpression (',' memberCallArguments+=XExpression)*)?
 	//	')')?
 	//	memberCallArguments+=XClosure?)*;
@@ -638,7 +643,7 @@ public class TortoiseShellGrammarAccess extends AbstractElementFinder.AbstractGr
 	//XIfExpression XExpression:
 	//	{XIfExpression}
 	//	'if' '(' if=XExpression ')'
-	//	then=XExpression (=> 'else' else=XExpression)?;
+	//	then=XExpression (=>'else' else=XExpression)?;
 	public XbaseGrammarAccess.XIfExpressionElements getXIfExpressionAccess() {
 		return gaXbase.getXIfExpressionAccess();
 	}
@@ -776,7 +781,7 @@ public class TortoiseShellGrammarAccess extends AbstractElementFinder.AbstractGr
 	
 	//XFeatureCall XExpression:
 	//	{XFeatureCall} ('<' typeArguments+=JvmArgumentTypeReference (',' typeArguments+=JvmArgumentTypeReference)* '>')?
-	//	feature=[types::JvmIdentifiableElement|IdOrSuper] (=> explicitOperationCall?='(' (featureCallArguments+=XShortClosure
+	//	feature=[types::JvmIdentifiableElement|IdOrSuper] (=>explicitOperationCall?='(' (featureCallArguments+=XShortClosure
 	//	| featureCallArguments+=XExpression (',' featureCallArguments+=XExpression)*)?
 	//	')')?
 	//	featureCallArguments+=XClosure?;
@@ -810,8 +815,8 @@ public class TortoiseShellGrammarAccess extends AbstractElementFinder.AbstractGr
 	
 	//XConstructorCall XExpression:
 	//	{XConstructorCall}
-	//	'new' constructor=[types::JvmConstructor|QualifiedName] (=> '<' typeArguments+=JvmArgumentTypeReference (','
-	//	typeArguments+=JvmArgumentTypeReference)* '>')? (=> explicitConstructorCall?='(' (arguments+=XShortClosure
+	//	'new' constructor=[types::JvmConstructor|QualifiedName] (=>'<' typeArguments+=JvmArgumentTypeReference (','
+	//	typeArguments+=JvmArgumentTypeReference)* '>')? (=>explicitConstructorCall?='(' (arguments+=XShortClosure
 	//	| arguments+=XExpression (',' arguments+=XExpression)*)?
 	//	')')?
 	//	arguments+=XClosure?;
@@ -884,7 +889,7 @@ public class TortoiseShellGrammarAccess extends AbstractElementFinder.AbstractGr
 	}
 	
 	//XReturnExpression XExpression:
-	//	{XReturnExpression} 'return' -> expression=XExpression?;
+	//	{XReturnExpression} 'return' ->expression=XExpression?;
 	public XbaseGrammarAccess.XReturnExpressionElements getXReturnExpressionAccess() {
 		return gaXbase.getXReturnExpressionAccess();
 	}
@@ -896,7 +901,7 @@ public class TortoiseShellGrammarAccess extends AbstractElementFinder.AbstractGr
 	//XTryCatchFinallyExpression XExpression:
 	//	{XTryCatchFinallyExpression}
 	//	'try'
-	//	expression=XExpression (catchClauses+=XCatchClause+ (=> 'finally' finallyExpression=XExpression)?
+	//	expression=XExpression (catchClauses+=XCatchClause+ (=>'finally' finallyExpression=XExpression)?
 	//	| 'finally' finallyExpression=XExpression);
 	public XbaseGrammarAccess.XTryCatchFinallyExpressionElements getXTryCatchFinallyExpressionAccess() {
 		return gaXbase.getXTryCatchFinallyExpressionAccess();
@@ -918,7 +923,7 @@ public class TortoiseShellGrammarAccess extends AbstractElementFinder.AbstractGr
 	}
 	
 	//XCatchClause:
-	//	=> 'catch' '(' declaredParam=FullJvmFormalParameter ')' expression=XExpression;
+	//	=>'catch' '(' declaredParam=FullJvmFormalParameter ')' expression=XExpression;
 	public XbaseGrammarAccess.XCatchClauseElements getXCatchClauseAccess() {
 		return gaXbase.getXCatchClauseAccess();
 	}
@@ -929,7 +934,7 @@ public class TortoiseShellGrammarAccess extends AbstractElementFinder.AbstractGr
 	
 	//@Override
 	//QualifiedName:
-	//	ValidID (=> '.' ValidID)*;
+	//	ValidID (=>'.' ValidID)*;
 	public XbaseGrammarAccess.QualifiedNameElements getQualifiedNameAccess() {
 		return gaXbase.getQualifiedNameAccess();
 	}
@@ -951,7 +956,8 @@ public class TortoiseShellGrammarAccess extends AbstractElementFinder.AbstractGr
 	///**
 	// * Dummy rule, for "better" downwards compatibility, since GrammarAccess generates non-static inner classes,
 	// * which makes downstream grammars break on classloading, when a rule is removed.
-	// */ StaticQualifier:
+	// */
+	//StaticQualifier:
 	//	(ValidID '::')+;
 	public XbaseGrammarAccess.StaticQualifierElements getStaticQualifierAccess() {
 		return gaXbase.getStaticQualifierAccess();
@@ -1011,9 +1017,9 @@ public class TortoiseShellGrammarAccess extends AbstractElementFinder.AbstractGr
 	}
 	
 	//JvmParameterizedTypeReference:
-	//	type=[JvmType|super::QualifiedName] (=> '<' arguments+=JvmArgumentTypeReference (','
-	//	arguments+=JvmArgumentTypeReference)* '>' (=> ({JvmInnerTypeReference.outer=current} '.') type=[JvmType|ValidID] (=>
-	//	'<' arguments+=JvmArgumentTypeReference (',' arguments+=JvmArgumentTypeReference)* '>')?)*)?;
+	//	type=[JvmType|super::QualifiedName] (=>'<' arguments+=JvmArgumentTypeReference (','
+	//	arguments+=JvmArgumentTypeReference)* '>' (=> ({JvmInnerTypeReference.outer=current} '.') type=[JvmType|ValidID] (
+	//	=>'<' arguments+=JvmArgumentTypeReference (',' arguments+=JvmArgumentTypeReference)* '>')?)*)?;
 	public XtypeGrammarAccess.JvmParameterizedTypeReferenceElements getJvmParameterizedTypeReferenceAccess() {
 		return gaXtype.getJvmParameterizedTypeReferenceAccess();
 	}

@@ -4,9 +4,9 @@
 package org.xtext.httprouting.ui;
 
 import com.google.inject.Injector;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
+import org.osgi.framework.FrameworkUtil;
 import org.xtext.httprouting.ui.internal.HttproutingActivator;
 
 /**
@@ -17,7 +17,7 @@ public class RouteExecutableExtensionFactory extends AbstractGuiceAwareExecutabl
 
 	@Override
 	protected Bundle getBundle() {
-		return Platform.getBundle(HttproutingActivator.PLUGIN_ID);
+		return FrameworkUtil.getBundle(HttproutingActivator.class);
 	}
 	
 	@Override

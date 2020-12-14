@@ -4,9 +4,9 @@
 package org.xtext.tortoiseshell.ui;
 
 import com.google.inject.Injector;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
+import org.osgi.framework.FrameworkUtil;
 import org.xtext.tortoiseshell.ui.internal.TortoiseshellActivator;
 
 /**
@@ -17,7 +17,7 @@ public class TortoiseShellExecutableExtensionFactory extends AbstractGuiceAwareE
 
 	@Override
 	protected Bundle getBundle() {
-		return Platform.getBundle(TortoiseshellActivator.PLUGIN_ID);
+		return FrameworkUtil.getBundle(TortoiseshellActivator.class);
 	}
 	
 	@Override

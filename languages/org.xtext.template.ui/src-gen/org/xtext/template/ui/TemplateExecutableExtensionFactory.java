@@ -4,9 +4,9 @@
 package org.xtext.template.ui;
 
 import com.google.inject.Injector;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
+import org.osgi.framework.FrameworkUtil;
 import org.xtext.template.ui.internal.TemplateActivator;
 
 /**
@@ -17,7 +17,7 @@ public class TemplateExecutableExtensionFactory extends AbstractGuiceAwareExecut
 
 	@Override
 	protected Bundle getBundle() {
-		return Platform.getBundle(TemplateActivator.PLUGIN_ID);
+		return FrameworkUtil.getBundle(TemplateActivator.class);
 	}
 	
 	@Override

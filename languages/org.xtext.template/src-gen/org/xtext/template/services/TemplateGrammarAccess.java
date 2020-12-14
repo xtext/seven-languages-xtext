@@ -48,7 +48,10 @@ public class TemplateGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//	body=RichString;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'<!--' '«' ('package' package=QualifiedName)? importSection=XImportSection? params+=Parameter* body=RichString
+		//'<!--' '«' ('package' package=QualifiedName)?
+		//importSection=XImportSection?
+		//params+=Parameter*
+		//body=RichString
 		public Group getGroup() { return cGroup; }
 		
 		//'<!--'
@@ -107,7 +110,8 @@ public class TemplateGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//	'param' type=JvmTypeReference? name=ID ('=' defaultexp=XExpression)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//annotations+=XAnnotation* 'param' type=JvmTypeReference? name=ID ('=' defaultexp=XExpression)?
+		//annotations+=XAnnotation*
+		//'param' type=JvmTypeReference? name=ID ('=' defaultexp=XExpression)?
 		public Group getGroup() { return cGroup; }
 		
 		//annotations+=XAnnotation*
@@ -253,7 +257,9 @@ public class TemplateGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//	"ENDFOR";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{RichStringForLoop} "FOR" declaredParam=JvmFormalParameter ':' forExpression=XExpression eachExpression=RichString
+		//{RichStringForLoop}
+		//"FOR" declaredParam=JvmFormalParameter ':' forExpression=XExpression
+		//eachExpression=RichString
 		//"ENDFOR"
 		public Group getGroup() { return cGroup; }
 		
@@ -312,7 +318,10 @@ public class TemplateGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//	"ENDIF";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{RichStringIf} "IF" if=XExpression then=RichString (else=RichStringElseIf | "ELSE" else=RichString)? "ENDIF"
+		//{RichStringIf}
+		//"IF" if=XExpression
+		//then=RichString (else=RichStringElseIf | "ELSE" else=RichString)?
+		//"ENDIF"
 		public Group getGroup() { return cGroup; }
 		
 		//{RichStringIf}
@@ -380,7 +389,9 @@ public class TemplateGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//	then=RichString (else=RichStringElseIf | "ELSE" else=RichString)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{RichStringIf} "ELSEIF" if=XExpression then=RichString (else=RichStringElseIf | "ELSE" else=RichString)?
+		//{RichStringIf}
+		//"ELSEIF" if=XExpression
+		//then=RichString (else=RichStringElseIf | "ELSE" else=RichString)?
 		public Group getGroup() { return cGroup; }
 		
 		//{RichStringIf}
@@ -597,8 +608,8 @@ public class TemplateGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	
 	//XAnnotation:
 	//	{XAnnotation}
-	//	'@' annotationType=[types::JvmAnnotationType|QualifiedName] (=> '(' (elementValuePairs+=XAnnotationElementValuePair
-	//	(',' elementValuePairs+=XAnnotationElementValuePair)*
+	//	'@' annotationType=[types::JvmAnnotationType|QualifiedName] (=>'(' (elementValuePairs+=XAnnotationElementValuePair (
+	//	',' elementValuePairs+=XAnnotationElementValuePair)*
 	//	| value=XAnnotationElementValueOrCommaList)?
 	//	')')?;
 	public XbaseWithAnnotationsGrammarAccess.XAnnotationElements getXAnnotationAccess() {
@@ -621,7 +632,7 @@ public class TemplateGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	
 	//XAnnotationElementValueOrCommaList xbase::XExpression:
 	//	=> ({xbase::XListLiteral} '#' '[') (elements+=XAnnotationOrExpression (',' elements+=XAnnotationOrExpression)*)? ']'
-	//	| XAnnotationOrExpression ({xbase::XListLiteral.elements+=current} (',' elements+=XAnnotationOrExpression)+)?;
+	//	| XAnnotationOrExpression ({xbase::XListLiteral.elements+= current} (',' elements+=XAnnotationOrExpression)+)?;
 	public XbaseWithAnnotationsGrammarAccess.XAnnotationElementValueOrCommaListElements getXAnnotationElementValueOrCommaListAccess() {
 		return gaXbaseWithAnnotations.getXAnnotationElementValueOrCommaListAccess();
 	}
@@ -905,7 +916,7 @@ public class TemplateGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	//	feature=[types::JvmIdentifiableElement|FeatureCallID] OpSingleAssign) value=XAssignment
 	//	| => ({XMemberFeatureCall.memberCallTarget=current} ("." | nullSafe?="?." | explicitStatic?="::")) ('<'
 	//	typeArguments+=JvmArgumentTypeReference (',' typeArguments+=JvmArgumentTypeReference)* '>')?
-	//	feature=[types::JvmIdentifiableElement|IdOrSuper] (=> explicitOperationCall?='(' (memberCallArguments+=XShortClosure
+	//	feature=[types::JvmIdentifiableElement|IdOrSuper] (=>explicitOperationCall?='(' (memberCallArguments+=XShortClosure
 	//	| memberCallArguments+=XExpression (',' memberCallArguments+=XExpression)*)?
 	//	')')?
 	//	memberCallArguments+=XClosure?)*;
@@ -1018,7 +1029,7 @@ public class TemplateGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	//XIfExpression XExpression:
 	//	{XIfExpression}
 	//	'if' '(' if=XExpression ')'
-	//	then=XExpression (=> 'else' else=XExpression)?;
+	//	then=XExpression (=>'else' else=XExpression)?;
 	public XbaseGrammarAccess.XIfExpressionElements getXIfExpressionAccess() {
 		return gaXbase.getXIfExpressionAccess();
 	}
@@ -1156,7 +1167,7 @@ public class TemplateGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	
 	//XFeatureCall XExpression:
 	//	{XFeatureCall} ('<' typeArguments+=JvmArgumentTypeReference (',' typeArguments+=JvmArgumentTypeReference)* '>')?
-	//	feature=[types::JvmIdentifiableElement|IdOrSuper] (=> explicitOperationCall?='(' (featureCallArguments+=XShortClosure
+	//	feature=[types::JvmIdentifiableElement|IdOrSuper] (=>explicitOperationCall?='(' (featureCallArguments+=XShortClosure
 	//	| featureCallArguments+=XExpression (',' featureCallArguments+=XExpression)*)?
 	//	')')?
 	//	featureCallArguments+=XClosure?;
@@ -1190,8 +1201,8 @@ public class TemplateGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	
 	//XConstructorCall XExpression:
 	//	{XConstructorCall}
-	//	'new' constructor=[types::JvmConstructor|QualifiedName] (=> '<' typeArguments+=JvmArgumentTypeReference (','
-	//	typeArguments+=JvmArgumentTypeReference)* '>')? (=> explicitConstructorCall?='(' (arguments+=XShortClosure
+	//	'new' constructor=[types::JvmConstructor|QualifiedName] (=>'<' typeArguments+=JvmArgumentTypeReference (','
+	//	typeArguments+=JvmArgumentTypeReference)* '>')? (=>explicitConstructorCall?='(' (arguments+=XShortClosure
 	//	| arguments+=XExpression (',' arguments+=XExpression)*)?
 	//	')')?
 	//	arguments+=XClosure?;
@@ -1264,7 +1275,7 @@ public class TemplateGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	}
 	
 	//XReturnExpression XExpression:
-	//	{XReturnExpression} 'return' -> expression=XExpression?;
+	//	{XReturnExpression} 'return' ->expression=XExpression?;
 	public XbaseGrammarAccess.XReturnExpressionElements getXReturnExpressionAccess() {
 		return gaXbase.getXReturnExpressionAccess();
 	}
@@ -1276,7 +1287,7 @@ public class TemplateGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	//XTryCatchFinallyExpression XExpression:
 	//	{XTryCatchFinallyExpression}
 	//	'try'
-	//	expression=XExpression (catchClauses+=XCatchClause+ (=> 'finally' finallyExpression=XExpression)?
+	//	expression=XExpression (catchClauses+=XCatchClause+ (=>'finally' finallyExpression=XExpression)?
 	//	| 'finally' finallyExpression=XExpression);
 	public XbaseGrammarAccess.XTryCatchFinallyExpressionElements getXTryCatchFinallyExpressionAccess() {
 		return gaXbase.getXTryCatchFinallyExpressionAccess();
@@ -1298,7 +1309,7 @@ public class TemplateGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	}
 	
 	//XCatchClause:
-	//	=> 'catch' '(' declaredParam=FullJvmFormalParameter ')' expression=XExpression;
+	//	=>'catch' '(' declaredParam=FullJvmFormalParameter ')' expression=XExpression;
 	public XbaseGrammarAccess.XCatchClauseElements getXCatchClauseAccess() {
 		return gaXbase.getXCatchClauseAccess();
 	}
@@ -1309,7 +1320,7 @@ public class TemplateGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	
 	//@Override
 	//QualifiedName:
-	//	ValidID (=> '.' ValidID)*;
+	//	ValidID (=>'.' ValidID)*;
 	public XbaseGrammarAccess.QualifiedNameElements getQualifiedNameAccess() {
 		return gaXbase.getQualifiedNameAccess();
 	}
@@ -1331,7 +1342,8 @@ public class TemplateGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	///**
 	// * Dummy rule, for "better" downwards compatibility, since GrammarAccess generates non-static inner classes,
 	// * which makes downstream grammars break on classloading, when a rule is removed.
-	// */ StaticQualifier:
+	// */
+	//StaticQualifier:
 	//	(ValidID '::')+;
 	public XbaseGrammarAccess.StaticQualifierElements getStaticQualifierAccess() {
 		return gaXbase.getStaticQualifierAccess();
@@ -1391,9 +1403,9 @@ public class TemplateGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	}
 	
 	//JvmParameterizedTypeReference:
-	//	type=[JvmType|super::QualifiedName] (=> '<' arguments+=JvmArgumentTypeReference (','
-	//	arguments+=JvmArgumentTypeReference)* '>' (=> ({JvmInnerTypeReference.outer=current} '.') type=[JvmType|ValidID] (=>
-	//	'<' arguments+=JvmArgumentTypeReference (',' arguments+=JvmArgumentTypeReference)* '>')?)*)?;
+	//	type=[JvmType|super::QualifiedName] (=>'<' arguments+=JvmArgumentTypeReference (','
+	//	arguments+=JvmArgumentTypeReference)* '>' (=> ({JvmInnerTypeReference.outer=current} '.') type=[JvmType|ValidID] (
+	//	=>'<' arguments+=JvmArgumentTypeReference (',' arguments+=JvmArgumentTypeReference)* '>')?)*)?;
 	public XtypeGrammarAccess.JvmParameterizedTypeReferenceElements getJvmParameterizedTypeReferenceAccess() {
 		return gaXtype.getJvmParameterizedTypeReferenceAccess();
 	}

@@ -4,9 +4,9 @@
 package org.xtext.guicemodules.ui;
 
 import com.google.inject.Injector;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
+import org.osgi.framework.FrameworkUtil;
 import org.xtext.guicemodules.ui.internal.GuicemodulesActivator;
 
 /**
@@ -17,7 +17,7 @@ public class GuiceModulesExecutableExtensionFactory extends AbstractGuiceAwareEx
 
 	@Override
 	protected Bundle getBundle() {
-		return Platform.getBundle(GuicemodulesActivator.PLUGIN_ID);
+		return FrameworkUtil.getBundle(GuicemodulesActivator.class);
 	}
 	
 	@Override
