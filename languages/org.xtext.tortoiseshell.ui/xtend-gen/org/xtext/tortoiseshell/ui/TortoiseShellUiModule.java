@@ -9,7 +9,6 @@ package org.xtext.tortoiseshell.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.xtend.lib.annotations.FinalFieldsConstructor;
-import org.xtext.tortoiseshell.ui.AbstractTortoiseShellUiModule;
 
 /**
  * Use this class to register components to be used within the IDE.

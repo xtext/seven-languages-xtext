@@ -12,7 +12,6 @@ import org.eclipse.jface.text.contentassist.CompletionProposal;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
-import org.xtext.template.ui.contentassist.AbstractTemplateProposalProvider;
 
 /**
  * see http://www.eclipse.org/Xtext/documentation/latest/xtext.html#contentAssist on how to customize content assistant

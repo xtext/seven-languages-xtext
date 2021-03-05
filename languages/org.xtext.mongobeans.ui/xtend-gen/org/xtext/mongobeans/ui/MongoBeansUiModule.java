@@ -13,7 +13,6 @@ import org.eclipse.xtend.lib.annotations.FinalFieldsConstructor;
 import org.eclipse.xtext.ui.editor.outline.IOutlineTreeProvider;
 import org.eclipse.xtext.ui.editor.outline.impl.IOutlineTreeStructureProvider;
 import org.eclipse.xtext.ui.editor.quickfix.IssueResolutionProvider;
-import org.xtext.mongobeans.ui.AbstractMongoBeansUiModule;
 import org.xtext.mongobeans.ui.labeling.MongoBeansLabelProvider;
 import org.xtext.mongobeans.ui.outline.MongoBeansOutlineTreeProvider;
 import org.xtext.mongobeans.ui.quickfix.MongoBeansQuickfixProvider;

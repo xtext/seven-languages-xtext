@@ -10,8 +10,6 @@ package org.xtext.mongobeans.lib;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
 import com.mongodb.WriteResult;
-import org.xtext.mongobeans.lib.IMongoBean;
-import org.xtext.mongobeans.lib.WrappingUtil;
 
 /**
  * Example wrapper methods for DB interaction.

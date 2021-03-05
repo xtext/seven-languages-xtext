@@ -27,7 +27,6 @@ import org.eclipse.ui.IPartListener;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.xbase.lib.Exceptions;
-import org.xtext.tortoiseshell.lib.view.TortoiseView;
 
 @SuppressWarnings("all")
 public class TortoisePartListener implements IPartListener, IResourceChangeListener, CaretListener {

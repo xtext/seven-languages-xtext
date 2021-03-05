@@ -11,7 +11,6 @@ import com.mongodb.DBObject;
 import java.lang.reflect.Constructor;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.Exceptions;
-import org.xtext.mongobeans.lib.IMongoBean;
 
 /**
  * Mongobeans <-> DBObject conversion methods.

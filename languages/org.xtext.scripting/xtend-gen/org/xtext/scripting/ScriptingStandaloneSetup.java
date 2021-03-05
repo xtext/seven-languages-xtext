@@ -7,8 +7,6 @@
  */
 package org.xtext.scripting;
 
-import org.xtext.scripting.ScriptingStandaloneSetupGenerated;
-
 /**
  * Initialization support for running Xtext languages
  * without equinox extension registry

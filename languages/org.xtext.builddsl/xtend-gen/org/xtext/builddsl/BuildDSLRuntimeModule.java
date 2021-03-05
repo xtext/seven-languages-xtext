@@ -9,7 +9,6 @@ package org.xtext.builddsl;
 
 import org.eclipse.xtext.service.SingletonBinding;
 import org.eclipse.xtext.xbase.scoping.batch.ImplicitlyImportedFeatures;
-import org.xtext.builddsl.AbstractBuildDSLRuntimeModule;
 import org.xtext.builddsl.scoping.BuildDSLImplicitlyImportedFeatures;
 import org.xtext.builddsl.validation.BuildDSLValidator;
 

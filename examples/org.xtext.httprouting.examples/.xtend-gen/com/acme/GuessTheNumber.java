@@ -7,7 +7,6 @@
  */
 package com.acme;
 
-import com.acme.MagicNumber;
 import com.google.common.io.CharSink;
 import com.google.inject.Inject;
 import java.io.IOException;

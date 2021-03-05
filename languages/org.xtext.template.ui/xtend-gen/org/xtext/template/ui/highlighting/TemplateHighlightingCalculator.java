@@ -19,7 +19,6 @@ import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.util.CancelIndicator;
 import org.eclipse.xtext.xbase.ide.highlighting.XbaseHighlightingCalculator;
 import org.xtext.template.services.TemplateGrammarAccess;
-import org.xtext.template.ui.highlighting.TemplateHighlightingConfiguration;
 
 @SuppressWarnings("all")
 public class TemplateHighlightingCalculator extends XbaseHighlightingCalculator {

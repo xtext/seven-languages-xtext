@@ -7,8 +7,6 @@
  */
 package org.xtext.template;
 
-import org.xtext.template.TemplateStandaloneSetupGenerated;
-
 /**
  * Initialization support for running Xtext languages
  * without equinox extension registry

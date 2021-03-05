@@ -11,7 +11,6 @@ import com.google.inject.Inject;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.xtext.ui.PluginImageHelper;
-import org.xtext.tortoiseshell.lib.view.TortoiseView;
 
 @SuppressWarnings("all")
 public class ToggleStopModeAction extends Action {

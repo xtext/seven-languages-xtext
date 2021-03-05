@@ -13,7 +13,6 @@ import org.eclipse.ui.views.contentoutline.IContentOutlinePage;
 import org.eclipse.xtext.ide.editor.syntaxcoloring.ISemanticHighlightingCalculator;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfiguration;
 import org.eclipse.xtext.xbase.ui.labeling.XbaseLabelProvider;
-import org.xtext.template.ui.AbstractTemplateUiModule;
 import org.xtext.template.ui.highlighting.TemplateHighlightingCalculator;
 import org.xtext.template.ui.highlighting.TemplateHighlightingConfiguration;
 

@@ -14,9 +14,6 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.xtend.lib.annotations.Accessors;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Pure;
-import org.xtext.tortoiseshell.lib.ITortoiseEvent;
-import org.xtext.tortoiseshell.lib.MoveEvent;
-import org.xtext.tortoiseshell.lib.TurnEvent;
 
 @SuppressWarnings("all")
 public class Tortoise {

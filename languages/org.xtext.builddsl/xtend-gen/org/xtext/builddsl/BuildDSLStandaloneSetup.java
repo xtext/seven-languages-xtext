@@ -7,8 +7,6 @@
  */
 package org.xtext.builddsl;
 
-import org.xtext.builddsl.BuildDSLStandaloneSetupGenerated;
-
 /**
  * Initialization support for running Xtext languages without Equinox extension registry.
  */

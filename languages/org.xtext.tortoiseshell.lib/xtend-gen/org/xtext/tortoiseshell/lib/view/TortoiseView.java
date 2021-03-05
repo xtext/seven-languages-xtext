@@ -39,12 +39,6 @@ import org.xtext.tortoiseshell.lib.ITortoiseInterpreter;
 import org.xtext.tortoiseshell.lib.MoveEvent;
 import org.xtext.tortoiseshell.lib.Tortoise;
 import org.xtext.tortoiseshell.lib.TurnEvent;
-import org.xtext.tortoiseshell.lib.view.Animation;
-import org.xtext.tortoiseshell.lib.view.Animator;
-import org.xtext.tortoiseshell.lib.view.RootLayer;
-import org.xtext.tortoiseshell.lib.view.ToggleStopModeAction;
-import org.xtext.tortoiseshell.lib.view.TortoiseFigure;
-import org.xtext.tortoiseshell.lib.view.TortoisePartListener;
 
 @Singleton
 @SuppressWarnings("all")

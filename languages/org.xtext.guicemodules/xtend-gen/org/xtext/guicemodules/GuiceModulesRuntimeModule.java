@@ -8,7 +8,6 @@
 package org.xtext.guicemodules;
 
 import org.eclipse.xtext.service.SingletonBinding;
-import org.xtext.guicemodules.AbstractGuiceModulesRuntimeModule;
 import org.xtext.guicemodules.validation.GuiceModulesValidator;
 
 /**

@@ -23,7 +23,6 @@ import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
-import org.xtext.builddsl.lib.JavaCompilerParams;
 
 @SuppressWarnings("all")
 public class JavaCompiler {

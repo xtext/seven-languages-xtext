@@ -3,8 +3,6 @@
  */
 package org.xtext.tortoiseshell.validation;
 
-import org.xtext.tortoiseshell.validation.AbstractTortoiseShellValidator;
-
 /**
  * This class contains custom validation rules.
  * 

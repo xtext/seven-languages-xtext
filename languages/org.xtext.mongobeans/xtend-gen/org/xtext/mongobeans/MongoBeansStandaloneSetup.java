@@ -7,8 +7,6 @@
  */
 package org.xtext.mongobeans;
 
-import org.xtext.mongobeans.MongoBeansStandaloneSetupGenerated;
-
 /**
  * Initialization support for running Xtext languages
  * without equinox extension registry

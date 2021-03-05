@@ -8,7 +8,6 @@
 package org.xtext.mongobeans;
 
 import org.eclipse.xtext.naming.IQualifiedNameProvider;
-import org.xtext.mongobeans.AbstractMongoBeansRuntimeModule;
 import org.xtext.mongobeans.scoping.MongoQualifiedNameProvider;
 
 /**
