@@ -18,7 +18,6 @@ import org.eclipse.debug.core.model.IProcess;
 import org.eclipse.debug.ui.RefreshTab;
 import org.eclipse.jdt.launching.JavaLaunchDelegate;
 import org.eclipse.xtext.xbase.lib.Exceptions;
-import org.xtext.builddsl.ui.launch.RefreshJob;
 
 @SuppressWarnings("all")
 public class BuildDSLLaunchDelegate extends JavaLaunchDelegate {

@@ -28,7 +28,6 @@ import org.xtext.tortoiseshell.lib.ITortoiseEvent;
 import org.xtext.tortoiseshell.lib.MoveEvent;
 import org.xtext.tortoiseshell.lib.Tortoise;
 import org.xtext.tortoiseshell.lib.TurnEvent;
-import org.xtext.tortoiseshell.tests.TortoiseShellInjectorProvider;
 import org.xtext.tortoiseshell.tortoiseShell.Program;
 
 @RunWith(XtextRunner.class)

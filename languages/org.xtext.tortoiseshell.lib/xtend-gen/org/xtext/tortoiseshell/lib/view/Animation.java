@@ -10,7 +10,6 @@ package org.xtext.tortoiseshell.lib.view;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Polyline;
 import org.eclipse.draw2d.geometry.Point;
-import org.xtext.tortoiseshell.lib.view.TortoiseFigure;
 
 @SuppressWarnings("all")
 public class Animation {

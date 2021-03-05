@@ -37,7 +37,6 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
-import org.xtext.mongobeans.jvmmodel.MongoTypes;
 import org.xtext.mongobeans.lib.IMongoBean;
 import org.xtext.mongobeans.lib.MongoBeanList;
 import org.xtext.mongobeans.lib.WrappingUtil;

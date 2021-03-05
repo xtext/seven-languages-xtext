@@ -27,9 +27,6 @@ import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure0;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
-import org.xtext.builddsl.lib.DependsOn;
-import org.xtext.builddsl.lib.Param;
-import org.xtext.builddsl.lib.TaskDef;
 
 @SuppressWarnings("all")
 public abstract class BuildScript {

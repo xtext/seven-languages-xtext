@@ -10,7 +10,6 @@ package org.xtext.tortoiseshell.lib;
 import com.google.inject.Binder;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.xtext.service.AbstractGenericModule;
-import org.xtext.tortoiseshell.lib.Activator;
 
 @SuppressWarnings("all")
 public class Module extends AbstractGenericModule {

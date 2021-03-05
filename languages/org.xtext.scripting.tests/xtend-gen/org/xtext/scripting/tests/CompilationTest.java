@@ -16,7 +16,6 @@ import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.testing.CompilationTestHelper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.xtext.scripting.tests.ScriptingInjectorProvider;
 
 @RunWith(XtextRunner.class)
 @InjectWith(ScriptingInjectorProvider.class)

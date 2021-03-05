@@ -7,8 +7,6 @@
  */
 package org.xtext.httprouting;
 
-import org.xtext.httprouting.RouteStandaloneSetupGenerated;
-
 /**
  * Initialization support for running Xtext languages in vanilla Java process
  */

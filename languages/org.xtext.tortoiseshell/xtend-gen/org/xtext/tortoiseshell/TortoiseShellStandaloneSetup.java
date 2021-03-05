@@ -7,8 +7,6 @@
  */
 package org.xtext.tortoiseshell;
 
-import org.xtext.tortoiseshell.TortoiseShellStandaloneSetupGenerated;
-
 /**
  * Initialization support for running Xtext languages
  * without equinox extension registry

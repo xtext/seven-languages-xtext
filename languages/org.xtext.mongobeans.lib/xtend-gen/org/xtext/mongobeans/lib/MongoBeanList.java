@@ -19,8 +19,6 @@ import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure2;
-import org.xtext.mongobeans.lib.IMongoBean;
-import org.xtext.mongobeans.lib.WrappingUtil;
 
 /**
  * Wraps a list of {@link DBObject}s.

@@ -7,10 +7,6 @@
  */
 package com.acme;
 
-import com.acme.DataProvider;
-import com.acme.LoggingService;
-import com.acme.RuntimeModule;
-import com.acme.TestModule;
 import com.google.inject.Guice;
 import com.google.inject.Inject;
 import org.junit.Assert;

@@ -24,8 +24,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.xtext.guicemodules.guiceModules.ModulesAST;
-import org.xtext.guicemodules.tests.GuiceModulesInjectorProvider;
-import org.xtext.guicemodules.tests.InjectionTarget;
 
 @RunWith(XtextRunner.class)
 @InjectWith(GuiceModulesInjectorProvider.class)

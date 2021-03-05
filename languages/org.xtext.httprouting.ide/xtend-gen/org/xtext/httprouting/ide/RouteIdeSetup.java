@@ -8,7 +8,6 @@ import com.google.inject.Injector;
 import org.eclipse.xtext.util.Modules2;
 import org.xtext.httprouting.RouteRuntimeModule;
 import org.xtext.httprouting.RouteStandaloneSetup;
-import org.xtext.httprouting.ide.RouteIdeModule;
 
 /**
  * Initialization support for running Xtext languages as language servers.

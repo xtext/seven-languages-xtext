@@ -8,7 +8,6 @@
 package com.acme.impl;
 
 import com.acme.DataProvider;
-import com.acme.impl.DataFile;
 import com.google.common.base.Charsets;
 import com.google.common.io.Files;
 import com.google.inject.Inject;

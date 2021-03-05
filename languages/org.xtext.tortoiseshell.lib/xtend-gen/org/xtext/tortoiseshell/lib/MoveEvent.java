@@ -11,8 +11,6 @@ import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.xtend.lib.annotations.Data;
 import org.eclipse.xtext.xbase.lib.Pure;
 import org.eclipse.xtext.xbase.lib.util.ToStringBuilder;
-import org.xtext.tortoiseshell.lib.ITortoiseEvent;
-import org.xtext.tortoiseshell.lib.Tortoise;
 
 @Data
 @SuppressWarnings("all")

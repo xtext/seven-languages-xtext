@@ -3,8 +3,6 @@
  */
 package org.xtext.httprouting.ide;
 
-import org.xtext.httprouting.ide.AbstractRouteIdeModule;
-
 /**
  * Use this class to register ide components.
  */

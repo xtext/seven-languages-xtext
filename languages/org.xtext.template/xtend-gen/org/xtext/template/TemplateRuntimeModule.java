@@ -10,8 +10,6 @@ package org.xtext.template;
 import org.eclipse.xtext.conversion.IValueConverterService;
 import org.eclipse.xtext.xbase.compiler.XbaseCompiler;
 import org.eclipse.xtext.xbase.typesystem.computation.ITypeComputer;
-import org.xtext.template.AbstractTemplateRuntimeModule;
-import org.xtext.template.TemplateValueConverterService;
 import org.xtext.template.jvmmodel.TemplateCompiler;
 import org.xtext.template.typesystem.TemplateTypeComputer;
 

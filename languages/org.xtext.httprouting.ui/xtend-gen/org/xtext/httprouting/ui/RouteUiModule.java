@@ -12,7 +12,6 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.xtend.lib.annotations.FinalFieldsConstructor;
 import org.eclipse.xtext.ui.editor.outline.IOutlineTreeProvider;
 import org.eclipse.xtext.ui.editor.outline.impl.IOutlineTreeStructureProvider;
-import org.xtext.httprouting.ui.AbstractRouteUiModule;
 import org.xtext.httprouting.ui.labeling.RouteLabelProvider;
 import org.xtext.httprouting.ui.outline.RouteOutlineTreeProvider;
 

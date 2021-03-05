@@ -10,7 +10,6 @@ package org.xtext.tortoiseshell.lib;
 import com.google.inject.Injector;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
-import org.xtext.tortoiseshell.lib.Activator;
 
 @SuppressWarnings("all")
 public class ExecutableExtensionFactory extends AbstractGuiceAwareExecutableExtensionFactory {

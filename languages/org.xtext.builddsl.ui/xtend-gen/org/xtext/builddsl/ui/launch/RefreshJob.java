@@ -16,7 +16,6 @@ import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.ui.RefreshTab;
 import org.eclipse.xtext.xbase.lib.Exceptions;
-import org.xtext.builddsl.ui.launch.BuildDSLLaunchDelegate;
 
 @SuppressWarnings("all")
 public class RefreshJob extends Job {

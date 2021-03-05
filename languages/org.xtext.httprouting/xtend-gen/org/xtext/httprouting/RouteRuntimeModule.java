@@ -8,7 +8,6 @@
 package org.xtext.httprouting;
 
 import org.eclipse.xtext.service.SingletonBinding;
-import org.xtext.httprouting.AbstractRouteRuntimeModule;
 import org.xtext.httprouting.validation.RouteValidator;
 
 /**

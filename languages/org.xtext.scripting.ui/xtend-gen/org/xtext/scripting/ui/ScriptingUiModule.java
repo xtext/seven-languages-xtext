@@ -11,7 +11,6 @@ import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.xtend.lib.annotations.FinalFieldsConstructor;
 import org.eclipse.xtext.xbase.ui.labeling.XbaseLabelProvider;
-import org.xtext.scripting.ui.AbstractScriptingUiModule;
 
 /**
  * Use this class to register components to be used within the IDE.

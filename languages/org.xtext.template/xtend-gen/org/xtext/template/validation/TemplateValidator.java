@@ -8,7 +8,6 @@
 package org.xtext.template.validation;
 
 import org.eclipse.xtext.xbase.XExpression;
-import org.xtext.template.validation.AbstractTemplateValidator;
 
 @SuppressWarnings("all")
 public class TemplateValidator extends AbstractTemplateValidator {

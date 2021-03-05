@@ -35,7 +35,6 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 import org.eclipse.xtext.xbase.ui.editor.XbaseEditor;
 import org.xtext.builddsl.build.Task;
-import org.xtext.builddsl.ui.launch.LaunchConfigurationInfo;
 
 @SuppressWarnings("all")
 public class BuildDSLLaunchShortcut implements ILaunchShortcut {

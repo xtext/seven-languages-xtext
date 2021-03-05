@@ -24,7 +24,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.xtext.mongobeans.mongoBeans.MongoBean;
 import org.xtext.mongobeans.mongoBeans.MongoFile;
-import org.xtext.mongobeans.tests.MongoBeansInjectorProvider;
 
 @RunWith(XtextRunner.class)
 @InjectWith(MongoBeansInjectorProvider.class)
