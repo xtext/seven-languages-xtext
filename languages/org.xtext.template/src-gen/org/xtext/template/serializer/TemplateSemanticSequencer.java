@@ -419,11 +419,13 @@ public class TemplateSemanticSequencer extends XbaseWithAnnotationsSemanticSeque
 	}
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     Parameter returns Parameter
 	 *
 	 * Constraint:
 	 *     (annotations+=XAnnotation* type=JvmTypeReference? name=ID defaultexp=XExpression?)
+	 * </pre>
 	 */
 	protected void sequence_Parameter(ISerializationContext context, org.xtext.template.template.Parameter semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -431,11 +433,13 @@ public class TemplateSemanticSequencer extends XbaseWithAnnotationsSemanticSeque
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     RichStringElseIf returns RichStringIf
 	 *
 	 * Constraint:
 	 *     (if=XExpression then=RichString (else=RichStringElseIf | else=RichString)?)
+	 * </pre>
 	 */
 	protected void sequence_RichStringElseIf(ISerializationContext context, RichStringIf semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -443,12 +447,14 @@ public class TemplateSemanticSequencer extends XbaseWithAnnotationsSemanticSeque
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     RichStringPart returns RichStringForLoop
 	 *     RichStringForLoop returns RichStringForLoop
 	 *
 	 * Constraint:
 	 *     (declaredParam=JvmFormalParameter forExpression=XExpression eachExpression=RichString)
+	 * </pre>
 	 */
 	protected void sequence_RichStringForLoop(ISerializationContext context, RichStringForLoop semanticObject) {
 		if (errorAcceptor != null) {
@@ -468,12 +474,14 @@ public class TemplateSemanticSequencer extends XbaseWithAnnotationsSemanticSeque
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     RichStringPart returns RichStringIf
 	 *     RichStringIf returns RichStringIf
 	 *
 	 * Constraint:
 	 *     (if=XExpression then=RichString (else=RichStringElseIf | else=RichString)?)
+	 * </pre>
 	 */
 	protected void sequence_RichStringIf(ISerializationContext context, RichStringIf semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -481,11 +489,13 @@ public class TemplateSemanticSequencer extends XbaseWithAnnotationsSemanticSeque
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     RichStringLiteral returns RichStringLiteral
 	 *
 	 * Constraint:
 	 *     value=TEXT
+	 * </pre>
 	 */
 	protected void sequence_RichStringLiteral(ISerializationContext context, RichStringLiteral semanticObject) {
 		if (errorAcceptor != null) {
@@ -499,11 +509,13 @@ public class TemplateSemanticSequencer extends XbaseWithAnnotationsSemanticSeque
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     RichString returns RichString
 	 *
 	 * Constraint:
 	 *     (expressions+=RichStringLiteral (expressions+=RichStringPart expressions+=RichStringLiteral)*)
+	 * </pre>
 	 */
 	protected void sequence_RichString(ISerializationContext context, RichString semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -511,11 +523,13 @@ public class TemplateSemanticSequencer extends XbaseWithAnnotationsSemanticSeque
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     TemplateFile returns TemplateFile
 	 *
 	 * Constraint:
 	 *     (package=QualifiedName? importSection=XImportSection? params+=Parameter* body=RichString)
+	 * </pre>
 	 */
 	protected void sequence_TemplateFile(ISerializationContext context, TemplateFile semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

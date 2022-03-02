@@ -123,29 +123,36 @@ public class RouteSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (QualifiedName '/')*
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) '/' (ambiguity) variables+=Variable
 	 *     variables+=Variable '/' (ambiguity) variables+=Variable
+	 
+	 * </pre>
 	 */
 	protected void emit_URL___QualifiedNameParserRuleCall_1_1_0_1_0_SolidusKeyword_1_1_0_0__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     ('/' | ('/' QualifiedName)+)?
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) (rule start)
+	 
+	 * </pre>
 	 */
 	protected void emit_URL___SolidusKeyword_1_0_or___SolidusKeyword_1_1_0_0_QualifiedNameParserRuleCall_1_1_0_1_0__p__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     ('/' QualifiedName)*
 	 *
@@ -153,23 +160,29 @@ public class RouteSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) (ambiguity) '/' variables+=Variable
 	 *     variables+=Variable (ambiguity) '/' variables+=Variable
 	 *     variables+=Variable (ambiguity) (rule end)
+	 
+	 * </pre>
 	 */
 	protected void emit_URL___SolidusKeyword_1_1_0_0_QualifiedNameParserRuleCall_1_1_0_1_0__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     ('(' ')')?
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     annotationType=[JvmAnnotationType|QualifiedName] (ambiguity) (rule end)
+	 
+	 * </pre>
 	 */
 	protected void emit_XAnnotation___LeftParenthesisKeyword_3_0_RightParenthesisKeyword_3_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     ';'?
 	 *
@@ -177,35 +190,44 @@ public class RouteSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     expressions+=XExpressionOrVarDeclaration (ambiguity) '}' ')' (rule end)
 	 *     expressions+=XExpressionOrVarDeclaration (ambiguity) '}' (rule end)
 	 *     expressions+=XExpressionOrVarDeclaration (ambiguity) expressions+=XExpressionOrVarDeclaration
+	 
+	 * </pre>
 	 */
 	protected void emit_XBlockExpression_SemicolonKeyword_2_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     ';'?
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     expressions+=XExpressionOrVarDeclaration (ambiguity) (rule end)
 	 *     expressions+=XExpressionOrVarDeclaration (ambiguity) expressions+=XExpressionOrVarDeclaration
+	 
+	 * </pre>
 	 */
 	protected void emit_XExpressionInClosure_SemicolonKeyword_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     ('(' ')')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) '=>' returnType=JvmTypeReference
+	 *     (rule start) (ambiguity) '=&gt;' returnType=JvmTypeReference
+	 
+	 * </pre>
 	 */
 	protected void emit_XFunctionTypeRef___LeftParenthesisKeyword_0_0_RightParenthesisKeyword_0_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     ';'?
 	 *
@@ -214,12 +236,15 @@ public class RouteSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     importedType=[JvmDeclaredType|QualifiedName] (ambiguity) (rule end)
 	 *     memberName=ValidID (ambiguity) (rule end)
 	 *     wildcard?='*' (ambiguity) (rule end)
+	 
+	 * </pre>
 	 */
 	protected void emit_XImportDeclaration_SemicolonKeyword_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     '('*
 	 *
@@ -228,7 +253,7 @@ public class RouteSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) (ambiguity) '#' '[' elements+=XExpression
 	 *     (rule start) (ambiguity) '#' '{' '}' (rule start)
 	 *     (rule start) (ambiguity) '#' '{' elements+=XExpression
-	 *     (rule start) (ambiguity) '<' typeArguments+=JvmArgumentTypeReference
+	 *     (rule start) (ambiguity) '&lt;' typeArguments+=JvmArgumentTypeReference
 	 *     (rule start) (ambiguity) '[' declaredFormalParameters+=JvmFormalParameter
 	 *     (rule start) (ambiguity) '[' explicitSyntax?='|'
 	 *     (rule start) (ambiguity) '[' expression=XExpressionInClosure
@@ -266,12 +291,15 @@ public class RouteSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) (ambiguity) {XInstanceOfExpression.expression=}
 	 *     (rule start) (ambiguity) {XMemberFeatureCall.memberCallTarget=}
 	 *     (rule start) (ambiguity) {XPostfixOperation.operand=}
+	 
+	 * </pre>
 	 */
 	protected void emit_XParenthesizedExpression_LeftParenthesisKeyword_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     '('+
 	 *
@@ -280,7 +308,7 @@ public class RouteSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) (ambiguity) '#' '[' elements+=XExpression
 	 *     (rule start) (ambiguity) '#' '{' '}' ')' (rule start)
 	 *     (rule start) (ambiguity) '#' '{' elements+=XExpression
-	 *     (rule start) (ambiguity) '<' typeArguments+=JvmArgumentTypeReference
+	 *     (rule start) (ambiguity) '&lt;' typeArguments+=JvmArgumentTypeReference
 	 *     (rule start) (ambiguity) '[' declaredFormalParameters+=JvmFormalParameter
 	 *     (rule start) (ambiguity) '[' explicitSyntax?='|'
 	 *     (rule start) (ambiguity) '[' expression=XExpressionInClosure
@@ -318,6 +346,8 @@ public class RouteSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) (ambiguity) {XInstanceOfExpression.expression=}
 	 *     (rule start) (ambiguity) {XMemberFeatureCall.memberCallTarget=}
 	 *     (rule start) (ambiguity) {XPostfixOperation.operand=}
+	 
+	 * </pre>
 	 */
 	protected void emit_XParenthesizedExpression_LeftParenthesisKeyword_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

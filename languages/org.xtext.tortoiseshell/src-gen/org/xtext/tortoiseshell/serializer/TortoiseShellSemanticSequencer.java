@@ -331,11 +331,13 @@ public class TortoiseShellSemanticSequencer extends XbaseSemanticSequencer {
 	}
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     Body returns XBlockExpression
 	 *
 	 * Constraint:
 	 *     expressions+=XExpressionOrVarDeclaration*
+	 * </pre>
 	 */
 	protected void sequence_Body(ISerializationContext context, XBlockExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -343,12 +345,14 @@ public class TortoiseShellSemanticSequencer extends XbaseSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     Program returns Program
 	 *     Executable returns Program
 	 *
 	 * Constraint:
 	 *     (body=Body subPrograms+=SubProgram*)
+	 * </pre>
 	 */
 	protected void sequence_Program(ISerializationContext context, Program semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -356,12 +360,14 @@ public class TortoiseShellSemanticSequencer extends XbaseSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SubProgram returns SubProgram
 	 *     Executable returns SubProgram
 	 *
 	 * Constraint:
 	 *     (name=ValidID returnType=JvmTypeReference? parameters+=FullJvmFormalParameter* body=Body)
+	 * </pre>
 	 */
 	protected void sequence_SubProgram(ISerializationContext context, SubProgram semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

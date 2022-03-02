@@ -405,12 +405,14 @@ public class RouteSemanticSequencer extends XbaseWithAnnotationsSemanticSequence
 	}
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractDeclaration returns Dependency
 	 *     Dependency returns Dependency
 	 *
 	 * Constraint:
 	 *     (annotations+=XAnnotation? type=JvmTypeReference name=ID)
+	 * </pre>
 	 */
 	protected void sequence_Dependency(ISerializationContext context, Dependency semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -418,11 +420,13 @@ public class RouteSemanticSequencer extends XbaseWithAnnotationsSemanticSequence
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     Model returns Model
 	 *
 	 * Constraint:
 	 *     ((importSection=XImportSection declarations+=AbstractDeclaration+) | declarations+=AbstractDeclaration+)?
+	 * </pre>
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -430,12 +434,14 @@ public class RouteSemanticSequencer extends XbaseWithAnnotationsSemanticSequence
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractDeclaration returns Route
 	 *     Route returns Route
 	 *
 	 * Constraint:
 	 *     (requestType=RequestType url=URL condition=XExpression? call=XExpression)
+	 * </pre>
 	 */
 	protected void sequence_Route(ISerializationContext context, Route semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -443,11 +449,13 @@ public class RouteSemanticSequencer extends XbaseWithAnnotationsSemanticSequence
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     URL returns URL
 	 *
 	 * Constraint:
 	 *     (variables+=Variable* (variables+=Variable wildcard?='*')?)
+	 * </pre>
 	 */
 	protected void sequence_URL(ISerializationContext context, URL semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -455,11 +463,13 @@ public class RouteSemanticSequencer extends XbaseWithAnnotationsSemanticSequence
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     Variable returns Variable
 	 *
 	 * Constraint:
 	 *     name=ID
+	 * </pre>
 	 */
 	protected void sequence_Variable(ISerializationContext context, Variable semanticObject) {
 		if (errorAcceptor != null) {

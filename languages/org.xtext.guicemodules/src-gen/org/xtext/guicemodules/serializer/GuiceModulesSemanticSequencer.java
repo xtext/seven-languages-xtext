@@ -399,11 +399,13 @@ public class GuiceModulesSemanticSequencer extends XbaseWithAnnotationsSemanticS
 	}
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     BindingAST returns BindingAST
 	 *
 	 * Constraint:
 	 *     (from=KeyAST (to=KeyAST | toInstance=XExpression)?)
+	 * </pre>
 	 */
 	protected void sequence_BindingAST(ISerializationContext context, BindingAST semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -411,11 +413,13 @@ public class GuiceModulesSemanticSequencer extends XbaseWithAnnotationsSemanticS
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     KeyAST returns KeyAST
 	 *
 	 * Constraint:
 	 *     (annotation=XAnnotation? type=JvmTypeReference)
+	 * </pre>
 	 */
 	protected void sequence_KeyAST(ISerializationContext context, KeyAST semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -423,11 +427,13 @@ public class GuiceModulesSemanticSequencer extends XbaseWithAnnotationsSemanticS
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     ModuleAST returns ModuleAST
 	 *
 	 * Constraint:
 	 *     (name=QualifiedName (mixins+=[ModuleAST|QualifiedName] mixins+=[ModuleAST|QualifiedName]*)? bindings+=BindingAST*)
+	 * </pre>
 	 */
 	protected void sequence_ModuleAST(ISerializationContext context, ModuleAST semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -435,11 +441,13 @@ public class GuiceModulesSemanticSequencer extends XbaseWithAnnotationsSemanticS
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     ModulesAST returns ModulesAST
 	 *
 	 * Constraint:
 	 *     ((importSection=XImportSection modules+=ModuleAST+) | modules+=ModuleAST+)?
+	 * </pre>
 	 */
 	protected void sequence_ModulesAST(ISerializationContext context, ModulesAST semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

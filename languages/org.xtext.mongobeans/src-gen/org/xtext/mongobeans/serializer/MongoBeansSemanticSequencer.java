@@ -339,12 +339,14 @@ public class MongoBeansSemanticSequencer extends XbaseSemanticSequencer {
 	}
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractElement returns MongoBean
 	 *     MongoBean returns MongoBean
 	 *
 	 * Constraint:
 	 *     (name=ValidID features+=AbstractFeature*)
+	 * </pre>
 	 */
 	protected void sequence_MongoBean(ISerializationContext context, MongoBean semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -352,11 +354,13 @@ public class MongoBeansSemanticSequencer extends XbaseSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     MongoFile returns MongoFile
 	 *
 	 * Constraint:
 	 *     ((importSection=XImportSection elements+=AbstractElement+) | elements+=AbstractElement+)?
+	 * </pre>
 	 */
 	protected void sequence_MongoFile(ISerializationContext context, MongoFile semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -364,12 +368,14 @@ public class MongoBeansSemanticSequencer extends XbaseSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractFeature returns MongoOperation
 	 *     MongoOperation returns MongoOperation
 	 *
 	 * Constraint:
 	 *     (returnType=JvmTypeReference name=ValidID (parameters+=FullJvmFormalParameter parameters+=FullJvmFormalParameter*)? body=XBlockExpression)
+	 * </pre>
 	 */
 	protected void sequence_MongoOperation(ISerializationContext context, MongoOperation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -377,12 +383,14 @@ public class MongoBeansSemanticSequencer extends XbaseSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractFeature returns MongoProperty
 	 *     MongoProperty returns MongoProperty
 	 *
 	 * Constraint:
 	 *     ((type=JvmTypeReference | inlineType=MongoBean) many?='*'? name=ValidID)
+	 * </pre>
 	 */
 	protected void sequence_MongoProperty(ISerializationContext context, MongoProperty semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -390,12 +398,14 @@ public class MongoBeansSemanticSequencer extends XbaseSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractElement returns PackageDeclaration
 	 *     PackageDeclaration returns PackageDeclaration
 	 *
 	 * Constraint:
 	 *     (name=QualifiedName elements+=AbstractElement*)
+	 * </pre>
 	 */
 	protected void sequence_PackageDeclaration(ISerializationContext context, PackageDeclaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

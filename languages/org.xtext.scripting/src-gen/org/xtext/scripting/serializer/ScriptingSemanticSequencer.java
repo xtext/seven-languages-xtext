@@ -323,11 +323,13 @@ public class ScriptingSemanticSequencer extends XbaseSemanticSequencer {
 	}
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     Script returns Script
 	 *
 	 * Constraint:
 	 *     expressions+=XExpressionOrVarDeclaration*
+	 * </pre>
 	 */
 	protected void sequence_Script(ISerializationContext context, Script semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

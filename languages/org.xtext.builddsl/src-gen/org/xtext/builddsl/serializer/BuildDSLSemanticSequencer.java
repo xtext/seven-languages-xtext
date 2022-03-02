@@ -330,6 +330,7 @@ public class BuildDSLSemanticSequencer extends XbaseSemanticSequencer {
 	}
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     BuildFile returns BuildFile
 	 *
@@ -339,6 +340,7 @@ public class BuildDSLSemanticSequencer extends XbaseSemanticSequencer {
 	 *         (name=QualifiedName? declarations+=Declaration+) | 
 	 *         declarations+=Declaration+
 	 *     )?
+	 * </pre>
 	 */
 	protected void sequence_BuildFile(ISerializationContext context, BuildFile semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -346,12 +348,14 @@ public class BuildDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     Declaration returns Parameter
 	 *     Parameter returns Parameter
 	 *
 	 * Constraint:
 	 *     (type=JvmTypeReference? name=ValidID init=XExpression?)
+	 * </pre>
 	 */
 	protected void sequence_Parameter(ISerializationContext context, org.xtext.builddsl.build.Parameter semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -359,12 +363,14 @@ public class BuildDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     Declaration returns Task
 	 *     Task returns Task
 	 *
 	 * Constraint:
 	 *     (name=ValidID (depends+=[Task|ValidID] depends+=[Task|ValidID]*)? action=XBlockExpression)
+	 * </pre>
 	 */
 	protected void sequence_Task(ISerializationContext context, Task semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
