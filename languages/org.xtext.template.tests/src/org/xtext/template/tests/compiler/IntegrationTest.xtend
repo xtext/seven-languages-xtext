@@ -32,7 +32,7 @@ class IntegrationTest {
 			<!--<< >>-->
 			Hello World
 		'''.toUnixLineSeparator.replace.compile [
-			val result = compiledClass.newInstance.invoke('generate', null)
+			val result = compiledClass.getDeclaredConstructor().newInstance.invoke('generate', null)
 			assertEquals('Hello World',result.toString)
 		]
 	}
@@ -58,7 +58,7 @@ class IntegrationTest {
 			  <<ENDFOR>>
 			</html>
 		'''.toUnixLineSeparator.replace.compile [
-			val result = compiledClass.newInstance.invoke('generate', null)
+			val result = compiledClass.getDeclaredConstructor().newInstance.invoke('generate', null)
 			assertEquals('''
 				<html>
 				  <title>Foo//</title>

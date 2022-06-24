@@ -147,7 +147,7 @@ class CommandLineTest {
 		val backup = System.out
 		System.setOut(new PrintStream(out))
 		try {
-			val instance = clazz.newInstance
+			val instance = clazz.getDeclaredConstructor().newInstance
 			clazz.superclass.declaredMethods.findFirst[name == 'doBuild'] => [
 				accessible = true
 				invoke(instance, cmdline.split(' ') as Object)	

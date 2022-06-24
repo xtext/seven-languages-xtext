@@ -53,7 +53,7 @@ public class ParserTest {
       _builder.newLine();
       final IAcceptor<CompilationTestHelper.Result> _function = (CompilationTestHelper.Result it) -> {
         try {
-          Object _newInstance = it.getCompiledClass().newInstance();
+          Object _newInstance = it.getCompiledClass().getDeclaredConstructor().newInstance();
           final HttpServlet servlet = ((HttpServlet) _newInstance);
           HttpServletResponse _response = this.response();
           final Procedure1<HttpServletResponse> _function_1 = (HttpServletResponse it_1) -> {

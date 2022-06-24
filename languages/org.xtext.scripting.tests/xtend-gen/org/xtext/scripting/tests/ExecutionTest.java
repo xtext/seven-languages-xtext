@@ -56,7 +56,7 @@ public class ExecutionTest {
       final IAcceptor<CompilationTestHelper.Result> _function = (CompilationTestHelper.Result it) -> {
         try {
           try {
-            this._reflectExtensions.invoke(it.getCompiledClass().newInstance(), "main", null);
+            this._reflectExtensions.invoke(it.getCompiledClass().getDeclaredConstructor().newInstance(), "main", null);
             Assert.fail("Expected ResultException not thrown.");
           } catch (final Throwable _t) {
             if (_t instanceof InvocationTargetException) {

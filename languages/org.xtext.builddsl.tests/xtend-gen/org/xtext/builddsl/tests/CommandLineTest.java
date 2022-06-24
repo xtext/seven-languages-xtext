@@ -248,7 +248,7 @@ public class CommandLineTest {
       PrintStream _printStream = new PrintStream(out);
       System.setOut(_printStream);
       try {
-        final Object instance = clazz.newInstance();
+        final Object instance = clazz.getDeclaredConstructor().newInstance();
         final Function1<Method, Boolean> _function_1 = (Method it) -> {
           String _name = it.getName();
           return Boolean.valueOf(Objects.equal(_name, "doBuild"));

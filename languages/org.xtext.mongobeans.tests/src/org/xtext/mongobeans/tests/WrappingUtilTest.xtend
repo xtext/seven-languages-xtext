@@ -46,9 +46,9 @@ class WrappingUtilTest {
 	}
 
 	@Test def testUnwrap() {
-		val one = mongoBeanClass.newInstance
-		val two = mongoBeanClass.newInstance
-		val three = mongoBeanClass.newInstance
+		val one = mongoBeanClass.getDeclaredConstructor().newInstance
+		val two = mongoBeanClass.getDeclaredConstructor().newInstance
+		val three = mongoBeanClass.getDeclaredConstructor().newInstance
 		one.invoke('setBar', 'BAR')
 		(one.invoke('getFoos') as List<Object>).add(two)
 		(one.invoke('getFoos') as List<Object>).add(three)

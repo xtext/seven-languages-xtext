@@ -136,7 +136,7 @@ public class IntegrationTest {
       _builder.newLine();
       final IAcceptor<CompilationTestHelper.Result> _function = (CompilationTestHelper.Result it) -> {
         try {
-          Object _newInstance = it.getCompiledClass().newInstance();
+          Object _newInstance = it.getCompiledClass().getDeclaredConstructor().newInstance();
           final com.google.inject.Module module = ((com.google.inject.Module) _newInstance);
           final InjectionTarget obj = Guice.createInjector(module).<InjectionTarget>getInstance(InjectionTarget.class);
           Assert.assertEquals("one", IterableExtensions.head(obj.col));

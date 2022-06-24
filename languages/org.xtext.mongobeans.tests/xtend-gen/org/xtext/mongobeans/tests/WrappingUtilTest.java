@@ -75,9 +75,9 @@ public class WrappingUtilTest {
   @Test
   public void testUnwrap() {
     try {
-      final Object one = this.mongoBeanClass.newInstance();
-      final Object two = this.mongoBeanClass.newInstance();
-      final Object three = this.mongoBeanClass.newInstance();
+      final Object one = this.mongoBeanClass.getDeclaredConstructor().newInstance();
+      final Object two = this.mongoBeanClass.getDeclaredConstructor().newInstance();
+      final Object three = this.mongoBeanClass.getDeclaredConstructor().newInstance();
       this._reflectExtensions.invoke(one, "setBar", "BAR");
       Object _invoke = this._reflectExtensions.invoke(one, "getFoos");
       ((List<Object>) _invoke).add(two);
