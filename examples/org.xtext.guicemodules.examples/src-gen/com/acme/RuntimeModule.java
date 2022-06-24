@@ -1,6 +1,5 @@
 package com.acme;
 
-import com.acme.DataProvider;
 import com.acme.impl.DataFile;
 import com.acme.impl.FileDataProvider;
 import com.google.inject.Binder;
@@ -14,14 +13,14 @@ public class RuntimeModule implements com.google.inject.Module {
   private String _toInstance1() {
     return "my-data.txt";
   }
-  
+
   @DataFile
   private String _from1;
-  
+
   public void configure(final Binder binder) {
     configure(binder, new HashSet<Key<?>>());
   }
-  
+
   /**
    * Registers bindings for keys not present in the given set.
    */

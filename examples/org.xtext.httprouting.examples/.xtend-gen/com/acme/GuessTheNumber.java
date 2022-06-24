@@ -23,10 +23,10 @@ public class GuessTheNumber {
   @Inject
   @Extension
   private MagicNumber _magicNumber;
-  
+
   @Inject
   private HttpServletResponse response;
-  
+
   public void handleGuess(final String theGuess) {
     if (((theGuess == null) || (this._magicNumber.getNumber() == null))) {
       this._magicNumber.seedNumber();
@@ -83,7 +83,7 @@ public class GuessTheNumber {
       }
     }
   }
-  
+
   public void handleAnswerToEverything() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("42 is normally the answer to everything ... ");
@@ -98,7 +98,7 @@ public class GuessTheNumber {
     }
     this.sendAnswer(_builder);
   }
-  
+
   public void sendAnswer(final CharSequence message) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<html>");
@@ -134,7 +134,7 @@ public class GuessTheNumber {
     _builder.newLine();
     this.send(_builder);
   }
-  
+
   private void send(final CharSequence answer) {
     try {
       final CharSink _function = new CharSink() {

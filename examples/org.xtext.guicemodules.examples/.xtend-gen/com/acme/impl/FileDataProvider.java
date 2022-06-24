@@ -20,7 +20,7 @@ public class FileDataProvider implements DataProvider {
   @Inject
   @DataFile
   private String dataFile;
-  
+
   @Override
   public String getData() {
     try {

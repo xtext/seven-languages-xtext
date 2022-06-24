@@ -12,19 +12,19 @@ import simple.SimpleClazz;
 public class Simple extends HttpServlet {
   @Inject
   private SimpleClazz simpleClazz;
-  
+
   private static Pattern _pattern1 = Pattern.compile("/(\\w+)");
-  
+
   public void _doGet1(final HttpServletRequest request, final HttpServletResponse response, final String someValue) {
     SimpleClazz.staticMethod(someValue);
   }
-  
+
   private static Pattern _pattern3 = Pattern.compile("/(\\w+)");
-  
+
   public void _doGet3(final HttpServletRequest request, final HttpServletResponse response, final String someValue) {
     this.simpleClazz.instanceMethod(someValue);
   }
-  
+
   @Override
   public void doGet(final HttpServletRequest request, final HttpServletResponse response) {
     String url =  request.getRequestURL().toString();

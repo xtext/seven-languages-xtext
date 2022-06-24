@@ -14,11 +14,11 @@ import org.eclipse.xtext.xbase.lib.Pure;
 public class Duration {
   @Accessors
   private int seconds;
-  
+
   public Duration(final int seconds) {
     this.seconds = seconds;
   }
-  
+
   public Duration(final String duration) {
     final String[] split = duration.split(":");
     int _parseInt = Integer.parseInt(split[0]);
@@ -27,7 +27,7 @@ public class Duration {
     int _plus = (_multiply + _parseInt_1);
     this.seconds = _plus;
   }
-  
+
   @Override
   public String toString() {
     String _string = Integer.toString((this.seconds / 60));
@@ -35,16 +35,16 @@ public class Duration {
     String _string_1 = Integer.toString((this.seconds % 60));
     return (_plus + _string_1);
   }
-  
+
   public Duration operator_plus(final Duration other) {
     return new Duration((this.seconds + other.seconds));
   }
-  
+
   @Pure
   public int getSeconds() {
     return this.seconds;
   }
-  
+
   public void setSeconds(final int seconds) {
     this.seconds = seconds;
   }

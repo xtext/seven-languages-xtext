@@ -16,17 +16,17 @@ import org.junit.Test;
 public class Main {
   @Inject
   private DataProvider provider;
-  
+
   @Inject
   private LoggingService logger;
-  
+
   public static void main(final String[] args) {
     final Main instance = new Main();
     RuntimeModule _runtimeModule = new RuntimeModule();
     Guice.createInjector(_runtimeModule).injectMembers(instance);
     instance.logTheData();
   }
-  
+
   @Test
   public void testTheSystem() {
     TestModule _testModule = new TestModule();
@@ -34,7 +34,7 @@ public class Main {
     this.logTheData();
     Assert.assertEquals("dummy-data", this.logger.toString());
   }
-  
+
   public void logTheData() {
     this.logger.logMessage(this.provider.getData());
   }

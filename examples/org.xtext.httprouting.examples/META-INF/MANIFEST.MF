@@ -6,13 +6,13 @@ Bundle-Version: 1.0.0.qualifier
 Require-Bundle: com.google.inject;bundle-version="3.0.0",
  org.eclipse.xtext.xbase.lib;bundle-version="2.4.0",
  org.eclipse.jetty.http,
- javax.servlet;bundle-version="2.5.0",
  org.eclipse.jetty.io,
  org.eclipse.jetty.server,
  org.eclipse.jetty.servlet,
  org.eclipse.jetty.util,
- org.eclipse.jetty.continuation,
  org.eclipse.jetty.security,
- javax.inject;bundle-version="1.0.0"
+ javax.inject;bundle-version="1.0.0",
+ jakarta.servlet-api;bundle-version="4.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Automatic-Module-Name: org.xtext.httprouting.examples
+Import-Package: org.slf4j

@@ -17,16 +17,16 @@ import org.xtext.builddsl.lib.Param;
 public class BuildExample extends BuildScript {
   @Param
   public File project = FileExtensions.file("example-project");
-  
+
   @Param
   public File source = FileExtensions.operator_divide(this.project, "src");
-  
+
   @Param
   public File target = FileExtensions.operator_divide(this.project, "target");
-  
+
   @Param
   public File jar = FileExtensions.operator_divide(FileExtensions.operator_divide(this.project, "result"), "foo.jar");
-  
+
   public static void main(final String... args) {
     BuildExample script = new BuildExample();
     if (script.showHelp(args)) {
@@ -34,12 +34,12 @@ public class BuildExample extends BuildScript {
     }
     System.exit(script.doBuild(args));
   }
-  
+
   @DependsOn("Compile")
   protected void Jar() {
     FileExtensions.zip(this.target, this.jar);
   }
-  
+
   @DependsOn("Clean")
   protected void Compile() {
     final Procedure1<JavaCompilerParams> _function = (JavaCompilerParams it) -> {
@@ -49,7 +49,7 @@ public class BuildExample extends BuildScript {
     };
     JavaCompiler.javac(_function);
   }
-  
+
   @DependsOn("Jar")
   protected void Run() {
     try {
@@ -60,7 +60,7 @@ public class BuildExample extends BuildScript {
       throw Exceptions.sneakyThrow(_e);
     }
   }
-  
+
   @DependsOn
   protected void Clean() {
     DirectoryCleaner.deleteDirectoryContents(this.target);
