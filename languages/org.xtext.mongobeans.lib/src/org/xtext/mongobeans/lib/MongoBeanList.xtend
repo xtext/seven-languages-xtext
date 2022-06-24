@@ -55,7 +55,7 @@ class MongoBeanList <T extends IMongoBean> implements List<T> {
 	override <R> toArray(R[] a) { 
 		val Object[] result = 
 			if(a.size < size) 
-				Array.newInstance(a.getClass().componentType, size) as Object[] 
+				Array.newInstance(a.getClass().getComponentType(), size) as Object[] 
 			else 
 				a
 		forEach [T elem, idx | result.set(idx, elem)]
