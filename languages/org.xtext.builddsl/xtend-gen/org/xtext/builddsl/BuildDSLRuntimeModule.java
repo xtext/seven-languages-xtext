@@ -21,7 +21,7 @@ public class BuildDSLRuntimeModule extends AbstractBuildDSLRuntimeModule {
   public Class<? extends BuildDSLValidator> bindValidator() {
     return BuildDSLValidator.class;
   }
-  
+
   public Class<? extends ImplicitlyImportedFeatures> bindImplicitlyImportedTypes() {
     return BuildDSLImplicitlyImportedFeatures.class;
   }

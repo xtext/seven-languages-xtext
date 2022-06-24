@@ -37,11 +37,11 @@ public class InterpreterTest {
   @Inject
   @Extension
   private TortoiseShellInterpeter _tortoiseShellInterpeter;
-  
+
   @Inject
   @Extension
   private ParseHelper<Program> _parseHelper;
-  
+
   @Test
   public void testTortoiseDefaults() {
     Tortoise _tortoise = new Tortoise();
@@ -56,7 +56,7 @@ public class InterpreterTest {
     };
     ObjectExtensions.<Tortoise>operator_doubleArrow(_tortoise, _function);
   }
-  
+
   @Test
   public void testTortoisProgram() {
     try {
@@ -110,7 +110,7 @@ public class InterpreterTest {
       throw Exceptions.sneakyThrow(_e);
     }
   }
-  
+
   @Test
   public void testSubProgram() {
     try {

@@ -44,24 +44,24 @@ import org.xtext.tortoiseshell.lib.TurnEvent;
 @SuppressWarnings("all")
 public class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
   private static final Logger LOGGER = Logger.getLogger(TortoiseView.class);
-  
+
   private FigureCanvas canvas;
-  
+
   @Inject
   private ToggleStopModeAction action;
-  
+
   @Inject
   private RootLayer rootFigure;
-  
+
   @Inject
   private TortoiseFigure tortoiseFigure;
-  
+
   @Inject
   private TortoisePartListener listener;
-  
+
   @Inject
   private Animator animator;
-  
+
   @Override
   public void createPartControl(final Composite parent) {
     FigureCanvas _figureCanvas = new FigureCanvas(parent, SWT.DOUBLE_BUFFERED);
@@ -78,20 +78,20 @@ public class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
     IWorkbenchPartSite _site = this.getSite();
     ((IViewSite) _site).getActionBars().getToolBarManager().add(this.action);
   }
-  
+
   @Override
   public void setFocus() {
     this.canvas.setFocus();
   }
-  
+
   public TortoiseFigure getTortoiseFigure() {
     return this.tortoiseFigure;
   }
-  
+
   public TortoisePartListener getTortoisePartListener() {
     return this.listener;
   }
-  
+
   public void reset() {
     this.rootFigure.removeAll();
     this.rootFigure.add(this.tortoiseFigure);
@@ -101,7 +101,7 @@ public class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
     final org.eclipse.swt.graphics.Point viewportSize = this.canvas.getSize();
     this.canvas.scrollTo(((-viewportSize.x) / 2), ((-viewportSize.y) / 2));
   }
-  
+
   public void show(final XtextEditor tortoiseEditor, final int stopAtLine) {
     this.animator.setAnimated((stopAtLine < 0));
     final Runnable _function = () -> {
@@ -141,7 +141,7 @@ public class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
     };
     tortoiseEditor.getDocument().<Object>readOnly(_function_1);
   }
-  
+
   public boolean hasError(final XtextEditor tortoiseEditor) {
     boolean _xblockexpression = false;
     {
@@ -169,7 +169,7 @@ public class TortoiseView extends ViewPart implements ITortoiseEvent.Listener {
     }
     return _xblockexpression;
   }
-  
+
   @Override
   public void handleTortoiseEvent(final ITortoiseEvent event) {
     boolean _matched = false;

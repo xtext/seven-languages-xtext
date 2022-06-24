@@ -29,7 +29,7 @@ import org.xtext.builddsl.build.Task;
 @SuppressWarnings("all")
 public class BuildDSLValidator extends XbaseValidator {
   public static final String CYCLIC_DEPENDENCY = "build.issue.cyclicDependency";
-  
+
   @Override
   protected List<EPackage> getEPackages() {
     return CollectionLiterals.<EPackage>newArrayList(
@@ -38,7 +38,7 @@ public class BuildDSLValidator extends XbaseValidator {
       TypesPackage.eINSTANCE, 
       XtypePackage.eINSTANCE);
   }
-  
+
   @Check
   public void checkNoRecursiveDependencies(final Task task) {
     final Procedure1<Set<Task>> _function = (Set<Task> cycle) -> {
@@ -66,7 +66,7 @@ public class BuildDSLValidator extends XbaseValidator {
     };
     this.findDependentTasks(task, _function);
   }
-  
+
   private Collection<Task> findDependentTasks(final Task it, final Procedure1<? super Set<Task>> cycleHandler) {
     LinkedHashSet<Task> _xblockexpression = null;
     {
@@ -95,7 +95,7 @@ public class BuildDSLValidator extends XbaseValidator {
     }
     return _xblockexpression;
   }
-  
+
   private void internalFindDependentTasksRec(final Task task, final Set<Task> set) {
     boolean _add = set.add(task);
     boolean _not = (!_add);

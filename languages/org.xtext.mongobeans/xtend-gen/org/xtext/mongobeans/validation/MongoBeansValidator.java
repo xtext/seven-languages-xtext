@@ -27,15 +27,15 @@ import org.xtext.mongobeans.mongoBeans.MongoProperty;
 @SuppressWarnings("all")
 public class MongoBeansValidator extends XbaseValidator {
   public static final String ILLEGAL_TYPE = "issue.illegalType";
-  
+
   public static final String MISSING_TYPE = "issue.missingType";
-  
+
   public static final String ILLEGAL_PROPERTY_NAME = "issue.illegalPropertyName";
-  
+
   @Inject
   @Extension
   private MongoTypes mongoTypes;
-  
+
   @Check
   public void checkMongoProperty(final MongoProperty it) {
     String _name = it.getName();
@@ -61,7 +61,7 @@ public class MongoBeansValidator extends XbaseValidator {
       }
     }
   }
-  
+
   @Override
   public List<EPackage> getEPackages() {
     return CollectionLiterals.<EPackage>newArrayList(

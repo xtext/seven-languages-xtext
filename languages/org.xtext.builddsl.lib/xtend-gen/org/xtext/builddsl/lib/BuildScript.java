@@ -31,17 +31,17 @@ import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 @SuppressWarnings("all")
 public abstract class BuildScript {
   public static int OK = 0;
-  
+
   public static int HELP = 1;
-  
+
   public static int ERROR = 2;
-  
+
   public static int WRONG_PARAM = 3;
-  
+
   private Map<String, TaskDef> _tasks;
-  
+
   private Map<String, Field> _parameters;
-  
+
   public Map<String, TaskDef> getTasks() {
     if ((this._tasks == null)) {
       this._tasks = CollectionLiterals.<String, TaskDef>newHashMap();
@@ -73,7 +73,7 @@ public abstract class BuildScript {
     }
     return this._tasks;
   }
-  
+
   public Map<String, Field> getParameters() {
     if ((this._parameters == null)) {
       this._parameters = CollectionLiterals.<String, Field>newHashMap();
@@ -91,7 +91,7 @@ public abstract class BuildScript {
     }
     return this._parameters;
   }
-  
+
   protected int doBuild(final String[] args) {
     final Iterator<String> iter = ((List<String>)Conversions.doWrapArray(args)).iterator();
     final ArrayList<String> tasksToExecute = CollectionLiterals.<String>newArrayList();
@@ -138,7 +138,7 @@ public abstract class BuildScript {
     }
     return BuildScript.OK;
   }
-  
+
   public void _executeTask(final String name) {
     final TaskDef task = this.getTasks().get(name);
     if ((task == null)) {
@@ -172,7 +172,7 @@ public abstract class BuildScript {
       task.setIsExecuting(false);
     }
   }
-  
+
   public boolean showHelp(final String[] args) {
     if ((IterableExtensions.isNullOrEmpty(((Iterable<?>)Conversions.doWrapArray(args))) || IterableExtensions.<String>exists(((Iterable<String>)Conversions.doWrapArray(args)), ((Function1<String, Boolean>) (String arg) -> {
       return Boolean.valueOf((Objects.equal("--help", arg) || Objects.equal("-h", arg)));
@@ -222,7 +222,7 @@ public abstract class BuildScript {
     }
     return false;
   }
-  
+
   public void taskDef(final String name, final Procedure1<? super TaskDef> init) {
     boolean _containsKey = this.getTasks().containsKey(name);
     if (_containsKey) {
@@ -232,7 +232,7 @@ public abstract class BuildScript {
     init.apply(task);
     this.getTasks().put(name, task);
   }
-  
+
   public boolean _initParameter(final String name, final String value) {
     try {
       final Field field = this.getParameters().get(name);
@@ -246,7 +246,7 @@ public abstract class BuildScript {
       throw Exceptions.sneakyThrow(_e);
     }
   }
-  
+
   public Object _convertTo(final String string, final Class<?> type) {
     Object _switchResult = null;
     boolean _matched = false;

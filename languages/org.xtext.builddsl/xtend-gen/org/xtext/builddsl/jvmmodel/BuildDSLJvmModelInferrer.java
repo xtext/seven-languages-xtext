@@ -47,7 +47,7 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
   @Inject
   @Extension
   private JvmTypesBuilder _jvmTypesBuilder;
-  
+
   protected void _infer(final BuildFile file, @Extension final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {
     final String qualifiedName = this.getJavaClassName(file);
     final String simpleName = Strings.lastToken(qualifiedName, ".");
@@ -143,19 +143,19 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
     };
     acceptor.<JvmGenericType>accept(this._jvmTypesBuilder.toClass(file, qualifiedName), _function);
   }
-  
+
   private Iterable<Task> getTasks(final BuildFile it) {
     return Iterables.<Task>filter(it.getDeclarations(), Task.class);
   }
-  
+
   private Iterable<Parameter> getParameters(final BuildFile it) {
     return Iterables.<Parameter>filter(it.getDeclarations(), Parameter.class);
   }
-  
+
   private String getMethodName(final Task it) {
     return it.getName();
   }
-  
+
   public String getJavaClassName(final BuildFile it) {
     String _xifexpression = null;
     String _name = it.getName();
@@ -170,7 +170,7 @@ public class BuildDSLJvmModelInferrer extends AbstractModelInferrer {
     }
     return _xifexpression;
   }
-  
+
   public void infer(final EObject file, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {
     if (file instanceof BuildFile) {
       _infer((BuildFile)file, acceptor, isPreIndexingPhase);

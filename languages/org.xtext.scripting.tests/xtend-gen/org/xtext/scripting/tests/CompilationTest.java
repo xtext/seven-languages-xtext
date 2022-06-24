@@ -24,7 +24,7 @@ public class CompilationTest {
   @Inject
   @Extension
   private CompilationTestHelper _compilationTestHelper;
-  
+
   @Test
   public void testDeepThought() {
     try {
@@ -60,7 +60,7 @@ public class CompilationTest {
       throw Exceptions.sneakyThrow(_e);
     }
   }
-  
+
   @Test
   public void testConstrutorChaining() {
     try {

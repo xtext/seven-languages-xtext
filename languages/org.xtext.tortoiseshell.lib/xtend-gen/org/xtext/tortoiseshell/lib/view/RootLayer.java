@@ -22,7 +22,7 @@ public class RootLayer extends FreeformLayer {
     FreeformLayout _freeformLayout = new FreeformLayout();
     this.setLayoutManager(_freeformLayout);
   }
-  
+
   @Override
   public Rectangle getFreeformExtent() {
     Rectangle _xblockexpression = null;
@@ -51,7 +51,7 @@ public class RootLayer extends FreeformLayer {
     }
     return _xblockexpression;
   }
-  
+
   protected Viewport findViewport(final IFigure figure) {
     Viewport _switchResult = null;
     boolean _matched = false;

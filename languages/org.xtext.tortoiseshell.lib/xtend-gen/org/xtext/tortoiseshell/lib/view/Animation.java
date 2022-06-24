@@ -14,22 +14,22 @@ import org.eclipse.draw2d.geometry.Point;
 @SuppressWarnings("all")
 public class Animation {
   private Point startPosition;
-  
+
   private Point delta;
-  
+
   private double startAngle;
-  
+
   private double deltaAngle;
-  
+
   private Polyline line;
-  
+
   private int delay;
-  
+
   public Animation(final Point startPosition, final Point endPosition, final Polyline line, final int delay) {
     this(startPosition, endPosition, delay);
     this.line = line;
   }
-  
+
   public Animation(final Point startPosition, final Point endPosition, final int delay) {
     this.deltaAngle = 0.0;
     this.startPosition = startPosition.getCopy();
@@ -37,17 +37,17 @@ public class Animation {
     this.delta = _point;
     this.delay = delay;
   }
-  
+
   public Animation(final double startAngle, final double endAngle, final int delay) {
     this.startAngle = startAngle;
     this.deltaAngle = (endAngle - startAngle);
     this.delay = delay;
   }
-  
+
   public int getDelay() {
     return this.delay;
   }
-  
+
   public void set(final TortoiseFigure figure, final double alpha) {
     if ((this.deltaAngle != 0.0)) {
       figure.setAngle((this.startAngle + (alpha * this.deltaAngle)));

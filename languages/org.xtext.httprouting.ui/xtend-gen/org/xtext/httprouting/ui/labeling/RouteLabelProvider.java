@@ -21,7 +21,7 @@ public class RouteLabelProvider extends XbaseLabelProvider {
   public RouteLabelProvider(final AdapterFactoryLabelProvider delegate) {
     super(delegate);
   }
-  
+
   public String text(final Dependency dep) {
     StringConcatenation _builder = new StringConcatenation();
     String _simpleName = dep.getType().getSimpleName();
@@ -31,7 +31,7 @@ public class RouteLabelProvider extends XbaseLabelProvider {
     _builder.append(_name);
     return _builder.toString();
   }
-  
+
   public String text(final Route route) {
     StringConcatenation _builder = new StringConcatenation();
     String _name = route.getRequestType().getName();

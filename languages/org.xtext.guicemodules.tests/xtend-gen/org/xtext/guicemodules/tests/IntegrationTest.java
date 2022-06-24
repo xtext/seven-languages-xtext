@@ -32,15 +32,15 @@ public class IntegrationTest {
   @Inject
   @Extension
   private CompilationTestHelper _compilationTestHelper;
-  
+
   @Inject
   @Extension
   private ParseHelper<ModulesAST> _parseHelper;
-  
+
   @Inject
   @Extension
   private ValidationTestHelper _validationTestHelper;
-  
+
   @Test
   public void testParsing() {
     try {
@@ -75,7 +75,7 @@ public class IntegrationTest {
       throw Exceptions.sneakyThrow(_e);
     }
   }
-  
+
   @Test
   public void testValidation_01() {
     try {
@@ -92,7 +92,7 @@ public class IntegrationTest {
       throw Exceptions.sneakyThrow(_e);
     }
   }
-  
+
   @Test
   public void testValidation_02() {
     try {
@@ -109,7 +109,7 @@ public class IntegrationTest {
       throw Exceptions.sneakyThrow(_e);
     }
   }
-  
+
   @Test
   public void testCompileAndExecute() {
     try {

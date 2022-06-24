@@ -39,10 +39,10 @@ public class CommandLineTest {
   @Inject
   @Extension
   private CompilationTestHelper _compilationTestHelper;
-  
+
   @Rule
   public TemporaryFolder temporaryFolder;
-  
+
   @Test
   public void testStringParameterWithDefault() {
     StringConcatenation _builder = new StringConcatenation();
@@ -73,7 +73,7 @@ public class CommandLineTest {
     _builder_2.newLine();
     this.assertExecute(file, "Start --projectName MyProject", _builder_2.toString());
   }
-  
+
   @Test
   public void testFileParameter() {
     StringConcatenation _builder = new StringConcatenation();
@@ -137,7 +137,7 @@ public class CommandLineTest {
     _builder_2.newLine();
     this.assertExecute(file, _plus, _builder_2.toString());
   }
-  
+
   @Test
   public void testDependencies() {
     StringConcatenation _builder = new StringConcatenation();
@@ -185,7 +185,7 @@ public class CommandLineTest {
     _builder_3.newLine();
     this.assertExecute(file, "Baz", _builder_3.toString());
   }
-  
+
   @Test
   public void testCompileJava() {
     final String tmpDir = System.getProperty("java.io.tmpdir");
@@ -233,7 +233,7 @@ public class CommandLineTest {
     _builder_1.newLine();
     this.assertExecute(file, ("Compile --source testdata/org/xtext/builddsl/tests/SimpleMain.java --dest " + tmpDir), _builder_1.toString());
   }
-  
+
   protected void assertExecute(final CharSequence file, final String cmdline, final String expectedOutput) {
     try {
       final ArrayList<Class<?>> classes = CollectionLiterals.<Class<?>>newArrayList();

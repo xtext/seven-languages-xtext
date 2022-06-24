@@ -18,7 +18,7 @@ public class MongoBeansOutlineTreeProvider extends DefaultOutlineTreeProvider {
   public boolean _isLeaf(final MongoOperation operation) {
     return true;
   }
-  
+
   public void _createChildren(final IOutlineNode parentNode, final MongoProperty property) {
     MongoBean _inlineType = property.getInlineType();
     boolean _tripleNotEquals = (_inlineType != null);
@@ -26,7 +26,7 @@ public class MongoBeansOutlineTreeProvider extends DefaultOutlineTreeProvider {
       this.createNode(parentNode, property.getInlineType());
     }
   }
-  
+
   public boolean _isLeaf(final MongoProperty property) {
     MongoBean _inlineType = property.getInlineType();
     return (_inlineType == null);

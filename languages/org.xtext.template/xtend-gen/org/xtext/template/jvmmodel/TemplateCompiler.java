@@ -87,7 +87,7 @@ public class TemplateCompiler extends XbaseCompiler {
       super.doInternalToJavaStatement(expr, it, isReferenced);
     }
   }
-  
+
   @Override
   protected void internalToConvertedExpression(final XExpression obj, final ITreeAppendable it) {
     boolean _hasName = it.hasName(obj);

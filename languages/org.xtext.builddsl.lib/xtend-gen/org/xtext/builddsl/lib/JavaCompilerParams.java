@@ -17,34 +17,34 @@ import org.eclipse.xtext.xbase.lib.Pure;
 @SuppressWarnings("all")
 public class JavaCompilerParams {
   private Collection<File> sources = CollectionLiterals.<File>newArrayList();
-  
+
   private Collection<File> classpath = CollectionLiterals.<File>newArrayList();
-  
+
   private File destination;
-  
+
   @Pure
   public Collection<File> getSources() {
     return this.sources;
   }
-  
+
   public void setSources(final Collection<File> sources) {
     this.sources = sources;
   }
-  
+
   @Pure
   public Collection<File> getClasspath() {
     return this.classpath;
   }
-  
+
   public void setClasspath(final Collection<File> classpath) {
     this.classpath = classpath;
   }
-  
+
   @Pure
   public File getDestination() {
     return this.destination;
   }
-  
+
   public void setDestination(final File destination) {
     this.destination = destination;
   }

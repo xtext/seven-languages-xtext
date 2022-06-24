@@ -29,11 +29,11 @@ public class IntegrationTest {
   @Inject
   @Extension
   private CompilationTestHelper _compilationTestHelper;
-  
+
   @Inject
   @Extension
   private ReflectExtensions _reflectExtensions;
-  
+
   @Test
   public void testParseAndCompile_01() {
     try {
@@ -55,7 +55,7 @@ public class IntegrationTest {
       throw Exceptions.sneakyThrow(_e);
     }
   }
-  
+
   @Test
   public void testParseAndCompile_02() {
     try {
@@ -142,7 +142,7 @@ public class IntegrationTest {
       throw Exceptions.sneakyThrow(_e);
     }
   }
-  
+
   public String replace(final CharSequence s) {
     return s.toString().replace("<<", "«").replace(">>", "»");
   }

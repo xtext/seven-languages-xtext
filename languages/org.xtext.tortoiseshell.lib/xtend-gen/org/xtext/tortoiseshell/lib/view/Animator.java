@@ -20,25 +20,25 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
 @SuppressWarnings("all")
 public class Animator extends UIJob {
   private final int UPDATE_INTERVAL = 20;
-  
+
   @Inject
   private TortoiseView view;
-  
+
   private long lastStart;
-  
+
   private boolean isScheduled;
-  
+
   private Queue<Animation> animationQueue = new ConcurrentLinkedQueue<Animation>();
-  
+
   private boolean isStop;
-  
+
   private boolean isAnimated = true;
-  
+
   public Animator() {
     super("Tortoise Animator");
     this.isScheduled = false;
   }
-  
+
   public void addAnimation(final Animation animation) {
     if (this.isAnimated) {
       this.animationQueue.add(animation);
@@ -51,7 +51,7 @@ public class Animator extends UIJob {
       animation.set(this.view.getTortoiseFigure(), 1);
     }
   }
-  
+
   public boolean setAnimated(final boolean isAnimated) {
     boolean _xblockexpression = false;
     {
@@ -60,7 +60,7 @@ public class Animator extends UIJob {
     }
     return _xblockexpression;
   }
-  
+
   public boolean stop() {
     try {
       boolean _xblockexpression = false;
@@ -84,7 +84,7 @@ public class Animator extends UIJob {
       throw Exceptions.sneakyThrow(_e);
     }
   }
-  
+
   @Override
   public IStatus runInUIThread(final IProgressMonitor monitor) {
     IStatus _xblockexpression = null;

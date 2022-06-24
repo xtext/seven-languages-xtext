@@ -23,7 +23,7 @@ public class TextValueConverter extends STRINGValueConverter {
     String _plus = ("»" + _convertToJavaString);
     return (_plus + "«");
   }
-  
+
   @Override
   protected String convertFromString(final String literal, final INode node) throws ValueConverterWithValueException {
     int _length = literal.length();

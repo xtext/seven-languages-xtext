@@ -26,7 +26,7 @@ import org.eclipse.xtext.xbase.lib.Procedures.Procedure2;
 @SuppressWarnings("all")
 public class MongoBeanList<T extends IMongoBean> implements List<T> {
   private List<DBObject> delegate;
-  
+
   public MongoBeanList(final DBObject owner, final String key) {
     final Object value = owner.get(key);
     if ((value == null)) {
@@ -36,22 +36,22 @@ public class MongoBeanList<T extends IMongoBean> implements List<T> {
       this.delegate = ((List<DBObject>) value);
     }
   }
-  
+
   @Override
   public int size() {
     return this.delegate.size();
   }
-  
+
   @Override
   public boolean isEmpty() {
     return this.delegate.isEmpty();
   }
-  
+
   @Override
   public boolean contains(final Object o) {
     return this.delegate.contains(WrappingUtil.unwrap(o));
   }
-  
+
   @Override
   public Iterator<T> iterator() {
     final Function1<DBObject, T> _function = (DBObject it) -> {
@@ -59,7 +59,7 @@ public class MongoBeanList<T extends IMongoBean> implements List<T> {
     };
     return ListExtensions.<DBObject, T>map(this.delegate, _function).iterator();
   }
-  
+
   @Override
   public T[] toArray() {
     final Function1<DBObject, IMongoBean> _function = (DBObject it) -> {
@@ -68,7 +68,7 @@ public class MongoBeanList<T extends IMongoBean> implements List<T> {
     Object[] _array = ListExtensions.<DBObject, IMongoBean>map(this.delegate, _function).toArray();
     return ((T[]) _array);
   }
-  
+
   @Override
   public <R extends Object> R[] toArray(final R[] a) {
     R[] _xblockexpression = null;
@@ -98,17 +98,17 @@ public class MongoBeanList<T extends IMongoBean> implements List<T> {
     }
     return _xblockexpression;
   }
-  
+
   @Override
   public boolean add(final T e) {
     return this.delegate.add(WrappingUtil.unwrap(e));
   }
-  
+
   @Override
   public boolean remove(final Object o) {
     return this.delegate.remove(WrappingUtil.unwrap(o));
   }
-  
+
   @Override
   public boolean containsAll(final Collection<?> c) {
     final Function1<Object, DBObject> _function = (Object it) -> {
@@ -116,7 +116,7 @@ public class MongoBeanList<T extends IMongoBean> implements List<T> {
     };
     return this.delegate.containsAll(IterableExtensions.<DBObject>toList(IterableExtensions.map(c, _function)));
   }
-  
+
   @Override
   public boolean addAll(final Collection<? extends T> c) {
     boolean _xblockexpression = false;
@@ -129,7 +129,7 @@ public class MongoBeanList<T extends IMongoBean> implements List<T> {
     }
     return _xblockexpression;
   }
-  
+
   @Override
   public boolean addAll(final int index, final Collection<? extends T> c) {
     boolean _xblockexpression = false;
@@ -146,7 +146,7 @@ public class MongoBeanList<T extends IMongoBean> implements List<T> {
     }
     return _xblockexpression;
   }
-  
+
   @Override
   public boolean removeAll(final Collection<?> c) {
     final Function1<Object, DBObject> _function = (Object it) -> {
@@ -154,7 +154,7 @@ public class MongoBeanList<T extends IMongoBean> implements List<T> {
     };
     return this.delegate.removeAll(IterableExtensions.<DBObject>toList(IterableExtensions.map(c, _function)));
   }
-  
+
   @Override
   public boolean retainAll(final Collection<?> c) {
     final Function1<Object, DBObject> _function = (Object it) -> {
@@ -162,52 +162,52 @@ public class MongoBeanList<T extends IMongoBean> implements List<T> {
     };
     return this.delegate.retainAll(IterableExtensions.<DBObject>toList(IterableExtensions.map(c, _function)));
   }
-  
+
   @Override
   public void clear() {
     this.delegate.clear();
   }
-  
+
   @Override
   public boolean equals(final Object o) {
     return this.delegate.equals(o);
   }
-  
+
   @Override
   public int hashCode() {
     return this.delegate.hashCode();
   }
-  
+
   @Override
   public T get(final int index) {
     return WrappingUtil.<T>wrapAndCast(this.delegate.get(index));
   }
-  
+
   @Override
   public T set(final int index, final T element) {
     return WrappingUtil.<T>wrapAndCast(this.delegate.set(index, WrappingUtil.unwrap(element)));
   }
-  
+
   @Override
   public void add(final int index, final T element) {
     this.delegate.add(index, WrappingUtil.unwrap(element));
   }
-  
+
   @Override
   public T remove(final int index) {
     return WrappingUtil.<T>wrapAndCast(this.delegate.remove(index));
   }
-  
+
   @Override
   public int indexOf(final Object o) {
     return this.delegate.indexOf(o);
   }
-  
+
   @Override
   public int lastIndexOf(final Object o) {
     return this.delegate.lastIndexOf(o);
   }
-  
+
   @Override
   public ListIterator<T> listIterator() {
     final Function1<DBObject, T> _function = (DBObject it) -> {
@@ -215,7 +215,7 @@ public class MongoBeanList<T extends IMongoBean> implements List<T> {
     };
     return ListExtensions.<DBObject, T>map(this.delegate, _function).listIterator();
   }
-  
+
   @Override
   public ListIterator<T> listIterator(final int index) {
     final Function1<DBObject, T> _function = (DBObject it) -> {
@@ -223,7 +223,7 @@ public class MongoBeanList<T extends IMongoBean> implements List<T> {
     };
     return ListExtensions.<DBObject, T>map(this.delegate, _function).listIterator(index);
   }
-  
+
   @Override
   public List<T> subList(final int fromIndex, final int toIndex) {
     final Function1<DBObject, T> _function = (DBObject it) -> {

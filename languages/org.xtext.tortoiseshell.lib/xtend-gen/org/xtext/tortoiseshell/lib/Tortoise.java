@@ -18,44 +18,44 @@ import org.eclipse.xtext.xbase.lib.Pure;
 @SuppressWarnings("all")
 public class Tortoise {
   private double angle;
-  
+
   private double x;
-  
+
   private double y;
-  
+
   @Accessors
   private int delay = 200;
-  
+
   private boolean isPaint = true;
-  
+
   @Accessors
   private int lineWidth = 1;
-  
+
   @Accessors
   private Color lineColor = ColorConstants.black;
-  
+
   private List<ITortoiseEvent.Listener> listeners = CollectionLiterals.<ITortoiseEvent.Listener>newArrayList();
-  
+
   public boolean addListener(final ITortoiseEvent.Listener listener) {
     return this.listeners.add(listener);
   }
-  
+
   public boolean removeListener(final ITortoiseEvent.Listener listener) {
     return this.listeners.remove(listener);
   }
-  
+
   public boolean penUp() {
     return this.isPaint = false;
   }
-  
+
   public boolean penDown() {
     return this.isPaint = true;
   }
-  
+
   public boolean isPaint() {
     return this.isPaint;
   }
-  
+
   public double goTo(final double x, final double y) {
     double _xblockexpression = (double) 0;
     {
@@ -64,11 +64,11 @@ public class Tortoise {
     }
     return _xblockexpression;
   }
-  
+
   public Point getPosition() {
     return new Point(((int) this.x), ((int) this.y));
   }
-  
+
   public void forward(final double amount) {
     final Point oldPosition = this.getPosition();
     double _sin = Math.sin(this.angle);
@@ -81,7 +81,7 @@ public class Tortoise {
     this.y = _minus_1;
     this.fireMoveEvent(oldPosition);
   }
-  
+
   public void back(final double amount) {
     final Point oldPosition = this.getPosition();
     double _sin = Math.sin(this.angle);
@@ -94,7 +94,7 @@ public class Tortoise {
     this.y = _plus_1;
     this.fireMoveEvent(oldPosition);
   }
-  
+
   public void turnLeft(final double amount) {
     final double oldAngle = this.angle;
     double _radians = Math.toRadians(amount);
@@ -102,7 +102,7 @@ public class Tortoise {
     this.angle = _plus;
     this.fireTurnEvent(oldAngle);
   }
-  
+
   public void turnRight(final double amount) {
     final double oldAngle = this.angle;
     double _radians = Math.toRadians(amount);
@@ -110,60 +110,60 @@ public class Tortoise {
     this.angle = _minus;
     this.fireTurnEvent(oldAngle);
   }
-  
+
   public void turnTo(final double angle) {
     final double oldAngle = this.angle;
     this.angle = Math.toRadians(angle);
     this.fireTurnEvent(oldAngle);
   }
-  
+
   public double getAngle() {
     return Math.toDegrees(this.angle);
   }
-  
+
   public double getAngleInRadians() {
     return this.angle;
   }
-  
+
   protected void fireMoveEvent(final Point oldPosition) {
     MoveEvent _moveEvent = new MoveEvent(this, oldPosition);
     this.notifyListeners(_moveEvent);
   }
-  
+
   protected void fireTurnEvent(final double oldAngle) {
     TurnEvent _turnEvent = new TurnEvent(this, oldAngle);
     this.notifyListeners(_turnEvent);
   }
-  
+
   protected void notifyListeners(final ITortoiseEvent event) {
     for (final ITortoiseEvent.Listener listener : this.listeners) {
       listener.handleTortoiseEvent(event);
     }
   }
-  
+
   @Pure
   public int getDelay() {
     return this.delay;
   }
-  
+
   public void setDelay(final int delay) {
     this.delay = delay;
   }
-  
+
   @Pure
   public int getLineWidth() {
     return this.lineWidth;
   }
-  
+
   public void setLineWidth(final int lineWidth) {
     this.lineWidth = lineWidth;
   }
-  
+
   @Pure
   public Color getLineColor() {
     return this.lineColor;
   }
-  
+
   public void setLineColor(final Color lineColor) {
     this.lineColor = lineColor;
   }

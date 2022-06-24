@@ -30,7 +30,7 @@ public class ScriptingJvmModelInferrer extends AbstractModelInferrer {
   @Inject
   @Extension
   private JvmTypesBuilder _jvmTypesBuilder;
-  
+
   protected void _infer(final Script script, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {
     final String className = script.eResource().getURI().trimFileExtension().lastSegment();
     final Procedure1<JvmGenericType> _function = (JvmGenericType it) -> {
@@ -48,7 +48,7 @@ public class ScriptingJvmModelInferrer extends AbstractModelInferrer {
     };
     acceptor.<JvmGenericType>accept(this._jvmTypesBuilder.toClass(script, className), _function);
   }
-  
+
   public void infer(final EObject script, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {
     if (script instanceof Script) {
       _infer((Script)script, acceptor, isPreIndexingPhase);

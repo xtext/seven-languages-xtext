@@ -29,11 +29,11 @@ import org.xtext.tortoiseshell.tortoiseShell.SubProgram;
 @SuppressWarnings("all")
 public class TortoiseShellJvmModelInferrer extends AbstractModelInferrer {
   public static final String INFERRED_CLASS_NAME = "MyTortoiseProgram";
-  
+
   @Inject
   @Extension
   private JvmTypesBuilder _jvmTypesBuilder;
-  
+
   protected void _infer(final Program program, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {
     final Procedure1<JvmGenericType> _function = (JvmGenericType it) -> {
       EList<JvmTypeReference> _superTypes = it.getSuperTypes();
@@ -76,7 +76,7 @@ public class TortoiseShellJvmModelInferrer extends AbstractModelInferrer {
     };
     acceptor.<JvmGenericType>accept(this._jvmTypesBuilder.toClass(program, TortoiseShellJvmModelInferrer.INFERRED_CLASS_NAME), _function);
   }
-  
+
   public void infer(final EObject program, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {
     if (program instanceof Program) {
       _infer((Program)program, acceptor, isPreIndexingPhase);

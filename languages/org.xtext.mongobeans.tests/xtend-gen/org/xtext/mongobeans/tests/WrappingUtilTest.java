@@ -40,14 +40,14 @@ public class WrappingUtilTest {
   @Inject
   @Extension
   private CompilationTestHelper _compilationTestHelper;
-  
+
   @Inject
   @Extension
   private ReflectExtensions _reflectExtensions;
-  
+
   @Accessors
   private Class<?> mongoBeanClass;
-  
+
   @Before
   public void setUp() {
     try {
@@ -71,7 +71,7 @@ public class WrappingUtilTest {
       throw Exceptions.sneakyThrow(_e);
     }
   }
-  
+
   @Test
   public void testUnwrap() {
     try {
@@ -94,7 +94,7 @@ public class WrappingUtilTest {
       throw Exceptions.sneakyThrow(_e);
     }
   }
-  
+
   @Test
   public void testWrap() {
     try {
@@ -113,7 +113,7 @@ public class WrappingUtilTest {
       throw Exceptions.sneakyThrow(_e);
     }
   }
-  
+
   protected BasicDBObject newFooDbObject(final String bar) {
     BasicDBObject _basicDBObject = new BasicDBObject();
     final Procedure1<BasicDBObject> _function = (BasicDBObject it) -> {
@@ -122,7 +122,7 @@ public class WrappingUtilTest {
     };
     return ObjectExtensions.<BasicDBObject>operator_doubleArrow(_basicDBObject, _function);
   }
-  
+
   protected Object newFooMongoBean(final DBObject source) {
     try {
       return this.mongoBeanClass.getConstructor(DBObject.class).newInstance(source);
@@ -130,12 +130,12 @@ public class WrappingUtilTest {
       throw Exceptions.sneakyThrow(_e);
     }
   }
-  
+
   @Pure
   public Class<?> getMongoBeanClass() {
     return this.mongoBeanClass;
   }
-  
+
   public void setMongoBeanClass(final Class<?> mongoBeanClass) {
     this.mongoBeanClass = mongoBeanClass;
   }

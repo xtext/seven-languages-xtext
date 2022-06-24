@@ -17,9 +17,9 @@ import org.eclipse.xtext.xbase.ui.highlighting.XbaseHighlightingConfiguration;
 @SuppressWarnings("all")
 public class TemplateHighlightingConfiguration extends XbaseHighlightingConfiguration {
   public static final String TEXT = "template.text";
-  
+
   public static final String ESCAPE = "teamplate.escape";
-  
+
   @Override
   public void configure(final IHighlightingConfigurationAcceptor acceptor) {
     acceptor.acceptDefaultHighlighting(TemplateHighlightingConfiguration.TEXT, "Text", this.staticText());
@@ -31,7 +31,7 @@ public class TemplateHighlightingConfiguration extends XbaseHighlightingConfigur
     };
     super.configure(_function);
   }
-  
+
   public TextStyle staticText() {
     TextStyle _copy = this.defaultTextStyle().copy();
     final Procedure1<TextStyle> _function = (TextStyle it) -> {
@@ -40,7 +40,7 @@ public class TemplateHighlightingConfiguration extends XbaseHighlightingConfigur
     };
     return ObjectExtensions.<TextStyle>operator_doubleArrow(_copy, _function);
   }
-  
+
   public TextStyle staticEscape() {
     TextStyle _copy = this.defaultTextStyle().copy();
     final Procedure1<TextStyle> _function = (TextStyle it) -> {

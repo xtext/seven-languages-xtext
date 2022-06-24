@@ -16,7 +16,7 @@ public class RouteOutlineTreeProvider extends DefaultOutlineTreeProvider {
   public boolean _isLeaf(final Route r) {
     return true;
   }
-  
+
   public boolean _isLeaf(final Dependency r) {
     return true;
   }

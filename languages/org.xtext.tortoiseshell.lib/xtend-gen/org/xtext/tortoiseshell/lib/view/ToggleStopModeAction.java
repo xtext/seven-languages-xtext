@@ -16,14 +16,14 @@ import org.eclipse.xtext.ui.PluginImageHelper;
 public class ToggleStopModeAction extends Action {
   @Inject
   private TortoiseView view;
-  
+
   @Inject
   public ToggleStopModeAction(final PluginImageHelper helper) {
     super("Toggle stop mode");
     this.setImageDescriptor(ImageDescriptor.createFromImage(helper.getImage("stopmode.gif")));
     this.setChecked(false);
   }
-  
+
   @Override
   public void run() {
     this.setChecked(this.view.getTortoisePartListener().toggleStopMode());

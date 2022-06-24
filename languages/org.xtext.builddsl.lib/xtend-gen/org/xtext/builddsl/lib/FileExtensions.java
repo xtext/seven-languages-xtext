@@ -36,7 +36,7 @@ public class FileExtensions {
       }
     }
   }
-  
+
   public static ArrayList<File> listAllFiles(final File file) {
     ArrayList<File> _xblockexpression = null;
     {
@@ -46,7 +46,7 @@ public class FileExtensions {
     }
     return _xblockexpression;
   }
-  
+
   public static void zip(final File directory, final File zipFile) {
     try {
       final ArrayList<File> files = FileExtensions.listAllFiles(directory);
@@ -75,7 +75,7 @@ public class FileExtensions {
       throw Exceptions.sneakyThrow(_e);
     }
   }
-  
+
   public static File operator_divide(final File dir, final String name) {
     File _xblockexpression = null;
     {
@@ -89,7 +89,7 @@ public class FileExtensions {
     }
     return _xblockexpression;
   }
-  
+
   public static File operator_divide(final String dir, final String post) {
     File _xblockexpression = null;
     {
@@ -103,11 +103,11 @@ public class FileExtensions {
     }
     return _xblockexpression;
   }
-  
+
   public static File file(final String path) {
     return new File(path);
   }
-  
+
   public static File relativeTo(final File target, final File base) {
     String _string = base.getAbsoluteFile().toURI().relativize(target.toURI()).toString();
     return new File(_string);

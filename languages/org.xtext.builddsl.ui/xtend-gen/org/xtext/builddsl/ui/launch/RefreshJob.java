@@ -20,14 +20,14 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
 @SuppressWarnings("all")
 public class RefreshJob extends Job {
   private static final Logger logger = Logger.getLogger(BuildDSLLaunchDelegate.class);
-  
+
   private ILaunchConfiguration configuration;
-  
+
   public RefreshJob(final ILaunchConfiguration configuration) {
     super("Refreshing after Build launch");
     this.configuration = configuration;
   }
-  
+
   @Override
   public IStatus run(final IProgressMonitor monitor) {
     IStatus _xblockexpression = null;

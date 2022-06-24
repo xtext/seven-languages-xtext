@@ -24,22 +24,22 @@ public class TemplateUiModule extends AbstractTemplateUiModule {
   public TemplateUiModule(final AbstractUIPlugin plugin) {
     super(plugin);
   }
-  
+
   @Override
   public Class<? extends ISemanticHighlightingCalculator> bindIdeSemanticHighlightingCalculator() {
     return TemplateHighlightingCalculator.class;
   }
-  
+
   @Override
   public Class<? extends IHighlightingConfiguration> bindIHighlightingConfiguration() {
     return TemplateHighlightingConfiguration.class;
   }
-  
+
   @Override
   public Class<? extends IContentOutlinePage> bindIContentOutlinePage() {
     return null;
   }
-  
+
   @Override
   public Class<? extends ILabelProvider> bindILabelProvider() {
     return XbaseLabelProvider.class;

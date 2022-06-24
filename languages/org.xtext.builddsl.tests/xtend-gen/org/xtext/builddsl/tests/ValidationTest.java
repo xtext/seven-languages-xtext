@@ -28,11 +28,11 @@ public class ValidationTest {
   @Inject
   @Extension
   private ParseHelper<BuildFile> _parseHelper;
-  
+
   @Inject
   @Extension
   private ValidationTestHelper _validationTestHelper;
-  
+
   @Test
   public void testSelfDependency() {
     try {
@@ -44,7 +44,7 @@ public class ValidationTest {
       throw Exceptions.sneakyThrow(_e);
     }
   }
-  
+
   @Test
   public void testSimpleCyclicDependency() {
     try {
@@ -60,7 +60,7 @@ public class ValidationTest {
       throw Exceptions.sneakyThrow(_e);
     }
   }
-  
+
   @Test
   public void testNoCycle() {
     try {

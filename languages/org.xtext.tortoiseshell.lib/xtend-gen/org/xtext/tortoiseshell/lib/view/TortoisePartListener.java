@@ -31,16 +31,16 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
 @SuppressWarnings("all")
 public class TortoisePartListener implements IPartListener, IResourceChangeListener, CaretListener {
   private XtextEditor currentTortoiseEditor;
-  
+
   @Inject
   private TortoiseView view;
-  
+
   private boolean isStopMode;
-  
+
   public boolean isTortoiseEditor(final IWorkbenchPart part) {
     return ((part instanceof XtextEditor) && Objects.equal(part.getSite().getId(), "org.xtext.tortoiseshell.TortoiseShell"));
   }
-  
+
   @Override
   public void partActivated(final IWorkbenchPart part) {
     boolean _isTortoiseEditor = this.isTortoiseEditor(part);
@@ -96,15 +96,15 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
       }
     }
   }
-  
+
   @Override
   public void partBroughtToTop(final IWorkbenchPart part) {
   }
-  
+
   @Override
   public void partClosed(final IWorkbenchPart part) {
   }
-  
+
   @Override
   public void partDeactivated(final IWorkbenchPart part) {
     boolean _equals = Objects.equal(part, this.currentTortoiseEditor);
@@ -134,11 +134,11 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
       this.currentTortoiseEditor = null;
     }
   }
-  
+
   @Override
   public void partOpened(final IWorkbenchPart part) {
   }
-  
+
   @Override
   public void resourceChanged(final IResourceChangeEvent event) {
     try {
@@ -169,7 +169,7 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
       throw Exceptions.sneakyThrow(_e);
     }
   }
-  
+
   protected IFile getEditorFile(final IEditorPart editor) {
     IFile _xifexpression = null;
     IEditorInput _editorInput = null;
@@ -184,7 +184,7 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
     }
     return _xifexpression;
   }
-  
+
   public boolean toggleStopMode() {
     boolean _xblockexpression = false;
     {
@@ -217,7 +217,7 @@ public class TortoisePartListener implements IPartListener, IResourceChangeListe
     }
     return _xblockexpression;
   }
-  
+
   @Override
   public void caretMoved(final CaretEvent event) {
     try {
