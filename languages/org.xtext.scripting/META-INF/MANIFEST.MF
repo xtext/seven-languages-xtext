@@ -22,7 +22,7 @@ Require-Bundle: org.eclipse.xtext;bundle-version="2.7.0";visibility:=reexport,
  org.eclipse.equinox.common;bundle-version="3.4",
  org.eclipse.xtend.lib;bundle-version="2.14.0"
 Import-Package: org.apache.log4j
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.xtext.scripting,
  org.xtext.scripting.jvmmodel,
  org.xtext.scripting.parser.antlr,

@@ -23,7 +23,7 @@ Require-Bundle: org.xtext.tortoiseshell;visibility:=reexport,
  org.eclipse.xtend.lib;bundle-version="2.14.0"
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.xtext.tortoiseshell.ui.contentassist,
  org.xtext.tortoiseshell.ui.internal,
  org.xtext.tortoiseshell.ui.quickfix,

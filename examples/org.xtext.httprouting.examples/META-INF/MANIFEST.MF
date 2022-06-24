@@ -13,6 +13,6 @@ Require-Bundle: com.google.inject;bundle-version="3.0.0",
  org.eclipse.jetty.security,
  javax.inject;bundle-version="1.0.0",
  jakarta.servlet-api;bundle-version="4.0.0"
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Automatic-Module-Name: org.xtext.httprouting.examples
 Import-Package: org.slf4j

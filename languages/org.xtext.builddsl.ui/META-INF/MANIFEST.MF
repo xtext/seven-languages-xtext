@@ -29,7 +29,7 @@ Require-Bundle: org.xtext.builddsl;visibility:=reexport,
  org.eclipse.ui.console;resolution:=optional
 Import-Package: org.apache.commons.logging,
  org.apache.log4j
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.xtext.builddsl.ui,
  org.xtext.builddsl.ui.internal,
  org.xtext.builddsl.ui.contentassist,
