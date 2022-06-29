@@ -39,10 +39,10 @@ public class ParserTest {
   @Inject
   @Extension
   private CompilationTestHelper _compilationTestHelper;
-  
+
   @Rule
   public TemporaryFolder tempFolder = new TemporaryFolder();
-  
+
   @Test
   public void testFirstRuleDoesNotMatch() {
     try {
@@ -53,7 +53,7 @@ public class ParserTest {
       _builder.newLine();
       final IAcceptor<CompilationTestHelper.Result> _function = (CompilationTestHelper.Result it) -> {
         try {
-          Object _newInstance = it.getCompiledClass().newInstance();
+          Object _newInstance = it.getCompiledClass().getDeclaredConstructor().newInstance();
           final HttpServlet servlet = ((HttpServlet) _newInstance);
           HttpServletResponse _response = this.response();
           final Procedure1<HttpServletResponse> _function_1 = (HttpServletResponse it_1) -> {
@@ -84,7 +84,7 @@ public class ParserTest {
       throw Exceptions.sneakyThrow(_e);
     }
   }
-  
+
   /**
    * creates a HttpServletRequest proxy
    */
@@ -106,7 +106,7 @@ public class ParserTest {
     };
     return this.<HttpServletRequest>newProxy(HttpServletRequest.class, _function);
   }
-  
+
   /**
    * creates a HttpServletResponse proxy
    */
@@ -139,7 +139,7 @@ public class ParserTest {
     }
     return _xblockexpression;
   }
-  
+
   /**
    * utility to create a proxy for a class and an invocation handler
    */

@@ -4,7 +4,7 @@ Bundle-Name: org.xtext.scripting.ide
 Bundle-SymbolicName: org.xtext.scripting.ide
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: Eclipse Modeling Project
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.xtext.scripting.ide.contentassist.antlr,
  org.xtext.scripting.ide.contentassist.antlr.internal
 Require-Bundle: org.xtext.scripting;bundle-version="1.0.0",

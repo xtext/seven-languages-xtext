@@ -21,7 +21,7 @@ public class MongoBeansLabelProvider extends XbaseLabelProvider {
   public MongoBeansLabelProvider(final AdapterFactoryLabelProvider delegate) {
     super(delegate);
   }
-  
+
   @Override
   protected Object doGetImage(final Object element) {
     Object _switchResult = null;

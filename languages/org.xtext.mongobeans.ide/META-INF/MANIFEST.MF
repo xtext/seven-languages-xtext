@@ -4,7 +4,7 @@ Bundle-Name: org.xtext.mongobeans.ide
 Bundle-SymbolicName: org.xtext.mongobeans.ide
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: Eclipse Modeling Project
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.xtext.mongobeans.ide.contentassist.antlr,
  org.xtext.mongobeans.ide.contentassist.antlr.internal
 Require-Bundle: org.xtext.mongobeans;bundle-version="1.0.0",

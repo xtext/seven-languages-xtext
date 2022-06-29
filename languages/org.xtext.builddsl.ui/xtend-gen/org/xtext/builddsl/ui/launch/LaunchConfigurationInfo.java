@@ -26,15 +26,15 @@ import org.eclipse.xtext.xbase.lib.util.ToStringBuilder;
 @SuppressWarnings("all")
 public class LaunchConfigurationInfo {
   private final String project;
-  
+
   private final String clazz;
-  
+
   private final String task;
-  
+
   public String getName() {
     return Strings.lastToken(this.clazz, ".");
   }
-  
+
   public ILaunchConfiguration createConfiguration() {
     try {
       ILaunchConfiguration _xblockexpression = null;
@@ -55,7 +55,7 @@ public class LaunchConfigurationInfo {
       throw Exceptions.sneakyThrow(_e);
     }
   }
-  
+
   public boolean configEquals(final ILaunchConfiguration a) {
     try {
       return (((Objects.equal(a.getAttribute(IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME, "X"), this.clazz) && 
@@ -66,18 +66,18 @@ public class LaunchConfigurationInfo {
       throw Exceptions.sneakyThrow(_e);
     }
   }
-  
+
   public boolean isValid() {
     return (((!StringExtensions.isNullOrEmpty(this.clazz)) && (!StringExtensions.isNullOrEmpty(this.project))) && (!StringExtensions.isNullOrEmpty(this.task)));
   }
-  
+
   public LaunchConfigurationInfo(final String project, final String clazz, final String task) {
     super();
     this.project = project;
     this.clazz = clazz;
     this.task = task;
   }
-  
+
   @Override
   @Pure
   public int hashCode() {
@@ -87,7 +87,7 @@ public class LaunchConfigurationInfo {
     result = prime * result + ((this.clazz== null) ? 0 : this.clazz.hashCode());
     return prime * result + ((this.task== null) ? 0 : this.task.hashCode());
   }
-  
+
   @Override
   @Pure
   public boolean equals(final Object obj) {
@@ -115,7 +115,7 @@ public class LaunchConfigurationInfo {
       return false;
     return true;
   }
-  
+
   @Override
   @Pure
   public String toString() {
@@ -125,17 +125,17 @@ public class LaunchConfigurationInfo {
     b.add("task", this.task);
     return b.toString();
   }
-  
+
   @Pure
   public String getProject() {
     return this.project;
   }
-  
+
   @Pure
   public String getClazz() {
     return this.clazz;
   }
-  
+
   @Pure
   public String getTask() {
     return this.task;

@@ -4,45 +4,45 @@ import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 @SuppressWarnings("all")
 public class MyWebsite {
   private String title = "No Title";
-  
+
   public void setTitle(final String title) {
     this.title = title;
   }
-  
+
   public String getTitle() {
     return this.title;
   }
-  
+
   private String author = "No Author";
-  
+
   public void setAuthor(final String author) {
     this.author = author;
   }
-  
+
   public String getAuthor() {
     return this.author;
   }
-  
+
   private String description = "No Description";
-  
+
   public void setDescription(final String description) {
     this.description = description;
   }
-  
+
   public String getDescription() {
     return this.description;
   }
-  
+
   private ArrayList<Section> sections = new ArrayList<Section>();
-  
+
   public void setSections(final ArrayList<Section> sections) {
     this.sections = sections;
   }
-  
+
   public ArrayList<Section> getSections() {
     return this.sections;
   }
-  
+
   private CharSequence generate() {
     StringBuilder _appendable = new StringBuilder();
     
@@ -84,7 +84,7 @@ public class MyWebsite {
     _appendable.append(org.eclipse.xtext.xbase.lib.ObjectExtensions.operator_elvis("\n</body>\n</html>",""));
     return ((CharSequence)_appendable);
   }
-  
+
   public String generate(final Procedure1<MyWebsite> init) {
     if (init != null)
     	init.apply(this);

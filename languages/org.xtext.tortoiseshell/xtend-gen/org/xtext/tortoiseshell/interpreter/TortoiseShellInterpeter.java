@@ -36,11 +36,11 @@ public class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoi
   @Inject
   @Extension
   private IJvmModelAssociations _iJvmModelAssociations;
-  
+
   private Tortoise tortoise;
-  
+
   private int stopAtLine;
-  
+
   @Override
   public void run(final Tortoise tortoise, final EObject program, final int stopAtLine) {
     if (((tortoise != null) && (program != null))) {
@@ -59,7 +59,7 @@ public class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoi
       }
     }
   }
-  
+
   @Override
   protected Object internalEvaluate(final XExpression expression, final IEvaluationContext context, final CancelIndicator indicator) {
     Object _xblockexpression = null;
@@ -77,7 +77,7 @@ public class TortoiseShellInterpeter extends XbaseInterpreter implements ITortoi
     }
     return _xblockexpression;
   }
-  
+
   @Override
   protected Object invokeOperation(final JvmOperation operation, final Object receiver, final List<Object> argumentValues) {
     try {

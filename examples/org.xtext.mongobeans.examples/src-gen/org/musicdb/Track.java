@@ -13,7 +13,7 @@ public class Track implements IMongoBean {
   public Track(final DBObject dbObject) {
     this._dbObject = dbObject;
   }
-  
+
   /**
    * Creates a new Track wrapping a new {@link com.mongodb.BasicDBObject}.
    */
@@ -21,29 +21,29 @@ public class Track implements IMongoBean {
     _dbObject = new BasicDBObject();
     _dbObject.put(JAVA_CLASS_KEY, "org.musicdb.Track");
   }
-  
+
   private DBObject _dbObject;
-  
+
   public DBObject getDbObject() {
     return this._dbObject;
   }
-  
+
   public String getTitle() {
     return (String) _dbObject.get("title");
   }
-  
+
   public void setTitle(final String title) {
     _dbObject.put("title", title);
   }
-  
+
   public int getSeconds() {
     return (Integer) _dbObject.get("seconds");
   }
-  
+
   public void setSeconds(final int seconds) {
     _dbObject.put("seconds", seconds);
   }
-  
+
   public Duration getDuration() {
     int _seconds = this.getSeconds();
     return new Duration(_seconds);

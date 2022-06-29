@@ -62,7 +62,7 @@ public class JavaCompiler {
       InputOutput.<String>println("failed.");
     }
   }
-  
+
   public static ClassLoader newClasspath(final File... entries) {
     final Function1<File, URL> _function = (File it) -> {
       try {

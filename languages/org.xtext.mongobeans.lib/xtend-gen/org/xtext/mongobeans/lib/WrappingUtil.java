@@ -55,12 +55,12 @@ public class WrappingUtil {
       throw Exceptions.sneakyThrow(_e);
     }
   }
-  
+
   public static <T extends IMongoBean> T wrapAndCast(final DBObject dbObject) {
     IMongoBean _wrap = WrappingUtil.wrap(dbObject);
     return ((T) _wrap);
   }
-  
+
   public static DBObject unwrap(final Object wrapper) {
     DBObject _xifexpression = null;
     if ((!(wrapper instanceof IMongoBean))) {
@@ -70,13 +70,13 @@ public class WrappingUtil {
     }
     return _xifexpression;
   }
-  
+
   private static ClassLoader _classLoader = WrappingUtil.class.getClassLoader();
-  
+
   public static ClassLoader getClassLoader() {
     return WrappingUtil._classLoader;
   }
-  
+
   public static ClassLoader setClassLoader(final ClassLoader classLoader) {
     return WrappingUtil._classLoader = classLoader;
   }

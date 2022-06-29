@@ -44,11 +44,11 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
   @Inject
   @Extension
   private JvmTypesBuilder builder;
-  
+
   @Inject
   @Extension
   private IQualifiedNameProvider _iQualifiedNameProvider;
-  
+
   protected void _infer(final ModuleAST module, final IJvmDeclaredTypeAcceptor acceptor, final boolean preIndexingPhase) {
     final Procedure1<JvmGenericType> _function = (JvmGenericType it) -> {
       this.builder.setDocumentation(it, this.builder.getDocumentation(module));
@@ -233,7 +233,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
     };
     acceptor.<JvmGenericType>accept(this.builder.toClass(module, this._iQualifiedNameProvider.getFullyQualifiedName(module)), _function);
   }
-  
+
   public StringConcatenationClient guiceKey(final KeyAST it) {
     StringConcatenationClient _client = new StringConcatenationClient() {
       @Override
@@ -260,7 +260,7 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
     };
     return _client;
   }
-  
+
   public String syntheticName(final KeyAST b) {
     final EObject binding = b.eContainer();
     String _name = b.eContainingFeature().getName();
@@ -268,16 +268,16 @@ public class GuiceModulesJvmModelInferrer extends AbstractModelInferrer {
     int _indexOf = binding.eContainer().eContents().indexOf(binding);
     return (_plus + Integer.valueOf(_indexOf));
   }
-  
+
   public String syntheticToInstanceName(final BindingAST binding) {
     int _indexOf = binding.eContainer().eContents().indexOf(binding);
     return ("_toInstance" + Integer.valueOf(_indexOf));
   }
-  
+
   public String simpleName(final ModuleAST module) {
     return StringExtensions.toFirstLower(IterableExtensions.<String>last(((Iterable<String>)Conversions.doWrapArray(module.getName().split("\\.")))));
   }
-  
+
   public void infer(final EObject module, final IJvmDeclaredTypeAcceptor acceptor, final boolean preIndexingPhase) {
     if (module instanceof ModuleAST) {
       _infer((ModuleAST)module, acceptor, preIndexingPhase);

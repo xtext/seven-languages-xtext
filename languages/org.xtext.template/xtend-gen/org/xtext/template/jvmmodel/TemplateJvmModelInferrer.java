@@ -36,7 +36,7 @@ public class TemplateJvmModelInferrer extends AbstractModelInferrer {
   @Inject
   @Extension
   private JvmTypesBuilder _jvmTypesBuilder;
-  
+
   protected void _infer(final TemplateFile element, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {
     final String simpleName = element.eResource().getURI().trimFileExtension().lastSegment();
     String _xifexpression = null;
@@ -135,7 +135,7 @@ public class TemplateJvmModelInferrer extends AbstractModelInferrer {
     };
     acceptor.<JvmGenericType>accept(javaClass, _function);
   }
-  
+
   public void infer(final EObject element, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {
     if (element instanceof TemplateFile) {
       _infer((TemplateFile)element, acceptor, isPreIndexingPhase);

@@ -16,7 +16,7 @@ import org.eclipse.xtext.xbase.conversion.XbaseValueConverterService;
 public class TemplateValueConverterService extends XbaseValueConverterService {
   @Inject
   private TextValueConverter textValueConverter;
-  
+
   @ValueConverter(rule = "TEXT")
   public IValueConverter<String> TEXT() {
     return this.textValueConverter;

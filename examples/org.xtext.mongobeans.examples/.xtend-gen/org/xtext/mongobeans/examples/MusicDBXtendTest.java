@@ -27,7 +27,7 @@ import org.xtext.mongobeans.lib.MongoExtensions;
 public class MusicDBXtendTest {
   @Extension
   private MongoExtensions _mongoExtensions = new MongoExtensions();
-  
+
   @Test
   public void testMongoFacade() {
     try {
@@ -77,14 +77,14 @@ public class MusicDBXtendTest {
       throw Exceptions.sneakyThrow(_e);
     }
   }
-  
+
   protected boolean addAlbum(final Artist it, final Procedure1<? super Album> initializer) {
     List<Album> _albums = it.getAlbums();
     Album _album = new Album();
     Album _doubleArrow = ObjectExtensions.<Album>operator_doubleArrow(_album, initializer);
     return _albums.add(_doubleArrow);
   }
-  
+
   protected boolean addTrack(final Album it, final String trackTitle, final String trackDuration) {
     List<Track> _tracks = it.getTracks();
     Track _track = new Track();

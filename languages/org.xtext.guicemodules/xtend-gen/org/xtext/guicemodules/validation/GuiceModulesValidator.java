@@ -26,7 +26,7 @@ public class GuiceModulesValidator extends XbaseWithAnnotationsValidator {
   @Inject
   @Extension
   private TypeReferences _typeReferences;
-  
+
   @Check
   public void checkAnnotationIsBindingAnnotation(final XAnnotation it) {
     JvmType _annotationType = it.getAnnotationType();

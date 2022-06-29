@@ -32,11 +32,11 @@ public class ValidationTest {
   @Inject
   @Extension
   private ValidationTestHelper _validationTestHelper;
-  
+
   @Inject
   @Extension
   private ParseHelper<MongoFile> _parseHelper;
-  
+
   @Test
   public void testValidType() {
     try {
@@ -62,7 +62,7 @@ public class ValidationTest {
       throw Exceptions.sneakyThrow(_e);
     }
   }
-  
+
   @Test
   public void testInvalidPropertyType() {
     try {
@@ -84,7 +84,7 @@ public class ValidationTest {
       throw Exceptions.sneakyThrow(_e);
     }
   }
-  
+
   @Test
   public void testInvalidPropertyName() {
     try {

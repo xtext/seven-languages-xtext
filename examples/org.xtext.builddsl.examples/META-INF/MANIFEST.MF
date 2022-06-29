@@ -3,14 +3,14 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Examples
 Bundle-SymbolicName: org.xtext.builddsl.examples
 Bundle-Version: 1.0.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: org.eclipse.xtext.xbase.lib,
  org.xtext.builddsl.lib,
  org.eclipse.emf.mwe2.launch,
  org.eclipse.emf.mwe2.lib,
  org.eclipse.emf.mwe2.runtime,
  org.apache.log4j,
- org.eclipse.xtext.generator,
+ org.eclipse.xtext.xtext.generator,
  org.xtext.builddsl;bundle-version="1.0.0",
  org.eclipse.core.runtime,
  org.eclipse.jdt.core,

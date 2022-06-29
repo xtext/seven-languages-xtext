@@ -41,7 +41,7 @@ class ExecutionTest {
 	def protected compileAndExecuteMainAndExpect(CharSequence script, Object expectedResult) {
 		script.compile [
 			try { 
-				compiledClass.newInstance.invoke('main', null)
+				compiledClass.getDeclaredConstructor().newInstance.invoke('main', null)
 				fail('Expected ResultException not thrown.')
 			} catch(InvocationTargetException exc) {
 				assertEquals(expectedResult.toString(), exc.cause.message)

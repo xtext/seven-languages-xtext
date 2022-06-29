@@ -15,26 +15,26 @@ import org.osgi.framework.BundleContext;
 @SuppressWarnings("all")
 public class Activator extends AbstractUIPlugin {
   private static Activator INSTANCE;
-  
+
   private Injector injector;
-  
+
   @Override
   public void start(final BundleContext context) throws Exception {
     super.start(context);
     Activator.INSTANCE = this;
   }
-  
+
   @Override
   public void stop(final BundleContext context) throws Exception {
     super.stop(context);
     Activator.INSTANCE = null;
     this.injector = null;
   }
-  
+
   public static Activator getInstance() {
     return Activator.INSTANCE;
   }
-  
+
   public Injector getInjector() {
     Injector _xblockexpression = null;
     {
@@ -45,7 +45,7 @@ public class Activator extends AbstractUIPlugin {
     }
     return _xblockexpression;
   }
-  
+
   protected Injector createInjector() {
     org.xtext.tortoiseshell.lib.Module _module = new org.xtext.tortoiseshell.lib.Module();
     return Guice.createInjector(_module);

@@ -23,11 +23,11 @@ public class TemplateRuntimeModule extends AbstractTemplateRuntimeModule {
   public Class<? extends IValueConverterService> bindIValueConverterService() {
     return TemplateValueConverterService.class;
   }
-  
+
   public Class<? extends XbaseCompiler> bindXbaseCompiler() {
     return TemplateCompiler.class;
   }
-  
+
   @Override
   public Class<? extends ITypeComputer> bindITypeComputer() {
     return TemplateTypeComputer.class;

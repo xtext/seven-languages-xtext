@@ -29,11 +29,11 @@ public class IntegrationTest {
   @Inject
   @Extension
   private CompilationTestHelper _compilationTestHelper;
-  
+
   @Inject
   @Extension
   private ReflectExtensions _reflectExtensions;
-  
+
   @Test
   public void testParseAndCompile_01() {
     try {
@@ -44,7 +44,7 @@ public class IntegrationTest {
       _builder.newLine();
       final IAcceptor<CompilationTestHelper.Result> _function = (CompilationTestHelper.Result it) -> {
         try {
-          final Object result = this._reflectExtensions.invoke(it.getCompiledClass().newInstance(), "generate", null);
+          final Object result = this._reflectExtensions.invoke(it.getCompiledClass().getDeclaredConstructor().newInstance(), "generate", null);
           Assert.assertEquals("Hello World", result.toString());
         } catch (Throwable _e) {
           throw Exceptions.sneakyThrow(_e);
@@ -55,7 +55,7 @@ public class IntegrationTest {
       throw Exceptions.sneakyThrow(_e);
     }
   }
-  
+
   @Test
   public void testParseAndCompile_02() {
     try {
@@ -112,7 +112,7 @@ public class IntegrationTest {
       _builder.newLine();
       final IAcceptor<CompilationTestHelper.Result> _function = (CompilationTestHelper.Result it) -> {
         try {
-          final Object result = this._reflectExtensions.invoke(it.getCompiledClass().newInstance(), "generate", null);
+          final Object result = this._reflectExtensions.invoke(it.getCompiledClass().getDeclaredConstructor().newInstance(), "generate", null);
           StringConcatenation _builder_1 = new StringConcatenation();
           _builder_1.append("<html>");
           _builder_1.newLine();
@@ -142,7 +142,7 @@ public class IntegrationTest {
       throw Exceptions.sneakyThrow(_e);
     }
   }
-  
+
   public String replace(final CharSequence s) {
     return s.toString().replace("<<", "«").replace(">>", "»");
   }

@@ -24,17 +24,17 @@ public class MongoTypes {
   @Inject
   @Extension
   private RawSuperTypes _rawSuperTypes;
-  
+
   public static final Set<String> mongoPrimitiveTypes = Collections.<String>unmodifiableSet(CollectionLiterals.<String>newHashSet("double", "java.lang.Double", "java.lang.String", "byte[]", "boolean", "java.lang.Boolean", "java.util.Date", "void", "java.lang.Void", "java.util.regex.Pattern", "int", "java.lang.Integer", "long", "java.lang.Long"));
-  
+
   public boolean isMongoPrimitiveType(final JvmTypeReference typeRef) {
     return MongoTypes.mongoPrimitiveTypes.contains(typeRef.getQualifiedName());
   }
-  
+
   public boolean isMongoType(final JvmTypeReference typeRef) {
     return (this.isMongoPrimitiveType(typeRef) || this.isMongoBean(typeRef.getType()));
   }
-  
+
   public boolean isMongoBean(final JvmType type) {
     return this._rawSuperTypes.collectNames(type).contains("org.xtext.mongobeans.lib.IMongoBean");
   }

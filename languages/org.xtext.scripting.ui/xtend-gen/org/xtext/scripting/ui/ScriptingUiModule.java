@@ -22,7 +22,7 @@ public class ScriptingUiModule extends AbstractScriptingUiModule {
   public Class<? extends ILabelProvider> bindILabelProvider() {
     return XbaseLabelProvider.class;
   }
-  
+
   public ScriptingUiModule(final AbstractUIPlugin plugin) {
     super(plugin);
   }

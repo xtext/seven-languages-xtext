@@ -55,23 +55,23 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
   @Inject
   @Extension
   private JvmTypesBuilder _jvmTypesBuilder;
-  
+
   @Inject
   @Extension
   private IQualifiedNameProvider _iQualifiedNameProvider;
-  
+
   @Inject
   @Extension
   private MongoTypes _mongoTypes;
-  
+
   @Inject
   @Extension
   private Primitives _primitives;
-  
+
   @Inject
   @Extension
   private IJvmModelAssociations associations;
-  
+
   protected void _infer(final MongoFile file, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {
     List<MongoBean> _eAllOfType = EcoreUtil2.<MongoBean>eAllOfType(file, MongoBean.class);
     for (final MongoBean bean : _eAllOfType) {
@@ -105,7 +105,7 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
       acceptor.<JvmGenericType>accept(this._jvmTypesBuilder.toClass(bean, this._iQualifiedNameProvider.getFullyQualifiedName(bean)), _function);
     }
   }
-  
+
   protected boolean addConstructors(final JvmDeclaredType inferredType, final MongoBean bean) {
     boolean _xblockexpression = false;
     {
@@ -167,7 +167,7 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
     }
     return _xblockexpression;
   }
-  
+
   protected boolean addDbObjectProperty(final JvmDeclaredType inferredType, final MongoBean bean) {
     boolean _xblockexpression = false;
     {
@@ -180,7 +180,7 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
     }
     return _xblockexpression;
   }
-  
+
   protected boolean addListAccessor(final JvmDeclaredType inferredType, final MongoProperty property) {
     boolean _xblockexpression = false;
     {
@@ -266,7 +266,7 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
     }
     return _xblockexpression;
   }
-  
+
   protected boolean addDelegateAccessors(final JvmDeclaredType inferredType, final MongoProperty property) {
     boolean _xblockexpression = false;
     {
@@ -351,7 +351,7 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
     }
     return _xblockexpression;
   }
-  
+
   protected boolean addMethod(final JvmDeclaredType inferredType, final MongoOperation operation) {
     EList<JvmMember> _members = inferredType.getMembers();
     final Procedure1<JvmOperation> _function = (JvmOperation it) -> {
@@ -367,7 +367,7 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
     JvmOperation _method = this._jvmTypesBuilder.toMethod(operation, operation.getName(), operation.getReturnType(), _function);
     return this._jvmTypesBuilder.<JvmOperation>operator_add(_members, _method);
   }
-  
+
   protected JvmTypeReference getJvmType(final MongoProperty property) {
     JvmTypeReference _xifexpression = null;
     MongoBean _inlineType = property.getInlineType();
@@ -380,7 +380,7 @@ public class MongoBeansJvmModelInferrer extends AbstractModelInferrer {
     }
     return _xifexpression;
   }
-  
+
   public void infer(final EObject file, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {
     if (file instanceof MongoFile) {
       _infer((MongoFile)file, acceptor, isPreIndexingPhase);

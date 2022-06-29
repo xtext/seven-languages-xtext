@@ -1,8 +1,5 @@
 package com.acme;
 
-import com.acme.DataProvider;
-import com.acme.LoggingService;
-import com.acme.RuntimeModule;
 import com.acme.impl.BufferedLoggingService;
 import com.google.inject.Binder;
 import com.google.inject.Key;
@@ -13,18 +10,18 @@ import java.util.Set;
 @SuppressWarnings("all")
 public class TestModule implements com.google.inject.Module {
   private RuntimeModule runtimeModule = new com.acme.RuntimeModule();
-  
+
   private DataProvider _toInstance0() {
     final DataProvider _function = () -> {
       return "dummy-data";
     };
     return _function;
   }
-  
+
   public void configure(final Binder binder) {
     configure(binder, new HashSet<Key<?>>());
   }
-  
+
   /**
    * Registers bindings for keys not present in the given set.
    */

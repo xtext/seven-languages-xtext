@@ -39,13 +39,13 @@ import org.xtext.builddsl.build.Task;
 @SuppressWarnings("all")
 public class BuildDSLLaunchShortcut implements ILaunchShortcut {
   public static final String BUNDLE_ID = "org.xtext.builddsl.ui";
-  
+
   @Override
   public void launch(final ISelection selection, final String mode) {
     MessageDialog.openError(null, "Unsupported Launch Selection.", 
       "Please open the file inside an editor to launch a task.");
   }
-  
+
   public String findTask(final XtextResource res, final int offset) {
     if ((offset < 0)) {
       return null;
@@ -78,7 +78,7 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
     }
     return null;
   }
-  
+
   @Override
   public void launch(final IEditorPart editor, final String mode) {
     if ((editor instanceof XbaseEditor)) {
@@ -118,7 +118,7 @@ public class BuildDSLLaunchShortcut implements ILaunchShortcut {
     }
     MessageDialog.openError(null, "Wrong editor kind.", "");
   }
-  
+
   public void launch(final String mode, final LaunchConfigurationInfo info) {
     boolean _isNullOrEmpty = StringExtensions.isNullOrEmpty(info.getTask());
     if (_isNullOrEmpty) {

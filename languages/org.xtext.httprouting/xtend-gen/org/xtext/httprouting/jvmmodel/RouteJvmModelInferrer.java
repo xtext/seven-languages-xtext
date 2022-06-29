@@ -49,15 +49,15 @@ import org.xtext.httprouting.route.Variable;
 @SuppressWarnings("all")
 public class RouteJvmModelInferrer extends AbstractModelInferrer {
   private static final String HTTP_REQUEST = "javax.servlet.http.HttpServletRequest";
-  
+
   private static final String HTTP_RESPONSE = "javax.servlet.http.HttpServletResponse";
-  
+
   private static final String HTTP_SERVLET = "javax.servlet.http.HttpServlet";
-  
+
   @Inject
   @Extension
   private JvmTypesBuilder _jvmTypesBuilder;
-  
+
   /**
    * The main entry point for this class.
    */
@@ -166,7 +166,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
     };
     acceptor.<JvmGenericType>accept(this._jvmTypesBuilder.toClass(model, this.javaClassName(model)), _function);
   }
-  
+
   /**
    * computes the Servlet name
    */
@@ -174,7 +174,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
     String _lastSegment = it.eResource().getURI().trimFileExtension().lastSegment();
     return ("routes." + _lastSegment);
   }
-  
+
   /**
    * Creates a method for the route's target call.
    * Gives scope and live to the expression.
@@ -197,7 +197,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
     };
     return this._jvmTypesBuilder.toMethod(route, this.nameOfRouteMethod(route), this._typeReferenceBuilder.typeRef(void.class), _function);
   }
-  
+
   /**
    * Creates a field for the URL pattern
    */
@@ -221,7 +221,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
     };
     return this._jvmTypesBuilder.toField(_url, _plus, this._typeReferenceBuilder.typeRef(Pattern.class), _function);
   }
-  
+
   /**
    * Creates a method for a route's when-part.
    * Gives scope and live to the expression.
@@ -246,7 +246,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
     };
     return this._jvmTypesBuilder.toMethod(route, _plus, this._typeReferenceBuilder.typeRef(Boolean.TYPE), _function);
   }
-  
+
   /**
    * Creates a servlet request handling method for the given routes
    */
@@ -369,21 +369,21 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
     };
     return this._jvmTypesBuilder.toMethod(model, name, this._typeReferenceBuilder.typeRef(Void.TYPE), _function);
   }
-  
+
   protected String nameOfRouteMethod(final Route route) {
     String _firstUpper = StringExtensions.toFirstUpper(route.getRequestType().getLiteral().toLowerCase());
     String _plus = ("_do" + _firstUpper);
     int _index = this.index(route);
     return (_plus + Integer.valueOf(_index));
   }
-  
+
   /**
    * a generic method computing the index of an AST object between its siblings
    */
   protected int index(final EObject obj) {
     return obj.eContainer().eContents().indexOf(obj);
   }
-  
+
   protected String getRegExPattern(final String originalPattern, final List<Variable> variables) {
     String pattern = originalPattern;
     for (final Variable variable : variables) {
@@ -402,11 +402,11 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
     }
     return pattern;
   }
-  
+
   public Iterable<Route> routes(final Model model) {
     return Iterables.<Route>filter(model.getDeclarations(), Route.class);
   }
-  
+
   public boolean isWildcard(final Variable it) {
     boolean _switchResult = false;
     EObject _eContainer = it.eContainer();
@@ -421,7 +421,7 @@ public class RouteJvmModelInferrer extends AbstractModelInferrer {
     }
     return _switchResult;
   }
-  
+
   public void infer(final EObject model, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {
     if (model instanceof Model) {
       _infer((Model)model, acceptor, isPreIndexingPhase);

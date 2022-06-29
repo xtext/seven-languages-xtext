@@ -25,17 +25,17 @@ public class RouteUiModule extends AbstractRouteUiModule {
   public Class<? extends ILabelProvider> bindILabelProvider() {
     return RouteLabelProvider.class;
   }
-  
+
   @Override
   public Class<? extends IOutlineTreeProvider> bindIOutlineTreeProvider() {
     return RouteOutlineTreeProvider.class;
   }
-  
+
   @Override
   public Class<? extends IOutlineTreeStructureProvider> bindIOutlineTreeStructureProvider() {
     return RouteOutlineTreeProvider.class;
   }
-  
+
   public RouteUiModule(final AbstractUIPlugin plugin) {
     super(plugin);
   }

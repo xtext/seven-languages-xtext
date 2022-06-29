@@ -35,7 +35,7 @@ class ParserTest {
 			GET /client/foo/:id/:name*  when id=="43" do response.addHeader(id, null)
 			GET /client/foo/:id/:name*  when id=="42" do response.addHeader(name + "/" + id, null)
 		'''.compile [
-			val servlet = compiledClass.newInstance as HttpServlet
+			val servlet = compiledClass.getDeclaredConstructor().newInstance as HttpServlet
 			
 			response => [
 				servlet.service(request("/client/foo/42/rest/of"), it)

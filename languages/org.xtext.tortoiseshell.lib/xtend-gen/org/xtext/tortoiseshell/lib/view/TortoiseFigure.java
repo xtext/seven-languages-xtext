@@ -23,12 +23,12 @@ import org.eclipse.xtext.xbase.lib.Pure;
 public class TortoiseFigure extends ImageFigure {
   @Accessors
   private double angle;
-  
+
   @Inject
   public TortoiseFigure(final PluginImageHelper imageHelper) {
     super(imageHelper.getImage("Turtle.png"), PositionConstants.NORTH_EAST);
   }
-  
+
   @Override
   protected void paintFigure(final Graphics graphics) {
     graphics.pushState();
@@ -41,7 +41,7 @@ public class TortoiseFigure extends ImageFigure {
     super.paintFigure(graphics);
     graphics.popState();
   }
-  
+
   @Override
   public Dimension getMinimumSize(final int wHint, final int hHint) {
     Dimension _xblockexpression = null;
@@ -51,7 +51,7 @@ public class TortoiseFigure extends ImageFigure {
     }
     return _xblockexpression;
   }
-  
+
   public void setTortoiseLocation(final Point location) {
     final Dimension minSize = this.getMinimumSize();
     IFigure _parent = this.getParent();
@@ -62,12 +62,12 @@ public class TortoiseFigure extends ImageFigure {
       minSize.height);
     _parent.setConstraint(this, _rectangle);
   }
-  
+
   public void setAngle(final double angle) {
     this.angle = angle;
     this.revalidate();
   }
-  
+
   @Pure
   public double getAngle() {
     return this.angle;

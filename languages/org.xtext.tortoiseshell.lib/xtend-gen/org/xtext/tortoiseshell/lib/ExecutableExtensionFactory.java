@@ -17,7 +17,7 @@ public class ExecutableExtensionFactory extends AbstractGuiceAwareExecutableExte
   protected Bundle getBundle() {
     return Activator.getInstance().getBundle();
   }
-  
+
   @Override
   protected Injector getInjector() {
     return Activator.getInstance().getInjector();

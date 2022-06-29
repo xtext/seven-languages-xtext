@@ -32,11 +32,11 @@ public class QualifiedNameProviderTest {
   @Inject
   @Extension
   private IQualifiedNameProvider _iQualifiedNameProvider;
-  
+
   @Inject
   @Extension
   private ParseHelper<MongoFile> _parseHelper;
-  
+
   @Test
   public void testQualifiedName() {
     try {

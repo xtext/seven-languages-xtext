@@ -26,21 +26,21 @@ public class TortoiseShellRuntimeModule extends AbstractTortoiseShellRuntimeModu
   public Class<? extends ImplicitlyImportedFeatures> bindImplicitlyImportedTypes() {
     return TortoiseShellImplicitlyImportedFeatures.class;
   }
-  
+
   public Class<? extends ITortoiseInterpreter> bindITortoiseInterpreter() {
     return TortoiseShellInterpeter.class;
   }
-  
+
   @Override
   public Class<? extends IdentifiableSimpleNameProvider> bindIdentifiableSimpleNameProvider() {
     return TortoiseShellIdentifiableSimpleNameProvider.class;
   }
-  
+
   @Override
   public Class<? extends IGenerator> bindIGenerator() {
     return NullGenerator.class;
   }
-  
+
   @Override
   public Class<? extends IDefaultResourceDescriptionStrategy> bindIDefaultResourceDescriptionStrategy() {
     return TortoiseResourceDescriptionStrategy.class;

@@ -22,7 +22,7 @@ Require-Bundle: org.xtext.guicemodules;visibility:=reexport,
  org.eclipse.xtend.lib;bundle-version="2.14.0"
 Import-Package: org.apache.log4j,
  org.apache.commons.logging
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.xtext.guicemodules.ui.internal,
  org.xtext.guicemodules.ui.contentassist,
  org.xtext.guicemodules.ui.quickfix,

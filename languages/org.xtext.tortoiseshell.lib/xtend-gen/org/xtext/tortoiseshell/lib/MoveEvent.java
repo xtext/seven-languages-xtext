@@ -16,15 +16,15 @@ import org.eclipse.xtext.xbase.lib.util.ToStringBuilder;
 @SuppressWarnings("all")
 public class MoveEvent implements ITortoiseEvent {
   private final Tortoise tortoise;
-  
+
   private final Point oldPosition;
-  
+
   public MoveEvent(final Tortoise tortoise, final Point oldPosition) {
     super();
     this.tortoise = tortoise;
     this.oldPosition = oldPosition;
   }
-  
+
   @Override
   @Pure
   public int hashCode() {
@@ -33,7 +33,7 @@ public class MoveEvent implements ITortoiseEvent {
     result = prime * result + ((this.tortoise== null) ? 0 : this.tortoise.hashCode());
     return prime * result + ((this.oldPosition== null) ? 0 : this.oldPosition.hashCode());
   }
-  
+
   @Override
   @Pure
   public boolean equals(final Object obj) {
@@ -56,7 +56,7 @@ public class MoveEvent implements ITortoiseEvent {
       return false;
     return true;
   }
-  
+
   @Override
   @Pure
   public String toString() {
@@ -65,13 +65,13 @@ public class MoveEvent implements ITortoiseEvent {
     b.add("oldPosition", this.oldPosition);
     return b.toString();
   }
-  
+
   @Pure
   @Override
   public Tortoise getTortoise() {
     return this.tortoise;
   }
-  
+
   @Pure
   public Point getOldPosition() {
     return this.oldPosition;

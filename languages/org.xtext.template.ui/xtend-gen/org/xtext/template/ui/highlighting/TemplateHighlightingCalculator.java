@@ -24,7 +24,7 @@ import org.xtext.template.services.TemplateGrammarAccess;
 public class TemplateHighlightingCalculator extends XbaseHighlightingCalculator {
   @Inject
   private TemplateGrammarAccess grammarAccess;
-  
+
   public boolean isText(final ILeafNode node) {
     boolean _switchResult = false;
     EObject _grammarElement = node.getGrammarElement();
@@ -41,7 +41,7 @@ public class TemplateHighlightingCalculator extends XbaseHighlightingCalculator 
     }
     return _switchResult;
   }
-  
+
   @Override
   protected void doProvideHighlightingFor(final XtextResource resource, final IHighlightedPositionAcceptor acceptor, final CancelIndicator cancelIndicator) {
     super.doProvideHighlightingFor(resource, acceptor, cancelIndicator);

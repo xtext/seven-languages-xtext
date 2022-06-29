@@ -16,7 +16,7 @@ public class InjectionTarget {
   @Inject
   @Named("foo-bar")
   public String s;
-  
+
   @Inject
   public Collection<?> col;
 }

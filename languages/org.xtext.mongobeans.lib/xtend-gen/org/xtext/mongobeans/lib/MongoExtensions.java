@@ -24,7 +24,7 @@ public class MongoExtensions {
     }
     return ((T) _wrap);
   }
-  
+
   public WriteResult save(final DBCollection collection, final IMongoBean wrapper) {
     return collection.save(wrapper.getDbObject());
   }

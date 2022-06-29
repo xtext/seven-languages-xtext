@@ -14,20 +14,20 @@ import org.eclipse.xtext.xbase.lib.InputOutput;
 public class NumberGuessing extends HttpServlet {
   @Inject
   private GuessTheNumber controller;
-  
+
   private static Pattern _pattern2 = Pattern.compile("/guess/(\\w+)");
-  
+
   public boolean _doGet2Condition(final HttpServletRequest request, final HttpServletResponse response, final String myGuess) {
     boolean _equals = myGuess.equals("42");
     return _equals;
   }
-  
+
   public void _doGet2(final HttpServletRequest request, final HttpServletResponse response, final String myGuess) {
     this.controller.handleAnswerToEverything();
   }
-  
+
   private static Pattern _pattern3 = Pattern.compile("/guess");
-  
+
   public boolean _doGet3Condition(final HttpServletRequest request, final HttpServletResponse response) {
     String _parameter = request.getParameter("theGuess");
     boolean _equals = false;
@@ -36,25 +36,25 @@ public class NumberGuessing extends HttpServlet {
     }
     return _equals;
   }
-  
+
   public void _doGet3(final HttpServletRequest request, final HttpServletResponse response) {
     this.controller.handleAnswerToEverything();
   }
-  
+
   private static Pattern _pattern4 = Pattern.compile("/guess/(\\w+)");
-  
+
   public void _doGet4(final HttpServletRequest request, final HttpServletResponse response, final String myGuess) {
     this.controller.handleGuess(myGuess);
   }
-  
+
   private static Pattern _pattern5 = Pattern.compile("/guess");
-  
+
   public void _doGet5(final HttpServletRequest request, final HttpServletResponse response) {
     this.controller.handleGuess(request.getParameter("theGuess"));
   }
-  
+
   private static Pattern _pattern6 = Pattern.compile("/");
-  
+
   public void _doGet6(final HttpServletRequest request, final HttpServletResponse response) {
     try {
       InputOutput.<String>println("Redirecting!");
@@ -63,7 +63,7 @@ public class NumberGuessing extends HttpServlet {
       throw Exceptions.sneakyThrow(_e);
     }
   }
-  
+
   @Override
   public void doGet(final HttpServletRequest request, final HttpServletResponse response) {
     String url =  request.getRequestURL().toString();

@@ -6,18 +6,18 @@ import org.eclipse.xtext.xbase.lib.util.ToStringBuilder;
 @SuppressWarnings("all")
 public class Section {
   private final String title;
-  
+
   private final String description;
-  
+
   private final String body;
-  
+
   public Section(final String title, final String description, final String body) {
     super();
     this.title = title;
     this.description = description;
     this.body = body;
   }
-  
+
   @Override
   @Pure
   public int hashCode() {
@@ -27,7 +27,7 @@ public class Section {
     result = prime * result + ((this.description== null) ? 0 : this.description.hashCode());
     return prime * result + ((this.body== null) ? 0 : this.body.hashCode());
   }
-  
+
   @Override
   @Pure
   public boolean equals(final Object obj) {
@@ -55,7 +55,7 @@ public class Section {
       return false;
     return true;
   }
-  
+
   @Override
   @Pure
   public String toString() {
@@ -65,17 +65,17 @@ public class Section {
     b.add("body", this.body);
     return b.toString();
   }
-  
+
   @Pure
   public String getTitle() {
     return this.title;
   }
-  
+
   @Pure
   public String getDescription() {
     return this.description;
   }
-  
+
   @Pure
   public String getBody() {
     return this.body;

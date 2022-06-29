@@ -28,11 +28,11 @@ public class ExecutionTest {
   @Inject
   @Extension
   private CompilationTestHelper _compilationTestHelper;
-  
+
   @Inject
   @Extension
   private ReflectExtensions _reflectExtensions;
-  
+
   @Test
   public void testHelloWorld() {
     StringConcatenation _builder = new StringConcatenation();
@@ -40,7 +40,7 @@ public class ExecutionTest {
     _builder.newLine();
     this.compileAndExecuteMainAndExpect(_builder, "Hello World");
   }
-  
+
   @Test
   public void testDeepThought() {
     StringConcatenation _builder = new StringConcatenation();
@@ -50,13 +50,13 @@ public class ExecutionTest {
     _builder.newLine();
     this.compileAndExecuteMainAndExpect(_builder, Integer.valueOf(42));
   }
-  
+
   protected void compileAndExecuteMainAndExpect(final CharSequence script, final Object expectedResult) {
     try {
       final IAcceptor<CompilationTestHelper.Result> _function = (CompilationTestHelper.Result it) -> {
         try {
           try {
-            this._reflectExtensions.invoke(it.getCompiledClass().newInstance(), "main", null);
+            this._reflectExtensions.invoke(it.getCompiledClass().getDeclaredConstructor().newInstance(), "main", null);
             Assert.fail("Expected ResultException not thrown.");
           } catch (final Throwable _t) {
             if (_t instanceof InvocationTargetException) {

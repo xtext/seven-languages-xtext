@@ -22,12 +22,12 @@ public class TemplateTypeComputer extends XbaseWithAnnotationsTypeComputer {
       }
     }
   }
-  
+
   protected void _computeTypes(final RichString expression, final ITypeComputationState state) {
     super._computeTypes(((XBlockExpression) expression), state);
     state.acceptActualType(this.getTypeForName(StringBuilder.class, state));
   }
-  
+
   protected void _computeTypes(final RichStringForLoop expression, final ITypeComputationState state) {
     super._computeTypes(((XForLoopExpression) expression), state);
     state.acceptActualType(this.getTypeForName(StringBuilder.class, state));

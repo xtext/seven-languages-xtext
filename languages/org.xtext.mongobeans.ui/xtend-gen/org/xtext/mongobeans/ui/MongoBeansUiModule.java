@@ -27,22 +27,22 @@ public class MongoBeansUiModule extends AbstractMongoBeansUiModule {
   public Class<? extends IOutlineTreeProvider> bindIOutlineTreeProvider() {
     return MongoBeansOutlineTreeProvider.class;
   }
-  
+
   @Override
   public Class<? extends IOutlineTreeStructureProvider> bindIOutlineTreeStructureProvider() {
     return MongoBeansOutlineTreeProvider.class;
   }
-  
+
   @Override
   public Class<? extends ILabelProvider> bindILabelProvider() {
     return MongoBeansLabelProvider.class;
   }
-  
+
   @Override
   public Class<? extends IssueResolutionProvider> bindIssueResolutionProvider() {
     return MongoBeansQuickfixProvider.class;
   }
-  
+
   public MongoBeansUiModule(final AbstractUIPlugin plugin) {
     super(plugin);
   }
