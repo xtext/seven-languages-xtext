@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2012 itemis AG (http://www.itemis.eu) and others.
+ * Copyright (c) 2012, 2023 itemis AG (http://www.itemis.eu) and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,13 +9,13 @@ package org.xtext.scripting.tests;
 
 import com.google.inject.Inject;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.testing.InjectWith;
 import org.eclipse.xtext.testing.XtextRunner;
 import org.eclipse.xtext.util.IAcceptor;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Extension;
-import org.eclipse.xtext.xbase.lib.util.ReflectExtensions;
 import org.eclipse.xtext.xbase.testing.CompilationTestHelper;
 import org.junit.Assert;
 import org.junit.Test;
@@ -28,10 +28,6 @@ public class ExecutionTest {
   @Inject
   @Extension
   private CompilationTestHelper _compilationTestHelper;
-
-  @Inject
-  @Extension
-  private ReflectExtensions _reflectExtensions;
 
   @Test
   public void testHelloWorld() {
@@ -56,7 +52,10 @@ public class ExecutionTest {
       final IAcceptor<CompilationTestHelper.Result> _function = (CompilationTestHelper.Result it) -> {
         try {
           try {
-            this._reflectExtensions.invoke(it.getCompiledClass().getDeclaredConstructor().newInstance(), "main", null);
+            String[] _newArrayOfSize = new String[0];
+            final Object[] o = new Object[] { _newArrayOfSize };
+            final Method m = it.getCompiledClass().getDeclaredMethod("main", String[].class);
+            m.invoke(null, o);
             Assert.fail("Expected ResultException not thrown.");
           } catch (final Throwable _t) {
             if (_t instanceof InvocationTargetException) {
