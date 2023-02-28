@@ -104,7 +104,6 @@ public class RoutePackageImpl extends EPackageImpl implements RoutePackage
   {
     super(eNS_URI, RouteFactory.eINSTANCE);
   }
-
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

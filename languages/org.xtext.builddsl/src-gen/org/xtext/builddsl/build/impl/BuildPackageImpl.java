@@ -78,7 +78,6 @@ public class BuildPackageImpl extends EPackageImpl implements BuildPackage
   {
     super(eNS_URI, BuildFactory.eINSTANCE);
   }
-
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

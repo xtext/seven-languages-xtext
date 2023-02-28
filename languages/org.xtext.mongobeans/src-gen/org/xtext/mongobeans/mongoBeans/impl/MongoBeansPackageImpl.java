@@ -102,7 +102,6 @@ public class MongoBeansPackageImpl extends EPackageImpl implements MongoBeansPac
   {
     super(eNS_URI, MongoBeansFactory.eINSTANCE);
   }
-
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

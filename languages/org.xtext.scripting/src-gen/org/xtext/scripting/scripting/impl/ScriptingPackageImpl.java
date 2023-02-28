@@ -50,7 +50,6 @@ public class ScriptingPackageImpl extends EPackageImpl implements ScriptingPacka
   {
     super(eNS_URI, ScriptingFactory.eINSTANCE);
   }
-
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

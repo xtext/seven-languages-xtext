@@ -68,7 +68,6 @@ public class TortoiseShellPackageImpl extends EPackageImpl implements TortoiseSh
   {
     super(eNS_URI, TortoiseShellFactory.eINSTANCE);
   }
-
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

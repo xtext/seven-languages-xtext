@@ -80,7 +80,6 @@ public class GuiceModulesPackageImpl extends EPackageImpl implements GuiceModule
   {
     super(eNS_URI, GuiceModulesFactory.eINSTANCE);
   }
-
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
